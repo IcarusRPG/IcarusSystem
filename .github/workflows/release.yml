@@ -28,7 +28,7 @@ jobs:
         run: node --test tests/regras.test.mjs
 
       - name: Montar o pacote
-        run: zip -r icarus-rpg.zip system.json icarus.mjs module templates styles fonts lang img README.md -x "*.DS_Store"
+        run: zip -r icarus-rpg.zip system.json icarus.mjs module templates styles fonts lang img README.md -x "*.DS_Store" "img/Logo oficial/*" "img/Wallpaper Icarus System.png"
 
       - name: Publicar release
         env:
