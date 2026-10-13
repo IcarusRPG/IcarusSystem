@@ -129,7 +129,6 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Perícias personalizadas ("Nova Perícia / Criar")
 - PV e PM no tier Paragon e mecânica de ascensão
 - Anotações de sessão no Diário (lista com data e resumo)
-- Ícones das raças em `img/Icones/raças/` (enquanto faltarem, as raças usam o dado azul)
 - Bônus de ataque e dano de poderes raciais (ficam como texto até existir o combate)
 - Resistência a dano, RD e visão no escuro como campos mecânicos (hoje só texto; Sentidos e Imunidades são preenchidos à mão)
 - Magias raciais (Astúcia Arcana, Luz Sagrada, Sombras Profanas)
