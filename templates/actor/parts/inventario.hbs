@@ -1,0 +1,40 @@
+<div class="inv">
+  <div class="painel lista">
+    <div class="lista-cab">
+      <h3 class="titulo-painel">{{localize "ICARUS.Inventario.Itens"}}</h3>
+      <span class="dica">{{localize "ICARUS.Inventario.ArrasteDica"}}</span>
+    </div>
+    {{#each equipamentos}}
+    <div class="item" data-item-id="{{id}}">
+      <img class="item-img" src="{{img}}" alt="" width="32" height="32">
+      <div class="item-nome"><b>{{name}}</b><small>{{tipo}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}}</small></div>
+      <div class="item-qtd">×{{quantidade}}</div>
+      {{#if equipavel}}
+      <button type="button" class="btn equipar{{#if equipado}} on{{/if}}" data-action="item-equipar" aria-pressed="{{#if equipado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
+        {{#if equipado}}{{localize "ICARUS.Inventario.Equipado"}}{{else}}{{localize "ICARUS.Inventario.Equipar"}}{{/if}}
+      </button>
+      {{else}}<span class="equipar-vazio"></span>{{/if}}
+      {{#if @root.editable}}
+      <span class="acoes">
+        <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+        <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+      </span>
+      {{/if}}
+    </div>
+    {{else}}
+    <div class="vazio">{{localize "ICARUS.Inventario.Vazio"}}</div>
+    {{/each}}
+    {{#if editable}}
+    <button type="button" class="btn tracejado add" data-action="item-criar" data-tipo="equipamento">{{localize "ICARUS.Inventario.Adicionar"}}</button>
+    {{/if}}
+  </div>
+
+  <div class="lado">
+    <div class="painel caixa-def">
+      <h3 class="titulo-painel">{{localize "ICARUS.Defesa.Rotulo"}}</h3>
+      <span class="dica">{{defesa.formula}}</span>
+      <span class="grande">{{defesa.total}}</span>
+    </div>
+    <div class="reservado">{{localize "ICARUS.Inventario.Riqueza"}}</div>
+  </div>
+</div>

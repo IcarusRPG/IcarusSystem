@@ -1,0 +1,43 @@
+<div class="recursos">
+  <div class="painel recurso pv">
+    <div class="rot-rec">{{localize "ICARUS.PV.Rotulo"}}</div>
+    <div class="recurso-linha">
+      {{#if editable}}<button type="button" class="btn quad" data-action="recurso" data-recurso="pv" data-delta="-1" aria-label="{{localize 'ICARUS.PV.Perder'}}">−</button>{{/if}}
+      <div class="recurso-valor">
+        <input type="number" name="system.pv.value" value="{{pv.value}}" step="1" aria-label="{{localize 'ICARUS.PV.Atuais'}}">
+        <span class="max">/ {{pv.max}}</span>
+      </div>
+      {{#if editable}}<button type="button" class="btn quad" data-action="recurso" data-recurso="pv" data-delta="1" aria-label="{{localize 'ICARUS.PV.Recuperar'}}">+</button>{{/if}}
+    </div>
+    <div class="barra"><span style="width: {{pv.pct}}%"></span></div>
+  </div>
+
+  <div class="painel recurso pm">
+    <div class="rot-rec">{{localize "ICARUS.PM.Rotulo"}}</div>
+    <div class="recurso-linha">
+      {{#if editable}}<button type="button" class="btn quad" data-action="recurso" data-recurso="pm" data-delta="-1" aria-label="{{localize 'ICARUS.PM.Gastar'}}">−</button>{{/if}}
+      <div class="recurso-valor">
+        <input type="number" name="system.pm.value" value="{{pm.value}}" step="1" aria-label="{{localize 'ICARUS.PM.Atuais'}}">
+        <span class="max">/ {{pm.max}}</span>
+      </div>
+      {{#if editable}}<button type="button" class="btn quad" data-action="recurso" data-recurso="pm" data-delta="1" aria-label="{{localize 'ICARUS.PM.Recuperar'}}">+</button>{{/if}}
+    </div>
+    <div class="barra"><span style="width: {{pm.pct}}%"></span></div>
+  </div>
+
+  <div class="painel defesa">
+    <div class="escudo" aria-hidden="true">
+      <span class="moldura escudo-forma"></span>
+      <span class="miolo escudo-forma"><span>{{defesa.total}}</span></span>
+    </div>
+    <div class="defesa-info">
+      <span class="rot-def">{{localize "ICARUS.Defesa.Rotulo"}} {{defesa.total}}</span>
+      <span>{{defesa.formula}}</span>
+      <label class="outros-def">
+        {{localize "ICARUS.Defesa.Outros"}}
+        <input class="campo" type="number" name="system.defesa.outros" value="{{defesa.outros}}" step="1">
+      </label>
+      <span>{{localize "ICARUS.Deslocamento"}} <b>{{deslocamento.exibicao}} m ({{deslocamento.quadrados}}q)</b></span>
+    </div>
+  </div>
+</div>

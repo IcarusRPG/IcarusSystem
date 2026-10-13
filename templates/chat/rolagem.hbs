@@ -1,0 +1,11 @@
+<div class="icarus-rolagem{{#if critico}} critico{{/if}}{{#if falha}} falha{{/if}}">
+  <div class="rolagem-tipo">{{tipoRotulo}}</div>
+  <h3 class="rolagem-nome">{{rotulo}}</h3>
+  <div class="rolagem-dados">
+    <span class="d20" aria-label="d20 {{d20}}"><span class="moldura hex"></span><span class="miolo hex">{{d20}}</span></span>
+    <span class="rolagem-formula">{{formula}}</span>
+    <span class="rolagem-total">{{total}}</span>
+  </div>
+  {{#if critico}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Critico"}}</div>{{/if}}
+  {{#if falha}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Falha"}}</div>{{/if}}
+</div>

@@ -1,0 +1,20 @@
+<form class="{{cssClass}} ficha-icarus ficha-item" autocomplete="off">
+  <header class="item-cab">
+    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
+    <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+  </header>
+  <div class="item-campos">
+    <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Fonte"}}</span>
+      <select class="campo" name="system.fonte">{{selectOptions opcoesFonte selected=source.fonte localize=true}}</select></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Poderes.CustoPM"}}</span>
+      <input class="campo" type="number" name="system.custoPM" value="{{source.custoPM}}" min="0" step="1" placeholder="{{localize 'ICARUS.Poderes.SemCusto'}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Nivel"}}</span>
+      <input class="campo" type="number" name="system.nivel" value="{{source.nivel}}" min="1" max="25" step="1" placeholder="—"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Prerequisito"}}</span>
+      <input class="campo" type="text" name="system.prerequisito" value="{{source.prerequisito}}"></label>
+  </div>
+  <div class="painel item-desc">
+    <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
+    {{editor descricaoHTML target="system.descricao" button=true editable=editable engine="prosemirror"}}
+  </div>
+</form>

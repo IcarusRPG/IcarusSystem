@@ -1,0 +1,56 @@
+<div class="ficha-icarus dialogo-nivel">
+  <p class="dica">
+    {{localize "ICARUS.NivelDialogo.Classe"}}: <b>{{classe}}</b> · {{localize "ICARUS.NivelDialogo.Explicacao"}}
+  </p>
+
+  <div class="dlg-grade">
+    {{#each passos}}
+    <div class="passo">
+      <span>{{rotulo}}</span>
+      <div class="passo-ctl">
+        <button type="button" class="btn quad" data-action="passo" data-campo="{{campo}}" data-delta="-1" aria-label="− {{rotulo}}">−</button>
+        <b>{{valor}}</b>
+        <button type="button" class="btn quad" data-action="passo" data-campo="{{campo}}" data-delta="1" aria-label="+ {{rotulo}}">+</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="dlg-grade">
+    <label class="f"><span class="rot">{{localize "ICARUS.NivelDialogo.BonusPv"}}</span>
+      <input class="campo" type="number" name="bonusPv" value="{{r.bonusPv}}" step="1"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.NivelDialogo.BonusPm"}}</span>
+      <input class="campo" type="number" name="bonusPm" value="{{r.bonusPm}}" step="1"></label>
+  </div>
+
+  <div class="grupo-chips">
+    <span class="rot">{{localize "ICARUS.NivelDialogo.AtributoPv"}}</span>
+    <div class="chips">
+      {{#each chipsPv}}<button type="button" class="btn peq{{#if ativo}} ativo{{/if}}" data-action="chip" data-campo="{{campo}}" data-valor="{{valor}}" aria-pressed="{{#if ativo}}true{{else}}false{{/if}}">{{rotulo}}</button>{{/each}}
+    </div>
+    <span class="rot">{{localize "ICARUS.NivelDialogo.AtributoPm"}}</span>
+    <div class="chips">
+      {{#each chipsPm}}<button type="button" class="btn peq{{#if ativo}} ativo{{/if}}" data-action="chip" data-campo="{{campo}}" data-valor="{{valor}}" aria-pressed="{{#if ativo}}true{{else}}false{{/if}}">{{rotulo}}</button>{{/each}}
+    </div>
+  </div>
+
+  <label class="chk"><input type="checkbox" name="manual" {{checked r.manual}}> {{localize "ICARUS.NivelDialogo.Manual"}}</label>
+  {{#if r.manual}}
+  <div class="dlg-grade">
+    <label class="f"><span class="rot">{{localize "ICARUS.NivelDialogo.PvMax"}}</span>
+      <input class="campo" type="number" name="pvMax" value="{{r.pvMax}}" min="0" step="1"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.NivelDialogo.PmMax"}}</span>
+      <input class="campo" type="number" name="pmMax" value="{{r.pmMax}}" min="0" step="1"></label>
+  </div>
+  {{/if}}
+
+  <div class="dlg-totais">
+    <div>{{totalPv}}: <b class="cor-pv">{{pvMax}}</b></div>
+    <div>{{totalPm}}: <b class="cor-pm">{{pmMax}}</b></div>
+  </div>
+
+  <div class="dlg-rodape">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.NivelDialogo.Cancelar"}}</button>
+    <button type="submit" class="btn primario">{{localize "ICARUS.NivelDialogo.Salvar"}}</button>
+  </div>
+</div>

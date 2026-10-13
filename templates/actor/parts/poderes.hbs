@@ -1,0 +1,35 @@
+<div class="poderes">
+  {{#each gruposPoder}}
+  <section class="grupo">
+    <div class="grupo-cab">
+      <span class="losango"></span>
+      <h3>{{titulo}}</h3>
+      <span class="fio"></span>
+      <span class="tag">{{tag}}</span>
+      {{#if @root.editable}}
+      <button type="button" class="btn peq tracejado" data-action="item-criar" data-tipo="poder" data-fonte="{{fonte}}">{{localize "ICARUS.Poderes.Adicionar"}}</button>
+      {{/if}}
+    </div>
+    <div class="cards">
+      {{#each poderes}}
+      <article class="painel card" data-item-id="{{id}}">
+        <div class="card-topo">
+          <b>{{name}}</b>
+          {{#if custo}}<span class="custo">{{custo}} PM</span>{{/if}}
+        </div>
+        {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}
+        <div class="card-texto">{{{descricao}}}</div>
+        {{#if @root.editable}}
+        <div class="card-acoes">
+          <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+          <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+        </div>
+        {{/if}}
+      </article>
+      {{else}}
+      <div class="card-vazio">{{vazio}}</div>
+      {{/each}}
+    </div>
+  </section>
+  {{/each}}
+</div>
