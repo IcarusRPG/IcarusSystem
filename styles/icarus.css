@@ -10,6 +10,22 @@
 @font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
 
+/* --- Identidade do Icarus na interface do Foundry (ver module/interface.mjs) --- */
+/* Logo no lugar da bigorna, no canto superior esquerdo */
+#logo {
+  content: url("../img/ui/logo-icarus.webp");
+  object-fit: contain;
+}
+/* Dado vermelho na mensagem "Jogo Pausado" */
+#pause img {
+  content: url("../img/ui/pausa-dado.webp");
+}
+/* Wallpaper no fundo cinza que aparece quando não há cena aberta.
+   O !important garante que ele vença o fundo padrão do Foundry. */
+body.game {
+  background: #04070b url("../img/ui/wallpaper.webp") center / cover no-repeat fixed !important;
+}
+
 /* --- Tokens de design (seção 5.2 do prompt) --- */
 .icarus.sheet, .icarus-dialogo, .ficha-icarus, .icarus-rolagem {
   --ic-fundo: #04070b;

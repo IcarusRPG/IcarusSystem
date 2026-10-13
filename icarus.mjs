@@ -9,6 +9,9 @@ import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
 import { rolarTeste, rolarPericia, rolarAtributo } from "./module/rolls.mjs";
 import { criarKaelen, verificarKaelen } from "./module/dev/kaelen.mjs";
+import { registrarInterface } from "./module/interface.mjs";
+
+registrarInterface();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
