@@ -1,5 +1,5 @@
 import { SISTEMA_ID, ATRIBUTOS, ATRIBUTOS_CHAVE_PM } from "../config.mjs";
-import { numero, maximoPelaClasse, maximoFinal } from "../regras.mjs";
+import { numero, maximoPelaClasse, maximoFinal, niveisImpares, comSinal } from "../regras.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -43,9 +43,10 @@ export class DialogoNivel extends HandlebarsApplicationMixin(ApplicationV2) {
     const total = k => (ATRIBUTOS.includes(k) ? s.atributos[k].total : null);
     const pvForm = maximoPelaClasse({ inicial: r.pvInicial, porNivel: r.pvPorNivel, atributoTotal: total(r.pvAtributo), nivel: s.nivel });
     const pmForm = maximoPelaClasse({ inicial: r.pmInicial, porNivel: r.pmPorNivel, atributoTotal: total(r.pmAtributo), nivel: s.nivel });
+    // Bônus por nível vêm de Efeitos Ativos de poderes (valor efetivo, não editável aqui)
     return {
-      pvMax: maximoFinal({ manual: r.manual, maximoManual: r.pvMax, maximoFormula: pvForm, bonus: r.bonusPv }),
-      pmMax: maximoFinal({ manual: r.manual, maximoManual: r.pmMax, maximoFormula: pmForm, bonus: r.bonusPm })
+      pvMax: maximoFinal({ manual: r.manual, maximoManual: r.pvMax, maximoFormula: pvForm, bonus: r.bonusPv, bonusNivel: s.pv.bonusNivel }),
+      pmMax: maximoFinal({ manual: r.manual, maximoManual: r.pmMax, maximoFormula: pmForm, bonus: r.bonusPm, bonusNivel: s.pm.bonusNivel })
     };
   }
 
@@ -62,6 +63,13 @@ export class DialogoNivel extends HandlebarsApplicationMixin(ApplicationV2) {
         ["pvInicial", "ICARUS.NivelDialogo.PvInicial"], ["pvPorNivel", "ICARUS.NivelDialogo.PvPorNivel"],
         ["pmInicial", "ICARUS.NivelDialogo.PmInicial"], ["pmPorNivel", "ICARUS.NivelDialogo.PmPorNivel"]
       ].map(([campo, rotulo]) => ({ campo, rotulo: game.i18n.localize(rotulo), valor: r[campo] })),
+      bonusPoderes: [
+        ["bonusPvPorNivel", s.classeConfig.bonusPvPorNivel, `× ${s.nivel} = ${comSinal(s.pv.bonusNivel)} PV`],
+        ["bonusPmPorNivel", s.classeConfig.bonusPmPorNivel, `× ${s.nivel} = ${comSinal(s.classeConfig.bonusPmPorNivel * s.nivel)} PM`],
+        ["bonusPmNivelImpar", s.classeConfig.bonusPmNivelImpar, `× ${niveisImpares(s.nivel)} = ${comSinal(s.classeConfig.bonusPmNivelImpar * niveisImpares(s.nivel))} PM`]
+      ].filter(([, valor]) => valor).map(([campo, valor, conta]) => ({
+        rotulo: game.i18n.localize(`ICARUS.NivelDialogo.Campos.${campo}`), valor: comSinal(valor), conta
+      })),
       chipsPv: chips("pvAtributo", ATRIBUTOS),
       chipsPm: chips("pmAtributo", ATRIBUTOS_CHAVE_PM),
       totalPv: game.i18n.format("ICARUS.NivelDialogo.TotalPv", { n: s.nivel }),

@@ -9,6 +9,23 @@
   <div class="cab-meio">
     <input class="nome" type="text" name="name" value="{{actor.name}}" aria-label="{{localize 'ICARUS.Identidade.Nome'}}" placeholder="{{localize 'ICARUS.Identidade.Nome'}}">
     <div class="identidade">
+      {{!-- Raça: combobox; a troca aplica atributos raciais, poderes e efeitos (module/racas.mjs) --}}
+      <div class="campo-raca">
+        <label class="rot" for="{{actor.id}}-raca">{{localize "ICARUS.Identidade.raca"}}</label>
+        <div class="raca-linha">
+          <span class="raca-icone" aria-hidden="true">
+            <span class="moldura hex"></span>
+            <span class="miolo hex"><img src="{{raca.icone}}" alt="" onerror="this.onerror=null;this.src='{{iconePadrao}}'"></span>
+          </span>
+          <select id="{{actor.id}}-raca" class="campo sel-raca" aria-describedby="{{actor.id}}-raca-sig">
+            {{#each raca.opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+          </select>
+          {{#if raca.id}}{{#if editable}}
+          <button type="button" class="btn icone" data-action="raca-reaplicar" title="{{localize 'ICARUS.Racas.Reaplicar'}}" aria-label="{{localize 'ICARUS.Racas.Reaplicar'}}"><i class="fa-solid fa-rotate" aria-hidden="true"></i></button>
+          {{/if}}{{/if}}
+        </div>
+        <span class="raca-significado" id="{{actor.id}}-raca-sig">{{raca.significado}}</span>
+      </div>
       {{#each identidade}}
       <label>
         <span class="rot">{{rotulo}}</span>

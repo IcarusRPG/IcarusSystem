@@ -2,29 +2,43 @@
   {{#each gruposPoder}}
   <section class="grupo">
     <div class="grupo-cab">
-      <span class="losango"></span>
+      {{#if icone}}
+      <span class="hex-mini grupo-icone" aria-hidden="true"><span class="moldura hex"></span><span class="miolo hex"><img src="{{icone}}" alt="" onerror="this.onerror=null;this.src='{{@root.iconePadrao}}'"></span></span>
+      {{else}}<span class="losango"></span>{{/if}}
       <h3>{{titulo}}</h3>
       <span class="fio"></span>
       <span class="tag">{{tag}}</span>
       {{#if @root.editable}}
+      {{#if ehRaca}}{{#if @root.raca.temEscolhas}}
+      <button type="button" class="btn peq{{#if @root.raca.pendente}} ativo pendente{{else}} tracejado{{/if}}" data-action="raca-escolhas">
+        {{#if @root.raca.pendente}}{{localize "ICARUS.Racas.EscolhasPendentes"}}{{else}}{{localize "ICARUS.Racas.Escolhas.Botao"}}{{/if}}
+      </button>
+      {{/if}}{{/if}}
       <button type="button" class="btn peq tracejado" data-action="item-criar" data-tipo="poder" data-fonte="{{fonte}}">{{localize "ICARUS.Poderes.Adicionar"}}</button>
       {{/if}}
     </div>
     <div class="cards">
       {{#each poderes}}
-      <article class="painel card" data-item-id="{{id}}">
-        <div class="card-topo">
-          <b>{{name}}</b>
-          {{#if custo}}<span class="custo">{{custo}} PM</span>{{/if}}
-        </div>
-        {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}
-        <div class="card-texto">{{{descricao}}}</div>
-        {{#if @root.editable}}
-        <div class="card-acoes">
-          <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
-          <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
-        </div>
+      <article class="painel card{{#if mostrarIcone}} com-icone{{/if}}" data-item-id="{{id}}" data-abrir-item>
+        {{#if mostrarIcone}}
+        <span class="hex-mini card-icone" aria-hidden="true"><span class="moldura hex"></span><span class="miolo hex"><img src="{{img}}" alt="" onerror="this.onerror=null;this.src='{{@root.iconePadrao}}'"></span></span>
         {{/if}}
+        <div class="card-corpo">
+          <div class="card-topo">
+            <b>{{name}}</b>
+            {{#if custo}}<span class="custo">{{custo}} PM</span>{{/if}}
+          </div>
+          {{#if auto}}<div class="card-tags"><span class="tag-racial">{{localize "ICARUS.Racas.TagRacial"}}</span>{{#if pendente}}<span class="tag-pendente">{{localize "ICARUS.Racas.EscolhaPendente"}}</span>{{/if}}</div>{{/if}}
+          {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}
+          <div class="card-texto">{{{descricao}}}</div>
+          {{#if @root.editable}}
+          <div class="card-acoes">
+            {{#if pendente}}<button type="button" class="btn peq ativo" data-action="raca-escolhas">{{localize "ICARUS.Racas.FazerEscolha"}}</button>{{/if}}
+            <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+            <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+          </div>
+          {{/if}}
+        </div>
       </article>
       {{else}}
       <div class="card-vazio">{{vazio}}</div>

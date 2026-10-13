@@ -1,0 +1,48 @@
+<div class="ficha-icarus dialogo-escolhas">
+  <p class="dica">{{localize "ICARUS.Racas.Escolhas.Explicacao"}}</p>
+
+  {{#each escolhas}}
+  <fieldset class="escolha">
+    <legend class="rot">{{rotulo}}</legend>
+
+    {{#if eh_atributosLivres}}
+    <div class="linhas-atributo">
+      {{#each linhas}}
+      <label class="linha-atributo">
+        <b>{{valor}}</b>
+        <select class="campo" name="{{nome}}">
+          <option value="">—</option>
+          {{#each opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+        </select>
+      </label>
+      {{/each}}
+    </div>
+    <p class="aviso-atributos" hidden>{{localize "ICARUS.Racas.Escolhas.AvisoAtributos"}}</p>
+    {{/if}}
+
+    {{#if eh_variante}}
+    <div class="chips">
+      {{#each opcoes}}
+      <label class="chk opcao-variante"><input type="radio" name="{{nome}}" value="{{valor}}"{{#if marcado}} checked{{/if}}> {{rotulo}}</label>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if eh_pericia}}
+    <select class="campo" name="{{nome}}">
+      <option value="">—</option>
+      {{#each opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+    </select>
+    {{/if}}
+
+    {{#if eh_texto}}
+    <input class="campo" type="text" name="{{nome}}" value="{{valor}}">
+    {{/if}}
+  </fieldset>
+  {{/each}}
+
+  <div class="dlg-rodape">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Racas.Escolhas.Depois"}}</button>
+    <button type="submit" class="btn primario">{{localize "ICARUS.Racas.Escolhas.Confirmar"}}</button>
+  </div>
+</div>

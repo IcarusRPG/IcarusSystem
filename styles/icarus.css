@@ -450,6 +450,57 @@ body.game {
 .ficha-icarus .cor-pm { color: var(--ic-pm-texto); }
 .ficha-icarus .dlg-rodape { display: flex; justify-content: flex-end; gap: 8px; }
 
+/* --- Raças (prompt de raças) --- */
+/* Hexágono pequeno com moldura ciano: ícone da raça no cabeçalho, no grupo e nos cards */
+.ficha-icarus .hex-mini { position: relative; flex: none; display: block; }
+.ficha-icarus .hex-mini .moldura { position: absolute; inset: 0; background: var(--ic-moldura); }
+.ficha-icarus .hex-mini .miolo { position: absolute; inset: 2px; background: var(--ic-miolo-hex); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ficha-icarus .hex-mini img { width: 100%; height: 100%; object-fit: cover; }
+.ficha-icarus .grupo-icone { width: 28px; height: 32px; }
+.ficha-icarus .card-icone { width: 40px; height: 46px; }
+
+.ficha-icarus .campo-raca { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .raca-linha { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.ficha-icarus .raca-icone { width: 32px; height: 36px; flex: none; position: relative; }
+.ficha-icarus .raca-icone .moldura { position: absolute; inset: 0; background: var(--ic-moldura); }
+.ficha-icarus .raca-icone .miolo { position: absolute; inset: 2px; background: var(--ic-miolo-hex); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ficha-icarus .raca-icone img { width: 100%; height: 100%; object-fit: cover; }
+.ficha-icarus .sel-raca { flex: 1; min-width: 0; padding: 6px 8px; }
+.ficha-icarus .raca-linha .btn.icone { width: 28px; height: 28px; flex: none; }
+.ficha-icarus .raca-significado { font-size: 12px; color: var(--ic-apagado2); font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 1em; }
+
+.ficha-icarus .card.com-icone { flex-direction: row; gap: 12px; align-items: flex-start; }
+.ficha-icarus .card[data-abrir-item] { cursor: pointer; }
+.ficha-icarus .card[data-abrir-item]:hover { border-color: var(--ic-btn-borda); }
+.ficha-icarus .card-corpo { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; align-self: stretch; }
+.ficha-icarus .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .tag-racial,
+.ficha-icarus .tag-pendente { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; border-radius: 3px; padding: 0 5px; }
+.ficha-icarus .tag-racial { color: var(--ic-ciano-titulo); border: 1px solid var(--ic-moldura); }
+.ficha-icarus .tag-pendente { color: var(--ic-ouro-claro); border: 1px solid var(--ic-ouro-escuro); }
+.ficha-icarus .btn.pendente { border-color: var(--ic-ouro); background: var(--ic-miolo-escudo); color: var(--ic-ouro-claro); }
+
+/* Valores alterados por Efeitos Ativos: a dica mostra a origem ("+2 Couro Brutal") */
+.ficha-icarus .com-efeito { cursor: help; }
+.ficha-icarus span.com-efeito, .ficha-icarus b.com-efeito, .ficha-icarus div.com-efeito { text-decoration: underline dotted var(--ic-moldura); text-underline-offset: 3px; }
+.ficha-icarus .btn.total.com-efeito, .ficha-icarus .per-outros.com-efeito { border-color: var(--ic-moldura); }
+
+/* Diálogo de escolhas da raça */
+.ficha-icarus.dialogo-escolhas { height: auto; gap: 12px; background: none; }
+.ficha-icarus .escolha { border: 1px solid var(--ic-borda); border-radius: 6px; padding: 10px 12px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .escolha legend { padding: 0 6px; }
+.ficha-icarus .linhas-atributo { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.ficha-icarus .linha-atributo { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .linha-atributo b { font-family: var(--ic-f-titulo); font-size: 18px; min-width: 30px; color: var(--ic-ouro-claro); }
+.ficha-icarus .aviso-atributos { margin: 0; font-size: 13px; color: var(--ic-pv); }
+.ficha-icarus .opcao-variante { padding: 4px 10px; border: 1px solid var(--ic-btn-borda); border-radius: 4px; }
+.ficha-icarus .opcao-variante input { accent-color: var(--ic-ciano); }
+
+/* Bônus de poderes no diálogo de nível (só leitura) */
+.ficha-icarus .bonus-poderes { display: flex; flex-direction: column; gap: 4px; padding: 8px 12px; border: 1px dashed var(--ic-btn-borda); border-radius: 6px; }
+.ficha-icarus .linha-leitura { display: flex; align-items: baseline; gap: 10px; }
+.ficha-icarus .linha-leitura b { font-family: var(--ic-f-titulo); color: var(--ic-ciano-titulo); }
+
 /* --- Janela estreita (seção 5.5): colunas empilham --- */
 @container (max-width: 1180px) {
   .ficha-icarus .carac { grid-template-columns: 250px minmax(0, 1fr); }
