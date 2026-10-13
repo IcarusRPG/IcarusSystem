@@ -1,0 +1,7 @@
+# Material de apoio local (regras em rascunho e protótipos): não vai para o repositório público
+referencias/
+
+node_modules/
+*.zip
+.DS_Store
+Thumbs.db

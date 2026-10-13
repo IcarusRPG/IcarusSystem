@@ -1,0 +1,82 @@
+{{!-- Linha de perícia: marcador de treino · nome (RES) · atributo · Outros · total (rola) --}}
+{{#*inline "icarusLinhaPericia"}}
+<div class="per-linha">
+  <button type="button" class="marcador" data-action="treino" data-pericia="{{chave}}" aria-label="{{treinoDica}}" title="{{treinoDica}}"><span class="m{{treino}}"></span></button>
+  <span class="per-nome{{#if treino}} treinada{{/if}}"><span title="{{nome}}">{{nome}}</span>{{#if resistencia}}<span class="res" title="{{localize 'ICARUS.Pericia.ResDica'}}">{{localize "ICARUS.Pericia.Res"}}</span>{{/if}}</span>
+  <select class="sel-atr{{#if atributoMudou}} mudou{{/if}}" name="system.pericias.{{chave}}.atributo" aria-label="{{localize 'ICARUS.Pericia.Atr'}} {{nome}}">{{selectOptions @root.opcoesAtributo selected=atributo}}</select>
+  <input class="campo per-outros{{#unless outros}} zero{{/unless}}" type="number" name="system.pericias.{{chave}}.outros" value="{{outros}}" step="1" aria-label="{{localize 'ICARUS.Pericia.Outros'}} {{nome}}">
+  <button type="button" class="btn total" data-action="rolar-pericia" data-pericia="{{chave}}" title="{{rolarDica}}" aria-label="{{rolarDica}}">{{total}}</button>
+</div>
+{{/inline}}
+<div class="carac">
+  {{!-- Coluna 1: atributos (Total = Base + Raça + Temp) --}}
+  <div class="atributos">
+    {{#each atributos}}
+    <div class="painel atr">
+      <button type="button" class="atr-hex" data-action="rolar-atributo" data-atributo="{{chave}}"
+              title="{{localize 'ICARUS.Atributo.Rolar'}} {{nome}}" aria-label="{{localize 'ICARUS.Atributo.Rolar'}} {{nome}} {{total}}">
+        <span class="moldura hex"></span><span class="miolo hex"><span>{{total}}</span></span>
+      </button>
+      <div class="atr-corpo">
+        <div class="atr-nome"><span class="sigla">{{chave}}</span><span class="extenso">{{nome}}</span></div>
+        <div class="atr-campos">
+          <label class="b"><span>{{localize "ICARUS.Atributo.Base"}}</span>
+            <input class="campo" type="number" name="system.atributos.{{chave}}.base" value="{{base}}" step="1"></label>
+          <label class="r"><span>{{localize "ICARUS.Atributo.Raca"}}</span>
+            <input class="campo" type="number" name="system.atributos.{{chave}}.racial" value="{{racial}}" step="1"></label>
+          <label class="t"><span>{{localize "ICARUS.Atributo.Temp"}}{{#if tempEfeito}} <em title="{{localize 'ICARUS.Atributo.TempEfeito'}}">{{tempEfeito}}</em>{{/if}}</span>
+            <input class="campo" type="number" name="system.atributos.{{chave}}.temp" value="{{temp}}" step="1"></label>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  {{!-- Coluna 2: perícias em duas listas de 15 --}}
+  <div class="pericias">
+    <div class="painel lista-per">
+      <div class="per-linha per-cab"><span></span><span>{{localize "ICARUS.Pericia.Cabecalho"}}</span><span>{{localize "ICARUS.Pericia.Atr"}}</span><span>{{localize "ICARUS.Pericia.Outros"}}</span><span>{{localize "ICARUS.Pericia.Total"}}</span></div>
+      {{#each periciasA}}{{> "icarusLinhaPericia" this}}{{/each}}
+    </div>
+    <div class="painel lista-per">
+      <div class="per-linha per-cab"><span></span><span>{{localize "ICARUS.Pericia.Cabecalho"}}</span><span>{{localize "ICARUS.Pericia.Atr"}}</span><span>{{localize "ICARUS.Pericia.Outros"}}</span><span>{{localize "ICARUS.Pericia.Total"}}</span></div>
+      {{#each periciasB}}{{> "icarusLinhaPericia" this}}{{/each}}
+    </div>
+  </div>
+
+  {{!-- Coluna 3: outras características, proficiências e notas --}}
+  <div class="lateral">
+    <div class="painel lat">
+      <h3 class="titulo-painel">{{localize "ICARUS.Outras.Titulo"}}</h3>
+      <label class="lat-linha"><span>{{localize "ICARUS.Outras.Tamanho"}}</span>
+        <select class="campo" name="system.tamanho">{{selectOptions opcoesTamanho selected=tamanho localize=true}}</select></label>
+      <label class="lat-linha"><span>{{localize "ICARUS.Deslocamento"}}</span>
+        <span class="desloc"><input class="campo" type="number" name="system.deslocamento" value="{{deslocamento.metros}}" step="1.5" min="0"> <span>m ({{deslocamento.quadrados}}q)</span></span></label>
+      {{#if dicaTamanho}}<div class="dica">{{dicaTamanho}}</div>{{/if}}
+      <div class="lat-linha"><span>{{localize "ICARUS.Outras.Resistencias"}}</span>
+        <div class="chips">
+          {{#each resistencias}}
+          <button type="button" class="btn chip-res" data-action="rolar-pericia" data-pericia="{{chave}}" title="{{localize 'ICARUS.Atributo.Rolar'}} {{nome}}">{{abrev}} <b>{{total}}</b></button>
+          {{/each}}
+        </div>
+      </div>
+      <label class="lat-linha"><span>{{localize "ICARUS.Outras.Imunidades"}}</span>
+        <input class="campo" type="text" name="system.imunidades" value="{{source.imunidades}}" placeholder="—"></label>
+      <label class="lat-linha"><span>{{localize "ICARUS.Outras.Sentidos"}}</span>
+        <input class="campo" type="text" name="system.sentidos" value="{{source.sentidos}}" placeholder="—"></label>
+    </div>
+
+    <div class="painel lat">
+      <h3 class="titulo-painel">{{localize "ICARUS.Proficiencias.Titulo"}}</h3>
+      <label class="lat-linha"><span>{{localize "ICARUS.Proficiencias.Armas"}}</span>
+        <input class="campo" type="text" name="system.proficiencias.armas" value="{{source.proficiencias.armas}}"></label>
+      <label class="lat-linha"><span>{{localize "ICARUS.Proficiencias.Armaduras"}}</span>
+        <input class="campo" type="text" name="system.proficiencias.armaduras" value="{{source.proficiencias.armaduras}}"></label>
+    </div>
+
+    <div class="painel lat notas">
+      <h3 class="titulo-painel">{{localize "ICARUS.Notas.Titulo"}}</h3>
+      {{editor notasHTML target="system.notas" button=true editable=editable engine="prosemirror"}}
+    </div>
+  </div>
+</div>

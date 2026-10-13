@@ -1,0 +1,32 @@
+<div class="painel efeitos">
+  <div class="lista-cab">
+    <h3 class="titulo-painel">{{localize "ICARUS.Efeitos.Titulo"}}</h3>
+    <span class="dica">{{localize "ICARUS.Efeitos.Dica"}}</span>
+  </div>
+  {{#each efeitos}}
+  <div class="item" data-effect-id="{{id}}" data-parent-id="{{parentId}}">
+    <img class="item-img" src="{{img}}" alt="" width="32" height="32">
+    <div class="item-nome">
+      <b>{{name}}</b>
+      {{#if origem}}<small>{{localize "ICARUS.Efeitos.Origem"}}: {{origem}}</small>{{/if}}
+      {{#if descricao}}<small class="efeito-desc">{{{descricao}}}</small>{{/if}}
+      <div class="efeito-mods">{{mudancas}}</div>
+    </div>
+    <button type="button" class="btn estado{{#if ativo}} on{{/if}}" data-action="efeito-alternar" aria-pressed="{{#if ativo}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
+      {{#if ativo}}{{localize "ICARUS.Efeitos.Ativo"}}{{else}}{{localize "ICARUS.Efeitos.Inativo"}}{{/if}}
+    </button>
+    {{#if @root.editable}}
+    <span class="acoes">
+      <button type="button" class="btn icone" data-action="efeito-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+      <button type="button" class="btn icone" data-action="efeito-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+    </span>
+    {{/if}}
+  </div>
+  {{else}}
+  <div class="vazio">{{localize "ICARUS.Efeitos.Vazio"}}</div>
+  {{/each}}
+  {{#if editable}}
+  <button type="button" class="btn tracejado add add-efeito" data-action="efeito-criar">{{localize "ICARUS.Efeitos.Adicionar"}}</button>
+  <p class="dica chaves">{{localize "ICARUS.Efeitos.Chaves"}} <code>{{chavesEfeito}}</code></p>
+  {{/if}}
+</div>

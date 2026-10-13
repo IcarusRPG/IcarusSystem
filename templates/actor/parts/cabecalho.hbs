@@ -1,0 +1,39 @@
+<header class="cab">
+  <div class="retrato" title="{{localize 'ICARUS.Retrato.Dica'}}">
+    <span class="moldura hex"></span>
+    <span class="miolo hex">
+      <img src="{{actor.img}}" alt="{{actor.name}}" data-edit="img"{{#if editable}} tabindex="0"{{/if}}>
+    </span>
+  </div>
+
+  <div class="cab-meio">
+    <input class="nome" type="text" name="name" value="{{actor.name}}" aria-label="{{localize 'ICARUS.Identidade.Nome'}}" placeholder="{{localize 'ICARUS.Identidade.Nome'}}">
+    <div class="identidade">
+      {{#each identidade}}
+      <label>
+        <span class="rot">{{rotulo}}</span>
+        <input class="campo" type="text" name="system.identidade.{{chave}}" value="{{valor}}" placeholder="{{placeholder}}">
+      </label>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="nivel">
+    <div class="nivel-linha">
+      {{#if editable}}<button type="button" class="btn quad" data-action="nivel" data-delta="-1" aria-label="{{localize 'ICARUS.Nivel.Diminuir'}}">−</button>{{/if}}
+      <div>
+        <div class="nivel-rot">{{localize "ICARUS.Nivel.Rotulo"}}</div>
+        <div class="nivel-num">{{nivel.valor}}</div>
+      </div>
+      {{#if editable}}<button type="button" class="btn quad" data-action="nivel" data-delta="1" aria-label="{{localize 'ICARUS.Nivel.Aumentar'}}">+</button>{{/if}}
+    </div>
+    <div class="pips" role="img" aria-label="{{localize 'ICARUS.Nivel.Rotulo'}} {{nivel.valor}} / 25">
+      {{#each nivel.pips}}<span class="pip {{classe}}"></span>{{/each}}
+    </div>
+    {{#if nivel.paragon}}
+    <div class="paragon">{{localize "ICARUS.Nivel.Paragon"}}</div>
+    {{else}}
+    <div class="paragon-dica">{{localize "ICARUS.Nivel.ParagonDica"}}</div>
+    {{/if}}
+  </div>
+</header>

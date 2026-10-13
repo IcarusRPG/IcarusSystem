@@ -1,0 +1,21 @@
+<form class="{{cssClass}} ficha-icarus ficha-item" autocomplete="off">
+  <header class="item-cab">
+    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
+    <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+  </header>
+  <div class="item-campos">
+    <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.Tipo"}}</span>
+      <select class="campo" name="system.tipo">{{selectOptions opcoesTipo selected=source.tipo localize=true}}</select></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.Quantidade"}}</span>
+      <input class="campo" type="number" name="system.quantidade" value="{{source.quantidade}}" min="0" step="1"></label>
+    {{#if equipavel}}
+    <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.BonusDefesa"}}</span>
+      <input class="campo" type="number" name="system.bonusDefesa" value="{{source.bonusDefesa}}" step="1"></label>
+    <label class="chk"><input type="checkbox" name="system.equipado" {{checked source.equipado}}> {{localize "ICARUS.Inventario.Equipado"}}</label>
+    {{/if}}
+  </div>
+  <div class="painel item-desc">
+    <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
+    {{editor descricaoHTML target="system.descricao" button=true editable=editable engine="prosemirror"}}
+  </div>
+</form>

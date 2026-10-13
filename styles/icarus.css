@@ -1,0 +1,494 @@
+/* ==========================================================================
+   Icarus RPG — estilos da ficha, do diálogo de nível e do cartão de chat.
+   Visual escuro do protótipo (referencias/ficha_prototipo_referencia.html).
+   Todos os seletores ficam presos a classes do sistema para não afetar o Foundry.
+   ========================================================================== */
+
+@font-face { font-family: "Cinzel"; src: url("../fonts/Cinzel-Variable.ttf") format("truetype"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+
+/* --- Tokens de design (seção 5.2 do prompt) --- */
+.icarus.sheet, .icarus-dialogo, .ficha-icarus, .icarus-rolagem {
+  --ic-fundo: #04070b;
+  --ic-janela: #070b10;
+  --ic-cabecalho: #0a1119;
+  --ic-painel: #0c131b;
+  --ic-borda: #1c2d3b;
+  --ic-borda-forte: #15222e;
+  --ic-campo: #080e14;
+  --ic-campo-borda: #1f3342;
+  --ic-linha: #121e29;
+  --ic-btn: #101c27;
+  --ic-btn-borda: #2a4558;
+  --ic-btn-hover: #17293a;
+  --ic-miolo-hex: #0a1620;
+  --ic-texto: #e7eef3;
+  --ic-branco: #ffffff;
+  --ic-apagado: #9bb0be;
+  --ic-apagado2: #8aa0b0;
+  --ic-apagado3: #6f8696;
+  --ic-marcador-vazio: #3a566a;
+  --ic-ciano: #3ee0e6;
+  --ic-ciano-titulo: #7fd9de;
+  --ic-ciano-fundo: #0f2a30;
+  --ic-moldura: #2b8f99;
+  --ic-ouro: #d8b45a;
+  --ic-ouro-claro: #f1d98f;
+  --ic-ouro-escuro: #5a4a22;
+  --ic-ouro-apagado: #4a3e1f;
+  --ic-miolo-escudo: #14110a;
+  --ic-pip-vazio: #17303b;
+  --ic-pv: #e4574f;
+  --ic-pv-fundo: #1a1012;
+  --ic-pm: #5b8cff;
+  --ic-pm-texto: #6fa0ff;
+  --ic-pm-fundo: #0d1426;
+  --ic-pm-borda: #2a3f6a;
+  --ic-f-titulo: "Cinzel", "Trajan Pro", Georgia, serif;
+  --ic-f-corpo: "Alegreya Sans", "Signika", "Segoe UI", sans-serif;
+}
+
+/* --- Janela do Foundry --- */
+.icarus.sheet .window-content {
+  padding: 0;
+  background: var(--ic-janela);
+  color: var(--ic-texto);
+  overflow: hidden;
+}
+.icarus.sheet.item .window-content { overflow-y: auto; }
+
+/* --- Base da ficha: anula os estilos padrão do Foundry para botões e campos --- */
+.ficha-icarus {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  container-type: inline-size;
+  font-family: var(--ic-f-corpo);
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--ic-texto);
+  background: var(--ic-janela);
+}
+.ficha-icarus button {
+  width: auto;
+  margin: 0;
+  line-height: 1;
+  font-family: inherit;
+  color: inherit;
+  box-shadow: none;
+  cursor: pointer;
+}
+.ficha-icarus input,
+.ficha-icarus select {
+  font-family: inherit;
+  box-shadow: none;
+}
+.ficha-icarus h3 { margin: 0; border: 0; padding: 0; }
+.ficha-icarus img { border: 0; }
+.ficha-icarus :focus-visible { outline: 2px solid var(--ic-ciano); outline-offset: 1px; box-shadow: none; }
+.ficha-icarus input:focus, .ficha-icarus select:focus { box-shadow: none; }
+@media (prefers-reduced-motion: reduce) {
+  .ficha-icarus *, .icarus-rolagem * { transition: none !important; animation: none !important; }
+}
+
+/* Formas */
+.ficha-icarus .hex, .icarus-rolagem .hex { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+.ficha-icarus .escudo-forma { clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%); }
+
+/* Botões e campos */
+.ficha-icarus .btn {
+  border: 1px solid var(--ic-btn-borda);
+  background: var(--ic-btn);
+  color: var(--ic-texto);
+  border-radius: 4px;
+  font-size: 15px;
+  height: 32px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.ficha-icarus .btn:hover { background: var(--ic-btn-hover); border-color: var(--ic-ciano); }
+.ficha-icarus .btn:disabled { opacity: .6; cursor: default; }
+.ficha-icarus .btn.quad { width: 32px; padding: 0; }
+.ficha-icarus .btn.peq { height: 28px; font-size: 14px; padding: 0 10px; }
+.ficha-icarus .btn.icone { width: 30px; height: 30px; padding: 0; background: none; border-color: transparent; color: var(--ic-apagado2); }
+.ficha-icarus .btn.icone:hover { border-color: var(--ic-btn-borda); color: var(--ic-ciano); }
+.ficha-icarus .btn.tracejado { border-style: dashed; background: none; color: var(--ic-apagado); }
+.ficha-icarus .btn.tracejado:hover { color: var(--ic-texto); }
+.ficha-icarus .btn.primario { border-color: var(--ic-moldura); background: var(--ic-ciano-fundo); color: var(--ic-ciano); }
+.ficha-icarus .btn.ativo { border-color: var(--ic-ciano); background: var(--ic-ciano-fundo); color: var(--ic-ciano); }
+.ficha-icarus .campo {
+  background: var(--ic-campo);
+  border: 1px solid var(--ic-campo-borda);
+  border-radius: 4px;
+  color: var(--ic-texto);
+  font-size: 15px;
+  height: auto;
+  padding: 6px 10px;
+  width: 100%;
+}
+.ficha-icarus .campo:hover { border-color: var(--ic-btn-borda); }
+.ficha-icarus select option { background: var(--ic-painel); color: var(--ic-texto); }
+.ficha-icarus input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+.ficha-icarus input[type="number"]::-webkit-inner-spin-button,
+.ficha-icarus input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.ficha-icarus .rot { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
+.ficha-icarus .titulo-painel { font-family: var(--ic-f-titulo); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--ic-ciano-titulo); font-weight: 700; }
+.ficha-icarus .painel { background: var(--ic-painel); border: 1px solid var(--ic-borda); border-radius: 6px; }
+.ficha-icarus .dica { font-size: 13px; color: var(--ic-apagado2); }
+.ficha-icarus .reservado { border: 1px dashed var(--ic-btn-borda); border-radius: 6px; padding: 12px 16px; color: var(--ic-apagado2); font-size: 14px; }
+
+/* --- Cabeçalho --- */
+.ficha-icarus .cab {
+  flex: none;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  padding: 18px 28px 14px;
+  background: var(--ic-cabecalho);
+  border-bottom: 1px solid var(--ic-borda-forte);
+}
+.ficha-icarus .retrato { width: 122px; height: 136px; flex: none; position: relative; }
+.ficha-icarus .retrato .moldura { position: absolute; inset: 0; background: var(--ic-moldura); transition: background .15s; }
+.ficha-icarus .retrato:hover .moldura { background: var(--ic-ciano); }
+.ficha-icarus .retrato .miolo { position: absolute; inset: 3px; background: var(--ic-miolo-hex); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ficha-icarus .retrato img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+.ficha-icarus .cab-meio { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.ficha-icarus .nome {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #24404f;
+  border-radius: 0;
+  color: var(--ic-branco);
+  font-family: var(--ic-f-titulo);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  height: auto;
+  padding: 0 0 6px;
+  width: 100%;
+}
+.ficha-icarus .nome:hover { border-bottom-color: var(--ic-moldura); }
+.ficha-icarus .identidade { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.ficha-icarus .identidade label { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .nivel { width: 258px; flex: none; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.ficha-icarus .nivel-linha { display: flex; align-items: center; gap: 14px; }
+.ficha-icarus .nivel-rot { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--ic-apagado); text-align: center; }
+.ficha-icarus .nivel-num { font-family: var(--ic-f-titulo); font-size: 44px; font-weight: 700; line-height: 1; color: var(--ic-branco); text-align: center; min-width: 64px; }
+.ficha-icarus .pips { display: flex; gap: 2px; }
+.ficha-icarus .pip { width: 7px; height: 14px; border-radius: 1px; background: var(--ic-pip-vazio); }
+.ficha-icarus .pip.on { background: var(--ic-ciano); }
+.ficha-icarus .pip.par { background: var(--ic-ouro-apagado); }
+.ficha-icarus .pip.par.on { background: var(--ic-ouro); }
+.ficha-icarus .paragon { font-family: var(--ic-f-titulo); font-size: 13px; letter-spacing: .3em; color: var(--ic-ouro); font-weight: 700; }
+.ficha-icarus .paragon-dica { font-size: 13px; color: var(--ic-apagado2); }
+
+/* --- Recursos (PV, PM, Defesa) --- */
+.ficha-icarus .recursos { flex: none; display: grid; grid-template-columns: 1fr 1fr 330px; gap: 16px; padding: 14px 28px; }
+.ficha-icarus .recurso { padding: 10px 16px; display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .rot-rec { font-family: var(--ic-f-titulo); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; text-align: center; }
+.ficha-icarus .recurso.pv .rot-rec { color: var(--ic-pv); }
+.ficha-icarus .recurso.pm .rot-rec { color: var(--ic-pm-texto); }
+.ficha-icarus .recurso-linha { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.ficha-icarus .recurso-valor { display: flex; align-items: baseline; gap: 6px; font-family: var(--ic-f-titulo); font-size: 30px; font-weight: 700; }
+.ficha-icarus .recurso-valor input {
+  width: 72px; height: auto; background: none; border: 1px solid transparent; border-radius: 4px;
+  color: var(--ic-texto); font: inherit; text-align: right; padding: 0 4px;
+}
+.ficha-icarus .recurso-valor input:hover { border-color: var(--ic-campo-borda); }
+.ficha-icarus .recurso-valor .max { color: var(--ic-apagado3); font-weight: 500; }
+.ficha-icarus .barra { height: 8px; border-radius: 4px; overflow: hidden; }
+.ficha-icarus .barra span { display: block; height: 100%; transition: width .2s; }
+.ficha-icarus .pv .barra { background: var(--ic-pv-fundo); }
+.ficha-icarus .pv .barra span { background: var(--ic-pv); }
+.ficha-icarus .pm .barra { background: var(--ic-pm-fundo); }
+.ficha-icarus .pm .barra span { background: var(--ic-pm); }
+.ficha-icarus .defesa { padding: 10px 16px; display: flex; align-items: center; gap: 16px; }
+.ficha-icarus .escudo { width: 64px; height: 72px; flex: none; position: relative; }
+.ficha-icarus .escudo .moldura { position: absolute; inset: 0; background: var(--ic-ouro); }
+.ficha-icarus .escudo .miolo { position: absolute; inset: 3px; background: var(--ic-miolo-escudo); display: flex; justify-content: center; padding-top: 10px; }
+.ficha-icarus .escudo .miolo span { font-family: var(--ic-f-titulo); font-size: 26px; font-weight: 700; color: var(--ic-ouro-claro); }
+.ficha-icarus .defesa-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-size: 14px; color: var(--ic-apagado); }
+.ficha-icarus .rot-def { font-family: var(--ic-f-titulo); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--ic-ouro); font-weight: 700; }
+.ficha-icarus .defesa-info b { color: var(--ic-texto); }
+.ficha-icarus .outros-def { display: inline-flex; align-items: center; gap: 6px; }
+.ficha-icarus .outros-def input { width: 48px; padding: 1px 4px; font-size: 14px; text-align: center; }
+
+/* --- Abas --- */
+.ficha-icarus .abas {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 46px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--ic-borda);
+}
+.ficha-icarus .abas-lista { display: flex; gap: 6px; align-self: stretch; overflow-x: auto; }
+.ficha-icarus .aba {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0 22px;
+  height: 100%;
+  min-height: 46px;
+  color: var(--ic-apagado);
+  font-family: var(--ic-f-titulo);
+  font-size: 15px;
+  letter-spacing: .1em;
+  position: relative;
+  white-space: nowrap;
+}
+.ficha-icarus .aba:hover { color: var(--ic-branco); background: none; }
+.ficha-icarus .aba.active { color: var(--ic-ciano); font-weight: 700; }
+.ficha-icarus .aba.active::after {
+  content: "";
+  position: absolute;
+  left: 12px; right: 12px; bottom: -1px;
+  height: 3px;
+  background: var(--ic-ciano);
+  border-radius: 2px 2px 0 0;
+}
+.ficha-icarus .btn-nivel { margin-bottom: 7px; flex: none; }
+.ficha-icarus .btn-nivel i { color: var(--ic-ciano-titulo); }
+
+/* --- Corpo e abas de conteúdo --- */
+.ficha-icarus .corpo { flex: 1; min-height: 0; overflow-y: auto; padding: 18px 28px; }
+.ficha-icarus .corpo > .tab:not(.active) { display: none; }
+.ficha-icarus .corpo::-webkit-scrollbar { width: 8px; }
+.ficha-icarus .corpo::-webkit-scrollbar-thumb { background: #24404f; border-radius: 4px; }
+
+/* --- Características --- */
+.ficha-icarus .carac { display: grid; grid-template-columns: 250px minmax(0, 1fr) 290px; gap: 16px; align-items: start; }
+.ficha-icarus .atributos { display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .atr { display: flex; align-items: center; gap: 12px; padding: 6px 10px; height: 76px; }
+.ficha-icarus .atr-hex { width: 54px; height: 60px; flex: none; position: relative; background: none; border: 0; padding: 0; }
+.ficha-icarus .atr-hex .moldura { position: absolute; inset: 0; background: var(--ic-moldura); transition: background .15s; }
+.ficha-icarus .atr-hex:hover .moldura { background: var(--ic-ciano); }
+.ficha-icarus .atr-hex .miolo { position: absolute; inset: 2px; background: var(--ic-miolo-hex); display: flex; align-items: center; justify-content: center; }
+.ficha-icarus .atr-hex .miolo span { font-family: var(--ic-f-titulo); font-size: 22px; font-weight: 700; color: var(--ic-branco); }
+.ficha-icarus .atr-corpo { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .atr-nome { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.ficha-icarus .atr-nome .sigla { font-family: var(--ic-f-titulo); font-size: 18px; font-weight: 700; color: var(--ic-ciano-titulo); letter-spacing: .06em; }
+.ficha-icarus .atr-nome .extenso { font-size: 13px; color: var(--ic-apagado2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ficha-icarus .atr-campos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.ficha-icarus .atr-campos label { display: flex; flex-direction: column; gap: 1px; }
+.ficha-icarus .atr-campos label > span { font-size: 10px; letter-spacing: .1em; color: var(--ic-apagado2); }
+.ficha-icarus .atr-campos .r > span { color: var(--ic-ciano-titulo); }
+.ficha-icarus .atr-campos .t > span { color: var(--ic-ouro); }
+.ficha-icarus .atr-campos em { font-style: normal; color: var(--ic-ouro-claro); }
+.ficha-icarus .atr-campos input { padding: 2px 4px; font-size: 14px; text-align: center; }
+
+.ficha-icarus .pericias { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.ficha-icarus .lista-per { padding: 6px 8px; }
+.ficha-icarus .per-linha {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 40px 36px 46px;
+  gap: 6px;
+  align-items: center;
+  height: 29px;
+  padding: 0 4px;
+  border-bottom: 1px solid var(--ic-linha);
+}
+.ficha-icarus .per-linha:last-child { border-bottom: 0; }
+.ficha-icarus .per-cab { height: 24px; font-size: 11px; letter-spacing: .12em; color: var(--ic-ciano-titulo); border-bottom: 1px solid var(--ic-borda); }
+.ficha-icarus .per-cab span:nth-child(n+3) { text-align: center; }
+.ficha-icarus .marcador { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; background: none; border: 0; padding: 0; border-radius: 50%; }
+.ficha-icarus .m0 { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--ic-marcador-vazio); display: block; box-sizing: border-box; }
+.ficha-icarus .m1 { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--ic-ciano); background: var(--ic-ciano); display: block; box-sizing: border-box; }
+.ficha-icarus .m2 { width: 10px; height: 10px; transform: rotate(45deg); background: var(--ic-ouro); box-shadow: 0 0 0 2px var(--ic-painel), 0 0 0 3px var(--ic-ouro); display: block; }
+.ficha-icarus .marcador:hover .m0 { border-color: var(--ic-ciano-titulo); }
+.ficha-icarus .per-nome { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.ficha-icarus .per-nome > span:first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ic-apagado); }
+.ficha-icarus .per-nome.treinada > span:first-child { color: var(--ic-branco); }
+.ficha-icarus .res { font-size: 9px; letter-spacing: .08em; color: var(--ic-ouro); border: 1px solid var(--ic-ouro-escuro); padding: 0 3px; border-radius: 2px; flex: none; }
+.ficha-icarus .sel-atr {
+  appearance: none; -webkit-appearance: none;
+  background: transparent; border: 1px solid transparent; border-radius: 3px;
+  color: var(--ic-apagado2); font-size: 12px; text-align: center; text-align-last: center;
+  width: 40px; height: 22px; padding: 0;
+}
+.ficha-icarus .sel-atr:hover { border-color: var(--ic-campo-borda); color: var(--ic-texto); }
+.ficha-icarus .sel-atr.mudou { color: var(--ic-ciano-titulo); }
+.ficha-icarus .per-outros { padding: 1px 2px; font-size: 13px; text-align: center; height: 22px; }
+.ficha-icarus .per-outros.zero { color: var(--ic-apagado3); }
+.ficha-icarus .btn.total { min-width: 46px; height: 24px; font-weight: 700; font-size: 15px; padding: 0 4px; }
+
+.ficha-icarus .lateral { display: flex; flex-direction: column; gap: 12px; }
+.ficha-icarus .lat { padding: 12px 16px; display: flex; flex-direction: column; gap: 9px; }
+.ficha-icarus .lat-linha { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.ficha-icarus .lat-linha > span:first-child { color: var(--ic-apagado2); flex: none; }
+.ficha-icarus .lat-linha .campo { max-width: 160px; padding: 4px 8px; }
+.ficha-icarus .desloc { display: flex; align-items: center; gap: 6px; }
+.ficha-icarus .desloc input { width: 60px; text-align: center; }
+.ficha-icarus .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .chip-res { height: 28px; padding: 0 8px; font-size: 13px; }
+.ficha-icarus .notas .editor { min-height: 140px; }
+
+/* Editor de texto rico (ProseMirror) no tema escuro */
+.ficha-icarus .editor { color: var(--ic-texto); background: var(--ic-campo); border: 1px solid var(--ic-campo-borda); border-radius: 4px; padding: 6px 10px; }
+.ficha-icarus .editor-content { color: var(--ic-texto); }
+.ficha-icarus .editor .editor-edit { color: var(--ic-ciano-titulo); background: var(--ic-btn); border: 1px solid var(--ic-btn-borda); }
+.ficha-icarus prose-mirror, .ficha-icarus .editor-menu { color: var(--ic-texto); }
+.ficha-icarus .editor-menu { background: var(--ic-btn); border-bottom: 1px solid var(--ic-borda); }
+.ficha-icarus .editor-menu button { color: var(--ic-texto); }
+
+/* --- Listas (inventário e efeitos) --- */
+.ficha-icarus .inv { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; align-items: start; }
+.ficha-icarus .lista, .ficha-icarus .efeitos { padding: 12px 16px; display: flex; flex-direction: column; }
+.ficha-icarus .lista-cab { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 8px; flex-wrap: wrap; }
+.ficha-icarus .item { display: flex; align-items: center; gap: 12px; padding: 9px 6px; border-bottom: 1px solid var(--ic-linha); }
+.ficha-icarus .item-img { width: 32px; height: 32px; object-fit: cover; border-radius: 4px; flex: none; }
+.ficha-icarus .item-nome { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.ficha-icarus .item-nome b { font-weight: 500; }
+.ficha-icarus .item-nome small { font-size: 13px; color: var(--ic-apagado2); }
+.ficha-icarus .efeito-desc p { margin: 0; }
+.ficha-icarus .efeito-mods { font-size: 13px; color: var(--ic-ciano-titulo); }
+.ficha-icarus .item-qtd { color: var(--ic-apagado2); width: 44px; text-align: right; }
+.ficha-icarus .equipar { width: 104px; height: 30px; font-size: 14px; }
+.ficha-icarus .equipar.on, .ficha-icarus .estado.on { color: var(--ic-ciano); }
+.ficha-icarus .equipar-vazio { width: 104px; }
+.ficha-icarus .estado { width: 96px; height: 30px; font-size: 14px; }
+.ficha-icarus .acoes { display: flex; gap: 2px; }
+.ficha-icarus .vazio { padding: 14px 6px; color: var(--ic-apagado2); font-size: 14px; }
+.ficha-icarus .add { margin-top: 12px; height: 36px; width: 100%; }
+.ficha-icarus .add-efeito { max-width: 240px; }
+.ficha-icarus .chaves { margin: 12px 0 0; }
+.ficha-icarus .chaves code { color: var(--ic-apagado); background: none; border: 0; word-break: break-word; }
+.ficha-icarus .lado { display: flex; flex-direction: column; gap: 12px; }
+.ficha-icarus .caixa-def { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .caixa-def .titulo-painel { color: var(--ic-ouro); }
+.ficha-icarus .caixa-def .grande { font-family: var(--ic-f-titulo); font-size: 34px; font-weight: 700; color: var(--ic-ouro-claro); }
+
+/* --- Poderes --- */
+.ficha-icarus .poderes { display: flex; flex-direction: column; gap: 18px; }
+.ficha-icarus .grupo-cab { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.ficha-icarus .losango { width: 8px; height: 8px; transform: rotate(45deg); background: var(--ic-ouro); flex: none; }
+.ficha-icarus .grupo-cab h3 { font-family: var(--ic-f-titulo); font-size: 14px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--ic-texto); white-space: nowrap; }
+.ficha-icarus .grupo-cab .fio { flex: 1; height: 1px; background: #1f3a4a; min-width: 20px; }
+.ficha-icarus .grupo-cab .tag { font-size: 13px; color: var(--ic-apagado2); white-space: nowrap; }
+.ficha-icarus .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.ficha-icarus .card { padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .card-topo { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.ficha-icarus .card-topo b { color: var(--ic-ciano-titulo); }
+.ficha-icarus .custo { font-size: 12px; color: var(--ic-pm-texto); border: 1px solid var(--ic-pm-borda); border-radius: 3px; padding: 1px 6px; white-space: nowrap; }
+.ficha-icarus .card-meta { font-size: 12px; color: var(--ic-apagado2); }
+.ficha-icarus .card-texto { font-size: 14px; color: #a9bcc9; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ficha-icarus .card-texto p { margin: 0; }
+.ficha-icarus .card-acoes { display: flex; justify-content: flex-end; gap: 2px; margin-top: auto; }
+.ficha-icarus .card-vazio { grid-column: 1 / -1; border: 1px dashed var(--ic-btn-borda); border-radius: 6px; padding: 12px 14px; color: var(--ic-apagado2); font-size: 14px; }
+
+/* --- Diário --- */
+.ficha-icarus .diario { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; align-items: start; }
+.ficha-icarus .diario > .painel { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .diario .editor { min-height: 420px; }
+
+/* --- Rodapé --- */
+.ficha-icarus .rodape {
+  flex: none;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding: 6px 28px;
+  background: var(--ic-fundo);
+  border-top: 1px solid var(--ic-borda-forte);
+  font-size: 13px;
+  color: var(--ic-apagado2);
+}
+
+/* --- Ficha de item --- */
+.ficha-icarus.ficha-item { padding: 16px 20px; gap: 14px; height: auto; min-height: 100%; }
+.ficha-icarus .item-cab { display: flex; align-items: center; gap: 14px; }
+.ficha-icarus .item-cab img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; border: 1px solid var(--ic-moldura); cursor: pointer; flex: none; }
+.ficha-icarus .item-cab .nome { font-size: 26px; }
+.ficha-icarus .item-campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ficha-icarus .item-desc { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .item-desc .editor { min-height: 160px; }
+.ficha-icarus label.f { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .chk { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.ficha-icarus .chk input { width: 18px; height: 18px; margin: 0; accent-color: var(--ic-ciano); }
+
+/* --- Diálogo de nível (ApplicationV2) --- */
+.application.icarus-dialogo { background: var(--ic-painel); border: 1px solid var(--ic-moldura); color: var(--ic-texto); }
+.application.icarus-dialogo .window-header { background: var(--ic-fundo); color: var(--ic-texto); font-family: var(--ic-f-titulo); letter-spacing: .1em; border-bottom: 1px solid var(--ic-borda); }
+.application.icarus-dialogo .window-content { background: var(--ic-painel); color: var(--ic-texto); padding: 16px 20px; }
+.ficha-icarus.dialogo-nivel { height: auto; gap: 14px; background: none; }
+.ficha-icarus .dlg-grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ficha-icarus .passo { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--ic-campo); border: 1px solid var(--ic-campo-borda); border-radius: 6px; padding: 8px 12px; }
+.ficha-icarus .passo > span { color: #a9bcc9; }
+.ficha-icarus .passo-ctl { display: flex; align-items: center; gap: 10px; }
+.ficha-icarus .passo-ctl b { font-family: var(--ic-f-titulo); font-size: 18px; min-width: 28px; text-align: center; }
+.ficha-icarus .grupo-chips { display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .dlg-totais { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 10px; border-top: 1px solid var(--ic-borda); }
+.ficha-icarus .dlg-totais b { font-family: var(--ic-f-titulo); font-size: 18px; }
+.ficha-icarus .cor-pv { color: var(--ic-pv); }
+.ficha-icarus .cor-pm { color: var(--ic-pm-texto); }
+.ficha-icarus .dlg-rodape { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* --- Janela estreita (seção 5.5): colunas empilham --- */
+@container (max-width: 1180px) {
+  .ficha-icarus .carac { grid-template-columns: 250px minmax(0, 1fr); }
+  .ficha-icarus .lateral { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .ficha-icarus .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ficha-icarus .identidade { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@container (max-width: 900px) {
+  .ficha-icarus .cab { flex-wrap: wrap; gap: 16px; padding: 16px; }
+  .ficha-icarus .nivel { margin-left: auto; width: auto; }
+  .ficha-icarus .cab-meio { order: 3; flex-basis: 100%; }
+  .ficha-icarus .recursos { grid-template-columns: 1fr 1fr; padding: 14px 16px; }
+  .ficha-icarus .recursos .defesa { grid-column: 1 / -1; }
+  .ficha-icarus .abas, .ficha-icarus .corpo { padding-left: 16px; padding-right: 16px; }
+  .ficha-icarus .rodape { padding: 6px 16px; }
+  .ficha-icarus .carac, .ficha-icarus .inv, .ficha-icarus .diario { grid-template-columns: minmax(0, 1fr); }
+  .ficha-icarus .atributos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .ficha-icarus .pericias { grid-template-columns: minmax(0, 1fr); }
+}
+@container (max-width: 600px) {
+  .ficha-icarus .identidade, .ficha-icarus .item-campos, .ficha-icarus .dlg-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ficha-icarus .recursos, .ficha-icarus .cards { grid-template-columns: 1fr; }
+  .ficha-icarus .nome { font-size: 28px; }
+}
+
+/* ==========================================================================
+   Cartão de rolagem no chat do Foundry
+   ========================================================================== */
+.icarus-rolagem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: var(--ic-painel);
+  border: 1px solid var(--ic-borda);
+  border-radius: 6px;
+  color: var(--ic-texto);
+  font-family: var(--ic-f-corpo);
+}
+.icarus-rolagem.critico { border-color: var(--ic-ouro); }
+.icarus-rolagem.falha { border-color: var(--ic-pv); }
+.icarus-rolagem .rolagem-tipo { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-apagado2); }
+.icarus-rolagem .rolagem-nome { margin: 0; padding: 0; border: 0; font-family: var(--ic-f-titulo); font-size: 17px; font-weight: 700; letter-spacing: .08em; color: var(--ic-texto); }
+.icarus-rolagem .rolagem-dados { display: flex; align-items: center; gap: 10px; }
+.icarus-rolagem .d20 { width: 34px; height: 38px; flex: none; position: relative; }
+.icarus-rolagem .d20 .moldura { position: absolute; inset: 0; background: var(--ic-moldura); }
+.icarus-rolagem .d20 .miolo {
+  position: absolute; inset: 2px; background: var(--ic-miolo-hex);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ic-f-titulo); font-weight: 700; font-size: 15px; color: var(--ic-branco);
+}
+.icarus-rolagem.critico .d20 .moldura { background: var(--ic-ouro); }
+.icarus-rolagem.falha .d20 .moldura { background: var(--ic-pv); }
+.icarus-rolagem .rolagem-formula { font-size: 14px; color: var(--ic-apagado); }
+.icarus-rolagem .rolagem-total { margin-left: auto; font-family: var(--ic-f-titulo); font-size: 28px; font-weight: 700; color: var(--ic-branco); }
+.icarus-rolagem.critico .rolagem-total, .icarus-rolagem.critico .rolagem-selo { color: var(--ic-ouro-claro); }
+.icarus-rolagem.falha .rolagem-total, .icarus-rolagem.falha .rolagem-selo { color: var(--ic-pv); }
+.icarus-rolagem .rolagem-selo { font-family: var(--ic-f-titulo); font-size: 12px; letter-spacing: .2em; font-weight: 700; }
