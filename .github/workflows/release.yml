@@ -24,8 +24,8 @@ jobs:
           fi
           grep -q "releases/download/v$VERSAO/icarus-rpg.zip" system.json || { echo "O link download do system.json não aponta para v$VERSAO"; exit 1; }
 
-      - name: Testar fórmulas
-        run: node --test tests/regras.test.mjs
+      - name: Testar fórmulas e raças
+        run: node --test tests/regras.test.mjs tests/racas.test.mjs
 
       - name: Montar o pacote
         run: zip -r icarus-rpg.zip system.json icarus.mjs module templates styles fonts lang img README.md -x "*.DS_Store" "img/Logo oficial/*" "img/Wallpaper Icarus System.png"

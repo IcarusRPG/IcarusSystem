@@ -21,9 +21,10 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 
 | Parte | Regra implementada |
 |---|---|
+| Raças | Combobox com as 17 raças. Escolher uma raça preenche a coluna RAÇA dos atributos, cria os poderes raciais (com o ícone da raça) na aba Poderes e aplica os bônus passivos por Efeitos Ativos. Raças com escolhas (Araké, Karadun, Ayomi, Harukan, Kirai, Ikori, Azakar, Ara'Maku) abrem um diálogo. Trocar de raça remove só o que é automático. Botão **Reaplicar raça** refaz a automação. |
 | Atributos | FOR, DES, CON, INT, SAB, CAR como modificador direto. Total = Base + Raça + Temp. Clicar no hexágono rola `1d20 + total` no chat. |
 | Perícias | 30 perícias com marcador de treino (Destreinado +0, Treinado +2, Especialista +4), atributo trocável, campo Outros. Total = Atributo + Treino + Outros. Clicar no total rola no chat. Fortitude, Reflexos e Vontade são também as Resistências. |
-| PV e PM | `inicial + por nível × (nível − 1) + atributo × nível` (diálogo **Nível**). PM só soma atributo-chave (INT, SAB ou CAR) em classes conjuradoras. Modo Manual e Bônus. |
+| PV e PM | `inicial + por nível × (nível − 1) + atributo × nível + bônus por nível de poderes` (diálogo **Nível**). PM só soma atributo-chave (INT, SAB ou CAR) em classes conjuradoras. Modo Manual e Bônus. |
 | Defesa | `10 + DES + Armadura + Escudo + Outros`. Armadura e escudo vêm dos itens equipados. |
 | Nível | 1 a 25. A partir do 21 aparece **PARAGON** e os 5 últimos segmentos ficam dourados. |
 | Deslocamento | Em metros, exibido também em quadrados de 1,5 m. Médio 9 m, Pequeno 6 m. |
@@ -40,7 +41,8 @@ No Foundry, abra o console (F12) ou crie uma macro do tipo **Script** com:
 
 ```js
 const actor = await game.icarus.criarKaelen();   // cria Kaelen Vorhal (nível 5, Koruma Lanceiro)
-game.icarus.verificarKaelen(actor);               // confere PV 42, PM 20, Defesa 19, Luta +6…
+game.icarus.verificarKaelen(actor);               // confere PV 42, PM 20, Defesa 19, Fortitude +6…
+await game.icarus.verificarRacas();               // testa as raças num personagem temporário (tabela no console)
 ```
 
 ## Estrutura
@@ -52,8 +54,10 @@ module/
   config.mjs                listas: atributos, perícias, tamanhos, tipos de item, fontes de poder
   regras.mjs                fórmulas puras (testadas no Node)
   rolls.mjs                 rolagens e cartão de chat
-  data/                     modelos de dados (personagem, poder, equipamento)
-  sheets/                   ficha de personagem, ficha de item, diálogo de nível
+  derivar.mjs               cálculos da ficha (usados pelo Foundry e pelos testes)
+  racas.mjs                 aplicar, trocar e reaplicar raças no Foundry
+  data/                     modelos de dados e racas.mjs (dados das 17 raças)
+  sheets/                   ficha de personagem, ficha de item, diálogos de nível e de escolhas da raça
   dev/kaelen.mjs            personagem de teste e verificação
 templates/                  Handlebars da ficha, dos itens, do diálogo e do chat
 styles/icarus.css           visual escuro da ficha e do cartão de chat
@@ -68,7 +72,7 @@ tests/                      testes das fórmulas
 Testes das fórmulas (Node 20 ou mais novo):
 
 ```bash
-node --test tests/regras.test.mjs
+node --test tests/regras.test.mjs tests/racas.test.mjs
 ```
 
 Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/systems/icarus-rpg`.
@@ -78,6 +82,31 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - **Novo tamanho, tipo de item ou fonte de poder:** acrescente em `module/config.mjs` e a tradução em `lang/pt-BR.json`.
 - **Nova regra derivada:** a fórmula vai em `module/regras.mjs` (com teste), e o cálculo em `prepareDerivedData` de `module/data/actor-personagem.mjs`.
 - **Novo tipo de ator ou item:** crie o modelo em `module/data/`, registre em `icarus.mjs` e declare em `documentTypes` no `system.json`.
+
+## Raças
+
+Os dados ficam em `module/data/racas.mjs`, uma entrada por raça:
+
+```js
+{
+  id: "koruma", nome: "Koruma", significado: "Os Senhores dos Labirintos", icone: "Koruma.png",
+  atributos: { FOR: 1, DES: 1, CAR: 1 },
+  escolhas: [],   // opcional: atributosLivres, variante, periciaEspecialista, periciaTreinada, texto
+  poderes: [
+    { nome: "Couro Brutal", descricao: "+1 na Defesa. +2 em Fortitude.",
+      efeitos: [add("system.defesa.outros", 1), add(outros("fortitude"), 2)] },
+    { nome: "Enterre-me de Pé", custoPM: 2, descricao: "…" }
+  ]
+}
+```
+
+- **Editar uma raça:** mude a entrada e, nos personagens que já têm a raça, use **Reaplicar raça** na ficha.
+- **Nova raça:** acrescente a entrada e o ícone em `img/Icones/raças/` com o nome exato do campo `icone`.
+- **Efeitos:** `add(chave, valor)` soma, `override(chave, valor)` substitui e `upgrade(chave, valor)` garante um mínimo (usado para treino). Chaves aceitas: `system.pericias.<pericia>.outros|treino|atributo`, `system.defesa.outros`, `system.deslocamento`, `system.tamanho`, `system.classeConfig.bonusPvPorNivel|bonusPmPorNivel|bonusPmNivelImpar`.
+- **Poder só de uma variante:** `variante: "luz"`, com a escolha `{ tipo: "variante", opcoes: [{ id: "luz", rotulo: "Luz" }, …] }`.
+- Rode `node --test tests/racas.test.mjs`: o teste confere se as chaves e escolhas estão coerentes.
+
+Os poderes criados pela raça ficam marcados com `flags["icarus-rpg"].auto` e são os únicos removidos ao trocar de raça.
 
 ## Publicar uma versão
 
@@ -100,3 +129,9 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Perícias personalizadas ("Nova Perícia / Criar")
 - PV e PM no tier Paragon e mecânica de ascensão
 - Anotações de sessão no Diário (lista com data e resumo)
+- Ícones das raças em `img/Icones/raças/` (enquanto faltarem, as raças usam o dado azul)
+- Bônus de ataque e dano de poderes raciais (ficam como texto até existir o combate)
+- Resistência a dano, RD e visão no escuro como campos mecânicos (hoje só texto; Sentidos e Imunidades são preenchidos à mão)
+- Magias raciais (Astúcia Arcana, Luz Sagrada, Sombras Profanas)
+- Compêndios de raças e poderes
+- Filtro por digitação na combobox de raça (hoje vale a busca nativa: digitar a inicial)

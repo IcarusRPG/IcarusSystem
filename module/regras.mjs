@@ -53,11 +53,30 @@ export function maximoPelaClasse({ inicial, porNivel, atributoTotal = null, nive
 
 /**
  * Máximo final de PV ou PM. No modo manual vale o valor digitado; o bônus soma nos dois casos.
+ * bonusNivel (bônus por nível vindos de poderes, ex.: Sangue de Aço) só entra fora do modo manual.
  * Nunca fica negativo.
  */
-export function maximoFinal({ manual, maximoManual, maximoFormula, bonus }) {
-  const base = manual ? numero(maximoManual) : numero(maximoFormula);
+export function maximoFinal({ manual, maximoManual, maximoFormula, bonus, bonusNivel = 0 }) {
+  const base = manual ? numero(maximoManual) : numero(maximoFormula) + numero(bonusNivel);
   return Math.max(0, base + numero(bonus));
+}
+
+/** Quantidade de níveis ímpares até o nível atual (1º, 3º, 5º…) = ceil(nível / 2). */
+export function niveisImpares(nivel) {
+  return Math.ceil(nivelValido(nivel) / 2);
+}
+
+/**
+ * Bônus de PV e PM que crescem com o nível (vêm de Efeitos Ativos de poderes):
+ * PV: bonusPvPorNivel × nível
+ * PM: bonusPmPorNivel × nível + bonusPmNivelImpar × ceil(nível / 2)
+ */
+export function bonusDeNivel({ nivel, bonusPvPorNivel, bonusPmPorNivel, bonusPmNivelImpar }) {
+  const n = nivelValido(nivel);
+  return {
+    pv: numero(bonusPvPorNivel) * n,
+    pm: numero(bonusPmPorNivel) * n + numero(bonusPmNivelImpar) * niveisImpares(n)
+  };
 }
 
 /** Defesa = 10 + DES + Armadura + Escudo + Outros. */

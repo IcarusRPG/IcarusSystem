@@ -8,7 +8,8 @@ import { EquipamentoData } from "./module/data/item-equipamento.mjs";
 import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
 import { rolarTeste, rolarPericia, rolarAtributo } from "./module/rolls.mjs";
-import { criarKaelen, verificarKaelen } from "./module/dev/kaelen.mjs";
+import { criarKaelen, verificarKaelen, dadosKaelen } from "./module/dev/kaelen.mjs";
+import { aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas, verificarRacas } from "./module/racas.mjs";
 import { registrarInterface } from "./module/interface.mjs";
 
 registrarInterface();
@@ -25,6 +26,7 @@ const TEMPLATES = [
   "item/poder.hbs",
   "item/equipamento.hbs",
   "dialogo-nivel.hbs",
+  "dialogo-escolhas-raca.hbs",
   "chat/rolagem.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
@@ -32,7 +34,12 @@ Hooks.once("init", () => {
   console.log("Icarus RPG | Iniciando o sistema");
 
   CONFIG.ICARUS = ICARUS;
-  game.icarus = { rolarTeste, rolarPericia, rolarAtributo, criarKaelen, verificarKaelen };
+  game.icarus = {
+    rolarTeste, rolarPericia, rolarAtributo,
+    aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
+    criarKaelen, verificarKaelen,
+    verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
+  };
 
   // Modelos de dados
   CONFIG.Actor.dataModels.personagem = PersonagemData;
@@ -68,4 +75,9 @@ Hooks.on("preCreateActor", (actor, dados) => {
     atualizacao["prototypeToken.texture.src"] = ICONE_PADRAO;
   }
   actor.updateSource(atualizacao);
+});
+
+/** O Mestre é avisado se algum ícone de raça estiver faltando em img/Icones/raças/. */
+Hooks.once("ready", () => {
+  if (game.user.isGM) verificarIconesRacas();
 });

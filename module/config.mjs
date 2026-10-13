@@ -25,40 +25,41 @@ export const NIVEL_PARAGON = 21;
 
 /**
  * As 30 perícias, em ordem alfabética, com o atributo-padrão.
+ * nome = nome em português (usado fora da interface, ex.: testes e descrições geradas).
  * resistencia = também é teste de Resistência (Fortitude, Reflexos, Vontade).
  * Olfato, Audição e Visão são perícias separadas: não existe "Percepção".
  */
 export const PERICIAS = [
-  { chave: "acrobacia", atributo: "DES" },
-  { chave: "adestramento", atributo: "CAR" },
-  { chave: "atletismo", atributo: "FOR" },
-  { chave: "atuacao", atributo: "CAR" },
-  { chave: "audicao", atributo: "SAB" },
-  { chave: "barganha", atributo: "CAR" },
-  { chave: "cavalgar", atributo: "DES" },
-  { chave: "concentracao", atributo: "CON" },
-  { chave: "cura", atributo: "SAB" },
-  { chave: "diplomacia", atributo: "CAR" },
-  { chave: "enganacao", atributo: "CAR" },
-  { chave: "fortitude", atributo: "CON", resistencia: true },
-  { chave: "furtividade", atributo: "DES" },
-  { chave: "historia", atributo: "INT" },
-  { chave: "iniciativa", atributo: "DES" },
-  { chave: "intimidacao", atributo: "CAR" },
-  { chave: "intuicao", atributo: "SAB" },
-  { chave: "investigacao", atributo: "INT" },
-  { chave: "luta", atributo: "FOR" },
-  { chave: "misticismo", atributo: "INT" },
-  { chave: "navegacao", atributo: "SAB" },
-  { chave: "nobreza", atributo: "INT" },
-  { chave: "olfato", atributo: "SAB" },
-  { chave: "pontaria", atributo: "DES" },
-  { chave: "prestidigitacao", atributo: "DES" },
-  { chave: "reflexos", atributo: "DES", resistencia: true },
-  { chave: "religiao", atributo: "SAB" },
-  { chave: "sobrevivencia", atributo: "SAB" },
-  { chave: "visao", atributo: "SAB" },
-  { chave: "vontade", atributo: "SAB", resistencia: true }
+  { chave: "acrobacia", nome: "Acrobacia", atributo: "DES" },
+  { chave: "adestramento", nome: "Adestramento", atributo: "CAR" },
+  { chave: "atletismo", nome: "Atletismo", atributo: "FOR" },
+  { chave: "atuacao", nome: "Atuação", atributo: "CAR" },
+  { chave: "audicao", nome: "Audição", atributo: "SAB" },
+  { chave: "barganha", nome: "Barganha", atributo: "CAR" },
+  { chave: "cavalgar", nome: "Cavalgar", atributo: "DES" },
+  { chave: "concentracao", nome: "Concentração", atributo: "CON" },
+  { chave: "cura", nome: "Cura", atributo: "SAB" },
+  { chave: "diplomacia", nome: "Diplomacia", atributo: "CAR" },
+  { chave: "enganacao", nome: "Enganação", atributo: "CAR" },
+  { chave: "fortitude", nome: "Fortitude", atributo: "CON", resistencia: true },
+  { chave: "furtividade", nome: "Furtividade", atributo: "DES" },
+  { chave: "historia", nome: "História", atributo: "INT" },
+  { chave: "iniciativa", nome: "Iniciativa", atributo: "DES" },
+  { chave: "intimidacao", nome: "Intimidação", atributo: "CAR" },
+  { chave: "intuicao", nome: "Intuição", atributo: "SAB" },
+  { chave: "investigacao", nome: "Investigação", atributo: "INT" },
+  { chave: "luta", nome: "Luta", atributo: "FOR" },
+  { chave: "misticismo", nome: "Misticismo", atributo: "INT" },
+  { chave: "navegacao", nome: "Navegação", atributo: "SAB" },
+  { chave: "nobreza", nome: "Nobreza", atributo: "INT" },
+  { chave: "olfato", nome: "Olfato", atributo: "SAB" },
+  { chave: "pontaria", nome: "Pontaria", atributo: "DES" },
+  { chave: "prestidigitacao", nome: "Prestidigitação", atributo: "DES" },
+  { chave: "reflexos", nome: "Reflexos", atributo: "DES", resistencia: true },
+  { chave: "religiao", nome: "Religião", atributo: "SAB" },
+  { chave: "sobrevivencia", nome: "Sobrevivência", atributo: "SAB" },
+  { chave: "visao", nome: "Visão", atributo: "SAB" },
+  { chave: "vontade", nome: "Vontade", atributo: "SAB", resistencia: true }
 ];
 
 /** Chips de Resistência da coluna lateral. */

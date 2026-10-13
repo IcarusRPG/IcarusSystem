@@ -3,9 +3,9 @@
 <div class="per-linha">
   <button type="button" class="marcador" data-action="treino" data-pericia="{{chave}}" aria-label="{{treinoDica}}" title="{{treinoDica}}"><span class="m{{treino}}"></span></button>
   <span class="per-nome{{#if treino}} treinada{{/if}}"><span title="{{nome}}">{{nome}}</span>{{#if resistencia}}<span class="res" title="{{localize 'ICARUS.Pericia.ResDica'}}">{{localize "ICARUS.Pericia.Res"}}</span>{{/if}}</span>
-  <select class="sel-atr{{#if atributoMudou}} mudou{{/if}}" name="system.pericias.{{chave}}.atributo" aria-label="{{localize 'ICARUS.Pericia.Atr'}} {{nome}}">{{selectOptions @root.opcoesAtributo selected=atributo}}</select>
-  <input class="campo per-outros{{#unless outros}} zero{{/unless}}" type="number" name="system.pericias.{{chave}}.outros" value="{{outros}}" step="1" aria-label="{{localize 'ICARUS.Pericia.Outros'}} {{nome}}">
-  <button type="button" class="btn total" data-action="rolar-pericia" data-pericia="{{chave}}" title="{{rolarDica}}" aria-label="{{rolarDica}}">{{total}}</button>
+  <select class="sel-atr{{#if atributoMudou}} mudou{{/if}}" name="system.pericias.{{chave}}.atributo" aria-label="{{localize 'ICARUS.Pericia.Atr'}} {{nome}}"{{#if atributoDica}} title="{{atributoDica}}"{{/if}}>{{selectOptions @root.opcoesAtributo selected=atributo}}</select>
+  <input class="campo per-outros{{#unless outros}} zero{{/unless}}{{#if outrosDica}} com-efeito{{/if}}" type="number" name="system.pericias.{{chave}}.outros" value="{{outros}}" step="1" aria-label="{{localize 'ICARUS.Pericia.Outros'}} {{nome}}"{{#if outrosDica}} title="{{outrosDica}}"{{/if}}>
+  <button type="button" class="btn total{{#if comEfeito}} com-efeito{{/if}}" data-action="rolar-pericia" data-pericia="{{chave}}" title="{{rolarDica}}" aria-label="{{rolarDica}}">{{total}}</button>
 </div>
 {{/inline}}
 <div class="carac">
@@ -24,7 +24,7 @@
             <input class="campo" type="number" name="system.atributos.{{chave}}.base" value="{{base}}" step="1"></label>
           <label class="r"><span>{{localize "ICARUS.Atributo.Raca"}}</span>
             <input class="campo" type="number" name="system.atributos.{{chave}}.racial" value="{{racial}}" step="1"></label>
-          <label class="t"><span>{{localize "ICARUS.Atributo.Temp"}}{{#if tempEfeito}} <em title="{{localize 'ICARUS.Atributo.TempEfeito'}}">{{tempEfeito}}</em>{{/if}}</span>
+          <label class="t"><span>{{localize "ICARUS.Atributo.Temp"}}{{#if tempEfeito}} <em title="{{tempDica}}">{{tempEfeito}}</em>{{/if}}</span>
             <input class="campo" type="number" name="system.atributos.{{chave}}.temp" value="{{temp}}" step="1"></label>
         </div>
       </div>
@@ -50,8 +50,10 @@
       <h3 class="titulo-painel">{{localize "ICARUS.Outras.Titulo"}}</h3>
       <label class="lat-linha"><span>{{localize "ICARUS.Outras.Tamanho"}}</span>
         <select class="campo" name="system.tamanho">{{selectOptions opcoesTamanho selected=tamanho localize=true}}</select></label>
+      {{#if tamanhoEfetivo}}<div class="dica com-efeito">{{tamanhoEfetivo}}</div>{{/if}}
       <label class="lat-linha"><span>{{localize "ICARUS.Deslocamento"}}</span>
-        <span class="desloc"><input class="campo" type="number" name="system.deslocamento" value="{{deslocamento.metros}}" step="1.5" min="0"> <span>m ({{deslocamento.quadrados}}q)</span></span></label>
+        <span class="desloc"><input class="campo" type="number" name="system.deslocamento" value="{{deslocamento.metros}}" step="1.5" min="0"> <span>m</span></span></label>
+      {{#if deslocamento.mudou}}<div class="dica com-efeito" title="{{deslocamento.dica}}">{{localize "ICARUS.Outras.DeslocamentoEfetivo"}}: {{deslocamento.exibicao}} m ({{deslocamento.quadrados}}q)</div>{{else}}<div class="dica">{{deslocamento.quadrados}} {{localize "ICARUS.Outras.Quadrados"}}</div>{{/if}}
       {{#if dicaTamanho}}<div class="dica">{{dicaTamanho}}</div>{{/if}}
       <div class="lat-linha"><span>{{localize "ICARUS.Outras.Resistencias"}}</span>
         <div class="chips">

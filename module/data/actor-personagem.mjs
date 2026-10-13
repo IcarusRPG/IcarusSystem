@@ -1,10 +1,6 @@
-import {
-  ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_EQUIPAVEIS
-} from "../config.mjs";
-import {
-  numero, limitar, nivelValido, ehParagon, totalAtributo, bonusTreino, totalPericia,
-  maximoPelaClasse, maximoFinal, calcularDefesa, emQuadrados
-} from "../regras.mjs";
+import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS } from "../config.mjs";
+import { derivarPersonagem } from "../derivar.mjs";
+import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 
 const fields = foundry.data.fields;
 
@@ -15,13 +11,14 @@ const texto = () => new fields.StringField({ required: true, blank: true, initia
 
 /**
  * Dados do Actor "personagem".
- * Tudo o que é derivado (totais, máximos, Defesa) é calculado em prepareDerivedData e nunca é salvo.
+ * Tudo o que é derivado (totais, máximos, Defesa) é calculado em module/derivar.mjs e nunca é salvo.
  */
 export class PersonagemData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       nivel: inteiro(1, { min: 1, max: 25 }),
       identidade: new fields.SchemaField({
+        // Raça: id de module/data/racas.mjs ("koruma"); texto livre = raça personalizada, sem automação
         raca: texto(), origem: texto(), classe: texto(), profissao: texto(), divindade: texto()
       }),
       // Cada atributo: Base (criação e poderes) · Raça (modificador racial) · Temp (temporário).
@@ -38,6 +35,10 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         pmAtributo: new fields.StringField({ required: true, nullable: true, blank: false, initial: null, choices: ATRIBUTOS_CHAVE_PM }),
         bonusPv: inteiro(0),
         bonusPm: inteiro(0),
+        // Só alterados por Efeitos Ativos de poderes (ex.: Sangue de Aço); não aparecem como campo editável
+        bonusPvPorNivel: inteiro(0),
+        bonusPmPorNivel: inteiro(0),
+        bonusPmNivelImpar: inteiro(0),
         manual: new fields.BooleanField({ initial: false })
       }),
       // "max" só é lido no modo manual; fora dele é recalculado pela fórmula.
@@ -59,52 +60,18 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     };
   }
 
-  /** Roda depois dos Efeitos Ativos, então Temp e os campos "Outros" já chegam somados. */
+  /** O campo Raça era texto livre: se o texto bate com o nome de uma raça, vira o id dela. */
+  static migrateData(source) {
+    const raca = source.identidade?.raca;
+    if (typeof raca === "string" && raca && !racaPorId(raca)) {
+      const id = idDaRacaPorNome(raca);
+      if (id) source.identidade.raca = id;
+    }
+    return super.migrateData(source);
+  }
+
+  /** Roda depois dos Efeitos Ativos, então Temp, "Outros", treino e deslocamento já chegam com os bônus. */
   prepareDerivedData() {
-    this.nivel = nivelValido(this.nivel);
-    this.paragon = ehParagon(this.nivel);
-
-    // Atributos: Total = Base + Raça + Temp
-    for (const k of ATRIBUTOS) {
-      const a = this.atributos[k];
-      a.total = totalAtributo(a);
-    }
-    const total = k => (ATRIBUTOS.includes(k) ? this.atributos[k].total : null);
-
-    // PV e PM
-    const cc = this.classeConfig;
-    this.pv.formula = maximoPelaClasse({
-      inicial: cc.pvInicial, porNivel: cc.pvPorNivel, atributoTotal: total(cc.pvAtributo), nivel: this.nivel
-    });
-    this.pm.formula = maximoPelaClasse({
-      inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: this.nivel
-    });
-    this.pv.max = maximoFinal({ manual: cc.manual, maximoManual: this.pv.max, maximoFormula: this.pv.formula, bonus: cc.bonusPv });
-    this.pm.max = maximoFinal({ manual: cc.manual, maximoManual: this.pm.max, maximoFormula: this.pm.formula, bonus: cc.bonusPm });
-    this.pv.value = limitar(numero(this.pv.value), 0, this.pv.max);
-    this.pm.value = limitar(numero(this.pm.value), 0, this.pm.max);
-
-    // Defesa: Armadura e Escudo vêm dos itens equipados
-    let armadura = 0, escudo = 0;
-    for (const item of this.parent?.items ?? []) {
-      if (item.type !== "equipamento") continue;
-      const s = item.system;
-      if (!s.equipado || !TIPOS_EQUIPAVEIS.includes(s.tipo)) continue;
-      if (s.tipo === "armadura") armadura += numero(s.bonusDefesa);
-      else escudo += numero(s.bonusDefesa);
-    }
-    this.defesa.armadura = armadura;
-    this.defesa.escudo = escudo;
-    this.defesa.total = calcularDefesa({ des: this.atributos.DES.total, armadura, escudo, outros: this.defesa.outros });
-
-    // Perícias: Atributo + Treino + Outros
-    for (const p of PERICIAS) {
-      const d = this.pericias[p.chave];
-      if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
-      d.bonusTreino = bonusTreino(d.treino);
-      d.total = totalPericia(this.atributos[d.atributo].total, d.treino, d.outros);
-    }
-
-    this.deslocamentoQuadrados = emQuadrados(this.deslocamento);
+    derivarPersonagem(this, this.parent?.items ?? []);
   }
 }

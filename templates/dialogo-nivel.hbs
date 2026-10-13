@@ -34,6 +34,14 @@
     </div>
   </div>
 
+  {{#if bonusPoderes.length}}
+  <div class="bonus-poderes">
+    <span class="rot">{{localize "ICARUS.NivelDialogo.BonusPoderes"}}</span>
+    {{#each bonusPoderes}}<div class="linha-leitura"><span>{{rotulo}}</span><b>{{valor}}</b><span class="dica">{{conta}}</span></div>{{/each}}
+    <span class="dica">{{localize "ICARUS.NivelDialogo.BonusPoderesDica"}}</span>
+  </div>
+  {{/if}}
+
   <label class="chk"><input type="checkbox" name="manual" {{checked r.manual}}> {{localize "ICARUS.NivelDialogo.Manual"}}</label>
   {{#if r.manual}}
   <div class="dlg-grade">

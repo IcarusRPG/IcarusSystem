@@ -1,86 +1,190 @@
 {
   "TYPES": {
-    "Actor": { "personagem": "Personagem" },
-    "Item": { "poder": "Poder", "equipamento": "Equipamento" }
+    "Actor": {
+      "personagem": "Personagem"
+    },
+    "Item": {
+      "poder": "Poder",
+      "equipamento": "Equipamento"
+    }
   },
   "ICARUS": {
-    "Ficha": { "Personagem": "Ficha de Personagem (Icarus RPG)", "Item": "Ficha de Item (Icarus RPG)" },
+    "Ficha": {
+      "Personagem": "Ficha de Personagem (Icarus RPG)",
+      "Item": "Ficha de Item (Icarus RPG)"
+    },
     "Identidade": {
       "Nome": "Nome do personagem",
-      "raca": "Raça", "origem": "Origem", "classe": "Classe", "profissao": "Profissão", "divindade": "Divindade",
-      "Obrigatoria": "Obrigatória", "Opcional": "Opcional"
+      "raca": "Raça",
+      "origem": "Origem",
+      "classe": "Classe",
+      "profissao": "Profissão",
+      "divindade": "Divindade",
+      "Obrigatoria": "Obrigatória",
+      "Opcional": "Opcional"
     },
-    "Retrato": { "Dica": "Clique para trocar a imagem" },
+    "Retrato": {
+      "Dica": "Clique para trocar a imagem"
+    },
     "Nivel": {
-      "Rotulo": "Nível", "Diminuir": "Diminuir nível", "Aumentar": "Aumentar nível",
-      "Paragon": "PARAGON", "ParagonDica": "Paragon a partir do nível 21", "Botao": "Nível"
+      "Rotulo": "Nível",
+      "Diminuir": "Diminuir nível",
+      "Aumentar": "Aumentar nível",
+      "Paragon": "PARAGON",
+      "ParagonDica": "Paragon a partir do nível 21",
+      "Botao": "Nível"
     },
-    "PV": { "Rotulo": "Pontos de Vida", "Perder": "Perder 1 PV", "Recuperar": "Recuperar 1 PV", "Atuais": "Pontos de Vida atuais" },
-    "PM": { "Rotulo": "Pontos de Mana", "Gastar": "Gastar 1 PM", "Recuperar": "Recuperar 1 PM", "Atuais": "Pontos de Mana atuais" },
+    "PV": {
+      "Rotulo": "Pontos de Vida",
+      "Perder": "Perder 1 PV",
+      "Recuperar": "Recuperar 1 PV",
+      "Atuais": "Pontos de Vida atuais"
+    },
+    "PM": {
+      "Rotulo": "Pontos de Mana",
+      "Gastar": "Gastar 1 PM",
+      "Recuperar": "Recuperar 1 PM",
+      "Atuais": "Pontos de Mana atuais"
+    },
     "Defesa": {
-      "Rotulo": "Defesa", "Outros": "Outros",
+      "Rotulo": "Defesa",
+      "Outros": "Outros",
       "Formula": "10 + DES {des} + Armadura {armadura} + Escudo {escudo} + Outros {outros}"
     },
     "Deslocamento": "Deslocamento",
     "Abas": {
-      "caracteristicas": "Características", "inventario": "Inventário", "poderes": "Poderes", "diario": "Diário", "efeitos": "Efeitos"
+      "caracteristicas": "Características",
+      "inventario": "Inventário",
+      "poderes": "Poderes",
+      "diario": "Diário",
+      "efeitos": "Efeitos"
     },
-    "Rodape": { "Rolar": "Clique no total de um atributo ou perícia para rolar no chat" },
+    "Rodape": {
+      "Rolar": "Clique no total de um atributo ou perícia para rolar no chat"
+    },
     "Treino": {
-      "0": "Destreinado", "1": "Treinado", "2": "Especialista",
+      "0": "Destreinado",
+      "1": "Treinado",
+      "2": "Especialista",
       "Legenda": "Marcador: vazio = Destreinado · ciano = Treinado (+2) · ouro = Especialista (+4)"
     },
     "Atributos": {
-      "FOR": "Força", "DES": "Destreza", "CON": "Constituição", "INT": "Inteligência", "SAB": "Sabedoria", "CAR": "Carisma"
+      "FOR": "Força",
+      "DES": "Destreza",
+      "CON": "Constituição",
+      "INT": "Inteligência",
+      "SAB": "Sabedoria",
+      "CAR": "Carisma"
     },
     "Atributo": {
-      "Rolar": "Rolar", "Base": "BASE", "Raca": "RAÇA", "Temp": "TEMP",
-      "TempEfeito": "Valor somado por Efeitos Ativos"
+      "Rolar": "Rolar",
+      "Base": "BASE",
+      "Raca": "RAÇA",
+      "Temp": "TEMP"
     },
     "Pericias": {
-      "acrobacia": "Acrobacia", "adestramento": "Adestramento", "atletismo": "Atletismo", "atuacao": "Atuação",
-      "audicao": "Audição", "barganha": "Barganha", "cavalgar": "Cavalgar", "concentracao": "Concentração",
-      "cura": "Cura", "diplomacia": "Diplomacia", "enganacao": "Enganação", "fortitude": "Fortitude",
-      "furtividade": "Furtividade", "historia": "História", "iniciativa": "Iniciativa", "intimidacao": "Intimidação",
-      "intuicao": "Intuição", "investigacao": "Investigação", "luta": "Luta", "misticismo": "Misticismo",
-      "navegacao": "Navegação", "nobreza": "Nobreza", "olfato": "Olfato", "pontaria": "Pontaria",
-      "prestidigitacao": "Prestidigitação", "reflexos": "Reflexos", "religiao": "Religião",
-      "sobrevivencia": "Sobrevivência", "visao": "Visão", "vontade": "Vontade"
+      "acrobacia": "Acrobacia",
+      "adestramento": "Adestramento",
+      "atletismo": "Atletismo",
+      "atuacao": "Atuação",
+      "audicao": "Audição",
+      "barganha": "Barganha",
+      "cavalgar": "Cavalgar",
+      "concentracao": "Concentração",
+      "cura": "Cura",
+      "diplomacia": "Diplomacia",
+      "enganacao": "Enganação",
+      "fortitude": "Fortitude",
+      "furtividade": "Furtividade",
+      "historia": "História",
+      "iniciativa": "Iniciativa",
+      "intimidacao": "Intimidação",
+      "intuicao": "Intuição",
+      "investigacao": "Investigação",
+      "luta": "Luta",
+      "misticismo": "Misticismo",
+      "navegacao": "Navegação",
+      "nobreza": "Nobreza",
+      "olfato": "Olfato",
+      "pontaria": "Pontaria",
+      "prestidigitacao": "Prestidigitação",
+      "reflexos": "Reflexos",
+      "religiao": "Religião",
+      "sobrevivencia": "Sobrevivência",
+      "visao": "Visão",
+      "vontade": "Vontade"
     },
     "Pericia": {
       "TreinoDica": "Treino em {pericia}: {grau}. Clique para alterar.",
       "Rolar": "Rolar {pericia} (1d20 {total})",
-      "Cabecalho": "PERÍCIA", "Atr": "ATR", "Outros": "OUTROS", "Total": "TOTAL",
-      "Res": "RES", "ResDica": "Também é teste de Resistência"
+      "Cabecalho": "PERÍCIA",
+      "Atr": "ATR",
+      "Outros": "OUTROS",
+      "Total": "TOTAL",
+      "Res": "RES",
+      "ResDica": "Também é teste de Resistência",
+      "Treino": "Treino",
+      "Atributo": "Atributo"
     },
     "Outras": {
-      "Titulo": "Outras Características", "Tamanho": "Tamanho", "Resistencias": "Resistências",
-      "Imunidades": "Imunidades", "Sentidos": "Sentidos",
-      "PadraoTamanho": "Padrão do tamanho {tamanho}: {metros} m. Raças e poderes podem alterar."
+      "Titulo": "Outras Características",
+      "Tamanho": "Tamanho",
+      "Resistencias": "Resistências",
+      "Imunidades": "Imunidades",
+      "Sentidos": "Sentidos",
+      "PadraoTamanho": "Padrão do tamanho {tamanho}: {metros} m. Raças e poderes podem alterar.",
+      "TamanhoEfetivo": "Efetivo: {tamanho} ({origem})",
+      "DeslocamentoEfetivo": "Efetivo",
+      "Quadrados": "quadrados"
     },
-    "Tamanhos": { "pequeno": "Pequeno", "medio": "Médio", "grande": "Grande" },
-    "Proficiencias": { "Titulo": "Proficiências", "Armas": "Armas", "Armaduras": "Armaduras" },
-    "Notas": { "Titulo": "Notas" },
+    "Tamanhos": {
+      "pequeno": "Pequeno",
+      "medio": "Médio",
+      "grande": "Grande"
+    },
+    "Proficiencias": {
+      "Titulo": "Proficiências",
+      "Armas": "Armas",
+      "Armaduras": "Armaduras"
+    },
+    "Notas": {
+      "Titulo": "Notas"
+    },
     "Inventario": {
       "Itens": "Itens",
       "ArrasteDica": "Arraste itens de outras fichas ou de compêndios para cá",
-      "Equipar": "Equipar", "Equipado": "Equipado",
+      "Equipar": "Equipar",
+      "Equipado": "Equipado",
       "Vazio": "Nenhum item. Use o botão abaixo para criar o primeiro.",
       "Adicionar": "+ Adicionar item",
       "Riqueza": "Moedas, carga e riqueza: [a definir no sistema]"
     },
     "Equipamento": {
-      "Novo": "Novo item", "Tipo": "Tipo", "Quantidade": "Quantidade", "BonusDefesa": "Bônus de Defesa",
+      "Novo": "Novo item",
+      "Tipo": "Tipo",
+      "Quantidade": "Quantidade",
+      "BonusDefesa": "Bônus de Defesa",
       "Tipos": {
-        "arma": "Arma", "armadura": "Armadura", "escudo": "Escudo",
-        "consumivel": "Consumível", "profissao": "Item de profissão", "outro": "Outro"
+        "arma": "Arma",
+        "armadura": "Armadura",
+        "escudo": "Escudo",
+        "consumivel": "Consumível",
+        "profissao": "Item de profissão",
+        "outro": "Outro"
       }
     },
     "Poderes": {
-      "Fontes": { "raca": "Raça", "classe": "Classe", "origem": "Origem", "profissao": "Profissão", "geral": "Geral" },
+      "Fontes": {
+        "raca": "Raça",
+        "classe": "Classe",
+        "origem": "Origem",
+        "profissao": "Profissão",
+        "geral": "Geral"
+      },
       "Gerais": "Poderes Gerais",
       "TagNivel": "Nível {nivel}",
-      "ContaUm": "1 poder", "Conta": "{n} poderes",
+      "ContaUm": "1 poder",
+      "Conta": "{n} poderes",
       "Vazio": "Nenhum poder de {fonte} ainda.",
       "NivelN": "{n}º nível",
       "Prerequisito": "Pré-requisito",
@@ -100,7 +204,8 @@
       "Titulo": "Efeitos Ativos e Condições",
       "Dica": "Somam em Temp dos atributos, Outros da Defesa e Outros das perícias",
       "Origem": "Vem de",
-      "Ativo": "Ativo", "Inativo": "Inativo",
+      "Ativo": "Ativo",
+      "Inativo": "Inativo",
       "Vazio": "Nenhum efeito.",
       "Adicionar": "+ Adicionar efeito",
       "Novo": "Novo efeito",
@@ -108,34 +213,84 @@
       "Chaves": "Na aba Efeitos do efeito, use o modo Somar e uma destas chaves:"
     },
     "Acoes": {
-      "Editar": "Editar", "Excluir": "Excluir",
+      "Editar": "Editar",
+      "Excluir": "Excluir",
       "ExcluirTitulo": "Confirmar exclusão",
       "ExcluirConfirmar": "Excluir {nome}? Esta ação não pode ser desfeita."
     },
-    "Item": { "Nome": "Nome do item", "Descricao": "Descrição" },
+    "Item": {
+      "Nome": "Nome do item",
+      "Descricao": "Descrição"
+    },
     "NivelDialogo": {
       "Titulo": "Configuração de Nível",
       "Classe": "Classe",
       "Explicacao": "PV = inicial + por nível × (nível − 1) + atributo × nível. PM igual; classes não conjuradoras não somam atributo.",
-      "PvInicial": "PV inicial", "PvPorNivel": "PV por nível", "PmInicial": "PM inicial", "PmPorNivel": "PM por nível",
-      "BonusPv": "Bônus de PV", "BonusPm": "Bônus de PM",
+      "PvInicial": "PV inicial",
+      "PvPorNivel": "PV por nível",
+      "PmInicial": "PM inicial",
+      "PmPorNivel": "PM por nível",
+      "BonusPv": "Bônus de PV",
+      "BonusPm": "Bônus de PM",
       "AtributoPv": "Atributo do PV",
       "AtributoPm": "Atributo-chave do PM (só classes conjuradoras)",
       "Nenhum": "Nenhum",
       "Manual": "Manual: digitar PV e PM máximos e ignorar a fórmula",
-      "PvMax": "PV máximo", "PmMax": "PM máximo",
-      "TotalPv": "PV total no nível {n}", "TotalPm": "PM total no nível {n}",
-      "Cancelar": "Cancelar", "Salvar": "Salvar"
+      "PvMax": "PV máximo",
+      "PmMax": "PM máximo",
+      "TotalPv": "PV total no nível {n}",
+      "TotalPm": "PM total no nível {n}",
+      "Cancelar": "Cancelar",
+      "Salvar": "Salvar",
+      "Campos": {
+        "bonusPvPorNivel": "PV por nível (poderes)",
+        "bonusPmPorNivel": "PM por nível (poderes)",
+        "bonusPmNivelImpar": "PM por nível ímpar (poderes)"
+      },
+      "BonusPoderes": "Bônus de poderes",
+      "BonusPoderesDica": "Vêm de Efeitos Ativos de poderes (ex.: Sangue de Aço). Não entram no modo Manual."
     },
     "Rolagem": {
-      "Tipo": { "atributo": "Teste de atributo", "pericia": "Teste de perícia", "resistencia": "Teste de resistência" },
+      "Tipo": {
+        "atributo": "Teste de atributo",
+        "pericia": "Teste de perícia",
+        "resistencia": "Teste de resistência"
+      },
       "Critico": "CRÍTICO",
       "Falha": "FALHA CRÍTICA"
     },
     "Dev": {
       "SemKaelen": "Nenhum personagem chamado Kaelen Vorhal. Crie com game.icarus.criarKaelen().",
       "Passou": "Kaelen Vorhal: todas as fórmulas da seção 6 conferem.",
-      "Falhou": "Kaelen Vorhal: {n} diferença(s). Veja o console (F12)."
+      "Falhou": "Kaelen Vorhal: {n} diferença(s). Veja o console (F12).",
+      "RacasPassou": "Raças: {total} verificações conferem.",
+      "RacasFalhou": "Raças: {n} de {total} verificações falharam. Veja a tabela no console (F12)."
+    },
+    "Racas": {
+      "Nenhuma": "— Nenhuma —",
+      "Personalizada": "Raça personalizada (sem automação)",
+      "Reaplicar": "Reaplicar raça: recria os poderes e bônus raciais com as escolhas já feitas",
+      "Reaplicada": "Raça {raca} reaplicada.",
+      "SemRaca": "Este personagem não tem uma raça da lista para reaplicar.",
+      "TrocarTitulo": "Trocar a raça",
+      "ConfirmarTroca": "Trocar a raça removerá os modificadores raciais e os poderes raciais automáticos. Poderes adicionados manualmente serão mantidos.",
+      "ExcluirAuto": "Este poder racial automático será recriado se você usar Reaplicar raça.",
+      "TagRacial": "Racial",
+      "EscolhaPendente": "Escolha pendente",
+      "EscolhasPendentes": "Escolhas pendentes",
+      "FazerEscolha": "Fazer escolha",
+      "IconesFaltando": "Icarus RPG: {n} ícone(s) de raça não encontrado(s) em img/Icones/raças/. Usando o dado azul no lugar. Faltam: {lista}",
+      "Escolhas": {
+        "Titulo": "Escolhas da raça",
+        "Botao": "Escolhas da raça",
+        "Explicacao": "Esta raça pede algumas escolhas. Se fechar agora, a raça é aplicada sem elas e você pode escolher depois na aba Poderes.",
+        "Atributos": "Atributos à escolha ({distribuicao}), todos diferentes",
+        "AvisoAtributos": "Escolha um atributo diferente para cada bônus.",
+        "Especialista": "{poder}: perícia em que se torna Especialista",
+        "Treinada": "{poder}: perícia em que se torna Treinado",
+        "Depois": "Escolher depois",
+        "Confirmar": "Confirmar"
+      }
     }
   }
 }

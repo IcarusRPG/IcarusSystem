@@ -1,58 +1,34 @@
 /**
- * Testes das fórmulas (seção 6 do prompt da ficha). Rode com:  node --test tests/
- * Reproduz o prepareDerivedData com as funções de module/regras.mjs, sem o Foundry.
+ * Testes das fórmulas (seção 6 do prompt da ficha). Rode com:  node --test tests/*.test.mjs
+ * Usa a mesma função de cálculo do sistema (module/derivar.mjs).
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { ATRIBUTOS, PERICIAS } from "../module/config.mjs";
+import { PERICIAS } from "../module/config.mjs";
 import {
-  totalAtributo, totalPericia, maximoPelaClasse, maximoFinal, calcularDefesa, emQuadrados,
-  nivelValido, ehParagon, comSinal
+  totalAtributo, totalPericia, maximoFinal, calcularDefesa, emQuadrados,
+  nivelValido, ehParagon, comSinal, niveisImpares, bonusDeNivel
 } from "../module/regras.mjs";
 import { dadosKaelen, compararKaelen, ESPERADO_KAELEN } from "../module/dev/kaelen.mjs";
+import { simular } from "./simulacao.mjs";
 
-/** Mesma sequência de cálculo do PersonagemData.prepareDerivedData. */
-function derivar(dados) {
-  const s = structuredClone(dados.system);
-  const nivel = nivelValido(s.nivel);
-  const atributos = {};
-  for (const k of ATRIBUTOS) atributos[k] = { ...s.atributos[k], total: totalAtributo(s.atributos[k]) };
-  const cc = s.classeConfig;
-  const tot = k => (k ? atributos[k].total : null);
-  const pvMax = maximoFinal({ manual: cc.manual, maximoManual: s.pv.max, bonus: cc.bonusPv,
-    maximoFormula: maximoPelaClasse({ inicial: cc.pvInicial, porNivel: cc.pvPorNivel, atributoTotal: tot(cc.pvAtributo), nivel }) });
-  const pmMax = maximoFinal({ manual: cc.manual, maximoManual: s.pm.max, bonus: cc.bonusPm,
-    maximoFormula: maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: tot(cc.pmAtributo), nivel }) });
-  const equipado = tipo => dados.items
-    .filter(i => i.type === "equipamento" && i.system.equipado && i.system.tipo === tipo)
-    .reduce((soma, i) => soma + i.system.bonusDefesa, 0);
-  const pericias = {};
-  for (const p of PERICIAS) {
-    const d = { treino: 0, outros: 0, atributo: p.atributo, ...s.pericias[p.chave] };
-    pericias[p.chave] = { ...d, total: totalPericia(atributos[d.atributo].total, d.treino, d.outros) };
-  }
-  return {
-    atributos, pericias,
-    pv: { max: pvMax }, pm: { max: pmMax },
-    defesa: { total: calcularDefesa({ des: atributos.DES.total, armadura: equipado("armadura"), escudo: equipado("escudo"), outros: s.defesa.outros }) }
-  };
-}
+const kaelen = () => simular(dadosKaelen(), "koruma").system;
 
-test("Kaelen Vorhal confere com todos os valores da seção 6", () => {
-  assert.deepEqual(compararKaelen(derivar(dadosKaelen())), []);
+test("Kaelen Vorhal (Koruma automático) confere com todos os valores esperados", () => {
+  assert.deepEqual(compararKaelen(kaelen()), []);
 });
 
 test("PV máx 42 = 16 + 4×4 + 2×5 e PM máx 20 (sem atributo-chave)", () => {
-  const d = derivar(dadosKaelen());
-  assert.equal(d.pv.max, ESPERADO_KAELEN.pvMax);
-  assert.equal(d.pm.max, ESPERADO_KAELEN.pmMax);
+  const s = kaelen();
+  assert.equal(s.pv.max, ESPERADO_KAELEN.pvMax);
+  assert.equal(s.pm.max, ESPERADO_KAELEN.pmMax);
 });
 
-test("Defesa 19 = 10 + DES 1 + Armadura 5 + Escudo 2 + Outros 1; sem armadura cai para 14", () => {
+test("Defesa 19 = 10 + DES 1 + Armadura 5 + Escudo 2 + Couro Brutal 1; sem armadura cai para 14", () => {
   const dados = dadosKaelen();
-  assert.equal(derivar(dados).defesa.total, 19);
+  assert.equal(simular(dados, "koruma").system.defesa.total, 19);
   dados.items.find(i => i.name === "Armadura de Placas").system.equipado = false;
-  assert.equal(derivar(dados).defesa.total, 14);
+  assert.equal(simular(dados, "koruma").system.defesa.total, 14);
 });
 
 test("Bônus de treino: Destreinado +0, Treinado +2, Especialista +4", () => {
@@ -62,10 +38,17 @@ test("Bônus de treino: Destreinado +0, Treinado +2, Especialista +4", () => {
   assert.equal(totalPericia(1, 2, -2), 3);
 });
 
-test("Modo manual usa o máximo digitado e ainda soma o bônus", () => {
-  assert.equal(maximoFinal({ manual: true, maximoManual: 50, maximoFormula: 42, bonus: 3 }), 53);
-  assert.equal(maximoFinal({ manual: false, maximoManual: 50, maximoFormula: 42, bonus: 3 }), 45);
+test("Modo manual usa o máximo digitado, soma o bônus fixo e ignora o bônus por nível", () => {
+  assert.equal(maximoFinal({ manual: true, maximoManual: 50, maximoFormula: 42, bonus: 3, bonusNivel: 5 }), 53);
+  assert.equal(maximoFinal({ manual: false, maximoManual: 50, maximoFormula: 42, bonus: 3, bonusNivel: 5 }), 50);
   assert.equal(maximoFinal({ manual: false, maximoManual: 0, maximoFormula: -5, bonus: 0 }), 0);
+});
+
+test("Bônus de PV/PM por nível e por nível ímpar", () => {
+  assert.equal(niveisImpares(1), 1);
+  assert.equal(niveisImpares(5), 3);
+  assert.equal(niveisImpares(6), 3);
+  assert.deepEqual(bonusDeNivel({ nivel: 5, bonusPvPorNivel: 1, bonusPmPorNivel: 1, bonusPmNivelImpar: 1 }), { pv: 5, pm: 8 });
 });
 
 test("Nível fica entre 1 e 25 e Paragon começa no 21", () => {
