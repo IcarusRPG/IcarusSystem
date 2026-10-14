@@ -3,7 +3,8 @@
  * Sem dependência do Foundry: recebe o objeto "system" (já com os Efeitos Ativos aplicados)
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
-import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS } from "./config.mjs";
+import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE } from "./config.mjs";
+import { totalEmCentavos } from "./moeda.mjs";
 import {
   numero, limitar, nivelValido, ehParagon, totalAtributo, bonusTreino, totalPericia,
   maximoPelaClasse, maximoFinal, bonusDeNivel, calcularDefesa, emQuadrados
@@ -57,5 +58,24 @@ export function derivarPersonagem(s, itens = []) {
   }
 
   s.deslocamentoQuadrados = emQuadrados(s.deslocamento);
+
+  // Carga em espaços: armas (espaços × quantidade), munições (1 por pacote de 20) e equipamentos.
+  // Sobrecarga ainda não tem efeito definido: só avisa.
+  s.carga = {
+    capacidade: Math.max(0, CARGA_BASE + CARGA_POR_FOR * s.atributos.FOR.total),
+    usado: itens.reduce((soma, item) => soma + espacosDoItem(item), 0)
+  };
+  s.carga.excedida = s.carga.usado > s.carga.capacidade;
+
+  if (s.moedas) s.moedas.total = totalEmCentavos(s.moedas);
   return s;
+}
+
+/** Espaços que um item ocupa na carga. */
+export function espacosDoItem(item) {
+  const e = item.system ?? {};
+  if (item.type === "arma") return numero(e.espacos) * numero(e.quantidade);
+  if (item.type === "municao") return Math.ceil(Math.max(0, numero(e.quantidade)) / TAMANHO_PACOTE);
+  if (item.type === "equipamento") return numero(e.espacos);
+  return 0;
 }

@@ -1,0 +1,44 @@
+{
+  "_id": "raJ2QTkBNMttXUKj",
+  "name": "Machado de guerra",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "75MXTa27qYqFLVyW",
+  "sort": 2800,
+  "system": {
+    "categoria": "marcial",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "duas-maos",
+    "dano": "1d12",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 3,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "corte"
+    ],
+    "propriedades": [
+      "duas-maos"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 2000,
+    "espacos": 2,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "machado-de-guerra"
+    }
+  },
+  "_key": "!items!raJ2QTkBNMttXUKj"
+}

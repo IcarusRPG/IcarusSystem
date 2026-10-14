@@ -1,0 +1,44 @@
+{
+  "_id": "DIyYXqTAlpPtc5YJ",
+  "name": "Arco curto",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Arco.png",
+  "folder": "McPweo2QPZsRiV7e",
+  "sort": 1200,
+  "system": {
+    "categoria": "simples",
+    "grupo": "distancia",
+    "empunhadura": "duas-maos",
+    "dano": "1d6",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 3,
+    "alcance": "medio",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [
+      "duas-maos"
+    ],
+    "municaoTipo": "flechas",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 3000,
+    "espacos": 2,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arco-curto"
+    }
+  },
+  "_key": "!items!DIyYXqTAlpPtc5YJ"
+}

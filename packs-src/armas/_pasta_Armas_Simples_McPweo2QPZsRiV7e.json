@@ -1,0 +1,15 @@
+{
+  "_id": "McPweo2QPZsRiV7e",
+  "name": "Armas Simples",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "simples"
+    }
+  },
+  "_key": "!folders!McPweo2QPZsRiV7e"
+}

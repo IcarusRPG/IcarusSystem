@@ -1,0 +1,21 @@
+{
+  "_id": "0NgLXM9pZPkTKOS2",
+  "name": "Pedras",
+  "type": "municao",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/muni%C3%A7%C3%B5es/Pedras.png",
+  "folder": null,
+  "sort": 300,
+  "system": {
+    "tipo": "pedras",
+    "quantidade": 20,
+    "precoPacote": 50,
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pedras"
+    }
+  },
+  "_key": "!items!0NgLXM9pZPkTKOS2"
+}

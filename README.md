@@ -30,6 +30,9 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Deslocamento | Em metros, exibido também em quadrados de 1,5 m. Médio 9 m, Pequeno 6 m. |
 | Rolagens | Vão para o **chat do Foundry** como cartão próprio, respeitando o modo de rolagem do chat. 20 natural = CRÍTICO (dourado), 1 natural = FALHA CRÍTICA (vermelho), só visual. |
 | Iniciativa | `1d20 + total da perícia Iniciativa` no Combat Tracker. |
+| Armas | Compêndio **Icarus — Armas** com 46 armas em 4 pastas (Simples, Marciais, Exóticas, de Fogo). Na ficha: ataque com a perícia certa (Luta no corpo a corpo; Pontaria em distância, arremesso e fogo), **Ágil** usa DES em vez de FOR, crítico por margem e multiplicador, card de chat com **Rolar dano** e **Dano crítico**. |
+| Munição | Compêndio **Icarus — Munições** (Flechas, Virotes, Pedras, Balas; pacote de 20 = 1 espaço). Cada disparo de arco, besta e funda gasta 1; armas de fogo têm disparos carregados e **Recarregar**; arma arremessada sai do inventário e volta com **Recolher arma**. |
+| Moedas e carga | Ouro Real, Reais e Centavos na ficha (preços guardados em centavos). Arrastar um item do compêndio pergunta **Comprar** ou **Adicionar grátis**. Carga = 10 + 2 × FOR espaços; acima disso fica vermelha (sem penalidade). |
 | Itens | `poder` (fonte, custo em PM, pré-requisito, nível, descrição) e `equipamento` (tipo, quantidade, equipado, bônus de Defesa, descrição). Arrastar e soltar entre fichas e compêndios funciona. |
 | Efeitos | Efeitos Ativos do Foundry, modo **Somar**, nas chaves `system.atributos.<FOR…>.temp`, `system.defesa.outros` e `system.pericias.<pericia>.outros`. |
 | Tokens | Barra 1 = PV, barra 2 = PM. Personagem novo recebe o ícone do dado azul e token ligado à ficha. |
@@ -43,6 +46,7 @@ No Foundry, abra o console (F12) ou crie uma macro do tipo **Script** com:
 const actor = await game.icarus.criarKaelen();   // cria Kaelen Vorhal (nível 5, Koruma Lanceiro)
 game.icarus.verificarKaelen(actor);               // confere PV 42, PM 20, Defesa 19, Fortitude +6…
 await game.icarus.verificarRacas();               // testa as raças num personagem temporário (tabela no console)
+await game.icarus.verificarArmas();               // testa armas, munição, moedas e carga (tabela no console)
 ```
 
 ## Estrutura
@@ -58,13 +62,23 @@ module/
   racas.mjs                 aplicar, trocar e reaplicar raças no Foundry
   data/                     modelos de dados e racas.mjs (dados das 17 raças)
   sheets/                   ficha de personagem, ficha de item, diálogos de nível e de escolhas da raça
-  dev/kaelen.mjs            personagem de teste e verificação
+  moeda.mjs                 preço em centavos, formatação, débito e crédito
+  combate.mjs               regras de ataque e dano (as provisórias ficam em REGRAS)
+  combate-chat.mjs          rolar ataque e dano, munição, recarga, arremesso e cards de chat
+  inventario.mjs            comprar ou adicionar itens, somar munição, botão + Item
+  dados-itens.mjs           converte tools/dados/armas.json em itens do Foundry
+  compendios.mjs            plano B: popular os compêndios dentro do Foundry
+  dev/                      personagem de teste e verificações (Kaelen, raças, armas)
 templates/                  Handlebars da ficha, dos itens, do diálogo e do chat
 styles/icarus.css           visual escuro da ficha e do cartão de chat
 fonts/                      Cinzel e Alegreya Sans (licença OFL)
 lang/pt-BR.json             todos os textos da interface
 img/                        ícones e imagens: raças, armas, munições e interface (256 px)
-tests/                      testes das fórmulas
+tests/                      testes das fórmulas, raças e armas
+tools/dados/armas.json      fonte única das armas e munições
+tools/build-packs.mjs       gera packs-src/ (JSON) e compila os compêndios em packs/ (LevelDB)
+packs-src/                  JSON dos compêndios (gerado; packs/ é compilado na hora do release)
+macros/popular-compendios.js  macro do plano B
 ```
 
 ## Desenvolvimento
@@ -72,7 +86,13 @@ tests/                      testes das fórmulas
 Testes das fórmulas (Node 20 ou mais novo):
 
 ```bash
-node --test tests/regras.test.mjs tests/racas.test.mjs
+npm test
+```
+
+Compêndios (precisa de `npm install` uma vez, que instala o CLI do Foundry):
+
+```bash
+npm run build:packs
 ```
 
 Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/systems/icarus-rpg`.
@@ -108,6 +128,16 @@ Os dados ficam em `module/data/racas.mjs`, uma entrada por raça:
 
 Os poderes criados pela raça ficam marcados com `flags["icarus-rpg"].auto` e são os únicos removidos ao trocar de raça.
 
+## Armas e munições
+
+A fonte única é `tools/dados/armas.json`. Para **editar ou adicionar uma arma**:
+
+1. Mude a entrada (ou copie uma parecida) em `armas`. Preço em **centavos** (R$ 15 = 1500). O campo `icone` é o nome exato do arquivo em `img/Icones/itens/equipamentos/armas/`; `null` usa o dado azul.
+2. Rode `npm run build:packs`. O `_id` vem do campo `id`, então nada se duplica.
+3. Publique uma versão nova. Quem já tem a arma numa ficha continua com a cópia antiga: arraste de novo do compêndio.
+
+Sem conseguir compilar no seu computador, use o **plano B** dentro do Foundry, como Mestre: `await game.icarus.popularCompendios()` (ou a macro `macros/popular-compendios.js`). Ela lê o mesmo JSON e cria ou atualiza os itens sem duplicar.
+
 ## Publicar uma versão
 
 1. Atualize `version` e o número da versão no link `download` do `system.json`.
@@ -134,3 +164,17 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Magias raciais (Astúcia Arcana, Luz Sagrada, Sombras Profanas)
 - Compêndios de raças e poderes
 - Filtro por digitação na combobox de raça (hoje vale a busca nativa: digitar a inicial)
+
+**Armas (regras [PROVISÓRIO], em `REGRAS` de `module/combate.mjs`):**
+- Dano soma FOR no corpo a corpo e no arremesso; arcos, bestas, funda e armas de fogo não somam atributo
+- Crítico multiplica tudo: (dados + bônus) × multiplicador
+- Sem acerto automático; o card só compara com a Defesa se houver exatamente 1 alvo
+- Sem proficiência na arma: só aviso, sem penalidade numérica
+- Penalidade de armadura no ataque sem proficiência em armadura: gancho `penalidadeDeAtaque` (0 até existir o compêndio de armaduras)
+- Ágil usa DES quando ela é maior que FOR (a regra permite usar DES)
+- Carga 10 + 2 × FOR (referência do Tormenta 20, a conferir); sobrecarga sem efeito
+- Fora de escopo por enquanto: duas armas, Arma Dupla completa, desarmado e armas naturais, aplicar dano nos tokens, medir alcance, munições especiais e recuperação de munição, efeitos de poderes sobre armas, armaduras/escudos/túnicas
+
+**Ícones de armas:**
+- Sem ícone (usam o dado azul): Azagaia, Machado de guerra, Marreta
+- Atribuições a confirmar: `Espada.png` → Espada curta · `Arco.png` → Arco curto · `Besta.png` → Besta leve · `Machado.png` → Machadinha (trocar em `tools/dados/armas.json`)

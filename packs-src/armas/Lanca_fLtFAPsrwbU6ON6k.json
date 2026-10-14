@@ -1,0 +1,44 @@
+{
+  "_id": "fLtFAPsrwbU6ON6k",
+  "name": "Lança",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Lan%C3%A7a.png",
+  "folder": "McPweo2QPZsRiV7e",
+  "sort": 600,
+  "system": {
+    "categoria": "simples",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d6",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "curto",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [
+      "arremesso"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 300,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lanca"
+    }
+  },
+  "_key": "!items!fLtFAPsrwbU6ON6k"
+}

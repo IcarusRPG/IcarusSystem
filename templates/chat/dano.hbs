@@ -1,0 +1,15 @@
+<div class="icarus-rolagem icarus-dano{{#if critico}} critico{{/if}}">
+  <div class="arma-cab">
+    <img src="{{arma.img}}" alt="" width="36" height="36">
+    <div>
+      <h3 class="rolagem-nome">{{arma.nome}}</h3>
+      <div class="rolagem-tipo">{{#if critico}}{{localize "ICARUS.Armas.Card.DanoCritico"}} (×{{mult}}){{else}}{{localize "ICARUS.Armas.Card.Dano"}}{{/if}}{{#if extra}} · {{extra}}{{/if}}</div>
+    </div>
+  </div>
+  <div class="rolagem-dados">
+    <span class="rolagem-formula">{{texto}}</span>
+    <span class="rolagem-total">{{total}}</span>
+  </div>
+  {{#if tipos}}<div class="linha-municao">{{localize "ICARUS.Armas.TipoDano"}}: {{tipos}}</div>{{/if}}
+  {{!-- Fase 2: botão "Aplicar" para descontar o dano do alvo --}}
+</div>

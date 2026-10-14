@@ -1,0 +1,21 @@
+{
+  "_id": "kF9eTPATtNGm1vsn",
+  "name": "Balas",
+  "type": "municao",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/muni%C3%A7%C3%B5es/Balas.png",
+  "folder": null,
+  "sort": 400,
+  "system": {
+    "tipo": "balas",
+    "quantidade": 20,
+    "precoPacote": 2000,
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "balas"
+    }
+  },
+  "_key": "!items!kF9eTPATtNGm1vsn"
+}

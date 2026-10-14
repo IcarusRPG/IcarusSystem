@@ -1,0 +1,42 @@
+{
+  "_id": "Se7yFsKNVU0f1P4w",
+  "name": "Mangual",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Mangual.png",
+  "folder": "75MXTa27qYqFLVyW",
+  "sort": 1900,
+  "system": {
+    "categoria": "marcial",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d8",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "impacto"
+    ],
+    "propriedades": [],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 800,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mangual"
+    }
+  },
+  "_key": "!items!Se7yFsKNVU0f1P4w"
+}

@@ -36,7 +36,6 @@ export function dadosKaelen() {
       proficiencias: { armas: "Lanças", armaduras: "Armaduras pesadas e escudos" }
     },
     items: [
-      eq("Lança de Guerra", "arma", 1, false, 0),
       eq("Armadura de Placas", "armadura", 1, true, 5),
       eq("Escudo de Torre", "escudo", 1, true, 2),
       eq("Ferramentas de Ferreiro", "profissao", 1, false, 0),
@@ -75,6 +74,14 @@ export function compararKaelen(system) {
 export async function criarKaelen() {
   const actor = await Actor.create(dadosKaelen());
   await game.icarus.aplicarRaca(actor, "koruma");
+  // Arma do Lanceiro, vinda do compêndio (se ele existir), já empunhada
+  const lanca = (await game.packs.get("icarus-rpg.armas")?.getDocuments())?.find(d => d.flags?.["icarus-rpg"]?.id === "lanca-montada");
+  if (lanca) {
+    const dados = lanca.toObject();
+    delete dados._id;
+    dados.system.empunhada = true;
+    await actor.createEmbeddedDocuments("Item", [dados]);
+  }
   actor?.sheet.render(true);
   return actor;
 }

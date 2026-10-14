@@ -1,0 +1,44 @@
+{
+  "_id": "0MvDm0p7ZFtIEVBK",
+  "name": "Nunchaku",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Nunchaku.png",
+  "folder": "ztXAWCms42Wo6ujn",
+  "sort": 3900,
+  "system": {
+    "categoria": "exotica",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d8",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "impacto"
+    ],
+    "propriedades": [
+      "agil"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 2500,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nunchaku"
+    }
+  },
+  "_key": "!items!0MvDm0p7ZFtIEVBK"
+}

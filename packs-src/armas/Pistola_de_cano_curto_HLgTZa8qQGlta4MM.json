@@ -1,0 +1,44 @@
+{
+  "_id": "HLgTZa8qQGlta4MM",
+  "name": "Pistola de cano curto",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Pistola%20de%20cano%20curto.png",
+  "folder": "dHtV5zhAcmtR6FI5",
+  "sort": 4400,
+  "system": {
+    "categoria": "fogo",
+    "grupo": "fogo",
+    "empunhadura": "leve",
+    "dano": "1d8",
+    "danoExtra": "",
+    "criticoMargem": 19,
+    "criticoMult": 3,
+    "alcance": "medio",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [
+      "leve"
+    ],
+    "municaoTipo": "balas",
+    "capacidadeDisparos": 1,
+    "carregados": 1,
+    "preco": 15000,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistola-de-cano-curto"
+    }
+  },
+  "_key": "!items!HLgTZa8qQGlta4MM"
+}

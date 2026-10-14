@@ -1,0 +1,15 @@
+{
+  "_id": "75MXTa27qYqFLVyW",
+  "name": "Armas Marciais",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "marcial"
+    }
+  },
+  "_key": "!folders!75MXTa27qYqFLVyW"
+}

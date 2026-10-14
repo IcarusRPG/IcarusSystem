@@ -1,0 +1,42 @@
+{
+  "_id": "f7jQKQ0nt2mYJPhy",
+  "name": "Picareta",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Picareta.png",
+  "folder": "75MXTa27qYqFLVyW",
+  "sort": 2100,
+  "system": {
+    "categoria": "marcial",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d6",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 4,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 800,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "picareta"
+    }
+  },
+  "_key": "!items!f7jQKQ0nt2mYJPhy"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "icarus-rpg",
+  "private": true,
+  "description": "Sistema Icarus RPG para Foundry VTT (ferramentas de desenvolvimento)",
+  "type": "module",
+  "scripts": {
+    "build:packs": "node tools/build-packs.mjs",
+    "extract:packs": "node tools/extract-packs.mjs",
+    "test": "node --test tests/regras.test.mjs tests/racas.test.mjs tests/armas.test.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "1.1.0"
+  }
+}

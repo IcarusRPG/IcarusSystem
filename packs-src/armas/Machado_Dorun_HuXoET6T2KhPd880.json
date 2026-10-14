@@ -1,0 +1,42 @@
+{
+  "_id": "HuXoET6T2KhPd880",
+  "name": "Machado Dorun",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Machado%20dorun.png",
+  "folder": "ztXAWCms42Wo6ujn",
+  "sort": 3800,
+  "system": {
+    "categoria": "exotica",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d10",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 3,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "corte"
+    ],
+    "propriedades": [],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 3000,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "machado-dorun"
+    }
+  },
+  "_key": "!items!HuXoET6T2KhPd880"
+}

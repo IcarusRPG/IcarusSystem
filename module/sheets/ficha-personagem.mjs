@@ -6,6 +6,12 @@ import { rolarPericia, rolarAtributo } from "../rolls.mjs";
 import { RACAS, racaPorId, iconeDaRaca, resolverRaca } from "../data/racas.mjs";
 import { trocarRaca, reaplicarRaca, refazerEscolhas, ehPoderRacialAuto, escolhasGuardadas } from "../racas.mjs";
 import { DialogoNivel } from "./dialogo-nivel.mjs";
+import { TAMANHO_PACOTE } from "../config.mjs";
+import { espacosDoItem } from "../derivar.mjs";
+import { formatarPreco, precoEmOuro } from "../moeda.mjs";
+import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura } from "../combate.mjs";
+import { itensDoAtor, rolarAtaque, rolarDano, recarregar } from "../combate-chat.mjs";
+import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
 
@@ -154,16 +160,41 @@ export class FichaPersonagem extends ActorSheet {
     }));
 
     // Inventário
+    const ordenar = (a, b) => (a.sort || 0) - (b.sort || 0);
+    const preco = c => ({ texto: formatarPreco(c), ouro: precoEmOuro(c) });
     ctx.equipamentos = actor.items.filter(i => i.type === "equipamento")
-      .sort((a, b) => (a.sort || 0) - (b.sort || 0))
+      .sort(ordenar)
       .map(i => ({
         id: i.id, name: i.name, img: i.img,
         tipo: loc(`ICARUS.Equipamento.Tipos.${i.system.tipo}`),
         quantidade: i.system.quantidade,
         equipavel: TIPOS_EQUIPAVEIS.includes(i.system.tipo),
         equipado: i.system.equipado,
-        bonus: comSinal(i.system.bonusDefesa)
+        bonus: comSinal(i.system.bonusDefesa),
+        espacos: espacosDoItem(i),
+        preco: preco(i.system.preco)
       }));
+
+    // Armas: bônus de ataque e dano calculados pelas regras de combate
+    const itens = itensDoAtor(actor);
+    ctx.armas = actor.items.filter(i => i.type === "arma").sort(ordenar).map(i => this._linhaDaArma(i, itens));
+    ctx.municoes = actor.items.filter(i => i.type === "municao").sort(ordenar).map(i => ({
+      id: i.id, name: i.name, img: i.img,
+      tipo: loc(`ICARUS.Municao.Tipos.${i.system.tipo}`),
+      quantidade: i.system.quantidade,
+      pacotes: game.i18n.format("ICARUS.Municao.Pacotes", {
+        n: new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 }).format(i.system.quantidade / TAMANHO_PACOTE), espacos: i.system.espacos
+      }),
+      espacos: i.system.espacos,
+      preco: preco(i.system.precoPacote)
+    }));
+    ctx.moedas = { ...src.moedas, total: formatarPreco(s.moedas.total) === "—" ? "R$ 0" : formatarPreco(s.moedas.total), ouro: precoEmOuro(s.moedas.total) };
+    ctx.carga = s.carga;
+
+    // Bloco Ataques (aba Características): só as armas empunhadas
+    ctx.ataques = ctx.armas.filter(a => a.empunhada);
+    const aviso = avisoEmpunhadura(actor.items.filter(i => i.type === "arma" && i.system.empunhada).map(i => i.system));
+    ctx.avisoAtaques = aviso ? loc(`ICARUS.Armas.AvisoEmpunhadura.${aviso}`) : "";
 
     // Poderes agrupados por fonte (Raça primeiro, com o ícone da raça)
     const poderes = actor.items.filter(i => i.type === "poder").sort((a, b) => (a.sort || 0) - (b.sort || 0));
@@ -220,6 +251,41 @@ export class FichaPersonagem extends ActorSheet {
     return ctx;
   }
 
+  /** Linha de uma arma no Inventário e no bloco Ataques. */
+  _linhaDaArma(item, itens) {
+    const loc = k => game.i18n.localize(k);
+    const a = item.system;
+    const s = this.actor.system;
+    const principal = a.modos[0];
+    const atq = calcularAtaque(s, a, principal, itens);
+    let municao = "";
+    if (a.grupo === "fogo") {
+      municao = `${a.carregados}/${a.capacidadeDisparos} · ${totalMunicao(itens, a.municaoTipo || "balas")} ${loc(`ICARUS.Municao.Tipos.${a.municaoTipo || "balas"}`)}`;
+    } else if (a.municaoTipo) {
+      municao = `${totalMunicao(itens, a.municaoTipo)} ${loc(`ICARUS.Municao.Tipos.${a.municaoTipo}`)}`;
+    }
+    const semArma = a.quantidade < 1;
+    return {
+      id: item.id, name: item.name, img: item.img,
+      quantidade: a.quantidade,
+      qtdTexto: a.quantidade === 1 ? "" : ` ×${a.quantidade}`,
+      ataque: comSinal(atq.bonus),
+      ataqueDica: `${loc(`ICARUS.Pericias.${atq.pericia}`)}${atq.agil ? ` · ${loc("ICARUS.Armas.Card.Agil")}` : ""}`,
+      dano: calcularDano(s, a, principal).texto,
+      critico: a.textoCritico,
+      alcance: [a.alcance, a.alcanceArremesso].filter(Boolean).map(k => loc(`ICARUS.Armas.Alcances.${k}`)).join(" / "),
+      municao,
+      empunhada: a.empunhada,
+      semProficiencia: !a.proficiente,
+      esmaecida: semArma,
+      // Botões: Atacar (corpo a corpo) só com a arma na mão; Arremessar / Disparar conforme o modo
+      modos: a.modos.map(m => ({ modo: m, rotulo: loc(`ICARUS.Armas.Botoes.${m}`), desligado: semArma })),
+      ehFogo: a.grupo === "fogo",
+      espacos: espacosDoItem(item),
+      preco: { texto: formatarPreco(a.preco), ouro: precoEmOuro(a.preco) }
+    };
+  }
+
   /** Nome legível de uma chave de efeito ("Fortitude · Outros"). */
   _nomeDaChave(chave) {
     const loc = k => game.i18n.localize(k);
@@ -267,6 +333,20 @@ export class FichaPersonagem extends ActorSheet {
     if (this.actor.isOwner) {
       html.on("click", "[data-action='rolar-pericia']", ev => rolarPericia(this.actor, ev.currentTarget.dataset.pericia));
       html.on("click", "[data-action='rolar-atributo']", ev => rolarAtributo(this.actor, ev.currentTarget.dataset.atributo));
+      // Armas: atacar, dano e recarregar também valem com a ficha travada
+      const armaDe = el => this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
+      html.on("click", "[data-action='arma-atacar']", ev => {
+        const item = armaDe(ev.currentTarget);
+        if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo);
+      });
+      html.on("click", "[data-action='arma-dano']", ev => {
+        const item = armaDe(ev.currentTarget);
+        if (item) rolarDano(this.actor, item, item.system.modos[0]);
+      });
+      html.on("click", "[data-action='arma-recarregar']", ev => {
+        const item = armaDe(ev.currentTarget);
+        if (item) recarregar(this.actor, item);
+      });
     }
     // Clicar no card do poder abre a ficha do item (fora dos botões)
     html.on("click", "[data-abrir-item]", ev => {
@@ -275,6 +355,12 @@ export class FichaPersonagem extends ActorSheet {
     });
     if (!this.isEditable) return;
     html.on("click", "[data-action]", this._onAcao.bind(this));
+    // Campos de item editados direto na ficha (ex.: quantidade de munição)
+    html.on("change", "[data-item-campo]", ev => {
+      const el = ev.currentTarget;
+      const item = this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
+      if (item) item.update({ [el.dataset.itemCampo]: Math.max(0, Math.trunc(numero(el.value))) });
+    });
     html.on("change", ".sel-raca", async ev => {
       const mudou = await trocarRaca(this.actor, ev.currentTarget.value);
       if (!mudou) this.render(false);  // cancelou: volta a combobox para a raça atual
@@ -315,6 +401,23 @@ export class FichaPersonagem extends ActorSheet {
         };
         const [item] = await actor.createEmbeddedDocuments("Item", [dados]);
         return item?.sheet.render(true);
+      }
+      case "item-novo":
+        return novoItem(actor);
+      case "item-duplicar": {
+        const item = itemDe();
+        if (!item) return;
+        const dados = item.toObject();
+        delete dados._id;
+        return actor.createEmbeddedDocuments("Item", [dados]);
+      }
+      case "arma-empunhar": {
+        const item = itemDe();
+        return item?.update({ "system.empunhada": !item.system.empunhada });
+      }
+      case "municao-delta": {
+        const item = itemDe();
+        return item?.update({ "system.quantidade": Math.max(0, item.system.quantidade + Number(el.dataset.delta)) });
       }
       case "item-editar":
         return itemDe()?.sheet.render(true);
@@ -360,6 +463,26 @@ export class FichaPersonagem extends ActorSheet {
       rejectClose: false
     });
     if (ok) return doc.delete();
+  }
+
+  /**
+   * Item solto na ficha. Vindo de um compêndio e com preço: pergunta se entra grátis ou comprado.
+   * Munição do mesmo tipo soma na quantidade existente. Reordenar dentro da ficha segue o padrão.
+   */
+  async _onDropItem(event, data) {
+    if (!this.actor.isOwner) return false;
+    const item = await Item.implementation.fromDropData(data);
+    if (!item) return false;
+    if (item.parent?.uuid === this.actor.uuid) return super._onDropItem(event, data);
+    const dados = item.toObject();
+    delete dados._id;
+    let comprar = false;
+    if (item.pack && precoDoItem(dados) > 0) {
+      const escolha = await perguntarCompra(this.actor, dados);
+      if (!escolha) return false;
+      comprar = escolha === "comprar";
+    }
+    return adicionarItem(this.actor, dados, { comprar });
   }
 
   /** PV e PM digitados ficam entre 0 e o máximo. */
