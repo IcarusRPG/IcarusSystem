@@ -205,3 +205,23 @@ export function avisoEmpunhadura(armasEmpunhadas) {
   if (armasEmpunhadas.length > 1 && armasEmpunhadas.some(a => a.empunhadura === "duas-maos")) return "duasMaosComOutra";
   return "";
 }
+
+/* ------------------------------ Botões do card de ataque ------------------------------ */
+
+/**
+ * Cada botão do card de ataque só pode ser usado uma vez. Esta tabela diz qual marca (flag da
+ * mensagem) cada botão grava e consulta. "dano" e "critico" dividem a mesma marca: um ataque
+ * tem dano normal OU crítico. A outra extremidade da arma Dupla é uma ação à parte.
+ */
+export const MARCA_DO_BOTAO = {
+  dano: "danoRolado",
+  critico: "danoRolado",
+  extremidade: "extremidadeRolada",
+  recolher: "recolhida"
+};
+
+/** O botão já foi usado neste card? (flags = flags["icarus-rpg"] da mensagem) */
+export function botaoUsado(flags, acao) {
+  const marca = MARCA_DO_BOTAO[acao];
+  return !!(marca && flags?.[marca]);
+}

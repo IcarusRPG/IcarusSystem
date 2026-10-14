@@ -184,3 +184,14 @@ test("Proficiência: automática só nas armas simples", () => {
   const katana = { ...arma("katana").system, proficiencia: "sim" };
   assert.equal(calcularAtaque(personagem(), katana, "corpo-a-corpo").proficiente, true);
 });
+
+test("Botões do card de ataque: dano e crítico valem uma vez juntos; outra extremidade e recolher são à parte", async () => {
+  const { botaoUsado } = await import("../module/combate.mjs");
+  assert.equal(botaoUsado({}, "dano"), false);
+  assert.equal(botaoUsado({ danoRolado: true }, "dano"), true);
+  assert.equal(botaoUsado({ danoRolado: true }, "critico"), true);
+  assert.equal(botaoUsado({ danoRolado: true }, "extremidade"), false);
+  assert.equal(botaoUsado({ extremidadeRolada: true }, "extremidade"), true);
+  assert.equal(botaoUsado({ recolhida: true }, "recolher"), true);
+  assert.equal(botaoUsado(undefined, "dano"), false);
+});
