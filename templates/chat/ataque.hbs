@@ -1,0 +1,32 @@
+<div class="icarus-rolagem icarus-ataque{{#if ameaca}} critico{{/if}}{{#if falha}} falha{{/if}}">
+  <div class="arma-cab">
+    <img src="{{arma.img}}" alt="" width="36" height="36">
+    <div>
+      <h3 class="rolagem-nome">{{arma.nome}}</h3>
+      <div class="rolagem-tipo">{{modo}} · {{pericia}}{{#if agil}} · {{localize "ICARUS.Armas.Card.Agil"}}{{/if}} · {{alcance}}</div>
+    </div>
+  </div>
+  <div class="rolagem-dados">
+    <span class="d20"><span class="moldura hex"></span><span class="miolo hex">{{d20}}</span></span>
+    <span class="rolagem-formula">d20 {{bonus}}</span>
+    <span class="rolagem-total">{{total}}</span>
+  </div>
+  {{#if ameaca}}<div class="rolagem-selo">{{localize "ICARUS.Armas.Card.Ameaca"}} ({{faixa}})</div>{{/if}}
+  {{#if falha}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Falha"}}</div>{{/if}}
+  {{#if semProficiencia}}<div class="linha-aviso">{{localize "ICARUS.Armas.SemProficiencia"}}</div>{{/if}}
+  {{#if alvo}}
+  <div class="linha-alvo {{#if alvo.acertou}}acertou{{else}}errou{{/if}}">
+    {{localize "ICARUS.Armas.Card.Alvo"}}: {{alvo.nome}} (Defesa {{alvo.defesa}}) —
+    <b>{{#if alvo.acertou}}{{localize "ICARUS.Armas.Card.Acertou"}}{{else}}{{localize "ICARUS.Armas.Card.Errou"}}{{/if}}</b>
+  </div>
+  {{/if}}
+  {{#if municao}}<div class="linha-municao">{{municao}}</div>{{/if}}
+  {{#if arremessou}}<div class="linha-municao">{{localize "ICARUS.Armas.Card.Arremessada"}} ({{restantesArma}})</div>{{/if}}
+  <div class="rolagem-botoes">
+    {{#if duasMaos}}<label class="chk-duas"><input type="checkbox" data-icarus-duas-maos> {{localize "ICARUS.Armas.Card.DuasMaos"}}</label>{{/if}}
+    <button type="button" data-icarus-acao="dano">{{localize "ICARUS.Armas.Card.RolarDano"}}</button>
+    {{#if podeCritico}}<button type="button" class="botao-critico" data-icarus-acao="critico">{{localize "ICARUS.Armas.Card.DanoCritico"}} (×{{mult}})</button>{{/if}}
+    {{#if dupla}}<button type="button" data-icarus-acao="extremidade">{{localize "ICARUS.Armas.Card.DanoOutraExtremidade"}}</button>{{/if}}
+    {{#if arremessou}}<button type="button" data-icarus-acao="recolher">{{localize "ICARUS.Armas.Card.Recolher"}}</button>{{/if}}
+  </div>
+</div>

@@ -80,9 +80,39 @@ export const TAMANHOS = {
 };
 export const METROS_POR_QUADRADO = 1.5;
 
-/** Tipos de item "equipamento". Só armadura e escudo podem ser equipados e somam na Defesa. */
-export const TIPOS_EQUIPAMENTO = ["arma", "armadura", "escudo", "consumivel", "profissao", "outro"];
+/**
+ * Tipos de item "equipamento" (armaduras, escudos, túnicas, consumíveis e outros).
+ * Armas são um tipo de item próprio ("arma"). Só armadura e escudo podem ser equipados e somam na Defesa.
+ */
+export const TIPOS_EQUIPAMENTO = ["armadura", "escudo", "consumivel", "profissao", "outro"];
 export const TIPOS_EQUIPAVEIS = ["armadura", "escudo"];
+
+/* ------------------------------ Armas e munições ------------------------------ */
+
+export const CATEGORIAS_ARMA = ["simples", "marcial", "exotica", "fogo"];
+export const GRUPOS_ARMA = ["corpo-a-corpo", "distancia", "fogo"];
+export const EMPUNHADURAS = ["leve", "uma-mao", "duas-maos"];
+export const ALCANCES = ["corpo-a-corpo", "curto", "medio", "longo"];
+export const TIPOS_DANO = ["corte", "perfuracao", "impacto"];
+export const PROPRIEDADES_ARMA = ["leve", "agil", "duas-maos", "arremesso", "dupla", "oculta", "cano-duplo"];
+export const TIPOS_MUNICAO = ["flechas", "virotes", "pedras", "balas"];
+
+/** Alcance em metros, só para exibir (referência T20; não se mede distância nesta fase). */
+export const ALCANCE_METROS = { "corpo-a-corpo": 1.5, curto: 9, medio: 30, longo: 90 };
+
+/** Munição vem em pacotes de 20 unidades; cada pacote ocupa 1 espaço. */
+export const TAMANHO_PACOTE = 20;
+
+/** Pastas dos ícones de itens (com ç e õ: passar por encodeURI). */
+export const PASTA_ICONES_ARMAS = `systems/${SISTEMA_ID}/img/Icones/itens/equipamentos/armas`;
+export const PASTA_ICONES_MUNICOES = `systems/${SISTEMA_ID}/img/Icones/itens/equipamentos/munições`;
+
+/**
+ * Carga: capacidade = CARGA_BASE + CARGA_POR_FOR × FOR (total), em espaços.
+ * Valor de referência do Tormenta 20, a conferir no livro do Icarus. Sobrecarga ainda não tem efeito.
+ */
+export const CARGA_BASE = 10;
+export const CARGA_POR_FOR = 2;
 
 /** De onde vem um poder; a aba Poderes agrupa nesta ordem. */
 export const FONTES_PODER = ["raca", "classe", "origem", "profissao", "geral"];

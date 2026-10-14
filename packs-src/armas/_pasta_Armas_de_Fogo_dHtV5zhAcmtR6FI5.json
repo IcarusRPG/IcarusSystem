@@ -1,0 +1,15 @@
+{
+  "_id": "dHtV5zhAcmtR6FI5",
+  "name": "Armas de Fogo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "fogo"
+    }
+  },
+  "_key": "!folders!dHtV5zhAcmtR6FI5"
+}

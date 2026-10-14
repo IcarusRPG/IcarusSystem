@@ -501,6 +501,64 @@ body.game {
 .ficha-icarus .linha-leitura { display: flex; align-items: baseline; gap: 10px; }
 .ficha-icarus .linha-leitura b { font-family: var(--ic-f-titulo); color: var(--ic-ciano-titulo); }
 
+/* --- Armas, munições, moedas e carga (prompt do compêndio de armas) --- */
+.ficha-icarus .inv-listas { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.ficha-icarus .esmaecida { opacity: .45; }
+.ficha-icarus .selo-semprof { color: var(--ic-ouro-claro); text-transform: uppercase; font-size: 10px; letter-spacing: .1em; border: 1px solid var(--ic-ouro-escuro); border-radius: 3px; padding: 0 4px; }
+
+/* Linha da arma: dados em cima, botões embaixo */
+.ficha-icarus .arma-cab-colunas,
+.ficha-icarus .arma-linha {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1.6fr) 48px minmax(0, 1.1fr) 52px minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 10px;
+  align-items: center;
+}
+.ficha-icarus .arma-cab-colunas { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-ciano-titulo); padding: 0 6px 4px; border-bottom: 1px solid var(--ic-borda); }
+.ficha-icarus .arma-linha { row-gap: 6px; padding: 9px 6px; border-bottom: 1px solid var(--ic-linha); }
+.ficha-icarus .arma-linha .col-ataque { font-family: var(--ic-f-titulo); font-weight: 700; color: var(--ic-branco); cursor: help; }
+.ficha-icarus .arma-linha .col-dano,
+.ficha-icarus .arma-linha .col-alcance,
+.ficha-icarus .arma-linha .col-municao { font-size: 14px; color: var(--ic-apagado); min-width: 0; overflow-wrap: anywhere; }
+.ficha-icarus .arma-linha .col-critico { font-size: 14px; color: var(--ic-ouro-claro); }
+.ficha-icarus .arma-acoes { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.ficha-icarus .arma-acoes .acoes { margin-left: auto; }
+.ficha-icarus .empunhar.ativo { color: var(--ic-ciano); }
+
+.ficha-icarus .qtd-controle { display: flex; align-items: center; gap: 4px; }
+.ficha-icarus .qtd-controle input { width: 64px; padding: 3px 4px; text-align: center; }
+.ficha-icarus .btn.quad.peq { width: 28px; height: 28px; }
+
+.ficha-icarus .caixa-moedas,
+.ficha-icarus .caixa-carga { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .moedas-campos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ficha-icarus .moedas-campos input { padding: 4px 6px; text-align: center; }
+.ficha-icarus .moedas-total { color: var(--ic-apagado); }
+.ficha-icarus .moedas-total b { color: var(--ic-ouro-claro); font-family: var(--ic-f-titulo); }
+.ficha-icarus .caixa-carga .grande { font-family: var(--ic-f-titulo); font-size: 28px; font-weight: 700; color: var(--ic-texto); }
+.ficha-icarus .caixa-carga.excedida { border-color: var(--ic-pv); }
+.ficha-icarus .caixa-carga.excedida .grande,
+.ficha-icarus .caixa-carga.excedida .dica { color: var(--ic-pv); }
+
+/* Bloco Ataques (aba Características) */
+.ficha-icarus .ataque-linha { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid var(--ic-linha); }
+.ficha-icarus .ataque-linha img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+.ficha-icarus .ataque-info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.ficha-icarus .ataque-info b { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ficha-icarus .ataque-info small { font-size: 12px; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-botoes { display: flex; gap: 4px; flex: none; }
+.ficha-icarus .aviso-ataques { color: var(--ic-ouro-claro); }
+
+/* Ficha de arma e munição */
+.ficha-icarus .item-cab-grande img { width: 96px; height: 96px; object-fit: contain; background: var(--ic-campo); }
+.ficha-icarus .item-cab-texto { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .resumo-arma { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px; color: var(--ic-apagado); }
+.ficha-icarus .resumo-arma b { color: var(--ic-ouro-claro); font-family: var(--ic-f-titulo); }
+.ficha-icarus .grupo-campos { border: 1px solid var(--ic-borda); border-radius: 6px; padding: 10px 12px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.ficha-icarus .grupo-campos legend { padding: 0 6px; }
+.ficha-icarus .grupo-campos .dica { margin: 0; }
+.ficha-icarus .chips-linha { display: flex; flex-direction: column; gap: 6px; }
+
 /* --- Janela estreita (seção 5.5): colunas empilham --- */
 @container (max-width: 1180px) {
   .ficha-icarus .carac { grid-template-columns: 250px minmax(0, 1fr); }
@@ -559,3 +617,30 @@ body.game {
 .icarus-rolagem.critico .rolagem-total, .icarus-rolagem.critico .rolagem-selo { color: var(--ic-ouro-claro); }
 .icarus-rolagem.falha .rolagem-total, .icarus-rolagem.falha .rolagem-selo { color: var(--ic-pv); }
 .icarus-rolagem .rolagem-selo { font-family: var(--ic-f-titulo); font-size: 12px; letter-spacing: .2em; font-weight: 700; }
+
+/* Cards de ataque, dano e recarga */
+.icarus-rolagem .arma-cab { display: flex; align-items: center; gap: 10px; }
+.icarus-rolagem .arma-cab img { width: 36px; height: 36px; object-fit: contain; border: 0; flex: none; }
+.icarus-rolagem .linha-alvo,
+.icarus-rolagem .linha-municao,
+.icarus-rolagem .linha-aviso { font-size: 13px; color: var(--ic-apagado); }
+.icarus-rolagem .linha-aviso { color: var(--ic-ouro-claro); }
+.icarus-rolagem .linha-alvo.acertou b { color: var(--ic-ciano); }
+.icarus-rolagem .linha-alvo.errou b { color: var(--ic-pv); }
+.icarus-rolagem .rolagem-botoes { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 2px; }
+.icarus-rolagem .rolagem-botoes button {
+  flex: 1 1 auto; width: auto; margin: 0; line-height: 26px; font-size: 13px;
+  background: var(--ic-btn); color: var(--ic-texto); border: 1px solid var(--ic-btn-borda); border-radius: 4px;
+}
+.icarus-rolagem .rolagem-botoes button:hover { border-color: var(--ic-ciano); box-shadow: none; }
+.icarus-rolagem .rolagem-botoes button:disabled { opacity: .5; }
+.icarus-rolagem .rolagem-botoes .botao-critico { border-color: var(--ic-ouro); color: var(--ic-ouro-claro); }
+.icarus-rolagem .chk-duas { display: flex; align-items: center; gap: 4px; font-size: 13px; color: var(--ic-apagado); width: 100%; }
+
+/* Inventário em janela estreita: dados da arma em duas colunas */
+@container (max-width: 900px) {
+  .ficha-icarus .arma-cab-colunas { display: none; }
+  .ficha-icarus .arma-linha { grid-template-columns: 32px minmax(0, 1fr) minmax(0, 1fr); }
+  .ficha-icarus .arma-linha .item-nome { grid-column: 2 / -1; }
+  .ficha-icarus .moedas-campos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

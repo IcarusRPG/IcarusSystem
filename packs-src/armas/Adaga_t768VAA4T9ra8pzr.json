@@ -1,0 +1,46 @@
+{
+  "_id": "t768VAA4T9ra8pzr",
+  "name": "Adaga",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Adaga.png",
+  "folder": "McPweo2QPZsRiV7e",
+  "sort": 100,
+  "system": {
+    "categoria": "simples",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "leve",
+    "dano": "1d4",
+    "danoExtra": "",
+    "criticoMargem": 19,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "curto",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [
+      "leve",
+      "agil",
+      "arremesso"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 500,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "adaga"
+    }
+  },
+  "_key": "!items!t768VAA4T9ra8pzr"
+}

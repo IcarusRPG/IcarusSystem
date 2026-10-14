@@ -1,0 +1,21 @@
+{
+  "_id": "PGG34JRTUG95p8i0",
+  "name": "Virotes",
+  "type": "municao",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/muni%C3%A7%C3%B5es/Virotes.png",
+  "folder": null,
+  "sort": 200,
+  "system": {
+    "tipo": "virotes",
+    "quantidade": 20,
+    "precoPacote": 200,
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "virotes"
+    }
+  },
+  "_key": "!items!PGG34JRTUG95p8i0"
+}

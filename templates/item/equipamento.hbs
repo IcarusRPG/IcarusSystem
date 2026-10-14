@@ -8,6 +8,10 @@
       <select class="campo" name="system.tipo">{{selectOptions opcoesTipo selected=source.tipo localize=true}}</select></label>
     <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.Quantidade"}}</span>
       <input class="campo" type="number" name="system.quantidade" value="{{source.quantidade}}" min="0" step="1"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Inventario.PrecoReais"}}</span>
+      <input class="campo" type="number" name="precoReais" value="{{preco.reais}}" min="0" step="0.01" title="{{preco.ouro}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Inventario.Espacos"}}</span>
+      <input class="campo" type="number" name="system.espacos" value="{{source.espacos}}" min="0" step="1"></label>
     {{#if equipavel}}
     <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.BonusDefesa"}}</span>
       <input class="campo" type="number" name="system.bonusDefesa" value="{{source.bonusDefesa}}" step="1"></label>

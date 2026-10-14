@@ -5,7 +5,9 @@
     },
     "Item": {
       "poder": "Poder",
-      "equipamento": "Equipamento"
+      "equipamento": "Equipamento",
+      "arma": "Arma",
+      "municao": "Munição"
     }
   },
   "ICARUS": {
@@ -156,8 +158,30 @@
       "Equipar": "Equipar",
       "Equipado": "Equipado",
       "Vazio": "Nenhum item. Use o botão abaixo para criar o primeiro.",
-      "Adicionar": "+ Adicionar item",
-      "Riqueza": "Moedas, carga e riqueza: [a definir no sistema]"
+      "Adicionar": "+ Item",
+      "Armas": "Armas",
+      "Municoes": "Munições",
+      "Equipamento": "Equipamento",
+      "SemArmas": "Nenhuma arma. Arraste do compêndio Icarus — Armas ou use + Item.",
+      "SemMunicoes": "Nenhuma munição.",
+      "Espacos": "Espaços",
+      "EspacosCurto": "esp.",
+      "Preco": "Preço",
+      "PrecoReais": "Preço (R$)",
+      "SemDinheiro": "Sem dinheiro para comprar {item} ({preco}).",
+      "Compra": {
+        "Titulo": "Adicionar item",
+        "Pergunta": "Adicionar {item} ({preco}) à ficha?",
+        "Saldo": "Dinheiro na ficha: {saldo}",
+        "SemDinheiro": "A ficha não tem dinheiro suficiente para comprar.",
+        "Comprar": "Comprar ({preco})",
+        "Gratis": "Adicionar grátis"
+      },
+      "NovoItem": {
+        "Titulo": "Novo item",
+        "Pergunta": "Que tipo de item?",
+        "Outro": "Outro"
+      }
     },
     "Equipamento": {
       "Novo": "Novo item",
@@ -165,7 +189,6 @@
       "Quantidade": "Quantidade",
       "BonusDefesa": "Bônus de Defesa",
       "Tipos": {
-        "arma": "Arma",
         "armadura": "Armadura",
         "escudo": "Escudo",
         "consumivel": "Consumível",
@@ -216,7 +239,8 @@
       "Editar": "Editar",
       "Excluir": "Excluir",
       "ExcluirTitulo": "Confirmar exclusão",
-      "ExcluirConfirmar": "Excluir {nome}? Esta ação não pode ser desfeita."
+      "ExcluirConfirmar": "Excluir {nome}? Esta ação não pode ser desfeita.",
+      "Duplicar": "Duplicar"
     },
     "Item": {
       "Nome": "Nome do item",
@@ -264,7 +288,9 @@
       "Passou": "Kaelen Vorhal: todas as fórmulas da seção 6 conferem.",
       "Falhou": "Kaelen Vorhal: {n} diferença(s). Veja o console (F12).",
       "RacasPassou": "Raças: {total} verificações conferem.",
-      "RacasFalhou": "Raças: {n} de {total} verificações falharam. Veja a tabela no console (F12)."
+      "RacasFalhou": "Raças: {n} de {total} verificações falharam. Veja a tabela no console (F12).",
+      "ArmasPassou": "Armas: {total} verificações conferem.",
+      "ArmasFalhou": "Armas: {n} de {total} verificações falharam. Veja a tabela no console (F12)."
     },
     "Racas": {
       "Nenhuma": "— Nenhuma —",
@@ -291,6 +317,172 @@
         "Depois": "Escolher depois",
         "Confirmar": "Confirmar"
       }
+    },
+    "Moedas": {
+      "Titulo": "Moedas",
+      "OuroReal": "Ouro Real",
+      "Real": "Reais",
+      "Centavo": "Centavos",
+      "Total": "Total"
+    },
+    "Carga": {
+      "Titulo": "Carga",
+      "Dica": "Espaços usados / capacidade (10 + 2 × FOR)",
+      "Excedida": "Acima da capacidade. O efeito da sobrecarga ainda não está definido."
+    },
+    "Armas": {
+      "Nova": "Nova arma",
+      "Ataques": "Ataques",
+      "SemEmpunhadas": "Nenhuma arma empunhada. Marque Empunhar no Inventário.",
+      "AvisoEmpunhadura": {
+        "maisDeDuas": "Mais de duas armas empunhadas.",
+        "duasMaosComOutra": "Arma de duas mãos empunhada junto com outra."
+      },
+      "SemProficiencia": "sem proficiência",
+      "Empunhada": "Empunhada",
+      "Empunhar": "Empunhar",
+      "Colunas": {
+        "Ataque": "Ataque",
+        "Dano": "Dano",
+        "Critico": "Crítico",
+        "Alcance": "Alcance",
+        "Municao": "Munição"
+      },
+      "Botoes": {
+        "corpo-a-corpo": "Atacar",
+        "arremesso": "Arremessar",
+        "distancia": "Disparar",
+        "fogo": "Disparar",
+        "dano": "Dano",
+        "recarregar": "Recarregar"
+      },
+      "Modos": {
+        "corpo-a-corpo": "Corpo a corpo",
+        "arremesso": "Arremesso",
+        "distancia": "Distância",
+        "fogo": "Arma de fogo"
+      },
+      "Alcances": {
+        "corpo-a-corpo": "Corpo a corpo",
+        "curto": "Curto",
+        "medio": "Médio",
+        "longo": "Longo"
+      },
+      "TiposDano": {
+        "corte": "Corte",
+        "perfuracao": "Perfuração",
+        "impacto": "Impacto"
+      },
+      "TipoDano": "Tipo de dano",
+      "Categorias": {
+        "simples": "Arma simples",
+        "marcial": "Arma marcial",
+        "exotica": "Arma exótica",
+        "fogo": "Arma de fogo"
+      },
+      "Grupos": {
+        "corpo-a-corpo": "Corpo a corpo",
+        "distancia": "Distância",
+        "fogo": "Fogo"
+      },
+      "Empunhaduras": {
+        "leve": "Leve",
+        "uma-mao": "Uma mão",
+        "duas-maos": "Duas mãos"
+      },
+      "Propriedades": {
+        "leve": "Leve",
+        "agil": "Ágil",
+        "duas-maos": "Duas mãos",
+        "arremesso": "Arremesso",
+        "dupla": "Dupla",
+        "oculta": "Oculta",
+        "cano-duplo": "Cano duplo"
+      },
+      "Proficiencia": {
+        "auto": "Automática (só armas simples)",
+        "sim": "Sim",
+        "nao": "Não"
+      },
+      "ProficienciaRotulo": "Proficiência",
+      "PropriedadesRotulo": "Propriedades",
+      "Secoes": {
+        "Identidade": "Identidade",
+        "Combate": "Combate",
+        "Municao": "Munição",
+        "Compra": "Compra e carga"
+      },
+      "Categoria": "Categoria",
+      "Grupo": "Grupo",
+      "Empunhadura": "Empunhadura",
+      "Dano": "Dano",
+      "DanoDuasMaos": "Dano com duas mãos",
+      "DanoOutraExtremidade": "Dano da outra extremidade",
+      "MargemCritico": "Margem de crítico",
+      "MultCritico": "Multiplicador de crítico",
+      "Critico": "Crítico",
+      "Alcance": "Alcance",
+      "AlcanceArremesso": "Alcance de arremesso",
+      "SemArremesso": "Não arremessa",
+      "BonusAtaque": "Bônus de ataque",
+      "BonusDano": "Bônus de dano",
+      "MunicaoTipo": "Munição usada",
+      "SemMunicao": "Nenhuma",
+      "MunicaoUsada": "Pacote a gastar",
+      "MunicaoAuto": "Automático (primeiro com unidades)",
+      "CapacidadeDisparos": "Capacidade de disparos",
+      "Carregados": "Disparos carregados",
+      "Aviso": {
+        "SemArma": "{arma}: você não está com a arma (quantidade 0).",
+        "Descarregada": "{arma}: arma descarregada. Recarregue.",
+        "SemMunicao": "{arma}: sem {municao}.",
+        "SemBalas": "{arma}: sem Balas para recarregar.",
+        "Recolhida": "{arma} recolhida.",
+        "ItemSumiu": "A arma não está mais na ficha."
+      },
+      "Card": {
+        "Agil": "Ágil (DES)",
+        "Ameaca": "AMEAÇA DE CRÍTICO",
+        "Alvo": "Alvo",
+        "Acertou": "ACERTOU",
+        "Errou": "ERROU",
+        "Restantes": "{municao}: {n} restantes",
+        "Carregados": "Carregados: {n}/{max}",
+        "Arremessada": "Arma arremessada: não volta para a mão",
+        "RolarDano": "Rolar dano",
+        "DanoCritico": "Dano crítico",
+        "DanoOutraExtremidade": "Dano da outra extremidade",
+        "OutraExtremidade": "outra extremidade",
+        "DuasMaos": "Duas mãos",
+        "Recolher": "Recolher arma",
+        "Dano": "Dano",
+        "Recarregou": "Recarregou (ação de movimento): {n}/{max} · {balas} Balas"
+      }
+    },
+    "Municao": {
+      "Tipos": {
+        "flechas": "Flechas",
+        "virotes": "Virotes",
+        "pedras": "Pedras",
+        "balas": "Balas"
+      },
+      "Nova": "Nova munição",
+      "Pacotes": "{n} pacote(s) · {espacos} espaço(s)",
+      "Pacote": "pacote",
+      "Unidades": "Unidades",
+      "PrecoPacote": "Preço do pacote de 20 (R$)",
+      "PrecoPacoteDica": "Pacote de 20",
+      "Menos": "Gastar 1",
+      "Mais": "Somar 1"
+    },
+    "Config": {
+      "ConsumirArremesso": {
+        "Nome": "Arma arremessada sai do inventário",
+        "Dica": "Ao arremessar, a quantidade da arma diminui em 1 e o card ganha o botão Recolher arma."
+      }
+    },
+    "Compendios": {
+      "SoMestre": "Só o Mestre pode popular os compêndios."
     }
   }
 }

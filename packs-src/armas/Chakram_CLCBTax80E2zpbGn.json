@@ -1,0 +1,45 @@
+{
+  "_id": "CLCBTax80E2zpbGn",
+  "name": "Chakram",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Chakram.png",
+  "folder": "ztXAWCms42Wo6ujn",
+  "sort": 4200,
+  "system": {
+    "categoria": "exotica",
+    "grupo": "distancia",
+    "empunhadura": "uma-mao",
+    "dano": "1d6",
+    "danoExtra": "",
+    "criticoMargem": 19,
+    "criticoMult": 2,
+    "alcance": "curto",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "corte"
+    ],
+    "propriedades": [
+      "arremesso",
+      "agil"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 3000,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chakram"
+    }
+  },
+  "_key": "!items!CLCBTax80E2zpbGn"
+}

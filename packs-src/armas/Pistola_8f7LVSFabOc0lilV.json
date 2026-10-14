@@ -1,0 +1,42 @@
+{
+  "_id": "8f7LVSFabOc0lilV",
+  "name": "Pistola",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Pistola.png",
+  "folder": "dHtV5zhAcmtR6FI5",
+  "sort": 4300,
+  "system": {
+    "categoria": "fogo",
+    "grupo": "fogo",
+    "empunhadura": "uma-mao",
+    "dano": "2d6",
+    "danoExtra": "",
+    "criticoMargem": 19,
+    "criticoMult": 3,
+    "alcance": "medio",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [],
+    "municaoTipo": "balas",
+    "capacidadeDisparos": 1,
+    "carregados": 1,
+    "preco": 25000,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistola"
+    }
+  },
+  "_key": "!items!8f7LVSFabOc0lilV"
+}

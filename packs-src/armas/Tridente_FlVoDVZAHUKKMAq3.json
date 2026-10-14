@@ -1,0 +1,44 @@
+{
+  "_id": "FlVoDVZAHUKKMAq3",
+  "name": "Tridente",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Tridente.png",
+  "folder": "75MXTa27qYqFLVyW",
+  "sort": 2200,
+  "system": {
+    "categoria": "marcial",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d8",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "curto",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [
+      "arremesso"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 1500,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tridente"
+    }
+  },
+  "_key": "!items!FlVoDVZAHUKKMAq3"
+}

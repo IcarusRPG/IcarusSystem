@@ -1,31 +1,99 @@
 <div class="inv">
-  <div class="painel lista">
-    <div class="lista-cab">
-      <h3 class="titulo-painel">{{localize "ICARUS.Inventario.Itens"}}</h3>
-      <span class="dica">{{localize "ICARUS.Inventario.ArrasteDica"}}</span>
-    </div>
-    {{#each equipamentos}}
-    <div class="item" data-item-id="{{id}}">
-      <img class="item-img" src="{{img}}" alt="" width="32" height="32">
-      <div class="item-nome"><b>{{name}}</b><small>{{tipo}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}}</small></div>
-      <div class="item-qtd">×{{quantidade}}</div>
-      {{#if equipavel}}
-      <button type="button" class="btn equipar{{#if equipado}} on{{/if}}" data-action="item-equipar" aria-pressed="{{#if equipado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
-        {{#if equipado}}{{localize "ICARUS.Inventario.Equipado"}}{{else}}{{localize "ICARUS.Inventario.Equipar"}}{{/if}}
-      </button>
-      {{else}}<span class="equipar-vazio"></span>{{/if}}
-      {{#if @root.editable}}
-      <span class="acoes">
-        <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
-        <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
-      </span>
+  <div class="inv-listas">
+    {{!-- Armas --}}
+    <section class="painel lista">
+      <div class="lista-cab">
+        <h3 class="titulo-painel">{{localize "ICARUS.Inventario.Armas"}}</h3>
+        <span class="dica">{{localize "ICARUS.Inventario.ArrasteDica"}}</span>
+      </div>
+      {{#if armas.length}}
+      <div class="arma-cab-colunas" aria-hidden="true">
+        <span></span><span></span><span>{{localize "ICARUS.Armas.Colunas.Ataque"}}</span><span>{{localize "ICARUS.Armas.Colunas.Dano"}}</span><span>{{localize "ICARUS.Armas.Colunas.Critico"}}</span><span>{{localize "ICARUS.Armas.Colunas.Alcance"}}</span><span>{{localize "ICARUS.Armas.Colunas.Municao"}}</span><span></span>
+      </div>
       {{/if}}
-    </div>
-    {{else}}
-    <div class="vazio">{{localize "ICARUS.Inventario.Vazio"}}</div>
-    {{/each}}
+      {{#each armas}}
+      <div class="arma-linha{{#if esmaecida}} esmaecida{{/if}}" data-item-id="{{id}}">
+        <img class="item-img" src="{{img}}" alt="" width="32" height="32">
+        <div class="item-nome">
+          <b>{{name}}{{qtdTexto}}</b>
+          <small>{{#if semProficiencia}}<span class="selo-semprof">{{localize "ICARUS.Armas.SemProficiencia"}}</span> · {{/if}}{{espacos}} {{localize "ICARUS.Inventario.EspacosCurto"}} · <span title="{{preco.ouro}}">{{preco.texto}}</span></small>
+        </div>
+        <span class="col-ataque" title="{{ataqueDica}}">{{ataque}}</span>
+        <span class="col-dano">{{dano}}</span>
+        <span class="col-critico">{{critico}}</span>
+        <span class="col-alcance">{{alcance}}</span>
+        <span class="col-municao">{{municao}}</span>
+        <div class="arma-acoes">
+          {{#each modos}}<button type="button" class="btn peq" data-action="arma-atacar" data-modo="{{modo}}"{{#if desligado}} disabled{{/if}}>{{rotulo}}</button>{{/each}}
+          <button type="button" class="btn peq" data-action="arma-dano">{{localize "ICARUS.Armas.Botoes.dano"}}</button>
+          {{#if ehFogo}}<button type="button" class="btn peq" data-action="arma-recarregar">{{localize "ICARUS.Armas.Botoes.recarregar"}}</button>{{/if}}
+          {{#if @root.editable}}
+          <button type="button" class="btn peq empunhar{{#if empunhada}} ativo{{/if}}" data-action="arma-empunhar" aria-pressed="{{#if empunhada}}true{{else}}false{{/if}}">{{#if empunhada}}{{localize "ICARUS.Armas.Empunhada"}}{{else}}{{localize "ICARUS.Armas.Empunhar"}}{{/if}}</button>
+          <span class="acoes">
+            <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+            <button type="button" class="btn icone" data-action="item-duplicar" aria-label="{{localize 'ICARUS.Acoes.Duplicar'}} {{name}}"><i class="fa-solid fa-copy" aria-hidden="true"></i></button>
+            <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+          </span>
+          {{/if}}
+        </div>
+      </div>
+      {{else}}
+      <div class="vazio">{{localize "ICARUS.Inventario.SemArmas"}}</div>
+      {{/each}}
+    </section>
+
+    {{!-- Munições --}}
+    <section class="painel lista">
+      <div class="lista-cab"><h3 class="titulo-painel">{{localize "ICARUS.Inventario.Municoes"}}</h3></div>
+      {{#each municoes}}
+      <div class="item" data-item-id="{{id}}">
+        <img class="item-img" src="{{img}}" alt="" width="32" height="32">
+        <div class="item-nome"><b>{{name}}</b><small>{{pacotes}} · <span title="{{preco.ouro}}">{{preco.texto}}</span> / {{localize "ICARUS.Municao.Pacote"}}</small></div>
+        {{#if @root.editable}}
+        <div class="qtd-controle">
+          <button type="button" class="btn quad peq" data-action="municao-delta" data-delta="-1" aria-label="{{localize 'ICARUS.Municao.Menos'}}">−</button>
+          <input class="campo" type="number" min="0" step="1" value="{{quantidade}}" data-item-campo="system.quantidade" aria-label="{{localize 'ICARUS.Municao.Unidades'}} {{name}}">
+          <button type="button" class="btn quad peq" data-action="municao-delta" data-delta="1" aria-label="{{localize 'ICARUS.Municao.Mais'}}">+</button>
+        </div>
+        <span class="acoes">
+          <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+          <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+        </span>
+        {{else}}<div class="item-qtd">{{quantidade}}</div>{{/if}}
+      </div>
+      {{else}}
+      <div class="vazio">{{localize "ICARUS.Inventario.SemMunicoes"}}</div>
+      {{/each}}
+    </section>
+
+    {{!-- Equipamento (armaduras, escudos, consumíveis e outros) --}}
+    <section class="painel lista">
+      <div class="lista-cab"><h3 class="titulo-painel">{{localize "ICARUS.Inventario.Equipamento"}}</h3></div>
+      {{#each equipamentos}}
+      <div class="item" data-item-id="{{id}}">
+        <img class="item-img" src="{{img}}" alt="" width="32" height="32">
+        <div class="item-nome"><b>{{name}}</b><small>{{tipo}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}} · {{espacos}} {{localize "ICARUS.Inventario.EspacosCurto"}} · <span title="{{preco.ouro}}">{{preco.texto}}</span></small></div>
+        <div class="item-qtd">×{{quantidade}}</div>
+        {{#if equipavel}}
+        <button type="button" class="btn equipar{{#if equipado}} on{{/if}}" data-action="item-equipar" aria-pressed="{{#if equipado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
+          {{#if equipado}}{{localize "ICARUS.Inventario.Equipado"}}{{else}}{{localize "ICARUS.Inventario.Equipar"}}{{/if}}
+        </button>
+        {{else}}<span class="equipar-vazio"></span>{{/if}}
+        {{#if @root.editable}}
+        <span class="acoes">
+          <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+          <button type="button" class="btn icone" data-action="item-duplicar" aria-label="{{localize 'ICARUS.Acoes.Duplicar'}} {{name}}"><i class="fa-solid fa-copy" aria-hidden="true"></i></button>
+          <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+        </span>
+        {{/if}}
+      </div>
+      {{else}}
+      <div class="vazio">{{localize "ICARUS.Inventario.Vazio"}}</div>
+      {{/each}}
+    </section>
+
     {{#if editable}}
-    <button type="button" class="btn tracejado add" data-action="item-criar" data-tipo="equipamento">{{localize "ICARUS.Inventario.Adicionar"}}</button>
+    <button type="button" class="btn tracejado add" data-action="item-novo">{{localize "ICARUS.Inventario.Adicionar"}}</button>
     {{/if}}
   </div>
 
@@ -35,6 +103,19 @@
       <span class="dica">{{defesa.formula}}</span>
       <span class="grande">{{defesa.total}}</span>
     </div>
-    <div class="reservado">{{localize "ICARUS.Inventario.Riqueza"}}</div>
+    <div class="painel caixa-moedas">
+      <h3 class="titulo-painel">{{localize "ICARUS.Moedas.Titulo"}}</h3>
+      <div class="moedas-campos">
+        <label class="f"><span class="rot">{{localize "ICARUS.Moedas.OuroReal"}}</span><input class="campo" type="number" name="system.moedas.ouroReal" value="{{moedas.ouroReal}}" min="0" step="1"></label>
+        <label class="f"><span class="rot">{{localize "ICARUS.Moedas.Real"}}</span><input class="campo" type="number" name="system.moedas.real" value="{{moedas.real}}" min="0" step="1"></label>
+        <label class="f"><span class="rot">{{localize "ICARUS.Moedas.Centavo"}}</span><input class="campo" type="number" name="system.moedas.centavo" value="{{moedas.centavo}}" min="0" step="1"></label>
+      </div>
+      <div class="moedas-total" title="{{moedas.ouro}}">{{localize "ICARUS.Moedas.Total"}}: <b>{{moedas.total}}</b></div>
+    </div>
+    <div class="painel caixa-carga{{#if carga.excedida}} excedida{{/if}}">
+      <h3 class="titulo-painel">{{localize "ICARUS.Carga.Titulo"}}</h3>
+      <span class="grande">{{carga.usado}} / {{carga.capacidade}}</span>
+      <span class="dica">{{#if carga.excedida}}{{localize "ICARUS.Carga.Excedida"}}{{else}}{{localize "ICARUS.Carga.Dica"}}{{/if}}</span>
+    </div>
   </div>
 </div>

@@ -1,0 +1,21 @@
+{
+  "_id": "sYwWMcTChMZo1rL1",
+  "name": "Flechas",
+  "type": "municao",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/muni%C3%A7%C3%B5es/Flechas.png",
+  "folder": null,
+  "sort": 100,
+  "system": {
+    "tipo": "flechas",
+    "quantidade": 20,
+    "precoPacote": 100,
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "flechas"
+    }
+  },
+  "_key": "!items!sYwWMcTChMZo1rL1"
+}

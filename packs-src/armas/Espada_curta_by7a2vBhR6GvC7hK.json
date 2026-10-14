@@ -1,0 +1,45 @@
+{
+  "_id": "by7a2vBhR6GvC7hK",
+  "name": "Espada curta",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Espada.png",
+  "folder": "McPweo2QPZsRiV7e",
+  "sort": 200,
+  "system": {
+    "categoria": "simples",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "leve",
+    "dano": "1d6",
+    "danoExtra": "",
+    "criticoMargem": 19,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "perfuracao"
+    ],
+    "propriedades": [
+      "leve",
+      "agil"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 1200,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "espada-curta"
+    }
+  },
+  "_key": "!items!by7a2vBhR6GvC7hK"
+}

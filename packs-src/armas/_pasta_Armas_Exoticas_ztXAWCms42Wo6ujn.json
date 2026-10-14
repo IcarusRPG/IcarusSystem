@@ -1,0 +1,15 @@
+{
+  "_id": "ztXAWCms42Wo6ujn",
+  "name": "Armas Exóticas",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "exotica"
+    }
+  },
+  "_key": "!folders!ztXAWCms42Wo6ujn"
+}

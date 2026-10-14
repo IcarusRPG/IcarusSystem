@@ -53,6 +53,10 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         atributo: new fields.StringField({ required: true, blank: false, initial: p.atributo, choices: ATRIBUTOS })
       })]))),
       proficiencias: new fields.SchemaField({ armas: texto(), armaduras: texto() }),
+      // Moedas (núcleo, seção 12): 1 Ouro Real = 1.000 Reais; 1 Real = 100 Centavos
+      moedas: new fields.SchemaField({
+        ouroReal: inteiro(0, { min: 0 }), real: inteiro(0, { min: 0 }), centavo: inteiro(0, { min: 0 })
+      }),
       imunidades: texto(),
       sentidos: texto(),
       notas: new fields.HTMLField({ required: true, blank: true, initial: "" }),

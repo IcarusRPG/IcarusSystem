@@ -1,0 +1,102 @@
+<form class="{{cssClass}} ficha-icarus ficha-item ficha-arma" autocomplete="off">
+  <header class="item-cab item-cab-grande">
+    <img src="{{item.img}}" alt="" data-edit="img" width="96" height="96" title="{{localize 'ICARUS.Retrato.Dica'}}">
+    <div class="item-cab-texto">
+      <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+      <div class="dica">{{categoriaRotulo}} · {{textoPropriedades}}</div>
+      <div class="resumo-arma">
+        <span><b>{{source.dano}}</b>{{#if source.danoExtra}} / {{source.danoExtra}}{{/if}}</span>
+        <span>{{localize "ICARUS.Armas.Critico"}} <b>{{critico.texto}}</b></span>
+        <span>{{textoAlcance}}</span>
+        <span title="{{preco.ouro}}">{{preco.texto}}</span>
+      </div>
+    </div>
+  </header>
+
+  <fieldset class="grupo-campos">
+    <legend class="rot">{{localize "ICARUS.Armas.Secoes.Identidade"}}</legend>
+    <div class="item-campos">
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.Categoria"}}</span>
+        <select class="campo" name="system.categoria">{{selectOptions opcoesCategoria selected=source.categoria localize=true}}</select></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.Grupo"}}</span>
+        <select class="campo" name="system.grupo">{{selectOptions opcoesGrupo selected=source.grupo localize=true}}</select></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.Empunhadura"}}</span>
+        <select class="campo" name="system.empunhadura">{{selectOptions opcoesEmpunhadura selected=source.empunhadura localize=true}}</select></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.ProficienciaRotulo"}}</span>
+        <select class="campo" name="system.proficiencia">{{selectOptions opcoesProficiencia selected=source.proficiencia localize=true}}</select></label>
+    </div>
+    <div class="chips-linha">
+      <span class="rot">{{localize "ICARUS.Armas.PropriedadesRotulo"}}</span>
+      <div class="chips">
+        {{#each chipsPropriedades}}<button type="button" class="btn peq{{#if ativo}} ativo{{/if}}" data-chip-lista="propriedades" data-valor="{{valor}}" aria-pressed="{{#if ativo}}true{{else}}false{{/if}}">{{rotulo}}</button>{{/each}}
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="grupo-campos">
+    <legend class="rot">{{localize "ICARUS.Armas.Secoes.Combate"}}</legend>
+    <div class="item-campos">
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.Dano"}}</span>
+        <input class="campo" type="text" name="system.dano" value="{{source.dano}}" placeholder="1d8"></label>
+      <label class="f"><span class="rot">{{rotuloDanoExtra}}</span>
+        <input class="campo" type="text" name="system.danoExtra" value="{{source.danoExtra}}" placeholder="—"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.MargemCritico"}}</span>
+        <input class="campo" type="number" name="system.criticoMargem" value="{{source.criticoMargem}}" min="2" max="20" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.MultCritico"}}</span>
+        <input class="campo" type="number" name="system.criticoMult" value="{{source.criticoMult}}" min="2" max="10" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.Alcance"}}</span>
+        <select class="campo" name="system.alcance">{{selectOptions opcoesAlcance selected=source.alcance localize=true}}</select></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.AlcanceArremesso"}}</span>
+        <select class="campo" name="system.alcanceArremesso">{{selectOptions opcoesArremesso selected=source.alcanceArremesso localize=true}}</select></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.BonusAtaque"}}</span>
+        <input class="campo" type="number" name="system.bonusAtaque" value="{{source.bonusAtaque}}" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.BonusDano"}}</span>
+        <input class="campo" type="number" name="system.bonusDano" value="{{source.bonusDano}}" step="1"></label>
+    </div>
+    <div class="chips-linha">
+      <span class="rot">{{localize "ICARUS.Armas.TipoDano"}}</span>
+      <div class="chips">
+        {{#each chipsTiposDano}}<button type="button" class="btn peq{{#if ativo}} ativo{{/if}}" data-chip-lista="tiposDano" data-valor="{{valor}}" aria-pressed="{{#if ativo}}true{{else}}false{{/if}}">{{rotulo}}</button>{{/each}}
+      </div>
+    </div>
+    <p class="dica">{{localize "ICARUS.Armas.Critico"}}: {{critico.texto}} ({{localize "ICARUS.Armas.Card.Ameaca"}} {{critico.faixa}}) · {{localize "ICARUS.Armas.Alcance"}}: {{textoAlcance}}</p>
+  </fieldset>
+
+  <fieldset class="grupo-campos">
+    <legend class="rot">{{localize "ICARUS.Armas.Secoes.Municao"}}</legend>
+    <div class="item-campos">
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.MunicaoTipo"}}</span>
+        <select class="campo" name="system.municaoTipo">{{selectOptions opcoesMunicao selected=source.municaoTipo localize=true}}</select></label>
+      {{#if temMunicaoUsada}}
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.MunicaoUsada"}}</span>
+        <select class="campo" name="system.municaoUsada">{{selectOptions opcoesMunicaoUsada selected=source.municaoUsada localize=true}}</select></label>
+      {{/if}}
+      {{#if ehFogo}}
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.CapacidadeDisparos"}}</span>
+        <input class="campo" type="number" name="system.capacidadeDisparos" value="{{source.capacidadeDisparos}}" min="1" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Armas.Carregados"}}</span>
+        <input class="campo" type="number" name="system.carregados" value="{{source.carregados}}" min="0" step="1"></label>
+      {{/if}}
+    </div>
+  </fieldset>
+
+  <fieldset class="grupo-campos">
+    <legend class="rot">{{localize "ICARUS.Armas.Secoes.Compra"}}</legend>
+    <div class="item-campos">
+      <label class="f"><span class="rot">{{localize "ICARUS.Inventario.PrecoReais"}}</span>
+        <input class="campo" type="number" name="precoReais" value="{{preco.reais}}" min="0" step="0.01" title="{{preco.ouro}}"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Inventario.Espacos"}}</span>
+        <input class="campo" type="number" name="system.espacos" value="{{source.espacos}}" min="0" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.Quantidade"}}</span>
+        <input class="campo" type="number" name="system.quantidade" value="{{source.quantidade}}" min="0" step="1"></label>
+      <label class="chk"><input type="checkbox" name="system.empunhada" {{checked source.empunhada}}> {{localize "ICARUS.Armas.Empunhada"}}</label>
+    </div>
+    <p class="dica">{{localize "ICARUS.Inventario.Preco"}}: <span title="{{preco.ouro}}">{{preco.texto}}</span></p>
+  </fieldset>
+
+  <div class="painel item-desc">
+    <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
+    {{#if textoPropriedades}}<p class="dica">{{textoPropriedades}}</p>{{/if}}
+    {{editor descricaoHTML target="system.descricao" button=true editable=editable engine="prosemirror"}}
+  </div>
+</form>

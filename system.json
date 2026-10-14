@@ -2,34 +2,114 @@
   "id": "icarus-rpg",
   "title": "Icarus RPG",
   "description": "Sistema do Icarus RPG, um RPG de fantasia medieval original com testes de d20 + modificador.",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
     "maximum": "12"
   },
   "authors": [
-    { "name": "IcarusRPG", "url": "https://github.com/IcarusRPG" }
+    {
+      "name": "IcarusRPG",
+      "url": "https://github.com/IcarusRPG"
+    }
   ],
-  "esmodules": ["icarus.mjs"],
-  "styles": ["styles/icarus.css"],
+  "esmodules": [
+    "icarus.mjs"
+  ],
+  "styles": [
+    "styles/icarus.css"
+  ],
   "languages": [
-    { "lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json" },
-    { "lang": "en", "name": "English", "path": "lang/pt-BR.json" }
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/pt-BR.json"
+    }
   ],
   "documentTypes": {
     "Actor": {
-      "personagem": { "htmlFields": ["notas", "diario"] }
+      "personagem": {
+        "htmlFields": [
+          "notas",
+          "diario"
+        ]
+      }
     },
     "Item": {
-      "poder": { "htmlFields": ["descricao"] },
-      "equipamento": { "htmlFields": ["descricao"] }
+      "poder": {
+        "htmlFields": [
+          "descricao"
+        ]
+      },
+      "equipamento": {
+        "htmlFields": [
+          "descricao"
+        ]
+      },
+      "arma": {
+        "htmlFields": [
+          "descricao"
+        ]
+      },
+      "municao": {
+        "htmlFields": [
+          "descricao"
+        ]
+      }
     }
   },
-  "grid": { "distance": 1.5, "units": "m" },
+  "packs": [
+    {
+      "name": "armas",
+      "label": "Icarus — Armas",
+      "path": "packs/armas",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "municoes",
+      "label": "Icarus — Munições",
+      "path": "packs/municoes",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Icarus RPG",
+      "sorting": "m",
+      "color": "#0c131b",
+      "packs": [
+        "armas",
+        "municoes"
+      ]
+    }
+  ],
+  "grid": {
+    "distance": 1.5,
+    "units": "m"
+  },
   "primaryTokenAttribute": "pv",
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.2.2/icarus-rpg.zip"
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.3.0/icarus-rpg.zip"
 }

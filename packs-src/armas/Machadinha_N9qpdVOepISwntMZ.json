@@ -1,0 +1,45 @@
+{
+  "_id": "N9qpdVOepISwntMZ",
+  "name": "Machadinha",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Machado.png",
+  "folder": "75MXTa27qYqFLVyW",
+  "sort": 1300,
+  "system": {
+    "categoria": "marcial",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "leve",
+    "dano": "1d6",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 3,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "curto",
+    "tiposDano": [
+      "corte"
+    ],
+    "propriedades": [
+      "leve",
+      "arremesso"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 600,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "machadinha"
+    }
+  },
+  "_key": "!items!N9qpdVOepISwntMZ"
+}

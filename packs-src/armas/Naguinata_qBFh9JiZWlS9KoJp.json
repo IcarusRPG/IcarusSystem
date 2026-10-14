@@ -1,0 +1,44 @@
+{
+  "_id": "qBFh9JiZWlS9KoJp",
+  "name": "Naguinata",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Naguinata.png",
+  "folder": "ztXAWCms42Wo6ujn",
+  "sort": 4100,
+  "system": {
+    "categoria": "exotica",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "duas-maos",
+    "dano": "1d10",
+    "danoExtra": "",
+    "criticoMargem": 19,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "corte"
+    ],
+    "propriedades": [
+      "duas-maos"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 6000,
+    "espacos": 2,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "naguinata"
+    }
+  },
+  "_key": "!items!qBFh9JiZWlS9KoJp"
+}

@@ -1,0 +1,25 @@
+<form class="{{cssClass}} ficha-icarus ficha-item" autocomplete="off">
+  <header class="item-cab item-cab-grande">
+    <img src="{{item.img}}" alt="" data-edit="img" width="96" height="96" title="{{localize 'ICARUS.Retrato.Dica'}}">
+    <div class="item-cab-texto">
+      <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+      <div class="dica">{{pacotes}}</div>
+    </div>
+  </header>
+  <fieldset class="grupo-campos">
+    <legend class="rot">{{localize "ICARUS.Armas.Secoes.Municao"}}</legend>
+    <div class="item-campos">
+      <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.Tipo"}}</span>
+        <select class="campo" name="system.tipo">{{selectOptions opcoesTipoMunicao selected=source.tipo localize=true}}</select></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Municao.Unidades"}}</span>
+        <input class="campo" type="number" name="system.quantidade" value="{{source.quantidade}}" min="0" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Municao.PrecoPacote"}}</span>
+        <input class="campo" type="number" name="precoReais" value="{{preco.reais}}" min="0" step="0.01" title="{{preco.ouro}}"></label>
+    </div>
+    <p class="dica">{{localize "ICARUS.Municao.PrecoPacoteDica"}}: <span title="{{preco.ouro}}">{{preco.texto}}</span></p>
+  </fieldset>
+  <div class="painel item-desc">
+    <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
+    {{editor descricaoHTML target="system.descricao" button=true editable=editable engine="prosemirror"}}
+  </div>
+</form>

@@ -1,0 +1,42 @@
+{
+  "_id": "a27ueMOWNt36WTiR",
+  "name": "Maça",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Ma%C3%A7a.png",
+  "folder": "McPweo2QPZsRiV7e",
+  "sort": 700,
+  "system": {
+    "categoria": "simples",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "uma-mao",
+    "dano": "1d8",
+    "danoExtra": "",
+    "criticoMargem": 20,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "impacto"
+    ],
+    "propriedades": [],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 1200,
+    "espacos": 1,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "maca"
+    }
+  },
+  "_key": "!items!a27ueMOWNt36WTiR"
+}
