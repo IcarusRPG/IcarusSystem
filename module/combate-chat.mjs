@@ -5,7 +5,8 @@
 import { SISTEMA_ID } from "./config.mjs";
 import { comSinal } from "./regras.mjs";
 import {
-  calcularAtaque, calcularDano, planejarAtaque, planejarRecarga, ehAmeaca, faixaCritico, alcanceDoModo, totalMunicao
+  calcularAtaque, calcularDano, planejarAtaque, planejarRecarga, ehAmeaca, faixaCritico, alcanceDoModo, totalMunicao,
+  MARCA_DO_BOTAO, botaoUsado
 } from "./combate.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/chat`;
@@ -148,6 +149,30 @@ export async function recolherArma(actor, item) {
 
 /* ------------------------------ Botões dos cards ------------------------------ */
 
+/**
+ * Grava no card a marca de um botão usado (ex.: "danoRolado"), para ele ficar desativado
+ * para todos e depois de recarregar a página. Só o autor da mensagem ou o Mestre podem gravar;
+ * se não puder, o botão fica desativado só na tela de quem clicou.
+ */
+async function marcarBotao(message, acao) {
+  const marca = MARCA_DO_BOTAO[acao];
+  if (!marca || message.flags?.[SISTEMA_ID]?.[marca]) return;
+  if (!message.canUserModify(game.user, "update")) return;
+  await message.setFlag(SISTEMA_ID, marca, true);
+}
+
+/**
+ * Dano rolado pela ficha: desativa os botões de dano do último card de ataque dessa arma
+ * (se ainda não tiverem sido usados).
+ */
+export async function marcarDanoNoUltimoAtaque(actor, item) {
+  const ultimo = game.messages.contents.findLast(m => {
+    const a = m.flags?.[SISTEMA_ID]?.ataque;
+    return a && a.actorUuid === actor.uuid && a.itemId === item.id;
+  });
+  if (ultimo && !botaoUsado(ultimo.flags[SISTEMA_ID], "dano")) await marcarBotao(ultimo, "dano");
+}
+
 /** Liga os botões dos cards de ataque (Foundry v12: hook renderChatMessage). */
 export function registrarBotoesDoChat() {
   Hooks.on("renderChatMessage", (message, html) => {
@@ -156,23 +181,32 @@ export function registrarBotoesDoChat() {
     const raiz = html instanceof HTMLElement ? html : html[0];
     const actor = fromUuidSync(dados.actorUuid);
     const podeUsar = game.user.isGM || actor?.isOwner;
+    const flags = message.flags[SISTEMA_ID];
+    const duasMaos = raiz.querySelector("[data-icarus-duas-maos]");
+    if (duasMaos && botaoUsado(flags, "dano")) duasMaos.disabled = true;
+
     raiz.querySelectorAll("[data-icarus-acao]").forEach(botao => {
       if (!podeUsar) { botao.remove(); return; }
-      if (botao.dataset.icarusAcao === "recolher" && message.flags[SISTEMA_ID].recolhida) botao.disabled = true;
+      const acao = botao.dataset.icarusAcao;
+      // Cada botão vale uma vez por ataque (dano e crítico juntos)
+      if (botaoUsado(flags, acao)) { botao.disabled = true; return; }
       botao.addEventListener("click", async ev => {
         ev.preventDefault();
+        if (botao.disabled) return;
         const ator = fromUuidSync(dados.actorUuid);
         const item = ator?.items.get(dados.itemId);
         if (!item) return ui.notifications.warn(loc("ICARUS.Armas.Aviso.ItemSumiu"));
-        const acao = botao.dataset.icarusAcao;
-        const duasMaos = raiz.querySelector("[data-icarus-duas-maos]")?.checked ?? false;
-        if (acao === "dano") return rolarDano(ator, item, dados.modo, { duasMaos });
-        if (acao === "critico" && dados.podeCritico) return rolarDano(ator, item, dados.modo, { duasMaos, critico: true });
-        if (acao === "extremidade") return rolarDano(ator, item, dados.modo, { outraExtremidade: true });
-        if (acao === "recolher" && !message.flags[SISTEMA_ID].recolhida) {
-          await recolherArma(ator, item);
-          await message.setFlag(SISTEMA_ID, "recolhida", true);
-        }
+        // Desativa na hora (evita clique duplo) junto com o par dano/crítico
+        const marca = MARCA_DO_BOTAO[acao];
+        raiz.querySelectorAll("[data-icarus-acao]").forEach(b => { if (MARCA_DO_BOTAO[b.dataset.icarusAcao] === marca) b.disabled = true; });
+        const comDuasMaos = duasMaos?.checked ?? false;
+        if (marca === "danoRolado" && duasMaos) duasMaos.disabled = true;
+
+        if (acao === "dano") await rolarDano(ator, item, dados.modo, { duasMaos: comDuasMaos });
+        else if (acao === "critico" && dados.podeCritico) await rolarDano(ator, item, dados.modo, { duasMaos: comDuasMaos, critico: true });
+        else if (acao === "extremidade") await rolarDano(ator, item, dados.modo, { outraExtremidade: true });
+        else if (acao === "recolher") await recolherArma(ator, item);
+        await marcarBotao(message, acao);
       });
     });
   });

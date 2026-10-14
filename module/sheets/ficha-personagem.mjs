@@ -10,7 +10,7 @@ import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
 import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura } from "../combate.mjs";
-import { itensDoAtor, rolarAtaque, rolarDano, recarregar } from "../combate-chat.mjs";
+import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
@@ -339,9 +339,12 @@ export class FichaPersonagem extends ActorSheet {
         const item = armaDe(ev.currentTarget);
         if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo);
       });
-      html.on("click", "[data-action='arma-dano']", ev => {
+      html.on("click", "[data-action='arma-dano']", async ev => {
         const item = armaDe(ev.currentTarget);
-        if (item) rolarDano(this.actor, item, item.system.modos[0]);
+        if (!item) return;
+        await rolarDano(this.actor, item, item.system.modos[0]);
+        // O dano do último ataque com essa arma já foi rolado: desativa os botões de dano do card
+        await marcarDanoNoUltimoAtaque(this.actor, item);
       });
       html.on("click", "[data-action='arma-recarregar']", ev => {
         const item = armaDe(ev.currentTarget);
