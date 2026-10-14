@@ -33,7 +33,7 @@ export async function verificarArmas() {
   }
   if (faltando.length) console.warn("Icarus RPG | Ícones que não carregaram:", faltando);
   conferir("1", "Ícones que não carregam", faltando.length, 0);
-  conferir("1", "Armas com o dado azul (sem ícone)", armas.filter(a => a.img === ICONE_PADRAO).map(a => a.name).sort().join(", "), "Azagaia, Machado de guerra, Marreta");
+  conferir("1", "Armas com o dado azul (sem ícone)", armas.filter(a => a.img === ICONE_PADRAO).length, 0);
 
   const doCompendio = (lista, id) => {
     const doc = lista.find(d => d.flags?.[SISTEMA_ID]?.id === id);
