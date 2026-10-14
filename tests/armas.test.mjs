@@ -112,6 +112,13 @@ test("6. Adaga arremessada: Pontaria, alcance Curto, quantidade 1 → 0; Azagaia
   assert.deepEqual(planejarAtaque([adaga], adaga, "arremesso", { consumirArremesso: false }).gastos, []);
   adaga.system.quantidade = 0;
   assert.equal(planejarAtaque([adaga], adaga, "corpo-a-corpo").motivo, "semArma");
+  // Chakram: corpo a corpo (Luta, com Ágil) e arremesso (Pontaria, alcance Curto); arremessado não volta
+  const chakram = comId(arma("chakram"));
+  assert.deepEqual(modosDeAtaque(chakram.system), ["corpo-a-corpo", "arremesso"]);
+  assert.equal(calcularAtaque(personagem(), chakram.system, "corpo-a-corpo").bonus, 6);
+  assert.equal(calcularAtaque(personagem(), chakram.system, "arremesso").pericia, "pontaria");
+  assert.equal(alcanceDoModo(chakram.system, "arremesso"), "curto");
+  assert.equal(planejarAtaque([chakram], chakram, "arremesso").gastos[0].valor, 0);
   const azagaia = arma("azagaia").system;
   assert.deepEqual(modosDeAtaque(azagaia), ["arremesso"]);
   assert.equal(alcanceDoModo(azagaia, "arremesso"), "medio");
