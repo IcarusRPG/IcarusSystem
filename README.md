@@ -175,6 +175,3 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Carga 10 + 2 × FOR (referência do Tormenta 20, a conferir); sobrecarga sem efeito
 - Fora de escopo por enquanto: duas armas, Arma Dupla completa, desarmado e armas naturais, aplicar dano nos tokens, medir alcance, munições especiais e recuperação de munição, efeitos de poderes sobre armas, armaduras/escudos/túnicas
 
-**Ícones de armas:**
-- Sem ícone (usam o dado azul): Azagaia, Machado de guerra, Marreta
-- Atribuições a confirmar: `Espada.png` → Espada curta · `Arco.png` → Arco curto · `Besta.png` → Besta leve · `Machado.png` → Machadinha (trocar em `tools/dados/armas.json`)

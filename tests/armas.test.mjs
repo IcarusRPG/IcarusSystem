@@ -32,14 +32,14 @@ const personagem = (itens = [], extra = {}) => derivarPersonagem(sistemaCompleto
 let n = 0;
 const comId = d => ({ ...d, id: `i${++n}` });
 
-test("1. Dados: 46 armas em 4 categorias, 4 munições, só 3 armas sem ícone e todos os arquivos existem", () => {
+test("1. Dados: 46 armas em 4 categorias, 4 munições, todas com ícone e todos os arquivos existem", () => {
   const docs = documentosDosCompendios(DADOS);
   assert.equal(docs.armas.itens.length, 46);
   assert.equal(docs.armas.pastas.length, 4);
   assert.equal(docs.municoes.itens.length, 4);
   const porCategoria = c => DADOS.armas.filter(a => a.categoria === c).length;
   assert.deepEqual([porCategoria("simples"), porCategoria("marcial"), porCategoria("exotica"), porCategoria("fogo")], [12, 20, 10, 4]);
-  assert.deepEqual(DADOS.armas.filter(a => !a.icone).map(a => a.nome).sort(), ["Azagaia", "Machado de guerra", "Marreta"]);
+  assert.deepEqual(DADOS.armas.filter(a => !a.icone).map(a => a.nome), []);
   const faltando = [
     ...DADOS.armas.filter(a => a.icone && !fs.existsSync(path.join(RAIZ, "img/Icones/itens/equipamentos/armas", a.icone))).map(a => a.icone),
     ...DADOS.municoes.filter(m => !fs.existsSync(path.join(RAIZ, "img/Icones/itens/equipamentos/munições", m.icone))).map(m => m.icone)
