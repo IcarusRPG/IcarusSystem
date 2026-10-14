@@ -17,6 +17,7 @@ import { rolarAtaque, rolarDano, recarregar, recolherArma, registrarBotoesDoChat
 import { adicionarItem } from "./module/inventario.mjs";
 import { popularCompendios } from "./module/compendios.mjs";
 import { verificarArmas } from "./module/dev/verificar-armas.mjs";
+import { registrarTelao, abrirTelao } from "./module/telao/telao.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
@@ -39,7 +40,8 @@ const TEMPLATES = [
   "chat/rolagem.hbs",
   "chat/ataque.hbs",
   "chat/dano.hbs",
-  "chat/aviso.hbs"
+  "chat/aviso.hbs",
+  "telao/telao.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
 Hooks.once("init", () => {
@@ -50,6 +52,7 @@ Hooks.once("init", () => {
     rolarTeste, rolarPericia, rolarAtributo,
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
+    telao: abrirTelao,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
   };
@@ -63,6 +66,7 @@ Hooks.once("init", () => {
 
   // Opções de mundo
   registrarConfiguracoesDeCombate();
+  registrarTelao();
 
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {

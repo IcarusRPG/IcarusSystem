@@ -483,6 +483,38 @@
     },
     "Compendios": {
       "SoMestre": "Só o Mestre pode popular os compêndios."
+    },
+    "Telao": {
+      "Titulo": "Telão",
+      "EscolherArquivo": "Escolher vídeo da pasta",
+      "LinkPlaceholder": "Ou cole um link do YouTube (ou de um arquivo de vídeo) e aperte Enter",
+      "Carregar": "Carregar",
+      "VazioMestre": "Escolha um vídeo da pasta ou cole um link. Só você vê a prévia até clicar em Mostrar para todos.",
+      "VazioJogador": "Nenhum vídeo sendo exibido agora.",
+      "Desbloquear": "Clique para assistir",
+      "Mostrar": "Mostrar para todos",
+      "Play": "Play",
+      "Pausar": "Pausar",
+      "Inicio": "Voltar ao início",
+      "FecharTodos": "Fechar para todos",
+      "Posicao": "Posição do vídeo",
+      "Volume": "Volume (só para você)",
+      "Status": {
+        "Vazio": "Nenhum vídeo carregado",
+        "Previa": "Prévia: só você está vendo",
+        "ParaTodos": "Exibindo para todos",
+        "Tocando": "tocando",
+        "Pausado": "pausado"
+      },
+      "Aviso": {
+        "SemVideo": "Carregue um vídeo primeiro.",
+        "LinkInvalido": "Link não reconhecido. Use um link do YouTube ou de um arquivo de vídeo (.mp4, .webm…).",
+        "ErroArquivo": "Não foi possível abrir o vídeo. Confira o arquivo e o formato (.mp4 ou .webm).",
+        "SemYoutube": "Não foi possível carregar o YouTube. Confira a conexão com a internet.",
+        "Bloqueado": "O dono deste vídeo não permite exibi-lo fora do YouTube. Escolha outro vídeo.",
+        "NaoEncontrado": "Vídeo do YouTube não encontrado (removido ou privado).",
+        "ErroYoutube": "O YouTube não conseguiu tocar este vídeo."
+      }
     }
   }
 }
