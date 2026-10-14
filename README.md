@@ -63,7 +63,7 @@ templates/                  Handlebars da ficha, dos itens, do diálogo e do cha
 styles/icarus.css           visual escuro da ficha e do cartão de chat
 fonts/                      Cinzel e Alegreya Sans (licença OFL)
 lang/pt-BR.json             todos os textos da interface
-img/                        ícones e imagens do sistema
+img/                        ícones e imagens: raças, armas, munições e interface (256 px)
 tests/                      testes das fórmulas
 ```
 
