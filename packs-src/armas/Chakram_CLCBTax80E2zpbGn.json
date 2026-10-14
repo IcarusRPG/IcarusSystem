@@ -7,14 +7,14 @@
   "sort": 4200,
   "system": {
     "categoria": "exotica",
-    "grupo": "distancia",
+    "grupo": "corpo-a-corpo",
     "empunhadura": "uma-mao",
     "dano": "1d6",
     "danoExtra": "",
     "criticoMargem": 19,
     "criticoMult": 2,
-    "alcance": "curto",
-    "alcanceArremesso": "",
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "curto",
     "tiposDano": [
       "corte"
     ],
