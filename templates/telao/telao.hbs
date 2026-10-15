@@ -1,0 +1,39 @@
+<div class="ficha-icarus telao">
+  {{#if gm}}
+  <div class="telao-fonte">
+    <button type="button" class="btn" data-action="escolherArquivo"><i class="fa-solid fa-folder-open" aria-hidden="true"></i> {{localize "ICARUS.Telao.EscolherArquivo"}}</button>
+    <input class="campo" type="text" name="link" placeholder="{{localize 'ICARUS.Telao.LinkPlaceholder'}}" aria-label="{{localize 'ICARUS.Telao.LinkPlaceholder'}}">
+    <button type="button" class="btn" data-action="carregarLink">{{localize "ICARUS.Telao.Carregar"}}</button>
+  </div>
+  {{/if}}
+
+  <div class="telao-tela">
+    <div class="telao-palco"></div>
+    <div class="telao-vazio">
+      <i class="fa-solid fa-tv" aria-hidden="true"></i>
+      <span>{{#if gm}}{{localize "ICARUS.Telao.VazioMestre"}}{{else}}{{localize "ICARUS.Telao.VazioJogador"}}{{/if}}</span>
+    </div>
+    <div class="telao-desbloqueio" hidden>
+      <button type="button" class="btn primario" data-action="desbloquear"><i class="fa-solid fa-play" aria-hidden="true"></i> {{localize "ICARUS.Telao.Desbloquear"}}</button>
+    </div>
+  </div>
+
+  <div class="telao-barra">
+    {{#if gm}}
+    <div class="telao-controles">
+      <button type="button" class="btn primario" data-action="mostrar"><i class="fa-solid fa-users" aria-hidden="true"></i> {{localize "ICARUS.Telao.Mostrar"}}</button>
+      <button type="button" class="btn" data-action="play"><i class="fa-solid fa-play" aria-hidden="true"></i> {{localize "ICARUS.Telao.Play"}}</button>
+      <button type="button" class="btn" data-action="pausar"><i class="fa-solid fa-pause" aria-hidden="true"></i> {{localize "ICARUS.Telao.Pausar"}}</button>
+      <button type="button" class="btn" data-action="inicio"><i class="fa-solid fa-backward-step" aria-hidden="true"></i> {{localize "ICARUS.Telao.Inicio"}}</button>
+      <button type="button" class="btn" data-action="fecharTodos"><i class="fa-solid fa-eye-slash" aria-hidden="true"></i> {{localize "ICARUS.Telao.FecharTodos"}}</button>
+    </div>
+    <input type="range" name="posicao" min="0" max="1" step="1" value="0" aria-label="{{localize 'ICARUS.Telao.Posicao'}}">
+    {{/if}}
+    <div class="telao-rodape">
+      <span class="telao-status"></span>
+      <span class="telao-tempo"></span>
+      <label class="telao-volume"><i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+        <input type="range" name="volume" min="0" max="1" step="0.05" value="{{volume}}" aria-label="{{localize 'ICARUS.Telao.Volume'}}"></label>
+    </div>
+  </div>
+</div>

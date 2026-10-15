@@ -2,7 +2,7 @@
   "id": "icarus-rpg",
   "title": "Icarus RPG",
   "description": "Sistema do Icarus RPG, um RPG de fantasia medieval original com testes de d20 + modificador.",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -111,5 +111,5 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.3.3/icarus-rpg.zip"
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.4.0/icarus-rpg.zip"
 }

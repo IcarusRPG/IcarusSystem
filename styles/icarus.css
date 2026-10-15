@@ -644,3 +644,32 @@ body.game {
   .ficha-icarus .arma-linha .item-nome { grid-column: 2 / -1; }
   .ficha-icarus .moedas-campos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ==========================================================================
+   Telão (vídeo para todos)
+   ========================================================================== */
+.application.icarus-telao .window-content { padding: 0; background: var(--ic-janela); }
+.ficha-icarus.telao { height: 100%; display: flex; flex-direction: column; gap: 0; background: var(--ic-janela); }
+.ficha-icarus .telao-fonte { flex: none; display: flex; gap: 8px; align-items: center; padding: 10px 14px; background: var(--ic-cabecalho); border-bottom: 1px solid var(--ic-borda); }
+.ficha-icarus .telao-fonte .campo { flex: 1; min-width: 0; }
+.ficha-icarus .telao-tela { flex: 1; min-height: 0; position: relative; background: #000; }
+.ficha-icarus .telao-palco,
+.ficha-icarus .telao-palco > div,
+.ficha-icarus .telao-palco iframe,
+.ficha-icarus .telao-palco .telao-video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ficha-icarus .telao-palco .telao-video { object-fit: contain; background: #000; }
+.ficha-icarus .telao-vazio { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--ic-apagado2); }
+.ficha-icarus .telao-vazio i { font-size: 48px; color: var(--ic-moldura); }
+.ficha-icarus .telao-vazio[hidden] { display: none; }
+.ficha-icarus .telao-desbloqueio { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(2, 5, 8, .7); }
+.ficha-icarus .telao-desbloqueio[hidden] { display: none; }
+.ficha-icarus .telao-desbloqueio .btn { height: 48px; font-size: 18px; padding: 0 24px; }
+.ficha-icarus .telao-barra { flex: none; display: flex; flex-direction: column; gap: 8px; padding: 10px 14px; background: var(--ic-fundo); border-top: 1px solid var(--ic-borda-forte); }
+.ficha-icarus .telao-controles { display: flex; flex-wrap: wrap; gap: 6px; }
+.ficha-icarus .telao-barra input[type="range"] { width: 100%; accent-color: var(--ic-ciano); }
+.ficha-icarus .telao-rodape { display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--ic-apagado); }
+.ficha-icarus .telao-status { flex: 1; min-width: 0; }
+.ficha-icarus .telao-status.ao-vivo { color: var(--ic-pv); font-weight: 700; }
+.ficha-icarus .telao-status.ao-vivo::before { content: "● "; }
+.ficha-icarus .telao-tempo { font-variant-numeric: tabular-nums; }
+.ficha-icarus .telao-volume { display: flex; align-items: center; gap: 6px; width: 160px; }
