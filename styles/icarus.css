@@ -673,3 +673,7 @@ body.game {
 .ficha-icarus .telao-status.ao-vivo::before { content: "● "; }
 .ficha-icarus .telao-tempo { font-variant-numeric: tabular-nums; }
 .ficha-icarus .telao-volume { display: flex; align-items: center; gap: 6px; width: 160px; }
+
+/* Botão do Telão na barra do chat */
+#chat-controls .icarus-botao-telao { flex: 0 0 auto; color: var(--ic-ciano, #3ee0e6); }
+#chat-controls .icarus-botao-telao:hover { text-shadow: 0 0 6px #3ee0e6; }
