@@ -272,7 +272,22 @@ export function registrarTelao() {
     default: 0.8
   });
 
-  // Botão "Telão" na barra de ferramentas dos tokens
+  // Botão "Telão" na barra do chat: sempre visível, com ou sem cena aberta
+  Hooks.on("renderChatLog", (app, html) => {
+    const raiz = html instanceof HTMLElement ? html : html?.[0];
+    const controles = raiz?.querySelector("#chat-controls");
+    if (!controles || controles.querySelector(".icarus-botao-telao")) return;
+    const botao = document.createElement("a");
+    botao.className = "button icarus-botao-telao";
+    botao.dataset.tooltip = loc("ICARUS.Telao.Titulo");
+    botao.setAttribute("aria-label", loc("ICARUS.Telao.Titulo"));
+    botao.setAttribute("role", "button");
+    botao.innerHTML = `<i class="fa-solid fa-tv" aria-hidden="true"></i>`;
+    botao.addEventListener("click", ev => { ev.preventDefault(); abrirTelao(); });
+    (controles.querySelector(".control-buttons") ?? controles).prepend(botao);
+  });
+
+  // Botão "Telão" na barra de ferramentas dos tokens (só aparece com uma cena aberta)
   Hooks.on("getSceneControlButtons", controles => {
     const tokens = controles.find(c => c.name === "token");
     tokens?.tools.push({
