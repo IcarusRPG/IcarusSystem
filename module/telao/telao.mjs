@@ -272,19 +272,24 @@ export function registrarTelao() {
     default: 0.8
   });
 
-  // Botão "Telão" na barra do chat: sempre visível, com ou sem cena aberta
-  Hooks.on("renderChatLog", (app, html) => {
+  // Botão "Telão" na ponta esquerda da barra de atalhos (entre Players e os atalhos), sempre visível
+  Hooks.on("renderHotbar", (app, html) => {
     const raiz = html instanceof HTMLElement ? html : html?.[0];
-    const controles = raiz?.querySelector("#chat-controls");
-    if (!controles || controles.querySelector(".icarus-botao-telao")) return;
+    if (!raiz || raiz.querySelector(".icarus-hotbar-telao")) return;
+    const bloco = document.createElement("nav");
+    bloco.className = "bar-controls flexcol icarus-hotbar-telao";
+    bloco.setAttribute("aria-label", loc("ICARUS.Telao.Titulo"));
     const botao = document.createElement("a");
-    botao.className = "button icarus-botao-telao";
+    botao.className = "icarus-botao-telao";
     botao.dataset.tooltip = loc("ICARUS.Telao.Titulo");
     botao.setAttribute("aria-label", loc("ICARUS.Telao.Titulo"));
     botao.setAttribute("role", "button");
+    botao.tabIndex = 0;
     botao.innerHTML = `<i class="fa-solid fa-tv" aria-hidden="true"></i>`;
     botao.addEventListener("click", ev => { ev.preventDefault(); abrirTelao(); });
-    (controles.querySelector(".control-buttons") ?? controles).prepend(botao);
+    botao.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); abrirTelao(); } });
+    bloco.append(botao);
+    raiz.prepend(bloco);
   });
 
   // Botão "Telão" na barra de ferramentas dos tokens (só aparece com uma cena aberta)
