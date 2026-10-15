@@ -74,7 +74,7 @@ templates/                  Handlebars da ficha, dos itens, do diálogo e do cha
 styles/icarus.css           visual escuro da ficha e do cartão de chat
 fonts/                      Cinzel e Alegreya Sans (licença OFL)
 lang/pt-BR.json             todos os textos da interface
-img/                        ícones e imagens: raças, armas, munições e interface (256 px)
+img/                        ícones e imagens: raças, armas, munições, armaduras e escudos, símbolos do panteão e interface (256 px)
 tests/                      testes das fórmulas, raças e armas
 tools/dados/armas.json      fonte única das armas e munições
 tools/build-packs.mjs       gera packs-src/ (JSON) e compila os compêndios em packs/ (LevelDB)
