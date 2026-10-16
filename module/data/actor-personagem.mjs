@@ -1,6 +1,7 @@
 import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS } from "../config.mjs";
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
+import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
 
 const fields = foundry.data.fields;
 
@@ -70,6 +71,12 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     if (typeof raca === "string" && raca && !racaPorId(raca)) {
       const id = idDaRacaPorNome(raca);
       if (id) source.identidade.raca = id;
+    }
+    // Divindade também era texto livre: vira o id; texto que não bate fica como "Outra"
+    const divindade = source.identidade?.divindade;
+    if (typeof divindade === "string" && divindade && !divindadePorId(divindade)) {
+      const id = idDaDivindadePorNome(divindade);
+      if (id) source.identidade.divindade = id;
     }
     return super.migrateData(source);
   }

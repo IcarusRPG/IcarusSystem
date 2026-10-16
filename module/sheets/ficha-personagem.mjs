@@ -7,6 +7,9 @@ import { RACAS, racaPorId, iconeDaRaca, resolverRaca } from "../data/racas.mjs";
 import { trocarRaca, reaplicarRaca, refazerEscolhas, ehPoderRacialAuto, escolhasGuardadas } from "../racas.mjs";
 import { DialogoNivel } from "./dialogo-nivel.mjs";
 import { conflitoEscudoAcoplado } from "../armaduras.mjs";
+import { DIVINDADES, GRUPOS_DIVINOS, divindadePorId, poderesDaDivindade, simboloDaDivindade } from "../panteao.mjs";
+import { DialogoPoderesConcedidos, trocarDivindade } from "./dialogo-poderes-concedidos.mjs";
+import { ligarArvoreDivindade } from "./arvore-divindade.mjs";
 import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
@@ -72,7 +75,25 @@ export class FichaPersonagem extends ActorSheet {
       ]
     };
 
-    ctx.identidade = ["origem", "classe", "profissao", "divindade"].map(k => ({
+    // Divindade (combobox em árvore): id da divindade, "" = Nenhum(a); texto antigo vira "Outra"
+    const div = divindadePorId(src.identidade.divindade);
+    const outra = src.identidade.divindade && !div ? src.identidade.divindade : "";
+    const possuidos = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.concedido && i.flags[SISTEMA_ID].id).filter(Boolean));
+    ctx.divindade = {
+      id: div?.id ?? "",
+      outra,
+      rotulo: div ? div.nome : outra ? `${loc("ICARUS.Devocao.Outra")}: ${outra}` : loc("ICARUS.Devocao.Nenhuma"),
+      simbolo: div ? simboloDaDivindade(div.id) : "",
+      titulo: div?.titulo ?? "",
+      dogma: div?.dogma ?? "",
+      grupos: GRUPOS_DIVINOS.map(g => ({
+        nome: g,
+        itens: DIVINDADES.filter(d => d.grupo === g).map(d => ({ id: d.id, nome: d.nome, titulo: d.titulo, simbolo: simboloDaDivindade(d.id), selecionado: d.id === div?.id }))
+      })),
+      poderes: div ? poderesDaDivindade(div.id).map(p => ({ nome: p.nome, meta: p.meta, possui: possuidos.has(p.id) })) : []
+    };
+
+    ctx.identidade = ["origem", "classe", "profissao"].map(k => ({
       chave: k,
       rotulo: loc(`ICARUS.Identidade.${k}`),
       valor: src.identidade[k],
@@ -207,7 +228,7 @@ export class FichaPersonagem extends ActorSheet {
 
     // Poderes agrupados por fonte (Raça primeiro, com o ícone da raça)
     const poderes = actor.items.filter(i => i.type === "poder").sort((a, b) => (a.sort || 0) - (b.sort || 0));
-    const subtitulo = { raca: ctx.raca.nome, classe: src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao };
+    const subtitulo = { raca: ctx.raca.nome, classe: src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
     ctx.gruposPoder = await Promise.all(FONTES_PODER.map(async fonte => {
       const lista = poderes.filter(p => p.system.fonte === fonte);
       const nomeFonte = loc(`ICARUS.Poderes.Fontes.${fonte}`);
@@ -216,7 +237,7 @@ export class FichaPersonagem extends ActorSheet {
         fonte,
         titulo,
         ehRaca: fonte === "raca",
-        icone: fonte === "raca" && raca ? ctx.raca.icone : "",
+        icone: fonte === "raca" && raca ? ctx.raca.icone : fonte === "divindade" && div ? ctx.divindade.simbolo : "",
         tag: fonte === "classe"
           ? game.i18n.format("ICARUS.Poderes.TagNivel", { nivel: s.nivel })
           : game.i18n.format(lista.length === 1 ? "ICARUS.Poderes.ContaUm" : "ICARUS.Poderes.Conta", { n: lista.length }),
@@ -225,7 +246,8 @@ export class FichaPersonagem extends ActorSheet {
           const flags = p.flags?.[SISTEMA_ID] ?? {};
           return {
             id: p.id, name: p.name, img: p.img,
-            mostrarIcone: fonte === "raca",
+            mostrarIcone: fonte === "raca" || fonte === "divindade",
+            concedido: !!flags.concedido,
             auto: ehPoderRacialAuto(p),
             pendente: ehPoderRacialAuto(p) && flags.pendente === true,
             custo: p.system.custoPM ?? null,
@@ -373,6 +395,7 @@ export class FichaPersonagem extends ActorSheet {
       const item = this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
       if (item) item.update({ [el.dataset.itemCampo]: Math.max(0, Math.trunc(numero(el.value))) });
     });
+    ligarArvoreDivindade(html instanceof HTMLElement ? html : html[0], valor => trocarDivindade(this.actor, valor));
     html.on("change", ".sel-raca", async ev => {
       const mudou = await trocarRaca(this.actor, ev.currentTarget.value);
       if (!mudou) this.render(false);  // cancelou: volta a combobox para a raça atual
@@ -404,6 +427,10 @@ export class FichaPersonagem extends ActorSheet {
         return reaplicarRaca(actor);
       case "raca-escolhas":
         return refazerEscolhas(actor);
+      case "divindade-poderes":
+        return new DialogoPoderesConcedidos(actor, actor._source.system.identidade.divindade).render(true);
+      case "poder-chat":
+        return this._enviarPoderAoChat(itemDe());
       case "item-criar": {
         const tipo = el.dataset.tipo;
         const dados = {
@@ -456,6 +483,15 @@ export class FichaPersonagem extends ActorSheet {
         return efeito?.update({ disabled: !efeito.disabled });
       }
     }
+  }
+
+  /** Botão "Enviar ao chat" dos cards de poder: nome, metadados e descrição. */
+  async _enviarPoderAoChat(item) {
+    if (!item) return;
+    const descricao = await TextEditor.enrichHTML(item.system.descricao, { async: true, relativeTo: item });
+    const custo = item.system.custoPM ? `<span class="custo">${item.system.custoPM} PM</span>` : "";
+    const content = `<div class="icarus-rolagem icarus-poder"><div class="arma-cab"><img src="${item.img}" alt="" width="36" height="36"><div><h3 class="rolagem-nome">${Handlebars.escapeExpression(item.name)}</h3><div class="rolagem-tipo">${Handlebars.escapeExpression(item.system.prerequisito || game.i18n.localize(`ICARUS.Poderes.Fontes.${item.system.fonte}`))} ${custo}</div></div></div><div class="poder-descricao">${descricao}</div></div>`;
+    return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content });
   }
 
   _efeitoDe(el) {
