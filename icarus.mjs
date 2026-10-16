@@ -22,11 +22,13 @@ import { registrarArmaduras } from "./module/armaduras.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
+import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
 registrarArmaduras();
 registrarBotoesDeDano();
+registrarMorte();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
@@ -52,6 +54,7 @@ const TEMPLATES = [
   "chat/aviso.hbs",
   "chat/dano-aplicado.hbs",
   "chat/condicao.hbs",
+  "chat/lembrete.hbs",
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
   "telao/telao.hbs"
@@ -66,7 +69,7 @@ Hooks.once("init", () => {
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
-    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso,
+    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarTesteDeMorte,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
   };

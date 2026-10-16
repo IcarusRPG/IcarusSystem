@@ -52,8 +52,21 @@ export async function aplicarNosSelecionados(valor, tipo, opcoes = {}) {
   return ChatMessage.create({ speaker: ChatMessage.getSpeaker(), content });
 }
 
-/** Rolagem de dano sem arma (ex.: Em Chamas 1d6 de fogo), com os botões de aplicar. */
-export async function rolarDanoAvulso({ formula, tipo = "dano", titulo, img = "icons/svg/fire.svg", actor = null, perda = false }) {
+/** Aplica num ator específico (pelo uuid) e posta o resumo. */
+async function aplicarNoAlvo(uuid, valor, tipo, opcoes) {
+  const actor = fromUuidSync(uuid);
+  if (!actor) return ui.notifications.warn(loc("ICARUS.Dano.SemSelecao"));
+  const { linha } = await aplicarNoAtor(actor, valor, tipo, opcoes);
+  const titulo = opcoes.modo === "perda" ? loc("ICARUS.Dano.TituloPerda") : loc("ICARUS.Dano.TituloAplicado");
+  const content = await renderTemplate(`${T}/dano-aplicado.hbs`, { titulo, linhas: [linha] });
+  return ChatMessage.create({ speaker: ChatMessage.getSpeaker(), content });
+}
+
+/**
+ * Rolagem de dano sem arma (ex.: Em Chamas 1d6 de fogo), com os botões de aplicar.
+ * alvoUuid: aplica direto nesse ator (lembretes de turno); sem ele, nos tokens selecionados.
+ */
+export async function rolarDanoAvulso({ formula, tipo = "dano", titulo, img = "icons/svg/fire.svg", actor = null, perda = false, alvoUuid = null }) {
   const roll = await new Roll(formula).evaluate();
   const content = await renderTemplate(`${T}/dano.hbs`, {
     arma: { nome: titulo, img },
@@ -68,7 +81,7 @@ export async function rolarDanoAvulso({ formula, tipo = "dano", titulo, img = "i
     content,
     rolls: [roll],
     sound: CONFIG.sounds.dice,
-    flags: { [SISTEMA_ID]: { dano: { total: roll.total, tipo, perda } } }
+    flags: { [SISTEMA_ID]: { dano: { total: roll.total, tipo, perda, alvoUuid } } }
   };
   ChatMessage.applyRollMode(dados, game.settings.get("core", "rollMode"));
   return ChatMessage.create(dados);
@@ -86,6 +99,8 @@ export function registrarBotoesDeDano() {
         const acao = botao.dataset.icarusAplicar;
         const multiplicador = acao === "metade" ? 0.5 : acao === "dobro" ? 2 : 1;
         const modo = acao === "perda" ? "perda" : "dano";
+        // Lembretes (Em Chamas, Sangrando) já sabem quem sofre; os demais usam os tokens selecionados
+        if (dano.alvoUuid) return aplicarNoAlvo(dano.alvoUuid, dano.total, dano.tipo, { modo, multiplicador });
         return aplicarNosSelecionados(dano.total, dano.tipo, { modo, multiplicador });
       });
     });

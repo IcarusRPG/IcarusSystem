@@ -14,6 +14,7 @@ import { CONDICAO_POR_ID } from "../condicoes.mjs";
 import { textosDasFlags } from "../dados-compendios.mjs";
 import { removerCondicao, escalarCondicao } from "../condicoes-foundry.mjs";
 import { PainelCondicoes } from "./painel-condicoes.mjs";
+import { rolarTesteDeMorte, registrarDanoEmMorrendo, estabilizarComCura } from "../morte-foundry.mjs";
 import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
@@ -211,6 +212,16 @@ export class FichaPersonagem extends ActorSheet {
         };
       }).sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
     ctx.avisosCondicoes = ctx.condicoesAtivas.filter(c => c.avisos.length).map(c => `${c.nome}: ${c.avisos.join("; ")}`);
+
+    // Testes de morte: aparece em Morrendo, estável ou com marcas
+    const m = s.morte ?? { sucessos: 0, falhas: 0, estavel: false };
+    const morrendo = actor.statuses?.has("morrendo") ?? false;
+    ctx.morte = {
+      mostrar: morrendo || m.estavel || m.sucessos > 0 || m.falhas > 0,
+      morrendo, estavel: m.estavel,
+      sucessos: [1, 2, 3].map(n => ({ n, marcado: n <= m.sucessos })),
+      falhas: [1, 2, 3].map(n => ({ n, marcado: n <= m.falhas }))
+    };
 
     // Resistências: RD geral e, por tipo, Redução / Imune / Vulnerável (campos salvos; efetivo na dica)
     const r = s.resistencias, rs = src.resistencias;
@@ -481,6 +492,18 @@ export class FichaPersonagem extends ActorSheet {
         return reaplicarRaca(actor);
       case "raca-escolhas":
         return refazerEscolhas(actor);
+      case "morte-rolar":
+        return rolarTesteDeMorte(actor);
+      case "morte-dano":
+        return registrarDanoEmMorrendo(actor, el.dataset.critico === "1");
+      case "morte-estabilizar":
+        return estabilizarComCura(actor);
+      case "morte-marca": {
+        // Clicar na bolinha marca até ela; clicar na última marcada desmarca
+        const tipo = el.dataset.tipo, n = Number(el.dataset.n);
+        const atual = actor.system.morte[tipo];
+        return actor.update({ [`system.morte.${tipo}`]: atual === n ? n - 1 : n });
+      }
       case "condicao-adicionar":
         return new PainelCondicoes({ actor }).render(true);
       case "divindade-poderes":

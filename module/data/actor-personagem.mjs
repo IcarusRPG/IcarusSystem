@@ -66,6 +66,10 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         imunidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })]))),
         vulnerabilidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })])))
       }),
+      // Testes de morte (Morrendo): sucessos, falhas e se ficou estável
+      morte: new fields.SchemaField({
+        sucessos: inteiro(0, { min: 0, max: 3 }), falhas: inteiro(0, { min: 0, max: 3 }), estavel: new fields.BooleanField({ initial: false })
+      }),
       // Bônus gerais de ataque (Efeitos Ativos podem somar aqui)
       bonus: new fields.SchemaField({ ataque: inteiro(0) }),
       imunidades: texto(),
