@@ -1,0 +1,58 @@
+<section class="icarus-teste-tela {{#if oposto}}tipo-oposto{{else}}tipo-resistencia{{/if}}{{#if entrada}} com-entrada{{/if}}{{#unless animar}} sem-animacao{{/unless}}{{#if resolvido}} resolvido{{/if}}{{#if muitos}} muitos{{/if}}"
+  role="dialog" aria-modal="false" aria-labelledby="icarus-teste-titulo">
+  <div class="teste-veu"></div>
+  {{#if oposto}}<div class="teste-clarao" aria-hidden="true"></div>{{/if}}
+
+  <header class="teste-cabecalho">
+    <h1 id="icarus-teste-titulo">{{titulo}}</h1>
+    <p class="teste-subtitulo">{{subtitulo}}</p>
+    {{#unless oposto}}
+    {{#if origem}}<p class="teste-origem">{{origem}}</p>{{/if}}
+    <div class="teste-cd" aria-label="{{localize "ICARUS.Testes.Resistencia.CD"}} {{cd}}"><span>{{localize "ICARUS.Testes.Resistencia.CD"}}</span><strong>{{cd}}</strong></div>
+    {{#if observacao}}<p class="teste-observacao">{{observacao}}</p>{{/if}}
+    {{/unless}}
+  </header>
+
+  <div class="teste-palco">
+    {{#each participantes}}
+    <article class="participante{{#if lado}} lado-{{lado}}{{/if}}{{#if vencedor}} vencedor{{/if}}{{#if perdedor}} perdedor{{/if}}{{#if novo}} resultado-novo{{/if}}"
+      style="--atraso: {{atraso}}ms" data-id="{{id}}">
+      <figure class="retrato">
+        <img src="{{img}}" alt="" data-fallback="{{@root.retratoPadrao}}">
+        <figcaption class="nome" data-tooltip="{{nome}}"><span class="nome-texto">{{nome}}</span>{{#if jogador}}<small class="jogador">{{jogador}}</small>{{/if}}</figcaption>
+      </figure>
+      <div class="teste-item">
+        <span>{{item.rotulo}}</span>
+        <span class="bonus"{{#if mostrarDica}} data-tooltip="{{dica}}"{{/if}}>{{bonusTexto}}</span>
+      </div>
+      <button type="button" class="dado{{#if clicavel}} clicavel{{/if}}{{#if girando}} girando{{/if}}{{#if falhaAutoTexto}} apagado{{/if}}{{#if resultadoTexto}} rolado{{/if}}"
+        data-action="rolar" data-id="{{id}}" {{#unless clicavel}}disabled aria-disabled="true"{{/unless}}
+        {{#if dicaDado}}data-tooltip="{{dicaDado}}"{{/if}}
+        aria-label="{{#if clicavel}}{{localize "ICARUS.Testes.Rolar"}} {{item.rotulo}} — {{nome}}{{else}}{{nome}}: {{#if resultadoTexto}}{{resultadoTexto}}{{else}}{{aguardandoTexto}}{{falhaAutoTexto}}{{/if}}{{/if}}">
+        <img src="{{@root.dado}}" alt="">
+        {{#if resultadoTexto}}<span class="dado-numero{{#if natural20}} natural-20{{/if}}{{#if natural1}} natural-1{{/if}}">{{resultado.d20}}</span>{{/if}}
+      </button>
+      {{#if rolarPor}}<button type="button" class="rolar-por" data-action="rolarPor" data-id="{{id}}">{{rolarPor}}</button>{{/if}}
+      <div class="teste-resultado-linha">
+        {{#if resultadoTexto}}<span class="conta">{{resultadoTexto}}</span>{{#if peloMestre}}<small class="pelo-mestre">{{localize "ICARUS.Testes.RoladoPeloMestre"}}</small>{{/if}}
+        {{else if falhaAutoTexto}}<span class="falha-auto">{{falhaAutoTexto}}</span>
+        {{else}}<span class="aguardando">{{aguardandoTexto}}</span>{{/if}}
+      </div>
+      {{#if selo}}<div class="selo selo-{{selo}}">{{seloTexto}}</div>{{/if}}
+    </article>
+    {{#if @first}}{{#if @root.oposto}}<div class="versus" aria-hidden="true">×</div>{{/if}}{{/if}}
+    {{/each}}
+  </div>
+
+  <div class="teste-banner" aria-live="polite">{{#if banner}}<strong>{{banner}}</strong>{{/if}}</div>
+
+  <footer class="teste-rodape">
+    {{#if anfitriao}}
+      {{#if empate}}<button type="button" class="btn" data-action="rolarNovamente"><i class="fa-solid fa-rotate"></i> {{localize "ICARUS.Testes.RolarNovamente"}}</button>{{/if}}
+      <button type="button" class="btn" data-action="reenviar"><i class="fa-solid fa-share-from-square"></i> {{localize "ICARUS.Testes.Reenviar"}}</button>
+      {{#if rolando}}<button type="button" class="btn" data-action="cancelar"><i class="fa-solid fa-ban"></i> {{localize "ICARUS.Testes.Cancelar"}}</button>{{/if}}
+      {{#if resolvido}}<button type="button" class="btn" data-action="fecharTodos"><i class="fa-solid fa-users-slash"></i> {{localize "ICARUS.Testes.FecharTodos"}}</button>{{/if}}
+    {{/if}}
+    <button type="button" class="btn" data-action="fechar"><i class="fa-solid fa-xmark"></i> {{localize "ICARUS.Testes.Fechar"}}</button>
+  </footer>
+</section>

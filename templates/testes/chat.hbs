@@ -1,0 +1,32 @@
+<div class="icarus-rolagem icarus-teste-chat">
+  <div class="rolagem-tipo">{{titulo}}</div>
+  <h3 class="rolagem-nome">{{subtitulo}}</h3>
+  {{#unless oposto}}
+  <p class="teste-chat-origem">
+    {{#if resistencia.origem}}<strong>{{resistencia.origem}}</strong>{{/if}}
+    {{#if resistencia.conjurador}} · {{localize "ICARUS.Testes.Resistencia.Conjurador"}}: {{resistencia.conjurador}}{{/if}}
+    · <strong>{{localize "ICARUS.Testes.Resistencia.CD"}} {{resistencia.cd}}</strong>
+  </p>
+  {{#if resistencia.observacao}}<p class="teste-chat-obs">{{resistencia.observacao}}</p>{{/if}}
+  {{/unless}}
+  <ul class="teste-chat-linhas">
+    {{#each linhas}}
+    <li class="{{#if vencedor}}vencedor{{/if}}{{#if passou}} passou{{/if}}">
+      <img src="{{img}}" alt="" width="28" height="28">
+      <span class="teste-chat-nome">{{nome}}{{#if ../oposto}} <small>({{item.rotulo}})</small>{{/if}}</span>
+      {{#if resultado.falhaAuto}}
+      <span class="teste-chat-conta falha">{{localize "ICARUS.Condicoes.FalhaAutomatica"}} ({{resultado.falhaAuto}})</span>
+      {{else}}
+      <span class="teste-chat-conta"><span class="{{#if natural20}}natural-20{{/if}}{{#if natural1}}natural-1{{/if}}">{{resultado.d20}}</span> + {{resultado.bonus}} = <strong>{{resultado.total}}</strong>{{#if peloMestre}} <small>({{localize "ICARUS.Testes.RoladoPeloMestre"}})</small>{{/if}}</span>
+      {{/if}}
+      {{#unless ../oposto}}<span class="selo-chat {{#if passou}}passou{{else}}falhou{{/if}}">{{#if passou}}{{localize "ICARUS.Testes.Selo.passou"}}{{else}}{{localize "ICARUS.Testes.Selo.falhou"}}{{/if}}</span>{{/unless}}
+    </li>
+    {{/each}}
+  </ul>
+  {{#if oposto}}
+  <div class="rolagem-selo">{{#if vencedor}}{{localize "ICARUS.Testes.VencedorRotulo"}}: {{vencedor.nome}}{{#if motivoBonus}} <small>({{localize "ICARUS.Testes.DesempateBonus"}})</small>{{/if}}{{else}}{{localize "ICARUS.Testes.Empate"}}{{/if}}</div>
+  {{else}}
+  <div class="rolagem-selo">{{localize "ICARUS.Testes.Selo.passou"}}: {{resumo.passaram}} · {{localize "ICARUS.Testes.Selo.falhou"}}: {{resumo.falharam}}</div>
+  {{#if falharamUuids}}<button type="button" class="icarus-gm-only" data-icarus-teste-condicao="{{falharamUuids}}"><i class="fa-solid fa-person-falling-burst"></i> {{localize "ICARUS.Testes.AplicarCondicaoFalhos"}}</button>{{/if}}
+  {{/if}}
+</div>

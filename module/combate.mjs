@@ -281,3 +281,45 @@ export function textoDoDano(passos, nomeTipo) {
     return String(p.resultado);
   }).join(" → ");
 }
+
+/* ---------------- Teste Oposto e Teste de Resistência ---------------- */
+
+export const REGRAS_TESTES = {
+  // [PROVISÓRIO] Empate no total do Teste Oposto: vence o maior bônus; se o bônus também empatar,
+  // o resultado é "Empate" e o Mestre pode mandar rolar de novo.
+  desempatePorBonus: true,
+  // [PROVISÓRIO] 20 e 1 naturais não têm efeito nesses testes (só destaque visual).
+  naturaisSemEfeito: true
+};
+
+/**
+ * Teste Oposto: quem vence entre os lados A e B.
+ * @param {{total:number, bonus:number, falhaAuto?:string}} a
+ * @param {{total:number, bonus:number, falhaAuto?:string}} b
+ * @returns {{vencedor: "A"|"B"|null, motivo: "total"|"bonus"|"falhaAuto"|"empate"}}
+ */
+export function resolverOposto(a, b) {
+  if (a.falhaAuto && b.falhaAuto) return { vencedor: null, motivo: "empate" };
+  if (a.falhaAuto) return { vencedor: "B", motivo: "falhaAuto" };
+  if (b.falhaAuto) return { vencedor: "A", motivo: "falhaAuto" };
+  if (a.total !== b.total) return { vencedor: a.total > b.total ? "A" : "B", motivo: "total" };
+  if (REGRAS_TESTES.desempatePorBonus && a.bonus !== b.bonus) return { vencedor: a.bonus > b.bonus ? "A" : "B", motivo: "bonus" };
+  return { vencedor: null, motivo: "empate" };
+}
+
+/**
+ * CD de habilidades e magias (fórmula oficial definida pelo Mestre):
+ *   CD = 10 + metade do nível do conjurador (para baixo) + atributo-chave
+ * O valor do atributo já é o modificador; o total da ficha inclui raça e bônus temporário.
+ * Sem nível numérico, usa 0 e devolve semNivel (a interface pede a CD manual; nada é inventado).
+ * @param {object} system  system do ator conjurador
+ * @param {string} atributoChave  FOR, DES, CON, INT, SAB ou CAR
+ */
+export function calcularCD(system, atributoChave) {
+  const nivelBruto = Number(system?.nivel);
+  const semNivel = !Number.isFinite(nivelBruto);
+  const nivel = semNivel ? 0 : Math.max(0, Math.trunc(nivelBruto));
+  const metade = Math.floor(nivel / 2);
+  const mod = numero(system?.atributos?.[atributoChave]?.total);
+  return { cd: 10 + metade + mod, nivel, metade, mod, semNivel };
+}
