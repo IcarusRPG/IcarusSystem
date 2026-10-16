@@ -25,7 +25,7 @@ const armas = ler("armas");
 const novos = {
   armaduras: ler("armaduras"), iconesArmaduras: ler("icones-armaduras"),
   poderes: ler("poderes-concedidos"), panteao: ler("panteao"), iconesDivindades: ler("icones-divindades"),
-  condicoes: ler("condicoes"),
+  condicoes: ler("condicoes"), macros: ler("macros"),
   nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
 };
 
@@ -45,6 +45,7 @@ for (const a of armas.armas) confere("itens/equipamentos/armas", a.icone, a.nome
 for (const m of armas.municoes) confere("itens/equipamentos/munições", m.icone, m.nome);
 for (const a of novos.armaduras.itens) confere("itens/equipamentos/armaduras e escudos", novos.iconesArmaduras[a.id], a.nome);
 for (const d of novos.panteao.divindades) confere("panteão/simbolos", novos.iconesDivindades[d.id], d.nome);
+for (const m of novos.macros.macros) if (m.icone) confere(path.posix.dirname(m.icone), path.posix.basename(m.icone), `macro ${m.nome}`);
 for (const [chave, rel] of Object.entries(IMAGENS_SISTEMA)) confere(path.posix.dirname(rel), path.posix.basename(rel), `interface (${chave})`);
 if (faltandoArquivo.length) {
   console.error(`ERRO: ${faltandoArquivo.length} ícone(s) mapeado(s) não existem no disco:\n  - ${faltandoArquivo.join("\n  - ")}`);

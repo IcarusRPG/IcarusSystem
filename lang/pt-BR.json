@@ -693,6 +693,9 @@
       "SangrandoContinua": "Falha: perde 1d6 PV e continua sangrando.",
       "Resultado": "Resultado",
       "Provisorio": "Lembrete provisório: nada é aplicado sem clicar."
+    },
+    "Testes": {
+      "SoMestre": "Só o Mestre pode iniciar testes."
     }
   }
 }

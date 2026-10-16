@@ -24,6 +24,7 @@ import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
+import { registrarTestes } from "./module/testes-sessao.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
@@ -85,7 +86,8 @@ Hooks.once("init", () => {
   // Opções de mundo
   registrarConfiguracoesDeCombate();
   registrarTelao();
-  game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre };
+  game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre, abrirPainel: abrirPainelDoMestre };
+  game.icarus.testes = registrarTestes();
 
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {

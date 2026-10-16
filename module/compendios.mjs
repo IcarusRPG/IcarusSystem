@@ -14,6 +14,7 @@ import PODERES from "./dados/poderes-concedidos.mjs";
 import PANTEAO from "./dados/panteao.mjs";
 import ICONES_DIVINDADES from "./dados/icones-divindades.mjs";
 import CONDICOES from "./dados/condicoes.mjs";
+import MACROS from "./dados/macros.mjs";
 
 /** Dados das armas (mantido por compatibilidade com a verificação de armas). */
 export async function carregarDadosDeArmas() {
@@ -26,7 +27,7 @@ export function todosOsDocumentos() {
   const novos = documentosNovos({
     armaduras: ARMADURAS, iconesArmaduras: ICONES_ARMADURAS,
     poderes: PODERES, panteao: PANTEAO, iconesDivindades: ICONES_DIVINDADES,
-    condicoes: CONDICOES, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
+    condicoes: CONDICOES, macros: MACROS, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
   });
   return { armas: armas.armas, municoes: armas.municoes, ...novos };
 }

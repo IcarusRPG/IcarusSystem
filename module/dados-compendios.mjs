@@ -170,16 +170,13 @@ export function diarioDasCondicoes(dados, nomePericia) {
 /* ------------------------------ Macros ------------------------------ */
 
 /** Macros do sistema (compêndio Icarus — Macros). */
-export function macrosDoSistema() {
-  const macro = (id, nome, img, command) => ({
-    _id: idEstavel(`macro:${id}`), name: nome, type: "script", img, command, scope: "global", folder: null, sort: 0,
-    flags: { [SISTEMA_ID]: { id } }
-  });
-  return [
-    macro("aplicar-condicao", "Aplicar Condição", "icons/svg/aura.svg", "game.icarus.condicoes.painel();"),
-    macro("telao", "Telão", "icons/svg/video.svg", "game.icarus.telao();"),
-    macro("popular-compendios", "Popular compêndios (Mestre)", "icons/svg/book.svg", "await game.icarus.popularCompendios();")
-  ];
+export function macrosDoSistema(lista = []) {
+  return lista.map((m, i) => ({
+    _id: idEstavel(`macro:${m.id}`), name: m.nome, type: "script",
+    img: m.icone ? encodeURI(`systems/${SISTEMA_ID}/img/Icones/${m.icone}`) : (m.iconeCore ?? ICONE_PADRAO),
+    command: m.comando, scope: "global", folder: null, sort: (i + 1) * 100,
+    flags: { [SISTEMA_ID]: { id: m.id } }
+  }));
 }
 
 /**
@@ -203,6 +200,6 @@ export function documentosNovos(d) {
       itens: d.poderes.poderes.map((p, i) => dadosDoPoderConcedido(p, porDivindade[p.divindade], d.iconesDivindades, (i + 1) * 100))
     },
     condicoes: { pastas: [], diarios: [diarioDasCondicoes(d.condicoes, nomePericia)] },
-    macros: { pastas: [], macros: macrosDoSistema() }
+    macros: { pastas: [], macros: macrosDoSistema(d.macros?.macros) }
   };
 }
