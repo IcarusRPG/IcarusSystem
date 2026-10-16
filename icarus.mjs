@@ -23,6 +23,7 @@ import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
+import { verificarImagensDoSistema } from "./module/imagens.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
@@ -120,6 +121,7 @@ Hooks.on("preCreateActor", (actor, dados) => {
 /** O Mestre é avisado se algum ícone de raça estiver faltando em img/Icones/raças/. */
 Hooks.once("ready", () => {
   if (game.user.isGM) verificarIconesRacas();
+  if (game.user.isGM) verificarImagensDoSistema();
 });
 
 /** Botão "Condições do Mestre" nas ferramentas de token (só para o Mestre). */

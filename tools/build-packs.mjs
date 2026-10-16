@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
 import { documentosNovos } from "../module/dados-compendios.mjs";
 import { PERICIAS } from "../module/config.mjs";
+import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
@@ -31,14 +32,20 @@ const novos = {
 /* ---------- Ícones ---------- */
 const faltandoArquivo = [];
 const semImagem = [];
+const normalizado = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const confere = (pasta, arquivo, nome) => {
   if (!arquivo) return semImagem.push(nome);
-  if (!fs.existsSync(path.join(RAIZ, "img", "Icones", ...pasta.split("/"), arquivo))) faltandoArquivo.push(`${nome}: img/Icones/${pasta}/${arquivo}`);
+  const dir = path.join(RAIZ, "img", "Icones", ...pasta.split("/"));
+  if (fs.existsSync(path.join(dir, arquivo))) return;
+  // Mesmo nome sem acento/maiúsculas (ex.: Condicoes.png): o caminho do mapa precisa ser corrigido
+  const parecido = fs.existsSync(dir) && fs.readdirSync(dir).find(f => normalizado(f) === normalizado(arquivo));
+  faltandoArquivo.push(`${nome}: img/Icones/${pasta}/${arquivo}${parecido ? ` (no disco está "${parecido}")` : ""}`);
 };
 for (const a of armas.armas) confere("itens/equipamentos/armas", a.icone, a.nome);
 for (const m of armas.municoes) confere("itens/equipamentos/munições", m.icone, m.nome);
 for (const a of novos.armaduras.itens) confere("itens/equipamentos/armaduras e escudos", novos.iconesArmaduras[a.id], a.nome);
 for (const d of novos.panteao.divindades) confere("panteão/simbolos", novos.iconesDivindades[d.id], d.nome);
+for (const [chave, rel] of Object.entries(IMAGENS_SISTEMA)) confere(path.posix.dirname(rel), path.posix.basename(rel), `interface (${chave})`);
 if (faltandoArquivo.length) {
   console.error(`ERRO: ${faltandoArquivo.length} ícone(s) mapeado(s) não existem no disco:\n  - ${faltandoArquivo.join("\n  - ")}`);
   process.exit(1);
