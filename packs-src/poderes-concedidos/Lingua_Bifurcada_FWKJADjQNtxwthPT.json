@@ -1,0 +1,56 @@
+{
+  "_id": "FWKJADjQNtxwthPT",
+  "name": "Língua Bifurcada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Odincia.png",
+  "folder": "bnX0upSyTCg7C60s",
+  "sort": 2500,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Odincia",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "odincia",
+    "tipoDano": "",
+    "descricao": "<p>Você recebe +2 em Enganação e Atuação, e criaturas que tentem perceber sua mentira (com um teste de Intuição contra você) sofrem –2 no teste.</p>"
+  },
+  "effects": [
+    {
+      "_id": "whTqXKc60XaerzbU",
+      "name": "Língua Bifurcada",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Odincia.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.enganacao.outros",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "system.pericias.atuacao.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "odincia__lingua-bifurcada"
+        }
+      },
+      "_key": "!items.effects!FWKJADjQNtxwthPT.whTqXKc60XaerzbU"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "odincia__lingua-bifurcada",
+      "divindade": "odincia",
+      "concedido": true
+    }
+  },
+  "_key": "!items!FWKJADjQNtxwthPT"
+}

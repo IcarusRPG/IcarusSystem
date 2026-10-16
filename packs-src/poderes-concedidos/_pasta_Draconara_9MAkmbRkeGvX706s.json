@@ -1,0 +1,15 @@
+{
+  "_id": "9MAkmbRkeGvX706s",
+  "name": "Draconara",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:draconara"
+    }
+  },
+  "_key": "!folders!9MAkmbRkeGvX706s"
+}

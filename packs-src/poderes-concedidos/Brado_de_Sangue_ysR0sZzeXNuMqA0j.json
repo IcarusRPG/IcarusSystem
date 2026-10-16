@@ -1,0 +1,29 @@
+{
+  "_id": "ysR0sZzeXNuMqA0j",
+  "name": "Brado de Sangue",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/B%C3%A9llica.png",
+  "folder": "0icLCKzTdAn9HG4N",
+  "sort": 900,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Béllica",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "bellica",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão</em></p><p>Você pode gastar uma ação padrão para soltar um brado de guerra. Você perde 2d6 PV, que não podem ser reduzidos de nenhuma forma, e, até o fim da cena, você e seus aliados em alcance curto recebem +1 em Fortitude, Reflexos e Vontade. Você não pode usar este poder se os PV perdidos o levassem a 0 PV. Usos repetidos na mesma cena não se acumulam.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bellica__brado-de-sangue",
+      "divindade": "bellica",
+      "concedido": true
+    }
+  },
+  "_key": "!items!ysR0sZzeXNuMqA0j"
+}

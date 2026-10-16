@@ -1,0 +1,29 @@
+{
+  "_id": "YAVpoHiDHSKoXSJM",
+  "name": "Ciclo Repetido",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Mentis.png",
+  "folder": "vXDqF9v3jf4BeCdb",
+  "sort": 5300,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Mentis",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "mentis",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Reação · 2 PM · 1x por cena</em></p><p>Uma vez por cena, quando falha em um teste de resistência, você pode gastar 2 PM para refazê-lo e ficar com o novo resultado.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mentis__ciclo-repetido",
+      "divindade": "mentis",
+      "concedido": true
+    }
+  },
+  "_key": "!items!YAVpoHiDHSKoXSJM"
+}

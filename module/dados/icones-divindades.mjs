@@ -1,0 +1,24 @@
+// GERADO por tools/gerar-dados.mjs a partir de tools/dados/icones-divindades.json — não edite à mão.
+export default {
+  "_leiame": "Mapa id da divindade → arquivo em img/Icones/panteão/simbolos/ (Alfars/ ou Baldurs/). Os 3 poderes concedidos usam o mesmo ícone.",
+  "aletris": "Alfars/Aletris.png",
+  "amorina": "Alfars/Amorina.png",
+  "bellica": "Alfars/Béllica.png",
+  "etheria": "Alfars/Ethéria.png",
+  "floressa": "Alfars/Floressa.png",
+  "justar": "Alfars/Justar.png",
+  "logos": "Alfars/Logos.png",
+  "nocturna": "Alfars/Nocturna.png",
+  "odincia": "Alfars/Odincia.png",
+  "solem": "Alfars/Sólem.png",
+  "ardor": "Baldurs/Ardor.png",
+  "draconara": "Baldurs/Draconara.png",
+  "eternus": "Baldurs/Eternus.png",
+  "expiria": "Baldurs/Expiria.png",
+  "fraudulus": "Baldurs/Fraudulus.png",
+  "insidia": "Baldurs/Insidia.png",
+  "irae": "Baldurs/Irae.png",
+  "mentis": "Baldurs/Mentis.png",
+  "paxus": "Baldurs/Paxus.png",
+  "valorus": "Baldurs/Valorus.png"
+};

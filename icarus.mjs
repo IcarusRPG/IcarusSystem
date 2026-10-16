@@ -18,15 +18,26 @@ import { adicionarItem } from "./module/inventario.mjs";
 import { popularCompendios } from "./module/compendios.mjs";
 import { verificarArmas } from "./module/dev/verificar-armas.mjs";
 import { registrarTelao, abrirTelao } from "./module/telao/telao.mjs";
+import { registrarArmaduras } from "./module/armaduras.mjs";
+import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
+import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
+import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
+import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
+registrarArmaduras();
+registrarBotoesDeDano();
+registrarMorte();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
   "actor/parts/cabecalho.hbs",
   "actor/parts/recursos.hbs",
   "actor/parts/caracteristicas.hbs",
+  "actor/parts/combate.hbs",
+  "actor/parts/condicoes.hbs",
+  "actor/parts/morte.hbs",
   "actor/parts/inventario.hbs",
   "actor/parts/poderes.hbs",
   "actor/parts/diario.hbs",
@@ -41,6 +52,11 @@ const TEMPLATES = [
   "chat/ataque.hbs",
   "chat/dano.hbs",
   "chat/aviso.hbs",
+  "chat/dano-aplicado.hbs",
+  "chat/condicao.hbs",
+  "chat/lembrete.hbs",
+  "painel-condicoes.hbs",
+  "dialogo-poderes-concedidos.hbs",
   "telao/telao.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
@@ -53,6 +69,7 @@ Hooks.once("init", () => {
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
+    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarTesteDeMorte,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
   };
@@ -67,6 +84,7 @@ Hooks.once("init", () => {
   // Opções de mundo
   registrarConfiguracoesDeCombate();
   registrarTelao();
+  game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre };
 
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {
@@ -102,4 +120,16 @@ Hooks.on("preCreateActor", (actor, dados) => {
 /** O Mestre é avisado se algum ícone de raça estiver faltando em img/Icones/raças/. */
 Hooks.once("ready", () => {
   if (game.user.isGM) verificarIconesRacas();
+});
+
+/** Botão "Condições do Mestre" nas ferramentas de token (só para o Mestre). */
+Hooks.on("getSceneControlButtons", controles => {
+  if (!game.user.isGM) return;
+  controles.find(c => c.name === "token")?.tools.push({
+    name: "icarus-condicoes",
+    title: "ICARUS.Condicoes.PainelMestre",
+    icon: "fa-solid fa-person-falling-burst",
+    button: true,
+    onClick: () => abrirPainelDoMestre()
+  });
 });

@@ -1,0 +1,29 @@
+{
+  "_id": "eRGq1Pq9Cc2Sysak",
+  "name": "Armadura Forjada em Sangue",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/B%C3%A9llica.png",
+  "folder": "0icLCKzTdAn9HG4N",
+  "sort": 800,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Béllica",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "bellica",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, o bônus na Defesa da armadura que você veste e o do escudo que você empunha aumentam em +1 cada, e sua penalidade de armadura diminui em 1 (mínimo 0). Vale para qualquer armadura (inclusive túnicas) e qualquer escudo (inclusive o Escudo Acoplado).</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bellica__armadura-forjada-em-sangue",
+      "divindade": "bellica",
+      "concedido": true
+    }
+  },
+  "_key": "!items!eRGq1Pq9Cc2Sysak"
+}

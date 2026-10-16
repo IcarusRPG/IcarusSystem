@@ -1,0 +1,851 @@
+{
+  "poderes": [
+    {
+      "id": "aletris__sim-nao-talvez",
+      "nome": "Sim, Não, Talvez",
+      "divindade": "aletris",
+      "divindadeNome": "Alétris",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "livre",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Antes de fazer um teste de perícia, você pode gastar 1 PM e rolar 1d6. Com 1 ou 2 (Não), sofre –3 no teste; com 3 ou 4 (Talvez), recebe +1; com 5 ou 6 (Sim), recebe +4.",
+      "efeitos": []
+    },
+    {
+      "id": "aletris__estacao-sorteada",
+      "nome": "Estação Sorteada",
+      "divindade": "aletris",
+      "divindadeNome": "Alétris",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM para rolar 1d4. A estação sorteada dura até o fim da cena. 1 (Primavera): no início de cada um de seus turnos, você recupera 1d4 PV, caso esteja ferido. 2 (Verão): você recebe +2 nas rolagens de dano. 3 (Outono): você recebe +2 em Furtividade, Intuição e Vontade. 4 (Inverno): você recebe +2 na Defesa e sofre –3m de deslocamento. Você pode gastar 1 PM para rolar novamente; o novo resultado substitui o anterior.",
+      "efeitos": []
+    },
+    {
+      "id": "aletris__caos-generoso",
+      "nome": "Caos Generoso",
+      "divindade": "aletris",
+      "divindadeNome": "Alétris",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Na primeira vez em cada cena que tirar 1 ou 20 natural em um d20, você recupera 1d4 PM.",
+      "efeitos": []
+    },
+    {
+      "id": "amorina__toque-acalentador",
+      "nome": "Toque Acalentador",
+      "divindade": "amorina",
+      "divindadeNome": "Amorina",
+      "grupo": "Alfars",
+      "custoPM": 2,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você se torna treinado em Cura (se já for treinado, recebe +2 nessa perícia). Além disso, pode gastar uma ação padrão e 2 PM para tocar uma criatura (inclusive você). Ela recupera 1d10 PV + seu Carisma + seu bônus total em Cura.",
+      "efeitos": []
+    },
+    {
+      "id": "amorina__riso-sagrado",
+      "nome": "Riso Sagrado",
+      "divindade": "amorina",
+      "divindadeNome": "Amorina",
+      "grupo": "Alfars",
+      "custoPM": 2,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 2 PM. Você e seus aliados em alcance curto recebem +2 em Vontade e Fortitude até o fim da cena.",
+      "efeitos": []
+    },
+    {
+      "id": "amorina__guarda-dos-inocentes",
+      "nome": "Guarda dos Inocentes",
+      "divindade": "amorina",
+      "divindadeNome": "Amorina",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "reacao",
+      "frequencia": "rodada",
+      "sustentada": false,
+      "descricao": "Uma vez por rodada, quando uma criatura em alcance curto sofreria dano, você pode gastar 1 PM. A criatura sofre apenas metade desse dano e você sofre o restante (arredonde para cima o dano que ela evita e para baixo o que você sofre).",
+      "efeitos": []
+    },
+    {
+      "id": "bellica__aco-abencoado",
+      "nome": "Aço Abençoado",
+      "divindade": "bellica",
+      "divindadeNome": "Béllica",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, uma arma que esteja empunhando e na qual seja proficiente recebe +1 na margem de ameaça e +2 nas rolagens de dano.",
+      "efeitos": []
+    },
+    {
+      "id": "bellica__armadura-forjada-em-sangue",
+      "nome": "Armadura Forjada em Sangue",
+      "divindade": "bellica",
+      "divindadeNome": "Béllica",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, o bônus na Defesa da armadura que você veste e o do escudo que você empunha aumentam em +1 cada, e sua penalidade de armadura diminui em 1 (mínimo 0). Vale para qualquer armadura (inclusive túnicas) e qualquer escudo (inclusive o Escudo Acoplado).",
+      "efeitos": []
+    },
+    {
+      "id": "bellica__brado-de-sangue",
+      "nome": "Brado de Sangue",
+      "divindade": "bellica",
+      "divindadeNome": "Béllica",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão para soltar um brado de guerra. Você perde 2d6 PV, que não podem ser reduzidos de nenhuma forma, e, até o fim da cena, você e seus aliados em alcance curto recebem +1 em Fortitude, Reflexos e Vontade. Você não pode usar este poder se os PV perdidos o levassem a 0 PV. Usos repetidos na mesma cena não se acumulam.",
+      "efeitos": []
+    },
+    {
+      "id": "etheria__mare-de-mana",
+      "nome": "Maré de Mana",
+      "divindade": "etheria",
+      "divindadeNome": "Etheria",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Seus PM máximos aumentam em +2 e em +1 a cada 3 níveis (níveis 3, 6, 9, 12, 15, 18 e 21).",
+      "efeitos": []
+    },
+    {
+      "id": "etheria__veu-cintilante",
+      "nome": "Véu Cintilante",
+      "divindade": "etheria",
+      "divindadeNome": "Etheria",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Sempre que gasta 2 PM ou mais em um único efeito, você recebe +2 na Defesa até o início do seu próximo turno.",
+      "efeitos": []
+    },
+    {
+      "id": "etheria__duas-faces-da-mana",
+      "nome": "Duas Faces da Mana",
+      "divindade": "etheria",
+      "divindadeNome": "Etheria",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Pré-requisito: capacidade de lançar magias. Escolha uma magia da tradição oposta à sua (arcana, se você lança magias divinas; divina, se lança magias arcanas), de um círculo que você já possa lançar. Você aprende e pode lançar essa magia. Sempre que sobe de nível, pode trocá-la por outra que atenda aos mesmos requisitos.",
+      "efeitos": []
+    },
+    {
+      "id": "floressa__voz-da-mata",
+      "nome": "Voz da Mata",
+      "divindade": "floressa",
+      "divindadeNome": "Floressa",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você entende e fala com animais e recebe +2 em Adestramento e Sobrevivência.",
+      "efeitos": [
+        {
+          "pericia": "adestramento",
+          "valor": 2
+        },
+        {
+          "pericia": "sobrevivencia",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "floressa__pele-de-casca",
+      "nome": "Pele de Casca",
+      "divindade": "floressa",
+      "divindadeNome": "Floressa",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, sua pele endurece como casca e você recebe +1 na Defesa e redução de corte, perfuração e impacto 3.",
+      "efeitos": []
+    },
+    {
+      "id": "floressa__seiva-vital",
+      "nome": "Seiva Vital",
+      "divindade": "floressa",
+      "divindadeNome": "Floressa",
+      "grupo": "Alfars",
+      "custoPM": 2,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 2 PM para tocar uma criatura (inclusive você). Ela recupera 1d4 PV + sua Sabedoria e, se estiver sangrando ou em chamas, é curada dessas condições.",
+      "efeitos": []
+    },
+    {
+      "id": "justar__contrapeso",
+      "nome": "Contrapeso",
+      "divindade": "justar",
+      "divindadeNome": "Justar",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Na primeira vez em cada cena que um inimigo acerta você ou um aliado em alcance curto, esse inimigo é marcado como agressor. Você recebe +2 nos testes de ataque contra ele até o fim da cena.",
+      "efeitos": []
+    },
+    {
+      "id": "justar__balanca-da-verdade",
+      "nome": "Balança da Verdade",
+      "divindade": "justar",
+      "divindadeNome": "Justar",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você se torna treinado em Intuição (se já for treinado, recebe +2 nessa perícia) e recebe +2 em Diplomacia.",
+      "efeitos": [
+        {
+          "pericia": "diplomacia",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "justar__fogo-da-justica",
+      "nome": "Fogo da Justiça",
+      "divindade": "justar",
+      "divindadeNome": "Justar",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, uma arma corpo a corpo que esteja empunhando causa +1d6 pontos de dano de fogo contra criaturas que tenham causado dano a você ou a um aliado durante a cena.",
+      "efeitos": []
+    },
+    {
+      "id": "logos__mente-arquivista",
+      "nome": "Mente Arquivista",
+      "divindade": "logos",
+      "divindadeNome": "Logos",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você recebe +2 em História e pode usar Inteligência, em vez de Sabedoria, nos testes de Cura, Intuição e Sobrevivência.",
+      "efeitos": [
+        {
+          "pericia": "historia",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "logos__ja-li-sobre-isso",
+      "nome": "Já Li Sobre Isso",
+      "divindade": "logos",
+      "divindadeNome": "Logos",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "livre",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Quando faz um teste de História, Investigação, Misticismo, Nobreza ou Religião, você pode gastar 1 PM para rolá-lo como se fosse Especialista (+4 de treino).",
+      "efeitos": []
+    },
+    {
+      "id": "logos__centelha-compartilhada",
+      "nome": "Centelha Compartilhada",
+      "divindade": "logos",
+      "divindadeNome": "Logos",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Uma vez por cena, você pode gastar uma ação de movimento e 1 PM. Um aliado em alcance curto que possa ouvi-lo recebe +2 no próximo teste de perícia (exceto ataque) que fizer até o fim do seu próximo turno.",
+      "efeitos": []
+    },
+    {
+      "id": "nocturna__rosto-sem-nome",
+      "nome": "Rosto Sem Nome",
+      "divindade": "nocturna",
+      "divindadeNome": "Nocturna",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Enquanto seu rosto estiver coberto (por máscara, capuz ou véu), você recebe +2 em Furtividade e Intimidação, e criaturas que tentem descobrir sua identidade sofrem –5 nesses testes.",
+      "efeitos": []
+    },
+    {
+      "id": "nocturna__manto-de-trevas",
+      "nome": "Manto de Trevas",
+      "divindade": "nocturna",
+      "divindadeNome": "Nocturna",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, uma sombra viva o envolve e você recebe +2 em Furtividade e +2 na Defesa contra ataques à distância. O efeito termina se você fizer um ataque.",
+      "efeitos": []
+    },
+    {
+      "id": "nocturna__ouvir-os-mortos",
+      "nome": "Ouvir os Mortos",
+      "divindade": "nocturna",
+      "divindadeNome": "Nocturna",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "completa",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação completa e 1 PM para tocar um cadáver morto há no máximo um dia e fazer um teste de Vontade (CD 10 + ND da criatura). Se passar, pode fazer uma pergunta ao cadáver, que responde apenas SIM ou NÃO, e somente se soubesse a resposta em vida; do contrário, permanece em silêncio. Cada cadáver só pode ser ouvido uma vez, passando ou falhando no teste.",
+      "efeitos": []
+    },
+    {
+      "id": "odincia__lingua-bifurcada",
+      "nome": "Língua Bifurcada",
+      "divindade": "odincia",
+      "divindadeNome": "Odincia",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você recebe +2 em Enganação e Atuação, e criaturas que tentem perceber sua mentira (com um teste de Intuição contra você) sofrem –2 no teste.",
+      "efeitos": [
+        {
+          "pericia": "enganacao",
+          "valor": 2
+        },
+        {
+          "pericia": "atuacao",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "odincia__odio-guardado",
+      "nome": "Ódio Guardado",
+      "divindade": "odincia",
+      "divindadeNome": "Odincia",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você guarda rancor por uma única criatura por cena: a primeira que acertar você com um ataque. Até o fim da cena, você causa +2 de dano em ataques contra ela para cada acerto que ela tenha feito em você, até um máximo de +6. Você só pode trocar o alvo do rancor se ele for reduzido a 0 PV; nesse caso, o rancor passa para a próxima criatura que acertar você e o acúmulo recomeça do zero.",
+      "efeitos": []
+    },
+    {
+      "id": "odincia__veu-de-ruina",
+      "nome": "Véu de Ruína",
+      "divindade": "odincia",
+      "divindadeNome": "Odincia",
+      "grupo": "Alfars",
+      "custoPM": 2,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 2 PM para criar uma duplicata ilusória de si mesmo ao seu lado. No primeiro ataque que um inimigo fizer contra você, role 1d6. Com 5 ou 6, o ataque atinge a ilusão e erra. Depois desse primeiro ataque, acertando a ilusão ou não, a duplicata desaparece.",
+      "efeitos": []
+    },
+    {
+      "id": "solem__muralha-solar",
+      "nome": "Muralha Solar",
+      "divindade": "solem",
+      "divindadeNome": "Sólem",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": true,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Seus aliados adjacentes recebem +1 na Defesa, ou +2 se você estiver empunhando um escudo (inclusive o Escudo Acoplado). Este poder é sustentado: para mantê-lo, você deve gastar 1 PM no início de cada um de seus turnos. Se não pagar, ou se ficar inconsciente, o efeito termina.",
+      "efeitos": []
+    },
+    {
+      "id": "solem__clarao-do-amanhecer",
+      "nome": "Clarão do Amanhecer",
+      "divindade": "solem",
+      "divindadeNome": "Sólem",
+      "grupo": "Alfars",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM para emitir um clarão de luz. Inimigos em alcance curto que possam vê-lo sofrem –2 nos testes de ataque até o início do seu próximo turno.",
+      "efeitos": []
+    },
+    {
+      "id": "solem__raio-solar",
+      "nome": "Raio Solar",
+      "divindade": "solem",
+      "divindadeNome": "Sólem",
+      "grupo": "Alfars",
+      "custoPM": null,
+      "acao": "completa",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação completa para invocar o poder de Sólem. Até o fim da cena, você recebe +1 nos testes de ataque e seus ataques causam +1d4 pontos de dano de fogo ou de luz. Você escolhe o tipo de dano ao usar o poder e não pode mudá-lo até o fim da cena. Este poder não custa PM.",
+      "efeitos": []
+    },
+    {
+      "id": "ardor__romper-amarras",
+      "nome": "Romper Amarras",
+      "divindade": "ardor",
+      "divindadeNome": "Ardor",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Você recebe +2 em Atletismo e Acrobacia para escapar de agarrões, cordas, algemas e grilhões. Além disso, uma vez por cena, você pode gastar uma ação livre e 1 PM para encerrar uma condição de movimento que o esteja prendendo.",
+      "efeitos": [
+        {
+          "pericia": "atletismo",
+          "valor": 2,
+          "condicional": "escapar de agarrões, cordas, algemas e grilhões"
+        },
+        {
+          "pericia": "acrobacia",
+          "valor": 2,
+          "condicional": "escapar de agarrões, cordas, algemas e grilhões"
+        }
+      ]
+    },
+    {
+      "id": "ardor__medir-o-desafio",
+      "nome": "Medir o Desafio",
+      "divindade": "ardor",
+      "divindadeNome": "Ardor",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "livre",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Antes de fazer um teste de perícia (exceto ataque), você pode gastar 1 PM para perguntar ao mestre qual é a CD do teste. Se fizer isso, sofre –2 no resultado do teste.",
+      "efeitos": []
+    },
+    {
+      "id": "ardor__golpe-ambicioso",
+      "nome": "Golpe Ambicioso",
+      "divindade": "ardor",
+      "divindadeNome": "Ardor",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "O multiplicador de crítico de armas com as quais você é proficiente aumenta em +1.",
+      "efeitos": []
+    },
+    {
+      "id": "draconara__couraca-draconica",
+      "nome": "Couraça Dracônica",
+      "divindade": "draconara",
+      "divindadeNome": "Draconara",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você recebe redução de fogo 5 e +1 na Defesa.",
+      "efeitos": [
+        {
+          "defesa": 1
+        },
+        {
+          "reducao": {
+            "fogo": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "draconara__folego-de-dragao",
+      "nome": "Fôlego de Dragão",
+      "divindade": "draconara",
+      "divindadeNome": "Draconara",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "especial",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você aprende e pode lançar Cone de Chamas, como uma magia arcana (atributo-chave Carisma).",
+      "efeitos": []
+    },
+    {
+      "id": "draconara__comando-de-batalha",
+      "nome": "Comando de Batalha",
+      "divindade": "draconara",
+      "divindadeNome": "Draconara",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "movimento",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Uma vez por cena, você pode gastar uma ação de movimento para dar uma ordem a um aliado em alcance curto que possa ouvi-lo. Se ele obedecer, usando sua própria ação para fazer um ataque ou curar alguém, você e ele recuperam 1d6 PM.",
+      "efeitos": []
+    },
+    {
+      "id": "eternus__corpo-renovado",
+      "nome": "Corpo Renovado",
+      "divindade": "eternus",
+      "divindadeNome": "Eternus",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Escolha duas condições. Você fica imune a elas. Sempre que sobe de nível, pode trocar as condições escolhidas.",
+      "efeitos": []
+    },
+    {
+      "id": "eternus__pressagio",
+      "nome": "Presságio",
+      "divindade": "eternus",
+      "divindadeNome": "Eternus",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Você recebe +2 em iniciativa e não pode ser surpreendido. Além disso, uma vez por cena, quando um aliado em alcance curto for alvo de um ataque, você pode gastar 1 PM como reação para avisá-lo. Ele recebe +2 na Defesa contra esse ataque.",
+      "efeitos": [
+        {
+          "pericia": "iniciativa",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "eternus__caca-da-alcateia",
+      "nome": "Caça da Alcateia",
+      "divindade": "eternus",
+      "divindadeNome": "Eternus",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM para marcar como presa um inimigo que possa ver em alcance curto. Você recebe +1 nos testes de ataque contra ele. Você só pode ter uma presa por vez e não pode marcar outra até que a atual seja reduzida a 0 PV ou a cena termine.",
+      "efeitos": []
+    },
+    {
+      "id": "expiria__filho-das-aguas",
+      "nome": "Filho das Águas",
+      "divindade": "expiria",
+      "divindadeNome": "Expiria",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode respirar embaixo d'água e adquire deslocamento de natação igual ao seu deslocamento terrestre. Além disso, não sofre penalidades em combate por estar na água.",
+      "efeitos": []
+    },
+    {
+      "id": "expiria__furia-do-tridente",
+      "nome": "Fúria do Tridente",
+      "divindade": "expiria",
+      "divindadeNome": "Expiria",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você se torna proficiente com tridentes. Para você, o tridente é considerado uma arma Ágil, e você recebe +2 nos testes de ataque e +1 na margem de ameaça com ele. Quando você arremessa um tridente, ele volta automaticamente para sua mão ao fim do ataque, acertando ou não.",
+      "efeitos": []
+    },
+    {
+      "id": "expiria__frio-das-profundezas",
+      "nome": "Frio das Profundezas",
+      "divindade": "expiria",
+      "divindadeNome": "Expiria",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, seus ataques causam +2 pontos de dano de frio.",
+      "efeitos": []
+    },
+    {
+      "id": "fraudulus__dado-carregado",
+      "nome": "Dado Carregado",
+      "divindade": "fraudulus",
+      "divindadeNome": "Fraudulus",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "livre",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Uma vez por cena, depois de rolar um teste de perícia (exceto ataque) e ver o resultado, você pode gastar 1 PM para trocar o resultado do d20 por 11.",
+      "efeitos": []
+    },
+    {
+      "id": "fraudulus__maos-leves",
+      "nome": "Mãos Leves",
+      "divindade": "fraudulus",
+      "divindadeNome": "Fraudulus",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você recebe +2 em Enganação e Prestidigitação e pode sacar ou guardar itens e armas Leves sem gastar uma ação.",
+      "efeitos": [
+        {
+          "pericia": "prestidigitacao",
+          "valor": 2
+        },
+        {
+          "pericia": "enganacao",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "fraudulus__mil-rostos",
+      "nome": "Mil Rostos",
+      "divindade": "fraudulus",
+      "divindadeNome": "Fraudulus",
+      "grupo": "Baldurs",
+      "custoPM": 2,
+      "acao": "completa",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação completa e 2 PM para assumir a aparência de outra criatura do seu tamanho até o fim da cena, recebendo +5 em Enganação para se passar por ela. O efeito termina se você atacar ou sofrer dano.",
+      "efeitos": []
+    },
+    {
+      "id": "insidia__silencio-letal",
+      "nome": "Silêncio Letal",
+      "divindade": "insidia",
+      "divindadeNome": "Insidia",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Uma vez por cena, o primeiro ataque que você fizer contra uma criatura que não o tenha percebido causa +2d6 pontos de dano.",
+      "efeitos": []
+    },
+    {
+      "id": "insidia__fio-invisivel",
+      "nome": "Fio Invisível",
+      "divindade": "insidia",
+      "divindadeNome": "Insidia",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 1 PM para sussurrar uma sugestão venenosa a uma criatura em alcance curto que possa ouvi-lo. A criatura deve fazer um teste de Vontade (CD Car). Se falhar, sofre –2 em testes de ataque e de perícia até o fim da cena.",
+      "efeitos": []
+    },
+    {
+      "id": "insidia__coracao-de-veneno",
+      "nome": "Coração de Veneno",
+      "divindade": "insidia",
+      "divindadeNome": "Insidia",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento para banhar suas armas em veneno. Você perde 1d6 PV, que não podem ser reduzidos de nenhuma forma, e, até o fim da cena, seus ataques causam +2 pontos de dano de veneno.",
+      "efeitos": []
+    },
+    {
+      "id": "irae__entrega-total",
+      "nome": "Entrega Total",
+      "divindade": "irae",
+      "divindadeNome": "Irae",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, você recebe +2 nos testes de ataque e nas rolagens de dano corpo a corpo, mas sofre –2 na Defesa.",
+      "efeitos": []
+    },
+    {
+      "id": "irae__estrondo-do-trovao",
+      "nome": "Estrondo do Trovão",
+      "divindade": "irae",
+      "divindadeNome": "Irae",
+      "grupo": "Baldurs",
+      "custoPM": 2,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 2 PM. Todas as criaturas em alcance corpo a corpo sofrem 2d6 pontos de dano elétrico (Fortitude CD Con reduz à metade).",
+      "efeitos": []
+    },
+    {
+      "id": "irae__voz-que-nao-se-cala",
+      "nome": "Voz que Não se Cala",
+      "divindade": "irae",
+      "divindadeNome": "Irae",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você recebe +2 em Intimidação e +5 em testes de resistência contra efeitos de medo.",
+      "efeitos": [
+        {
+          "pericia": "intimidacao",
+          "valor": 2
+        }
+      ]
+    },
+    {
+      "id": "mentis__ritmo-do-tempo",
+      "nome": "Ritmo do Tempo",
+      "divindade": "mentis",
+      "divindadeNome": "Mentis",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Quando faz um teste de iniciativa, você rola dois d20 e usa o melhor resultado.",
+      "efeitos": []
+    },
+    {
+      "id": "mentis__ciclo-repetido",
+      "nome": "Ciclo Repetido",
+      "divindade": "mentis",
+      "divindadeNome": "Mentis",
+      "grupo": "Baldurs",
+      "custoPM": 2,
+      "acao": "reacao",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Uma vez por cena, quando falha em um teste de resistência, você pode gastar 2 PM para refazê-lo e ficar com o novo resultado.",
+      "efeitos": []
+    },
+    {
+      "id": "mentis__troca-de-ritmo",
+      "nome": "Troca de Ritmo",
+      "divindade": "mentis",
+      "divindadeNome": "Mentis",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "livre",
+      "frequencia": "cena",
+      "sustentada": false,
+      "descricao": "Uma vez por cena, no início do seu turno, você pode gastar uma ação livre e 1 PM para trocar de posição na iniciativa com um aliado em alcance curto. Ele age agora, no seu lugar, e você age no turno dele; a nova ordem vale até o fim da cena. Além disso, vocês trocam de lugar no campo de batalha, ocupando instantaneamente o espaço um do outro.",
+      "efeitos": []
+    },
+    {
+      "id": "paxus__domo-da-verdade",
+      "nome": "Domo da Verdade",
+      "divindade": "paxus",
+      "divindadeNome": "Paxus",
+      "grupo": "Baldurs",
+      "custoPM": 3,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 3 PM para conjurar um domo de energia divina com 6m de raio, centrado em você, que dura até o fim da cena. Criaturas dentro do domo, ou que entrem nele, devem fazer um teste de Vontade (CD Sab). Se passar, a criatura fica imune a este poder por um dia. Se falhar, ela não pode sair do domo e não pode dizer mentiras: tudo o que disser é verdade. Você também é afetado pelo domo, automaticamente e sem teste, e não pode sair dele enquanto ele durar.",
+      "efeitos": []
+    },
+    {
+      "id": "paxus__escudo-interposto",
+      "nome": "Escudo Interposto",
+      "divindade": "paxus",
+      "divindadeNome": "Paxus",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "reacao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Quando um aliado adjacente é alvo de um ataque, você pode gastar 1 PM como reação para se interpor. O ataque passa a ter você como alvo.",
+      "efeitos": []
+    },
+    {
+      "id": "paxus__mao-que-segura",
+      "nome": "Mão que Segura",
+      "divindade": "paxus",
+      "divindadeNome": "Paxus",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM. Um aliado adjacente recebe 1d6 + sua Sabedoria PV temporários até o fim da cena.",
+      "efeitos": []
+    },
+    {
+      "id": "valorus__desafio-honrado",
+      "nome": "Desafio Honrado",
+      "divindade": "valorus",
+      "divindadeNome": "Valorus",
+      "grupo": "Baldurs",
+      "custoPM": 1,
+      "acao": "movimento",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação de movimento e 1 PM para escolher um inimigo que possa ver em alcance curto. Até o fim da cena, você recebe +2 nos testes de ataque e nas rolagens de dano contra ele. O efeito termina se você atacar outra criatura hostil ou se o inimigo for reduzido a 0 PV.",
+      "efeitos": []
+    },
+    {
+      "id": "valorus__brado-de-honra",
+      "nome": "Brado de Honra",
+      "divindade": "valorus",
+      "divindadeNome": "Valorus",
+      "grupo": "Baldurs",
+      "custoPM": 2,
+      "acao": "padrao",
+      "frequencia": "",
+      "sustentada": false,
+      "descricao": "Você pode gastar uma ação padrão e 2 PM. Você e seus aliados em alcance curto recebem +1 nos testes de ataque e +2 em Vontade até o fim da cena.",
+      "efeitos": []
+    },
+    {
+      "id": "valorus__vitoria-digna",
+      "nome": "Vitória Digna",
+      "divindade": "valorus",
+      "divindadeNome": "Valorus",
+      "grupo": "Baldurs",
+      "custoPM": null,
+      "acao": "passivo",
+      "frequencia": "rodada",
+      "sustentada": false,
+      "descricao": "Uma vez por rodada, quando reduz um inimigo a 0 PV com um ataque corpo a corpo, você recupera PV igual ao seu nível. Uma vez por cena, você também recupera 1 PM.",
+      "efeitos": []
+    }
+  ]
+}

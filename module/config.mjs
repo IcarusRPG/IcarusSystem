@@ -5,6 +5,9 @@
  * e as respectivas traduções em lang/pt-BR.json.
  */
 
+import ARMADURAS from "./dados/armaduras.mjs";
+import TIPOS_DANO_DADOS from "./dados/tipos-dano.mjs";
+
 export const SISTEMA_ID = "icarus-rpg";
 
 /** Ícone padrão de todo personagem novo (o nome do arquivo tem espaços). */
@@ -87,13 +90,20 @@ export const METROS_POR_QUADRADO = 1.5;
 export const TIPOS_EQUIPAMENTO = ["armadura", "escudo", "consumivel", "profissao", "outro"];
 export const TIPOS_EQUIPAVEIS = ["armadura", "escudo"];
 
+/** Categorias de armadura e escudo (compêndio Armaduras e Escudos). Túnicas contam como armadura. */
+export const CATEGORIAS_ARMADURA = ["leve", "media", "pesada", "tunica", "escudo", "escudo-acoplado"];
+
+/** Perícias que sofrem a penalidade de armadura (tools/dados/armaduras.json → penalidadePericias). */
+export const PERICIAS_PENALIZADAS = ARMADURAS.penalidadePericias;
+
 /* ------------------------------ Armas e munições ------------------------------ */
 
 export const CATEGORIAS_ARMA = ["simples", "marcial", "exotica", "fogo"];
 export const GRUPOS_ARMA = ["corpo-a-corpo", "distancia", "fogo"];
 export const EMPUNHADURAS = ["leve", "uma-mao", "duas-maos"];
 export const ALCANCES = ["corpo-a-corpo", "curto", "medio", "longo"];
-export const TIPOS_DANO = ["corte", "perfuracao", "impacto"];
+// Tipos de dano das armas: todos os do sistema (as armas cadastradas usam corte, perfuração e impacto)
+export const TIPOS_DANO = TIPOS_DANO_DADOS.tipos.map(t => t.id).filter(t => t !== "dano");
 export const PROPRIEDADES_ARMA = ["leve", "agil", "duas-maos", "arremesso", "dupla", "oculta", "cano-duplo"];
 export const TIPOS_MUNICAO = ["flechas", "virotes", "pedras", "balas"];
 
@@ -115,18 +125,37 @@ export const CARGA_BASE = 10;
 export const CARGA_POR_FOR = 2;
 
 /** De onde vem um poder; a aba Poderes agrupa nesta ordem. */
-export const FONTES_PODER = ["raca", "classe", "origem", "profissao", "geral"];
+export const FONTES_PODER = ["raca", "classe", "origem", "profissao", "divindade", "geral"];
+
+/** Ação e frequência de uso dos poderes (poderes concedidos). */
+export const ACOES_PODER = ["livre", "movimento", "padrao", "completa", "reacao", "passivo", "especial"];
+export const FREQUENCIAS_PODER = ["cena", "rodada", "dia"];
+
+/**
+ * Tipos de dano (tools/dados/tipos-dano.json). "dano" é o genérico (só sofre RD geral).
+ * Não existe tipo "Perda de PV": perder PV é regra à parte e ignora resistências.
+ */
+export const TIPOS_DANO_TODOS = TIPOS_DANO_DADOS.tipos.map(t => t.id);
+export const TIPOS_DANO_COM_RESISTENCIA = TIPOS_DANO_TODOS.filter(t => t !== "dano");
+export const REGRAS_DANO = TIPOS_DANO_DADOS.regras;
 
 /** Campos que os Efeitos Ativos podem alterar (modo Somar). */
 export function chavesDeEfeito() {
   return [
     ...ATRIBUTOS.map(k => `system.atributos.${k}.temp`),
     "system.defesa.outros",
-    ...PERICIAS.map(p => `system.pericias.${p.chave}.outros`)
+    ...PERICIAS.map(p => `system.pericias.${p.chave}.outros`),
+    // Resistências: somar em rdGeral e reducao; forçar true (modo Substituir) em imunidade e vulnerabilidade
+    "system.resistencias.rdGeral",
+    ...TIPOS_DANO_COM_RESISTENCIA.map(t => `system.resistencias.reducao.${t}`),
+    ...TIPOS_DANO_COM_RESISTENCIA.map(t => `system.resistencias.imunidade.${t}`),
+    ...TIPOS_DANO_COM_RESISTENCIA.map(t => `system.resistencias.vulnerabilidade.${t}`)
   ];
 }
 
 export const ICARUS = {
+  // Tipos de dano (CONFIG.ICARUS.tiposDano): id → chave de tradução
+  tiposDano: Object.fromEntries(TIPOS_DANO_TODOS.map(id => [id, `ICARUS.TiposDano.${id}`])),
   SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, ATRIBUTOS_CHAVE_PM, BONUS_TREINO, NIVEL_MAXIMO, NIVEL_PARAGON,
   PERICIAS, RESISTENCIAS, TAMANHOS, METROS_POR_QUADRADO, TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS, FONTES_PODER
 };

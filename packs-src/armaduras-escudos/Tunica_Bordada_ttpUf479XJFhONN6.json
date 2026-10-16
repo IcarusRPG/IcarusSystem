@@ -1,0 +1,33 @@
+{
+  "_id": "ttpUf479XJFhONN6",
+  "name": "Túnica Bordada",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/T%C3%BAnica%20bordada.png",
+  "folder": "aOECkPEpIoKqocck",
+  "sort": 900,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "tunica",
+    "bonusDefesa": 2,
+    "penalidade": 2,
+    "preco": 4000,
+    "espacos": 1,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": true,
+    "acoplado": false,
+    "provisorio": [
+      "nome",
+      "preco",
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tunica-bordada"
+    }
+  },
+  "_key": "!items!ttpUf479XJFhONN6"
+}

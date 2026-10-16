@@ -1,0 +1,29 @@
+{
+  "_id": "u1p1geuqsJYLxdEn",
+  "name": "Contrapeso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Justar.png",
+  "folder": "QUDMA8fbOxI0TKms",
+  "sort": 1600,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Justar",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "justar",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>1x por cena</em></p><p>Na primeira vez em cada cena que um inimigo acerta você ou um aliado em alcance curto, esse inimigo é marcado como agressor. Você recebe +2 nos testes de ataque contra ele até o fim da cena.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "justar__contrapeso",
+      "divindade": "justar",
+      "concedido": true
+    }
+  },
+  "_key": "!items!u1p1geuqsJYLxdEn"
+}

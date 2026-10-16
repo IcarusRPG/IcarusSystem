@@ -1,0 +1,29 @@
+{
+  "_id": "6CY9ylJfcMgGxP2d",
+  "name": "Fôlego de Dragão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Draconara.png",
+  "folder": "9MAkmbRkeGvX706s",
+  "sort": 3500,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Draconara",
+    "nivel": null,
+    "acao": "especial",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "draconara",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Especial</em></p><p>Você aprende e pode lançar Cone de Chamas, como uma magia arcana (atributo-chave Carisma).</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "draconara__folego-de-dragao",
+      "divindade": "draconara",
+      "concedido": true
+    }
+  },
+  "_key": "!items!6CY9ylJfcMgGxP2d"
+}

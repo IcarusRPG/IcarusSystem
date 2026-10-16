@@ -1,0 +1,9 @@
+<div class="icarus-rolagem icarus-condicao">
+  <div class="arma-cab">
+    <img src="{{img}}" alt="" width="32" height="32">
+    <h3 class="rolagem-nome">{{titulo}}</h3>
+  </div>
+  {{#if pendente}}<div class="rolagem-selo selo-pendente">{{localize "ICARUS.Condicoes.RegraAConfirmar"}}</div>{{/if}}
+  {{#if descricao}}<p class="condicao-descricao">{{descricao}}</p>{{/if}}
+  {{#if avisos.length}}<ul class="condicao-avisos">{{#each avisos}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+</div>

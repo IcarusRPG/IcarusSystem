@@ -72,7 +72,7 @@
       {{#each equipamentos}}
       <div class="item" data-item-id="{{id}}">
         <img class="item-img" src="{{img}}" alt="" width="32" height="32">
-        <div class="item-nome"><b>{{name}}</b><small>{{tipo}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}} · {{espacos}} {{localize "ICARUS.Inventario.EspacosCurto"}} · <span title="{{preco.ouro}}">{{preco.texto}}</span></small></div>
+        <div class="item-nome"><b>{{name}}</b><small>{{#if categoria}}{{categoria}}{{else}}{{tipo}}{{/if}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}}{{#if penalidade}} · {{localize "ICARUS.Armaduras.Penalidade"}} {{penalidade}}{{/if}} · {{espacos}} {{localize "ICARUS.Inventario.EspacosCurto"}} · <span title="{{preco.ouro}}">{{preco.texto}}</span></small></div>
         <div class="item-qtd">×{{quantidade}}</div>
         {{#if equipavel}}
         <button type="button" class="btn equipar{{#if equipado}} on{{/if}}" data-action="item-equipar" aria-pressed="{{#if equipado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
@@ -102,6 +102,8 @@
       <h3 class="titulo-painel">{{localize "ICARUS.Defesa.Rotulo"}}</h3>
       <span class="dica">{{defesa.formula}}</span>
       <span class="grande">{{defesa.total}}</span>
+      {{#if defesa.penalidade}}<span class="dica">{{defesa.penalidade}}</span>{{/if}}
+      {{#if defesa.avisoAcoplado}}<span class="dica aviso-ataques">{{defesa.avisoAcoplado}}</span>{{/if}}
     </div>
     <div class="painel caixa-moedas">
       <h3 class="titulo-painel">{{localize "ICARUS.Moedas.Titulo"}}</h3>

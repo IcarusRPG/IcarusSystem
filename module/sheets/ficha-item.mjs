@@ -1,5 +1,5 @@
 import {
-  SISTEMA_ID, FONTES_PODER, TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS, CATEGORIAS_ARMA, GRUPOS_ARMA, EMPUNHADURAS,
+  CATEGORIAS_ARMADURA, SISTEMA_ID, FONTES_PODER, TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS, CATEGORIAS_ARMA, GRUPOS_ARMA, EMPUNHADURAS,
   ALCANCES, TIPOS_DANO, PROPRIEDADES_ARMA, TIPOS_MUNICAO, ALCANCE_METROS, TAMANHO_PACOTE
 } from "../config.mjs";
 import { numero } from "../regras.mjs";
@@ -39,6 +39,10 @@ export class FichaItem extends ItemSheet {
     ctx.opcoesFonte = opcoes(FONTES_PODER, "ICARUS.Poderes.Fontes");
     ctx.opcoesTipo = opcoes(TIPOS_EQUIPAMENTO, "ICARUS.Equipamento.Tipos");
     ctx.equipavel = TIPOS_EQUIPAVEIS.includes(s.tipo);
+    if (item.type === "equipamento") {
+      ctx.opcoesCategoriaArmadura = { "": "ICARUS.Armaduras.SemCategoria", ...opcoes(CATEGORIAS_ARMADURA, "ICARUS.Armaduras.Categorias") };
+      ctx.provisorio = (s.provisorio ?? []).map(c => loc(`ICARUS.Armaduras.Campos.${c}`)).join(", ");
+    }
     ctx.descricaoHTML = await TextEditor.enrichHTML(src.descricao, { async: true, secrets: item.isOwner, relativeTo: item });
 
     // Preço: editado em Reais, gravado em centavos
@@ -60,7 +64,7 @@ export class FichaItem extends ItemSheet {
       ctx.opcoesMunicaoUsada = { auto: "ICARUS.Armas.MunicaoAuto", ...Object.fromEntries(pacotes.map(p => [p.id, `${p.name} (${p.system.quantidade})`])) };
       ctx.temMunicaoUsada = pacotes.length > 0;
       ctx.chipsPropriedades = PROPRIEDADES_ARMA.map(p => ({ valor: p, rotulo: loc(`ICARUS.Armas.Propriedades.${p}`), ativo: s.propriedades.includes(p) }));
-      ctx.chipsTiposDano = TIPOS_DANO.map(t => ({ valor: t, rotulo: loc(`ICARUS.Armas.TiposDano.${t}`), ativo: s.tiposDano.includes(t) }));
+      ctx.chipsTiposDano = TIPOS_DANO.map(t => ({ valor: t, rotulo: loc(`ICARUS.TiposDano.${t}`), ativo: s.tiposDano.includes(t) }));
       ctx.categoriaRotulo = loc(`ICARUS.Armas.Categorias.${s.categoria}`);
       ctx.textoPropriedades = s.propriedades.map(p => loc(`ICARUS.Armas.Propriedades.${p}`)).join(", ");
       ctx.critico = { texto: textoCritico(s), faixa: faixaCritico(s) };

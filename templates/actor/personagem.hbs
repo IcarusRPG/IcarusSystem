@@ -1,10 +1,17 @@
 <form class="{{cssClass}} ficha-icarus" autocomplete="off">
   {{> "systems/icarus-rpg/templates/actor/parts/cabecalho.hbs"}}
   {{> "systems/icarus-rpg/templates/actor/parts/recursos.hbs"}}
+  {{#if avisosCondicoes.length}}
+  <div class="faixa-condicoes" role="status">
+    <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+    {{#each avisosCondicoes}}<span>{{this}}</span>{{/each}}
+  </div>
+  {{/if}}
 
   <nav class="abas">
     <div class="abas-lista" role="tablist">
       <button type="button" class="item aba" data-tab="caracteristicas" role="tab">{{localize "ICARUS.Abas.caracteristicas"}}</button>
+      <button type="button" class="item aba" data-tab="combate" role="tab">{{localize "ICARUS.Abas.combate"}}</button>
       <button type="button" class="item aba" data-tab="inventario" role="tab">{{localize "ICARUS.Abas.inventario"}}</button>
       <button type="button" class="item aba" data-tab="poderes" role="tab">{{localize "ICARUS.Abas.poderes"}}</button>
       <button type="button" class="item aba" data-tab="diario" role="tab">{{localize "ICARUS.Abas.diario"}}</button>
@@ -19,6 +26,7 @@
 
   <section class="corpo">
     <div class="tab" data-tab="caracteristicas">{{> "systems/icarus-rpg/templates/actor/parts/caracteristicas.hbs"}}</div>
+    <div class="tab" data-tab="combate">{{> "systems/icarus-rpg/templates/actor/parts/combate.hbs"}}</div>
     <div class="tab" data-tab="inventario">{{> "systems/icarus-rpg/templates/actor/parts/inventario.hbs"}}</div>
     <div class="tab" data-tab="poderes">{{> "systems/icarus-rpg/templates/actor/parts/poderes.hbs"}}</div>
     <div class="tab" data-tab="diario">{{> "systems/icarus-rpg/templates/actor/parts/diario.hbs"}}</div>

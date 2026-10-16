@@ -1,0 +1,15 @@
+{
+  "_id": "aOECkPEpIoKqocck",
+  "name": "Túnicas",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "armaduras:tunicas"
+    }
+  },
+  "_key": "!folders!aOECkPEpIoKqocck"
+}

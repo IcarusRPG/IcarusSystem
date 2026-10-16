@@ -1,0 +1,15 @@
+{
+  "_id": "Fi1qjcO9MyEyWpCE",
+  "name": "Insidia",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:insidia"
+    }
+  },
+  "_key": "!folders!Fi1qjcO9MyEyWpCE"
+}

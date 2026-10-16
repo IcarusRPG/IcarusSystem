@@ -1,0 +1,29 @@
+{
+  "_id": "IzF8dwl4M1E5He82",
+  "name": "Véu Cintilante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Eth%C3%A9ria.png",
+  "folder": "UuRGYaKAYpYf5Dw7",
+  "sort": 1100,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Etheria",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "etheria",
+    "tipoDano": "",
+    "descricao": "<p>Sempre que gasta 2 PM ou mais em um único efeito, você recebe +2 na Defesa até o início do seu próximo turno.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "etheria__veu-cintilante",
+      "divindade": "etheria",
+      "concedido": true
+    }
+  },
+  "_key": "!items!IzF8dwl4M1E5He82"
+}

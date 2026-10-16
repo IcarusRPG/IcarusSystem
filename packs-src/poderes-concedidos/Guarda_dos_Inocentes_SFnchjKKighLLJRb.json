@@ -1,0 +1,29 @@
+{
+  "_id": "SFnchjKKighLLJRb",
+  "name": "Guarda dos Inocentes",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Amorina.png",
+  "folder": "pkfRvSZLpJZpb6P6",
+  "sort": 600,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Amorina",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "rodada",
+    "sustentada": false,
+    "divindade": "amorina",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Reação · 1 PM · 1x por rodada</em></p><p>Uma vez por rodada, quando uma criatura em alcance curto sofreria dano, você pode gastar 1 PM. A criatura sofre apenas metade desse dano e você sofre o restante (arredonde para cima o dano que ela evita e para baixo o que você sofre).</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "amorina__guarda-dos-inocentes",
+      "divindade": "amorina",
+      "concedido": true
+    }
+  },
+  "_key": "!items!SFnchjKKighLLJRb"
+}

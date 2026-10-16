@@ -1,0 +1,29 @@
+{
+  "_id": "krIoGmjQmI5nR1DU",
+  "name": "Aço Abençoado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/B%C3%A9llica.png",
+  "folder": "0icLCKzTdAn9HG4N",
+  "sort": 700,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Béllica",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "bellica",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, uma arma que esteja empunhando e na qual seja proficiente recebe +1 na margem de ameaça e +2 nas rolagens de dano.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bellica__aco-abencoado",
+      "divindade": "bellica",
+      "concedido": true
+    }
+  },
+  "_key": "!items!krIoGmjQmI5nR1DU"
+}

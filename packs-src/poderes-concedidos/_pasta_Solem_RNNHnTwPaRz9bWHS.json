@@ -1,0 +1,15 @@
+{
+  "_id": "RNNHnTwPaRz9bWHS",
+  "name": "Sólem",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 1000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:solem"
+    }
+  },
+  "_key": "!folders!RNNHnTwPaRz9bWHS"
+}

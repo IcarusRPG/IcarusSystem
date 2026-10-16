@@ -1,0 +1,15 @@
+{
+  "_id": "0icLCKzTdAn9HG4N",
+  "name": "Béllica",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:bellica"
+    }
+  },
+  "_key": "!folders!0icLCKzTdAn9HG4N"
+}

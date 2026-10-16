@@ -1,0 +1,56 @@
+{
+  "_id": "MbvMgVbXjIA8Y7Y9",
+  "name": "Couraça Dracônica",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Draconara.png",
+  "folder": "9MAkmbRkeGvX706s",
+  "sort": 3400,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Draconara",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "draconara",
+    "tipoDano": "",
+    "descricao": "<p>Você recebe redução de fogo 5 e +1 na Defesa.</p>"
+  },
+  "effects": [
+    {
+      "_id": "2ENJKiIvJnWyJb9G",
+      "name": "Couraça Dracônica",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Draconara.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.defesa.outros",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.resistencias.reducao.fogo",
+          "mode": 2,
+          "value": "5"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "draconara__couraca-draconica"
+        }
+      },
+      "_key": "!items.effects!MbvMgVbXjIA8Y7Y9.2ENJKiIvJnWyJb9G"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "draconara__couraca-draconica",
+      "divindade": "draconara",
+      "concedido": true
+    }
+  },
+  "_key": "!items!MbvMgVbXjIA8Y7Y9"
+}

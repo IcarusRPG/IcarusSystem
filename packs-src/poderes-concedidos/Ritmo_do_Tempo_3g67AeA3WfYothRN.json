@@ -1,0 +1,29 @@
+{
+  "_id": "3g67AeA3WfYothRN",
+  "name": "Ritmo do Tempo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Mentis.png",
+  "folder": "vXDqF9v3jf4BeCdb",
+  "sort": 5200,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Mentis",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "mentis",
+    "tipoDano": "",
+    "descricao": "<p>Quando faz um teste de iniciativa, você rola dois d20 e usa o melhor resultado.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mentis__ritmo-do-tempo",
+      "divindade": "mentis",
+      "concedido": true
+    }
+  },
+  "_key": "!items!3g67AeA3WfYothRN"
+}

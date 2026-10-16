@@ -1,0 +1,31 @@
+{
+  "_id": "ynKBrCnOUvzGFSrt",
+  "name": "Escudo Acoplado",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Escudo%20acoplado.png",
+  "folder": "vWpjM3qlPpnP1Wdk",
+  "sort": 1200,
+  "system": {
+    "tipo": "escudo",
+    "categoria": "escudo-acoplado",
+    "bonusDefesa": 2,
+    "penalidade": 1,
+    "preco": 8000,
+    "espacos": 2,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": true,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-acoplado"
+    }
+  },
+  "_key": "!items!ynKBrCnOUvzGFSrt"
+}

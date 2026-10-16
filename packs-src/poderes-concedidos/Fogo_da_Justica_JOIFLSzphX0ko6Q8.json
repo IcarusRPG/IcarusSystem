@@ -1,0 +1,29 @@
+{
+  "_id": "JOIFLSzphX0ko6Q8",
+  "name": "Fogo da Justiça",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Justar.png",
+  "folder": "QUDMA8fbOxI0TKms",
+  "sort": 1800,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Justar",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "justar",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, uma arma corpo a corpo que esteja empunhando causa +1d6 pontos de dano de fogo contra criaturas que tenham causado dano a você ou a um aliado durante a cena.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "justar__fogo-da-justica",
+      "divindade": "justar",
+      "concedido": true
+    }
+  },
+  "_key": "!items!JOIFLSzphX0ko6Q8"
+}

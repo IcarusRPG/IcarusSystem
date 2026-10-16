@@ -1,0 +1,31 @@
+<div class="ficha-icarus dialogo-devocao">
+  <div class="devocao-cab">
+    <img src="{{divindade.simbolo}}" alt="" width="56" height="56">
+    <div>
+      <h3 class="titulo-painel">{{divindade.nome}}</h3>
+      <div class="dica">{{divindade.titulo}}</div>
+    </div>
+  </div>
+
+  <ul class="lista-concedidos">
+    {{#each poderes}}
+    <li class="concedido{{#if possui}} possui{{/if}}">
+      <label class="chk">
+        <input type="checkbox" name="poder" value="{{id}}"{{#if possui}} checked disabled{{/if}}>
+        <img src="{{@root.divindade.simbolo}}" alt="" width="32" height="32">
+        <b>{{nome}}</b>
+        {{#if possui}}<span class="tag-racial">{{localize "ICARUS.Devocao.JaPossui"}}</span>{{/if}}
+      </label>
+      {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}
+      <p class="descricao-concedido">{{descricao}}</p>
+    </li>
+    {{/each}}
+  </ul>
+
+  <p class="dica"><span class="contador-devocao"></span> · {{limite.regra}}</p>
+
+  <div class="dlg-rodape">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Devocao.AgoraNao"}}</button>
+    <button type="submit" class="btn primario">{{localize "ICARUS.Devocao.Confirmar"}}</button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "_id": "fnUYuxyaxmfJItHL",
+  "name": "Sim, Não, Talvez",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Aletris.png",
+  "folder": "V7LfyTmq8uKQMLQL",
+  "sort": 100,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Alétris",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "aletris",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação livre · 1 PM</em></p><p>Antes de fazer um teste de perícia, você pode gastar 1 PM e rolar 1d6. Com 1 ou 2 (Não), sofre –3 no teste; com 3 ou 4 (Talvez), recebe +1; com 5 ou 6 (Sim), recebe +4.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "aletris__sim-nao-talvez",
+      "divindade": "aletris",
+      "concedido": true
+    }
+  },
+  "_key": "!items!fnUYuxyaxmfJItHL"
+}

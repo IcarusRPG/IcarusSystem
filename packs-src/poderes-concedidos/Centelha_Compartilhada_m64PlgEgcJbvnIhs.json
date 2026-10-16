@@ -1,0 +1,29 @@
+{
+  "_id": "m64PlgEgcJbvnIhs",
+  "name": "Centelha Compartilhada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Logos.png",
+  "folder": "Sy0dGtoovy9dP89g",
+  "sort": 2100,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Logos",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "logos",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM · 1x por cena</em></p><p>Uma vez por cena, você pode gastar uma ação de movimento e 1 PM. Um aliado em alcance curto que possa ouvi-lo recebe +2 no próximo teste de perícia (exceto ataque) que fizer até o fim do seu próximo turno.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "logos__centelha-compartilhada",
+      "divindade": "logos",
+      "concedido": true
+    }
+  },
+  "_key": "!items!m64PlgEgcJbvnIhs"
+}

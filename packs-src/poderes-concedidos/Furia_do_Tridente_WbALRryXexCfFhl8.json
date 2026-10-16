@@ -1,0 +1,29 @@
+{
+  "_id": "WbALRryXexCfFhl8",
+  "name": "Fúria do Tridente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Expiria.png",
+  "folder": "xAQ0YE6l03T3sPYG",
+  "sort": 4100,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Expiria",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "expiria",
+    "tipoDano": "",
+    "descricao": "<p>Você se torna proficiente com tridentes. Para você, o tridente é considerado uma arma Ágil, e você recebe +2 nos testes de ataque e +1 na margem de ameaça com ele. Quando você arremessa um tridente, ele volta automaticamente para sua mão ao fim do ataque, acertando ou não.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "expiria__furia-do-tridente",
+      "divindade": "expiria",
+      "concedido": true
+    }
+  },
+  "_key": "!items!WbALRryXexCfFhl8"
+}

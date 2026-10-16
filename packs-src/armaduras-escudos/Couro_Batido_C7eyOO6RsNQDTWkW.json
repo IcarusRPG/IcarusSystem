@@ -1,0 +1,31 @@
+{
+  "_id": "C7eyOO6RsNQDTWkW",
+  "name": "Couro Batido",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Couro%20batido.png",
+  "folder": "qZQcPRsu8UQM5a2H",
+  "sort": 200,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "leve",
+    "bonusDefesa": 2,
+    "penalidade": 0,
+    "preco": 2500,
+    "espacos": 2,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "couro-batido"
+    }
+  },
+  "_key": "!items!C7eyOO6RsNQDTWkW"
+}

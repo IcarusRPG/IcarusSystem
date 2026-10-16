@@ -1,0 +1,29 @@
+{
+  "_id": "NlAAng97ehGsdTRi",
+  "name": "Filho das Águas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Expiria.png",
+  "folder": "xAQ0YE6l03T3sPYG",
+  "sort": 4000,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Expiria",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "expiria",
+    "tipoDano": "",
+    "descricao": "<p>Você pode respirar embaixo d'água e adquire deslocamento de natação igual ao seu deslocamento terrestre. Além disso, não sofre penalidades em combate por estar na água.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "expiria__filho-das-aguas",
+      "divindade": "expiria",
+      "concedido": true
+    }
+  },
+  "_key": "!items!NlAAng97ehGsdTRi"
+}

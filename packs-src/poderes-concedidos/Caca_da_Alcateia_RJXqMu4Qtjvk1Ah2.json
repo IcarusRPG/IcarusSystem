@@ -1,0 +1,29 @@
+{
+  "_id": "RJXqMu4Qtjvk1Ah2",
+  "name": "Caça da Alcateia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Eternus.png",
+  "folder": "x63ld0hmsmSeTyyJ",
+  "sort": 3900,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Eternus",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "eternus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM para marcar como presa um inimigo que possa ver em alcance curto. Você recebe +1 nos testes de ataque contra ele. Você só pode ter uma presa por vez e não pode marcar outra até que a atual seja reduzida a 0 PV ou a cena termine.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "eternus__caca-da-alcateia",
+      "divindade": "eternus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!RJXqMu4Qtjvk1Ah2"
+}

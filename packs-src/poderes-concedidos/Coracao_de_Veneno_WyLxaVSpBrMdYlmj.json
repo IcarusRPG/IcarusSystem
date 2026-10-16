@@ -1,0 +1,29 @@
+{
+  "_id": "WyLxaVSpBrMdYlmj",
+  "name": "Coração de Veneno",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Insidia.png",
+  "folder": "Fi1qjcO9MyEyWpCE",
+  "sort": 4800,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Insidia",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "insidia",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento</em></p><p>Você pode gastar uma ação de movimento para banhar suas armas em veneno. Você perde 1d6 PV, que não podem ser reduzidos de nenhuma forma, e, até o fim da cena, seus ataques causam +2 pontos de dano de veneno.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "insidia__coracao-de-veneno",
+      "divindade": "insidia",
+      "concedido": true
+    }
+  },
+  "_key": "!items!WyLxaVSpBrMdYlmj"
+}

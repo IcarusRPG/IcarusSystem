@@ -1,11 +1,20 @@
 import {
-  SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito
+  TIPOS_DANO_COM_RESISTENCIA, SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito
 } from "../config.mjs";
 import { numero, limitar, comSinal, semMais } from "../regras.mjs";
 import { rolarPericia, rolarAtributo } from "../rolls.mjs";
 import { RACAS, racaPorId, iconeDaRaca, resolverRaca } from "../data/racas.mjs";
 import { trocarRaca, reaplicarRaca, refazerEscolhas, ehPoderRacialAuto, escolhasGuardadas } from "../racas.mjs";
 import { DialogoNivel } from "./dialogo-nivel.mjs";
+import { conflitoEscudoAcoplado } from "../armaduras.mjs";
+import { DIVINDADES, GRUPOS_DIVINOS, divindadePorId, poderesDaDivindade, simboloDaDivindade } from "../panteao.mjs";
+import { DialogoPoderesConcedidos, trocarDivindade } from "./dialogo-poderes-concedidos.mjs";
+import { ligarArvoreDivindade } from "./arvore-divindade.mjs";
+import { CONDICAO_POR_ID } from "../condicoes.mjs";
+import { textosDasFlags } from "../dados-compendios.mjs";
+import { removerCondicao, escalarCondicao } from "../condicoes-foundry.mjs";
+import { PainelCondicoes } from "./painel-condicoes.mjs";
+import { rolarTesteDeMorte, registrarDanoEmMorrendo, estabilizarComCura } from "../morte-foundry.mjs";
 import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
@@ -71,7 +80,25 @@ export class FichaPersonagem extends ActorSheet {
       ]
     };
 
-    ctx.identidade = ["origem", "classe", "profissao", "divindade"].map(k => ({
+    // Divindade (combobox em árvore): id da divindade, "" = Nenhum(a); texto antigo vira "Outra"
+    const div = divindadePorId(src.identidade.divindade);
+    const outra = src.identidade.divindade && !div ? src.identidade.divindade : "";
+    const possuidos = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.concedido && i.flags[SISTEMA_ID].id).filter(Boolean));
+    ctx.divindade = {
+      id: div?.id ?? "",
+      outra,
+      rotulo: div ? div.nome : outra ? `${loc("ICARUS.Devocao.Outra")}: ${outra}` : loc("ICARUS.Devocao.Nenhuma"),
+      simbolo: div ? simboloDaDivindade(div.id) : "",
+      titulo: div?.titulo ?? "",
+      dogma: div?.dogma ?? "",
+      grupos: GRUPOS_DIVINOS.map(g => ({
+        nome: g,
+        itens: DIVINDADES.filter(d => d.grupo === g).map(d => ({ id: d.id, nome: d.nome, titulo: d.titulo, simbolo: simboloDaDivindade(d.id), selecionado: d.id === div?.id }))
+      })),
+      poderes: div ? poderesDaDivindade(div.id).map(p => ({ nome: p.nome, meta: p.meta, possui: possuidos.has(p.id) })) : []
+    };
+
+    ctx.identidade = ["origem", "classe", "profissao"].map(k => ({
       chave: k,
       rotulo: loc(`ICARUS.Identidade.${k}`),
       valor: src.identidade[k],
@@ -92,7 +119,9 @@ export class FichaPersonagem extends ActorSheet {
     ctx.defesa = {
       total: s.defesa.total,
       outros: src.defesa.outros,
-      dica: dica("system.defesa.outros"),
+      dica: [dica("system.defesa.outros"), s.defesa.condicao ? `${comSinal(s.defesa.condicao.valor)} ${s.defesa.condicao.origem}` : ""].filter(Boolean).join("\n"),
+      penalidade: s.defesa.penalidade ? game.i18n.format("ICARUS.Armaduras.PenalidadeTotal", { valor: comSinal(-s.defesa.penalidade) }) : "",
+      avisoAcoplado: conflitoEscudoAcoplado(actor) ? loc("ICARUS.Armaduras.AvisoAcoplado") : "",
       formula: game.i18n.format("ICARUS.Defesa.Formula", {
         des: semMais(s.atributos.DES.total), armadura: semMais(s.defesa.armadura),
         escudo: semMais(s.defesa.escudo), outros: semMais(s.defesa.outros)
@@ -124,7 +153,13 @@ export class FichaPersonagem extends ActorSheet {
       const fonte = src.pericias[p.chave];
       const nome = loc(`ICARUS.Pericias.${p.chave}`);
       const k = `system.pericias.${p.chave}`;
-      const origem = dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`);
+      // Origem dos bônus: Efeitos Ativos e penalidade de armadura ("−1 Couro Reforçado")
+      const penalidade = d.penalidadeArmadura
+        ? s.defesa.origensPenalidade.map(o => game.i18n.format("ICARUS.Armaduras.PenalidadeOrigem", { valor: comSinal(-o.valor), nome: o.nome })).join("\n")
+        : "";
+      const condicao = d.condicao ? `${comSinal(d.condicao)} ${d.origemCondicao}` : "";
+      const falha = d.falhaAuto ? game.i18n.format("ICARUS.Condicoes.FalhaAuto", { condicao: d.falhaAuto }) : "";
+      const origem = [dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`), penalidade, condicao, falha].filter(Boolean).join("\n");
       const rolar = game.i18n.format("ICARUS.Pericia.Rolar", { pericia: nome, total: comSinal(d.total) });
       return {
         chave: p.chave,
@@ -159,6 +194,54 @@ export class FichaPersonagem extends ActorSheet {
       chave: r.chave, abrev: r.abrev, nome: loc(`ICARUS.Pericias.${r.chave}`), total: comSinal(s.pericias[r.chave].total)
     }));
 
+    // Condições ativas (chips na aba Combate) e avisos informativos (faixa abaixo dos recursos)
+    const nomePericiaLoc = k => loc(`ICARUS.Pericias.${k}`);
+    ctx.condicoesAtivas = actor.effects.filter(e => e.flags?.[SISTEMA_ID]?.condicao || [...(e.statuses ?? [])].some(sid => CONDICAO_POR_ID[sid]))
+      .map(e => {
+        const id = e.flags?.[SISTEMA_ID]?.condicao ?? [...e.statuses].find(sid => CONDICAO_POR_ID[sid]);
+        const c = CONDICAO_POR_ID[id];
+        const origem = e.flags?.[SISTEMA_ID]?.origem;
+        const duracao = e.flags?.[SISTEMA_ID]?.duracao ?? "remover";
+        return {
+          efeitoId: e.id, id, nome: c.nome, img: e.img, descricao: c.descricao,
+          origem: origem ? game.i18n.format("ICARUS.Condicoes.IncluidaPor", { condicao: CONDICAO_POR_ID[origem]?.nome ?? origem }) : "",
+          duracao: duracao === "rodadas" && e.duration?.rounds ? game.i18n.format("ICARUS.Condicoes.RodadasN", { n: e.duration.rounds }) : loc(`ICARUS.Condicoes.Duracoes.${duracao}`),
+          pendente: (c.pendencias ?? []).length > 0,
+          escala: c.escala ? CONDICAO_POR_ID[c.escala]?.nome : "",
+          avisos: textosDasFlags(c, nomePericiaLoc)
+        };
+      }).sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
+    ctx.avisosCondicoes = ctx.condicoesAtivas.filter(c => c.avisos.length).map(c => `${c.nome}: ${c.avisos.join("; ")}`);
+
+    // Testes de morte: aparece em Morrendo, estável ou com marcas
+    const m = s.morte ?? { sucessos: 0, falhas: 0, estavel: false };
+    const morrendo = actor.statuses?.has("morrendo") ?? false;
+    ctx.morte = {
+      mostrar: morrendo || m.estavel || m.sucessos > 0 || m.falhas > 0,
+      morrendo, estavel: m.estavel,
+      sucessos: [1, 2, 3].map(n => ({ n, marcado: n <= m.sucessos })),
+      falhas: [1, 2, 3].map(n => ({ n, marcado: n <= m.falhas }))
+    };
+
+    // Resistências: RD geral e, por tipo, Redução / Imune / Vulnerável (campos salvos; efetivo na dica)
+    const r = s.resistencias, rs = src.resistencias;
+    ctx.resistenciasTabela = {
+      rdGeral: rs.rdGeral,
+      rdEfetivo: r.rdGeral !== rs.rdGeral ? r.rdGeral : null,
+      rdDica: dica("system.resistencias.rdGeral"),
+      linhas: TIPOS_DANO_COM_RESISTENCIA.map(tipo => ({
+        tipo,
+        nome: loc(`ICARUS.TiposDano.${tipo}`),
+        reducao: rs.reducao[tipo],
+        reducaoEfetiva: r.reducao[tipo] !== rs.reducao[tipo] ? r.reducao[tipo] : null,
+        imune: rs.imunidade[tipo],
+        imuneEfeito: r.imunidade[tipo] && !rs.imunidade[tipo],
+        vulneravel: rs.vulnerabilidade[tipo],
+        vulneravelEfeito: r.vulnerabilidade[tipo] && !rs.vulnerabilidade[tipo],
+        dica: dica(`system.resistencias.reducao.${tipo}`, `system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)
+      }))
+    };
+
     // Inventário
     const ordenar = (a, b) => (a.sort || 0) - (b.sort || 0);
     const preco = c => ({ texto: formatarPreco(c), ouro: precoEmOuro(c) });
@@ -171,6 +254,8 @@ export class FichaPersonagem extends ActorSheet {
         equipavel: TIPOS_EQUIPAVEIS.includes(i.system.tipo),
         equipado: i.system.equipado,
         bonus: comSinal(i.system.bonusDefesa),
+        categoria: i.system.categoria ? loc(`ICARUS.Armaduras.Categorias.${i.system.categoria}`) : "",
+        penalidade: i.system.penalidade ? comSinal(-i.system.penalidade) : "",
         espacos: espacosDoItem(i),
         preco: preco(i.system.preco)
       }));
@@ -198,7 +283,7 @@ export class FichaPersonagem extends ActorSheet {
 
     // Poderes agrupados por fonte (Raça primeiro, com o ícone da raça)
     const poderes = actor.items.filter(i => i.type === "poder").sort((a, b) => (a.sort || 0) - (b.sort || 0));
-    const subtitulo = { raca: ctx.raca.nome, classe: src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao };
+    const subtitulo = { raca: ctx.raca.nome, classe: src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
     ctx.gruposPoder = await Promise.all(FONTES_PODER.map(async fonte => {
       const lista = poderes.filter(p => p.system.fonte === fonte);
       const nomeFonte = loc(`ICARUS.Poderes.Fontes.${fonte}`);
@@ -207,7 +292,7 @@ export class FichaPersonagem extends ActorSheet {
         fonte,
         titulo,
         ehRaca: fonte === "raca",
-        icone: fonte === "raca" && raca ? ctx.raca.icone : "",
+        icone: fonte === "raca" && raca ? ctx.raca.icone : fonte === "divindade" && div ? ctx.divindade.simbolo : "",
         tag: fonte === "classe"
           ? game.i18n.format("ICARUS.Poderes.TagNivel", { nivel: s.nivel })
           : game.i18n.format(lista.length === 1 ? "ICARUS.Poderes.ContaUm" : "ICARUS.Poderes.Conta", { n: lista.length }),
@@ -216,7 +301,8 @@ export class FichaPersonagem extends ActorSheet {
           const flags = p.flags?.[SISTEMA_ID] ?? {};
           return {
             id: p.id, name: p.name, img: p.img,
-            mostrarIcone: fonte === "raca",
+            mostrarIcone: fonte === "raca" || fonte === "divindade",
+            concedido: !!flags.concedido,
             auto: ehPoderRacialAuto(p),
             pendente: ehPoderRacialAuto(p) && flags.pendente === true,
             custo: p.system.custoPM ?? null,
@@ -298,6 +384,11 @@ export class FichaPersonagem extends ActorSheet {
     }
     if (p[0] === "classeConfig") return loc(`ICARUS.NivelDialogo.Campos.${p[1]}`);
     if (p[0] === "deslocamento") return loc("ICARUS.Deslocamento");
+    if (p[0] === "resistencias") {
+      if (p[1] === "rdGeral") return loc("ICARUS.Resistencias.RdGeral");
+      const campo = { reducao: "ICARUS.Resistencias.Reducao", imunidade: "ICARUS.Resistencias.Imune", vulnerabilidade: "ICARUS.Resistencias.Vulneravel" }[p[1]];
+      return `${loc(campo)} · ${loc(`ICARUS.TiposDano.${p[2]}`)}`;
+    }
     if (p[0] === "tamanho") return loc("ICARUS.Outras.Tamanho");
     return chave;
   }
@@ -364,6 +455,12 @@ export class FichaPersonagem extends ActorSheet {
       const item = this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
       if (item) item.update({ [el.dataset.itemCampo]: Math.max(0, Math.trunc(numero(el.value))) });
     });
+    // Condições: clique direito no chip → Remover / Escalar
+    new ContextMenu(html, ".chip-condicao", [
+      { name: "ICARUS.Condicoes.Remover", icon: '<i class="fa-solid fa-xmark"></i>', callback: li => removerCondicao(this.actor, (li[0] ?? li).dataset.condicao) },
+      { name: "ICARUS.Condicoes.Escalar", icon: '<i class="fa-solid fa-angles-up"></i>', condition: li => !!CONDICAO_POR_ID[(li[0] ?? li).dataset.condicao]?.escala, callback: li => escalarCondicao(this.actor, (li[0] ?? li).dataset.condicao) }
+    ]);
+    ligarArvoreDivindade(html instanceof HTMLElement ? html : html[0], valor => trocarDivindade(this.actor, valor));
     html.on("change", ".sel-raca", async ev => {
       const mudou = await trocarRaca(this.actor, ev.currentTarget.value);
       if (!mudou) this.render(false);  // cancelou: volta a combobox para a raça atual
@@ -395,6 +492,24 @@ export class FichaPersonagem extends ActorSheet {
         return reaplicarRaca(actor);
       case "raca-escolhas":
         return refazerEscolhas(actor);
+      case "morte-rolar":
+        return rolarTesteDeMorte(actor);
+      case "morte-dano":
+        return registrarDanoEmMorrendo(actor, el.dataset.critico === "1");
+      case "morte-estabilizar":
+        return estabilizarComCura(actor);
+      case "morte-marca": {
+        // Clicar na bolinha marca até ela; clicar na última marcada desmarca
+        const tipo = el.dataset.tipo, n = Number(el.dataset.n);
+        const atual = actor.system.morte[tipo];
+        return actor.update({ [`system.morte.${tipo}`]: atual === n ? n - 1 : n });
+      }
+      case "condicao-adicionar":
+        return new PainelCondicoes({ actor }).render(true);
+      case "divindade-poderes":
+        return new DialogoPoderesConcedidos(actor, actor._source.system.identidade.divindade).render(true);
+      case "poder-chat":
+        return this._enviarPoderAoChat(itemDe());
       case "item-criar": {
         const tipo = el.dataset.tipo;
         const dados = {
@@ -447,6 +562,15 @@ export class FichaPersonagem extends ActorSheet {
         return efeito?.update({ disabled: !efeito.disabled });
       }
     }
+  }
+
+  /** Botão "Enviar ao chat" dos cards de poder: nome, metadados e descrição. */
+  async _enviarPoderAoChat(item) {
+    if (!item) return;
+    const descricao = await TextEditor.enrichHTML(item.system.descricao, { async: true, relativeTo: item });
+    const custo = item.system.custoPM ? `<span class="custo">${item.system.custoPM} PM</span>` : "";
+    const content = `<div class="icarus-rolagem icarus-poder"><div class="arma-cab"><img src="${item.img}" alt="" width="36" height="36"><div><h3 class="rolagem-nome">${Handlebars.escapeExpression(item.name)}</h3><div class="rolagem-tipo">${Handlebars.escapeExpression(item.system.prerequisito || game.i18n.localize(`ICARUS.Poderes.Fontes.${item.system.fonte}`))} ${custo}</div></div></div><div class="poder-descricao">${descricao}</div></div>`;
+    return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content });
   }
 
   _efeitoDe(el) {

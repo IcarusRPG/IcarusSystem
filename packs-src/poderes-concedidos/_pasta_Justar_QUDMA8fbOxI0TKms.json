@@ -1,0 +1,15 @@
+{
+  "_id": "QUDMA8fbOxI0TKms",
+  "name": "Justar",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:justar"
+    }
+  },
+  "_key": "!folders!QUDMA8fbOxI0TKms"
+}

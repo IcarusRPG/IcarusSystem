@@ -1,4 +1,4 @@
-import { TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS } from "../config.mjs";
+import { TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS, CATEGORIAS_ARMADURA } from "../config.mjs";
 
 const fields = foundry.data.fields;
 
@@ -13,6 +13,13 @@ export class EquipamentoData extends foundry.abstract.TypeDataModel {
       quantidade: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 1 }),
       equipado: new fields.BooleanField({ initial: false }),
       bonusDefesa: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0 }),
+      // Armaduras e escudos: categoria, penalidade de armadura (em Acrobacia, Furtividade e Prestidigitação),
+      // túnica sem exigência de proficiência, escudo acoplado e campos ainda não confirmados no núcleo
+      categoria: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", ...CATEGORIAS_ARMADURA] }),
+      penalidade: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),
+      proficienciaLivre: new fields.BooleanField({ initial: false }),
+      acoplado: new fields.BooleanField({ initial: false }),
+      provisorio: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
       preco: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),
       espacos: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 1 }),
       descricao: new fields.HTMLField({ required: true, blank: true, initial: "" })

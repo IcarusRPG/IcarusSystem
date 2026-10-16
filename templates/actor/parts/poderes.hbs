@@ -28,16 +28,18 @@
             <b>{{name}}</b>
             {{#if custo}}<span class="custo">{{custo}} PM</span>{{/if}}
           </div>
+          {{#if concedido}}<div class="card-tags"><span class="tag-racial">{{localize "ICARUS.Devocao.TagConcedido"}}</span></div>{{/if}}
           {{#if auto}}<div class="card-tags"><span class="tag-racial">{{localize "ICARUS.Racas.TagRacial"}}</span>{{#if pendente}}<span class="tag-pendente">{{localize "ICARUS.Racas.EscolhaPendente"}}</span>{{/if}}</div>{{/if}}
           {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}
           <div class="card-texto">{{{descricao}}}</div>
-          {{#if @root.editable}}
           <div class="card-acoes">
+            <button type="button" class="btn icone" data-action="poder-chat" aria-label="{{localize 'ICARUS.Poderes.EnviarChat'}} {{name}}" title="{{localize 'ICARUS.Poderes.EnviarChat'}}"><i class="fa-solid fa-comment" aria-hidden="true"></i></button>
+          {{#if @root.editable}}
             {{#if pendente}}<button type="button" class="btn peq ativo" data-action="raca-escolhas">{{localize "ICARUS.Racas.FazerEscolha"}}</button>{{/if}}
             <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{name}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
             <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
-          </div>
           {{/if}}
+          </div>
         </div>
       </article>
       {{else}}

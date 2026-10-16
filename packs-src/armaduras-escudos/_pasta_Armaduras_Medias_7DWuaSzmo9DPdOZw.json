@@ -1,0 +1,15 @@
+{
+  "_id": "7DWuaSzmo9DPdOZw",
+  "name": "Armaduras Médias",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "armaduras:armaduras-medias"
+    }
+  },
+  "_key": "!folders!7DWuaSzmo9DPdOZw"
+}

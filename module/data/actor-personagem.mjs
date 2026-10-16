@@ -1,6 +1,7 @@
-import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS } from "../config.mjs";
+import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESISTENCIA } from "../config.mjs";
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
+import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
 
 const fields = foundry.data.fields;
 
@@ -57,6 +58,20 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
       moedas: new fields.SchemaField({
         ouroReal: inteiro(0, { min: 0 }), real: inteiro(0, { min: 0 }), centavo: inteiro(0, { min: 0 })
       }),
+      // Resistências (por tipo de dano): Redução de [tipo] X, Imunidade, Vulnerabilidade e RD geral.
+      // Efeitos Ativos podem somar (reducao, rdGeral) ou forçar true (imunidade, vulnerabilidade).
+      resistencias: new fields.SchemaField({
+        rdGeral: inteiro(0),
+        reducao: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, inteiro(0)]))),
+        imunidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })]))),
+        vulnerabilidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })])))
+      }),
+      // Testes de morte (Morrendo): sucessos, falhas e se ficou estável
+      morte: new fields.SchemaField({
+        sucessos: inteiro(0, { min: 0, max: 3 }), falhas: inteiro(0, { min: 0, max: 3 }), estavel: new fields.BooleanField({ initial: false })
+      }),
+      // Bônus gerais de ataque (Efeitos Ativos podem somar aqui)
+      bonus: new fields.SchemaField({ ataque: inteiro(0) }),
       imunidades: texto(),
       sentidos: texto(),
       notas: new fields.HTMLField({ required: true, blank: true, initial: "" }),
@@ -71,11 +86,17 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
       const id = idDaRacaPorNome(raca);
       if (id) source.identidade.raca = id;
     }
+    // Divindade também era texto livre: vira o id; texto que não bate fica como "Outra"
+    const divindade = source.identidade?.divindade;
+    if (typeof divindade === "string" && divindade && !divindadePorId(divindade)) {
+      const id = idDaDivindadePorNome(divindade);
+      if (id) source.identidade.divindade = id;
+    }
     return super.migrateData(source);
   }
 
   /** Roda depois dos Efeitos Ativos, então Temp, "Outros", treino e deslocamento já chegam com os bônus. */
   prepareDerivedData() {
-    derivarPersonagem(this, this.parent?.items ?? []);
+    derivarPersonagem(this, this.parent?.items ?? [], this.parent?.statuses ?? []);
   }
 }

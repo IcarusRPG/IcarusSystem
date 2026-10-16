@@ -1,0 +1,51 @@
+{
+  "_id": "htSy1ng5w2rsVkVG",
+  "name": "Voz que Não se Cala",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Irae.png",
+  "folder": "s5JpuKlsVtccWV1O",
+  "sort": 5100,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Irae",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "irae",
+    "tipoDano": "",
+    "descricao": "<p>Você recebe +2 em Intimidação e +5 em testes de resistência contra efeitos de medo.</p>"
+  },
+  "effects": [
+    {
+      "_id": "hMUFgr7tFvG13Li0",
+      "name": "Voz que Não se Cala",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Irae.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.intimidacao.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "irae__voz-que-nao-se-cala"
+        }
+      },
+      "_key": "!items.effects!htSy1ng5w2rsVkVG.hMUFgr7tFvG13Li0"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "irae__voz-que-nao-se-cala",
+      "divindade": "irae",
+      "concedido": true
+    }
+  },
+  "_key": "!items!htSy1ng5w2rsVkVG"
+}

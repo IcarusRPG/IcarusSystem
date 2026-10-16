@@ -2,7 +2,7 @@
   "id": "icarus-rpg",
   "title": "Icarus RPG",
   "description": "Sistema do Icarus RPG, um RPG de fantasia medieval original com testes de d20 + modificador.",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -90,6 +90,58 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "armaduras-escudos",
+      "label": "Icarus — Armaduras e Escudos",
+      "path": "packs/armaduras-escudos",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "poderes-concedidos",
+      "label": "Icarus — Poderes Concedidos",
+      "path": "packs/poderes-concedidos",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "condicoes",
+      "label": "Icarus — Condições",
+      "path": "packs/condicoes",
+      "type": "JournalEntry",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "macros",
+      "label": "Icarus — Macros",
+      "path": "packs/macros",
+      "type": "Macro",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -99,7 +151,11 @@
       "color": "#0c131b",
       "packs": [
         "armas",
-        "municoes"
+        "municoes",
+        "armaduras-escudos",
+        "poderes-concedidos",
+        "condicoes",
+        "macros"
       ]
     }
   ],
@@ -111,5 +167,5 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.4.4/icarus-rpg.zip"
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.5.0/icarus-rpg.zip"
 }

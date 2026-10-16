@@ -1,0 +1,15 @@
+{
+  "_id": "RV5Y6KegIdoSQ72s",
+  "name": "Floressa",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:floressa"
+    }
+  },
+  "_key": "!folders!RV5Y6KegIdoSQ72s"
+}

@@ -1,0 +1,29 @@
+{
+  "_id": "Gy9PkO0cvB0YOGTq",
+  "name": "Mão que Segura",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Paxus.png",
+  "folder": "3s8zaqmZqmMwYu79",
+  "sort": 5700,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Paxus",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "paxus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Um aliado adjacente recebe 1d6 + sua Sabedoria PV temporários até o fim da cena.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paxus__mao-que-segura",
+      "divindade": "paxus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!Gy9PkO0cvB0YOGTq"
+}

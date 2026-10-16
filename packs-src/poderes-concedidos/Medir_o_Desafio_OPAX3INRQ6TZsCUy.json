@@ -1,0 +1,29 @@
+{
+  "_id": "OPAX3INRQ6TZsCUy",
+  "name": "Medir o Desafio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Ardor.png",
+  "folder": "xbs3TqdLUtioFSjm",
+  "sort": 3200,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Ardor",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "ardor",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação livre · 1 PM</em></p><p>Antes de fazer um teste de perícia (exceto ataque), você pode gastar 1 PM para perguntar ao mestre qual é a CD do teste. Se fizer isso, sofre –2 no resultado do teste.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ardor__medir-o-desafio",
+      "divindade": "ardor",
+      "concedido": true
+    }
+  },
+  "_key": "!items!OPAX3INRQ6TZsCUy"
+}

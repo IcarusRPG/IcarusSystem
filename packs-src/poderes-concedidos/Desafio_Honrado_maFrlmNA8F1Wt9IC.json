@@ -1,0 +1,29 @@
+{
+  "_id": "maFrlmNA8F1Wt9IC",
+  "name": "Desafio Honrado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Valorus.png",
+  "folder": "FAoSmt4rZZjIEz0Q",
+  "sort": 5800,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Valorus",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "valorus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM para escolher um inimigo que possa ver em alcance curto. Até o fim da cena, você recebe +2 nos testes de ataque e nas rolagens de dano contra ele. O efeito termina se você atacar outra criatura hostil ou se o inimigo for reduzido a 0 PV.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "valorus__desafio-honrado",
+      "divindade": "valorus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!maFrlmNA8F1Wt9IC"
+}

@@ -1,0 +1,29 @@
+{
+  "_id": "HRHJy9hywNh6H476",
+  "name": "Riso Sagrado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Amorina.png",
+  "folder": "pkfRvSZLpJZpb6P6",
+  "sort": 500,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Amorina",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "amorina",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 2 PM</em></p><p>Você pode gastar uma ação padrão e 2 PM. Você e seus aliados em alcance curto recebem +2 em Vontade e Fortitude até o fim da cena.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "amorina__riso-sagrado",
+      "divindade": "amorina",
+      "concedido": true
+    }
+  },
+  "_key": "!items!HRHJy9hywNh6H476"
+}

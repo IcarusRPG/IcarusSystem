@@ -1,0 +1,15 @@
+{
+  "_id": "Yv3NGVR00tk1sg4i",
+  "name": "Nocturna",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 800,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:nocturna"
+    }
+  },
+  "_key": "!folders!Yv3NGVR00tk1sg4i"
+}

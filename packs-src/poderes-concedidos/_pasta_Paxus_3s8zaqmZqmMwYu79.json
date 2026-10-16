@@ -1,0 +1,15 @@
+{
+  "_id": "3s8zaqmZqmMwYu79",
+  "name": "Paxus",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1900,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:paxus"
+    }
+  },
+  "_key": "!folders!3s8zaqmZqmMwYu79"
+}

@@ -1,0 +1,29 @@
+{
+  "_id": "cbnr7dzCSaTf68ML",
+  "name": "Toque Acalentador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Amorina.png",
+  "folder": "pkfRvSZLpJZpb6P6",
+  "sort": 400,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Amorina",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "amorina",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 2 PM</em></p><p>Você se torna treinado em Cura (se já for treinado, recebe +2 nessa perícia). Além disso, pode gastar uma ação padrão e 2 PM para tocar uma criatura (inclusive você). Ela recupera 1d10 PV + seu Carisma + seu bônus total em Cura.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "amorina__toque-acalentador",
+      "divindade": "amorina",
+      "concedido": true
+    }
+  },
+  "_key": "!items!cbnr7dzCSaTf68ML"
+}

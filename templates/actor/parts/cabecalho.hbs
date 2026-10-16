@@ -32,6 +32,47 @@
         <input class="campo" type="text" name="system.identidade.{{chave}}" value="{{valor}}" placeholder="{{placeholder}}">
       </label>
       {{/each}}
+
+      {{!-- Divindade: combobox em árvore (Nenhum(a) · Alfars [+] · Baldurs [+]), module/panteao.mjs --}}
+      <div class="campo-divindade">
+        <span class="rot" id="{{actor.id}}-div-rot">{{localize "ICARUS.Identidade.divindade"}}</span>
+        <div class="combo-divindade">
+          <button type="button" class="campo combo-botao" aria-haspopup="tree" aria-expanded="false" aria-labelledby="{{actor.id}}-div-rot {{actor.id}}-div-valor"{{#unless editable}} disabled{{/unless}}>
+            {{#if divindade.simbolo}}<img src="{{divindade.simbolo}}" alt="" width="22" height="22">{{/if}}
+            <span id="{{actor.id}}-div-valor" class="combo-valor">{{divindade.rotulo}}</span>
+            <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+          </button>
+          <ul class="arvore-divindade" role="tree" aria-labelledby="{{actor.id}}-div-rot" hidden>
+            <li role="treeitem" class="folha" data-valor="" tabindex="-1" aria-selected="{{#unless divindade.id}}{{#unless divindade.outra}}true{{else}}false{{/unless}}{{else}}false{{/unless}}">{{localize "ICARUS.Devocao.Nenhuma"}}</li>
+            {{#each divindade.grupos}}
+            <li role="treeitem" class="grupo" data-grupo="{{nome}}" aria-expanded="false" tabindex="-1">
+              <span class="grupo-linha"><span class="expandir" aria-hidden="true">[+]</span> {{nome}}</span>
+              <ul role="group" hidden>
+                {{#each itens}}
+                <li role="treeitem" class="folha" data-valor="{{id}}" tabindex="-1" title="{{titulo}}" aria-selected="{{#if selecionado}}true{{else}}false{{/if}}">
+                  <img src="{{simbolo}}" alt="" width="22" height="22"> {{nome}}
+                </li>
+                {{/each}}
+              </ul>
+            </li>
+            {{/each}}
+            {{#if divindade.outra}}<li role="treeitem" class="folha" data-valor="{{divindade.outra}}" tabindex="-1" aria-selected="true">{{localize "ICARUS.Devocao.Outra"}}: {{divindade.outra}}</li>{{/if}}
+          </ul>
+        </div>
+        {{#if divindade.id}}
+        <details class="painel-divindade">
+          <summary>{{localize "ICARUS.Devocao.DogmasEPoderes"}}</summary>
+          <div class="painel-divindade-corpo">
+            <p class="dica">{{divindade.titulo}}</p>
+            <h4>{{localize "ICARUS.Devocao.Dogmas"}}</h4>
+            <p>{{divindade.dogma}}</p>
+            <h4>{{localize "ICARUS.Devocao.PoderesConcedidos"}}</h4>
+            <ul>{{#each divindade.poderes}}<li><b>{{nome}}</b>{{#if meta}} <span class="dica">({{meta}})</span>{{/if}}{{#if possui}} ✓{{/if}}</li>{{/each}}</ul>
+            {{#if editable}}<button type="button" class="btn peq" data-action="divindade-poderes">{{localize "ICARUS.Devocao.BotaoPoderes"}}</button>{{/if}}
+          </div>
+        </details>
+        {{/if}}
+      </div>
     </div>
   </div>
 

@@ -134,7 +134,7 @@ test("Escolhas pendentes: atributos, perícia e texto ficam marcados e o texto e
 test("Dados das 17 raças: ids únicos, efeitos com chaves válidas, variantes e escolhas coerentes", () => {
   assert.equal(RACAS.length, 17);
   assert.equal(new Set(RACAS.map(r => r.id)).size, 17);
-  const valido = chave => /^system\.(pericias\.\w+\.(outros|treino|atributo)|defesa\.outros|deslocamento|tamanho|classeConfig\.(bonusPvPorNivel|bonusPmPorNivel|bonusPmNivelImpar))$/.test(chave);
+  const valido = chave => /^system\.(pericias\.\w+\.(outros|treino|atributo)|defesa\.outros|resistencias\.reducao\.\w+|deslocamento|tamanho|classeConfig\.(bonusPvPorNivel|bonusPmPorNivel|bonusPmNivelImpar))$/.test(chave);
   for (const r of RACAS) {
     for (const p of r.poderes) {
       for (const e of p.efeitos ?? []) {

@@ -1,0 +1,16 @@
+{
+  "_id": "9eK1SFWTU5nyW2bF",
+  "name": "Popular compêndios (Mestre)",
+  "type": "script",
+  "img": "icons/svg/book.svg",
+  "command": "await game.icarus.popularCompendios();",
+  "scope": "global",
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "icarus-rpg": {
+      "id": "popular-compendios"
+    }
+  },
+  "_key": "!macros!9eK1SFWTU5nyW2bF"
+}

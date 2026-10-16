@@ -1,0 +1,31 @@
+{
+  "_id": "YfrE38o8C7ONCizK",
+  "name": "Meia-armadura",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Meia%20armadura.png",
+  "folder": "4XtlAT0NAetX4lYn",
+  "sort": 600,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "pesada",
+    "bonusDefesa": 6,
+    "penalidade": 4,
+    "preco": 50000,
+    "espacos": 5,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "meia-armadura"
+    }
+  },
+  "_key": "!items!YfrE38o8C7ONCizK"
+}

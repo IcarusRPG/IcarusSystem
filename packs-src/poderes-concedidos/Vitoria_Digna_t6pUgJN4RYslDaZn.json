@@ -1,0 +1,29 @@
+{
+  "_id": "t6pUgJN4RYslDaZn",
+  "name": "Vitória Digna",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Valorus.png",
+  "folder": "FAoSmt4rZZjIEz0Q",
+  "sort": 6000,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Valorus",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "rodada",
+    "sustentada": false,
+    "divindade": "valorus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>1x por rodada</em></p><p>Uma vez por rodada, quando reduz um inimigo a 0 PV com um ataque corpo a corpo, você recupera PV igual ao seu nível. Uma vez por cena, você também recupera 1 PM.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "valorus__vitoria-digna",
+      "divindade": "valorus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!t6pUgJN4RYslDaZn"
+}

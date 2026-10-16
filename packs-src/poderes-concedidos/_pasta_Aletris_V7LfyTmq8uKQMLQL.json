@@ -1,0 +1,15 @@
+{
+  "_id": "V7LfyTmq8uKQMLQL",
+  "name": "Alétris",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:aletris"
+    }
+  },
+  "_key": "!folders!V7LfyTmq8uKQMLQL"
+}

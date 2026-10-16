@@ -70,9 +70,13 @@ export function calcularAtaque(system, arma, modo, itens = []) {
     if (DES > FOR) { base = base - FOR + DES; agil = true; }
   }
   const proficiente = ehProficiente(arma);
-  const bonus = base + numero(arma.bonusAtaque) + penalidadeDeAtaque(system, itens)
+  // Condições: a maior penalidade entre a geral e a de corpo a corpo (Caído), sem somar as duas
+  const condGeral = system.condicoes?.ataque?.valor ?? 0;
+  const condCorpo = modo === "corpo-a-corpo" ? (system.condicoes?.ataqueCorpoACorpo?.valor ?? 0) : 0;
+  const condicao = Math.min(condGeral, condCorpo);
+  const bonus = base + numero(arma.bonusAtaque) + numero(system.bonus?.ataque) + condicao + penalidadeDeAtaque(system, itens)
     + (proficiente ? 0 : REGRAS.penalidadeSemProficiencia);
-  return { pericia, bonus, agil, proficiente };
+  return { pericia, bonus, agil, proficiente, condicao };
 }
 
 /**
@@ -224,4 +228,56 @@ export const MARCA_DO_BOTAO = {
 export function botaoUsado(flags, acao) {
   const marca = MARCA_DO_BOTAO[acao];
   return !!(marca && flags?.[marca]);
+}
+
+/* ------------------------------ Dano recebido (resistências) ------------------------------ */
+
+/**
+ * Dano que um alvo realmente sofre, com o passo a passo para o chat.
+ * PROVISÓRIO: a ordem vulnerabilidade → redução e o arredondamento são sugestão (tipos-dano.json → regras).
+ * Ordem: 1) Imunidade ao tipo → 0; 2) Vulnerabilidade → ×1,5 arredondado para baixo;
+ * 3) Redução do tipo → subtrai; 4) RD geral → subtrai; 5) mínimo 0.
+ * O tipo genérico "dano" só sofre RD geral. Perda de PV não passa por aqui (ignora tudo).
+ *
+ * @param {object} resistencias  system.resistencias do alvo (já com Efeitos Ativos e condições)
+ * @param {number} valor         dano rolado (já multiplicado por metade/dobro, se for o caso)
+ * @param {string} tipo          id do tipo de dano
+ * @returns {{ final: number, passos: {chave: string, valor?: number, resultado: number}[] }}
+ */
+export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }) {
+  const r = resistencias ?? {};
+  let dano = Math.max(0, Math.trunc(numero(valor)));
+  const passos = [{ chave: "rolado", resultado: dano }];
+  const generico = !tipo || tipo === "dano";
+  if (!generico && r.imunidade?.[tipo]) {
+    passos.push({ chave: "imune", resultado: 0 });
+    return { final: 0, passos };
+  }
+  if (!generico && r.vulnerabilidade?.[tipo]) {
+    dano = Math.floor(dano * (regras.vulnerabilidadeMult ?? 1.5));
+    passos.push({ chave: "vulneravel", valor: regras.vulnerabilidadeMult ?? 1.5, resultado: dano });
+  }
+  const reducao = generico ? 0 : numero(r.reducao?.[tipo]);
+  if (reducao) {
+    dano = Math.max(regras.minimo ?? 0, dano - reducao);
+    passos.push({ chave: "reducao", valor: reducao, resultado: dano });
+  }
+  const rd = numero(r.rdGeral);
+  if (rd) {
+    dano = Math.max(regras.minimo ?? 0, dano - rd);
+    passos.push({ chave: "rd", valor: rd, resultado: dano });
+  }
+  return { final: Math.max(regras.minimo ?? 0, dano), passos };
+}
+
+/** Texto do passo a passo: "12 Fogo → vulnerável ×1,5 = 18 → Redução de fogo 5 → 13". */
+export function textoDoDano(passos, nomeTipo) {
+  return passos.map(p => {
+    if (p.chave === "rolado") return `${p.resultado} ${nomeTipo}`;
+    if (p.chave === "imune") return "imune → 0";
+    if (p.chave === "vulneravel") return `vulnerável ×${String(p.valor).replace(".", ",")} = ${p.resultado}`;
+    if (p.chave === "reducao") return `Redução de ${nomeTipo.toLowerCase()} ${p.valor} → ${p.resultado}`;
+    if (p.chave === "rd") return `RD ${p.valor} → ${p.resultado}`;
+    return String(p.resultado);
+  }).join(" → ");
 }

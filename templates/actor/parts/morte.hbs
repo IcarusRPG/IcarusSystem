@@ -1,0 +1,23 @@
+{{#if morte.mostrar}}
+<section class="painel morte-ficha">
+  <div class="lista-cab">
+    <h3 class="titulo-painel">{{localize "ICARUS.Morte.Titulo"}}</h3>
+    {{#if morte.estavel}}<span class="tag-racial">{{localize "ICARUS.Morte.Estavel"}}</span>{{/if}}
+  </div>
+  <div class="morte-marcas">
+    <span class="rot">{{localize "ICARUS.Morte.Sucessos"}}</span>
+    {{#each morte.sucessos}}<button type="button" class="bolinha sucesso{{#if marcado}} marcada{{/if}}" data-action="morte-marca" data-tipo="sucessos" data-n="{{n}}" aria-label="{{localize 'ICARUS.Morte.Sucessos'}} {{n}}" aria-pressed="{{#if marcado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}></button>{{/each}}
+    <span class="rot">{{localize "ICARUS.Morte.Falhas"}}</span>
+    {{#each morte.falhas}}<button type="button" class="bolinha falha{{#if marcado}} marcada{{/if}}" data-action="morte-marca" data-tipo="falhas" data-n="{{n}}" aria-label="{{localize 'ICARUS.Morte.Falhas'}} {{n}}" aria-pressed="{{#if marcado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}></button>{{/each}}
+  </div>
+  {{#if editable}}
+  <div class="chips">
+    {{#if morte.morrendo}}<button type="button" class="btn peq primario" data-action="morte-rolar">{{localize "ICARUS.Morte.Rolar"}}</button>{{/if}}
+    <button type="button" class="btn peq" data-action="morte-dano" data-critico="0">{{localize "ICARUS.Morte.DanoNormal"}}</button>
+    <button type="button" class="btn peq" data-action="morte-dano" data-critico="1">{{localize "ICARUS.Morte.DanoCritico"}}</button>
+    {{#if morte.morrendo}}<button type="button" class="btn peq" data-action="morte-estabilizar">{{localize "ICARUS.Morte.Estabilizar"}}</button>{{/if}}
+  </div>
+  {{/if}}
+  <p class="dica">{{localize "ICARUS.Morte.Dica"}}</p>
+</section>
+{{/if}}

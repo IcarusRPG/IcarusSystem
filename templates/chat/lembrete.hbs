@@ -1,0 +1,18 @@
+<div class="icarus-rolagem icarus-lembrete{{#if critico}} critico{{/if}}{{#if falha}} falha{{/if}}">
+  <h3 class="rolagem-nome">{{titulo}}</h3>
+  {{#if linhas.length}}<ul class="condicao-avisos">{{#each linhas}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+  {{#if d20}}
+  <div class="rolagem-dados">
+    <span class="d20"><span class="moldura hex"></span><span class="miolo hex">{{d20}}</span></span>
+    <span class="rolagem-formula">1d20</span>
+  </div>
+  {{/if}}
+  {{#if total}}<div class="rolagem-dados"><span class="rolagem-formula">{{localize "ICARUS.Lembrete.Resultado"}}</span><span class="rolagem-total">{{total}}</span></div>{{/if}}
+  {{#if texto}}<p class="condicao-descricao">{{texto}}</p>{{/if}}
+  {{#if botoes.length}}
+  <div class="rolagem-botoes">
+    {{#each botoes}}<button type="button" data-icarus-lembrete="{{acao}}">{{rotulo}}</button>{{/each}}
+  </div>
+  {{/if}}
+  {{#if provisorio}}<div class="linha-aviso">{{localize "ICARUS.Lembrete.Provisorio"}}</div>{{/if}}
+</div>

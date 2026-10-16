@@ -1,0 +1,29 @@
+{
+  "_id": "b0lSDWy2faSV4Rdo",
+  "name": "Duas Faces da Mana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Eth%C3%A9ria.png",
+  "folder": "UuRGYaKAYpYf5Dw7",
+  "sort": 1200,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Etheria",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "etheria",
+    "tipoDano": "",
+    "descricao": "<p>Pré-requisito: capacidade de lançar magias. Escolha uma magia da tradição oposta à sua (arcana, se você lança magias divinas; divina, se lança magias arcanas), de um círculo que você já possa lançar. Você aprende e pode lançar essa magia. Sempre que sobe de nível, pode trocá-la por outra que atenda aos mesmos requisitos.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "etheria__duas-faces-da-mana",
+      "divindade": "etheria",
+      "concedido": true
+    }
+  },
+  "_key": "!items!b0lSDWy2faSV4Rdo"
+}

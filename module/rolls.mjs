@@ -43,9 +43,18 @@ export async function rolarTeste(actor, { rotulo, modificador, tipo, chave }) {
 }
 
 /** Rola uma perícia do personagem (inclui as Resistências). */
-export function rolarPericia(actor, chave) {
+export async function rolarPericia(actor, chave) {
   const pericia = actor.system.pericias[chave];
   if (!pericia) return null;
+  // Condição com falha automática (Cego em Visão, Surdo em Audição, Indefeso em Reflexos): não rola
+  if (pericia.falhaAuto) {
+    const content = await renderTemplate(TEMPLATE_CARTAO, {
+      rotulo: game.i18n.localize(`ICARUS.Pericias.${chave}`),
+      tipoRotulo: game.i18n.format("ICARUS.Condicoes.FalhaAuto", { condicao: pericia.falhaAuto }),
+      falhaAutomatica: true
+    });
+    return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content });
+  }
   const resistencia = ["fortitude", "reflexos", "vontade"].includes(chave);
   return rolarTeste(actor, {
     rotulo: game.i18n.localize(`ICARUS.Pericias.${chave}`),

@@ -1,0 +1,29 @@
+{
+  "_id": "wBG6TuvX0EQzjKw8",
+  "name": "Troca de Ritmo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Mentis.png",
+  "folder": "vXDqF9v3jf4BeCdb",
+  "sort": 5400,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Mentis",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "mentis",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação livre · 1 PM · 1x por cena</em></p><p>Uma vez por cena, no início do seu turno, você pode gastar uma ação livre e 1 PM para trocar de posição na iniciativa com um aliado em alcance curto. Ele age agora, no seu lugar, e você age no turno dele; a nova ordem vale até o fim da cena. Além disso, vocês trocam de lugar no campo de batalha, ocupando instantaneamente o espaço um do outro.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mentis__troca-de-ritmo",
+      "divindade": "mentis",
+      "concedido": true
+    }
+  },
+  "_key": "!items!wBG6TuvX0EQzjKw8"
+}

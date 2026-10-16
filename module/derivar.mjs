@@ -3,14 +3,22 @@
  * Sem dependência do Foundry: recebe o objeto "system" (já com os Efeitos Ativos aplicados)
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
-import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE } from "./config.mjs";
+import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
+import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import {
   numero, limitar, nivelValido, ehParagon, totalAtributo, bonusTreino, totalPericia,
   maximoPelaClasse, maximoFinal, bonusDeNivel, calcularDefesa, emQuadrados
 } from "./regras.mjs";
 
-export function derivarPersonagem(s, itens = []) {
+/**
+ * @param {object} s               system do personagem
+ * @param {object[]} itens         itens do personagem
+ * @param {Iterable<string>} condicoesAtivas  ids das condições ativas (statuses do ator)
+ */
+export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
+  // Condições: "vale a maior penalidade" em cada campo (module/condicoes.mjs)
+  const cond = modificadoresDasCondicoes(condicoesAtivas);
   s.nivel = nivelValido(s.nivel);
   s.paragon = ehParagon(s.nivel);
 
@@ -35,18 +43,26 @@ export function derivarPersonagem(s, itens = []) {
   s.pv.value = limitar(numero(s.pv.value), 0, s.pv.max);
   s.pm.value = limitar(numero(s.pm.value), 0, s.pm.max);
 
-  // Defesa: Armadura e Escudo vêm dos itens equipados
+  // Defesa: Armadura e Escudo vêm dos itens equipados.
+  // Penalidade de armadura: soma das penalidades da armadura e do escudo equipados, aplicada como
+  // modificador negativo nas perícias de PERICIAS_PENALIZADAS (Acrobacia, Furtividade, Prestidigitação).
   let armadura = 0, escudo = 0;
+  const penalidades = [];
   for (const item of itens) {
     if (item.type !== "equipamento") continue;
     const e = item.system;
     if (!e.equipado || !TIPOS_EQUIPAVEIS.includes(e.tipo)) continue;
     if (e.tipo === "armadura") armadura += numero(e.bonusDefesa);
     else escudo += numero(e.bonusDefesa);
+    if (numero(e.penalidade) > 0) penalidades.push({ nome: item.name ?? "", valor: numero(e.penalidade) });
   }
+  s.defesa.penalidade = penalidades.reduce((soma, p) => soma + p.valor, 0);
+  s.defesa.origensPenalidade = penalidades;
   s.defesa.armadura = armadura;
   s.defesa.escudo = escudo;
   s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
+  s.defesa.condicao = cond.defesa;
+  if (cond.defesa) s.defesa.total += cond.defesa.valor;
 
   // Perícias: Atributo + Treino + Outros
   for (const p of PERICIAS) {
@@ -54,7 +70,26 @@ export function derivarPersonagem(s, itens = []) {
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
     d.treino = limitar(Math.trunc(numero(d.treino)), 0, 2);
     d.bonusTreino = bonusTreino(d.treino);
-    d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros);
+    d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
+    d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
+    const c = cond.pericias[p.chave];
+    d.condicao = c?.valor ?? 0;
+    d.origemCondicao = c?.origem ?? "";
+    d.total += d.condicao;
+    d.falhaAuto = cond.falhaAuto[p.chave];
+  }
+
+  // RD das condições (Petrificado) entra na RD geral
+  if (s.resistencias && cond.rd) s.resistencias.rdGeral = Number(s.resistencias.rdGeral || 0) + cond.rd.valor;
+
+  // Ataque: as condições ficam à parte (combate.mjs soma conforme o modo)
+  s.condicoes = { ids: [...cond.ids], ataque: cond.ataque, ataqueCorpoACorpo: cond.ataqueCorpoACorpo, pendencias: cond.pendencias };
+
+  // Deslocamento com as condições (Lento, Sobrecarregado, Caído, Imóvel)
+  s.deslocamentoSemCondicoes = s.deslocamento;
+  if (cond.deslocamento.origens.length) {
+    s.deslocamento = deslocamentoComCondicoes(s.deslocamento, cond.deslocamento);
+    s.deslocamentoOrigens = cond.deslocamento.origens;
   }
 
   s.deslocamentoQuadrados = emQuadrados(s.deslocamento);

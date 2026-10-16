@@ -1,0 +1,29 @@
+{
+  "_id": "4J5Z77Tsyogpvw8d",
+  "name": "Muralha Solar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/S%C3%B3lem.png",
+  "folder": "RNNHnTwPaRz9bWHS",
+  "sort": 2800,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Sólem",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": true,
+    "divindade": "solem",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM · Sustentada</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Seus aliados adjacentes recebem +1 na Defesa, ou +2 se você estiver empunhando um escudo (inclusive o Escudo Acoplado). Este poder é sustentado: para mantê-lo, você deve gastar 1 PM no início de cada um de seus turnos. Se não pagar, ou se ficar inconsciente, o efeito termina.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "solem__muralha-solar",
+      "divindade": "solem",
+      "concedido": true
+    }
+  },
+  "_key": "!items!4J5Z77Tsyogpvw8d"
+}

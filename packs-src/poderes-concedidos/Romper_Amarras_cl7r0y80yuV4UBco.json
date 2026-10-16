@@ -1,0 +1,29 @@
+{
+  "_id": "cl7r0y80yuV4UBco",
+  "name": "Romper Amarras",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Ardor.png",
+  "folder": "xbs3TqdLUtioFSjm",
+  "sort": 3100,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Ardor",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "ardor",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>1x por cena</em></p><p>Você recebe +2 em Atletismo e Acrobacia para escapar de agarrões, cordas, algemas e grilhões. Além disso, uma vez por cena, você pode gastar uma ação livre e 1 PM para encerrar uma condição de movimento que o esteja prendendo.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ardor__romper-amarras",
+      "divindade": "ardor",
+      "concedido": true
+    }
+  },
+  "_key": "!items!cl7r0y80yuV4UBco"
+}

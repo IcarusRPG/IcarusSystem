@@ -1,0 +1,29 @@
+{
+  "_id": "XLHuLIipuoozJ5ve",
+  "name": "Caos Generoso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Aletris.png",
+  "folder": "V7LfyTmq8uKQMLQL",
+  "sort": 300,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Alétris",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "aletris",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>1x por cena</em></p><p>Na primeira vez em cada cena que tirar 1 ou 20 natural em um d20, você recupera 1d4 PM.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "aletris__caos-generoso",
+      "divindade": "aletris",
+      "concedido": true
+    }
+  },
+  "_key": "!items!XLHuLIipuoozJ5ve"
+}

@@ -3,7 +3,7 @@
  * valores salvos → Efeitos Ativos (em ordem de prioridade) → derivarPersonagem.
  * Usa as mesmas funções do sistema (module/derivar.mjs e module/data/racas.mjs).
  */
-import { ATRIBUTOS, PERICIAS } from "../module/config.mjs";
+import { ATRIBUTOS, PERICIAS, TIPOS_DANO_COM_RESISTENCIA } from "../module/config.mjs";
 import { derivarPersonagem } from "../module/derivar.mjs";
 import { racaPorId, resolverRaca } from "../module/data/racas.mjs";
 
@@ -22,6 +22,15 @@ export function sistemaCompleto(parcial = {}) {
   s.pv = { value: 0, max: 0, ...s.pv };
   s.pm = { value: 0, max: 0, ...s.pm };
   s.defesa = { outros: 0, ...s.defesa };
+  const porTipo = v => Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, v]));
+  s.resistencias = {
+    rdGeral: 0, ...s.resistencias,
+    reducao: { ...porTipo(0), ...s.resistencias?.reducao },
+    imunidade: { ...porTipo(false), ...s.resistencias?.imunidade },
+    vulnerabilidade: { ...porTipo(false), ...s.resistencias?.vulnerabilidade }
+  };
+  s.bonus = { ataque: 0, ...s.bonus };
+  s.morte = { sucessos: 0, falhas: 0, estavel: false, ...s.morte };
   s.deslocamento ??= 9;
   s.tamanho ??= "medio";
   s.pericias ??= {};

@@ -21,7 +21,7 @@ export function dadosKaelen() {
     type: "personagem",
     system: {
       nivel: 5,
-      identidade: { raca: "koruma", origem: "Caçador de Feras", classe: "Lanceiro", profissao: "Ferreiro", divindade: "Draconara" },
+      identidade: { raca: "koruma", origem: "Caçador de Feras", classe: "Lanceiro", profissao: "Ferreiro", divindade: "draconara" },
       atributos: {
         FOR: { base: 2, racial: 1, temp: 1 }, DES: { base: 0, racial: 1, temp: 0 }, CON: { base: 2, racial: 0, temp: 0 },
         INT: { base: 0, racial: 0, temp: 0 }, SAB: { base: 1, racial: 0, temp: 0 }, CAR: { base: 1, racial: 1, temp: 0 }

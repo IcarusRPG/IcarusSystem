@@ -1,0 +1,29 @@
+{
+  "_id": "SSTVoqFIWYG8ksVr",
+  "name": "Manto de Trevas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Nocturna.png",
+  "folder": "Yv3NGVR00tk1sg4i",
+  "sort": 2300,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Nocturna",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "nocturna",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, uma sombra viva o envolve e você recebe +2 em Furtividade e +2 na Defesa contra ataques à distância. O efeito termina se você fizer um ataque.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nocturna__manto-de-trevas",
+      "divindade": "nocturna",
+      "concedido": true
+    }
+  },
+  "_key": "!items!SSTVoqFIWYG8ksVr"
+}

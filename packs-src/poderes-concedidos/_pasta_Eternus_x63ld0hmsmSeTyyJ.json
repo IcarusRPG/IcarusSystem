@@ -1,0 +1,15 @@
+{
+  "_id": "x63ld0hmsmSeTyyJ",
+  "name": "Eternus",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:eternus"
+    }
+  },
+  "_key": "!folders!x63ld0hmsmSeTyyJ"
+}
