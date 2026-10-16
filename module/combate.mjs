@@ -70,9 +70,13 @@ export function calcularAtaque(system, arma, modo, itens = []) {
     if (DES > FOR) { base = base - FOR + DES; agil = true; }
   }
   const proficiente = ehProficiente(arma);
-  const bonus = base + numero(arma.bonusAtaque) + penalidadeDeAtaque(system, itens)
+  // Condições: a maior penalidade entre a geral e a de corpo a corpo (Caído), sem somar as duas
+  const condGeral = system.condicoes?.ataque?.valor ?? 0;
+  const condCorpo = modo === "corpo-a-corpo" ? (system.condicoes?.ataqueCorpoACorpo?.valor ?? 0) : 0;
+  const condicao = Math.min(condGeral, condCorpo);
+  const bonus = base + numero(arma.bonusAtaque) + numero(system.bonus?.ataque) + condicao + penalidadeDeAtaque(system, itens)
     + (proficiente ? 0 : REGRAS.penalidadeSemProficiencia);
-  return { pericia, bonus, agil, proficiente };
+  return { pericia, bonus, agil, proficiente, condicao };
 }
 
 /**

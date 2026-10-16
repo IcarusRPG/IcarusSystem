@@ -1,0 +1,55 @@
+<div class="ficha-icarus painel-condicoes">
+  {{#if mestre}}
+  <fieldset class="escolha">
+    <legend class="rot">{{localize "ICARUS.Condicoes.Alvos"}}</legend>
+    {{#each alvos}}
+    <label class="chk alvo-condicao">
+      <input type="checkbox" name="alvo" value="{{id}}"{{#if marcado}} checked{{/if}}>
+      <img src="{{img}}" alt="" width="28" height="28">
+      <b>{{nome}}</b>{{#unless vinculado}} <span class="dica">({{localize "ICARUS.Condicoes.NaoVinculado"}})</span>{{/unless}}
+      <span class="dica">{{#if ativas}}{{ativas}}{{else}}{{localize "ICARUS.Condicoes.Nenhuma"}}{{/if}}</span>
+    </label>
+    {{else}}
+    <p class="dica">{{localize "ICARUS.Condicoes.SemTokens"}}</p>
+    {{/each}}
+  </fieldset>
+  {{/if}}
+
+  <fieldset class="escolha">
+    <legend class="rot">{{localize "ICARUS.Condicoes.Titulo"}}</legend>
+    <input class="campo" type="search" name="busca" placeholder="{{localize 'ICARUS.Condicoes.Buscar'}}" aria-label="{{localize 'ICARUS.Condicoes.Buscar'}}">
+    <div class="chips filtros-descritor">
+      {{#each descritores}}<button type="button" class="btn peq" data-action="filtro" data-descritor="{{this}}">{{this}}</button>{{/each}}
+    </div>
+    <ul class="lista-condicoes">
+      {{#each condicoes}}
+      <li class="condicao-opcao" data-nome="{{nome}}" data-descritores="{{descritores}}">
+        <label class="chk">
+          <input type="checkbox" name="condicao" value="{{id}}">
+          <img src="{{img}}" alt="" width="24" height="24">
+          <b>{{nome}}</b>
+          {{#each tags}}<span class="icarus-tag">{{this}}</span>{{/each}}
+          {{#if pendente}}<span class="tag-pendente">{{localize "ICARUS.Condicoes.RegraAConfirmar"}}</span>{{/if}}
+        </label>
+        <div class="dica">{{descricao}}{{#if compoe}} <em>= {{compoe}}</em>{{/if}}</div>
+      </li>
+      {{/each}}
+    </ul>
+  </fieldset>
+
+  <fieldset class="escolha duracao">
+    <legend class="rot">{{localize "ICARUS.Condicoes.Duracao"}}</legend>
+    <label class="chk"><input type="radio" name="duracao" value="remover" checked> {{localize "ICARUS.Condicoes.AteRemover"}}</label>
+    <label class="chk"><input type="radio" name="duracao" value="rodadas"> {{localize "ICARUS.Condicoes.Rodadas"}} <input class="campo rodadas" type="number" name="rodadas" value="1" min="1" step="1" aria-label="{{localize 'ICARUS.Condicoes.Rodadas'}}"></label>
+    <label class="chk"><input type="radio" name="duracao" value="cena"> {{localize "ICARUS.Condicoes.FimDaCena"}}</label>
+  </fieldset>
+
+  <div class="dlg-rodape">
+    {{#if mestre}}
+    <button type="button" class="btn" data-action="encerrarCena">{{localize "ICARUS.Condicoes.EncerrarCena"}}</button>
+    <button type="button" class="btn" data-action="removerTodas">{{localize "ICARUS.Condicoes.RemoverTodas"}}</button>
+    <button type="button" class="btn" data-action="remover">{{localize "ICARUS.Condicoes.Remover"}}</button>
+    {{/if}}
+    <button type="button" class="btn primario" data-action="aplicar">{{localize "ICARUS.Condicoes.Aplicar"}}</button>
+  </div>
+</div>

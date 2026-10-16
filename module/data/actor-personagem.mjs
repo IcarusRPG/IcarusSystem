@@ -66,6 +66,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         imunidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })]))),
         vulnerabilidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })])))
       }),
+      // Bônus gerais de ataque (Efeitos Ativos podem somar aqui)
+      bonus: new fields.SchemaField({ ataque: inteiro(0) }),
       imunidades: texto(),
       sentidos: texto(),
       notas: new fields.HTMLField({ required: true, blank: true, initial: "" }),
@@ -91,6 +93,6 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
 
   /** Roda depois dos Efeitos Ativos, então Temp, "Outros", treino e deslocamento já chegam com os bônus. */
   prepareDerivedData() {
-    derivarPersonagem(this, this.parent?.items ?? []);
+    derivarPersonagem(this, this.parent?.items ?? [], this.parent?.statuses ?? []);
   }
 }

@@ -1,6 +1,12 @@
 <form class="{{cssClass}} ficha-icarus" autocomplete="off">
   {{> "systems/icarus-rpg/templates/actor/parts/cabecalho.hbs"}}
   {{> "systems/icarus-rpg/templates/actor/parts/recursos.hbs"}}
+  {{#if avisosCondicoes.length}}
+  <div class="faixa-condicoes" role="status">
+    <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+    {{#each avisosCondicoes}}<span>{{this}}</span>{{/each}}
+  </div>
+  {{/if}}
 
   <nav class="abas">
     <div class="abas-lista" role="tablist">

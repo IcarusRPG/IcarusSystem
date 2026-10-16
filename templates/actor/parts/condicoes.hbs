@@ -1,0 +1,23 @@
+<section class="painel condicoes-ficha">
+  <div class="lista-cab">
+    <h3 class="titulo-painel">{{localize "ICARUS.Condicoes.Titulo"}}</h3>
+    {{#if editable}}<button type="button" class="btn peq tracejado" data-action="condicao-adicionar">{{localize "ICARUS.Condicoes.Adicionar"}}</button>{{/if}}
+  </div>
+  <div class="chips-condicoes">
+    {{#each condicoesAtivas}}
+    <details class="chip-condicao" data-condicao="{{id}}">
+      <summary title="{{localize 'ICARUS.Condicoes.DicaChip'}}">
+        <img src="{{img}}" alt="" width="20" height="20"> {{nome}}
+        {{#if pendente}}<span class="tag-pendente">{{localize "ICARUS.Condicoes.RegraAConfirmar"}}</span>{{/if}}
+      </summary>
+      <div class="chip-condicao-corpo">
+        <p>{{descricao}}</p>
+        {{#if avisos.length}}<ul>{{#each avisos}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+        <p class="dica">{{duracao}}{{#if origem}} · {{origem}}{{/if}}{{#if escala}} · {{localize "ICARUS.Condicoes.PioraPara"}} {{escala}}{{/if}}</p>
+      </div>
+    </details>
+    {{else}}
+    <p class="dica">{{localize "ICARUS.Condicoes.Nenhuma"}}</p>
+    {{/each}}
+  </div>
+</section>

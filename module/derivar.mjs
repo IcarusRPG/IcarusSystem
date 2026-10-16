@@ -5,12 +5,20 @@
  */
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
+import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import {
   numero, limitar, nivelValido, ehParagon, totalAtributo, bonusTreino, totalPericia,
   maximoPelaClasse, maximoFinal, bonusDeNivel, calcularDefesa, emQuadrados
 } from "./regras.mjs";
 
-export function derivarPersonagem(s, itens = []) {
+/**
+ * @param {object} s               system do personagem
+ * @param {object[]} itens         itens do personagem
+ * @param {Iterable<string>} condicoesAtivas  ids das condições ativas (statuses do ator)
+ */
+export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
+  // Condições: "vale a maior penalidade" em cada campo (module/condicoes.mjs)
+  const cond = modificadoresDasCondicoes(condicoesAtivas);
   s.nivel = nivelValido(s.nivel);
   s.paragon = ehParagon(s.nivel);
 
@@ -53,6 +61,8 @@ export function derivarPersonagem(s, itens = []) {
   s.defesa.armadura = armadura;
   s.defesa.escudo = escudo;
   s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
+  s.defesa.condicao = cond.defesa;
+  if (cond.defesa) s.defesa.total += cond.defesa.valor;
 
   // Perícias: Atributo + Treino + Outros
   for (const p of PERICIAS) {
@@ -62,6 +72,24 @@ export function derivarPersonagem(s, itens = []) {
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
+    const c = cond.pericias[p.chave];
+    d.condicao = c?.valor ?? 0;
+    d.origemCondicao = c?.origem ?? "";
+    d.total += d.condicao;
+    d.falhaAuto = cond.falhaAuto[p.chave];
+  }
+
+  // RD das condições (Petrificado) entra na RD geral
+  if (s.resistencias && cond.rd) s.resistencias.rdGeral = Number(s.resistencias.rdGeral || 0) + cond.rd.valor;
+
+  // Ataque: as condições ficam à parte (combate.mjs soma conforme o modo)
+  s.condicoes = { ids: [...cond.ids], ataque: cond.ataque, ataqueCorpoACorpo: cond.ataqueCorpoACorpo, pendencias: cond.pendencias };
+
+  // Deslocamento com as condições (Lento, Sobrecarregado, Caído, Imóvel)
+  s.deslocamentoSemCondicoes = s.deslocamento;
+  if (cond.deslocamento.origens.length) {
+    s.deslocamento = deslocamentoComCondicoes(s.deslocamento, cond.deslocamento);
+    s.deslocamentoOrigens = cond.deslocamento.origens;
   }
 
   s.deslocamentoQuadrados = emQuadrados(s.deslocamento);
