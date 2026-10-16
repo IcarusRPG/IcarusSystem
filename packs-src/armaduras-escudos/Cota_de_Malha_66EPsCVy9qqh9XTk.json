@@ -1,0 +1,31 @@
+{
+  "_id": "66EPsCVy9qqh9XTk",
+  "name": "Cota de Malha",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Cota%20de%20malha.png",
+  "folder": "7DWuaSzmo9DPdOZw",
+  "sort": 500,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "media",
+    "bonusDefesa": 5,
+    "penalidade": 3,
+    "preco": 25000,
+    "espacos": 3,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "cota-de-malha"
+    }
+  },
+  "_key": "!items!66EPsCVy9qqh9XTk"
+}

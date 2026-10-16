@@ -1,0 +1,15 @@
+{
+  "_id": "pkfRvSZLpJZpb6P6",
+  "name": "Amorina",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:amorina"
+    }
+  },
+  "_key": "!folders!pkfRvSZLpJZpb6P6"
+}

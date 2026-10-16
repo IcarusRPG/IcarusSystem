@@ -1,0 +1,15 @@
+{
+  "_id": "xbs3TqdLUtioFSjm",
+  "name": "Ardor",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:ardor"
+    }
+  },
+  "_key": "!folders!xbs3TqdLUtioFSjm"
+}

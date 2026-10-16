@@ -1,0 +1,31 @@
+{
+  "_id": "bsXPRm5huYebaZrN",
+  "name": "Couro Reforçado",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Couro%20refor%C3%A7ado.png",
+  "folder": "qZQcPRsu8UQM5a2H",
+  "sort": 300,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "leve",
+    "bonusDefesa": 3,
+    "penalidade": 1,
+    "preco": 6000,
+    "espacos": 2,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "couro-reforcado"
+    }
+  },
+  "_key": "!items!bsXPRm5huYebaZrN"
+}

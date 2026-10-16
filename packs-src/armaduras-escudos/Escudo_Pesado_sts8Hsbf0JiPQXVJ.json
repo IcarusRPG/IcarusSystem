@@ -1,0 +1,31 @@
+{
+  "_id": "sts8Hsbf0JiPQXVJ",
+  "name": "Escudo Pesado",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Escudo%20Medieval%20de%20A%C3%A7o%20Desgastado.png",
+  "folder": "vWpjM3qlPpnP1Wdk",
+  "sort": 1100,
+  "system": {
+    "tipo": "escudo",
+    "categoria": "escudo",
+    "bonusDefesa": 2,
+    "penalidade": 2,
+    "preco": 4000,
+    "espacos": 2,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-pesado"
+    }
+  },
+  "_key": "!items!sts8Hsbf0JiPQXVJ"
+}

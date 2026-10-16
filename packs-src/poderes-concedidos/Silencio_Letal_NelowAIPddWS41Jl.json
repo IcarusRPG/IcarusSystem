@@ -1,0 +1,29 @@
+{
+  "_id": "NelowAIPddWS41Jl",
+  "name": "Silêncio Letal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Insidia.png",
+  "folder": "Fi1qjcO9MyEyWpCE",
+  "sort": 4600,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Insidia",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "insidia",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>1x por cena</em></p><p>Uma vez por cena, o primeiro ataque que você fizer contra uma criatura que não o tenha percebido causa +2d6 pontos de dano.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "insidia__silencio-letal",
+      "divindade": "insidia",
+      "concedido": true
+    }
+  },
+  "_key": "!items!NelowAIPddWS41Jl"
+}

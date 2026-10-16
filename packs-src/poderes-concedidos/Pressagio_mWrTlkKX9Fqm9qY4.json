@@ -1,0 +1,51 @@
+{
+  "_id": "mWrTlkKX9Fqm9qY4",
+  "name": "Presságio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Eternus.png",
+  "folder": "x63ld0hmsmSeTyyJ",
+  "sort": 3800,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Eternus",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "eternus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>1x por cena</em></p><p>Você recebe +2 em iniciativa e não pode ser surpreendido. Além disso, uma vez por cena, quando um aliado em alcance curto for alvo de um ataque, você pode gastar 1 PM como reação para avisá-lo. Ele recebe +2 na Defesa contra esse ataque.</p>"
+  },
+  "effects": [
+    {
+      "_id": "IPPnmVwFPCoTsYtY",
+      "name": "Presságio",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Eternus.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.iniciativa.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "eternus__pressagio"
+        }
+      },
+      "_key": "!items.effects!mWrTlkKX9Fqm9qY4.IPPnmVwFPCoTsYtY"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "eternus__pressagio",
+      "divindade": "eternus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!mWrTlkKX9Fqm9qY4"
+}

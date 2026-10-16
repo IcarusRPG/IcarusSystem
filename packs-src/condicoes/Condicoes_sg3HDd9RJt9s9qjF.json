@@ -1,0 +1,734 @@
+{
+  "_id": "sg3HDd9RJt9s9qjF",
+  "name": "Condições",
+  "folder": null,
+  "sort": 0,
+  "pages": [
+    {
+      "_id": "e2iBK24rGXkWOgqz",
+      "name": "Abalado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Medo</span></p><p>O personagem sofre –2 em testes de perícia. Se ficar abalado novamente, em vez disso fica apavorado.</p><p><strong>Escalonamento:</strong> a condição piora para Apavorado.</p>"
+      },
+      "sort": 100,
+      "flags": {
+        "icarus-rpg": {
+          "id": "abalado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.e2iBK24rGXkWOgqz"
+    },
+    {
+      "_id": "1AfDL4Df4SEuOjpn",
+      "name": "Agarrado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Movimento</span></p><p class=\"icarus-pendente\">Regra a confirmar (PENDENTE)</p><p>O personagem fica desprevenido e imóvel, sofre –2 em testes de ataque e só pode atacar com armas Leves. Ataques à distância contra um alvo envolvido em uma manobra de agarrar têm 50% de chance de acertar o alvo errado.</p><p><strong>Composição:</strong> = Desprevenido + Imóvel</p><ul><li>só ataca com armas Leves</li><li>ataques à distância contra alvo envolvido: 50% de acertar o alvo errado</li></ul>"
+      },
+      "sort": 200,
+      "flags": {
+        "icarus-rpg": {
+          "id": "agarrado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.1AfDL4Df4SEuOjpn"
+    },
+    {
+      "_id": "JJO0NDoxfroxyeo8",
+      "name": "Alquebrado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O custo em PM das habilidades do personagem aumenta em +1.</p><ul><li>Habilidades custam +1 PM</li></ul>"
+      },
+      "sort": 300,
+      "flags": {
+        "icarus-rpg": {
+          "id": "alquebrado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.JJO0NDoxfroxyeo8"
+    },
+    {
+      "_id": "SmHuCw2ZRDbFWfCD",
+      "name": "Apavorado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Medo</span></p><p>O personagem sofre –5 em testes de perícia e não pode se aproximar voluntariamente da fonte do medo.</p>"
+      },
+      "sort": 400,
+      "flags": {
+        "icarus-rpg": {
+          "id": "apavorado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.SmHuCw2ZRDbFWfCD"
+    },
+    {
+      "_id": "KR03G0OIbcRjpVBI",
+      "name": "Atordoado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem fica desprevenido e não pode fazer ações.</p><p><strong>Composição:</strong> = Desprevenido</p><ul><li>Não pode fazer ações</li></ul>"
+      },
+      "sort": 500,
+      "flags": {
+        "icarus-rpg": {
+          "id": "atordoado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.KR03G0OIbcRjpVBI"
+    },
+    {
+      "_id": "GkYU88wyIhDP3S09",
+      "name": "Caído",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Movimento</span></p><p>O personagem sofre –5 em ataques corpo a corpo e seu deslocamento é reduzido a 1,5 m. Além disso, sofre –5 na Defesa contra ataques corpo a corpo e recebe +5 na Defesa contra ataques à distância (cumulativos com outras condições).</p><ul><li>Defesa –5 contra ataques corpo a corpo, +5 contra ataques à distância (informar na linha de alvo do card)</li></ul>"
+      },
+      "sort": 600,
+      "flags": {
+        "icarus-rpg": {
+          "id": "caido"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.GkYU88wyIhDP3S09"
+    },
+    {
+      "_id": "vBTA3i21Cr3VBm4Q",
+      "name": "Cego",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Sentidos</span></p><p class=\"icarus-pendente\">Regra a confirmar (CONFIRMAR, PENDENTE)</p><p>O personagem falha automaticamente em todos os testes de Visão e, a cada turno em combate, perde ou a ação de movimento ou a ação padrão, até se recuperar da condição.</p><ul><li>Falha automática em Visão</li><li>Perde uma ação de movimento ou padrão por turno, à escolha [CONFIRMAR]</li></ul>"
+      },
+      "sort": 700,
+      "flags": {
+        "icarus-rpg": {
+          "id": "cego"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.vBTA3i21Cr3VBm4Q"
+    },
+    {
+      "_id": "bAGPWm7aMBw4bnzY",
+      "name": "Confuso",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem comporta-se de modo aleatório. Role 1d6 no início de cada turno dele: 1) move-se em uma direção escolhida por uma rolagem de 1d8; 2-3) não pode fazer ações e balbucia incoerentemente; 4-5) usa a arma que estiver empunhando para atacar a criatura mais próxima, ou a si mesmo, se estiver sozinho (nesse caso, apenas role o dano); 6) a condição termina e ele pode agir normalmente.</p>"
+      },
+      "sort": 800,
+      "flags": {
+        "icarus-rpg": {
+          "id": "confuso"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.bAGPWm7aMBw4bnzY"
+    },
+    {
+      "_id": "Bf0xDVZ2s1lk1DUD",
+      "name": "Debilitado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem sofre –5 em testes de Força, Destreza e Constituição e de perícias baseadas nesses atributos (incluindo Luta, Pontaria, Fortitude, Reflexos e Iniciativa). Se ficar debilitado novamente, em vez disso fica inconsciente.</p><p><strong>Escalonamento:</strong> a condição piora para Inconsciente.</p>"
+      },
+      "sort": 900,
+      "flags": {
+        "icarus-rpg": {
+          "id": "debilitado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.Bf0xDVZ2s1lk1DUD"
+    },
+    {
+      "_id": "0s7WppDdVoeLakZp",
+      "name": "Desprevenido",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem sofre –5 na Defesa e em Reflexos. Você fica desprevenido contra inimigos que não possa perceber.</p>"
+      },
+      "sort": 1000,
+      "flags": {
+        "icarus-rpg": {
+          "id": "desprevenido"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.0s7WppDdVoeLakZp"
+    },
+    {
+      "_id": "0ImEhrLQ2QcfJ1ge",
+      "name": "Doente",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Metabolismo</span></p><p class=\"icarus-pendente\">Regra a confirmar (PENDENTE)</p><p>Sob efeito de uma doença.</p>"
+      },
+      "sort": 1100,
+      "flags": {
+        "icarus-rpg": {
+          "id": "doente"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.0ImEhrLQ2QcfJ1ge"
+    },
+    {
+      "_id": "GiNIe89h9Gl3U0Vh",
+      "name": "Em Chamas",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem está pegando fogo. No início de cada um de seus turnos, sofre 1d6 pontos de dano de fogo. O personagem pode gastar uma ação padrão para apagar o fogo com as mãos. Imersão em água também apaga as chamas.</p>"
+      },
+      "sort": 1200,
+      "flags": {
+        "icarus-rpg": {
+          "id": "em-chamas"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.GiNIe89h9Gl3U0Vh"
+    },
+    {
+      "_id": "HbCAdkob543NLMTV",
+      "name": "Enfeitiçado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem se torna prestativo em relação à fonte da condição. Ele não fica sob o controle da fonte, mas percebe suas palavras e ações da maneira mais favorável possível. A fonte da condição recebe +10 em testes de Diplomacia com o personagem.</p>"
+      },
+      "sort": 1300,
+      "flags": {
+        "icarus-rpg": {
+          "id": "enfeiticado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.HbCAdkob543NLMTV"
+    },
+    {
+      "_id": "jbFw9nmq9k5g07tv",
+      "name": "Enjoado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Metabolismo</span></p><p>O personagem só pode realizar uma ação padrão ou de movimento por rodada (não ambas). Ele pode gastar uma ação padrão para fazer uma investida, mas só pode avançar até o seu deslocamento (não o dobro).</p><ul><li>Só uma ação por turno</li></ul>"
+      },
+      "sort": 1400,
+      "flags": {
+        "icarus-rpg": {
+          "id": "enjoado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.jbFw9nmq9k5g07tv"
+    },
+    {
+      "_id": "COzwqjFJIagtHZRn",
+      "name": "Enredado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Movimento</span></p><p>O personagem fica lento e vulnerável e sofre –2 em testes de ataque.</p><p><strong>Composição:</strong> = Lento + Vulnerável</p>"
+      },
+      "sort": 1500,
+      "flags": {
+        "icarus-rpg": {
+          "id": "enredado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.COzwqjFJIagtHZRn"
+    },
+    {
+      "_id": "y7sD1AQLU87louzQ",
+      "name": "Envenenado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Veneno</span></p><p class=\"icarus-pendente\">Regra a confirmar (PENDENTE)</p><p>O efeito desta condição varia de acordo com o veneno: perda de vida recorrente ou outra condição (como fraco ou enjoado). A perda de vida recorrente por venenos é cumulativa.</p>"
+      },
+      "sort": 1600,
+      "flags": {
+        "icarus-rpg": {
+          "id": "envenenado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.y7sD1AQLU87louzQ"
+    },
+    {
+      "_id": "MSnUymimVqzMM6D5",
+      "name": "Esmorecido",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem sofre –5 em testes de Inteligência, Sabedoria e Carisma e de perícias baseadas nesses atributos, exceto Visão, Audição e Olfato (os sentidos são afetados por Cego, Surdo e Ofuscado).</p>"
+      },
+      "sort": 1700,
+      "flags": {
+        "icarus-rpg": {
+          "id": "esmorecido"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.MSnUymimVqzMM6D5"
+    },
+    {
+      "_id": "8lSUrLTsM9D3kBgS",
+      "name": "Exausto",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Cansaço</span></p><p>O personagem fica debilitado, lento e vulnerável. Se ficar exausto novamente, em vez disso fica inconsciente.</p><p><strong>Composição:</strong> = Debilitado + Lento + Vulnerável</p><p><strong>Escalonamento:</strong> a condição piora para Inconsciente.</p>"
+      },
+      "sort": 1800,
+      "flags": {
+        "icarus-rpg": {
+          "id": "exausto"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.8lSUrLTsM9D3kBgS"
+    },
+    {
+      "_id": "AnogQu9DNfEKhzYr",
+      "name": "Fascinado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>Com a atenção presa em alguma coisa, o personagem sofre –5 em Visão e Audição e não pode fazer ações, exceto observar aquilo que o fascinou. A condição é anulada por ações hostis contra o personagem ou contra aquilo que o fascinou. Balançar uma criatura fascinada para tirá-la desse estado gasta uma ação padrão.</p><ul><li>Não pode fazer ações</li><li>Exceto: observar o que fascinou</li></ul>"
+      },
+      "sort": 1900,
+      "flags": {
+        "icarus-rpg": {
+          "id": "fascinado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.AnogQu9DNfEKhzYr"
+    },
+    {
+      "_id": "8hPd19BsRXG4ImIr",
+      "name": "Fatigado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Cansaço</span></p><p>O personagem fica fraco e vulnerável. Se ficar fatigado novamente, em vez disso fica exausto.</p><p><strong>Composição:</strong> = Fraco + Vulnerável</p><p><strong>Escalonamento:</strong> a condição piora para Exausto.</p>"
+      },
+      "sort": 2000,
+      "flags": {
+        "icarus-rpg": {
+          "id": "fatigado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.8hPd19BsRXG4ImIr"
+    },
+    {
+      "_id": "WQOhiSHuNbo4UAjc",
+      "name": "Fraco",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem sofre –2 em testes de Força, Destreza e Constituição e de perícias baseadas nesses atributos. Se ficar fraco novamente, em vez disso fica debilitado.</p><p><strong>Escalonamento:</strong> a condição piora para Debilitado.</p>"
+      },
+      "sort": 2100,
+      "flags": {
+        "icarus-rpg": {
+          "id": "fraco"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.WQOhiSHuNbo4UAjc"
+    },
+    {
+      "_id": "jXhuEEjGkiLBtXzJ",
+      "name": "Frustrado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem sofre –2 em testes de Inteligência, Sabedoria e Carisma e de perícias baseadas nesses atributos, exceto Visão, Audição e Olfato. Se ficar frustrado novamente, em vez disso fica esmorecido.</p><p><strong>Escalonamento:</strong> a condição piora para Esmorecido.</p>"
+      },
+      "sort": 2200,
+      "flags": {
+        "icarus-rpg": {
+          "id": "frustrado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.jXhuEEjGkiLBtXzJ"
+    },
+    {
+      "_id": "NVxU0Um3f6CHCB5I",
+      "name": "Imóvel",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Movimento</span></p><p>Todas as formas de deslocamento do personagem são reduzidas a 0 m.</p>"
+      },
+      "sort": 2300,
+      "flags": {
+        "icarus-rpg": {
+          "id": "imovel"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.NVxU0Um3f6CHCB5I"
+    },
+    {
+      "_id": "1MAdLco60exykM0q",
+      "name": "Inconsciente",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem fica indefeso e não pode fazer ações, incluindo reações (mas ainda pode fazer testes naturalmente feitos nesse estado, como os testes de morte e o teste de Constituição para estabilizar um sangramento). Balançar uma criatura para acordá-la gasta uma ação padrão.</p><p><strong>Composição:</strong> = Indefeso</p><ul><li>Não pode fazer ações</li><li>Não pode fazer reações</li></ul>"
+      },
+      "sort": 2400,
+      "flags": {
+        "icarus-rpg": {
+          "id": "inconsciente"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.1MAdLco60exykM0q"
+    },
+    {
+      "_id": "51PUapZR4JuTjEYX",
+      "name": "Indefeso",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem fica desprevenido, mas sofre –10 na Defesa, falha automaticamente em testes de Reflexos e pode sofrer golpes de misericórdia.</p><p><strong>Composição:</strong> = Desprevenido</p><ul><li>Falha automática em Reflexos</li><li>Pode sofrer golpe de misericórdia</li></ul>"
+      },
+      "sort": 2500,
+      "flags": {
+        "icarus-rpg": {
+          "id": "indefeso"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.51PUapZR4JuTjEYX"
+    },
+    {
+      "_id": "5deeuz035o4U7X1T",
+      "name": "Lento",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Movimento</span></p><p>Todas as formas de deslocamento do personagem são reduzidas à metade (arredonde para baixo, em incrementos de 1,5 m) e ele não pode correr nem fazer investidas.</p><ul><li>Não pode correr</li><li>Não pode fazer investidas</li></ul>"
+      },
+      "sort": 2600,
+      "flags": {
+        "icarus-rpg": {
+          "id": "lento"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.5deeuz035o4U7X1T"
+    },
+    {
+      "_id": "bIbcWf4H2nEyMKg2",
+      "name": "Morrendo",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Com 0 PV o personagem fica inconsciente e faz testes de morte no início de cada turno (veja &quot;Pontos de Vida em 0 e Testes de Morte&quot;).</p><p><strong>Composição:</strong> = Inconsciente</p>"
+      },
+      "sort": 2700,
+      "flags": {
+        "icarus-rpg": {
+          "id": "morrendo"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.bIbcWf4H2nEyMKg2"
+    },
+    {
+      "_id": "9kZcvGnwKkxlDMwS",
+      "name": "Ofuscado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Sentidos</span></p><p>O personagem sofre –2 em testes de ataque e de Visão.</p>"
+      },
+      "sort": 2800,
+      "flags": {
+        "icarus-rpg": {
+          "id": "ofuscado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.9kZcvGnwKkxlDMwS"
+    },
+    {
+      "_id": "IKXNTSOSxspBlF1C",
+      "name": "Paralisado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem fica imóvel e indefeso e só pode realizar ações puramente mentais.</p><p><strong>Composição:</strong> = Imóvel + Indefeso</p><ul><li>Só pode fazer ações puramente mentais</li></ul>"
+      },
+      "sort": 2900,
+      "flags": {
+        "icarus-rpg": {
+          "id": "paralisado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.IKXNTSOSxspBlF1C"
+    },
+    {
+      "_id": "4yL7RD8eKtGZriw9",
+      "name": "Pasmo",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Mental</span></p><p>O personagem não pode fazer ações.</p><ul><li>Não pode fazer ações</li></ul>"
+      },
+      "sort": 3000,
+      "flags": {
+        "icarus-rpg": {
+          "id": "pasmo"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.4yL7RD8eKtGZriw9"
+    },
+    {
+      "_id": "hEL1wgmpEhO5D4uG",
+      "name": "Petrificado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Metamorfose</span></p><p class=\"icarus-pendente\">Regra a confirmar (PENDENTE)</p><p>O personagem fica inconsciente e recebe redução de dano 8.</p><p><strong>Composição:</strong> = Inconsciente</p>"
+      },
+      "sort": 3100,
+      "flags": {
+        "icarus-rpg": {
+          "id": "petrificado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.hEL1wgmpEhO5D4uG"
+    },
+    {
+      "_id": "COO55bLeuOw3UpbO",
+      "name": "Sangrando",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Metabolismo</span></p><p>No início de seu turno, o personagem deve fazer um teste de Constituição (CD 15). Se falhar, perde 1d6 pontos de vida e continua sangrando; se passar, remove essa condição.</p>"
+      },
+      "sort": 3200,
+      "flags": {
+        "icarus-rpg": {
+          "id": "sangrando"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.COO55bLeuOw3UpbO"
+    },
+    {
+      "_id": "fe79yzUmfj8kduq9",
+      "name": "Sobrecarregado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Movimento</span></p><p class=\"icarus-pendente\">Regra a confirmar (PENDENTE)</p><p>O personagem sofre –5 de penalidade de armadura (somada à armadura que usa, em Acrobacia, Furtividade e Prestidigitação) e seu deslocamento é reduzido em 3 m.</p>"
+      },
+      "sort": 3300,
+      "flags": {
+        "icarus-rpg": {
+          "id": "sobrecarregado"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.fe79yzUmfj8kduq9"
+    },
+    {
+      "_id": "dGOhbtcomlcz6F6e",
+      "name": "Surdo",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><span class=\"icarus-tag\">Sentidos</span></p><p class=\"icarus-pendente\">Regra a confirmar (PENDENTE)</p><p>O personagem falha automaticamente em todos os testes de Audição e sofre –5 em Iniciativa.</p><ul><li>Falha automática em Audição</li></ul>"
+      },
+      "sort": 3400,
+      "flags": {
+        "icarus-rpg": {
+          "id": "surdo"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.dGOhbtcomlcz6F6e"
+    },
+    {
+      "_id": "pdwUMnXMQauclgaO",
+      "name": "Surpreendido",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem fica desprevenido e não pode fazer ações. Em combate, a condição dura a primeira rodada, na qual ele não age (nem por reação). Fora de combate, dura até o fim da ação ou do evento que o pegou desprevenido, como uma armadilha.</p><p><strong>Composição:</strong> = Desprevenido</p><ul><li>Não pode fazer ações</li><li>Vale na primeira rodada</li></ul>"
+      },
+      "sort": 3500,
+      "flags": {
+        "icarus-rpg": {
+          "id": "surpreendido"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.pdwUMnXMQauclgaO"
+    },
+    {
+      "_id": "cqKoD3RBWDi1en51",
+      "name": "Vulnerável",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O personagem sofre –2 na Defesa.</p>"
+      },
+      "sort": 3600,
+      "flags": {
+        "icarus-rpg": {
+          "id": "vulneravel"
+        }
+      },
+      "_key": "!journal.pages!sg3HDd9RJt9s9qjF.cqKoD3RBWDi1en51"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "condicoes"
+    }
+  },
+  "_key": "!journal!sg3HDd9RJt9s9qjF"
+}

@@ -1,0 +1,51 @@
+{
+  "_id": "6vEN2h06riCapYxX",
+  "name": "Balança da Verdade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Justar.png",
+  "folder": "QUDMA8fbOxI0TKms",
+  "sort": 1700,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Justar",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "justar",
+    "tipoDano": "",
+    "descricao": "<p>Você se torna treinado em Intuição (se já for treinado, recebe +2 nessa perícia) e recebe +2 em Diplomacia.</p>"
+  },
+  "effects": [
+    {
+      "_id": "ylXXpPZiWB5YO0HX",
+      "name": "Balança da Verdade",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Justar.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.diplomacia.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "justar__balanca-da-verdade"
+        }
+      },
+      "_key": "!items.effects!6vEN2h06riCapYxX.ylXXpPZiWB5YO0HX"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "justar__balanca-da-verdade",
+      "divindade": "justar",
+      "concedido": true
+    }
+  },
+  "_key": "!items!6vEN2h06riCapYxX"
+}

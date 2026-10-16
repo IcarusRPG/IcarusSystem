@@ -1,0 +1,31 @@
+{
+  "_id": "AEzbFoQjCGDHfjT6",
+  "name": "Gibão de Escamas",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Gib%C3%A3o%20de%20escamas.png",
+  "folder": "7DWuaSzmo9DPdOZw",
+  "sort": 400,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "media",
+    "bonusDefesa": 4,
+    "penalidade": 2,
+    "preco": 12000,
+    "espacos": 3,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "gibao-de-escamas"
+    }
+  },
+  "_key": "!items!AEzbFoQjCGDHfjT6"
+}

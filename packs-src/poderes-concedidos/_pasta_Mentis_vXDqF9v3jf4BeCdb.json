@@ -1,0 +1,15 @@
+{
+  "_id": "vXDqF9v3jf4BeCdb",
+  "name": "Mentis",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1800,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:mentis"
+    }
+  },
+  "_key": "!folders!vXDqF9v3jf4BeCdb"
+}

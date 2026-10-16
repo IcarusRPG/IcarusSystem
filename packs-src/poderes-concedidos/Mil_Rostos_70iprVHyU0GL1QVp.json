@@ -1,0 +1,29 @@
+{
+  "_id": "70iprVHyU0GL1QVp",
+  "name": "Mil Rostos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Fraudulus.png",
+  "folder": "ADMnGrJLwaKNGrrP",
+  "sort": 4500,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Fraudulus",
+    "nivel": null,
+    "acao": "completa",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "fraudulus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação completa · 2 PM</em></p><p>Você pode gastar uma ação completa e 2 PM para assumir a aparência de outra criatura do seu tamanho até o fim da cena, recebendo +5 em Enganação para se passar por ela. O efeito termina se você atacar ou sofrer dano.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "fraudulus__mil-rostos",
+      "divindade": "fraudulus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!70iprVHyU0GL1QVp"
+}

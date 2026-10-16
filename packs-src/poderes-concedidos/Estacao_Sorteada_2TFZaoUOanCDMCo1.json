@@ -1,0 +1,29 @@
+{
+  "_id": "2TFZaoUOanCDMCo1",
+  "name": "Estação Sorteada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Aletris.png",
+  "folder": "V7LfyTmq8uKQMLQL",
+  "sort": 200,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Alétris",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "aletris",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM para rolar 1d4. A estação sorteada dura até o fim da cena. 1 (Primavera): no início de cada um de seus turnos, você recupera 1d4 PV, caso esteja ferido. 2 (Verão): você recebe +2 nas rolagens de dano. 3 (Outono): você recebe +2 em Furtividade, Intuição e Vontade. 4 (Inverno): você recebe +2 na Defesa e sofre –3m de deslocamento. Você pode gastar 1 PM para rolar novamente; o novo resultado substitui o anterior.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "aletris__estacao-sorteada",
+      "divindade": "aletris",
+      "concedido": true
+    }
+  },
+  "_key": "!items!2TFZaoUOanCDMCo1"
+}

@@ -1,0 +1,56 @@
+{
+  "_id": "mgUbp7j5luMsYLcF",
+  "name": "Mãos Leves",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Fraudulus.png",
+  "folder": "ADMnGrJLwaKNGrrP",
+  "sort": 4400,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Fraudulus",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "fraudulus",
+    "tipoDano": "",
+    "descricao": "<p>Você recebe +2 em Enganação e Prestidigitação e pode sacar ou guardar itens e armas Leves sem gastar uma ação.</p>"
+  },
+  "effects": [
+    {
+      "_id": "2UPFCsXwzgpdcglk",
+      "name": "Mãos Leves",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Fraudulus.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.prestidigitacao.outros",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "system.pericias.enganacao.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "fraudulus__maos-leves"
+        }
+      },
+      "_key": "!items.effects!mgUbp7j5luMsYLcF.2UPFCsXwzgpdcglk"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "fraudulus__maos-leves",
+      "divindade": "fraudulus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!mgUbp7j5luMsYLcF"
+}

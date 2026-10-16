@@ -1,0 +1,29 @@
+{
+  "_id": "OMKa89xl5iKebejZ",
+  "name": "Corpo Renovado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Eternus.png",
+  "folder": "x63ld0hmsmSeTyyJ",
+  "sort": 3700,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Eternus",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "eternus",
+    "tipoDano": "",
+    "descricao": "<p>Escolha duas condições. Você fica imune a elas. Sempre que sobe de nível, pode trocar as condições escolhidas.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "eternus__corpo-renovado",
+      "divindade": "eternus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!OMKa89xl5iKebejZ"
+}

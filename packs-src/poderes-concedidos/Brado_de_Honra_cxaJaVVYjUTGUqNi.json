@@ -1,0 +1,29 @@
+{
+  "_id": "cxaJaVVYjUTGUqNi",
+  "name": "Brado de Honra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Valorus.png",
+  "folder": "FAoSmt4rZZjIEz0Q",
+  "sort": 5900,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Valorus",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "valorus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 2 PM</em></p><p>Você pode gastar uma ação padrão e 2 PM. Você e seus aliados em alcance curto recebem +1 nos testes de ataque e +2 em Vontade até o fim da cena.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "valorus__brado-de-honra",
+      "divindade": "valorus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!cxaJaVVYjUTGUqNi"
+}

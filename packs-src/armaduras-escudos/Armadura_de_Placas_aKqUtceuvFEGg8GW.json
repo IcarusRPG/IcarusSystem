@@ -1,0 +1,31 @@
+{
+  "_id": "aKqUtceuvFEGg8GW",
+  "name": "Armadura de Placas",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Armadura%20de%20placas.png",
+  "folder": "4XtlAT0NAetX4lYn",
+  "sort": 700,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "pesada",
+    "bonusDefesa": 8,
+    "penalidade": 5,
+    "preco": 150000,
+    "espacos": 5,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "armadura-de-placas"
+    }
+  },
+  "_key": "!items!aKqUtceuvFEGg8GW"
+}

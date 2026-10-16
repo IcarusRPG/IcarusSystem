@@ -1,0 +1,29 @@
+{
+  "_id": "Cb74Vg4MuK1l9jkm",
+  "name": "Fio Invisível",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Insidia.png",
+  "folder": "Fi1qjcO9MyEyWpCE",
+  "sort": 4700,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Insidia",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "insidia",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 1 PM</em></p><p>Você pode gastar uma ação padrão e 1 PM para sussurrar uma sugestão venenosa a uma criatura em alcance curto que possa ouvi-lo. A criatura deve fazer um teste de Vontade (CD Car). Se falhar, sofre –2 em testes de ataque e de perícia até o fim da cena.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "insidia__fio-invisivel",
+      "divindade": "insidia",
+      "concedido": true
+    }
+  },
+  "_key": "!items!Cb74Vg4MuK1l9jkm"
+}

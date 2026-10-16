@@ -1,0 +1,51 @@
+{
+  "_id": "EvZQma8e5QGXzP6C",
+  "name": "Mente Arquivista",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Logos.png",
+  "folder": "Sy0dGtoovy9dP89g",
+  "sort": 1900,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Logos",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "logos",
+    "tipoDano": "",
+    "descricao": "<p>Você recebe +2 em História e pode usar Inteligência, em vez de Sabedoria, nos testes de Cura, Intuição e Sobrevivência.</p>"
+  },
+  "effects": [
+    {
+      "_id": "eC004O4LOvxac5qI",
+      "name": "Mente Arquivista",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Logos.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.historia.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "logos__mente-arquivista"
+        }
+      },
+      "_key": "!items.effects!EvZQma8e5QGXzP6C.eC004O4LOvxac5qI"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "logos__mente-arquivista",
+      "divindade": "logos",
+      "concedido": true
+    }
+  },
+  "_key": "!items!EvZQma8e5QGXzP6C"
+}

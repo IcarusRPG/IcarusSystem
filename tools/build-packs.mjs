@@ -1,56 +1,92 @@
 /**
- * Gera os compêndios a partir de tools/dados/armas.json.
+ * Gera os compêndios a partir de tools/dados/*.json.
  *   npm run build:packs
- * 1. Escreve os JSON-fonte em packs-src/armas e packs-src/municoes (um arquivo por documento,
- *    com _id estável e a chave _key exigida pelo compilador: "!items!<id>" e "!folders!<id>").
+ * 1. Escreve os JSON-fonte em packs-src/<pacote>/ (um arquivo por documento, com _id estável e a
+ *    chave _key exigida pelo compilador: "!items!<id>", "!folders!<id>", "!journal!<id>",
+ *    "!macros!<id>"; embutidos: "!items.effects!<item>.<efeito>", "!journal.pages!<diário>.<página>").
  * 2. Compila para LevelDB em packs/ com o @foundryvtt/foundryvtt-cli (compilePack).
  * Rodar duas vezes gera exatamente os mesmos documentos (nada é duplicado).
- * Feche o Foundry antes de compilar numa pasta que ele esteja usando.
+ * Ícones: todo caminho mapeado precisa existir (o build para com mensagem clara); itens sem
+ * imagem no mapa usam o dado azul e são listados.
  */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
+import { documentosNovos } from "../module/dados-compendios.mjs";
+import { PERICIAS } from "../module/config.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const DADOS = path.join(RAIZ, "tools", "dados", "armas.json");
-const PACOTES = ["armas", "municoes"];
+const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
 const soFontes = process.argv.includes("--so-fontes");
 
-const dados = JSON.parse(fs.readFileSync(DADOS, "utf8"));
-
-// Ícones: lista os que faltam (sem parar; esses itens usam o dado azul)
-const faltando = [];
-const confere = (pasta, arquivo, nome) => {
-  if (!arquivo) faltando.push(`${nome} (sem ícone definido)`);
-  else if (!fs.existsSync(path.join(RAIZ, "img", "Icones", "itens", "equipamentos", pasta, arquivo))) faltando.push(`${nome}: ${pasta}/${arquivo}`);
+const armas = ler("armas");
+const novos = {
+  armaduras: ler("armaduras"), iconesArmaduras: ler("icones-armaduras"),
+  poderes: ler("poderes-concedidos"), panteao: ler("panteao"), iconesDivindades: ler("icones-divindades"),
+  condicoes: ler("condicoes"),
+  nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
 };
-for (const a of dados.armas) confere("armas", a.icone, a.nome);
-for (const m of dados.municoes) confere("munições", m.icone, m.nome);
-if (faltando.length) console.warn(`Ícones faltando (${faltando.length}), usando o dado azul:\n  - ${faltando.join("\n  - ")}`);
-const confirmar = dados.armas.filter(a => a.iconeConfirmar).map(a => `${a.nome} ← ${a.icone}`);
-if (confirmar.length) console.warn(`Ícones a confirmar: ${confirmar.join(" · ")}`);
 
-/** Nome de arquivo seguro para o JSON-fonte. */
+/* ---------- Ícones ---------- */
+const faltandoArquivo = [];
+const semImagem = [];
+const confere = (pasta, arquivo, nome) => {
+  if (!arquivo) return semImagem.push(nome);
+  if (!fs.existsSync(path.join(RAIZ, "img", "Icones", ...pasta.split("/"), arquivo))) faltandoArquivo.push(`${nome}: img/Icones/${pasta}/${arquivo}`);
+};
+for (const a of armas.armas) confere("itens/equipamentos/armas", a.icone, a.nome);
+for (const m of armas.municoes) confere("itens/equipamentos/munições", m.icone, m.nome);
+for (const a of novos.armaduras.itens) confere("itens/equipamentos/armaduras e escudos", novos.iconesArmaduras[a.id], a.nome);
+for (const d of novos.panteao.divindades) confere("panteão/simbolos", novos.iconesDivindades[d.id], d.nome);
+if (faltandoArquivo.length) {
+  console.error(`ERRO: ${faltandoArquivo.length} ícone(s) mapeado(s) não existem no disco:\n  - ${faltandoArquivo.join("\n  - ")}`);
+  process.exit(1);
+}
+if (semImagem.length) console.warn(`Sem imagem no mapa (usam o dado azul): ${semImagem.join(", ")}`);
+
+/* ---------- Documentos ---------- */
+const docsArmas = documentosDosCompendios(armas);
+const docsNovos = documentosNovos(novos);
+
+/** Cada pacote: lista de [documento, coleção] já com as chaves. */
+const PACOTES = {
+  armas: docsArmas.armas,
+  municoes: docsArmas.municoes,
+  "armaduras-escudos": docsNovos["armaduras-escudos"],
+  "poderes-concedidos": docsNovos["poderes-concedidos"],
+  condicoes: docsNovos.condicoes,
+  macros: docsNovos.macros
+};
+
+/** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */
+function comChaves(doc, colecao) {
+  const d = structuredClone(doc);
+  d._key = `!${colecao}!${d._id}`;
+  if (colecao === "items") for (const e of d.effects ?? []) e._key = `!items.effects!${d._id}.${e._id}`;
+  if (colecao === "journal") for (const p of d.pages ?? []) p._key = `!journal.pages!${d._id}.${p._id}`;
+  return d;
+}
+
 const arquivo = (doc, prefixo = "") => `${prefixo}${doc.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9]+/g, "_")}_${doc._id}.json`;
 
-const docs = documentosDosCompendios(dados);
-for (const nome of PACOTES) {
+for (const [nome, conteudo] of Object.entries(PACOTES)) {
   const destino = path.join(RAIZ, "packs-src", nome);
   fs.rmSync(destino, { recursive: true, force: true });
   fs.mkdirSync(destino, { recursive: true });
-  for (const pasta of docs[nome].pastas) {
-    fs.writeFileSync(path.join(destino, arquivo(pasta, "_pasta_")), JSON.stringify({ ...pasta, _key: `!folders!${pasta._id}` }, null, 2) + "\n");
-  }
-  for (const item of docs[nome].itens) {
-    fs.writeFileSync(path.join(destino, arquivo(item)), JSON.stringify({ ...item, _key: `!items!${item._id}` }, null, 2) + "\n");
-  }
-  console.log(`packs-src/${nome}: ${docs[nome].pastas.length} pasta(s), ${docs[nome].itens.length} item(ns)`);
+  const gravar = (doc, colecao, prefixo) =>
+    fs.writeFileSync(path.join(destino, arquivo(doc, prefixo)), JSON.stringify(comChaves(doc, colecao), null, 2) + "\n");
+  for (const p of conteudo.pastas ?? []) gravar(p, "folders", "_pasta_");
+  for (const i of conteudo.itens ?? []) gravar(i, "items");
+  for (const j of conteudo.diarios ?? []) gravar(j, "journal");
+  for (const m of conteudo.macros ?? []) gravar(m, "macros");
+  const total = (conteudo.itens ?? conteudo.diarios ?? conteudo.macros ?? []).length;
+  console.log(`packs-src/${nome}: ${(conteudo.pastas ?? []).length} pasta(s), ${total} documento(s)`);
 }
 
 if (!soFontes) {
   const { compilePack } = await import("@foundryvtt/foundryvtt-cli");
-  for (const nome of PACOTES) {
+  for (const nome of Object.keys(PACOTES)) {
     const destino = path.join(RAIZ, "packs", nome);
     fs.rmSync(destino, { recursive: true, force: true });
     await compilePack(path.join(RAIZ, "packs-src", nome), destino);

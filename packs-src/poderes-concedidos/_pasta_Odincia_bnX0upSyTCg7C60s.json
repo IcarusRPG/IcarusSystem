@@ -1,0 +1,15 @@
+{
+  "_id": "bnX0upSyTCg7C60s",
+  "name": "Odincia",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 900,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:odincia"
+    }
+  },
+  "_key": "!folders!bnX0upSyTCg7C60s"
+}

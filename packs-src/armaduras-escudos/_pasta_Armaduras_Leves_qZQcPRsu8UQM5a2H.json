@@ -1,0 +1,15 @@
+{
+  "_id": "qZQcPRsu8UQM5a2H",
+  "name": "Armaduras Leves",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "armaduras:armaduras-leves"
+    }
+  },
+  "_key": "!folders!qZQcPRsu8UQM5a2H"
+}

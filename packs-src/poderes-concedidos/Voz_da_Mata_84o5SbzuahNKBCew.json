@@ -1,0 +1,56 @@
+{
+  "_id": "84o5SbzuahNKBCew",
+  "name": "Voz da Mata",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Floressa.png",
+  "folder": "RV5Y6KegIdoSQ72s",
+  "sort": 1300,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Floressa",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "floressa",
+    "tipoDano": "",
+    "descricao": "<p>Você entende e fala com animais e recebe +2 em Adestramento e Sobrevivência.</p>"
+  },
+  "effects": [
+    {
+      "_id": "8dOU7bLlJmr2ahnI",
+      "name": "Voz da Mata",
+      "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Floressa.png",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.pericias.adestramento.outros",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "system.pericias.sobrevivencia.outros",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "description": "",
+      "flags": {
+        "icarus-rpg": {
+          "poderConcedido": "floressa__voz-da-mata"
+        }
+      },
+      "_key": "!items.effects!84o5SbzuahNKBCew.8dOU7bLlJmr2ahnI"
+    }
+  ],
+  "flags": {
+    "icarus-rpg": {
+      "id": "floressa__voz-da-mata",
+      "divindade": "floressa",
+      "concedido": true
+    }
+  },
+  "_key": "!items!84o5SbzuahNKBCew"
+}

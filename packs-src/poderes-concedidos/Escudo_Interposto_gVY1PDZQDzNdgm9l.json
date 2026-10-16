@@ -1,0 +1,29 @@
+{
+  "_id": "gVY1PDZQDzNdgm9l",
+  "name": "Escudo Interposto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Paxus.png",
+  "folder": "3s8zaqmZqmMwYu79",
+  "sort": 5600,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Paxus",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "paxus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Reação · 1 PM</em></p><p>Quando um aliado adjacente é alvo de um ataque, você pode gastar 1 PM como reação para se interpor. O ataque passa a ter você como alvo.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paxus__escudo-interposto",
+      "divindade": "paxus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!gVY1PDZQDzNdgm9l"
+}

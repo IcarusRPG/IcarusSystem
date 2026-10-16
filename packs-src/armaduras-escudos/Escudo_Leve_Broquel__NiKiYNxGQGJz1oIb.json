@@ -1,0 +1,31 @@
+{
+  "_id": "NiKiYNxGQGJz1oIb",
+  "name": "Escudo Leve (Broquel)",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Escudo%20Medieval%20de%20Madeira%20e%20Ferro.png",
+  "folder": "vWpjM3qlPpnP1Wdk",
+  "sort": 1000,
+  "system": {
+    "tipo": "escudo",
+    "categoria": "escudo",
+    "bonusDefesa": 1,
+    "penalidade": 0,
+    "preco": 1500,
+    "espacos": 1,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-leve"
+    }
+  },
+  "_key": "!items!NiKiYNxGQGJz1oIb"
+}

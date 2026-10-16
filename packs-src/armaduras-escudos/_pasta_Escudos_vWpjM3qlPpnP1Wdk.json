@@ -1,0 +1,15 @@
+{
+  "_id": "vWpjM3qlPpnP1Wdk",
+  "name": "Escudos",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 500000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "armaduras:escudos"
+    }
+  },
+  "_key": "!folders!vWpjM3qlPpnP1Wdk"
+}

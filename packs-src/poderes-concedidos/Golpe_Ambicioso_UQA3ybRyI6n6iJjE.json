@@ -1,0 +1,29 @@
+{
+  "_id": "UQA3ybRyI6n6iJjE",
+  "name": "Golpe Ambicioso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Ardor.png",
+  "folder": "xbs3TqdLUtioFSjm",
+  "sort": 3300,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Ardor",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "ardor",
+    "tipoDano": "",
+    "descricao": "<p>O multiplicador de crítico de armas com as quais você é proficiente aumenta em +1.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ardor__golpe-ambicioso",
+      "divindade": "ardor",
+      "concedido": true
+    }
+  },
+  "_key": "!items!UQA3ybRyI6n6iJjE"
+}

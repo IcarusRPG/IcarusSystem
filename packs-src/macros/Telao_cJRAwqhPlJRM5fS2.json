@@ -1,0 +1,16 @@
+{
+  "_id": "cJRAwqhPlJRM5fS2",
+  "name": "Telão",
+  "type": "script",
+  "img": "icons/svg/video.svg",
+  "command": "game.icarus.telao();",
+  "scope": "global",
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "icarus-rpg": {
+      "id": "telao"
+    }
+  },
+  "_key": "!macros!cJRAwqhPlJRM5fS2"
+}

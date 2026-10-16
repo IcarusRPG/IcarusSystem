@@ -1,0 +1,15 @@
+{
+  "_id": "Sy0dGtoovy9dP89g",
+  "name": "Logos",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 700,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:logos"
+    }
+  },
+  "_key": "!folders!Sy0dGtoovy9dP89g"
+}

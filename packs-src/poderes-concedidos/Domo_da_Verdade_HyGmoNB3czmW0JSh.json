@@ -1,0 +1,29 @@
+{
+  "_id": "HyGmoNB3czmW0JSh",
+  "name": "Domo da Verdade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Paxus.png",
+  "folder": "3s8zaqmZqmMwYu79",
+  "sort": 5500,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 3,
+    "prerequisito": "Devoto de Paxus",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "paxus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 3 PM</em></p><p>Você pode gastar uma ação padrão e 3 PM para conjurar um domo de energia divina com 6m de raio, centrado em você, que dura até o fim da cena. Criaturas dentro do domo, ou que entrem nele, devem fazer um teste de Vontade (CD Sab). Se passar, a criatura fica imune a este poder por um dia. Se falhar, ela não pode sair do domo e não pode dizer mentiras: tudo o que disser é verdade. Você também é afetado pelo domo, automaticamente e sem teste, e não pode sair dele enquanto ele durar.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paxus__domo-da-verdade",
+      "divindade": "paxus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!HyGmoNB3czmW0JSh"
+}

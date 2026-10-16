@@ -1,0 +1,29 @@
+{
+  "_id": "TrycO3kqtB4t6WVL",
+  "name": "Rosto Sem Nome",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Nocturna.png",
+  "folder": "Yv3NGVR00tk1sg4i",
+  "sort": 2200,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Nocturna",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "nocturna",
+    "tipoDano": "",
+    "descricao": "<p>Enquanto seu rosto estiver coberto (por máscara, capuz ou véu), você recebe +2 em Furtividade e Intimidação, e criaturas que tentem descobrir sua identidade sofrem –5 nesses testes.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nocturna__rosto-sem-nome",
+      "divindade": "nocturna",
+      "concedido": true
+    }
+  },
+  "_key": "!items!TrycO3kqtB4t6WVL"
+}

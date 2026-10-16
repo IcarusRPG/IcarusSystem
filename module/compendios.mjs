@@ -1,47 +1,70 @@
 /**
- * Plano B para os compêndios: popula "Icarus — Armas" e "Icarus — Munições" dentro do Foundry,
- * a partir do mesmo tools/dados/armas.json usado pelo build. Idempotente: atualiza o que já existe
- * (pelo _id estável e por flags["icarus-rpg"].id) e só cria o que falta.
+ * Plano B para os compêndios: popula todos os compêndios do Icarus dentro do Foundry, a partir
+ * dos mesmos dados do build (tools/dados/*.json, embutidos em module/dados/). Idempotente:
+ * atualiza o que já existe (pelo _id estável) e só cria o que falta.
  * Uso (Mestre): macro de script com  await game.icarus.popularCompendios();
  */
-import { SISTEMA_ID } from "./config.mjs";
+import { SISTEMA_ID, PERICIAS } from "./config.mjs";
 import { documentosDosCompendios } from "./dados-itens.mjs";
+import { documentosNovos } from "./dados-compendios.mjs";
+import ARMAS from "./dados/armas.mjs";
+import ARMADURAS from "./dados/armaduras.mjs";
+import ICONES_ARMADURAS from "./dados/icones-armaduras.mjs";
+import PODERES from "./dados/poderes-concedidos.mjs";
+import PANTEAO from "./dados/panteao.mjs";
+import ICONES_DIVINDADES from "./dados/icones-divindades.mjs";
+import CONDICOES from "./dados/condicoes.mjs";
 
-const URL_DADOS = `systems/${SISTEMA_ID}/tools/dados/armas.json`;
-
+/** Dados das armas (mantido por compatibilidade com a verificação de armas). */
 export async function carregarDadosDeArmas() {
-  const resposta = await fetch(URL_DADOS);
-  if (!resposta.ok) throw new Error(`Não foi possível ler ${URL_DADOS} (${resposta.status})`);
-  return resposta.json();
+  return ARMAS;
+}
+
+/** Todos os documentos de todos os compêndios, por nome de pacote. */
+export function todosOsDocumentos() {
+  const armas = documentosDosCompendios(ARMAS);
+  const novos = documentosNovos({
+    armaduras: ARMADURAS, iconesArmaduras: ICONES_ARMADURAS,
+    poderes: PODERES, panteao: PANTEAO, iconesDivindades: ICONES_DIVINDADES,
+    condicoes: CONDICOES, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
+  });
+  return { armas: armas.armas, municoes: armas.municoes, ...novos };
 }
 
 export async function popularCompendios() {
   if (!game.user.isGM) return ui.notifications.warn(game.i18n.localize("ICARUS.Compendios.SoMestre"));
-  const docs = documentosDosCompendios(await carregarDadosDeArmas());
   const relatorio = [];
-  for (const nome of ["armas", "municoes"]) {
+  for (const [nome, docs] of Object.entries(todosOsDocumentos())) {
     const pack = game.packs.get(`${SISTEMA_ID}.${nome}`);
     if (!pack) { relatorio.push(`${nome}: compêndio não encontrado`); continue; }
     const travado = pack.locked;
     if (travado) await pack.configure({ locked: false });
 
-    // Pastas
-    const pastasExistentes = new Set(pack.folders.map(f => f.id));
-    const novasPastas = docs[nome].pastas.filter(p => !pastasExistentes.has(p._id));
-    if (novasPastas.length) await Folder.createDocuments(novasPastas, { pack: pack.collection, keepId: true });
+    // Pastas: as mães antes das filhas
+    const existentes = new Set(pack.folders.map(f => f.id));
+    const novas = (docs.pastas ?? []).filter(p => !existentes.has(p._id)).sort((a, b) => (a.folder ? 1 : 0) - (b.folder ? 1 : 0));
+    for (const p of novas) await Folder.create(p, { pack: pack.collection, keepId: true });
 
-    // Itens: atualiza os existentes e cria os que faltam
-    const indice = await pack.getIndex({ fields: [`flags.${SISTEMA_ID}.id`] });
-    const porId = new Map(indice.map(e => [e._id, e]));
-    const criar = [], atualizar = [];
-    for (const item of docs[nome].itens) (porId.has(item._id) ? atualizar : criar).push(item);
-    if (criar.length) await Item.createDocuments(criar, { pack: pack.collection, keepId: true });
-    if (atualizar.length) await Item.updateDocuments(atualizar, { pack: pack.collection });
+    const classe = pack.documentClass;
+    const lista = docs.itens ?? docs.diarios ?? docs.macros ?? [];
+    const indice = await pack.getIndex();
+    const criar = lista.filter(d => !indice.has(d._id));
+    const atualizar = lista.filter(d => indice.has(d._id));
+    if (criar.length) await classe.createDocuments(criar, { pack: pack.collection, keepId: true });
+    if (atualizar.length) {
+      // Diários: recria para atualizar as páginas; demais: atualiza os campos
+      if (pack.documentName === "JournalEntry") {
+        await classe.deleteDocuments(atualizar.map(d => d._id), { pack: pack.collection });
+        await classe.createDocuments(atualizar, { pack: pack.collection, keepId: true });
+      } else {
+        await classe.updateDocuments(atualizar.map(({ effects, pages, ...resto }) => resto), { pack: pack.collection });
+      }
+    }
 
     if (travado) await pack.configure({ locked: true });
-    relatorio.push(`${pack.title}: ${criar.length} criado(s), ${atualizar.length} atualizado(s), ${novasPastas.length} pasta(s) nova(s)`);
+    relatorio.push(`${pack.title}: ${criar.length} criado(s), ${atualizar.length} atualizado(s), ${novas.length} pasta(s) nova(s)`);
   }
   console.log(`Icarus RPG | Compêndios:\n${relatorio.join("\n")}`);
-  ui.notifications.info(relatorio.join(" · "));
+  ui.notifications.info(game.i18n.localize("ICARUS.Compendios.Populados"));
   return relatorio;
 }

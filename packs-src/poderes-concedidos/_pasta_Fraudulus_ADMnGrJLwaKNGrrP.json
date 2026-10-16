@@ -1,0 +1,15 @@
+{
+  "_id": "ADMnGrJLwaKNGrrP",
+  "name": "Fraudulus",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:fraudulus"
+    }
+  },
+  "_key": "!folders!ADMnGrJLwaKNGrrP"
+}

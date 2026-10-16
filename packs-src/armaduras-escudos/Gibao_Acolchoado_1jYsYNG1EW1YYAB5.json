@@ -1,0 +1,31 @@
+{
+  "_id": "1jYsYNG1EW1YYAB5",
+  "name": "Gibão Acolchoado",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Gib%C3%A3o%20acolchoado.png",
+  "folder": "qZQcPRsu8UQM5a2H",
+  "sort": 100,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "leve",
+    "bonusDefesa": 1,
+    "penalidade": 0,
+    "preco": 1000,
+    "espacos": 2,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": false,
+    "acoplado": false,
+    "provisorio": [
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "gibao-acolchoado"
+    }
+  },
+  "_key": "!items!1jYsYNG1EW1YYAB5"
+}

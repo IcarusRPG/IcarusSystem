@@ -1,0 +1,32 @@
+{
+  "_id": "lYila4I4v7eslq2a",
+  "name": "Túnica Simples",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/T%C3%BAnica%20simples.png",
+  "folder": "aOECkPEpIoKqocck",
+  "sort": 800,
+  "system": {
+    "tipo": "armadura",
+    "categoria": "tunica",
+    "bonusDefesa": 1,
+    "penalidade": 1,
+    "preco": 1200,
+    "espacos": 1,
+    "quantidade": 1,
+    "equipado": false,
+    "proficienciaLivre": true,
+    "acoplado": false,
+    "provisorio": [
+      "preco",
+      "espacos"
+    ],
+    "descricao": ""
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tunica-simples"
+    }
+  },
+  "_key": "!items!lYila4I4v7eslq2a"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "s6AbEWYfYoXfpDIy",
+  "name": "Alfars",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "grupo:alfars"
+    }
+  },
+  "_key": "!folders!s6AbEWYfYoXfpDIy"
+}

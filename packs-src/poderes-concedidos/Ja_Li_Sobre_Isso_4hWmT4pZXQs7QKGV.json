@@ -1,0 +1,29 @@
+{
+  "_id": "4hWmT4pZXQs7QKGV",
+  "name": "Já Li Sobre Isso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Logos.png",
+  "folder": "Sy0dGtoovy9dP89g",
+  "sort": 2000,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Logos",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "logos",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação livre · 1 PM</em></p><p>Quando faz um teste de História, Investigação, Misticismo, Nobreza ou Religião, você pode gastar 1 PM para rolá-lo como se fosse Especialista (+4 de treino).</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "logos__ja-li-sobre-isso",
+      "divindade": "logos",
+      "concedido": true
+    }
+  },
+  "_key": "!items!4hWmT4pZXQs7QKGV"
+}

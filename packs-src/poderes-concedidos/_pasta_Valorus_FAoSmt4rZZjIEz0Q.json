@@ -1,0 +1,15 @@
+{
+  "_id": "FAoSmt4rZZjIEz0Q",
+  "name": "Valorus",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 2000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:valorus"
+    }
+  },
+  "_key": "!folders!FAoSmt4rZZjIEz0Q"
+}

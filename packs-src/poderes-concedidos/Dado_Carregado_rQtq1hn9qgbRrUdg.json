@@ -1,0 +1,29 @@
+{
+  "_id": "rQtq1hn9qgbRrUdg",
+  "name": "Dado Carregado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Fraudulus.png",
+  "folder": "ADMnGrJLwaKNGrrP",
+  "sort": 4300,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Fraudulus",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "cena",
+    "sustentada": false,
+    "divindade": "fraudulus",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação livre · 1 PM · 1x por cena</em></p><p>Uma vez por cena, depois de rolar um teste de perícia (exceto ataque) e ver o resultado, você pode gastar 1 PM para trocar o resultado do d20 por 11.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "fraudulus__dado-carregado",
+      "divindade": "fraudulus",
+      "concedido": true
+    }
+  },
+  "_key": "!items!rQtq1hn9qgbRrUdg"
+}

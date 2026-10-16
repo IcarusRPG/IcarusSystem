@@ -1,0 +1,29 @@
+{
+  "_id": "OKN59yIYG0vcKMAr",
+  "name": "Ódio Guardado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Odincia.png",
+  "folder": "bnX0upSyTCg7C60s",
+  "sort": 2600,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Odincia",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "odincia",
+    "tipoDano": "",
+    "descricao": "<p>Você guarda rancor por uma única criatura por cena: a primeira que acertar você com um ataque. Até o fim da cena, você causa +2 de dano em ataques contra ela para cada acerto que ela tenha feito em você, até um máximo de +6. Você só pode trocar o alvo do rancor se ele for reduzido a 0 PV; nesse caso, o rancor passa para a próxima criatura que acertar você e o acúmulo recomeça do zero.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "odincia__odio-guardado",
+      "divindade": "odincia",
+      "concedido": true
+    }
+  },
+  "_key": "!items!OKN59yIYG0vcKMAr"
+}

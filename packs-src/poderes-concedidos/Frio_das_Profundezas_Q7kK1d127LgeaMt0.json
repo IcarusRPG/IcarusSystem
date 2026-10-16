@@ -1,0 +1,29 @@
+{
+  "_id": "Q7kK1d127LgeaMt0",
+  "name": "Frio das Profundezas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Expiria.png",
+  "folder": "xAQ0YE6l03T3sPYG",
+  "sort": 4200,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Expiria",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "expiria",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, seus ataques causam +2 pontos de dano de frio.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "expiria__frio-das-profundezas",
+      "divindade": "expiria",
+      "concedido": true
+    }
+  },
+  "_key": "!items!Q7kK1d127LgeaMt0"
+}

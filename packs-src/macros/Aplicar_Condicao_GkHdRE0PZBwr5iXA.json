@@ -1,0 +1,16 @@
+{
+  "_id": "GkHdRE0PZBwr5iXA",
+  "name": "Aplicar Condição",
+  "type": "script",
+  "img": "icons/svg/aura.svg",
+  "command": "game.icarus.condicoes.painel();",
+  "scope": "global",
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "icarus-rpg": {
+      "id": "aplicar-condicao"
+    }
+  },
+  "_key": "!macros!GkHdRE0PZBwr5iXA"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "4XtlAT0NAetX4lYn",
+  "name": "Armaduras Pesadas",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "armaduras:armaduras-pesadas"
+    }
+  },
+  "_key": "!folders!4XtlAT0NAetX4lYn"
+}

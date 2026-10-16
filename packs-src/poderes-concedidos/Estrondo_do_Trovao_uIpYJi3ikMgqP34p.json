@@ -1,0 +1,29 @@
+{
+  "_id": "uIpYJi3ikMgqP34p",
+  "name": "Estrondo do Trovão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Irae.png",
+  "folder": "s5JpuKlsVtccWV1O",
+  "sort": 5000,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Irae",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "irae",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 2 PM</em></p><p>Você pode gastar uma ação padrão e 2 PM. Todas as criaturas em alcance corpo a corpo sofrem 2d6 pontos de dano elétrico (Fortitude CD Con reduz à metade).</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "irae__estrondo-do-trovao",
+      "divindade": "irae",
+      "concedido": true
+    }
+  },
+  "_key": "!items!uIpYJi3ikMgqP34p"
+}

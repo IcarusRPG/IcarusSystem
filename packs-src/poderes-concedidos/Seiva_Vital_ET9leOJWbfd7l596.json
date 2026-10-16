@@ -1,0 +1,29 @@
+{
+  "_id": "ET9leOJWbfd7l596",
+  "name": "Seiva Vital",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Floressa.png",
+  "folder": "RV5Y6KegIdoSQ72s",
+  "sort": 1500,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Floressa",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "floressa",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 2 PM</em></p><p>Você pode gastar uma ação padrão e 2 PM para tocar uma criatura (inclusive você). Ela recupera 1d4 PV + sua Sabedoria e, se estiver sangrando ou em chamas, é curada dessas condições.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "floressa__seiva-vital",
+      "divindade": "floressa",
+      "concedido": true
+    }
+  },
+  "_key": "!items!ET9leOJWbfd7l596"
+}

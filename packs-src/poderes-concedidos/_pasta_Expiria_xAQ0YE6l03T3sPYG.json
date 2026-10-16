@@ -1,0 +1,15 @@
+{
+  "_id": "xAQ0YE6l03T3sPYG",
+  "name": "Expiria",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:expiria"
+    }
+  },
+  "_key": "!folders!xAQ0YE6l03T3sPYG"
+}

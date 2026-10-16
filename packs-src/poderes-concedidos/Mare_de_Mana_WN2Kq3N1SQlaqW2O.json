@@ -1,0 +1,29 @@
+{
+  "_id": "WN2Kq3N1SQlaqW2O",
+  "name": "Maré de Mana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Eth%C3%A9ria.png",
+  "folder": "UuRGYaKAYpYf5Dw7",
+  "sort": 1000,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": null,
+    "prerequisito": "Devoto de Etheria",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "etheria",
+    "tipoDano": "",
+    "descricao": "<p>Seus PM máximos aumentam em +2 e em +1 a cada 3 níveis (níveis 3, 6, 9, 12, 15, 18 e 21).</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "etheria__mare-de-mana",
+      "divindade": "etheria",
+      "concedido": true
+    }
+  },
+  "_key": "!items!WN2Kq3N1SQlaqW2O"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "s5JpuKlsVtccWV1O",
+  "name": "Irae",
+  "type": "Item",
+  "folder": "1gSizn5VD2tc8BFd",
+  "sorting": "a",
+  "sort": 1700,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:irae"
+    }
+  },
+  "_key": "!folders!s5JpuKlsVtccWV1O"
+}

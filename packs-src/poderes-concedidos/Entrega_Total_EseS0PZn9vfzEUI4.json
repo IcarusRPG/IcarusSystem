@@ -1,0 +1,29 @@
+{
+  "_id": "EseS0PZn9vfzEUI4",
+  "name": "Entrega Total",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Baldurs/Irae.png",
+  "folder": "s5JpuKlsVtccWV1O",
+  "sort": 4900,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Irae",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "irae",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação de movimento · 1 PM</em></p><p>Você pode gastar uma ação de movimento e 1 PM. Até o fim da cena, você recebe +2 nos testes de ataque e nas rolagens de dano corpo a corpo, mas sofre –2 na Defesa.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "irae__entrega-total",
+      "divindade": "irae",
+      "concedido": true
+    }
+  },
+  "_key": "!items!EseS0PZn9vfzEUI4"
+}

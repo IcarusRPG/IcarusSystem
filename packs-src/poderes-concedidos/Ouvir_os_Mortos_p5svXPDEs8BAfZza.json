@@ -1,0 +1,29 @@
+{
+  "_id": "p5svXPDEs8BAfZza",
+  "name": "Ouvir os Mortos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Nocturna.png",
+  "folder": "Yv3NGVR00tk1sg4i",
+  "sort": 2400,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 1,
+    "prerequisito": "Devoto de Nocturna",
+    "nivel": null,
+    "acao": "completa",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "nocturna",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação completa · 1 PM</em></p><p>Você pode gastar uma ação completa e 1 PM para tocar um cadáver morto há no máximo um dia e fazer um teste de Vontade (CD 10 + ND da criatura). Se passar, pode fazer uma pergunta ao cadáver, que responde apenas SIM ou NÃO, e somente se soubesse a resposta em vida; do contrário, permanece em silêncio. Cada cadáver só pode ser ouvido uma vez, passando ou falhando no teste.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nocturna__ouvir-os-mortos",
+      "divindade": "nocturna",
+      "concedido": true
+    }
+  },
+  "_key": "!items!p5svXPDEs8BAfZza"
+}

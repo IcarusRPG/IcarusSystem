@@ -1,0 +1,15 @@
+{
+  "_id": "1gSizn5VD2tc8BFd",
+  "name": "Baldurs",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "grupo:baldurs"
+    }
+  },
+  "_key": "!folders!1gSizn5VD2tc8BFd"
+}

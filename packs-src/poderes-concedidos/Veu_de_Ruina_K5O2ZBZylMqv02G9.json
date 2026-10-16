@@ -1,0 +1,29 @@
+{
+  "_id": "K5O2ZBZylMqv02G9",
+  "name": "Véu de Ruína",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/pante%C3%A3o/simbolos/Alfars/Odincia.png",
+  "folder": "bnX0upSyTCg7C60s",
+  "sort": 2700,
+  "system": {
+    "fonte": "divindade",
+    "custoPM": 2,
+    "prerequisito": "Devoto de Odincia",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "odincia",
+    "tipoDano": "",
+    "descricao": "<p class=\"meta-poder\"><em>Ação padrão · 2 PM</em></p><p>Você pode gastar uma ação padrão e 2 PM para criar uma duplicata ilusória de si mesmo ao seu lado. No primeiro ataque que um inimigo fizer contra você, role 1d6. Com 5 ou 6, o ataque atinge a ilusão e erra. Depois desse primeiro ataque, acertando a ilusão ou não, a duplicata desaparece.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "odincia__veu-de-ruina",
+      "divindade": "odincia",
+      "concedido": true
+    }
+  },
+  "_key": "!items!K5O2ZBZylMqv02G9"
+}

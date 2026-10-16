@@ -1,0 +1,15 @@
+{
+  "_id": "UuRGYaKAYpYf5Dw7",
+  "name": "Etheria",
+  "type": "Item",
+  "folder": "s6AbEWYfYoXfpDIy",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "divindade:etheria"
+    }
+  },
+  "_key": "!folders!UuRGYaKAYpYf5Dw7"
+}
