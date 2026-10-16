@@ -272,43 +272,7 @@ export function registrarTelao() {
     default: 0.8
   });
 
-  // Botão "Telão" na ponta esquerda da barra de atalhos (entre Players e os atalhos), sempre visível
-  Hooks.on("renderHotbar", (app, html) => {
-    const raiz = html instanceof HTMLElement ? html : html?.[0];
-    if (!raiz || raiz.querySelector(".icarus-hotbar-telao")) return;
-    const bloco = document.createElement("nav");
-    bloco.className = "bar-controls flexcol icarus-hotbar-telao";
-    bloco.setAttribute("aria-label", loc("ICARUS.Telao.Titulo"));
-    const botao = document.createElement("a");
-    botao.className = "icarus-botao-telao";
-    botao.dataset.tooltip = loc("ICARUS.Telao.Titulo");
-    botao.setAttribute("aria-label", loc("ICARUS.Telao.Titulo"));
-    botao.setAttribute("role", "button");
-    botao.tabIndex = 0;
-    botao.innerHTML = `<i class="fa-solid fa-tv" aria-hidden="true"></i>`;
-    bloco.append(botao);
-    raiz.prepend(bloco);
-  });
-
-  // O clique é ouvido no documento inteiro, na fase de captura: assim nenhuma camada da interface
-  // do Foundry por cima da barra consegue engolir o clique antes de chegar ao botão.
-  const dentroDoBotao = ev => {
-    if (ev.target?.closest?.(".icarus-botao-telao")) return true;
-    // Clique "atravessado" por uma camada invisível: confere se caiu na área do botão
-    if (ev.type !== "click") return false;
-    const botao = document.querySelector("#hotbar .icarus-botao-telao");
-    const r = botao?.getBoundingClientRect();
-    return !!r && r.width > 0 && ev.clientX >= r.left && ev.clientX <= r.right && ev.clientY >= r.top && ev.clientY <= r.bottom;
-  };
-  const aoAcionar = ev => {
-    if (!dentroDoBotao(ev)) return;
-    if (ev.type === "keydown" && ev.key !== "Enter" && ev.key !== " ") return;
-    ev.preventDefault();
-    ev.stopPropagation();
-    abrirTelao();
-  };
-  document.addEventListener("click", aoAcionar, true);
-  document.addEventListener("keydown", aoAcionar, true);
+  // O botão da barra de macros fica em module/atalhos.mjs (junto com os atalhos do Mestre)
 
   // Botão "Telão" na barra de ferramentas dos tokens (só aparece com uma cena aberta)
   Hooks.on("getSceneControlButtons", controles => {

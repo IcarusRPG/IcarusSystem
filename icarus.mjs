@@ -25,12 +25,14 @@ import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
+import { registrarAtalhos } from "./module/atalhos.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
 registrarArmaduras();
 registrarBotoesDeDano();
 registrarMorte();
+registrarAtalhos();
 
 const TEMPLATES = [
   "actor/personagem.hbs",

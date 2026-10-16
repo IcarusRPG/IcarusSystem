@@ -696,6 +696,12 @@
     },
     "Testes": {
       "SoMestre": "Só o Mestre pode iniciar testes."
+    },
+    "Atalhos": {
+      "Titulo": "Atalhos do Icarus",
+      "Condicoes": "Condições",
+      "TesteOposto": "Teste Oposto",
+      "TesteResistencia": "Teste de Resistência"
     }
   }
 }
