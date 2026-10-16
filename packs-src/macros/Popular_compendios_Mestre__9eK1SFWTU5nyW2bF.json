@@ -6,7 +6,7 @@
   "command": "await game.icarus.popularCompendios();",
   "scope": "global",
   "folder": null,
-  "sort": 0,
+  "sort": 500,
   "flags": {
     "icarus-rpg": {
       "id": "popular-compendios"

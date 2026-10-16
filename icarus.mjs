@@ -23,12 +23,16 @@ import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
+import { verificarImagensDoSistema } from "./module/imagens.mjs";
+import { registrarTestes } from "./module/testes-sessao.mjs";
+import { registrarAtalhos } from "./module/atalhos.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
 registrarArmaduras();
 registrarBotoesDeDano();
 registrarMorte();
+registrarAtalhos();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
@@ -57,7 +61,12 @@ const TEMPLATES = [
   "chat/lembrete.hbs",
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
-  "telao/telao.hbs"
+  "telao/telao.hbs",
+  "testes/tela.hbs",
+  "testes/chat.hbs",
+  "testes/oposto-config.hbs",
+  "testes/resistencia-config.hbs",
+  "testes/seletor.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
 Hooks.once("init", () => {
@@ -84,7 +93,8 @@ Hooks.once("init", () => {
   // Opções de mundo
   registrarConfiguracoesDeCombate();
   registrarTelao();
-  game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre };
+  game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre, abrirPainel: abrirPainelDoMestre };
+  game.icarus.testes = registrarTestes();
 
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {
@@ -120,6 +130,7 @@ Hooks.on("preCreateActor", (actor, dados) => {
 /** O Mestre é avisado se algum ícone de raça estiver faltando em img/Icones/raças/. */
 Hooks.once("ready", () => {
   if (game.user.isGM) verificarIconesRacas();
+  if (game.user.isGM) verificarImagensDoSistema();
 });
 
 /** Botão "Condições do Mestre" nas ferramentas de token (só para o Mestre). */

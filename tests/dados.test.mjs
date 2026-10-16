@@ -17,7 +17,7 @@ const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados",
 const entrada = () => ({
   armaduras: ler("armaduras"), iconesArmaduras: ler("icones-armaduras"),
   poderes: ler("poderes-concedidos"), panteao: ler("panteao"), iconesDivindades: ler("icones-divindades"),
-  condicoes: ler("condicoes"), nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
+  condicoes: ler("condicoes"), macros: ler("macros"), nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
 });
 
 test("module/dados está em sincronia com tools/dados (rode npm run gerar:dados se falhar)", () => {
@@ -95,4 +95,17 @@ test("1. Condições: diário com 36 páginas em ordem alfabética e selo de pen
   assert.match(agarrado, /Composição:<\/strong> = Desprevenido \+ Imóvel/);
   assert.match(agarrado, /Regra a confirmar/);
   assert.match(d.pages.find(p => p.name === "Cego").text.content, /Falha automática em Visão/);
+});
+
+test("Macros: Aplicar Condição, Teste Oposto, Teste de Resistência, Telão e Popular; ícones existem; _id estável", () => {
+  const m = documentosNovos(entrada()).macros.macros;
+  const ids = m.map(x => x.flags["icarus-rpg"].id);
+  assert.deepEqual(ids, ["aplicar-condicao", "teste-oposto", "teste-resistencia", "telao", "popular-compendios"]);
+  assert.ok(m.every(x => x.type === "script" && x.command));
+  for (const x of m.filter(x => x.img.startsWith("systems/"))) assert.ok(fs.existsSync(path.join(RAIZ, decodeURI(x.img).replace("systems/icarus-rpg/", ""))), x.img);
+  assert.equal(m[0]._id, idEstavel("macro:aplicar-condicao"));
+  assert.equal(m[1].command, "game.icarus.testes.abrirOposto();");
+  assert.equal(m[2].command, "game.icarus.testes.abrirResistencia();");
+  const dois = documentosNovos(entrada()).macros.macros;
+  assert.deepEqual(dois, m);
 });

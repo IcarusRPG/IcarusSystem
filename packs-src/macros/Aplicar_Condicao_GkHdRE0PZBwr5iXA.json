@@ -2,11 +2,11 @@
   "_id": "GkHdRE0PZBwr5iXA",
   "name": "Aplicar Condição",
   "type": "script",
-  "img": "icons/svg/aura.svg",
-  "command": "game.icarus.condicoes.painel();",
+  "img": "systems/icarus-rpg/img/Icones/system/Condi%C3%A7%C3%B5es.png",
+  "command": "game.icarus.condicoes.abrirPainel();",
   "scope": "global",
   "folder": null,
-  "sort": 0,
+  "sort": 100,
   "flags": {
     "icarus-rpg": {
       "id": "aplicar-condicao"

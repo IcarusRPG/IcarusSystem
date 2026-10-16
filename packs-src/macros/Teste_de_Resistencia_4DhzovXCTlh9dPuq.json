@@ -1,0 +1,16 @@
+{
+  "_id": "4DhzovXCTlh9dPuq",
+  "name": "Teste de Resistência",
+  "type": "script",
+  "img": "systems/icarus-rpg/img/Icones/system/Teste%20de%20Resist%C3%AAncia.png",
+  "command": "game.icarus.testes.abrirResistencia();",
+  "scope": "global",
+  "folder": null,
+  "sort": 300,
+  "flags": {
+    "icarus-rpg": {
+      "id": "teste-resistencia"
+    }
+  },
+  "_key": "!macros!4DhzovXCTlh9dPuq"
+}

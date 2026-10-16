@@ -1,0 +1,269 @@
+/* ==========================================================================
+   Teste Oposto e Teste de Resistência: tela animada, diálogos e card de chat
+   Animações só com transform/opacity. prefers-reduced-motion ou a opção
+   "Animações dos testes" desligada: só fade.
+   ========================================================================== */
+
+/* --- Tela (overlay em todos os clientes) --- */
+#icarus-teste-tela.application {
+  position: fixed !important; inset: 0 !important; width: auto !important; height: auto !important;
+  max-width: none !important; max-height: none !important; margin: 0; padding: 0;
+  z-index: 95 !important; background: none; border: 0; box-shadow: none; border-radius: 0; overflow: hidden;
+}
+.icarus-teste-tela {
+  --tt-ouro: #d8b45a; --tt-ouro-claro: #f1d98f; --tt-texto: #e7eef3; --tt-apagado: #9bb0be;
+  --tt-verde: #7fdc8a; --tt-vermelho: #e4574f;
+  --tt-retrato: clamp(140px, 16vw, 300px);
+  --tt-dado: clamp(64px, 6vw, 112px);
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  gap: clamp(10px, 2vh, 24px); padding: clamp(16px, 4vh, 48px) 16px 16px;
+  color: var(--tt-texto); font-family: "Alegreya Sans", "Signika", sans-serif; overflow-x: hidden; overflow-y: auto;
+}
+.icarus-teste-tela.muitos { --tt-retrato: clamp(96px, 9vw, 180px); --tt-dado: clamp(48px, 4vw, 80px); }
+.icarus-teste-tela .teste-veu {
+  position: fixed; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(20, 17, 10, .92) 0%, rgba(2, 4, 7, .96) 70%);
+}
+.icarus-teste-tela .teste-cabecalho { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.icarus-teste-tela h1 {
+  margin: 0; border: 0; font-family: "Cinzel", Georgia, serif; font-weight: 700; letter-spacing: .18em;
+  font-size: clamp(26px, 3.4vw, 56px); color: var(--tt-ouro); text-shadow: 0 0 18px rgba(216, 180, 90, .45);
+}
+.icarus-teste-tela .teste-subtitulo { margin: 0; font-family: "Cinzel", Georgia, serif; font-size: clamp(16px, 1.7vw, 28px); color: var(--tt-ouro-claro); }
+.icarus-teste-tela .teste-origem { margin: 0; font-size: clamp(14px, 1.2vw, 20px); color: var(--tt-apagado); }
+.icarus-teste-tela .teste-observacao { margin: 0; font-size: 14px; font-style: italic; color: var(--tt-apagado); }
+.icarus-teste-tela .teste-cd {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 6px;
+  width: clamp(72px, 6vw, 110px); aspect-ratio: 1; border-radius: 50%;
+  border: 3px solid var(--tt-ouro); background: rgba(20, 17, 10, .9); box-shadow: 0 0 20px rgba(216, 180, 90, .35);
+  font-family: "Cinzel", Georgia, serif; color: var(--tt-ouro-claro);
+}
+.icarus-teste-tela .teste-cd span { font-size: 12px; letter-spacing: .2em; }
+.icarus-teste-tela .teste-cd strong { font-size: clamp(26px, 2.4vw, 44px); line-height: 1; }
+
+.icarus-teste-tela .teste-palco {
+  flex: 1 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
+  gap: clamp(12px, 2vw, 40px); width: 100%; max-width: 1800px;
+}
+.icarus-teste-tela.tipo-oposto .teste-palco { flex-wrap: nowrap; align-items: center; gap: clamp(16px, 5vw, 120px); }
+.icarus-teste-tela .versus {
+  font-family: "Cinzel", Georgia, serif; font-size: clamp(36px, 4vw, 72px); color: var(--tt-ouro);
+  text-shadow: 0 0 16px rgba(216, 180, 90, .6);
+}
+
+/* Participante: retrato + nome (sempre juntos), item, dado, resultado */
+.icarus-teste-tela .participante {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; width: var(--tt-retrato);
+  transition: transform .4s ease, filter .4s ease, opacity .4s ease;
+}
+.icarus-teste-tela .retrato {
+  position: relative; margin: 0; width: var(--tt-retrato); aspect-ratio: 1; border-radius: 10px; overflow: hidden;
+  border: 2px solid var(--tt-ouro); background: #0a1119; box-shadow: 0 6px 24px rgba(0, 0, 0, .6);
+}
+.icarus-teste-tela .retrato img { width: 100%; height: 100%; object-fit: cover; border: 0; display: block; }
+.icarus-teste-tela .retrato .nome {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 6px 8px 7px;
+  background: linear-gradient(to top, rgba(4, 7, 11, .95), rgba(4, 7, 11, .72));
+  font-family: "Cinzel", Georgia, serif; font-weight: 700; font-size: clamp(13px, 1.05vw, 19px); line-height: 1.2;
+  color: var(--tt-ouro-claro); text-align: center; text-shadow: 0 1px 2px #000;
+}
+.icarus-teste-tela .retrato .nome-texto {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere;
+}
+.icarus-teste-tela .retrato .jogador { display: block; font-family: "Alegreya Sans", sans-serif; font-weight: 400; font-size: 12px; color: var(--tt-apagado); }
+.icarus-teste-tela .teste-item { display: flex; gap: 8px; align-items: baseline; font-size: clamp(14px, 1.1vw, 18px); text-align: center; }
+.icarus-teste-tela .teste-item .bonus { font-weight: 700; color: var(--tt-ouro-claro); }
+
+.icarus-teste-tela .dado {
+  position: relative; width: var(--tt-dado); height: var(--tt-dado); padding: 0; margin: 0;
+  border: 0; background: none; border-radius: 50%; cursor: default; line-height: 1;
+}
+.icarus-teste-tela .dado img { width: 100%; height: 100%; object-fit: contain; border: 0; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .7)); }
+.icarus-teste-tela .dado:disabled { opacity: 1; }
+.icarus-teste-tela .dado:disabled:not(.rolado):not(.apagado) img { filter: grayscale(.35) brightness(.75) drop-shadow(0 4px 10px rgba(0, 0, 0, .7)); }
+.icarus-teste-tela .dado.clicavel { cursor: pointer; animation: tt-pulso 1.3s ease-in-out infinite; }
+.icarus-teste-tela .dado.clicavel:hover img,
+.icarus-teste-tela .dado.clicavel:focus-visible img { filter: drop-shadow(0 0 14px rgba(241, 217, 143, .9)); }
+.icarus-teste-tela .dado:focus-visible { outline: 2px solid var(--tt-ouro-claro); outline-offset: 4px; }
+.icarus-teste-tela .dado.girando { animation: tt-giro .7s cubic-bezier(.2, .7, .3, 1) infinite; }
+.icarus-teste-tela .dado.apagado img { filter: grayscale(1) brightness(.4); }
+.icarus-teste-tela .dado.rolado img { filter: brightness(.55) drop-shadow(0 4px 10px rgba(0, 0, 0, .7)); }
+.icarus-teste-tela .dado-numero {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: "Cinzel", Georgia, serif; font-weight: 700; font-size: calc(var(--tt-dado) * .42); color: #fff;
+  text-shadow: 0 2px 6px #000;
+}
+.icarus-teste-tela .dado-numero.natural-20 { color: var(--tt-ouro-claro); text-shadow: 0 0 12px var(--tt-ouro); }
+.icarus-teste-tela .dado-numero.natural-1 { color: #ff8b84; text-shadow: 0 0 12px var(--tt-vermelho); }
+.icarus-teste-tela .rolar-por {
+  width: auto; height: auto; padding: 2px 10px; font-size: 12px; line-height: 1.6; border-radius: 4px;
+  border: 1px solid var(--tt-ouro); background: rgba(20, 17, 10, .9); color: var(--tt-ouro-claro); cursor: pointer;
+}
+.icarus-teste-tela .teste-resultado-linha { min-height: 1.4em; text-align: center; font-size: clamp(14px, 1.1vw, 18px); }
+.icarus-teste-tela .conta { font-weight: 700; font-size: 1.15em; }
+.icarus-teste-tela .pelo-mestre { display: block; font-size: 11px; color: var(--tt-apagado); }
+.icarus-teste-tela .aguardando { color: var(--tt-apagado); font-style: italic; }
+.icarus-teste-tela .falha-auto { color: #ff8b84; font-weight: 700; }
+.icarus-teste-tela .selo {
+  padding: 3px 14px; border-radius: 4px; font-family: "Cinzel", Georgia, serif; font-weight: 700; letter-spacing: .14em;
+  font-size: clamp(14px, 1.2vw, 20px); border: 2px solid;
+}
+.icarus-teste-tela .selo-passou { color: var(--tt-verde); border-color: var(--tt-ouro); background: rgba(30, 50, 25, .85); }
+.icarus-teste-tela .selo-falhou { color: #ff8b84; border-color: var(--tt-vermelho); background: rgba(50, 15, 15, .85); }
+
+/* Vencedor / perdedor */
+.icarus-teste-tela .participante.vencedor { transform: scale(1.1); }
+.icarus-teste-tela .participante.vencedor .retrato { border-color: var(--tt-ouro-claro); box-shadow: 0 0 30px rgba(241, 217, 143, .7); }
+.icarus-teste-tela .participante.perdedor { filter: brightness(.45) saturate(.6); }
+
+.icarus-teste-tela .teste-banner { min-height: 1.6em; text-align: center; }
+.icarus-teste-tela .teste-banner strong {
+  display: inline-block; padding: 6px 28px; border-top: 2px solid var(--tt-ouro); border-bottom: 2px solid var(--tt-ouro);
+  font-family: "Cinzel", Georgia, serif; font-size: clamp(20px, 2.2vw, 36px); letter-spacing: .12em; color: var(--tt-ouro-claro);
+  background: linear-gradient(90deg, transparent, rgba(20, 17, 10, .95) 15%, rgba(20, 17, 10, .95) 85%, transparent);
+  animation: tt-surge .5s ease-out both;
+}
+.icarus-teste-tela .teste-rodape { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding-bottom: 8px; }
+.icarus-teste-tela .teste-rodape .btn {
+  width: auto; height: 34px; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid #2a4558; border-radius: 4px; background: #101c27; color: var(--tt-texto); font-size: 14px; cursor: pointer;
+}
+.icarus-teste-tela .teste-rodape .btn:hover,
+.icarus-teste-tela .teste-rodape .btn:focus-visible { border-color: var(--tt-ouro); color: var(--tt-ouro-claro); outline: none; }
+
+/* --- Entrada (só na primeira renderização) --- */
+.icarus-teste-tela.com-entrada .teste-cabecalho { animation: tt-surge .5s ease-out both; }
+/* Teste Oposto: retratos entram pelos lados, colidem no centro, recuam e ficam frente a frente (~1,2 s) */
+.icarus-teste-tela.com-entrada.tipo-oposto .participante.lado-a { animation: tt-entra-a 1.2s cubic-bezier(.3, .1, .3, 1) both; }
+.icarus-teste-tela.com-entrada.tipo-oposto .participante.lado-b { animation: tt-entra-b 1.2s cubic-bezier(.3, .1, .3, 1) both; }
+.icarus-teste-tela.com-entrada.tipo-oposto .versus { animation: tt-surge .3s ease-out 1.05s both; }
+.icarus-teste-tela.com-entrada.tipo-oposto .teste-palco { animation: tt-tremor .35s linear .78s both; }
+.icarus-teste-tela .teste-clarao {
+  position: fixed; inset: 0; pointer-events: none; opacity: 0; z-index: 2;
+  background: radial-gradient(circle at center, rgba(241, 217, 143, .85), rgba(216, 180, 90, .2) 35%, transparent 65%);
+}
+.icarus-teste-tela.com-entrada .teste-clarao { animation: tt-clarao .5s ease-out .78s both; }
+/* Teste de Resistência: retratos sobem de baixo até o meio, em cascata */
+.icarus-teste-tela.com-entrada.tipo-resistencia .participante { animation: tt-sobe .9s cubic-bezier(.15, .8, .3, 1) var(--atraso, 0ms) both; }
+/* Dado, item e resultado aparecem depois dos retratos */
+.icarus-teste-tela.com-entrada .participante > :not(.retrato) { animation: tt-surge .4s ease-out both; animation-delay: 1.2s; }
+.icarus-teste-tela.com-entrada.tipo-resistencia .participante > :not(.retrato) { animation-delay: calc(.9s + var(--atraso, 0ms)); }
+/* Resultado novo */
+.icarus-teste-tela .participante.resultado-novo .dado-numero,
+.icarus-teste-tela .participante.resultado-novo .conta,
+.icarus-teste-tela .participante.resultado-novo .selo { animation: tt-pop .45s cubic-bezier(.2, 1.4, .4, 1) both; }
+
+@keyframes tt-entra-a {
+  0% { transform: translateX(-70vw); opacity: 0; }
+  15% { opacity: 1; }
+  65% { transform: translateX(calc(50% + 2vw)) scale(1.05); }
+  80% { transform: translateX(-3vw) scale(.97); }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes tt-entra-b {
+  0% { transform: translateX(70vw); opacity: 0; }
+  15% { opacity: 1; }
+  65% { transform: translateX(calc(-50% - 2vw)) scale(1.05); }
+  80% { transform: translateX(3vw) scale(.97); }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes tt-sobe { from { transform: translateY(80vh); opacity: 0; } 30% { opacity: 1; } to { transform: none; opacity: 1; } }
+@keyframes tt-tremor {
+  0%, 100% { transform: none; } 20% { transform: translate(-6px, 3px); } 40% { transform: translate(5px, -4px); }
+  60% { transform: translate(-4px, -2px); } 80% { transform: translate(3px, 2px); }
+}
+@keyframes tt-clarao { 0% { opacity: 0; } 25% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes tt-surge { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes tt-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tt-pop { 0% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: none; } }
+@keyframes tt-pulso { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes tt-giro { from { transform: rotate(0) scale(1); } 50% { transform: rotate(200deg) scale(1.12); } to { transform: rotate(360deg) scale(1); } }
+
+/* Movimento reduzido ou animações desligadas: só fade */
+@media (prefers-reduced-motion: reduce) {
+  .icarus-teste-tela *, .icarus-teste-tela.com-entrada * { animation: none !important; transition: none !important; }
+  .icarus-teste-tela.com-entrada .teste-palco,
+  .icarus-teste-tela.com-entrada .teste-cabecalho { animation: tt-fade .4s ease-out both !important; }
+  .icarus-teste-tela .participante.vencedor { transform: none; }
+}
+.icarus-teste-tela.sem-animacao *, .icarus-teste-tela.sem-animacao.com-entrada * { animation: none !important; transition: none !important; }
+.icarus-teste-tela.sem-animacao.com-entrada .teste-palco,
+.icarus-teste-tela.sem-animacao.com-entrada .teste-cabecalho { animation: tt-fade .3s ease-out both !important; }
+
+/* --- Card de chat --- */
+.icarus-teste-chat .teste-chat-origem, .icarus-teste-chat .teste-chat-obs { margin: 2px 0; font-size: 13px; }
+.icarus-teste-chat .teste-chat-obs { font-style: italic; }
+.icarus-teste-chat .teste-chat-linhas { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.icarus-teste-chat .teste-chat-linhas li { display: flex; align-items: center; gap: 6px; font-size: 13px; padding: 2px 4px; border-radius: 4px; }
+.icarus-teste-chat .teste-chat-linhas li.vencedor { background: rgba(216, 180, 90, .18); }
+.icarus-teste-chat .teste-chat-linhas img { width: 28px; height: 28px; object-fit: cover; border: 1px solid #5a4a22; border-radius: 4px; flex: none; }
+.icarus-teste-chat .teste-chat-nome { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.icarus-teste-chat .teste-chat-conta { white-space: nowrap; }
+.icarus-teste-chat .teste-chat-conta.falha { color: #e4574f; }
+.icarus-teste-chat .natural-20 { color: #b8860b; font-weight: 700; }
+.icarus-teste-chat .natural-1 { color: #e4574f; font-weight: 700; }
+.icarus-teste-chat .selo-chat { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 0 5px; border-radius: 3px; border: 1px solid; }
+.icarus-teste-chat .selo-chat.passou { color: #2e7d32; border-color: #2e7d32; }
+.icarus-teste-chat .selo-chat.falhou { color: #c62828; border-color: #c62828; }
+.icarus-teste-chat [data-icarus-teste-condicao] { margin-top: 6px; font-size: 13px; }
+
+/* --- Diálogos de configuração (Mestre) --- */
+.application.icarus-teste-config .window-content { padding: 0; overflow: hidden; }
+.ficha-icarus.teste-config { height: 100%; display: flex; flex-direction: column; gap: 12px; padding: 12px 14px; overflow-y: auto; background: var(--ic-janela); }
+.ficha-icarus.teste-config [hidden] { display: none !important; }
+.ficha-icarus .colunas-oposto { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-height: 0; }
+.ficha-icarus .coluna-lado { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 10px; border: 1px solid var(--ic-borda); border-radius: 6px; background: var(--ic-painel); }
+.ficha-icarus .coluna-cab { display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .coluna-cab h3 { margin: 0; border: 0; font-family: var(--ic-f-titulo); letter-spacing: .14em; color: var(--ic-ouro); font-size: 16px; }
+.ficha-icarus .chip-item { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; padding: 2px 4px 2px 10px; border: 1px solid var(--ic-ouro-escuro); border-radius: 14px; background: var(--ic-miolo-escudo); color: var(--ic-ouro-claro); font-size: 14px; }
+.ficha-icarus .chip-item.vazio { padding: 2px 10px; border-style: dashed; color: var(--ic-apagado2); background: none; }
+.ficha-icarus .chip-item .btn.icone { width: 22px; height: 22px; }
+.ficha-icarus .teste-config .bloco { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.ficha-icarus .teste-config .bloco-titulo { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
+.ficha-icarus .teste-config .bloco-titulo .btn { text-transform: none; letter-spacing: 0; height: 26px; font-size: 13px; }
+.ficha-icarus .teste-config legend { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-ciano-titulo); padding: 0; }
+.ficha-icarus .botoes-alvos { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.ficha-icarus .seletor-participantes { display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .seletor-busca { width: 100%; }
+.ficha-icarus .seletor-lista { max-height: 230px; overflow-y: auto; border: 1px solid var(--ic-borda); border-radius: 4px; padding: 4px; background: var(--ic-campo); }
+.ficha-icarus .teste-resistencia-config .seletor-lista { max-height: 260px; }
+.ficha-icarus .seletor-grupo { margin: 0 0 6px; padding: 0; border: 0; }
+.ficha-icarus .seletor-grupo legend { padding: 2px 4px; font-size: 11px; color: var(--ic-ouro); }
+.ficha-icarus .seletor-linha { display: flex; align-items: center; gap: 8px; padding: 3px 4px; border-radius: 4px; cursor: pointer; }
+.ficha-icarus .seletor-linha[hidden] { display: none; }
+.ficha-icarus .seletor-linha:hover { background: var(--ic-btn-hover); }
+.ficha-icarus .seletor-linha:has(input:checked) { background: var(--ic-ciano-fundo); }
+.ficha-icarus .seletor-linha input { margin: 0; accent-color: var(--ic-ciano); flex: none; }
+.ficha-icarus .seletor-linha img { width: 32px; height: 32px; object-fit: cover; border: 1px solid var(--ic-borda); border-radius: 4px; flex: none; }
+.ficha-icarus .seletor-nome { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.15; overflow: hidden; text-overflow: ellipsis; }
+.ficha-icarus .seletor-nome small { font-size: 12px; color: var(--ic-apagado2); }
+.ficha-icarus .seletor-vazio { margin: 6px; color: var(--ic-apagado2); }
+
+.ficha-icarus .arvore-teste, .ficha-icarus .arvore-teste ul { list-style: none; margin: 0; padding: 0; }
+.ficha-icarus .arvore-teste ul { padding-left: 14px; max-height: 260px; overflow-y: auto; }
+.ficha-icarus .no-arvore { width: 100%; height: auto; display: flex; align-items: center; gap: 6px; padding: 4px 6px; border: 0; background: none; color: var(--ic-ouro); font-family: var(--ic-f-titulo); letter-spacing: .08em; text-align: left; cursor: pointer; }
+.ficha-icarus .no-arvore:hover, .ficha-icarus .no-arvore:focus-visible { background: var(--ic-btn-hover); }
+.ficha-icarus .no-arvore .expandir { font-family: var(--ic-f-corpo); color: var(--ic-ciano-titulo); }
+.ficha-icarus .folha-teste { display: flex; align-items: center; gap: 8px; padding: 2px 6px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+.ficha-icarus .folha-teste:hover { background: var(--ic-btn-hover); }
+.ficha-icarus .folha-teste:has(input:checked) { background: var(--ic-ciano-fundo); }
+.ficha-icarus .folha-teste input { margin: 0; accent-color: var(--ic-ciano); }
+.ficha-icarus .folha-rotulo { flex: 1; }
+.ficha-icarus .folha-bonus { font-weight: 700; color: var(--ic-ouro-claro); min-width: 2.2em; text-align: right; }
+
+.ficha-icarus .tipos-resistencia { flex-direction: row; flex-wrap: wrap; gap: 16px; }
+.ficha-icarus .tipos-resistencia .chk { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
+.ficha-icarus .grade-origem { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+.ficha-icarus .grade-origem .campo { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .grade-origem .campo-largo { grid-column: 1 / -1; }
+.ficha-icarus .grade-origem .rot { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-apagado2); }
+.ficha-icarus .linha-cd { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .linha-cd input { width: 80px; font-size: 18px; font-weight: 700; text-align: center; }
+.ficha-icarus .cd-manual { font-size: 12px; color: var(--ic-ouro-claro); }
+.ficha-icarus .dica-cd { font-size: 12px; color: var(--ic-apagado2); }
+.ficha-icarus .aviso-config { margin: 0; font-size: 13px; color: var(--ic-ouro-claro); }
+.ficha-icarus .rodape-config { display: flex; justify-content: flex-end; gap: 8px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--ic-borda); }
+.ficha-icarus .rodape-config .btn.primario { border-color: var(--ic-ouro); color: var(--ic-ouro-claro); }
+.ficha-icarus .rodape-config .btn:disabled { opacity: .45; cursor: not-allowed; }
+@media (max-width: 720px) { .ficha-icarus .colunas-oposto, .ficha-icarus .grade-origem { grid-template-columns: 1fr; } }

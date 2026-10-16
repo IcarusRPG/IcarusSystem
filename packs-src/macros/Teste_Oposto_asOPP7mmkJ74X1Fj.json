@@ -1,0 +1,16 @@
+{
+  "_id": "asOPP7mmkJ74X1Fj",
+  "name": "Teste Oposto",
+  "type": "script",
+  "img": "systems/icarus-rpg/img/Icones/system/Teste%20Oposto.png",
+  "command": "game.icarus.testes.abrirOposto();",
+  "scope": "global",
+  "folder": null,
+  "sort": 200,
+  "flags": {
+    "icarus-rpg": {
+      "id": "teste-oposto"
+    }
+  },
+  "_key": "!macros!asOPP7mmkJ74X1Fj"
+}

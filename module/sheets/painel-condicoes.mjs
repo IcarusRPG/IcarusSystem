@@ -12,9 +12,11 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
  *   token não vinculado (aplica no ator do próprio token). Tem "Encerrar cena".
  */
 export class PainelCondicoes extends HandlebarsApplicationMixin(ApplicationV2) {
-  constructor({ actor = null } = {}, options = {}) {
+  constructor({ actor = null, alvosUuids = null } = {}, options = {}) {
     super({ id: actor ? `icarus-condicoes-${actor.id}` : "icarus-condicoes-mestre", ...options });
     this.actor = actor;
+    /** Alvos pré-selecionados (ex.: "Aplicar condição aos que falharam" no Teste de Resistência). */
+    this.alvosUuids = alvosUuids;
   }
 
   static DEFAULT_OPTIONS = {
@@ -43,6 +45,17 @@ export class PainelCondicoes extends HandlebarsApplicationMixin(ApplicationV2) {
   /** Alvos: o ator (modo ficha) ou os tokens da cena (modo Mestre). */
   _alvos() {
     if (this.actor) return [{ id: this.actor.id, token: null, actor: this.actor, nome: this.actor.name, img: this.actor.img, marcado: true }];
+    if (this.alvosUuids?.length) {
+      return this.alvosUuids.map(uuid => {
+        const doc = fromUuidSync(uuid);
+        const token = doc?.documentName === "Token" ? doc : null;
+        const actor = token ? token.actor : doc?.documentName === "Actor" ? doc : null;
+        return actor && {
+          id: uuid, token, actor, nome: token?.name ?? actor.name, img: token?.texture?.src ?? actor.img,
+          marcado: true, vinculado: token ? token.actorLink : true
+        };
+      }).filter(Boolean);
+    }
     const selecionados = new Set((canvas?.tokens?.controlled ?? []).map(t => t.id));
     const tokens = selecionados.size ? canvas.tokens.controlled : (canvas?.tokens?.placeables ?? []);
     return tokens.filter(t => t.actor).map(t => ({
@@ -143,8 +156,9 @@ export class PainelCondicoes extends HandlebarsApplicationMixin(ApplicationV2) {
 }
 
 /** Abre o painel do Mestre (só GM). */
-export function abrirPainelDoMestre() {
+export async function abrirPainelDoMestre({ alvosUuids = null } = {}) {
   if (!game.user.isGM) return ui.notifications.warn(game.i18n.localize("ICARUS.Condicoes.SoMestre"));
-  return new PainelCondicoes().render(true);
+  await foundry.applications.instances.get("icarus-condicoes-mestre")?.close();
+  return new PainelCondicoes({ alvosUuids }).render(true);
 }
 

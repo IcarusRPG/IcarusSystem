@@ -489,6 +489,18 @@
         "Nunca": "Nunca",
         "Gm": "Só para o Mestre",
         "Todos": "Para todos"
+      },
+      "MestreRolaPorJogador": {
+        "Nome": "Mestre pode rolar por jogadores ausentes",
+        "Dica": "Nos Testes Oposto e de Resistência, o Mestre ganha o botão \"Rolar por <jogador>\" nos dados de PJs (marcado no chat como rolado pelo Mestre)."
+      },
+      "AnimacoesTestes": {
+        "Nome": "Animações dos testes",
+        "Dica": "Choque dos retratos, retratos subindo e giro do dado. Desligado (ou com movimento reduzido no sistema): só aparecem."
+      },
+      "TestesMostrarJogador": {
+        "Nome": "Mostrar o jogador nos testes",
+        "Dica": "Exibe o nome do jogador dono abaixo do nome do personagem nas telas dos testes."
       }
     },
     "Compendios": {
@@ -693,6 +705,98 @@
       "SangrandoContinua": "Falha: perde 1d6 PV e continua sangrando.",
       "Resultado": "Resultado",
       "Provisorio": "Lembrete provisório: nada é aplicado sem clicar."
+    },
+    "Testes": {
+      "SoMestre": "Só o Mestre pode iniciar testes.",
+      "Iniciar": "Iniciar",
+      "Cancelar": "Cancelar teste",
+      "Fechar": "Fechar",
+      "FecharTodos": "Fechar para todos",
+      "Reenviar": "Reenviar tela",
+      "RolarNovamente": "Rolar novamente",
+      "Rolar": "Rolar",
+      "Cancelado": "Teste cancelado pelo Mestre (sem resultado).",
+      "CanceladoPeloMestre": "O Mestre cancelou o teste.",
+      "MestreSaiu": "O Mestre saiu: o teste em andamento foi encerrado.",
+      "RolagemDescartada": "Rolagem de {nome} descartada: sem permissão para esse dado.",
+      "Mestre": "Mestre",
+      "RolarPor": "Rolar por {nome}",
+      "RoladoPeloMestre": "rolado pelo Mestre",
+      "CliqueParaRolar": "Clique (ou Enter) para rolar",
+      "SomenteDono": "Somente {nome} pode rolar",
+      "Aguardando": "Aguardando {nome}",
+      "FalhaAutomatica": "Falha automática ({causa})",
+      "Vencedor": "Vencedor: {nome}",
+      "VencedorRotulo": "Vencedor",
+      "Empate": "Empate",
+      "DesempateBonus": "desempate pelo maior bônus",
+      "Resumo": "Passaram {passaram} · Falharam {falharam}",
+      "AplicarCondicaoFalhos": "Aplicar condição aos que falharam",
+      "Selo": {
+        "passou": "Passou",
+        "falhou": "Falhou"
+      },
+      "Tipo": {
+        "atributo": "Atributo",
+        "pericia": "Perícia"
+      },
+      "Parcelas": {
+        "base": "Base",
+        "racial": "Raça",
+        "temp": "Temporário",
+        "treino": "Treino",
+        "outros": "Outros",
+        "armadura": "Penalidade de armadura",
+        "condicao": "Condição"
+      },
+      "Grupos": {
+        "pj": "Personagens de jogadores",
+        "npc": "NPCs"
+      },
+      "Atributos": "Atributos",
+      "Pericias": "Perícias",
+      "Personagem": "Personagem",
+      "BuscarNome": "Buscar por nome…",
+      "Token": "token",
+      "SemAtores": "Nenhum personagem encontrado.",
+      "UsarSelecionados": "Usar tokens selecionados",
+      "SemTokensSelecionados": "Selecione um ou mais tokens na cena.",
+      "AtorNaoEncontrado": "Personagem não encontrado (foi apagado?).",
+      "LimparItem": "Limpar escolha",
+      "Oposto": {
+        "Titulo": "Teste Oposto",
+        "Lado": "Lado",
+        "Teste": "Teste",
+        "EscolhaItem": "Escolha um atributo ou perícia",
+        "MesmoParticipante": "Os dois lados precisam ser personagens diferentes (o mesmo ator só em tokens diferentes)."
+      },
+      "Resistencia": {
+        "Titulo": "Teste de Resistência",
+        "Alvos": "Alvos",
+        "TodosPJs": "Todos os PJs",
+        "Limpar": "Limpar",
+        "Tipo": "Tipo de teste",
+        "Origem": "Habilidade ou magia",
+        "OrigemExemplo": "ex.: Fôlego de Dragão",
+        "Conjurador": "Conjurador",
+        "SemConjurador": "— sem conjurador —",
+        "ConjuradoPor": "conjurado por {nome}",
+        "AtributoChave": "Atributo-chave",
+        "CD": "CD",
+        "Manual": "(manual)",
+        "Recalcular": "Recalcular",
+        "DicaCD": "10 + {metade} (metade do nível {nivel}) + {mod} ({atributo})",
+        "CDManual": "Sem conjurador: informe a CD.",
+        "SemNivel": "Nível não encontrado: informe a CD manualmente.",
+        "Observacao": "Observação",
+        "ObservacaoExemplo": "ex.: metade do dano se passar"
+      }
+    },
+    "Atalhos": {
+      "Titulo": "Atalhos do Icarus",
+      "Condicoes": "Condições",
+      "TesteOposto": "Teste Oposto",
+      "TesteResistencia": "Teste de Resistência"
     }
   }
 }

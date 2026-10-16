@@ -1,0 +1,61 @@
+<div class="ficha-icarus teste-config teste-resistencia-config">
+  <div class="bloco">
+    <div class="bloco-titulo">
+      <span>{{localize "ICARUS.Testes.Resistencia.Alvos"}} (<span class="n-alvos">{{nAlvos}}</span>)</span>
+      <span class="botoes-alvos">
+        <button type="button" class="btn" data-action="usarSelecionados"><i class="fa-solid fa-crosshairs"></i> {{localize "ICARUS.Testes.UsarSelecionados"}}</button>
+        <button type="button" class="btn" data-action="todosPJs"><i class="fa-solid fa-users"></i> {{localize "ICARUS.Testes.Resistencia.TodosPJs"}}</button>
+        <button type="button" class="btn" data-action="limpar"><i class="fa-solid fa-eraser"></i> {{localize "ICARUS.Testes.Resistencia.Limpar"}}</button>
+      </span>
+    </div>
+    {{> "systems/icarus-rpg/templates/testes/seletor.hbs" nome="alvo" tipo="checkbox" busca=busca grupos=grupos}}
+  </div>
+
+  <fieldset class="bloco tipos-resistencia">
+    <legend>{{localize "ICARUS.Testes.Resistencia.Tipo"}}</legend>
+    {{#each tipos}}
+    <label class="chk"><input type="radio" name="pericia" value="{{chave}}"{{#if marcado}} checked{{/if}}> {{rotulo}}</label>
+    {{/each}}
+  </fieldset>
+
+  <div class="bloco grade-origem">
+    <label class="campo">
+      <span class="rot">{{localize "ICARUS.Testes.Resistencia.Origem"}}</span>
+      <input type="text" name="origem" value="{{origem}}" list="icarus-sugestoes-origem" placeholder="{{localize "ICARUS.Testes.Resistencia.OrigemExemplo"}}" autocomplete="off">
+      <datalist id="icarus-sugestoes-origem">{{#each sugestoes}}<option value="{{this}}"></option>{{/each}}</datalist>
+    </label>
+    <label class="campo">
+      <span class="rot">{{localize "ICARUS.Testes.Resistencia.Conjurador"}}</span>
+      <select name="conjurador">
+        {{#each conjuradores}}<option value="{{uuid}}"{{#if selecionado}} selected{{/if}}>{{nome}}</option>{{/each}}
+      </select>
+    </label>
+    {{#if temConjurador}}
+    <label class="campo">
+      <span class="rot">{{localize "ICARUS.Testes.Resistencia.AtributoChave"}}</span>
+      <select name="atributoChave">
+        {{#each atributos}}<option value="{{chave}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+      </select>
+    </label>
+    {{/if}}
+    <div class="campo campo-cd">
+      <label class="rot" for="icarus-cd">{{localize "ICARUS.Testes.Resistencia.CD"}}</label>
+      <div class="linha-cd">
+        <input id="icarus-cd" type="number" name="cd" value="{{cd}}" min="0" step="1" data-tooltip="{{dicaCD}}">
+        <span class="cd-manual"{{#unless manual}} hidden{{/unless}}>{{localize "ICARUS.Testes.Resistencia.Manual"}}</span>
+        <button type="button" class="btn" data-action="recalcular"{{#unless manual}} hidden{{/unless}}><i class="fa-solid fa-calculator"></i> {{localize "ICARUS.Testes.Resistencia.Recalcular"}}</button>
+      </div>
+      {{#if temConjurador}}<small class="dica-cd">{{dicaCD}}</small>{{/if}}
+      {{#if semNivel}}<small class="aviso-config">{{localize "ICARUS.Testes.Resistencia.SemNivel"}}</small>{{/if}}
+    </div>
+    <label class="campo campo-largo">
+      <span class="rot">{{localize "ICARUS.Testes.Resistencia.Observacao"}}</span>
+      <input type="text" name="observacao" value="{{observacao}}" maxlength="120" placeholder="{{localize "ICARUS.Testes.Resistencia.ObservacaoExemplo"}}">
+    </label>
+  </div>
+
+  <footer class="rodape-config">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Testes.Cancelar"}}</button>
+    <button type="button" class="btn primario" data-action="iniciar"{{#unless completo}} disabled{{/unless}}><i class="fa-solid fa-dice-d20"></i> {{localize "ICARUS.Testes.Iniciar"}}</button>
+  </footer>
+</div>

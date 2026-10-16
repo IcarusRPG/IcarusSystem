@@ -1,0 +1,21 @@
+{{!-- Seletor de participantes. Parâmetros: nome (nome do input), tipo (radio|checkbox), busca, grupos --}}
+<div class="seletor-participantes">
+  <input type="search" class="seletor-busca" name="busca-{{nome}}" value="{{busca}}" placeholder="{{localize "ICARUS.Testes.BuscarNome"}}" aria-label="{{localize "ICARUS.Testes.BuscarNome"}}">
+  <div class="seletor-lista" data-lista="{{nome}}">
+    {{#each grupos}}
+    <fieldset class="seletor-grupo">
+      <legend>{{localize rotulo}}</legend>
+      {{#each itens}}
+      <label class="seletor-linha" data-nome="{{nome}}">
+        <input type="{{../../tipo}}" name="{{../../nome}}" value="{{uuid}}"{{#if marcado}} checked{{/if}}>
+        <img src="{{img}}" alt="" width="32" height="32">
+        <span class="seletor-nome">{{nome}}{{#if jogadores}}<small>{{jogadores}}</small>{{/if}}</span>
+        {{#if naCena}}<span class="icarus-tag">{{localize "ICARUS.Testes.Token"}}</span>{{/if}}
+      </label>
+      {{/each}}
+    </fieldset>
+    {{else}}
+    <p class="seletor-vazio">{{localize "ICARUS.Testes.SemAtores"}}</p>
+    {{/each}}
+  </div>
+</div>

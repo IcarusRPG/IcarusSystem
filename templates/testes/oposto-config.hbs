@@ -1,0 +1,54 @@
+<div class="ficha-icarus teste-config teste-oposto-config">
+  <div class="colunas-oposto">
+    {{#each colunas}}
+    <section class="coluna-lado" aria-labelledby="titulo-lado-{{lado}}">
+      <header class="coluna-cab">
+        <h3 id="titulo-lado-{{lado}}">{{titulo}}</h3>
+        {{#if chip}}
+        <span class="chip-item">{{chip}} <strong>{{chipBonus}}</strong>
+          <button type="button" class="btn icone" data-action="limparItem" data-lado="{{lado}}" aria-label="{{localize "ICARUS.Testes.LimparItem"}}"><i class="fa-solid fa-xmark"></i></button>
+        </span>
+        {{else}}<span class="chip-item vazio">{{localize "ICARUS.Testes.Oposto.EscolhaItem"}}</span>{{/if}}
+      </header>
+
+      <div class="bloco">
+        <div class="bloco-titulo">
+          <span>{{localize "ICARUS.Testes.Personagem"}}</span>
+          <button type="button" class="btn" data-action="usarSelecionados" data-lado="{{lado}}"><i class="fa-solid fa-crosshairs"></i> {{localize "ICARUS.Testes.UsarSelecionados"}}</button>
+        </div>
+        {{> "systems/icarus-rpg/templates/testes/seletor.hbs" nome=(concat "participante-" lado) tipo="radio" busca=busca grupos=grupos}}
+      </div>
+
+      <div class="bloco">
+        <div class="bloco-titulo"><span>{{localize "ICARUS.Testes.Oposto.Teste"}}{{#if personagem}} — {{personagem.nome}}{{/if}}</span></div>
+        <ul class="arvore-teste" role="tree" aria-label="{{localize "ICARUS.Testes.Oposto.Teste"}} {{titulo}}">
+          {{#each nos}}
+          <li role="treeitem" aria-expanded="{{#if aberto}}true{{else}}false{{/if}}">
+            <button type="button" class="no-arvore" data-action="alternar" data-lado="{{../lado}}" data-no="{{id}}">
+              <span class="expandir" aria-hidden="true">{{#if aberto}}[–]{{else}}[+]{{/if}}</span> {{rotulo}}
+            </button>
+            <ul role="group"{{#unless aberto}} hidden{{/unless}}>
+              {{#each folhas}}
+              <li role="none">
+                <label class="folha-teste">
+                  <input type="radio" name="item-{{../../lado}}" value="{{valor}}"{{#if marcado}} checked{{/if}}>
+                  <span class="folha-rotulo">{{rotulo}}</span>
+                  {{#if falhaAuto}}<span class="icarus-tag">{{localize "ICARUS.Condicoes.FalhaAutomatica"}}</span>{{/if}}
+                  {{#if bonus}}<span class="folha-bonus" data-tooltip="{{dica}}">{{bonus}}</span>{{/if}}
+                </label>
+              </li>
+              {{/each}}
+            </ul>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+    {{/each}}
+  </div>
+  {{#if avisoMesmo}}<p class="aviso-config">{{localize "ICARUS.Testes.Oposto.MesmoParticipante"}}</p>{{/if}}
+  <footer class="rodape-config">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Testes.Cancelar"}}</button>
+    <button type="button" class="btn primario" data-action="iniciar"{{#unless completo}} disabled{{/unless}}><i class="fa-solid fa-dice-d20"></i> {{localize "ICARUS.Testes.Iniciar"}}</button>
+  </footer>
+</div>

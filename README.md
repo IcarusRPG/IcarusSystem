@@ -31,6 +31,10 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Poderes concedidos | Compêndio **Icarus — Poderes Concedidos** (60 poderes, pastas Alfars/Baldurs > divindade, ícone = símbolo da divindade). Bônus fixos viram Efeitos Ativos; bônus condicionais ficam só no texto. Na aba Poderes aparecem no grupo da divindade com a tag **Concedido** e botão de enviar ao chat. |
 | Dano e resistências | 13 tipos de dano. Aba **Combate** com tabela de Redução, Imune e Vulnerável por tipo, mais RD geral. Card de dano tem **Aplicar**, **Metade**, **Dobro** e **Perda de PV** nos tokens selecionados: imunidade → vulnerável ×1,5 (para baixo) → redução do tipo → RD → mínimo 0, com o cálculo no chat. Perda de PV ignora tudo. `game.icarus.aplicarDano(...)`, `game.icarus.rolarDanoAvulso(...)`. |
 | Condições | 36 condições como Status Effects (ícone no token). Aba Combate: chips com o texto, **+ Condição**, botão direito para Remover/Escalar; faixa de avisos no topo da ficha. Penalidades **não se acumulam** (vale a maior) e entram em Defesa, perícias, ataque e deslocamento; condições que incluem outras (Agarrado → Desprevenido + Imóvel) aplicam e removem as filhas. Duração: até remover, rodadas (sai no Combat Tracker) ou fim da cena. Anúncio no chat configurável. |
+| Atalhos do Mestre | Na barra de atalhos, ao lado do Telão: **Condições**, **Teste Oposto** e **Teste de Resistência** (só o Mestre vê). Cada um executa a macro do compêndio **Icarus — Macros**; sem o compêndio, chama a API direto. |
+| Teste Oposto | O Mestre escolhe dois personagens (PJ ou NPC, inclusive tokens não vinculados) e, em cada lado, **um** atributo ou perícia numa árvore [+]/[–], vendo o bônus atual. **Iniciar** abre para todos a tela com os retratos se chocando no centro e um d20 vermelho sob cada um. Só o dono jogador rola o dado do seu PJ; NPCs, só o Mestre. Vence o maior total (empate: maior bônus; persistindo, **Rolar novamente**). Resultado na tela e no chat. `game.icarus.testes.abrirOposto()`. |
+| Teste de Resistência | Vários alvos, **Fortitude**, **Reflexos** ou **Vontade**, habilidade/magia (autocompleta com os poderes do conjurador), conjurador, atributo-chave e **CD = 10 + metade do nível + atributo-chave** (editável: "(manual)" e **Recalcular**). Retratos sobem até o meio; cada dono rola o seu; **Passou**/**Falhou** por alvo, resumo e card no chat com **Aplicar condição aos que falharam** (abre o painel com eles marcados). Falha automática por condição (ex.: Indefeso → Reflexos) não rola. `game.icarus.testes.abrirResistencia()`. |
+| Sincronia dos testes | Socket do sistema: o Mestre que inicia guarda o estado e valida cada rolagem (rolagem de quem não pode é descartada). **Reenviar tela**, **Cancelar teste** e **Fechar para todos**; quem reconecta recebe o estado. Dice So Nice mostra os dados quando instalado; sem ele, o dado vermelho gira. Opções: animações (cliente), mostrar o jogador (cliente) e "Mestre pode rolar por jogadores ausentes" (mundo, desligada). |
 | Painel do Mestre | Sem abrir ficha: ícone de condições nos controles de token, **Token HUD** do Foundry, macro **Aplicar Condição** ou `game.icarus.condicoes.painel()`. Busca, filtro por descritor, vários alvos, duração, **Remover todas** e **Encerrar cena**. API: `game.icarus.condicoes.aplicar/remover/removerTodas/escalar/encerrarCena`. |
 | PV 0 e morte | PV 0 aplica **Morrendo** (com Inconsciente e Indefeso). Aba Combate: marcadores de sucesso e falha, **Rolar teste de morte** (1–9 falha, 10–19 sucesso, 20 recupera 1 PV, 1 = duas falhas), dano em Morrendo e **Estabilizar (Cura CD 10)**. Voltar a 1 PV limpa tudo. No início do turno, lembretes com botões para Em Chamas, Sangrando, Confuso e Morrendo. |
 | Nível | 1 a 25. A partir do 21 aparece **PARAGON** e os 5 últimos segmentos ficam dourados. |
@@ -40,7 +44,7 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Armas | Compêndio **Icarus — Armas** com 46 armas em 4 pastas (Simples, Marciais, Exóticas, de Fogo). Na ficha: ataque com a perícia certa (Luta no corpo a corpo; Pontaria em distância, arremesso e fogo), **Ágil** usa DES em vez de FOR, crítico por margem e multiplicador, card de chat com **Rolar dano** e **Dano crítico**. |
 | Munição | Compêndio **Icarus — Munições** (Flechas, Virotes, Pedras, Balas; pacote de 20 = 1 espaço). Cada disparo de arco, besta e funda gasta 1; armas de fogo têm disparos carregados e **Recarregar**; arma arremessada sai do inventário e volta com **Recolher arma**. |
 | Moedas e carga | Ouro Real, Reais e Centavos na ficha (preços guardados em centavos). Arrastar um item do compêndio pergunta **Comprar** ou **Adicionar grátis**. Carga = 10 + 2 × FOR espaços; acima disso fica vermelha (sem penalidade). |
-| Telão | Botão **Telão** (ícone de TV) na ponta esquerda da barra de atalhos, embaixo, sempre visível (e também na barra de tokens, quando há cena aberta). Atalho: `game.icarus.telao()`. O Mestre escolhe um vídeo de uma pasta ou cola um link do YouTube, vê a prévia, e com **Mostrar para todos** a janela abre para os jogadores. **Play**, **Pausar**, **Voltar ao início** e a barra de posição valem para todos; cada jogador ajusta o próprio volume. Quem entra no meio da sessão cai no ponto certo. Se o navegador bloquear o som, aparece **Clique para assistir**. |
+| Telão | Botão **Telão** (ícone do monitor) na ponta esquerda da barra de atalhos, embaixo, sempre visível (e também na barra de tokens, quando há cena aberta). Atalho: `game.icarus.telao()`. O Mestre escolhe um vídeo de uma pasta ou cola um link do YouTube, vê a prévia, e com **Mostrar para todos** a janela abre para os jogadores. **Play**, **Pausar**, **Voltar ao início** e a barra de posição valem para todos; cada jogador ajusta o próprio volume. Quem entra no meio da sessão cai no ponto certo. Se o navegador bloquear o som, aparece **Clique para assistir**. |
 | Itens | `poder` (fonte, custo em PM, pré-requisito, nível, descrição) e `equipamento` (tipo, quantidade, equipado, bônus de Defesa, descrição). Arrastar e soltar entre fichas e compêndios funciona. |
 | Efeitos | Efeitos Ativos do Foundry, modo **Somar**, nas chaves `system.atributos.<FOR…>.temp`, `system.defesa.outros`, `system.pericias.<pericia>.outros`, `system.bonus.ataque` e `system.resistencias.reducao.<tipo>`. |
 | Tokens | Barra 1 = PV, barra 2 = PM. Personagem novo recebe o ícone do dado azul e token ligado à ficha. |
@@ -84,13 +88,19 @@ module/
   condicoes.mjs             regras puras das condições (composição, maior penalidade)
   condicoes-foundry.mjs     Status Effects, duração, anúncio e API das condições
   morte.mjs / morte-foundry.mjs  testes de morte e lembretes de turno
+  imagens.mjs               imagens fixas da interface (atalhos e telas dos testes) e verificação
+  atalhos.mjs               ponto único dos atalhos na barra de macros (hook renderHotbar)
+  testes.mjs                Teste Oposto e de Resistência: bônus, permissões, rolagens e resolução (puro)
+  testes-sessao.mjs         sessão por socket (Mestre anfitrião), chat e API game.icarus.testes
+  apps/                     tela animada dos testes e diálogos de configuração
   dev/                      personagem de teste e verificações (Kaelen, raças, armas)
 templates/                  Handlebars da ficha, dos itens, do diálogo e do chat
 styles/icarus.css           visual escuro da ficha e do cartão de chat
+styles/testes.css           tela animada e diálogos dos testes
 fonts/                      Cinzel e Alegreya Sans (licença OFL)
 lang/pt-BR.json             todos os textos da interface
 img/                        ícones e imagens: raças, armas, munições, armaduras e escudos, símbolos do panteão e interface (256 px)
-tests/                      testes das fórmulas, raças, armas, armaduras, panteão, dano, condições e morte
+tests/                      testes das fórmulas, raças, armas, armaduras, panteão, dano, condições, morte e testes opostos/resistência
 tools/dados/                fonte única: armas, armaduras, poderes concedidos, panteão, tipos de dano, condições e mapas de ícones
 tools/gerar-dados.mjs       gera module/dados/ a partir de tools/dados/
 tools/build-packs.mjs       gera packs-src/ (JSON) e compila os compêndios em packs/ (LevelDB)
@@ -209,3 +219,9 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Teste de morte soma só bônus gerais de resistência, campo que ainda não existe (nada é somado)
 - Lembretes de turno (Em Chamas, Sangrando, Confuso, Morrendo) só avisam; nada é aplicado sem clicar
 - Bônus condicionais dos poderes concedidos ficam só no texto
+
+**Teste Oposto e Teste de Resistência ([PROVISÓRIO], em `REGRAS_TESTES` de `module/combate.mjs`):**
+- Empate no Teste Oposto: vence o maior bônus; se o bônus também empatar, é Empate e o Mestre pode mandar rolar de novo
+- 20 e 1 naturais não têm efeito nesses testes (só destaque visual)
+- CD usa `system.nivel` do conjurador; sem nível numérico, conta 0 e o diálogo pede a CD manual
+- Não existem ainda os tipos de ator NPC e Ameaça: quem não tem dono jogador conta como NPC
