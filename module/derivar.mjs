@@ -3,7 +3,7 @@
  * Sem dependência do Foundry: recebe o objeto "system" (já com os Efeitos Ativos aplicados)
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
-import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE } from "./config.mjs";
+import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import {
   numero, limitar, nivelValido, ehParagon, totalAtributo, bonusTreino, totalPericia,
@@ -35,15 +35,21 @@ export function derivarPersonagem(s, itens = []) {
   s.pv.value = limitar(numero(s.pv.value), 0, s.pv.max);
   s.pm.value = limitar(numero(s.pm.value), 0, s.pm.max);
 
-  // Defesa: Armadura e Escudo vêm dos itens equipados
+  // Defesa: Armadura e Escudo vêm dos itens equipados.
+  // Penalidade de armadura: soma das penalidades da armadura e do escudo equipados, aplicada como
+  // modificador negativo nas perícias de PERICIAS_PENALIZADAS (Acrobacia, Furtividade, Prestidigitação).
   let armadura = 0, escudo = 0;
+  const penalidades = [];
   for (const item of itens) {
     if (item.type !== "equipamento") continue;
     const e = item.system;
     if (!e.equipado || !TIPOS_EQUIPAVEIS.includes(e.tipo)) continue;
     if (e.tipo === "armadura") armadura += numero(e.bonusDefesa);
     else escudo += numero(e.bonusDefesa);
+    if (numero(e.penalidade) > 0) penalidades.push({ nome: item.name ?? "", valor: numero(e.penalidade) });
   }
+  s.defesa.penalidade = penalidades.reduce((soma, p) => soma + p.valor, 0);
+  s.defesa.origensPenalidade = penalidades;
   s.defesa.armadura = armadura;
   s.defesa.escudo = escudo;
   s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
@@ -54,7 +60,8 @@ export function derivarPersonagem(s, itens = []) {
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
     d.treino = limitar(Math.trunc(numero(d.treino)), 0, 2);
     d.bonusTreino = bonusTreino(d.treino);
-    d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros);
+    d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
+    d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
   }
 
   s.deslocamentoQuadrados = emQuadrados(s.deslocamento);

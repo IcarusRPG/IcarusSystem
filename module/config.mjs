@@ -5,6 +5,8 @@
  * e as respectivas traduções em lang/pt-BR.json.
  */
 
+import ARMADURAS from "./dados/armaduras.mjs";
+
 export const SISTEMA_ID = "icarus-rpg";
 
 /** Ícone padrão de todo personagem novo (o nome do arquivo tem espaços). */
@@ -86,6 +88,12 @@ export const METROS_POR_QUADRADO = 1.5;
  */
 export const TIPOS_EQUIPAMENTO = ["armadura", "escudo", "consumivel", "profissao", "outro"];
 export const TIPOS_EQUIPAVEIS = ["armadura", "escudo"];
+
+/** Categorias de armadura e escudo (compêndio Armaduras e Escudos). Túnicas contam como armadura. */
+export const CATEGORIAS_ARMADURA = ["leve", "media", "pesada", "tunica", "escudo", "escudo-acoplado"];
+
+/** Perícias que sofrem a penalidade de armadura (tools/dados/armaduras.json → penalidadePericias). */
+export const PERICIAS_PENALIZADAS = ARMADURAS.penalidadePericias;
 
 /* ------------------------------ Armas e munições ------------------------------ */
 

@@ -18,9 +18,11 @@ import { adicionarItem } from "./module/inventario.mjs";
 import { popularCompendios } from "./module/compendios.mjs";
 import { verificarArmas } from "./module/dev/verificar-armas.mjs";
 import { registrarTelao, abrirTelao } from "./module/telao/telao.mjs";
+import { registrarArmaduras } from "./module/armaduras.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
+registrarArmaduras();
 
 const TEMPLATES = [
   "actor/personagem.hbs",

@@ -6,6 +6,7 @@ import { rolarPericia, rolarAtributo } from "../rolls.mjs";
 import { RACAS, racaPorId, iconeDaRaca, resolverRaca } from "../data/racas.mjs";
 import { trocarRaca, reaplicarRaca, refazerEscolhas, ehPoderRacialAuto, escolhasGuardadas } from "../racas.mjs";
 import { DialogoNivel } from "./dialogo-nivel.mjs";
+import { conflitoEscudoAcoplado } from "../armaduras.mjs";
 import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
@@ -93,6 +94,8 @@ export class FichaPersonagem extends ActorSheet {
       total: s.defesa.total,
       outros: src.defesa.outros,
       dica: dica("system.defesa.outros"),
+      penalidade: s.defesa.penalidade ? game.i18n.format("ICARUS.Armaduras.PenalidadeTotal", { valor: comSinal(-s.defesa.penalidade) }) : "",
+      avisoAcoplado: conflitoEscudoAcoplado(actor) ? loc("ICARUS.Armaduras.AvisoAcoplado") : "",
       formula: game.i18n.format("ICARUS.Defesa.Formula", {
         des: semMais(s.atributos.DES.total), armadura: semMais(s.defesa.armadura),
         escudo: semMais(s.defesa.escudo), outros: semMais(s.defesa.outros)
@@ -124,7 +127,11 @@ export class FichaPersonagem extends ActorSheet {
       const fonte = src.pericias[p.chave];
       const nome = loc(`ICARUS.Pericias.${p.chave}`);
       const k = `system.pericias.${p.chave}`;
-      const origem = dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`);
+      // Origem dos bônus: Efeitos Ativos e penalidade de armadura ("−1 Couro Reforçado")
+      const penalidade = d.penalidadeArmadura
+        ? s.defesa.origensPenalidade.map(o => game.i18n.format("ICARUS.Armaduras.PenalidadeOrigem", { valor: comSinal(-o.valor), nome: o.nome })).join("\n")
+        : "";
+      const origem = [dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`), penalidade].filter(Boolean).join("\n");
       const rolar = game.i18n.format("ICARUS.Pericia.Rolar", { pericia: nome, total: comSinal(d.total) });
       return {
         chave: p.chave,
@@ -171,6 +178,8 @@ export class FichaPersonagem extends ActorSheet {
         equipavel: TIPOS_EQUIPAVEIS.includes(i.system.tipo),
         equipado: i.system.equipado,
         bonus: comSinal(i.system.bonusDefesa),
+        categoria: i.system.categoria ? loc(`ICARUS.Armaduras.Categorias.${i.system.categoria}`) : "",
+        penalidade: i.system.penalidade ? comSinal(-i.system.penalidade) : "",
         espacos: espacosDoItem(i),
         preco: preco(i.system.preco)
       }));

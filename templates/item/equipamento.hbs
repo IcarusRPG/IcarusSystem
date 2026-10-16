@@ -15,9 +15,16 @@
     {{#if equipavel}}
     <label class="f"><span class="rot">{{localize "ICARUS.Equipamento.BonusDefesa"}}</span>
       <input class="campo" type="number" name="system.bonusDefesa" value="{{source.bonusDefesa}}" step="1"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Armaduras.Categoria"}}</span>
+      <select class="campo" name="system.categoria">{{selectOptions opcoesCategoriaArmadura selected=source.categoria localize=true}}</select></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Armaduras.Penalidade"}}</span>
+      <input class="campo" type="number" name="system.penalidade" value="{{source.penalidade}}" min="0" step="1"></label>
     <label class="chk"><input type="checkbox" name="system.equipado" {{checked source.equipado}}> {{localize "ICARUS.Inventario.Equipado"}}</label>
+    <label class="chk"><input type="checkbox" name="system.proficienciaLivre" {{checked source.proficienciaLivre}}> {{localize "ICARUS.Armaduras.ProficienciaLivre"}}</label>
+    <label class="chk"><input type="checkbox" name="system.acoplado" {{checked source.acoplado}}> {{localize "ICARUS.Armaduras.Acoplado"}}</label>
     {{/if}}
   </div>
+  {{#if provisorio}}<p class="dica">{{localize "ICARUS.Armaduras.Provisorio"}}: {{provisorio}}</p>{{/if}}
   <div class="painel item-desc">
     <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
     {{editor descricaoHTML target="system.descricao" button=true editable=editable engine="prosemirror"}}
