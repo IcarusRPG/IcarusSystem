@@ -207,10 +207,12 @@ export const RACAS = [
       { tipo: "variante", rotulo: "Linhagem", opcoes: [{ id: "luz", rotulo: "Luz" }, { id: "sombra", rotulo: "Sombra" }] }
     ],
     poderes: [
-      { nome: "Condutor (Luz)", variante: "luz", custoPM: 1, descricao: "Resistência a dano elétrico +5. Pode gastar 1 ação de movimento + 1 PM para imbuir eletricidade em uma arma (+1d4 de dano elétrico até o fim da cena)." },
+      { nome: "Condutor (Luz)", variante: "luz", custoPM: 1, descricao: "Resistência a dano elétrico +5. Pode gastar 1 ação de movimento + 1 PM para imbuir eletricidade em uma arma (+1d4 de dano elétrico até o fim da cena).",
+        efeitos: [add("system.resistencias.reducao.eletrico", 5)] },
       { nome: "Luz Sagrada (Luz)", variante: "luz", descricao: "+2 em Diplomacia e Intuição. Ganha acesso a um efeito de luz menor (detalhes dependem do sistema de magia, a fechar).",
         efeitos: [add(outros("diplomacia"), 2), add(outros("intuicao"), 2)] },
-      { nome: "Corrosivo (Sombra)", variante: "sombra", custoPM: 1, descricao: "Resistência a dano ácido +5. Pode gastar 1 ação de movimento + 1 PM para imbuir ácido em uma arma (+1d4 de dano ácido até o fim da cena)." },
+      { nome: "Corrosivo (Sombra)", variante: "sombra", custoPM: 1, descricao: "Resistência a dano ácido +5. Pode gastar 1 ação de movimento + 1 PM para imbuir ácido em uma arma (+1d4 de dano ácido até o fim da cena).",
+        efeitos: [add("system.resistencias.reducao.acido", 5)] },
       { nome: "Sombras Profanas (Sombra)", variante: "sombra", descricao: "+2 em Enganação e Furtividade. Ganha acesso a um efeito de escuridão menor (depende do sistema de magia, a fechar).",
         efeitos: [add(outros("enganacao"), 2), add(outros("furtividade"), 2)] }
     ]

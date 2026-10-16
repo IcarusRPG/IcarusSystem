@@ -11,5 +11,17 @@
     <span class="rolagem-total">{{total}}</span>
   </div>
   {{#if tipos}}<div class="linha-municao">{{localize "ICARUS.Armas.TipoDano"}}: {{tipos}}</div>{{/if}}
-  {{!-- Fase 2: botão "Aplicar" para descontar o dano do alvo --}}
+  {{#if botoes}}
+  <div class="rolagem-botoes">
+    {{#if perda}}
+    <button type="button" data-icarus-aplicar="perda">{{localize "ICARUS.Dano.AplicarPerda"}}</button>
+    {{else}}
+    <button type="button" data-icarus-aplicar="dano">{{localize "ICARUS.Dano.Aplicar"}}</button>
+    <button type="button" data-icarus-aplicar="metade">{{localize "ICARUS.Dano.Metade"}}</button>
+    <button type="button" data-icarus-aplicar="dobro">{{localize "ICARUS.Dano.Dobro"}}</button>
+    <button type="button" data-icarus-aplicar="perda">{{localize "ICARUS.Dano.AplicarPerda"}}</button>
+    {{/if}}
+  </div>
+  <div class="linha-municao">{{localize "ICARUS.Dano.DicaSelecionar"}}</div>
+  {{/if}}
 </div>

@@ -1,0 +1,35 @@
+<div class="combate">
+  {{!-- Condições ativas (etapa e) --}}
+  {{> "systems/icarus-rpg/templates/actor/parts/condicoes.hbs"}}
+
+  {{!-- Testes de morte (etapa g) --}}
+  {{> "systems/icarus-rpg/templates/actor/parts/morte.hbs"}}
+
+  {{!-- Resistências: RD geral e uma linha por tipo (12, sem o genérico) --}}
+  <section class="painel resistencias">
+    <div class="lista-cab">
+      <h3 class="titulo-painel">{{localize "ICARUS.Resistencias.Titulo"}}</h3>
+      <label class="rd-geral{{#if resistenciasTabela.rdDica}} com-efeito{{/if}}"{{#if resistenciasTabela.rdDica}} title="{{resistenciasTabela.rdDica}}"{{/if}}>
+        {{localize "ICARUS.Resistencias.RdGeral"}}
+        <input class="campo" type="number" name="system.resistencias.rdGeral" value="{{resistenciasTabela.rdGeral}}" step="1">
+        {{#if resistenciasTabela.rdEfetivo}}<span class="efetivo">= {{resistenciasTabela.rdEfetivo}}</span>{{/if}}
+      </label>
+    </div>
+    <table class="tabela-resistencias">
+      <thead>
+        <tr><th scope="col">{{localize "ICARUS.Resistencias.Tipo"}}</th><th scope="col">{{localize "ICARUS.Resistencias.Reducao"}}</th><th scope="col">{{localize "ICARUS.Resistencias.Imune"}}</th><th scope="col">{{localize "ICARUS.Resistencias.Vulneravel"}}</th></tr>
+      </thead>
+      <tbody>
+        {{#each resistenciasTabela.linhas}}
+        <tr{{#if dica}} class="com-efeito" title="{{dica}}"{{/if}}>
+          <th scope="row">{{nome}}</th>
+          <td><input class="campo" type="number" name="system.resistencias.reducao.{{tipo}}" value="{{reducao}}" step="1" aria-label="{{localize 'ICARUS.Resistencias.Reducao'}} {{nome}}">{{#if reducaoEfetiva}} <span class="efetivo">= {{reducaoEfetiva}}</span>{{/if}}</td>
+          <td><input type="checkbox" name="system.resistencias.imunidade.{{tipo}}" {{checked imune}} aria-label="{{localize 'ICARUS.Resistencias.Imune'}} {{nome}}">{{#if imuneEfeito}} <span class="efetivo">✓</span>{{/if}}</td>
+          <td><input type="checkbox" name="system.resistencias.vulnerabilidade.{{tipo}}" {{checked vulneravel}} aria-label="{{localize 'ICARUS.Resistencias.Vulneravel'}} {{nome}}">{{#if vulneravelEfeito}} <span class="efetivo">✓</span>{{/if}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p class="dica">{{localize "ICARUS.Resistencias.Dica"}}</p>
+  </section>
+</div>

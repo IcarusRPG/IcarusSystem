@@ -102,7 +102,8 @@ export async function rolarAtaque(actor, item, modo, { criarMensagem = true } = 
 }
 
 /**
- * Dano da arma. Não aplica dano em ninguém (gancho para a fase 2: botão "Aplicar").
+ * Dano da arma, com os botões Aplicar dano / metade / dobro / perda de PV (tokens selecionados).
+ * O tipo usado no cálculo das resistências é o primeiro da arma (a Alabarda, corte e perfuração, usa corte).
  * @param {object} [opcoes] { critico, duasMaos, outraExtremidade }
  */
 export async function rolarDano(actor, item, modo, opcoes = {}) {
@@ -116,9 +117,10 @@ export async function rolarDano(actor, item, modo, opcoes = {}) {
     critico: !!opcoes.critico,
     mult: arma.criticoMult,
     extra: opcoes.outraExtremidade ? loc("ICARUS.Armas.Card.OutraExtremidade") : opcoes.duasMaos ? loc("ICARUS.Armas.Card.DuasMaos") : "",
-    tipos: (arma.tiposDano ?? []).map(t => loc(`ICARUS.Armas.TiposDano.${t}`)).join(" e ")
+    tipos: (arma.tiposDano ?? []).map(t => loc(`ICARUS.TiposDano.${t}`)).join(" e "),
+    botoes: true
   });
-  return enviar(actor, content, { rolls: [roll] });
+  return enviar(actor, content, { rolls: [roll], flags: { dano: { total: roll.total, tipo: arma.tiposDano?.[0] || "dano" } } });
 }
 
 /** Recarregar arma de fogo (ação de movimento). Não gasta Balas: o gasto é no disparo. */

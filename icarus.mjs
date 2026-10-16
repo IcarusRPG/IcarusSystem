@@ -19,16 +19,21 @@ import { popularCompendios } from "./module/compendios.mjs";
 import { verificarArmas } from "./module/dev/verificar-armas.mjs";
 import { registrarTelao, abrirTelao } from "./module/telao/telao.mjs";
 import { registrarArmaduras } from "./module/armaduras.mjs";
+import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
 registrarArmaduras();
+registrarBotoesDeDano();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
   "actor/parts/cabecalho.hbs",
   "actor/parts/recursos.hbs",
   "actor/parts/caracteristicas.hbs",
+  "actor/parts/combate.hbs",
+  "actor/parts/condicoes.hbs",
+  "actor/parts/morte.hbs",
   "actor/parts/inventario.hbs",
   "actor/parts/poderes.hbs",
   "actor/parts/diario.hbs",
@@ -43,6 +48,8 @@ const TEMPLATES = [
   "chat/ataque.hbs",
   "chat/dano.hbs",
   "chat/aviso.hbs",
+  "chat/dano-aplicado.hbs",
+  "dialogo-poderes-concedidos.hbs",
   "telao/telao.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
@@ -55,6 +62,7 @@ Hooks.once("init", () => {
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
+    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
   };

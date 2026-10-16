@@ -1,4 +1,4 @@
-import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS } from "../config.mjs";
+import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESISTENCIA } from "../config.mjs";
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
@@ -57,6 +57,14 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
       // Moedas (núcleo, seção 12): 1 Ouro Real = 1.000 Reais; 1 Real = 100 Centavos
       moedas: new fields.SchemaField({
         ouroReal: inteiro(0, { min: 0 }), real: inteiro(0, { min: 0 }), centavo: inteiro(0, { min: 0 })
+      }),
+      // Resistências (por tipo de dano): Redução de [tipo] X, Imunidade, Vulnerabilidade e RD geral.
+      // Efeitos Ativos podem somar (reducao, rdGeral) ou forçar true (imunidade, vulnerabilidade).
+      resistencias: new fields.SchemaField({
+        rdGeral: inteiro(0),
+        reducao: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, inteiro(0)]))),
+        imunidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })]))),
+        vulnerabilidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })])))
       }),
       imunidades: texto(),
       sentidos: texto(),

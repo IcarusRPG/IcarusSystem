@@ -1,5 +1,5 @@
 import {
-  SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito
+  TIPOS_DANO_COM_RESISTENCIA, SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito
 } from "../config.mjs";
 import { numero, limitar, comSinal, semMais } from "../regras.mjs";
 import { rolarPericia, rolarAtributo } from "../rolls.mjs";
@@ -187,6 +187,25 @@ export class FichaPersonagem extends ActorSheet {
       chave: r.chave, abrev: r.abrev, nome: loc(`ICARUS.Pericias.${r.chave}`), total: comSinal(s.pericias[r.chave].total)
     }));
 
+    // Resistências: RD geral e, por tipo, Redução / Imune / Vulnerável (campos salvos; efetivo na dica)
+    const r = s.resistencias, rs = src.resistencias;
+    ctx.resistenciasTabela = {
+      rdGeral: rs.rdGeral,
+      rdEfetivo: r.rdGeral !== rs.rdGeral ? r.rdGeral : null,
+      rdDica: dica("system.resistencias.rdGeral"),
+      linhas: TIPOS_DANO_COM_RESISTENCIA.map(tipo => ({
+        tipo,
+        nome: loc(`ICARUS.TiposDano.${tipo}`),
+        reducao: rs.reducao[tipo],
+        reducaoEfetiva: r.reducao[tipo] !== rs.reducao[tipo] ? r.reducao[tipo] : null,
+        imune: rs.imunidade[tipo],
+        imuneEfeito: r.imunidade[tipo] && !rs.imunidade[tipo],
+        vulneravel: rs.vulnerabilidade[tipo],
+        vulneravelEfeito: r.vulnerabilidade[tipo] && !rs.vulnerabilidade[tipo],
+        dica: dica(`system.resistencias.reducao.${tipo}`, `system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)
+      }))
+    };
+
     // Inventário
     const ordenar = (a, b) => (a.sort || 0) - (b.sort || 0);
     const preco = c => ({ texto: formatarPreco(c), ouro: precoEmOuro(c) });
@@ -329,6 +348,11 @@ export class FichaPersonagem extends ActorSheet {
     }
     if (p[0] === "classeConfig") return loc(`ICARUS.NivelDialogo.Campos.${p[1]}`);
     if (p[0] === "deslocamento") return loc("ICARUS.Deslocamento");
+    if (p[0] === "resistencias") {
+      if (p[1] === "rdGeral") return loc("ICARUS.Resistencias.RdGeral");
+      const campo = { reducao: "ICARUS.Resistencias.Reducao", imunidade: "ICARUS.Resistencias.Imune", vulnerabilidade: "ICARUS.Resistencias.Vulneravel" }[p[1]];
+      return `${loc(campo)} · ${loc(`ICARUS.TiposDano.${p[2]}`)}`;
+    }
     if (p[0] === "tamanho") return loc("ICARUS.Outras.Tamanho");
     return chave;
   }

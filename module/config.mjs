@@ -144,11 +144,18 @@ export function chavesDeEfeito() {
   return [
     ...ATRIBUTOS.map(k => `system.atributos.${k}.temp`),
     "system.defesa.outros",
-    ...PERICIAS.map(p => `system.pericias.${p.chave}.outros`)
+    ...PERICIAS.map(p => `system.pericias.${p.chave}.outros`),
+    // Resistências: somar em rdGeral e reducao; forçar true (modo Substituir) em imunidade e vulnerabilidade
+    "system.resistencias.rdGeral",
+    ...TIPOS_DANO_COM_RESISTENCIA.map(t => `system.resistencias.reducao.${t}`),
+    ...TIPOS_DANO_COM_RESISTENCIA.map(t => `system.resistencias.imunidade.${t}`),
+    ...TIPOS_DANO_COM_RESISTENCIA.map(t => `system.resistencias.vulnerabilidade.${t}`)
   ];
 }
 
 export const ICARUS = {
+  // Tipos de dano (CONFIG.ICARUS.tiposDano): id → chave de tradução
+  tiposDano: Object.fromEntries(TIPOS_DANO_TODOS.map(id => [id, `ICARUS.TiposDano.${id}`])),
   SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, ATRIBUTOS_CHAVE_PM, BONUS_TREINO, NIVEL_MAXIMO, NIVEL_PARAGON,
   PERICIAS, RESISTENCIAS, TAMANHOS, METROS_POR_QUADRADO, TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS, FONTES_PODER
 };

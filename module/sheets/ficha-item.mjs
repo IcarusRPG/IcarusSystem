@@ -64,7 +64,7 @@ export class FichaItem extends ItemSheet {
       ctx.opcoesMunicaoUsada = { auto: "ICARUS.Armas.MunicaoAuto", ...Object.fromEntries(pacotes.map(p => [p.id, `${p.name} (${p.system.quantidade})`])) };
       ctx.temMunicaoUsada = pacotes.length > 0;
       ctx.chipsPropriedades = PROPRIEDADES_ARMA.map(p => ({ valor: p, rotulo: loc(`ICARUS.Armas.Propriedades.${p}`), ativo: s.propriedades.includes(p) }));
-      ctx.chipsTiposDano = TIPOS_DANO.map(t => ({ valor: t, rotulo: loc(`ICARUS.Armas.TiposDano.${t}`), ativo: s.tiposDano.includes(t) }));
+      ctx.chipsTiposDano = TIPOS_DANO.map(t => ({ valor: t, rotulo: loc(`ICARUS.TiposDano.${t}`), ativo: s.tiposDano.includes(t) }));
       ctx.categoriaRotulo = loc(`ICARUS.Armas.Categorias.${s.categoria}`);
       ctx.textoPropriedades = s.propriedades.map(p => loc(`ICARUS.Armas.Propriedades.${p}`)).join(", ");
       ctx.critico = { texto: textoCritico(s), faixa: faixaCritico(s) };
