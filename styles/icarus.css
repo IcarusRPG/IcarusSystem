@@ -680,3 +680,108 @@ body.game {
 #hotbar .icarus-hotbar-telao .icarus-botao-telao { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 22px; color: #3ee0e6; cursor: pointer; }
 #hotbar .icarus-hotbar-telao .icarus-botao-telao:hover,
 #hotbar .icarus-hotbar-telao .icarus-botao-telao:focus-visible { text-shadow: 0 0 8px #3ee0e6; outline: none; }
+
+/* ==========================================================================
+   Armaduras, divindades, resistências, condições e testes de morte
+   ========================================================================== */
+
+/* --- Divindade: combobox em árvore --- */
+.ficha-icarus .campo-divindade { display: flex; flex-direction: column; gap: 4px; min-width: 0; position: relative; }
+.ficha-icarus .combo-divindade { position: relative; }
+.ficha-icarus .combo-botao { display: flex; align-items: center; gap: 6px; text-align: left; cursor: pointer; padding: 5px 8px; }
+.ficha-icarus .combo-botao img { width: 22px; height: 22px; object-fit: contain; border: 0; flex: none; }
+.ficha-icarus .combo-botao .combo-valor { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ficha-icarus .combo-botao i { color: var(--ic-ciano-titulo); }
+.ficha-icarus .arvore-divindade {
+  position: absolute; z-index: 30; top: calc(100% + 2px); left: 0; right: 0; min-width: 240px;
+  max-height: 360px; overflow-y: auto; margin: 0; padding: 4px; list-style: none;
+  background: var(--ic-painel); border: 1px solid var(--ic-moldura); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .6);
+}
+.ficha-icarus .arvore-divindade[hidden] { display: none; }
+.ficha-icarus .arvore-divindade ul { list-style: none; margin: 0; padding: 0 0 0 14px; }
+.ficha-icarus .arvore-divindade ul[hidden] { display: none; }
+.ficha-icarus .arvore-divindade [role="treeitem"] { padding: 4px 8px; border-radius: 4px; cursor: pointer; outline: none; }
+.ficha-icarus .arvore-divindade .folha { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .arvore-divindade .folha img { width: 22px; height: 22px; object-fit: contain; border: 0; }
+.ficha-icarus .arvore-divindade .grupo > .grupo-linha { font-family: var(--ic-f-titulo); letter-spacing: .1em; color: var(--ic-ouro); }
+.ficha-icarus .arvore-divindade .expandir { font-family: var(--ic-f-corpo); color: var(--ic-ciano-titulo); }
+.ficha-icarus .arvore-divindade [role="treeitem"]:focus,
+.ficha-icarus .arvore-divindade .folha:hover { background: var(--ic-btn-hover); }
+.ficha-icarus .arvore-divindade [aria-selected="true"] { color: var(--ic-ciano); }
+.ficha-icarus .painel-divindade summary { font-size: 12px; color: var(--ic-apagado2); cursor: pointer; }
+.ficha-icarus .painel-divindade[open] .painel-divindade-corpo {
+  position: absolute; z-index: 25; left: 0; right: 0; min-width: 320px; padding: 10px 12px;
+  background: var(--ic-painel); border: 1px solid var(--ic-ouro-escuro); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .6);
+}
+.ficha-icarus .painel-divindade h4 { margin: 8px 0 2px; font-family: var(--ic-f-titulo); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ic-ouro); border: 0; }
+.ficha-icarus .painel-divindade p, .ficha-icarus .painel-divindade ul { margin: 0 0 4px; font-size: 14px; }
+.ficha-icarus .painel-divindade ul { padding-left: 16px; }
+@container (max-width: 1180px) { .ficha-icarus .identidade { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* --- Janela de poderes concedidos --- */
+.ficha-icarus.dialogo-devocao { height: auto; gap: 12px; background: none; }
+.ficha-icarus .devocao-cab { display: flex; align-items: center; gap: 12px; }
+.ficha-icarus .devocao-cab img { border: 0; object-fit: contain; }
+.ficha-icarus .lista-concedidos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ficha-icarus .concedido { padding: 10px 12px; border: 1px solid var(--ic-borda); border-radius: 6px; }
+.ficha-icarus .concedido.possui { opacity: .7; }
+.ficha-icarus .concedido .chk img { border: 0; object-fit: contain; }
+.ficha-icarus .descricao-concedido { margin: 6px 0 0; font-size: 14px; color: #a9bcc9; }
+.ficha-icarus .contador-devocao { font-weight: 700; color: var(--ic-ciano-titulo); }
+.ficha-icarus .contador-devocao.acima { color: var(--ic-ouro-claro); }
+
+/* --- Aba Combate --- */
+.ficha-icarus .combate { display: flex; flex-direction: column; gap: 14px; }
+.ficha-icarus .condicoes-ficha, .ficha-icarus .morte-ficha, .ficha-icarus .resistencias { padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
+.ficha-icarus .chips-condicoes { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
+.ficha-icarus .chip-condicao { border: 1px solid var(--ic-btn-borda); border-radius: 16px; background: var(--ic-btn); }
+.ficha-icarus .chip-condicao[open] { border-radius: 8px; flex-basis: 100%; }
+.ficha-icarus .chip-condicao summary { display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; cursor: pointer; list-style: none; }
+.ficha-icarus .chip-condicao summary::-webkit-details-marker { display: none; }
+.ficha-icarus .chip-condicao summary img { width: 20px; height: 20px; border: 0; }
+.ficha-icarus .chip-condicao-corpo { padding: 4px 12px 10px; font-size: 14px; }
+.ficha-icarus .chip-condicao-corpo p, .ficha-icarus .chip-condicao-corpo ul { margin: 4px 0; }
+.ficha-icarus .faixa-condicoes {
+  flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; padding: 6px 28px;
+  background: var(--ic-miolo-escudo); border-top: 1px solid var(--ic-ouro-escuro); border-bottom: 1px solid var(--ic-ouro-escuro);
+  color: var(--ic-ouro-claro); font-size: 14px;
+}
+.ficha-icarus .tabela-resistencias { width: 100%; border-collapse: collapse; font-size: 14px; }
+.ficha-icarus .tabela-resistencias th, .ficha-icarus .tabela-resistencias td { padding: 4px 8px; border-bottom: 1px solid var(--ic-linha); text-align: center; }
+.ficha-icarus .tabela-resistencias thead th { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-ciano-titulo); border-bottom: 1px solid var(--ic-borda); }
+.ficha-icarus .tabela-resistencias th[scope="row"] { text-align: left; font-weight: 500; }
+.ficha-icarus .tabela-resistencias input[type="number"] { width: 64px; padding: 2px 4px; text-align: center; }
+.ficha-icarus .tabela-resistencias input[type="checkbox"] { accent-color: var(--ic-ciano); width: 16px; height: 16px; margin: 0; }
+.ficha-icarus .rd-geral { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .rd-geral input { width: 64px; padding: 2px 4px; text-align: center; }
+.ficha-icarus .efetivo { color: var(--ic-ciano-titulo); font-weight: 700; }
+.ficha-icarus .morte-marcas { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .bolinha { width: 22px; height: 22px; padding: 0; border-radius: 50%; border: 2px solid var(--ic-marcador-vazio); background: none; }
+.ficha-icarus .bolinha.sucesso.marcada { background: var(--ic-ciano); border-color: var(--ic-ciano); }
+.ficha-icarus .bolinha.falha.marcada { background: var(--ic-pv); border-color: var(--ic-pv); }
+.ficha-icarus .morte-marcas .rot:not(:first-child) { margin-left: 14px; }
+
+/* --- Painel de condições --- */
+.application.icarus-painel-condicoes .window-content { overflow-y: auto; }
+.ficha-icarus.painel-condicoes { height: auto; gap: 12px; background: none; }
+.ficha-icarus .alvo-condicao { flex-wrap: wrap; padding: 4px 0; border-bottom: 1px solid var(--ic-linha); }
+.ficha-icarus .alvo-condicao img { border: 0; object-fit: contain; }
+.ficha-icarus .lista-condicoes { list-style: none; margin: 0; padding: 0; max-height: 320px; overflow-y: auto; }
+.ficha-icarus .condicao-opcao { padding: 6px 4px; border-bottom: 1px solid var(--ic-linha); }
+.ficha-icarus .condicao-opcao[hidden] { display: none; }
+.ficha-icarus .condicao-opcao img { border: 0; }
+.ficha-icarus .filtros-descritor { margin: 4px 0; }
+.ficha-icarus .duracao .rodadas { width: 64px; padding: 2px 4px; display: inline-block; }
+.ficha-icarus .icarus-tag, .icarus-rolagem .icarus-tag, .journal-entry-page .icarus-tag {
+  display: inline-block; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 0 5px; margin: 0 2px;
+  border: 1px solid #2b8f99; border-radius: 3px; color: #7fd9de;
+}
+.journal-entry-page .icarus-pendente { color: #b8860b; font-weight: 700; }
+
+/* --- Cards de chat novos --- */
+.icarus-rolagem .selo-pendente { color: var(--ic-ouro-claro); }
+.icarus-rolagem .condicao-descricao { margin: 0; font-size: 14px; color: var(--ic-apagado); }
+.icarus-rolagem .condicao-avisos, .icarus-rolagem .linhas-dano { margin: 0; padding-left: 18px; font-size: 13px; color: var(--ic-apagado); }
+.icarus-rolagem.icarus-poder .poder-descricao { font-size: 14px; color: var(--ic-apagado); }
+.icarus-rolagem.icarus-poder .poder-descricao p { margin: 4px 0; }
+.icarus-rolagem .custo { font-size: 12px; color: var(--ic-pm-texto); border: 1px solid var(--ic-pm-borda); border-radius: 3px; padding: 0 5px; }

@@ -59,7 +59,8 @@
       "inventario": "Inventário",
       "poderes": "Poderes",
       "diario": "Diário",
-      "efeitos": "Efeitos"
+      "efeitos": "Efeitos",
+      "combate": "Combate"
     },
     "Rodape": {
       "Rolar": "Clique no total de um atributo ou perícia para rolar no chat"
@@ -202,7 +203,8 @@
         "classe": "Classe",
         "origem": "Origem",
         "profissao": "Profissão",
-        "geral": "Geral"
+        "geral": "Geral",
+        "divindade": "Divindade"
       },
       "Gerais": "Poderes Gerais",
       "TagNivel": "Nível {nivel}",
@@ -216,7 +218,8 @@
       "Fonte": "Fonte",
       "CustoPM": "Custo em PM",
       "SemCusto": "Sem custo",
-      "Nivel": "Nível (opcional)"
+      "Nivel": "Nível (opcional)",
+      "EnviarChat": "Enviar ao chat"
     },
     "Diario": {
       "Titulo": "Diário do Personagem",
@@ -479,10 +482,18 @@
       "ConsumirArremesso": {
         "Nome": "Arma arremessada sai do inventário",
         "Dica": "Ao arremessar, a quantidade da arma diminui em 1 e o card ganha o botão Recolher arma."
+      },
+      "AnunciarCondicoes": {
+        "Nome": "Anunciar condições no chat",
+        "Dica": "Mensagem a cada condição aplicada ou removida.",
+        "Nunca": "Nunca",
+        "Gm": "Só para o Mestre",
+        "Todos": "Para todos"
       }
     },
     "Compendios": {
-      "SoMestre": "Só o Mestre pode popular os compêndios."
+      "SoMestre": "Só o Mestre pode popular os compêndios.",
+      "Populados": "Compêndios do Icarus atualizados. Detalhes no console (F12)."
     },
     "Telao": {
       "Titulo": "Telão",
@@ -515,6 +526,173 @@
         "NaoEncontrado": "Vídeo do YouTube não encontrado (removido ou privado).",
         "ErroYoutube": "O YouTube não conseguiu tocar este vídeo."
       }
+    },
+    "TiposDano": {
+      "dano": "Dano",
+      "corte": "Corte",
+      "perfuracao": "Perfuração",
+      "impacto": "Impacto",
+      "fogo": "Fogo",
+      "frio": "Frio",
+      "eletrico": "Elétrico",
+      "acido": "Ácido",
+      "luz": "Luz",
+      "trevas": "Trevas",
+      "essencia": "Essência",
+      "psiquico": "Psíquico",
+      "veneno": "Veneno"
+    },
+    "Armaduras": {
+      "Categoria": "Categoria",
+      "SemCategoria": "—",
+      "Categorias": {
+        "leve": "Armadura leve",
+        "media": "Armadura média",
+        "pesada": "Armadura pesada",
+        "tunica": "Túnica",
+        "escudo": "Escudo",
+        "escudo-acoplado": "Escudo acoplado"
+      },
+      "Penalidade": "Penalidade de armadura",
+      "PenalidadeOrigem": "{valor} {nome} (penalidade de armadura)",
+      "PenalidadeTotal": "Penalidade de armadura {valor} em Acrobacia, Furtividade e Prestidigitação",
+      "ProficienciaLivre": "Não exige proficiência (túnica)",
+      "Acoplado": "Escudo acoplado",
+      "AvisoAcoplado": "Escudo acoplado equipado com uma arma de duas mãos empunhada. Confira as restrições com o Mestre.",
+      "Desequipou": "{novo} equipado; {antigo} foi desequipado (só um de cada tipo).",
+      "Provisorio": "Campos ainda não confirmados no livro",
+      "Campos": {
+        "espacos": "espaços",
+        "preco": "preço",
+        "nome": "nome"
+      }
+    },
+    "Devocao": {
+      "Nenhuma": "Nenhum(a)",
+      "Outra": "Outra",
+      "DogmasEPoderes": "Dogmas e poderes",
+      "Dogmas": "Dogmas e Restrições",
+      "PoderesConcedidos": "Poderes Concedidos",
+      "BotaoPoderes": "Poderes Concedidos…",
+      "TituloJanela": "Poderes Concedidos de {divindade}",
+      "JaPossui": "já possui",
+      "Selecionados": "Selecionados {n}",
+      "SelecionadosDe": "Selecionados {n} de {de}",
+      "Confirmar": "Confirmar",
+      "AgoraNao": "Agora não",
+      "Adicionados": "{n} poder(es) concedido(s) adicionado(s).",
+      "TagConcedido": "Concedido",
+      "TrocarTitulo": "Trocar de divindade",
+      "TrocarTexto": "Os {n} poder(es) concedido(s) de {divindade} continuam na ficha. Quer removê-los ou mantê-los?",
+      "Manter": "Manter",
+      "Remover": "Remover"
+    },
+    "Resistencias": {
+      "Titulo": "Resistências",
+      "RdGeral": "RD geral",
+      "Tipo": "Tipo de dano",
+      "Reducao": "Redução",
+      "Imune": "Imune",
+      "Vulneravel": "Vulnerável",
+      "Dica": "Redução de [tipo] e RD subtraem do dano; Imune zera; Vulnerável aumenta em 50%. Perda de PV ignora tudo isso. Valores com ✓ ou \"=\" vêm de Efeitos Ativos (passe o mouse para ver a origem)."
+    },
+    "Dano": {
+      "Aplicar": "Aplicar dano",
+      "Metade": "Aplicar metade",
+      "Dobro": "Aplicar em dobro",
+      "AplicarPerda": "Aplicar como perda de PV",
+      "DicaSelecionar": "Selecione os tokens que sofrem o dano antes de clicar.",
+      "SemSelecao": "Selecione pelo menos um token para aplicar o dano.",
+      "SemPermissao": "{nome}: sem permissão para alterar a ficha.",
+      "PerdaDePV": "Perda de PV (ignora resistências)",
+      "PerdaDetalhe": "perde {n} PV",
+      "Linha": "{nome}: {detalhe} · PV {antes} → {depois}",
+      "TituloAplicado": "Dano aplicado",
+      "TituloPerda": "Perda de PV aplicada",
+      "Provisorio": "Ordem do cálculo (vulnerabilidade, redução, RD) provisória."
+    },
+    "Condicoes": {
+      "Titulo": "Condições",
+      "Adicionar": "+ Condição",
+      "Nenhuma": "Nenhuma condição.",
+      "Painel": "Condições",
+      "PainelDe": "Condições de {nome}",
+      "PainelMestre": "Condições do Mestre",
+      "Alvos": "Alvos",
+      "SemTokens": "Nenhum token na cena.",
+      "NaoVinculado": "não vinculado",
+      "Buscar": "Buscar condição…",
+      "Duracao": "Duração",
+      "AteRemover": "Até remover",
+      "Rodadas": "Rodadas",
+      "FimDaCena": "Fim da cena",
+      "Duracoes": {
+        "remover": "Até remover",
+        "rodadas": "Rodadas",
+        "cena": "Fim da cena"
+      },
+      "RodadasN": "{n} rodada(s)",
+      "Aplicar": "Aplicar",
+      "Remover": "Remover",
+      "RemoverTodas": "Remover todas",
+      "Escalar": "Escalar",
+      "EncerrarCena": "Encerrar cena",
+      "EncerrarCenaTexto": "Remover de todos os tokens da cena as condições com duração \"fim da cena\"?",
+      "CenaEncerrada": "Cena encerrada: {n} condição(ões) removida(s).",
+      "SemAlvo": "Marque pelo menos um alvo.",
+      "SemCondicao": "Marque pelo menos uma condição.",
+      "SoMestre": "Só o Mestre pode usar o painel de condições.",
+      "Aplicada": "{alvo}: {condicao}",
+      "Removida": "{alvo}: {condicao} terminou",
+      "IncluidaPor": "incluída por {condicao}",
+      "PioraPara": "piora para",
+      "RegraAConfirmar": "regra a confirmar",
+      "DicaChip": "Clique para ver o texto; botão direito para remover ou escalar",
+      "FalhaAuto": "Falha automática ({condicao})",
+      "FalhaAutomatica": "FALHA AUTOMÁTICA"
+    },
+    "Morte": {
+      "Titulo": "Testes de morte",
+      "Sucessos": "Sucessos",
+      "Falhas": "Falhas",
+      "Estavel": "Estável",
+      "Rolar": "Rolar teste de morte",
+      "DanoNormal": "Registrar dano em Morrendo",
+      "DanoCritico": "Registrar dano crítico em Morrendo",
+      "Estabilizar": "Estabilizar (Cura CD 10)",
+      "Dica": "1–9 falha · 10–19 sucesso · 20 natural recupera 1 PV · 1 natural = 2 falhas · 3 sucessos estabiliza · 3 falhas: morto. Estável recupera 1 PV após 1d4 horas.",
+      "TesteDe": "Teste de morte: {nome}",
+      "Contagem": "{s} sucesso(s), {f} falha(s)",
+      "Resultado": {
+        "sucesso": "Sucesso",
+        "falha": "Falha",
+        "duasFalhas": "1 natural: duas falhas",
+        "reanima": "20 natural: recupera 1 PV e age",
+        "estavel": "Três sucessos: estável",
+        "morto": "Três falhas: morreu"
+      },
+      "Morreu": "{nome} morreu (três falhas nos testes de morte).",
+      "CuraEm": "{curador} tenta estabilizar {nome} (Cura CD 10)",
+      "Estabilizou": "Estabilizado.",
+      "NaoEstabilizou": "Não conseguiu estabilizar."
+    },
+    "Lembrete": {
+      "Titulo": "Início do turno: {nome}",
+      "EmChamas": "Em Chamas: sofre 1d6 de fogo (apagar: ação padrão ou água).",
+      "Sangrando": "Sangrando: teste de Constituição CD 15 (falha: perde 1d6 PV e continua; sucesso: para).",
+      "Confuso": "Confuso: role 1d6 para o comportamento.",
+      "Morrendo": "Morrendo: role o teste de morte.",
+      "RolarFogo": "Rolar 1d6 de fogo",
+      "RolarConstituicao": "Rolar Constituição CD 15",
+      "RolarConfuso": "Rolar d6 de Confuso",
+      "FogoEm": "Em Chamas: {nome}",
+      "ConfusoEm": "Confuso: {nome}",
+      "SangrandoEm": "Sangrando: {nome} (Constituição CD 15)",
+      "PerdaEm": "Sangrando: {nome} perde PV",
+      "SangrandoParou": "Sucesso: o sangramento parou.",
+      "SangrandoContinua": "Falha: perde 1d6 PV e continua sangrando.",
+      "Resultado": "Resultado",
+      "Provisorio": "Lembrete provisório: nada é aplicado sem clicar."
     }
   }
 }

@@ -25,7 +25,14 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Atributos | FOR, DES, CON, INT, SAB, CAR como modificador direto. Total = Base + Raça + Temp. Clicar no hexágono rola `1d20 + total` no chat. |
 | Perícias | 30 perícias com marcador de treino (Destreinado +0, Treinado +2, Especialista +4), atributo trocável, campo Outros. Total = Atributo + Treino + Outros. Clicar no total rola no chat. Fortitude, Reflexos e Vontade são também as Resistências. |
 | PV e PM | `inicial + por nível × (nível − 1) + atributo × nível + bônus por nível de poderes` (diálogo **Nível**). PM só soma atributo-chave (INT, SAB ou CAR) em classes conjuradoras. Modo Manual e Bônus. |
-| Defesa | `10 + DES + Armadura + Escudo + Outros`. Armadura e escudo vêm dos itens equipados. |
+| Defesa | `10 + DES + Armadura + Escudo + Outros` + modificador de condição. Armadura e escudo vêm dos itens equipados; só uma armadura e um escudo ficam equipados por vez. |
+| Armaduras e escudos | Compêndio **Icarus — Armaduras e Escudos** (12 itens: leves, médias, pesadas, túnicas e escudos). A **penalidade de armadura** soma das peças equipadas e sai de Acrobacia, Furtividade e Prestidigitação (o tooltip mostra a origem). Escudo acoplado com arma de duas mãos empunhada gera aviso. |
+| Divindade | Combobox em árvore no cabeçalho: Nenhum(a) / **Alfars** / **Baldurs** (20 divindades com símbolo) / Outra. Setas, Enter, Esc, Home e End funcionam. Abaixo, **Dogmas e poderes** mostra dogma e os 3 poderes. Ao escolher, abre **Poderes Concedidos** com caixas de seleção e contador; trocar de divindade pergunta se mantém ou remove os poderes da anterior. |
+| Poderes concedidos | Compêndio **Icarus — Poderes Concedidos** (60 poderes, pastas Alfars/Baldurs > divindade, ícone = símbolo da divindade). Bônus fixos viram Efeitos Ativos; bônus condicionais ficam só no texto. Na aba Poderes aparecem no grupo da divindade com a tag **Concedido** e botão de enviar ao chat. |
+| Dano e resistências | 13 tipos de dano. Aba **Combate** com tabela de Redução, Imune e Vulnerável por tipo, mais RD geral. Card de dano tem **Aplicar**, **Metade**, **Dobro** e **Perda de PV** nos tokens selecionados: imunidade → vulnerável ×1,5 (para baixo) → redução do tipo → RD → mínimo 0, com o cálculo no chat. Perda de PV ignora tudo. `game.icarus.aplicarDano(...)`, `game.icarus.rolarDanoAvulso(...)`. |
+| Condições | 36 condições como Status Effects (ícone no token). Aba Combate: chips com o texto, **+ Condição**, botão direito para Remover/Escalar; faixa de avisos no topo da ficha. Penalidades **não se acumulam** (vale a maior) e entram em Defesa, perícias, ataque e deslocamento; condições que incluem outras (Agarrado → Desprevenido + Imóvel) aplicam e removem as filhas. Duração: até remover, rodadas (sai no Combat Tracker) ou fim da cena. Anúncio no chat configurável. |
+| Painel do Mestre | Sem abrir ficha: ícone de condições nos controles de token, **Token HUD** do Foundry, macro **Aplicar Condição** ou `game.icarus.condicoes.painel()`. Busca, filtro por descritor, vários alvos, duração, **Remover todas** e **Encerrar cena**. API: `game.icarus.condicoes.aplicar/remover/removerTodas/escalar/encerrarCena`. |
+| PV 0 e morte | PV 0 aplica **Morrendo** (com Inconsciente e Indefeso). Aba Combate: marcadores de sucesso e falha, **Rolar teste de morte** (1–9 falha, 10–19 sucesso, 20 recupera 1 PV, 1 = duas falhas), dano em Morrendo e **Estabilizar (Cura CD 10)**. Voltar a 1 PV limpa tudo. No início do turno, lembretes com botões para Em Chamas, Sangrando, Confuso e Morrendo. |
 | Nível | 1 a 25. A partir do 21 aparece **PARAGON** e os 5 últimos segmentos ficam dourados. |
 | Deslocamento | Em metros, exibido também em quadrados de 1,5 m. Médio 9 m, Pequeno 6 m. |
 | Rolagens | Vão para o **chat do Foundry** como cartão próprio, respeitando o modo de rolagem do chat. 20 natural = CRÍTICO (dourado), 1 natural = FALHA CRÍTICA (vermelho), só visual. |
@@ -35,7 +42,7 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Moedas e carga | Ouro Real, Reais e Centavos na ficha (preços guardados em centavos). Arrastar um item do compêndio pergunta **Comprar** ou **Adicionar grátis**. Carga = 10 + 2 × FOR espaços; acima disso fica vermelha (sem penalidade). |
 | Telão | Botão **Telão** (ícone de TV) na ponta esquerda da barra de atalhos, embaixo, sempre visível (e também na barra de tokens, quando há cena aberta). Atalho: `game.icarus.telao()`. O Mestre escolhe um vídeo de uma pasta ou cola um link do YouTube, vê a prévia, e com **Mostrar para todos** a janela abre para os jogadores. **Play**, **Pausar**, **Voltar ao início** e a barra de posição valem para todos; cada jogador ajusta o próprio volume. Quem entra no meio da sessão cai no ponto certo. Se o navegador bloquear o som, aparece **Clique para assistir**. |
 | Itens | `poder` (fonte, custo em PM, pré-requisito, nível, descrição) e `equipamento` (tipo, quantidade, equipado, bônus de Defesa, descrição). Arrastar e soltar entre fichas e compêndios funciona. |
-| Efeitos | Efeitos Ativos do Foundry, modo **Somar**, nas chaves `system.atributos.<FOR…>.temp`, `system.defesa.outros` e `system.pericias.<pericia>.outros`. |
+| Efeitos | Efeitos Ativos do Foundry, modo **Somar**, nas chaves `system.atributos.<FOR…>.temp`, `system.defesa.outros`, `system.pericias.<pericia>.outros`, `system.bonus.ataque` e `system.resistencias.reducao.<tipo>`. |
 | Tokens | Barra 1 = PV, barra 2 = PM. Personagem novo recebe o ícone do dado azul e token ligado à ficha. |
 | Interface | Logo do Icarus no lugar da bigorna do Foundry, dado vermelho na mensagem de jogo pausado e wallpaper no fundo quando não há cena aberta (imagens otimizadas em `img/ui/`). |
 
@@ -62,24 +69,33 @@ module/
   derivar.mjs               cálculos da ficha (usados pelo Foundry e pelos testes)
   racas.mjs                 aplicar, trocar e reaplicar raças no Foundry
   data/                     modelos de dados e racas.mjs (dados das 17 raças)
-  sheets/                   ficha de personagem, ficha de item, diálogos de nível e de escolhas da raça
+  sheets/                   ficha de personagem e de item, diálogos (nível, raça, poderes concedidos), árvore de divindade, painel de condições
   moeda.mjs                 preço em centavos, formatação, débito e crédito
   combate.mjs               regras de ataque e dano (as provisórias ficam em REGRAS)
   combate-chat.mjs          rolar ataque e dano, munição, recarga, arremesso e cards de chat
   inventario.mjs            comprar ou adicionar itens, somar munição, botão + Item
   dados-itens.mjs           converte tools/dados/armas.json em itens do Foundry
   compendios.mjs            plano B: popular os compêndios dentro do Foundry
+  dados-compendios.mjs      converte armaduras, poderes concedidos, condições e macros em documentos
+  dados/                    gerado de tools/dados/*.json (não editar à mão)
+  armaduras.mjs             uma armadura e um escudo equipados por vez
+  panteao.mjs               divindades, símbolos e poderes concedidos
+  dano.mjs                  aplicar dano com resistências, botões do card de dano
+  condicoes.mjs             regras puras das condições (composição, maior penalidade)
+  condicoes-foundry.mjs     Status Effects, duração, anúncio e API das condições
+  morte.mjs / morte-foundry.mjs  testes de morte e lembretes de turno
   dev/                      personagem de teste e verificações (Kaelen, raças, armas)
 templates/                  Handlebars da ficha, dos itens, do diálogo e do chat
 styles/icarus.css           visual escuro da ficha e do cartão de chat
 fonts/                      Cinzel e Alegreya Sans (licença OFL)
 lang/pt-BR.json             todos os textos da interface
 img/                        ícones e imagens: raças, armas, munições, armaduras e escudos, símbolos do panteão e interface (256 px)
-tests/                      testes das fórmulas, raças e armas
-tools/dados/armas.json      fonte única das armas e munições
+tests/                      testes das fórmulas, raças, armas, armaduras, panteão, dano, condições e morte
+tools/dados/                fonte única: armas, armaduras, poderes concedidos, panteão, tipos de dano, condições e mapas de ícones
+tools/gerar-dados.mjs       gera module/dados/ a partir de tools/dados/
 tools/build-packs.mjs       gera packs-src/ (JSON) e compila os compêndios em packs/ (LevelDB)
 packs-src/                  JSON dos compêndios (gerado; packs/ é compilado na hora do release)
-macros/popular-compendios.js  macro do plano B
+macros/popular-compendios.js  macro do plano B (também no compêndio Icarus — Macros)
 ```
 
 ## Desenvolvimento
@@ -139,6 +155,16 @@ A fonte única é `tools/dados/armas.json`. Para **editar ou adicionar uma arma*
 
 Sem conseguir compilar no seu computador, use o **plano B** dentro do Foundry, como Mestre: `await game.icarus.popularCompendios()` (ou a macro `macros/popular-compendios.js`). Ela lê o mesmo JSON e cria ou atualiza os itens sem duplicar.
 
+## Armaduras, poderes concedidos e condições
+
+Fontes únicas em `tools/dados/`: `armaduras.json`, `poderes-concedidos.json`, `panteao.json`, `tipos-dano.json` e `condicoes.json`, copiadas dos anexos do livro. Os ícones ficam em `icones-armaduras.json`, `icones-divindades.json` (caminho dentro de `img/Icones/panteão/simbolos/`) e `icones-condicoes.json` (vazio: as condições usam os ícones do próprio Foundry).
+
+1. Edite o JSON e rode `npm run build:packs` (gera `module/dados/` e os compêndios). O teste `tests/dados.test.mjs` falha se `module/dados/` ficar desatualizado.
+2. Ícone mapeado que não existe faz o build parar com o nome do arquivo.
+3. Plano B no Foundry: macro **Popular compêndios** ou `await game.icarus.popularCompendios()`, que agora cobre todos os compêndios.
+
+As condições também estão no compêndio **Icarus — Condições** (um diário com uma página por condição, em ordem alfabética, com descritores e marcas de pendência).
+
 ## Publicar uma versão
 
 1. Atualize `version` e o número da versão no link `download` do `system.json`.
@@ -150,20 +176,19 @@ Sem conseguir compilar no seu computador, use o **plano B** dentro do Foundry, c
 Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço reservado:
 
 - Magias e custo de PM por círculo
-- Combate: ataque, dano e crítico de arma; rolagem de itens e poderes
+- Rolagem de itens e poderes com efeito mecânico (hoje os poderes só vão ao chat como texto)
 - Lista de Origens e automação das perícias de Origem
 - Detalhes das Profissões (atributo mínimo, perícias, poderes, itens) e automação
-- Moedas, carga e riqueza
 - Compêndios com as 17 raças e 16 classes
-- Actor de NPC e criatura
+- Actor de NPC e criatura (as condições e o dano já funcionam em qualquer token com a ficha de personagem)
 - Deslocamento do tamanho Grande e outros tamanhos
 - Perícias personalizadas ("Nova Perícia / Criar")
 - PV e PM no tier Paragon e mecânica de ascensão
 - Anotações de sessão no Diário (lista com data e resumo)
 - Bônus de ataque e dano de poderes raciais (ficam como texto até existir o combate)
-- Resistência a dano, RD e visão no escuro como campos mecânicos (hoje só texto; Sentidos e Imunidades são preenchidos à mão)
+- Visão no escuro como campo mecânico (Sentidos e Imunidades em texto continuam preenchidos à mão)
 - Magias raciais (Astúcia Arcana, Luz Sagrada, Sombras Profanas)
-- Compêndios de raças e poderes
+- Compêndios de raças e de poderes de classe
 - Telão: vídeos do YouTube que o dono não permite incorporar não tocam (aparece um aviso); a sincronia é feita a cada ação do Mestre (sem correção contínua durante a reprodução)
 - Filtro por digitação na combobox de raça (hoje vale a busca nativa: digitar a inicial)
 
@@ -172,8 +197,15 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Crítico multiplica tudo: (dados + bônus) × multiplicador
 - Sem acerto automático; o card só compara com a Defesa se houver exatamente 1 alvo
 - Sem proficiência na arma: só aviso, sem penalidade numérica
-- Penalidade de armadura no ataque sem proficiência em armadura: gancho `penalidadeDeAtaque` (0 até existir o compêndio de armaduras)
+- Penalidade de armadura no ataque sem proficiência em armadura: gancho `penalidadeDeAtaque` (sem valor no livro, continua 0)
 - Ágil usa DES quando ela é maior que FOR (a regra permite usar DES)
 - Carga 10 + 2 × FOR (referência do Tormenta 20, a conferir); sobrecarga sem efeito
-- Fora de escopo por enquanto: duas armas, Arma Dupla completa, desarmado e armas naturais, aplicar dano nos tokens, medir alcance, munições especiais e recuperação de munição, efeitos de poderes sobre armas, armaduras/escudos/túnicas
+- Fora de escopo por enquanto: duas armas, Arma Dupla completa, desarmado e armas naturais, aplicar dano nos tokens, medir alcance, munições especiais e recuperação de munição, efeitos de poderes sobre armas
 
+**Armaduras, dano, condições e morte ([PROVISÓRIO]):**
+- Espaços de todas as armaduras e escudos; preço das túnicas; nome da Túnica Bordada (campo `provisorio` em `tools/dados/armaduras.json`, mostrado no item)
+- Ordem do dano: imunidade → vulnerabilidade ×1,5 arredondada para baixo → redução do tipo → RD geral → mínimo 0 (`regras` em `tools/dados/tipos-dano.json`)
+- Condições com texto marcado PENDENTE ou CONFIRMAR no livro: Agarrado, Cego, Doente, Envenenado, Petrificado, Sobrecarregado, Surdo (efeitos não automatizados ficam só no texto)
+- Teste de morte soma só bônus gerais de resistência, campo que ainda não existe (nada é somado)
+- Lembretes de turno (Em Chamas, Sangrando, Confuso, Morrendo) só avisam; nada é aplicado sem clicar
+- Bônus condicionais dos poderes concedidos ficam só no texto
