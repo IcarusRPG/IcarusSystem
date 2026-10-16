@@ -61,7 +61,12 @@ const TEMPLATES = [
   "chat/lembrete.hbs",
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
-  "telao/telao.hbs"
+  "telao/telao.hbs",
+  "testes/tela.hbs",
+  "testes/chat.hbs",
+  "testes/oposto-config.hbs",
+  "testes/resistencia-config.hbs",
+  "testes/seletor.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
 Hooks.once("init", () => {

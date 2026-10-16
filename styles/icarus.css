@@ -675,7 +675,7 @@ body.game {
 .ficha-icarus .telao-volume { display: flex; align-items: center; gap: 6px; width: 160px; }
 
 /* Botão do Telão na ponta esquerda da barra de atalhos (mesmo visual dos controles da barra) */
-#hotbar .icarus-atalhos { flex: 0 0 auto; flex-direction: row; justify-content: center; align-items: center; gap: 4px; margin-right: 6px; padding: 0 4px; position: relative; z-index: 5; pointer-events: auto; }
+#hotbar .icarus-atalhos { display: flex; flex: 0 0 auto; flex-direction: row; justify-content: center; align-items: center; gap: 4px; margin-right: 6px; padding: 0 4px; position: relative; z-index: 5; pointer-events: auto; }
 #hotbar .icarus-atalhos * { pointer-events: auto; }
 #hotbar .icarus-atalhos .icarus-atalho { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 6px; cursor: pointer; transition: filter .15s, transform .15s; }
 #hotbar .icarus-atalhos .icarus-atalho img { width: 32px; height: 32px; object-fit: contain; border: 0; }
