@@ -1040,7 +1040,23 @@
         "meditacao": "Caminho da Meditação",
         "sombras": "Caminho das Sombras",
         "astral": "Caminho Astral"
-      }
+      },
+      "BracosAstrais": "Braços Astrais",
+      "Desarmado": "Ataque desarmado (Monge)",
+      "CriarDesarmado": "Criar ataque desarmado",
+      "ManifestarBracos": "Manifestar Braços Astrais",
+      "DispensarBracos": "Dispensar Braços Astrais",
+      "BracosInfo": "ação de movimento, {custo} PM, até o fim da cena",
+      "BracosInfoAtivo": "ativos: alcance 3 m, dano de Essência, Sabedoria no ataque e no dano desarmado",
+      "BracosConfirma": "Manifestar os Braços Astrais (ação de movimento, {custo} PM)? PM atuais: {pm}.",
+      "BracosManifestou": "{nome} manifesta os Braços Astrais.",
+      "BracosDispensou": "{nome} dispensa os Braços Astrais.",
+      "LinhaBracos": "Braços Astrais: Sabedoria no ataque e no dano, dano de Essência, alcance 3 m",
+      "Rajada": "Rajada de Golpes",
+      "RajadaRotulo": "Rajada de Golpes (1 PM): ataque desarmado adicional, sem atributo no dano",
+      "RajadaDica": "PM atuais: {pm}.",
+      "NaoUsaArmas": "O Monge não usa armas (só ataca desarmado).",
+      "NaoUsaArmaduras": "O Monge não usa armaduras nem escudos (túnicas podem)."
     },
     "Comuns": {
       "AumentoTitulo": "Aumento de Atributo",

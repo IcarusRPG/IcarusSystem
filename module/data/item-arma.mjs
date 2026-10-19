@@ -2,6 +2,8 @@ import {
   CATEGORIAS_ARMA, GRUPOS_ARMA, EMPUNHADURAS, ALCANCES, TIPOS_DANO, PROPRIEDADES_ARMA, TIPOS_MUNICAO
 } from "../config.mjs";
 import { ehProficiente, textoCritico, modosDeAtaque } from "../combate.mjs";
+import { SISTEMA_ID } from "../config.mjs";
+import { danoDesarmadoDoMonge } from "../classes-dados.mjs";
 
 const fields = foundry.data.fields;
 const inteiro = (initial = 0, opcoes = {}) =>
@@ -44,6 +46,13 @@ export class ArmaData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
+    // Ataque desarmado do Monge: dado pelo nível; com Braços Astrais, dano de Essência
+    const flags = this.parent?.flags?.[SISTEMA_ID];
+    const dono = this.parent?.parent;
+    if (flags?.desarmadoMonge && dono?.system) {
+      this.dano = danoDesarmadoDoMonge(dono.system.nivel);
+      if (dono.flags?.[SISTEMA_ID]?.bracosAstrais) this.tiposDano = ["essencia"];
+    }
     // "auto": confere as proficiências do personagem dono da arma (sem dono: só armas simples)
     this.proficiente = ehProficiente(this, this.parent?.parent?.system?.proficiencias ?? null);
     this.textoCritico = textoCritico(this);

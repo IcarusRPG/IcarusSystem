@@ -77,9 +77,18 @@ export async function rolarAtaque(actor, item, modo, opcoes = {}) {
   return new DialogoAtaque({
     actor, item, modo, contexto,
     preset: { vantagem: !!opcoes.vantagem, desvantagem: !!opcoes.desvantagem },
-    aoConfirmar: escolhas => (escolhas.duasArmas ? agredirComDuasArmas(actor, item, modo, escolhas) : executarAtaque(actor, item, modo, { ...escolhas }))
+    aoConfirmar: async escolhas => {
+      if (escolhas.duasArmas) return agredirComDuasArmas(actor, item, modo, escolhas);
+      const r = await executarAtaque(actor, item, modo, { ...escolhas });
+      // Ataques adicionais pedidos no diálogo (ex.: Rajada de Golpes do Monge)
+      for (const extra of ATAQUES_ADICIONAIS) await extra(actor, item, modo, escolhas);
+      return r;
+    }
   }).render(true);
 }
+
+/** Depois do ataque do diálogo: (actor, item, modo, escolhas) => Promise (ex.: Rajada de Golpes). */
+export const ATAQUES_ADICIONAIS = [];
 
 /**
  * Agredir com duas armas: um ataque com cada arma (ou com cada extremidade da arma Dupla),
@@ -148,6 +157,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
   const extrasDano = [];
   const rollsExtras = [];
   let forcarAcerto = !!opcoes.forcarAcerto;
+  let atributoDano = opcoes.atributoDano ?? "FOR";
   for (const mod of MODIFICADORES_ATAQUE) {
     const m = await mod({ actor, item, modo, opcoes, alvos });
     if (!m) continue;
@@ -162,6 +172,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
     if (m.extrasDano) extrasDano.push(...m.extrasDano);
     if (m.rolls) rollsExtras.push(...m.rolls);
     if (m.forcarAcerto) forcarAcerto = true;
+    if (m.atributoDano) atributoDano = m.atributoDano;
   }
 
   const v = vantagemDaRolagem(actor, ["ataque"], opcoes);
@@ -208,7 +219,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
   });
   const mensagem = await enviar(actor, content, {
     rolls: [...rollsExtras, r.roll],
-    flags: { ataque: { actorUuid: actor.uuid, itemId: item.id, modo, podeCritico, arremessou, extrasDano, segundoSemAtributo: !!opcoes.segundoSemAtributo, outraExtremidade: !!opcoes.outraExtremidade, atributoDano: opcoes.atributoDano ?? "FOR" } }
+    flags: { ataque: { actorUuid: actor.uuid, itemId: item.id, modo, podeCritico, arremessou, extrasDano, segundoSemAtributo: !!opcoes.segundoSemAtributo, outraExtremidade: !!opcoes.outraExtremidade, atributoDano } }
   });
   return { roll: r.roll, d20: r.d20, total: r.total, plano, ameaca, podeCritico, resultados, mensagem };
 }

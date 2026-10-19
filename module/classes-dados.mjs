@@ -312,3 +312,6 @@ export function maximoTiroCarregado(nivel, { calibrePesado = false, mosquete = f
   const base = nivel >= 20 ? 5 : nivel >= 15 ? 4 : nivel >= 10 ? 3 : nivel >= 5 ? 2 : 1;
   return base + (calibrePesado && mosquete ? 2 : 0);
 }
+
+/** Dano desarmado do Monge (Punhos Disciplinados): 1d8; 1d10 no 9º; 1d12 no 17º. */
+export const danoDesarmadoDoMonge = nivel => (nivel >= 17 ? "1d12" : nivel >= 9 ? "1d10" : "1d8");

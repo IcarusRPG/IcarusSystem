@@ -254,3 +254,12 @@ test("Samurai: Kiai pelo texto (1 dado no 1º, 2 no 5º, 3 no 9º, 4 no 13º, 5 
   assert.match(kiai.descricao, /aumenta para 2 no 5º nível, 3 no 9º, 4 no 13º e 5 no 17º/);
   assert.deepEqual([kiai.custoPM], [2]);
 });
+
+test("13. Monge: dano desarmado 1d8 → 1d10 (9º) → 1d12 (17º); caminhos na ordem Meditação/Sombras/Astral", async () => {
+  const { danoDesarmadoDoMonge } = await import("../module/classes-dados.mjs");
+  assert.deepEqual([1, 8, 9, 16, 17, 20].map(danoDesarmadoDoMonge), ["1d8", "1d8", "1d10", "1d10", "1d12", "1d12"]);
+  const caminho = classePorId("monge").habilidades.find(h => h.id === "caminho-do-monge");
+  assert.deepEqual(caminho.subs.map(s => s.nome), ["Caminho da Meditação", "Caminho das Sombras", "Caminho Astral"]);
+  const punhos = classePorId("monge").habilidades.find(h => h.id === "punhos-disciplinados");
+  assert.match(punhos.descricao, /1d10 no 9º nível e para 1d12 no 17º/);
+});
