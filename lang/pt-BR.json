@@ -1119,6 +1119,16 @@
       "Recarregou": "{nome} recarrega como ação livre ({custo} PM).",
       "SaqueInfo": "1 PM por arma, uma vez por turno",
       "MestreInfo": "Mestre da Recarga: 1 PM recarrega as duas pistolas, quantas vezes quiser"
+    },
+    "Guerreiro": {
+      "Folego": "Recobrar o Fôlego",
+      "FolegoUsado": "já usado nesta cena",
+      "FolegoInfo": "1 vez por cena, ação de movimento: 1d8 + {nivel} + CON ({con}) PV",
+      "FolegoConfirma": "Recobrar o Fôlego (ação de movimento, 1 vez por cena): recupera {formula} PV.",
+      "FolegoChat": "{nome} recobra o fôlego: +{total} PV ({antes} → {depois}).",
+      "ExtraConfirma": "Gastar {custo} PM para uma ação de Agredir adicional neste turno? (PM atuais: {pm})",
+      "ExtraChat": "{nome} gasta {custo} PM: ação de Agredir adicional ({n} neste turno).",
+      "ExtraInfo": "{custo} PM: Agredir adicional · neste turno: {n}"
     }
   }
 }
