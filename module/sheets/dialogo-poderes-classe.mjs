@@ -10,16 +10,11 @@ import { validarPoder, gruposEscolhidos, normalizarNome } from "../classes-dados
 import { dadosDoPoderDeClasse } from "../dados-compendios.mjs";
 import { classeDoAtor, idsDeClasseDoAtor, contagemDeClasseDoAtor, contadorDePoderes } from "../classes.mjs";
 import ICONES_CLASSES from "../dados/icones-classes.mjs";
+import { resolverEscolha } from "../escolhas.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
-
-/**
- * Antes de criar o poder (por id do poder sem a classe): pode completar os dados (ex.: escolher o
- * atributo do Aumento de Atributo) ou cancelar devolvendo null. (actor, dados) => dados | null
- */
-export const ANTES_DE_ESCOLHER = new Map();
 
 /** Situação do personagem para validar poderes. */
 export function situacaoParaValidar(actor, classe) {
@@ -36,15 +31,11 @@ export function situacaoParaValidar(actor, classe) {
 
 /** Cria o item do poder de classe na ficha (com os ganchos de escolha). */
 export async function escolherPoderDeClasse(actor, classe, poder, { forcado = false } = {}) {
-  let dados = dadosDoPoderDeClasse(classe, poder, ICONES_CLASSES);
+  const dados = dadosDoPoderDeClasse(classe, poder, ICONES_CLASSES);
   delete dados._id;
   delete dados.folder;
-  const gancho = ANTES_DE_ESCOLHER.get(poder.id);
-  if (gancho) {
-    dados = await gancho(actor, dados, { forcado });
-    if (!dados) return null;
-  }
   const [item] = await actor.createEmbeddedDocuments("Item", [dados]);
+  if (item && poder.escolha) await resolverEscolha(actor, item, { forcado });
   if (forcado) {
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor }),

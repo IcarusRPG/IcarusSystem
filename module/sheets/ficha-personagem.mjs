@@ -26,6 +26,7 @@ import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, rea
 import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } from "../classes-dados.mjs";
 import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } from "../classes.mjs";
 import { acaoDaMecanica } from "../classes/comum.mjs";
+import { escolhaPendente, entradaDoItem, resolverEscolha } from "../escolhas.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
@@ -374,6 +375,9 @@ export class FichaPersonagem extends ActorSheet {
             custo: p.system.custoPM ?? null,
             // Usar: poderes com ação (não passivos) ou com custo em PM
             usavel: (p.system.acao && p.system.acao !== "passivo") || !!p.system.custoPM,
+            // Escolha do poder/habilidade de classe (Aumento de Atributo, Caminho…): pendente ou alterável
+            escolhaPendente: escolhaPendente(p),
+            escolhaAlteravel: !escolhaPendente(p) && !!entradaDoItem(p).entrada?.escolha && (!entradaDoItem(p).entrada.escolha.permanente || game.user.isGM),
             usarDica: [p.system.acao ? loc(`ICARUS.Poderes.Acoes.${p.system.acao}`) : "", p.system.acao === "reacao" ? textoReacao(actor) : ""].filter(Boolean).join(" · "),
             meta: [
               p.system.nivel ? game.i18n.format("ICARUS.Poderes.NivelN", { n: p.system.nivel }) : "",
@@ -610,6 +614,8 @@ export class FichaPersonagem extends ActorSheet {
         return new PainelCondicoes({ actor }).render(true);
       case "divindade-poderes":
         return new DialogoPoderesConcedidos(actor, actor._source.system.identidade.divindade).render(true);
+      case "poder-escolha":
+        return resolverEscolha(actor, itemDe());
       case "poder-usar":
         return usarPoder(actor, itemDe());
       case "reacao-alternar":

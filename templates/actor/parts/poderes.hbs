@@ -33,6 +33,8 @@
           {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}
           <div class="card-texto">{{{descricao}}}</div>
           <div class="card-acoes">
+            {{#if escolhaPendente}}<button type="button" class="btn peq ativo pendente" data-action="poder-escolha">{{localize "ICARUS.Escolhas.Concluir"}}</button>{{/if}}
+            {{#if escolhaAlteravel}}<button type="button" class="btn peq tracejado" data-action="poder-escolha">{{localize "ICARUS.Escolhas.Alterar"}}</button>{{/if}}
             {{#if usavel}}<button type="button" class="btn peq" data-action="poder-usar" data-tooltip="{{usarDica}}"><i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Poderes.Usar"}}</button>{{/if}}
             <button type="button" class="btn icone" data-action="poder-chat" aria-label="{{localize 'ICARUS.Poderes.EnviarChat'}} {{name}}" title="{{localize 'ICARUS.Poderes.EnviarChat'}}"><i class="fa-solid fa-comment" aria-hidden="true"></i></button>
           {{#if @root.editable}}

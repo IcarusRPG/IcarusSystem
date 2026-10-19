@@ -1173,6 +1173,24 @@
       "Vazio": "Nenhum recurso. Use + Recurso ou Sugerir pelos textos.",
       "NadaSugerido": "Nenhuma habilidade ou poder novo com uso limitado no texto.",
       "Sugeridos": "Recursos criados: {lista}"
+    },
+    "Escolhas": {
+      "Permanente": "Escolha permanente: só muda pelo reset de classe ou pelo Mestre.",
+      "SoMestre": "Esta escolha é permanente: só o Mestre pode alterar.",
+      "Pendente": "{item}: escolha pendente. Conclua pelo botão na ficha.",
+      "DecidirDepois": "Decidir depois",
+      "PericiasTexto": "Escolha exatamente {n} perícia(s).",
+      "ArmaExotica": "Você recebe proficiência com a arma escolhida.",
+      "Atributos": "Atributos",
+      "Treinadas": "Perícias treinadas",
+      "Defesa": "Defesa",
+      "Deslocamento": "Deslocamento",
+      "Ataques": "Ataques",
+      "Provisorio": "Valores provisórios (Anexo B), a validar pelo Mestre.",
+      "Concluir": "Concluir escolha",
+      "Alterar": "Escolher/alterar",
+      "Pendentes": "Escolhas pendentes",
+      "NenhumaPendente": "Nenhuma escolha pendente."
     }
   }
 }

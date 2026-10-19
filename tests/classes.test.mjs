@@ -287,3 +287,22 @@ test("Recursos de classe: frequência pelo texto (uma vez por cena/rodada/turno/
   const folego = classePorId("guerreiro").habilidades.find(h => h.id === "recobrar-o-folego");
   assert.equal(frequenciaDoTexto(folego.descricao), "cena");
 });
+
+test("16. Telas de escolha: tipos e opções do JSON; caminhos batem com as subs; Treino Extra treina por item", async () => {
+  const tipos = new Set(["caminho", "atributo", "pericias", "tipo-dano", "terreno", "arma-exotica"]);
+  const comEscolha = CLASSES.flatMap(c => [...c.habilidades, ...c.poderes].filter(p => p.escolha).map(p => ({ c, p })));
+  for (const { c, p } of comEscolha) {
+    assert.ok(tipos.has(p.escolha.tipo), `${c.id}/${p.id}: tipo ${p.escolha.tipo}`);
+    if (p.escolha.tipo === "pericias") assert.ok(["nao-treinadas", "treinadas", "treinadas-nao-especialistas"].includes(p.escolha.filtro), p.id);
+    if (p.escolha.tipo === "caminho") assert.deepEqual(p.escolha.opcoes, p.subs.map(s => s.nome), `${c.id}/${p.id}: opções = subs`);
+  }
+  const nomes = comEscolha.map(x => x.p.nome);
+  for (const n of ["Senda do Combatente", "Caminho do Monge", "Vínculo Selvagem", "Perícia Refinada", "Aumento de Atributo", "Perícia Especializada", "Treino Extra", "Treinamento Extra", "Arma Exótica", "Corpo Temperado", "Especialista em Terreno"]) {
+    assert.ok(nomes.includes(n), `sem tela: ${n}`);
+  }
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  const treino = { type: "poder", system: {}, flags: { "icarus-rpg": { periciasTreinadas: ["atletismo", "cura"] } } };
+  const s = derivarPersonagem(sistemaCompleto({}), [treino]);
+  assert.deepEqual([s.pericias.atletismo.treino, s.pericias.cura.treino, s.pericias.luta.treino], [1, 1, 0]);
+});

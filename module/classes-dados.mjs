@@ -215,14 +215,16 @@ export const podeAumentarAtributo = (existentes, atributo, patamar) => !existent
 export function bonusDeItensDeClasse(itens = []) {
   const aumentos = {};
   const especialistas = new Set();
+  const treinadas = new Set();
   for (const i of itens) {
     const f = i?.flags?.[SISTEMA_ID];
     if (!f) continue;
     if (f.aumentoAtributo?.atributo) aumentos[f.aumentoAtributo.atributo] = (aumentos[f.aumentoAtributo.atributo] ?? 0) + 1;
     if (f.periciaEspecializada?.pericia) especialistas.add(f.periciaEspecializada.pericia);
     for (const p of f.periciaRefinada ?? []) especialistas.add(p);
+    for (const p of f.periciasTreinadas ?? []) treinadas.add(p);
   }
-  return { aumentos, especialistas };
+  return { aumentos, especialistas, treinadas };
 }
 
 /* ------------------------------ Efeitos passivos de habilidades ------------------------------ */

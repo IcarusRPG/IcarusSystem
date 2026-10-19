@@ -7,6 +7,7 @@ import { SISTEMA_ID } from "./config.mjs";
 import { classePorId, iconeDaClasse, proficienciasDaClasse, habilidadesAteNivel, contagemDePoderes } from "./classes-dados.mjs";
 import { dadosDaHabilidade, idDeClasse } from "./dados-compendios.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
+import { resolverEscolha } from "./escolhas.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -54,7 +55,7 @@ export function contadorDePoderes(actor) {
  * Concede as habilidades da classe até o nível atual que ainda faltam (um item por habilidade).
  * @returns {Promise<Item[]>} os itens criados
  */
-export async function concederHabilidades(actor, { nivel = actor.system.nivel } = {}) {
+export async function concederHabilidades(actor, { nivel = actor.system.nivel, abrirEscolhas = true } = {}) {
   const classe = classeDoAtor(actor);
   if (!classe) return [];
   const tem = new Set(itensDeClasse(actor, "habilidade").map(i => i.flags?.[SISTEMA_ID]?.id));
@@ -70,7 +71,10 @@ export async function concederHabilidades(actor, { nivel = actor.system.nivel } 
   if (!novas.length) return [];
   const criados = await actor.createEmbeddedDocuments("Item", novas);
   ui.notifications.info(fmt("ICARUS.Classe.HabilidadesRecebidas", { nome: actor.name, lista: criados.map(i => i.name).join(", ") }));
-  for (const item of criados) await APOS_CONCEDER.get(item.flags?.[SISTEMA_ID]?.habilidade)?.(actor, item);
+  for (const item of criados) {
+    await APOS_CONCEDER.get(item.flags?.[SISTEMA_ID]?.habilidade)?.(actor, item);
+    if (abrirEscolhas) await resolverEscolha(actor, item);
+  }
   return criados;
 }
 
