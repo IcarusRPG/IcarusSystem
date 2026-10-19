@@ -1,4 +1,4 @@
-import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESISTENCIA } from "../config.mjs";
+import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESISTENCIA, PROFICIENCIAS_ARMA, CATEGORIAS_ARMADURA_CORPO } from "../config.mjs";
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
@@ -53,7 +53,14 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         outros: inteiro(0),
         atributo: new fields.StringField({ required: true, blank: false, initial: p.atributo, choices: ATRIBUTOS })
       })]))),
-      proficiencias: new fields.SchemaField({ armas: texto(), armaduras: texto() }),
+      // Proficiências: listas marcáveis (usadas nas regras) + texto livre para o resto
+      proficiencias: new fields.SchemaField({
+        armas: new fields.ArrayField(new fields.StringField({ required: true, blank: false, choices: PROFICIENCIAS_ARMA }), { initial: ["simples"] }),
+        armaduras: new fields.ArrayField(new fields.StringField({ required: true, blank: false, choices: CATEGORIAS_ARMADURA_CORPO })),
+        escudo: new fields.BooleanField({ initial: false }),
+        tunicas: new fields.BooleanField({ initial: false }),
+        texto: texto()
+      }),
       // Moedas (núcleo, seção 12): 1 Ouro Real = 1.000 Reais; 1 Real = 100 Centavos
       moedas: new fields.SchemaField({
         ouroReal: inteiro(0, { min: 0 }), real: inteiro(0, { min: 0 }), centavo: inteiro(0, { min: 0 })
@@ -91,6 +98,13 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     if (typeof divindade === "string" && divindade && !divindadePorId(divindade)) {
       const id = idDaDivindadePorNome(divindade);
       if (id) source.identidade.divindade = id;
+    }
+    // Proficiências eram dois textos livres: o texto é preservado em "texto" e as listas começam
+    // só com armas simples (o jogador marca o resto; a classe preenche ao ser escolhida)
+    const prof = source.proficiencias;
+    if (prof && (typeof prof.armas === "string" || typeof prof.armaduras === "string")) {
+      const antigo = [prof.armas, prof.armaduras].filter(t => typeof t === "string" && t.trim()).join(" · ");
+      source.proficiencias = { armas: ["simples"], armaduras: [], escudo: false, tunicas: false, texto: prof.texto ?? antigo };
     }
     return super.migrateData(source);
   }

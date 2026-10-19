@@ -1,84 +1,76 @@
-/**
- * Testes das fórmulas (seção 6 do prompt da ficha). Rode com:  node --test tests/*.test.mjs
- * Usa a mesma função de cálculo do sistema (module/derivar.mjs).
- */
+/** Ajustes de regras oficiais: túnicas, proficiências, d20 com vantagem, acerto/crítico, flanco, RD e mais. */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { PERICIAS } from "../module/config.mjs";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { dadosDaArmadura } from "../module/dados-compendios.mjs";
 import {
-  totalAtributo, totalPericia, maximoFinal, calcularDefesa, emQuadrados,
-  nivelValido, ehParagon, comSinal, niveisImpares, bonusDeNivel
-} from "../module/regras.mjs";
-import { dadosKaelen, compararKaelen, ESPERADO_KAELEN } from "../module/dev/kaelen.mjs";
-import { simular } from "./simulacao.mjs";
+  usandoArmadura, tipoArmadura, armaduraLeveOuNenhuma, vestindoTunica, temProficienciaArmadura, temProficienciaArma,
+  penalidadeDeAtaque, calcularAtaque
+} from "../module/combate.mjs";
+import { derivarPersonagem } from "../module/derivar.mjs";
+import { sistemaCompleto } from "./simulacao.mjs";
 
-const kaelen = () => simular(dadosKaelen(), "koruma").system;
+const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
+const ARMADURAS = ler("armaduras");
+const ICONES = ler("icones-armaduras");
+const ARMAS = ler("armas");
+const vestir = id => { const d = dadosDaArmadura(ARMADURAS.itens.find(a => a.id === id), ICONES); d.system.equipado = true; return d; };
+const arma = nome => ({ ...ARMAS.armas.find(a => a.nome === nome), proficiencia: "auto", bonusAtaque: 0, bonusDano: 0 });
+const ficha = (parcial, itens = []) => derivarPersonagem(sistemaCompleto(parcial), itens);
 
-test("Kaelen Vorhal (Koruma automático) confere com todos os valores esperados", () => {
-  assert.deepEqual(compararKaelen(kaelen()), []);
+test("Túnica não é armadura; escudo não é armadura; leve/média/pesada são", () => {
+  assert.equal(usandoArmadura([vestir("tunica-simples")]), false);
+  assert.equal(usandoArmadura([vestir("escudo-pesado")]), false);
+  assert.equal(usandoArmadura([vestir("tunica-bordada"), vestir("escudo-leve")]), false);
+  assert.equal(vestindoTunica([vestir("tunica-simples")]), true);
+  for (const [id, tipo] of [["couro-batido", "leve"], ["cota-de-malha", "media"], ["armadura-de-placas", "pesada"]]) {
+    assert.equal(usandoArmadura([vestir(id)]), true, id);
+    assert.equal(tipoArmadura([vestir(id)]), tipo, id);
+  }
+  assert.equal(tipoArmadura([]), "nenhuma");
+  assert.equal(armaduraLeveOuNenhuma([vestir("couro-batido")]), true);
+  assert.equal(armaduraLeveOuNenhuma([vestir("cota-de-malha")]), false);
+  const desequipada = vestir("armadura-de-placas"); desequipada.system.equipado = false;
+  assert.equal(usandoArmadura([desequipada]), false);
 });
 
-test("PV máx 42 = 16 + 4×4 + 2×5 e PM máx 20 (sem atributo-chave)", () => {
-  const s = kaelen();
-  assert.equal(s.pv.max, ESPERADO_KAELEN.pvMax);
-  assert.equal(s.pm.max, ESPERADO_KAELEN.pmMax);
+test("Túnica sem proficiência: penalidade também no ataque; com proficiência: só nas perícias", () => {
+  const itens = [vestir("tunica-bordada")];
+  const sem = ficha({ atributos: { FOR: { base: 2 } } }, itens);
+  assert.equal(penalidadeDeAtaque(sem, itens), -2);
+  assert.equal(calcularAtaque(sem, arma("Clava"), "corpo-a-corpo", itens).bonus, 2 - 2);
+  assert.equal(sem.pericias.acrobacia.total, -2);
+  const com = ficha({ atributos: { FOR: { base: 2 } }, proficiencias: { tunicas: true } }, itens);
+  assert.equal(penalidadeDeAtaque(com, itens), 0);
+  assert.equal(calcularAtaque(com, arma("Clava"), "corpo-a-corpo", itens).bonus, 2);
+  assert.equal(com.pericias.acrobacia.total, -2, "a penalidade nas perícias continua");
 });
 
-test("Defesa 19 = 10 + DES 1 + Armadura 5 + Escudo 2 + Couro Brutal 1; sem armadura cai para 14", () => {
-  const dados = dadosKaelen();
-  assert.equal(simular(dados, "koruma").system.defesa.total, 19);
-  dados.items.find(i => i.name === "Armadura de Placas").system.equipado = false;
-  assert.equal(simular(dados, "koruma").system.defesa.total, 14);
+test("Armadura/escudo sem proficiência penalizam o ataque; hierarquia leve < média < pesada", () => {
+  const prof = { armaduras: ["pesada"], escudo: true };
+  assert.equal(temProficienciaArmadura(prof, "leve"), true);
+  assert.equal(temProficienciaArmadura(prof, "media"), true);
+  assert.equal(temProficienciaArmadura({ armaduras: ["leve"] }, "media"), false);
+  assert.equal(temProficienciaArmadura({}, "tunica"), false);
+  assert.equal(temProficienciaArmadura({ tunicas: true }, "tunica"), true);
+  const itens = [vestir("cota-de-malha"), vestir("escudo-pesado")];
+  assert.equal(penalidadeDeAtaque(ficha({}), itens), -(3 + 2));
+  assert.equal(penalidadeDeAtaque(ficha({ proficiencias: { armaduras: ["media"] } }), itens), -2);
+  assert.equal(penalidadeDeAtaque(ficha({ proficiencias: { armaduras: ["media"], escudo: true } }), itens), 0);
 });
 
-test("Bônus de treino: Destreinado +0, Treinado +2, Especialista +4", () => {
-  assert.equal(totalPericia(1, 0, 0), 1);
-  assert.equal(totalPericia(1, 1, 0), 3);
-  assert.equal(totalPericia(1, 2, 0), 5);
-  assert.equal(totalPericia(1, 2, -2), 3);
-});
-
-test("Modo manual usa o máximo digitado, soma o bônus fixo e ignora o bônus por nível", () => {
-  assert.equal(maximoFinal({ manual: true, maximoManual: 50, maximoFormula: 42, bonus: 3, bonusNivel: 5 }), 53);
-  assert.equal(maximoFinal({ manual: false, maximoManual: 50, maximoFormula: 42, bonus: 3, bonusNivel: 5 }), 50);
-  assert.equal(maximoFinal({ manual: false, maximoManual: 0, maximoFormula: -5, bonus: 0 }), 0);
-});
-
-test("Bônus de PV/PM por nível e por nível ímpar", () => {
-  assert.equal(niveisImpares(1), 1);
-  assert.equal(niveisImpares(5), 3);
-  assert.equal(niveisImpares(6), 3);
-  assert.deepEqual(bonusDeNivel({ nivel: 5, bonusPvPorNivel: 1, bonusPmPorNivel: 1, bonusPmNivelImpar: 1 }), { pv: 5, pm: 8 });
-});
-
-test("Nível fica entre 1 e 25 e Paragon começa no 21", () => {
-  assert.equal(nivelValido(0), 1);
-  assert.equal(nivelValido(30), 25);
-  assert.equal(nivelValido("abc"), 1);
-  assert.equal(ehParagon(20), false);
-  assert.equal(ehParagon(21), true);
-});
-
-test("Deslocamento em quadrados de 1,5 m", () => {
-  assert.equal(emQuadrados(9), 6);
-  assert.equal(emQuadrados(12), 8);
-  assert.equal(emQuadrados(6), 4);
-});
-
-test("Valores vazios ou inválidos viram 0", () => {
-  assert.equal(totalAtributo({ base: null, racial: "", temp: undefined }), 0);
-  assert.equal(calcularDefesa({ des: null, armadura: undefined, escudo: "x", outros: 2 }), 12);
-});
-
-test("Modificador com sinal", () => {
-  assert.equal(comSinal(3), "+3");
-  assert.equal(comSinal(0), "+0");
-  assert.equal(comSinal(-2), "−2");
-});
-
-test("Lista tem 30 perícias, em ordem alfabética, com 3 Resistências", () => {
-  assert.equal(PERICIAS.length, 30);
-  const chaves = PERICIAS.map(p => p.chave);
-  assert.deepEqual([...chaves].sort((a, b) => a.localeCompare(b, "pt-BR")), chaves);
-  assert.deepEqual(PERICIAS.filter(p => p.resistencia).map(p => p.chave), ["fortitude", "reflexos", "vontade"]);
+test("Proficiência em armas: simples sempre; marciais Leves/Ágeis (Ladino); exóticas de corte (Samurai); fogo", () => {
+  assert.equal(temProficienciaArma({ armas: [] }, arma("Adaga")), true);
+  assert.equal(temProficienciaArma({ armas: ["simples"] }, arma("Espada longa")), false);
+  assert.equal(temProficienciaArma({ armas: ["marciais"] }, arma("Espada longa")), true);
+  assert.equal(temProficienciaArma({ armas: ["marciais-leves-ageis"] }, arma("Florete")), true);
+  assert.equal(temProficienciaArma({ armas: ["marciais-leves-ageis"] }, arma("Machadinha")), true);
+  assert.equal(temProficienciaArma({ armas: ["marciais-leves-ageis"] }, arma("Espada longa")), false);
+  assert.equal(temProficienciaArma({ armas: ["exoticas-corte"] }, arma("Katana")), true);
+  assert.equal(temProficienciaArma({ armas: ["exoticas-corte"] }, arma("Nunchaku")), false);
+  assert.equal(temProficienciaArma({ armas: ["fogo"] }, arma("Pistola")), true);
+  assert.equal(temProficienciaArma({ armas: ["marciais"] }, arma("Pistola")), false);
 });

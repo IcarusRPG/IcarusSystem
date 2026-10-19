@@ -6,7 +6,7 @@
  * para trocar num lugar só quando a regra for definida.
  */
 import { numero } from "./regras.mjs";
-import { ALCANCE_METROS } from "./config.mjs";
+import { ALCANCE_METROS, CATEGORIAS_ARMADURA_CORPO } from "./config.mjs";
 
 export const REGRAS = {
   // [PROVISÓRIO] Corpo a corpo e arremesso somam FOR (total) ao dano; arcos, bestas, funda e
@@ -35,20 +35,95 @@ export function modosDeAtaque(arma) {
   return tem(arma, "arremesso") ? ["corpo-a-corpo", "arremesso"] : ["corpo-a-corpo"];
 }
 
-/** Proficiência: "auto" = só armas simples (todo personagem tem proficiência com armas simples). */
-export function ehProficiente(arma) {
-  if (arma.proficiencia === "sim") return true;
-  if (arma.proficiencia === "nao") return false;
-  return arma.categoria === "simples";
+/* ------------------------------ Proficiências e armadura ------------------------------ */
+
+/**
+ * O personagem tem proficiência com a arma? (prof = system.proficiencias do ator)
+ * Todo personagem tem armas simples. "sim"/"nao" na arma forçam o resultado.
+ */
+export function temProficienciaArma(prof, arma) {
+  const lista = prof?.armas ?? [];
+  const props = arma.propriedades ?? [];
+  switch (arma.categoria) {
+    case "simples": return true;
+    case "marcial": return lista.includes("marciais") || (lista.includes("marciais-leves-ageis") && (props.includes("leve") || props.includes("agil")));
+    case "exotica": return lista.includes("exoticas") || (lista.includes("exoticas-corte") && (arma.tiposDano ?? []).includes("corte"));
+    case "fogo": return lista.includes("fogo");
+    default: return false;
+  }
 }
 
 /**
- * Penalidade de armadura nos testes de ataque.
- * Regra confirmada (núcleo, seção 14): sem proficiência em ARMADURA, a penalidade de armadura
- * vale também nos testes de ataque. Fica em 0 até existir o compêndio de armaduras com penalidade.
+ * Proficiência da arma: "sim"/"nao" na arma forçam; "auto" usa as proficiências do personagem
+ * (sem personagem, só armas simples).
  */
-export function penalidadeDeAtaque(_system, _itens = []) {
-  return 0;
+export function ehProficiente(arma, prof = null) {
+  if (arma.proficiencia === "sim") return true;
+  if (arma.proficiencia === "nao") return false;
+  return temProficienciaArma(prof, arma);
+}
+
+/** Ordem das armaduras: quem tem proficiência numa categoria tem nas mais leves (decisão do Mestre a confirmar). */
+const HIERARQUIA_ARMADURA = { leve: 1, media: 2, pesada: 3 };
+
+/**
+ * Proficiência numa categoria de armadura, escudo ou túnica.
+ * Armaduras seguem a hierarquia leve < média < pesada (PROVISÓRIO: troque aqui se o Mestre decidir
+ * que "armaduras pesadas" não inclui as mais leves). Túnica tem proficiência própria.
+ */
+export function temProficienciaArmadura(prof, categoria) {
+  if (!categoria) return true;
+  if (categoria === "tunica") return !!prof?.tunicas;
+  if (categoria === "escudo" || categoria === "escudo-acoplado") return !!prof?.escudo;
+  const nivel = HIERARQUIA_ARMADURA[categoria];
+  if (!nivel) return true;
+  return (prof?.armaduras ?? []).some(c => (HIERARQUIA_ARMADURA[c] ?? 0) >= nivel);
+}
+
+/** Itens de armadura/escudo/túnica equipados (itens = lista { type, system }). */
+const vestidos = itens => (itens ?? []).filter(i => i.type === "equipamento" && i.system?.equipado && i.system.categoria);
+
+/**
+ * Tipo de armadura que o personagem veste: "nenhuma" | "leve" | "media" | "pesada".
+ * Só leve, média e pesada contam; túnica e escudo NÃO são armadura.
+ */
+export function tipoArmadura(itens) {
+  let maior = "nenhuma";
+  for (const i of vestidos(itens)) {
+    const c = i.system.categoria;
+    if (CATEGORIAS_ARMADURA_CORPO.includes(c) && (HIERARQUIA_ARMADURA[c] > (HIERARQUIA_ARMADURA[maior] ?? 0))) maior = c;
+  }
+  return maior;
+}
+
+/** Está usando armadura? Verdadeiro só com armadura leve, média ou pesada equipada. */
+export const usandoArmadura = itens => tipoArmadura(itens) !== "nenhuma";
+
+/** Sem armadura ou com armadura leve (túnica e escudo não mudam isso). */
+export const armaduraLeveOuNenhuma = itens => ["nenhuma", "leve"].includes(tipoArmadura(itens));
+
+/** Está vestindo túnica? / empunhando escudo? */
+export const vestindoTunica = itens => vestidos(itens).some(i => i.system.categoria === "tunica");
+export const usandoEscudo = itens => vestidos(itens).some(i => ["escudo", "escudo-acoplado"].includes(i.system.categoria));
+
+/**
+ * Penalidade de armadura nos testes de ataque (núcleo, seção 14): a penalidade de cada
+ * armadura, escudo ou túnica equipado SEM proficiência vale também no ataque.
+ * Armas sem proficiência continuam só com aviso.
+ * @returns {number} valor negativo (ou 0)
+ */
+export function penalidadeDeAtaque(system, itens = []) {
+  const prof = system?.proficiencias;
+  let total = 0;
+  for (const i of vestidos(itens)) {
+    if (!temProficienciaArmadura(prof, i.system.categoria)) total += numero(i.system.penalidade);
+  }
+  return total ? -total : 0;
+}
+
+/** Itens vestidos sem proficiência (para o aviso do card). */
+export function vestidosSemProficiencia(system, itens = []) {
+  return vestidos(itens).filter(i => !temProficienciaArmadura(system?.proficiencias, i.system.categoria));
 }
 
 /**
@@ -69,14 +144,15 @@ export function calcularAtaque(system, arma, modo, itens = []) {
     const FOR = numero(system.atributos.FOR.total), DES = numero(system.atributos.DES.total);
     if (DES > FOR) { base = base - FOR + DES; agil = true; }
   }
-  const proficiente = ehProficiente(arma);
+  const proficiente = ehProficiente(arma, system.proficiencias);
   // Condições: a maior penalidade entre a geral e a de corpo a corpo (Caído), sem somar as duas
   const condGeral = system.condicoes?.ataque?.valor ?? 0;
   const condCorpo = modo === "corpo-a-corpo" ? (system.condicoes?.ataqueCorpoACorpo?.valor ?? 0) : 0;
   const condicao = Math.min(condGeral, condCorpo);
-  const bonus = base + numero(arma.bonusAtaque) + numero(system.bonus?.ataque) + condicao + penalidadeDeAtaque(system, itens)
+  const penalidadeArmadura = penalidadeDeAtaque(system, itens);
+  const bonus = base + numero(arma.bonusAtaque) + numero(system.bonus?.ataque) + condicao + penalidadeArmadura
     + (proficiente ? 0 : REGRAS.penalidadeSemProficiencia);
-  return { pericia, bonus, agil, proficiente, condicao };
+  return { pericia, bonus, agil, proficiente, condicao, penalidadeArmadura };
 }
 
 /**

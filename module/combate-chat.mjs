@@ -86,6 +86,7 @@ export async function rolarAtaque(actor, item, modo, { criarMensagem = true } = 
     pericia: loc(`ICARUS.Pericias.${atq.pericia}`),
     agil: atq.agil,
     semProficiencia: !atq.proficiente,
+    penalidadeArmadura: atq.penalidadeArmadura ? game.i18n.format("ICARUS.Proficiencias.CardArmadura", { valor: atq.penalidadeArmadura }) : "",
     alcance: loc(`ICARUS.Armas.Alcances.${alcanceDoModo(arma, modo)}`),
     d20, bonus: comSinal(atq.bonus), total: roll.total,
     ameaca, faixa: faixaCritico(arma), falha: d20 === 1,

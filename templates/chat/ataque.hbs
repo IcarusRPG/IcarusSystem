@@ -14,6 +14,7 @@
   {{#if ameaca}}<div class="rolagem-selo">{{localize "ICARUS.Armas.Card.Ameaca"}} ({{faixa}})</div>{{/if}}
   {{#if falha}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Falha"}}</div>{{/if}}
   {{#if semProficiencia}}<div class="linha-aviso">{{localize "ICARUS.Armas.SemProficiencia"}}</div>{{/if}}
+  {{#if penalidadeArmadura}}<div class="linha-aviso">{{penalidadeArmadura}}</div>{{/if}}
   {{#if alvo}}
   <div class="linha-alvo {{#if alvo.acertou}}acertou{{else}}errou{{/if}}">
     {{localize "ICARUS.Armas.Card.Alvo"}}: {{alvo.nome}} (Defesa {{alvo.defesa}}) —

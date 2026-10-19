@@ -40,7 +40,7 @@ export function dadosDaArmadura(a, mapaIcones, sort = 0) {
     system: {
       tipo: a.tipo, categoria: a.categoria, bonusDefesa: a.bonusDefesa, penalidade: a.penalidade,
       preco: a.preco, espacos: a.espacos, quantidade: 1, equipado: false,
-      proficienciaLivre: !!a.proficienciaLivre, acoplado: !!a.acoplado, provisorio: [...(a.provisorio ?? [])],
+      acoplado: !!a.acoplado, provisorio: [...(a.provisorio ?? [])],
       descricao: ""
     },
     effects: [],

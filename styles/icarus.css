@@ -786,3 +786,13 @@ body.game {
 .icarus-rolagem.icarus-poder .poder-descricao { font-size: 14px; color: var(--ic-apagado); }
 .icarus-rolagem.icarus-poder .poder-descricao p { margin: 4px 0; }
 .icarus-rolagem .custo { font-size: 12px; color: var(--ic-pm-texto); border: 1px solid var(--ic-pm-borda); border-radius: 3px; padding: 0 5px; }
+
+/* --- Proficiências (listas marcáveis) --- */
+.ficha-icarus .prof-bloco { display: flex; flex-direction: column; gap: 4px; padding: 4px 0; }
+.ficha-icarus .prof-rot { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-apagado2); }
+.ficha-icarus .prof-chips { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.ficha-icarus .prof-chip { width: auto; height: 24px; padding: 0 8px; border: 1px solid var(--ic-btn-borda); border-radius: 12px; background: none; color: var(--ic-apagado); font-size: 12px; line-height: 1; cursor: pointer; }
+.ficha-icarus .prof-chip.on { background: var(--ic-ciano-fundo); border-color: var(--ic-ciano); color: var(--ic-texto); }
+.ficha-icarus .prof-chip:disabled { cursor: default; opacity: .85; }
+.ficha-icarus .prof-chk { font-size: 13px; gap: 4px; }
+.ficha-icarus .aviso-prof { margin: 4px 0 0; font-size: 13px; color: var(--ic-ouro-claro); }

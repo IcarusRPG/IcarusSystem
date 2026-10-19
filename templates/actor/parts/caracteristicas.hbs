@@ -90,10 +90,23 @@
 
     <div class="painel lat">
       <h3 class="titulo-painel">{{localize "ICARUS.Proficiencias.Titulo"}}</h3>
-      <label class="lat-linha"><span>{{localize "ICARUS.Proficiencias.Armas"}}</span>
-        <input class="campo" type="text" name="system.proficiencias.armas" value="{{source.proficiencias.armas}}"></label>
-      <label class="lat-linha"><span>{{localize "ICARUS.Proficiencias.Armaduras"}}</span>
-        <input class="campo" type="text" name="system.proficiencias.armaduras" value="{{source.proficiencias.armaduras}}"></label>
+      <div class="prof-bloco">
+        <span class="prof-rot">{{localize "ICARUS.Proficiencias.Armas"}}</span>
+        <div class="prof-chips">
+          {{#each proficiencias.armas}}<button type="button" class="prof-chip{{#if marcado}} on{{/if}}" data-action="prof-alternar" data-lista="armas" data-valor="{{chave}}" aria-pressed="{{#if marcado}}true{{else}}false{{/if}}"{{#if fixo}} disabled data-tooltip="{{../proficiencias.dicaSimples}}"{{/if}}>{{rotulo}}</button>{{/each}}
+        </div>
+      </div>
+      <div class="prof-bloco">
+        <span class="prof-rot">{{localize "ICARUS.Proficiencias.Armaduras"}}</span>
+        <div class="prof-chips">
+          {{#each proficiencias.armaduras}}<button type="button" class="prof-chip{{#if marcado}} on{{/if}}" data-action="prof-alternar" data-lista="armaduras" data-valor="{{chave}}" aria-pressed="{{#if marcado}}true{{else}}false{{/if}}">{{rotulo}}</button>{{/each}}
+          <label class="chk prof-chk"><input type="checkbox" name="system.proficiencias.escudo" {{checked source.proficiencias.escudo}}> {{localize "ICARUS.Proficiencias.Escudo"}}</label>
+          <label class="chk prof-chk"><input type="checkbox" name="system.proficiencias.tunicas" {{checked source.proficiencias.tunicas}}> {{localize "ICARUS.Proficiencias.Tunicas"}}</label>
+        </div>
+      </div>
+      <label class="lat-linha"><span>{{localize "ICARUS.Proficiencias.Outras"}}</span>
+        <input class="campo" type="text" name="system.proficiencias.texto" value="{{source.proficiencias.texto}}" placeholder="—"></label>
+      {{#if proficiencias.avisos}}<p class="aviso-prof">{{proficiencias.avisos}}</p>{{/if}}
     </div>
 
     <div class="painel lat notas">

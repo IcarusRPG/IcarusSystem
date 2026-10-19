@@ -148,7 +148,29 @@
     "Proficiencias": {
       "Titulo": "Proficiências",
       "Armas": "Armas",
-      "Armaduras": "Armaduras"
+      "Armaduras": "Armaduras",
+      "Escudo": "Escudos",
+      "Tunicas": "Túnicas",
+      "Outras": "Outras",
+      "ArmasOp": {
+        "simples": "Simples",
+        "marciais": "Marciais",
+        "marciais-leves-ageis": "Marciais Leves/Ágeis",
+        "exoticas": "Exóticas",
+        "exoticas-corte": "Exóticas de corte",
+        "fogo": "De fogo",
+        "arcos-curtos": "Arcos curtos",
+        "arcos-longos": "Arcos longos"
+      },
+      "ArmadurasOp": {
+        "leve": "Leves",
+        "media": "Médias",
+        "pesada": "Pesadas"
+      },
+      "DicaSimples": "Todo personagem tem proficiência com armas simples.",
+      "AvisoVestido": "Sem proficiência: {itens}. A penalidade vale também nos testes de ataque.",
+      "AvisoEquipar": "{item}: sem proficiência. A penalidade vale também nos testes de ataque.",
+      "CardArmadura": "Armadura/túnica sem proficiência: {valor} no ataque"
     },
     "Notas": {
       "Titulo": "Notas"
@@ -568,7 +590,6 @@
       "Penalidade": "Penalidade de armadura",
       "PenalidadeOrigem": "{valor} {nome} (penalidade de armadura)",
       "PenalidadeTotal": "Penalidade de armadura {valor} em Acrobacia, Furtividade e Prestidigitação",
-      "ProficienciaLivre": "Não exige proficiência (túnica)",
       "Acoplado": "Escudo acoplado",
       "AvisoAcoplado": "Escudo acoplado equipado com uma arma de duas mãos empunhada. Confira as restrições com o Mestre.",
       "Desequipou": "{novo} equipado; {antigo} foi desequipado (só um de cada tipo).",

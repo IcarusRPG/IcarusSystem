@@ -1,5 +1,6 @@
 import {
-  TIPOS_DANO_COM_RESISTENCIA, SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito
+  TIPOS_DANO_COM_RESISTENCIA, SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito,
+  PROFICIENCIAS_ARMA, CATEGORIAS_ARMADURA_CORPO
 } from "../config.mjs";
 import { numero, limitar, comSinal, semMais } from "../regras.mjs";
 import { rolarPericia, rolarAtributo } from "../rolls.mjs";
@@ -18,7 +19,7 @@ import { rolarTesteDeMorte, registrarDanoEmMorrendo, estabilizarComCura } from "
 import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
-import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura } from "../combate.mjs";
+import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura, vestidosSemProficiencia } from "../combate.mjs";
 import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 
@@ -240,6 +241,16 @@ export class FichaPersonagem extends ActorSheet {
         vulneravelEfeito: r.vulnerabilidade[tipo] && !rs.vulnerabilidade[tipo],
         dica: dica(`system.resistencias.reducao.${tipo}`, `system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)
       }))
+    };
+
+    // Proficiências: armas e armaduras marcáveis; simples é de todos
+    const prof = src.proficiencias;
+    const semProf = vestidosSemProficiencia(s, itensDoAtor(actor));
+    ctx.proficiencias = {
+      armas: PROFICIENCIAS_ARMA.map(k => ({ chave: k, rotulo: loc(`ICARUS.Proficiencias.ArmasOp.${k}`), marcado: k === "simples" || prof.armas.includes(k), fixo: k === "simples" })),
+      armaduras: CATEGORIAS_ARMADURA_CORPO.map(k => ({ chave: k, rotulo: loc(`ICARUS.Proficiencias.ArmadurasOp.${k}`), marcado: prof.armaduras.includes(k) })),
+      dicaSimples: loc("ICARUS.Proficiencias.DicaSimples"),
+      avisos: semProf.length ? game.i18n.format("ICARUS.Proficiencias.AvisoVestido", { itens: semProf.map(i => actor.items.get(i.id)?.name ?? "").join(", ") }) : ""
     };
 
     // Inventário
@@ -485,6 +496,12 @@ export class FichaPersonagem extends ActorSheet {
         const k = el.dataset.pericia;
         // Cicla 0 → 1 → 2 → 0 o treino salvo, sem bloquear; Efeitos (UPGRADE) agem por cima
         return actor.update({ [`system.pericias.${k}.treino`]: (actor._source.system.pericias[k].treino + 1) % 3 });
+      }
+      case "prof-alternar": {
+        const lista = el.dataset.lista, valor = el.dataset.valor;
+        const atual = new Set(actor._source.system.proficiencias[lista] ?? []);
+        if (atual.has(valor)) atual.delete(valor); else atual.add(valor);
+        return actor.update({ [`system.proficiencias.${lista}`]: [...atual] });
       }
       case "abrir-nivel":
         return new DialogoNivel(actor).render(true);

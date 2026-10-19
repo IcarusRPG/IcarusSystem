@@ -33,7 +33,7 @@ export function dadosKaelen() {
       deslocamento: 9,
       tamanho: "medio",
       pericias: Object.fromEntries(Object.entries(treino).map(([k, t]) => [k, { treino: t }])),
-      proficiencias: { armas: "Lanças", armaduras: "Armaduras pesadas e escudos" }
+      proficiencias: { armas: ["simples", "marciais"], armaduras: ["pesada"], escudo: true, tunicas: false, texto: "" }
     },
     items: [
       eq("Armadura de Placas", "armadura", 1, true, 5),

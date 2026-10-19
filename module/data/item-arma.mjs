@@ -44,7 +44,8 @@ export class ArmaData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    this.proficiente = ehProficiente(this);
+    // "auto": confere as proficiências do personagem dono da arma (sem dono: só armas simples)
+    this.proficiente = ehProficiente(this, this.parent?.parent?.system?.proficiencias ?? null);
     this.textoCritico = textoCritico(this);
     this.modos = modosDeAtaque(this);
     this.ehFogo = this.grupo === "fogo";
