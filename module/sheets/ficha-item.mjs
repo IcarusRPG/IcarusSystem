@@ -1,7 +1,6 @@
 import {
   CATEGORIAS_ARMADURA, SISTEMA_ID, FONTES_PODER, TIPOS_EQUIPAMENTO, TIPOS_EQUIPAVEIS, CATEGORIAS_ARMA, GRUPOS_ARMA, EMPUNHADURAS,
-  ALCANCES, TIPOS_DANO, PROPRIEDADES_ARMA, TIPOS_MUNICAO, ALCANCE_METROS, TAMANHO_PACOTE
-} from "../config.mjs";
+  ALCANCES, TIPOS_DANO, PROPRIEDADES_ARMA, TIPOS_MUNICAO, ALCANCE_METROS, TAMANHO_PACOTE, ACOES_PODER, FREQUENCIAS_PODER } from "../config.mjs";
 import { numero } from "../regras.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
 import { textoCritico, faixaCritico } from "../combate.mjs";
@@ -37,6 +36,8 @@ export class FichaItem extends ItemSheet {
     ctx.editable = this.isEditable;
     ctx.owner = item.isOwner;
     ctx.opcoesFonte = opcoes(FONTES_PODER, "ICARUS.Poderes.Fontes");
+    ctx.opcoesAcao = { "": "ICARUS.Poderes.SemAcao", ...opcoes(ACOES_PODER, "ICARUS.Poderes.Acoes") };
+    ctx.opcoesFrequencia = { "": "ICARUS.Poderes.SemFrequencia", ...opcoes(FREQUENCIAS_PODER, "ICARUS.Poderes.Frequencias") };
     ctx.opcoesTipo = opcoes(TIPOS_EQUIPAMENTO, "ICARUS.Equipamento.Tipos");
     ctx.equipavel = TIPOS_EQUIPAVEIS.includes(s.tipo);
     if (item.type === "equipamento") {

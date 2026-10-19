@@ -10,6 +10,10 @@
       <input class="campo" type="number" name="system.custoPM" value="{{source.custoPM}}" min="0" step="1" placeholder="{{localize 'ICARUS.Poderes.SemCusto'}}"></label>
     <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Nivel"}}</span>
       <input class="campo" type="number" name="system.nivel" value="{{source.nivel}}" min="1" max="25" step="1" placeholder="—"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Acao"}}</span>
+      <select class="campo" name="system.acao">{{selectOptions opcoesAcao selected=source.acao localize=true}}</select></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Frequencia"}}</span>
+      <select class="campo" name="system.frequencia">{{selectOptions opcoesFrequencia selected=source.frequencia localize=true}}</select></label>
     <label class="f"><span class="rot">{{localize "ICARUS.Poderes.Prerequisito"}}</span>
       <input class="campo" type="text" name="system.prerequisito" value="{{source.prerequisito}}"></label>
   </div>

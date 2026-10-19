@@ -77,6 +77,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
       morte: new fields.SchemaField({
         sucessos: inteiro(0, { min: 0, max: 3 }), falhas: inteiro(0, { min: 0, max: 3 }), estavel: new fields.BooleanField({ initial: false })
       }),
+      // Reação da rodada (renova no início do turno do personagem)
+      reacao: new fields.SchemaField({ disponivel: new fields.BooleanField({ initial: true }) }),
       // Bônus gerais de ataque (Efeitos Ativos podem somar aqui)
       bonus: new fields.SchemaField({ ataque: inteiro(0) }),
       imunidades: texto(),

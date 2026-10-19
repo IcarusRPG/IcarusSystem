@@ -156,3 +156,12 @@ test("Dano: extras de poderes entram na multiplicação (salvo naoMultiplica); s
   const fora = { rotulo: "X", formula: "1d4", naoMultiplica: true };
   assert.equal(calcularDano(s, espada, "corpo-a-corpo", { extras: [fora], critico: true }).formula, "(1d8 + 3) * 2 + 1d4");
 });
+
+test("Reação: 1 por rodada; Desprevenido ou Surpreendido não reagem", async () => {
+  const { podeReagir } = await import("../module/combate.mjs");
+  assert.deepEqual(podeReagir({ reacao: { disponivel: true } }, []), { pode: true, motivo: "" });
+  assert.deepEqual(podeReagir({ reacao: { disponivel: false } }, []), { pode: false, motivo: "usada" });
+  assert.deepEqual(podeReagir({ reacao: { disponivel: true } }, new Set(["desprevenido"])), { pode: false, motivo: "desprevenido" });
+  assert.deepEqual(podeReagir({ reacao: { disponivel: true } }, ["surpreendido"]), { pode: false, motivo: "surpreendido" });
+  assert.equal(podeReagir({ reacao: { disponivel: true } }, ["abalado", "aguardando"]).pode, true);
+});

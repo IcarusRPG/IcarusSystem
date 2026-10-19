@@ -22,6 +22,7 @@ import { formatarPreco, precoEmOuro } from "../moeda.mjs";
 import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura, vestidosSemProficiencia } from "../combate.mjs";
 import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
+import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, reacaoDoAtor } from "../acoes.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
 
@@ -217,6 +218,16 @@ export class FichaPersonagem extends ActorSheet {
     // Testes de morte: aparece em Morrendo, estável ou com marcas
     const m = s.morte ?? { sucessos: 0, falhas: 0, estavel: false };
     const morrendo = actor.statuses?.has("morrendo") ?? false;
+    // Reação da rodada e Aguardar
+    const reacao = reacaoDoAtor(actor);
+    const aguardando = actor.getFlag(SISTEMA_ID, "aguardando");
+    ctx.acoesCombate = {
+      reacaoDisponivel: s.reacao.disponivel,
+      reacaoPode: reacao.pode,
+      reacaoTexto: textoReacao(actor),
+      aguardando: aguardando ? game.i18n.format("ICARUS.Aguardar.Ativo", { acao: loc(`ICARUS.Poderes.Acoes.${aguardando.acao}`), gatilho: aguardando.gatilho }) : ""
+    };
+
     ctx.morte = {
       mostrar: morrendo || m.estavel || m.sucessos > 0 || m.falhas > 0,
       morrendo, estavel: m.estavel,
@@ -317,6 +328,9 @@ export class FichaPersonagem extends ActorSheet {
             auto: ehPoderRacialAuto(p),
             pendente: ehPoderRacialAuto(p) && flags.pendente === true,
             custo: p.system.custoPM ?? null,
+            // Usar: poderes com ação (não passivos) ou com custo em PM
+            usavel: (p.system.acao && p.system.acao !== "passivo") || !!p.system.custoPM,
+            usarDica: [p.system.acao ? loc(`ICARUS.Poderes.Acoes.${p.system.acao}`) : "", p.system.acao === "reacao" ? textoReacao(actor) : ""].filter(Boolean).join(" · "),
             meta: [
               p.system.nivel ? game.i18n.format("ICARUS.Poderes.NivelN", { n: p.system.nivel }) : "",
               p.system.prerequisito ? `${loc("ICARUS.Poderes.Prerequisito")}: ${p.system.prerequisito}` : ""
@@ -526,6 +540,14 @@ export class FichaPersonagem extends ActorSheet {
         return new PainelCondicoes({ actor }).render(true);
       case "divindade-poderes":
         return new DialogoPoderesConcedidos(actor, actor._source.system.identidade.divindade).render(true);
+      case "poder-usar":
+        return usarPoder(actor, itemDe());
+      case "reacao-alternar":
+        return alternarReacao(actor);
+      case "aguardar":
+        return aguardar(actor);
+      case "aguardar-disparar":
+        return dispararAguardar(actor);
       case "poder-chat":
         return this._enviarPoderAoChat(itemDe());
       case "item-criar": {

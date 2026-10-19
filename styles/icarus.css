@@ -823,3 +823,18 @@ body.game {
 .icarus-rolagem .lista-alvos { list-style: none; margin: 4px 0; padding: 0; }
 .icarus-rolagem .linha-alvo.critico b { color: var(--ic-ouro); }
 .icarus-rolagem .linha-regra { font-size: 12px; color: var(--ic-ciano-titulo); }
+
+/* --- Reação e Aguardar --- */
+.ficha-icarus .acoes-combate { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 16px; }
+.ficha-icarus .reacao-icone { width: auto; height: 30px; display: inline-flex; align-items: center; gap: 6px; padding: 0 10px; border: 1px solid var(--ic-btn-borda); border-radius: 15px; background: none; color: var(--ic-apagado); cursor: pointer; }
+.ficha-icarus .reacao-icone.disponivel { border-color: var(--ic-ciano); color: var(--ic-texto); }
+.ficha-icarus .reacao-icone.disponivel i { color: var(--ic-ciano); }
+.ficha-icarus .reacao-icone.impedida i { color: var(--ic-pv); }
+.ficha-icarus .chip-aguardando { display: inline-flex; align-items: center; gap: 8px; padding: 2px 4px 2px 10px; border: 1px solid var(--ic-ouro-escuro); border-radius: 15px; color: var(--ic-ouro-claro); font-size: 14px; }
+#combat .icarus-reacao-tracker { color: #6f8696; margin-right: 4px; }
+#combat .icarus-reacao-tracker.disponivel { color: #3ee0e6; }
+#combat .icarus-reacao-tracker.impedida { color: #e4574f; }
+.icarus-uso { display: flex; flex-direction: column; gap: 8px; }
+.icarus-uso .linha { display: flex; flex-direction: column; gap: 4px; }
+.icarus-uso .dica { margin: 0; font-size: 12px; opacity: .8; }
+.icarus-uso .aviso { margin: 0; color: #e4574f; font-weight: 700; }

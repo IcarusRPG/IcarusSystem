@@ -8,6 +8,7 @@
  * - Penalidades: calculadas na ficha a partir das condições ativas (module/condicoes.mjs).
  */
 import { SISTEMA_ID, PERICIAS } from "./config.mjs";
+import { STATUS_AGUARDANDO } from "./acoes.mjs";
 import { LISTA_CONDICOES, CONDICAO_POR_ID } from "./condicoes.mjs";
 import { textosDasFlags } from "./dados-compendios.mjs";
 import ICONES_CONDICOES from "./dados/icones-condicoes.mjs";
@@ -135,6 +136,8 @@ export function registrarCondicoes() {
 
   // As 36 condições no Token HUD (com nome em pt-BR); mantém o "morto" do Foundry para os testes de morte
   const morto = CONFIG.statusEffects.find(s => s.id === "dead");
+  // "Aguardando" (ação Aguardar) não é condição: só o ícone no token
+  const aguardando = { ...STATUS_AGUARDANDO };
   CONFIG.statusEffects = [
     ...LISTA_CONDICOES.map(c => ({
       id: c.id,
@@ -143,6 +146,7 @@ export function registrarCondicoes() {
       description: c.descricao,
       flags: { [SISTEMA_ID]: { condicao: c.id, descritores: c.descritores ?? [], pendencias: c.pendencias ?? [] } }
     })).sort((a, b) => a.name.localeCompare(b.name, "pt-BR")),
+    aguardando,
     ...(morto ? [morto] : [])
   ];
 

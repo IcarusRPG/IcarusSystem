@@ -1,4 +1,17 @@
 <div class="combate">
+  {{!-- Reação da rodada e Aguardar --}}
+  <section class="painel acoes-combate">
+    <button type="button" class="reacao-icone{{#if acoesCombate.reacaoDisponivel}} disponivel{{/if}}{{#unless acoesCombate.reacaoPode}} impedida{{/unless}}" data-action="reacao-alternar" data-tooltip="{{acoesCombate.reacaoTexto}}" aria-label="{{localize "ICARUS.Reacao.Titulo"}}: {{acoesCombate.reacaoTexto}}">
+      <i class="fa-solid fa-bolt" aria-hidden="true"></i> {{localize "ICARUS.Reacao.Titulo"}}: <b>{{acoesCombate.reacaoTexto}}</b>
+    </button>
+    {{#if acoesCombate.aguardando}}
+    <span class="chip-aguardando"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> {{acoesCombate.aguardando}}
+      <button type="button" class="btn peq" data-action="aguardar-disparar">{{localize "ICARUS.Aguardar.Disparar"}}</button></span>
+    {{else}}
+    <button type="button" class="btn peq" data-action="aguardar" data-tooltip="{{localize "ICARUS.Aguardar.Dica"}}"><i class="fa-solid fa-hourglass-start" aria-hidden="true"></i> {{localize "ICARUS.Aguardar.Botao"}}</button>
+    {{/if}}
+  </section>
+
   {{!-- Condições ativas (etapa e) --}}
   {{> "systems/icarus-rpg/templates/actor/parts/condicoes.hbs"}}
 

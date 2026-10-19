@@ -241,7 +241,30 @@
       "CustoPM": "Custo em PM",
       "SemCusto": "Sem custo",
       "Nivel": "Nível (opcional)",
-      "EnviarChat": "Enviar ao chat"
+      "EnviarChat": "Enviar ao chat",
+      "Acao": "Ação",
+      "SemAcao": "—",
+      "Frequencia": "Frequência",
+      "SemFrequencia": "—",
+      "Acoes": {
+        "livre": "Ação livre",
+        "movimento": "Ação de movimento",
+        "padrao": "Ação padrão",
+        "completa": "Ação completa",
+        "reacao": "Reação",
+        "passivo": "Passivo",
+        "especial": "Especial"
+      },
+      "Frequencias": {
+        "cena": "1 vez por cena",
+        "rodada": "1 vez por rodada",
+        "dia": "1 vez por dia"
+      },
+      "Usar": "Usar",
+      "UsarTitulo": "Usar {nome}",
+      "PMAtual": "PM atuais: {pm}/{max}",
+      "CustoInferido": "Custo e ação sugeridos a partir do texto (podem estar errados): confira antes de usar.",
+      "SemPM": "{nome}: PM insuficientes ({pm} pedidos, {atual} disponíveis)."
     },
     "Diario": {
       "Titulo": "Diário do Personagem",
@@ -837,6 +860,32 @@
       "AcertoAutomatico": "20 NATURAL: ACERTO AUTOMÁTICO E CRÍTICO",
       "Critico": "CRÍTICO",
       "AmeacaSemAlvo": "Na margem de ameaça: é crítico só se alcançar a Defesa do alvo."
+    },
+    "Reacao": {
+      "Titulo": "Reação",
+      "Disponivel": "disponível",
+      "Usada": "já usada nesta rodada",
+      "Impedida": "impedida ({motivo})",
+      "JaUsada": "a reação desta rodada já foi usada",
+      "NaoPode": "{nome} não pode reagir: {motivo}.",
+      "Gasta": "gasta a reação",
+      "UsarMesmoAssim": "Usar mesmo assim (Mestre)",
+      "Forcada": "Usada pelo Mestre mesmo sem poder reagir."
+    },
+    "Aguardar": {
+      "Botao": "Aguardar",
+      "Titulo": "Aguardar: {nome}",
+      "Status": "Aguardando",
+      "Dica": "Ação completa: escolha um gatilho e uma ação padrão ou de movimento. Se o gatilho ocorrer até o início do seu próximo turno, você age logo antes dele, sem gastar reação; se não, a ação se perde.",
+      "Gatilho": "Gatilho",
+      "Exemplo": "ex.: quando o ogro sair da porta",
+      "Acao": "Ação",
+      "Confirmar": "Aguardar",
+      "Chat": "{nome} aguarda ({acao}): {gatilho}",
+      "Ativo": "Aguardando ({acao}): {gatilho}",
+      "Disparar": "Disparar",
+      "Disparou": "{nome} age agora ({acao}), antes do gatilho: {gatilho}",
+      "Perdeu": "{nome}: o gatilho \"{gatilho}\" não ocorreu; a ação se perdeu."
     }
   }
 }

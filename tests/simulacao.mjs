@@ -30,6 +30,7 @@ export function sistemaCompleto(parcial = {}) {
     vulnerabilidade: { ...porTipo(false), ...s.resistencias?.vulnerabilidade }
   };
   s.bonus = { ataque: 0, ...s.bonus };
+  s.reacao = { disponivel: true, ...s.reacao };
   s.proficiencias = { armas: ["simples"], armaduras: [], escudo: false, tunicas: false, texto: "", ...s.proficiencias };
   s.morte = { sucessos: 0, falhas: 0, estavel: false, ...s.morte };
   s.deslocamento ??= 9;

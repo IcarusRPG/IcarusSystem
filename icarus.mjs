@@ -27,6 +27,7 @@ import { verificarImagensDoSistema } from "./module/imagens.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";
+import { registrarAcoes } from "./module/acoes.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
@@ -34,6 +35,7 @@ registrarArmaduras();
 registrarBotoesDeDano();
 registrarMorte();
 registrarAtalhos();
+registrarAcoes();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
@@ -61,6 +63,7 @@ const TEMPLATES = [
   "chat/dano-aplicado.hbs",
   "chat/condicao.hbs",
   "chat/lembrete.hbs",
+  "chat/poder-uso.hbs",
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
   "dialogo-ataque.hbs",

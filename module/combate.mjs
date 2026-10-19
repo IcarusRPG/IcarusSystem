@@ -506,3 +506,22 @@ export function resolverAtaque({ d20, total, margem = 20, defesa = null, forcarA
 export function resolverAtaqueMultiplo(ataque, alvos = []) {
   return alvos.map(a => ({ ...a, ...resolverAtaque({ ...ataque, defesa: a.defesa }) }));
 }
+
+/* ------------------------------ Reações ------------------------------ */
+
+/** Condições que impedem reações (ids reais das condições do sistema). */
+export const CONDICOES_SEM_REACAO = ["desprevenido", "surpreendido"];
+
+/**
+ * Pode reagir? Falso se a reação da rodada já foi usada ou se está Desprevenido/Surpreendido.
+ * @param {object} system    system do ator (reacao.disponivel)
+ * @param {Set<string>|string[]} statuses  condições ativas
+ * @returns {{ pode: boolean, motivo: string }} motivo = "usada" ou o id da condição
+ */
+export function podeReagir(system, statuses = []) {
+  const ativos = statuses instanceof Set ? statuses : new Set(statuses);
+  const condicao = CONDICOES_SEM_REACAO.find(c => ativos.has(c));
+  if (condicao) return { pode: false, motivo: condicao };
+  if (system?.reacao && system.reacao.disponivel === false) return { pode: false, motivo: "usada" };
+  return { pode: true, motivo: "" };
+}
