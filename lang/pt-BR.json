@@ -826,6 +826,17 @@
       "Condicoes": "Condições",
       "TesteOposto": "Teste Oposto",
       "TesteResistencia": "Teste de Resistência"
+    },
+    "Ataque": {
+      "Titulo": "Ataque",
+      "Rolar": "Atacar",
+      "BonusExtra": "Bônus extra",
+      "Alvos": "Alvos",
+      "SemAlvo": "Nenhum alvo marcado (marque com T). O card não compara com a Defesa.",
+      "ModoFlags": "Efeitos do personagem: {modo}",
+      "AcertoAutomatico": "20 NATURAL: ACERTO AUTOMÁTICO E CRÍTICO",
+      "Critico": "CRÍTICO",
+      "AmeacaSemAlvo": "Na margem de ameaça: é crítico só se alcançar a Defesa do alvo."
     }
   }
 }

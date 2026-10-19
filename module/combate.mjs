@@ -159,28 +159,38 @@ export function calcularAtaque(system, arma, modo, itens = []) {
  * Fórmula de dano.
  * - duasMaos: usa danoExtra quando a arma tem dano de duas mãos (Espada bastarda, Katana).
  * - outraExtremidade: usa danoExtra da arma Dupla (Bordão, Corrente de espinhos).
- * - critico: (dados + bônus fixos) × multiplicador.
+ * - semAtributo: não soma o atributo (segundo ataque de duas armas, Rajada de Golpes).
+ * - atributo: atributo somado no dano no lugar de FOR (ex.: SAB nos Braços Astrais).
+ * - extras: dados extras de poderes [{ rotulo, formula, naoMultiplica? }] (Ataque Furtivo, Marca da Presa…).
+ * - critico: (dados + bônus da arma + extras) × multiplicador. Extras com naoMultiplica ficam fora
+ *   (regra oficial: só não multiplica o que o poder disser).
  * @returns {{ dado: string, partes: {rotulo:string, valor:number}[], formula: string, texto: string }}
  */
-export function calcularDano(system, arma, modo, { duasMaos = false, outraExtremidade = false, critico = false } = {}) {
+export function calcularDano(system, arma, modo, { duasMaos = false, outraExtremidade = false, critico = false, semAtributo = false, atributo = "FOR", extras = [] } = {}) {
   const dupla = tem(arma, "dupla");
   let dado = arma.dano || "0";
   if (arma.danoExtra && ((dupla && outraExtremidade) || (!dupla && duasMaos))) dado = arma.danoExtra;
 
   const partes = [];
-  const FOR = numero(system.atributos.FOR.total);
-  if (REGRAS.danoSomaFOR[modo] && FOR !== 0) partes.push({ rotulo: "FOR", valor: FOR });
+  const valorAtributo = numero(system.atributos?.[atributo]?.total);
+  if (!semAtributo && REGRAS.danoSomaFOR[modo] && valorAtributo !== 0) partes.push({ rotulo: atributo, valor: valorAtributo });
   if (numero(arma.bonusDano)) partes.push({ rotulo: "item", valor: numero(arma.bonusDano) });
 
   const fixos = partes.map(p => `${p.valor < 0 ? "-" : "+"} ${Math.abs(p.valor)}`).join(" ");
   const textoFixos = partes.map(p => `${p.valor < 0 ? "−" : "+"} ${Math.abs(p.valor)} (${p.rotulo})`).join(" ");
-  let formula = fixos ? `${dado} ${fixos}` : dado;
-  let texto = textoFixos ? `${dado} ${textoFixos}` : dado;
+  const multiplicam = extras.filter(e => e?.formula && !e.naoMultiplica);
+  const foraDoCritico = extras.filter(e => e?.formula && e.naoMultiplica);
+  const comExtras = (f, t, lista) => [
+    lista.reduce((acc, e) => `${acc} + ${e.formula}`, f),
+    lista.reduce((acc, e) => `${acc} + ${e.formula} (${e.rotulo})`, t)
+  ];
+  let [formula, texto] = comExtras(fixos ? `${dado} ${fixos}` : dado, textoFixos ? `${dado} ${textoFixos}` : dado, multiplicam);
   if (critico) {
     const mult = Math.max(2, Math.trunc(numero(arma.criticoMult)) || 2);
     formula = REGRAS.criticoMultiplicaTudo ? `(${formula}) * ${mult}` : formula;
     texto = `(${texto}) × ${mult}`;
   }
+  [formula, texto] = comExtras(formula, texto, foraDoCritico);
   return { dado, partes, formula, texto };
 }
 
@@ -462,4 +472,37 @@ export async function rolarD20({ vantagem = false, desvantagem = false, bonus = 
   const valores = (roll.dice[0]?.results ?? []).map(r => r.result);
   const escolha = escolherD20(valores.length ? valores : [roll.total - b], modo, minimo);
   return { roll, modo, ...escolha, bonus: b, total: escolha.d20 + b };
+}
+
+/* ------------------------------ Acerto, margem de ameaça e crítico ------------------------------ */
+
+/**
+ * Resultado de um ataque contra uma Defesa (regra oficial):
+ * - 20 natural: acerta sempre e é crítico;
+ * - dentro da margem de ameaça (mas não 20): precisa alcançar a Defesa; se alcançar, é crítico;
+ * - fora da margem: acerta se total ≥ Defesa, sem crítico.
+ * 1 natural não tem efeito especial (PENDENTE no livro). forcarAcerto (Tiro Lendário): acerta e é crítico.
+ * Sem Defesa conhecida (sem alvo): acerta = null e ameaca diz se o d20 caiu na margem.
+ * @param {{ d20: number, total: number, margem?: number, defesa?: number|null, forcarAcerto?: boolean }} a
+ *   d20 = valor natural do dado mantido
+ * @returns {{ acerta: boolean|null, critico: boolean, ameaca: boolean, automatico: boolean }}
+ */
+export function resolverAtaque({ d20, total, margem = 20, defesa = null, forcarAcerto = false }) {
+  const natural = numero(d20);
+  const m = numero(margem) || 20;
+  const ameaca = natural >= m;
+  if (forcarAcerto || natural === 20) return { acerta: true, critico: true, ameaca: true, automatico: true };
+  if (defesa === null || defesa === undefined || !Number.isFinite(Number(defesa))) return { acerta: null, critico: false, ameaca, automatico: false };
+  const acerta = numero(total) >= numero(defesa);
+  return { acerta, critico: acerta && ameaca, ameaca, automatico: false };
+}
+
+/**
+ * Um único d20 contra vários alvos (ataque que atinge várias criaturas com um teste).
+ * @param {{ d20, total, margem, forcarAcerto }} ataque
+ * @param {{ id: string, defesa: number|null }[]} alvos
+ * @returns {{ id: string, defesa: number|null, acerta: boolean|null, critico: boolean }[]}
+ */
+export function resolverAtaqueMultiplo(ataque, alvos = []) {
+  return alvos.map(a => ({ ...a, ...resolverAtaque({ ...ataque, defesa: a.defesa }) }));
 }

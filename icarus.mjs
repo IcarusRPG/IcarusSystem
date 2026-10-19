@@ -63,6 +63,7 @@ const TEMPLATES = [
   "chat/lembrete.hbs",
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
+  "dialogo-ataque.hbs",
   "telao/telao.hbs",
   "testes/tela.hbs",
   "testes/chat.hbs",

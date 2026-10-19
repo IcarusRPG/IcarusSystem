@@ -801,3 +801,25 @@ body.game {
 .icarus-rolagem .d20-par { display: inline-flex; gap: 4px; }
 .icarus-rolagem .d20.descartado { opacity: .35; filter: grayscale(.6); }
 .icarus-rolagem .rolagem-modo { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
+
+/* --- Diálogo de ataque e card com vários alvos --- */
+.ficha-icarus.dialogo-ataque { height: auto; gap: 10px; padding: 12px 14px; background: none; }
+.ficha-icarus .ataque-cab { display: flex; gap: 10px; align-items: center; }
+.ficha-icarus .ataque-cab img { border: 0; object-fit: contain; }
+.ficha-icarus .ataque-cab strong { display: block; font-family: var(--ic-f-titulo); color: var(--ic-ouro); }
+.ficha-icarus .ataque-sub { font-size: 13px; color: var(--ic-apagado); }
+.ficha-icarus .ataque-linha { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .ataque-linha > label, .ficha-icarus .ataque-linha > span { min-width: 110px; font-size: 13px; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-linha select, .ficha-icarus .ataque-linha input { width: auto; flex: 1; }
+.ficha-icarus .ataque-secao { margin: 0; padding: 6px 10px 8px; border: 1px solid var(--ic-borda); border-radius: 6px; display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .ataque-secao legend { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-ciano-titulo); padding: 0 4px; }
+.ficha-icarus .ataque-secao .chk { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.ficha-icarus .ataque-dica { font-size: 12px; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-aviso { margin: 2px 0 0; font-size: 12px; color: var(--ic-ouro-claro); }
+.ficha-icarus .ataque-alvos { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; }
+.ficha-icarus .ataque-alvos .rot { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-alvo { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; border: 1px solid var(--ic-borda); border-radius: 12px; }
+.ficha-icarus .ataque-alvo img { border: 0; border-radius: 50%; }
+.icarus-rolagem .lista-alvos { list-style: none; margin: 4px 0; padding: 0; }
+.icarus-rolagem .linha-alvo.critico b { color: var(--ic-ouro); }
+.icarus-rolagem .linha-regra { font-size: 12px; color: var(--ic-ciano-titulo); }

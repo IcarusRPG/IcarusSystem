@@ -1,4 +1,4 @@
-<div class="icarus-rolagem icarus-ataque{{#if ameaca}} critico{{/if}}{{#if falha}} falha{{/if}}">
+<div class="icarus-rolagem icarus-ataque{{#if ameaca}} critico{{/if}}">
   <div class="arma-cab">
     <img src="{{arma.img}}" alt="" width="36" height="36">
     <div>
@@ -7,19 +7,27 @@
     </div>
   </div>
   <div class="rolagem-dados">
-    <span class="d20"><span class="moldura hex"></span><span class="miolo hex">{{d20}}</span></span>
+    {{> "systems/icarus-rpg/templates/chat/partes-d20.hbs"}}
     <span class="rolagem-formula">d20 {{bonus}}</span>
     <span class="rolagem-total">{{total}}</span>
   </div>
-  {{#if ameaca}}<div class="rolagem-selo">{{localize "ICARUS.Armas.Card.Ameaca"}} ({{faixa}})</div>{{/if}}
-  {{#if falha}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Falha"}}</div>{{/if}}
+  {{#if modoRotulo}}<div class="rolagem-modo">{{modoRotulo}}</div>{{/if}}
+  {{#if automatico}}<div class="rolagem-selo">{{localize "ICARUS.Ataque.AcertoAutomatico"}}</div>
+  {{else if ameaca}}<div class="rolagem-selo">{{localize "ICARUS.Armas.Card.Ameaca"}} ({{faixa}})</div>{{/if}}
+  {{#each linhas}}<div class="linha-regra">{{this}}</div>{{/each}}
   {{#if semProficiencia}}<div class="linha-aviso">{{localize "ICARUS.Armas.SemProficiencia"}}</div>{{/if}}
   {{#if penalidadeArmadura}}<div class="linha-aviso">{{penalidadeArmadura}}</div>{{/if}}
-  {{#if alvo}}
-  <div class="linha-alvo {{#if alvo.acertou}}acertou{{else}}errou{{/if}}">
-    {{localize "ICARUS.Armas.Card.Alvo"}}: {{alvo.nome}} (Defesa {{alvo.defesa}}) —
-    <b>{{#if alvo.acertou}}{{localize "ICARUS.Armas.Card.Acertou"}}{{else}}{{localize "ICARUS.Armas.Card.Errou"}}{{/if}}</b>
-  </div>
+  {{#if alvos.length}}
+  <ul class="lista-alvos">
+    {{#each alvos}}
+    <li class="linha-alvo {{classe}}">
+      {{nome}} ({{localize "ICARUS.Defesa.Rotulo"}} {{#if defesa}}{{defesa}}{{else}}?{{/if}}) —
+      <b>{{#if (eq rotulo "Critico")}}{{localize "ICARUS.Ataque.Critico"}}{{else if acerta}}{{localize "ICARUS.Armas.Card.Acertou"}}{{else}}{{localize "ICARUS.Armas.Card.Errou"}}{{/if}}</b>
+    </li>
+    {{/each}}
+  </ul>
+  {{else if ameaca}}
+  <div class="linha-aviso">{{localize "ICARUS.Ataque.AmeacaSemAlvo"}}</div>
   {{/if}}
   {{#if municao}}<div class="linha-municao">{{municao}}</div>{{/if}}
   {{#if arremessou}}<div class="linha-municao">{{localize "ICARUS.Armas.Card.Arremessada"}} ({{restantesArma}})</div>{{/if}}

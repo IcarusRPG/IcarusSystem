@@ -1,0 +1,50 @@
+<div class="ficha-icarus dialogo-ataque">
+  <header class="ataque-cab">
+    <img src="{{arma.img}}" alt="" width="40" height="40">
+    <div>
+      <strong>{{arma.nome}}</strong>
+      <span class="ataque-sub">{{modoRotulo}} · {{pericia}} · <b>{{bonus}}</b></span>
+    </div>
+  </header>
+
+  <div class="ataque-linha">
+    <label for="icarus-atq-modo">{{localize "ICARUS.Testes.ModoRolagem"}}</label>
+    <select id="icarus-atq-modo" name="modo">{{#each modos}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}</select>
+    {{#if modoFlags}}<small class="ataque-dica">{{modoFlags}}</small>{{/if}}
+  </div>
+  <div class="ataque-linha">
+    <label for="icarus-atq-bonus">{{localize "ICARUS.Ataque.BonusExtra"}}</label>
+    <input id="icarus-atq-bonus" type="number" name="bonusExtra" value="0" step="1">
+  </div>
+
+  {{#each secoes}}
+  <fieldset class="ataque-secao{{#if aviso}} com-aviso{{/if}}">
+    <legend>{{titulo}}</legend>
+    {{#each campos}}
+      {{#if (eq tipo "checkbox")}}
+      <label class="chk"><input type="checkbox" name="op.{{nome}}"{{#if valor}} checked{{/if}}{{#if desativado}} disabled{{/if}}> {{rotulo}}</label>
+      {{else if (eq tipo "select")}}
+      <label class="ataque-linha"><span>{{rotulo}}</span><select name="op.{{nome}}">{{#each opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}</select></label>
+      {{else if (eq tipo "number")}}
+      <label class="ataque-linha"><span>{{rotulo}}</span><input type="number" name="op.{{nome}}" value="{{valor}}" min="{{min}}" max="{{max}}" step="1"></label>
+      {{/if}}
+      {{#if dica}}<small class="ataque-dica">{{dica}}</small>{{/if}}
+    {{/each}}
+    {{#if aviso}}<p class="ataque-aviso">{{aviso}}</p>{{/if}}
+  </fieldset>
+  {{/each}}
+
+  <div class="ataque-alvos">
+    <span class="rot">{{localize "ICARUS.Ataque.Alvos"}}</span>
+    {{#each alvos}}
+    <span class="ataque-alvo"><img src="{{img}}" alt="" width="22" height="22"> {{nome}} <small>({{localize "ICARUS.Defesa.Rotulo"}} {{defesa}})</small></span>
+    {{else}}
+    <small class="ataque-dica">{{localize "ICARUS.Ataque.SemAlvo"}}</small>
+    {{/each}}
+  </div>
+
+  <footer class="rodape-config">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Testes.Cancelar"}}</button>
+    <button type="submit" class="btn primario"><i class="fa-solid fa-dice-d20"></i> {{localize "ICARUS.Ataque.Rolar"}}</button>
+  </footer>
+</div>

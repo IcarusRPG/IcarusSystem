@@ -440,7 +440,7 @@ export class FichaPersonagem extends ActorSheet {
       const armaDe = el => this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
       html.on("click", "[data-action='arma-atacar']", ev => {
         const item = armaDe(ev.currentTarget);
-        if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo);
+        if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo, modoDoEvento(ev));
       });
       html.on("click", "[data-action='arma-dano']", async ev => {
         const item = armaDe(ev.currentTarget);
