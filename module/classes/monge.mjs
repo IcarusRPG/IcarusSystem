@@ -18,7 +18,10 @@ import { calcularAtaque } from "../combate.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, ATAQUES_ADICIONAIS, executarAtaque, itensDoAtor } from "../combate-chat.mjs";
 import { ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor } from "../classes.mjs";
 import { FIM_DA_CENA } from "../condicoes-foundry.mjs";
-import { registrarLinhas, itemDeClasse, marcarStatus, avisarNoChat, DEPOIS_DA_ESCOLHA } from "./comum.mjs";
+import { registrarLinhas, itemDeClasse, marcarStatus, avisarNoChat, DEPOIS_DA_ESCOLHA, USO_PROPRIO } from "./comum.mjs";
+
+// Rajada de Golpes é escolhida no diálogo de ataque (não no botão Usar)
+USO_PROPRIO.add("monge__rajada-de-golpes");
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);

@@ -25,7 +25,7 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Atributos | FOR, DES, CON, INT, SAB, CAR como modificador direto. Total = Base + Raça + Temp. Clicar no hexágono rola `1d20 + total` no chat. |
 | Perícias | 30 perícias com marcador de treino (Destreinado +0, Treinado +2, Especialista +4), atributo trocável, campo Outros. Total = Atributo + Treino + Outros. Clicar no total rola no chat. Fortitude, Reflexos e Vontade são também as Resistências. |
 | PV e PM | `inicial + por nível × (nível − 1) + atributo × nível + bônus por nível de poderes` (diálogo **Nível**). PM só soma atributo-chave (INT, SAB ou CAR) em classes conjuradoras. Modo Manual e Bônus. |
-| Defesa | `10 + DES + Armadura + Escudo + Outros` + modificador de condição. Armadura e escudo vêm dos itens equipados; só uma armadura e um escudo ficam equipados por vez. |
+| Defesa | `10 + DES + Armadura/Túnica + Escudo + Outros` + passivos de classe (Pele Rija, Defesa Interior) + condição. Só uma armadura **ou** túnica e um escudo equipados por vez. **Túnica não é armadura** (não conta para "usando armadura") e exige proficiência própria. |
 | Armaduras e escudos | Compêndio **Icarus — Armaduras e Escudos** (12 itens: leves, médias, pesadas, túnicas e escudos). A **penalidade de armadura** soma das peças equipadas e sai de Acrobacia, Furtividade e Prestidigitação (o tooltip mostra a origem). Escudo acoplado com arma de duas mãos empunhada gera aviso. |
 | Divindade | Combobox em árvore no cabeçalho: Nenhum(a) / **Alfars** / **Baldurs** (20 divindades com símbolo) / Outra. Setas, Enter, Esc, Home e End funcionam. Abaixo, **Dogmas e poderes** mostra dogma e os 3 poderes. Ao escolher, abre **Poderes Concedidos** com caixas de seleção e contador; trocar de divindade pergunta se mantém ou remove os poderes da anterior. |
 | Poderes concedidos | Compêndio **Icarus — Poderes Concedidos** (60 poderes, pastas Alfars/Baldurs > divindade, ícone = símbolo da divindade). Bônus fixos viram Efeitos Ativos; bônus condicionais ficam só no texto. Na aba Poderes aparecem no grupo da divindade com a tag **Concedido** e botão de enviar ao chat. |
@@ -37,10 +37,20 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Sincronia dos testes | Socket do sistema: o Mestre que inicia guarda o estado e valida cada rolagem (rolagem de quem não pode é descartada). **Reenviar tela**, **Cancelar teste** e **Fechar para todos**; quem reconecta recebe o estado. Dice So Nice mostra os dados quando instalado; sem ele, o dado vermelho gira. Opções: animações (cliente), mostrar o jogador (cliente) e "Mestre pode rolar por jogadores ausentes" (mundo, desligada). |
 | Painel do Mestre | Sem abrir ficha: ícone de condições nos controles de token, **Token HUD** do Foundry, macro **Aplicar Condição** ou `game.icarus.condicoes.painel()`. Busca, filtro por descritor, vários alvos, duração, **Remover todas** e **Encerrar cena**. API: `game.icarus.condicoes.aplicar/remover/removerTodas/escalar/encerrarCena`. |
 | PV 0 e morte | PV 0 aplica **Morrendo** (com Inconsciente e Indefeso). Aba Combate: marcadores de sucesso e falha, **Rolar teste de morte** (1–9 falha, 10–19 sucesso, 20 recupera 1 PV, 1 = duas falhas), dano em Morrendo e **Estabilizar (Cura CD 10)**. Voltar a 1 PV limpa tudo. No início do turno, lembretes com botões para Em Chamas, Sangrando, Confuso e Morrendo. |
+| Proficiências | Na ficha: armas (simples sempre; marciais, marciais Leves/Ágeis, exóticas, exóticas de corte, de fogo, arcos), armaduras (leves/médias/pesadas; quem tem uma categoria tem as mais leves), **escudos** e **túnicas**, mais texto livre. Armadura, escudo ou túnica **sem proficiência**: a penalidade vale também nos testes de ataque (aviso na ficha, ao equipar e no card). |
+| Vantagem e desvantagem | 2d20 e fica com o maior (vantagem) ou o menor (desvantagem); não acumulam e, juntas, se anulam. Ficha: **Shift** = vantagem, **Ctrl** = desvantagem em perícias, atributos e teste de morte; o card mostra os dois d20. Efeitos Ativos: `flags.icarus-rpg.vantagem.<escopo>` / `desvantagem.<escopo>` (ataque, pericia.<chave>, resistencia.<chave>, morte, iniciativa, todos). Testes Oposto e de Resistência têm Normal/Vantagem/Desvantagem por participante. |
+| Ataque | Clicar em atacar abre o **diálogo de ataque**: rolagem, bônus extra, alvos com a Defesa e as opções (flanco, camuflagem, duas armas e poderes de classe). Só o **20 natural** acerta sem alcançar a Defesa; na margem de ameaça precisa acertar para ser crítico; um d20 contra vários alvos. 1 natural sem efeito. |
+| Flanco e camuflagem | **Flanco (+2)** corpo a corpo, pré-marcado quando os tokens mostram um aliado do lado oposto do alvo (não à distância nem desarmado). **Camuflagem** leve (falha com 1–2 no d10) ou total (1–5), rolada antes do ataque. |
+| Reação e Aguardar | 1 reação por rodada (renova no início do turno; Desprevenido/Surpreendido não reagem), ícone na aba Combate e no Combat Tracker. **Usar** em poderes: confirmação com o custo em PM editável, gasta a reação quando o poder é de reação. **Aguardar**: gatilho + ação; Disparar, ou a ação se perde no próximo turno. |
+| Manobras | Agarrar, Derrubar, Desarmar, Empurrar e Quebrar: teste oposto (ataque × Fortitude) na tela do Teste Oposto; o card diz o efeito (Empurrar 1,5 m + 1,5 m a cada 5 de diferença) e o Mestre aplica Agarrado/Caído com um clique. |
+| Redução de dano | Fontes diferentes somam, a mesma fonte não soma consigo mesma; teto 8 + metade do nível (RD geral e cada Redução de [tipo] à parte); dica com as fontes. |
+| Duas armas | "Agredir com duas armas" (uma Leve, ou arma Dupla): um ataque com cada, −2 nos dois; Duas Armas, Lâminas do Mato, Duas Pistolas e Par de Lâminas tiram a penalidade (segundo dano sem atributo; Ambidestria, Mão Habilidosa, Mão Firme e Pulso Firme devolvem). |
+| Classes | 7 classes (Guerreiro, Samurai, Bárbaro, Ladino, Patrulheiro, Monge, Pistoleiro) nos compêndios **Classes**, **Habilidades de Classe** e **Poderes de Classe**. Escolher a classe no cabeçalho preenche PV/PM (PM do Monge: Sabedoria só no 1º nível), proficiências, abre **Perícias da classe** e concede as habilidades do nível. Aba **Classe**: progressão 1º–20º, "Poderes de classe X / Y", **Escolher poder de classe** (✓/✗/⚠ nos pré-requisitos), escolhas permanentes (Senda, Caminho, Vínculo), mecânicas e **recursos** (usos por cena/rodada/descanso). |
+| Mecânicas de classe | Bárbaro: Fúria. Ladino: Ataque Furtivo, Perícia Refinada/Infalível. Patrulheiro: Marca da Presa e Vínculo Selvagem (animal invocado do compêndio **Vínculos**). Pistoleiro: Tiro Carregado, recarga rápida, Tiro Lendário. Guerreiro: Recobrar o Fôlego, Ataque Extra. Samurai: Kiai. Monge: caminhos, Braços Astrais, ataque desarmado 1d8→1d12, Rajada de Golpes, restrição de equipamento. Poderes comuns: Aumento de Atributo (1 por patamar por atributo) e Perícia Especializada. |
 | Nível | 1 a 25. A partir do 21 aparece **PARAGON** e os 5 últimos segmentos ficam dourados. |
 | Deslocamento | Em metros, exibido também em quadrados de 1,5 m. Médio 9 m, Pequeno 6 m. |
 | Rolagens | Vão para o **chat do Foundry** como cartão próprio, respeitando o modo de rolagem do chat. 20 natural = CRÍTICO (dourado), 1 natural = FALHA CRÍTICA (vermelho), só visual. |
-| Iniciativa | `1d20 + total da perícia Iniciativa` no Combat Tracker. |
+| Iniciativa | `1d20 + total da perícia Iniciativa` no Combat Tracker (2d20 com vantagem/desvantagem por Efeito Ativo). |
 | Armas | Compêndio **Icarus — Armas** com 46 armas em 4 pastas (Simples, Marciais, Exóticas, de Fogo). Na ficha: ataque com a perícia certa (Luta no corpo a corpo; Pontaria em distância, arremesso e fogo), **Ágil** usa DES em vez de FOR, crítico por margem e multiplicador, card de chat com **Rolar dano** e **Dano crítico**. |
 | Munição | Compêndio **Icarus — Munições** (Flechas, Virotes, Pedras, Balas; pacote de 20 = 1 espaço). Cada disparo de arco, besta e funda gasta 1; armas de fogo têm disparos carregados e **Recarregar**; arma arremessada sai do inventário e volta com **Recolher arma**. |
 | Moedas e carga | Ouro Real, Reais e Centavos na ficha (preços guardados em centavos). Arrastar um item do compêndio pergunta **Comprar** ou **Adicionar grátis**. Carga = 10 + 2 × FOR espaços; acima disso fica vermelha (sem penalidade). |
@@ -88,6 +98,15 @@ module/
   condicoes.mjs             regras puras das condições (composição, maior penalidade)
   condicoes-foundry.mjs     Status Effects, duração, anúncio e API das condições
   morte.mjs / morte-foundry.mjs  testes de morte e lembretes de turno
+  acoes.mjs                 usar poderes (PM e reação), reação por rodada, Aguardar, início do turno
+  regras-ataque.mjs         flanco, camuflagem e duas armas no diálogo de ataque
+  manobras.mjs              diálogo de manobra (usa a sessão do Teste Oposto)
+  iniciativa.mjs            iniciativa com vantagem/desvantagem
+  classes-dados.mjs         classes: dados, progressão, pré-requisitos, patamares, passivos (puro)
+  classes.mjs               escolher classe, conceder habilidades, contador de poderes
+  classes/                  mecânicas por classe (comum, barbaro, ladino, patrulheiro, pistoleiro, guerreiro, samurai, monge)
+  poderes-comuns.mjs        Aumento de Atributo, Perícia Especializada, Perícia Refinada
+  recursos.mjs              recursos de classe (usos por cena/rodada/descanso)
   imagens.mjs               imagens fixas da interface (atalhos e telas dos testes) e verificação
   atalhos.mjs               ponto único dos atalhos na barra de macros (hook renderHotbar)
   testes.mjs                Teste Oposto e de Resistência: bônus, permissões, rolagens e resolução (puro)
@@ -101,7 +120,7 @@ fonts/                      Cinzel e Alegreya Sans (licença OFL)
 lang/pt-BR.json             todos os textos da interface
 img/                        ícones e imagens: raças, armas, munições, armaduras e escudos, símbolos do panteão e interface (256 px)
 tests/                      testes das fórmulas, raças, armas, armaduras, panteão, dano, condições, morte e testes opostos/resistência
-tools/dados/                fonte única: armas, armaduras, poderes concedidos, panteão, tipos de dano, condições e mapas de ícones
+tools/dados/                fonte única: armas, armaduras, poderes concedidos, panteão, tipos de dano, condições, classes, vínculos e mapas de ícones
 tools/gerar-dados.mjs       gera module/dados/ a partir de tools/dados/
 tools/build-packs.mjs       gera packs-src/ (JSON) e compila os compêndios em packs/ (LevelDB)
 packs-src/                  JSON dos compêndios (gerado; packs/ é compilado na hora do release)
@@ -189,7 +208,7 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Rolagem de itens e poderes com efeito mecânico (hoje os poderes só vão ao chat como texto)
 - Lista de Origens e automação das perícias de Origem
 - Detalhes das Profissões (atributo mínimo, perícias, poderes, itens) e automação
-- Compêndios com as 17 raças e 16 classes
+- Compêndios com as 17 raças e com as 9 classes que faltam (Lanceiro, Nobre, Paladino, Arcanista, Clérigo, Druida, Místico, Bardo, Anátema)
 - Actor de NPC e criatura (as condições e o dano já funcionam em qualquer token com a ficha de personagem)
 - Deslocamento do tamanho Grande e outros tamanhos
 - Perícias personalizadas ("Nova Perícia / Criar")
@@ -198,19 +217,19 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Bônus de ataque e dano de poderes raciais (ficam como texto até existir o combate)
 - Visão no escuro como campo mecânico (Sentidos e Imunidades em texto continuam preenchidos à mão)
 - Magias raciais (Astúcia Arcana, Luz Sagrada, Sombras Profanas)
-- Compêndios de raças e de poderes de classe
+- Compêndio de raças; magias e círculos (inclui Detectar Magia, citada por Sentir a Mana)
+- Ataque de oportunidade, regra completa de Quebrar, tamanho nas manobras, efeito do 1 natural no ataque
+- Multiclasse; automação de alvos, áreas e dano dos poderes de classe
 - Telão: vídeos do YouTube que o dono não permite incorporar não tocam (aparece um aviso); a sincronia é feita a cada ação do Mestre (sem correção contínua durante a reprodução)
 - Filtro por digitação na combobox de raça (hoje vale a busca nativa: digitar a inicial)
 
 **Armas (regras [PROVISÓRIO], em `REGRAS` de `module/combate.mjs`):**
 - Dano soma FOR no corpo a corpo e no arremesso; arcos, bestas, funda e armas de fogo não somam atributo
 - Crítico multiplica tudo: (dados + bônus) × multiplicador
-- Sem acerto automático; o card só compara com a Defesa se houver exatamente 1 alvo
 - Sem proficiência na arma: só aviso, sem penalidade numérica
-- Penalidade de armadura no ataque sem proficiência em armadura: gancho `penalidadeDeAtaque` (sem valor no livro, continua 0)
 - Ágil usa DES quando ela é maior que FOR (a regra permite usar DES)
 - Carga 10 + 2 × FOR (referência do Tormenta 20, a conferir); sobrecarga sem efeito
-- Fora de escopo por enquanto: duas armas, Arma Dupla completa, desarmado e armas naturais, aplicar dano nos tokens, medir alcance, munições especiais e recuperação de munição, efeitos de poderes sobre armas
+- Fora de escopo por enquanto: armas naturais (além do desarmado do Monge e dos animais do Vínculo), medir alcance, munições especiais e recuperação de munição, efeitos de poderes sobre armas
 
 **Armaduras, dano, condições e morte ([PROVISÓRIO]):**
 - Espaços de todas as armaduras e escudos; preço das túnicas; nome da Túnica Bordada (campo `provisorio` em `tools/dados/armaduras.json`, mostrado no item)
@@ -225,3 +244,13 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - 20 e 1 naturais não têm efeito nesses testes (só destaque visual)
 - CD usa `system.nivel` do conjurador; sem nível numérico, conta 0 e o diálogo pede a CD manual
 - Não existem ainda os tipos de ator NPC e Ameaça: quem não tem dono jogador conta como NPC
+
+**Regras de combate e classes ([PROVISÓRIO] ou só infraestrutura):**
+- Proficiência em armadura em hierarquia (pesada inclui média e leve): `temProficienciaArmadura` em `module/combate.mjs`
+- A penalidade de duas armas vale só nos dois ataques do Agredir (não fica "até o próximo turno")
+- Vantagem/desvantagem por poderes: só a infraestrutura de flags (nenhum poder foi convertido)
+- Companheiro de Crime: a flag `flanqueadorPor` é lida, mas o poder não a grava sozinho
+- Atacar nas Sombras (Monge): só texto (o Teste de Resistência só tem Fortitude, Reflexos e Vontade)
+- Custo e ação dos 245 poderes e 44 habilidades vieram de heurística do texto: sempre editáveis na confirmação
+- Kiai segue o texto (1 vez por rodada, N dados), não um recurso de "Dados de Kiai"
+- Animais do Vínculo são atores `personagem` sem dono jogador (não existe o tipo NPC)
