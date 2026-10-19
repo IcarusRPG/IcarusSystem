@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
-import { documentosNovos, documentosDeClasses } from "../module/dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "../module/dados-compendios.mjs";
 import { PERICIAS } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 
@@ -26,7 +26,7 @@ const novos = {
   armaduras: ler("armaduras"), iconesArmaduras: ler("icones-armaduras"),
   poderes: ler("poderes-concedidos"), panteao: ler("panteao"), iconesDivindades: ler("icones-divindades"),
   condicoes: ler("condicoes"), macros: ler("macros"),
-  classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes"),
+  classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes"), vinculos: ler("vinculos"),
   nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
 };
 
@@ -70,7 +70,8 @@ const PACOTES = {
   macros: docsNovos.macros,
   classes: docsClasses.classes,
   "habilidades-classe": docsClasses["habilidades-classe"],
-  "poderes-classe": docsClasses["poderes-classe"]
+  "poderes-classe": docsClasses["poderes-classe"],
+  vinculos: documentosDeVinculos(novos.vinculos, novos.classes)
 };
 
 /** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */
@@ -79,6 +80,7 @@ function comChaves(doc, colecao) {
   d._key = `!${colecao}!${d._id}`;
   if (colecao === "items") for (const e of d.effects ?? []) e._key = `!items.effects!${d._id}.${e._id}`;
   if (colecao === "journal") for (const p of d.pages ?? []) p._key = `!journal.pages!${d._id}.${p._id}`;
+  if (colecao === "actors") for (const i of d.items ?? []) i._key = `!actors.items!${d._id}.${i._id}`;
   return d;
 }
 
@@ -94,7 +96,8 @@ for (const [nome, conteudo] of Object.entries(PACOTES)) {
   for (const i of conteudo.itens ?? []) gravar(i, "items");
   for (const j of conteudo.diarios ?? []) gravar(j, "journal");
   for (const m of conteudo.macros ?? []) gravar(m, "macros");
-  const total = (conteudo.itens ?? conteudo.diarios ?? conteudo.macros ?? []).length;
+  for (const a of conteudo.atores ?? []) gravar(a, "actors");
+  const total = (conteudo.itens ?? conteudo.diarios ?? conteudo.macros ?? conteudo.atores ?? []).length;
   console.log(`packs-src/${nome}: ${(conteudo.pastas ?? []).length} pasta(s), ${total} documento(s)`);
 }
 

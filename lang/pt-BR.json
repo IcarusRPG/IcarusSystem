@@ -1078,6 +1078,26 @@
       "FurtivoLinha": "Ataque Furtivo: +{n}d6 {tipo} (se acertar)",
       "Infalivel": "Perícia Infalível",
       "InfalivelInfo": "d20 < 10 conta como 10 em Acrobacia, Furtividade, Investigação, Prestidigitação, Audição, Visão e Reflexos"
+    },
+    "Patrulheiro": {
+      "Presa": "Presa",
+      "MarcaDaPresa": "Marca da Presa",
+      "Marcar": "Marcar presa",
+      "UmAlvo": "Marque exatamente um alvo (T) para ser a presa.",
+      "Marcou": "{nome} marca {presa} como presa: +{n}d4 de dano nos ataques que acertarem.",
+      "ContraPresa": "Contra a presa (+{n}d4)",
+      "PresaAtual": "presa: {presa}",
+      "SemPresa": "Nenhuma presa marcada.",
+      "MarcaInfo": "ação de movimento, 1 PM: +{n}d4 de dano contra a presa",
+      "LinhaPresa": "Contra a presa: +{n}d4 de dano (se acertar)",
+      "SemAnimal": "Escolha o animal do Vínculo Selvagem primeiro.",
+      "NomeAnimal": "{animal} de {nome}",
+      "Invocou": "{nome} invoca {animal} (PV {pv}).",
+      "Invocar": "Invocar {animal}",
+      "InvocarInfo": "ação de movimento, 1 PM · PV {pv}",
+      "Dispensar": "Dispensar o animal",
+      "NaoCura": "{animal} não pode ser curado (invoque de novo para recuperar os PV).",
+      "Sumiu": "{animal} chegou a 0 PV e desapareceu."
     }
   }
 }

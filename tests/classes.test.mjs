@@ -215,3 +215,19 @@ test("Duas armas por poder: Duas Armas do Ladino tira a penalidade; Mão Habilid
   assert.deepEqual(flagsDeDuasArmas([it("ladino__duas-armas"), it("ladino__mao-habilidosa")]), { duasArmas: "sem-penalidade", duasArmasAtributoNoSegundo: true });
   assert.deepEqual(flagsDeDuasArmas([]), {});
 });
+
+test("11. Vínculo Selvagem: PV = 10 + metade do nível; Defesa = 10 + DES + bônus; dano + metade do nível", async () => {
+  const { estatisticasDoVinculo } = await import("../module/classes-dados.mjs");
+  const vinculos = JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", "vinculos.json"), "utf8"));
+  assert.equal(vinculos.animais.length, 6);
+  const subs = classePorId("patrulheiro").habilidades.find(h => h.id === "vinculo-selvagem").subs.map(s => s.nome);
+  assert.deepEqual(vinculos.animais.map(a => a.nome), subs, "mesmos animais e ordem do Anexo A");
+  const lobo = vinculos.animais.find(a => a.id === "lobo");
+  const e = estatisticasDoVinculo(lobo, { nivel: 7, DES: 3, ataque: 6, fortitude: 2, reflexos: 5, vontade: 1 });
+  assert.equal(e.pv, 10 + 3);
+  assert.equal(e.defesaOutros, 3 + 2);
+  assert.deepEqual([e.ataques[0].bonusAtaque, e.ataques[0].bonusDano], [6, 3]);
+  const teixugo = estatisticasDoVinculo(vinculos.animais.find(a => a.id === "teixugo-gigante"), { nivel: 4, DES: 1, ataque: 2 });
+  assert.deepEqual(teixugo.ataques.map(a => a.bonusDano), [2, 0], "só a mordida soma a metade do nível");
+  assert.equal(estatisticasDoVinculo(vinculos.animais.find(a => a.id === "urso-negro"), { nivel: 1 }).rd, 2);
+});

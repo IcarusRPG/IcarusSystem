@@ -276,3 +276,24 @@ export function flagsDeDuasArmas(itens, flags = {}) {
   if (DUAS_ARMAS_ATRIBUTO_NO_SEGUNDO.some(id => ids.has(id))) r.duasArmasAtributoNoSegundo = true;
   return r;
 }
+
+/* ------------------------------ Vínculo Selvagem (Patrulheiro) ------------------------------ */
+
+/**
+ * Valores do animal do Vínculo a partir do patrulheiro (regra geral do texto da habilidade):
+ * PV = 10 + metade do nível; Defesa = 10 + DES do patrulheiro + bônus do animal; ataque e testes
+ * de resistência iguais aos do patrulheiro; dano + metade do nível (só nos ataques que somam).
+ * @param {object} animal  entrada de vinculos.json
+ * @param {{ nivel, DES, ataque, fortitude, reflexos, vontade }} p  totais do patrulheiro
+ */
+export function estatisticasDoVinculo(animal, p) {
+  const metade = Math.floor(Math.max(1, Number(p.nivel) || 1) / 2);
+  return {
+    pv: 10 + metade,
+    defesaOutros: (Number(p.DES) || 0) + animal.defesa,
+    ataques: animal.ataques.map(a => ({ ...a, bonusAtaque: Number(p.ataque) || 0, bonusDano: a.somaNivel ? metade : 0 })),
+    resistencias: { fortitude: p.fortitude ?? 0, reflexos: p.reflexos ?? 0, vontade: p.vontade ?? 0 },
+    deslocamento: animal.deslocamento,
+    rd: animal.rd ?? 0
+  };
+}

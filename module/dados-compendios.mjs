@@ -295,3 +295,48 @@ export function documentosDeClasses(d) {
     }
   };
 }
+
+/* ------------------------------ Vínculos (animais do Patrulheiro) ------------------------------ */
+
+/**
+ * Atores dos animais do Vínculo Selvagem (tipo personagem, sem dono jogador = NPC), com os
+ * ataques como armas. Valores-base de um patrulheiro de 1º nível; ao invocar, o sistema recalcula
+ * pelo patrulheiro (module/classes/patrulheiro.mjs).
+ * @param {{ animais }} vinculos
+ * @param {{ classes }} classes  para o texto de cada animal
+ */
+export function documentosDeVinculos(vinculos, classes) {
+  const hab = classes?.classes?.find(c => c.id === "patrulheiro")?.habilidades.find(h => h.id === "vinculo-selvagem");
+  return {
+    pastas: [],
+    atores: (vinculos?.animais ?? []).map((a, i) => {
+      const sub = hab?.subs?.find(s => normalizar(s.nome) === normalizar(a.nome));
+      const actorId = idEstavel(`vinculo:${a.id}`);
+      return {
+        _id: actorId, name: a.nome, type: "personagem", img: "icons/svg/pawprint.svg", folder: null, sort: (i + 1) * 100,
+        system: {
+          nivel: 1,
+          classeConfig: { manual: true },
+          pv: { value: 10, max: 10 },
+          defesa: { outros: a.defesa },
+          deslocamento: a.deslocamento,
+          resistencias: { rdGeral: a.rd ?? 0 },
+          notas: `${sub ? `<p>${sub.descricao}</p>` : ""}${a.movimentos ? `<p><em>${escapar(a.movimentos)}</em></p>` : ""}`,
+          pericias: Object.fromEntries(Object.entries(a.pericias ?? {}).map(([k, v]) => [k, { outros: v }]))
+        },
+        prototypeToken: { name: a.nome, actorLink: true, disposition: 1, texture: { src: "icons/svg/pawprint.svg" } },
+        items: a.ataques.map((atq, j) => ({
+          _id: idEstavel(`vinculo:${a.id}:ataque:${j}`), name: atq.nome, type: "arma", img: "icons/svg/claw.svg",
+          system: {
+            categoria: "simples", grupo: "corpo-a-corpo", empunhadura: "uma-mao", dano: atq.dano, tiposDano: [...atq.tipos],
+            criticoMargem: 20, criticoMult: 2, alcance: "corpo-a-corpo", proficiencia: "sim", empunhada: true,
+            bonusAtaque: 0, bonusDano: 0, quantidade: 1, espacos: 0, preco: 0
+          },
+          flags: { [SISTEMA_ID]: { natural: true, somaNivel: !!atq.somaNivel } }
+        })),
+        effects: [],
+        flags: { [SISTEMA_ID]: { id: a.id, vinculo: { animal: a.id } } }
+      };
+    })
+  };
+}

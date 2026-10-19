@@ -187,6 +187,19 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "vinculos",
+      "label": "Icarus — Vínculos (Patrulheiro)",
+      "path": "packs/vinculos",
+      "type": "Actor",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -203,7 +216,8 @@
         "macros",
         "classes",
         "habilidades-classe",
-        "poderes-classe"
+        "poderes-classe",
+        "vinculos"
       ]
     }
   ],
