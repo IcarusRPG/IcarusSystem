@@ -1,0 +1,38 @@
+{
+  "_id": "e6Ev3nwBMTYD4ziJ",
+  "name": "Cano Longo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "3dVNpK8ABwdsU0Vu",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O alcance das suas armas de fogo dobra.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Mosquete",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__cano-longo",
+      "classe": "pistoleiro",
+      "poder": "cano-longo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!e6Ev3nwBMTYD4ziJ"
+}

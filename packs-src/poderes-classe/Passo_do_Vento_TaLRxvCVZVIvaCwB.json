@@ -1,0 +1,38 @@
+{
+  "_id": "TaLRxvCVZVIvaCwB",
+  "name": "Passo do Vento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM. Até o fim do turno, você ignora terreno difícil e seu deslocamento aumenta em 3 m.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__passo-do-vento",
+      "classe": "samurai",
+      "poder": "passo-do-vento",
+      "inferido": true
+    }
+  },
+  "_key": "!items!TaLRxvCVZVIvaCwB"
+}

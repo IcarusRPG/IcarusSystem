@@ -1,0 +1,38 @@
+{
+  "_id": "R29agZcd9dTBiRLx",
+  "name": "Bala Ofuscante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "vnnPkbrlbKvK3BSb",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 3 PM ao acertar um ataque com arma de fogo. O alvo faz um teste de Reflexos ou fica Cego até o início do seu próximo turno.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__bala-ofuscante",
+      "classe": "pistoleiro",
+      "poder": "bala-ofuscante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!R29agZcd9dTBiRLx"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "rwkwYknfBRPzNwkq",
+  "name": "Arqueiro da Torre Emerald",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em terreno elevado, o alcance dos seus arcos aumenta em um passo.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__arqueiro-da-torre-emerald",
+      "classe": "samurai",
+      "poder": "arqueiro-da-torre-emerald",
+      "inferido": false
+    }
+  },
+  "_key": "!items!rwkwYknfBRPzNwkq"
+}

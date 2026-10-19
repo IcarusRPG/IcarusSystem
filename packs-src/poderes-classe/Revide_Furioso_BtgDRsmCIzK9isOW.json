@@ -1,0 +1,38 @@
+{
+  "_id": "BtgDRsmCIzK9isOW",
+  "name": "Revide Furioso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ku9oOPxCneXCEe9f",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um inimigo adjacente lhe causa dano, você pode gastar 1 PM e a sua reação para fazer imediatamente um ataque corpo a corpo contra ele. Só pode ser usado em Fúria.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__revide-furioso",
+      "classe": "barbaro",
+      "poder": "revide-furioso",
+      "inferido": true
+    }
+  },
+  "_key": "!items!BtgDRsmCIzK9isOW"
+}

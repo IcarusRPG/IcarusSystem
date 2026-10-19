@@ -7,6 +7,7 @@
  * Proficiência em armadura por classe ainda não existe no sistema (fora de escopo).
  */
 import { TIPOS_EQUIPAVEIS } from "./config.mjs";
+import { temProficienciaArmadura } from "./combate.mjs";
 
 const loc = k => game.i18n.localize(k);
 
@@ -32,6 +33,10 @@ async function aoEquipar(item) {
     ui.notifications.info(game.i18n.format("ICARUS.Armaduras.Desequipou", { novo: item.name, antigo: outros.map(i => i.name).join(", ") }));
   }
   if (conflitoEscudoAcoplado(actor)) ui.notifications.warn(loc("ICARUS.Armaduras.AvisoAcoplado"));
+  // Sem proficiência: a penalidade vale também nos ataques (túnica tem proficiência própria)
+  if (item.system.categoria && !temProficienciaArmadura(actor.system.proficiencias, item.system.categoria)) {
+    ui.notifications.warn(game.i18n.format("ICARUS.Proficiencias.AvisoEquipar", { item: item.name }));
+  }
 }
 
 export function registrarArmaduras() {

@@ -1,0 +1,38 @@
+{
+  "_id": "6AM9QPPzMdc602fD",
+  "name": "Resposta à Queima-Roupa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "vnnPkbrlbKvK3BSb",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um inimigo adjacente ataca você, você pode gastar 2 PM e a sua reação para fazer um ataque com arma de fogo contra ele antes do ataque dele. Se acertar, o ataque do inimigo é feito com desvantagem.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__resposta-a-queima-roupa",
+      "classe": "pistoleiro",
+      "poder": "resposta-a-queima-roupa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6AM9QPPzMdc602fD"
+}

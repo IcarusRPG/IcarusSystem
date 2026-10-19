@@ -1,0 +1,38 @@
+{
+  "_id": "JBTTApMcV5F8DfFp",
+  "name": "Corte nos Tendões",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "w20HEhQUd8NZwBQJ",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao fazer um Ataque Furtivo. Se acertar, o alvo fica Lento até o início do seu próximo turno.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Combate Ágil",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__corte-nos-tendoes",
+      "classe": "ladino",
+      "poder": "corte-nos-tendoes",
+      "inferido": true
+    }
+  },
+  "_key": "!items!JBTTApMcV5F8DfFp"
+}

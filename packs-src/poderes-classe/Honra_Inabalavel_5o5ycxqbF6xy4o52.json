@@ -1,0 +1,38 @@
+{
+  "_id": "5o5ycxqbF6xy4o52",
+  "name": "Honra Inabalável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em Vontade contra efeitos de influência.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__honra-inabalavel",
+      "classe": "samurai",
+      "poder": "honra-inabalavel",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5o5ycxqbF6xy4o52"
+}

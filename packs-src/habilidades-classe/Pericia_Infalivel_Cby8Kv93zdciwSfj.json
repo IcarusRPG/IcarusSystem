@@ -1,0 +1,38 @@
+{
+  "_id": "Cby8Kv93zdciwSfj",
+  "name": "Perícia Infalível",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 11005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 11,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você faz um teste de Acrobacia, Furtividade, Investigação, Prestidigitação, Audição, Visão ou Reflexos e o resultado do d20 é menor que 10, considere que o resultado foi 10. Se o teste tiver vantagem, o mínimo de 10 vale para o dado que você manteve.",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__pericia-infalivel",
+      "classe": "ladino",
+      "habilidade": "pericia-infalivel",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Cby8Kv93zdciwSfj"
+}

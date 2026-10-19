@@ -19,6 +19,15 @@ export class PoderData extends foundry.abstract.TypeDataModel {
       divindade: texto(),
       // Tipo de dano, para poderes que causam dano (só informativo por enquanto)
       tipoDano: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", ...TIPOS_DANO_TODOS] }),
+      // Classe: id da classe, habilidade de classe ou poder de classe, grupo (linha/caminho) e pré-requisitos
+      classe: texto(),
+      tipoPoder: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", "habilidade", "poder"] }),
+      grupo: texto(),
+      nivelMinimo: new fields.NumberField({ required: true, nullable: true, integer: true, min: 1, max: 25, initial: null }),
+      atributoMinimo: new fields.ObjectField({ required: true, initial: {} }),
+      requerPoderes: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
+      requerGrupo: texto(),
+      repetivel: new fields.BooleanField({ initial: false }),
       descricao: new fields.HTMLField({ required: true, blank: true, initial: "" })
     };
   }

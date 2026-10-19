@@ -1,0 +1,15 @@
+{
+  "_id": "gdo614mxTqnHORen",
+  "name": "Bárbaro",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:barbaro"
+    }
+  },
+  "_key": "!folders!gdo614mxTqnHORen"
+}

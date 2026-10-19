@@ -1,0 +1,38 @@
+{
+  "_id": "fHsoNq9r592V7N9s",
+  "name": "Toque Restaurador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ON1XFwxYoGI0lmQx",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 2 PM e remove de uma criatura adjacente uma das condições Envenenado, Doente ou Sangrando.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Meditação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Meditação",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__toque-restaurador",
+      "classe": "monge",
+      "poder": "toque-restaurador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fHsoNq9r592V7N9s"
+}

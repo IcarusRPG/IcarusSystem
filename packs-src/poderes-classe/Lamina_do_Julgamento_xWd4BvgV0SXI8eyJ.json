@@ -1,0 +1,38 @@
+{
+  "_id": "xWd4BvgV0SXI8eyJ",
+  "name": "Lâmina do Julgamento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando ataca um inimigo que causou dano a um aliado nesta cena, você recebe +2 no teste de ataque.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__lamina-do-julgamento",
+      "classe": "samurai",
+      "poder": "lamina-do-julgamento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!xWd4BvgV0SXI8eyJ"
+}

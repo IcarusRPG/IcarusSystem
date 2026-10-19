@@ -1,0 +1,38 @@
+{
+  "_id": "BqqZTrYenfHPi0nS",
+  "name": "Rastreador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "dE4F9uKffi9vLoXF",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Sobrevivência e Investigação e consegue rastrear criaturas mesmo depois de dias.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__rastreador",
+      "classe": "patrulheiro",
+      "poder": "rastreador",
+      "inferido": false
+    }
+  },
+  "_key": "!items!BqqZTrYenfHPi0nS"
+}

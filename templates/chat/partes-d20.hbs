@@ -1,0 +1,8 @@
+{{!-- d20 do card: com vantagem/desvantagem mostra os dois dados (o descartado esmaecido) --}}
+{{#if dados}}
+<span class="d20-par" aria-label="{{modoRotulo}}">
+  {{#each dados}}<span class="d20{{#unless mantido}} descartado{{/unless}}"><span class="moldura hex"></span><span class="miolo hex">{{valor}}</span></span>{{/each}}
+</span>
+{{else}}
+<span class="d20" aria-label="d20 {{d20}}"><span class="moldura hex"></span><span class="miolo hex">{{d20}}</span></span>
+{{/if}}

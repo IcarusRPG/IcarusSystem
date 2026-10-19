@@ -1,0 +1,38 @@
+{
+  "_id": "fEUlo19XQSToGfmm",
+  "name": "Corpo Escorregadio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 3003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você passa em um teste de Reflexos contra um efeito que causaria metade do dano, você não sofre dano algum. Se falhar, sofre apenas metade.",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__corpo-escorregadio",
+      "classe": "ladino",
+      "habilidade": "corpo-escorregadio",
+      "inferido": false
+    }
+  },
+  "_key": "!items!fEUlo19XQSToGfmm"
+}

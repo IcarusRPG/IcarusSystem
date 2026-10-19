@@ -9,6 +9,8 @@
           <button type="button" class="btn icone" data-action="limparItem" data-lado="{{lado}}" aria-label="{{localize "ICARUS.Testes.LimparItem"}}"><i class="fa-solid fa-xmark"></i></button>
         </span>
         {{else}}<span class="chip-item vazio">{{localize "ICARUS.Testes.Oposto.EscolhaItem"}}</span>{{/if}}
+        <label class="modo-lado">{{localize "ICARUS.Testes.ModoRolagem"}}
+          <select name="modo-{{lado}}">{{#each modos}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}</select></label>
       </header>
 
       <div class="bloco">

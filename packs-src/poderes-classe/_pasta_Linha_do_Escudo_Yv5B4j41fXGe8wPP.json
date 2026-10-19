@@ -1,0 +1,15 @@
+{
+  "_id": "Yv5B4j41fXGe8wPP",
+  "name": "Linha do Escudo",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:linha-do-escudo"
+    }
+  },
+  "_key": "!folders!Yv5B4j41fXGe8wPP"
+}

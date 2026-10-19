@@ -1,0 +1,83 @@
+{
+  "_id": "yyhvJxEf52ZnOQba",
+  "name": "Pantera",
+  "type": "personagem",
+  "img": "icons/svg/pawprint.svg",
+  "folder": null,
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 3
+    },
+    "deslocamento": 15,
+    "resistencias": {
+      "rdGeral": 0
+    },
+    "notas": "<p>Defesa +3; deslocamento 15 m, escalada 9 m; +4 em Furtividade. Mordida: 1d6 de dano de Perfuração. <em>Bote:</em> se a mordida derruba o alvo (ele fica Caído), a pantera faz imediatamente um segundo ataque de mordida.</p><p><em>escalada 9 m</em></p>",
+    "pericias": {
+      "furtividade": {
+        "outros": 4
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Pantera",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "icons/svg/pawprint.svg"
+    }
+  },
+  "items": [
+    {
+      "_id": "wOydeVx3oVN6sCPw",
+      "name": "Mordida",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!yyhvJxEf52ZnOQba.wOydeVx3oVN6sCPw"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pantera",
+      "vinculo": {
+        "animal": "pantera"
+      }
+    }
+  },
+  "_key": "!actors!yyhvJxEf52ZnOQba"
+}

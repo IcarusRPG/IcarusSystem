@@ -1,0 +1,40 @@
+{
+  "_id": "bHstOsPvfLf3nzcT",
+  "name": "Ambidestria",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "oQRJr2ZMsQhANvjb",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Par de Lâminas, 6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O segundo ataque do Par de Lâminas soma o modificador de atributo no dano.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Par de Lâminas",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "par-de-laminas"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__ambidestria",
+      "classe": "guerreiro",
+      "poder": "ambidestria",
+      "inferido": false
+    }
+  },
+  "_key": "!items!bHstOsPvfLf3nzcT"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "RDkFjscEoQDfUqzX",
+  "name": "Embalo de Batalha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "eQnEw0KeBpN1HPfL",
+  "sort": 4001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 4,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, quando você reduz uma criatura a 0 PV ou acerta um ataque crítico, recupera 1 PM.",
+    "classe": "guerreiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__embalo-de-batalha",
+      "classe": "guerreiro",
+      "habilidade": "embalo-de-batalha",
+      "inferido": true
+    }
+  },
+  "_key": "!items!RDkFjscEoQDfUqzX"
+}

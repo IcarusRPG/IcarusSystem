@@ -1,0 +1,38 @@
+{
+  "_id": "jLnlIJ6cUqIrv2IV",
+  "name": "Presença Majestosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 3700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você soma sua Sabedoria em Diplomacia e Intimidação.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__presenca-majestosa",
+      "classe": "samurai",
+      "poder": "presenca-majestosa",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jLnlIJ6cUqIrv2IV"
+}

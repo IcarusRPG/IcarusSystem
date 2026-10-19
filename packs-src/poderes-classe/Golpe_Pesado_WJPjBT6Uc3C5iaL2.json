@@ -1,0 +1,40 @@
+{
+  "_id": "WJPjBT6Uc3C5iaL2",
+  "name": "Golpe Pesado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "8L8lK0we5ZuYskBP",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Força 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando ataca com uma arma de Duas Mãos, você soma o dobro do seu modificador de Força no dano.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Mãos",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__golpe-pesado",
+      "classe": "guerreiro",
+      "poder": "golpe-pesado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WJPjBT6Uc3C5iaL2"
+}

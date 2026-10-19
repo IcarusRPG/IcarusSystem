@@ -1,0 +1,15 @@
+{
+  "_id": "DMxyhR3tH0YC0faM",
+  "name": "Linha do Tiro",
+  "type": "Item",
+  "folder": "KtMQTXLNCK68DiSY",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:pistoleiro:linha-do-tiro"
+    }
+  },
+  "_key": "!folders!DMxyhR3tH0YC0faM"
+}

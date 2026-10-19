@@ -1,0 +1,15 @@
+{
+  "_id": "eQnEw0KeBpN1HPfL",
+  "name": "Guerreiro",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:guerreiro"
+    }
+  },
+  "_key": "!folders!eQnEw0KeBpN1HPfL"
+}

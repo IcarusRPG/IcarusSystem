@@ -1,0 +1,38 @@
+{
+  "_id": "CTBK1C3lmFqa2wXx",
+  "name": "Foco do Caçador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você soma sua Sabedoria nos testes de Pontaria.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__foco-do-cacador",
+      "classe": "samurai",
+      "poder": "foco-do-cacador",
+      "inferido": false
+    }
+  },
+  "_key": "!items!CTBK1C3lmFqa2wXx"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "V2ubxXdyXIIdptAx",
+  "name": "Mira Demorada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "DMxyhR3tH0YC0faM",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 1 PM. Seu próximo ataque com arma de fogo neste turno recebe +2 no teste de ataque e a margem de ameaça dele aumenta em 1.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Tiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__mira-demorada",
+      "classe": "pistoleiro",
+      "poder": "mira-demorada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!V2ubxXdyXIIdptAx"
+}

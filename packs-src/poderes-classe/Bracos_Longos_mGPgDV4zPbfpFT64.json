@@ -1,0 +1,38 @@
+{
+  "_id": "mGPgDV4zPbfpFT64",
+  "name": "Braços Longos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "FbN4z45dfYqvMyg7",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O alcance dos Braços Astrais aumenta para 4,5 m.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho Astral",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho Astral",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__bracos-longos",
+      "classe": "monge",
+      "poder": "bracos-longos",
+      "inferido": false
+    }
+  },
+  "_key": "!items!mGPgDV4zPbfpFT64"
+}

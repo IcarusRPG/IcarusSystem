@@ -1,0 +1,15 @@
+{
+  "_id": "dE4F9uKffi9vLoXF",
+  "name": "Linha da Mata",
+  "type": "Item",
+  "folder": "768IunF6PIkYMdz0",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:patrulheiro:linha-da-mata"
+    }
+  },
+  "_key": "!folders!dE4F9uKffi9vLoXF"
+}

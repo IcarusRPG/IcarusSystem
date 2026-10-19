@@ -1,0 +1,38 @@
+{
+  "_id": "9RngthE27ou8ttq8",
+  "name": "Mira Calma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "bvRbBSZU9LvgwCQb",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você não sofre a penalidade de –5 em ataques à distância contra inimigos adjacentes.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__mira-calma",
+      "classe": "patrulheiro",
+      "poder": "mira-calma",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9RngthE27ou8ttq8"
+}

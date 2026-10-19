@@ -1,0 +1,38 @@
+{
+  "_id": "9wq1a3fFl6nIgerk",
+  "name": "Golpe do Sol Nascente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa o Kiai, você pode gastar 2 PM adicionais. O dano extra do Kiai passa a ser de fogo e o ataque ilumina uma área de 3 m ao redor do alvo.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__golpe-do-sol-nascente",
+      "classe": "samurai",
+      "poder": "golpe-do-sol-nascente",
+      "inferido": true
+    }
+  },
+  "_key": "!items!9wq1a3fFl6nIgerk"
+}

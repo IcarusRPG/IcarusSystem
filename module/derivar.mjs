@@ -4,6 +4,8 @@
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
+import { bonusDeItensDeClasse, passivosDeClasse } from "./classes-dados.mjs";
+import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import {
@@ -16,16 +18,18 @@ import {
  * @param {object[]} itens         itens do personagem
  * @param {Iterable<string>} condicoesAtivas  ids das condições ativas (statuses do ator)
  */
-export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
+export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = {}) {
   // Condições: "vale a maior penalidade" em cada campo (module/condicoes.mjs)
   const cond = modificadoresDasCondicoes(condicoesAtivas);
   s.nivel = nivelValido(s.nivel);
   s.paragon = ehParagon(s.nivel);
 
-  // Atributos: Total = Base + Raça + Temp
+  // Atributos: Total = Base + Raça + Temp + Aumentos de Atributo (poder comum, derivado dos itens)
+  const deClasse = bonusDeItensDeClasse(itens);
   for (const k of ATRIBUTOS) {
     const a = s.atributos[k];
-    a.total = totalAtributo(a);
+    a.aumento = deClasse.aumentos[k] ?? 0;
+    a.total = totalAtributo(a) + a.aumento;
   }
   const total = k => (ATRIBUTOS.includes(k) ? s.atributos[k].total : null);
 
@@ -35,7 +39,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
     nivel: s.nivel, bonusPvPorNivel: cc.bonusPvPorNivel, bonusPmPorNivel: cc.bonusPmPorNivel, bonusPmNivelImpar: cc.bonusPmNivelImpar
   });
   s.pv.formula = maximoPelaClasse({ inicial: cc.pvInicial, porNivel: cc.pvPorNivel, atributoTotal: total(cc.pvAtributo), nivel: s.nivel });
-  s.pm.formula = maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: s.nivel });
+  s.pm.formula = maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: s.nivel, atributoUmaVez: !!cc.pmAtributoSoNoPrimeiroNivel });
   s.pv.bonusNivel = porNivel.pv;
   s.pm.bonusNivel = porNivel.pm;
   s.pv.max = maximoFinal({ manual: cc.manual, maximoManual: s.pv.max, maximoFormula: s.pv.formula, bonus: cc.bonusPv, bonusNivel: porNivel.pv });
@@ -61,6 +65,13 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
   s.defesa.armadura = armadura;
   s.defesa.escudo = escudo;
   s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
+  // Habilidades de classe com bônus passivo (Pele Rija, Defesa Interior, Passo Ligeiro)
+  const vestidos = itens.map(i => ({ type: i.type, system: i.system }));
+  const passivos = passivosDeClasse(itens, {
+    tipoArmadura: tipoArmadura(vestidos), usandoEscudo: usandoEscudo(vestidos), vestindoTunica: vestindoTunica(vestidos), SAB: s.atributos.SAB.total
+  });
+  s.defesa.passivos = passivos.defesa;
+  for (const p of passivos.defesa) s.defesa.total += p.valor;
   s.defesa.condicao = cond.defesa;
   if (cond.defesa) s.defesa.total += cond.defesa.valor;
 
@@ -69,6 +80,9 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
     const d = s.pericias[p.chave];
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
     d.treino = limitar(Math.trunc(numero(d.treino)), 0, 2);
+    // Perícia Especializada / Perícia Refinada: treinada vira especialista (+4); ao remover o item, volta
+    d.especialistaPorPoder = deClasse.especialistas.has(p.chave) && d.treino >= 1;
+    if (d.especialistaPorPoder) d.treino = 2;
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
@@ -79,13 +93,32 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
     d.falhaAuto = cond.falhaAuto[p.chave];
   }
 
-  // RD das condições (Petrificado) entra na RD geral
-  if (s.resistencias && cond.rd) s.resistencias.rdGeral = Number(s.resistencias.rdGeral || 0) + cond.rd.valor;
+  // Redução de Dano: fontes diferentes somam, a mesma fonte não soma consigo mesma, teto de
+  // 8 + metade do nível (RD geral e cada Redução de [tipo] à parte). Com opcoes.rd (vindo do
+  // Foundry), os totais são refeitos a partir do valor digitado + fontes; sem ele (testes), o
+  // valor atual vale como digitado. A condição Petrificado entra como uma fonte.
+  if (s.resistencias) {
+    const teto = tetoDeRD(s.nivel);
+    const rd = opcoes.rd ?? { base: { rdGeral: s.resistencias.rdGeral, reducao: { ...s.resistencias.reducao } }, fontes: [] };
+    const fontesGeral = rd.fontes.filter(f => !f.tipo);
+    if (cond.rd) fontesGeral.push({ chave: `condicao:${cond.rd.origem}`, origem: cond.rd.origem, valor: cond.rd.valor });
+    const geral = somarRD(rd.base.rdGeral, fontesGeral, teto);
+    s.resistencias.rdGeral = geral.total;
+    s.resistencias.teto = teto;
+    s.resistencias.detalhe = { rdGeral: geral, reducao: {} };
+    for (const tipo of Object.keys(s.resistencias.reducao ?? {})) {
+      const r = somarRD(rd.base.reducao?.[tipo] ?? 0, rd.fontes.filter(f => f.tipo === tipo), teto);
+      s.resistencias.reducao[tipo] = r.total;
+      s.resistencias.detalhe.reducao[tipo] = r;
+    }
+  }
 
   // Ataque: as condições ficam à parte (combate.mjs soma conforme o modo)
   s.condicoes = { ids: [...cond.ids], ataque: cond.ataque, ataqueCorpoACorpo: cond.ataqueCorpoACorpo, pendencias: cond.pendencias };
 
   // Deslocamento com as condições (Lento, Sobrecarregado, Caído, Imóvel)
+  for (const p of passivos.deslocamento) s.deslocamento += p.valor;
+  s.deslocamentoPassivos = passivos.deslocamento;
   s.deslocamentoSemCondicoes = s.deslocamento;
   if (cond.deslocamento.origens.length) {
     s.deslocamento = deslocamentoComCondicoes(s.deslocamento, cond.deslocamento);

@@ -1,0 +1,38 @@
+{
+  "_id": "3FPmo4qsxjTw70Xm",
+  "name": "Defletir",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando é atingido por um ataque corpo a corpo, você pode gastar 3 PM e fazer um teste de Luta contra o resultado do ataque. Se o seu total for maior, o ataque falha. Você pode usar este poder, por cena, um número de vezes igual à sua Sabedoria (mínimo 1).",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__defletir",
+      "classe": "samurai",
+      "poder": "defletir",
+      "inferido": true
+    }
+  },
+  "_key": "!items!3FPmo4qsxjTw70Xm"
+}

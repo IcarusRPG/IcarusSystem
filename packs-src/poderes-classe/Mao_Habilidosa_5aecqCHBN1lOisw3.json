@@ -1,0 +1,38 @@
+{
+  "_id": "5aecqCHBN1lOisw3",
+  "name": "Mão Habilidosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O segundo ataque da habilidade Duas Armas soma o modificador de atributo no dano.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__mao-habilidosa",
+      "classe": "ladino",
+      "poder": "mao-habilidosa",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5aecqCHBN1lOisw3"
+}

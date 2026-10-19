@@ -1,0 +1,38 @@
+{
+  "_id": "vj4bxxionrVvJHSG",
+  "name": "Escudo Erguido",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "Yv5B4j41fXGe8wPP",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "empunhar um escudo",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você posiciona o escudo à frente do corpo, sem atacar. Até o início do seu próximo turno, você recebe +3 na Defesa.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Escudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__escudo-erguido",
+      "classe": "guerreiro",
+      "poder": "escudo-erguido",
+      "inferido": true
+    }
+  },
+  "_key": "!items!vj4bxxionrVvJHSG"
+}

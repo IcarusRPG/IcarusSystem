@@ -1,0 +1,38 @@
+{
+  "_id": "WRMufWtKHZhON9l8",
+  "name": "Calibre Pesado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "3dVNpK8ABwdsU0Vu",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "11º nível, usar mosquete",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando ataca com um mosquete, o máximo de PM que você pode gastar no Tiro Carregado aumenta em 2.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Mosquete",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__calibre-pesado",
+      "classe": "pistoleiro",
+      "poder": "calibre-pesado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WRMufWtKHZhON9l8"
+}

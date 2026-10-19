@@ -1,0 +1,38 @@
+{
+  "_id": "UcHVBk0EQEzS5N1A",
+  "name": "Primeiro a Atirar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "9nkjJoPyRVVSgaqA",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando rola Iniciativa, você pode gastar 1 PM para rolar com vantagem.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Pistoleiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__primeiro-a-atirar",
+      "classe": "pistoleiro",
+      "poder": "primeiro-a-atirar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!UcHVBk0EQEzS5N1A"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "y3EoCBZvEbDVpoRO",
+  "name": "Pulso Firme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "rW9ip1zuIDiHGMrD",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Duas Pistolas, 6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O segundo ataque da Duas Pistolas soma o modificador de atributo no dano.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Pistolas",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "duas-pistolas"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__pulso-firme",
+      "classe": "pistoleiro",
+      "poder": "pulso-firme",
+      "inferido": false
+    }
+  },
+  "_key": "!items!y3EoCBZvEbDVpoRO"
+}

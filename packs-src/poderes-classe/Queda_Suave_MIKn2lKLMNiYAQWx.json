@@ -1,0 +1,38 @@
+{
+  "_id": "MIKn2lKLMNiYAQWx",
+  "name": "Queda Suave",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você reduz à metade o dano de queda e não fica Caído ao cair.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__queda-suave",
+      "classe": "monge",
+      "poder": "queda-suave",
+      "inferido": false
+    }
+  },
+  "_key": "!items!MIKn2lKLMNiYAQWx"
+}

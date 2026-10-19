@@ -1,0 +1,38 @@
+{
+  "_id": "I3EeYMpw3Z5Fpxz6",
+  "name": "Fúria Persistente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A sua Fúria só termina por falta de combate se você passar duas rodadas seguidas sem atacar nem sofrer dano.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__furia-persistente",
+      "classe": "barbaro",
+      "poder": "furia-persistente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!I3EeYMpw3Z5Fpxz6"
+}

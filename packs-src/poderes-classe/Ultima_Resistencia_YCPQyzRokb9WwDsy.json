@@ -1,0 +1,40 @@
+{
+  "_id": "YCPQyzRokb9WwDsy",
+  "name": "Última Resistência",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "rOeaAnOv8HXNYLFU",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Corpo de Ferro, 12º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, quando seus PV chegariam a 0, você fica com 1 PV.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": 12,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "corpo-de-ferro"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__ultima-resistencia",
+      "classe": "guerreiro",
+      "poder": "ultima-resistencia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!YCPQyzRokb9WwDsy"
+}

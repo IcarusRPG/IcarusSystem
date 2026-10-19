@@ -17,6 +17,9 @@ import { SISTEMA_ID, PERICIAS, ICONE_PADRAO } from "./config.mjs";
 import { registrarRolagem, resolver, rolarNovamente, resultadoInicial, todosRolaram, podeRolar, bonusDoItem } from "./testes.mjs";
 import { TelaTeste } from "./apps/teste-tela.mjs";
 import { abrirPainelDoMestre } from "./sheets/painel-condicoes.mjs";
+import { rolarD20, modoD20, minimoDasFlags, efeitoDaManobra } from "./combate.mjs";
+import { vantagemDaRolagem, escoposDaPericia } from "./rolls.mjs";
+import { minimoD20DeHabilidades } from "./classes-dados.mjs";
 
 const CANAL = `system.${SISTEMA_ID}`;
 const TEMPLATE_CHAT = `systems/${SISTEMA_ID}/templates/testes/chat.hbs`;
@@ -39,6 +42,7 @@ function emitir(acao, dados = {}) {
 /** Rótulo de um item de teste ("Atletismo", "Força"). */
 export function rotuloDoItem(item) {
   if (!item) return "";
+  if (item.tipo === "ataque") return fmt("ICARUS.Manobra.ItemAtaque", { pericia: loc(`ICARUS.Pericias.${item.chave === "pontaria" ? "pontaria" : "luta"}`) });
   return item.tipo === "atributo" ? loc(`ICARUS.Atributos.${item.chave}`) : loc(`ICARUS.Pericias.${item.chave}`);
 }
 
@@ -76,18 +80,32 @@ export function nomeDoParticipante(actor, token) {
 
 export const retratoDoParticipante = (actor, token) => token?.texture?.src || actor?.img || ICONE_PADRAO;
 
-/** Monta um participante a partir de um uuid e do item testado (lê o bônus da ficha). */
-export function montarParticipante(uuid, item, indice) {
+/** Escopos das flags de vantagem/mínimo para o item testado. */
+const escoposDoItem = item => (item?.tipo === "pericia" ? escoposDaPericia(item.chave) : item?.tipo === "atributo" ? [`atributo.${item.chave}`] : item?.tipo === "ataque" ? ["ataque"] : []);
+
+/**
+ * Monta um participante a partir de um uuid e do item testado (lê o bônus da ficha).
+ * modo: "normal" | "vantagem" | "desvantagem" escolhido pelo Mestre; soma com as flags do ator
+ * (não acumulam; vantagem + desvantagem se anulam).
+ */
+export function montarParticipante(uuid, item, indice, { modo = "normal" } = {}) {
   const { actor, token } = resolverUuid(uuid);
   if (!actor) return null;
   const donos = donosJogadores(actor);
-  const b = bonusDoItem(actor.system, item) ?? { bonus: 0, detalhes: [], falhaAuto: null };
+  const itens = actor.items.map(i => ({ id: i.id, type: i.type, system: i.system }));
+  const b = bonusDoItem(actor.system, item, itens) ?? { bonus: 0, detalhes: [], falhaAuto: null };
   const p = {
     id: `p${indice}`, uuid, nome: nomeDoParticipante(actor, token), img: retratoDoParticipante(actor, token),
     donos: donos.map(u => u.id), jogadores: donos.map(u => u.name),
     item: { ...item, rotulo: rotuloDoItem(item) },
     bonus: b.bonus, detalhes: b.detalhes, dica: textoDosDetalhes(b.detalhes), falhaAuto: b.falhaAuto
   };
+  const v = vantagemDaRolagem(actor, escoposDoItem(item), { vantagem: modo === "vantagem", desvantagem: modo === "desvantagem" });
+  p.vantagem = v.vantagem;
+  p.desvantagem = v.desvantagem;
+  p.modo = modoD20(v);
+  p.minimo = Math.max(minimoDasFlags(actor.flags?.[SISTEMA_ID], escoposDoItem(item)) ?? 0,
+    item?.tipo === "pericia" ? minimoD20DeHabilidades(actor.items, item.chave) ?? 0 : 0) || null;
   p.resultado = resultadoInicial(p);
   return p;
 }
@@ -95,12 +113,12 @@ export function montarParticipante(uuid, item, indice) {
 /* ------------------------------ Anfitrião ------------------------------ */
 
 /** Começa uma sessão (o Mestre, pelos diálogos de configuração). */
-export function iniciarSessao({ tipo, participantes, resistencia = null }) {
+export function iniciarSessao({ tipo, participantes, resistencia = null, manobra = null }) {
   if (!game.user.isGM) return ui.notifications.warn(loc("ICARUS.Testes.SoMestre"));
   if (sessao && sessao.status === "rolando" && souAnfitriao()) cancelar({ silencioso: true });
   sessao = {
     sessaoId: foundry.utils.randomID(), tipo, gmId: game.user.id, status: "rolando", rodada: 1,
-    resistencia, participantes, resolucao: null
+    resistencia, participantes, resolucao: null, manobra
   };
   // Quem tem falha automática em todos (ex.: todos Indefesos) resolve na hora
   if (todosRolaram(sessao)) return concluir(sessao, { abrir: true });
@@ -126,10 +144,10 @@ async function concluir(estado, { abrir = false } = {}) {
 }
 
 /** Anfitrião recebe uma rolagem (de outro cliente ou dele mesmo). */
-async function processarRolagem({ sessaoId, participanteId, d20, total }, userId) {
+async function processarRolagem({ sessaoId, participanteId, d20, total, dados }, userId) {
   if (!souAnfitriao() || sessao.sessaoId !== sessaoId) return;
   const usuario = game.users.get(userId);
-  const r = registrarRolagem(sessao, { participanteId, d20, total }, usuario, opcoesDeRolagem());
+  const r = registrarRolagem(sessao, { participanteId, d20, total, dados }, usuario, opcoesDeRolagem());
   if (r.erro) {
     console.warn(`Icarus RPG | Rolagem descartada (${r.erro}) de ${usuario?.name ?? userId} para ${participanteId}.`);
     if (r.erro === "permissao") ui.notifications.warn(fmt("ICARUS.Testes.RolagemDescartada", { nome: usuario?.name ?? "?" }));
@@ -187,13 +205,13 @@ export async function rolarParticipante(participanteId) {
   const p = sessao?.participantes.find(x => x.id === participanteId);
   if (!p || p.resultado || sessao.status !== "rolando") return null;
   if (!permissaoLocal(p).pode) return null;
-  const roll = await new Roll(`1d20 + ${p.bonus}`.replace("+ -", "- ")).evaluate();
-  const d20 = roll.dice[0]?.total ?? roll.total - p.bonus;
-  if (game.dice3d) await game.dice3d.showForRoll(roll, game.user, true);
-  const dados = { sessaoId: sessao.sessaoId, participanteId, d20, total: roll.total };
+  // d20 com vantagem/desvantagem (2d20kh / 2d20kl) e mínimo (Perícia Infalível) do participante
+  const r = await rolarD20({ vantagem: p.vantagem, desvantagem: p.desvantagem, bonus: p.bonus, minimo: p.minimo });
+  if (game.dice3d) await game.dice3d.showForRoll(r.roll, game.user, true);
+  const dados = { sessaoId: sessao.sessaoId, participanteId, d20: r.d20, total: r.total, dados: r.dados };
   if (souAnfitriao()) await processarRolagem(dados, game.user.id);
   else emitir("testes:rolou", dados);
-  return { d20, total: roll.total };
+  return { d20: r.d20, total: r.total };
 }
 
 /* -------------------------------- Chat -------------------------------- */
@@ -209,6 +227,21 @@ async function postarResultado(estado) {
   }));
   const vencedor = linhas.find(l => l.vencedor);
   const r = estado.resistencia;
+  // Manobra: o atacante (lado A) venceu? Efeito e botão do Mestre para aplicar a condição
+  let manobra = null;
+  if (estado.manobra) {
+    const [a, b] = estado.participantes;
+    const venceu = estado.resolucao?.vencedorId === a.id;
+    const efeito = efeitoDaManobra(estado.manobra.id, venceu ? (a.resultado?.total ?? 0) - (b.resultado?.total ?? 0) : 0);
+    manobra = {
+      nome: loc(`ICARUS.Manobra.Tipos.${estado.manobra.id}`),
+      venceu,
+      efeito: venceu ? textoDoEfeito(estado.manobra.id, efeito, a.nome, b.nome) : fmt("ICARUS.Manobra.Resistiu", { alvo: b.nome }),
+      condicao: venceu ? efeito.condicao : null,
+      condicaoNome: efeito.condicao ? loc(`ICARUS.Manobra.Condicoes.${efeito.condicao}`) : "",
+      alvoUuid: b.uuid
+    };
+  }
   const content = await renderTemplate(TEMPLATE_CHAT, {
     oposto: estado.tipo === "oposto",
     titulo: loc(estado.tipo === "oposto" ? "ICARUS.Testes.Oposto.Titulo" : "ICARUS.Testes.Resistencia.Titulo"),
@@ -219,13 +252,40 @@ async function postarResultado(estado) {
     empate: estado.tipo === "oposto" && !vencedor,
     motivoBonus: estado.resolucao?.motivo === "bonus",
     resistencia: r, resumo: estado.resolucao,
-    falharamUuids: estado.tipo === "resistencia" ? linhas.filter(l => !l.passou).map(l => l.uuid).join(",") : ""
+    falharamUuids: estado.tipo === "resistencia" ? linhas.filter(l => !l.passou).map(l => l.uuid).join(",") : "",
+    manobra
   });
   return ChatMessage.create({
     content,
     speaker: { alias: loc(estado.tipo === "oposto" ? "ICARUS.Testes.Oposto.Titulo" : "ICARUS.Testes.Resistencia.Titulo") },
     flags: { [SISTEMA_ID]: { teste: estado } }
   });
+}
+
+/** Texto do efeito da manobra vencida pelo atacante. */
+function textoDoEfeito(id, efeito, atacante, alvo) {
+  if (id === "empurrar") return fmt("ICARUS.Manobra.Efeitos.empurrar", { alvo, metros: String(efeito.metros).replace(".", ",") });
+  if (id === "desarmar") return fmt(efeito.empurraItem ? "ICARUS.Manobra.Efeitos.desarmarLonge" : "ICARUS.Manobra.Efeitos.desarmar", { alvo, atacante });
+  return fmt(`ICARUS.Manobra.Efeitos.${id}`, { alvo, atacante });
+}
+
+/**
+ * Inicia uma manobra (teste oposto: ataque do atacante × Fortitude do alvo). O Mestre inicia
+ * direto; um jogador pede ao Mestre (que precisa estar conectado).
+ * @param {{ manobra: string, atacanteUuid: string, alvoUuid: string, pericia: "luta"|"pontaria" }} pedido
+ */
+export function iniciarManobra(pedido) {
+  if (!game.user.isGM) {
+    if (!game.users.activeGM) return ui.notifications.warn(loc("ICARUS.Manobra.SemMestre"));
+    emitir("testes:pedirManobra", { pedido });
+    return ui.notifications.info(loc("ICARUS.Manobra.Pedido"));
+  }
+  const participantes = [
+    montarParticipante(pedido.atacanteUuid, { tipo: "ataque", chave: pedido.pericia === "pontaria" ? "pontaria" : "luta" }, 0),
+    montarParticipante(pedido.alvoUuid, { tipo: "pericia", chave: "fortitude" }, 1)
+  ];
+  if (participantes.some(p => !p)) return ui.notifications.warn(loc("ICARUS.Testes.AtorNaoEncontrado"));
+  return iniciarSessao({ tipo: "oposto", participantes, manobra: { id: pedido.manobra } });
 }
 
 /* ------------------------------- Socket ------------------------------- */
@@ -246,6 +306,12 @@ function aoReceber(msg, remetente) {
       sessao = msg.estado;
       if (msg.para) TelaTeste.mostrar(sessao);
       else TelaTeste.atualizar(sessao);
+      break;
+    case "testes:pedirManobra":
+      // Só o Mestre ativo atende, e só pedidos de quem é dono do atacante
+      if (!game.user.isGM || (game.users.activeGM && !game.users.activeGM.isSelf)) return;
+      if (!resolverUuid(msg.pedido?.atacanteUuid).actor?.testUserPermission(game.users.get(userId), "OWNER")) return;
+      iniciarManobra(msg.pedido);
       break;
     case "testes:rolou":
       processarRolagem(msg, userId);
@@ -312,6 +378,21 @@ export function registrarTestes() {
     });
   });
 
+  // Card da manobra: "Aplicar Agarrado/Caído" (só o Mestre, com um clique de confirmação)
+  Hooks.on("renderChatMessage", (mensagem, html) => {
+    const raiz = html instanceof HTMLElement ? html : html?.[0];
+    const botao = raiz?.querySelector("[data-icarus-manobra-condicao]");
+    if (!botao) return;
+    if (!game.user.isGM) return botao.remove();
+    botao.addEventListener("click", async ev => {
+      ev.preventDefault();
+      botao.disabled = true;
+      const { aplicarCondicao } = await import("./condicoes-foundry.mjs");
+      const doc = fromUuidSync(botao.dataset.uuid);
+      if (doc) await aplicarCondicao(doc, botao.dataset.icarusManobraCondicao, { origem: "manobra" });
+    });
+  });
+
   // O anfitrião saiu: a sessão se perde
   Hooks.on("userConnected", (usuario, conectado) => {
     if (conectado || !sessao || usuario.id !== sessao.gmId || souAnfitriao()) return;
@@ -321,7 +402,7 @@ export function registrarTestes() {
   });
 
   return {
-    abrirOposto, abrirResistencia, iniciarSessao, cancelar, reenviarTela, fecharParaTodos,
+    abrirOposto, abrirResistencia, iniciarSessao, iniciarManobra, cancelar, reenviarTela, fecharParaTodos,
     rolarNovamente: repetirEmpate, sessaoAtual, pericias: () => PERICIAS
   };
 }

@@ -1,8 +1,9 @@
 import {
-  TIPOS_DANO_COM_RESISTENCIA, SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito
+  TIPOS_DANO_COM_RESISTENCIA, SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS, PERICIAS, RESISTENCIAS, TAMANHOS, FONTES_PODER, TIPOS_EQUIPAVEIS, NIVEL_PARAGON, chavesDeEfeito,
+  PROFICIENCIAS_ARMA, CATEGORIAS_ARMADURA_CORPO
 } from "../config.mjs";
 import { numero, limitar, comSinal, semMais } from "../regras.mjs";
-import { rolarPericia, rolarAtributo } from "../rolls.mjs";
+import { rolarPericia, rolarAtributo, modoDoEvento } from "../rolls.mjs";
 import { RACAS, racaPorId, iconeDaRaca, resolverRaca } from "../data/racas.mjs";
 import { trocarRaca, reaplicarRaca, refazerEscolhas, ehPoderRacialAuto, escolhasGuardadas } from "../racas.mjs";
 import { DialogoNivel } from "./dialogo-nivel.mjs";
@@ -18,9 +19,15 @@ import { rolarTesteDeMorte, registrarDanoEmMorrendo, estabilizarComCura } from "
 import { TAMANHO_PACOTE } from "../config.mjs";
 import { espacosDoItem } from "../derivar.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
-import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura } from "../combate.mjs";
+import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura, vestidosSemProficiencia } from "../combate.mjs";
 import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
+import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, reacaoDoAtor } from "../acoes.mjs";
+import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } from "../classes-dados.mjs";
+import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } from "../classes.mjs";
+import { acaoDaMecanica } from "../classes/comum.mjs";
+import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
+import { abrirManobra } from "../manobras.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
 
@@ -98,7 +105,39 @@ export class FichaPersonagem extends ActorSheet {
       poderes: div ? poderesDaDivindade(div.id).map(p => ({ nome: p.nome, meta: p.meta, possui: possuidos.has(p.id) })) : []
     };
 
-    ctx.identidade = ["origem", "classe", "profissao"].map(k => ({
+    // Classe: seletor com as classes do sistema + "Outra (texto livre)"
+    const classe = classePorId(src.identidade.classe);
+    const classeLivreTexto = src.identidade.classe && !classe ? src.identidade.classe : "";
+    ctx.classe = {
+      id: classe?.id ?? "",
+      icone: classe ? iconeDaClasse(classe.id) : "",
+      papel: classe?.papel ?? "",
+      opcoes: [
+        { valor: "", rotulo: loc("ICARUS.Classe.Nenhuma"), selecionado: !src.identidade.classe },
+        ...CLASSES.map(c => ({ valor: c.id, rotulo: c.nome, selecionado: c.id === classe?.id })),
+        ...(classeLivreTexto ? [{ valor: classeLivreTexto, rotulo: `${classeLivreTexto} (${loc("ICARUS.Classe.Livre")})`, selecionado: true }] : []),
+        { valor: "__outra__", rotulo: loc("ICARUS.Classe.Outra"), selecionado: false }
+      ]
+    };
+
+    // Aba Classe: progressão, contador de poderes e mecânicas
+    const contador = contadorDePoderes(actor);
+    const caminhoMonge = actor.getFlag(SISTEMA_ID, "caminho");
+    ctx.classeAba = classe ? {
+      tem: true, nome: classe.nome, icone: ctx.classe.icone, papel: classe.papel,
+      patamar: loc(`ICARUS.Patamares.${patamarDe(s.nivel)}`),
+      caminho: caminhoMonge ? loc(`ICARUS.Monge.Caminhos.${caminhoMonge}`) : "",
+      contador,
+      tabela: tabelaDeProgressao(classe, s.nivel),
+      mecanicas: MECANICAS_DE_CLASSE.get(classe.id)?.(actor) ?? []
+    } : { tem: false };
+
+    // Recursos de classe
+    ctx.recursosClasse = (s.recursos ?? []).map(r => ({
+      ...r, opcoes: RECARGAS.map(v => ({ valor: v, rotulo: loc(`ICARUS.Recursos.Recargas.${v}`), selecionado: v === r.recarga }))
+    }));
+
+    ctx.identidade = ["origem", "profissao"].map(k => ({
       chave: k,
       rotulo: loc(`ICARUS.Identidade.${k}`),
       valor: src.identidade[k],
@@ -119,7 +158,7 @@ export class FichaPersonagem extends ActorSheet {
     ctx.defesa = {
       total: s.defesa.total,
       outros: src.defesa.outros,
-      dica: [dica("system.defesa.outros"), s.defesa.condicao ? `${comSinal(s.defesa.condicao.valor)} ${s.defesa.condicao.origem}` : ""].filter(Boolean).join("\n"),
+      dica: [dica("system.defesa.outros"), ...(s.defesa.passivos ?? []).map(p => `${comSinal(p.valor)} ${p.origem}`), s.defesa.condicao ? `${comSinal(s.defesa.condicao.valor)} ${s.defesa.condicao.origem}` : ""].filter(Boolean).join("\n"),
       penalidade: s.defesa.penalidade ? game.i18n.format("ICARUS.Armaduras.PenalidadeTotal", { valor: comSinal(-s.defesa.penalidade) }) : "",
       avisoAcoplado: conflitoEscudoAcoplado(actor) ? loc("ICARUS.Armaduras.AvisoAcoplado") : "",
       formula: game.i18n.format("ICARUS.Defesa.Formula", {
@@ -143,7 +182,7 @@ export class FichaPersonagem extends ActorSheet {
       temp: src.atributos[k].temp,
       // Temp diferente do salvo = há Efeito Ativo mexendo nele
       tempEfeito: s.atributos[k].temp !== src.atributos[k].temp ? comSinal(s.atributos[k].temp - src.atributos[k].temp) : "",
-      tempDica: dica(`system.atributos.${k}.temp`),
+      tempDica: [dica(`system.atributos.${k}.temp`), s.atributos[k].aumento ? game.i18n.format("ICARUS.Comuns.AumentoDica", { n: s.atributos[k].aumento }) : ""].filter(Boolean).join("\n"),
       total: comSinal(s.atributos[k].total)
     }));
 
@@ -165,7 +204,7 @@ export class FichaPersonagem extends ActorSheet {
         chave: p.chave,
         nome,
         treino: d.treino,
-        treinoDica: [game.i18n.format("ICARUS.Pericia.TreinoDica", { pericia: nome, grau: loc(`ICARUS.Treino.${d.treino}`) }), dica(`${k}.treino`)].filter(Boolean).join("\n"),
+        treinoDica: [game.i18n.format("ICARUS.Pericia.TreinoDica", { pericia: nome, grau: loc(`ICARUS.Treino.${d.treino}`) }), dica(`${k}.treino`), d.especialistaPorPoder ? loc("ICARUS.Comuns.EspecialistaDica") : ""].filter(Boolean).join("\n"),
         resistencia: !!p.resistencia,
         atributo: fonte.atributo,
         atributoMudou: d.atributo !== p.atributo,
@@ -174,7 +213,7 @@ export class FichaPersonagem extends ActorSheet {
         outrosDica: dica(`${k}.outros`),
         comEfeito: !!origem,
         total: comSinal(d.total),
-        rolarDica: [rolar, origem].filter(Boolean).join("\n")
+        rolarDica: [rolar, origem, loc("ICARUS.Rolagem.DicaAtalhos")].filter(Boolean).join("\n")
       };
     });
     ctx.opcoesAtributo = opcoesAtributo;
@@ -216,6 +255,16 @@ export class FichaPersonagem extends ActorSheet {
     // Testes de morte: aparece em Morrendo, estável ou com marcas
     const m = s.morte ?? { sucessos: 0, falhas: 0, estavel: false };
     const morrendo = actor.statuses?.has("morrendo") ?? false;
+    // Reação da rodada e Aguardar
+    const reacao = reacaoDoAtor(actor);
+    const aguardando = actor.getFlag(SISTEMA_ID, "aguardando");
+    ctx.acoesCombate = {
+      reacaoDisponivel: s.reacao.disponivel,
+      reacaoPode: reacao.pode,
+      reacaoTexto: textoReacao(actor),
+      aguardando: aguardando ? game.i18n.format("ICARUS.Aguardar.Ativo", { acao: loc(`ICARUS.Poderes.Acoes.${aguardando.acao}`), gatilho: aguardando.gatilho }) : ""
+    };
+
     ctx.morte = {
       mostrar: morrendo || m.estavel || m.sucessos > 0 || m.falhas > 0,
       morrendo, estavel: m.estavel,
@@ -225,10 +274,17 @@ export class FichaPersonagem extends ActorSheet {
 
     // Resistências: RD geral e, por tipo, Redução / Imune / Vulnerável (campos salvos; efetivo na dica)
     const r = s.resistencias, rs = src.resistencias;
+    // Dica da RD: digitado + fontes, e o teto quando cortou
+    const dicaRD = det => !det ? "" : [
+      det.usadas.length || det.cortado ? game.i18n.format("ICARUS.RD.Digitado", { valor: det.bruto - det.usadas.reduce((x, f) => x + f.valor, 0) }) : "",
+      ...det.usadas.map(f => `+${f.valor} ${f.origem}`),
+      det.cortado ? game.i18n.format("ICARUS.RD.Teto", { teto: r.teto, bruto: det.bruto }) : ""
+    ].filter(Boolean).join("\n");
     ctx.resistenciasTabela = {
       rdGeral: rs.rdGeral,
       rdEfetivo: r.rdGeral !== rs.rdGeral ? r.rdGeral : null,
-      rdDica: dica("system.resistencias.rdGeral"),
+      rdDica: dicaRD(r.detalhe?.rdGeral) || (r.teto === null ? loc("ICARUS.RD.SemTeto") : ""),
+      teto: r.teto !== null && r.teto !== undefined ? game.i18n.format("ICARUS.RD.TetoCurto", { teto: r.teto }) : loc("ICARUS.RD.SemTeto"),
       linhas: TIPOS_DANO_COM_RESISTENCIA.map(tipo => ({
         tipo,
         nome: loc(`ICARUS.TiposDano.${tipo}`),
@@ -238,8 +294,18 @@ export class FichaPersonagem extends ActorSheet {
         imuneEfeito: r.imunidade[tipo] && !rs.imunidade[tipo],
         vulneravel: rs.vulnerabilidade[tipo],
         vulneravelEfeito: r.vulnerabilidade[tipo] && !rs.vulnerabilidade[tipo],
-        dica: dica(`system.resistencias.reducao.${tipo}`, `system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)
+        dica: [dicaRD(r.detalhe?.reducao?.[tipo]), dica(`system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)].filter(Boolean).join("\n")
       }))
+    };
+
+    // Proficiências: armas e armaduras marcáveis; simples é de todos
+    const prof = src.proficiencias;
+    const semProf = vestidosSemProficiencia(s, itensDoAtor(actor));
+    ctx.proficiencias = {
+      armas: PROFICIENCIAS_ARMA.map(k => ({ chave: k, rotulo: loc(`ICARUS.Proficiencias.ArmasOp.${k}`), marcado: k === "simples" || prof.armas.includes(k), fixo: k === "simples" })),
+      armaduras: CATEGORIAS_ARMADURA_CORPO.map(k => ({ chave: k, rotulo: loc(`ICARUS.Proficiencias.ArmadurasOp.${k}`), marcado: prof.armaduras.includes(k) })),
+      dicaSimples: loc("ICARUS.Proficiencias.DicaSimples"),
+      avisos: semProf.length ? game.i18n.format("ICARUS.Proficiencias.AvisoVestido", { itens: semProf.map(i => actor.items.get(i.id)?.name ?? "").join(", ") }) : ""
     };
 
     // Inventário
@@ -283,7 +349,7 @@ export class FichaPersonagem extends ActorSheet {
 
     // Poderes agrupados por fonte (Raça primeiro, com o ícone da raça)
     const poderes = actor.items.filter(i => i.type === "poder").sort((a, b) => (a.sort || 0) - (b.sort || 0));
-    const subtitulo = { raca: ctx.raca.nome, classe: src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
+    const subtitulo = { raca: ctx.raca.nome, classe: classe?.nome ?? src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
     ctx.gruposPoder = await Promise.all(FONTES_PODER.map(async fonte => {
       const lista = poderes.filter(p => p.system.fonte === fonte);
       const nomeFonte = loc(`ICARUS.Poderes.Fontes.${fonte}`);
@@ -292,7 +358,7 @@ export class FichaPersonagem extends ActorSheet {
         fonte,
         titulo,
         ehRaca: fonte === "raca",
-        icone: fonte === "raca" && raca ? ctx.raca.icone : fonte === "divindade" && div ? ctx.divindade.simbolo : "",
+        icone: fonte === "raca" && raca ? ctx.raca.icone : fonte === "divindade" && div ? ctx.divindade.simbolo : fonte === "classe" && classe ? ctx.classe.icone : "",
         tag: fonte === "classe"
           ? game.i18n.format("ICARUS.Poderes.TagNivel", { nivel: s.nivel })
           : game.i18n.format(lista.length === 1 ? "ICARUS.Poderes.ContaUm" : "ICARUS.Poderes.Conta", { n: lista.length }),
@@ -301,11 +367,14 @@ export class FichaPersonagem extends ActorSheet {
           const flags = p.flags?.[SISTEMA_ID] ?? {};
           return {
             id: p.id, name: p.name, img: p.img,
-            mostrarIcone: fonte === "raca" || fonte === "divindade",
+            mostrarIcone: fonte === "raca" || fonte === "divindade" || fonte === "classe",
             concedido: !!flags.concedido,
             auto: ehPoderRacialAuto(p),
             pendente: ehPoderRacialAuto(p) && flags.pendente === true,
             custo: p.system.custoPM ?? null,
+            // Usar: poderes com ação (não passivos) ou com custo em PM
+            usavel: (p.system.acao && p.system.acao !== "passivo") || !!p.system.custoPM,
+            usarDica: [p.system.acao ? loc(`ICARUS.Poderes.Acoes.${p.system.acao}`) : "", p.system.acao === "reacao" ? textoReacao(actor) : ""].filter(Boolean).join(" · "),
             meta: [
               p.system.nivel ? game.i18n.format("ICARUS.Poderes.NivelN", { n: p.system.nivel }) : "",
               p.system.prerequisito ? `${loc("ICARUS.Poderes.Prerequisito")}: ${p.system.prerequisito}` : ""
@@ -422,13 +491,14 @@ export class FichaPersonagem extends ActorSheet {
     super.activateListeners(html);
     // Rolar é permitido a quem é dono da ficha, mesmo com ela travada
     if (this.actor.isOwner) {
-      html.on("click", "[data-action='rolar-pericia']", ev => rolarPericia(this.actor, ev.currentTarget.dataset.pericia));
-      html.on("click", "[data-action='rolar-atributo']", ev => rolarAtributo(this.actor, ev.currentTarget.dataset.atributo));
+      // Shift = vantagem, Ctrl = desvantagem
+      html.on("click", "[data-action='rolar-pericia']", ev => rolarPericia(this.actor, ev.currentTarget.dataset.pericia, modoDoEvento(ev)));
+      html.on("click", "[data-action='rolar-atributo']", ev => rolarAtributo(this.actor, ev.currentTarget.dataset.atributo, modoDoEvento(ev)));
       // Armas: atacar, dano e recarregar também valem com a ficha travada
       const armaDe = el => this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
       html.on("click", "[data-action='arma-atacar']", ev => {
         const item = armaDe(ev.currentTarget);
-        if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo);
+        if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo, modoDoEvento(ev));
       });
       html.on("click", "[data-action='arma-dano']", async ev => {
         const item = armaDe(ev.currentTarget);
@@ -449,6 +519,14 @@ export class FichaPersonagem extends ActorSheet {
     });
     if (!this.isEditable) return;
     html.on("click", "[data-action]", this._onAcao.bind(this));
+    // Recursos de classe: nome, máximo e recarga editados na linha
+    html.on("change", "[data-recurso-campo]", ev => {
+      const el = ev.currentTarget;
+      const id = el.closest("[data-recurso-id]")?.dataset.recursoId;
+      const campo = el.dataset.recursoCampo;
+      const valor = campo === "max" ? Math.max(0, Math.trunc(numero(el.value))) : el.value;
+      if (id) alterarRecurso(this.actor, id, { [campo]: valor });
+    });
     // Campos de item editados direto na ficha (ex.: quantidade de munição)
     html.on("change", "[data-item-campo]", ev => {
       const el = ev.currentTarget;
@@ -461,6 +539,24 @@ export class FichaPersonagem extends ActorSheet {
       { name: "ICARUS.Condicoes.Escalar", icon: '<i class="fa-solid fa-angles-up"></i>', condition: li => !!CONDICAO_POR_ID[(li[0] ?? li).dataset.condicao]?.escala, callback: li => escalarCondicao(this.actor, (li[0] ?? li).dataset.condicao) }
     ]);
     ligarArvoreDivindade(html instanceof HTMLElement ? html : html[0], valor => trocarDivindade(this.actor, valor));
+    html.on("change", ".sel-classe", async ev => {
+      const valor = ev.currentTarget.value;
+      let mudou = false;
+      if (valor === "__outra__") {
+        const texto = await foundry.applications.api.DialogV2.prompt({
+          window: { title: game.i18n.localize("ICARUS.Classe.Outra") },
+          content: `<input type="text" name="classe" autofocus placeholder="${game.i18n.localize("ICARUS.Classe.OutraDica")}">`,
+          ok: { label: game.i18n.localize("ICARUS.Devocao.Confirmar"), callback: (e, b) => b.form.elements.classe.value.trim() },
+          rejectClose: false
+        });
+        if (texto) { await classeLivre(this.actor, texto); mudou = true; }
+      } else if (valor === "") {
+        await classeLivre(this.actor, ""); mudou = true;
+      } else if (classePorId(valor)) {
+        mudou = await aplicarClasse(this.actor, valor);
+      }
+      if (!mudou) this.render(false);
+    });
     html.on("change", ".sel-raca", async ev => {
       const mudou = await trocarRaca(this.actor, ev.currentTarget.value);
       if (!mudou) this.render(false);  // cancelou: volta a combobox para a raça atual
@@ -486,6 +582,12 @@ export class FichaPersonagem extends ActorSheet {
         // Cicla 0 → 1 → 2 → 0 o treino salvo, sem bloquear; Efeitos (UPGRADE) agem por cima
         return actor.update({ [`system.pericias.${k}.treino`]: (actor._source.system.pericias[k].treino + 1) % 3 });
       }
+      case "prof-alternar": {
+        const lista = el.dataset.lista, valor = el.dataset.valor;
+        const atual = new Set(actor._source.system.proficiencias[lista] ?? []);
+        if (atual.has(valor)) atual.delete(valor); else atual.add(valor);
+        return actor.update({ [`system.proficiencias.${lista}`]: [...atual] });
+      }
       case "abrir-nivel":
         return new DialogoNivel(actor).render(true);
       case "raca-reaplicar":
@@ -493,7 +595,7 @@ export class FichaPersonagem extends ActorSheet {
       case "raca-escolhas":
         return refazerEscolhas(actor);
       case "morte-rolar":
-        return rolarTesteDeMorte(actor);
+        return rolarTesteDeMorte(actor, modoDoEvento(event));
       case "morte-dano":
         return registrarDanoEmMorrendo(actor, el.dataset.critico === "1");
       case "morte-estabilizar":
@@ -508,6 +610,37 @@ export class FichaPersonagem extends ActorSheet {
         return new PainelCondicoes({ actor }).render(true);
       case "divindade-poderes":
         return new DialogoPoderesConcedidos(actor, actor._source.system.identidade.divindade).render(true);
+      case "poder-usar":
+        return usarPoder(actor, itemDe());
+      case "reacao-alternar":
+        return alternarReacao(actor);
+      case "recurso-classe-novo":
+        return adicionarRecurso(actor);
+      case "recurso-classe-sugerir":
+        return sugerirRecursos(actor);
+      case "recurso-classe-descanso":
+        return recarregarRecursos(actor, "descanso");
+      case "recurso-classe-excluir":
+        return removerRecurso(actor, el.closest("[data-recurso-id]")?.dataset.recursoId);
+      case "recurso-classe-delta": {
+        const id = el.closest("[data-recurso-id]")?.dataset.recursoId;
+        const r = s.recursos.find(x => x.id === id);
+        return r ? alterarRecurso(actor, id, { valor: r.valor + Number(el.dataset.delta) }) : null;
+      }
+      case "classe-mecanica": {
+        const fn = acaoDaMecanica(el.dataset.mecanica);
+        return fn ? fn(actor) : null;
+      }
+      case "classe-poder": {
+        const { DialogoPoderesClasse } = await import("./dialogo-poderes-classe.mjs");
+        return new DialogoPoderesClasse(actor).render(true);
+      }
+      case "manobra":
+        return abrirManobra(actor);
+      case "aguardar":
+        return aguardar(actor);
+      case "aguardar-disparar":
+        return dispararAguardar(actor);
       case "poder-chat":
         return this._enviarPoderAoChat(itemDe());
       case "item-criar": {

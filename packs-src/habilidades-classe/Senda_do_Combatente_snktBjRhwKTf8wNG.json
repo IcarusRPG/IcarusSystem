@@ -1,0 +1,38 @@
+{
+  "_id": "snktBjRhwKTf8wNG",
+  "name": "Senda do Combatente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "dyqFs5SBHWlNlCxE",
+  "sort": 2002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe uma Senda, que define seu estilo. A escolha é permanente.<ul class=\"subs-classe\"><li><strong>Lâmina Única (Kenjutsu).</strong> Enquanto empunha uma única arma corpo a corpo (a uma ou duas mãos), recebe +2 nos testes de ataque e +1 na margem de ameaça.</li><li><strong>Lâminas Gêmeas (Niten).</strong> Você recebe os benefícios do poder Par de Lâminas e, enquanto empunha duas armas, +2 na Defesa.</li><li><strong>Kyudo (Arco).</strong> Você soma sua Sabedoria (limitada pelo seu nível) no dano com arcos e ignora as penalidades de cobertura leve.</li></ul>",
+    "classe": "samurai",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__senda-do-combatente",
+      "classe": "samurai",
+      "habilidade": "senda-do-combatente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!snktBjRhwKTf8wNG"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "ON1XFwxYoGI0lmQx",
+  "name": "Poderes do Caminho da Meditação",
+  "type": "Item",
+  "folder": "zQgUz5C0U1Tp26gK",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:monge:poderes-do-caminho-da-meditacao"
+    }
+  },
+  "_key": "!folders!ON1XFwxYoGI0lmQx"
+}

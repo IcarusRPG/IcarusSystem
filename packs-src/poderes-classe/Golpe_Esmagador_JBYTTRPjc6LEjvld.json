@@ -1,0 +1,38 @@
+{
+  "_id": "JBYTTRPjc6LEjvld",
+  "name": "Golpe Esmagador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "4BoMF4gKzJMJAKMH",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar corpo a corpo com uma arma de Impacto. Se acertar, o alvo faz um teste de Fortitude (CD = 10 + metade do nível + Força) ou fica Pasmo até o início do seu próximo turno.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Brutalidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__golpe-esmagador",
+      "classe": "barbaro",
+      "poder": "golpe-esmagador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!JBYTTRPjc6LEjvld"
+}

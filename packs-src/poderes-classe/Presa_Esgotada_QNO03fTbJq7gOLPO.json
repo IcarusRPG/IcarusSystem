@@ -1,0 +1,38 @@
+{
+  "_id": "QNO03fTbJq7gOLPO",
+  "name": "Presa Esgotada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "d5fIcsTe8anCGskF",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques contra a sua presa ignoram 3 pontos da RD dela.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Caça",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__presa-esgotada",
+      "classe": "patrulheiro",
+      "poder": "presa-esgotada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!QNO03fTbJq7gOLPO"
+}

@@ -1,0 +1,79 @@
+{
+  "_id": "fZ0ddD2MnNfvG6cB",
+  "name": "Lobo",
+  "type": "personagem",
+  "img": "icons/svg/pawprint.svg",
+  "folder": null,
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 2
+    },
+    "deslocamento": 12,
+    "resistencias": {
+      "rdGeral": 0
+    },
+    "notas": "<p>Defesa +2; deslocamento 12 m. Mordida: 1d6 de dano de Perfuração. <em>Tática de Matilha:</em> se um aliado seu estiver adjacente ao alvo, o ataque do lobo é feito com vantagem. <em>Derrubar:</em> uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Caído.</p>",
+    "pericias": {}
+  },
+  "prototypeToken": {
+    "name": "Lobo",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "icons/svg/pawprint.svg"
+    }
+  },
+  "items": [
+    {
+      "_id": "gIUflnfIqbKKr4Ky",
+      "name": "Mordida",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!fZ0ddD2MnNfvG6cB.gIUflnfIqbKKr4Ky"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lobo",
+      "vinculo": {
+        "animal": "lobo"
+      }
+    }
+  },
+  "_key": "!actors!fZ0ddD2MnNfvG6cB"
+}

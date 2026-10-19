@@ -1,0 +1,38 @@
+{
+  "_id": "ZXeKvGs51lUC91Ur",
+  "name": "Ladrão de Rua",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Atletismo e Acrobacia.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__ladrao-de-rua",
+      "classe": "ladino",
+      "poder": "ladrao-de-rua",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ZXeKvGs51lUC91Ur"
+}

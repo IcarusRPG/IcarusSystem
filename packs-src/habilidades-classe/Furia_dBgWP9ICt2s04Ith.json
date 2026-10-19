@@ -1,0 +1,38 @@
+{
+  "_id": "dBgWP9ICt2s04Ith",
+  "name": "Fúria",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "gdo614mxTqnHORen",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação livre, você gasta 2 PM e entra em Fúria. Em Fúria, você recebe +2 nas rolagens de dano corpo a corpo e +1 nos testes de ataque corpo a corpo. Em contrapartida, não pode lançar magias nem fazer testes de Concentração, e só usa perícias baseadas em Inteligência, Sabedoria ou Carisma se forem Intimidação ou Vontade. A Fúria dura até o fim da cena, mas termina se, ao fim de uma rodada, você não tiver atacado nem sofrido dano. Você pode encerrá-la quando quiser, sem custo. No 9º nível, o bônus passa a +3 no dano e +2 no ataque; no 17º nível, a +4 no dano e +3 no ataque.",
+    "classe": "barbaro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__furia",
+      "classe": "barbaro",
+      "habilidade": "furia",
+      "inferido": true
+    }
+  },
+  "_key": "!items!dBgWP9ICt2s04Ith"
+}

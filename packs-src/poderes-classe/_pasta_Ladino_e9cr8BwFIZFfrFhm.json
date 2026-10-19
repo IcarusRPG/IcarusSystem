@@ -1,0 +1,15 @@
+{
+  "_id": "e9cr8BwFIZFfrFhm",
+  "name": "Ladino",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:ladino"
+    }
+  },
+  "_key": "!folders!e9cr8BwFIZFfrFhm"
+}

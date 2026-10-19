@@ -1,0 +1,40 @@
+<div class="ficha-icarus dialogo-poderes-classe">
+  {{#if semClasse}}
+  <p>{{localize "ICARUS.Classe.SemClasse"}}</p>
+  {{else}}
+  <header class="filtros-poderes-classe">
+    <input type="search" name="busca" value="{{filtros.busca}}" placeholder="{{localize "ICARUS.Classe.Buscar"}}" aria-label="{{localize "ICARUS.Classe.Buscar"}}">
+    <select name="grupo" aria-label="{{localize "ICARUS.Classe.Grupo"}}">
+      <option value="">{{localize "ICARUS.Classe.TodosGrupos"}}</option>
+      {{#each nomesGrupos}}<option value="{{this}}"{{#if (eq this ../filtros.grupo)}} selected{{/if}}>{{this}}</option>{{/each}}
+    </select>
+    <label class="chk"><input type="checkbox" name="soDisponiveis"{{#if filtros.soDisponiveis}} checked{{/if}}> {{localize "ICARUS.Classe.SoDisponiveis"}}</label>
+    <span class="contador-classe">{{contador}}</span>
+  </header>
+  <div class="lista-poderes-classe">
+    {{#each grupos}}
+    <section class="grupo-poderes-classe" data-grupo="{{nome}}">
+      <h3 class="titulo-painel">{{nome}}</h3>
+      {{#each poderes}}
+      <article class="card-poder-classe{{#if jaEscolhido}} escolhido{{/if}}{{#unless ok}} com-falta{{/unless}}" data-busca="{{busca}}" data-disponivel="{{#if disponivel}}1{{else}}0{{/if}}">
+        <div class="card-topo">
+          <b>{{nome}}</b>
+          {{#if custo}}<span class="custo">{{custo}} PM</span>{{/if}}
+          {{#if acao}}<span class="icarus-tag">{{acao}}</span>{{/if}}
+          {{#if repetivel}}<span class="icarus-tag">{{localize "ICARUS.Classe.Repetivel"}}</span>{{/if}}
+          {{#if jaEscolhido}}<span class="icarus-tag">{{localize "ICARUS.Classe.JaTem"}}</span>{{/if}}
+        </div>
+        {{#if itens.length}}
+        <ul class="prereqs">{{#each itens}}<li class="pre-{{estado}}"{{#if titulo}} data-tooltip="{{titulo}}"{{/if}}><span aria-hidden="true">{{icone}}</span> {{texto}}</li>{{/each}}</ul>
+        {{/if}}
+        <div class="card-texto">{{{descricao}}}</div>
+        <div class="card-acoes">
+          <button type="button" class="btn peq{{#if disponivel}} primario{{/if}}" data-action="escolher" data-id="{{id}}"{{#if jaEscolhido}} disabled{{/if}}>{{localize "ICARUS.Classe.Escolher"}}</button>
+        </div>
+      </article>
+      {{/each}}
+    </section>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

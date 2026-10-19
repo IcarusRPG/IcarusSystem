@@ -1,0 +1,40 @@
+{
+  "_id": "D92sC83pSk8gvZOx",
+  "name": "Turbilhão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "8L8lK0we5ZuYskBP",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Golpe Pesado, 5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Empunhando uma arma corpo a corpo de Duas Mãos, como uma ação de Agredir, gaste 2 PM. Você gira a arma junto com o corpo e realiza um único teste de ataque, comparando o resultado com a Defesa de cada criatura adjacente a você, aliada ou inimiga. Contra cada criatura cuja Defesa seja igual ou menor que o resultado, você causa o dano da arma. Se o d20 for um 20 natural, o ataque acerta e causa crítico em todas as criaturas adjacentes. Se o d20 estiver na sua margem de ameaça, mas não for 20 natural, o crítico vale apenas contra as criaturas cuja Defesa o resultado alcança.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Mãos",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "golpe-pesado"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__turbilhao",
+      "classe": "guerreiro",
+      "poder": "turbilhao",
+      "inferido": true
+    }
+  },
+  "_key": "!items!D92sC83pSk8gvZOx"
+}

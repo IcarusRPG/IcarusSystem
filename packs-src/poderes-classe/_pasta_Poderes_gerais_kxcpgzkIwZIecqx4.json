@@ -1,0 +1,15 @@
+{
+  "_id": "kxcpgzkIwZIecqx4",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "zQgUz5C0U1Tp26gK",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:monge:poderes-gerais"
+    }
+  },
+  "_key": "!folders!kxcpgzkIwZIecqx4"
+}

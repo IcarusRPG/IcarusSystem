@@ -1,0 +1,38 @@
+{
+  "_id": "4gNXqeAH4676ACnT",
+  "name": "Finta Calculada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "70uqTQ5F1kQeBDtd",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "treinado em Luta",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, gaste 1 PM e faça um teste de Luta contra a Reflexos de um inimigo adjacente. Se vencer, ele fica Desprevenido contra seu próximo ataque neste turno.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de combate geral",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__finta-calculada",
+      "classe": "guerreiro",
+      "poder": "finta-calculada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!4gNXqeAH4676ACnT"
+}

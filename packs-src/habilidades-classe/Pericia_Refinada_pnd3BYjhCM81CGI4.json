@@ -1,0 +1,38 @@
+{
+  "_id": "pnd3BYjhCM81CGI4",
+  "name": "Perícia Refinada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 8001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 8,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha duas perícias em que você seja treinado. Você se torna especialista nelas (bônus de treino +4). Esta habilidade é recebida uma única vez.",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__pericia-refinada",
+      "classe": "ladino",
+      "habilidade": "pericia-refinada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!pnd3BYjhCM81CGI4"
+}

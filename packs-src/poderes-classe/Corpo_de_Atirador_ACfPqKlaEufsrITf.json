@@ -1,0 +1,38 @@
+{
+  "_id": "ACfPqKlaEufsrITf",
+  "name": "Corpo de Atirador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "9nkjJoPyRVVSgaqA",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Acrobacia e Reflexos.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Pistoleiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__corpo-de-atirador",
+      "classe": "pistoleiro",
+      "poder": "corpo-de-atirador",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ACfPqKlaEufsrITf"
+}

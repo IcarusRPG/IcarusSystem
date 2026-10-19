@@ -20,6 +20,8 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
   constructor({ alvosUuids = [] } = {}, options = {}) {
     super(options);
     this.alvos = new Set(alvosUuids);
+    /** Vantagem/desvantagem por alvo (uuid → modo). */
+    this.modos = new Map();
   }
 
   static DEFAULT_OPTIONS = {
@@ -74,7 +76,7 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
     const nomeAtributo = loc(`ICARUS.Atributos.${this.atributoChave}`);
     return {
       busca: this.busca,
-      grupos: gruposDeCandidatos(lista, this.alvos),
+      grupos: gruposDeCandidatos(lista, this.alvos, this.modos),
       nAlvos: this.alvos.size,
       tipos: PERICIAS_RESISTENCIA.map(k => ({ chave: k, rotulo: loc(`ICARUS.Pericias.${k}`), marcado: this.pericia === k })),
       origem: this.origem,
@@ -130,6 +132,10 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
         else this.alvos.delete(t.value);
         el.querySelector(".n-alvos").textContent = this.alvos.size;
         return this._atualizarBotao();
+      }
+      if (t.name === "modo-alvo") {
+        this.modos.set(t.dataset.uuid, t.value);
+        return;
       }
       if (t.name === "pericia") {
         this.pericia = t.value;
@@ -187,7 +193,7 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
   static _aoIniciar() {
     if (!this.completo) return;
     const item = { tipo: "pericia", chave: this.pericia };
-    const participantes = [...this.alvos].map((uuid, i) => montarParticipante(uuid, item, i)).filter(Boolean);
+    const participantes = [...this.alvos].map((uuid, i) => montarParticipante(uuid, item, i, { modo: this.modos.get(uuid) ?? "normal" })).filter(Boolean);
     if (!participantes.length) return ui.notifications.warn(loc("ICARUS.Testes.AtorNaoEncontrado"));
     const conj = resolverUuid(this.conjurador);
     iniciarSessao({

@@ -1,0 +1,38 @@
+{
+  "_id": "VmvC7OR9EChKtJoo",
+  "name": "Sempre Alerta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "7º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você não pode ficar Surpreendido.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": 7,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__sempre-alerta",
+      "classe": "ladino",
+      "poder": "sempre-alerta",
+      "inferido": false
+    }
+  },
+  "_key": "!items!VmvC7OR9EChKtJoo"
+}

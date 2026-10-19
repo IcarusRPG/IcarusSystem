@@ -8,6 +8,7 @@
  * - Penalidades: calculadas na ficha a partir das condições ativas (module/condicoes.mjs).
  */
 import { SISTEMA_ID, PERICIAS } from "./config.mjs";
+import { STATUS_AGUARDANDO } from "./acoes.mjs";
 import { LISTA_CONDICOES, CONDICAO_POR_ID } from "./condicoes.mjs";
 import { textosDasFlags } from "./dados-compendios.mjs";
 import ICONES_CONDICOES from "./dados/icones-condicoes.mjs";
@@ -84,6 +85,9 @@ async function aplicarEmVarios(alvos, id, opcoes = {}) {
 }
 
 /** "Encerrar cena": remove as condições com duração "fim da cena" de todos os tokens da cena. */
+/** Fim da cena (por ator da cena): recursos "1 vez por cena", Fúria, Braços Astrais… acrescentam aqui. */
+export const FIM_DA_CENA = [];
+
 export async function encerrarCena({ confirmar = true } = {}) {
   if (!game.user.isGM) return;
   if (confirmar) {
@@ -100,6 +104,8 @@ export async function encerrarCena({ confirmar = true } = {}) {
     const ids = actor.effects.filter(e => e.flags?.[SISTEMA_ID]?.duracao === "cena" && !e.flags[SISTEMA_ID].origem).map(e => e.id);
     if (ids.length) { await actor.deleteEmbeddedDocuments("ActiveEffect", ids); n += ids.length; }
   }
+  // Outras partes do sistema (recursos "1 vez por cena", Fúria, Braços Astrais…) reagem ao fim da cena
+  for (const actor of atores.values()) for (const fn of FIM_DA_CENA) await fn(actor);
   ui.notifications.info(game.i18n.format("ICARUS.Condicoes.CenaEncerrada", { n }));
 }
 
@@ -135,6 +141,8 @@ export function registrarCondicoes() {
 
   // As 36 condições no Token HUD (com nome em pt-BR); mantém o "morto" do Foundry para os testes de morte
   const morto = CONFIG.statusEffects.find(s => s.id === "dead");
+  // "Aguardando" (ação Aguardar) não é condição: só o ícone no token
+  const aguardando = { ...STATUS_AGUARDANDO };
   CONFIG.statusEffects = [
     ...LISTA_CONDICOES.map(c => ({
       id: c.id,
@@ -143,6 +151,7 @@ export function registrarCondicoes() {
       description: c.descricao,
       flags: { [SISTEMA_ID]: { condicao: c.id, descritores: c.descritores ?? [], pendencias: c.pendencias ?? [] } }
     })).sort((a, b) => a.name.localeCompare(b.name, "pt-BR")),
+    aguardando,
     ...(morto ? [morto] : [])
   ];
 

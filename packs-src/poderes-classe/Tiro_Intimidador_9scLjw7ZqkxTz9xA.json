@@ -1,0 +1,38 @@
+{
+  "_id": "9scLjw7ZqkxTz9xA",
+  "name": "Tiro Intimidador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "DMxyhR3tH0YC0faM",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM ao acertar um ataque com arma de fogo. O alvo faz um teste de Vontade ou fica Abalado até o fim do seu próximo turno.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Tiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__tiro-intimidador",
+      "classe": "pistoleiro",
+      "poder": "tiro-intimidador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!9scLjw7ZqkxTz9xA"
+}

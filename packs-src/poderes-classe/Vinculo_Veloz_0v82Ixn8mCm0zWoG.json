@@ -1,0 +1,38 @@
+{
+  "_id": "0v82Ixn8mCm0zWoG",
+  "name": "Vínculo Veloz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "yqFYIOJfsmwPFLiV",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O deslocamento do seu animal aumenta em 3 m.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Vínculo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__vinculo-veloz",
+      "classe": "patrulheiro",
+      "poder": "vinculo-veloz",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0v82Ixn8mCm0zWoG"
+}

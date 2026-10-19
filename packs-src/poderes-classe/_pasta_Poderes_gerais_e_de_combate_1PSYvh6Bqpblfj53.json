@@ -1,0 +1,15 @@
+{
+  "_id": "1PSYvh6Bqpblfj53",
+  "name": "Poderes gerais e de combate",
+  "type": "Item",
+  "folder": "IsBXvPTjWaJ2n34C",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:samurai:poderes-gerais-e-de-combate"
+    }
+  },
+  "_key": "!folders!1PSYvh6Bqpblfj53"
+}

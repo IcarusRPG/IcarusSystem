@@ -1,0 +1,38 @@
+{
+  "_id": "ytNjP6b2sA28QIrG",
+  "name": "Zen Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, gaste 2 PM para ganhar uma ação de movimento adicional.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__zen-marcial",
+      "classe": "samurai",
+      "poder": "zen-marcial",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ytNjP6b2sA28QIrG"
+}

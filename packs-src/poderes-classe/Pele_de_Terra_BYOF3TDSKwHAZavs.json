@@ -1,0 +1,38 @@
+{
+  "_id": "BYOF3TDSKwHAZavs",
+  "name": "Pele de Terra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "8WF0cwnOG1K4pvvj",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +3 em Furtividade em ambientes naturais.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Selvageria",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__pele-de-terra",
+      "classe": "barbaro",
+      "poder": "pele-de-terra",
+      "inferido": false
+    }
+  },
+  "_key": "!items!BYOF3TDSKwHAZavs"
+}

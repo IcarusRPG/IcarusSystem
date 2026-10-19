@@ -1,0 +1,15 @@
+{
+  "_id": "gvjuW1nqOhHfDl9d",
+  "name": "Linha da Distância",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:linha-da-distancia"
+    }
+  },
+  "_key": "!folders!gvjuW1nqOhHfDl9d"
+}

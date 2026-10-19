@@ -1,0 +1,38 @@
+{
+  "_id": "rK5sIJ0uiXYEkSXQ",
+  "name": "Atacar nas Sombras",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "X3UYfIWpHkRwn5Bh",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você ataca estando em um local de sombra (penumbra ou escuridão), cada criatura que poderia perceber você faz um teste de Visão ou Audição (CD = 10 + metade do nível + Sabedoria). Quem falhar não descobre a sua posição.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho das Sombras",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho das Sombras",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__atacar-nas-sombras",
+      "classe": "monge",
+      "poder": "atacar-nas-sombras",
+      "inferido": false
+    }
+  },
+  "_key": "!items!rK5sIJ0uiXYEkSXQ"
+}

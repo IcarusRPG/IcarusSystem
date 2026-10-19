@@ -1,0 +1,38 @@
+{
+  "_id": "6ea6ZhX4RC2uoQph",
+  "name": "Ataque Extra Aprimorado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "eQnEw0KeBpN1HPfL",
+  "sort": 15003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em seu turno, você pode gastar mais 2 PM para realizar uma segunda ação de Agredir adicional. Com os dois Ataques Extras, você realiza três ações de Agredir no turno, por 3 PM.",
+    "classe": "guerreiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__ataque-extra-aprimorado",
+      "classe": "guerreiro",
+      "habilidade": "ataque-extra-aprimorado",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6ea6ZhX4RC2uoQph"
+}

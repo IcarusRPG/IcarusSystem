@@ -1,0 +1,38 @@
+{
+  "_id": "Q9KVAr5RRZ9qOWK2",
+  "name": "Salto Prodigioso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Acrobacia e dobra a distância dos seus saltos.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__salto-prodigioso",
+      "classe": "monge",
+      "poder": "salto-prodigioso",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Q9KVAr5RRZ9qOWK2"
+}

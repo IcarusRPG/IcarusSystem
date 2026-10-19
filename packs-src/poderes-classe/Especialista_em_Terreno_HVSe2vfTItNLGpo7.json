@@ -1,0 +1,38 @@
+{
+  "_id": "HVSe2vfTItNLGpo7",
+  "name": "Especialista em Terreno",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "dE4F9uKffi9vLoXF",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha um tipo de terreno: floresta, montanha, deserto, pântano, gelo, subterrâneo, urbano ou planície. Enquanto estiver nesse terreno, você recebe +2 em Furtividade, Sobrevivência e Iniciativa. Você pode escolher este poder várias vezes, cada uma para um terreno diferente.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__especialista-em-terreno",
+      "classe": "patrulheiro",
+      "poder": "especialista-em-terreno",
+      "inferido": false
+    }
+  },
+  "_key": "!items!HVSe2vfTItNLGpo7"
+}

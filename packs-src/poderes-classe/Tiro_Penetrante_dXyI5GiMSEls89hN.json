@@ -1,0 +1,40 @@
+{
+  "_id": "dXyI5GiMSEls89hN",
+  "name": "Tiro Penetrante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "gvjuW1nqOhHfDl9d",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Mira Firme, 8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar à distância. O ataque ignora a RD do alvo.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Distância",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "mira-firme"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__tiro-penetrante",
+      "classe": "guerreiro",
+      "poder": "tiro-penetrante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!dXyI5GiMSEls89hN"
+}

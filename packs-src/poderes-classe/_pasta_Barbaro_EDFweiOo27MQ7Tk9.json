@@ -1,0 +1,15 @@
+{
+  "_id": "EDFweiOo27MQ7Tk9",
+  "name": "Bárbaro",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:barbaro"
+    }
+  },
+  "_key": "!folders!EDFweiOo27MQ7Tk9"
+}

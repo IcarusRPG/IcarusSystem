@@ -1,0 +1,38 @@
+{
+  "_id": "fXRa9wMwVAvGvpGD",
+  "name": "Espírito Indomado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver em Fúria, você recebe +2 em todos os testes de resistência exigidos por magias que causam dano. É um efeito passivo: não gasta PM nem ação.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__espirito-indomado",
+      "classe": "barbaro",
+      "poder": "espirito-indomado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!fXRa9wMwVAvGvpGD"
+}

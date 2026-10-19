@@ -1,0 +1,38 @@
+{
+  "_id": "iYOLpXP9YUpfcf2i",
+  "name": "Companheiro de Crime",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "w20HEhQUd8NZwBQJ",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 1 PM e escolhe um aliado adjacente ao mesmo inimigo que você. Até o início do seu próximo turno, esse aliado conta como flanqueador desse inimigo, independente de posição.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Combate Ágil",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__companheiro-de-crime",
+      "classe": "ladino",
+      "poder": "companheiro-de-crime",
+      "inferido": true
+    }
+  },
+  "_key": "!items!iYOLpXP9YUpfcf2i"
+}

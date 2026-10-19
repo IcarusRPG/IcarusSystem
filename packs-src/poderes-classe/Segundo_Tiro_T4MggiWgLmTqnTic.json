@@ -1,0 +1,38 @@
+{
+  "_id": "T4MggiWgLmTqnTic",
+  "name": "Segundo Tiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "9nkjJoPyRVVSgaqA",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando erra um ataque com arma de fogo, você pode gastar 2 PM para repetir o ataque, ficando com o novo resultado.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Pistoleiro",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__segundo-tiro",
+      "classe": "pistoleiro",
+      "poder": "segundo-tiro",
+      "inferido": true
+    }
+  },
+  "_key": "!items!T4MggiWgLmTqnTic"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "BZjUzfA8bCO7NugO",
+  "name": "Tiro de Dispersão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "3dVNpK8ABwdsU0Vu",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 3 PM e dispara uma arma de fogo de Duas Mãos em um cone de 4,5 m. Faça um ataque contra cada criatura na área. Esse ataque não recebe o Tiro Carregado.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Mosquete",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__tiro-de-dispersao",
+      "classe": "pistoleiro",
+      "poder": "tiro-de-dispersao",
+      "inferido": true
+    }
+  },
+  "_key": "!items!BZjUzfA8bCO7NugO"
+}

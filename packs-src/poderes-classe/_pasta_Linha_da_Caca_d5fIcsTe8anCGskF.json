@@ -1,0 +1,15 @@
+{
+  "_id": "d5fIcsTe8anCGskF",
+  "name": "Linha da Caça",
+  "type": "Item",
+  "folder": "768IunF6PIkYMdz0",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:patrulheiro:linha-da-caca"
+    }
+  },
+  "_key": "!folders!d5fIcsTe8anCGskF"
+}

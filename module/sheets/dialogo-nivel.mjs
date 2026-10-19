@@ -1,5 +1,6 @@
 import { SISTEMA_ID, ATRIBUTOS, ATRIBUTOS_CHAVE_PM } from "../config.mjs";
 import { numero, maximoPelaClasse, maximoFinal, niveisImpares, comSinal } from "../regras.mjs";
+import { classePorId } from "../classes-dados.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -42,7 +43,7 @@ export class DialogoNivel extends HandlebarsApplicationMixin(ApplicationV2) {
     const s = this.actor.system;
     const total = k => (ATRIBUTOS.includes(k) ? s.atributos[k].total : null);
     const pvForm = maximoPelaClasse({ inicial: r.pvInicial, porNivel: r.pvPorNivel, atributoTotal: total(r.pvAtributo), nivel: s.nivel });
-    const pmForm = maximoPelaClasse({ inicial: r.pmInicial, porNivel: r.pmPorNivel, atributoTotal: total(r.pmAtributo), nivel: s.nivel });
+    const pmForm = maximoPelaClasse({ inicial: r.pmInicial, porNivel: r.pmPorNivel, atributoTotal: total(r.pmAtributo), nivel: s.nivel, atributoUmaVez: !!r.pmAtributoSoNoPrimeiroNivel });
     // Bônus por nível vêm de Efeitos Ativos de poderes (valor efetivo, não editável aqui)
     return {
       pvMax: maximoFinal({ manual: r.manual, maximoManual: r.pvMax, maximoFormula: pvForm, bonus: r.bonusPv, bonusNivel: s.pv.bonusNivel }),
@@ -58,7 +59,7 @@ export class DialogoNivel extends HandlebarsApplicationMixin(ApplicationV2) {
     }));
     return {
       r,
-      classe: this.actor.system.identidade.classe || "—",
+      classe: classePorId(this.actor.system.identidade.classe)?.nome ?? (this.actor.system.identidade.classe || "—"),
       passos: [
         ["pvInicial", "ICARUS.NivelDialogo.PvInicial"], ["pvPorNivel", "ICARUS.NivelDialogo.PvPorNivel"],
         ["pmInicial", "ICARUS.NivelDialogo.PmInicial"], ["pmPorNivel", "ICARUS.NivelDialogo.PmPorNivel"]
@@ -72,6 +73,7 @@ export class DialogoNivel extends HandlebarsApplicationMixin(ApplicationV2) {
       })),
       chipsPv: chips("pvAtributo", ATRIBUTOS),
       chipsPm: chips("pmAtributo", ATRIBUTOS_CHAVE_PM),
+      atributoUmaVez: r.pmAtributo ? game.i18n.format("ICARUS.NivelDialogo.AtributoUmaVez", { atributo: game.i18n.localize(`ICARUS.Atributos.${r.pmAtributo}`) }) : "",
       totalPv: game.i18n.format("ICARUS.NivelDialogo.TotalPv", { n: s.nivel }),
       totalPm: game.i18n.format("ICARUS.NivelDialogo.TotalPm", { n: s.nivel }),
       ...this._previa()

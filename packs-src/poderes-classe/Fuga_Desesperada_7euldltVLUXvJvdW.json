@@ -1,0 +1,38 @@
+{
+  "_id": "7euldltVLUXvJvdW",
+  "name": "Fuga Desesperada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação livre, você gasta 2 PM. Seu deslocamento aumenta em 6 m até o fim do turno.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__fuga-desesperada",
+      "classe": "ladino",
+      "poder": "fuga-desesperada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!7euldltVLUXvJvdW"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "0Eghe1CdcBScPEE6",
+  "name": "Flecha Cortante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O multiplicador de crítico dos seus arcos aumenta em +1.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__flecha-cortante",
+      "classe": "samurai",
+      "poder": "flecha-cortante",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0Eghe1CdcBScPEE6"
+}

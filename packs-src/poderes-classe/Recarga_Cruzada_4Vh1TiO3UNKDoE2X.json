@@ -1,0 +1,40 @@
+{
+  "_id": "4Vh1TiO3UNKDoE2X",
+  "name": "Recarga Cruzada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "rW9ip1zuIDiHGMrD",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Duas Pistolas",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando recarrega uma arma de fogo, você recarrega também a outra arma que estiver empunhando, com a mesma ação.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Pistolas",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "duas-pistolas"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__recarga-cruzada",
+      "classe": "pistoleiro",
+      "poder": "recarga-cruzada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!4Vh1TiO3UNKDoE2X"
+}

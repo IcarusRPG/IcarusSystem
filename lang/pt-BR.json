@@ -7,7 +7,8 @@
       "poder": "Poder",
       "equipamento": "Equipamento",
       "arma": "Arma",
-      "municao": "Munição"
+      "municao": "Munição",
+      "classe": "Classe"
     }
   },
   "ICARUS": {
@@ -60,7 +61,8 @@
       "poderes": "Poderes",
       "diario": "Diário",
       "efeitos": "Efeitos",
-      "combate": "Combate"
+      "combate": "Combate",
+      "classe": "Classe"
     },
     "Rodape": {
       "Rolar": "Clique no total de um atributo ou perícia para rolar no chat"
@@ -148,7 +150,29 @@
     "Proficiencias": {
       "Titulo": "Proficiências",
       "Armas": "Armas",
-      "Armaduras": "Armaduras"
+      "Armaduras": "Armaduras",
+      "Escudo": "Escudos",
+      "Tunicas": "Túnicas",
+      "Outras": "Outras",
+      "ArmasOp": {
+        "simples": "Simples",
+        "marciais": "Marciais",
+        "marciais-leves-ageis": "Marciais Leves/Ágeis",
+        "exoticas": "Exóticas",
+        "exoticas-corte": "Exóticas de corte",
+        "fogo": "De fogo",
+        "arcos-curtos": "Arcos curtos",
+        "arcos-longos": "Arcos longos"
+      },
+      "ArmadurasOp": {
+        "leve": "Leves",
+        "media": "Médias",
+        "pesada": "Pesadas"
+      },
+      "DicaSimples": "Todo personagem tem proficiência com armas simples.",
+      "AvisoVestido": "Sem proficiência: {itens}. A penalidade vale também nos testes de ataque.",
+      "AvisoEquipar": "{item}: sem proficiência. A penalidade vale também nos testes de ataque.",
+      "CardArmadura": "Armadura/túnica sem proficiência: {valor} no ataque"
     },
     "Notas": {
       "Titulo": "Notas"
@@ -219,7 +243,30 @@
       "CustoPM": "Custo em PM",
       "SemCusto": "Sem custo",
       "Nivel": "Nível (opcional)",
-      "EnviarChat": "Enviar ao chat"
+      "EnviarChat": "Enviar ao chat",
+      "Acao": "Ação",
+      "SemAcao": "—",
+      "Frequencia": "Frequência",
+      "SemFrequencia": "—",
+      "Acoes": {
+        "livre": "Ação livre",
+        "movimento": "Ação de movimento",
+        "padrao": "Ação padrão",
+        "completa": "Ação completa",
+        "reacao": "Reação",
+        "passivo": "Passivo",
+        "especial": "Especial"
+      },
+      "Frequencias": {
+        "cena": "1 vez por cena",
+        "rodada": "1 vez por rodada",
+        "dia": "1 vez por dia"
+      },
+      "Usar": "Usar",
+      "UsarTitulo": "Usar {nome}",
+      "PMAtual": "PM atuais: {pm}/{max}",
+      "CustoInferido": "Custo e ação sugeridos a partir do texto (podem estar errados): confira antes de usar.",
+      "SemPM": "{nome}: PM insuficientes ({pm} pedidos, {atual} disponíveis)."
     },
     "Diario": {
       "Titulo": "Diário do Personagem",
@@ -272,10 +319,12 @@
       "Campos": {
         "bonusPvPorNivel": "PV por nível (poderes)",
         "bonusPmPorNivel": "PM por nível (poderes)",
-        "bonusPmNivelImpar": "PM por nível ímpar (poderes)"
+        "bonusPmNivelImpar": "PM por nível ímpar (poderes)",
+        "pmAtributoSoNoPrimeiroNivel": "Atributo de PM só no 1º nível"
       },
       "BonusPoderes": "Bônus de poderes",
-      "BonusPoderesDica": "Vêm de Efeitos Ativos de poderes (ex.: Sangue de Aço). Não entram no modo Manual."
+      "BonusPoderesDica": "Vêm de Efeitos Ativos de poderes (ex.: Sangue de Aço). Não entram no modo Manual.",
+      "AtributoUmaVez": "{atributo} soma só no 1º nível (Monge)"
     },
     "Rolagem": {
       "Tipo": {
@@ -284,7 +333,14 @@
         "resistencia": "Teste de resistência"
       },
       "Critico": "CRÍTICO",
-      "Falha": "FALHA CRÍTICA"
+      "Falha": "FALHA CRÍTICA",
+      "Modo": {
+        "vantagem": "Vantagem",
+        "desvantagem": "Desvantagem",
+        "normal": "Normal"
+      },
+      "Minimo": "d20 {natural} conta como {d20}",
+      "DicaAtalhos": "Shift: vantagem · Ctrl: desvantagem"
     },
     "Dev": {
       "SemKaelen": "Nenhum personagem chamado Kaelen Vorhal. Crie com game.icarus.criarKaelen().",
@@ -568,7 +624,6 @@
       "Penalidade": "Penalidade de armadura",
       "PenalidadeOrigem": "{valor} {nome} (penalidade de armadura)",
       "PenalidadeTotal": "Penalidade de armadura {valor} em Acrobacia, Furtividade e Prestidigitação",
-      "ProficienciaLivre": "Não exige proficiência (túnica)",
       "Acoplado": "Escudo acoplado",
       "AvisoAcoplado": "Escudo acoplado equipado com uma arma de duas mãos empunhada. Confira as restrições com o Mestre.",
       "Desequipou": "{novo} equipado; {antigo} foi desequipado (só um de cada tipo).",
@@ -790,13 +845,333 @@
         "SemNivel": "Nível não encontrado: informe a CD manualmente.",
         "Observacao": "Observação",
         "ObservacaoExemplo": "ex.: metade do dano se passar"
-      }
+      },
+      "ModoRolagem": "Rolagem"
     },
     "Atalhos": {
       "Titulo": "Atalhos do Icarus",
       "Condicoes": "Condições",
       "TesteOposto": "Teste Oposto",
       "TesteResistencia": "Teste de Resistência"
+    },
+    "Ataque": {
+      "Titulo": "Ataque",
+      "Rolar": "Atacar",
+      "BonusExtra": "Bônus extra",
+      "Alvos": "Alvos",
+      "SemAlvo": "Nenhum alvo marcado (marque com T). O card não compara com a Defesa.",
+      "ModoFlags": "Efeitos do personagem: {modo}",
+      "AcertoAutomatico": "20 NATURAL: ACERTO AUTOMÁTICO E CRÍTICO",
+      "Critico": "CRÍTICO",
+      "AmeacaSemAlvo": "Na margem de ameaça: é crítico só se alcançar a Defesa do alvo."
+    },
+    "Reacao": {
+      "Titulo": "Reação",
+      "Disponivel": "disponível",
+      "Usada": "já usada nesta rodada",
+      "Impedida": "impedida ({motivo})",
+      "JaUsada": "a reação desta rodada já foi usada",
+      "NaoPode": "{nome} não pode reagir: {motivo}.",
+      "Gasta": "gasta a reação",
+      "UsarMesmoAssim": "Usar mesmo assim (Mestre)",
+      "Forcada": "Usada pelo Mestre mesmo sem poder reagir."
+    },
+    "Aguardar": {
+      "Botao": "Aguardar",
+      "Titulo": "Aguardar: {nome}",
+      "Status": "Aguardando",
+      "Dica": "Ação completa: escolha um gatilho e uma ação padrão ou de movimento. Se o gatilho ocorrer até o início do seu próximo turno, você age logo antes dele, sem gastar reação; se não, a ação se perde.",
+      "Gatilho": "Gatilho",
+      "Exemplo": "ex.: quando o ogro sair da porta",
+      "Acao": "Ação",
+      "Confirmar": "Aguardar",
+      "Chat": "{nome} aguarda ({acao}): {gatilho}",
+      "Ativo": "Aguardando ({acao}): {gatilho}",
+      "Disparar": "Disparar",
+      "Disparou": "{nome} age agora ({acao}), antes do gatilho: {gatilho}",
+      "Perdeu": "{nome}: o gatilho \"{gatilho}\" não ocorreu; a ação se perdeu."
+    },
+    "Flanco": {
+      "Titulo": "Flanco",
+      "Rotulo": "Flanco (+{bonus})",
+      "Detectado": "Detectado: um aliado está do lado oposto de {alvo}.",
+      "Manual": "Não detectado pelos tokens: marque se um aliado está do lado oposto do alvo, corpo a corpo.",
+      "Linha": "Flanco: +{bonus} no ataque"
+    },
+    "Camuflagem": {
+      "Titulo": "Camuflagem",
+      "Rotulo": "Camuflagem do alvo",
+      "Tipos": {
+        "nenhuma": "Nenhuma",
+        "leve": "Leve (falha com 1–2)",
+        "total": "Total (falha com 1–5)"
+      },
+      "Dica": "Leve: neblina, folhagem, penumbra. Total: escuridão total, invisibilidade. Rola 1d10 antes do ataque.",
+      "Ignora": "Este personagem ignora camuflagem: nada é rolado.",
+      "Nomes": {
+        "leve": "leve",
+        "total": "total"
+      },
+      "Ignorou": "Ignora camuflagem",
+      "Falhou": "Falhou pela camuflagem ({tipo}): d10 = {d10} (falha com até {limite})",
+      "Passou": "Camuflagem {tipo}: d10 = {d10} (falharia com até {limite}): o ataque segue"
+    },
+    "Manobra": {
+      "Titulo": "Manobra",
+      "Botao": "Manobra",
+      "Iniciar": "Iniciar teste oposto",
+      "Escolha": "Manobra",
+      "Pericia": "Teste de ataque com",
+      "Tipos": {
+        "agarrar": "Agarrar",
+        "derrubar": "Derrubar",
+        "desarmar": "Desarmar",
+        "empurrar": "Empurrar",
+        "quebrar": "Quebrar"
+      },
+      "NoLugar": "A manobra é feita no lugar de um ataque. Teste oposto: o seu ataque contra a Fortitude do alvo; quem vence aplica o efeito.",
+      "PoderPermite": "Um poder permite esta manobra à distância (Pontaria)",
+      "SoDesarmarDistancia": "À distância (Pontaria) só é possível Desarmar, salvo poder que permita outra manobra.",
+      "UmAlvo": "Marque exatamente um alvo (T) para a manobra.",
+      "Alvo": "Alvo: {alvo}",
+      "Quebrar": "Quebrar: só o teste (dureza do item ainda não definida).",
+      "SemMestre": "A manobra precisa do Mestre conectado.",
+      "Pedido": "Manobra enviada ao Mestre.",
+      "ItemAtaque": "Ataque ({pericia})",
+      "Resistiu": "{alvo} resistiu: nada acontece.",
+      "Efeitos": {
+        "agarrar": "{alvo} fica Agarrado.",
+        "derrubar": "{alvo} fica Caído.",
+        "desarmar": "{alvo} deixa cair um item que empunha.",
+        "desarmarLonge": "{alvo} deixa cair um item que empunha, empurrado 1,5 m na direção que {atacante} escolher (venceu por 5 ou mais).",
+        "empurrar": "{alvo} é empurrado {metros} m (o atacante pode gastar uma ação de movimento para avançar junto).",
+        "quebrar": "{atacante} atinge um item que {alvo} empunha (dano ao item: regra pendente)."
+      },
+      "Condicoes": {
+        "agarrado": "Agarrado",
+        "caido": "Caído"
+      },
+      "Aplicar": "Aplicar"
+    },
+    "RD": {
+      "Digitado": "{valor} digitado na ficha",
+      "Teto": "Teto 8 + metade do nível: {teto} (somaria {bruto})",
+      "TetoCurto": "Teto de RD (8 + metade do nível): {teto}, contado à parte na RD geral e em cada tipo; a mesma fonte não soma consigo mesma.",
+      "SemTeto": "Sem nível: sem teto de RD."
+    },
+    "DuasArmas": {
+      "Titulo": "Duas armas",
+      "Rotulo": "Agredir com duas armas ({primeira} e {segunda})",
+      "RotuloDupla": "Agredir com as duas extremidades (arma Dupla)",
+      "OutraExtremidade": "outra extremidade",
+      "Penalidade": "Um ataque com cada arma, {valor} em todos os testes de ataque até o próximo turno.",
+      "SemPenalidade": "Sem penalidade (poder).",
+      "SemAtributo": "Sem penalidade (poder); o segundo ataque não soma o atributo no dano.",
+      "Linha": "Duas armas: {valor} no ataque",
+      "LinhaSemAtributo": "Segundo ataque: dano sem o atributo"
+    },
+    "Classe": {
+      "PV": "Pontos de Vida",
+      "PM": "Pontos de Mana",
+      "AtributoChave": "Atributo-chave",
+      "Pericias": "Perícias",
+      "Progressao": "Progressão",
+      "Nivel": "Nível",
+      "Habilidades": "Habilidades de classe",
+      "PoderDeClasse": "Poder de classe",
+      "PVTexto": "{inicial} + {atributo} no 1º nível; +{porNivel} + {atributo} por nível",
+      "PMTexto": "{inicial} no 1º nível; +{porNivel} por nível",
+      "PMAtributoPrimeiro": " (+ {atributo} só no 1º nível)",
+      "PericiasTexto": "{obrigatorias}, mais {n} entre: {lista}",
+      "Nenhuma": "—",
+      "Livre": "texto livre",
+      "Outra": "Outra (texto livre)…",
+      "OutraDica": "Nome da classe (sem automação)",
+      "TrocarTitulo": "Trocar de classe",
+      "TrocarTexto": "Trocar {antiga} por {nova}? As {n} habilidade(s) automáticas de {antiga} serão removidas; os poderes de classe escolhidos ficam (remova à mão se quiser).",
+      "Manual": "{nome}: PV/PM no modo manual, os valores da classe não foram aplicados (confira em Nível).",
+      "HabilidadesRecebidas": "{nome} recebeu: {lista}",
+      "PoderesParaEscolher": "{nome}: você tem {n} poder(es) de classe para escolher.",
+      "PericiasTitulo": "Perícias da classe",
+      "Obrigatorias": "Obrigatórias",
+      "Escolhidas": "À sua escolha",
+      "JaTreinada": "já treinada",
+      "TreinoExtra": "{n} obrigatória(s) já era(m) treinada(s): escolha outra(s) da lista (treinamento extra).",
+      "PericiasContador": "{n} de {max}",
+      "PericiasLimite": "Escolha no máximo {max}.",
+      "PericiasDica": "Só acrescenta treino: perícias já treinadas por raça, origem ou profissão continuam como estão.",
+      "PericiasFeitas": "Perícias treinadas: {lista}",
+      "AgoraNao": "Agora não",
+      "Contador": "Poderes de classe",
+      "EscolherPoder": "Escolher poder de classe…",
+      "Mecanicas": "Mecânicas da classe",
+      "SemClasse": "Escolha uma classe no cabeçalho para ver a progressão, os poderes de classe e as mecânicas.",
+      "EscolherPoderTitulo": "Escolher poder de classe",
+      "Buscar": "Buscar poder…",
+      "Grupo": "Grupo",
+      "TodosGrupos": "Todos os grupos",
+      "SoDisponiveis": "Só os disponíveis agora",
+      "ContadorTexto": "Poderes de classe: {x} / {y}",
+      "Repetivel": "repetível",
+      "JaTem": "já tem",
+      "Escolher": "Escolher",
+      "ConfirmeManual": "Confirme manualmente com o Mestre",
+      "MesmoAssimTitulo": "Pré-requisitos não atendidos",
+      "MesmoAssimTexto": "{poder}: falta {faltam}. Escolher mesmo assim? Fica registrado no chat.",
+      "EscolherMesmoAssim": "Escolher mesmo assim",
+      "EscolhidoMesmoAssim": "{nome} escolheu {poder} sem atender todos os pré-requisitos ({usuario}).",
+      "JaEscolhido": "{poder} já foi escolhido (não é repetível).",
+      "SemEscolhas": "Não há escolhas de poder de classe disponíveis neste nível (o Mestre pode permitir).",
+      "Escolhido": "Poder escolhido: {poder}",
+      "EscolhaPermanente": "Esta escolha é permanente. Abra cada opção para ler e clique na que quiser.",
+      "Escolheu": "{nome} escolheu ({habilidade}): {escolha}",
+      "EscolherSub": "Escolher: {habilidade}",
+      "EscolhaPendente": "escolha pendente"
+    },
+    "Patamares": {
+      "iniciante": "Iniciante",
+      "veterano": "Veterano",
+      "campeao": "Campeão",
+      "lenda": "Lenda",
+      "paragon": "Paragon"
+    },
+    "Monge": {
+      "Caminhos": {
+        "meditacao": "Caminho da Meditação",
+        "sombras": "Caminho das Sombras",
+        "astral": "Caminho Astral"
+      },
+      "BracosAstrais": "Braços Astrais",
+      "Desarmado": "Ataque desarmado (Monge)",
+      "CriarDesarmado": "Criar ataque desarmado",
+      "ManifestarBracos": "Manifestar Braços Astrais",
+      "DispensarBracos": "Dispensar Braços Astrais",
+      "BracosInfo": "ação de movimento, {custo} PM, até o fim da cena",
+      "BracosInfoAtivo": "ativos: alcance 3 m, dano de Essência, Sabedoria no ataque e no dano desarmado",
+      "BracosConfirma": "Manifestar os Braços Astrais (ação de movimento, {custo} PM)? PM atuais: {pm}.",
+      "BracosManifestou": "{nome} manifesta os Braços Astrais.",
+      "BracosDispensou": "{nome} dispensa os Braços Astrais.",
+      "LinhaBracos": "Braços Astrais: Sabedoria no ataque e no dano, dano de Essência, alcance 3 m",
+      "Rajada": "Rajada de Golpes",
+      "RajadaRotulo": "Rajada de Golpes (1 PM): ataque desarmado adicional, sem atributo no dano",
+      "RajadaDica": "PM atuais: {pm}.",
+      "NaoUsaArmas": "O Monge não usa armas (só ataca desarmado).",
+      "NaoUsaArmaduras": "O Monge não usa armaduras nem escudos (túnicas podem)."
+    },
+    "Comuns": {
+      "AumentoTitulo": "Aumento de Atributo",
+      "AumentoTexto": "Qual atributo recebe +1? Só uma vez por patamar para o mesmo atributo (patamar atual: {patamar}).",
+      "UmaVezPorPatamar": "Apenas uma vez por patamar para o mesmo atributo.",
+      "PermitirMesmoAssim": "Permitir mesmo assim (Mestre)?",
+      "EspecializadaTitulo": "Perícia Especializada",
+      "EspecializadaTexto": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Ela passa a especialista (+4).",
+      "RefinadaTexto": "Escolha duas perícias em que você seja treinado. Elas passam a especialista (+4).",
+      "SemPericias": "Nenhuma perícia treinada e ainda não especialista.",
+      "EscolhaN": "Escolha exatamente {n}.",
+      "AumentoDica": "+{n} Aumento de Atributo",
+      "EspecialistaDica": "Especialista por poder (Perícia Especializada/Refinada)"
+    },
+    "Barbaro": {
+      "EmFuria": "Em Fúria",
+      "Furia": "Fúria",
+      "Entrar": "Entrar em Fúria",
+      "Encerrar": "Encerrar Fúria",
+      "SemFuria": "Este personagem não tem a habilidade Fúria.",
+      "Info": "ação livre, 2 PM: +{dano} no dano e +{ataque} no ataque corpo a corpo",
+      "InfoAtiva": "em Fúria: +{dano} dano / +{ataque} ataque corpo a corpo",
+      "Dica": "Sem magias nem Concentração; só perícias de INT/SAB/CAR se forem Intimidação ou Vontade. Termina se, ao fim de uma rodada, você não atacou nem sofreu dano.",
+      "EntrouFuria": "{nome} entra em Fúria: +{dano} no dano e +{ataque} nos ataques corpo a corpo.",
+      "SaiuFuria": "{nome} sai da Fúria.",
+      "LinhaAtaque": "Fúria: +{ataque} no ataque, +{dano} no dano"
+    },
+    "Ladino": {
+      "Furtivo": "Ataque Furtivo",
+      "FurtivoRotulo": "Ataque Furtivo ({n}d6)",
+      "FurtivoDica": "Primeiro ataque da rodada, se acertar: dano extra do mesmo tipo da arma.",
+      "FurtivoAviso": "Confira: alvo desprevenido, flanqueado ou impedido (Agarrado, Caído, Cego, Enredado, Imóvel, Paralisado ou Pasmo), e arma Leve ou Ágil corpo a corpo, ou ataque à distância em alcance curto.",
+      "FurtivoUsado": "já usado nesta rodada",
+      "FurtivoNoAtaque": "marque no diálogo de ataque",
+      "FurtivoLinha": "Ataque Furtivo: +{n}d6 {tipo} (se acertar)",
+      "Infalivel": "Perícia Infalível",
+      "InfalivelInfo": "d20 < 10 conta como 10 em Acrobacia, Furtividade, Investigação, Prestidigitação, Audição, Visão e Reflexos"
+    },
+    "Patrulheiro": {
+      "Presa": "Presa",
+      "MarcaDaPresa": "Marca da Presa",
+      "Marcar": "Marcar presa",
+      "UmAlvo": "Marque exatamente um alvo (T) para ser a presa.",
+      "Marcou": "{nome} marca {presa} como presa: +{n}d4 de dano nos ataques que acertarem.",
+      "ContraPresa": "Contra a presa (+{n}d4)",
+      "PresaAtual": "presa: {presa}",
+      "SemPresa": "Nenhuma presa marcada.",
+      "MarcaInfo": "ação de movimento, 1 PM: +{n}d4 de dano contra a presa",
+      "LinhaPresa": "Contra a presa: +{n}d4 de dano (se acertar)",
+      "SemAnimal": "Escolha o animal do Vínculo Selvagem primeiro.",
+      "NomeAnimal": "{animal} de {nome}",
+      "Invocou": "{nome} invoca {animal} (PV {pv}).",
+      "Invocar": "Invocar {animal}",
+      "InvocarInfo": "ação de movimento, 1 PM · PV {pv}",
+      "Dispensar": "Dispensar o animal",
+      "NaoCura": "{animal} não pode ser curado (invoque de novo para recuperar os PV).",
+      "Sumiu": "{animal} chegou a 0 PV e desapareceu."
+    },
+    "Pistoleiro": {
+      "TiroCarregado": "Tiro Carregado",
+      "PMNoTiro": "PM no Tiro Carregado (máx. {max})",
+      "TiroDica": "+1d6 de Perfuração por PM, gastos ao rolar o ataque, mesmo se errar. PM atuais: {pm}.",
+      "Limitado": "Tiro Carregado limitado a {n} PM (pedido {pedido}).",
+      "LinhaTiro": "Tiro Carregado: {n} PM gastos, +{n}d6 de Perfuração",
+      "TiroInfo": "no ataque com arma de fogo (máx. {max} PM)",
+      "TiroLendario": "Tiro Lendário",
+      "DeclararLendario": "Declarar Tiro Lendário (acerta e é crítico)",
+      "LendarioDica": "Uma vez por cena.",
+      "LendarioUsado": "já usado nesta cena",
+      "LendarioNoAtaque": "1 vez por cena, no diálogo de ataque",
+      "LinhaLendario": "Tiro Lendário: acerto automático e crítico",
+      "RecargaRapida": "Recarga rápida (ação livre)",
+      "SemArmaFogo": "Nenhuma arma de fogo empunhada.",
+      "SaqueUsado": "Saque Rápido já usado neste turno.",
+      "RecargaConfirma": "Recarregar {n} arma(s) de fogo como ação livre por {custo} PM? (PM atuais: {pm})",
+      "Recarregou": "{nome} recarrega como ação livre ({custo} PM).",
+      "SaqueInfo": "1 PM por arma, uma vez por turno",
+      "MestreInfo": "Mestre da Recarga: 1 PM recarrega as duas pistolas, quantas vezes quiser"
+    },
+    "Guerreiro": {
+      "Folego": "Recobrar o Fôlego",
+      "FolegoUsado": "já usado nesta cena",
+      "FolegoInfo": "1 vez por cena, ação de movimento: 1d8 + {nivel} + CON ({con}) PV",
+      "FolegoConfirma": "Recobrar o Fôlego (ação de movimento, 1 vez por cena): recupera {formula} PV.",
+      "FolegoChat": "{nome} recobra o fôlego: +{total} PV ({antes} → {depois}).",
+      "ExtraConfirma": "Gastar {custo} PM para uma ação de Agredir adicional neste turno? (PM atuais: {pm})",
+      "ExtraChat": "{nome} gasta {custo} PM: ação de Agredir adicional ({n} neste turno).",
+      "ExtraInfo": "{custo} PM: Agredir adicional · neste turno: {n}"
+    },
+    "Samurai": {
+      "Kiai": "Kiai",
+      "KiaiRotulo": "Kiai ({custo} PM): +{bonus} no ataque e +{n}{dado} de dano se acertar",
+      "KiaiUsado": "já usado nesta rodada",
+      "KiaiDica": "Uma vez por rodada. PM atuais: {pm}.",
+      "KiaiLinha": "Kiai ({custo} PM): +{bonus} no ataque, +{n}{dado} de dano se acertar",
+      "KiaiInfo": "no diálogo de ataque: {custo} PM, +{n} dado(s) da arma"
+    },
+    "Recursos": {
+      "Titulo": "Recursos de classe",
+      "Adicionar": "+ Recurso",
+      "Novo": "Novo recurso",
+      "Nome": "Nome do recurso",
+      "Max": "Máximo",
+      "Recarga": "Recarga",
+      "Recargas": {
+        "cena": "por cena",
+        "rodada": "por rodada",
+        "descanso": "por descanso"
+      },
+      "Sugerir": "Sugerir pelos textos",
+      "SugerirDica": "Cria um recurso para cada habilidade ou poder da ficha que diz \"uma vez por cena/rodada/turno/dia\".",
+      "Descansar": "Descanso: recarregar",
+      "Vazio": "Nenhum recurso. Use + Recurso ou Sugerir pelos textos.",
+      "NadaSugerido": "Nenhuma habilidade ou poder novo com uso limitado no texto.",
+      "Sugeridos": "Recursos criados: {lista}"
     }
   }
 }

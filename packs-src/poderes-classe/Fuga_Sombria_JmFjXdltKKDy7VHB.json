@@ -1,0 +1,38 @@
+{
+  "_id": "JmFjXdltKKDy7VHB",
+  "name": "Fuga Sombria",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "X3UYfIWpHkRwn5Bh",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando é alvo de um ataque, você pode gastar 2 PM e a sua reação para se deslocar 3 m. O ataque erra, pois o alvo não está mais lá.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho das Sombras",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho das Sombras",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__fuga-sombria",
+      "classe": "monge",
+      "poder": "fuga-sombria",
+      "inferido": true
+    }
+  },
+  "_key": "!items!JmFjXdltKKDy7VHB"
+}

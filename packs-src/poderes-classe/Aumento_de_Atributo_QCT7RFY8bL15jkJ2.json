@@ -1,0 +1,38 @@
+{
+  "_id": "QCT7RFY8bL15jkJ2",
+  "name": "Aumento de Atributo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "YOvIrfm3i1bw4d2l",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__aumento-de-atributo",
+      "classe": "patrulheiro",
+      "poder": "aumento-de-atributo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!QCT7RFY8bL15jkJ2"
+}

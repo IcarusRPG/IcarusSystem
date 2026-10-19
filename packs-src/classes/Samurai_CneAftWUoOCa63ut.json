@@ -1,0 +1,185 @@
+{
+  "_id": "CneAftWUoOCa63ut",
+  "name": "Samurai",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 200,
+  "system": {
+    "classeId": "samurai",
+    "papel": "Combatente Disciplinado",
+    "atributoChave": "Sabedoria (para CD de habilidades de Samurai)",
+    "pv": {
+      "inicial": 20,
+      "porNivel": 5,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 3,
+      "porNivel": 3,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "3 por nível (classe não conjuradora: sem atributo-chave de PM)"
+    },
+    "pericias": {
+      "obrigatorias": "Concentração e (Luta ou Pontaria)",
+      "escolha": 4,
+      "lista": [
+        "Acrobacia",
+        "Adestramento",
+        "Atletismo",
+        "Audição",
+        "Barganha",
+        "Diplomacia",
+        "Fortitude",
+        "Iniciativa",
+        "Intimidação",
+        "Nobreza",
+        "Reflexos",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas marciais, armas exóticas de corte, armaduras leves e médias",
+      "armas": [
+        "simples",
+        "marciais",
+        "exoticas-corte"
+      ],
+      "armaduras": [
+        "leve",
+        "media"
+      ],
+      "escudo": false,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Kiai",
+          "Coração Firme"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Senda do Combatente"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Kiai (2 dados)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Kiai (3 dados)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Postura de Batalha"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [
+          "Kiai (4 dados)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Kiai (5 dados)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "O Ápice da Senda"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>Há quem lute por glória, por ouro ou por medo. O samurai luta por um juramento. Treinado desde cedo em uma disciplina de lâmina e respiração, ele aprende que o golpe mais forte nasce da mente mais calma, e que a derrota começa muito antes do primeiro corte, no instante em que a vontade vacila.</p><p>Samurais servem a senhores, a ideais ou a um código que só eles compreendem por inteiro. Podem ser guardiões de uma casa nobre, duelistas sem mestre ou arqueiros de olhar paciente. Não importa o caminho: todos concentram o corpo e o espírito em um único instante, e é nesse instante que a luta se decide.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai"
+    }
+  },
+  "_key": "!items!CneAftWUoOCa63ut"
+}

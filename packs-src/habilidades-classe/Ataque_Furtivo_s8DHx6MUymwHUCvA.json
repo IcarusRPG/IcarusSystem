@@ -1,0 +1,38 @@
+{
+  "_id": "s8DHx6MUymwHUCvA",
+  "name": "Ataque Furtivo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O <strong>primeiro ataque</strong> que você faz em cada rodada causa dano extra de 1d6, do mesmo tipo da arma, se acertar e for um ataque corpo a corpo com uma arma Leve ou Ágil (ou um ataque à distância em alcance curto) contra um alvo desprevenido, flanqueado ou impedido (Agarrado, Caído, Cego, Enredado, Imóvel, Paralisado ou Pasmo). Os demais ataques da rodada não recebem o dano extra. O dano extra aumenta em 1d6 a cada 4 níveis (2d6 no 5º, 3d6 no 9º, 4d6 no 13º e 5d6 no 17º).",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__ataque-furtivo",
+      "classe": "ladino",
+      "habilidade": "ataque-furtivo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!s8DHx6MUymwHUCvA"
+}

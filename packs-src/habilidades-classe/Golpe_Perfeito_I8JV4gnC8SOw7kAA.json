@@ -1,0 +1,38 @@
+{
+  "_id": "I8JV4gnC8SOw7kAA",
+  "name": "Golpe Perfeito",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 20006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, ao acertar um Ataque Furtivo, você causa o dano máximo nos dados do dano extra.",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__golpe-perfeito",
+      "classe": "ladino",
+      "habilidade": "golpe-perfeito",
+      "inferido": false
+    }
+  },
+  "_key": "!items!I8JV4gnC8SOw7kAA"
+}

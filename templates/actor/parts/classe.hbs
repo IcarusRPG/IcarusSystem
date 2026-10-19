@@ -1,0 +1,53 @@
+<div class="aba-classe">
+  {{#if classeAba.tem}}
+  <section class="painel classe-cab">
+    <img src="{{classeAba.icone}}" alt="" width="56" height="56" onerror="this.onerror=null;this.src='{{iconePadrao}}'">
+    <div class="classe-cab-texto">
+      <h3>{{classeAba.nome}}</h3>
+      <span class="classe-papel">{{classeAba.papel}} · {{classeAba.patamar}}</span>
+      {{#if classeAba.caminho}}<span class="classe-caminho">{{classeAba.caminho}}</span>{{/if}}
+    </div>
+    <div class="classe-contador{{#if classeAba.contador.disponiveis}} pendente{{/if}}">
+      <span>{{localize "ICARUS.Classe.Contador"}}</span>
+      <b>{{classeAba.contador.escolhidos}} / {{classeAba.contador.total}}</b>
+      {{#if editable}}<button type="button" class="btn peq{{#if classeAba.contador.disponiveis}} ativo{{/if}}" data-action="classe-poder">{{localize "ICARUS.Classe.EscolherPoder"}}</button>{{/if}}
+    </div>
+  </section>
+
+  {{#if classeAba.mecanicas.length}}
+  <section class="painel classe-mecanicas">
+    <h3 class="titulo-painel">{{localize "ICARUS.Classe.Mecanicas"}}</h3>
+    <div class="mecanicas-lista">
+      {{#each classeAba.mecanicas}}
+      <div class="mecanica{{#if ativo}} ativa{{/if}}">
+        {{#if botao}}<button type="button" class="btn peq{{#if ativo}} ativo{{/if}}" data-action="classe-mecanica" data-mecanica="{{id}}"{{#if dica}} data-tooltip="{{dica}}"{{/if}}{{#if desativado}} disabled{{/if}}>{{rotulo}}</button>{{else}}<span class="mecanica-rot">{{rotulo}}</span>{{/if}}
+        {{#if info}}<span class="mecanica-info">{{info}}</span>{{/if}}
+      </div>
+      {{/each}}
+    </div>
+  </section>
+  {{/if}}
+
+  {{> "systems/icarus-rpg/templates/actor/parts/recursos-classe.hbs"}}
+
+  <section class="painel classe-progressao">
+    <h3 class="titulo-painel">{{localize "ICARUS.Classe.Progressao"}}</h3>
+    <table class="tabela-progressao">
+      <thead><tr><th scope="col">{{localize "ICARUS.Classe.Nivel"}}</th><th scope="col">{{localize "ICARUS.Classe.Habilidades"}}</th><th scope="col">{{localize "ICARUS.Classe.PoderDeClasse"}}</th></tr></thead>
+      <tbody>
+        {{#each classeAba.tabela}}
+        <tr class="{{#if atual}}atual{{/if}}{{#unless alcancado}} futuro{{/unless}}"{{#if atual}} aria-current="true"{{/if}}>
+          <td>{{nivel}}º</td>
+          <td>{{#each habilidades}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
+          <td>{{#if poder}}✓{{/if}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+  {{else}}
+  <section class="painel classe-vazia">
+    <p>{{localize "ICARUS.Classe.SemClasse"}}</p>
+  </section>
+  {{/if}}
+</div>

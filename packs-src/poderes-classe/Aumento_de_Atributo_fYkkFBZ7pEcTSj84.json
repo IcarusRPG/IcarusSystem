@@ -1,0 +1,38 @@
+{
+  "_id": "fYkkFBZ7pEcTSj84",
+  "name": "Aumento de Atributo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "E3TrZhSDIej5N4gE",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__aumento-de-atributo",
+      "classe": "monge",
+      "poder": "aumento-de-atributo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!fYkkFBZ7pEcTSj84"
+}

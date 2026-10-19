@@ -1,0 +1,38 @@
+{
+  "_id": "nw2Z8RVTOu81yWpA",
+  "name": "Lâmina Veloz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você saca e guarda armas como ação livre.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__lamina-veloz",
+      "classe": "samurai",
+      "poder": "lamina-veloz",
+      "inferido": true
+    }
+  },
+  "_key": "!items!nw2Z8RVTOu81yWpA"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "unJBm1LihK4HaFmK",
+  "name": "Golpe de Escudo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "Yv5B4j41fXGe8wPP",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Mestre do Escudo",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM e faça um ataque corpo a corpo com o escudo. Se acertar, causa 1d6 de dano de impacto e o alvo fica Vulnerável até o início do seu próximo turno.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Escudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "mestre-do-escudo"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__golpe-de-escudo",
+      "classe": "guerreiro",
+      "poder": "golpe-de-escudo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!unJBm1LihK4HaFmK"
+}

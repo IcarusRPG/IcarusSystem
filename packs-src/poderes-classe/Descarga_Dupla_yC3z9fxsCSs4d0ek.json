@@ -1,0 +1,38 @@
+{
+  "_id": "yC3z9fxsCSs4d0ek",
+  "name": "Descarga Dupla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "3dVNpK8ABwdsU0Vu",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar com uma arma de Cano Duplo. Você dispara os dois canos de uma vez, gastando duas Balas, e rola o dano da arma duas vezes, somando os resultados.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Mosquete",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__descarga-dupla",
+      "classe": "pistoleiro",
+      "poder": "descarga-dupla",
+      "inferido": true
+    }
+  },
+  "_key": "!items!yC3z9fxsCSs4d0ek"
+}

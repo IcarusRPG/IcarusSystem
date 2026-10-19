@@ -267,3 +267,12 @@
 .ficha-icarus .rodape-config .btn.primario { border-color: var(--ic-ouro); color: var(--ic-ouro-claro); }
 .ficha-icarus .rodape-config .btn:disabled { opacity: .45; cursor: not-allowed; }
 @media (max-width: 720px) { .ficha-icarus .colunas-oposto, .ficha-icarus .grade-origem { grid-template-columns: 1fr; } }
+
+.icarus-teste-tela .modo-teste { padding: 0 6px; border: 1px solid var(--tt-ouro); border-radius: 3px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--tt-ouro-claro); }
+.icarus-teste-tela .dados-teste { display: block; font-size: 12px; color: var(--tt-apagado); }
+.ficha-icarus .seletor-linha .sel-modo { width: auto; height: 24px; padding: 0 4px; font-size: 12px; flex: none; }
+.ficha-icarus .modo-lado { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.ficha-icarus .modo-lado select { width: auto; }
+
+.icarus-teste-chat .manobra-efeito { margin: 4px 0; font-size: 13px; }
+.icarus-teste-chat .manobra-efeito.venceu b { color: #b8860b; }

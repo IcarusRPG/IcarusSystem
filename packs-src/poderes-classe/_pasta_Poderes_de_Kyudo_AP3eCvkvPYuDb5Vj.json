@@ -1,0 +1,15 @@
+{
+  "_id": "AP3eCvkvPYuDb5Vj",
+  "name": "Poderes de Kyudo",
+  "type": "Item",
+  "folder": "IsBXvPTjWaJ2n34C",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:samurai:poderes-de-kyudo"
+    }
+  },
+  "_key": "!folders!AP3eCvkvPYuDb5Vj"
+}

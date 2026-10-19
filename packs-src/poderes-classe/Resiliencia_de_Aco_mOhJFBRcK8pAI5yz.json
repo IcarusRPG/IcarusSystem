@@ -1,0 +1,38 @@
+{
+  "_id": "mOhJFBRcK8pAI5yz",
+  "name": "Resiliência de Aço",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus pontos de vida totais aumentam em um valor fixo igual à sua Sabedoria. <em>(Ganho único, não por nível.)</em>",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__resiliencia-de-aco",
+      "classe": "samurai",
+      "poder": "resiliencia-de-aco",
+      "inferido": false
+    }
+  },
+  "_key": "!items!mOhJFBRcK8pAI5yz"
+}

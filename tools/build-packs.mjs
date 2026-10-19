@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
-import { documentosNovos } from "../module/dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "../module/dados-compendios.mjs";
 import { PERICIAS } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 
@@ -26,6 +26,7 @@ const novos = {
   armaduras: ler("armaduras"), iconesArmaduras: ler("icones-armaduras"),
   poderes: ler("poderes-concedidos"), panteao: ler("panteao"), iconesDivindades: ler("icones-divindades"),
   condicoes: ler("condicoes"), macros: ler("macros"),
+  classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes"), vinculos: ler("vinculos"),
   nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
 };
 
@@ -45,6 +46,7 @@ for (const a of armas.armas) confere("itens/equipamentos/armas", a.icone, a.nome
 for (const m of armas.municoes) confere("itens/equipamentos/munições", m.icone, m.nome);
 for (const a of novos.armaduras.itens) confere("itens/equipamentos/armaduras e escudos", novos.iconesArmaduras[a.id], a.nome);
 for (const d of novos.panteao.divindades) confere("panteão/simbolos", novos.iconesDivindades[d.id], d.nome);
+for (const c of novos.classes.classes) confere("classes", novos.iconesClasses[c.id], `classe ${c.nome}`);
 for (const m of novos.macros.macros) if (m.icone) confere(path.posix.dirname(m.icone), path.posix.basename(m.icone), `macro ${m.nome}`);
 for (const [chave, rel] of Object.entries(IMAGENS_SISTEMA)) confere(path.posix.dirname(rel), path.posix.basename(rel), `interface (${chave})`);
 if (faltandoArquivo.length) {
@@ -56,6 +58,7 @@ if (semImagem.length) console.warn(`Sem imagem no mapa (usam o dado azul): ${sem
 /* ---------- Documentos ---------- */
 const docsArmas = documentosDosCompendios(armas);
 const docsNovos = documentosNovos(novos);
+const docsClasses = documentosDeClasses(novos);
 
 /** Cada pacote: lista de [documento, coleção] já com as chaves. */
 const PACOTES = {
@@ -64,7 +67,11 @@ const PACOTES = {
   "armaduras-escudos": docsNovos["armaduras-escudos"],
   "poderes-concedidos": docsNovos["poderes-concedidos"],
   condicoes: docsNovos.condicoes,
-  macros: docsNovos.macros
+  macros: docsNovos.macros,
+  classes: docsClasses.classes,
+  "habilidades-classe": docsClasses["habilidades-classe"],
+  "poderes-classe": docsClasses["poderes-classe"],
+  vinculos: documentosDeVinculos(novos.vinculos, novos.classes)
 };
 
 /** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */
@@ -73,6 +80,7 @@ function comChaves(doc, colecao) {
   d._key = `!${colecao}!${d._id}`;
   if (colecao === "items") for (const e of d.effects ?? []) e._key = `!items.effects!${d._id}.${e._id}`;
   if (colecao === "journal") for (const p of d.pages ?? []) p._key = `!journal.pages!${d._id}.${p._id}`;
+  if (colecao === "actors") for (const i of d.items ?? []) i._key = `!actors.items!${d._id}.${i._id}`;
   return d;
 }
 
@@ -88,7 +96,8 @@ for (const [nome, conteudo] of Object.entries(PACOTES)) {
   for (const i of conteudo.itens ?? []) gravar(i, "items");
   for (const j of conteudo.diarios ?? []) gravar(j, "journal");
   for (const m of conteudo.macros ?? []) gravar(m, "macros");
-  const total = (conteudo.itens ?? conteudo.diarios ?? conteudo.macros ?? []).length;
+  for (const a of conteudo.atores ?? []) gravar(a, "actors");
+  const total = (conteudo.itens ?? conteudo.diarios ?? conteudo.macros ?? conteudo.atores ?? []).length;
   console.log(`packs-src/${nome}: ${(conteudo.pastas ?? []).length} pasta(s), ${total} documento(s)`);
 }
 

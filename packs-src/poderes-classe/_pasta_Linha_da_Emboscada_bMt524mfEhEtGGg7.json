@@ -1,0 +1,15 @@
+{
+  "_id": "bMt524mfEhEtGGg7",
+  "name": "Linha da Emboscada",
+  "type": "Item",
+  "folder": "e9cr8BwFIZFfrFhm",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:ladino:linha-da-emboscada"
+    }
+  },
+  "_key": "!folders!bMt524mfEhEtGGg7"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "ExZTy6nFRZoH0MjP",
+  "name": "Lâminas do Mato",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "5YBYfpeaVGiK2EG4",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa Agredir empunhando uma arma Leve ou Ágil em cada mão, você faz um ataque com cada uma, sem sofrer a penalidade geral de combate com duas armas. O segundo ataque não soma o modificador de atributo no dano.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Lâmina",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__laminas-do-mato",
+      "classe": "patrulheiro",
+      "poder": "laminas-do-mato",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ExZTy6nFRZoH0MjP"
+}

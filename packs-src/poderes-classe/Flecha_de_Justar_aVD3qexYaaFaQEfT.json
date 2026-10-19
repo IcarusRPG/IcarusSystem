@@ -1,0 +1,38 @@
+{
+  "_id": "aVD3qexYaaFaQEfT",
+  "name": "Flecha de Justar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM. Seu ataque à distância ignora camuflagem total.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__flecha-de-justar",
+      "classe": "samurai",
+      "poder": "flecha-de-justar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!aVD3qexYaaFaQEfT"
+}

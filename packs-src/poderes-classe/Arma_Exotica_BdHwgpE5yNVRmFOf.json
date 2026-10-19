@@ -1,0 +1,38 @@
+{
+  "_id": "BdHwgpE5yNVRmFOf",
+  "name": "Arma Exótica",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "ajOnRlwDRMxAYG5N",
+  "sort": 3200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe proficiência com uma arma exótica à sua escolha. Pode escolher este poder várias vezes, com uma arma diferente a cada vez.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e versatilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__arma-exotica",
+      "classe": "guerreiro",
+      "poder": "arma-exotica",
+      "inferido": false
+    }
+  },
+  "_key": "!items!BdHwgpE5yNVRmFOf"
+}

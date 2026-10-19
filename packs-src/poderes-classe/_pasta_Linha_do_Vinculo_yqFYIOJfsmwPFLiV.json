@@ -1,0 +1,15 @@
+{
+  "_id": "yqFYIOJfsmwPFLiV",
+  "name": "Linha do Vínculo",
+  "type": "Item",
+  "folder": "768IunF6PIkYMdz0",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:patrulheiro:linha-do-vinculo"
+    }
+  },
+  "_key": "!folders!yqFYIOJfsmwPFLiV"
+}

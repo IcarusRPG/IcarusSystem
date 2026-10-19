@@ -1,0 +1,38 @@
+{
+  "_id": "65ubKIHpmpKWpfDd",
+  "name": "Olho de Avaliador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "h7eXbgUzlO52mjvn",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Intuição e Investigação e reconhece o valor aproximado de qualquer item que examine.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__olho-de-avaliador",
+      "classe": "ladino",
+      "poder": "olho-de-avaliador",
+      "inferido": false
+    }
+  },
+  "_key": "!items!65ubKIHpmpKWpfDd"
+}

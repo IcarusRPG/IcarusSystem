@@ -14,7 +14,6 @@
     "espacos": 2,
     "quantidade": 1,
     "equipado": false,
-    "proficienciaLivre": false,
     "acoplado": true,
     "provisorio": [
       "espacos"

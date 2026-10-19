@@ -37,10 +37,11 @@ test("Penalidade soma armadura e escudo equipados; item não equipado não conta
   assert.equal(s.pericias.furtividade.total, 2 - 5);
 });
 
-test("Túnicas contam como armadura e não exigem proficiência", () => {
+test("Túnica: ocupa o lugar da armadura, soma Defesa, mas NÃO é armadura e exige proficiência própria", () => {
   const tunica = item("tunica-simples");
   assert.equal(tunica.system.tipo, "armadura");
-  assert.equal(tunica.system.proficienciaLivre, true);
+  assert.equal(tunica.system.categoria, "tunica");
+  assert.equal(tunica.system.proficienciaLivre, undefined);
   assert.equal(personagem([tunica]).defesa.armadura, 1);
 });
 

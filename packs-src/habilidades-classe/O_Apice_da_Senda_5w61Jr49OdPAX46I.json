@@ -1,0 +1,38 @@
+{
+  "_id": "5w61Jr49OdPAX46I",
+  "name": "O Ápice da Senda",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "dyqFs5SBHWlNlCxE",
+  "sort": 20004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu treino atinge o ponto mais alto. O efeito depende da Senda:<ul class=\"subs-classe\"><li><strong>Seguidor do Vento Sangrento (Lâmina Única).</strong> Quando acerta um ataque, você pode gastar 3 PM para fazer imediatamente um novo ataque. Pode repetir até errar, até ficar sem PM ou até ter feito um número de ataques extras igual à sua Sabedoria (mínimo 1) na cena.</li><li><strong>Tempestade do Dever (Lâminas Gêmeas).</strong> Como uma ação padrão, você gasta 6 PM e faz um ataque contra cada inimigo em alcance curto. Até o início do seu próximo turno, recebe +6 na Defesa e não pode ser flanqueado.</li><li><strong>Saraivada Inflexível do Vento (Kyudo).</strong> Como uma ação padrão, uma vez por rodada, você gasta 8 PM e escolhe um ponto em alcance longo. Criaturas em um raio de 9 m desse ponto sofrem 12d6 de dano de perfuração e ficam enredadas por 1 rodada. Um teste de Reflexos (CD Sab) reduz o dano à metade e evita o enredamento.</li></ul>",
+    "classe": "samurai",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__o-apice-da-senda",
+      "classe": "samurai",
+      "habilidade": "o-apice-da-senda",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5w61Jr49OdPAX46I"
+}

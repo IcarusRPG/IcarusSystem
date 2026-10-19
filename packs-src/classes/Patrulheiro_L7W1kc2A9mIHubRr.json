@@ -1,0 +1,189 @@
+{
+  "_id": "L7W1kc2A9mIHubRr",
+  "name": "Patrulheiro",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 500,
+  "system": {
+    "classeId": "patrulheiro",
+    "papel": "Explorador e Caçador",
+    "atributoChave": "Destreza",
+    "pv": {
+      "inicial": 18,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "4 por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Sobrevivência e (Luta ou Pontaria)",
+      "escolha": 6,
+      "lista": [
+        "Acrobacia",
+        "Adestramento",
+        "Atletismo",
+        "Audição",
+        "Cavalgar",
+        "Cura",
+        "Fortitude",
+        "Furtividade",
+        "Iniciativa",
+        "Intuição",
+        "Investigação",
+        "Navegação",
+        "Olfato",
+        "Reflexos",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas marciais, arcos longos, armaduras leves e médias",
+      "armas": [
+        "simples",
+        "marciais",
+        "arcos-longos"
+      ],
+      "armaduras": [
+        "leve",
+        "media"
+      ],
+      "escudo": false,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Marca da Presa (1d4)"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Vínculo Selvagem"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Marca da Presa (2d4)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [
+          "Disparo Duplo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Marca da Presa (3d4)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Caçada Contínua"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [
+          "Marca da Presa (4d4)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Marca da Presa (5d4)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Presa Condenada"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>A floresta não perdoa, e o patrulheiro aprendeu a falar a língua dela. Lê uma pegada como outros leem uma carta, ouve o galho que quebra antes do inimigo perceber que o pisou, e sabe que toda caçada se vence com paciência: escolher a presa, segui-la e acertar uma única vez no lugar certo.</p><p>Há patrulheiros que guardam fronteiras, outros que caçam monstros por contrato, outros que simplesmente vivem longe de tudo. O que os une é o olhar fixo em um alvo e a certeza de que, uma vez marcado, ele não escapa.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro"
+    }
+  },
+  "_key": "!items!L7W1kc2A9mIHubRr"
+}

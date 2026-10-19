@@ -1,0 +1,38 @@
+{
+  "_id": "6gTgV7WukB1kh4PL",
+  "name": "Mira Paciente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 1 PM. Seu próximo ataque à distância neste turno recebe +2 no teste de ataque e a margem de ameaça dele aumenta em 1.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__mira-paciente",
+      "classe": "ladino",
+      "poder": "mira-paciente",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6gTgV7WukB1kh4PL"
+}

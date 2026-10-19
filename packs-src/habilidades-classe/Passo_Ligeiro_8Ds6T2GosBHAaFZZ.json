@@ -1,0 +1,38 @@
+{
+  "_id": "8Ds6T2GosBHAaFZZ",
+  "name": "Passo Ligeiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 2002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto não estiver usando armadura, o seu deslocamento aumenta em 3 m.",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__passo-ligeiro",
+      "classe": "monge",
+      "habilidade": "passo-ligeiro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!8Ds6T2GosBHAaFZZ"
+}

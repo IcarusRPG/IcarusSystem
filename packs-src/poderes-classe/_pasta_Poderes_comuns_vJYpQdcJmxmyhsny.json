@@ -1,0 +1,15 @@
+{
+  "_id": "vJYpQdcJmxmyhsny",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "e9cr8BwFIZFfrFhm",
+  "sorting": "a",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:ladino:poderes-comuns"
+    }
+  },
+  "_key": "!folders!vJYpQdcJmxmyhsny"
+}

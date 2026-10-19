@@ -1,0 +1,186 @@
+{
+  "_id": "ErbVSd2P32ggTW88",
+  "name": "Guerreiro",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 100,
+  "system": {
+    "classeId": "guerreiro",
+    "papel": "Combatente Especialista",
+    "atributoChave": "Força (para CD de habilidades de Guerreiro)",
+    "pv": {
+      "inicial": 20,
+      "porNivel": 5,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 3,
+      "porNivel": 3,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "3 por nível (classe não conjuradora: sem atributo-chave de PM)"
+    },
+    "pericias": {
+      "obrigatorias": "Fortitude e (Luta ou Pontaria)",
+      "escolha": 4,
+      "lista": [
+        "Adestramento",
+        "Atletismo",
+        "Audição",
+        "Barganha",
+        "Cavalgar",
+        "Concentração",
+        "Furtividade",
+        "História",
+        "Iniciativa",
+        "Intimidação",
+        "Intuição",
+        "Navegação",
+        "Nobreza",
+        "Olfato",
+        "Reflexos",
+        "Religião",
+        "Sobrevivência",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas marciais, armaduras pesadas, escudos",
+      "armas": [
+        "simples",
+        "marciais"
+      ],
+      "armaduras": [
+        "pesada"
+      ],
+      "escudo": true,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Recobrar o Fôlego"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [
+          "Embalo de Batalha"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [
+          "Ataque Extra"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [
+          "Segunda Tentativa"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [
+          "Ataque Extra Aprimorado"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Segunda Tentativa (2 vezes)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Mestre de Armas"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>Todo exército, toda caravana e toda taverna de beira de estrada guarda um guerreiro. Não há dogma, escola ou juramento que una todos eles. O que os une é a prática: anos de treino, de cicatrizes e de lutas que ensinaram o que funciona e o que mata.</p><p>O guerreiro é a classe mais versátil do mundo. Pode ser o muro de escudo que segura a linha, o duelista que corta com duas lâminas, o brutamontes de um golpe só com uma arma de duas mãos, o arqueiro que não erra. Ou pode ser um pouco de tudo, e pagar por isso: quem espalha seu treino domina muitas ferramentas, mas nenhuma no limite.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro"
+    }
+  },
+  "_key": "!items!ErbVSd2P32ggTW88"
+}

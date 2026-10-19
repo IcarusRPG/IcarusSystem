@@ -1,0 +1,38 @@
+{
+  "_id": "nXs2ZZ2HaXksE4DP",
+  "name": "Tiro Calculado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "gvjuW1nqOhHfDl9d",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você soma seu modificador de Inteligência (limitado pelo seu nível) nas rolagens de dano dos seus ataques à distância.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__tiro-calculado",
+      "classe": "guerreiro",
+      "poder": "tiro-calculado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!nXs2ZZ2HaXksE4DP"
+}

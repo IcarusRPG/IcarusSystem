@@ -1,0 +1,40 @@
+{
+  "_id": "YHmeCYzYBDz35v53",
+  "name": "Guarda Dupla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "oQRJr2ZMsQhANvjb",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Par de Lâminas",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto empunha uma arma em cada mão, você recebe +1 na Defesa.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Par de Lâminas",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "par-de-laminas"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__guarda-dupla",
+      "classe": "guerreiro",
+      "poder": "guarda-dupla",
+      "inferido": false
+    }
+  },
+  "_key": "!items!YHmeCYzYBDz35v53"
+}

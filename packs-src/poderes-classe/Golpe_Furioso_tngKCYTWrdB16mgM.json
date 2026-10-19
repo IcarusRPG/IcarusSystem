@@ -1,0 +1,38 @@
+{
+  "_id": "tngKCYTWrdB16mgM",
+  "name": "Golpe Furioso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em Fúria, ao atacar corpo a corpo, você gasta 2 PM e soma ao dano o dobro do bônus de dano da Fúria.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__golpe-furioso",
+      "classe": "barbaro",
+      "poder": "golpe-furioso",
+      "inferido": true
+    }
+  },
+  "_key": "!items!tngKCYTWrdB16mgM"
+}

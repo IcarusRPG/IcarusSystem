@@ -1,0 +1,15 @@
+{
+  "_id": "rW9ip1zuIDiHGMrD",
+  "name": "Linha das Duas Pistolas",
+  "type": "Item",
+  "folder": "KtMQTXLNCK68DiSY",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:pistoleiro:linha-das-duas-pistolas"
+    }
+  },
+  "_key": "!folders!rW9ip1zuIDiHGMrD"
+}

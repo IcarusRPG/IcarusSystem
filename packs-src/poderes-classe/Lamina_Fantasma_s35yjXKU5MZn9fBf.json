@@ -1,0 +1,38 @@
+{
+  "_id": "s35yjXKU5MZn9fBf",
+  "name": "Lâmina Fantasma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques corpo a corpo ignoram a camuflagem de criaturas incorpóreas.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__lamina-fantasma",
+      "classe": "samurai",
+      "poder": "lamina-fantasma",
+      "inferido": false
+    }
+  },
+  "_key": "!items!s35yjXKU5MZn9fBf"
+}

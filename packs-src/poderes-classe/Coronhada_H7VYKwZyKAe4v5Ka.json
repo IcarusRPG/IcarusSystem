@@ -1,0 +1,38 @@
+{
+  "_id": "H7VYKwZyKAe4v5Ka",
+  "name": "Coronhada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "3dVNpK8ABwdsU0Vu",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar uma arma de fogo de Duas Mãos como arma corpo a corpo (1d6 de dano de Impacto, crítico 20/x2), usando Luta ou Pontaria à sua escolha. Atacar assim não gasta a carga da arma.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Mosquete",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__coronhada",
+      "classe": "pistoleiro",
+      "poder": "coronhada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!H7VYKwZyKAe4v5Ka"
+}

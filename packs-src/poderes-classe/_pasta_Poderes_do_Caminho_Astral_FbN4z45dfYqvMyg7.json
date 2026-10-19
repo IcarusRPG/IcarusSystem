@@ -1,0 +1,15 @@
+{
+  "_id": "FbN4z45dfYqvMyg7",
+  "name": "Poderes do Caminho Astral",
+  "type": "Item",
+  "folder": "zQgUz5C0U1Tp26gK",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:monge:poderes-do-caminho-astral"
+    }
+  },
+  "_key": "!folders!FbN4z45dfYqvMyg7"
+}

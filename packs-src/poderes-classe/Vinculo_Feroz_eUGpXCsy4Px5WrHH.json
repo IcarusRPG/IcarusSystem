@@ -1,0 +1,38 @@
+{
+  "_id": "eUGpXCsy4Px5WrHH",
+  "name": "Vínculo Feroz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "yqFYIOJfsmwPFLiV",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O dano do ataque do seu animal aumenta em 1d6.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Vínculo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__vinculo-feroz",
+      "classe": "patrulheiro",
+      "poder": "vinculo-feroz",
+      "inferido": false
+    }
+  },
+  "_key": "!items!eUGpXCsy4Px5WrHH"
+}

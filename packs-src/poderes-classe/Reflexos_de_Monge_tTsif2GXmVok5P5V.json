@@ -1,0 +1,38 @@
+{
+  "_id": "tTsif2GXmVok5P5V",
+  "name": "Reflexos de Monge",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Reflexos e Iniciativa.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__reflexos-de-monge",
+      "classe": "monge",
+      "poder": "reflexos-de-monge",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tTsif2GXmVok5P5V"
+}

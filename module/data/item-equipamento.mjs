@@ -14,10 +14,10 @@ export class EquipamentoData extends foundry.abstract.TypeDataModel {
       equipado: new fields.BooleanField({ initial: false }),
       bonusDefesa: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0 }),
       // Armaduras e escudos: categoria, penalidade de armadura (em Acrobacia, Furtividade e Prestidigitação),
-      // túnica sem exigência de proficiência, escudo acoplado e campos ainda não confirmados no núcleo
+      // escudo acoplado e campos ainda não confirmados no núcleo. Túnica não é armadura e exige a
+      // proficiência própria "túnicas" (proficiencias.tunicas do personagem)
       categoria: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", ...CATEGORIAS_ARMADURA] }),
       penalidade: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),
-      proficienciaLivre: new fields.BooleanField({ initial: false }),
       acoplado: new fields.BooleanField({ initial: false }),
       provisorio: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
       preco: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),

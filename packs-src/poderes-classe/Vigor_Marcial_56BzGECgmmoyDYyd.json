@@ -1,0 +1,40 @@
+{
+  "_id": "56BzGECgmmoyDYyd",
+  "name": "Vigor Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "rOeaAnOv8HXNYLFU",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Constituição 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus pontos de vida totais aumentam em 1 por nível.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CON": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__vigor-marcial",
+      "classe": "guerreiro",
+      "poder": "vigor-marcial",
+      "inferido": false
+    }
+  },
+  "_key": "!items!56BzGECgmmoyDYyd"
+}

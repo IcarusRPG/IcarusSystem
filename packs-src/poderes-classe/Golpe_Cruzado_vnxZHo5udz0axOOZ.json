@@ -1,0 +1,40 @@
+{
+  "_id": "vnxZHo5udz0axOOZ",
+  "name": "Golpe Cruzado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "oQRJr2ZMsQhANvjb",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Ambidestria, 10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando acerta os dois ataques do Par de Lâminas no mesmo alvo, o alvo sofre 1d6 de dano adicional.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Par de Lâminas",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "ambidestria"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__golpe-cruzado",
+      "classe": "guerreiro",
+      "poder": "golpe-cruzado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!vnxZHo5udz0axOOZ"
+}

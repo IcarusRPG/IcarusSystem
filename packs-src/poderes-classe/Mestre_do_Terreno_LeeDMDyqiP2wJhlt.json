@@ -1,0 +1,40 @@
+{
+  "_id": "LeeDMDyqiP2wJhlt",
+  "name": "Mestre do Terreno",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "dE4F9uKffi9vLoXF",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Especialista em Terreno, 10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O bônus do Especialista em Terreno passa a +4 em um dos seus terrenos, e aliados em alcance curto recebem +2 em Furtividade nele.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Mata",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "especialista-em-terreno"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__mestre-do-terreno",
+      "classe": "patrulheiro",
+      "poder": "mestre-do-terreno",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LeeDMDyqiP2wJhlt"
+}

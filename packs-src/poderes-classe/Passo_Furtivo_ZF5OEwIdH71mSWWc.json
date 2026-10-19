@@ -1,0 +1,38 @@
+{
+  "_id": "ZF5OEwIdH71mSWWc",
+  "name": "Passo Furtivo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "X3UYfIWpHkRwn5Bh",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em Furtividade e se move até o seu deslocamento sem sofrer penalidade nesse teste.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho das Sombras",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho das Sombras",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__passo-furtivo",
+      "classe": "monge",
+      "poder": "passo-furtivo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ZF5OEwIdH71mSWWc"
+}

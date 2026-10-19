@@ -1,0 +1,38 @@
+{
+  "_id": "MIEcawvesEUEJXJH",
+  "name": "Corpo de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto não estiver usando armadura, você recebe RD 2.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__corpo-de-ferro",
+      "classe": "monge",
+      "poder": "corpo-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!MIEcawvesEUEJXJH"
+}

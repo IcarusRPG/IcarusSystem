@@ -1,0 +1,183 @@
+{
+  "_id": "gJTUoTl3clVdUjWI",
+  "name": "Bárbaro",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 300,
+  "system": {
+    "classeId": "barbaro",
+    "papel": "Combatente Primitivo",
+    "atributoChave": "Força",
+    "pv": {
+      "inicial": 24,
+      "porNivel": 6,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 3,
+      "porNivel": 3,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "3 por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Fortitude e Luta",
+      "escolha": 4,
+      "lista": [
+        "Acrobacia",
+        "Adestramento",
+        "Atletismo",
+        "Audição",
+        "Cavalgar",
+        "Furtividade",
+        "Iniciativa",
+        "Intimidação",
+        "Olfato",
+        "Pontaria",
+        "Reflexos",
+        "Sobrevivência",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas marciais, armaduras leves e médias",
+      "armas": [
+        "simples",
+        "marciais"
+      ],
+      "armaduras": [
+        "leve",
+        "media"
+      ],
+      "escudo": false,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Fúria",
+          "Pele Rija"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Sangue Quente"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Instinto Selvagem"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Fúria (+3 de dano e +2 de ataque)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [
+          "Recusa a Cair"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Fúria (+4 de dano e +3 de ataque)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Fúria Primeva"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>Não há treinamento, escola ou juramento por trás do seu golpe. Há fome, raiva e a certeza de que, enquanto ainda estiver de pé, o inimigo não terá vencido. O bárbaro luta com o corpo inteiro, e é o corpo que responde: quanto mais ferido, mais perigoso.</p><p>Alguns vêm das terras selvagens, outros foram forjados em cativeiros, em guerras perdidas ou em tavernas onde só um punho resolvia a conversa. O que os une é a Fúria, uma tempestade que escolhem soltar, e que sabem que cobra caro de quem não a governa.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro"
+    }
+  },
+  "_key": "!items!gJTUoTl3clVdUjWI"
+}

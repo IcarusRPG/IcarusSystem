@@ -1,0 +1,38 @@
+{
+  "_id": "obVYfSslK0XkpyxJ",
+  "name": "Finta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "w20HEhQUd8NZwBQJ",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 1 PM e faz um teste de Enganação oposto ao teste de Intuição do alvo. Se vencer, o alvo fica desprevenido contra o seu próximo ataque, até o fim do seu turno.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Combate Ágil",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__finta",
+      "classe": "ladino",
+      "poder": "finta",
+      "inferido": true
+    }
+  },
+  "_key": "!items!obVYfSslK0XkpyxJ"
+}

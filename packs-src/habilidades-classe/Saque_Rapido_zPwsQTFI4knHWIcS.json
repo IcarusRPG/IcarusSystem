@@ -1,0 +1,38 @@
+{
+  "_id": "zPwsQTFI4knHWIcS",
+  "name": "Saque Rápido",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "I297XYpyoUdXVQCD",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você saca uma arma de fogo ou uma Bala como ação livre. Uma vez por turno, você pode gastar 1 PM para recarregar uma arma de fogo como ação livre, em vez de ação de movimento. Se estiver empunhando duas armas de fogo, o custo é de 1 PM por arma recarregada.",
+    "classe": "pistoleiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__saque-rapido",
+      "classe": "pistoleiro",
+      "habilidade": "saque-rapido",
+      "inferido": true
+    }
+  },
+  "_key": "!items!zPwsQTFI4knHWIcS"
+}

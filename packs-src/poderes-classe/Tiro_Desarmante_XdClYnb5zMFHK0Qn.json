@@ -1,0 +1,38 @@
+{
+  "_id": "XdClYnb5zMFHK0Qn",
+  "name": "Tiro Desarmante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "DMxyhR3tH0YC0faM",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM ao atacar com arma de fogo. Seu ataque realiza a manobra Desarmar, usando Pontaria no lugar do ataque corpo a corpo (ver Manobras, na seção 1).",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Tiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__tiro-desarmante",
+      "classe": "pistoleiro",
+      "poder": "tiro-desarmante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!XdClYnb5zMFHK0Qn"
+}

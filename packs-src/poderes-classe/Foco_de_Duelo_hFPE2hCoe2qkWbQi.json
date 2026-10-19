@@ -1,0 +1,38 @@
+{
+  "_id": "hFPE2hCoe2qkWbQi",
+  "name": "Foco de Duelo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM para marcar um oponente. Até o fim da cena, você recebe +2 na Defesa contra ele.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__foco-de-duelo",
+      "classe": "samurai",
+      "poder": "foco-de-duelo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!hFPE2hCoe2qkWbQi"
+}

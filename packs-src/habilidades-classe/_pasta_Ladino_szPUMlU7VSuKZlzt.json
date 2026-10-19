@@ -1,0 +1,15 @@
+{
+  "_id": "szPUMlU7VSuKZlzt",
+  "name": "Ladino",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:ladino"
+    }
+  },
+  "_key": "!folders!szPUMlU7VSuKZlzt"
+}

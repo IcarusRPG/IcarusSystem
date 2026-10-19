@@ -1,0 +1,38 @@
+{
+  "_id": "hGTPJBN7rXFysryB",
+  "name": "Faro para Perigo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 5004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Iniciativa e +2 em testes de Audição, Visão e Investigação para perceber armadilhas, emboscadas e criaturas escondidas.",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__faro-para-perigo",
+      "classe": "ladino",
+      "habilidade": "faro-para-perigo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!hGTPJBN7rXFysryB"
+}

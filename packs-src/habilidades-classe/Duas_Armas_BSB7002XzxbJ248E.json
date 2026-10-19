@@ -1,0 +1,38 @@
+{
+  "_id": "BSB7002XzxbJ248E",
+  "name": "Duas Armas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "szPUMlU7VSuKZlzt",
+  "sort": 1002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa Agredir empunhando uma arma Leve ou Ágil em cada mão, você faz um ataque com cada uma, sem sofrer a penalidade geral de combate com duas armas. O segundo ataque não soma o modificador de atributo no dano.",
+    "classe": "ladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__duas-armas",
+      "classe": "ladino",
+      "habilidade": "duas-armas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!BSB7002XzxbJ248E"
+}

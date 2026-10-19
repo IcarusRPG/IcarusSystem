@@ -1,0 +1,38 @@
+{
+  "_id": "LagdUulUJ9cimIxQ",
+  "name": "Tiro Lendário",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "I297XYpyoUdXVQCD",
+  "sort": 20004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, ao fazer um ataque com arma de fogo, você pode declarar um Tiro Lendário: o ataque acerta automaticamente, mesmo contra a Defesa, e conta como um acerto crítico.",
+    "classe": "pistoleiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__tiro-lendario",
+      "classe": "pistoleiro",
+      "habilidade": "tiro-lendario",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LagdUulUJ9cimIxQ"
+}

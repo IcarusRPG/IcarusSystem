@@ -1,0 +1,40 @@
+{
+  "_id": "tbbTjk3EN73pzkDi",
+  "name": "Golpe Devastador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "8L8lK0we5ZuYskBP",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Golpe Pesado",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar com uma arma de Duas Mãos. Se acertar, causa dados de dano adicionais iguais ao seu nível dividido por 4 (arredondado para cima, mínimo 1), do mesmo tipo e tamanho dos dados da arma.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Mãos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "golpe-pesado"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__golpe-devastador",
+      "classe": "guerreiro",
+      "poder": "golpe-devastador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!tbbTjk3EN73pzkDi"
+}

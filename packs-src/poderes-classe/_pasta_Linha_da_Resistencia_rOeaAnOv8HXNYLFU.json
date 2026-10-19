@@ -1,0 +1,15 @@
+{
+  "_id": "rOeaAnOv8HXNYLFU",
+  "name": "Linha da Resistência",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:linha-da-resistencia"
+    }
+  },
+  "_key": "!folders!rOeaAnOv8HXNYLFU"
+}

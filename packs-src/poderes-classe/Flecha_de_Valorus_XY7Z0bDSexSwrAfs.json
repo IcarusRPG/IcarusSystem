@@ -1,0 +1,38 @@
+{
+  "_id": "XY7Z0bDSexSwrAfs",
+  "name": "Flecha de Valorus",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM. Seu ataque à distância realiza a manobra Empurrar, usando Pontaria no lugar do ataque corpo a corpo (ver Manobras, na seção 1).",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__flecha-de-valorus",
+      "classe": "samurai",
+      "poder": "flecha-de-valorus",
+      "inferido": true
+    }
+  },
+  "_key": "!items!XY7Z0bDSexSwrAfs"
+}

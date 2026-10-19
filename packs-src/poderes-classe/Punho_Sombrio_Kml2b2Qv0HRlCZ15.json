@@ -1,0 +1,38 @@
+{
+  "_id": "Kml2b2Qv0HRlCZ15",
+  "name": "Punho Sombrio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "X3UYfIWpHkRwn5Bh",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques desarmados causam dano de Trevas no lugar de Impacto.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho das Sombras",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho das Sombras",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__punho-sombrio",
+      "classe": "monge",
+      "poder": "punho-sombrio",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Kml2b2Qv0HRlCZ15"
+}

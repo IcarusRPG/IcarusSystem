@@ -1,0 +1,38 @@
+{
+  "_id": "jc6pd1pTxSzUb30O",
+  "name": "Mira Firme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "gvjuW1nqOhHfDl9d",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "treinado em Pontaria",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 nos testes de ataque à distância.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__mira-firme",
+      "classe": "guerreiro",
+      "poder": "mira-firme",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jc6pd1pTxSzUb30O"
+}

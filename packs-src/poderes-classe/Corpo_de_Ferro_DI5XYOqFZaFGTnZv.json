@@ -1,0 +1,40 @@
+{
+  "_id": "DI5XYOqFZaFGTnZv",
+  "name": "Corpo de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "rOeaAnOv8HXNYLFU",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Vigor Marcial",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você é imune à condição Sangrando e recebe +2 em Fortitude.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "vigor-marcial"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__corpo-de-ferro",
+      "classe": "guerreiro",
+      "poder": "corpo-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!DI5XYOqFZaFGTnZv"
+}

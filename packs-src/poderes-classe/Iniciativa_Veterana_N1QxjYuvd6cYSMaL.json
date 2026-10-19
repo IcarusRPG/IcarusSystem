@@ -1,0 +1,38 @@
+{
+  "_id": "N1QxjYuvd6cYSMaL",
+  "name": "Iniciativa Veterana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "70uqTQ5F1kQeBDtd",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +4 em Iniciativa.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de combate geral",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__iniciativa-veterana",
+      "classe": "guerreiro",
+      "poder": "iniciativa-veterana",
+      "inferido": false
+    }
+  },
+  "_key": "!items!N1QxjYuvd6cYSMaL"
+}

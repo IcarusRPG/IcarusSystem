@@ -1,0 +1,15 @@
+{
+  "_id": "h7eXbgUzlO52mjvn",
+  "name": "Linha dos Truques",
+  "type": "Item",
+  "folder": "e9cr8BwFIZFfrFhm",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:ladino:linha-dos-truques"
+    }
+  },
+  "_key": "!folders!h7eXbgUzlO52mjvn"
+}

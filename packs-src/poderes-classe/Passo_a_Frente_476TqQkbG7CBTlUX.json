@@ -1,0 +1,40 @@
+{
+  "_id": "476TqQkbG7CBTlUX",
+  "name": "Passo à Frente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "Yv5B4j41fXGe8wPP",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Mestre do Escudo",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um aliado adjacente é alvo de um ataque, você pode gastar 1 PM e a sua reação para trocar de lugar com ele, tornando-se o alvo do ataque.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Escudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "mestre-do-escudo"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__passo-a-frente",
+      "classe": "guerreiro",
+      "poder": "passo-a-frente",
+      "inferido": true
+    }
+  },
+  "_key": "!items!476TqQkbG7CBTlUX"
+}

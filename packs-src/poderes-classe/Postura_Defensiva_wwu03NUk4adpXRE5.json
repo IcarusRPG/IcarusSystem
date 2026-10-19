@@ -1,0 +1,38 @@
+{
+  "_id": "wwu03NUk4adpXRE5",
+  "name": "Postura Defensiva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 1 PM. Até o início do seu próximo turno, você recebe +2 na Defesa.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__postura-defensiva",
+      "classe": "monge",
+      "poder": "postura-defensiva",
+      "inferido": true
+    }
+  },
+  "_key": "!items!wwu03NUk4adpXRE5"
+}

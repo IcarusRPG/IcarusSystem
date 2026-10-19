@@ -24,6 +24,7 @@
       <div class="teste-item">
         <span>{{item.rotulo}}</span>
         <span class="bonus"{{#if mostrarDica}} data-tooltip="{{dica}}"{{/if}}>{{bonusTexto}}</span>
+        {{#if modoTexto}}<span class="modo-teste">{{modoTexto}}</span>{{/if}}
       </div>
       <button type="button" class="dado{{#if clicavel}} clicavel{{/if}}{{#if girando}} girando{{/if}}{{#if falhaAutoTexto}} apagado{{/if}}{{#if resultadoTexto}} rolado{{/if}}"
         data-action="rolar" data-id="{{id}}" {{#unless clicavel}}disabled aria-disabled="true"{{/unless}}
@@ -34,7 +35,7 @@
       </button>
       {{#if rolarPor}}<button type="button" class="rolar-por" data-action="rolarPor" data-id="{{id}}">{{rolarPor}}</button>{{/if}}
       <div class="teste-resultado-linha">
-        {{#if resultadoTexto}}<span class="conta">{{resultadoTexto}}</span>{{#if peloMestre}}<small class="pelo-mestre">{{localize "ICARUS.Testes.RoladoPeloMestre"}}</small>{{/if}}
+        {{#if resultadoTexto}}<span class="conta">{{resultadoTexto}}</span>{{#if dadosTexto}}<small class="dados-teste">{{dadosTexto}}</small>{{/if}}{{#if peloMestre}}<small class="pelo-mestre">{{localize "ICARUS.Testes.RoladoPeloMestre"}}</small>{{/if}}
         {{else if falhaAutoTexto}}<span class="falha-auto">{{falhaAutoTexto}}</span>
         {{else}}<span class="aguardando">{{aguardandoTexto}}</span>{{/if}}
       </div>

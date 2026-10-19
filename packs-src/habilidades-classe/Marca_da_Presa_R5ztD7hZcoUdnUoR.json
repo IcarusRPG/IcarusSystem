@@ -1,0 +1,38 @@
+{
+  "_id": "R5ztD7hZcoUdnUoR",
+  "name": "Marca da Presa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "0blCeOiABOTbsU4X",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 1 PM e escolhe uma criatura que consiga ver em alcance médio. Ela se torna a sua <strong>presa</strong> até o fim da cena ou até você marcar outra criatura. Você tem uma presa por vez. Contra a sua presa, você recebe +2 em testes de Sobrevivência, Investigação e Visão para rastreá-la, e todos os seus ataques que acertarem causam dano extra de 1d4 (o dano extra vale só para os seus ataques, não para os do seu animal). O dano extra aumenta em 1d4 a cada 4 níveis (2d4 no 5º, 3d4 no 9º, 4d4 no 13º e 5d4 no 17º).",
+    "classe": "patrulheiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__marca-da-presa",
+      "classe": "patrulheiro",
+      "habilidade": "marca-da-presa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!R5ztD7hZcoUdnUoR"
+}

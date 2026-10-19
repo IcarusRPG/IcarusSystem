@@ -1,0 +1,38 @@
+{
+  "_id": "3XThyjalCeHKrUz8",
+  "name": "Rajada Astral",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "FbN4z45dfYqvMyg7",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Com os Braços Astrais ativos, a Rajada de Golpes concede dois ataques adicionais em vez de um e custa 2 PM.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho Astral",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho Astral",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__rajada-astral",
+      "classe": "monge",
+      "poder": "rajada-astral",
+      "inferido": true
+    }
+  },
+  "_key": "!items!3XThyjalCeHKrUz8"
+}

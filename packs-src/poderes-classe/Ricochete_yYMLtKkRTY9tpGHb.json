@@ -1,0 +1,38 @@
+{
+  "_id": "yYMLtKkRTY9tpGHb",
+  "name": "Ricochete",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "DMxyhR3tH0YC0faM",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao acertar um ataque com arma de fogo. Você faz um ataque adicional contra outro inimigo a até 3 m do alvo. O ataque adicional não recebe o Tiro Carregado e não soma o modificador de atributo no dano.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Tiro",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__ricochete",
+      "classe": "pistoleiro",
+      "poder": "ricochete",
+      "inferido": true
+    }
+  },
+  "_key": "!items!yYMLtKkRTY9tpGHb"
+}

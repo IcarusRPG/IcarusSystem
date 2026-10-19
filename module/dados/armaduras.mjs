@@ -23,7 +23,6 @@ export default {
       "preco": 1000,
       "espacos": 2,
       "pasta": "Armaduras Leves",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -39,7 +38,6 @@ export default {
       "preco": 2500,
       "espacos": 2,
       "pasta": "Armaduras Leves",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -55,7 +53,6 @@ export default {
       "preco": 6000,
       "espacos": 2,
       "pasta": "Armaduras Leves",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -71,7 +68,6 @@ export default {
       "preco": 12000,
       "espacos": 3,
       "pasta": "Armaduras Médias",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -87,7 +83,6 @@ export default {
       "preco": 25000,
       "espacos": 3,
       "pasta": "Armaduras Médias",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -103,7 +98,6 @@ export default {
       "preco": 50000,
       "espacos": 5,
       "pasta": "Armaduras Pesadas",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -119,7 +113,6 @@ export default {
       "preco": 150000,
       "espacos": 5,
       "pasta": "Armaduras Pesadas",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -135,7 +128,6 @@ export default {
       "preco": 1200,
       "espacos": 1,
       "pasta": "Túnicas",
-      "proficienciaLivre": true,
       "acoplado": false,
       "provisorio": [
         "preco",
@@ -152,7 +144,6 @@ export default {
       "preco": 4000,
       "espacos": 1,
       "pasta": "Túnicas",
-      "proficienciaLivre": true,
       "acoplado": false,
       "provisorio": [
         "nome",
@@ -170,7 +161,6 @@ export default {
       "preco": 1500,
       "espacos": 1,
       "pasta": "Escudos",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -186,7 +176,6 @@ export default {
       "preco": 4000,
       "espacos": 2,
       "pasta": "Escudos",
-      "proficienciaLivre": false,
       "acoplado": false,
       "provisorio": [
         "espacos"
@@ -202,7 +191,6 @@ export default {
       "preco": 8000,
       "espacos": 2,
       "pasta": "Escudos",
-      "proficienciaLivre": false,
       "acoplado": true,
       "provisorio": [
         "espacos"

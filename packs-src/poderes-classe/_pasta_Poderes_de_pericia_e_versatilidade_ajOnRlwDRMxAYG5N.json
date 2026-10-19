@@ -1,0 +1,15 @@
+{
+  "_id": "ajOnRlwDRMxAYG5N",
+  "name": "Poderes de perícia e versatilidade",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 700,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:poderes-de-pericia-e-versatilidade"
+    }
+  },
+  "_key": "!folders!ajOnRlwDRMxAYG5N"
+}

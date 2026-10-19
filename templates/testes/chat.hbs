@@ -17,12 +17,16 @@
       {{#if resultado.falhaAuto}}
       <span class="teste-chat-conta falha">{{localize "ICARUS.Condicoes.FalhaAutomatica"}} ({{resultado.falhaAuto}})</span>
       {{else}}
-      <span class="teste-chat-conta"><span class="{{#if natural20}}natural-20{{/if}}{{#if natural1}}natural-1{{/if}}">{{resultado.d20}}</span> + {{resultado.bonus}} = <strong>{{resultado.total}}</strong>{{#if peloMestre}} <small>({{localize "ICARUS.Testes.RoladoPeloMestre"}})</small>{{/if}}</span>
+      <span class="teste-chat-conta">{{#if resultado.dados}}<small>({{#each resultado.dados}}{{#if mantido}}<b>{{valor}}</b>{{else}}<s>{{valor}}</s>{{/if}}{{#unless @last}}/{{/unless}}{{/each}})</small> {{/if}}<span class="{{#if natural20}}natural-20{{/if}}{{#if natural1}}natural-1{{/if}}">{{resultado.d20}}</span> + {{resultado.bonus}} = <strong>{{resultado.total}}</strong>{{#if peloMestre}} <small>({{localize "ICARUS.Testes.RoladoPeloMestre"}})</small>{{/if}}</span>
       {{/if}}
       {{#unless ../oposto}}<span class="selo-chat {{#if passou}}passou{{else}}falhou{{/if}}">{{#if passou}}{{localize "ICARUS.Testes.Selo.passou"}}{{else}}{{localize "ICARUS.Testes.Selo.falhou"}}{{/if}}</span>{{/unless}}
     </li>
     {{/each}}
   </ul>
+  {{#if manobra}}
+  <div class="manobra-efeito{{#if manobra.venceu}} venceu{{/if}}"><b>{{localize "ICARUS.Manobra.Titulo"}}: {{manobra.nome}}.</b> {{manobra.efeito}}</div>
+  {{#if manobra.condicao}}<button type="button" data-icarus-manobra-condicao="{{manobra.condicao}}" data-uuid="{{manobra.alvoUuid}}"><i class="fa-solid fa-person-falling-burst"></i> {{localize "ICARUS.Manobra.Aplicar"}} {{manobra.condicaoNome}}</button>{{/if}}
+  {{/if}}
   {{#if oposto}}
   <div class="rolagem-selo">{{#if vencedor}}{{localize "ICARUS.Testes.VencedorRotulo"}}: {{vencedor.nome}}{{#if motivoBonus}} <small>({{localize "ICARUS.Testes.DesempateBonus"}})</small>{{/if}}{{else}}{{localize "ICARUS.Testes.Empate"}}{{/if}}</div>
   {{else}}

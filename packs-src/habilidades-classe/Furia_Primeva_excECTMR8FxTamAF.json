@@ -1,0 +1,38 @@
+{
+  "_id": "excECTMR8FxTamAF",
+  "name": "Fúria Primeva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "gdo614mxTqnHORen",
+  "sort": 20005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Entrar em Fúria não custa PM. O bônus da Fúria passa a +5 no dano e +4 no ataque.",
+    "classe": "barbaro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__furia-primeva",
+      "classe": "barbaro",
+      "habilidade": "furia-primeva",
+      "inferido": false
+    }
+  },
+  "_key": "!items!excECTMR8FxTamAF"
+}

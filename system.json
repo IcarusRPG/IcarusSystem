@@ -2,7 +2,7 @@
   "id": "icarus-rpg",
   "title": "Icarus RPG",
   "description": "Sistema do Icarus RPG, um RPG de fantasia medieval original com testes de d20 + modificador.",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -61,6 +61,11 @@
       "municao": {
         "htmlFields": [
           "descricao"
+        ]
+      },
+      "classe": {
+        "htmlFields": [
+          "intro"
         ]
       }
     }
@@ -143,6 +148,58 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "classes",
+      "label": "Icarus — Classes",
+      "path": "packs/classes",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "habilidades-classe",
+      "label": "Icarus — Habilidades de Classe",
+      "path": "packs/habilidades-classe",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "poderes-classe",
+      "label": "Icarus — Poderes de Classe",
+      "path": "packs/poderes-classe",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "vinculos",
+      "label": "Icarus — Vínculos (Patrulheiro)",
+      "path": "packs/vinculos",
+      "type": "Actor",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -156,7 +213,11 @@
         "armaduras-escudos",
         "poderes-concedidos",
         "condicoes",
-        "macros"
+        "macros",
+        "classes",
+        "habilidades-classe",
+        "poderes-classe",
+        "vinculos"
       ]
     }
   ],
@@ -168,6 +229,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.6.0/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.7.0/icarus-rpg.zip",
   "socket": true
 }

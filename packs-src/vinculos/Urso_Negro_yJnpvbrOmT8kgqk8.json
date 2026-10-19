@@ -1,0 +1,79 @@
+{
+  "_id": "yJnpvbrOmT8kgqk8",
+  "name": "Urso Negro",
+  "type": "personagem",
+  "img": "icons/svg/pawprint.svg",
+  "folder": null,
+  "sort": 400,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 1
+    },
+    "deslocamento": 9,
+    "resistencias": {
+      "rdGeral": 2
+    },
+    "notas": "<p>Defesa +1; deslocamento 9 m, escalada 6 m; RD 2. Garras: 1d8 de dano de Corte.</p><p><em>escalada 6 m</em></p>",
+    "pericias": {}
+  },
+  "prototypeToken": {
+    "name": "Urso Negro",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "icons/svg/pawprint.svg"
+    }
+  },
+  "items": [
+    {
+      "_id": "RlJERpBkvWLfscKH",
+      "name": "Garras",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d8",
+        "tiposDano": [
+          "corte"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!yJnpvbrOmT8kgqk8.RlJERpBkvWLfscKH"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "urso-negro",
+      "vinculo": {
+        "animal": "urso-negro"
+      }
+    }
+  },
+  "_key": "!actors!yJnpvbrOmT8kgqk8"
+}

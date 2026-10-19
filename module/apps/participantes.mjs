@@ -33,13 +33,22 @@ export function candidatos() {
 }
 
 /** Candidatos agrupados (Personagens de jogadores / NPCs), marcando os selecionados. */
-export function gruposDeCandidatos(lista, selecionados = new Set()) {
-  const marca = c => ({ uuid: c.uuid, nome: c.nome, img: c.img, jogadores: c.jogadores, naCena: c.naCena, marcado: selecionados.has(c.uuid) });
+export function gruposDeCandidatos(lista, selecionados = new Set(), modos = null) {
+  const marca = c => ({
+    uuid: c.uuid, nome: c.nome, img: c.img, jogadores: c.jogadores, naCena: c.naCena, marcado: selecionados.has(c.uuid),
+    // Vantagem/desvantagem por alvo (Teste de Resistência)
+    modos: modos ? opcoesDeModo(modos.get(c.uuid) ?? "normal") : null
+  });
   return [
     { id: "pj", rotulo: "ICARUS.Testes.Grupos.pj", itens: lista.filter(c => c.pj).map(marca) },
     { id: "npc", rotulo: "ICARUS.Testes.Grupos.npc", itens: lista.filter(c => !c.pj).map(marca) }
   ].filter(g => g.itens.length);
 }
+
+/** Opções Normal / Vantagem / Desvantagem de um seletor. */
+export const opcoesDeModo = atual => ["normal", "vantagem", "desvantagem"].map(m => ({
+  valor: m, rotulo: game.i18n.localize(`ICARUS.Rolagem.Modo.${m}`), selecionado: m === atual
+}));
 
 /** uuids dos tokens selecionados na cena. */
 export const uuidsSelecionados = () => (canvas?.tokens?.controlled ?? []).filter(t => t.actor).map(t => t.document.uuid);

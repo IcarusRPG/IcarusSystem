@@ -1,0 +1,38 @@
+{
+  "_id": "6bHPDd5sRdjhYNNU",
+  "name": "Guarda Inexorável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa armadura leve ou média, você soma sua Sabedoria na Defesa, limitada ao bônus da armadura.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__guarda-inexoravel",
+      "classe": "samurai",
+      "poder": "guarda-inexoravel",
+      "inferido": false
+    }
+  },
+  "_key": "!items!6bHPDd5sRdjhYNNU"
+}

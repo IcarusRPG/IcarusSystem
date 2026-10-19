@@ -1,0 +1,15 @@
+{
+  "_id": "zQgUz5C0U1Tp26gK",
+  "name": "Monge",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 600000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:monge"
+    }
+  },
+  "_key": "!folders!zQgUz5C0U1Tp26gK"
+}

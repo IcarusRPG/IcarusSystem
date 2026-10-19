@@ -1,0 +1,38 @@
+{
+  "_id": "RPoIpdRKlai9XUPN",
+  "name": "Sangue dos Baldurs",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Fortitude. Nos testes de morte, você começa com 1 sucesso automático.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__sangue-dos-baldurs",
+      "classe": "samurai",
+      "poder": "sangue-dos-baldurs",
+      "inferido": false
+    }
+  },
+  "_key": "!items!RPoIpdRKlai9XUPN"
+}

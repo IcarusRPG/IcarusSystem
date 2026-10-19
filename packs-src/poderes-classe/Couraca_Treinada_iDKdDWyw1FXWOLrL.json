@@ -1,0 +1,38 @@
+{
+  "_id": "iDKdDWyw1FXWOLrL",
+  "name": "Couraça Treinada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "rOeaAnOv8HXNYLFU",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "estar usando armadura pesada",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto usa armadura pesada, você recebe +1 na Defesa.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__couraca-treinada",
+      "classe": "guerreiro",
+      "poder": "couraca-treinada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!iDKdDWyw1FXWOLrL"
+}

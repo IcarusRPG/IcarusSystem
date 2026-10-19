@@ -6,7 +6,7 @@
  * para trocar num lugar só quando a regra for definida.
  */
 import { numero } from "./regras.mjs";
-import { ALCANCE_METROS } from "./config.mjs";
+import { ALCANCE_METROS, CATEGORIAS_ARMADURA_CORPO } from "./config.mjs";
 
 export const REGRAS = {
   // [PROVISÓRIO] Corpo a corpo e arremesso somam FOR (total) ao dano; arcos, bestas, funda e
@@ -18,9 +18,9 @@ export const REGRAS = {
   acertoAutomatico: false,
   // [PROVISÓRIO] Sem proficiência na arma: só um aviso, sem penalidade numérica (valor não definido).
   penalidadeSemProficiencia: 0,
-  // Ganchos ainda não implementados: duas armas (−2, Ataque Duplo/Ambidestria), Arma Dupla completa,
-  // dano desarmado e armas naturais, efeitos de poderes sobre armas (ex.: Tradição da Forja).
-  duasArmas: null
+  // Duas armas: planoDuasArmas (abaixo). Ainda não implementados: armas naturais e efeitos de
+  // poderes sobre armas (ex.: Tradição da Forja).
+  duasArmas: "planoDuasArmas"
 };
 
 /** Perícia de cada modo: corpo a corpo usa Luta; distância, arremesso e fogo usam Pontaria. */
@@ -35,20 +35,95 @@ export function modosDeAtaque(arma) {
   return tem(arma, "arremesso") ? ["corpo-a-corpo", "arremesso"] : ["corpo-a-corpo"];
 }
 
-/** Proficiência: "auto" = só armas simples (todo personagem tem proficiência com armas simples). */
-export function ehProficiente(arma) {
-  if (arma.proficiencia === "sim") return true;
-  if (arma.proficiencia === "nao") return false;
-  return arma.categoria === "simples";
+/* ------------------------------ Proficiências e armadura ------------------------------ */
+
+/**
+ * O personagem tem proficiência com a arma? (prof = system.proficiencias do ator)
+ * Todo personagem tem armas simples. "sim"/"nao" na arma forçam o resultado.
+ */
+export function temProficienciaArma(prof, arma) {
+  const lista = prof?.armas ?? [];
+  const props = arma.propriedades ?? [];
+  switch (arma.categoria) {
+    case "simples": return true;
+    case "marcial": return lista.includes("marciais") || (lista.includes("marciais-leves-ageis") && (props.includes("leve") || props.includes("agil")));
+    case "exotica": return lista.includes("exoticas") || (lista.includes("exoticas-corte") && (arma.tiposDano ?? []).includes("corte"));
+    case "fogo": return lista.includes("fogo");
+    default: return false;
+  }
 }
 
 /**
- * Penalidade de armadura nos testes de ataque.
- * Regra confirmada (núcleo, seção 14): sem proficiência em ARMADURA, a penalidade de armadura
- * vale também nos testes de ataque. Fica em 0 até existir o compêndio de armaduras com penalidade.
+ * Proficiência da arma: "sim"/"nao" na arma forçam; "auto" usa as proficiências do personagem
+ * (sem personagem, só armas simples).
  */
-export function penalidadeDeAtaque(_system, _itens = []) {
-  return 0;
+export function ehProficiente(arma, prof = null) {
+  if (arma.proficiencia === "sim") return true;
+  if (arma.proficiencia === "nao") return false;
+  return temProficienciaArma(prof, arma);
+}
+
+/** Ordem das armaduras: quem tem proficiência numa categoria tem nas mais leves (decisão do Mestre a confirmar). */
+const HIERARQUIA_ARMADURA = { leve: 1, media: 2, pesada: 3 };
+
+/**
+ * Proficiência numa categoria de armadura, escudo ou túnica.
+ * Armaduras seguem a hierarquia leve < média < pesada (PROVISÓRIO: troque aqui se o Mestre decidir
+ * que "armaduras pesadas" não inclui as mais leves). Túnica tem proficiência própria.
+ */
+export function temProficienciaArmadura(prof, categoria) {
+  if (!categoria) return true;
+  if (categoria === "tunica") return !!prof?.tunicas;
+  if (categoria === "escudo" || categoria === "escudo-acoplado") return !!prof?.escudo;
+  const nivel = HIERARQUIA_ARMADURA[categoria];
+  if (!nivel) return true;
+  return (prof?.armaduras ?? []).some(c => (HIERARQUIA_ARMADURA[c] ?? 0) >= nivel);
+}
+
+/** Itens de armadura/escudo/túnica equipados (itens = lista { type, system }). */
+const vestidos = itens => (itens ?? []).filter(i => i.type === "equipamento" && i.system?.equipado && i.system.categoria);
+
+/**
+ * Tipo de armadura que o personagem veste: "nenhuma" | "leve" | "media" | "pesada".
+ * Só leve, média e pesada contam; túnica e escudo NÃO são armadura.
+ */
+export function tipoArmadura(itens) {
+  let maior = "nenhuma";
+  for (const i of vestidos(itens)) {
+    const c = i.system.categoria;
+    if (CATEGORIAS_ARMADURA_CORPO.includes(c) && (HIERARQUIA_ARMADURA[c] > (HIERARQUIA_ARMADURA[maior] ?? 0))) maior = c;
+  }
+  return maior;
+}
+
+/** Está usando armadura? Verdadeiro só com armadura leve, média ou pesada equipada. */
+export const usandoArmadura = itens => tipoArmadura(itens) !== "nenhuma";
+
+/** Sem armadura ou com armadura leve (túnica e escudo não mudam isso). */
+export const armaduraLeveOuNenhuma = itens => ["nenhuma", "leve"].includes(tipoArmadura(itens));
+
+/** Está vestindo túnica? / empunhando escudo? */
+export const vestindoTunica = itens => vestidos(itens).some(i => i.system.categoria === "tunica");
+export const usandoEscudo = itens => vestidos(itens).some(i => ["escudo", "escudo-acoplado"].includes(i.system.categoria));
+
+/**
+ * Penalidade de armadura nos testes de ataque (núcleo, seção 14): a penalidade de cada
+ * armadura, escudo ou túnica equipado SEM proficiência vale também no ataque.
+ * Armas sem proficiência continuam só com aviso.
+ * @returns {number} valor negativo (ou 0)
+ */
+export function penalidadeDeAtaque(system, itens = []) {
+  const prof = system?.proficiencias;
+  let total = 0;
+  for (const i of vestidos(itens)) {
+    if (!temProficienciaArmadura(prof, i.system.categoria)) total += numero(i.system.penalidade);
+  }
+  return total ? -total : 0;
+}
+
+/** Itens vestidos sem proficiência (para o aviso do card). */
+export function vestidosSemProficiencia(system, itens = []) {
+  return vestidos(itens).filter(i => !temProficienciaArmadura(system?.proficiencias, i.system.categoria));
 }
 
 /**
@@ -69,42 +144,53 @@ export function calcularAtaque(system, arma, modo, itens = []) {
     const FOR = numero(system.atributos.FOR.total), DES = numero(system.atributos.DES.total);
     if (DES > FOR) { base = base - FOR + DES; agil = true; }
   }
-  const proficiente = ehProficiente(arma);
+  const proficiente = ehProficiente(arma, system.proficiencias);
   // Condições: a maior penalidade entre a geral e a de corpo a corpo (Caído), sem somar as duas
   const condGeral = system.condicoes?.ataque?.valor ?? 0;
   const condCorpo = modo === "corpo-a-corpo" ? (system.condicoes?.ataqueCorpoACorpo?.valor ?? 0) : 0;
   const condicao = Math.min(condGeral, condCorpo);
-  const bonus = base + numero(arma.bonusAtaque) + numero(system.bonus?.ataque) + condicao + penalidadeDeAtaque(system, itens)
+  const penalidadeArmadura = penalidadeDeAtaque(system, itens);
+  const bonus = base + numero(arma.bonusAtaque) + numero(system.bonus?.ataque) + condicao + penalidadeArmadura
     + (proficiente ? 0 : REGRAS.penalidadeSemProficiencia);
-  return { pericia, bonus, agil, proficiente, condicao };
+  return { pericia, bonus, agil, proficiente, condicao, penalidadeArmadura };
 }
 
 /**
  * Fórmula de dano.
  * - duasMaos: usa danoExtra quando a arma tem dano de duas mãos (Espada bastarda, Katana).
  * - outraExtremidade: usa danoExtra da arma Dupla (Bordão, Corrente de espinhos).
- * - critico: (dados + bônus fixos) × multiplicador.
+ * - semAtributo: não soma o atributo (segundo ataque de duas armas, Rajada de Golpes).
+ * - atributo: atributo somado no dano no lugar de FOR (ex.: SAB nos Braços Astrais).
+ * - extras: dados extras de poderes [{ rotulo, formula, naoMultiplica? }] (Ataque Furtivo, Marca da Presa…).
+ * - critico: (dados + bônus da arma + extras) × multiplicador. Extras com naoMultiplica ficam fora
+ *   (regra oficial: só não multiplica o que o poder disser).
  * @returns {{ dado: string, partes: {rotulo:string, valor:number}[], formula: string, texto: string }}
  */
-export function calcularDano(system, arma, modo, { duasMaos = false, outraExtremidade = false, critico = false } = {}) {
+export function calcularDano(system, arma, modo, { duasMaos = false, outraExtremidade = false, critico = false, semAtributo = false, atributo = "FOR", extras = [] } = {}) {
   const dupla = tem(arma, "dupla");
   let dado = arma.dano || "0";
   if (arma.danoExtra && ((dupla && outraExtremidade) || (!dupla && duasMaos))) dado = arma.danoExtra;
 
   const partes = [];
-  const FOR = numero(system.atributos.FOR.total);
-  if (REGRAS.danoSomaFOR[modo] && FOR !== 0) partes.push({ rotulo: "FOR", valor: FOR });
+  const valorAtributo = numero(system.atributos?.[atributo]?.total);
+  if (!semAtributo && REGRAS.danoSomaFOR[modo] && valorAtributo !== 0) partes.push({ rotulo: atributo, valor: valorAtributo });
   if (numero(arma.bonusDano)) partes.push({ rotulo: "item", valor: numero(arma.bonusDano) });
 
   const fixos = partes.map(p => `${p.valor < 0 ? "-" : "+"} ${Math.abs(p.valor)}`).join(" ");
   const textoFixos = partes.map(p => `${p.valor < 0 ? "−" : "+"} ${Math.abs(p.valor)} (${p.rotulo})`).join(" ");
-  let formula = fixos ? `${dado} ${fixos}` : dado;
-  let texto = textoFixos ? `${dado} ${textoFixos}` : dado;
+  const multiplicam = extras.filter(e => e?.formula && !e.naoMultiplica);
+  const foraDoCritico = extras.filter(e => e?.formula && e.naoMultiplica);
+  const comExtras = (f, t, lista) => [
+    lista.reduce((acc, e) => `${acc} + ${e.formula}`, f),
+    lista.reduce((acc, e) => `${acc} + ${e.formula} (${e.rotulo})`, t)
+  ];
+  let [formula, texto] = comExtras(fixos ? `${dado} ${fixos}` : dado, textoFixos ? `${dado} ${textoFixos}` : dado, multiplicam);
   if (critico) {
     const mult = Math.max(2, Math.trunc(numero(arma.criticoMult)) || 2);
     formula = REGRAS.criticoMultiplicaTudo ? `(${formula}) * ${mult}` : formula;
     texto = `(${texto}) × ${mult}`;
   }
+  [formula, texto] = comExtras(formula, texto, foraDoCritico);
   return { dado, partes, formula, texto };
 }
 
@@ -244,7 +330,7 @@ export function botaoUsado(flags, acao) {
  * @param {string} tipo          id do tipo de dano
  * @returns {{ final: number, passos: {chave: string, valor?: number, resultado: number}[] }}
  */
-export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }) {
+export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }, { ignoraRD = false } = {}) {
   const r = resistencias ?? {};
   let dano = Math.max(0, Math.trunc(numero(valor)));
   const passos = [{ chave: "rolado", resultado: dano }];
@@ -257,12 +343,13 @@ export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulne
     dano = Math.floor(dano * (regras.vulnerabilidadeMult ?? 1.5));
     passos.push({ chave: "vulneravel", valor: regras.vulnerabilidadeMult ?? 1.5, resultado: dano });
   }
-  const reducao = generico ? 0 : numero(r.reducao?.[tipo]);
+  // Ataques que "ignoram a RD" ignoram o total (Redução do tipo e RD geral)
+  const reducao = generico || ignoraRD ? 0 : numero(r.reducao?.[tipo]);
   if (reducao) {
     dano = Math.max(regras.minimo ?? 0, dano - reducao);
     passos.push({ chave: "reducao", valor: reducao, resultado: dano });
   }
-  const rd = numero(r.rdGeral);
+  const rd = ignoraRD ? 0 : numero(r.rdGeral);
   if (rd) {
     dano = Math.max(regras.minimo ?? 0, dano - rd);
     passos.push({ chave: "rd", valor: rd, resultado: dano });
@@ -322,4 +409,270 @@ export function calcularCD(system, atributoChave) {
   const metade = Math.floor(nivel / 2);
   const mod = numero(system?.atributos?.[atributoChave]?.total);
   return { cd: 10 + metade + mod, nivel, metade, mod, semNivel };
+}
+
+/* ------------------------------ d20: vantagem e desvantagem ------------------------------ */
+
+/**
+ * Modo da rolagem: vantagem e desvantagem não acumulam (várias fontes = 2d20) e,
+ * juntas, se anulam (1d20).
+ * @returns {"normal"|"vantagem"|"desvantagem"}
+ */
+export function modoD20({ vantagem = false, desvantagem = false } = {}) {
+  if (vantagem && desvantagem) return "normal";
+  return vantagem ? "vantagem" : desvantagem ? "desvantagem" : "normal";
+}
+
+/**
+ * Dado mantido entre os rolados. 20 e 1 naturais contam pelo dado que ficou.
+ * minimo (Perícia Infalível): d20 menor que o mínimo conta como o mínimo — vale para o dado mantido.
+ * @param {number[]} valores  1 ou 2 d20
+ * @returns {{ natural: number, d20: number, dados: {valor:number, mantido:boolean}[], minimoAplicado: boolean }}
+ */
+export function escolherD20(valores, modo = "normal", minimo = null) {
+  let indice = 0;
+  if (valores.length > 1 && modo === "vantagem") indice = valores[1] > valores[0] ? 1 : 0;
+  if (valores.length > 1 && modo === "desvantagem") indice = valores[1] < valores[0] ? 1 : 0;
+  const natural = valores[indice];
+  const d20 = minimo && natural < minimo ? minimo : natural;
+  return { natural, d20, dados: valores.map((valor, i) => ({ valor, mantido: i === indice })), minimoAplicado: d20 !== natural };
+}
+
+/**
+ * Vantagem/desvantagem vindas de Efeitos Ativos (flags["icarus-rpg"].vantagem.<escopo> e
+ * .desvantagem.<escopo>). Escopos: "ataque", "pericia.<chave>", "resistencia.<chave>", "morte",
+ * "iniciativa" e "todos" (este vale para qualquer rolagem).
+ * @param {object} flags  flags["icarus-rpg"] do ator
+ * @param {string[]} escopos
+ */
+export function vantagemDasFlags(flags, escopos = []) {
+  const ler = (tipo, escopo) => !!escopo.split(".").reduce((o, p) => o?.[p], flags?.[tipo]);
+  const todos = [...escopos, "todos"];
+  return {
+    vantagem: todos.some(e => ler("vantagem", e)),
+    desvantagem: todos.some(e => ler("desvantagem", e))
+  };
+}
+
+/** Mínimo do d20 vindo de flags (flags["icarus-rpg"].minimoD20.<escopo>), ex.: Perícia Infalível. */
+export function minimoDasFlags(flags, escopos = []) {
+  const valores = escopos.map(e => Number(e.split(".").reduce((o, p) => o?.[p], flags?.minimoD20))).filter(v => v > 0);
+  return valores.length ? Math.max(...valores) : null;
+}
+
+/**
+ * Rola o d20 com vantagem/desvantagem (Roll real do Foundry: 2d20kh / 2d20kl / 1d20) + bônus.
+ * O total é recalculado com o dado mantido (e o mínimo, se houver).
+ * @returns {Promise<{ roll, modo, d20, natural, dados, total, bonus, minimoAplicado }>}
+ */
+export async function rolarD20({ vantagem = false, desvantagem = false, bonus = 0, minimo = null } = {}) {
+  const modo = modoD20({ vantagem, desvantagem });
+  const termo = modo === "vantagem" ? "2d20kh" : modo === "desvantagem" ? "2d20kl" : "1d20";
+  const b = numero(bonus);
+  const roll = await new Roll(`${termo} ${b < 0 ? "-" : "+"} ${Math.abs(b)}`).evaluate();
+  const valores = (roll.dice[0]?.results ?? []).map(r => r.result);
+  const escolha = escolherD20(valores.length ? valores : [roll.total - b], modo, minimo);
+  return { roll, modo, ...escolha, bonus: b, total: escolha.d20 + b };
+}
+
+/* ------------------------------ Acerto, margem de ameaça e crítico ------------------------------ */
+
+/**
+ * Resultado de um ataque contra uma Defesa (regra oficial):
+ * - 20 natural: acerta sempre e é crítico;
+ * - dentro da margem de ameaça (mas não 20): precisa alcançar a Defesa; se alcançar, é crítico;
+ * - fora da margem: acerta se total ≥ Defesa, sem crítico.
+ * 1 natural não tem efeito especial (PENDENTE no livro). forcarAcerto (Tiro Lendário): acerta e é crítico.
+ * Sem Defesa conhecida (sem alvo): acerta = null e ameaca diz se o d20 caiu na margem.
+ * @param {{ d20: number, total: number, margem?: number, defesa?: number|null, forcarAcerto?: boolean }} a
+ *   d20 = valor natural do dado mantido
+ * @returns {{ acerta: boolean|null, critico: boolean, ameaca: boolean, automatico: boolean }}
+ */
+export function resolverAtaque({ d20, total, margem = 20, defesa = null, forcarAcerto = false }) {
+  const natural = numero(d20);
+  const m = numero(margem) || 20;
+  const ameaca = natural >= m;
+  if (forcarAcerto || natural === 20) return { acerta: true, critico: true, ameaca: true, automatico: true };
+  if (defesa === null || defesa === undefined || !Number.isFinite(Number(defesa))) return { acerta: null, critico: false, ameaca, automatico: false };
+  const acerta = numero(total) >= numero(defesa);
+  return { acerta, critico: acerta && ameaca, ameaca, automatico: false };
+}
+
+/**
+ * Um único d20 contra vários alvos (ataque que atinge várias criaturas com um teste).
+ * @param {{ d20, total, margem, forcarAcerto }} ataque
+ * @param {{ id: string, defesa: number|null }[]} alvos
+ * @returns {{ id: string, defesa: number|null, acerta: boolean|null, critico: boolean }[]}
+ */
+export function resolverAtaqueMultiplo(ataque, alvos = []) {
+  return alvos.map(a => ({ ...a, ...resolverAtaque({ ...ataque, defesa: a.defesa }) }));
+}
+
+/* ------------------------------ Reações ------------------------------ */
+
+/** Condições que impedem reações (ids reais das condições do sistema). */
+export const CONDICOES_SEM_REACAO = ["desprevenido", "surpreendido"];
+
+/**
+ * Pode reagir? Falso se a reação da rodada já foi usada ou se está Desprevenido/Surpreendido.
+ * @param {object} system    system do ator (reacao.disponivel)
+ * @param {Set<string>|string[]} statuses  condições ativas
+ * @returns {{ pode: boolean, motivo: string }} motivo = "usada" ou o id da condição
+ */
+export function podeReagir(system, statuses = []) {
+  const ativos = statuses instanceof Set ? statuses : new Set(statuses);
+  const condicao = CONDICOES_SEM_REACAO.find(c => ativos.has(c));
+  if (condicao) return { pode: false, motivo: condicao };
+  if (system?.reacao && system.reacao.disponivel === false) return { pode: false, motivo: "usada" };
+  return { pode: true, motivo: "" };
+}
+
+/* ------------------------------ Flanco e camuflagem ------------------------------ */
+
+/** Bônus de flanco nos ataques corpo a corpo (regra oficial). */
+export const BONUS_FLANCO = 2;
+
+/**
+ * Duas caixas (em unidades de grade: x, y do canto e w, h do tamanho) são adjacentes?
+ * Encostam ou se sobrepõem, com tolerância de meio quadrado (grade quadrada ou hexagonal).
+ */
+export function adjacentes(a, b, tolerancia = 0.5) {
+  const gapX = Math.max(0, Math.max(a.x, b.x) - Math.min(a.x + a.w, b.x + b.w));
+  const gapY = Math.max(0, Math.max(a.y, b.y) - Math.min(a.y + a.h, b.y + b.h));
+  return Math.max(gapX, gapY) <= tolerancia;
+}
+
+const centro = c => ({ x: c.x + c.w / 2, y: c.y + c.h / 2 });
+
+/**
+ * Flanco: atacante e um aliado estão corpo a corpo com o alvo em lados opostos (o alvo entre os
+ * dois). "Oposto" = ângulo de pelo menos 135° entre as direções alvo→atacante e alvo→aliado,
+ * o que vale para grade quadrada e hexagonal.
+ * Aliado com flanco por poder (Companheiro de Crime: flanqueadorPor contém o alvo) conta em
+ * qualquer posição. Alvo com naoFlanqueavel nunca é flanqueado.
+ * @param {{x,y,w,h}} atacante
+ * @param {{x,y,w,h, uuid?, naoFlanqueavel?}} alvo
+ * @param {{x,y,w,h, flanqueadorPor?: string[]}[]} aliados
+ * @returns {boolean}
+ */
+export function estaFlanqueando(atacante, alvo, aliados = [], { anguloMinimo = 135 } = {}) {
+  if (!atacante || !alvo || alvo.naoFlanqueavel) return false;
+  if (!adjacentes(atacante, alvo)) return false;
+  const c = centro(alvo);
+  const a = centro(atacante);
+  const va = { x: a.x - c.x, y: a.y - c.y };
+  const limite = Math.cos((anguloMinimo * Math.PI) / 180);
+  return aliados.some(al => {
+    if ((al.flanqueadorPor ?? []).includes(alvo.uuid)) return true;
+    if (!adjacentes(al, alvo)) return false;
+    const b = centro(al);
+    const vb = { x: b.x - c.x, y: b.y - c.y };
+    const n = Math.hypot(va.x, va.y) * Math.hypot(vb.x, vb.y);
+    return n > 0 && (va.x * vb.x + va.y * vb.y) / n <= limite;
+  });
+}
+
+/** Camuflagem: chance de falha com 1d10 antes do ataque (leve: 1–2; total: 1–5). */
+export const FALHA_CAMUFLAGEM = { leve: 2, total: 5 };
+
+/** O ataque falha pela camuflagem com este d10? */
+export function falhaPorCamuflagem(d10, tipo) {
+  const limite = FALHA_CAMUFLAGEM[tipo];
+  return !!limite && Number(d10) <= limite;
+}
+
+/* ------------------------------ Manobras ------------------------------ */
+
+/**
+ * Manobras: ataque especial no lugar de um ataque. Teste oposto: ataque corpo a corpo (Luta) do
+ * atacante × Fortitude do alvo; quem vence aplica o efeito. À distância (Pontaria) só Desarmar,
+ * salvo poder que permita outra. Quebrar: só o teste (regra do item PENDENTE no livro).
+ */
+export const MANOBRAS = ["agarrar", "derrubar", "desarmar", "empurrar", "quebrar"];
+export const MANOBRAS_A_DISTANCIA = ["desarmar"];
+/** Condição aplicada ao alvo quando o atacante vence. */
+export const CONDICAO_DA_MANOBRA = { agarrar: "agarrado", derrubar: "caido" };
+
+/**
+ * Efeito da manobra para o atacante que venceu por `diferenca` pontos (totalA − totalB ≥ 0).
+ * Empurrar: 1,5 m + 1,5 m a cada 5 pontos de diferença. Desarmar: com 5 ou mais, o item vai 1,5 m.
+ * @returns {{ condicao: string|null, metros: number|null, empurraItem: boolean }}
+ */
+export function efeitoDaManobra(manobra, diferenca = 0) {
+  const d = Math.max(0, Math.trunc(numero(diferenca)));
+  return {
+    condicao: CONDICAO_DA_MANOBRA[manobra] ?? null,
+    metros: manobra === "empurrar" ? 1.5 + 1.5 * Math.floor(d / 5) : null,
+    empurraItem: manobra === "desarmar" && d >= 5
+  };
+}
+
+/**
+ * Bônus de ataque sem arma específica (manobras): total da perícia (Luta ou Pontaria) + bônus de
+ * ataque + condições + penalidade de armadura sem proficiência.
+ */
+export function bonusDeAtaqueGeral(system, pericia = "luta", itens = []) {
+  const modo = pericia === "pontaria" ? "distancia" : "corpo-a-corpo";
+  const pseudoArma = { categoria: "simples", propriedades: [], bonusAtaque: 0, proficiencia: "sim" };
+  return calcularAtaque(system, pseudoArma, modo, itens);
+}
+
+/* ------------------------------ Acúmulo de Redução de Dano ------------------------------ */
+
+/** Teto de RD (oficial): 8 + metade do nível (para baixo). Sem nível numérico: sem teto (null). */
+export function tetoDeRD(nivel) {
+  const n = Number(nivel);
+  return Number.isFinite(n) ? 8 + Math.floor(n / 2) : null;
+}
+
+/**
+ * Soma a RD de fontes diferentes; a mesma fonte nunca soma consigo mesma (vale a maior das
+ * repetições, pela chave da fonte); o total não passa do teto. Vale para a RD geral e para
+ * cada Redução de [tipo], cada uma contada à parte.
+ * @param {number} manual  valor digitado na ficha
+ * @param {{ chave: string, origem: string, valor: number }[]} fontes
+ * @param {number|null} teto
+ * @returns {{ total: number, bruto: number, usadas: object[], cortado: boolean }}
+ */
+export function somarRD(manual, fontes = [], teto = null) {
+  const porChave = new Map();
+  for (const f of fontes) {
+    const v = numero(f.valor);
+    if (!v) continue;
+    const atual = porChave.get(f.chave);
+    if (!atual || v > atual.valor) porChave.set(f.chave, { ...f, valor: v });
+  }
+  const usadas = [...porChave.values()];
+  const bruto = numero(manual) + usadas.reduce((s, f) => s + f.valor, 0);
+  const cortado = teto !== null && bruto > teto;
+  return { total: cortado ? teto : Math.max(0, bruto), bruto, usadas, cortado };
+}
+
+/* ------------------------------ Duas armas ------------------------------ */
+
+/** Penalidade geral de combate com duas armas (em todos os ataques até o próximo turno). */
+export const PENALIDADE_DUAS_ARMAS = -2;
+
+/**
+ * Agredir com duas armas (regra geral): empunhando duas armas, pelo menos uma Leve (ou uma arma
+ * Dupla, que conta como duas), faz um ataque com cada, com −2 em todos os ataques.
+ * Poderes que eliminam a penalidade (flags duasArmas = "sem-penalidade") trocam-na por: o
+ * segundo ataque não soma o atributo no dano — salvo flag duasArmasAtributoNoSegundo
+ * (Ambidestria, Mão Habilidosa, Mão Firme, Pulso Firme).
+ * @param {{ id, propriedades: string[] }[]} armas  armas empunhadas (system + id)
+ * @param {object} flags  flags["icarus-rpg"] do ator
+ * @returns {{ possivel: boolean, primeira, segunda, dupla: boolean, penalidade: number, segundoSemAtributo: boolean }}
+ */
+export function planoDuasArmas(armas = [], flags = {}) {
+  const semPenalidade = flags?.duasArmas === "sem-penalidade";
+  const base = {
+    penalidade: semPenalidade ? 0 : PENALIDADE_DUAS_ARMAS,
+    segundoSemAtributo: semPenalidade && !flags?.duasArmasAtributoNoSegundo
+  };
+  const dupla = armas.find(a => (a.propriedades ?? []).includes("dupla"));
+  if (armas.length === 1 && dupla) return { possivel: true, primeira: dupla, segunda: dupla, dupla: true, ...base };
+  if (armas.length === 2 && armas.some(a => (a.propriedades ?? []).includes("leve"))) {
+    return { possivel: true, primeira: armas[0], segunda: armas[1], dupla: false, ...base };
+  }
+  return { possivel: false, primeira: null, segunda: null, dupla: false, ...base };
 }

@@ -1,0 +1,15 @@
+{
+  "_id": "5YBYfpeaVGiK2EG4",
+  "name": "Linha da Lâmina",
+  "type": "Item",
+  "folder": "768IunF6PIkYMdz0",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:patrulheiro:linha-da-lamina"
+    }
+  },
+  "_key": "!folders!5YBYfpeaVGiK2EG4"
+}

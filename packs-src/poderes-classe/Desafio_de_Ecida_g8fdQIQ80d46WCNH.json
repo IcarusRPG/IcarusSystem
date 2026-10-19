@@ -1,0 +1,38 @@
+{
+  "_id": "g8fdQIQ80d46WCNH",
+  "name": "Desafio de Écida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Sabedoria, em vez de Carisma, em testes de Intimidação. Gastando 2 PM, seu efeito afeta também criaturas normalmente imunes a medo.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__desafio-de-ecida",
+      "classe": "samurai",
+      "poder": "desafio-de-ecida",
+      "inferido": true
+    }
+  },
+  "_key": "!items!g8fdQIQ80d46WCNH"
+}

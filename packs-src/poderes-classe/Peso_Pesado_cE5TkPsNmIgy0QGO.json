@@ -1,0 +1,38 @@
+{
+  "_id": "cE5TkPsNmIgy0QGO",
+  "name": "Peso Pesado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "4BoMF4gKzJMJAKMH",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao empunhar uma arma de Duas Mãos, você recebe +2 nas rolagens de dano.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Brutalidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__peso-pesado",
+      "classe": "barbaro",
+      "poder": "peso-pesado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!cE5TkPsNmIgy0QGO"
+}

@@ -104,6 +104,15 @@ export const EMPUNHADURAS = ["leve", "uma-mao", "duas-maos"];
 export const ALCANCES = ["corpo-a-corpo", "curto", "medio", "longo"];
 // Tipos de dano das armas: todos os do sistema (as armas cadastradas usam corte, perfuração e impacto)
 export const TIPOS_DANO = TIPOS_DANO_DADOS.tipos.map(t => t.id).filter(t => t !== "dano");
+/**
+ * Proficiências em armas (lista na ficha). Todo personagem tem "simples" (regra básica).
+ * marciais-leves-ageis = só marciais Leves ou Ágeis (Ladino); exoticas-corte = só exóticas que
+ * causam corte (Samurai); arcos-curtos/arcos-longos ficam registrados para exibição.
+ */
+export const PROFICIENCIAS_ARMA = ["simples", "marciais", "marciais-leves-ageis", "exoticas", "exoticas-corte", "fogo", "arcos-curtos", "arcos-longos"];
+/** Categorias que contam como "usar armadura" (túnica e escudo não contam). */
+export const CATEGORIAS_ARMADURA_CORPO = ["leve", "media", "pesada"];
+
 export const PROPRIEDADES_ARMA = ["leve", "agil", "duas-maos", "arremesso", "dupla", "oculta", "cano-duplo"];
 export const TIPOS_MUNICAO = ["flechas", "virotes", "pedras", "balas"];
 

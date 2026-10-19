@@ -1,0 +1,38 @@
+{
+  "_id": "TbKBfJQ9elwL1Vse",
+  "name": "Treinamento Extra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "9nkjJoPyRVVSgaqA",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna treinado em duas perícias à sua escolha.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Pistoleiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__treinamento-extra",
+      "classe": "pistoleiro",
+      "poder": "treinamento-extra",
+      "inferido": false
+    }
+  },
+  "_key": "!items!TbKBfJQ9elwL1Vse"
+}

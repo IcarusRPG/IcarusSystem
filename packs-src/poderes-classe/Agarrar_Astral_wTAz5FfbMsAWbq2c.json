@@ -1,0 +1,38 @@
+{
+  "_id": "wTAz5FfbMsAWbq2c",
+  "name": "Agarrar Astral",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "FbN4z45dfYqvMyg7",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Com os Braços Astrais ativos, você pode fazer a manobra Agarrar ou Empurrar contra um alvo até o alcance deles, usando a sua Sabedoria.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho Astral",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho Astral",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__agarrar-astral",
+      "classe": "monge",
+      "poder": "agarrar-astral",
+      "inferido": false
+    }
+  },
+  "_key": "!items!wTAz5FfbMsAWbq2c"
+}

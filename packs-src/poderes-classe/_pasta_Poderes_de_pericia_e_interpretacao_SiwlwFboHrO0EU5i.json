@@ -1,0 +1,15 @@
+{
+  "_id": "SiwlwFboHrO0EU5i",
+  "name": "Poderes de perícia e interpretação",
+  "type": "Item",
+  "folder": "IsBXvPTjWaJ2n34C",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:samurai:poderes-de-pericia-e-interpretacao"
+    }
+  },
+  "_key": "!folders!SiwlwFboHrO0EU5i"
+}

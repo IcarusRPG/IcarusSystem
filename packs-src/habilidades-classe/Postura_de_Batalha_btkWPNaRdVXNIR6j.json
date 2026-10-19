@@ -1,0 +1,38 @@
+{
+  "_id": "btkWPNaRdVXNIR6j",
+  "name": "Postura de Batalha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "dyqFs5SBHWlNlCxE",
+  "sort": 10003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você pode gastar 3 PM. Até o fim da cena, você recebe RD 5 e seus ataques críticos ignoram a Redução de Dano do alvo.",
+    "classe": "samurai",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__postura-de-batalha",
+      "classe": "samurai",
+      "habilidade": "postura-de-batalha",
+      "inferido": true
+    }
+  },
+  "_key": "!items!btkWPNaRdVXNIR6j"
+}

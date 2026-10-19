@@ -1,0 +1,38 @@
+{
+  "_id": "Uc36oeTL65S8mk0q",
+  "name": "Postura da Montanha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Se você não se moveu neste turno, recebe +5 em testes para resistir a manobras de empurrar e derrubar.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__postura-da-montanha",
+      "classe": "samurai",
+      "poder": "postura-da-montanha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Uc36oeTL65S8mk0q"
+}

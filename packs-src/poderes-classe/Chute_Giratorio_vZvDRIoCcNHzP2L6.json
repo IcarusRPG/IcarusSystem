@@ -1,0 +1,38 @@
+{
+  "_id": "vZvDRIoCcNHzP2L6",
+  "name": "Chute Giratório",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 2 PM e faz um ataque desarmado contra cada inimigo adjacente.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__chute-giratorio",
+      "classe": "monge",
+      "poder": "chute-giratorio",
+      "inferido": true
+    }
+  },
+  "_key": "!items!vZvDRIoCcNHzP2L6"
+}

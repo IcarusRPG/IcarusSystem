@@ -6,7 +6,7 @@
  */
 import { SISTEMA_ID, PERICIAS } from "./config.mjs";
 import { documentosDosCompendios } from "./dados-itens.mjs";
-import { documentosNovos } from "./dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "./dados-compendios.mjs";
 import ARMAS from "./dados/armas.mjs";
 import ARMADURAS from "./dados/armaduras.mjs";
 import ICONES_ARMADURAS from "./dados/icones-armaduras.mjs";
@@ -15,6 +15,10 @@ import PANTEAO from "./dados/panteao.mjs";
 import ICONES_DIVINDADES from "./dados/icones-divindades.mjs";
 import CONDICOES from "./dados/condicoes.mjs";
 import MACROS from "./dados/macros.mjs";
+import CLASSES from "./dados/classes.mjs";
+import ICONES_CLASSES from "./dados/icones-classes.mjs";
+import PROFICIENCIAS_CLASSES from "./dados/proficiencias-classes.mjs";
+import VINCULOS from "./dados/vinculos.mjs";
 
 /** Dados das armas (mantido por compatibilidade com a verificação de armas). */
 export async function carregarDadosDeArmas() {
@@ -29,7 +33,8 @@ export function todosOsDocumentos() {
     poderes: PODERES, panteao: PANTEAO, iconesDivindades: ICONES_DIVINDADES,
     condicoes: CONDICOES, macros: MACROS, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
   });
-  return { armas: armas.armas, municoes: armas.municoes, ...novos };
+  const classes = documentosDeClasses({ classes: CLASSES, iconesClasses: ICONES_CLASSES, proficienciasClasses: PROFICIENCIAS_CLASSES });
+  return { armas: armas.armas, municoes: armas.municoes, ...novos, ...classes, vinculos: documentosDeVinculos(VINCULOS, CLASSES) };
 }
 
 export async function popularCompendios() {
@@ -47,14 +52,14 @@ export async function popularCompendios() {
     for (const p of novas) await Folder.create(p, { pack: pack.collection, keepId: true });
 
     const classe = pack.documentClass;
-    const lista = docs.itens ?? docs.diarios ?? docs.macros ?? [];
+    const lista = docs.itens ?? docs.diarios ?? docs.macros ?? docs.atores ?? [];
     const indice = await pack.getIndex();
     const criar = lista.filter(d => !indice.has(d._id));
     const atualizar = lista.filter(d => indice.has(d._id));
     if (criar.length) await classe.createDocuments(criar, { pack: pack.collection, keepId: true });
     if (atualizar.length) {
-      // Diários: recria para atualizar as páginas; demais: atualiza os campos
-      if (pack.documentName === "JournalEntry") {
+      // Diários e atores: recria para atualizar páginas e itens embutidos; demais: atualiza os campos
+      if (pack.documentName === "JournalEntry" || pack.documentName === "Actor") {
         await classe.deleteDocuments(atualizar.map(d => d._id), { pack: pack.collection });
         await classe.createDocuments(atualizar, { pack: pack.collection, keepId: true });
       } else {

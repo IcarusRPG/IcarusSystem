@@ -1,0 +1,15 @@
+{
+  "_id": "768IunF6PIkYMdz0",
+  "name": "Patrulheiro",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 500000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:patrulheiro"
+    }
+  },
+  "_key": "!folders!768IunF6PIkYMdz0"
+}

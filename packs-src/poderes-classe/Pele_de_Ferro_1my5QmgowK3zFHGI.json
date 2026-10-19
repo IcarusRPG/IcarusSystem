@@ -1,0 +1,38 @@
+{
+  "_id": "1my5QmgowK3zFHGI",
+  "name": "Pele de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ku9oOPxCneXCEe9f",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe RD 2, mesmo fora da Fúria.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__pele-de-ferro",
+      "classe": "barbaro",
+      "poder": "pele-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!1my5QmgowK3zFHGI"
+}

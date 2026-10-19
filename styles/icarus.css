@@ -786,3 +786,126 @@ body.game {
 .icarus-rolagem.icarus-poder .poder-descricao { font-size: 14px; color: var(--ic-apagado); }
 .icarus-rolagem.icarus-poder .poder-descricao p { margin: 4px 0; }
 .icarus-rolagem .custo { font-size: 12px; color: var(--ic-pm-texto); border: 1px solid var(--ic-pm-borda); border-radius: 3px; padding: 0 5px; }
+
+/* --- Proficiências (listas marcáveis) --- */
+.ficha-icarus .prof-bloco { display: flex; flex-direction: column; gap: 4px; padding: 4px 0; }
+.ficha-icarus .prof-rot { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-apagado2); }
+.ficha-icarus .prof-chips { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.ficha-icarus .prof-chip { width: auto; height: 24px; padding: 0 8px; border: 1px solid var(--ic-btn-borda); border-radius: 12px; background: none; color: var(--ic-apagado); font-size: 12px; line-height: 1; cursor: pointer; }
+.ficha-icarus .prof-chip.on { background: var(--ic-ciano-fundo); border-color: var(--ic-ciano); color: var(--ic-texto); }
+.ficha-icarus .prof-chip:disabled { cursor: default; opacity: .85; }
+.ficha-icarus .prof-chk { font-size: 13px; gap: 4px; }
+.ficha-icarus .aviso-prof { margin: 4px 0 0; font-size: 13px; color: var(--ic-ouro-claro); }
+
+/* --- d20 com vantagem/desvantagem --- */
+.icarus-rolagem .d20-par { display: inline-flex; gap: 4px; }
+.icarus-rolagem .d20.descartado { opacity: .35; filter: grayscale(.6); }
+.icarus-rolagem .rolagem-modo { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
+
+/* --- Diálogo de ataque e card com vários alvos --- */
+.ficha-icarus.dialogo-ataque { height: auto; gap: 10px; padding: 12px 14px; background: none; }
+.ficha-icarus .ataque-cab { display: flex; gap: 10px; align-items: center; }
+.ficha-icarus .ataque-cab img { border: 0; object-fit: contain; }
+.ficha-icarus .ataque-cab strong { display: block; font-family: var(--ic-f-titulo); color: var(--ic-ouro); }
+.ficha-icarus .ataque-sub { font-size: 13px; color: var(--ic-apagado); }
+.ficha-icarus .ataque-linha { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .ataque-linha > label, .ficha-icarus .ataque-linha > span { min-width: 110px; font-size: 13px; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-linha select, .ficha-icarus .ataque-linha input { width: auto; flex: 1; }
+.ficha-icarus .ataque-secao { margin: 0; padding: 6px 10px 8px; border: 1px solid var(--ic-borda); border-radius: 6px; display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .ataque-secao legend { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-ciano-titulo); padding: 0 4px; }
+.ficha-icarus .ataque-secao .chk { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.ficha-icarus .ataque-dica { font-size: 12px; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-aviso { margin: 2px 0 0; font-size: 12px; color: var(--ic-ouro-claro); }
+.ficha-icarus .ataque-alvos { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; }
+.ficha-icarus .ataque-alvos .rot { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ic-apagado2); }
+.ficha-icarus .ataque-alvo { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; border: 1px solid var(--ic-borda); border-radius: 12px; }
+.ficha-icarus .ataque-alvo img { border: 0; border-radius: 50%; }
+.icarus-rolagem .lista-alvos { list-style: none; margin: 4px 0; padding: 0; }
+.icarus-rolagem .linha-alvo.critico b { color: var(--ic-ouro); }
+.icarus-rolagem .linha-regra { font-size: 12px; color: var(--ic-ciano-titulo); }
+
+/* --- Reação e Aguardar --- */
+.ficha-icarus .acoes-combate { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 16px; }
+.ficha-icarus .reacao-icone { width: auto; height: 30px; display: inline-flex; align-items: center; gap: 6px; padding: 0 10px; border: 1px solid var(--ic-btn-borda); border-radius: 15px; background: none; color: var(--ic-apagado); cursor: pointer; }
+.ficha-icarus .reacao-icone.disponivel { border-color: var(--ic-ciano); color: var(--ic-texto); }
+.ficha-icarus .reacao-icone.disponivel i { color: var(--ic-ciano); }
+.ficha-icarus .reacao-icone.impedida i { color: var(--ic-pv); }
+.ficha-icarus .chip-aguardando { display: inline-flex; align-items: center; gap: 8px; padding: 2px 4px 2px 10px; border: 1px solid var(--ic-ouro-escuro); border-radius: 15px; color: var(--ic-ouro-claro); font-size: 14px; }
+#combat .icarus-reacao-tracker { color: #6f8696; margin-right: 4px; }
+#combat .icarus-reacao-tracker.disponivel { color: #3ee0e6; }
+#combat .icarus-reacao-tracker.impedida { color: #e4574f; }
+.icarus-uso { display: flex; flex-direction: column; gap: 8px; }
+.icarus-uso .linha { display: flex; flex-direction: column; gap: 4px; }
+.icarus-uso .dica { margin: 0; font-size: 12px; opacity: .8; }
+.icarus-uso .aviso { margin: 0; color: #e4574f; font-weight: 700; }
+
+/* --- Ficha do item Classe --- */
+.ficha-icarus.ficha-classe .classe-titulo { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.ficha-icarus.ficha-classe .classe-papel { font-size: 13px; color: var(--ic-ouro-claro); letter-spacing: .08em; }
+.ficha-icarus .classe-resumo .f.largo { grid-column: 1 / -1; }
+.ficha-icarus .tabela-progressao { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ficha-icarus .tabela-progressao th, .ficha-icarus .tabela-progressao td { padding: 3px 6px; border-bottom: 1px solid var(--ic-linha); text-align: left; }
+.ficha-icarus .tabela-progressao thead th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
+.ficha-icarus .tabela-progressao tr.atual { background: var(--ic-ciano-fundo); }
+.ficha-icarus .tabela-progressao td:first-child { white-space: nowrap; color: var(--ic-ouro-claro); }
+
+/* --- Classe no cabeçalho e diálogo de perícias --- */
+.ficha-icarus .campo-classe { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .classe-linha { display: flex; align-items: center; gap: 6px; }
+.ficha-icarus .classe-icone { width: 24px; height: 24px; object-fit: contain; border: 0; flex: none; }
+.ficha-icarus .classe-linha select { flex: 1; min-width: 0; }
+.ficha-icarus.dialogo-pericias-classe { height: auto; gap: 10px; padding: 12px 14px; background: none; }
+.ficha-icarus .lista-pericias-classe { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .lista-pericias-classe li { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .lista-pericias-classe select { width: auto; }
+.ficha-icarus .grade-pericias-classe { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 10px; }
+.ficha-icarus .grade-pericias-classe .chk { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.ficha-icarus .grade-pericias-classe .chk.ja { opacity: .6; }
+.ficha-icarus .contador-pericias { float: right; font-size: 13px; color: var(--ic-ciano-titulo); }
+
+/* --- Aba Classe --- */
+.ficha-icarus .aba-classe { display: flex; flex-direction: column; gap: 14px; }
+.ficha-icarus .classe-cab { display: flex; align-items: center; gap: 14px; padding: 12px 16px; }
+.ficha-icarus .classe-cab img { border: 0; object-fit: contain; }
+.ficha-icarus .classe-cab-texto { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.ficha-icarus .classe-cab-texto h3 { margin: 0; border: 0; font-family: var(--ic-f-titulo); letter-spacing: .12em; color: var(--ic-ouro); }
+.ficha-icarus .classe-caminho { font-size: 13px; color: var(--ic-ciano-titulo); }
+.ficha-icarus .classe-contador { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-size: 13px; color: var(--ic-apagado); }
+.ficha-icarus .classe-contador b { font-size: 22px; color: var(--ic-texto); }
+.ficha-icarus .classe-contador.pendente b { color: var(--ic-ouro-claro); }
+.ficha-icarus .classe-progressao, .ficha-icarus .classe-mecanicas, .ficha-icarus .classe-vazia { padding: 12px 16px; }
+.ficha-icarus .tabela-progressao tr.futuro { opacity: .55; }
+.ficha-icarus .mecanicas-lista { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.ficha-icarus .mecanica { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.ficha-icarus .mecanica-info { color: var(--ic-apagado); font-size: 13px; }
+.ficha-icarus .mecanica.ativa .mecanica-info { color: var(--ic-ouro-claro); }
+
+/* --- Diálogo de poderes de classe --- */
+.application.icarus-poderes-classe .window-content { padding: 0; overflow: hidden; }
+.ficha-icarus.dialogo-poderes-classe { height: 100%; display: flex; flex-direction: column; gap: 8px; padding: 10px 14px; background: var(--ic-janela); }
+.ficha-icarus .filtros-poderes-classe { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ficha-icarus .filtros-poderes-classe input[type="search"] { flex: 1; min-width: 160px; }
+.ficha-icarus .filtros-poderes-classe select { width: auto; }
+.ficha-icarus .contador-classe { margin-left: auto; color: var(--ic-ciano-titulo); font-size: 13px; }
+.ficha-icarus .lista-poderes-classe { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-right: 4px; }
+.ficha-icarus .grupo-poderes-classe[hidden], .ficha-icarus .card-poder-classe[hidden] { display: none; }
+.ficha-icarus .grupo-poderes-classe { display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .card-poder-classe { padding: 8px 10px; border: 1px solid var(--ic-borda); border-radius: 6px; background: var(--ic-painel); display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .card-poder-classe.escolhido { opacity: .6; }
+.ficha-icarus .card-poder-classe .card-topo { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .card-poder-classe .card-texto { font-size: 14px; color: #c3d2dc; }
+.ficha-icarus .card-poder-classe .card-texto p { margin: 2px 0; }
+.ficha-icarus .prereqs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; }
+.ficha-icarus .prereqs .pre-ok { color: #7fdc8a; }
+.ficha-icarus .prereqs .pre-falta { color: #ff8b84; }
+.ficha-icarus .prereqs .pre-conferir { color: var(--ic-ouro-claro); }
+.ficha-icarus .card-poder-classe .card-acoes { display: flex; justify-content: flex-end; }
+
+/* --- Recursos de classe --- */
+.ficha-icarus .classe-recursos { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .botoes-recursos { display: flex; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .recurso-classe { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .recurso-classe .nome-recurso { flex: 1; min-width: 0; }
+.ficha-icarus .recurso-classe .recurso-ctl { display: flex; align-items: center; gap: 4px; }
+.ficha-icarus .recurso-classe .max-recurso { width: 52px; text-align: center; }
+.ficha-icarus .recurso-classe select { width: auto; }

@@ -1,0 +1,38 @@
+{
+  "_id": "qpf19Qfa2BBSEMzu",
+  "name": "Contra-Ataque Espiritual",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um inimigo erra um ataque corpo a corpo contra você, você pode gastar 1 PM para fazer imediatamente um ataque corpo a corpo contra ele. É um ataque normal, sem Kiai ou qualquer outro acréscimo. Usar este poder gasta a sua reação da rodada.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__contra-ataque-espiritual",
+      "classe": "samurai",
+      "poder": "contra-ataque-espiritual",
+      "inferido": true
+    }
+  },
+  "_key": "!items!qpf19Qfa2BBSEMzu"
+}

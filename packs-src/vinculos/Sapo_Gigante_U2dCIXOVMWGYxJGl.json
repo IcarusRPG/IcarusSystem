@@ -1,0 +1,79 @@
+{
+  "_id": "U2dCIXOVMWGYxJGl",
+  "name": "Sapo Gigante",
+  "type": "personagem",
+  "img": "icons/svg/pawprint.svg",
+  "folder": null,
+  "sort": 500,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 1
+    },
+    "deslocamento": 9,
+    "resistencias": {
+      "rdGeral": 0
+    },
+    "notas": "<p>Defesa +1; deslocamento 9 m, salto de 6 m. Mordida: 1d6 de dano de Perfuração. <em>Língua Agarrante:</em> quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Agarrado; enquanto agarra um alvo, o sapo não pode atacar outro.</p><p><em>salto de 6 m</em></p>",
+    "pericias": {}
+  },
+  "prototypeToken": {
+    "name": "Sapo Gigante",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "icons/svg/pawprint.svg"
+    }
+  },
+  "items": [
+    {
+      "_id": "GNpmCBylveTtZrpr",
+      "name": "Mordida",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!U2dCIXOVMWGYxJGl.GNpmCBylveTtZrpr"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sapo-gigante",
+      "vinculo": {
+        "animal": "sapo-gigante"
+      }
+    }
+  },
+  "_key": "!actors!U2dCIXOVMWGYxJGl"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "HtDvAqUn2NCr8lrU",
+  "name": "Etiqueta de Dannan",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Diplomacia e Nobreza ao lidar com nobres e oficiais militares.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__etiqueta-de-dannan",
+      "classe": "samurai",
+      "poder": "etiqueta-de-dannan",
+      "inferido": false
+    }
+  },
+  "_key": "!items!HtDvAqUn2NCr8lrU"
+}

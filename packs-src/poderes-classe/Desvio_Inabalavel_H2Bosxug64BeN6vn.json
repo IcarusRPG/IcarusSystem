@@ -1,0 +1,38 @@
+{
+  "_id": "H2Bosxug64BeN6vn",
+  "name": "Desvio Inabalável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, gaste 1 PM. Até o início do seu próximo turno, você soma sua Sabedoria em testes de Reflexos.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__desvio-inabalavel",
+      "classe": "samurai",
+      "poder": "desvio-inabalavel",
+      "inferido": true
+    }
+  },
+  "_key": "!items!H2Bosxug64BeN6vn"
+}

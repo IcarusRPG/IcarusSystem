@@ -1,0 +1,15 @@
+{
+  "_id": "3dVNpK8ABwdsU0Vu",
+  "name": "Linha do Mosquete",
+  "type": "Item",
+  "folder": "KtMQTXLNCK68DiSY",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:pistoleiro:linha-do-mosquete"
+    }
+  },
+  "_key": "!folders!3dVNpK8ABwdsU0Vu"
+}

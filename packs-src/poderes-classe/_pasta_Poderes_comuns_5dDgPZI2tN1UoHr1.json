@@ -1,0 +1,15 @@
+{
+  "_id": "5dDgPZI2tN1UoHr1",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "IsBXvPTjWaJ2n34C",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:samurai:poderes-comuns"
+    }
+  },
+  "_key": "!folders!5dDgPZI2tN1UoHr1"
+}

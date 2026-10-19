@@ -1,0 +1,38 @@
+{
+  "_id": "pn7jEs47uKCU4vT8",
+  "name": "Fabricar Balas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "9nkjJoPyRVVSgaqA",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você fabrica as suas próprias balas. Elas não custam dinheiro para você, e, ao fim de cada descanso, você tem até 40 Balas.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Pistoleiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__fabricar-balas",
+      "classe": "pistoleiro",
+      "poder": "fabricar-balas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!pn7jEs47uKCU4vT8"
+}

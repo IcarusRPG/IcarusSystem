@@ -1,0 +1,38 @@
+{
+  "_id": "UYxQxpJL5K0VKFzH",
+  "name": "Diplomacia da Lâmina",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 3200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar Luta no lugar de Diplomacia, apenas para pedir trégua ou rendição.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__diplomacia-da-lamina",
+      "classe": "samurai",
+      "poder": "diplomacia-da-lamina",
+      "inferido": false
+    }
+  },
+  "_key": "!items!UYxQxpJL5K0VKFzH"
+}

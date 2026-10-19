@@ -1,0 +1,38 @@
+{
+  "_id": "VNLfzXG0TxQ1Mtzi",
+  "name": "Aumento de Atributo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "m7om2PUSbpQzhc16",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__aumento-de-atributo",
+      "classe": "pistoleiro",
+      "poder": "aumento-de-atributo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!VNLfzXG0TxQ1Mtzi"
+}

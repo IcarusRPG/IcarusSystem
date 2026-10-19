@@ -1,0 +1,15 @@
+{
+  "_id": "yJx9WvWzOH5AeRXE",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 800,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:poderes-comuns"
+    }
+  },
+  "_key": "!folders!yJx9WvWzOH5AeRXE"
+}

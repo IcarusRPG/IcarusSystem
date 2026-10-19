@@ -1,0 +1,38 @@
+{
+  "_id": "LMFnVXyZDM9pORXL",
+  "name": "Investida Furiosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você avança até o seu deslocamento em linha reta e faz um ataque corpo a corpo, com +2 no ataque. Até o início do seu próximo turno, você sofre –2 na Defesa. Só pode ser usada em Fúria.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__investida-furiosa",
+      "classe": "barbaro",
+      "poder": "investida-furiosa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!LMFnVXyZDM9pORXL"
+}

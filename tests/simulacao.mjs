@@ -15,7 +15,7 @@ export function sistemaCompleto(parcial = {}) {
   s.atributos ??= {};
   for (const k of ATRIBUTOS) s.atributos[k] = { base: 0, racial: 0, temp: 0, ...s.atributos[k] };
   s.classeConfig = {
-    pvInicial: 0, pvPorNivel: 0, pmInicial: 0, pmPorNivel: 0, pvAtributo: "CON", pmAtributo: null,
+    pvInicial: 0, pvPorNivel: 0, pmInicial: 0, pmPorNivel: 0, pvAtributo: "CON", pmAtributo: null, pmAtributoSoNoPrimeiroNivel: false,
     bonusPv: 0, bonusPm: 0, bonusPvPorNivel: 0, bonusPmPorNivel: 0, bonusPmNivelImpar: 0, manual: false,
     ...s.classeConfig
   };
@@ -30,6 +30,8 @@ export function sistemaCompleto(parcial = {}) {
     vulnerabilidade: { ...porTipo(false), ...s.resistencias?.vulnerabilidade }
   };
   s.bonus = { ataque: 0, ...s.bonus };
+  s.reacao = { disponivel: true, ...s.reacao };
+  s.proficiencias = { armas: ["simples"], armaduras: [], escudo: false, tunicas: false, texto: "", ...s.proficiencias };
   s.morte = { sucessos: 0, falhas: 0, estavel: false, ...s.morte };
   s.deslocamento ??= 9;
   s.tamanho ??= "medio";

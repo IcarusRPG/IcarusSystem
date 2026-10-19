@@ -1,0 +1,38 @@
+{
+  "_id": "QWxT9lYzttN9pWwN",
+  "name": "Flecha de Desarme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 3300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM ao atacar à distância. Seu ataque realiza a manobra Desarmar, usando Pontaria no lugar do ataque corpo a corpo (ver Manobras, na seção 1).",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__flecha-de-desarme",
+      "classe": "ladino",
+      "poder": "flecha-de-desarme",
+      "inferido": true
+    }
+  },
+  "_key": "!items!QWxT9lYzttN9pWwN"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "aY4E10ZvfDIrR4Rb",
+  "name": "Treino Extra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "ajOnRlwDRMxAYG5N",
+  "sort": 3100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna treinado em duas perícias à sua escolha. Pode escolher este poder até duas vezes.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e versatilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__treino-extra",
+      "classe": "guerreiro",
+      "poder": "treino-extra",
+      "inferido": false
+    }
+  },
+  "_key": "!items!aY4E10ZvfDIrR4Rb"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "5PaAO4NJ9roukoXc",
+  "name": "Desviar Golpe",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 7006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 7,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando sofre dano de um ataque, você pode gastar 1 PM e a sua reação para reduzir esse dano em 5 + metade do seu nível + a sua Sabedoria.",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 7,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__desviar-golpe",
+      "classe": "monge",
+      "habilidade": "desviar-golpe",
+      "inferido": true
+    }
+  },
+  "_key": "!items!5PaAO4NJ9roukoXc"
+}

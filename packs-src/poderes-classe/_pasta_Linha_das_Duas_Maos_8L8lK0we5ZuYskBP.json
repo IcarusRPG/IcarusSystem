@@ -1,0 +1,15 @@
+{
+  "_id": "8L8lK0we5ZuYskBP",
+  "name": "Linha das Duas Mãos",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:linha-das-duas-maos"
+    }
+  },
+  "_key": "!folders!8L8lK0we5ZuYskBP"
+}

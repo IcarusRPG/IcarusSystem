@@ -1,0 +1,38 @@
+{
+  "_id": "N50tlb4y0eCAlQd9",
+  "name": "Presença Intimidadora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "ajOnRlwDRMxAYG5N",
+  "sort": 3300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Força, em vez de Carisma, nos testes de Intimidação.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e versatilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__presenca-intimidadora",
+      "classe": "guerreiro",
+      "poder": "presenca-intimidadora",
+      "inferido": false
+    }
+  },
+  "_key": "!items!N50tlb4y0eCAlQd9"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Z3pOf5hq4mtM2U5M",
+  "name": "Chamado ao Combate",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "Yv5B4j41fXGe8wPP",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "3º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, gaste 2 PM. Cada inimigo em alcance curto que possa ver ou ouvir você faz um teste de Vontade (CD Força). Os que falharem ficam obrigados, até o início do seu próximo turno, a escolher você como alvo de todos os seus ataques e efeitos hostis, enquanto você estiver ao alcance e à vista deles. Os que passarem ficam imunes a este poder pelo resto da cena. É um efeito mental.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Escudo",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__chamado-ao-combate",
+      "classe": "guerreiro",
+      "poder": "chamado-ao-combate",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Z3pOf5hq4mtM2U5M"
+}

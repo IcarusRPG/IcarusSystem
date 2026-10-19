@@ -1,0 +1,40 @@
+{
+  "_id": "RfxfdHnrAeH6Tsbm",
+  "name": "Curandeiro de Campo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "dE4F9uKffi9vLoXF",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Sabedoria 1",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Sabedoria no lugar de Inteligência ou Carisma em testes de Cura e, como uma ação padrão, pode gastar 2 PM para curar 1d6 + Sabedoria PV de uma criatura adjacente.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "SAB": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__curandeiro-de-campo",
+      "classe": "patrulheiro",
+      "poder": "curandeiro-de-campo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!RfxfdHnrAeH6Tsbm"
+}

@@ -7,6 +7,7 @@ import { PoderData } from "./module/data/item-poder.mjs";
 import { EquipamentoData } from "./module/data/item-equipamento.mjs";
 import { ArmaData } from "./module/data/item-arma.mjs";
 import { MunicaoData } from "./module/data/item-municao.mjs";
+import { ClasseData } from "./module/data/item-classe.mjs";
 import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
 import { rolarTeste, rolarPericia, rolarAtributo } from "./module/rolls.mjs";
@@ -24,8 +25,23 @@ import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
+import { verificarIconesClasses } from "./module/classes-dados.mjs";
+import { registrarClasses, aplicarClasse, concederHabilidades } from "./module/classes.mjs";
+import "./module/poderes-comuns.mjs";
+import "./module/classes/comum.mjs";
+import "./module/classes/barbaro.mjs";
+import "./module/classes/ladino.mjs";
+import "./module/classes/patrulheiro.mjs";
+import "./module/classes/pistoleiro.mjs";
+import "./module/classes/guerreiro.mjs";
+import "./module/classes/samurai.mjs";
+import "./module/classes/monge.mjs";
+import "./module/recursos.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
+import { registrarIniciativa } from "./module/iniciativa.mjs";
+import { registrarAcoes } from "./module/acoes.mjs";
+import "./module/regras-ataque.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
@@ -33,6 +49,8 @@ registrarArmaduras();
 registrarBotoesDeDano();
 registrarMorte();
 registrarAtalhos();
+registrarAcoes();
+registrarClasses();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
@@ -44,6 +62,8 @@ const TEMPLATES = [
   "actor/parts/morte.hbs",
   "actor/parts/inventario.hbs",
   "actor/parts/poderes.hbs",
+  "actor/parts/classe.hbs",
+  "actor/parts/recursos-classe.hbs",
   "actor/parts/diario.hbs",
   "actor/parts/efeitos.hbs",
   "item/poder.hbs",
@@ -53,14 +73,19 @@ const TEMPLATES = [
   "dialogo-nivel.hbs",
   "dialogo-escolhas-raca.hbs",
   "chat/rolagem.hbs",
+  "chat/partes-d20.hbs",
   "chat/ataque.hbs",
   "chat/dano.hbs",
   "chat/aviso.hbs",
   "chat/dano-aplicado.hbs",
   "chat/condicao.hbs",
   "chat/lembrete.hbs",
+  "chat/poder-uso.hbs",
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
+  "dialogo-ataque.hbs",
+  "dialogo-pericias-classe.hbs",
+  "dialogo-poderes-classe.hbs",
   "telao/telao.hbs",
   "testes/tela.hbs",
   "testes/chat.hbs",
@@ -78,6 +103,7 @@ Hooks.once("init", () => {
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
+    aplicarClasse, concederHabilidades,
     aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarTesteDeMorte,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
@@ -89,6 +115,7 @@ Hooks.once("init", () => {
   CONFIG.Item.dataModels.equipamento = EquipamentoData;
   CONFIG.Item.dataModels.arma = ArmaData;
   CONFIG.Item.dataModels.municao = MunicaoData;
+  CONFIG.Item.dataModels.classe = ClasseData;
 
   // Opções de mundo
   registrarConfiguracoesDeCombate();
@@ -103,6 +130,7 @@ Hooks.once("init", () => {
 
   // Iniciativa = 1d20 + total da perícia Iniciativa
   CONFIG.Combat.initiative = { formula: "1d20 + @pericias.iniciativa.total", decimals: 0 };
+  registrarIniciativa();
 
   // Efeitos de itens passam para o personagem sem serem copiados
   CONFIG.ActiveEffect.legacyTransferral = false;
@@ -111,7 +139,7 @@ Hooks.once("init", () => {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet(SISTEMA_ID, FichaPersonagem, { types: ["personagem"], makeDefault: true, label: "ICARUS.Ficha.Personagem" });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao"], makeDefault: true, label: "ICARUS.Ficha.Item" });
+  Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 
   return loadTemplates(TEMPLATES);
 });
@@ -131,6 +159,7 @@ Hooks.on("preCreateActor", (actor, dados) => {
 Hooks.once("ready", () => {
   if (game.user.isGM) verificarIconesRacas();
   if (game.user.isGM) verificarImagensDoSistema();
+  if (game.user.isGM) verificarIconesClasses();
 });
 
 /** Botão "Condições do Mestre" nas ferramentas de token (só para o Mestre). */
