@@ -18,6 +18,8 @@ const fmt = (k, d) => game.i18n.format(k, d);
  */
 export const MECANICAS_DE_CLASSE = new Map();
 export const ACOES_DE_MECANICA = new Map();
+/** Depois de conceder uma habilidade (por id da habilidade): (actor, item) => Promise. Ex.: Perícia Refinada. */
+export const APOS_CONCEDER = new Map();
 
 /** Classe do personagem (dados do JSON) ou null (texto livre / nenhuma). */
 export const classeDoAtor = actor => classePorId(actor?._source?.system?.identidade?.classe ?? actor?.system?.identidade?.classe);
@@ -58,6 +60,7 @@ export async function concederHabilidades(actor, { nivel = actor.system.nivel } 
   if (!novas.length) return [];
   const criados = await actor.createEmbeddedDocuments("Item", novas);
   ui.notifications.info(fmt("ICARUS.Classe.HabilidadesRecebidas", { nome: actor.name, lista: criados.map(i => i.name).join(", ") }));
+  for (const item of criados) await APOS_CONCEDER.get(item.flags?.[SISTEMA_ID]?.habilidade)?.(actor, item);
   return criados;
 }
 

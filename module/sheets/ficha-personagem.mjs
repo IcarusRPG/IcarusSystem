@@ -175,7 +175,7 @@ export class FichaPersonagem extends ActorSheet {
       temp: src.atributos[k].temp,
       // Temp diferente do salvo = há Efeito Ativo mexendo nele
       tempEfeito: s.atributos[k].temp !== src.atributos[k].temp ? comSinal(s.atributos[k].temp - src.atributos[k].temp) : "",
-      tempDica: dica(`system.atributos.${k}.temp`),
+      tempDica: [dica(`system.atributos.${k}.temp`), s.atributos[k].aumento ? game.i18n.format("ICARUS.Comuns.AumentoDica", { n: s.atributos[k].aumento }) : ""].filter(Boolean).join("\n"),
       total: comSinal(s.atributos[k].total)
     }));
 
@@ -197,7 +197,7 @@ export class FichaPersonagem extends ActorSheet {
         chave: p.chave,
         nome,
         treino: d.treino,
-        treinoDica: [game.i18n.format("ICARUS.Pericia.TreinoDica", { pericia: nome, grau: loc(`ICARUS.Treino.${d.treino}`) }), dica(`${k}.treino`)].filter(Boolean).join("\n"),
+        treinoDica: [game.i18n.format("ICARUS.Pericia.TreinoDica", { pericia: nome, grau: loc(`ICARUS.Treino.${d.treino}`) }), dica(`${k}.treino`), d.especialistaPorPoder ? loc("ICARUS.Comuns.EspecialistaDica") : ""].filter(Boolean).join("\n"),
         resistencia: !!p.resistencia,
         atributo: fonte.atributo,
         atributoMudou: d.atributo !== p.atributo,

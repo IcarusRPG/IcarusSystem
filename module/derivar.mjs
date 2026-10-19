@@ -4,6 +4,7 @@
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
+import { bonusDeItensDeClasse } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
@@ -23,10 +24,12 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.nivel = nivelValido(s.nivel);
   s.paragon = ehParagon(s.nivel);
 
-  // Atributos: Total = Base + Raça + Temp
+  // Atributos: Total = Base + Raça + Temp + Aumentos de Atributo (poder comum, derivado dos itens)
+  const deClasse = bonusDeItensDeClasse(itens);
   for (const k of ATRIBUTOS) {
     const a = s.atributos[k];
-    a.total = totalAtributo(a);
+    a.aumento = deClasse.aumentos[k] ?? 0;
+    a.total = totalAtributo(a) + a.aumento;
   }
   const total = k => (ATRIBUTOS.includes(k) ? s.atributos[k].total : null);
 
@@ -70,6 +73,9 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     const d = s.pericias[p.chave];
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
     d.treino = limitar(Math.trunc(numero(d.treino)), 0, 2);
+    // Perícia Especializada / Perícia Refinada: treinada vira especialista (+4); ao remover o item, volta
+    d.especialistaPorPoder = deClasse.especialistas.has(p.chave) && d.treino >= 1;
+    if (d.especialistaPorPoder) d.treino = 2;
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;

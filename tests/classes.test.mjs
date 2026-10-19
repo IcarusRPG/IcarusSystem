@@ -128,3 +128,38 @@ test("5. Validação de poderes: nível, atributo (inclui \"ou\"), poderes exigi
   assert.equal(atendeGrupo("Senda do Kyudo", gruposEscolhidos(classePorId("samurai"), { "senda-do-combatente": 2 })), true);
   assert.equal(atendeGrupo("Senda do Kyudo", gruposEscolhidos(classePorId("samurai"), { "senda-do-combatente": 0 })), false);
 });
+
+test("6. Aumento de Atributo: uma vez por patamar por atributo; +1 no total sem mexer na Base", async () => {
+  const { podeAumentarAtributo, patamarDe } = await import("../module/classes-dados.mjs");
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  assert.deepEqual([1, 4, 5, 10, 11, 16, 17, 20, 21, 25].map(patamarDe),
+    ["iniciante", "iniciante", "veterano", "veterano", "campeao", "campeao", "lenda", "lenda", "paragon", "paragon"]);
+  const existentes = [{ atributo: "DES", patamar: "iniciante" }];
+  assert.equal(podeAumentarAtributo(existentes, "DES", "iniciante"), false);
+  assert.equal(podeAumentarAtributo(existentes, "DES", "veterano"), true);
+  assert.equal(podeAumentarAtributo(existentes, "FOR", "iniciante"), true);
+  const aumento = (atributo, patamar) => ({ type: "poder", system: {}, flags: { "icarus-rpg": { aumentoAtributo: { atributo, patamar } } } });
+  const s = derivarPersonagem(sistemaCompleto({ atributos: { DES: { base: 2 } } }), [aumento("DES", "iniciante"), aumento("DES", "veterano")]);
+  assert.equal(s.atributos.DES.total, 4);
+  assert.equal(s.atributos.DES.base, 2);
+  assert.equal(s.pericias.acrobacia.total, 4, "a perícia usa o total do atributo");
+});
+
+test("7. Perícia Especializada / Perícia Refinada: treinada vira especialista (+4); removendo, volta", async () => {
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  const especializada = { type: "poder", system: {}, flags: { "icarus-rpg": { periciaEspecializada: { pericia: "luta" } } } };
+  const refinada = { type: "poder", system: {}, flags: { "icarus-rpg": { periciaRefinada: ["furtividade", "atletismo"] } } };
+  const base = { pericias: { luta: { treino: 1 }, furtividade: { treino: 1 } } };
+  const com = derivarPersonagem(sistemaCompleto(base), [especializada, refinada]);
+  assert.equal(com.pericias.luta.treino, 2);
+  assert.equal(com.pericias.luta.total, 4);
+  assert.equal(com.pericias.furtividade.treino, 2);
+  assert.equal(com.pericias.atletismo.treino, 0, "destreinada não vira especialista");
+  const sem = derivarPersonagem(sistemaCompleto(base), []);
+  assert.equal(sem.pericias.luta.treino, 1);
+  // Perícia Especializada exige 10º nível
+  const pe = classePorId("ladino").poderes.find(p => p.id === "pericia-especializada");
+  assert.equal(pe.nivelMinimo, 10);
+});

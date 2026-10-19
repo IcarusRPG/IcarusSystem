@@ -27,6 +27,7 @@ import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
 import { verificarIconesClasses } from "./module/classes-dados.mjs";
 import { registrarClasses, aplicarClasse, concederHabilidades } from "./module/classes.mjs";
+import "./module/poderes-comuns.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";

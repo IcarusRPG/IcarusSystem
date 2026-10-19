@@ -1037,6 +1037,19 @@
         "sombras": "Caminho das Sombras",
         "astral": "Caminho Astral"
       }
+    },
+    "Comuns": {
+      "AumentoTitulo": "Aumento de Atributo",
+      "AumentoTexto": "Qual atributo recebe +1? Só uma vez por patamar para o mesmo atributo (patamar atual: {patamar}).",
+      "UmaVezPorPatamar": "Apenas uma vez por patamar para o mesmo atributo.",
+      "PermitirMesmoAssim": "Permitir mesmo assim (Mestre)?",
+      "EspecializadaTitulo": "Perícia Especializada",
+      "EspecializadaTexto": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Ela passa a especialista (+4).",
+      "RefinadaTexto": "Escolha duas perícias em que você seja treinado. Elas passam a especialista (+4).",
+      "SemPericias": "Nenhuma perícia treinada e ainda não especialista.",
+      "EscolhaN": "Escolha exatamente {n}.",
+      "AumentoDica": "+{n} Aumento de Atributo",
+      "EspecialistaDica": "Especialista por poder (Perícia Especializada/Refinada)"
     }
   }
 }

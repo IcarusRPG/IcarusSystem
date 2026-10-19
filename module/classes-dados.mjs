@@ -195,3 +195,30 @@ export function validarPoder(classe, poder, p) {
     disponivel: ok && !jaEscolhido
   };
 }
+
+/* ------------------------------ Poderes comuns ------------------------------ */
+
+/**
+ * Aumento de Atributo: +1 num atributo, várias vezes, mas só uma vez por patamar para o mesmo
+ * atributo. existentes = [{ atributo, patamar }] dos que o personagem já tem.
+ */
+export const podeAumentarAtributo = (existentes, atributo, patamar) => !existentes.some(e => e.atributo === atributo && e.patamar === patamar);
+
+/**
+ * Bônus derivados dos itens (sem Efeito Ativo e sem mexer na Base):
+ * - aumentos: { FOR: n, … } dos Aumentos de Atributo;
+ * - especialistas: perícias que viram especialista (+4) por Perícia Especializada ou Perícia Refinada.
+ * @param {{ flags? }[]} itens
+ */
+export function bonusDeItensDeClasse(itens = []) {
+  const aumentos = {};
+  const especialistas = new Set();
+  for (const i of itens) {
+    const f = i?.flags?.[SISTEMA_ID];
+    if (!f) continue;
+    if (f.aumentoAtributo?.atributo) aumentos[f.aumentoAtributo.atributo] = (aumentos[f.aumentoAtributo.atributo] ?? 0) + 1;
+    if (f.periciaEspecializada?.pericia) especialistas.add(f.periciaEspecializada.pericia);
+    for (const p of f.periciaRefinada ?? []) especialistas.add(p);
+  }
+  return { aumentos, especialistas };
+}
