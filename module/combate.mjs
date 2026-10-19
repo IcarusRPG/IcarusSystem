@@ -330,7 +330,7 @@ export function botaoUsado(flags, acao) {
  * @param {string} tipo          id do tipo de dano
  * @returns {{ final: number, passos: {chave: string, valor?: number, resultado: number}[] }}
  */
-export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }) {
+export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }, { ignoraRD = false } = {}) {
   const r = resistencias ?? {};
   let dano = Math.max(0, Math.trunc(numero(valor)));
   const passos = [{ chave: "rolado", resultado: dano }];
@@ -343,12 +343,13 @@ export function calcularDanoRecebido(resistencias, valor, tipo, regras = { vulne
     dano = Math.floor(dano * (regras.vulnerabilidadeMult ?? 1.5));
     passos.push({ chave: "vulneravel", valor: regras.vulnerabilidadeMult ?? 1.5, resultado: dano });
   }
-  const reducao = generico ? 0 : numero(r.reducao?.[tipo]);
+  // Ataques que "ignoram a RD" ignoram o total (Redução do tipo e RD geral)
+  const reducao = generico || ignoraRD ? 0 : numero(r.reducao?.[tipo]);
   if (reducao) {
     dano = Math.max(regras.minimo ?? 0, dano - reducao);
     passos.push({ chave: "reducao", valor: reducao, resultado: dano });
   }
-  const rd = numero(r.rdGeral);
+  const rd = ignoraRD ? 0 : numero(r.rdGeral);
   if (rd) {
     dano = Math.max(regras.minimo ?? 0, dano - rd);
     passos.push({ chave: "rd", valor: rd, resultado: dano });
@@ -614,4 +615,35 @@ export function bonusDeAtaqueGeral(system, pericia = "luta", itens = []) {
   const modo = pericia === "pontaria" ? "distancia" : "corpo-a-corpo";
   const pseudoArma = { categoria: "simples", propriedades: [], bonusAtaque: 0, proficiencia: "sim" };
   return calcularAtaque(system, pseudoArma, modo, itens);
+}
+
+/* ------------------------------ Acúmulo de Redução de Dano ------------------------------ */
+
+/** Teto de RD (oficial): 8 + metade do nível (para baixo). Sem nível numérico: sem teto (null). */
+export function tetoDeRD(nivel) {
+  const n = Number(nivel);
+  return Number.isFinite(n) ? 8 + Math.floor(n / 2) : null;
+}
+
+/**
+ * Soma a RD de fontes diferentes; a mesma fonte nunca soma consigo mesma (vale a maior das
+ * repetições, pela chave da fonte); o total não passa do teto. Vale para a RD geral e para
+ * cada Redução de [tipo], cada uma contada à parte.
+ * @param {number} manual  valor digitado na ficha
+ * @param {{ chave: string, origem: string, valor: number }[]} fontes
+ * @param {number|null} teto
+ * @returns {{ total: number, bruto: number, usadas: object[], cortado: boolean }}
+ */
+export function somarRD(manual, fontes = [], teto = null) {
+  const porChave = new Map();
+  for (const f of fontes) {
+    const v = numero(f.valor);
+    if (!v) continue;
+    const atual = porChave.get(f.chave);
+    if (!atual || v > atual.valor) porChave.set(f.chave, { ...f, valor: v });
+  }
+  const usadas = [...porChave.values()];
+  const bruto = numero(manual) + usadas.reduce((s, f) => s + f.valor, 0);
+  const cortado = teto !== null && bruto > teto;
+  return { total: cortado ? teto : Math.max(0, bruto), bruto, usadas, cortado };
 }

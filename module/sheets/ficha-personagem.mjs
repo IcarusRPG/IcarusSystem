@@ -238,10 +238,17 @@ export class FichaPersonagem extends ActorSheet {
 
     // Resistências: RD geral e, por tipo, Redução / Imune / Vulnerável (campos salvos; efetivo na dica)
     const r = s.resistencias, rs = src.resistencias;
+    // Dica da RD: digitado + fontes, e o teto quando cortou
+    const dicaRD = det => !det ? "" : [
+      det.usadas.length || det.cortado ? game.i18n.format("ICARUS.RD.Digitado", { valor: det.bruto - det.usadas.reduce((x, f) => x + f.valor, 0) }) : "",
+      ...det.usadas.map(f => `+${f.valor} ${f.origem}`),
+      det.cortado ? game.i18n.format("ICARUS.RD.Teto", { teto: r.teto, bruto: det.bruto }) : ""
+    ].filter(Boolean).join("\n");
     ctx.resistenciasTabela = {
       rdGeral: rs.rdGeral,
       rdEfetivo: r.rdGeral !== rs.rdGeral ? r.rdGeral : null,
-      rdDica: dica("system.resistencias.rdGeral"),
+      rdDica: dicaRD(r.detalhe?.rdGeral) || (r.teto === null ? loc("ICARUS.RD.SemTeto") : ""),
+      teto: r.teto !== null && r.teto !== undefined ? game.i18n.format("ICARUS.RD.TetoCurto", { teto: r.teto }) : loc("ICARUS.RD.SemTeto"),
       linhas: TIPOS_DANO_COM_RESISTENCIA.map(tipo => ({
         tipo,
         nome: loc(`ICARUS.TiposDano.${tipo}`),
@@ -251,7 +258,7 @@ export class FichaPersonagem extends ActorSheet {
         imuneEfeito: r.imunidade[tipo] && !rs.imunidade[tipo],
         vulneravel: rs.vulnerabilidade[tipo],
         vulneravelEfeito: r.vulnerabilidade[tipo] && !rs.vulnerabilidade[tipo],
-        dica: dica(`system.resistencias.reducao.${tipo}`, `system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)
+        dica: [dicaRD(r.detalhe?.reducao?.[tipo]), dica(`system.resistencias.imunidade.${tipo}`, `system.resistencias.vulnerabilidade.${tipo}`)].filter(Boolean).join("\n")
       }))
     };
 

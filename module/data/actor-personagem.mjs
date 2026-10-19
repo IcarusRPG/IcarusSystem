@@ -2,6 +2,43 @@ import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESIS
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
+import { SISTEMA_ID } from "../config.mjs";
+
+const CHAVE_RD = /^system\.resistencias\.(rdGeral|reducao\.(\w+))$/;
+
+/**
+ * Fontes de RD do ator: Efeitos Ativos que SOMAM na RD geral ou numa Redução de [tipo] e itens
+ * com flags["icarus-rpg"].rd = [{ valor, tipo|null }] (equipamentos só equipados).
+ * A "mesma fonte" é o mesmo item (pelo id do compêndio, flags["icarus-rpg"].id, ou pelo nome) ou
+ * o mesmo efeito do próprio ator (pelo nome): duas cópias contam uma vez.
+ * Devolve também a base digitada (valores salvos, antes dos efeitos).
+ */
+export function fontesDeRD(actor) {
+  const fontes = [];
+  const chaveDoItem = item => `item:${item.flags?.[SISTEMA_ID]?.id ?? item.name}`;
+  const modoSomar = CONST?.ACTIVE_EFFECT_MODES?.ADD ?? 2;
+  for (const efeito of actor.allApplicableEffects?.() ?? []) {
+    if (efeito.disabled || efeito.isSuppressed) continue;
+    const item = efeito.parent !== actor ? efeito.parent : null;
+    for (const c of efeito.changes ?? []) {
+      const m = c.key.match(CHAVE_RD);
+      if (!m || Number(c.mode) !== modoSomar) continue;
+      fontes.push({
+        tipo: m[2] ?? null, valor: Number(c.value) || 0,
+        origem: item ? item.name : efeito.name,
+        chave: `${item ? chaveDoItem(item) : `efeito:${efeito.name}`}|${m[1]}`
+      });
+    }
+  }
+  for (const item of actor.items ?? []) {
+    const lista = item.flags?.[SISTEMA_ID]?.rd;
+    if (!Array.isArray(lista)) continue;
+    if (item.type === "equipamento" && !item.system?.equipado) continue;
+    for (const r of lista) fontes.push({ tipo: r.tipo ?? null, valor: Number(r.valor) || 0, origem: item.name, chave: `${chaveDoItem(item)}|${r.tipo ?? "rdGeral"}` });
+  }
+  const salvo = actor._source?.system?.resistencias ?? {};
+  return { base: { rdGeral: salvo.rdGeral ?? 0, reducao: { ...(salvo.reducao ?? {}) } }, fontes };
+}
 
 const fields = foundry.data.fields;
 
@@ -113,6 +150,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
 
   /** Roda depois dos Efeitos Ativos, então Temp, "Outros", treino e deslocamento já chegam com os bônus. */
   prepareDerivedData() {
-    derivarPersonagem(this, this.parent?.items ?? [], this.parent?.statuses ?? []);
+    const actor = this.parent;
+    const rd = actor ? fontesDeRD(actor) : undefined;
+    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd });
   }
 }

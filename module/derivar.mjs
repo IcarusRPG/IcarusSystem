@@ -4,6 +4,7 @@
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
+import { somarRD, tetoDeRD } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import {
@@ -16,7 +17,7 @@ import {
  * @param {object[]} itens         itens do personagem
  * @param {Iterable<string>} condicoesAtivas  ids das condições ativas (statuses do ator)
  */
-export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
+export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = {}) {
   // Condições: "vale a maior penalidade" em cada campo (module/condicoes.mjs)
   const cond = modificadoresDasCondicoes(condicoesAtivas);
   s.nivel = nivelValido(s.nivel);
@@ -79,8 +80,25 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = []) {
     d.falhaAuto = cond.falhaAuto[p.chave];
   }
 
-  // RD das condições (Petrificado) entra na RD geral
-  if (s.resistencias && cond.rd) s.resistencias.rdGeral = Number(s.resistencias.rdGeral || 0) + cond.rd.valor;
+  // Redução de Dano: fontes diferentes somam, a mesma fonte não soma consigo mesma, teto de
+  // 8 + metade do nível (RD geral e cada Redução de [tipo] à parte). Com opcoes.rd (vindo do
+  // Foundry), os totais são refeitos a partir do valor digitado + fontes; sem ele (testes), o
+  // valor atual vale como digitado. A condição Petrificado entra como uma fonte.
+  if (s.resistencias) {
+    const teto = tetoDeRD(s.nivel);
+    const rd = opcoes.rd ?? { base: { rdGeral: s.resistencias.rdGeral, reducao: { ...s.resistencias.reducao } }, fontes: [] };
+    const fontesGeral = rd.fontes.filter(f => !f.tipo);
+    if (cond.rd) fontesGeral.push({ chave: `condicao:${cond.rd.origem}`, origem: cond.rd.origem, valor: cond.rd.valor });
+    const geral = somarRD(rd.base.rdGeral, fontesGeral, teto);
+    s.resistencias.rdGeral = geral.total;
+    s.resistencias.teto = teto;
+    s.resistencias.detalhe = { rdGeral: geral, reducao: {} };
+    for (const tipo of Object.keys(s.resistencias.reducao ?? {})) {
+      const r = somarRD(rd.base.reducao?.[tipo] ?? 0, rd.fontes.filter(f => f.tipo === tipo), teto);
+      s.resistencias.reducao[tipo] = r.total;
+      s.resistencias.detalhe.reducao[tipo] = r;
+    }
+  }
 
   // Ataque: as condições ficam à parte (combate.mjs soma conforme o modo)
   s.condicoes = { ids: [...cond.ids], ataque: cond.ataque, ataqueCorpoACorpo: cond.ataqueCorpoACorpo, pendencias: cond.pendencias };

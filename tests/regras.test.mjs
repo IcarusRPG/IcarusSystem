@@ -212,3 +212,40 @@ test("Manobras: Fortitude oposta; Empurrar 1,5 m + 1,5 m a cada 5 de diferença;
   assert.equal(bonusDoItem(s, { tipo: "ataque", chave: "luta" }).bonus, 3 + 2 + 1);
   assert.equal(bonusDoItem(s, { tipo: "pericia", chave: "fortitude" }).bonus, 0);
 });
+
+test("RD: fontes diferentes somam; a mesma fonte não soma consigo mesma; teto 8 + metade do nível", async () => {
+  const { somarRD, tetoDeRD } = await import("../module/combate.mjs");
+  assert.equal(tetoDeRD(1), 8);
+  assert.equal(tetoDeRD(5), 10);
+  assert.equal(tetoDeRD(6), 11);
+  assert.equal(tetoDeRD(undefined), null);
+  const armadura = { chave: "item:armadura-x|rdGeral", origem: "Armadura X", valor: 3 };
+  const poder = { chave: "item:poder-y|rdGeral", origem: "Poder Y", valor: 2 };
+  assert.equal(somarRD(1, [armadura, poder], 10).total, 6);
+  // Duas cópias do mesmo poder contam uma vez
+  assert.equal(somarRD(0, [poder, { ...poder }], 10).total, 2);
+  // Teto
+  const r = somarRD(5, [armadura, poder, { chave: "c", origem: "Z", valor: 4 }], 10);
+  assert.deepEqual([r.total, r.bruto, r.cortado], [10, 14, true]);
+  // Sem nível: sem teto
+  assert.equal(somarRD(5, [armadura, poder, { chave: "c", origem: "Z", valor: 4 }], null).total, 14);
+  // Na ficha: RD geral e Redução de fogo têm o teto contado à parte
+  const s = ficha({ nivel: 4 }, []);
+  const comFontes = derivarPersonagem(sistemaCompleto({ nivel: 4 }), [], [], {
+    rd: { base: { rdGeral: 6, reducao: { fogo: 9 } }, fontes: [{ ...armadura, valor: 5 }, { chave: "f|fogo", origem: "Manto", valor: 4, tipo: "fogo" }] }
+  });
+  assert.equal(s.resistencias.teto, 10);
+  assert.equal(comFontes.resistencias.rdGeral, 10);
+  assert.equal(comFontes.resistencias.reducao.fogo, 10);
+  assert.equal(comFontes.resistencias.reducao.frio, 0);
+  // Petrificado (condição) entra como fonte
+  const petrificado = derivarPersonagem(sistemaCompleto({ nivel: 2 }), [], ["petrificado"]);
+  assert.ok(petrificado.resistencias.rdGeral > 0);
+});
+
+test("Ataque que ignora a RD ignora o total; perda de PV não passa por resistências", async () => {
+  const { calcularDanoRecebido } = await import("../module/combate.mjs");
+  const res = { rdGeral: 3, reducao: { fogo: 5 }, imunidade: {}, vulnerabilidade: {} };
+  assert.equal(calcularDanoRecebido(res, 12, "fogo").final, 4);
+  assert.equal(calcularDanoRecebido(res, 12, "fogo", undefined, { ignoraRD: true }).final, 12);
+});

@@ -948,6 +948,12 @@
         "caido": "Caído"
       },
       "Aplicar": "Aplicar"
+    },
+    "RD": {
+      "Digitado": "{valor} digitado na ficha",
+      "Teto": "Teto 8 + metade do nível: {teto} (somaria {bruto})",
+      "TetoCurto": "Teto de RD (8 + metade do nível): {teto}, contado à parte na RD geral e em cada tipo; a mesma fonte não soma consigo mesma.",
+      "SemTeto": "Sem nível: sem teto de RD."
     }
   }
 }
