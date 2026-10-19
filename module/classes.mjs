@@ -7,6 +7,8 @@ import { SISTEMA_ID } from "./config.mjs";
 import { classePorId, iconeDaClasse, proficienciasDaClasse, habilidadesAteNivel, contagemDePoderes } from "./classes-dados.mjs";
 import { dadosDaHabilidade, idDeClasse } from "./dados-compendios.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
+import { resolverEscolha } from "./escolhas.mjs";
+import { confirmarReset, resetarClasse, itensDeOrigemDeClasse } from "./assistente.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -32,6 +34,16 @@ export function idsDeClasseDoAtor(actor) {
   return new Set(itensDeClasse(actor).map(i => String(i.flags?.[SISTEMA_ID]?.id ?? "").split("__")[1]).filter(Boolean));
 }
 
+/** Quantas vezes o ator tem cada poder/habilidade de classe (repetíveis contam várias). */
+export function contagemDeClasseDoAtor(actor) {
+  const mapa = new Map();
+  for (const i of itensDeClasse(actor)) {
+    const id = String(i.flags?.[SISTEMA_ID]?.id ?? "").split("__")[1];
+    if (id) mapa.set(id, (mapa.get(id) ?? 0) + 1);
+  }
+  return mapa;
+}
+
 /** Contador "Poderes de classe X / Y" do ator. */
 export function contadorDePoderes(actor) {
   const classe = classeDoAtor(actor);
@@ -44,7 +56,7 @@ export function contadorDePoderes(actor) {
  * Concede as habilidades da classe até o nível atual que ainda faltam (um item por habilidade).
  * @returns {Promise<Item[]>} os itens criados
  */
-export async function concederHabilidades(actor, { nivel = actor.system.nivel } = {}) {
+export async function concederHabilidades(actor, { nivel = actor.system.nivel, abrirEscolhas = true } = {}) {
   const classe = classeDoAtor(actor);
   if (!classe) return [];
   const tem = new Set(itensDeClasse(actor, "habilidade").map(i => i.flags?.[SISTEMA_ID]?.id));
@@ -60,7 +72,10 @@ export async function concederHabilidades(actor, { nivel = actor.system.nivel } 
   if (!novas.length) return [];
   const criados = await actor.createEmbeddedDocuments("Item", novas);
   ui.notifications.info(fmt("ICARUS.Classe.HabilidadesRecebidas", { nome: actor.name, lista: criados.map(i => i.name).join(", ") }));
-  for (const item of criados) await APOS_CONCEDER.get(item.flags?.[SISTEMA_ID]?.habilidade)?.(actor, item);
+  for (const item of criados) {
+    await APOS_CONCEDER.get(item.flags?.[SISTEMA_ID]?.habilidade)?.(actor, item);
+    if (abrirEscolhas) await resolverEscolha(actor, item);
+  }
   return criados;
 }
 
@@ -74,15 +89,10 @@ export async function aplicarClasse(actor, novoId) {
   const atual = classeDoAtor(actor);
   const nova = classePorId(novoId);
   if (!nova || atual?.id === nova.id) return false;
-  const antigas = atual ? itensDeClasse(actor, "habilidade").filter(i => i.flags?.[SISTEMA_ID]?.auto) : [];
-  if (atual) {
-    const ok = await foundry.applications.api.DialogV2.confirm({
-      window: { title: loc("ICARUS.Classe.TrocarTitulo") },
-      content: `<p>${Handlebars.escapeExpression(fmt("ICARUS.Classe.TrocarTexto", { antiga: atual.nome, nova: nova.nome, n: antigas.length }))}</p>`,
-      rejectClose: false
-    });
-    if (!ok) return false;
-    if (antigas.length) await actor.deleteEmbeddedDocuments("Item", antigas.map(i => i.id));
+  // Trocar de classe (ou sair de uma "Outra" com itens de classe): reset limpo com confirmação
+  if (atual || itensDeOrigemDeClasse(actor).length) {
+    if (!(await confirmarReset(actor, nova.nome))) return false;
+    await resetarClasse(actor);
   }
   const src = actor._source.system;
   const prof = proficienciasDaClasse(nova.id);
@@ -90,6 +100,8 @@ export async function aplicarClasse(actor, novoId) {
   const dados = {
     "system.identidade.classe": nova.id,
     [`flags.${SISTEMA_ID}.classeId`]: nova.id,
+    // Para o reset: as proficiências como estavam antes da classe
+    [`flags.${SISTEMA_ID}.proficienciasAntesClasse`]: foundry.utils.deepClone(src.proficiencias),
     "system.proficiencias.armas": unir(src.proficiencias.armas, prof.armas),
     "system.proficiencias.armaduras": unir(src.proficiencias.armaduras, prof.armaduras),
     "system.proficiencias.escudo": src.proficiencias.escudo || prof.escudo,
@@ -110,14 +122,20 @@ export async function aplicarClasse(actor, novoId) {
   }
   await actor.update(dados);
   const { DialogoPericiasClasse } = await import("./sheets/dialogo-pericias-classe.mjs");
-  new DialogoPericiasClasse(actor, nova).render(true);
-  await concederHabilidades(actor);
+  const { abrirAssistenteDeNivel } = await import("./sheets/dialogo-subir-nivel.mjs");
+  // Depois das perícias, o assistente percorre do 1º nível ao atual (habilidades e poderes)
+  new DialogoPericiasClasse(actor, nova, { aoFechar: () => abrirAssistenteDeNivel(actor, { de: 0, ate: actor.system.nivel }) }).render(true);
   return true;
 }
 
-/** Classe em texto livre ("Outra"): sem automação. */
-export function classeLivre(actor, texto) {
-  return actor.update({ "system.identidade.classe": texto, [`flags.${SISTEMA_ID}.-=classeId`]: null });
+/** Classe em texto livre ("Outra") ou nenhuma: sem automação; havendo classe, faz o reset antes. */
+export async function classeLivre(actor, texto) {
+  if (classeDoAtor(actor) || itensDeOrigemDeClasse(actor).length) {
+    if (!(await confirmarReset(actor, texto || loc("ICARUS.Classe.Nenhuma")))) return false;
+    await resetarClasse(actor);
+  }
+  await actor.update({ "system.identidade.classe": texto, [`flags.${SISTEMA_ID}.-=classeId`]: null });
+  return true;
 }
 
 /**
@@ -125,12 +143,19 @@ export function classeLivre(actor, texto) {
  * Descer de nível não remove nada (o Mestre decide).
  */
 export function registrarClasses() {
-  Hooks.on("updateActor", async (actor, mudancas, opcoes, userId) => {
-    if (userId !== game.user.id || !foundry.utils.hasProperty(mudancas, "system.nivel")) return;
-    if (!classeDoAtor(actor)) return;
-    await concederHabilidades(actor);
-    const c = contadorDePoderes(actor);
-    if (c?.disponiveis) ui.notifications.info(fmt("ICARUS.Classe.PoderesParaEscolher", { nome: actor.name, n: c.disponiveis }));
+  // Subir o nível (campo da ficha, botão + ou macro) com classe do sistema: o nível só muda pelo
+  // assistente (que concede as habilidades e os poderes). O resto da atualização segue normal.
+  Hooks.on("preUpdateActor", (actor, mudancas, opcoes) => {
+    if (opcoes.icarusAssistente || !classeDoAtor(actor)) return;
+    const novo = foundry.utils.getProperty(mudancas, "system.nivel");
+    if (novo === undefined || novo <= actor.system.nivel) return;
+    delete mudancas.system.nivel;
+    const de = actor.system.nivel;
+    import("./sheets/dialogo-subir-nivel.mjs").then(m => m.abrirAssistenteDeNivel(actor, { de, ate: novo }));
+  });
+  Hooks.on("updateActor", (actor, mudancas, opcoes, userId) => {
+    if (userId !== game.user.id || opcoes.icarusAssistente || !classeDoAtor(actor)) return;
+    if (foundry.utils.hasProperty(mudancas, "system.nivel")) ui.notifications.info(fmt("ICARUS.Assistente.DesceuNivel", { nome: actor.name }));
   });
 }
 

@@ -157,7 +157,7 @@ const NOMES_ATRIBUTO = { FOR: "Força", DES: "Destreza", CON: "Constituição", 
  * "já escolhido" em poder não repetível.
  * @param {object} classe
  * @param {object} poder  entrada de classes.json
- * @param {{ nivel, atributos: {FOR:n…}, treino: {pericia: 0|1|2}, tem: Set<string>, grupos: string[] }} p
+ * @param {{ nivel, atributos: {FOR:n…}, treino: {pericia: 0|1|2}, tem: Set<string>, contagem?: Map<string, number>, grupos: string[] }} p
  * @returns {{ itens: {texto, estado: "ok"|"falta"|"conferir"}[], ok: boolean, jaEscolhido: boolean, visivel: boolean, disponivel: boolean }}
  */
 export function validarPoder(classe, poder, p) {
@@ -186,7 +186,9 @@ export function validarPoder(classe, poder, p) {
   if (poder.requerGrupo) resto = resto.replace(poder.requerGrupo, "");
   resto = resto.replace(/[,;.]|\b(e|ou)\b/gi, " ").trim();
   if (resto.length > 2) itens.push({ texto: resto, estado: "conferir" });
-  const jaEscolhido = !poder.repetivel && !!p.tem?.has(poder.id);
+  // Não repetível: uma vez; repetível com maxEscolhas (Treino Extra: 2): até o limite
+  const vezes = p.contagem?.get?.(poder.id) ?? (p.tem?.has(poder.id) ? 1 : 0);
+  const jaEscolhido = poder.repetivel ? (Number(poder.maxEscolhas) > 0 && vezes >= poder.maxEscolhas) : vezes > 0;
   const ok = itens.every(i => i.estado !== "falta");
   return {
     itens, ok, jaEscolhido,
@@ -213,14 +215,16 @@ export const podeAumentarAtributo = (existentes, atributo, patamar) => !existent
 export function bonusDeItensDeClasse(itens = []) {
   const aumentos = {};
   const especialistas = new Set();
+  const treinadas = new Set();
   for (const i of itens) {
     const f = i?.flags?.[SISTEMA_ID];
     if (!f) continue;
     if (f.aumentoAtributo?.atributo) aumentos[f.aumentoAtributo.atributo] = (aumentos[f.aumentoAtributo.atributo] ?? 0) + 1;
     if (f.periciaEspecializada?.pericia) especialistas.add(f.periciaEspecializada.pericia);
     for (const p of f.periciaRefinada ?? []) especialistas.add(p);
+    for (const p of f.periciasTreinadas ?? []) treinadas.add(p);
   }
-  return { aumentos, especialistas };
+  return { aumentos, especialistas, treinadas };
 }
 
 /* ------------------------------ Efeitos passivos de habilidades ------------------------------ */
@@ -280,21 +284,22 @@ export function flagsDeDuasArmas(itens, flags = {}) {
 /* ------------------------------ Vínculo Selvagem (Patrulheiro) ------------------------------ */
 
 /**
- * Valores do animal do Vínculo a partir do patrulheiro (regra geral do texto da habilidade):
- * PV = 10 + metade do nível; Defesa = 10 + DES do patrulheiro + bônus do animal; ataque e testes
- * de resistência iguais aos do patrulheiro; dano + metade do nível (só nos ataques que somam).
- * @param {object} animal  entrada de vinculos.json
- * @param {{ nivel, DES, ataque, fortitude, reflexos, vontade }} p  totais do patrulheiro
+ * Valores do animal do Vínculo que dependem do patrulheiro (Anexo B, PROVISÓRIO):
+ * PV = 10 + metade do nível; Defesa = 10 + metade do nível + defesaBonus; dano dos ataques +
+ * metade do nível; CD das habilidades = 10 + metade do nível + DES do patrulheiro. O ataque e os
+ * testes usam as perícias da ficha do próprio animal.
+ * @param {object} animal  entrada de vinculos.json (vinculos[])
+ * @param {{ nivel: number, DES: number }} p  nível e DES (total) do patrulheiro
  */
 export function estatisticasDoVinculo(animal, p) {
   const metade = Math.floor(Math.max(1, Number(p.nivel) || 1) / 2);
   return {
     pv: 10 + metade,
-    defesaOutros: (Number(p.DES) || 0) + animal.defesa,
-    ataques: animal.ataques.map(a => ({ ...a, bonusAtaque: Number(p.ataque) || 0, bonusDano: a.somaNivel ? metade : 0 })),
-    resistencias: { fortitude: p.fortitude ?? 0, reflexos: p.reflexos ?? 0, vontade: p.vontade ?? 0 },
-    deslocamento: animal.deslocamento,
-    rd: animal.rd ?? 0
+    defesa: 10 + metade + (animal.defesaBonus ?? 0),
+    // A Defesa da ficha é 10 + DES + Outros: Outros acerta a conta para não somar a DES do animal
+    defesaOutros: metade + (animal.defesaBonus ?? 0) - (animal.atributos?.DES ?? 0),
+    bonusDano: metade,
+    cd: 10 + metade + (Number(p.DES) || 0)
   };
 }
 
@@ -315,3 +320,37 @@ export function maximoTiroCarregado(nivel, { calibrePesado = false, mosquete = f
 
 /** Dano desarmado do Monge (Punhos Disciplinados): 1d8; 1d10 no 9º; 1d12 no 17º. */
 export const danoDesarmadoDoMonge = nivel => (nivel >= 17 ? "1d12" : nivel >= 9 ? "1d10" : "1d8");
+
+/* ------------------------------ Assistente de nível ------------------------------ */
+
+/**
+ * Habilidades da linha de progressão de um nível: o rótulo da tabela ("Ataque Furtivo (2d6)") e a
+ * habilidade do JSON; nova = recebida neste nível (senão é o aprimoramento de uma que já tem).
+ */
+export function habilidadesDoNivel(classe, nivel) {
+  const linha = (classe?.progressao ?? []).find(p => p.nivel === nivel);
+  return (linha?.habilidades ?? []).map(rotulo => {
+    const base = normalizarNome(String(rotulo).replace(/\(.*?\)/g, ""));
+    const h = (classe.habilidades ?? []).find(x => normalizarNome(x.nome) === base) ?? null;
+    return { rotulo, habilidade: h, nova: !!h && nivelDaHabilidade(h) === nivel };
+  });
+}
+
+/** O nível concede escolha de poder de classe? (nunca no 1º) */
+export const nivelTemPoder = (classe, nivel) => nivel >= 2 && !!(classe?.progressao ?? []).find(p => p.nivel === nivel)?.poder;
+
+/**
+ * PV e PM ganhos ao chegar a um nível (fórmula da classe; Monge: atributo de PM só no 1º).
+ * @param {object} cc  classeConfig
+ * @param {{ FOR,DES,CON,INT,SAB,CAR }} atributos  totais
+ */
+export function ganhoDoNivel(cc, atributos, nivel) {
+  const at = k => (k ? Number(atributos?.[k]) || 0 : 0);
+  if (nivel <= 1) {
+    return { pv: (cc.pvInicial ?? 0) + at(cc.pvAtributo), pm: (cc.pmInicial ?? 0) + at(cc.pmAtributo) };
+  }
+  return {
+    pv: (cc.pvPorNivel ?? 0) + at(cc.pvAtributo),
+    pm: (cc.pmPorNivel ?? 0) + (cc.pmAtributoSoNoPrimeiroNivel ? 0 : at(cc.pmAtributo))
+  };
+}

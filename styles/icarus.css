@@ -909,3 +909,34 @@ body.game {
 .ficha-icarus .recurso-classe .recurso-ctl { display: flex; align-items: center; gap: 4px; }
 .ficha-icarus .recurso-classe .max-recurso { width: 52px; text-align: center; }
 .ficha-icarus .recurso-classe select { width: auto; }
+
+/* --- Assistente: desfazer troca de classe --- */
+.ficha-icarus .faixa-desfazer { display: flex; align-items: center; gap: 10px; padding: 6px 12px; border: 1px dashed var(--ic-ouro-escuro); border-radius: 6px; color: var(--ic-ouro-claro); font-size: 14px; }
+.icarus-uso .lista-reset { margin: 4px 0; padding-left: 18px; max-height: 220px; overflow-y: auto; font-size: 13px; }
+.icarus-uso .cartoes-escolha { display: flex; gap: 10px; align-items: stretch; }
+.icarus-uso .cartao-escolha { flex: 1; min-width: 0; padding: 8px 10px; border: 1px solid #5a4a22; border-radius: 6px; font-size: 13px; max-height: 420px; overflow-y: auto; }
+.icarus-uso .cartao-escolha h4 { margin: 0 0 4px; }
+.icarus-uso .mini-ficha { margin: 6px 0 0; font-size: 12px; }
+.icarus-uso .mini-ficha dt { font-weight: 700; margin-top: 2px; }
+.icarus-uso .mini-ficha dd { margin: 0 0 2px; }
+.icarus-uso .mini-ficha .provisorio { font-style: italic; opacity: .8; }
+
+/* --- Assistente de nível --- */
+.application.icarus-subir-nivel .window-content { padding: 0; overflow: hidden; }
+.ficha-icarus.dialogo-subir-nivel { height: 100%; display: flex; flex-direction: column; gap: 10px; padding: 10px 14px; overflow-y: auto; background: var(--ic-janela); }
+.ficha-icarus .passo-nivel { font-family: var(--ic-f-titulo); letter-spacing: .12em; color: var(--ic-ouro); }
+.ficha-icarus .habilidade-travada { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .desc-habilidade { font-size: 13px; color: #c3d2dc; margin: 2px 0 6px 22px; }
+.ficha-icarus .lista-poderes-nivel { display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .grupo-nivel { margin: 0; padding: 4px 8px; border: 1px solid var(--ic-borda); border-radius: 6px; display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .grupo-nivel legend { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-ouro); padding: 0 4px; }
+.ficha-icarus .opcao-poder { display: flex; gap: 8px; align-items: flex-start; padding: 4px; border-radius: 4px; cursor: pointer; }
+.ficha-icarus .opcao-poder[hidden] { display: none; }
+.ficha-icarus .opcao-poder:has(input:checked) { background: var(--ic-ciano-fundo); }
+.ficha-icarus .opcao-poder.indisponivel { opacity: .55; cursor: default; }
+.ficha-icarus .opcao-texto { display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
+.ficha-icarus .opcao-texto .razao { color: #ff8b84; }
+.ficha-icarus .opcao-texto .aviso-pre { color: var(--ic-ouro-claro); }
+.ficha-icarus .opcao-texto .desc-poder { font-size: 13px; color: #c3d2dc; }
+.ficha-icarus .opcao-texto .desc-poder p { margin: 0; }
+.ficha-icarus .contador-vagas { float: right; font-size: 13px; color: var(--ic-ciano-titulo); }

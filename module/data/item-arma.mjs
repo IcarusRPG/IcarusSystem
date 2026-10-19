@@ -55,6 +55,15 @@ export class ArmaData extends foundry.abstract.TypeDataModel {
     }
     // "auto": confere as proficiências do personagem dono da arma (sem dono: só armas simples)
     this.proficiente = ehProficiente(this, this.parent?.parent?.system?.proficiencias ?? null);
+    // Arma Exótica (poder): proficiência com a arma escolhida (pelo id do compêndio ou pelo nome)
+    if (!this.proficiente && this.proficiencia === "auto" && dono?.items) {
+      const meuId = flags?.id;
+      const nome = (this.parent?.name ?? "").toLowerCase();
+      this.proficiente = dono.items.some(i => {
+        const e = i.flags?.[SISTEMA_ID]?.armaExotica;
+        return e && (e.id === meuId || String(e.nome).toLowerCase() === nome);
+      });
+    }
     this.textoCritico = textoCritico(this);
     this.modos = modosDeAtaque(this);
     this.ehFogo = this.grupo === "fogo";

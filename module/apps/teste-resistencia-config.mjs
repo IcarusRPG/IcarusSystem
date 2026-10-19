@@ -17,9 +17,17 @@ const fmt = (k, d) => game.i18n.format(k, d);
 const ATRIBUTOS_DE_CONJURACAO = ["INT", "SAB", "CAR"];
 
 export class TesteResistenciaConfig extends HandlebarsApplicationMixin(ApplicationV2) {
-  constructor({ alvosUuids = [] } = {}, options = {}) {
+  /**
+   * @param {object} [pre]  pré-preenchimento: alvos, tipos de teste (padrão Fortitude/Reflexos/Vontade;
+   *   ex.: Visão/Audição no Atacar nas Sombras), perícia marcada, origem e CD manual
+   */
+  constructor({ alvosUuids = [], tipos = PERICIAS_RESISTENCIA, pericia = null, origem = "", cd = null } = {}, options = {}) {
     super(options);
     this.alvos = new Set(alvosUuids);
+    this.tipos = tipos;
+    this.pericia = pericia;
+    this.origem = origem;
+    this.cd = cd;
     /** Vantagem/desvantagem por alvo (uuid → modo). */
     this.modos = new Map();
   }
@@ -41,11 +49,9 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
 
   static PARTS = { corpo: { template: `systems/${SISTEMA_ID}/templates/testes/resistencia-config.hbs` } };
 
-  pericia = null;
-  origem = "";
+  tipos = PERICIAS_RESISTENCIA;
   conjurador = "";
   atributoChave = "CAR";
-  cd = null;
   cdManual = false;
   observacao = "";
   busca = "";
@@ -65,7 +71,7 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
   }
 
   get completo() {
-    return this.alvos.size > 0 && PERICIAS_RESISTENCIA.includes(this.pericia) && Number.isFinite(this.cdEfetiva);
+    return this.alvos.size > 0 && this.tipos.includes(this.pericia) && Number.isFinite(this.cdEfetiva);
   }
 
   async _prepareContext() {
@@ -78,7 +84,7 @@ export class TesteResistenciaConfig extends HandlebarsApplicationMixin(Applicati
       busca: this.busca,
       grupos: gruposDeCandidatos(lista, this.alvos, this.modos),
       nAlvos: this.alvos.size,
-      tipos: PERICIAS_RESISTENCIA.map(k => ({ chave: k, rotulo: loc(`ICARUS.Pericias.${k}`), marcado: this.pericia === k })),
+      tipos: this.tipos.map(k => ({ chave: k, rotulo: loc(`ICARUS.Pericias.${k}`), marcado: this.pericia === k })),
       origem: this.origem,
       sugestoes: conj ? conj.items.filter(i => i.type === "poder").map(i => i.name).sort((a, b) => a.localeCompare(b, "pt-BR")) : [],
       conjuradores: [{ uuid: "", nome: loc("ICARUS.Testes.Resistencia.SemConjurador") }, ...lista.map(c => ({ uuid: c.uuid, nome: c.nome }))]

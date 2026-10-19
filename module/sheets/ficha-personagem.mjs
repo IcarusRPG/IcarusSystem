@@ -26,6 +26,8 @@ import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, rea
 import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } from "../classes-dados.mjs";
 import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } from "../classes.mjs";
 import { acaoDaMecanica } from "../classes/comum.mjs";
+import { escolhaPendente, entradaDoItem, resolverEscolha } from "../escolhas.mjs";
+import { desfazerTrocaDeClasse } from "../assistente.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
@@ -131,6 +133,7 @@ export class FichaPersonagem extends ActorSheet {
       tabela: tabelaDeProgressao(classe, s.nivel),
       mecanicas: MECANICAS_DE_CLASSE.get(classe.id)?.(actor) ?? []
     } : { tem: false };
+    ctx.classeAba.desfazer = !!actor.getFlag(SISTEMA_ID, "snapshotTrocaClasse");
 
     // Recursos de classe
     ctx.recursosClasse = (s.recursos ?? []).map(r => ({
@@ -374,6 +377,9 @@ export class FichaPersonagem extends ActorSheet {
             custo: p.system.custoPM ?? null,
             // Usar: poderes com ação (não passivos) ou com custo em PM
             usavel: (p.system.acao && p.system.acao !== "passivo") || !!p.system.custoPM,
+            // Escolha do poder/habilidade de classe (Aumento de Atributo, Caminho…): pendente ou alterável
+            escolhaPendente: escolhaPendente(p),
+            escolhaAlteravel: !escolhaPendente(p) && !!entradaDoItem(p).entrada?.escolha && (!entradaDoItem(p).entrada.escolha.permanente || game.user.isGM),
             usarDica: [p.system.acao ? loc(`ICARUS.Poderes.Acoes.${p.system.acao}`) : "", p.system.acao === "reacao" ? textoReacao(actor) : ""].filter(Boolean).join(" · "),
             meta: [
               p.system.nivel ? game.i18n.format("ICARUS.Poderes.NivelN", { n: p.system.nivel }) : "",
@@ -549,9 +555,9 @@ export class FichaPersonagem extends ActorSheet {
           ok: { label: game.i18n.localize("ICARUS.Devocao.Confirmar"), callback: (e, b) => b.form.elements.classe.value.trim() },
           rejectClose: false
         });
-        if (texto) { await classeLivre(this.actor, texto); mudou = true; }
+        if (texto) mudou = await classeLivre(this.actor, texto);
       } else if (valor === "") {
-        await classeLivre(this.actor, ""); mudou = true;
+        mudou = await classeLivre(this.actor, "");
       } else if (classePorId(valor)) {
         mudou = await aplicarClasse(this.actor, valor);
       }
@@ -571,8 +577,14 @@ export class FichaPersonagem extends ActorSheet {
     const s = actor.system;
     const itemDe = () => actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
     switch (acao) {
-      case "nivel":
-        return actor.update({ "system.nivel": limitar(s.nivel + Number(el.dataset.delta), 1, 25) });
+      case "nivel": {
+        const novo = limitar(s.nivel + Number(el.dataset.delta), 1, 25);
+        if (novo > s.nivel && classePorId(actor._source.system.identidade.classe)) {
+          const { abrirAssistenteDeNivel } = await import("./dialogo-subir-nivel.mjs");
+          return abrirAssistenteDeNivel(actor, { de: s.nivel, ate: novo });
+        }
+        return actor.update({ "system.nivel": novo });
+      }
       case "recurso": {
         const k = el.dataset.recurso;
         return actor.update({ [`system.${k}.value`]: limitar(s[k].value + Number(el.dataset.delta), 0, s[k].max) });
@@ -610,6 +622,8 @@ export class FichaPersonagem extends ActorSheet {
         return new PainelCondicoes({ actor }).render(true);
       case "divindade-poderes":
         return new DialogoPoderesConcedidos(actor, actor._source.system.identidade.divindade).render(true);
+      case "poder-escolha":
+        return resolverEscolha(actor, itemDe());
       case "poder-usar":
         return usarPoder(actor, itemDe());
       case "reacao-alternar":
@@ -631,6 +645,8 @@ export class FichaPersonagem extends ActorSheet {
         const fn = acaoDaMecanica(el.dataset.mecanica);
         return fn ? fn(actor) : null;
       }
+      case "classe-desfazer":
+        return desfazerTrocaDeClasse(actor);
       case "classe-poder": {
         const { DialogoPoderesClasse } = await import("./dialogo-poderes-classe.mjs");
         return new DialogoPoderesClasse(actor).render(true);

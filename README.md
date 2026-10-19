@@ -46,6 +46,7 @@ O link só funciona depois do primeiro release publicado no GitHub (veja "Public
 | Redução de dano | Fontes diferentes somam, a mesma fonte não soma consigo mesma; teto 8 + metade do nível (RD geral e cada Redução de [tipo] à parte); dica com as fontes. |
 | Duas armas | "Agredir com duas armas" (uma Leve, ou arma Dupla): um ataque com cada, −2 nos dois; Duas Armas, Lâminas do Mato, Duas Pistolas e Par de Lâminas tiram a penalidade (segundo dano sem atributo; Ambidestria, Mão Habilidosa, Mão Firme e Pulso Firme devolvem). |
 | Classes | 7 classes (Guerreiro, Samurai, Bárbaro, Ladino, Patrulheiro, Monge, Pistoleiro) nos compêndios **Classes**, **Habilidades de Classe** e **Poderes de Classe**. Escolher a classe no cabeçalho preenche PV/PM (PM do Monge: Sabedoria só no 1º nível), proficiências, abre **Perícias da classe** e concede as habilidades do nível. Aba **Classe**: progressão 1º–20º, "Poderes de classe X / Y", **Escolher poder de classe** (✓/✗/⚠ nos pré-requisitos), escolhas permanentes (Senda, Caminho, Vínculo), mecânicas e **recursos** (usos por cena/rodada/descanso). |
+| Assistente de ficha | **Trocar de classe** mostra o que sai e faz o reset limpo (itens e escolhas de classe, treino da classe, estados, animal invocado; raça/origem/profissão ficam), com **Desfazer troca de classe**. **Subir de nível** abre "Subir para o nível N" (um nível por vez): resumo de PV/PM, habilidades da progressão travadas e exatamente 1 poder de classe a partir do 2º. **Telas de escolha** vindas do JSON: caminho (Senda, Caminho do Monge, Vínculo com a mini-ficha do animal), atributo, perícias, tipo de dano, terreno e arma exótica; escolha não feita fica pendente com botão para concluir. |
 | Mecânicas de classe | Bárbaro: Fúria. Ladino: Ataque Furtivo, Perícia Refinada/Infalível. Patrulheiro: Marca da Presa e Vínculo Selvagem (animal invocado do compêndio **Vínculos**). Pistoleiro: Tiro Carregado, recarga rápida, Tiro Lendário. Guerreiro: Recobrar o Fôlego, Ataque Extra. Samurai: Kiai. Monge: caminhos, Braços Astrais, ataque desarmado 1d8→1d12, Rajada de Golpes, restrição de equipamento. Poderes comuns: Aumento de Atributo (1 por patamar por atributo) e Perícia Especializada. |
 | Nível | 1 a 25. A partir do 21 aparece **PARAGON** e os 5 últimos segmentos ficam dourados. |
 | Deslocamento | Em metros, exibido também em quadrados de 1,5 m. Médio 9 m, Pequeno 6 m. |
@@ -105,7 +106,8 @@ module/
   classes-dados.mjs         classes: dados, progressão, pré-requisitos, patamares, passivos (puro)
   classes.mjs               escolher classe, conceder habilidades, contador de poderes
   classes/                  mecânicas por classe (comum, barbaro, ladino, patrulheiro, pistoleiro, guerreiro, samurai, monge)
-  poderes-comuns.mjs        Aumento de Atributo, Perícia Especializada, Perícia Refinada
+  escolhas.mjs              telas de escolha dos poderes e habilidades de classe (campo escolha do JSON)
+  assistente.mjs            trocar de classe com reset, snapshot e Desfazer
   recursos.mjs              recursos de classe (usos por cena/rodada/descanso)
   imagens.mjs               imagens fixas da interface (atalhos e telas dos testes) e verificação
   atalhos.mjs               ponto único dos atalhos na barra de macros (hook renderHotbar)
@@ -246,11 +248,13 @@ Ainda não definidos nas regras, por isso a ficha só tem campo livre ou espaço
 - Não existem ainda os tipos de ator NPC e Ameaça: quem não tem dono jogador conta como NPC
 
 **Regras de combate e classes ([PROVISÓRIO] ou só infraestrutura):**
-- Proficiência em armadura em hierarquia (pesada inclui média e leve): `temProficienciaArmadura` em `module/combate.mjs`
+- Proficiência em armadura em hierarquia (pesada inclui média e leve), decidido pelo Mestre: `temProficienciaArmadura` em `module/combate.mjs`
 - A penalidade de duas armas vale só nos dois ataques do Agredir (não fica "até o próximo turno")
 - Vantagem/desvantagem por poderes: só a infraestrutura de flags (nenhum poder foi convertido)
 - Companheiro de Crime: a flag `flanqueadorPor` é lida, mas o poder não a grava sozinho
 - Atacar nas Sombras (Monge): só texto (o Teste de Resistência só tem Fortitude, Reflexos e Vontade)
 - Custo e ação dos 245 poderes e 44 habilidades vieram de heurística do texto: sempre editáveis na confirmação
-- Kiai segue o texto (1 vez por rodada, N dados), não um recurso de "Dados de Kiai"
-- Animais do Vínculo são atores `personagem` sem dono jogador (não existe o tipo NPC)
+- Kiai: 1 vez por rodada, N dados (confirmado pelo Mestre)
+- Animais do Vínculo (Anexo B) são PROVISÓRIOS e atores `personagem` sem dono jogador (não existe o tipo NPC); controlados pelos donos do patrulheiro
+- Assistente de nível: as escolhas de caminho feitas num salto de vários níveis só valem depois de confirmar (os poderes de caminho aparecem a partir da próxima subida)
+- Duas armas: a penalidade vale só nos dois ataques; no crítico multiplica também o atributo (dúvidas ainda abertas)

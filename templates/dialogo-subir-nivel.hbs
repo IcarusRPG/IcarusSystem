@@ -1,0 +1,56 @@
+<div class="ficha-icarus dialogo-subir-nivel">
+  {{#if vazio}}
+  <p>{{localize "ICARUS.Classe.SemClasse"}}</p>
+  {{else}}
+  <header class="passo-nivel"><b>{{passo}}</b></header>
+
+  <section class="bloco resumo-nivel">
+    <h3 class="titulo-painel">{{localize "ICARUS.Assistente.Resumo"}}</h3>
+    <p><b>PV {{resumo.pv}}</b> · <b>PM {{resumo.pm}}</b>{{#if resumo.monge}} <small>({{localize "ICARUS.Assistente.MongeSab"}})</small>{{/if}}</p>
+    {{#if resumo.patamar}}<p class="aviso-config">{{resumo.patamar}}</p>{{/if}}
+  </section>
+
+  <section class="bloco">
+    <h3 class="titulo-painel">{{localize "ICARUS.Assistente.Habilidades"}}</h3>
+    {{#each habilidades}}
+    <label class="chk habilidade-travada"><input type="checkbox" checked disabled> <b>{{rotulo}}</b>
+      <span class="icarus-tag">{{localize "ICARUS.Assistente.Obrigatorio"}}</span>
+      {{#if escolha}}<span class="icarus-tag">{{localize "ICARUS.Assistente.EscolhaAoConfirmar"}}</span>{{/if}}</label>
+    {{#if nova}}<div class="desc-habilidade">{{{descricao}}}</div>{{else}}<small class="dica">{{descricao}}</small>{{/if}}
+    {{else}}
+    <p class="dica">{{localize "ICARUS.Assistente.SemHabilidades"}}</p>
+    {{/each}}
+  </section>
+
+  <section class="bloco poderes-nivel">
+    <h3 class="titulo-painel">{{localize "ICARUS.Classe.PoderDeClasse"}}
+      {{#if vagas}}<span class="contador-vagas">{{marcados}} / {{vagas}}</span>{{/if}}</h3>
+    {{#if semPoder}}<p class="dica">{{semPoder}}</p>{{/if}}
+    {{#if vagas}}
+    <input type="search" name="busca" value="{{busca}}" placeholder="{{localize "ICARUS.Classe.Buscar"}}" aria-label="{{localize "ICARUS.Classe.Buscar"}}">
+    <div class="lista-poderes-nivel">
+      {{#each poderes}}
+      <fieldset class="grupo-nivel"><legend>{{nome}}</legend>
+        {{#each itens}}
+        <label class="opcao-poder{{#unless disponivel}} indisponivel{{/unless}}" data-busca="{{nome}} {{grupo}}"{{#if oculto}} hidden{{/if}}>
+          <input type="checkbox" name="poder" value="{{id}}"{{#if marcado}} checked{{/if}}{{#unless disponivel}} disabled{{/unless}}>
+          <span class="opcao-texto"><b>{{nome}}</b>{{#if custo}} <span class="custo">{{custo}} PM</span>{{/if}}
+            {{#if razao}}<small class="razao">✗ {{razao}}</small>{{/if}}
+            {{#if avisos}}<small class="aviso-pre">⚠ {{avisos}}</small>{{/if}}
+            <span class="desc-poder">{{{descricao}}}</span></span>
+        </label>
+        {{/each}}
+      </fieldset>
+      {{/each}}
+    </div>
+    {{/if}}
+  </section>
+
+  <footer class="rodape-config">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Testes.Cancelar"}}</button>
+    {{#unless primeiro}}<button type="button" class="btn" data-action="voltar">{{localize "ICARUS.Assistente.Voltar"}}</button>{{/unless}}
+    {{#if ultimo}}<button type="button" class="btn primario" data-action="confirmar">{{localize "ICARUS.Devocao.Confirmar"}}</button>
+    {{else}}<button type="button" class="btn primario" data-action="proximo">{{localize "ICARUS.Assistente.Proximo"}}</button>{{/if}}
+  </footer>
+  {{/if}}
+</div>

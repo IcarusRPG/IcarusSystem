@@ -80,6 +80,9 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     const d = s.pericias[p.chave];
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
     d.treino = limitar(Math.trunc(numero(d.treino)), 0, 2);
+    // Treino Extra / Treinamento Extra: treinada por poder de classe (derivado; remover o item desfaz)
+    d.treinadaPorPoder = deClasse.treinadas.has(p.chave) && d.treino < 1;
+    if (d.treinadaPorPoder) d.treino = 1;
     // Perícia Especializada / Perícia Refinada: treinada vira especialista (+4); ao remover o item, volta
     d.especialistaPorPoder = deClasse.especialistas.has(p.chave) && d.treino >= 1;
     if (d.especialistaPorPoder) d.treino = 2;

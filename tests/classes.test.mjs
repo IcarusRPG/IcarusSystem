@@ -71,8 +71,8 @@ test("Progressão: habilidades por nível e contador de poderes de classe", asyn
   assert.equal(poderesConcedidosAteNivel(ladino, 2), 1);
   assert.equal(poderesConcedidosAteNivel(ladino, 20), 19);
   assert.deepEqual(contagemDePoderes(ladino, 5, 2), { escolhidos: 2, total: 4, disponiveis: 2 });
-  // Guerreiro: o Anexo A marca poder também no 1º nível (20 no 20º) — divergência relatada
-  assert.equal(poderesConcedidosAteNivel(classePorId("guerreiro"), 20), 20);
+  // Todas as classes: 0 no 1º nível, 1 no 2º, 19 no 20º (inclusive o Guerreiro)
+  for (const c of CLASSES) assert.deepEqual([1, 2, 20].map(n => poderesConcedidosAteNivel(c, n)), [0, 1, 19], c.id);
   // Monge: Restrição de Equipamento (nível vazio no JSON) vem no 1º nível
   assert.ok(habilidadesAteNivel(classePorId("monge"), 1).some(h => h.id === "restricao-de-equipamento"));
 });
@@ -216,20 +216,27 @@ test("Duas armas por poder: Duas Armas do Ladino tira a penalidade; Mão Habilid
   assert.deepEqual(flagsDeDuasArmas([]), {});
 });
 
-test("11. Vínculo Selvagem: PV = 10 + metade do nível; Defesa = 10 + DES + bônus; dano + metade do nível", async () => {
+test("11/17. Vínculo Selvagem (Anexo B): 6 fichas; PV = 10 + ⌊nível/2⌋; Defesa = 10 + ⌊nível/2⌋ + defesaBonus", async () => {
   const { estatisticasDoVinculo } = await import("../module/classes-dados.mjs");
-  const vinculos = JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", "vinculos.json"), "utf8"));
-  assert.equal(vinculos.animais.length, 6);
-  const subs = classePorId("patrulheiro").habilidades.find(h => h.id === "vinculo-selvagem").subs.map(s => s.nome);
-  assert.deepEqual(vinculos.animais.map(a => a.nome), subs, "mesmos animais e ordem do Anexo A");
-  const lobo = vinculos.animais.find(a => a.id === "lobo");
-  const e = estatisticasDoVinculo(lobo, { nivel: 7, DES: 3, ataque: 6, fortitude: 2, reflexos: 5, vontade: 1 });
-  assert.equal(e.pv, 10 + 3);
-  assert.equal(e.defesaOutros, 3 + 2);
-  assert.deepEqual([e.ataques[0].bonusAtaque, e.ataques[0].bonusDano], [6, 3]);
-  const teixugo = estatisticasDoVinculo(vinculos.animais.find(a => a.id === "teixugo-gigante"), { nivel: 4, DES: 1, ataque: 2 });
-  assert.deepEqual(teixugo.ataques.map(a => a.bonusDano), [2, 0], "só a mordida soma a metade do nível");
-  assert.equal(estatisticasDoVinculo(vinculos.animais.find(a => a.id === "urso-negro"), { nivel: 1 }).rd, 2);
+  const { documentosDeVinculos } = await import("../module/dados-compendios.mjs");
+  const { PERICIAS } = await import("../module/config.mjs");
+  const dados = JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", "vinculos.json"), "utf8"));
+  assert.equal(dados.vinculos.length, 6);
+  const opcoes = classePorId("patrulheiro").habilidades.find(h => h.id === "vinculo-selvagem").escolha.opcoes;
+  assert.deepEqual(dados.vinculos.map(a => a.nome), opcoes, "mesmos animais e ordem da escolha");
+  const lobo = dados.vinculos.find(a => a.id === "lobo");
+  const e = estatisticasDoVinculo(lobo, { nivel: 7, DES: 3 });
+  assert.deepEqual([e.pv, e.defesa, e.bonusDano, e.cd], [13, 10 + 3 + 2, 3, 10 + 3 + 3]);
+  // Na ficha do animal: 10 + DES do animal + Outros = Defesa da regra
+  assert.equal(10 + lobo.atributos.DES + e.defesaOutros, e.defesa);
+  const atores = documentosDeVinculos(dados, PERICIAS).atores;
+  assert.equal(atores.length, 6);
+  const atorLobo = atores.find(a => a.flags["icarus-rpg"].id === "lobo");
+  assert.equal(atorLobo.system.pericias.luta.treino, 1, "a Luta é da ficha do animal");
+  assert.equal(atorLobo.system.atributos.DES.base, 2);
+  assert.ok(atores.every(a => a.flags["icarus-rpg"].provisorio));
+  const teixugo = atores.find(a => a.flags["icarus-rpg"].id === "teixugo-gigante");
+  assert.deepEqual(teixugo.items.filter(i => i.type === "arma").map(i => i.flags["icarus-rpg"].somaNivel), [true, false]);
 });
 
 test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pistolas e 11º nível", async () => {
@@ -247,6 +254,12 @@ test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pi
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set() }).ok, false);
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 10, tem: new Set(["duas-pistolas"]) }).ok, false);
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set(["duas-pistolas"]) }).ok, true);
+  assert.equal(mestre.repetivel, false, "Mestre da Recarga não é repetível");
+  assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set(["duas-pistolas", "mestre-da-recarga"]) }).jaEscolhido, true);
+  // Treino Extra (Guerreiro): repetível até 2 vezes
+  const g = classePorId("guerreiro"); const te = g.poderes.find(p => p.id === "treino-extra");
+  assert.equal(validarPoder(g, te, { ...base, nivel: 5, tem: new Set(["treino-extra"]), contagem: new Map([["treino-extra", 1]]) }).jaEscolhido, false);
+  assert.equal(validarPoder(g, te, { ...base, nivel: 5, tem: new Set(["treino-extra"]), contagem: new Map([["treino-extra", 2]]) }).jaEscolhido, true);
 });
 
 test("Samurai: Kiai pelo texto (1 dado no 1º, 2 no 5º, 3 no 9º, 4 no 13º, 5 no 17º)", () => {
@@ -273,4 +286,36 @@ test("Recursos de classe: frequência pelo texto (uma vez por cena/rodada/turno/
   assert.equal(frequenciaDoTexto("sem limite"), null);
   const folego = classePorId("guerreiro").habilidades.find(h => h.id === "recobrar-o-folego");
   assert.equal(frequenciaDoTexto(folego.descricao), "cena");
+});
+
+test("16. Telas de escolha: tipos e opções do JSON; caminhos batem com as subs; Treino Extra treina por item", async () => {
+  const tipos = new Set(["caminho", "atributo", "pericias", "tipo-dano", "terreno", "arma-exotica"]);
+  const comEscolha = CLASSES.flatMap(c => [...c.habilidades, ...c.poderes].filter(p => p.escolha).map(p => ({ c, p })));
+  for (const { c, p } of comEscolha) {
+    assert.ok(tipos.has(p.escolha.tipo), `${c.id}/${p.id}: tipo ${p.escolha.tipo}`);
+    if (p.escolha.tipo === "pericias") assert.ok(["nao-treinadas", "treinadas", "treinadas-nao-especialistas"].includes(p.escolha.filtro), p.id);
+    if (p.escolha.tipo === "caminho") assert.deepEqual(p.escolha.opcoes, p.subs.map(s => s.nome), `${c.id}/${p.id}: opções = subs`);
+  }
+  const nomes = comEscolha.map(x => x.p.nome);
+  for (const n of ["Senda do Combatente", "Caminho do Monge", "Vínculo Selvagem", "Perícia Refinada", "Aumento de Atributo", "Perícia Especializada", "Treino Extra", "Treinamento Extra", "Arma Exótica", "Corpo Temperado", "Especialista em Terreno"]) {
+    assert.ok(nomes.includes(n), `sem tela: ${n}`);
+  }
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  const treino = { type: "poder", system: {}, flags: { "icarus-rpg": { periciasTreinadas: ["atletismo", "cura"] } } };
+  const s = derivarPersonagem(sistemaCompleto({}), [treino]);
+  assert.deepEqual([s.pericias.atletismo.treino, s.pericias.cura.treino, s.pericias.luta.treino], [1, 1, 0]);
+});
+
+test("15. Assistente de nível: habilidades da linha, poder só a partir do 2º, PV/PM do nível (Monge)", async () => {
+  const { habilidadesDoNivel, nivelTemPoder, ganhoDoNivel } = await import("../module/classes-dados.mjs");
+  const ladino = classePorId("ladino");
+  const n5 = habilidadesDoNivel(ladino, 5);
+  assert.deepEqual(n5.map(h => [h.rotulo, h.habilidade?.id, h.nova]), [["Ataque Furtivo (2d6)", "ataque-furtivo", false], ["Faro para Perigo", "faro-para-perigo", true]]);
+  for (const c of CLASSES) assert.deepEqual([1, 2, 20].map(n => nivelTemPoder(c, n)), [false, true, true], c.id);
+  const monge = { pvInicial: 18, pvPorNivel: 4, pvAtributo: "CON", pmInicial: 4, pmPorNivel: 4, pmAtributo: "SAB", pmAtributoSoNoPrimeiroNivel: true };
+  assert.deepEqual(ganhoDoNivel(monge, { CON: 1, SAB: 3 }, 1), { pv: 19, pm: 7 });
+  assert.deepEqual(ganhoDoNivel(monge, { CON: 1, SAB: 3 }, 2), { pv: 5, pm: 4 });
+  const conjurador = { ...monge, pmAtributoSoNoPrimeiroNivel: false };
+  assert.equal(ganhoDoNivel(conjurador, { SAB: 3 }, 2).pm, 7);
 });

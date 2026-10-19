@@ -5,7 +5,7 @@
  *   Ladino). Condições (alvo desprevenido, flanqueado ou impedido; arma Leve/Ágil corpo a corpo
  *   ou à distância em alcance curto) só geram aviso. No crítico, os dados entram na multiplicação
  *   (o texto não diz o contrário).
- * - Duas Armas, Perícia Refinada e Perícia Infalível: classes-dados.mjs / poderes-comuns.mjs.
+ * - Duas Armas, Perícia Infalível: classes-dados.mjs. Perícia Refinada: tela de escolha (escolhas.mjs).
  */
 import { SISTEMA_ID } from "../config.mjs";
 import { dadosPorNivel } from "../classes-dados.mjs";
@@ -14,11 +14,11 @@ import { INICIO_DO_TURNO } from "../acoes.mjs";
 import { detectarFlanco } from "../regras-ataque.mjs";
 import { registrarLinhas, itemDeClasse } from "./comum.mjs";
 import { ACOES_DE_MECANICA } from "../classes.mjs";
-import { escolherPericiaRefinada } from "../poderes-comuns.mjs";
+import { resolverEscolha } from "../escolhas.mjs";
 
 ACOES_DE_MECANICA.set("ladino:refinada", actor => {
   const item = itemDeClasse(actor, "ladino", "pericia-refinada");
-  return item ? escolherPericiaRefinada(actor, item) : null;
+  return item ? resolverEscolha(actor, item) : null;
 });
 
 const loc = k => game.i18n.localize(k);

@@ -71,7 +71,7 @@ const PACOTES = {
   classes: docsClasses.classes,
   "habilidades-classe": docsClasses["habilidades-classe"],
   "poderes-classe": docsClasses["poderes-classe"],
-  vinculos: documentosDeVinculos(novos.vinculos, novos.classes)
+  vinculos: documentosDeVinculos(novos.vinculos, PERICIAS)
 };
 
 /** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */

@@ -10,11 +10,12 @@
  *   Força/Destreza no ataque e no dano.
  * - Rajada de Golpes (3º): 1 PM ao Agredir desarmado: ataque adicional sem atributo no dano.
  * - Restrição de equipamento: aviso ao empunhar arma ou vestir armadura/escudo (túnica pode).
- * - Defesa Interior e Passo Ligeiro: passivos (classes-dados.mjs). Atacar nas Sombras: só texto
- *   (o Teste de Resistência só tem Fortitude, Reflexos e Vontade).
+ * - Defesa Interior e Passo Ligeiro: passivos (classes-dados.mjs).
+ * - Atacar nas Sombras: botão que abre o Teste de Resistência já preenchido (Visão ou Audição,
+ *   CD = 10 + metade do nível + Sabedoria); para jogador, o card com a CD vai ao chat.
  */
 import { SISTEMA_ID, CATEGORIAS_ARMADURA_CORPO } from "../config.mjs";
-import { calcularAtaque } from "../combate.mjs";
+import { calcularAtaque, calcularCD } from "../combate.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, ATAQUES_ADICIONAIS, executarAtaque, itensDoAtor } from "../combate-chat.mjs";
 import { ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor } from "../classes.mjs";
 import { FIM_DA_CENA } from "../condicoes-foundry.mjs";
@@ -116,11 +117,23 @@ Hooks.on("updateItem", (item, mudancas, opcoes, userId) => {
   if (foundry.utils.hasProperty(mudancas, "system.empunhada") || foundry.utils.hasProperty(mudancas, "system.equipado")) avisarRestricao(item);
 });
 
+/* ---------------- Atacar nas Sombras ---------------- */
+ACOES_DE_MECANICA.set("monge:sombras", async actor => {
+  const cd = calcularCD(actor.system, "SAB").cd;
+  if (game.user.isGM) {
+    return game.icarus.testes.abrirResistencia({ tipos: ["visao", "audicao"], pericia: "visao", origem: loc("ICARUS.Monge.AtacarNasSombras"), cd });
+  }
+  return avisarNoChat(actor, fmt("ICARUS.Monge.SombrasChat", { nome: actor.name, cd }));
+});
+
 /* ---------------- Aba Classe ---------------- */
 registrarLinhas("monge", actor => {
   const linhas = [];
   if (itemDeClasse(actor, "monge", "punhos-disciplinados") && !actor.items.some(ehDesarmadoDoMonge)) {
     linhas.push({ id: "monge:desarmado", botao: true, rotulo: loc("ICARUS.Monge.CriarDesarmado") });
+  }
+  if (itemDeClasse(actor, "monge", "atacar-nas-sombras")) {
+    linhas.push({ id: "monge:sombras", botao: true, rotulo: loc("ICARUS.Monge.AtacarNasSombras"), info: fmt("ICARUS.Monge.SombrasInfo", { cd: calcularCD(actor.system, "SAB").cd }) });
   }
   if (actor.getFlag(SISTEMA_ID, "caminho") === "astral") {
     const ativo = bracosAtivos(actor);

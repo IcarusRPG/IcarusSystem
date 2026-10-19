@@ -7,9 +7,12 @@
  * Cada classe acrescenta as próprias linhas em module/classes/<classe>.mjs.
  */
 import { SISTEMA_ID } from "../config.mjs";
-import { CLASSES, classePorId, habilidadesComEscolha, escolhaDaHabilidade, ESCOLHA_SEGUE, iconeDaClasse } from "../classes-dados.mjs";
-import { MECANICAS_DE_CLASSE, ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor, itensDeClasse } from "../classes.mjs";
+import { CLASSES, classePorId, habilidadesComEscolha, escolhaDaHabilidade, ESCOLHA_SEGUE, iconeDaClasse, habilidadesAteNivel } from "../classes-dados.mjs";
+import { MECANICAS_DE_CLASSE, ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor, itensDeClasse, concederHabilidades } from "../classes.mjs";
+
+ACOES_DE_MECANICA.set("classe:conceder", actor => concederHabilidades(actor));
 import { usarPoder } from "../acoes.mjs";
+import { resolverEscolha, APOS_CAMINHO, pendentesDoAtor } from "../escolhas.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -57,28 +60,6 @@ async function criarItensDaEscolha(actor, classe, indice, baseId) {
   if (novos.length) await actor.createEmbeddedDocuments("Item", novos);
 }
 
-/** Diálogo da escolha permanente (um botão por subitem, com o texto). */
-export async function escolherSubitem(actor, classe, h) {
-  const content = `<div class="icarus-uso escolha-subitem"><p class="dica">${esc(loc("ICARUS.Classe.EscolhaPermanente"))}</p>
-    ${h.subs.map(s => `<details><summary><b>${esc(s.nome)}</b></summary><div>${s.descricao}</div></details>`).join("")}</div>`;
-  const indice = await foundry.applications.api.DialogV2.wait({
-    window: { title: h.nome },
-    content,
-    buttons: h.subs.map((s, i) => ({ action: String(i), label: s.nome })),
-    rejectClose: false
-  });
-  const i = Number(indice);
-  if (!Number.isInteger(i) || !h.subs[i]) return null;
-  await actor.setFlag(SISTEMA_ID, "escolhasClasse", { ...escolhasDoAtor(actor), [h.id]: i });
-  await DEPOIS_DA_ESCOLHA.get(h.id)?.(actor, i);
-  await criarItensDaEscolha(actor, classe, i, h.id);
-  await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    content: `<div class="icarus-rolagem icarus-lembrete"><p class="condicao-descricao">${esc(fmt("ICARUS.Classe.Escolheu", { nome: actor.name, habilidade: h.nome, escolha: h.subs[i].nome }))}</p></div>`
-  });
-  return i;
-}
-
 /** Depois de escolher (por habilidade): (actor, índice) => Promise. Ex.: Monge guarda o caminho. */
 export const DEPOIS_DA_ESCOLHA = new Map();
 
@@ -91,10 +72,18 @@ for (const [habId, baseId] of Object.entries(ESCOLHA_SEGUE)) {
   });
 }
 
-// Ação de cada escolha: "escolha:<habilidade>"
+// Ação de cada escolha: "escolha:<habilidade>" → tela de caminho (escolhas.mjs); depois dela, o
+// ator guarda o caminho, roda os ganchos da classe e cria o item da escolha
 for (const classe of CLASSES) {
   for (const h of habilidadesComEscolha(classe)) {
-    ACOES_DE_MECANICA.set(`escolha:${h.id}`, actor => escolherSubitem(actor, classe, h));
+    ACOES_DE_MECANICA.set(`escolha:${h.id}`, actor => {
+      const item = itemDeClasse(actor, classe.id, h.id);
+      return item ? resolverEscolha(actor, item) : null;
+    });
+    APOS_CAMINHO.set(h.id, async (actor, i) => {
+      await DEPOIS_DA_ESCOLHA.get(h.id)?.(actor, i);
+      await criarItensDaEscolha(actor, classe, i, h.id);
+    });
   }
 }
 
@@ -112,6 +101,15 @@ function linhasDaClasse(actor) {
     linhas.push(i === null
       ? { id: `escolha:${h.id}`, rotulo: fmt("ICARUS.Classe.EscolherSub", { habilidade: h.nome }), botao: true, ativo: true, info: loc("ICARUS.Classe.EscolhaPendente") }
       : { id: `escolha:${h.id}`, rotulo: h.nome, info: h.subs[i]?.nome });
+  }
+  // Habilidades do nível que faltam (assistente fechado sem confirmar)
+  const tem = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.id));
+  const faltam = habilidadesAteNivel(classe, actor.system.nivel).filter(h => !tem.has(`${classe.id}__${h.id}`));
+  if (faltam.length) linhas.push({ id: "classe:conceder", rotulo: loc("ICARUS.Assistente.ReceberHabilidades"), botao: true, ativo: true, info: faltam.map(h => h.nome).join(", ") });
+  // Escolhas pendentes (itens criados sem a escolha feita)
+  for (const item of pendentesDoAtor(actor)) {
+    if (habilidadesComEscolha(classe).some(h => item.flags?.[SISTEMA_ID]?.id === `${classe.id}__${h.id}`)) continue;
+    linhas.push({ id: `pendente:${item.id}`, rotulo: item.name, botao: true, ativo: true, info: loc("ICARUS.Classe.EscolhaPendente") });
   }
   linhas.push(...(LINHAS.get(classe.id)?.(actor) ?? []));
   // "Usar": habilidades e poderes de classe com ação (não passivos) ou com custo em PM
@@ -132,6 +130,7 @@ for (const classe of CLASSES) MECANICAS_DE_CLASSE.set(classe.id, linhasDaClasse)
 /** "usar:<itemId>" → usarPoder. A ficha chama ACOES_DE_MECANICA pelo id; o prefixo é tratado aqui. */
 export function acaoDaMecanica(id) {
   if (id?.startsWith("usar:")) return actor => usarPoder(actor, actor.items.get(id.slice(5)));
+  if (id?.startsWith("pendente:")) return actor => resolverEscolha(actor, actor.items.get(id.slice(9)));
   return ACOES_DE_MECANICA.get(id);
 }
 

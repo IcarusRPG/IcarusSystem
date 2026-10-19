@@ -7,6 +7,39 @@
   "sort": 100,
   "system": {
     "nivel": 1,
+    "tamanho": "medio",
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
     "classeConfig": {
       "manual": true
     },
@@ -15,14 +48,33 @@
       "max": 10
     },
     "defesa": {
-      "outros": 2
+      "outros": 0
     },
     "deslocamento": 12,
     "resistencias": {
       "rdGeral": 0
     },
-    "notas": "<p>Defesa +2; deslocamento 12 m. Mordida: 1d6 de dano de Perfuração. <em>Tática de Matilha:</em> se um aliado seu estiver adjacente ao alvo, o ataque do lobo é feito com vantagem. <em>Derrubar:</em> uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Caído.</p>",
-    "pericias": {}
+    "pericias": {
+      "luta": {
+        "treino": 1
+      },
+      "furtividade": {
+        "treino": 1
+      },
+      "olfato": {
+        "treino": 1
+      },
+      "audicao": {
+        "treino": 1
+      },
+      "iniciativa": {
+        "treino": 1
+      },
+      "reflexos": {
+        "treino": 1
+      }
+    },
+    "notas": "<p><strong>Vínculo Selvagem (valores provisórios).</strong></p>"
   },
   "prototypeToken": {
     "name": "Lobo",
@@ -55,7 +107,8 @@
         "bonusDano": 0,
         "quantidade": 1,
         "espacos": 0,
-        "preco": 0
+        "preco": 0,
+        "descricao": ""
       },
       "flags": {
         "icarus-rpg": {
@@ -64,6 +117,38 @@
         }
       },
       "_key": "!actors.items!fZ0ddD2MnNfvG6cB.gIUflnfIqbKKr4Ky"
+    },
+    {
+      "_id": "HvGIYNHgU9JDOCK2",
+      "name": "Tática de Matilha",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Se um aliado seu estiver adjacente ao alvo, o ataque do lobo é feito com vantagem.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!fZ0ddD2MnNfvG6cB.HvGIYNHgU9JDOCK2"
+    },
+    {
+      "_id": "oOGNeW8S7KeVTYuk",
+      "name": "Derrubar",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Caído.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!fZ0ddD2MnNfvG6cB.oOGNeW8S7KeVTYuk"
     }
   ],
   "effects": [],
@@ -72,7 +157,8 @@
       "id": "lobo",
       "vinculo": {
         "animal": "lobo"
-      }
+      },
+      "provisorio": true
     }
   },
   "_key": "!actors!fZ0ddD2MnNfvG6cB"

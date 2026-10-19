@@ -34,7 +34,7 @@ export function todosOsDocumentos() {
     condicoes: CONDICOES, macros: MACROS, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
   });
   const classes = documentosDeClasses({ classes: CLASSES, iconesClasses: ICONES_CLASSES, proficienciasClasses: PROFICIENCIAS_CLASSES });
-  return { armas: armas.armas, municoes: armas.municoes, ...novos, ...classes, vinculos: documentosDeVinculos(VINCULOS, CLASSES) };
+  return { armas: armas.armas, municoes: armas.municoes, ...novos, ...classes, vinculos: documentosDeVinculos(VINCULOS, PERICIAS) };
 }
 
 export async function popularCompendios() {
