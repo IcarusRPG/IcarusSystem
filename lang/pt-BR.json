@@ -1202,7 +1202,28 @@
       "DesfazerDica": "A classe foi trocada.",
       "DesfazerTexto": "Voltar a classe anterior ({n} item(ns), escolhas, perícias e proficiências)? O que a classe nova trouxe sai.",
       "SemSnapshot": "Não há troca de classe para desfazer.",
-      "Desfeito": "Troca de classe desfeita."
+      "Desfeito": "Troca de classe desfeita.",
+      "SubirTitulo": "Subir de nível",
+      "SubirPara": "Subir para o nível {nivel}",
+      "Passo": "Nível {nivel} de {ate}",
+      "Resumo": "Resumo",
+      "MongeSab": "Sabedoria soma só no 1º nível",
+      "NovoPatamar": "Novo patamar: {patamar} (libera novos Aumentos de Atributo)",
+      "Habilidades": "Habilidades de classe deste nível",
+      "Obrigatorio": "Obrigatório da progressão",
+      "EscolhaAoConfirmar": "escolha ao confirmar",
+      "Aprimoramento": "Aprimoramento de uma habilidade que você já tem (a descrição traz a progressão).",
+      "SemHabilidades": "Nenhuma habilidade nova neste nível.",
+      "SemPoderNoPrimeiro": "No 1º nível ninguém escolhe poder de classe (só recebe as habilidades).",
+      "SemPoderNoNivel": "Este nível não concede poder de classe.",
+      "Vagas": "{n} / {max}",
+      "MarqueN": "Marque no máximo {n}.",
+      "FaltamEscolhas": "Faltam {n} escolha(s) de poder neste nível. Seguir assim (ficam pendentes)?",
+      "Proximo": "Próximo nível",
+      "Voltar": "Voltar",
+      "ChegouAo": "{nome} chegou ao {nivel}º nível",
+      "DesceuNivel": "{nome}: o nível baixou; nenhum item de classe foi removido (remova à mão se quiser).",
+      "ReceberHabilidades": "Receber habilidades do nível"
     }
   }
 }

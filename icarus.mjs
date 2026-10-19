@@ -85,6 +85,7 @@ const TEMPLATES = [
   "dialogo-ataque.hbs",
   "dialogo-pericias-classe.hbs",
   "dialogo-poderes-classe.hbs",
+  "dialogo-subir-nivel.hbs",
   "telao/telao.hbs",
   "testes/tela.hbs",
   "testes/chat.hbs",

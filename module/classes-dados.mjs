@@ -320,3 +320,37 @@ export function maximoTiroCarregado(nivel, { calibrePesado = false, mosquete = f
 
 /** Dano desarmado do Monge (Punhos Disciplinados): 1d8; 1d10 no 9º; 1d12 no 17º. */
 export const danoDesarmadoDoMonge = nivel => (nivel >= 17 ? "1d12" : nivel >= 9 ? "1d10" : "1d8");
+
+/* ------------------------------ Assistente de nível ------------------------------ */
+
+/**
+ * Habilidades da linha de progressão de um nível: o rótulo da tabela ("Ataque Furtivo (2d6)") e a
+ * habilidade do JSON; nova = recebida neste nível (senão é o aprimoramento de uma que já tem).
+ */
+export function habilidadesDoNivel(classe, nivel) {
+  const linha = (classe?.progressao ?? []).find(p => p.nivel === nivel);
+  return (linha?.habilidades ?? []).map(rotulo => {
+    const base = normalizarNome(String(rotulo).replace(/\(.*?\)/g, ""));
+    const h = (classe.habilidades ?? []).find(x => normalizarNome(x.nome) === base) ?? null;
+    return { rotulo, habilidade: h, nova: !!h && nivelDaHabilidade(h) === nivel };
+  });
+}
+
+/** O nível concede escolha de poder de classe? (nunca no 1º) */
+export const nivelTemPoder = (classe, nivel) => nivel >= 2 && !!(classe?.progressao ?? []).find(p => p.nivel === nivel)?.poder;
+
+/**
+ * PV e PM ganhos ao chegar a um nível (fórmula da classe; Monge: atributo de PM só no 1º).
+ * @param {object} cc  classeConfig
+ * @param {{ FOR,DES,CON,INT,SAB,CAR }} atributos  totais
+ */
+export function ganhoDoNivel(cc, atributos, nivel) {
+  const at = k => (k ? Number(atributos?.[k]) || 0 : 0);
+  if (nivel <= 1) {
+    return { pv: (cc.pvInicial ?? 0) + at(cc.pvAtributo), pm: (cc.pmInicial ?? 0) + at(cc.pmAtributo) };
+  }
+  return {
+    pv: (cc.pvPorNivel ?? 0) + at(cc.pvAtributo),
+    pm: (cc.pmPorNivel ?? 0) + (cc.pmAtributoSoNoPrimeiroNivel ? 0 : at(cc.pmAtributo))
+  };
+}

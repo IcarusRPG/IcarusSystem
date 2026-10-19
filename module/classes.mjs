@@ -122,8 +122,9 @@ export async function aplicarClasse(actor, novoId) {
   }
   await actor.update(dados);
   const { DialogoPericiasClasse } = await import("./sheets/dialogo-pericias-classe.mjs");
-  new DialogoPericiasClasse(actor, nova).render(true);
-  await concederHabilidades(actor);
+  const { abrirAssistenteDeNivel } = await import("./sheets/dialogo-subir-nivel.mjs");
+  // Depois das perícias, o assistente percorre do 1º nível ao atual (habilidades e poderes)
+  new DialogoPericiasClasse(actor, nova, { aoFechar: () => abrirAssistenteDeNivel(actor, { de: 0, ate: actor.system.nivel }) }).render(true);
   return true;
 }
 
@@ -142,12 +143,19 @@ export async function classeLivre(actor, texto) {
  * Descer de nível não remove nada (o Mestre decide).
  */
 export function registrarClasses() {
-  Hooks.on("updateActor", async (actor, mudancas, opcoes, userId) => {
-    if (userId !== game.user.id || !foundry.utils.hasProperty(mudancas, "system.nivel")) return;
-    if (!classeDoAtor(actor)) return;
-    await concederHabilidades(actor);
-    const c = contadorDePoderes(actor);
-    if (c?.disponiveis) ui.notifications.info(fmt("ICARUS.Classe.PoderesParaEscolher", { nome: actor.name, n: c.disponiveis }));
+  // Subir o nível (campo da ficha, botão + ou macro) com classe do sistema: o nível só muda pelo
+  // assistente (que concede as habilidades e os poderes). O resto da atualização segue normal.
+  Hooks.on("preUpdateActor", (actor, mudancas, opcoes) => {
+    if (opcoes.icarusAssistente || !classeDoAtor(actor)) return;
+    const novo = foundry.utils.getProperty(mudancas, "system.nivel");
+    if (novo === undefined || novo <= actor.system.nivel) return;
+    delete mudancas.system.nivel;
+    const de = actor.system.nivel;
+    import("./sheets/dialogo-subir-nivel.mjs").then(m => m.abrirAssistenteDeNivel(actor, { de, ate: novo }));
+  });
+  Hooks.on("updateActor", (actor, mudancas, opcoes, userId) => {
+    if (userId !== game.user.id || opcoes.icarusAssistente || !classeDoAtor(actor)) return;
+    if (foundry.utils.hasProperty(mudancas, "system.nivel")) ui.notifications.info(fmt("ICARUS.Assistente.DesceuNivel", { nome: actor.name }));
   });
 }
 

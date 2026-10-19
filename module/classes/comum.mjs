@@ -7,8 +7,10 @@
  * Cada classe acrescenta as próprias linhas em module/classes/<classe>.mjs.
  */
 import { SISTEMA_ID } from "../config.mjs";
-import { CLASSES, classePorId, habilidadesComEscolha, escolhaDaHabilidade, ESCOLHA_SEGUE, iconeDaClasse } from "../classes-dados.mjs";
-import { MECANICAS_DE_CLASSE, ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor, itensDeClasse } from "../classes.mjs";
+import { CLASSES, classePorId, habilidadesComEscolha, escolhaDaHabilidade, ESCOLHA_SEGUE, iconeDaClasse, habilidadesAteNivel } from "../classes-dados.mjs";
+import { MECANICAS_DE_CLASSE, ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor, itensDeClasse, concederHabilidades } from "../classes.mjs";
+
+ACOES_DE_MECANICA.set("classe:conceder", actor => concederHabilidades(actor));
 import { usarPoder } from "../acoes.mjs";
 import { resolverEscolha, APOS_CAMINHO, pendentesDoAtor } from "../escolhas.mjs";
 
@@ -100,6 +102,10 @@ function linhasDaClasse(actor) {
       ? { id: `escolha:${h.id}`, rotulo: fmt("ICARUS.Classe.EscolherSub", { habilidade: h.nome }), botao: true, ativo: true, info: loc("ICARUS.Classe.EscolhaPendente") }
       : { id: `escolha:${h.id}`, rotulo: h.nome, info: h.subs[i]?.nome });
   }
+  // Habilidades do nível que faltam (assistente fechado sem confirmar)
+  const tem = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.id));
+  const faltam = habilidadesAteNivel(classe, actor.system.nivel).filter(h => !tem.has(`${classe.id}__${h.id}`));
+  if (faltam.length) linhas.push({ id: "classe:conceder", rotulo: loc("ICARUS.Assistente.ReceberHabilidades"), botao: true, ativo: true, info: faltam.map(h => h.nome).join(", ") });
   // Escolhas pendentes (itens criados sem a escolha feita)
   for (const item of pendentesDoAtor(actor)) {
     if (habilidadesComEscolha(classe).some(h => item.flags?.[SISTEMA_ID]?.id === `${classe.id}__${h.id}`)) continue;

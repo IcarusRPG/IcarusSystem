@@ -306,3 +306,16 @@ test("16. Telas de escolha: tipos e opções do JSON; caminhos batem com as subs
   const s = derivarPersonagem(sistemaCompleto({}), [treino]);
   assert.deepEqual([s.pericias.atletismo.treino, s.pericias.cura.treino, s.pericias.luta.treino], [1, 1, 0]);
 });
+
+test("15. Assistente de nível: habilidades da linha, poder só a partir do 2º, PV/PM do nível (Monge)", async () => {
+  const { habilidadesDoNivel, nivelTemPoder, ganhoDoNivel } = await import("../module/classes-dados.mjs");
+  const ladino = classePorId("ladino");
+  const n5 = habilidadesDoNivel(ladino, 5);
+  assert.deepEqual(n5.map(h => [h.rotulo, h.habilidade?.id, h.nova]), [["Ataque Furtivo (2d6)", "ataque-furtivo", false], ["Faro para Perigo", "faro-para-perigo", true]]);
+  for (const c of CLASSES) assert.deepEqual([1, 2, 20].map(n => nivelTemPoder(c, n)), [false, true, true], c.id);
+  const monge = { pvInicial: 18, pvPorNivel: 4, pvAtributo: "CON", pmInicial: 4, pmPorNivel: 4, pmAtributo: "SAB", pmAtributoSoNoPrimeiroNivel: true };
+  assert.deepEqual(ganhoDoNivel(monge, { CON: 1, SAB: 3 }, 1), { pv: 19, pm: 7 });
+  assert.deepEqual(ganhoDoNivel(monge, { CON: 1, SAB: 3 }, 2), { pv: 5, pm: 4 });
+  const conjurador = { ...monge, pmAtributoSoNoPrimeiroNivel: false };
+  assert.equal(ganhoDoNivel(conjurador, { SAB: 3 }, 2).pm, 7);
+});

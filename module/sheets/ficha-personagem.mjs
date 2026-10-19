@@ -577,8 +577,14 @@ export class FichaPersonagem extends ActorSheet {
     const s = actor.system;
     const itemDe = () => actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
     switch (acao) {
-      case "nivel":
-        return actor.update({ "system.nivel": limitar(s.nivel + Number(el.dataset.delta), 1, 25) });
+      case "nivel": {
+        const novo = limitar(s.nivel + Number(el.dataset.delta), 1, 25);
+        if (novo > s.nivel && classePorId(actor._source.system.identidade.classe)) {
+          const { abrirAssistenteDeNivel } = await import("./dialogo-subir-nivel.mjs");
+          return abrirAssistenteDeNivel(actor, { de: s.nivel, ate: novo });
+        }
+        return actor.update({ "system.nivel": novo });
+      }
       case "recurso": {
         const k = el.dataset.recurso;
         return actor.update({ [`system.${k}.value`]: limitar(s[k].value + Number(el.dataset.delta), 0, s[k].max) });

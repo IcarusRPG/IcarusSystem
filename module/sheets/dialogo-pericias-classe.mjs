@@ -14,10 +14,12 @@ const loc = k => game.i18n.localize(k);
 const nome = chave => loc(`ICARUS.Pericias.${chave}`);
 
 export class DialogoPericiasClasse extends HandlebarsApplicationMixin(ApplicationV2) {
-  constructor(actor, classe, options = {}) {
+  constructor(actor, classe, { aoFechar = null, ...options } = {}) {
     super({ id: `icarus-pericias-classe-${actor.id}`, ...options });
     this.actor = actor;
     this.classe = classe;
+    /** Chamado uma vez ao fechar (confirmando ou não): abre o assistente de nível. */
+    this.aoFechar = aoFechar;
     this.obrigatorias = parseObrigatorias(classe.pericias.obrigatorias);
     // Escolha das obrigatórias "A ou B": a primeira que ainda não é treinada
     this.escolhaObrigatoria = this.obrigatorias.map(o => (o.tipo === "escolha" ? (o.opcoes.find(k => !this._treinada(k)) ?? o.opcoes[0]) : o.chave));
@@ -100,5 +102,12 @@ export class DialogoPericiasClasse extends HandlebarsApplicationMixin(Applicatio
 
   static _aoCancelar() {
     this.close();
+  }
+
+  _onClose(options) {
+    super._onClose?.(options);
+    const fn = this.aoFechar;
+    this.aoFechar = null;
+    fn?.();
   }
 }
