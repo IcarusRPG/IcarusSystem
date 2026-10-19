@@ -796,3 +796,8 @@ body.game {
 .ficha-icarus .prof-chip:disabled { cursor: default; opacity: .85; }
 .ficha-icarus .prof-chk { font-size: 13px; gap: 4px; }
 .ficha-icarus .aviso-prof { margin: 4px 0 0; font-size: 13px; color: var(--ic-ouro-claro); }
+
+/* --- d20 com vantagem/desvantagem --- */
+.icarus-rolagem .d20-par { display: inline-flex; gap: 4px; }
+.icarus-rolagem .d20.descartado { opacity: .35; filter: grayscale(.6); }
+.icarus-rolagem .rolagem-modo { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ic-ciano-titulo); }

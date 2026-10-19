@@ -3,9 +3,10 @@
   {{#if linhas.length}}<ul class="condicao-avisos">{{#each linhas}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
   {{#if d20}}
   <div class="rolagem-dados">
-    <span class="d20"><span class="moldura hex"></span><span class="miolo hex">{{d20}}</span></span>
+    {{> "systems/icarus-rpg/templates/chat/partes-d20.hbs"}}
     <span class="rolagem-formula">1d20</span>
   </div>
+  {{#if modoRotulo}}<div class="rolagem-modo">{{modoRotulo}}</div>{{/if}}
   {{/if}}
   {{#if total}}<div class="rolagem-dados"><span class="rolagem-formula">{{localize "ICARUS.Lembrete.Resultado"}}</span><span class="rolagem-total">{{total}}</span></div>{{/if}}
   {{#if texto}}<p class="condicao-descricao">{{texto}}</p>{{/if}}

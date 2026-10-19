@@ -3,7 +3,7 @@ import {
   PROFICIENCIAS_ARMA, CATEGORIAS_ARMADURA_CORPO
 } from "../config.mjs";
 import { numero, limitar, comSinal, semMais } from "../regras.mjs";
-import { rolarPericia, rolarAtributo } from "../rolls.mjs";
+import { rolarPericia, rolarAtributo, modoDoEvento } from "../rolls.mjs";
 import { RACAS, racaPorId, iconeDaRaca, resolverRaca } from "../data/racas.mjs";
 import { trocarRaca, reaplicarRaca, refazerEscolhas, ehPoderRacialAuto, escolhasGuardadas } from "../racas.mjs";
 import { DialogoNivel } from "./dialogo-nivel.mjs";
@@ -175,7 +175,7 @@ export class FichaPersonagem extends ActorSheet {
         outrosDica: dica(`${k}.outros`),
         comEfeito: !!origem,
         total: comSinal(d.total),
-        rolarDica: [rolar, origem].filter(Boolean).join("\n")
+        rolarDica: [rolar, origem, loc("ICARUS.Rolagem.DicaAtalhos")].filter(Boolean).join("\n")
       };
     });
     ctx.opcoesAtributo = opcoesAtributo;
@@ -433,8 +433,9 @@ export class FichaPersonagem extends ActorSheet {
     super.activateListeners(html);
     // Rolar é permitido a quem é dono da ficha, mesmo com ela travada
     if (this.actor.isOwner) {
-      html.on("click", "[data-action='rolar-pericia']", ev => rolarPericia(this.actor, ev.currentTarget.dataset.pericia));
-      html.on("click", "[data-action='rolar-atributo']", ev => rolarAtributo(this.actor, ev.currentTarget.dataset.atributo));
+      // Shift = vantagem, Ctrl = desvantagem
+      html.on("click", "[data-action='rolar-pericia']", ev => rolarPericia(this.actor, ev.currentTarget.dataset.pericia, modoDoEvento(ev)));
+      html.on("click", "[data-action='rolar-atributo']", ev => rolarAtributo(this.actor, ev.currentTarget.dataset.atributo, modoDoEvento(ev)));
       // Armas: atacar, dano e recarregar também valem com a ficha travada
       const armaDe = el => this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
       html.on("click", "[data-action='arma-atacar']", ev => {
@@ -510,7 +511,7 @@ export class FichaPersonagem extends ActorSheet {
       case "raca-escolhas":
         return refazerEscolhas(actor);
       case "morte-rolar":
-        return rolarTesteDeMorte(actor);
+        return rolarTesteDeMorte(actor, modoDoEvento(event));
       case "morte-dano":
         return registrarDanoEmMorrendo(actor, el.dataset.critico === "1");
       case "morte-estabilizar":

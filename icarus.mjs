@@ -26,6 +26,7 @@ import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
+import { registrarIniciativa } from "./module/iniciativa.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
@@ -53,6 +54,7 @@ const TEMPLATES = [
   "dialogo-nivel.hbs",
   "dialogo-escolhas-raca.hbs",
   "chat/rolagem.hbs",
+  "chat/partes-d20.hbs",
   "chat/ataque.hbs",
   "chat/dano.hbs",
   "chat/aviso.hbs",
@@ -103,6 +105,7 @@ Hooks.once("init", () => {
 
   // Iniciativa = 1d20 + total da perícia Iniciativa
   CONFIG.Combat.initiative = { formula: "1d20 + @pericias.iniciativa.total", decimals: 0 };
+  registrarIniciativa();
 
   // Efeitos de itens passam para o personagem sem serem copiados
   CONFIG.ActiveEffect.legacyTransferral = false;

@@ -7,8 +7,9 @@ import { fileURLToPath } from "node:url";
 import { dadosDaArmadura } from "../module/dados-compendios.mjs";
 import {
   usandoArmadura, tipoArmadura, armaduraLeveOuNenhuma, vestindoTunica, temProficienciaArmadura, temProficienciaArma,
-  penalidadeDeAtaque, calcularAtaque
+  penalidadeDeAtaque, calcularAtaque, modoD20, escolherD20, vantagemDasFlags, minimoDasFlags
 } from "../module/combate.mjs";
+import { resultadoTesteMorte } from "../module/morte.mjs";
 import { derivarPersonagem } from "../module/derivar.mjs";
 import { sistemaCompleto } from "./simulacao.mjs";
 
@@ -73,4 +74,41 @@ test("Proficiência em armas: simples sempre; marciais Leves/Ágeis (Ladino); ex
   assert.equal(temProficienciaArma({ armas: ["exoticas-corte"] }, arma("Nunchaku")), false);
   assert.equal(temProficienciaArma({ armas: ["fogo"] }, arma("Pistola")), true);
   assert.equal(temProficienciaArma({ armas: ["marciais"] }, arma("Pistola")), false);
+});
+
+test("Vantagem fica com o maior, desvantagem com o menor; juntas se anulam; não acumulam", () => {
+  assert.equal(modoD20({ vantagem: true }), "vantagem");
+  assert.equal(modoD20({ desvantagem: true }), "desvantagem");
+  assert.equal(modoD20({ vantagem: true, desvantagem: true }), "normal");
+  assert.equal(escolherD20([7, 15], "vantagem").d20, 15);
+  assert.equal(escolherD20([7, 15], "desvantagem").d20, 7);
+  assert.deepEqual(escolherD20([7, 15], "vantagem").dados, [{ valor: 7, mantido: false }, { valor: 15, mantido: true }]);
+  // Várias fontes de vantagem continuam sendo 2d20 (o modo é o mesmo)
+  const flags = { vantagem: { ataque: true, todos: true }, desvantagem: {} };
+  assert.deepEqual(vantagemDasFlags(flags, ["ataque"]), { vantagem: true, desvantagem: false });
+  assert.equal(modoD20(vantagemDasFlags(flags, ["ataque"])), "vantagem");
+  assert.deepEqual(vantagemDasFlags({ vantagem: { pericia: { luta: true } } }, ["pericia.luta"]), { vantagem: true, desvantagem: false });
+  assert.deepEqual(vantagemDasFlags({ vantagem: { pericia: { luta: true } } }, ["pericia.acrobacia"]), { vantagem: false, desvantagem: false });
+});
+
+test("20 e 1 naturais contam pelo dado que ficou", () => {
+  assert.equal(escolherD20([20, 3], "desvantagem").natural, 3);
+  assert.equal(escolherD20([1, 20], "vantagem").natural, 20);
+  assert.equal(escolherD20([1, 20], "desvantagem").natural, 1);
+});
+
+test("Mínimo do d20 (Perícia Infalível) vale para o dado mantido", () => {
+  assert.deepEqual(escolherD20([4], "normal", 10), { natural: 4, d20: 10, dados: [{ valor: 4, mantido: true }], minimoAplicado: true });
+  assert.equal(escolherD20([4, 8], "vantagem", 10).d20, 10);
+  assert.equal(escolherD20([4, 14], "vantagem", 10).d20, 14);
+  assert.equal(minimoDasFlags({ minimoD20: { pericia: { reflexos: 10 } } }, ["pericia.reflexos"]), 10);
+  assert.equal(minimoDasFlags({ minimoD20: { pericia: { reflexos: 10 } } }, ["pericia.luta"]), null);
+});
+
+test("Teste de morte com vantagem: faixas fixas pelo dado mantido", () => {
+  const comVantagem = escolherD20([5, 20], "vantagem");
+  assert.equal(resultadoTesteMorte(comVantagem.d20, {}).resultado, "reanima");
+  const comDesvantagem = escolherD20([12, 1], "desvantagem");
+  assert.equal(resultadoTesteMorte(comDesvantagem.d20, {}).resultado, "duasFalhas");
+  assert.equal(resultadoTesteMorte(escolherD20([9, 10], "vantagem").d20, {}).resultado, "sucesso");
 });

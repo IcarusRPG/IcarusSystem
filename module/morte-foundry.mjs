@@ -7,6 +7,8 @@
  *   Confuso ou Morrendo, o Mestre recebe um card com botões. Nada é aplicado sozinho.
  */
 import { SISTEMA_ID } from "./config.mjs";
+import { rolarD20 } from "./combate.mjs";
+import { vantagemDaRolagem, dadosDoCard } from "./rolls.mjs";
 import { resultadoTesteMorte, danoEmMorrendo } from "./morte.mjs";
 import { aplicarCondicao, removerCondicao } from "./condicoes-foundry.mjs";
 import { rolarDanoAvulso } from "./dano.mjs";
@@ -38,15 +40,17 @@ async function estabilizar(actor) {
 }
 
 /** Rola o teste de morte e aplica o resultado. */
-export async function rolarTesteDeMorte(actor) {
-  const roll = await new Roll("1d20").evaluate();
-  const d20 = roll.total;
+export async function rolarTesteDeMorte(actor, opcoes = {}) {
+  // Vantagem/desvantagem valem no teste de morte (faixas fixas, pelo dado mantido)
+  const rd = await rolarD20(vantagemDaRolagem(actor, ["morte"], opcoes));
+  const roll = rd.roll;
+  const d20 = rd.d20;
   const r = resultadoTesteMorte(d20, actor.system.morte);
   await actor.update({ "system.morte.sucessos": r.sucessos, "system.morte.falhas": r.falhas });
   const content = await renderTemplate(`${T}/lembrete.hbs`, {
     titulo: game.i18n.format("ICARUS.Morte.TesteDe", { nome: actor.name }),
     texto: `${loc(`ICARUS.Morte.Resultado.${r.resultado}`)} · ${game.i18n.format("ICARUS.Morte.Contagem", { s: r.sucessos, f: r.falhas })}`,
-    d20, critico: d20 === 20, falha: d20 === 1
+    ...dadosDoCard(rd), critico: d20 === 20, falha: d20 === 1
   });
   await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls: [roll], sound: CONFIG.sounds.dice });
   if (r.reanima) await actor.update({ "system.pv.value": 1 });

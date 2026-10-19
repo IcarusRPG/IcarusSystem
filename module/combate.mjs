@@ -399,3 +399,67 @@ export function calcularCD(system, atributoChave) {
   const mod = numero(system?.atributos?.[atributoChave]?.total);
   return { cd: 10 + metade + mod, nivel, metade, mod, semNivel };
 }
+
+/* ------------------------------ d20: vantagem e desvantagem ------------------------------ */
+
+/**
+ * Modo da rolagem: vantagem e desvantagem não acumulam (várias fontes = 2d20) e,
+ * juntas, se anulam (1d20).
+ * @returns {"normal"|"vantagem"|"desvantagem"}
+ */
+export function modoD20({ vantagem = false, desvantagem = false } = {}) {
+  if (vantagem && desvantagem) return "normal";
+  return vantagem ? "vantagem" : desvantagem ? "desvantagem" : "normal";
+}
+
+/**
+ * Dado mantido entre os rolados. 20 e 1 naturais contam pelo dado que ficou.
+ * minimo (Perícia Infalível): d20 menor que o mínimo conta como o mínimo — vale para o dado mantido.
+ * @param {number[]} valores  1 ou 2 d20
+ * @returns {{ natural: number, d20: number, dados: {valor:number, mantido:boolean}[], minimoAplicado: boolean }}
+ */
+export function escolherD20(valores, modo = "normal", minimo = null) {
+  let indice = 0;
+  if (valores.length > 1 && modo === "vantagem") indice = valores[1] > valores[0] ? 1 : 0;
+  if (valores.length > 1 && modo === "desvantagem") indice = valores[1] < valores[0] ? 1 : 0;
+  const natural = valores[indice];
+  const d20 = minimo && natural < minimo ? minimo : natural;
+  return { natural, d20, dados: valores.map((valor, i) => ({ valor, mantido: i === indice })), minimoAplicado: d20 !== natural };
+}
+
+/**
+ * Vantagem/desvantagem vindas de Efeitos Ativos (flags["icarus-rpg"].vantagem.<escopo> e
+ * .desvantagem.<escopo>). Escopos: "ataque", "pericia.<chave>", "resistencia.<chave>", "morte",
+ * "iniciativa" e "todos" (este vale para qualquer rolagem).
+ * @param {object} flags  flags["icarus-rpg"] do ator
+ * @param {string[]} escopos
+ */
+export function vantagemDasFlags(flags, escopos = []) {
+  const ler = (tipo, escopo) => !!escopo.split(".").reduce((o, p) => o?.[p], flags?.[tipo]);
+  const todos = [...escopos, "todos"];
+  return {
+    vantagem: todos.some(e => ler("vantagem", e)),
+    desvantagem: todos.some(e => ler("desvantagem", e))
+  };
+}
+
+/** Mínimo do d20 vindo de flags (flags["icarus-rpg"].minimoD20.<escopo>), ex.: Perícia Infalível. */
+export function minimoDasFlags(flags, escopos = []) {
+  const valores = escopos.map(e => Number(e.split(".").reduce((o, p) => o?.[p], flags?.minimoD20))).filter(v => v > 0);
+  return valores.length ? Math.max(...valores) : null;
+}
+
+/**
+ * Rola o d20 com vantagem/desvantagem (Roll real do Foundry: 2d20kh / 2d20kl / 1d20) + bônus.
+ * O total é recalculado com o dado mantido (e o mínimo, se houver).
+ * @returns {Promise<{ roll, modo, d20, natural, dados, total, bonus, minimoAplicado }>}
+ */
+export async function rolarD20({ vantagem = false, desvantagem = false, bonus = 0, minimo = null } = {}) {
+  const modo = modoD20({ vantagem, desvantagem });
+  const termo = modo === "vantagem" ? "2d20kh" : modo === "desvantagem" ? "2d20kl" : "1d20";
+  const b = numero(bonus);
+  const roll = await new Roll(`${termo} ${b < 0 ? "-" : "+"} ${Math.abs(b)}`).evaluate();
+  const valores = (roll.dice[0]?.results ?? []).map(r => r.result);
+  const escolha = escolherD20(valores.length ? valores : [roll.total - b], modo, minimo);
+  return { roll, modo, ...escolha, bonus: b, total: escolha.d20 + b };
+}

@@ -89,7 +89,7 @@ export function resultadoInicial(participante) {
  * d20 entre 1 e 20 e total = d20 + bônus da sessão (o cliente não escolhe o próprio bônus).
  * @returns {{ estado?: object, erro?: string }}
  */
-export function registrarRolagem(estado, { participanteId, d20, total }, usuario, opcoes = {}) {
+export function registrarRolagem(estado, { participanteId, d20, total, dados = null }, usuario, opcoes = {}) {
   if (!estado || estado.status !== "rolando") return { erro: "sessao" };
   const p = estado.participantes.find(x => x.id === participanteId);
   if (!p) return { erro: "participante" };
@@ -101,7 +101,9 @@ export function registrarRolagem(estado, { participanteId, d20, total }, usuario
   if (Number(total) !== dado + p.bonus) return { erro: "total" };
   const novo = structuredClone(estado);
   novo.participantes.find(x => x.id === participanteId).resultado = {
-    d20: dado, bonus: p.bonus, total: dado + p.bonus, rolouPor: usuario.id, peloMestre: permissao.peloMestre, falhaAuto: null
+    d20: dado, bonus: p.bonus, total: dado + p.bonus, rolouPor: usuario.id, peloMestre: permissao.peloMestre, falhaAuto: null,
+    // Com vantagem/desvantagem: os dois d20 (o mantido marcado), só para exibir
+    dados: Array.isArray(dados) && dados.length > 1 ? dados.map(x => ({ valor: Number(x.valor), mantido: !!x.mantido })) : null
   };
   return { estado: novo };
 }

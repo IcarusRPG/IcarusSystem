@@ -7,7 +7,7 @@
 import { SISTEMA_ID } from "../config.mjs";
 import { bonusDoItem, itensDeTeste } from "../testes.mjs";
 import { iniciarSessao, montarParticipante, resolverUuid, rotuloDoItem, textoDosDetalhes } from "../testes-sessao.mjs";
-import { candidatos, gruposDeCandidatos, uuidsSelecionados, filtrarLinhas } from "./participantes.mjs";
+import { candidatos, gruposDeCandidatos, uuidsSelecionados, filtrarLinhas, opcoesDeModo } from "./participantes.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const loc = k => game.i18n.localize(k);
@@ -34,6 +34,8 @@ export class TesteOpostoConfig extends HandlebarsApplicationMixin(ApplicationV2)
   lados = { A: { uuid: null, item: null }, B: { uuid: null, item: null } };
   abertos = { A: { atributos: false, pericias: false }, B: { atributos: false, pericias: false } };
   buscas = { A: "", B: "" };
+  /** Vantagem/desvantagem escolhida pelo Mestre para cada lado. */
+  modos = { A: "normal", B: "normal" };
   _rolagens = {};
 
   /** Pronto para iniciar: os dois lados com personagem e item, e participantes diferentes. */
@@ -66,6 +68,7 @@ export class TesteOpostoConfig extends HandlebarsApplicationMixin(ApplicationV2)
         personagem: actor ? lista.find(c => c.uuid === escolha.uuid) : null,
         chip: escolhido ? `${loc(`ICARUS.Testes.Tipo.${escolha.item.tipo}`)}: ${escolhido.rotulo}` : "",
         chipBonus: escolhido?.bonus ?? "",
+        modos: opcoesDeModo(this.modos[lado]),
         nos: [
           { id: "atributos", rotulo: loc("ICARUS.Testes.Atributos"), aberto: this.abertos[lado].atributos, folhas: itens.atributos.map(folha) },
           { id: "pericias", rotulo: loc("ICARUS.Testes.Pericias"), aberto: this.abertos[lado].pericias, folhas: itens.pericias.map(folha) }
@@ -100,6 +103,11 @@ export class TesteOpostoConfig extends HandlebarsApplicationMixin(ApplicationV2)
       if (m) {
         this.lados[m[1]].uuid = ev.target.value;
         return this._rerender();
+      }
+      m = nome.match(/^modo-([AB])$/);
+      if (m) {
+        this.modos[m[1]] = ev.target.value;
+        return;
       }
       m = nome.match(/^item-([AB])$/);
       if (m) {
@@ -145,7 +153,7 @@ export class TesteOpostoConfig extends HandlebarsApplicationMixin(ApplicationV2)
 
   static _aoIniciar() {
     if (!this.completo) return;
-    const participantes = LADOS.map((lado, i) => montarParticipante(this.lados[lado].uuid, this.lados[lado].item, i));
+    const participantes = LADOS.map((lado, i) => montarParticipante(this.lados[lado].uuid, this.lados[lado].item, i, { modo: this.modos[lado] }));
     if (participantes.some(p => !p)) return ui.notifications.warn(loc("ICARUS.Testes.AtorNaoEncontrado"));
     iniciarSessao({ tipo: "oposto", participantes });
     this.close();

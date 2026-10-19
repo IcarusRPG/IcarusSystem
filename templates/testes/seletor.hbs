@@ -11,6 +11,7 @@
         <img src="{{img}}" alt="" width="32" height="32">
         <span class="seletor-nome">{{nome}}{{#if jogadores}}<small>{{jogadores}}</small>{{/if}}</span>
         {{#if naCena}}<span class="icarus-tag">{{localize "ICARUS.Testes.Token"}}</span>{{/if}}
+        {{#if modos}}<select class="sel-modo" name="modo-alvo" data-uuid="{{uuid}}" aria-label="{{localize "ICARUS.Testes.ModoRolagem"}} — {{nome}}">{{#each modos}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}</select>{{/if}}
       </label>
       {{/each}}
     </fieldset>

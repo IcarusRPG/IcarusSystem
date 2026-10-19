@@ -17,6 +17,8 @@ import { SISTEMA_ID, PERICIAS, ICONE_PADRAO } from "./config.mjs";
 import { registrarRolagem, resolver, rolarNovamente, resultadoInicial, todosRolaram, podeRolar, bonusDoItem } from "./testes.mjs";
 import { TelaTeste } from "./apps/teste-tela.mjs";
 import { abrirPainelDoMestre } from "./sheets/painel-condicoes.mjs";
+import { rolarD20, modoD20, minimoDasFlags } from "./combate.mjs";
+import { vantagemDaRolagem, escoposDaPericia } from "./rolls.mjs";
 
 const CANAL = `system.${SISTEMA_ID}`;
 const TEMPLATE_CHAT = `systems/${SISTEMA_ID}/templates/testes/chat.hbs`;
@@ -76,8 +78,15 @@ export function nomeDoParticipante(actor, token) {
 
 export const retratoDoParticipante = (actor, token) => token?.texture?.src || actor?.img || ICONE_PADRAO;
 
-/** Monta um participante a partir de um uuid e do item testado (lê o bônus da ficha). */
-export function montarParticipante(uuid, item, indice) {
+/** Escopos das flags de vantagem/mínimo para o item testado. */
+const escoposDoItem = item => (item?.tipo === "pericia" ? escoposDaPericia(item.chave) : item?.tipo === "atributo" ? [`atributo.${item.chave}`] : []);
+
+/**
+ * Monta um participante a partir de um uuid e do item testado (lê o bônus da ficha).
+ * modo: "normal" | "vantagem" | "desvantagem" escolhido pelo Mestre; soma com as flags do ator
+ * (não acumulam; vantagem + desvantagem se anulam).
+ */
+export function montarParticipante(uuid, item, indice, { modo = "normal" } = {}) {
   const { actor, token } = resolverUuid(uuid);
   if (!actor) return null;
   const donos = donosJogadores(actor);
@@ -88,6 +97,11 @@ export function montarParticipante(uuid, item, indice) {
     item: { ...item, rotulo: rotuloDoItem(item) },
     bonus: b.bonus, detalhes: b.detalhes, dica: textoDosDetalhes(b.detalhes), falhaAuto: b.falhaAuto
   };
+  const v = vantagemDaRolagem(actor, escoposDoItem(item), { vantagem: modo === "vantagem", desvantagem: modo === "desvantagem" });
+  p.vantagem = v.vantagem;
+  p.desvantagem = v.desvantagem;
+  p.modo = modoD20(v);
+  p.minimo = minimoDasFlags(actor.flags?.[SISTEMA_ID], escoposDoItem(item));
   p.resultado = resultadoInicial(p);
   return p;
 }
@@ -126,10 +140,10 @@ async function concluir(estado, { abrir = false } = {}) {
 }
 
 /** Anfitrião recebe uma rolagem (de outro cliente ou dele mesmo). */
-async function processarRolagem({ sessaoId, participanteId, d20, total }, userId) {
+async function processarRolagem({ sessaoId, participanteId, d20, total, dados }, userId) {
   if (!souAnfitriao() || sessao.sessaoId !== sessaoId) return;
   const usuario = game.users.get(userId);
-  const r = registrarRolagem(sessao, { participanteId, d20, total }, usuario, opcoesDeRolagem());
+  const r = registrarRolagem(sessao, { participanteId, d20, total, dados }, usuario, opcoesDeRolagem());
   if (r.erro) {
     console.warn(`Icarus RPG | Rolagem descartada (${r.erro}) de ${usuario?.name ?? userId} para ${participanteId}.`);
     if (r.erro === "permissao") ui.notifications.warn(fmt("ICARUS.Testes.RolagemDescartada", { nome: usuario?.name ?? "?" }));
@@ -187,13 +201,13 @@ export async function rolarParticipante(participanteId) {
   const p = sessao?.participantes.find(x => x.id === participanteId);
   if (!p || p.resultado || sessao.status !== "rolando") return null;
   if (!permissaoLocal(p).pode) return null;
-  const roll = await new Roll(`1d20 + ${p.bonus}`.replace("+ -", "- ")).evaluate();
-  const d20 = roll.dice[0]?.total ?? roll.total - p.bonus;
-  if (game.dice3d) await game.dice3d.showForRoll(roll, game.user, true);
-  const dados = { sessaoId: sessao.sessaoId, participanteId, d20, total: roll.total };
+  // d20 com vantagem/desvantagem (2d20kh / 2d20kl) e mínimo (Perícia Infalível) do participante
+  const r = await rolarD20({ vantagem: p.vantagem, desvantagem: p.desvantagem, bonus: p.bonus, minimo: p.minimo });
+  if (game.dice3d) await game.dice3d.showForRoll(r.roll, game.user, true);
+  const dados = { sessaoId: sessao.sessaoId, participanteId, d20: r.d20, total: r.total, dados: r.dados };
   if (souAnfitriao()) await processarRolagem(dados, game.user.id);
   else emitir("testes:rolou", dados);
-  return { d20, total: roll.total };
+  return { d20: r.d20, total: r.total };
 }
 
 /* -------------------------------- Chat -------------------------------- */

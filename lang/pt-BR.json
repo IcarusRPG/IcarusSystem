@@ -306,7 +306,14 @@
         "resistencia": "Teste de resistência"
       },
       "Critico": "CRÍTICO",
-      "Falha": "FALHA CRÍTICA"
+      "Falha": "FALHA CRÍTICA",
+      "Modo": {
+        "vantagem": "Vantagem",
+        "desvantagem": "Desvantagem",
+        "normal": "Normal"
+      },
+      "Minimo": "d20 {natural} conta como {d20}",
+      "DicaAtalhos": "Shift: vantagem · Ctrl: desvantagem"
     },
     "Dev": {
       "SemKaelen": "Nenhum personagem chamado Kaelen Vorhal. Crie com game.icarus.criarKaelen().",
@@ -811,7 +818,8 @@
         "SemNivel": "Nível não encontrado: informe a CD manualmente.",
         "Observacao": "Observação",
         "ObservacaoExemplo": "ex.: metade do dano se passar"
-      }
+      },
+      "ModoRolagem": "Rolagem"
     },
     "Atalhos": {
       "Titulo": "Atalhos do Icarus",
