@@ -23,6 +23,10 @@
     </li>
     {{/each}}
   </ul>
+  {{#if manobra}}
+  <div class="manobra-efeito{{#if manobra.venceu}} venceu{{/if}}"><b>{{localize "ICARUS.Manobra.Titulo"}}: {{manobra.nome}}.</b> {{manobra.efeito}}</div>
+  {{#if manobra.condicao}}<button type="button" data-icarus-manobra-condicao="{{manobra.condicao}}" data-uuid="{{manobra.alvoUuid}}"><i class="fa-solid fa-person-falling-burst"></i> {{localize "ICARUS.Manobra.Aplicar"}} {{manobra.condicaoNome}}</button>{{/if}}
+  {{/if}}
   {{#if oposto}}
   <div class="rolagem-selo">{{#if vencedor}}{{localize "ICARUS.Testes.VencedorRotulo"}}: {{vencedor.nome}}{{#if motivoBonus}} <small>({{localize "ICARUS.Testes.DesempateBonus"}})</small>{{/if}}{{else}}{{localize "ICARUS.Testes.Empate"}}{{/if}}</div>
   {{else}}

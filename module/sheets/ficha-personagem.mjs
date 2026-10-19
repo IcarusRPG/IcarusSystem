@@ -23,6 +23,7 @@ import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura, vestidosS
 import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, reacaoDoAtor } from "../acoes.mjs";
+import { abrirManobra } from "../manobras.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
 
@@ -544,6 +545,8 @@ export class FichaPersonagem extends ActorSheet {
         return usarPoder(actor, itemDe());
       case "reacao-alternar":
         return alternarReacao(actor);
+      case "manobra":
+        return abrirManobra(actor);
       case "aguardar":
         return aguardar(actor);
       case "aguardar-disparar":

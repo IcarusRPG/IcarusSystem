@@ -115,7 +115,7 @@ export class TelaTeste extends HandlebarsApplicationMixin(ApplicationV2) {
       oposto, entrada: this.entrada, animar, gm: game.user.isGM, anfitriao: souAnfitriao(),
       rolando: e.status === "rolando", resolvido,
       dado: imagemOuPadrao("dadoVermelho"), retratoPadrao: imagemOuPadrao("dadoAzul"),
-      titulo: loc(oposto ? "ICARUS.Testes.Oposto.Titulo" : "ICARUS.Testes.Resistencia.Titulo"),
+      titulo: e.manobra ? `${loc("ICARUS.Manobra.Titulo")}: ${loc(`ICARUS.Manobra.Tipos.${e.manobra.id}`)}` : loc(oposto ? "ICARUS.Testes.Oposto.Titulo" : "ICARUS.Testes.Resistencia.Titulo"),
       subtitulo: oposto
         ? participantes.map(p => `${p.item.rotulo} (${loc(`ICARUS.Testes.Tipo.${p.item.tipo}`)})`).join(" × ")
         : loc(`ICARUS.Pericias.${r.pericia}`),

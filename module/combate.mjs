@@ -579,3 +579,39 @@ export function falhaPorCamuflagem(d10, tipo) {
   const limite = FALHA_CAMUFLAGEM[tipo];
   return !!limite && Number(d10) <= limite;
 }
+
+/* ------------------------------ Manobras ------------------------------ */
+
+/**
+ * Manobras: ataque especial no lugar de um ataque. Teste oposto: ataque corpo a corpo (Luta) do
+ * atacante × Fortitude do alvo; quem vence aplica o efeito. À distância (Pontaria) só Desarmar,
+ * salvo poder que permita outra. Quebrar: só o teste (regra do item PENDENTE no livro).
+ */
+export const MANOBRAS = ["agarrar", "derrubar", "desarmar", "empurrar", "quebrar"];
+export const MANOBRAS_A_DISTANCIA = ["desarmar"];
+/** Condição aplicada ao alvo quando o atacante vence. */
+export const CONDICAO_DA_MANOBRA = { agarrar: "agarrado", derrubar: "caido" };
+
+/**
+ * Efeito da manobra para o atacante que venceu por `diferenca` pontos (totalA − totalB ≥ 0).
+ * Empurrar: 1,5 m + 1,5 m a cada 5 pontos de diferença. Desarmar: com 5 ou mais, o item vai 1,5 m.
+ * @returns {{ condicao: string|null, metros: number|null, empurraItem: boolean }}
+ */
+export function efeitoDaManobra(manobra, diferenca = 0) {
+  const d = Math.max(0, Math.trunc(numero(diferenca)));
+  return {
+    condicao: CONDICAO_DA_MANOBRA[manobra] ?? null,
+    metros: manobra === "empurrar" ? 1.5 + 1.5 * Math.floor(d / 5) : null,
+    empurraItem: manobra === "desarmar" && d >= 5
+  };
+}
+
+/**
+ * Bônus de ataque sem arma específica (manobras): total da perícia (Luta ou Pontaria) + bônus de
+ * ataque + condições + penalidade de armadura sem proficiência.
+ */
+export function bonusDeAtaqueGeral(system, pericia = "luta", itens = []) {
+  const modo = pericia === "pontaria" ? "distancia" : "corpo-a-corpo";
+  const pseudoArma = { categoria: "simples", propriedades: [], bonusAtaque: 0, proficiencia: "sim" };
+  return calcularAtaque(system, pseudoArma, modo, itens);
+}

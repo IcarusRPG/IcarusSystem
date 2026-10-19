@@ -196,3 +196,19 @@ test("Camuflagem: leve falha com 1–2; total com 1–5", async () => {
   assert.deepEqual([1, 5, 6, 10].map(d => falhaPorCamuflagem(d, "total")), [true, true, false, false]);
   assert.equal(falhaPorCamuflagem(1, "nenhuma"), false);
 });
+
+test("Manobras: Fortitude oposta; Empurrar 1,5 m + 1,5 m a cada 5 de diferença; Desarmar por 5 empurra o item", async () => {
+  const { efeitoDaManobra, MANOBRAS } = await import("../module/combate.mjs");
+  const { bonusDoItem } = await import("../module/testes.mjs");
+  assert.deepEqual(MANOBRAS, ["agarrar", "derrubar", "desarmar", "empurrar", "quebrar"]);
+  assert.equal(efeitoDaManobra("agarrar", 3).condicao, "agarrado");
+  assert.equal(efeitoDaManobra("derrubar", 0).condicao, "caido");
+  assert.deepEqual([0, 4, 5, 9, 10, 15].map(d => efeitoDaManobra("empurrar", d).metros), [1.5, 1.5, 3, 3, 4.5, 6]);
+  assert.equal(efeitoDaManobra("desarmar", 4).empurraItem, false);
+  assert.equal(efeitoDaManobra("desarmar", 5).empurraItem, true);
+  assert.equal(efeitoDaManobra("quebrar", 7).condicao, null);
+  // Lado A da manobra usa o total de ataque corpo a corpo (Luta + bônus de ataque + condições)
+  const s = ficha({ atributos: { FOR: { base: 3 } }, pericias: { luta: { treino: 1 } }, bonus: { ataque: 1 } });
+  assert.equal(bonusDoItem(s, { tipo: "ataque", chave: "luta" }).bonus, 3 + 2 + 1);
+  assert.equal(bonusDoItem(s, { tipo: "pericia", chave: "fortitude" }).bonus, 0);
+});

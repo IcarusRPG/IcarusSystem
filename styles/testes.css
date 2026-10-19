@@ -273,3 +273,6 @@
 .ficha-icarus .seletor-linha .sel-modo { width: auto; height: 24px; padding: 0 4px; font-size: 12px; flex: none; }
 .ficha-icarus .modo-lado { display: flex; align-items: center; gap: 6px; font-size: 13px; }
 .ficha-icarus .modo-lado select { width: auto; }
+
+.icarus-teste-chat .manobra-efeito { margin: 4px 0; font-size: 13px; }
+.icarus-teste-chat .manobra-efeito.venceu b { color: #b8860b; }

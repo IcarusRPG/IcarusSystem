@@ -181,7 +181,8 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
     municao,
     arremessou, restantesArma: atualizada.system.quantidade,
     podeCritico, mult: arma.criticoMult,
-    dupla, duasMaos
+    dupla, duasMaos,
+    corpoACorpo: modo === "corpo-a-corpo"
   });
   const mensagem = await enviar(actor, content, {
     rolls: [...rollsExtras, r.roll],
@@ -274,6 +275,17 @@ export function registrarBotoesDoChat() {
     const podeUsar = game.user.isGM || actor?.isOwner;
     const flags = message.flags[SISTEMA_ID];
     const duasMaos = raiz.querySelector("[data-icarus-duas-maos]");
+    // Manobra (no lugar de um ataque): abre o diálogo de manobra do atacante
+    const botaoManobra = raiz.querySelector("[data-icarus-manobra-abrir]");
+    if (botaoManobra) {
+      if (!podeUsar) botaoManobra.remove();
+      else botaoManobra.addEventListener("click", async ev => {
+        ev.preventDefault();
+        const { abrirManobra } = await import("./manobras.mjs");
+        const ator = fromUuidSync(dados.actorUuid);
+        if (ator) abrirManobra(ator);
+      });
+    }
     if (duasMaos && botaoUsado(flags, "dano")) duasMaos.disabled = true;
 
     raiz.querySelectorAll("[data-icarus-acao]").forEach(botao => {

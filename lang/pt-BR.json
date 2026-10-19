@@ -911,6 +911,43 @@
       "Ignorou": "Ignora camuflagem",
       "Falhou": "Falhou pela camuflagem ({tipo}): d10 = {d10} (falha com até {limite})",
       "Passou": "Camuflagem {tipo}: d10 = {d10} (falharia com até {limite}): o ataque segue"
+    },
+    "Manobra": {
+      "Titulo": "Manobra",
+      "Botao": "Manobra",
+      "Iniciar": "Iniciar teste oposto",
+      "Escolha": "Manobra",
+      "Pericia": "Teste de ataque com",
+      "Tipos": {
+        "agarrar": "Agarrar",
+        "derrubar": "Derrubar",
+        "desarmar": "Desarmar",
+        "empurrar": "Empurrar",
+        "quebrar": "Quebrar"
+      },
+      "NoLugar": "A manobra é feita no lugar de um ataque. Teste oposto: o seu ataque contra a Fortitude do alvo; quem vence aplica o efeito.",
+      "PoderPermite": "Um poder permite esta manobra à distância (Pontaria)",
+      "SoDesarmarDistancia": "À distância (Pontaria) só é possível Desarmar, salvo poder que permita outra manobra.",
+      "UmAlvo": "Marque exatamente um alvo (T) para a manobra.",
+      "Alvo": "Alvo: {alvo}",
+      "Quebrar": "Quebrar: só o teste (dureza do item ainda não definida).",
+      "SemMestre": "A manobra precisa do Mestre conectado.",
+      "Pedido": "Manobra enviada ao Mestre.",
+      "ItemAtaque": "Ataque ({pericia})",
+      "Resistiu": "{alvo} resistiu: nada acontece.",
+      "Efeitos": {
+        "agarrar": "{alvo} fica Agarrado.",
+        "derrubar": "{alvo} fica Caído.",
+        "desarmar": "{alvo} deixa cair um item que empunha.",
+        "desarmarLonge": "{alvo} deixa cair um item que empunha, empurrado 1,5 m na direção que {atacante} escolher (venceu por 5 ou mais).",
+        "empurrar": "{alvo} é empurrado {metros} m (o atacante pode gastar uma ação de movimento para avançar junto).",
+        "quebrar": "{atacante} atinge um item que {alvo} empunha (dano ao item: regra pendente)."
+      },
+      "Condicoes": {
+        "agarrado": "Agarrado",
+        "caido": "Caído"
+      },
+      "Aplicar": "Aplicar"
     }
   }
 }
