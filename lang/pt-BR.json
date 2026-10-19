@@ -1054,6 +1054,19 @@
       "EscolhaN": "Escolha exatamente {n}.",
       "AumentoDica": "+{n} Aumento de Atributo",
       "EspecialistaDica": "Especialista por poder (Perícia Especializada/Refinada)"
+    },
+    "Barbaro": {
+      "EmFuria": "Em Fúria",
+      "Furia": "Fúria",
+      "Entrar": "Entrar em Fúria",
+      "Encerrar": "Encerrar Fúria",
+      "SemFuria": "Este personagem não tem a habilidade Fúria.",
+      "Info": "ação livre, 2 PM: +{dano} no dano e +{ataque} no ataque corpo a corpo",
+      "InfoAtiva": "em Fúria: +{dano} dano / +{ataque} ataque corpo a corpo",
+      "Dica": "Sem magias nem Concentração; só perícias de INT/SAB/CAR se forem Intimidação ou Vontade. Termina se, ao fim de uma rodada, você não atacou nem sofreu dano.",
+      "EntrouFuria": "{nome} entra em Fúria: +{dano} no dano e +{ataque} nos ataques corpo a corpo.",
+      "SaiuFuria": "{nome} sai da Fúria.",
+      "LinhaAtaque": "Fúria: +{ataque} no ataque, +{dano} no dano"
     }
   }
 }

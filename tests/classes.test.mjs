@@ -199,3 +199,11 @@ test("10. Perícia Infalível: d20 < 10 conta como 10 nas 7 perícias", async ()
   // Ataque Furtivo / Marca da Presa: +1 dado a cada 4 níveis
   assert.deepEqual([1, 4, 5, 9, 13, 17, 20].map(dadosPorNivel), [1, 1, 2, 3, 4, 5, 5]);
 });
+
+test("9. Fúria do Bárbaro: bônus pelo nível conforme o texto (1º, 9º, 17º)", async () => {
+  const texto = classePorId("barbaro").habilidades.find(h => h.id === "furia").descricao;
+  assert.match(texto, /\+2 nas rolagens de dano corpo a corpo e \+1 nos testes de ataque/);
+  assert.match(texto, /No 9º nível, o bônus passa a \+3 no dano e \+2 no ataque; no 17º nível, a \+4 no dano e \+3 no ataque/);
+  const furia = classePorId("barbaro").habilidades.find(h => h.id === "furia");
+  assert.deepEqual([furia.custoPM, furia.acao], [2, "livre"]);
+});
