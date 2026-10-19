@@ -248,3 +248,9 @@ test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pi
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 10, tem: new Set(["duas-pistolas"]) }).ok, false);
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set(["duas-pistolas"]) }).ok, true);
 });
+
+test("Samurai: Kiai pelo texto (1 dado no 1º, 2 no 5º, 3 no 9º, 4 no 13º, 5 no 17º)", () => {
+  const kiai = classePorId("samurai").habilidades.find(h => h.id === "kiai");
+  assert.match(kiai.descricao, /aumenta para 2 no 5º nível, 3 no 9º, 4 no 13º e 5 no 17º/);
+  assert.deepEqual([kiai.custoPM], [2]);
+});

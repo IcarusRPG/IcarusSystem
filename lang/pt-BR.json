@@ -1129,6 +1129,14 @@
       "ExtraConfirma": "Gastar {custo} PM para uma ação de Agredir adicional neste turno? (PM atuais: {pm})",
       "ExtraChat": "{nome} gasta {custo} PM: ação de Agredir adicional ({n} neste turno).",
       "ExtraInfo": "{custo} PM: Agredir adicional · neste turno: {n}"
+    },
+    "Samurai": {
+      "Kiai": "Kiai",
+      "KiaiRotulo": "Kiai ({custo} PM): +{bonus} no ataque e +{n}{dado} de dano se acertar",
+      "KiaiUsado": "já usado nesta rodada",
+      "KiaiDica": "Uma vez por rodada. PM atuais: {pm}.",
+      "KiaiLinha": "Kiai ({custo} PM): +{bonus} no ataque, +{n}{dado} de dano se acertar",
+      "KiaiInfo": "no diálogo de ataque: {custo} PM, +{n} dado(s) da arma"
     }
   }
 }
