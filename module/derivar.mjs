@@ -4,8 +4,8 @@
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
-import { bonusDeItensDeClasse } from "./classes-dados.mjs";
-import { somarRD, tetoDeRD } from "./combate.mjs";
+import { bonusDeItensDeClasse, passivosDeClasse } from "./classes-dados.mjs";
+import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import {
@@ -65,6 +65,13 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.defesa.armadura = armadura;
   s.defesa.escudo = escudo;
   s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
+  // Habilidades de classe com bônus passivo (Pele Rija, Defesa Interior, Passo Ligeiro)
+  const vestidos = itens.map(i => ({ type: i.type, system: i.system }));
+  const passivos = passivosDeClasse(itens, {
+    tipoArmadura: tipoArmadura(vestidos), usandoEscudo: usandoEscudo(vestidos), vestindoTunica: vestindoTunica(vestidos), SAB: s.atributos.SAB.total
+  });
+  s.defesa.passivos = passivos.defesa;
+  for (const p of passivos.defesa) s.defesa.total += p.valor;
   s.defesa.condicao = cond.defesa;
   if (cond.defesa) s.defesa.total += cond.defesa.valor;
 
@@ -110,6 +117,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.condicoes = { ids: [...cond.ids], ataque: cond.ataque, ataqueCorpoACorpo: cond.ataqueCorpoACorpo, pendencias: cond.pendencias };
 
   // Deslocamento com as condições (Lento, Sobrecarregado, Caído, Imóvel)
+  for (const p of passivos.deslocamento) s.deslocamento += p.valor;
+  s.deslocamentoPassivos = passivos.deslocamento;
   s.deslocamentoSemCondicoes = s.deslocamento;
   if (cond.deslocamento.origens.length) {
     s.deslocamento = deslocamentoComCondicoes(s.deslocamento, cond.deslocamento);

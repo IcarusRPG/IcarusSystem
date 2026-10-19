@@ -1,6 +1,7 @@
 import { SISTEMA_ID } from "./config.mjs";
 import { numero, comSinal } from "./regras.mjs";
 import { rolarD20, vantagemDasFlags, minimoDasFlags } from "./combate.mjs";
+import { minimoD20DeHabilidades } from "./classes-dados.mjs";
 
 const TEMPLATE_CARTAO = `systems/${SISTEMA_ID}/templates/chat/rolagem.hbs`;
 
@@ -43,7 +44,7 @@ export function dadosDoCard(r) {
 export async function rolarTeste(actor, { rotulo, modificador, tipo, chave, escopos = [], vantagem = false, desvantagem = false }) {
   const mod = numero(modificador);
   const v = vantagemDaRolagem(actor, escopos, { vantagem, desvantagem });
-  const minimo = minimoDasFlags(actor?.flags?.[SISTEMA_ID], escopos);
+  const minimo = Math.max(minimoDasFlags(actor?.flags?.[SISTEMA_ID], escopos) ?? 0, minimoD20DeHabilidades(actor?.items ?? [], chave) ?? 0) || null;
   const r = await rolarD20({ ...v, bonus: mod, minimo });
 
   const content = await renderTemplate(TEMPLATE_CARTAO, {

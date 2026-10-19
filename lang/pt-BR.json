@@ -1022,7 +1022,11 @@
       "EscolhidoMesmoAssim": "{nome} escolheu {poder} sem atender todos os pré-requisitos ({usuario}).",
       "JaEscolhido": "{poder} já foi escolhido (não é repetível).",
       "SemEscolhas": "Não há escolhas de poder de classe disponíveis neste nível (o Mestre pode permitir).",
-      "Escolhido": "Poder escolhido: {poder}"
+      "Escolhido": "Poder escolhido: {poder}",
+      "EscolhaPermanente": "Esta escolha é permanente. Abra cada opção para ler e clique na que quiser.",
+      "Escolheu": "{nome} escolheu ({habilidade}): {escolha}",
+      "EscolherSub": "Escolher: {habilidade}",
+      "EscolhaPendente": "escolha pendente"
     },
     "Patamares": {
       "iniciante": "Iniciante",

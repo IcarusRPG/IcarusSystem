@@ -163,3 +163,39 @@ test("7. Perícia Especializada / Perícia Refinada: treinada vira especialista 
   const pe = classePorId("ladino").poderes.find(p => p.id === "pericia-especializada");
   assert.equal(pe.nivelMinimo, 10);
 });
+
+test("8/9. Túnica não é armadura: Monge mantém Defesa Interior e Passo Ligeiro; Pele Rija exige sem túnica", async () => {
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  const { dadosDaArmadura } = await import("../module/dados-compendios.mjs");
+  const ler = n => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${n}.json`), "utf8"));
+  const ARM = ler("armaduras"), ICA = ler("icones-armaduras");
+  const vestir = id => { const d = dadosDaArmadura(ARM.itens.find(a => a.id === id), ICA); d.system.equipado = true; return d; };
+  const hab = (classe, id) => ({ type: "poder", system: {}, flags: { "icarus-rpg": { id: `${classe}__${id}` } } });
+  const monge = itens => derivarPersonagem(sistemaCompleto({ atributos: { SAB: { base: 3 } }, deslocamento: 9 }), [hab("monge", "defesa-interior"), hab("monge", "passo-ligeiro"), ...itens]);
+  assert.equal(monge([]).defesa.total, 10 + 3);
+  assert.equal(monge([]).deslocamento, 12);
+  const comTunica = monge([vestir("tunica-bordada")]);
+  assert.equal(comTunica.defesa.total, 10 + 2 + 3, "túnica soma com a Defesa Interior");
+  assert.equal(comTunica.deslocamento, 12);
+  const comArmadura = monge([vestir("couro-batido")]);
+  assert.equal(comArmadura.defesa.total, 10 + 2);
+  assert.equal(comArmadura.deslocamento, 9);
+  assert.equal(monge([vestir("escudo-leve")]).defesa.total, 10 + 1, "escudo tira a Defesa Interior");
+  const barbaro = itens => derivarPersonagem(sistemaCompleto({}), [hab("barbaro", "pele-rija"), ...itens]);
+  assert.equal(barbaro([]).defesa.total, 12);
+  assert.equal(barbaro([vestir("couro-batido")]).defesa.total, 10 + 2 + 2);
+  assert.equal(barbaro([vestir("cota-de-malha")]).defesa.total, 10 + 5);
+  assert.equal(barbaro([vestir("tunica-simples")]).defesa.total, 10 + 1, "Pele Rija não vale com túnica");
+});
+
+test("10. Perícia Infalível: d20 < 10 conta como 10 nas 7 perícias", async () => {
+  const { minimoD20DeHabilidades, PERICIAS_INFALIVEIS, dadosPorNivel } = await import("../module/classes-dados.mjs");
+  const itens = [{ flags: { "icarus-rpg": { id: "ladino__pericia-infalivel" } } }];
+  assert.deepEqual(PERICIAS_INFALIVEIS, ["acrobacia", "furtividade", "investigacao", "prestidigitacao", "audicao", "visao", "reflexos"]);
+  assert.equal(minimoD20DeHabilidades(itens, "reflexos"), 10);
+  assert.equal(minimoD20DeHabilidades(itens, "luta"), null);
+  assert.equal(minimoD20DeHabilidades([], "reflexos"), null);
+  // Ataque Furtivo / Marca da Presa: +1 dado a cada 4 níveis
+  assert.deepEqual([1, 4, 5, 9, 13, 17, 20].map(dadosPorNivel), [1, 1, 2, 3, 4, 5, 5]);
+});

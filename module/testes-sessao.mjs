@@ -19,6 +19,7 @@ import { TelaTeste } from "./apps/teste-tela.mjs";
 import { abrirPainelDoMestre } from "./sheets/painel-condicoes.mjs";
 import { rolarD20, modoD20, minimoDasFlags, efeitoDaManobra } from "./combate.mjs";
 import { vantagemDaRolagem, escoposDaPericia } from "./rolls.mjs";
+import { minimoD20DeHabilidades } from "./classes-dados.mjs";
 
 const CANAL = `system.${SISTEMA_ID}`;
 const TEMPLATE_CHAT = `systems/${SISTEMA_ID}/templates/testes/chat.hbs`;
@@ -103,7 +104,8 @@ export function montarParticipante(uuid, item, indice, { modo = "normal" } = {})
   p.vantagem = v.vantagem;
   p.desvantagem = v.desvantagem;
   p.modo = modoD20(v);
-  p.minimo = minimoDasFlags(actor.flags?.[SISTEMA_ID], escoposDoItem(item));
+  p.minimo = Math.max(minimoDasFlags(actor.flags?.[SISTEMA_ID], escoposDoItem(item)) ?? 0,
+    item?.tipo === "pericia" ? minimoD20DeHabilidades(actor.items, item.chave) ?? 0 : 0) || null;
   p.resultado = resultadoInicial(p);
   return p;
 }

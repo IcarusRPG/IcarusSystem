@@ -222,3 +222,41 @@ export function bonusDeItensDeClasse(itens = []) {
   }
   return { aumentos, especialistas };
 }
+
+/* ------------------------------ Efeitos passivos de habilidades ------------------------------ */
+
+/** Habilidade de classe que o personagem tem? (itens = lista de { flags }) */
+export const temHabilidadeNosItens = (itens, classeId, habId) => (itens ?? []).some(i => i?.flags?.[SISTEMA_ID]?.id === `${classeId}__${habId}`);
+
+/**
+ * Bônus passivos derivados de habilidades (regras no texto do Anexo A):
+ * - Pele Rija (Bárbaro): +2 Defesa sem armadura ou com leve, e sem túnica;
+ * - Defesa Interior (Monge): +SAB na Defesa sem armadura nem escudo (túnica não impede);
+ * - Passo Ligeiro (Monge): +3 m de deslocamento sem armadura.
+ * @param {object[]} itens
+ * @param {{ tipoArmadura: string, usandoEscudo: boolean, vestindoTunica: boolean, SAB: number }} situacao
+ * @returns {{ defesa: {valor, origem}[], deslocamento: {valor, origem}[] }}
+ */
+export function passivosDeClasse(itens, situacao) {
+  const defesa = [];
+  const deslocamento = [];
+  const semArmadura = situacao.tipoArmadura === "nenhuma";
+  if (temHabilidadeNosItens(itens, "barbaro", "pele-rija") && ["nenhuma", "leve"].includes(situacao.tipoArmadura) && !situacao.vestindoTunica) {
+    defesa.push({ valor: 2, origem: "Pele Rija" });
+  }
+  if (temHabilidadeNosItens(itens, "monge", "defesa-interior") && semArmadura && !situacao.usandoEscudo && situacao.SAB) {
+    defesa.push({ valor: situacao.SAB, origem: "Defesa Interior" });
+  }
+  if (temHabilidadeNosItens(itens, "monge", "passo-ligeiro") && semArmadura) deslocamento.push({ valor: 3, origem: "Passo Ligeiro" });
+  return { defesa, deslocamento };
+}
+
+/** Perícia Infalível (Ladino, 11º): d20 menor que 10 conta como 10 nestas perícias. */
+export const PERICIAS_INFALIVEIS = ["acrobacia", "furtividade", "investigacao", "prestidigitacao", "audicao", "visao", "reflexos"];
+
+/** Mínimo do d20 de uma perícia vindo de habilidades (ou null). */
+export const minimoD20DeHabilidades = (itens, pericia) =>
+  (temHabilidadeNosItens(itens, "ladino", "pericia-infalivel") && PERICIAS_INFALIVEIS.includes(pericia) ? 10 : null);
+
+/** Dados de dano que crescem a cada 4 níveis (1º, 5º, 9º, 13º, 17º): 1 a 5. */
+export const dadosPorNivel = nivel => Math.min(5, 1 + Math.floor((Math.max(1, nivel) - 1) / 4));

@@ -24,7 +24,8 @@ import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaq
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, reacaoDoAtor } from "../acoes.mjs";
 import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } from "../classes-dados.mjs";
-import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE, ACOES_DE_MECANICA } from "../classes.mjs";
+import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } from "../classes.mjs";
+import { acaoDaMecanica } from "../classes/comum.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
@@ -151,7 +152,7 @@ export class FichaPersonagem extends ActorSheet {
     ctx.defesa = {
       total: s.defesa.total,
       outros: src.defesa.outros,
-      dica: [dica("system.defesa.outros"), s.defesa.condicao ? `${comSinal(s.defesa.condicao.valor)} ${s.defesa.condicao.origem}` : ""].filter(Boolean).join("\n"),
+      dica: [dica("system.defesa.outros"), ...(s.defesa.passivos ?? []).map(p => `${comSinal(p.valor)} ${p.origem}`), s.defesa.condicao ? `${comSinal(s.defesa.condicao.valor)} ${s.defesa.condicao.origem}` : ""].filter(Boolean).join("\n"),
       penalidade: s.defesa.penalidade ? game.i18n.format("ICARUS.Armaduras.PenalidadeTotal", { valor: comSinal(-s.defesa.penalidade) }) : "",
       avisoAcoplado: conflitoEscudoAcoplado(actor) ? loc("ICARUS.Armaduras.AvisoAcoplado") : "",
       formula: game.i18n.format("ICARUS.Defesa.Formula", {
@@ -600,7 +601,7 @@ export class FichaPersonagem extends ActorSheet {
       case "reacao-alternar":
         return alternarReacao(actor);
       case "classe-mecanica": {
-        const fn = ACOES_DE_MECANICA.get(el.dataset.mecanica);
+        const fn = acaoDaMecanica(el.dataset.mecanica);
         return fn ? fn(actor) : null;
       }
       case "classe-poder": {
