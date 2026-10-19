@@ -1098,6 +1098,27 @@
       "Dispensar": "Dispensar o animal",
       "NaoCura": "{animal} não pode ser curado (invoque de novo para recuperar os PV).",
       "Sumiu": "{animal} chegou a 0 PV e desapareceu."
+    },
+    "Pistoleiro": {
+      "TiroCarregado": "Tiro Carregado",
+      "PMNoTiro": "PM no Tiro Carregado (máx. {max})",
+      "TiroDica": "+1d6 de Perfuração por PM, gastos ao rolar o ataque, mesmo se errar. PM atuais: {pm}.",
+      "Limitado": "Tiro Carregado limitado a {n} PM (pedido {pedido}).",
+      "LinhaTiro": "Tiro Carregado: {n} PM gastos, +{n}d6 de Perfuração",
+      "TiroInfo": "no ataque com arma de fogo (máx. {max} PM)",
+      "TiroLendario": "Tiro Lendário",
+      "DeclararLendario": "Declarar Tiro Lendário (acerta e é crítico)",
+      "LendarioDica": "Uma vez por cena.",
+      "LendarioUsado": "já usado nesta cena",
+      "LendarioNoAtaque": "1 vez por cena, no diálogo de ataque",
+      "LinhaLendario": "Tiro Lendário: acerto automático e crítico",
+      "RecargaRapida": "Recarga rápida (ação livre)",
+      "SemArmaFogo": "Nenhuma arma de fogo empunhada.",
+      "SaqueUsado": "Saque Rápido já usado neste turno.",
+      "RecargaConfirma": "Recarregar {n} arma(s) de fogo como ação livre por {custo} PM? (PM atuais: {pm})",
+      "Recarregou": "{nome} recarrega como ação livre ({custo} PM).",
+      "SaqueInfo": "1 PM por arma, uma vez por turno",
+      "MestreInfo": "Mestre da Recarga: 1 PM recarrega as duas pistolas, quantas vezes quiser"
     }
   }
 }

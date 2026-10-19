@@ -85,6 +85,9 @@ async function aplicarEmVarios(alvos, id, opcoes = {}) {
 }
 
 /** "Encerrar cena": remove as condições com duração "fim da cena" de todos os tokens da cena. */
+/** Fim da cena (por ator da cena): recursos "1 vez por cena", Fúria, Braços Astrais… acrescentam aqui. */
+export const FIM_DA_CENA = [];
+
 export async function encerrarCena({ confirmar = true } = {}) {
   if (!game.user.isGM) return;
   if (confirmar) {
@@ -101,6 +104,8 @@ export async function encerrarCena({ confirmar = true } = {}) {
     const ids = actor.effects.filter(e => e.flags?.[SISTEMA_ID]?.duracao === "cena" && !e.flags[SISTEMA_ID].origem).map(e => e.id);
     if (ids.length) { await actor.deleteEmbeddedDocuments("ActiveEffect", ids); n += ids.length; }
   }
+  // Outras partes do sistema (recursos "1 vez por cena", Fúria, Braços Astrais…) reagem ao fim da cena
+  for (const actor of atores.values()) for (const fn of FIM_DA_CENA) await fn(actor);
   ui.notifications.info(game.i18n.format("ICARUS.Condicoes.CenaEncerrada", { n }));
 }
 

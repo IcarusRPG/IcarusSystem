@@ -231,3 +231,20 @@ test("11. Vínculo Selvagem: PV = 10 + metade do nível; Defesa = 10 + DES + bô
   assert.deepEqual(teixugo.ataques.map(a => a.bonusDano), [2, 0], "só a mordida soma a metade do nível");
   assert.equal(estatisticasDoVinculo(vinculos.animais.find(a => a.id === "urso-negro"), { nivel: 1 }).rd, 2);
 });
+
+test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pistolas e 11º nível", async () => {
+  const { maximoTiroCarregado, bonusDaFuria } = await import("../module/classes-dados.mjs");
+  assert.deepEqual([1, 8, 9, 16, 17, 20].map(n => bonusDaFuria(n).dano), [2, 2, 3, 3, 4, 4]);
+  const texto = classePorId("pistoleiro").habilidades.find(h => h.id === "tiro-carregado").descricao;
+  assert.match(texto, /1 no 1º nível, 2 no 5º, 3 no 10º, 4 no 15º e 5 no 20º/);
+  assert.deepEqual([1, 4, 5, 10, 15, 20].map(n => maximoTiroCarregado(n)), [1, 1, 2, 3, 4, 5]);
+  assert.equal(maximoTiroCarregado(10, { calibrePesado: true, mosquete: true }), 5);
+  assert.equal(maximoTiroCarregado(10, { calibrePesado: true, mosquete: false }), 3);
+  const { validarPoder } = await import("../module/classes-dados.mjs");
+  const pist = classePorId("pistoleiro");
+  const mestre = pist.poderes.find(p => p.id === "mestre-da-recarga");
+  const base = { atributos: {}, treino: {}, grupos: [] };
+  assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set() }).ok, false);
+  assert.equal(validarPoder(pist, mestre, { ...base, nivel: 10, tem: new Set(["duas-pistolas"]) }).ok, false);
+  assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set(["duas-pistolas"]) }).ok, true);
+});

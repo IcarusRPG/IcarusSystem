@@ -9,16 +9,11 @@ import { GANCHOS_DE_PODER, usarPoder } from "../acoes.mjs";
 import { MODIFICADORES_ATAQUE } from "../combate-chat.mjs";
 import { ACOES_DE_MECANICA } from "../classes.mjs";
 import { registrarLinhas, itemDeClasse, marcarStatus, avisarNoChat, USO_PROPRIO } from "./comum.mjs";
+import { bonusDaFuria } from "../classes-dados.mjs";
+import { FIM_DA_CENA } from "../condicoes-foundry.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
-
-/** Bônus da Fúria pelo nível (conferido no texto da habilidade Fúria do Anexo A). */
-export function bonusDaFuria(nivel) {
-  if (nivel >= 17) return { dano: 4, ataque: 3 };
-  if (nivel >= 9) return { dano: 3, ataque: 2 };
-  return { dano: 2, ataque: 1 };
-}
 
 const emFuria = actor => !!actor.getFlag(SISTEMA_ID, "furia");
 
@@ -67,3 +62,6 @@ MODIFICADORES_ATAQUE.push(({ actor, modo }) => {
     linhas: [fmt("ICARUS.Barbaro.LinhaAtaque", { dano: b.dano, ataque: b.ataque })]
   };
 });
+
+// A Fúria dura até o fim da cena
+FIM_DA_CENA.push(async actor => { if (emFuria(actor)) await encerrarFuria(actor); });

@@ -297,3 +297,18 @@ export function estatisticasDoVinculo(animal, p) {
     rd: animal.rd ?? 0
   };
 }
+
+/* ------------------------------ Regras numéricas das classes ------------------------------ */
+
+/** Bônus da Fúria pelo nível (conferido no texto da habilidade Fúria do Anexo A). */
+export function bonusDaFuria(nivel) {
+  if (nivel >= 17) return { dano: 4, ataque: 3 };
+  if (nivel >= 9) return { dano: 3, ataque: 2 };
+  return { dano: 2, ataque: 1 };
+}
+
+/** Máximo de PM no Tiro Carregado pelo nível (+2 com Calibre Pesado usando mosquete). */
+export function maximoTiroCarregado(nivel, { calibrePesado = false, mosquete = false } = {}) {
+  const base = nivel >= 20 ? 5 : nivel >= 15 ? 4 : nivel >= 10 ? 3 : nivel >= 5 ? 2 : 1;
+  return base + (calibrePesado && mosquete ? 2 : 0);
+}
