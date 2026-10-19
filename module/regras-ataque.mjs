@@ -3,7 +3,7 @@
  * flanco, camuflagem e duas armas. As fórmulas puras estão em combate.mjs.
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { estaFlanqueando, falhaPorCamuflagem, BONUS_FLANCO, FALHA_CAMUFLAGEM } from "./combate.mjs";
+import { estaFlanqueando, falhaPorCamuflagem, BONUS_FLANCO, FALHA_CAMUFLAGEM, planoDuasArmas } from "./combate.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, alvosMarcados } from "./combate-chat.mjs";
 
 const loc = k => game.i18n.localize(k);
@@ -82,4 +82,30 @@ MODIFICADORES_ATAQUE.push(async ({ actor, opcoes }) => {
     return { cancelar: { motivo: "camuflagem", texto: fmt("ICARUS.Camuflagem.Falhou", { tipo: nome, d10: roll.total, limite: FALHA_CAMUFLAGEM[tipo] }), rolls: [roll] } };
   }
   return { rolls: [roll], linhas: [fmt("ICARUS.Camuflagem.Passou", { tipo: nome, d10: roll.total, limite: FALHA_CAMUFLAGEM[tipo] })] };
+});
+
+/* ---------------- Duas armas ---------------- */
+
+/** Armas empunhadas do ator no formato que planoDuasArmas espera. */
+export const armasEmpunhadas = actor => actor.items.filter(i => i.type === "arma" && i.system.empunhada)
+  .map(i => ({ id: i.id, propriedades: i.system.propriedades ?? [], nome: i.name }));
+
+PROVEDORES_ATAQUE.push(actor => {
+  const plano = planoDuasArmas(armasEmpunhadas(actor), flagsDe(actor));
+  if (!plano.possivel) return null;
+  const outra = plano.dupla ? loc("ICARUS.DuasArmas.OutraExtremidade") : plano.segunda.nome;
+  return {
+    id: "duas-armas", titulo: loc("ICARUS.DuasArmas.Titulo"),
+    campos: [{ tipo: "checkbox", nome: "duasArmas", valor: false,
+      rotulo: plano.dupla ? loc("ICARUS.DuasArmas.RotuloDupla") : fmt("ICARUS.DuasArmas.Rotulo", { primeira: plano.primeira.nome, segunda: outra }),
+      dica: plano.penalidade ? fmt("ICARUS.DuasArmas.Penalidade", { valor: plano.penalidade })
+        : plano.segundoSemAtributo ? loc("ICARUS.DuasArmas.SemAtributo") : loc("ICARUS.DuasArmas.SemPenalidade") }]
+  };
+});
+MODIFICADORES_ATAQUE.push(({ opcoes }) => {
+  if (!opcoes.penalidadeDuasArmas && !opcoes.ataqueDeDuasArmas) return null;
+  const linhas = [];
+  if (opcoes.penalidadeDuasArmas) linhas.push(fmt("ICARUS.DuasArmas.Linha", { valor: opcoes.penalidadeDuasArmas }));
+  if (opcoes.segundoSemAtributo) linhas.push(loc("ICARUS.DuasArmas.LinhaSemAtributo"));
+  return { bonus: opcoes.penalidadeDuasArmas ?? 0, linhas };
 });

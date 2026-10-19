@@ -77,8 +77,29 @@ export async function rolarAtaque(actor, item, modo, opcoes = {}) {
   return new DialogoAtaque({
     actor, item, modo, contexto,
     preset: { vantagem: !!opcoes.vantagem, desvantagem: !!opcoes.desvantagem },
-    aoConfirmar: escolhas => executarAtaque(actor, item, modo, { ...escolhas })
+    aoConfirmar: escolhas => (escolhas.duasArmas ? agredirComDuasArmas(actor, item, modo, escolhas) : executarAtaque(actor, item, modo, { ...escolhas }))
   }).render(true);
+}
+
+/**
+ * Agredir com duas armas: um ataque com cada arma (ou com cada extremidade da arma Dupla),
+ * cada um com o próprio d20, aplicando a penalidade (ou a regra do poder) nos dois.
+ * O segundo ataque usa o mesmo modo de rolagem e opções do diálogo.
+ */
+export async function agredirComDuasArmas(actor, item, modo, escolhas) {
+  const { planoDuasArmas } = await import("./combate.mjs");
+  const { armasEmpunhadas } = await import("./regras-ataque.mjs");
+  const plano = planoDuasArmas(armasEmpunhadas(actor), actor.flags?.[SISTEMA_ID] ?? {});
+  if (!plano.possivel) return executarAtaque(actor, item, modo, { ...escolhas, duasArmas: false });
+  const comuns = { ...escolhas, duasArmas: false, ataqueDeDuasArmas: true, penalidadeDuasArmas: plano.penalidade };
+  // Primeiro ataque: a arma clicada (se for uma das duas), senão a primeira
+  const primeira = [plano.primeira.id, plano.segunda.id].includes(item.id) ? item : actor.items.get(plano.primeira.id);
+  const segunda = plano.dupla ? primeira : actor.items.get(primeira.id === plano.primeira.id ? plano.segunda.id : plano.primeira.id);
+  await executarAtaque(actor, primeira, primeira.id === item.id ? modo : primeira.system.modos[0], comuns);
+  return executarAtaque(actor, segunda, segunda.id === item.id ? modo : segunda.system.modos[0], {
+    ...comuns, segundoSemAtributo: plano.segundoSemAtributo, outraExtremidade: plano.dupla,
+    // Camuflagem já foi rolada para o primeiro; o segundo rola de novo (ataque separado)
+  });
 }
 
 /** Dados do diálogo de ataque: arma, bônus, alvos e as seções dos provedores. */
@@ -186,7 +207,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
   });
   const mensagem = await enviar(actor, content, {
     rolls: [...rollsExtras, r.roll],
-    flags: { ataque: { actorUuid: actor.uuid, itemId: item.id, modo, podeCritico, arremessou, extrasDano, segundoSemAtributo: !!opcoes.segundoSemAtributo } }
+    flags: { ataque: { actorUuid: actor.uuid, itemId: item.id, modo, podeCritico, arremessou, extrasDano, segundoSemAtributo: !!opcoes.segundoSemAtributo, outraExtremidade: !!opcoes.outraExtremidade, atributoDano: opcoes.atributoDano ?? "FOR" } }
   });
   return { roll: r.roll, d20: r.d20, total: r.total, plano, ameaca, podeCritico, resultados, mensagem };
 }
@@ -307,8 +328,8 @@ export function registrarBotoesDoChat() {
 
         // Extras de poderes (Ataque Furtivo, Marca da Presa…) e "sem atributo" guardados no card
         const doAtaque = { extras: dados.extrasDano ?? [], semAtributo: !!dados.segundoSemAtributo, atributo: dados.atributoDano ?? "FOR" };
-        if (acao === "dano") await rolarDano(ator, item, dados.modo, { ...doAtaque, duasMaos: comDuasMaos });
-        else if (acao === "critico" && dados.podeCritico) await rolarDano(ator, item, dados.modo, { ...doAtaque, duasMaos: comDuasMaos, critico: true });
+        if (acao === "dano") await rolarDano(ator, item, dados.modo, { ...doAtaque, duasMaos: comDuasMaos, outraExtremidade: !!dados.outraExtremidade });
+        else if (acao === "critico" && dados.podeCritico) await rolarDano(ator, item, dados.modo, { ...doAtaque, duasMaos: comDuasMaos, critico: true, outraExtremidade: !!dados.outraExtremidade });
         else if (acao === "extremidade") await rolarDano(ator, item, dados.modo, { ...doAtaque, outraExtremidade: true });
         else if (acao === "recolher") await recolherArma(ator, item);
         await marcarBotao(message, acao);

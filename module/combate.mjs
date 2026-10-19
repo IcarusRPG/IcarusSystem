@@ -18,9 +18,9 @@ export const REGRAS = {
   acertoAutomatico: false,
   // [PROVISÓRIO] Sem proficiência na arma: só um aviso, sem penalidade numérica (valor não definido).
   penalidadeSemProficiencia: 0,
-  // Ganchos ainda não implementados: duas armas (−2, Ataque Duplo/Ambidestria), Arma Dupla completa,
-  // dano desarmado e armas naturais, efeitos de poderes sobre armas (ex.: Tradição da Forja).
-  duasArmas: null
+  // Duas armas: planoDuasArmas (abaixo). Ainda não implementados: armas naturais e efeitos de
+  // poderes sobre armas (ex.: Tradição da Forja).
+  duasArmas: "planoDuasArmas"
 };
 
 /** Perícia de cada modo: corpo a corpo usa Luta; distância, arremesso e fogo usam Pontaria. */
@@ -646,4 +646,33 @@ export function somarRD(manual, fontes = [], teto = null) {
   const bruto = numero(manual) + usadas.reduce((s, f) => s + f.valor, 0);
   const cortado = teto !== null && bruto > teto;
   return { total: cortado ? teto : Math.max(0, bruto), bruto, usadas, cortado };
+}
+
+/* ------------------------------ Duas armas ------------------------------ */
+
+/** Penalidade geral de combate com duas armas (em todos os ataques até o próximo turno). */
+export const PENALIDADE_DUAS_ARMAS = -2;
+
+/**
+ * Agredir com duas armas (regra geral): empunhando duas armas, pelo menos uma Leve (ou uma arma
+ * Dupla, que conta como duas), faz um ataque com cada, com −2 em todos os ataques.
+ * Poderes que eliminam a penalidade (flags duasArmas = "sem-penalidade") trocam-na por: o
+ * segundo ataque não soma o atributo no dano — salvo flag duasArmasAtributoNoSegundo
+ * (Ambidestria, Mão Habilidosa, Mão Firme, Pulso Firme).
+ * @param {{ id, propriedades: string[] }[]} armas  armas empunhadas (system + id)
+ * @param {object} flags  flags["icarus-rpg"] do ator
+ * @returns {{ possivel: boolean, primeira, segunda, dupla: boolean, penalidade: number, segundoSemAtributo: boolean }}
+ */
+export function planoDuasArmas(armas = [], flags = {}) {
+  const semPenalidade = flags?.duasArmas === "sem-penalidade";
+  const base = {
+    penalidade: semPenalidade ? 0 : PENALIDADE_DUAS_ARMAS,
+    segundoSemAtributo: semPenalidade && !flags?.duasArmasAtributoNoSegundo
+  };
+  const dupla = armas.find(a => (a.propriedades ?? []).includes("dupla"));
+  if (armas.length === 1 && dupla) return { possivel: true, primeira: dupla, segunda: dupla, dupla: true, ...base };
+  if (armas.length === 2 && armas.some(a => (a.propriedades ?? []).includes("leve"))) {
+    return { possivel: true, primeira: armas[0], segunda: armas[1], dupla: false, ...base };
+  }
+  return { possivel: false, primeira: null, segunda: null, dupla: false, ...base };
 }

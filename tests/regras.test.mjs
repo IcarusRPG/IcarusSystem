@@ -249,3 +249,21 @@ test("Ataque que ignora a RD ignora o total; perda de PV não passa por resistê
   assert.equal(calcularDanoRecebido(res, 12, "fogo").final, 4);
   assert.equal(calcularDanoRecebido(res, 12, "fogo", undefined, { ignoraRD: true }).final, 12);
 });
+
+test("Duas armas: precisa de uma Leve (ou arma Dupla); −2 nos dois; poder tira a penalidade e o atributo do segundo", async () => {
+  const { planoDuasArmas } = await import("../module/combate.mjs");
+  const adaga = { id: "a", propriedades: ["leve", "agil"] };
+  const espada = { id: "e", propriedades: [] };
+  const machado = { id: "m", propriedades: [] };
+  const bordao = { id: "b", propriedades: ["duas-maos", "dupla"] };
+  assert.equal(planoDuasArmas([espada, machado]).possivel, false);
+  const p = planoDuasArmas([espada, adaga]);
+  assert.deepEqual([p.possivel, p.penalidade, p.segundoSemAtributo], [true, -2, false]);
+  const ladino = planoDuasArmas([espada, adaga], { duasArmas: "sem-penalidade" });
+  assert.deepEqual([ladino.penalidade, ladino.segundoSemAtributo], [0, true]);
+  const ambidestro = planoDuasArmas([espada, adaga], { duasArmas: "sem-penalidade", duasArmasAtributoNoSegundo: true });
+  assert.equal(ambidestro.segundoSemAtributo, false);
+  const dupla = planoDuasArmas([bordao]);
+  assert.deepEqual([dupla.possivel, dupla.dupla, dupla.primeira.id, dupla.segunda.id], [true, true, "b", "b"]);
+  assert.equal(planoDuasArmas([adaga]).possivel, false);
+});

@@ -954,6 +954,17 @@
       "Teto": "Teto 8 + metade do nível: {teto} (somaria {bruto})",
       "TetoCurto": "Teto de RD (8 + metade do nível): {teto}, contado à parte na RD geral e em cada tipo; a mesma fonte não soma consigo mesma.",
       "SemTeto": "Sem nível: sem teto de RD."
+    },
+    "DuasArmas": {
+      "Titulo": "Duas armas",
+      "Rotulo": "Agredir com duas armas ({primeira} e {segunda})",
+      "RotuloDupla": "Agredir com as duas extremidades (arma Dupla)",
+      "OutraExtremidade": "outra extremidade",
+      "Penalidade": "Um ataque com cada arma, {valor} em todos os testes de ataque até o próximo turno.",
+      "SemPenalidade": "Sem penalidade (poder).",
+      "SemAtributo": "Sem penalidade (poder); o segundo ataque não soma o atributo no dano.",
+      "Linha": "Duas armas: {valor} no ataque",
+      "LinhaSemAtributo": "Segundo ataque: dano sem o atributo"
     }
   }
 }
