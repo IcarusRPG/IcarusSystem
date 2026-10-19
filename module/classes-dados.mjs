@@ -108,3 +108,90 @@ export const PATAMARES = [
 
 /** Patamar de um nível ("iniciante", "veterano", "campeao", "lenda", "paragon"). */
 export const patamarDe = nivel => (PATAMARES.find(p => nivel >= p.de && nivel <= p.ate) ?? PATAMARES[0]).id;
+
+/* ------------------------------ Escolhas permanentes (caminho, senda, vínculo) ------------------------------ */
+
+/**
+ * Habilidades que seguem a escolha de outra (mesma posição na lista de subitens):
+ * Caminho Aprofundado/Supremo seguem o Caminho do Monge; O Ápice da Senda segue a Senda.
+ */
+export const ESCOLHA_SEGUE = { "caminho-aprofundado": "caminho-do-monge", "caminho-supremo": "caminho-do-monge", "o-apice-da-senda": "senda-do-combatente" };
+
+/** Habilidades da classe com escolha entre subitens (as que não seguem outra). */
+export const habilidadesComEscolha = classe => (classe?.habilidades ?? []).filter(h => h.subs?.length && !ESCOLHA_SEGUE[h.id]);
+
+/** Nome sem o parêntese ("Kyudo (Arco)" → "kyudo"). */
+const nucleo = nome => normalizarNome(String(nome).replace(/\(.*?\)/g, ""));
+
+/**
+ * Subitem escolhido de uma habilidade (índice) a partir das escolhas guardadas
+ * ({ [habilidadeId]: índice }), seguindo ESCOLHA_SEGUE.
+ */
+export function escolhaDaHabilidade(habId, escolhas = {}) {
+  const base = ESCOLHA_SEGUE[habId] ?? habId;
+  const i = escolhas?.[base];
+  return Number.isInteger(i) ? i : null;
+}
+
+/** Nomes dos grupos liberados pelas escolhas (ex.: "Caminho Astral", "Kyudo (Arco)"). */
+export function gruposEscolhidos(classe, escolhas = {}) {
+  return habilidadesComEscolha(classe).map(h => {
+    const i = escolhaDaHabilidade(h.id, escolhas);
+    return i === null ? null : h.subs[i]?.nome;
+  }).filter(Boolean);
+}
+
+/** O grupo exigido pelo poder ("Senda do Kyudo", "Caminho Astral") foi escolhido? */
+export function atendeGrupo(requerGrupo, grupos = []) {
+  if (!requerGrupo) return true;
+  const alvo = normalizarNome(requerGrupo);
+  return grupos.some(g => { const n = nucleo(g); return n && (alvo === n || alvo.includes(n) || n.includes(alvo)); });
+}
+
+/* ------------------------------ Pré-requisitos dos poderes ------------------------------ */
+
+const NOMES_ATRIBUTO = { FOR: "Força", DES: "Destreza", CON: "Constituição", INT: "Inteligência", SAB: "Sabedoria", CAR: "Carisma" };
+
+/**
+ * Valida um poder de classe para o personagem. Nunca bloqueia (só ✓ / ✗ / ⚠), exceto
+ * "já escolhido" em poder não repetível.
+ * @param {object} classe
+ * @param {object} poder  entrada de classes.json
+ * @param {{ nivel, atributos: {FOR:n…}, treino: {pericia: 0|1|2}, tem: Set<string>, grupos: string[] }} p
+ * @returns {{ itens: {texto, estado: "ok"|"falta"|"conferir"}[], ok: boolean, jaEscolhido: boolean, visivel: boolean, disponivel: boolean }}
+ */
+export function validarPoder(classe, poder, p) {
+  const itens = [];
+  const nomePoder = id => classe.poderes.find(x => x.id === id)?.nome ?? id;
+  if (poder.nivelMinimo) itens.push({ texto: `${poder.nivelMinimo}º nível`, estado: p.nivel >= poder.nivelMinimo ? "ok" : "falta" });
+  const atrs = Object.entries(poder.atributoMinimo ?? {});
+  if (atrs.length) {
+    // "Força 1 ou Destreza 1": basta um
+    const qualquer = /\bou\b/i.test(poder.prerequisito ?? "") && atrs.length > 1;
+    const atende = ([k, v]) => (p.atributos?.[k] ?? 0) >= v;
+    const texto = atrs.map(([k, v]) => `${NOMES_ATRIBUTO[k] ?? k} ${v}`).join(qualquer ? " ou " : " e ");
+    itens.push({ texto, estado: (qualquer ? atrs.some(atende) : atrs.every(atende)) ? "ok" : "falta" });
+  }
+  for (const id of poder.requerPoderes ?? []) itens.push({ texto: nomePoder(id), estado: p.tem?.has(id) ? "ok" : "falta" });
+  if (poder.requerGrupo) itens.push({ texto: poder.requerGrupo, estado: atendeGrupo(poder.requerGrupo, p.grupos) ? "ok" : "falta" });
+  // "treinado em X" também é conferido; o resto do texto fica para o Mestre confirmar
+  let resto = String(poder.prerequisito ?? "");
+  for (const m of resto.matchAll(/treinad[oa] em ([A-Za-zÀ-ú]+)/gi)) {
+    const chave = chaveDaPericia(m[1]);
+    if (chave) itens.push({ texto: m[0], estado: (p.treino?.[chave] ?? 0) >= 1 ? "ok" : "falta" });
+  }
+  resto = resto.replace(/treinad[oa] em [A-Za-zÀ-ú]+/gi, "").replace(/\d+º nível/g, "");
+  for (const [, nome] of Object.entries(NOMES_ATRIBUTO)) resto = resto.replace(new RegExp(`${nome} \d+`, "g"), "");
+  for (const id of poder.requerPoderes ?? []) resto = resto.replace(nomePoder(id), "");
+  if (poder.requerGrupo) resto = resto.replace(poder.requerGrupo, "");
+  resto = resto.replace(/[,;.]|\b(e|ou)\b/gi, " ").trim();
+  if (resto.length > 2) itens.push({ texto: resto, estado: "conferir" });
+  const jaEscolhido = !poder.repetivel && !!p.tem?.has(poder.id);
+  const ok = itens.every(i => i.estado !== "falta");
+  return {
+    itens, ok, jaEscolhido,
+    // Poderes de caminho/senda só aparecem para quem escolheu o caminho
+    visivel: atendeGrupo(poder.requerGrupo, p.grupos),
+    disponivel: ok && !jaEscolhido
+  };
+}

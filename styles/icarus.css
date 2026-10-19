@@ -879,3 +879,24 @@ body.game {
 .ficha-icarus .mecanica { display: flex; align-items: center; gap: 6px; font-size: 14px; }
 .ficha-icarus .mecanica-info { color: var(--ic-apagado); font-size: 13px; }
 .ficha-icarus .mecanica.ativa .mecanica-info { color: var(--ic-ouro-claro); }
+
+/* --- Diálogo de poderes de classe --- */
+.application.icarus-poderes-classe .window-content { padding: 0; overflow: hidden; }
+.ficha-icarus.dialogo-poderes-classe { height: 100%; display: flex; flex-direction: column; gap: 8px; padding: 10px 14px; background: var(--ic-janela); }
+.ficha-icarus .filtros-poderes-classe { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ficha-icarus .filtros-poderes-classe input[type="search"] { flex: 1; min-width: 160px; }
+.ficha-icarus .filtros-poderes-classe select { width: auto; }
+.ficha-icarus .contador-classe { margin-left: auto; color: var(--ic-ciano-titulo); font-size: 13px; }
+.ficha-icarus .lista-poderes-classe { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-right: 4px; }
+.ficha-icarus .grupo-poderes-classe[hidden], .ficha-icarus .card-poder-classe[hidden] { display: none; }
+.ficha-icarus .grupo-poderes-classe { display: flex; flex-direction: column; gap: 8px; }
+.ficha-icarus .card-poder-classe { padding: 8px 10px; border: 1px solid var(--ic-borda); border-radius: 6px; background: var(--ic-painel); display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .card-poder-classe.escolhido { opacity: .6; }
+.ficha-icarus .card-poder-classe .card-topo { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .card-poder-classe .card-texto { font-size: 14px; color: #c3d2dc; }
+.ficha-icarus .card-poder-classe .card-texto p { margin: 2px 0; }
+.ficha-icarus .prereqs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; }
+.ficha-icarus .prereqs .pre-ok { color: #7fdc8a; }
+.ficha-icarus .prereqs .pre-falta { color: #ff8b84; }
+.ficha-icarus .prereqs .pre-conferir { color: var(--ic-ouro-claro); }
+.ficha-icarus .card-poder-classe .card-acoes { display: flex; justify-content: flex-end; }

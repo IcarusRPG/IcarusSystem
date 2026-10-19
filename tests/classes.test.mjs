@@ -95,3 +95,36 @@ test("3. PV/PM pela classe: Monge 5 com SAB +3 = 23 PM; Guerreiro 5 = 15 PM; Bá
   assert.equal(comClasse("guerreiro", {}).pm.max, 3 + 3 * 4);
   assert.equal(comClasse("barbaro", { CON: { base: 2 } }).pv.max, 24 + 6 * 4 + 2 * 5);
 });
+
+test("5. Validação de poderes: nível, atributo (inclui \"ou\"), poderes exigidos, caminho e ⚠ para o resto", async () => {
+  const { validarPoder, gruposEscolhidos, atendeGrupo } = await import("../module/classes-dados.mjs");
+  const patrulheiro = classePorId("patrulheiro");
+  const rastreio = patrulheiro.poderes.find(p => p.id === "rastreio-infalivel");
+  const base = { nivel: 5, atributos: { SAB: 0 }, treino: {}, tem: new Set(), grupos: [] };
+  assert.equal(validarPoder(patrulheiro, rastreio, base).ok, false);
+  assert.equal(validarPoder(patrulheiro, rastreio, { ...base, atributos: { SAB: 1 } }).ok, true);
+  const guerreiro = classePorId("guerreiro");
+  const avancar = guerreiro.poderes.find(p => p.id === "avancar-e-golpear");
+  assert.equal(validarPoder(guerreiro, avancar, { ...base, atributos: { FOR: 0, DES: 1 } }).ok, true, "Força 1 ou Destreza 1");
+  const golpeCruzado = guerreiro.poderes.find(p => p.id === "golpe-cruzado");
+  const r = validarPoder(guerreiro, golpeCruzado, { ...base, nivel: 9 });
+  assert.deepEqual(r.itens.map(i => i.estado), ["falta", "falta"]);
+  assert.equal(validarPoder(guerreiro, golpeCruzado, { ...base, nivel: 10, tem: new Set(["ambidestria"]) }).ok, true);
+  // Pré-requisito só informativo: ⚠
+  const baluarte = guerreiro.poderes.find(p => p.prerequisito === "estar usando armadura pesada");
+  assert.equal(validarPoder(guerreiro, baluarte, base).itens.at(-1).estado, "conferir");
+  // Não repetível já escolhido
+  const ambid = guerreiro.poderes.find(p => p.id === "ambidestria");
+  assert.equal(validarPoder(guerreiro, ambid, { ...base, nivel: 6, tem: new Set(["par-de-laminas", "ambidestria"]) }).jaEscolhido, true);
+  const aumento = guerreiro.poderes.find(p => p.id === "aumento-de-atributo");
+  assert.equal(validarPoder(guerreiro, aumento, { ...base, tem: new Set(["aumento-de-atributo"]) }).jaEscolhido, false);
+  // Caminhos do Monge e Senda do Samurai
+  const monge = classePorId("monge");
+  const astral = monge.poderes.find(p => p.requerGrupo === "Caminho Astral");
+  assert.equal(validarPoder(monge, astral, base).visivel, false);
+  const grupos = gruposEscolhidos(monge, { "caminho-do-monge": 2 });
+  assert.deepEqual(grupos, ["Caminho Astral"]);
+  assert.equal(validarPoder(monge, astral, { ...base, grupos }).visivel, true);
+  assert.equal(atendeGrupo("Senda do Kyudo", gruposEscolhidos(classePorId("samurai"), { "senda-do-combatente": 2 })), true);
+  assert.equal(atendeGrupo("Senda do Kyudo", gruposEscolhidos(classePorId("samurai"), { "senda-do-combatente": 0 })), false);
+});
