@@ -298,44 +298,61 @@ export function documentosDeClasses(d) {
 
 /* ------------------------------ Vínculos (animais do Patrulheiro) ------------------------------ */
 
+const TIPO_POR_NOME = { "perfuração": "perfuracao", "corte": "corte", "impacto": "impacto", "veneno": "veneno", "fogo": "fogo", "frio": "frio", "ácido": "acido" };
+const chavePericia = (nome, pericias) => pericias.find(p => normalizar(p.nome) === normalizar(nome))?.chave;
+
 /**
- * Atores dos animais do Vínculo Selvagem (tipo personagem, sem dono jogador = NPC), com os
- * ataques como armas. Valores-base de um patrulheiro de 1º nível; ao invocar, o sistema recalcula
- * pelo patrulheiro (module/classes/patrulheiro.mjs).
- * @param {{ animais }} vinculos
- * @param {{ classes }} classes  para o texto de cada animal
+ * Atores dos animais do Vínculo Selvagem (Anexo B, PROVISÓRIO): tipo personagem, sem dono
+ * jogador; atributos como modificadores diretos, perícias treinadas (+2) e "outros", ataques como
+ * armas (Luta do animal) e habilidades como poderes. Os valores que dependem do patrulheiro (PV,
+ * Defesa, dano) são recalculados ao invocar (module/classes/patrulheiro.mjs).
+ * @param {{ vinculos }} dados   vinculos.json
+ * @param {{ chave, nome }[]} pericias  PERICIAS de config.mjs
  */
-export function documentosDeVinculos(vinculos, classes) {
-  const hab = classes?.classes?.find(c => c.id === "patrulheiro")?.habilidades.find(h => h.id === "vinculo-selvagem");
+export function documentosDeVinculos(dados, pericias) {
   return {
     pastas: [],
-    atores: (vinculos?.animais ?? []).map((a, i) => {
-      const sub = hab?.subs?.find(s => normalizar(s.nome) === normalizar(a.nome));
+    atores: (dados?.vinculos ?? []).map((a, i) => {
       const actorId = idEstavel(`vinculo:${a.id}`);
+      const pericia = {};
+      for (const nome of a.treinadas ?? []) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), treino: 1 }; }
+      for (const [nome, v] of Object.entries(a.outros ?? {})) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), outros: v }; }
+      const movimentos = Object.entries(a.deslocamentos ?? {}).filter(([k]) => k !== "terrestre").map(([k, v]) => `${k} ${v} m`).join(", ");
       return {
         _id: actorId, name: a.nome, type: "personagem", img: "icons/svg/pawprint.svg", folder: null, sort: (i + 1) * 100,
         system: {
-          nivel: 1,
+          nivel: 1, tamanho: a.tamanho === "pequeno" ? "pequeno" : "medio",
+          atributos: Object.fromEntries(Object.entries(a.atributos ?? {}).map(([k, v]) => [k, { base: v, racial: 0, temp: 0 }])),
           classeConfig: { manual: true },
           pv: { value: 10, max: 10 },
-          defesa: { outros: a.defesa },
-          deslocamento: a.deslocamento,
+          defesa: { outros: (a.defesaBonus ?? 0) - (a.atributos?.DES ?? 0) },
+          deslocamento: a.deslocamentos?.terrestre ?? 9,
           resistencias: { rdGeral: a.rd ?? 0 },
-          notas: `${sub ? `<p>${sub.descricao}</p>` : ""}${a.movimentos ? `<p><em>${escapar(a.movimentos)}</em></p>` : ""}`,
-          pericias: Object.fromEntries(Object.entries(a.pericias ?? {}).map(([k, v]) => [k, { outros: v }]))
+          pericias: pericia,
+          notas: `<p><strong>Vínculo Selvagem (valores provisórios).</strong>${movimentos ? ` Deslocamentos: ${escapar(movimentos)}.` : ""}</p>`
         },
         prototypeToken: { name: a.nome, actorLink: true, disposition: 1, texture: { src: "icons/svg/pawprint.svg" } },
-        items: a.ataques.map((atq, j) => ({
-          _id: idEstavel(`vinculo:${a.id}:ataque:${j}`), name: atq.nome, type: "arma", img: "icons/svg/claw.svg",
-          system: {
-            categoria: "simples", grupo: "corpo-a-corpo", empunhadura: "uma-mao", dano: atq.dano, tiposDano: [...atq.tipos],
-            criticoMargem: 20, criticoMult: 2, alcance: "corpo-a-corpo", proficiencia: "sim", empunhada: true,
-            bonusAtaque: 0, bonusDano: 0, quantidade: 1, espacos: 0, preco: 0
-          },
-          flags: { [SISTEMA_ID]: { natural: true, somaNivel: !!atq.somaNivel } }
-        })),
+        items: [
+          ...a.ataques.map((atq, j) => ({
+            _id: idEstavel(`vinculo:${a.id}:ataque:${j}`), name: atq.nome, type: "arma", img: "icons/svg/claw.svg",
+            system: {
+              categoria: "simples", grupo: "corpo-a-corpo", empunhadura: "uma-mao",
+              dano: /1d6 de dano de veneno/i.test(atq.extra ?? "") ? `${atq.dano} + 1d6` : atq.dano,
+              tiposDano: [TIPO_POR_NOME[String(atq.tipo ?? "").toLowerCase()] ?? "impacto", ...(/veneno/i.test(atq.extra ?? "") ? ["veneno"] : [])],
+              criticoMargem: 20, criticoMult: 2, alcance: "corpo-a-corpo", proficiencia: "sim", empunhada: true,
+              bonusAtaque: 0, bonusDano: 0, quantidade: 1, espacos: 0, preco: 0,
+              descricao: atq.extra ? `<p>${escapar(atq.extra)}</p>` : ""
+            },
+            // Teixugo: só a mordida soma a metade do nível do patrulheiro
+            flags: { [SISTEMA_ID]: { natural: true, somaNivel: !/só a mordida soma/i.test(atq.extra ?? "") || /mordida/i.test(atq.nome) } }
+          })),
+          ...(a.habilidades ?? []).map((h, j) => ({
+            _id: idEstavel(`vinculo:${a.id}:habilidade:${j}`), name: h.nome, type: "poder", img: "icons/svg/pawprint.svg",
+            system: { fonte: "geral", descricao: `<p>${escapar(h.texto)}</p>` }, flags: { [SISTEMA_ID]: { vinculo: true } }
+          }))
+        ],
         effects: [],
-        flags: { [SISTEMA_ID]: { id: a.id, vinculo: { animal: a.id } } }
+        flags: { [SISTEMA_ID]: { id: a.id, vinculo: { animal: a.id }, provisorio: true } }
       };
     })
   };

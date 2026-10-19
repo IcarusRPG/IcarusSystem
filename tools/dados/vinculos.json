@@ -1,17 +1,268 @@
 {
-  "_leiame": "Animais do Vínculo Selvagem (Patrulheiro), estruturados a partir do texto do Anexo A (classes.json → patrulheiro → vinculo-selvagem → subs). Regra geral: PV = 10 + metade do nível do patrulheiro; Defesa = 10 + DES do patrulheiro + defesa; ataques e resistências iguais aos do patrulheiro; dano + metade do nível (somaNivel). O texto completo de cada animal vai para a ficha.",
-  "animais": [
-    { "id": "lobo", "nome": "Lobo", "defesa": 2, "deslocamento": 12, "movimentos": "", "rd": 0, "pericias": {},
-      "ataques": [{ "nome": "Mordida", "dano": "1d6", "tipos": ["perfuracao"], "somaNivel": true }] },
-    { "id": "pantera", "nome": "Pantera", "defesa": 3, "deslocamento": 15, "movimentos": "escalada 9 m", "rd": 0, "pericias": { "furtividade": 4 },
-      "ataques": [{ "nome": "Mordida", "dano": "1d6", "tipos": ["perfuracao"], "somaNivel": true }] },
-    { "id": "cobra-voadora", "nome": "Cobra Voadora", "defesa": 4, "deslocamento": 9, "movimentos": "voo 12 m", "rd": 0, "pericias": {},
-      "ataques": [{ "nome": "Mordida", "dano": "1d4 + 1d6", "tipos": ["perfuracao", "veneno"], "somaNivel": true }] },
-    { "id": "urso-negro", "nome": "Urso Negro", "defesa": 1, "deslocamento": 9, "movimentos": "escalada 6 m", "rd": 2, "pericias": {},
-      "ataques": [{ "nome": "Garras", "dano": "1d8", "tipos": ["corte"], "somaNivel": true }] },
-    { "id": "sapo-gigante", "nome": "Sapo Gigante", "defesa": 1, "deslocamento": 9, "movimentos": "salto de 6 m", "rd": 0, "pericias": {},
-      "ataques": [{ "nome": "Mordida", "dano": "1d6", "tipos": ["perfuracao"], "somaNivel": true }] },
-    { "id": "teixugo-gigante", "nome": "Teixugo Gigante", "defesa": 2, "deslocamento": 6, "movimentos": "escavação 6 m", "rd": 0, "pericias": {},
-      "ataques": [{ "nome": "Mordida", "dano": "1d6", "tipos": ["perfuracao"], "somaNivel": true }, { "nome": "Garras", "dano": "1d4", "tipos": ["corte"], "somaNivel": false }] }
+  "versao": 1,
+  "regras": {
+    "pv": "10 + metade do nível do patrulheiro (arredondada para baixo), igual para todos",
+    "defesa": "10 + metade do nível do patrulheiro (arredondada para baixo) + defesaBonus",
+    "cd": "10 + metade do nível do patrulheiro + Destreza do patrulheiro",
+    "dano": "dano do ataque + metade do nível do patrulheiro (arredondada para baixo)",
+    "treino": "perícias listadas em treinadas têm treino +2; \"outros\" soma ao total",
+    "provisorio": true
+  },
+  "vinculos": [
+    {
+      "id": "lobo",
+      "nome": "Lobo",
+      "tamanho": "medio",
+      "atributos": {
+        "FOR": 1,
+        "DES": 2,
+        "CON": 1,
+        "INT": -4,
+        "SAB": 1,
+        "CAR": -2
+      },
+      "treinadas": [
+        "Luta",
+        "Furtividade",
+        "Olfato",
+        "Audição",
+        "Iniciativa",
+        "Reflexos"
+      ],
+      "outros": {},
+      "defesaBonus": 2,
+      "deslocamentos": {
+        "terrestre": 12
+      },
+      "rd": 0,
+      "ataques": [
+        {
+          "nome": "Mordida",
+          "dano": "1d6",
+          "tipo": "Perfuração",
+          "pericia": "Luta"
+        }
+      ],
+      "habilidades": [
+        {
+          "nome": "Tática de Matilha",
+          "texto": "Se um aliado seu estiver adjacente ao alvo, o ataque do lobo é feito com vantagem."
+        },
+        {
+          "nome": "Derrubar",
+          "texto": "Uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Caído."
+        }
+      ]
+    },
+    {
+      "id": "pantera",
+      "nome": "Pantera",
+      "tamanho": "medio",
+      "atributos": {
+        "FOR": 2,
+        "DES": 2,
+        "CON": 0,
+        "INT": -4,
+        "SAB": 2,
+        "CAR": -2
+      },
+      "treinadas": [
+        "Luta",
+        "Furtividade",
+        "Atletismo",
+        "Audição",
+        "Olfato",
+        "Visão",
+        "Reflexos"
+      ],
+      "outros": {
+        "Furtividade": 4
+      },
+      "defesaBonus": 3,
+      "deslocamentos": {
+        "terrestre": 15,
+        "escalada": 9
+      },
+      "rd": 0,
+      "ataques": [
+        {
+          "nome": "Mordida",
+          "dano": "1d6",
+          "tipo": "Perfuração",
+          "pericia": "Luta"
+        }
+      ],
+      "habilidades": [
+        {
+          "nome": "Bote",
+          "texto": "Se a mordida derruba o alvo (ele fica Caído), a pantera faz imediatamente um segundo ataque de mordida."
+        }
+      ]
+    },
+    {
+      "id": "cobra-voadora",
+      "nome": "Cobra Voadora",
+      "tamanho": "pequeno",
+      "atributos": {
+        "FOR": -3,
+        "DES": 4,
+        "CON": 0,
+        "INT": -4,
+        "SAB": 1,
+        "CAR": -3
+      },
+      "treinadas": [
+        "Luta",
+        "Furtividade",
+        "Acrobacia",
+        "Visão",
+        "Reflexos"
+      ],
+      "outros": {},
+      "defesaBonus": 4,
+      "deslocamentos": {
+        "terrestre": 9,
+        "voo": 12
+      },
+      "rd": 0,
+      "ataques": [
+        {
+          "nome": "Mordida",
+          "dano": "1d4",
+          "tipo": "Perfuração",
+          "extra": "mais 1d6 de dano de Veneno",
+          "pericia": "Luta"
+        }
+      ],
+      "habilidades": [
+        {
+          "nome": "Ataque e Recuo",
+          "texto": "Uma vez por rodada, depois de atacar, a cobra pode se deslocar até 6 m como ação livre."
+        }
+      ]
+    },
+    {
+      "id": "urso-negro",
+      "nome": "Urso Negro",
+      "tamanho": "medio",
+      "atributos": {
+        "FOR": 2,
+        "DES": 0,
+        "CON": 2,
+        "INT": -4,
+        "SAB": 1,
+        "CAR": -2
+      },
+      "treinadas": [
+        "Luta",
+        "Fortitude",
+        "Atletismo",
+        "Olfato",
+        "Audição"
+      ],
+      "outros": {},
+      "defesaBonus": 1,
+      "deslocamentos": {
+        "terrestre": 9,
+        "escalada": 6
+      },
+      "rd": 2,
+      "ataques": [
+        {
+          "nome": "Garras",
+          "dano": "1d8",
+          "tipo": "Corte",
+          "pericia": "Luta"
+        }
+      ],
+      "habilidades": []
+    },
+    {
+      "id": "sapo-gigante",
+      "nome": "Sapo Gigante",
+      "tamanho": "medio",
+      "atributos": {
+        "FOR": 2,
+        "DES": 1,
+        "CON": 1,
+        "INT": -4,
+        "SAB": 0,
+        "CAR": -4
+      },
+      "treinadas": [
+        "Luta",
+        "Furtividade",
+        "Atletismo",
+        "Visão"
+      ],
+      "outros": {},
+      "defesaBonus": 1,
+      "deslocamentos": {
+        "terrestre": 9,
+        "salto": 6
+      },
+      "rd": 0,
+      "ataques": [
+        {
+          "nome": "Mordida",
+          "dano": "1d6",
+          "tipo": "Perfuração",
+          "pericia": "Luta"
+        }
+      ],
+      "habilidades": [
+        {
+          "nome": "Língua Agarrante",
+          "texto": "Quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Agarrado; enquanto agarra um alvo, o sapo não pode atacar outro."
+        }
+      ]
+    },
+    {
+      "id": "teixugo-gigante",
+      "nome": "Teixugo Gigante",
+      "tamanho": "medio",
+      "atributos": {
+        "FOR": 1,
+        "DES": 0,
+        "CON": 2,
+        "INT": -4,
+        "SAB": 1,
+        "CAR": -3
+      },
+      "treinadas": [
+        "Luta",
+        "Fortitude",
+        "Atletismo",
+        "Olfato"
+      ],
+      "outros": {},
+      "defesaBonus": 2,
+      "deslocamentos": {
+        "terrestre": 6,
+        "escavacao": 6
+      },
+      "rd": 0,
+      "ataques": [
+        {
+          "nome": "Mordida",
+          "dano": "1d6",
+          "tipo": "Perfuração",
+          "pericia": "Luta"
+        },
+        {
+          "nome": "Garras",
+          "dano": "1d4",
+          "tipo": "Corte",
+          "pericia": "Luta",
+          "extra": "só a mordida soma a metade do nível"
+        }
+      ],
+      "habilidades": [
+        {
+          "nome": "Ataque Duplo",
+          "texto": "O teixugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro."
+        }
+      ]
+    }
   ]
 }

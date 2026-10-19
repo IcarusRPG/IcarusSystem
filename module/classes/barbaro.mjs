@@ -37,7 +37,8 @@ ACOES_DE_MECANICA.set("barbaro:furia", async actor => {
   if (emFuria(actor)) return encerrarFuria(actor);
   const item = itemDeClasse(actor, "barbaro", "furia");
   if (!item) return ui.notifications.warn(loc("ICARUS.Barbaro.SemFuria"));
-  return usarPoder(actor, item);
+  // Fúria Primeva (20º): entrar em Fúria não custa PM
+  return usarPoder(actor, item, { custo: itemDeClasse(actor, "barbaro", "furia-primeva") ? 0 : null });
 });
 
 registrarLinhas("barbaro", actor => {
@@ -47,7 +48,7 @@ registrarLinhas("barbaro", actor => {
   return [{
     id: "barbaro:furia", botao: true, ativo: ativa,
     rotulo: ativa ? loc("ICARUS.Barbaro.Encerrar") : loc("ICARUS.Barbaro.Entrar"),
-    info: fmt(ativa ? "ICARUS.Barbaro.InfoAtiva" : "ICARUS.Barbaro.Info", { dano: b.dano, ataque: b.ataque }),
+    info: fmt(ativa ? "ICARUS.Barbaro.InfoAtiva" : itemDeClasse(actor, "barbaro", "furia-primeva") ? "ICARUS.Barbaro.InfoPrimeva" : "ICARUS.Barbaro.Info", { dano: b.dano, ataque: b.ataque }),
     dica: loc("ICARUS.Barbaro.Dica")
   }];
 });

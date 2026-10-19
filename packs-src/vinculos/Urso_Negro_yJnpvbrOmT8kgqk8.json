@@ -7,6 +7,39 @@
   "sort": 400,
   "system": {
     "nivel": 1,
+    "tamanho": "medio",
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
     "classeConfig": {
       "manual": true
     },
@@ -21,8 +54,24 @@
     "resistencias": {
       "rdGeral": 2
     },
-    "notas": "<p>Defesa +1; deslocamento 9 m, escalada 6 m; RD 2. Garras: 1d8 de dano de Corte.</p><p><em>escalada 6 m</em></p>",
-    "pericias": {}
+    "pericias": {
+      "luta": {
+        "treino": 1
+      },
+      "fortitude": {
+        "treino": 1
+      },
+      "atletismo": {
+        "treino": 1
+      },
+      "olfato": {
+        "treino": 1
+      },
+      "audicao": {
+        "treino": 1
+      }
+    },
+    "notas": "<p><strong>Vínculo Selvagem (valores provisórios).</strong> Deslocamentos: escalada 6 m.</p>"
   },
   "prototypeToken": {
     "name": "Urso Negro",
@@ -55,7 +104,8 @@
         "bonusDano": 0,
         "quantidade": 1,
         "espacos": 0,
-        "preco": 0
+        "preco": 0,
+        "descricao": ""
       },
       "flags": {
         "icarus-rpg": {
@@ -72,7 +122,8 @@
       "id": "urso-negro",
       "vinculo": {
         "animal": "urso-negro"
-      }
+      },
+      "provisorio": true
     }
   },
   "_key": "!actors!yJnpvbrOmT8kgqk8"

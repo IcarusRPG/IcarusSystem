@@ -8,7 +8,7 @@
 import { SISTEMA_ID, ATRIBUTOS, PERICIAS } from "../config.mjs";
 import { validarPoder, gruposEscolhidos, normalizarNome } from "../classes-dados.mjs";
 import { dadosDoPoderDeClasse } from "../dados-compendios.mjs";
-import { classeDoAtor, idsDeClasseDoAtor, contadorDePoderes } from "../classes.mjs";
+import { classeDoAtor, idsDeClasseDoAtor, contagemDeClasseDoAtor, contadorDePoderes } from "../classes.mjs";
 import ICONES_CLASSES from "../dados/icones-classes.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -29,6 +29,7 @@ export function situacaoParaValidar(actor, classe) {
     atributos: Object.fromEntries(ATRIBUTOS.map(k => [k, s.atributos[k].total])),
     treino: Object.fromEntries(PERICIAS.map(p => [p.chave, s.pericias[p.chave].treino])),
     tem: idsDeClasseDoAtor(actor),
+    contagem: contagemDeClasseDoAtor(actor),
     grupos: gruposEscolhidos(classe, actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {})
   };
 }

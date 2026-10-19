@@ -1082,7 +1082,8 @@
       "Dica": "Sem magias nem Concentração; só perícias de INT/SAB/CAR se forem Intimidação ou Vontade. Termina se, ao fim de uma rodada, você não atacou nem sofreu dano.",
       "EntrouFuria": "{nome} entra em Fúria: +{dano} no dano e +{ataque} nos ataques corpo a corpo.",
       "SaiuFuria": "{nome} sai da Fúria.",
-      "LinhaAtaque": "Fúria: +{ataque} no ataque, +{dano} no dano"
+      "LinhaAtaque": "Fúria: +{ataque} no ataque, +{dano} no dano",
+      "InfoPrimeva": "ação livre, sem custo (Fúria Primeva): +{dano} no dano e +{ataque} no ataque corpo a corpo"
     },
     "Ladino": {
       "Furtivo": "Ataque Furtivo",
@@ -1108,7 +1109,7 @@
       "LinhaPresa": "Contra a presa: +{n}d4 de dano (se acertar)",
       "SemAnimal": "Escolha o animal do Vínculo Selvagem primeiro.",
       "NomeAnimal": "{animal} de {nome}",
-      "Invocou": "{nome} invoca {animal} (PV {pv}).",
+      "Invocou": "{nome} invoca {animal} (PV {pv}, Defesa {defesa}, CD das habilidades {cd}).",
       "Invocar": "Invocar {animal}",
       "InvocarInfo": "ação de movimento, 1 PM · PV {pv}",
       "Dispensar": "Dispensar o animal",

@@ -15,7 +15,7 @@
     "sustentada": false,
     "divindade": "",
     "tipoDano": "",
-    "descricao": "Entrar em Fúria não custa PM. O bônus da Fúria passa a +5 no dano e +4 no ataque.",
+    "descricao": "Entrar em Fúria não custa PM. <em>(O bônus da Fúria permanece o do 17º nível: +4 no dano e +3 no ataque.)</em>",
     "classe": "barbaro",
     "tipoPoder": "habilidade",
     "grupo": "",

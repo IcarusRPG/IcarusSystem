@@ -157,7 +157,7 @@ const NOMES_ATRIBUTO = { FOR: "Força", DES: "Destreza", CON: "Constituição", 
  * "já escolhido" em poder não repetível.
  * @param {object} classe
  * @param {object} poder  entrada de classes.json
- * @param {{ nivel, atributos: {FOR:n…}, treino: {pericia: 0|1|2}, tem: Set<string>, grupos: string[] }} p
+ * @param {{ nivel, atributos: {FOR:n…}, treino: {pericia: 0|1|2}, tem: Set<string>, contagem?: Map<string, number>, grupos: string[] }} p
  * @returns {{ itens: {texto, estado: "ok"|"falta"|"conferir"}[], ok: boolean, jaEscolhido: boolean, visivel: boolean, disponivel: boolean }}
  */
 export function validarPoder(classe, poder, p) {
@@ -186,7 +186,9 @@ export function validarPoder(classe, poder, p) {
   if (poder.requerGrupo) resto = resto.replace(poder.requerGrupo, "");
   resto = resto.replace(/[,;.]|\b(e|ou)\b/gi, " ").trim();
   if (resto.length > 2) itens.push({ texto: resto, estado: "conferir" });
-  const jaEscolhido = !poder.repetivel && !!p.tem?.has(poder.id);
+  // Não repetível: uma vez; repetível com maxEscolhas (Treino Extra: 2): até o limite
+  const vezes = p.contagem?.get?.(poder.id) ?? (p.tem?.has(poder.id) ? 1 : 0);
+  const jaEscolhido = poder.repetivel ? (Number(poder.maxEscolhas) > 0 && vezes >= poder.maxEscolhas) : vezes > 0;
   const ok = itens.every(i => i.estado !== "falta");
   return {
     itens, ok, jaEscolhido,
@@ -280,21 +282,22 @@ export function flagsDeDuasArmas(itens, flags = {}) {
 /* ------------------------------ Vínculo Selvagem (Patrulheiro) ------------------------------ */
 
 /**
- * Valores do animal do Vínculo a partir do patrulheiro (regra geral do texto da habilidade):
- * PV = 10 + metade do nível; Defesa = 10 + DES do patrulheiro + bônus do animal; ataque e testes
- * de resistência iguais aos do patrulheiro; dano + metade do nível (só nos ataques que somam).
- * @param {object} animal  entrada de vinculos.json
- * @param {{ nivel, DES, ataque, fortitude, reflexos, vontade }} p  totais do patrulheiro
+ * Valores do animal do Vínculo que dependem do patrulheiro (Anexo B, PROVISÓRIO):
+ * PV = 10 + metade do nível; Defesa = 10 + metade do nível + defesaBonus; dano dos ataques +
+ * metade do nível; CD das habilidades = 10 + metade do nível + DES do patrulheiro. O ataque e os
+ * testes usam as perícias da ficha do próprio animal.
+ * @param {object} animal  entrada de vinculos.json (vinculos[])
+ * @param {{ nivel: number, DES: number }} p  nível e DES (total) do patrulheiro
  */
 export function estatisticasDoVinculo(animal, p) {
   const metade = Math.floor(Math.max(1, Number(p.nivel) || 1) / 2);
   return {
     pv: 10 + metade,
-    defesaOutros: (Number(p.DES) || 0) + animal.defesa,
-    ataques: animal.ataques.map(a => ({ ...a, bonusAtaque: Number(p.ataque) || 0, bonusDano: a.somaNivel ? metade : 0 })),
-    resistencias: { fortitude: p.fortitude ?? 0, reflexos: p.reflexos ?? 0, vontade: p.vontade ?? 0 },
-    deslocamento: animal.deslocamento,
-    rd: animal.rd ?? 0
+    defesa: 10 + metade + (animal.defesaBonus ?? 0),
+    // A Defesa da ficha é 10 + DES + Outros: Outros acerta a conta para não somar a DES do animal
+    defesaOutros: metade + (animal.defesaBonus ?? 0) - (animal.atributos?.DES ?? 0),
+    bonusDano: metade,
+    cd: 10 + metade + (Number(p.DES) || 0)
   };
 }
 

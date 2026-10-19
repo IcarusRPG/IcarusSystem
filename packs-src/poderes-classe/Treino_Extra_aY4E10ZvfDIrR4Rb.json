@@ -23,7 +23,7 @@
     "atributoMinimo": {},
     "requerPoderes": [],
     "requerGrupo": "",
-    "repetivel": false
+    "repetivel": true
   },
   "effects": [],
   "flags": {

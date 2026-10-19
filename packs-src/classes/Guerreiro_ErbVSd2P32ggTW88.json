@@ -64,7 +64,7 @@
         "habilidades": [
           "Recobrar o Fôlego"
         ],
-        "poder": true
+        "poder": false
       },
       {
         "nivel": 2,

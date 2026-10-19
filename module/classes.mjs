@@ -32,6 +32,16 @@ export function idsDeClasseDoAtor(actor) {
   return new Set(itensDeClasse(actor).map(i => String(i.flags?.[SISTEMA_ID]?.id ?? "").split("__")[1]).filter(Boolean));
 }
 
+/** Quantas vezes o ator tem cada poder/habilidade de classe (repetíveis contam várias). */
+export function contagemDeClasseDoAtor(actor) {
+  const mapa = new Map();
+  for (const i of itensDeClasse(actor)) {
+    const id = String(i.flags?.[SISTEMA_ID]?.id ?? "").split("__")[1];
+    if (id) mapa.set(id, (mapa.get(id) ?? 0) + 1);
+  }
+  return mapa;
+}
+
 /** Contador "Poderes de classe X / Y" do ator. */
 export function contadorDePoderes(actor) {
   const classe = classeDoAtor(actor);

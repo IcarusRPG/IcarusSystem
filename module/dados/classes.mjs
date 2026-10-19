@@ -55,7 +55,7 @@ export default {
           "habilidades": [
             "Recobrar o Fôlego"
           ],
-          "poder": true
+          "poder": false
         },
         {
           "nivel": 2,
@@ -246,7 +246,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "ambidestria",
@@ -262,7 +263,8 @@ export default {
             "par-de-laminas"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-cruzado",
@@ -278,7 +280,8 @@ export default {
             "ambidestria"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "guarda-dupla",
@@ -294,7 +297,8 @@ export default {
             "par-de-laminas"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "escudo-erguido",
@@ -308,7 +312,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mestre-do-escudo",
@@ -322,7 +327,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passo-a-frente",
@@ -338,7 +344,8 @@ export default {
             "mestre-do-escudo"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "chamado-ao-combate",
@@ -352,7 +359,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-de-escudo",
@@ -368,7 +376,8 @@ export default {
             "mestre-do-escudo"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "baluarte",
@@ -384,7 +393,8 @@ export default {
             "mestre-do-escudo"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-pesado",
@@ -400,7 +410,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-devastador",
@@ -416,7 +427,8 @@ export default {
             "golpe-pesado"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "turbilhao",
@@ -432,7 +444,8 @@ export default {
             "golpe-pesado"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "critico-brutal",
@@ -448,7 +461,8 @@ export default {
             "golpe-pesado"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "quebra-guarda",
@@ -464,7 +478,8 @@ export default {
             "golpe-pesado"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mira-firme",
@@ -478,7 +493,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "arremessador",
@@ -494,7 +510,8 @@ export default {
             "mira-firme"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-penetrante",
@@ -510,7 +527,8 @@ export default {
             "mira-firme"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-calculado",
@@ -524,7 +542,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "foco-do-atirador",
@@ -538,7 +557,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-incapacitante",
@@ -554,7 +574,8 @@ export default {
             "mira-firme"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "vigor-marcial",
@@ -570,7 +591,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "couraca-treinada",
@@ -584,7 +606,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "corpo-de-ferro",
@@ -600,7 +623,8 @@ export default {
             "vigor-marcial"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "ultima-resistencia",
@@ -616,7 +640,8 @@ export default {
             "corpo-de-ferro"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "folego-constante",
@@ -630,7 +655,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "avancar-e-golpear",
@@ -647,7 +673,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "finta-calculada",
@@ -661,7 +688,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "estudo-do-inimigo",
@@ -678,7 +706,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "iniciativa-veterana",
@@ -692,7 +721,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "treino-extra",
@@ -706,7 +736,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": true,
+          "maxEscolhas": 2,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 2,
+            "filtro": "nao-treinadas"
+          }
         },
         {
           "id": "arma-exotica",
@@ -720,7 +756,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "arma-exotica",
+            "quantidade": 1
+          }
         },
         {
           "id": "presenca-intimidadora",
@@ -734,7 +775,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "soldado-de-campo",
@@ -748,7 +790,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -762,7 +805,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -776,7 +824,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     },
@@ -979,7 +1033,16 @@ export default {
               "nome": "Kyudo (Arco)",
               "descricao": "Você soma sua Sabedoria (limitada pelo seu nível) no dano com arcos e ignora as penalidades de cobertura leve."
             }
-          ]
+          ],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Lâmina Única (Kenjutsu)",
+              "Lâminas Gêmeas (Niten)",
+              "Kyudo (Arco)"
+            ]
+          }
         },
         {
           "id": "postura-de-batalha",
@@ -1032,7 +1095,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "resiliencia-de-aco",
@@ -1046,7 +1110,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "contra-ataque-espiritual",
@@ -1060,7 +1125,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "foco-de-duelo",
@@ -1074,7 +1140,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "estocada-de-valorus",
@@ -1088,7 +1155,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "guarda-inexoravel",
@@ -1102,7 +1170,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passo-do-vento",
@@ -1116,7 +1185,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "meditacao-de-combate",
@@ -1130,7 +1200,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sangue-dos-baldurs",
@@ -1144,7 +1215,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-do-sol-nascente",
@@ -1158,7 +1230,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "lamina-do-julgamento",
@@ -1172,7 +1245,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "defletir",
@@ -1186,7 +1260,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "desvio-inabalavel",
@@ -1200,7 +1275,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "vigor-de-fogo-e-chamas",
@@ -1214,7 +1290,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "postura-da-montanha",
@@ -1228,7 +1305,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "corte-de-ar",
@@ -1242,7 +1320,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "desafio-de-ecida",
@@ -1256,7 +1335,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "lamina-fantasma",
@@ -1270,7 +1350,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "equilibrio-de-justar",
@@ -1284,7 +1365,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-derradeiro",
@@ -1298,7 +1380,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "corpo-temperado",
@@ -1312,7 +1395,17 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "tipo-dano",
+            "opcoes": [
+              "Ácido",
+              "Elétrico",
+              "Fogo",
+              "Frio"
+            ]
+          }
         },
         {
           "id": "reflexo-de-espelho",
@@ -1326,7 +1419,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "presenca-marcial",
@@ -1340,7 +1434,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "grito-de-allen-lande",
@@ -1354,7 +1449,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "zen-marcial",
@@ -1368,7 +1464,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "honra-inabalavel",
@@ -1382,7 +1479,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "palavra-do-senhor",
@@ -1396,7 +1494,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "calma-zen",
@@ -1410,7 +1509,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "etiqueta-de-dannan",
@@ -1424,7 +1524,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "rastro-de-almagia",
@@ -1438,7 +1539,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "olhar-de-justar",
@@ -1452,7 +1554,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "diplomacia-da-lamina",
@@ -1466,7 +1569,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "cronista-de-icarus",
@@ -1480,7 +1584,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sentir-a-mana",
@@ -1494,7 +1599,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mentor-de-recrutas",
@@ -1508,7 +1614,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "resiliencia-pos-cruzada",
@@ -1522,7 +1629,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "presenca-majestosa",
@@ -1536,7 +1644,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "leitura-de-batalha",
@@ -1550,7 +1659,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "codigo-de-valorus",
@@ -1564,7 +1674,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "flecha-de-justar",
@@ -1578,7 +1689,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "chuva-de-penas",
@@ -1592,7 +1704,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-de-mysteria",
@@ -1606,7 +1719,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "foco-do-cacador",
@@ -1620,7 +1734,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "arqueiro-da-torre-emerald",
@@ -1634,7 +1749,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "flecha-de-valorus",
@@ -1648,7 +1764,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sopro-do-vento",
@@ -1662,7 +1779,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "olho-da-tempestade",
@@ -1676,7 +1794,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "arqueria-zen",
@@ -1690,7 +1809,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "flecha-cortante",
@@ -1704,7 +1824,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Senda do Kyudo",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -1718,7 +1839,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -1732,7 +1858,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     },
@@ -1945,7 +2077,7 @@ export default {
           "id": "furia-primeva",
           "nome": "Fúria Primeva",
           "nivel": 20,
-          "descricao": "Entrar em Fúria não custa PM. O bônus da Fúria passa a +5 no dano e +4 no ataque.",
+          "descricao": "Entrar em Fúria não custa PM. <em>(O bônus da Fúria permanece o do 17º nível: +4 no dano e +3 no ataque.)</em>",
           "custoPM": null,
           "acao": "passivo",
           "subs": []
@@ -1971,7 +2103,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "furia-revigorante",
@@ -1985,7 +2118,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mente-furiosa",
@@ -1999,7 +2133,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "espirito-indomado",
@@ -2013,7 +2148,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "furia-persistente",
@@ -2027,7 +2163,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-furioso",
@@ -2041,7 +2178,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "furia-sanguinaria",
@@ -2055,7 +2193,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "investida-furiosa",
@@ -2069,7 +2208,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "furia-mortal",
@@ -2083,7 +2223,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-esmagador",
@@ -2097,7 +2238,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "machadada-dilacerante",
@@ -2111,7 +2253,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "peso-pesado",
@@ -2125,7 +2268,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "arremesso-brutal",
@@ -2139,7 +2283,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "forca-bruta",
@@ -2153,7 +2298,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "arma-improvisada",
@@ -2167,7 +2313,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "pele-de-ferro",
@@ -2181,7 +2328,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "vigor-selvagem",
@@ -2195,7 +2343,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "folego-do-selvagem",
@@ -2209,7 +2358,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "estomago-de-ferro",
@@ -2223,7 +2373,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "insensivel",
@@ -2237,7 +2388,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "revide-furioso",
@@ -2251,7 +2403,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "teimosia-de-ferro",
@@ -2265,7 +2418,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "faro-agucado",
@@ -2279,7 +2433,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "pe-ligeiro",
@@ -2293,7 +2448,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "olhar-de-fera",
@@ -2307,7 +2463,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "salto-selvagem",
@@ -2321,7 +2478,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "domar-a-fera",
@@ -2335,7 +2493,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "pele-de-terra",
@@ -2349,7 +2508,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "cacador-implacavel",
@@ -2363,7 +2523,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -2377,7 +2538,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -2391,7 +2557,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     },
@@ -2579,7 +2751,12 @@ export default {
           "descricao": "Escolha duas perícias em que você seja treinado. Você se torna especialista nelas (bônus de treino +4). Esta habilidade é recebida uma única vez.",
           "custoPM": null,
           "acao": "passivo",
-          "subs": []
+          "subs": [],
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 2,
+            "filtro": "treinadas"
+          }
         },
         {
           "id": "duas-armas",
@@ -2648,7 +2825,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passo-silencioso",
@@ -2662,7 +2840,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "surpreender",
@@ -2676,7 +2855,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "ataque-e-sumico",
@@ -2690,7 +2870,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "esconderijo-instantaneo",
@@ -2704,7 +2885,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sussurro-letal",
@@ -2718,7 +2900,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "maos-de-seda",
@@ -2732,7 +2915,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "arrombador",
@@ -2746,7 +2930,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "olho-de-avaliador",
@@ -2760,7 +2945,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mestre-dos-disfarces",
@@ -2774,7 +2960,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sorte-de-ladino",
@@ -2788,7 +2975,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "treinamento-extra",
@@ -2802,7 +2990,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 2,
+            "filtro": "nao-treinadas"
+          }
         },
         {
           "id": "olhos-atentos",
@@ -2816,7 +3010,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "lingua-prateada",
@@ -2830,7 +3025,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-certeiro",
@@ -2844,7 +3040,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "finta",
@@ -2858,7 +3055,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "ataque-rasteiro",
@@ -2872,7 +3070,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "corte-nos-tendoes",
@@ -2886,7 +3085,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mira-silenciosa",
@@ -2900,7 +3100,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "companheiro-de-crime",
@@ -2914,7 +3115,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mao-habilidosa",
@@ -2928,7 +3130,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passo-de-lado",
@@ -2942,7 +3145,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "rolamento",
@@ -2956,7 +3160,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "escapista",
@@ -2970,7 +3175,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "fuga-desesperada",
@@ -2984,7 +3190,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sempre-alerta",
@@ -2998,7 +3205,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "ladrao-de-rua",
@@ -3012,7 +3220,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "atirador-furtivo",
@@ -3026,7 +3235,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "disparo-sorrateiro",
@@ -3040,7 +3250,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mira-paciente",
@@ -3054,7 +3265,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-a-queima-roupa",
@@ -3068,7 +3280,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "disparo-duplo",
@@ -3082,7 +3295,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "flecha-de-desarme",
@@ -3096,7 +3310,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "saque-veloz",
@@ -3110,7 +3325,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -3124,7 +3340,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -3138,7 +3359,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     },
@@ -3320,7 +3547,7 @@ export default {
           "id": "vinculo-selvagem",
           "nome": "Vínculo Selvagem",
           "nivel": 3,
-          "descricao": "Floressa concede aos patrulheiros um vínculo espiritual com um animal da natureza. Você escolhe <strong>um</strong> vínculo da lista abaixo, e essa escolha é permanente. Como uma ação de movimento, você gasta 1 PM e invoca o seu animal, que surge em um espaço livre adjacente a você. Ele permanece até você dispensá-lo (ação livre) ou até chegar a 0 PV, quando desaparece; você pode invocá-lo de novo, com todos os PV, pagando o custo outra vez. O animal <strong>não pode ser curado</strong> por nenhum efeito. Ele age logo depois do seu turno, com uma ação padrão e uma ação de movimento. Em geral, o animal tem: <strong>PV</strong> = 10 + metade do seu nível (arredondada para baixo), igual para todos os animais; <strong>Defesa</strong> = 10 + a sua Destreza + o bônus do animal; <strong>testes de ataque</strong> e <strong>testes de resistência</strong> iguais aos seus; e causa o dano indicado, mais metade do seu nível (arredondada para baixo). As CDs das habilidades do animal são 10 + metade do seu nível + a sua Destreza.",
+          "descricao": "Floressa concede aos patrulheiros um vínculo espiritual com um animal da natureza. Você escolhe <strong>um</strong> vínculo da lista abaixo, e essa escolha é permanente. Como uma ação de movimento, você gasta 1 PM e invoca o seu animal, que surge em um espaço livre adjacente a você. Ele permanece até você dispensá-lo (ação livre) ou até chegar a 0 PV, quando desaparece; você pode invocá-lo de novo, com todos os PV, pagando o custo outra vez. O animal <strong>não pode ser curado</strong> por nenhum efeito. Ele age logo depois do seu turno, com uma ação padrão e uma ação de movimento. Em geral, o animal tem: <strong>PV</strong> = 10 + metade do seu nível (arredondada para baixo), igual para todos os animais; <strong>Defesa</strong> = 10 + metade do seu nível de patrulheiro + o bônus do animal; <strong>testes de ataque</strong> e <strong>testes de resistência</strong> pelas perícias da ficha do próprio animal (cada animal tem a sua ficha); e causa o dano indicado, mais metade do seu nível (arredondada para baixo). As CDs das habilidades do animal são 10 + metade do seu nível + a sua Destreza.",
           "custoPM": 1,
           "acao": "padrao",
           "subs": [
@@ -3348,7 +3575,19 @@ export default {
               "nome": "Teixugo Gigante",
               "descricao": "Defesa +2; deslocamento 6 m, escavação 6 m. <em>Ataque Duplo:</em> o teixugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do seu nível."
             }
-          ]
+          ],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Lobo",
+              "Pantera",
+              "Cobra Voadora",
+              "Urso Negro",
+              "Sapo Gigante",
+              "Teixugo Gigante"
+            ]
+          }
         },
         {
           "id": "disparo-duplo",
@@ -3399,7 +3638,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "rastreio-infalivel",
@@ -3415,7 +3655,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-do-cacador",
@@ -3429,7 +3670,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "emboscada-de-cacador",
@@ -3443,7 +3685,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "marca-compartilhada",
@@ -3457,7 +3700,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "presa-esgotada",
@@ -3471,7 +3715,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "presa-dupla",
@@ -3485,7 +3730,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "disparo-certeiro",
@@ -3499,7 +3745,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "flecha-que-atravessa",
@@ -3513,7 +3760,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "disparo-longo",
@@ -3527,7 +3775,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mira-calma",
@@ -3541,7 +3790,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "chuva-de-flechas",
@@ -3555,7 +3805,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "disparo-duplo-aprimorado",
@@ -3569,7 +3820,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "laminas-do-mato",
@@ -3583,7 +3835,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mao-firme",
@@ -3599,7 +3852,8 @@ export default {
             "laminas-do-mato"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-de-emboscada",
@@ -3613,7 +3867,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "especialista-em-terreno",
@@ -3627,7 +3882,21 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "terreno",
+            "opcoes": [
+              "floresta",
+              "montanha",
+              "deserto",
+              "pântano",
+              "gelo",
+              "subterrâneo",
+              "urbano",
+              "planície"
+            ]
+          }
         },
         {
           "id": "mestre-do-terreno",
@@ -3643,7 +3912,8 @@ export default {
             "especialista-em-terreno"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "rastreador",
@@ -3657,7 +3927,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "curandeiro-de-campo",
@@ -3673,7 +3944,8 @@ export default {
           },
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sentidos-agucados",
@@ -3687,7 +3959,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passos-leves",
@@ -3701,7 +3974,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "vinculo-veloz",
@@ -3715,7 +3989,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "vinculo-feroz",
@@ -3729,7 +4004,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "vinculo-resistente",
@@ -3743,7 +4019,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "caca-em-dupla",
@@ -3757,7 +4034,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "montaria",
@@ -3771,7 +4049,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -3785,7 +4064,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -3799,7 +4083,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     },
@@ -4031,7 +4321,16 @@ export default {
               "nome": "Caminho Astral",
               "descricao": "<em>Braços Astrais:</em> como uma ação de movimento, você gasta 2 PM e manifesta braços espirituais até o fim da cena (ou até você dispensá-los, como ação livre). Enquanto estiverem ativos, seus ataques desarmados têm alcance de 3 m, causam dano de Essência no lugar de Impacto e usam a sua Sabedoria no lugar de Destreza ou Força nos testes de ataque e no dano."
             }
-          ]
+          ],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Caminho da Meditação",
+              "Caminho das Sombras",
+              "Caminho Astral"
+            ]
+          }
         },
         {
           "id": "desviar-golpe",
@@ -4116,7 +4415,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "chute-giratorio",
@@ -4130,7 +4430,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "salto-prodigioso",
@@ -4144,7 +4445,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mente-serena",
@@ -4158,7 +4460,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "reflexos-de-monge",
@@ -4172,7 +4475,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "postura-defensiva",
@@ -4186,7 +4490,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "queda-suave",
@@ -4200,7 +4505,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "punho-de-ferro",
@@ -4214,7 +4520,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "corpo-de-ferro",
@@ -4228,7 +4535,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "respiracao-controlada",
@@ -4242,7 +4550,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passo-sobre-as-aguas",
@@ -4256,7 +4565,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "resposta-veloz",
@@ -4270,7 +4580,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "toque-restaurador",
@@ -4284,7 +4595,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho da Meditação",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "palma-desarmante",
@@ -4298,7 +4610,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho da Meditação",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-de-desequilibrio",
@@ -4312,7 +4625,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho da Meditação",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "respiracao-compartilhada",
@@ -4328,7 +4642,8 @@ export default {
             "respiracao-controlada"
           ],
           "requerGrupo": "Caminho da Meditação",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "pacificar",
@@ -4342,7 +4657,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho da Meditação",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "palma-reparadora",
@@ -4356,7 +4672,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho da Meditação",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "passo-furtivo",
@@ -4370,7 +4687,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho das Sombras",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "estocada-oculta",
@@ -4384,7 +4702,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho das Sombras",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "fuga-sombria",
@@ -4398,7 +4717,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho das Sombras",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "punho-sombrio",
@@ -4412,7 +4732,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho das Sombras",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-letal",
@@ -4426,7 +4747,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho das Sombras",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "atacar-nas-sombras",
@@ -4440,7 +4762,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho das Sombras",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "bracos-longos",
@@ -4454,7 +4777,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho Astral",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "escudo-astral",
@@ -4468,7 +4792,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho Astral",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "golpe-espiritual",
@@ -4482,7 +4807,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho Astral",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "agarrar-astral",
@@ -4496,7 +4822,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho Astral",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "rajada-astral",
@@ -4510,7 +4837,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": "Caminho Astral",
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -4524,7 +4852,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -4538,7 +4871,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     },
@@ -4772,7 +5111,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "bala-perfurante",
@@ -4786,7 +5126,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-intimidador",
@@ -4800,7 +5141,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-nas-pernas",
@@ -4814,7 +5156,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-desarmante",
@@ -4828,7 +5171,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "ricochete",
@@ -4842,7 +5186,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mira-demorada",
@@ -4856,7 +5201,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "disparo-letal",
@@ -4870,7 +5216,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "duas-pistolas",
@@ -4884,7 +5231,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "pulso-firme",
@@ -4900,7 +5248,8 @@ export default {
             "duas-pistolas"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "recarga-cruzada",
@@ -4916,7 +5265,8 @@ export default {
             "duas-pistolas"
           ],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "mestre-da-recarga",
@@ -4932,7 +5282,8 @@ export default {
             "duas-pistolas"
           ],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "cano-longo",
@@ -4946,7 +5297,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "descarga-dupla",
@@ -4960,7 +5312,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "coronhada",
@@ -4974,7 +5327,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "tiro-de-dispersao",
@@ -4988,7 +5342,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "calibre-pesado",
@@ -5002,7 +5357,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "bala-incendiaria",
@@ -5016,7 +5372,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "bala-ofuscante",
@@ -5030,7 +5387,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "bala-de-fumaca",
@@ -5044,7 +5402,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "fogo-cruzado",
@@ -5058,7 +5417,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "resposta-a-queima-roupa",
@@ -5072,7 +5432,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "sangue-frio",
@@ -5086,7 +5447,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "corpo-de-atirador",
@@ -5100,7 +5462,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "faro-de-recompensas",
@@ -5114,7 +5477,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "treinamento-extra",
@@ -5128,7 +5492,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 2,
+            "filtro": "nao-treinadas"
+          }
         },
         {
           "id": "fabricar-balas",
@@ -5142,7 +5512,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "primeiro-a-atirar",
@@ -5156,7 +5527,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "segundo-tiro",
@@ -5170,7 +5542,8 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": false
+          "repetivel": false,
+          "maxEscolhas": null
         },
         {
           "id": "aumento-de-atributo",
@@ -5184,7 +5557,12 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
         },
         {
           "id": "pericia-especializada",
@@ -5198,7 +5576,13 @@ export default {
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,
-          "repetivel": true
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
         }
       ]
     }

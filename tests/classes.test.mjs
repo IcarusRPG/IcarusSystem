@@ -71,8 +71,8 @@ test("Progressão: habilidades por nível e contador de poderes de classe", asyn
   assert.equal(poderesConcedidosAteNivel(ladino, 2), 1);
   assert.equal(poderesConcedidosAteNivel(ladino, 20), 19);
   assert.deepEqual(contagemDePoderes(ladino, 5, 2), { escolhidos: 2, total: 4, disponiveis: 2 });
-  // Guerreiro: o Anexo A marca poder também no 1º nível (20 no 20º) — divergência relatada
-  assert.equal(poderesConcedidosAteNivel(classePorId("guerreiro"), 20), 20);
+  // Todas as classes: 0 no 1º nível, 1 no 2º, 19 no 20º (inclusive o Guerreiro)
+  for (const c of CLASSES) assert.deepEqual([1, 2, 20].map(n => poderesConcedidosAteNivel(c, n)), [0, 1, 19], c.id);
   // Monge: Restrição de Equipamento (nível vazio no JSON) vem no 1º nível
   assert.ok(habilidadesAteNivel(classePorId("monge"), 1).some(h => h.id === "restricao-de-equipamento"));
 });
@@ -216,20 +216,27 @@ test("Duas armas por poder: Duas Armas do Ladino tira a penalidade; Mão Habilid
   assert.deepEqual(flagsDeDuasArmas([]), {});
 });
 
-test("11. Vínculo Selvagem: PV = 10 + metade do nível; Defesa = 10 + DES + bônus; dano + metade do nível", async () => {
+test("11/17. Vínculo Selvagem (Anexo B): 6 fichas; PV = 10 + ⌊nível/2⌋; Defesa = 10 + ⌊nível/2⌋ + defesaBonus", async () => {
   const { estatisticasDoVinculo } = await import("../module/classes-dados.mjs");
-  const vinculos = JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", "vinculos.json"), "utf8"));
-  assert.equal(vinculos.animais.length, 6);
-  const subs = classePorId("patrulheiro").habilidades.find(h => h.id === "vinculo-selvagem").subs.map(s => s.nome);
-  assert.deepEqual(vinculos.animais.map(a => a.nome), subs, "mesmos animais e ordem do Anexo A");
-  const lobo = vinculos.animais.find(a => a.id === "lobo");
-  const e = estatisticasDoVinculo(lobo, { nivel: 7, DES: 3, ataque: 6, fortitude: 2, reflexos: 5, vontade: 1 });
-  assert.equal(e.pv, 10 + 3);
-  assert.equal(e.defesaOutros, 3 + 2);
-  assert.deepEqual([e.ataques[0].bonusAtaque, e.ataques[0].bonusDano], [6, 3]);
-  const teixugo = estatisticasDoVinculo(vinculos.animais.find(a => a.id === "teixugo-gigante"), { nivel: 4, DES: 1, ataque: 2 });
-  assert.deepEqual(teixugo.ataques.map(a => a.bonusDano), [2, 0], "só a mordida soma a metade do nível");
-  assert.equal(estatisticasDoVinculo(vinculos.animais.find(a => a.id === "urso-negro"), { nivel: 1 }).rd, 2);
+  const { documentosDeVinculos } = await import("../module/dados-compendios.mjs");
+  const { PERICIAS } = await import("../module/config.mjs");
+  const dados = JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", "vinculos.json"), "utf8"));
+  assert.equal(dados.vinculos.length, 6);
+  const opcoes = classePorId("patrulheiro").habilidades.find(h => h.id === "vinculo-selvagem").escolha.opcoes;
+  assert.deepEqual(dados.vinculos.map(a => a.nome), opcoes, "mesmos animais e ordem da escolha");
+  const lobo = dados.vinculos.find(a => a.id === "lobo");
+  const e = estatisticasDoVinculo(lobo, { nivel: 7, DES: 3 });
+  assert.deepEqual([e.pv, e.defesa, e.bonusDano, e.cd], [13, 10 + 3 + 2, 3, 10 + 3 + 3]);
+  // Na ficha do animal: 10 + DES do animal + Outros = Defesa da regra
+  assert.equal(10 + lobo.atributos.DES + e.defesaOutros, e.defesa);
+  const atores = documentosDeVinculos(dados, PERICIAS).atores;
+  assert.equal(atores.length, 6);
+  const atorLobo = atores.find(a => a.flags["icarus-rpg"].id === "lobo");
+  assert.equal(atorLobo.system.pericias.luta.treino, 1, "a Luta é da ficha do animal");
+  assert.equal(atorLobo.system.atributos.DES.base, 2);
+  assert.ok(atores.every(a => a.flags["icarus-rpg"].provisorio));
+  const teixugo = atores.find(a => a.flags["icarus-rpg"].id === "teixugo-gigante");
+  assert.deepEqual(teixugo.items.filter(i => i.type === "arma").map(i => i.flags["icarus-rpg"].somaNivel), [true, false]);
 });
 
 test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pistolas e 11º nível", async () => {
@@ -247,6 +254,12 @@ test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pi
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set() }).ok, false);
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 10, tem: new Set(["duas-pistolas"]) }).ok, false);
   assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set(["duas-pistolas"]) }).ok, true);
+  assert.equal(mestre.repetivel, false, "Mestre da Recarga não é repetível");
+  assert.equal(validarPoder(pist, mestre, { ...base, nivel: 11, tem: new Set(["duas-pistolas", "mestre-da-recarga"]) }).jaEscolhido, true);
+  // Treino Extra (Guerreiro): repetível até 2 vezes
+  const g = classePorId("guerreiro"); const te = g.poderes.find(p => p.id === "treino-extra");
+  assert.equal(validarPoder(g, te, { ...base, nivel: 5, tem: new Set(["treino-extra"]), contagem: new Map([["treino-extra", 1]]) }).jaEscolhido, false);
+  assert.equal(validarPoder(g, te, { ...base, nivel: 5, tem: new Set(["treino-extra"]), contagem: new Map([["treino-extra", 2]]) }).jaEscolhido, true);
 });
 
 test("Samurai: Kiai pelo texto (1 dado no 1º, 2 no 5º, 3 no 9º, 4 no 13º, 5 no 17º)", () => {
