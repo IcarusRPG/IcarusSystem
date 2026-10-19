@@ -1153,6 +1153,25 @@
       "KiaiDica": "Uma vez por rodada. PM atuais: {pm}.",
       "KiaiLinha": "Kiai ({custo} PM): +{bonus} no ataque, +{n}{dado} de dano se acertar",
       "KiaiInfo": "no diálogo de ataque: {custo} PM, +{n} dado(s) da arma"
+    },
+    "Recursos": {
+      "Titulo": "Recursos de classe",
+      "Adicionar": "+ Recurso",
+      "Novo": "Novo recurso",
+      "Nome": "Nome do recurso",
+      "Max": "Máximo",
+      "Recarga": "Recarga",
+      "Recargas": {
+        "cena": "por cena",
+        "rodada": "por rodada",
+        "descanso": "por descanso"
+      },
+      "Sugerir": "Sugerir pelos textos",
+      "SugerirDica": "Cria um recurso para cada habilidade ou poder da ficha que diz \"uma vez por cena/rodada/turno/dia\".",
+      "Descansar": "Descanso: recarregar",
+      "Vazio": "Nenhum recurso. Use + Recurso ou Sugerir pelos textos.",
+      "NadaSugerido": "Nenhuma habilidade ou poder novo com uso limitado no texto.",
+      "Sugeridos": "Recursos criados: {lista}"
     }
   }
 }

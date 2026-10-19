@@ -36,6 +36,7 @@ import "./module/classes/pistoleiro.mjs";
 import "./module/classes/guerreiro.mjs";
 import "./module/classes/samurai.mjs";
 import "./module/classes/monge.mjs";
+import "./module/recursos.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";

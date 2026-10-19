@@ -900,3 +900,12 @@ body.game {
 .ficha-icarus .prereqs .pre-falta { color: #ff8b84; }
 .ficha-icarus .prereqs .pre-conferir { color: var(--ic-ouro-claro); }
 .ficha-icarus .card-poder-classe .card-acoes { display: flex; justify-content: flex-end; }
+
+/* --- Recursos de classe --- */
+.ficha-icarus .classe-recursos { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+.ficha-icarus .botoes-recursos { display: flex; gap: 6px; flex-wrap: wrap; }
+.ficha-icarus .recurso-classe { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .recurso-classe .nome-recurso { flex: 1; min-width: 0; }
+.ficha-icarus .recurso-classe .recurso-ctl { display: flex; align-items: center; gap: 4px; }
+.ficha-icarus .recurso-classe .max-recurso { width: 52px; text-align: center; }
+.ficha-icarus .recurso-classe select { width: auto; }

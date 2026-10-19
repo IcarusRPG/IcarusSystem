@@ -26,6 +26,7 @@ import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, rea
 import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } from "../classes-dados.mjs";
 import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } from "../classes.mjs";
 import { acaoDaMecanica } from "../classes/comum.mjs";
+import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
@@ -130,6 +131,11 @@ export class FichaPersonagem extends ActorSheet {
       tabela: tabelaDeProgressao(classe, s.nivel),
       mecanicas: MECANICAS_DE_CLASSE.get(classe.id)?.(actor) ?? []
     } : { tem: false };
+
+    // Recursos de classe
+    ctx.recursosClasse = (s.recursos ?? []).map(r => ({
+      ...r, opcoes: RECARGAS.map(v => ({ valor: v, rotulo: loc(`ICARUS.Recursos.Recargas.${v}`), selecionado: v === r.recarga }))
+    }));
 
     ctx.identidade = ["origem", "profissao"].map(k => ({
       chave: k,
@@ -513,6 +519,14 @@ export class FichaPersonagem extends ActorSheet {
     });
     if (!this.isEditable) return;
     html.on("click", "[data-action]", this._onAcao.bind(this));
+    // Recursos de classe: nome, máximo e recarga editados na linha
+    html.on("change", "[data-recurso-campo]", ev => {
+      const el = ev.currentTarget;
+      const id = el.closest("[data-recurso-id]")?.dataset.recursoId;
+      const campo = el.dataset.recursoCampo;
+      const valor = campo === "max" ? Math.max(0, Math.trunc(numero(el.value))) : el.value;
+      if (id) alterarRecurso(this.actor, id, { [campo]: valor });
+    });
     // Campos de item editados direto na ficha (ex.: quantidade de munição)
     html.on("change", "[data-item-campo]", ev => {
       const el = ev.currentTarget;
@@ -600,6 +614,19 @@ export class FichaPersonagem extends ActorSheet {
         return usarPoder(actor, itemDe());
       case "reacao-alternar":
         return alternarReacao(actor);
+      case "recurso-classe-novo":
+        return adicionarRecurso(actor);
+      case "recurso-classe-sugerir":
+        return sugerirRecursos(actor);
+      case "recurso-classe-descanso":
+        return recarregarRecursos(actor, "descanso");
+      case "recurso-classe-excluir":
+        return removerRecurso(actor, el.closest("[data-recurso-id]")?.dataset.recursoId);
+      case "recurso-classe-delta": {
+        const id = el.closest("[data-recurso-id]")?.dataset.recursoId;
+        const r = s.recursos.find(x => x.id === id);
+        return r ? alterarRecurso(actor, id, { valor: r.valor + Number(el.dataset.delta) }) : null;
+      }
       case "classe-mecanica": {
         const fn = acaoDaMecanica(el.dataset.mecanica);
         return fn ? fn(actor) : null;

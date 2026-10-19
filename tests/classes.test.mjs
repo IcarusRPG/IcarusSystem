@@ -263,3 +263,14 @@ test("13. Monge: dano desarmado 1d8 → 1d10 (9º) → 1d12 (17º); caminhos na 
   const punhos = classePorId("monge").habilidades.find(h => h.id === "punhos-disciplinados");
   assert.match(punhos.descricao, /1d10 no 9º nível e para 1d12 no 17º/);
 });
+
+test("Recursos de classe: frequência pelo texto (uma vez por cena/rodada/turno/dia)", async () => {
+  const { frequenciaDoTexto } = await import("../module/recursos.mjs");
+  assert.equal(frequenciaDoTexto("<p>Uma vez por cena, como uma ação de movimento…</p>"), "cena");
+  assert.equal(frequenciaDoTexto("uma vez por rodada"), "rodada");
+  assert.equal(frequenciaDoTexto("Uma vez por turno"), "rodada");
+  assert.equal(frequenciaDoTexto("uma vez por dia"), "descanso");
+  assert.equal(frequenciaDoTexto("sem limite"), null);
+  const folego = classePorId("guerreiro").habilidades.find(h => h.id === "recobrar-o-folego");
+  assert.equal(frequenciaDoTexto(folego.descricao), "cena");
+});

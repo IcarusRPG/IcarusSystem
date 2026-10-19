@@ -1,1 +1,29 @@
-{{!-- Recursos de classe (Dados de Kiai, Tiro Lendário, Segunda Tentativa…): etapa (h) --}}
+{{!-- Recursos de classe (usos limitados): valor/máximo e recarga --}}
+<section class="painel classe-recursos">
+  <div class="lista-cab">
+    <h3 class="titulo-painel">{{localize "ICARUS.Recursos.Titulo"}}</h3>
+    {{#if editable}}
+    <span class="botoes-recursos">
+      <button type="button" class="btn peq tracejado" data-action="recurso-classe-novo">{{localize "ICARUS.Recursos.Adicionar"}}</button>
+      <button type="button" class="btn peq" data-action="recurso-classe-sugerir" data-tooltip="{{localize "ICARUS.Recursos.SugerirDica"}}">{{localize "ICARUS.Recursos.Sugerir"}}</button>
+      <button type="button" class="btn peq" data-action="recurso-classe-descanso">{{localize "ICARUS.Recursos.Descansar"}}</button>
+    </span>
+    {{/if}}
+  </div>
+  {{#each recursosClasse}}
+  <div class="recurso-classe" data-recurso-id="{{id}}">
+    <input class="campo nome-recurso" type="text" value="{{nome}}" data-recurso-campo="nome" aria-label="{{localize "ICARUS.Recursos.Nome"}}"{{#unless @root.editable}} disabled{{/unless}}>
+    <div class="recurso-ctl">
+      <button type="button" class="btn quad" data-action="recurso-classe-delta" data-delta="-1" aria-label="−">−</button>
+      <b>{{valor}}</b> / <input class="campo max-recurso" type="number" min="0" step="1" value="{{max}}" data-recurso-campo="max" aria-label="{{localize "ICARUS.Recursos.Max"}}"{{#unless @root.editable}} disabled{{/unless}}>
+      <button type="button" class="btn quad" data-action="recurso-classe-delta" data-delta="1" aria-label="+">+</button>
+    </div>
+    <select class="campo" data-recurso-campo="recarga" aria-label="{{localize "ICARUS.Recursos.Recarga"}}"{{#unless @root.editable}} disabled{{/unless}}>
+      {{#each opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+    </select>
+    {{#if @root.editable}}<button type="button" class="btn icone" data-action="recurso-classe-excluir" aria-label="{{localize "ICARUS.Acoes.Excluir"}} {{nome}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>{{/if}}
+  </div>
+  {{else}}
+  <p class="dica">{{localize "ICARUS.Recursos.Vazio"}}</p>
+  {{/each}}
+</section>
