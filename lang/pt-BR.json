@@ -1056,7 +1056,10 @@
       "RajadaRotulo": "Rajada de Golpes (1 PM): ataque desarmado adicional, sem atributo no dano",
       "RajadaDica": "PM atuais: {pm}.",
       "NaoUsaArmas": "O Monge não usa armas (só ataca desarmado).",
-      "NaoUsaArmaduras": "O Monge não usa armaduras nem escudos (túnicas podem)."
+      "NaoUsaArmaduras": "O Monge não usa armaduras nem escudos (túnicas podem).",
+      "AtacarNasSombras": "Atacar nas Sombras",
+      "SombrasInfo": "teste de Visão ou Audição contra CD {cd}",
+      "SombrasChat": "{nome} ataca nas sombras: quem poderia percebê-lo faz Visão ou Audição contra CD {cd}; quem falha não descobre a posição."
     },
     "Comuns": {
       "AumentoTitulo": "Aumento de Atributo",
