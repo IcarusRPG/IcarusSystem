@@ -12,7 +12,8 @@ import { fileURLToPath } from "node:url";
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const GERADOS = [
   "armas", "tipos-dano", "armaduras", "poderes-concedidos", "panteao", "condicoes",
-  "icones-armaduras", "icones-divindades", "icones-condicoes", "macros"
+  "icones-armaduras", "icones-divindades", "icones-condicoes", "macros",
+  "classes", "icones-classes", "proficiencias-classes"
 ];
 
 /** Conteúdo do módulo gerado para um JSON. */

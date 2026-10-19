@@ -24,6 +24,7 @@ import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
+import { verificarIconesClasses } from "./module/classes-dados.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";
@@ -139,6 +140,7 @@ Hooks.on("preCreateActor", (actor, dados) => {
 Hooks.once("ready", () => {
   if (game.user.isGM) verificarIconesRacas();
   if (game.user.isGM) verificarImagensDoSistema();
+  if (game.user.isGM) verificarIconesClasses();
 });
 
 /** Botão "Condições do Mestre" nas ferramentas de token (só para o Mestre). */
