@@ -8,6 +8,7 @@ import { classePorId, iconeDaClasse, proficienciasDaClasse, habilidadesAteNivel,
 import { dadosDaHabilidade, idDeClasse } from "./dados-compendios.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
 import { resolverEscolha } from "./escolhas.mjs";
+import { confirmarReset, resetarClasse, itensDeOrigemDeClasse } from "./assistente.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -88,15 +89,10 @@ export async function aplicarClasse(actor, novoId) {
   const atual = classeDoAtor(actor);
   const nova = classePorId(novoId);
   if (!nova || atual?.id === nova.id) return false;
-  const antigas = atual ? itensDeClasse(actor, "habilidade").filter(i => i.flags?.[SISTEMA_ID]?.auto) : [];
-  if (atual) {
-    const ok = await foundry.applications.api.DialogV2.confirm({
-      window: { title: loc("ICARUS.Classe.TrocarTitulo") },
-      content: `<p>${Handlebars.escapeExpression(fmt("ICARUS.Classe.TrocarTexto", { antiga: atual.nome, nova: nova.nome, n: antigas.length }))}</p>`,
-      rejectClose: false
-    });
-    if (!ok) return false;
-    if (antigas.length) await actor.deleteEmbeddedDocuments("Item", antigas.map(i => i.id));
+  // Trocar de classe (ou sair de uma "Outra" com itens de classe): reset limpo com confirmação
+  if (atual || itensDeOrigemDeClasse(actor).length) {
+    if (!(await confirmarReset(actor, nova.nome))) return false;
+    await resetarClasse(actor);
   }
   const src = actor._source.system;
   const prof = proficienciasDaClasse(nova.id);
@@ -104,6 +100,8 @@ export async function aplicarClasse(actor, novoId) {
   const dados = {
     "system.identidade.classe": nova.id,
     [`flags.${SISTEMA_ID}.classeId`]: nova.id,
+    // Para o reset: as proficiências como estavam antes da classe
+    [`flags.${SISTEMA_ID}.proficienciasAntesClasse`]: foundry.utils.deepClone(src.proficiencias),
     "system.proficiencias.armas": unir(src.proficiencias.armas, prof.armas),
     "system.proficiencias.armaduras": unir(src.proficiencias.armaduras, prof.armaduras),
     "system.proficiencias.escudo": src.proficiencias.escudo || prof.escudo,
@@ -129,9 +127,14 @@ export async function aplicarClasse(actor, novoId) {
   return true;
 }
 
-/** Classe em texto livre ("Outra"): sem automação. */
-export function classeLivre(actor, texto) {
-  return actor.update({ "system.identidade.classe": texto, [`flags.${SISTEMA_ID}.-=classeId`]: null });
+/** Classe em texto livre ("Outra") ou nenhuma: sem automação; havendo classe, faz o reset antes. */
+export async function classeLivre(actor, texto) {
+  if (classeDoAtor(actor) || itensDeOrigemDeClasse(actor).length) {
+    if (!(await confirmarReset(actor, texto || loc("ICARUS.Classe.Nenhuma")))) return false;
+    await resetarClasse(actor);
+  }
+  await actor.update({ "system.identidade.classe": texto, [`flags.${SISTEMA_ID}.-=classeId`]: null });
+  return true;
 }
 
 /**

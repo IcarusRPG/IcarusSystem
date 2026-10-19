@@ -1191,6 +1191,18 @@
       "Alterar": "Escolher/alterar",
       "Pendentes": "Escolhas pendentes",
       "NenhumaPendente": "Nenhuma escolha pendente."
+    },
+    "Assistente": {
+      "TrocarTitulo": "Trocar de classe",
+      "TrocarTexto": "Trocar para {nova}? Sai tudo o que veio da classe atual:",
+      "TrocarDica": "Também saem as escolhas (caminhos, vínculo, Aumentos de Atributo, perícias da classe, Treino Extra, Perícia Refinada/Especializada), estados como Fúria e Presa, e o token do animal. Treino e bônus de raça, origem e profissão ficam. Dá para desfazer.",
+      "NadaARemover": "Nenhum item de classe na ficha.",
+      "AnimalSai": "O animal do Vínculo invocado sai da cena.",
+      "Desfazer": "Desfazer troca de classe",
+      "DesfazerDica": "A classe foi trocada.",
+      "DesfazerTexto": "Voltar a classe anterior ({n} item(ns), escolhas, perícias e proficiências)? O que a classe nova trouxe sai.",
+      "SemSnapshot": "Não há troca de classe para desfazer.",
+      "Desfeito": "Troca de classe desfeita."
     }
   }
 }

@@ -27,6 +27,7 @@ import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } fr
 import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } from "../classes.mjs";
 import { acaoDaMecanica } from "../classes/comum.mjs";
 import { escolhaPendente, entradaDoItem, resolverEscolha } from "../escolhas.mjs";
+import { desfazerTrocaDeClasse } from "../assistente.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
@@ -132,6 +133,7 @@ export class FichaPersonagem extends ActorSheet {
       tabela: tabelaDeProgressao(classe, s.nivel),
       mecanicas: MECANICAS_DE_CLASSE.get(classe.id)?.(actor) ?? []
     } : { tem: false };
+    ctx.classeAba.desfazer = !!actor.getFlag(SISTEMA_ID, "snapshotTrocaClasse");
 
     // Recursos de classe
     ctx.recursosClasse = (s.recursos ?? []).map(r => ({
@@ -553,9 +555,9 @@ export class FichaPersonagem extends ActorSheet {
           ok: { label: game.i18n.localize("ICARUS.Devocao.Confirmar"), callback: (e, b) => b.form.elements.classe.value.trim() },
           rejectClose: false
         });
-        if (texto) { await classeLivre(this.actor, texto); mudou = true; }
+        if (texto) mudou = await classeLivre(this.actor, texto);
       } else if (valor === "") {
-        await classeLivre(this.actor, ""); mudou = true;
+        mudou = await classeLivre(this.actor, "");
       } else if (classePorId(valor)) {
         mudou = await aplicarClasse(this.actor, valor);
       }
@@ -637,6 +639,8 @@ export class FichaPersonagem extends ActorSheet {
         const fn = acaoDaMecanica(el.dataset.mecanica);
         return fn ? fn(actor) : null;
       }
+      case "classe-desfazer":
+        return desfazerTrocaDeClasse(actor);
       case "classe-poder": {
         const { DialogoPoderesClasse } = await import("./dialogo-poderes-classe.mjs");
         return new DialogoPoderesClasse(actor).render(true);

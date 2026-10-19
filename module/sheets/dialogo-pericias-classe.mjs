@@ -7,6 +7,7 @@
  */
 import { SISTEMA_ID } from "../config.mjs";
 import { parseObrigatorias, chaveDaPericia } from "../classes-dados.mjs";
+import { marcarTreinoDaClasse } from "../assistente.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const loc = k => game.i18n.localize(k);
@@ -92,6 +93,7 @@ export class DialogoPericiasClasse extends HandlebarsApplicationMixin(Applicatio
     const dados = {};
     for (const k of chaves) if ((src[k]?.treino ?? 0) < 1) dados[`system.pericias.${k}.treino`] = 1;
     dados[`flags.${SISTEMA_ID}.periciasClasse`] = { classe: this.classe.id, pericias: chaves };
+    Object.assign(dados, marcarTreinoDaClasse(this.actor, chaves.filter(k => (src[k]?.treino ?? 0) < 1)));
     await this.actor.update(dados);
     ui.notifications.info(game.i18n.format("ICARUS.Classe.PericiasFeitas", { lista: chaves.map(nome).join(", ") }));
   }

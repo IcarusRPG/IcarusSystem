@@ -1,4 +1,8 @@
 <div class="aba-classe">
+  {{#if classeAba.desfazer}}{{#if editable}}
+  <div class="faixa-desfazer"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> {{localize "ICARUS.Assistente.DesfazerDica"}}
+    <button type="button" class="btn peq" data-action="classe-desfazer">{{localize "ICARUS.Assistente.Desfazer"}}</button></div>
+  {{/if}}{{/if}}
   {{#if classeAba.tem}}
   <section class="painel classe-cab">
     <img src="{{classeAba.icone}}" alt="" width="56" height="56" onerror="this.onerror=null;this.src='{{iconePadrao}}'">
