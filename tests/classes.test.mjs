@@ -207,3 +207,11 @@ test("9. Fúria do Bárbaro: bônus pelo nível conforme o texto (1º, 9º, 17º
   const furia = classePorId("barbaro").habilidades.find(h => h.id === "furia");
   assert.deepEqual([furia.custoPM, furia.acao], [2, "livre"]);
 });
+
+test("Duas armas por poder: Duas Armas do Ladino tira a penalidade; Mão Habilidosa devolve o atributo", async () => {
+  const { flagsDeDuasArmas } = await import("../module/classes-dados.mjs");
+  const it = id => ({ flags: { "icarus-rpg": { id } } });
+  assert.deepEqual(flagsDeDuasArmas([it("ladino__duas-armas")]), { duasArmas: "sem-penalidade" });
+  assert.deepEqual(flagsDeDuasArmas([it("ladino__duas-armas"), it("ladino__mao-habilidosa")]), { duasArmas: "sem-penalidade", duasArmasAtributoNoSegundo: true });
+  assert.deepEqual(flagsDeDuasArmas([]), {});
+});

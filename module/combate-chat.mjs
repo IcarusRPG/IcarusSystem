@@ -89,7 +89,8 @@ export async function rolarAtaque(actor, item, modo, opcoes = {}) {
 export async function agredirComDuasArmas(actor, item, modo, escolhas) {
   const { planoDuasArmas } = await import("./combate.mjs");
   const { armasEmpunhadas } = await import("./regras-ataque.mjs");
-  const plano = planoDuasArmas(armasEmpunhadas(actor), actor.flags?.[SISTEMA_ID] ?? {});
+  const { flagsDeDuasArmas } = await import("./classes-dados.mjs");
+  const plano = planoDuasArmas(armasEmpunhadas(actor), flagsDeDuasArmas(actor.items, actor.flags?.[SISTEMA_ID] ?? {}));
   if (!plano.possivel) return executarAtaque(actor, item, modo, { ...escolhas, duasArmas: false });
   const comuns = { ...escolhas, duasArmas: false, ataqueDeDuasArmas: true, penalidadeDuasArmas: plano.penalidade };
   // Primeiro ataque: a arma clicada (se for uma das duas), senão a primeira

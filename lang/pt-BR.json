@@ -1067,6 +1067,17 @@
       "EntrouFuria": "{nome} entra em Fúria: +{dano} no dano e +{ataque} nos ataques corpo a corpo.",
       "SaiuFuria": "{nome} sai da Fúria.",
       "LinhaAtaque": "Fúria: +{ataque} no ataque, +{dano} no dano"
+    },
+    "Ladino": {
+      "Furtivo": "Ataque Furtivo",
+      "FurtivoRotulo": "Ataque Furtivo ({n}d6)",
+      "FurtivoDica": "Primeiro ataque da rodada, se acertar: dano extra do mesmo tipo da arma.",
+      "FurtivoAviso": "Confira: alvo desprevenido, flanqueado ou impedido (Agarrado, Caído, Cego, Enredado, Imóvel, Paralisado ou Pasmo), e arma Leve ou Ágil corpo a corpo, ou ataque à distância em alcance curto.",
+      "FurtivoUsado": "já usado nesta rodada",
+      "FurtivoNoAtaque": "marque no diálogo de ataque",
+      "FurtivoLinha": "Ataque Furtivo: +{n}d6 {tipo} (se acertar)",
+      "Infalivel": "Perícia Infalível",
+      "InfalivelInfo": "d20 < 10 conta como 10 em Acrobacia, Furtividade, Investigação, Prestidigitação, Audição, Visão e Reflexos"
     }
   }
 }

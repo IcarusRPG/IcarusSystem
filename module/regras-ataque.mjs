@@ -5,6 +5,7 @@
 import { SISTEMA_ID } from "./config.mjs";
 import { estaFlanqueando, falhaPorCamuflagem, BONUS_FLANCO, FALHA_CAMUFLAGEM, planoDuasArmas } from "./combate.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, alvosMarcados } from "./combate-chat.mjs";
+import { flagsDeDuasArmas } from "./classes-dados.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -91,7 +92,7 @@ export const armasEmpunhadas = actor => actor.items.filter(i => i.type === "arma
   .map(i => ({ id: i.id, propriedades: i.system.propriedades ?? [], nome: i.name }));
 
 PROVEDORES_ATAQUE.push(actor => {
-  const plano = planoDuasArmas(armasEmpunhadas(actor), flagsDe(actor));
+  const plano = planoDuasArmas(armasEmpunhadas(actor), flagsDeDuasArmas(actor.items, flagsDe(actor)));
   if (!plano.possivel) return null;
   const outra = plano.dupla ? loc("ICARUS.DuasArmas.OutraExtremidade") : plano.segunda.nome;
   return {

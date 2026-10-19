@@ -260,3 +260,19 @@ export const minimoD20DeHabilidades = (itens, pericia) =>
 
 /** Dados de dano que crescem a cada 4 níveis (1º, 5º, 9º, 13º, 17º): 1 a 5. */
 export const dadosPorNivel = nivel => Math.min(5, 1 + Math.floor((Math.max(1, nivel) - 1) / 4));
+
+/* ------------------------------ Duas armas por poder ------------------------------ */
+
+/** Poderes/habilidades que tiram a penalidade de duas armas (o segundo ataque fica sem atributo no dano). */
+export const DUAS_ARMAS_SEM_PENALIDADE = ["ladino__duas-armas", "patrulheiro__laminas-do-mato", "pistoleiro__duas-pistolas", "guerreiro__par-de-laminas"];
+/** Poderes que devolvem o atributo ao dano do segundo ataque. */
+export const DUAS_ARMAS_ATRIBUTO_NO_SEGUNDO = ["guerreiro__ambidestria", "ladino__mao-habilidosa", "patrulheiro__mao-firme", "pistoleiro__pulso-firme"];
+
+/** Flags de duas armas do ator somando as que vêm dos poderes de classe. */
+export function flagsDeDuasArmas(itens, flags = {}) {
+  const ids = new Set((itens ?? []).map(i => i?.flags?.[SISTEMA_ID]?.id).filter(Boolean));
+  const r = { ...flags };
+  if (DUAS_ARMAS_SEM_PENALIDADE.some(id => ids.has(id))) r.duasArmas = "sem-penalidade";
+  if (DUAS_ARMAS_ATRIBUTO_NO_SEGUNDO.some(id => ids.has(id))) r.duasArmasAtributoNoSegundo = true;
+  return r;
+}
