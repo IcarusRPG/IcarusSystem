@@ -1,0 +1,38 @@
+{
+  "_id": "MBP6YNPwlfSrc15P",
+  "name": "Fúria Mortal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "13º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em Fúria, a margem de ameaça dos seus ataques corpo a corpo aumenta em 1.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": 13,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__furia-mortal",
+      "classe": "barbaro",
+      "poder": "furia-mortal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!MBP6YNPwlfSrc15P"
+}

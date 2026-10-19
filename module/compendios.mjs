@@ -6,7 +6,7 @@
  */
 import { SISTEMA_ID, PERICIAS } from "./config.mjs";
 import { documentosDosCompendios } from "./dados-itens.mjs";
-import { documentosNovos } from "./dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses } from "./dados-compendios.mjs";
 import ARMAS from "./dados/armas.mjs";
 import ARMADURAS from "./dados/armaduras.mjs";
 import ICONES_ARMADURAS from "./dados/icones-armaduras.mjs";
@@ -15,6 +15,9 @@ import PANTEAO from "./dados/panteao.mjs";
 import ICONES_DIVINDADES from "./dados/icones-divindades.mjs";
 import CONDICOES from "./dados/condicoes.mjs";
 import MACROS from "./dados/macros.mjs";
+import CLASSES from "./dados/classes.mjs";
+import ICONES_CLASSES from "./dados/icones-classes.mjs";
+import PROFICIENCIAS_CLASSES from "./dados/proficiencias-classes.mjs";
 
 /** Dados das armas (mantido por compatibilidade com a verificação de armas). */
 export async function carregarDadosDeArmas() {
@@ -29,7 +32,8 @@ export function todosOsDocumentos() {
     poderes: PODERES, panteao: PANTEAO, iconesDivindades: ICONES_DIVINDADES,
     condicoes: CONDICOES, macros: MACROS, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
   });
-  return { armas: armas.armas, municoes: armas.municoes, ...novos };
+  const classes = documentosDeClasses({ classes: CLASSES, iconesClasses: ICONES_CLASSES, proficienciasClasses: PROFICIENCIAS_CLASSES });
+  return { armas: armas.armas, municoes: armas.municoes, ...novos, ...classes };
 }
 
 export async function popularCompendios() {

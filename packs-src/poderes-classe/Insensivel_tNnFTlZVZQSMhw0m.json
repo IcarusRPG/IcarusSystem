@@ -1,0 +1,38 @@
+{
+  "_id": "tNnFTlZVZQSMhw0m",
+  "name": "Insensível",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ku9oOPxCneXCEe9f",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em Fúria, você recebe +5 em testes de resistência contra as condições Atordoado, Lento, Pasmo e Paralisado.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__insensivel",
+      "classe": "barbaro",
+      "poder": "insensivel",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tNnFTlZVZQSMhw0m"
+}

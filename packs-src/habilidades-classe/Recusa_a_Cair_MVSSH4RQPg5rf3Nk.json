@@ -1,0 +1,38 @@
+{
+  "_id": "MVSSH4RQPg5rf3Nk",
+  "name": "Recusa a Cair",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "gdo614mxTqnHORen",
+  "sort": 11004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 11,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, enquanto estiver em Fúria, quando seus PV fossem reduzidos a 0, você fica com 1 PV.",
+    "classe": "barbaro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__recusa-a-cair",
+      "classe": "barbaro",
+      "habilidade": "recusa-a-cair",
+      "inferido": false
+    }
+  },
+  "_key": "!items!MVSSH4RQPg5rf3Nk"
+}

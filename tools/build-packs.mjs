@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
-import { documentosNovos } from "../module/dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses } from "../module/dados-compendios.mjs";
 import { PERICIAS } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 
@@ -58,6 +58,7 @@ if (semImagem.length) console.warn(`Sem imagem no mapa (usam o dado azul): ${sem
 /* ---------- Documentos ---------- */
 const docsArmas = documentosDosCompendios(armas);
 const docsNovos = documentosNovos(novos);
+const docsClasses = documentosDeClasses(novos);
 
 /** Cada pacote: lista de [documento, coleção] já com as chaves. */
 const PACOTES = {
@@ -66,7 +67,10 @@ const PACOTES = {
   "armaduras-escudos": docsNovos["armaduras-escudos"],
   "poderes-concedidos": docsNovos["poderes-concedidos"],
   condicoes: docsNovos.condicoes,
-  macros: docsNovos.macros
+  macros: docsNovos.macros,
+  classes: docsClasses.classes,
+  "habilidades-classe": docsClasses["habilidades-classe"],
+  "poderes-classe": docsClasses["poderes-classe"]
 };
 
 /** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */

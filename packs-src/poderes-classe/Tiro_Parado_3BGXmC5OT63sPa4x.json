@@ -1,0 +1,38 @@
+{
+  "_id": "3BGXmC5OT63sPa4x",
+  "name": "Tiro Parado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "DMxyhR3tH0YC0faM",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Se você não se moveu neste turno, recebe +2 nos testes de ataque com armas de fogo.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Tiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__tiro-parado",
+      "classe": "pistoleiro",
+      "poder": "tiro-parado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!3BGXmC5OT63sPa4x"
+}

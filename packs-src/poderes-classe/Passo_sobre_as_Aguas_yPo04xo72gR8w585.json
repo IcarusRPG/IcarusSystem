@@ -1,0 +1,38 @@
+{
+  "_id": "yPo04xo72gR8w585",
+  "name": "Passo sobre as Águas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode andar sobre superfícies líquidas até o fim do seu turno.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__passo-sobre-as-aguas",
+      "classe": "monge",
+      "poder": "passo-sobre-as-aguas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!yPo04xo72gR8w585"
+}

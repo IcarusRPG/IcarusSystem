@@ -1,0 +1,38 @@
+{
+  "_id": "WP6UgsE9lUlhjbpR",
+  "name": "Punhos Disciplinados",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques desarmados causam 1d8 de dano de Impacto, com crítico 20/x2, e contam como armas Leves e Ágeis (você pode usar Destreza no lugar de Força nos testes de ataque e de Luta com eles). O dano aumenta para 1d10 no 9º nível e para 1d12 no 17º nível.",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__punhos-disciplinados",
+      "classe": "monge",
+      "habilidade": "punhos-disciplinados",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WP6UgsE9lUlhjbpR"
+}

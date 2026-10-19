@@ -1,0 +1,38 @@
+{
+  "_id": "KHO9hLhipTBqm5y0",
+  "name": "Defesa Interior",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 3004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto não estiver usando armadura nem escudo, você soma a sua Sabedoria na Defesa. Túnicas não contam como armadura, então o bônus de uma túnica soma com este.",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__defesa-interior",
+      "classe": "monge",
+      "habilidade": "defesa-interior",
+      "inferido": false
+    }
+  },
+  "_key": "!items!KHO9hLhipTBqm5y0"
+}

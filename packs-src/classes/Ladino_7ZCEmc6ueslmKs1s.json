@@ -1,0 +1,191 @@
+{
+  "_id": "7ZCEmc6ueslmKs1s",
+  "name": "Ladino",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 400,
+  "system": {
+    "classeId": "ladino",
+    "papel": "Especialista em Furtividade",
+    "atributoChave": "Destreza",
+    "pv": {
+      "inicial": 16,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "4 por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Furtividade e Prestidigitação",
+      "escolha": 8,
+      "lista": [
+        "Acrobacia",
+        "Atletismo",
+        "Atuação",
+        "Audição",
+        "Barganha",
+        "Diplomacia",
+        "Enganação",
+        "Intimidação",
+        "Intuição",
+        "Investigação",
+        "Iniciativa",
+        "Luta",
+        "Pontaria",
+        "Reflexos",
+        "Sobrevivência",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas marciais Leves ou Ágeis, arcos curtos, armaduras leves",
+      "armas": [
+        "simples",
+        "marciais-leves-ageis",
+        "arcos-curtos"
+      ],
+      "armaduras": [
+        "leve"
+      ],
+      "escudo": false,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Ataque Furtivo (1d6)",
+          "Duas Armas"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Corpo Escorregadio"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Ataque Furtivo (2d6)",
+          "Faro para Perigo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [
+          "Perícia Refinada"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Ataque Furtivo (3d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [
+          "Perícia Infalível"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [
+          "Ataque Furtivo (4d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Ataque Furtivo (5d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Golpe Perfeito"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>Todo mundo julga o ladino pelo que ele leva embora. Poucos reparam no que ele precisou saber para chegar até lá: a hora certa, o passo certo, a palavra certa. O ladino não vence o inimigo mais forte; vence o mais distraído, e faz com que todos estejam distraídos.</p><p>Pode ser batedor, trambiqueiro, espião, arrombador ou apenas alguém que cresceu sem nada e aprendeu a notar tudo. O que os une é o ofício: uma lâmina curta, olhos treinados e a paciência de esperar o instante em que um único golpe basta.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino"
+    }
+  },
+  "_key": "!items!7ZCEmc6ueslmKs1s"
+}

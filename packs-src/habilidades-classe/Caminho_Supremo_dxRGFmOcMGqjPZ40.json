@@ -1,0 +1,38 @@
+{
+  "_id": "dxRGFmOcMGqjPZ40",
+  "name": "Caminho Supremo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 17008,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 17,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Cada caminho recebe o aprimoramento final.<ul class=\"subs-classe\"><li><strong>Caminho da Meditação.</strong> <em>Aura de Serenidade:</em> enquanto você estiver consciente, aliados em alcance curto recebem +2 em testes de resistência contra condições mentais.</li><li><strong>Caminho das Sombras.</strong> <em>Véu das Sombras:</em> como uma ação padrão, você gasta 3 PM. Até o início do seu próximo turno, você recebe camuflagem total. O dano do Golpe Sombrio aumenta para 3d6.</li><li><strong>Caminho Astral.</strong> <em>Forma Astral:</em> enquanto os Braços Astrais estiverem ativos, você recebe RD 3 e a Rajada de Golpes não custa PM.</li></ul>",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 17,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__caminho-supremo",
+      "classe": "monge",
+      "habilidade": "caminho-supremo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!dxRGFmOcMGqjPZ40"
+}

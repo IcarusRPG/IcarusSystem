@@ -7,7 +7,8 @@
       "poder": "Poder",
       "equipamento": "Equipamento",
       "arma": "Arma",
-      "municao": "Munição"
+      "municao": "Munição",
+      "classe": "Classe"
     }
   },
   "ICARUS": {
@@ -965,6 +966,20 @@
       "SemAtributo": "Sem penalidade (poder); o segundo ataque não soma o atributo no dano.",
       "Linha": "Duas armas: {valor} no ataque",
       "LinhaSemAtributo": "Segundo ataque: dano sem o atributo"
+    },
+    "Classe": {
+      "PV": "Pontos de Vida",
+      "PM": "Pontos de Mana",
+      "AtributoChave": "Atributo-chave",
+      "Pericias": "Perícias",
+      "Progressao": "Progressão",
+      "Nivel": "Nível",
+      "Habilidades": "Habilidades de classe",
+      "PoderDeClasse": "Poder de classe",
+      "PVTexto": "{inicial} + {atributo} no 1º nível; +{porNivel} + {atributo} por nível",
+      "PMTexto": "{inicial} no 1º nível; +{porNivel} por nível",
+      "PMAtributoPrimeiro": " (+ {atributo} só no 1º nível)",
+      "PericiasTexto": "{obrigatorias}, mais {n} entre: {lista}"
     }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "_id": "gpiqAvRl7nLteuzC",
+  "name": "Perícia Especializada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "E3TrZhSDIej5N4gE",
+  "sort": 3100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__pericia-especializada",
+      "classe": "monge",
+      "poder": "pericia-especializada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!gpiqAvRl7nLteuzC"
+}

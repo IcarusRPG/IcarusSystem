@@ -1,0 +1,38 @@
+{
+  "_id": "eWOaaUgXlZGeQj6N",
+  "name": "Respiração Controlada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 1 PM e remove de si uma das condições Abalado, Enjoado ou Fatigado.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__respiracao-controlada",
+      "classe": "monge",
+      "poder": "respiracao-controlada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!eWOaaUgXlZGeQj6N"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "VoBeAZz5LR09teDY",
+  "name": "Mentor de Recrutas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 3500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Aliados em alcance curto recebem +2 em uma perícia de Samurai na qual você seja treinado, à sua escolha, até o fim da cena.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__mentor-de-recrutas",
+      "classe": "samurai",
+      "poder": "mentor-de-recrutas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!VoBeAZz5LR09teDY"
+}

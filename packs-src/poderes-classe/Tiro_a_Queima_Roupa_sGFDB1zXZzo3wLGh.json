@@ -1,0 +1,38 @@
+{
+  "_id": "sGFDB1zXZzo3wLGh",
+  "name": "Tiro à Queima-Roupa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 3100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você não sofre a penalidade de –5 em ataques à distância contra inimigos adjacentes.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__tiro-a-queima-roupa",
+      "classe": "ladino",
+      "poder": "tiro-a-queima-roupa",
+      "inferido": false
+    }
+  },
+  "_key": "!items!sGFDB1zXZzo3wLGh"
+}

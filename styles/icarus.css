@@ -838,3 +838,13 @@ body.game {
 .icarus-uso .linha { display: flex; flex-direction: column; gap: 4px; }
 .icarus-uso .dica { margin: 0; font-size: 12px; opacity: .8; }
 .icarus-uso .aviso { margin: 0; color: #e4574f; font-weight: 700; }
+
+/* --- Ficha do item Classe --- */
+.ficha-icarus.ficha-classe .classe-titulo { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.ficha-icarus.ficha-classe .classe-papel { font-size: 13px; color: var(--ic-ouro-claro); letter-spacing: .08em; }
+.ficha-icarus .classe-resumo .f.largo { grid-column: 1 / -1; }
+.ficha-icarus .tabela-progressao { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ficha-icarus .tabela-progressao th, .ficha-icarus .tabela-progressao td { padding: 3px 6px; border-bottom: 1px solid var(--ic-linha); text-align: left; }
+.ficha-icarus .tabela-progressao thead th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
+.ficha-icarus .tabela-progressao tr.atual { background: var(--ic-ciano-fundo); }
+.ficha-icarus .tabela-progressao td:first-child { white-space: nowrap; color: var(--ic-ouro-claro); }

@@ -1,0 +1,38 @@
+{
+  "_id": "e9MKNSmevUjyKyq6",
+  "name": "Atirador Furtivo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Ataque Furtivo com arco ou besta funciona também contra alvos em alcance médio.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__atirador-furtivo",
+      "classe": "ladino",
+      "poder": "atirador-furtivo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!e9MKNSmevUjyKyq6"
+}

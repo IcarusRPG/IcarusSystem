@@ -1,0 +1,38 @@
+{
+  "_id": "8ksw1nrDQ4w9Fomy",
+  "name": "Golpe de Desequilíbrio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ON1XFwxYoGI0lmQx",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM ao acertar um ataque desarmado. O alvo faz um teste de Reflexos (CD = 10 + metade do nível + Sabedoria) ou fica Caído.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Meditação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Meditação",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__golpe-de-desequilibrio",
+      "classe": "monge",
+      "poder": "golpe-de-desequilibrio",
+      "inferido": true
+    }
+  },
+  "_key": "!items!8ksw1nrDQ4w9Fomy"
+}

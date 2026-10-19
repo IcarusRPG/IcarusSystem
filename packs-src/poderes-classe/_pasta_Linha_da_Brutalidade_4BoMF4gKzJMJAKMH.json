@@ -1,0 +1,15 @@
+{
+  "_id": "4BoMF4gKzJMJAKMH",
+  "name": "Linha da Brutalidade",
+  "type": "Item",
+  "folder": "EDFweiOo27MQ7Tk9",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:barbaro:linha-da-brutalidade"
+    }
+  },
+  "_key": "!folders!4BoMF4gKzJMJAKMH"
+}

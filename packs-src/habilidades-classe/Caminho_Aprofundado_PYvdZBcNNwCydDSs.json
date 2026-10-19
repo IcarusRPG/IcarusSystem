@@ -1,0 +1,38 @@
+{
+  "_id": "PYvdZBcNNwCydDSs",
+  "name": "Caminho Aprofundado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 11007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 11,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Cada caminho recebe um novo aprimoramento.<ul class=\"subs-classe\"><li><strong>Caminho da Meditação.</strong> <em>Manobra Fluida:</em> ao acertar um ataque desarmado, você pode gastar 1 PM para fazer uma manobra (Agarrar, Derrubar, Desarmar ou Empurrar) contra o alvo como parte do mesmo ataque, usando a Sabedoria no lugar de Destreza ou Força no teste.</li><li><strong>Caminho das Sombras.</strong> <em>Passo Sombrio:</em> como uma ação de movimento, você gasta 2 PM e se desloca até 9 m para um espaço livre que possa ver. Até o fim do turno, o seu próximo ataque é feito contra o alvo como se ele estivesse desprevenido. O dano do Golpe Sombrio aumenta para 2d6.</li><li><strong>Caminho Astral.</strong> <em>Visão Astral:</em> enquanto os Braços Astrais estiverem ativos, você recebe +5 em Visão e Audição e não pode ser Surpreendido.</li></ul>",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__caminho-aprofundado",
+      "classe": "monge",
+      "habilidade": "caminho-aprofundado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!PYvdZBcNNwCydDSs"
+}

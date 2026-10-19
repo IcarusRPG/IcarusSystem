@@ -1,0 +1,40 @@
+{
+  "_id": "Y6nc54vcBnLGolj9",
+  "name": "Mão Firme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "5YBYfpeaVGiK2EG4",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Lâminas do Mato, 6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O segundo ataque das Lâminas do Mato soma o modificador de atributo no dano.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Lâmina",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "laminas-do-mato"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__mao-firme",
+      "classe": "patrulheiro",
+      "poder": "mao-firme",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Y6nc54vcBnLGolj9"
+}

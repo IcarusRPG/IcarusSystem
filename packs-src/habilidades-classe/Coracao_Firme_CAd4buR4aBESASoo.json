@@ -1,0 +1,38 @@
+{
+  "_id": "CAd4buR4aBESASoo",
+  "name": "Coração Firme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "dyqFs5SBHWlNlCxE",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando faz um teste de resistência (Fortitude, Reflexos ou Vontade), você pode gastar 1 PM para somar sua Sabedoria no resultado.",
+    "classe": "samurai",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__coracao-firme",
+      "classe": "samurai",
+      "habilidade": "coracao-firme",
+      "inferido": true
+    }
+  },
+  "_key": "!items!CAd4buR4aBESASoo"
+}

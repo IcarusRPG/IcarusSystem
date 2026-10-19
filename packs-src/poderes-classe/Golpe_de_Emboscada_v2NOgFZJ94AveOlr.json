@@ -1,0 +1,38 @@
+{
+  "_id": "v2NOgFZJ94AveOlr",
+  "name": "Golpe de Emboscada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "5YBYfpeaVGiK2EG4",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando ataca a sua presa corpo a corpo, você gasta 1 PM para empurrá-la 1,5 m depois do golpe, se ela falhar em um teste de Fortitude (CD = 10 + metade do nível + Destreza).",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Lâmina",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__golpe-de-emboscada",
+      "classe": "patrulheiro",
+      "poder": "golpe-de-emboscada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!v2NOgFZJ94AveOlr"
+}

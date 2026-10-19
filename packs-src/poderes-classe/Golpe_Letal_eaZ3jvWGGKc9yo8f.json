@@ -1,0 +1,38 @@
+{
+  "_id": "eaZ3jvWGGKc9yo8f",
+  "name": "Golpe Letal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "X3UYfIWpHkRwn5Bh",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A margem de ameaça dos seus ataques desarmados contra alvos desprevenidos aumenta em 1.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho das Sombras",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho das Sombras",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__golpe-letal",
+      "classe": "monge",
+      "poder": "golpe-letal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!eaZ3jvWGGKc9yo8f"
+}

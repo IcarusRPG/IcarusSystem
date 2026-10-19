@@ -1,0 +1,38 @@
+{
+  "_id": "whQGLnQ9JRRdDCqB",
+  "name": "Vigor de Fogo e Chamas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto usa armadura média, você recebe RD 2.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__vigor-de-fogo-e-chamas",
+      "classe": "samurai",
+      "poder": "vigor-de-fogo-e-chamas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!whQGLnQ9JRRdDCqB"
+}

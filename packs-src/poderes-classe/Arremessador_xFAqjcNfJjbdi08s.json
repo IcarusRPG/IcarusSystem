@@ -1,0 +1,40 @@
+{
+  "_id": "xFAqjcNfJjbdi08s",
+  "name": "Arremessador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "gvjuW1nqOhHfDl9d",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Mira Firme",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você saca armas de arremesso como ação livre e o alcance delas aumenta em um passo.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "mira-firme"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__arremessador",
+      "classe": "guerreiro",
+      "poder": "arremessador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!xFAqjcNfJjbdi08s"
+}

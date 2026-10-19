@@ -1,0 +1,38 @@
+{
+  "_id": "37BVh4eGP4PBCVR1",
+  "name": "Resposta Veloz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um inimigo erra um ataque corpo a corpo contra você, você pode gastar 1 PM e a sua reação para fazer um ataque desarmado contra ele.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__resposta-veloz",
+      "classe": "monge",
+      "poder": "resposta-veloz",
+      "inferido": true
+    }
+  },
+  "_key": "!items!37BVh4eGP4PBCVR1"
+}

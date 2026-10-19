@@ -1,0 +1,24 @@
+<form class="{{cssClass}} ficha-icarus ficha-item ficha-classe" autocomplete="off">
+  <header class="item-cab">
+    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
+    <div class="classe-titulo">
+      <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+      <span class="classe-papel">{{source.papel}}</span>
+    </div>
+  </header>
+  <div class="item-campos classe-resumo">
+    <div class="f"><span class="rot">{{localize "ICARUS.Classe.PV"}}</span><span>{{classe.pv}}</span></div>
+    <div class="f"><span class="rot">{{localize "ICARUS.Classe.PM"}}</span><span>{{classe.pm}}</span></div>
+    <div class="f"><span class="rot">{{localize "ICARUS.Classe.AtributoChave"}}</span><span>{{source.atributoChave}}</span></div>
+    <div class="f largo"><span class="rot">{{localize "ICARUS.Classe.Pericias"}}</span><span>{{classe.pericias}}</span></div>
+    <div class="f largo"><span class="rot">{{localize "ICARUS.Proficiencias.Titulo"}}</span><span>{{source.proficiencias.texto}}</span></div>
+  </div>
+  <div class="painel item-desc">
+    <h3 class="titulo-painel">{{localize "ICARUS.Classe.Progressao"}}</h3>
+    <table class="tabela-progressao">
+      <thead><tr><th scope="col">{{localize "ICARUS.Classe.Nivel"}}</th><th scope="col">{{localize "ICARUS.Classe.Habilidades"}}</th><th scope="col">{{localize "ICARUS.Classe.PoderDeClasse"}}</th></tr></thead>
+      <tbody>{{#each source.progressao}}<tr><td>{{nivel}}º</td><td>{{#each habilidades}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td><td>{{#if poder}}✓{{/if}}</td></tr>{{/each}}</tbody>
+    </table>
+    <div class="classe-intro">{{{introHTML}}}</div>
+  </div>
+</form>

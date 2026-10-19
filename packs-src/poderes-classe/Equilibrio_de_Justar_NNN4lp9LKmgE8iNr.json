@@ -1,0 +1,38 @@
+{
+  "_id": "NNN4lp9LKmgE8iNr",
+  "name": "Equilíbrio de Justar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando sofre uma penalidade em um teste de ataque, o seu próximo ataque na cena recebe um bônus igual à penalidade sofrida.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__equilibrio-de-justar",
+      "classe": "samurai",
+      "poder": "equilibrio-de-justar",
+      "inferido": false
+    }
+  },
+  "_key": "!items!NNN4lp9LKmgE8iNr"
+}

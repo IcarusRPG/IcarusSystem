@@ -1,0 +1,38 @@
+{
+  "_id": "QtmTSWGrbyv6juEs",
+  "name": "Mãos de Seda",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "h7eXbgUzlO52mjvn",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Prestidigitação e pode sacar ou guardar um item como ação livre.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__maos-de-seda",
+      "classe": "ladino",
+      "poder": "maos-de-seda",
+      "inferido": true
+    }
+  },
+  "_key": "!items!QtmTSWGrbyv6juEs"
+}

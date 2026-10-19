@@ -1,0 +1,38 @@
+{
+  "_id": "BY0BLODgPFHFXOLw",
+  "name": "Disparo Letal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "DMxyhR3tH0YC0faM",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "12º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O multiplicador de crítico das suas armas de fogo aumenta em 1.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Tiro",
+    "nivelMinimo": 12,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__disparo-letal",
+      "classe": "pistoleiro",
+      "poder": "disparo-letal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!BY0BLODgPFHFXOLw"
+}

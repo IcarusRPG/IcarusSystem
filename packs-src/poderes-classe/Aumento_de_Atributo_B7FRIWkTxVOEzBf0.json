@@ -1,0 +1,38 @@
+{
+  "_id": "B7FRIWkTxVOEzBf0",
+  "name": "Aumento de Atributo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "5dDgPZI2tN1UoHr1",
+  "sort": 5000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__aumento-de-atributo",
+      "classe": "samurai",
+      "poder": "aumento-de-atributo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!B7FRIWkTxVOEzBf0"
+}

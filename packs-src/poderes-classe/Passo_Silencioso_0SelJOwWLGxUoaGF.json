@@ -1,0 +1,38 @@
+{
+  "_id": "0SelJOwWLGxUoaGF",
+  "name": "Passo Silencioso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "bMt524mfEhEtGGg7",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se move até o seu deslocamento sem sofrer penalidade em Furtividade.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Emboscada",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__passo-silencioso",
+      "classe": "ladino",
+      "poder": "passo-silencioso",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0SelJOwWLGxUoaGF"
+}

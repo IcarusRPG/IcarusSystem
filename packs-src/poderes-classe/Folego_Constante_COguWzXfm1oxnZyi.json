@@ -1,0 +1,38 @@
+{
+  "_id": "COguWzXfm1oxnZyi",
+  "name": "Fôlego Constante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "rOeaAnOv8HXNYLFU",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar Recobrar o Fôlego duas vezes por cena.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__folego-constante",
+      "classe": "guerreiro",
+      "poder": "folego-constante",
+      "inferido": false
+    }
+  },
+  "_key": "!items!COguWzXfm1oxnZyi"
+}

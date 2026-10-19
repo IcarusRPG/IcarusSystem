@@ -203,3 +203,95 @@ export function documentosNovos(d) {
     macros: { pastas: [], macros: macrosDoSistema(d.macros?.macros) }
   };
 }
+
+/* ------------------------------ Classes ------------------------------ */
+
+export const PASTA_ICONES_CLASSES = `systems/${SISTEMA_ID}/img/Icones/classes`;
+export const iconeDaClasseNoMapa = (id, mapa) => iconeDoMapa(PASTA_ICONES_CLASSES, mapa?.[id]);
+
+/** Id (flags) de uma habilidade ou poder de classe: "<classe>__<id>". */
+export const idDeClasse = (classe, id) => `${classe}__${id}`;
+
+/** Subitens (caminhos, animais…) acrescentados à descrição como lista. */
+const comSubs = (descricao, subs = []) => descricao + (subs.length
+  ? `<ul class="subs-classe">${subs.map(s => `<li><strong>${escapar(s.nome)}.</strong> ${s.descricao}</li>`).join("")}</ul>` : "");
+
+/** custoPM e acao vieram de heurística do texto: ficam marcados como inferidos. */
+const inferido = x => x.custoPM !== null && x.custoPM !== undefined || (!!x.acao && x.acao !== "passivo");
+
+/** Item "classe". */
+export function dadosDaClasse(c, mapaIcones, prof, sort = 0) {
+  return {
+    _id: idEstavel(`classe:${c.id}`), name: c.nome, type: "classe", img: iconeDaClasseNoMapa(c.id, mapaIcones),
+    folder: idEstavel("pasta:classes"), sort,
+    system: {
+      classeId: c.id, papel: c.papel, atributoChave: c.atributoChave ?? "",
+      pv: { ...c.pv }, pm: { inicial: c.pm.inicial, porNivel: c.pm.porNivel, atributo: c.pm.atributo ?? null, atributoSoNoPrimeiroNivel: !!c.pm.atributoSoNoPrimeiroNivel, texto: c.pm.texto ?? "" },
+      pericias: { obrigatorias: c.pericias.obrigatorias, escolha: c.pericias.escolha, lista: [...c.pericias.lista] },
+      proficiencias: { texto: c.proficiencias, armas: [...(prof?.armas ?? [])], armaduras: [...(prof?.armaduras ?? [])], escudo: !!prof?.escudo, tunicas: !!prof?.tunicas },
+      progressao: c.progressao.map(p => ({ nivel: p.nivel, habilidades: [...p.habilidades], poder: !!p.poder })),
+      intro: (c.intro ?? []).map(t => `<p>${t}</p>`).join("")
+    },
+    effects: [],
+    flags: { [SISTEMA_ID]: { id: c.id } }
+  };
+}
+
+/** Habilidade de classe → item "poder" (tipoPoder "habilidade"). */
+export function dadosDaHabilidade(c, h, mapaIcones, sort = 0) {
+  return {
+    _id: idEstavel(`habilidade:${c.id}:${h.id}`), name: h.nome, type: "poder", img: iconeDaClasseNoMapa(c.id, mapaIcones),
+    folder: idEstavel(`pasta:habilidades:${c.id}`), sort,
+    system: {
+      fonte: "classe", custoPM: h.custoPM ?? null, prerequisito: "", nivel: h.nivel ?? null, acao: h.acao ?? "", frequencia: "",
+      sustentada: false, divindade: "", tipoDano: "", descricao: comSubs(h.descricao, h.subs),
+      classe: c.id, tipoPoder: "habilidade", grupo: "", nivelMinimo: h.nivel ?? null, atributoMinimo: {}, requerPoderes: [], requerGrupo: "", repetivel: false
+    },
+    effects: [],
+    flags: { [SISTEMA_ID]: { id: idDeClasse(c.id, h.id), classe: c.id, habilidade: h.id, inferido: inferido(h) } }
+  };
+}
+
+/** Poder de classe → item "poder" (tipoPoder "poder"). */
+export function dadosDoPoderDeClasse(c, p, mapaIcones, sort = 0) {
+  return {
+    _id: idEstavel(`poder-classe:${c.id}:${p.id}`), name: p.nome, type: "poder", img: iconeDaClasseNoMapa(c.id, mapaIcones),
+    folder: idEstavel(`pasta:poderes-classe:${c.id}:${normalizar(p.grupo)}`), sort,
+    system: {
+      fonte: "classe", custoPM: p.custoPM ?? null, prerequisito: p.prerequisito ?? "", nivel: null, acao: p.acao ?? "", frequencia: "",
+      sustentada: false, divindade: "", tipoDano: "", descricao: p.descricao,
+      classe: c.id, tipoPoder: "poder", grupo: p.grupo ?? "", nivelMinimo: p.nivelMinimo ?? null, atributoMinimo: { ...(p.atributoMinimo ?? {}) },
+      requerPoderes: [...(p.requerPoderes ?? [])], requerGrupo: p.requerGrupo ?? "", repetivel: !!p.repetivel
+    },
+    effects: [],
+    flags: { [SISTEMA_ID]: { id: idDeClasse(c.id, p.id), classe: c.id, poder: p.id, inferido: inferido(p) } }
+  };
+}
+
+/**
+ * Documentos dos compêndios de classes: classes (pasta única), habilidades (pasta por classe)
+ * e poderes (pasta por classe > grupo).
+ * @param {{ classes, iconesClasses, proficienciasClasses }} d
+ */
+export function documentosDeClasses(d) {
+  const lista = d.classes?.classes ?? [];
+  const pastasHab = lista.map((c, i) => pasta(`habilidades:${c.id}`, c.nome, { sort: (i + 1) * 100000 }));
+  const pastasClassePoder = lista.map((c, i) => pasta(`poderes-classe:${c.id}`, c.nome, { sort: (i + 1) * 100000 }));
+  const pastasGrupo = lista.flatMap(c => (c.grupos ?? []).map((g, j) => pasta(`poderes-classe:${c.id}:${normalizar(g)}`, g, {
+    mae: idEstavel(`pasta:poderes-classe:${c.id}`), sort: (j + 1) * 100
+  })));
+  return {
+    classes: {
+      pastas: [pasta("classes", "Classes")],
+      itens: lista.map((c, i) => dadosDaClasse(c, d.iconesClasses, d.proficienciasClasses?.[c.id], (i + 1) * 100))
+    },
+    "habilidades-classe": {
+      pastas: pastasHab,
+      itens: lista.flatMap(c => c.habilidades.map((h, i) => dadosDaHabilidade(c, h, d.iconesClasses, (h.nivel ?? 0) * 1000 + i)))
+    },
+    "poderes-classe": {
+      pastas: [...pastasClassePoder, ...pastasGrupo],
+      itens: lista.flatMap(c => c.poderes.map((p, i) => dadosDoPoderDeClasse(c, p, d.iconesClasses, (i + 1) * 100)))
+    }
+  };
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "lkY35EM7oX0L9wOm",
+  "name": "Mestre dos Disfarces",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "h7eXbgUzlO52mjvn",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Enganação e se disfarça em 10 minutos, sem precisar de materiais especiais.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__mestre-dos-disfarces",
+      "classe": "ladino",
+      "poder": "mestre-dos-disfarces",
+      "inferido": false
+    }
+  },
+  "_key": "!items!lkY35EM7oX0L9wOm"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "agBiBKX01mpHmcZg",
+  "name": "Rolamento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você reduz à metade o dano de queda e não fica Caído ao cair.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__rolamento",
+      "classe": "ladino",
+      "poder": "rolamento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!agBiBKX01mpHmcZg"
+}

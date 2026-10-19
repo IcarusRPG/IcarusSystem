@@ -1,0 +1,38 @@
+{
+  "_id": "LJw6XssoUP5BW74R",
+  "name": "Tiro de Mysteria",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques com arco são considerados mágicos e podem causar dano de Essência.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__tiro-de-mysteria",
+      "classe": "samurai",
+      "poder": "tiro-de-mysteria",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LJw6XssoUP5BW74R"
+}

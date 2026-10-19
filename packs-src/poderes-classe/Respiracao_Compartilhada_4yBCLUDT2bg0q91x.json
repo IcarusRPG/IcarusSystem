@@ -1,0 +1,40 @@
+{
+  "_id": "4yBCLUDT2bg0q91x",
+  "name": "Respiração Compartilhada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ON1XFwxYoGI0lmQx",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Respiração Controlada",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar a Respiração Controlada em um aliado adjacente.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Meditação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "respiracao-controlada"
+    ],
+    "requerGrupo": "Caminho da Meditação",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__respiracao-compartilhada",
+      "classe": "monge",
+      "poder": "respiracao-compartilhada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!4yBCLUDT2bg0q91x"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Gp5O61dPTowTm4fC",
+  "name": "Passo de Lado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando é alvo de um ataque corpo a corpo, você pode gastar 1 PM e a sua reação para receber +3 na Defesa contra esse ataque.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__passo-de-lado",
+      "classe": "ladino",
+      "poder": "passo-de-lado",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Gp5O61dPTowTm4fC"
+}

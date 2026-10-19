@@ -1,0 +1,38 @@
+{
+  "_id": "fmzFm9fm1gJOEuo2",
+  "name": "Escudo Astral",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "FbN4z45dfYqvMyg7",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando é alvo de um ataque, você pode gastar 1 PM e a sua reação para receber +3 na Defesa contra esse ataque. Só pode ser usado com os Braços Astrais ativos.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho Astral",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho Astral",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__escudo-astral",
+      "classe": "monge",
+      "poder": "escudo-astral",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fmzFm9fm1gJOEuo2"
+}

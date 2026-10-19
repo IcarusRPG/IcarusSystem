@@ -1,0 +1,180 @@
+{
+  "_id": "EQMOWEKw3ppPvoMh",
+  "name": "Monge",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 600,
+  "system": {
+    "classeId": "monge",
+    "papel": "Combatente Marcial",
+    "atributoChave": "Sabedoria",
+    "pv": {
+      "inicial": 18,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": "SAB",
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "4 + Sabedoria no 1º nível; +4 por nível seguinte"
+    },
+    "pericias": {
+      "obrigatorias": "Acrobacia e Fortitude",
+      "escolha": 4,
+      "lista": [
+        "Atletismo",
+        "Audição",
+        "Concentração",
+        "Cura",
+        "Furtividade",
+        "Iniciativa",
+        "Intuição",
+        "Luta",
+        "Reflexos",
+        "Religião",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Nenhuma arma (o Monge luta apenas desarmado). Túnicas. Nunca usa armaduras nem escudos",
+      "armas": [],
+      "armaduras": [],
+      "escudo": false,
+      "tunicas": true
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Punhos Disciplinados"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Passo Ligeiro"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Rajada de Golpes",
+          "Defesa Interior"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Caminho do Monge"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [
+          "Desviar Golpe"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Punhos Disciplinados (1d10)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [
+          "Caminho Aprofundado"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Caminho Supremo",
+          "Punhos Disciplinados (1d12)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Punhos Perfeitos"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O monge não carrega armas porque o corpo dele já é a arma. Anos de disciplina, respiração e silêncio fizeram dos punhos, dos pés e da mente uma só ferramenta, e é a mente que decide o golpe: quem controla a si mesmo controla a luta.</p><p>Nem todos os monges chegam à mesma conclusão. Uns buscam a paz que cura e desarma, outros aprendem a ser a sombra que ninguém percebe, e há os que alcançam além do corpo e fazem do espírito um segundo par de braços. O caminho que cada um escolhe diz mais sobre ele do que qualquer voto.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge"
+    }
+  },
+  "_key": "!items!EQMOWEKw3ppPvoMh"
+}

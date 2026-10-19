@@ -1,0 +1,40 @@
+{
+  "_id": "WHsBePIrM1HBbwdp",
+  "name": "Crítico Brutal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "8L8lK0we5ZuYskBP",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Golpe Pesado, 10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O multiplicador de crítico das suas armas de Duas Mãos aumenta em +1.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Mãos",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "golpe-pesado"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__critico-brutal",
+      "classe": "guerreiro",
+      "poder": "critico-brutal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WHsBePIrM1HBbwdp"
+}

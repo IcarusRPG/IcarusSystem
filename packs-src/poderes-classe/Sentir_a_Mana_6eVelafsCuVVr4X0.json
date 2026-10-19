@@ -1,0 +1,38 @@
+{
+  "_id": "6eVelafsCuVVr4X0",
+  "name": "Sentir a Mana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 3400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gastando 1 PM, você lança Detectar Magia (atributo-chave Sabedoria).",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__sentir-a-mana",
+      "classe": "samurai",
+      "poder": "sentir-a-mana",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6eVelafsCuVVr4X0"
+}

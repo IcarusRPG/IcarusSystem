@@ -1,0 +1,38 @@
+{
+  "_id": "zZdwGlrfT5MOuruD",
+  "name": "Instinto Selvagem",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "gdo614mxTqnHORen",
+  "sort": 5003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Iniciativa. Em Fúria, você não pode ser flanqueado.",
+    "classe": "barbaro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__instinto-selvagem",
+      "classe": "barbaro",
+      "habilidade": "instinto-selvagem",
+      "inferido": false
+    }
+  },
+  "_key": "!items!zZdwGlrfT5MOuruD"
+}

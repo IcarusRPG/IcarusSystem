@@ -1,0 +1,38 @@
+{
+  "_id": "oRHuNNF8chDebtKX",
+  "name": "Caça em Dupla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "yqFYIOJfsmwPFLiV",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você e o seu animal atacam o mesmo alvo no mesmo turno, o segundo ataque conta como contra um alvo flanqueado.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Vínculo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__caca-em-dupla",
+      "classe": "patrulheiro",
+      "poder": "caca-em-dupla",
+      "inferido": false
+    }
+  },
+  "_key": "!items!oRHuNNF8chDebtKX"
+}

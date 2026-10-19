@@ -1,0 +1,38 @@
+{
+  "_id": "aHeKLkNCu14zWhzK",
+  "name": "Sopro do Vento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você ignora a penalidade de distância no segundo incremento de alcance do arco.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__sopro-do-vento",
+      "classe": "samurai",
+      "poder": "sopro-do-vento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!aHeKLkNCu14zWhzK"
+}

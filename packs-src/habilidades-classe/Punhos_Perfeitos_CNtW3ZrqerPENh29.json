@@ -1,0 +1,38 @@
+{
+  "_id": "CNtW3ZrqerPENh29",
+  "name": "Punhos Perfeitos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 20009,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A margem de ameaça dos seus ataques desarmados aumenta em 1 (19–20) e a Rajada de Golpes não custa PM para você.",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__punhos-perfeitos",
+      "classe": "monge",
+      "habilidade": "punhos-perfeitos",
+      "inferido": false
+    }
+  },
+  "_key": "!items!CNtW3ZrqerPENh29"
+}

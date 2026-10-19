@@ -1,0 +1,38 @@
+{
+  "_id": "MItZAFfW77CLFhAj",
+  "name": "Escapista",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "ogCN1MTDymiThGGk",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em testes para escapar das condições Agarrado e Enredado.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Esquiva",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__escapista",
+      "classe": "ladino",
+      "poder": "escapista",
+      "inferido": false
+    }
+  },
+  "_key": "!items!MItZAFfW77CLFhAj"
+}

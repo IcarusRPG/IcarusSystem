@@ -1,0 +1,38 @@
+{
+  "_id": "2b4HTZOAJiBemxiO",
+  "name": "Segunda Tentativa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "eQnEw0KeBpN1HPfL",
+  "sort": 12004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 12,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando falha em um teste de resistência, você pode refazê-lo e ficar com o novo resultado. A partir do 17º nível, pode fazer isso duas vezes por cena.",
+    "classe": "guerreiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 12,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__segunda-tentativa",
+      "classe": "guerreiro",
+      "habilidade": "segunda-tentativa",
+      "inferido": false
+    }
+  },
+  "_key": "!items!2b4HTZOAJiBemxiO"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "KgYHzWhlTQ1vsown",
+  "name": "Disparo Duplo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "0blCeOiABOTbsU4X",
+  "sort": 6002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 6,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao Agredir com arco ou besta. Você faz um disparo adicional contra o mesmo alvo ou contra outro alvo em alcance curto. O disparo adicional não soma o modificador de atributo no dano.",
+    "classe": "patrulheiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__disparo-duplo",
+      "classe": "patrulheiro",
+      "habilidade": "disparo-duplo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!KgYHzWhlTQ1vsown"
+}

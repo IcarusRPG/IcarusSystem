@@ -1,0 +1,41 @@
+{
+  "_id": "HjCz5yqZ4LFXaBRk",
+  "name": "Estudo do Inimigo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "70uqTQ5F1kQeBDtd",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Inteligência 1 ou Sabedoria 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Depois de atacar uma criatura, você recebe +1 nos testes de ataque contra ela até o fim da cena.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de combate geral",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "INT": 1,
+      "SAB": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__estudo-do-inimigo",
+      "classe": "guerreiro",
+      "poder": "estudo-do-inimigo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!HjCz5yqZ4LFXaBRk"
+}

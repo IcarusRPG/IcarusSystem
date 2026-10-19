@@ -1,0 +1,38 @@
+{
+  "_id": "IhEq5oV70rRdOOst",
+  "name": "Pacificar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ON1XFwxYoGI0lmQx",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 3 PM. Uma criatura em alcance curto faz um teste de Vontade (CD = 10 + metade do nível + Sabedoria) ou fica Frustrada até o fim da cena.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Meditação",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Meditação",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__pacificar",
+      "classe": "monge",
+      "poder": "pacificar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!IhEq5oV70rRdOOst"
+}

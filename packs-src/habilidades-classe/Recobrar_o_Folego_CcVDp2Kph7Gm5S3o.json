@@ -1,0 +1,38 @@
+{
+  "_id": "CcVDp2Kph7Gm5S3o",
+  "name": "Recobrar o Fôlego",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "eQnEw0KeBpN1HPfL",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como uma ação de movimento, você recupera 1d8 + seu nível de Guerreiro + sua Constituição em pontos de vida.",
+    "classe": "guerreiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__recobrar-o-folego",
+      "classe": "guerreiro",
+      "habilidade": "recobrar-o-folego",
+      "inferido": true
+    }
+  },
+  "_key": "!items!CcVDp2Kph7Gm5S3o"
+}

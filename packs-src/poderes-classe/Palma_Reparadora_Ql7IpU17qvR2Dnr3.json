@@ -1,0 +1,38 @@
+{
+  "_id": "Ql7IpU17qvR2Dnr3",
+  "name": "Palma Reparadora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ON1XFwxYoGI0lmQx",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A Palma Curativa cura um dado adicional de 1d8.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Meditação",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Meditação",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__palma-reparadora",
+      "classe": "monge",
+      "poder": "palma-reparadora",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Ql7IpU17qvR2Dnr3"
+}

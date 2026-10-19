@@ -1,0 +1,41 @@
+{
+  "_id": "ErgniHLhzbFNUZ83",
+  "name": "Avançar e Golpear",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "70uqTQ5F1kQeBDtd",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Força 1 ou Destreza 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode se mover antes e depois de realizar Agredir, dividindo seu deslocamento entre os dois.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de combate geral",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 1,
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__avancar-e-golpear",
+      "classe": "guerreiro",
+      "poder": "avancar-e-golpear",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ErgniHLhzbFNUZ83"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Gin5YJlLmrkFyKRF",
+  "name": "Rajada de Golpes",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 3003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 1 PM ao Agredir desarmado. Você faz um ataque desarmado adicional. O ataque adicional não soma o modificador de atributo no dano.",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__rajada-de-golpes",
+      "classe": "monge",
+      "habilidade": "rajada-de-golpes",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Gin5YJlLmrkFyKRF"
+}

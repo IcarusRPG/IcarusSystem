@@ -1,0 +1,38 @@
+{
+  "_id": "J8uNvMxOHwq0rek7",
+  "name": "Bala Incendiária",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "vnnPkbrlbKvK3BSb",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar com arma de fogo. O ataque causa dano de Fogo no lugar de Perfuração e, se acertar, o alvo faz um teste de Reflexos ou fica Em Chamas.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__bala-incendiaria",
+      "classe": "pistoleiro",
+      "poder": "bala-incendiaria",
+      "inferido": true
+    }
+  },
+  "_key": "!items!J8uNvMxOHwq0rek7"
+}

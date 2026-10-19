@@ -1,0 +1,15 @@
+{
+  "_id": "8WF0cwnOG1K4pvvj",
+  "name": "Linha da Selvageria",
+  "type": "Item",
+  "folder": "EDFweiOo27MQ7Tk9",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:barbaro:linha-da-selvageria"
+    }
+  },
+  "_key": "!folders!8WF0cwnOG1K4pvvj"
+}

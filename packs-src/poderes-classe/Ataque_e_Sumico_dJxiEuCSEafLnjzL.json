@@ -1,0 +1,38 @@
+{
+  "_id": "dJxiEuCSEafLnjzL",
+  "name": "Ataque e Sumiço",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "bMt524mfEhEtGGg7",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Depois de um Ataque Furtivo, você pode gastar 1 PM, como ação livre, para se deslocar até 3 m.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Emboscada",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__ataque-e-sumico",
+      "classe": "ladino",
+      "poder": "ataque-e-sumico",
+      "inferido": true
+    }
+  },
+  "_key": "!items!dJxiEuCSEafLnjzL"
+}

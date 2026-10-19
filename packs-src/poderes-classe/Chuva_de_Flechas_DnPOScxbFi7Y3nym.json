@@ -1,0 +1,38 @@
+{
+  "_id": "DnPOScxbFi7Y3nym",
+  "name": "Chuva de Flechas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "bvRbBSZU9LvgwCQb",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 4 PM e faz um ataque à distância contra cada inimigo em alcance curto.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__chuva-de-flechas",
+      "classe": "patrulheiro",
+      "poder": "chuva-de-flechas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!DnPOScxbFi7Y3nym"
+}

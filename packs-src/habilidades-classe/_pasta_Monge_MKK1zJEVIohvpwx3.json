@@ -1,0 +1,15 @@
+{
+  "_id": "MKK1zJEVIohvpwx3",
+  "name": "Monge",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 600000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:monge"
+    }
+  },
+  "_key": "!folders!MKK1zJEVIohvpwx3"
+}

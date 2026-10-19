@@ -1,0 +1,15 @@
+{
+  "_id": "m7om2PUSbpQzhc16",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "KtMQTXLNCK68DiSY",
+  "sorting": "a",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:pistoleiro:poderes-comuns"
+    }
+  },
+  "_key": "!folders!m7om2PUSbpQzhc16"
+}

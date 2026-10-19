@@ -1,0 +1,38 @@
+{
+  "_id": "9LppKebjuUokKVu4",
+  "name": "Pele Rija",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "gdo614mxTqnHORen",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sem armadura ou usando armadura leve, e sem vestir túnica, você recebe +2 na Defesa.",
+    "classe": "barbaro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__pele-rija",
+      "classe": "barbaro",
+      "habilidade": "pele-rija",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9LppKebjuUokKVu4"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "5dFgUWsaIYGWV9F0",
+  "name": "Baluarte",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "Yv5B4j41fXGe8wPP",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Mestre do Escudo, 8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto empunha um escudo, você recebe RD 2.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Escudo",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "mestre-do-escudo"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__baluarte",
+      "classe": "guerreiro",
+      "poder": "baluarte",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5dFgUWsaIYGWV9F0"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "HRXJY58Ts9zonJb4",
+  "name": "Olhar de Fera",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "8WF0cwnOG1K4pvvj",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Força no lugar de Carisma em testes de Intimidação e recebe +2 nesses testes.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Selvageria",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__olhar-de-fera",
+      "classe": "barbaro",
+      "poder": "olhar-de-fera",
+      "inferido": false
+    }
+  },
+  "_key": "!items!HRXJY58Ts9zonJb4"
+}

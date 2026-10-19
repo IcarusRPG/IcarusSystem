@@ -7,6 +7,7 @@ import { PoderData } from "./module/data/item-poder.mjs";
 import { EquipamentoData } from "./module/data/item-equipamento.mjs";
 import { ArmaData } from "./module/data/item-arma.mjs";
 import { MunicaoData } from "./module/data/item-municao.mjs";
+import { ClasseData } from "./module/data/item-classe.mjs";
 import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
 import { rolarTeste, rolarPericia, rolarAtributo } from "./module/rolls.mjs";
@@ -97,6 +98,7 @@ Hooks.once("init", () => {
   CONFIG.Item.dataModels.equipamento = EquipamentoData;
   CONFIG.Item.dataModels.arma = ArmaData;
   CONFIG.Item.dataModels.municao = MunicaoData;
+  CONFIG.Item.dataModels.classe = ClasseData;
 
   // Opções de mundo
   registrarConfiguracoesDeCombate();
@@ -120,7 +122,7 @@ Hooks.once("init", () => {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet(SISTEMA_ID, FichaPersonagem, { types: ["personagem"], makeDefault: true, label: "ICARUS.Ficha.Personagem" });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao"], makeDefault: true, label: "ICARUS.Ficha.Item" });
+  Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 
   return loadTemplates(TEMPLATES);
 });

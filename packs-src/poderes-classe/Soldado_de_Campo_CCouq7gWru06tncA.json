@@ -1,0 +1,38 @@
+{
+  "_id": "CCouq7gWru06tncA",
+  "name": "Soldado de Campo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "ajOnRlwDRMxAYG5N",
+  "sort": 3400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Sobrevivência e em Fortitude contra fadiga, frio e calor.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e versatilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__soldado-de-campo",
+      "classe": "guerreiro",
+      "poder": "soldado-de-campo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!CCouq7gWru06tncA"
+}

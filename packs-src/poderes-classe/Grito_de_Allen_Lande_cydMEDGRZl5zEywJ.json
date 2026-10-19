@@ -1,0 +1,38 @@
+{
+  "_id": "cydMEDGRZl5zEywJ",
+  "name": "Grito de Allen-Lande",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao usar o Kiai, você faz um teste de Intimidação como ação livre contra o alvo do ataque.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__grito-de-allen-lande",
+      "classe": "samurai",
+      "poder": "grito-de-allen-lande",
+      "inferido": true
+    }
+  },
+  "_key": "!items!cydMEDGRZl5zEywJ"
+}

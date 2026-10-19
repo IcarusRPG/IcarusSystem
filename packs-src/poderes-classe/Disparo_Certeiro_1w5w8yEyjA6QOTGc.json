@@ -1,0 +1,38 @@
+{
+  "_id": "1w5w8yEyjA6QOTGc",
+  "name": "Disparo Certeiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "bvRbBSZU9LvgwCQb",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Se você não se moveu neste turno, recebe +2 nos testes de ataque à distância.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__disparo-certeiro",
+      "classe": "patrulheiro",
+      "poder": "disparo-certeiro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!1w5w8yEyjA6QOTGc"
+}

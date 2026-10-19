@@ -1,0 +1,38 @@
+{
+  "_id": "7M1OqB4X7quBu8sr",
+  "name": "Mente Furiosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em Fúria, você recebe +5 em testes de resistência contra as condições Abalado, Apavorado, Confuso, Enfeitiçado e Fascinado.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__mente-furiosa",
+      "classe": "barbaro",
+      "poder": "mente-furiosa",
+      "inferido": false
+    }
+  },
+  "_key": "!items!7M1OqB4X7quBu8sr"
+}

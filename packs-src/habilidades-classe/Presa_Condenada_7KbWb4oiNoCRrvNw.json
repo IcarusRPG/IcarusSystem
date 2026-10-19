@@ -1,0 +1,38 @@
+{
+  "_id": "7KbWb4oiNoCRrvNw",
+  "name": "Presa Condenada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "0blCeOiABOTbsU4X",
+  "sort": 20004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, ao acertar a sua presa, os dados da Marca da Presa causam o dano máximo e a presa fica Lenta até o início do seu próximo turno.",
+    "classe": "patrulheiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__presa-condenada",
+      "classe": "patrulheiro",
+      "habilidade": "presa-condenada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!7KbWb4oiNoCRrvNw"
+}

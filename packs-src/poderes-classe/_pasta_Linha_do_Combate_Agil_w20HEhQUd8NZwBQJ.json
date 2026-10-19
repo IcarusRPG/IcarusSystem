@@ -1,0 +1,15 @@
+{
+  "_id": "w20HEhQUd8NZwBQJ",
+  "name": "Linha do Combate Ágil",
+  "type": "Item",
+  "folder": "e9cr8BwFIZFfrFhm",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:ladino:linha-do-combate-agil"
+    }
+  },
+  "_key": "!folders!w20HEhQUd8NZwBQJ"
+}

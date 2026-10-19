@@ -1,0 +1,40 @@
+{
+  "_id": "MW6NqsWqy5BrasfK",
+  "name": "Tiro Incapacitante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "gvjuW1nqOhHfDl9d",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Mira Firme, 5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar à distância. Se acertar, o alvo faz um teste de Fortitude (CD Força). Se falhar, fica Lento até o fim do próximo turno dele.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Distância",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "mira-firme"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__tiro-incapacitante",
+      "classe": "guerreiro",
+      "poder": "tiro-incapacitante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!MW6NqsWqy5BrasfK"
+}

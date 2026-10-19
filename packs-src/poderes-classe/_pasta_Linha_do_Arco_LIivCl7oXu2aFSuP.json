@@ -1,0 +1,15 @@
+{
+  "_id": "LIivCl7oXu2aFSuP",
+  "name": "Linha do Arco",
+  "type": "Item",
+  "folder": "e9cr8BwFIZFfrFhm",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:ladino:linha-do-arco"
+    }
+  },
+  "_key": "!folders!LIivCl7oXu2aFSuP"
+}

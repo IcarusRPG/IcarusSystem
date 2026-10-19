@@ -1,0 +1,40 @@
+{
+  "_id": "MTbUdAbItudotkK2",
+  "name": "Quebra-Guarda",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "8L8lK0we5ZuYskBP",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Golpe Pesado",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar. O ataque ignora a RD do alvo e o bônus de escudo na Defesa dele.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Mãos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "golpe-pesado"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__quebra-guarda",
+      "classe": "guerreiro",
+      "poder": "quebra-guarda",
+      "inferido": true
+    }
+  },
+  "_key": "!items!MTbUdAbItudotkK2"
+}

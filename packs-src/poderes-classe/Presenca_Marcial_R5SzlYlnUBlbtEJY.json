@@ -1,0 +1,38 @@
+{
+  "_id": "R5SzlYlnUBlbtEJY",
+  "name": "Presença Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "1PSYvh6Bqpblfj53",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Inimigos adjacentes a você sofrem –2 nos ataques contra seus aliados.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais e de combate",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__presenca-marcial",
+      "classe": "samurai",
+      "poder": "presenca-marcial",
+      "inferido": false
+    }
+  },
+  "_key": "!items!R5SzlYlnUBlbtEJY"
+}

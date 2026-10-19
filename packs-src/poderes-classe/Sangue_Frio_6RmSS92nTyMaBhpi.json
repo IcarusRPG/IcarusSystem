@@ -1,0 +1,38 @@
+{
+  "_id": "6RmSS92nTyMaBhpi",
+  "name": "Sangue Frio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "9nkjJoPyRVVSgaqA",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Iniciativa e Vontade.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Pistoleiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__sangue-frio",
+      "classe": "pistoleiro",
+      "poder": "sangue-frio",
+      "inferido": false
+    }
+  },
+  "_key": "!items!6RmSS92nTyMaBhpi"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "t4IDkusDG2Fkfi22",
+  "name": "Leitura de Batalha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 3800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Sabedoria, em vez de Destreza, em testes de Iniciativa.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__leitura-de-batalha",
+      "classe": "samurai",
+      "poder": "leitura-de-batalha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!t4IDkusDG2Fkfi22"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "NNtwKdsagagWJO7g",
+  "name": "Linha da Fúria",
+  "type": "Item",
+  "folder": "EDFweiOo27MQ7Tk9",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:barbaro:linha-da-furia"
+    }
+  },
+  "_key": "!folders!NNtwKdsagagWJO7g"
+}

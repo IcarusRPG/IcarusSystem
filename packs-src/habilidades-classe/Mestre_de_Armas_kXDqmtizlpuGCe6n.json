@@ -1,0 +1,38 @@
+{
+  "_id": "kXDqmtizlpuGCe6n",
+  "name": "Mestre de Armas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "eQnEw0KeBpN1HPfL",
+  "sort": 20005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques recebem +1 na margem de ameaça e +1 no multiplicador de crítico.",
+    "classe": "guerreiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__mestre-de-armas",
+      "classe": "guerreiro",
+      "habilidade": "mestre-de-armas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kXDqmtizlpuGCe6n"
+}

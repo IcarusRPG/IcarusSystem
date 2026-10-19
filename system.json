@@ -62,6 +62,11 @@
         "htmlFields": [
           "descricao"
         ]
+      },
+      "classe": {
+        "htmlFields": [
+          "intro"
+        ]
       }
     }
   },
@@ -143,6 +148,45 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "classes",
+      "label": "Icarus — Classes",
+      "path": "packs/classes",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "habilidades-classe",
+      "label": "Icarus — Habilidades de Classe",
+      "path": "packs/habilidades-classe",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "poderes-classe",
+      "label": "Icarus — Poderes de Classe",
+      "path": "packs/poderes-classe",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -156,7 +200,10 @@
         "armaduras-escudos",
         "poderes-concedidos",
         "condicoes",
-        "macros"
+        "macros",
+        "classes",
+        "habilidades-classe",
+        "poderes-classe"
       ]
     }
   ],

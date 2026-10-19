@@ -1,0 +1,38 @@
+{
+  "_id": "It1nK93UFonBQYom",
+  "name": "Restrição de Equipamento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 1,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O Monge não usa armas: ele só ataca desarmado (ou com os Braços Astrais). Ele também não usa armaduras nem escudos; só veste vestimentas comuns e túnicas. Vestimentas e túnicas não contam como armadura (regra geral das túnicas).",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__restricao-de-equipamento",
+      "classe": "monge",
+      "habilidade": "restricao-de-equipamento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!It1nK93UFonBQYom"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "cnIpFWAGCoUM7box",
+  "name": "Sangue Quente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "gdo614mxTqnHORen",
+  "sort": 3002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, enquanto estiver em Fúria, ao reduzir um inimigo a 0 PV com um ataque corpo a corpo, você recupera PV igual ao seu nível.",
+    "classe": "barbaro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__sangue-quente",
+      "classe": "barbaro",
+      "habilidade": "sangue-quente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!cnIpFWAGCoUM7box"
+}

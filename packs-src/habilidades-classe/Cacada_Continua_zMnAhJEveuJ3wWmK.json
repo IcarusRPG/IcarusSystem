@@ -1,0 +1,38 @@
+{
+  "_id": "zMnAhJEveuJ3wWmK",
+  "name": "Caçada Contínua",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "0blCeOiABOTbsU4X",
+  "sort": 10003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando a sua presa é reduzida a 0 PV, você pode marcar outra criatura como uma ação livre, sem gastar PM.",
+    "classe": "patrulheiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__cacada-continua",
+      "classe": "patrulheiro",
+      "habilidade": "cacada-continua",
+      "inferido": true
+    }
+  },
+  "_key": "!items!zMnAhJEveuJ3wWmK"
+}

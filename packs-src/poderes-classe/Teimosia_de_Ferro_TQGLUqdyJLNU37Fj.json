@@ -1,0 +1,38 @@
+{
+  "_id": "TQGLUqdyJLNU37Fj",
+  "name": "Teimosia de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ku9oOPxCneXCEe9f",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você rola com vantagem o primeiro teste de morte de cada vez que cai a 0 PV.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__teimosia-de-ferro",
+      "classe": "barbaro",
+      "poder": "teimosia-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!TQGLUqdyJLNU37Fj"
+}

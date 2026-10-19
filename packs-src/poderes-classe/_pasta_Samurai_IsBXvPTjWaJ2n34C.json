@@ -1,0 +1,15 @@
+{
+  "_id": "IsBXvPTjWaJ2n34C",
+  "name": "Samurai",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:samurai"
+    }
+  },
+  "_key": "!folders!IsBXvPTjWaJ2n34C"
+}

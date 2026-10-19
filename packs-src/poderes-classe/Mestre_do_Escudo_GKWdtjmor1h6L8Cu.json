@@ -1,0 +1,38 @@
+{
+  "_id": "GKWdtjmor1h6L8Cu",
+  "name": "Mestre do Escudo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "Yv5B4j41fXGe8wPP",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "estar usando um escudo",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O bônus de Defesa do seu escudo aumenta em +1.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Escudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__mestre-do-escudo",
+      "classe": "guerreiro",
+      "poder": "mestre-do-escudo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!GKWdtjmor1h6L8Cu"
+}

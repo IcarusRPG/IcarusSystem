@@ -1,0 +1,38 @@
+{
+  "_id": "oP5cp510bhGd5SOh",
+  "name": "Estocada Oculta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "X3UYfIWpHkRwn5Bh",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 nos testes de ataque desarmado contra alvos desprevenidos.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho das Sombras",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho das Sombras",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__estocada-oculta",
+      "classe": "monge",
+      "poder": "estocada-oculta",
+      "inferido": false
+    }
+  },
+  "_key": "!items!oP5cp510bhGd5SOh"
+}

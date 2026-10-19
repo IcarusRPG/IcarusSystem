@@ -1,0 +1,15 @@
+{
+  "_id": "vnnPkbrlbKvK3BSb",
+  "name": "Linha dos Truques",
+  "type": "Item",
+  "folder": "KtMQTXLNCK68DiSY",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:pistoleiro:linha-dos-truques"
+    }
+  },
+  "_key": "!folders!vnnPkbrlbKvK3BSb"
+}

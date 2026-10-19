@@ -1,0 +1,38 @@
+{
+  "_id": "Kz0QOG33M3Zt22Hb",
+  "name": "Tiro Carregado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "I297XYpyoUdXVQCD",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao fazer um ataque com arma de fogo, você pode gastar PM para carregar o tiro com mais pólvora. Cada PM gasto causa +1d6 de dano de Perfuração. Você decide antes do teste de ataque, e os PM são gastos mesmo que o ataque erre. O máximo de PM por ataque é 1 no 1º nível, 2 no 5º, 3 no 10º, 4 no 15º e 5 no 20º.",
+    "classe": "pistoleiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__tiro-carregado",
+      "classe": "pistoleiro",
+      "habilidade": "tiro-carregado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Kz0QOG33M3Zt22Hb"
+}

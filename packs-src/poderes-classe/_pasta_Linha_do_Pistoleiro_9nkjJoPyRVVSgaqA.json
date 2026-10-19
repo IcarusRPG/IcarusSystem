@@ -1,0 +1,15 @@
+{
+  "_id": "9nkjJoPyRVVSgaqA",
+  "name": "Linha do Pistoleiro",
+  "type": "Item",
+  "folder": "KtMQTXLNCK68DiSY",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:pistoleiro:linha-do-pistoleiro"
+    }
+  },
+  "_key": "!folders!9nkjJoPyRVVSgaqA"
+}

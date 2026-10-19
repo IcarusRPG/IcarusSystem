@@ -1,0 +1,38 @@
+{
+  "_id": "2tHjccHJfGkO2Hrk",
+  "name": "Língua Prateada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "h7eXbgUzlO52mjvn",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Destreza no lugar de Carisma em testes de Enganação.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__lingua-prateada",
+      "classe": "ladino",
+      "poder": "lingua-prateada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!2tHjccHJfGkO2Hrk"
+}

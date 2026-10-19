@@ -1,0 +1,40 @@
+{
+  "_id": "6PnQrnWfEallJEiq",
+  "name": "Par de Lâminas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "oQRJr2ZMsQhANvjb",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Destreza 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa Agredir empunhando uma arma corpo a corpo em cada mão, você faz um ataque com cada uma. O segundo ataque não soma o modificador de atributo (Força ou Destreza) no dano.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Par de Lâminas",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__par-de-laminas",
+      "classe": "guerreiro",
+      "poder": "par-de-laminas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!6PnQrnWfEallJEiq"
+}

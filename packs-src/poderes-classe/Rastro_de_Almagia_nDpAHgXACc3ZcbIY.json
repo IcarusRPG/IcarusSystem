@@ -1,0 +1,38 @@
+{
+  "_id": "nDpAHgXACc3ZcbIY",
+  "name": "Rastro de Almagia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "SiwlwFboHrO0EU5i",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Sobrevivência e consegue rastrear mesmo em pedra ou cinzas.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de perícia e interpretação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__rastro-de-almagia",
+      "classe": "samurai",
+      "poder": "rastro-de-almagia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!nDpAHgXACc3ZcbIY"
+}

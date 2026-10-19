@@ -1,0 +1,38 @@
+{
+  "_id": "ypiXyIZh9QQCri8G",
+  "name": "Golpe nas Sombras",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "bMt524mfEhEtGGg7",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Se você estava escondido ao atacar, o alvo fica desprevenido contra esse ataque.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Emboscada",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__golpe-nas-sombras",
+      "classe": "ladino",
+      "poder": "golpe-nas-sombras",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ypiXyIZh9QQCri8G"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "yJeqYravhAXRlwed",
+  "name": "Sentidos Aguçados",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "dE4F9uKffi9vLoXF",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Audição, Olfato e Visão.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__sentidos-agucados",
+      "classe": "patrulheiro",
+      "poder": "sentidos-agucados",
+      "inferido": false
+    }
+  },
+  "_key": "!items!yJeqYravhAXRlwed"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "PLuJA8RWVMNz4yHe",
+  "name": "Golpe Certeiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "w20HEhQUd8NZwBQJ",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar. Você recebe +3 no teste de ataque.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Combate Ágil",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__golpe-certeiro",
+      "classe": "ladino",
+      "poder": "golpe-certeiro",
+      "inferido": true
+    }
+  },
+  "_key": "!items!PLuJA8RWVMNz4yHe"
+}

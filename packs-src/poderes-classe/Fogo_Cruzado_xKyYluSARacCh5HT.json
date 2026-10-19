@@ -1,0 +1,38 @@
+{
+  "_id": "xKyYluSARacCh5HT",
+  "name": "Fogo Cruzado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "vnnPkbrlbKvK3BSb",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você acerta um ataque com arma de fogo contra um inimigo, o próximo aliado que atacar esse inimigo antes do início do seu próximo turno recebe +2 no teste de ataque.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__fogo-cruzado",
+      "classe": "pistoleiro",
+      "poder": "fogo-cruzado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!xKyYluSARacCh5HT"
+}

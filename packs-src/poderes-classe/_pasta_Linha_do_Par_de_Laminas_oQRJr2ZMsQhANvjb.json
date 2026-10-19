@@ -1,0 +1,15 @@
+{
+  "_id": "oQRJr2ZMsQhANvjb",
+  "name": "Linha do Par de Lâminas",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:linha-do-par-de-laminas"
+    }
+  },
+  "_key": "!folders!oQRJr2ZMsQhANvjb"
+}

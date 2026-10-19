@@ -1,0 +1,38 @@
+{
+  "_id": "ozJSRzHdJEDBgZLK",
+  "name": "Golpe Atordoante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao acertar um ataque desarmado. O alvo faz um teste de Fortitude (CD = 10 + metade do nível + Sabedoria) ou fica Pasmo até o início do seu próximo turno.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__golpe-atordoante",
+      "classe": "monge",
+      "poder": "golpe-atordoante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ozJSRzHdJEDBgZLK"
+}

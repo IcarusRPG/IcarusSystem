@@ -1,0 +1,38 @@
+{
+  "_id": "4DSFUUOQamzjU3Xo",
+  "name": "Surpreender",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "bMt524mfEhEtGGg7",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques contra criaturas que ainda não agiram no combate contam como ataques contra alvos desprevenidos.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Emboscada",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__surpreender",
+      "classe": "ladino",
+      "poder": "surpreender",
+      "inferido": false
+    }
+  },
+  "_key": "!items!4DSFUUOQamzjU3Xo"
+}

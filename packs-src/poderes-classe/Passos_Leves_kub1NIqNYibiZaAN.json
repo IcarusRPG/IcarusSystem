@@ -1,0 +1,38 @@
+{
+  "_id": "kub1NIqNYibiZaAN",
+  "name": "Passos Leves",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "dE4F9uKffi9vLoXF",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se move até o seu deslocamento sem sofrer penalidade em Furtividade.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__passos-leves",
+      "classe": "patrulheiro",
+      "poder": "passos-leves",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kub1NIqNYibiZaAN"
+}

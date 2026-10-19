@@ -1,0 +1,38 @@
+{
+  "_id": "g5DIGZ6tVE03RrfE",
+  "name": "Atirador de Combate",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "I297XYpyoUdXVQCD",
+  "sort": 3002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você não sofre a penalidade de –5 em ataques à distância contra inimigos adjacentes e recebe +2 nos testes de ataque com armas de fogo contra alvos em alcance curto.",
+    "classe": "pistoleiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__atirador-de-combate",
+      "classe": "pistoleiro",
+      "habilidade": "atirador-de-combate",
+      "inferido": false
+    }
+  },
+  "_key": "!items!g5DIGZ6tVE03RrfE"
+}

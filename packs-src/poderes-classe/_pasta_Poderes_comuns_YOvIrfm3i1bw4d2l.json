@@ -1,0 +1,15 @@
+{
+  "_id": "YOvIrfm3i1bw4d2l",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "768IunF6PIkYMdz0",
+  "sorting": "a",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:patrulheiro:poderes-comuns"
+    }
+  },
+  "_key": "!folders!YOvIrfm3i1bw4d2l"
+}

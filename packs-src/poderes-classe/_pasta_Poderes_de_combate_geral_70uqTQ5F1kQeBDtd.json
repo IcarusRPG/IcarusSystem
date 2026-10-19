@@ -1,0 +1,15 @@
+{
+  "_id": "70uqTQ5F1kQeBDtd",
+  "name": "Poderes de combate geral",
+  "type": "Item",
+  "folder": "RVA0SFooSqBoTn3S",
+  "sorting": "a",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro:poderes-de-combate-geral"
+    }
+  },
+  "_key": "!folders!70uqTQ5F1kQeBDtd"
+}

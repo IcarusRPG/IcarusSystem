@@ -1,0 +1,38 @@
+{
+  "_id": "hwaFQ0woecpDUI8N",
+  "name": "Palma Desarmante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "ON1XFwxYoGI0lmQx",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em testes de ataque da manobra Desarmar.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Meditação",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Meditação",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__palma-desarmante",
+      "classe": "monge",
+      "poder": "palma-desarmante",
+      "inferido": false
+    }
+  },
+  "_key": "!items!hwaFQ0woecpDUI8N"
+}

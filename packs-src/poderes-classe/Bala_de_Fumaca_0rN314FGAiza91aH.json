@@ -1,0 +1,38 @@
+{
+  "_id": "0rN314FGAiza91aH",
+  "name": "Bala de Fumaça",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "vnnPkbrlbKvK3BSb",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação padrão, você gasta 2 PM e dispara uma bala de fumaça em um ponto em alcance médio. Uma esfera de 3 m de raio concede camuflagem total (ver Camuflagem, na seção 1) até o início do seu próximo turno.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__bala-de-fumaca",
+      "classe": "pistoleiro",
+      "poder": "bala-de-fumaca",
+      "inferido": true
+    }
+  },
+  "_key": "!items!0rN314FGAiza91aH"
+}

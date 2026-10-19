@@ -1,0 +1,38 @@
+{
+  "_id": "SlsxrXWoDQo9T8Pr",
+  "name": "Ataque Extra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "eQnEw0KeBpN1HPfL",
+  "sort": 7002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 7,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em seu turno, você pode gastar 1 PM para realizar uma ação de Agredir adicional. Ela só pode ser usada para Agredir. Vale para qualquer estilo: arma e escudo, duas armas, arma de duas mãos ou arma à distância.",
+    "classe": "guerreiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 7,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__ataque-extra",
+      "classe": "guerreiro",
+      "habilidade": "ataque-extra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!SlsxrXWoDQo9T8Pr"
+}

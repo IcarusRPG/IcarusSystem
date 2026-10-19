@@ -1,0 +1,38 @@
+{
+  "_id": "kTaXSStZOhnOJ1eP",
+  "name": "Caminho do Monge",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "MKK1zJEVIohvpwx3",
+  "sort": 5005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe um caminho, e essa escolha é permanente. Cada caminho concede uma habilidade agora, outra no 11º nível (Caminho Aprofundado) e outra no 17º (Caminho Supremo), além de uma lista de poderes própria.<ul class=\"subs-classe\"><li><strong>Caminho da Meditação.</strong> <em>Palma Curativa:</em> como uma ação padrão, você gasta 2 PM e toca uma criatura, que recupera 1d8 + a sua Sabedoria PV. A cura aumenta em 1d8 no 9º, no 13º e no 17º nível.</li><li><strong>Caminho das Sombras.</strong> <em>Golpe Sombrio:</em> uma vez por rodada, ao acertar um ataque desarmado contra um alvo desprevenido ou flanqueado, você causa 1d6 de dano de Trevas adicional.</li><li><strong>Caminho Astral.</strong> <em>Braços Astrais:</em> como uma ação de movimento, você gasta 2 PM e manifesta braços espirituais até o fim da cena (ou até você dispensá-los, como ação livre). Enquanto estiverem ativos, seus ataques desarmados têm alcance de 3 m, causam dano de Essência no lugar de Impacto e usam a sua Sabedoria no lugar de Destreza ou Força nos testes de ataque e no dano.</li></ul>",
+    "classe": "monge",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__caminho-do-monge",
+      "classe": "monge",
+      "habilidade": "caminho-do-monge",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kTaXSStZOhnOJ1eP"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "zBbiWzGxlsMByoj0",
+  "name": "Kiai",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "dyqFs5SBHWlNlCxE",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, quando faz um ataque, você pode gastar 2 PM. O ataque recebe +2 no teste de ataque e, se acertar, causa um dado de dano adicional do mesmo tipo e tamanho do dado da arma. Esse número de dados aumenta para 2 no 5º nível, 3 no 9º, 4 no 13º e 5 no 17º.",
+    "classe": "samurai",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__kiai",
+      "classe": "samurai",
+      "habilidade": "kiai",
+      "inferido": true
+    }
+  },
+  "_key": "!items!zBbiWzGxlsMByoj0"
+}

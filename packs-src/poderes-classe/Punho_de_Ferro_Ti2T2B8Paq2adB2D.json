@@ -1,0 +1,38 @@
+{
+  "_id": "Ti2T2B8Paq2adB2D",
+  "name": "Punho de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "kxcpgzkIwZIecqx4",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques desarmados causam +2 de dano.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__punho-de-ferro",
+      "classe": "monge",
+      "poder": "punho-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Ti2T2B8Paq2adB2D"
+}

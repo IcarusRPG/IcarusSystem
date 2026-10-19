@@ -1,0 +1,38 @@
+{
+  "_id": "CA5BJ5tzl0LWzFDz",
+  "name": "Olhos Atentos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "h7eXbgUzlO52mjvn",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Visão, Audição e Investigação.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha dos Truques",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__olhos-atentos",
+      "classe": "ladino",
+      "poder": "olhos-atentos",
+      "inferido": false
+    }
+  },
+  "_key": "!items!CA5BJ5tzl0LWzFDz"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "2kclJGadH5RroIwv",
+  "name": "Olho da Tempestade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Samurai.png",
+  "folder": "AP3eCvkvPYuDb5Vj",
+  "sort": 4700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você não sofre a penalidade de –5 em ataques à distância contra inimigos adjacentes.",
+    "classe": "samurai",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Kyudo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Senda do Kyudo",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "samurai__olho-da-tempestade",
+      "classe": "samurai",
+      "poder": "olho-da-tempestade",
+      "inferido": false
+    }
+  },
+  "_key": "!items!2kclJGadH5RroIwv"
+}

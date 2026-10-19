@@ -1,0 +1,38 @@
+{
+  "_id": "6aiGWnzjILo8Jg8b",
+  "name": "Estômago de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ku9oOPxCneXCEe9f",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em testes de Fortitude contra as condições Doente, Enjoado e Envenenado.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__estomago-de-ferro",
+      "classe": "barbaro",
+      "poder": "estomago-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!6aiGWnzjILo8Jg8b"
+}

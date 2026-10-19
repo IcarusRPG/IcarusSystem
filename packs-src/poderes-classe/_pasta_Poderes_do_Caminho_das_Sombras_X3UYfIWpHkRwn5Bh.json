@@ -1,0 +1,15 @@
+{
+  "_id": "X3UYfIWpHkRwn5Bh",
+  "name": "Poderes do Caminho das Sombras",
+  "type": "Item",
+  "folder": "zQgUz5C0U1Tp26gK",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:monge:poderes-do-caminho-das-sombras"
+    }
+  },
+  "_key": "!folders!X3UYfIWpHkRwn5Bh"
+}

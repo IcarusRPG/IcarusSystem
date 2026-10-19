@@ -1,0 +1,38 @@
+{
+  "_id": "EDQNNjtUYV6fh9Ux",
+  "name": "Disparo Sorrateiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Depois de atacar escondido com arco ou besta, você pode gastar 1 PM e fazer um teste de Furtividade contra a Visão de quem o procura. Se vencer, continua escondido.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__disparo-sorrateiro",
+      "classe": "ladino",
+      "poder": "disparo-sorrateiro",
+      "inferido": true
+    }
+  },
+  "_key": "!items!EDQNNjtUYV6fh9Ux"
+}

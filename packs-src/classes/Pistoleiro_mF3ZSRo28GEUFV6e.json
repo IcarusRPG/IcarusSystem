@@ -1,0 +1,184 @@
+{
+  "_id": "mF3ZSRo28GEUFV6e",
+  "name": "Pistoleiro",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 700,
+  "system": {
+    "classeId": "pistoleiro",
+    "papel": "Combate à Distância",
+    "atributoChave": "Destreza",
+    "pv": {
+      "inicial": 16,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "4 por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Pontaria e Reflexos",
+      "escolha": 4,
+      "lista": [
+        "Acrobacia",
+        "Atletismo",
+        "Audição",
+        "Barganha",
+        "Enganação",
+        "Fortitude",
+        "Iniciativa",
+        "Intimidação",
+        "Intuição",
+        "Investigação",
+        "Luta",
+        "Prestidigitação",
+        "Sobrevivência",
+        "Visão",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas de fogo, armaduras leves",
+      "armas": [
+        "simples",
+        "fogo"
+      ],
+      "armaduras": [
+        "leve"
+      ],
+      "escudo": false,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Saque Rápido",
+          "Tiro Carregado (1 PM)"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Atirador de Combate"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Tiro Carregado (2 PM)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [
+          "Disparo em Movimento"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Tiro Carregado (3 PM)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [
+          "Tiro Carregado (4 PM)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Tiro Carregado (5 PM)",
+          "Tiro Lendário"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>Combate à Distância</p><p>A pólvora trocou o duelo de espadas por algo mais honesto: quem atira primeiro e melhor volta para casa. O pistoleiro não confia em encantos nem em ancestrais. Confia na mão firme, no cano limpo e no segundo exato em que o dedo aperta o gatilho.</p><p>Há duelistas que vivem de honra, caçadores de recompensa que vivem de contratos, contrabandistas, soldados de fronteira e artilheiros sem exército. O que os une é o respeito pela arma, que é cara, barulhenta e não perdoa quem esquece de recarregá-la.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro"
+    }
+  },
+  "_key": "!items!mF3ZSRo28GEUFV6e"
+}

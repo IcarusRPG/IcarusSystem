@@ -1,0 +1,38 @@
+{
+  "_id": "4B7fZnrjKhZwzx9M",
+  "name": "Arremesso Brutal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "4BoMF4gKzJMJAKMH",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Suas armas de arremesso causam +2 de dano e têm o alcance dobrado.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Brutalidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__arremesso-brutal",
+      "classe": "barbaro",
+      "poder": "arremesso-brutal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!4B7fZnrjKhZwzx9M"
+}

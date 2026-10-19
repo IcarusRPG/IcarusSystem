@@ -1,0 +1,15 @@
+{
+  "_id": "RVA0SFooSqBoTn3S",
+  "name": "Guerreiro",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:guerreiro"
+    }
+  },
+  "_key": "!folders!RVA0SFooSqBoTn3S"
+}

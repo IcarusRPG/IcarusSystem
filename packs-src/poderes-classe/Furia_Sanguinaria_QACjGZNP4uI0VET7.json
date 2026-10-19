@@ -1,0 +1,38 @@
+{
+  "_id": "QACjGZNP4uI0VET7",
+  "name": "Fúria Sanguinária",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "NNtwKdsagagWJO7g",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em Fúria, quando acerta um ataque crítico, você recupera 1 PM.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Fúria",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__furia-sanguinaria",
+      "classe": "barbaro",
+      "poder": "furia-sanguinaria",
+      "inferido": true
+    }
+  },
+  "_key": "!items!QACjGZNP4uI0VET7"
+}

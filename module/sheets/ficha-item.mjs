@@ -36,6 +36,15 @@ export class FichaItem extends ItemSheet {
     ctx.editable = this.isEditable;
     ctx.owner = item.isOwner;
     ctx.opcoesFonte = opcoes(FONTES_PODER, "ICARUS.Poderes.Fontes");
+    if (item.type === "classe") {
+      const pmAtributo = src.pm.atributo ? (src.pm.atributoSoNoPrimeiroNivel ? game.i18n.format("ICARUS.Classe.PMAtributoPrimeiro", { atributo: src.pm.atributo }) : ` + ${src.pm.atributo}`) : "";
+      ctx.classe = {
+        pv: game.i18n.format("ICARUS.Classe.PVTexto", { inicial: src.pv.inicial, porNivel: src.pv.porNivel, atributo: src.pv.atributo ?? "CON" }),
+        pm: game.i18n.format("ICARUS.Classe.PMTexto", { inicial: src.pm.inicial, porNivel: src.pm.porNivel }) + pmAtributo,
+        pericias: game.i18n.format("ICARUS.Classe.PericiasTexto", { obrigatorias: src.pericias.obrigatorias, n: src.pericias.escolha, lista: src.pericias.lista.join(", ") })
+      };
+      ctx.introHTML = await TextEditor.enrichHTML(src.intro, { async: true });
+    }
     ctx.opcoesAcao = { "": "ICARUS.Poderes.SemAcao", ...opcoes(ACOES_PODER, "ICARUS.Poderes.Acoes") };
     ctx.opcoesFrequencia = { "": "ICARUS.Poderes.SemFrequencia", ...opcoes(FREQUENCIAS_PODER, "ICARUS.Poderes.Frequencias") };
     ctx.opcoesTipo = opcoes(TIPOS_EQUIPAMENTO, "ICARUS.Equipamento.Tipos");

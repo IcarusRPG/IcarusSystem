@@ -1,0 +1,38 @@
+{
+  "_id": "5ouG789BnvJrUpYr",
+  "name": "Disparo em Movimento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "I297XYpyoUdXVQCD",
+  "sort": 8003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 8,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, depois de atacar com arma de fogo, você pode gastar 1 PM para se deslocar até 3 m como ação livre.",
+    "classe": "pistoleiro",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__disparo-em-movimento",
+      "classe": "pistoleiro",
+      "habilidade": "disparo-em-movimento",
+      "inferido": true
+    }
+  },
+  "_key": "!items!5ouG789BnvJrUpYr"
+}

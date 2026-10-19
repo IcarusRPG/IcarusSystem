@@ -1,0 +1,38 @@
+{
+  "_id": "h8bDo647PuLYkUj6",
+  "name": "Sussurro Letal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "bMt524mfEhEtGGg7",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Ataque Furtivo causa um dado extra de dano contra alvos que não percebem você.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Emboscada",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__sussurro-letal",
+      "classe": "ladino",
+      "poder": "sussurro-letal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!h8bDo647PuLYkUj6"
+}

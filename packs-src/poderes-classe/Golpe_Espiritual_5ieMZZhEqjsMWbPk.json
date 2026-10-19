@@ -1,0 +1,38 @@
+{
+  "_id": "5ieMZZhEqjsMWbPk",
+  "name": "Golpe Espiritual",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Monge.png",
+  "folder": "FbN4z45dfYqvMyg7",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao atacar com os Braços Astrais ativos. O ataque ignora 3 pontos da RD do alvo.",
+    "classe": "monge",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho Astral",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho Astral",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "monge__golpe-espiritual",
+      "classe": "monge",
+      "poder": "golpe-espiritual",
+      "inferido": true
+    }
+  },
+  "_key": "!items!5ieMZZhEqjsMWbPk"
+}

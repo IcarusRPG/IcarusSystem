@@ -1,0 +1,38 @@
+{
+  "_id": "U9fFlVuIJ11Gv5sI",
+  "name": "Fôlego do Selvagem",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/B%C3%A1rbaro.png",
+  "folder": "ku9oOPxCneXCEe9f",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 2 PM e recupera PV iguais ao dobro do seu nível. Uma vez por cena.",
+    "classe": "barbaro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Resistência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "barbaro__folego-do-selvagem",
+      "classe": "barbaro",
+      "poder": "folego-do-selvagem",
+      "inferido": true
+    }
+  },
+  "_key": "!items!U9fFlVuIJ11Gv5sI"
+}

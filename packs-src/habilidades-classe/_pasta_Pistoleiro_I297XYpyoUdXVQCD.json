@@ -1,0 +1,15 @@
+{
+  "_id": "I297XYpyoUdXVQCD",
+  "name": "Pistoleiro",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 700000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:pistoleiro"
+    }
+  },
+  "_key": "!folders!I297XYpyoUdXVQCD"
+}

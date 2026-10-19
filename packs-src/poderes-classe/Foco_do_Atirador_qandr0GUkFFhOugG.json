@@ -1,0 +1,38 @@
+{
+  "_id": "qandr0GUkFFhOugG",
+  "name": "Foco do Atirador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Guerreiro.png",
+  "folder": "gvjuW1nqOhHfDl9d",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, gaste 1 PM. Seu próximo ataque à distância neste turno recebe +5 no teste de ataque e +1 na margem de ameaça.",
+    "classe": "guerreiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guerreiro__foco-do-atirador",
+      "classe": "guerreiro",
+      "poder": "foco-do-atirador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!qandr0GUkFFhOugG"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "ku9oOPxCneXCEe9f",
+  "name": "Linha da Resistência",
+  "type": "Item",
+  "folder": "EDFweiOo27MQ7Tk9",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:barbaro:linha-da-resistencia"
+    }
+  },
+  "_key": "!folders!ku9oOPxCneXCEe9f"
+}

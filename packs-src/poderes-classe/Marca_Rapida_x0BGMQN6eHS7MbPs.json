@@ -1,0 +1,38 @@
+{
+  "_id": "x0BGMQN6eHS7MbPs",
+  "name": "Marca Rápida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Patrulheiro.png",
+  "folder": "d5fIcsTe8anCGskF",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você marca a sua presa como uma ação livre, uma vez por rodada, em vez de ação de movimento.",
+    "classe": "patrulheiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Caça",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patrulheiro__marca-rapida",
+      "classe": "patrulheiro",
+      "poder": "marca-rapida",
+      "inferido": true
+    }
+  },
+  "_key": "!items!x0BGMQN6eHS7MbPs"
+}

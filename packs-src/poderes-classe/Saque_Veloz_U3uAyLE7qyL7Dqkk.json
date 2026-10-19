@@ -1,0 +1,38 @@
+{
+  "_id": "U3uAyLE7qyL7Dqkk",
+  "name": "Saque Veloz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 3400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por turno, você saca um arco ou uma besta como ação livre.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__saque-veloz",
+      "classe": "ladino",
+      "poder": "saque-veloz",
+      "inferido": true
+    }
+  },
+  "_key": "!items!U3uAyLE7qyL7Dqkk"
+}

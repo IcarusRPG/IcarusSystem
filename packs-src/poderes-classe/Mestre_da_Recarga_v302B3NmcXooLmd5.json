@@ -1,0 +1,40 @@
+{
+  "_id": "v302B3NmcXooLmd5",
+  "name": "Mestre da Recarga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Pistoleiro.png",
+  "folder": "rW9ip1zuIDiHGMrD",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Duas Pistolas, 11º nível",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar 1 PM para recarregar as suas duas pistolas como ação livre, quantas vezes quiser no seu turno (cada disparo ainda consome uma Bala). Isso substitui o limite de uma vez por turno do Saque Rápido.",
+    "classe": "pistoleiro",
+    "tipoPoder": "poder",
+    "grupo": "Linha das Duas Pistolas",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "duas-pistolas"
+    ],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pistoleiro__mestre-da-recarga",
+      "classe": "pistoleiro",
+      "poder": "mestre-da-recarga",
+      "inferido": true
+    }
+  },
+  "_key": "!items!v302B3NmcXooLmd5"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "uuP2v22cMbGrxRA5",
+  "name": "Esconderijo Instantâneo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "bMt524mfEhEtGGg7",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como uma ação de movimento, você gasta 2 PM e faz um teste de Furtividade para se esconder, mesmo sem camuflagem ou cobertura disponível.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha da Emboscada",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__esconderijo-instantaneo",
+      "classe": "ladino",
+      "poder": "esconderijo-instantaneo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!uuP2v22cMbGrxRA5"
+}

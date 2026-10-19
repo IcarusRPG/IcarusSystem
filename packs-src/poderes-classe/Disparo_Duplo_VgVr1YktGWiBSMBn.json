@@ -1,0 +1,38 @@
+{
+  "_id": "VgVr1YktGWiBSMBn",
+  "name": "Disparo Duplo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Ladino.png",
+  "folder": "LIivCl7oXu2aFSuP",
+  "sort": 3200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Gaste 2 PM ao Agredir com arco ou besta. Você faz um disparo adicional contra o mesmo alvo ou contra outro alvo em alcance curto. O disparo adicional não soma o modificador de atributo no dano.",
+    "classe": "ladino",
+    "tipoPoder": "poder",
+    "grupo": "Linha do Arco",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ladino__disparo-duplo",
+      "classe": "ladino",
+      "poder": "disparo-duplo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!VgVr1YktGWiBSMBn"
+}
