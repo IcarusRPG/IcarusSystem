@@ -36,7 +36,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     nivel: s.nivel, bonusPvPorNivel: cc.bonusPvPorNivel, bonusPmPorNivel: cc.bonusPmPorNivel, bonusPmNivelImpar: cc.bonusPmNivelImpar
   });
   s.pv.formula = maximoPelaClasse({ inicial: cc.pvInicial, porNivel: cc.pvPorNivel, atributoTotal: total(cc.pvAtributo), nivel: s.nivel });
-  s.pm.formula = maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: s.nivel });
+  s.pm.formula = maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: s.nivel, atributoUmaVez: !!cc.pmAtributoSoNoPrimeiroNivel });
   s.pv.bonusNivel = porNivel.pv;
   s.pm.bonusNivel = porNivel.pm;
   s.pv.max = maximoFinal({ manual: cc.manual, maximoManual: s.pv.max, maximoFormula: s.pv.formula, bonus: cc.bonusPv, bonusNivel: porNivel.pv });

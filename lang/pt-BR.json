@@ -318,10 +318,12 @@
       "Campos": {
         "bonusPvPorNivel": "PV por nível (poderes)",
         "bonusPmPorNivel": "PM por nível (poderes)",
-        "bonusPmNivelImpar": "PM por nível ímpar (poderes)"
+        "bonusPmNivelImpar": "PM por nível ímpar (poderes)",
+        "pmAtributoSoNoPrimeiroNivel": "Atributo de PM só no 1º nível"
       },
       "BonusPoderes": "Bônus de poderes",
-      "BonusPoderesDica": "Vêm de Efeitos Ativos de poderes (ex.: Sangue de Aço). Não entram no modo Manual."
+      "BonusPoderesDica": "Vêm de Efeitos Ativos de poderes (ex.: Sangue de Aço). Não entram no modo Manual.",
+      "AtributoUmaVez": "{atributo} soma só no 1º nível (Monge)"
     },
     "Rolagem": {
       "Tipo": {
@@ -979,7 +981,26 @@
       "PVTexto": "{inicial} + {atributo} no 1º nível; +{porNivel} + {atributo} por nível",
       "PMTexto": "{inicial} no 1º nível; +{porNivel} por nível",
       "PMAtributoPrimeiro": " (+ {atributo} só no 1º nível)",
-      "PericiasTexto": "{obrigatorias}, mais {n} entre: {lista}"
+      "PericiasTexto": "{obrigatorias}, mais {n} entre: {lista}",
+      "Nenhuma": "—",
+      "Livre": "texto livre",
+      "Outra": "Outra (texto livre)…",
+      "OutraDica": "Nome da classe (sem automação)",
+      "TrocarTitulo": "Trocar de classe",
+      "TrocarTexto": "Trocar {antiga} por {nova}? As {n} habilidade(s) automáticas de {antiga} serão removidas; os poderes de classe escolhidos ficam (remova à mão se quiser).",
+      "Manual": "{nome}: PV/PM no modo manual, os valores da classe não foram aplicados (confira em Nível).",
+      "HabilidadesRecebidas": "{nome} recebeu: {lista}",
+      "PoderesParaEscolher": "{nome}: você tem {n} poder(es) de classe para escolher.",
+      "PericiasTitulo": "Perícias da classe",
+      "Obrigatorias": "Obrigatórias",
+      "Escolhidas": "À sua escolha",
+      "JaTreinada": "já treinada",
+      "TreinoExtra": "{n} obrigatória(s) já era(m) treinada(s): escolha outra(s) da lista (treinamento extra).",
+      "PericiasContador": "{n} de {max}",
+      "PericiasLimite": "Escolha no máximo {max}.",
+      "PericiasDica": "Só acrescenta treino: perícias já treinadas por raça, origem ou profissão continuam como estão.",
+      "PericiasFeitas": "Perícias treinadas: {lista}",
+      "AgoraNao": "Agora não"
     }
   }
 }

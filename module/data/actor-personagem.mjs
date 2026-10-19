@@ -2,6 +2,7 @@ import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESIS
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
+import { classePorId, idDaClassePorNome } from "../classes-dados.mjs";
 import { SISTEMA_ID } from "../config.mjs";
 
 const CHAVE_RD = /^system\.resistencias\.(rdGeral|reducao\.(\w+))$/;
@@ -71,6 +72,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         pmPorNivel: inteiro(0, { min: 0 }),
         pvAtributo: new fields.StringField({ required: true, nullable: true, blank: false, initial: "CON", choices: ATRIBUTOS }),
         pmAtributo: new fields.StringField({ required: true, nullable: true, blank: false, initial: null, choices: ATRIBUTOS_CHAVE_PM }),
+        // Exceção do Monge: o atributo de PM soma uma única vez, no 1º nível
+        pmAtributoSoNoPrimeiroNivel: new fields.BooleanField({ initial: false }),
         bonusPv: inteiro(0),
         bonusPm: inteiro(0),
         // Só alterados por Efeitos Ativos de poderes (ex.: Sangue de Aço); não aparecem como campo editável
@@ -131,6 +134,12 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     if (typeof raca === "string" && raca && !racaPorId(raca)) {
       const id = idDaRacaPorNome(raca);
       if (id) source.identidade.raca = id;
+    }
+    // Classe também era texto livre: se bate com o nome de uma classe do sistema, vira o id
+    const classe = source.identidade?.classe;
+    if (typeof classe === "string" && classe && !classePorId(classe)) {
+      const id = idDaClassePorNome(classe);
+      if (id) source.identidade.classe = id;
     }
     // Divindade também era texto livre: vira o id; texto que não bate fica como "Outra"
     const divindade = source.identidade?.divindade;

@@ -848,3 +848,17 @@ body.game {
 .ficha-icarus .tabela-progressao thead th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ic-ciano-titulo); }
 .ficha-icarus .tabela-progressao tr.atual { background: var(--ic-ciano-fundo); }
 .ficha-icarus .tabela-progressao td:first-child { white-space: nowrap; color: var(--ic-ouro-claro); }
+
+/* --- Classe no cabeçalho e diálogo de perícias --- */
+.ficha-icarus .campo-classe { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ficha-icarus .classe-linha { display: flex; align-items: center; gap: 6px; }
+.ficha-icarus .classe-icone { width: 24px; height: 24px; object-fit: contain; border: 0; flex: none; }
+.ficha-icarus .classe-linha select { flex: 1; min-width: 0; }
+.ficha-icarus.dialogo-pericias-classe { height: auto; gap: 10px; padding: 12px 14px; background: none; }
+.ficha-icarus .lista-pericias-classe { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.ficha-icarus .lista-pericias-classe li { display: flex; align-items: center; gap: 8px; }
+.ficha-icarus .lista-pericias-classe select { width: auto; }
+.ficha-icarus .grade-pericias-classe { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 10px; }
+.ficha-icarus .grade-pericias-classe .chk { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.ficha-icarus .grade-pericias-classe .chk.ja { opacity: .6; }
+.ficha-icarus .contador-pericias { float: right; font-size: 13px; color: var(--ic-ciano-titulo); }

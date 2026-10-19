@@ -26,6 +26,7 @@ import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
 import { verificarImagensDoSistema } from "./module/imagens.mjs";
 import { verificarIconesClasses } from "./module/classes-dados.mjs";
+import { registrarClasses, aplicarClasse, concederHabilidades } from "./module/classes.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";
@@ -39,6 +40,7 @@ registrarBotoesDeDano();
 registrarMorte();
 registrarAtalhos();
 registrarAcoes();
+registrarClasses();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
@@ -70,6 +72,7 @@ const TEMPLATES = [
   "painel-condicoes.hbs",
   "dialogo-poderes-concedidos.hbs",
   "dialogo-ataque.hbs",
+  "dialogo-pericias-classe.hbs",
   "telao/telao.hbs",
   "testes/tela.hbs",
   "testes/chat.hbs",
@@ -87,6 +90,7 @@ Hooks.once("init", () => {
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
+    aplicarClasse, concederHabilidades,
     aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarTesteDeMorte,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })

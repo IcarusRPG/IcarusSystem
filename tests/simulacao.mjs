@@ -15,7 +15,7 @@ export function sistemaCompleto(parcial = {}) {
   s.atributos ??= {};
   for (const k of ATRIBUTOS) s.atributos[k] = { base: 0, racial: 0, temp: 0, ...s.atributos[k] };
   s.classeConfig = {
-    pvInicial: 0, pvPorNivel: 0, pmInicial: 0, pmPorNivel: 0, pvAtributo: "CON", pmAtributo: null,
+    pvInicial: 0, pvPorNivel: 0, pmInicial: 0, pmPorNivel: 0, pvAtributo: "CON", pmAtributo: null, pmAtributoSoNoPrimeiroNivel: false,
     bonusPv: 0, bonusPm: 0, bonusPvPorNivel: 0, bonusPmPorNivel: 0, bonusPmNivelImpar: 0, manual: false,
     ...s.classeConfig
   };

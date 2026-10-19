@@ -44,10 +44,11 @@ export function totalPericia(atributoTotal, treino, outros) {
  * Máximo de PV ou PM pela fórmula da classe:
  * inicial + por nível × (nível − 1) + atributo × nível.
  * Sem atributo (null), a parte do atributo não entra — é o caso do PM das classes não conjuradoras.
+ * atributoUmaVez: o atributo soma uma única vez, no 1º nível (PM do Monge: 4 + SAB + 4 × (nível − 1)).
  */
-export function maximoPelaClasse({ inicial, porNivel, atributoTotal = null, nivel }) {
+export function maximoPelaClasse({ inicial, porNivel, atributoTotal = null, nivel, atributoUmaVez = false }) {
   const n = nivelValido(nivel);
-  const parteAtributo = atributoTotal === null ? 0 : numero(atributoTotal) * n;
+  const parteAtributo = atributoTotal === null ? 0 : numero(atributoTotal) * (atributoUmaVez ? 1 : n);
   return numero(inicial) + numero(porNivel) * (n - 1) + parteAtributo;
 }
 

@@ -23,6 +23,8 @@ import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura, vestidosS
 import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, reacaoDoAtor } from "../acoes.mjs";
+import { CLASSES, classePorId, iconeDaClasse } from "../classes-dados.mjs";
+import { aplicarClasse, classeLivre } from "../classes.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
@@ -101,7 +103,22 @@ export class FichaPersonagem extends ActorSheet {
       poderes: div ? poderesDaDivindade(div.id).map(p => ({ nome: p.nome, meta: p.meta, possui: possuidos.has(p.id) })) : []
     };
 
-    ctx.identidade = ["origem", "classe", "profissao"].map(k => ({
+    // Classe: seletor com as classes do sistema + "Outra (texto livre)"
+    const classe = classePorId(src.identidade.classe);
+    const classeLivreTexto = src.identidade.classe && !classe ? src.identidade.classe : "";
+    ctx.classe = {
+      id: classe?.id ?? "",
+      icone: classe ? iconeDaClasse(classe.id) : "",
+      papel: classe?.papel ?? "",
+      opcoes: [
+        { valor: "", rotulo: loc("ICARUS.Classe.Nenhuma"), selecionado: !src.identidade.classe },
+        ...CLASSES.map(c => ({ valor: c.id, rotulo: c.nome, selecionado: c.id === classe?.id })),
+        ...(classeLivreTexto ? [{ valor: classeLivreTexto, rotulo: `${classeLivreTexto} (${loc("ICARUS.Classe.Livre")})`, selecionado: true }] : []),
+        { valor: "__outra__", rotulo: loc("ICARUS.Classe.Outra"), selecionado: false }
+      ]
+    };
+
+    ctx.identidade = ["origem", "profissao"].map(k => ({
       chave: k,
       rotulo: loc(`ICARUS.Identidade.${k}`),
       valor: src.identidade[k],
@@ -313,7 +330,7 @@ export class FichaPersonagem extends ActorSheet {
 
     // Poderes agrupados por fonte (Raça primeiro, com o ícone da raça)
     const poderes = actor.items.filter(i => i.type === "poder").sort((a, b) => (a.sort || 0) - (b.sort || 0));
-    const subtitulo = { raca: ctx.raca.nome, classe: src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
+    const subtitulo = { raca: ctx.raca.nome, classe: classe?.nome ?? src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
     ctx.gruposPoder = await Promise.all(FONTES_PODER.map(async fonte => {
       const lista = poderes.filter(p => p.system.fonte === fonte);
       const nomeFonte = loc(`ICARUS.Poderes.Fontes.${fonte}`);
@@ -322,7 +339,7 @@ export class FichaPersonagem extends ActorSheet {
         fonte,
         titulo,
         ehRaca: fonte === "raca",
-        icone: fonte === "raca" && raca ? ctx.raca.icone : fonte === "divindade" && div ? ctx.divindade.simbolo : "",
+        icone: fonte === "raca" && raca ? ctx.raca.icone : fonte === "divindade" && div ? ctx.divindade.simbolo : fonte === "classe" && classe ? ctx.classe.icone : "",
         tag: fonte === "classe"
           ? game.i18n.format("ICARUS.Poderes.TagNivel", { nivel: s.nivel })
           : game.i18n.format(lista.length === 1 ? "ICARUS.Poderes.ContaUm" : "ICARUS.Poderes.Conta", { n: lista.length }),
@@ -331,7 +348,7 @@ export class FichaPersonagem extends ActorSheet {
           const flags = p.flags?.[SISTEMA_ID] ?? {};
           return {
             id: p.id, name: p.name, img: p.img,
-            mostrarIcone: fonte === "raca" || fonte === "divindade",
+            mostrarIcone: fonte === "raca" || fonte === "divindade" || fonte === "classe",
             concedido: !!flags.concedido,
             auto: ehPoderRacialAuto(p),
             pendente: ehPoderRacialAuto(p) && flags.pendente === true,
@@ -495,6 +512,24 @@ export class FichaPersonagem extends ActorSheet {
       { name: "ICARUS.Condicoes.Escalar", icon: '<i class="fa-solid fa-angles-up"></i>', condition: li => !!CONDICAO_POR_ID[(li[0] ?? li).dataset.condicao]?.escala, callback: li => escalarCondicao(this.actor, (li[0] ?? li).dataset.condicao) }
     ]);
     ligarArvoreDivindade(html instanceof HTMLElement ? html : html[0], valor => trocarDivindade(this.actor, valor));
+    html.on("change", ".sel-classe", async ev => {
+      const valor = ev.currentTarget.value;
+      let mudou = false;
+      if (valor === "__outra__") {
+        const texto = await foundry.applications.api.DialogV2.prompt({
+          window: { title: game.i18n.localize("ICARUS.Classe.Outra") },
+          content: `<input type="text" name="classe" autofocus placeholder="${game.i18n.localize("ICARUS.Classe.OutraDica")}">`,
+          ok: { label: game.i18n.localize("ICARUS.Devocao.Confirmar"), callback: (e, b) => b.form.elements.classe.value.trim() },
+          rejectClose: false
+        });
+        if (texto) { await classeLivre(this.actor, texto); mudou = true; }
+      } else if (valor === "") {
+        await classeLivre(this.actor, ""); mudou = true;
+      } else if (classePorId(valor)) {
+        mudou = await aplicarClasse(this.actor, valor);
+      }
+      if (!mudou) this.render(false);
+    });
     html.on("change", ".sel-raca", async ev => {
       const mudou = await trocarRaca(this.actor, ev.currentTarget.value);
       if (!mudou) this.render(false);  // cancelou: volta a combobox para a raça atual

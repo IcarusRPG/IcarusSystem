@@ -3,7 +3,7 @@
  * puras de progressão, patamares e pré-requisitos. Sem Foundry (testado em tests/classes.test.mjs).
  * Novas classes entram só acrescentando ao JSON (e o ícone em icones-classes.json).
  */
-import { SISTEMA_ID, ICONE_PADRAO } from "./config.mjs";
+import { SISTEMA_ID, ICONE_PADRAO, PERICIAS } from "./config.mjs";
 import CLASSES_JSON from "./dados/classes.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
 import PROFICIENCIAS_CLASSES from "./dados/proficiencias-classes.mjs";
@@ -39,4 +39,58 @@ export async function verificarIconesClasses() {
   }
   if (faltando.length) console.warn(`Icarus RPG | Ícones de classe não encontrados (usam o dado azul): ${faltando.join(", ")}`);
   return faltando;
+}
+
+/* ------------------------------ Perícias da classe ------------------------------ */
+
+/** Chave da perícia pelo nome ("Prestidigitação" → "prestidigitacao"), ou null. */
+export function chaveDaPericia(nome) {
+  const n = normalizarNome(nome);
+  return PERICIAS.find(p => normalizarNome(p.nome) === n)?.chave ?? null;
+}
+
+/**
+ * Perícias obrigatórias a partir do texto da classe: "Fortitude e (Luta ou Pontaria)" →
+ * [{ tipo: "fixa", chave: "fortitude" }, { tipo: "escolha", opcoes: ["luta", "pontaria"] }].
+ */
+export function parseObrigatorias(texto) {
+  const partes = [];
+  const re = /\(([^)]*)\)|([^()]+)/g;
+  for (const m of String(texto ?? "").matchAll(re)) {
+    if (m[1]) {
+      const opcoes = m[1].split(/\s+ou\s+/i).map(chaveDaPericia).filter(Boolean);
+      if (opcoes.length) partes.push({ tipo: "escolha", opcoes });
+    } else {
+      for (const nome of m[2].split(/\s*(?:,|\be\b)\s*/i)) {
+        const chave = chaveDaPericia(nome);
+        if (chave) partes.push({ tipo: "fixa", chave });
+      }
+    }
+  }
+  return partes;
+}
+
+/* ------------------------------ Progressão ------------------------------ */
+
+/** Nível em que a habilidade é recebida (null no JSON = 1º nível, ex.: Restrição de Equipamento). */
+export const nivelDaHabilidade = h => h.nivel ?? 1;
+
+/** Habilidades da classe recebidas até um nível (uma por habilidade; versões por nível ficam na descrição). */
+export const habilidadesAteNivel = (classe, nivel) => (classe?.habilidades ?? []).filter(h => nivelDaHabilidade(h) <= nivel);
+
+/** Quantos poderes de classe a classe concede até o nível (linhas com poder: true). */
+export const poderesConcedidosAteNivel = (classe, nivel) => (classe?.progressao ?? []).filter(p => p.poder && p.nivel <= nivel).length;
+
+/**
+ * Contador "Poderes de classe X / Y": escolhidos e concedidos até o nível; disponiveis = Y − X.
+ * @param {number} escolhidos  quantos poderes de classe (tipoPoder "poder") o personagem tem
+ */
+export function contagemDePoderes(classe, nivel, escolhidos) {
+  const total = poderesConcedidosAteNivel(classe, nivel);
+  return { escolhidos, total, disponiveis: Math.max(0, total - escolhidos) };
+}
+
+/** Linhas da tabela de progressão (1º–20º) com o nível atual marcado. */
+export function tabelaDeProgressao(classe, nivel) {
+  return (classe?.progressao ?? []).map(p => ({ ...p, atual: p.nivel === nivel, alcancado: p.nivel <= nivel }));
 }

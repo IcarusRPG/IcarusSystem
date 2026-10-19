@@ -26,6 +26,17 @@
         </div>
         <span class="raca-significado" id="{{actor.id}}-raca-sig">{{raca.significado}}</span>
       </div>
+      {{!-- Classe: escolher do compêndio preenche PV/PM, perícias e habilidades (module/classes.mjs) --}}
+      <div class="campo-classe">
+        <label class="rot" for="{{actor.id}}-classe">{{localize "ICARUS.Identidade.classe"}}</label>
+        <div class="classe-linha">
+          {{#if classe.icone}}<img class="classe-icone" src="{{classe.icone}}" alt="" width="24" height="24" onerror="this.onerror=null;this.src='{{iconePadrao}}'">{{/if}}
+          <select id="{{actor.id}}-classe" class="campo sel-classe"{{#if classe.papel}} data-tooltip="{{classe.papel}}"{{/if}}>
+            {{#each classe.opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+          </select>
+        </div>
+      </div>
+
       {{#each identidade}}
       <label>
         <span class="rot">{{rotulo}}</span>

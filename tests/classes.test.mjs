@@ -48,3 +48,50 @@ test("Compêndios de classes: 7 classes, 44 habilidades e 245 poderes; pastas po
   assert.ok(docs["poderes-classe"].itens.filter(p => p.system.classe === "monge").every(p => p.img === monge.img));
   assert.deepEqual([monge.system.proficiencias.tunicas, monge.system.pm.atributoSoNoPrimeiroNivel], [true, true]);
 });
+
+test("Perícias obrigatórias: fixas e (Luta ou Pontaria) como escolha", async () => {
+  const { parseObrigatorias, chaveDaPericia } = await import("../module/classes-dados.mjs");
+  assert.equal(chaveDaPericia("Prestidigitação"), "prestidigitacao");
+  assert.deepEqual(parseObrigatorias("Fortitude e (Luta ou Pontaria)"), [{ tipo: "fixa", chave: "fortitude" }, { tipo: "escolha", opcoes: ["luta", "pontaria"] }]);
+  assert.deepEqual(parseObrigatorias("Furtividade e Prestidigitação"), [{ tipo: "fixa", chave: "furtividade" }, { tipo: "fixa", chave: "prestidigitacao" }]);
+  for (const c of CLASSES) {
+    const p = parseObrigatorias(c.pericias.obrigatorias);
+    assert.ok(p.length === 2, `${c.id}: ${c.pericias.obrigatorias}`);
+    for (const nome of c.pericias.lista) assert.ok(chaveDaPericia(nome), `${c.id}: perícia desconhecida ${nome}`);
+  }
+});
+
+test("Progressão: habilidades por nível e contador de poderes de classe", async () => {
+  const { habilidadesAteNivel, contagemDePoderes, poderesConcedidosAteNivel } = await import("../module/classes-dados.mjs");
+  const ladino = classePorId("ladino");
+  assert.deepEqual(habilidadesAteNivel(ladino, 1).map(h => h.id).sort(), ["ataque-furtivo", "duas-armas"]);
+  assert.ok(habilidadesAteNivel(ladino, 8).some(h => h.id === "pericia-refinada"));
+  // A partir do 2º nível: 1 no 2º, 19 no 20º (classes com poder:true do 2º ao 20º)
+  assert.equal(poderesConcedidosAteNivel(ladino, 1), 0);
+  assert.equal(poderesConcedidosAteNivel(ladino, 2), 1);
+  assert.equal(poderesConcedidosAteNivel(ladino, 20), 19);
+  assert.deepEqual(contagemDePoderes(ladino, 5, 2), { escolhidos: 2, total: 4, disponiveis: 2 });
+  // Guerreiro: o Anexo A marca poder também no 1º nível (20 no 20º) — divergência relatada
+  assert.equal(poderesConcedidosAteNivel(classePorId("guerreiro"), 20), 20);
+  // Monge: Restrição de Equipamento (nível vazio no JSON) vem no 1º nível
+  assert.ok(habilidadesAteNivel(classePorId("monge"), 1).some(h => h.id === "restricao-de-equipamento"));
+});
+
+test("3. PV/PM pela classe: Monge 5 com SAB +3 = 23 PM; Guerreiro 5 = 15 PM; Bárbaro 5 com CON +2 = 58 PV", async () => {
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  const comClasse = (id, atributos) => {
+    const c = classePorId(id);
+    return derivarPersonagem(sistemaCompleto({
+      nivel: 5, atributos,
+      classeConfig: {
+        pvInicial: c.pv.inicial, pvPorNivel: c.pv.porNivel, pvAtributo: "CON",
+        pmInicial: c.pm.inicial, pmPorNivel: c.pm.porNivel, pmAtributo: c.pm.atributo ?? null,
+        pmAtributoSoNoPrimeiroNivel: !!c.pm.atributoSoNoPrimeiroNivel
+      }
+    }));
+  };
+  assert.equal(comClasse("monge", { SAB: { base: 3 } }).pm.max, 4 + 3 + 4 * 4);
+  assert.equal(comClasse("guerreiro", {}).pm.max, 3 + 3 * 4);
+  assert.equal(comClasse("barbaro", { CON: { base: 2 } }).pv.max, 24 + 6 * 4 + 2 * 5);
+});

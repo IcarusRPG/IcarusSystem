@@ -1,0 +1,31 @@
+<div class="ficha-icarus dialogo-pericias-classe">
+  <section class="bloco">
+    <h3 class="titulo-painel">{{localize "ICARUS.Classe.Obrigatorias"}}</h3>
+    <ul class="lista-pericias-classe">
+      {{#each obrigatorias}}
+      <li>
+        {{#if escolha}}
+        <select name="obrigatoria-{{indice}}" aria-label="{{localize "ICARUS.Classe.Obrigatorias"}}">{{#each opcoes}}<option value="{{chave}}"{{#if selecionada}} selected{{/if}}>{{nome}}</option>{{/each}}</select>
+        {{else}}
+        <label class="chk"><input type="checkbox" checked disabled> {{nome}}</label>
+        {{/if}}
+        {{#if jaTreinada}}<span class="icarus-tag">{{localize "ICARUS.Classe.JaTreinada"}}</span>{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+    {{#if extras}}<p class="aviso-config">{{extras}}</p>{{/if}}
+  </section>
+  <section class="bloco">
+    <h3 class="titulo-painel">{{localize "ICARUS.Classe.Escolhidas"}} <span class="contador-pericias">{{contador}}</span></h3>
+    <div class="grade-pericias-classe">
+      {{#each lista}}
+      <label class="chk{{#if jaTreinada}} ja{{/if}}"><input type="checkbox" name="pericia" value="{{chave}}"{{#if marcada}} checked{{/if}}{{#if jaTreinada}} disabled{{/if}}> {{nome}}{{#if jaTreinada}} <small>({{localize "ICARUS.Classe.JaTreinada"}})</small>{{/if}}</label>
+      {{/each}}
+    </div>
+  </section>
+  <p class="dica">{{localize "ICARUS.Classe.PericiasDica"}}</p>
+  <footer class="rodape-config">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Classe.AgoraNao"}}</button>
+    <button type="submit" class="btn primario">{{localize "ICARUS.Devocao.Confirmar"}}</button>
+  </footer>
+</div>

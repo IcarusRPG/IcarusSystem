@@ -32,6 +32,7 @@
     <div class="chips">
       {{#each chipsPm}}<button type="button" class="btn peq{{#if ativo}} ativo{{/if}}" data-action="chip" data-campo="{{campo}}" data-valor="{{valor}}" aria-pressed="{{#if ativo}}true{{else}}false{{/if}}">{{rotulo}}</button>{{/each}}
     </div>
+    {{#if r.pmAtributo}}<label class="chk"><input type="checkbox" name="pmAtributoSoNoPrimeiroNivel" {{checked r.pmAtributoSoNoPrimeiroNivel}}> {{atributoUmaVez}}</label>{{/if}}
   </div>
 
   {{#if bonusPoderes.length}}
