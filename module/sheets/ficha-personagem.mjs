@@ -23,8 +23,8 @@ import { calcularAtaque, calcularDano, totalMunicao, avisoEmpunhadura, vestidosS
 import { itensDoAtor, rolarAtaque, rolarDano, recarregar, marcarDanoNoUltimoAtaque } from "../combate-chat.mjs";
 import { adicionarItem, perguntarCompra, precoDoItem, novoItem } from "../inventario.mjs";
 import { usarPoder, alternarReacao, aguardar, dispararAguardar, textoReacao, reacaoDoAtor } from "../acoes.mjs";
-import { CLASSES, classePorId, iconeDaClasse } from "../classes-dados.mjs";
-import { aplicarClasse, classeLivre } from "../classes.mjs";
+import { CLASSES, classePorId, iconeDaClasse, tabelaDeProgressao, patamarDe } from "../classes-dados.mjs";
+import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE, ACOES_DE_MECANICA } from "../classes.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
@@ -117,6 +117,18 @@ export class FichaPersonagem extends ActorSheet {
         { valor: "__outra__", rotulo: loc("ICARUS.Classe.Outra"), selecionado: false }
       ]
     };
+
+    // Aba Classe: progressão, contador de poderes e mecânicas
+    const contador = contadorDePoderes(actor);
+    const caminhoMonge = actor.getFlag(SISTEMA_ID, "caminho");
+    ctx.classeAba = classe ? {
+      tem: true, nome: classe.nome, icone: ctx.classe.icone, papel: classe.papel,
+      patamar: loc(`ICARUS.Patamares.${patamarDe(s.nivel)}`),
+      caminho: caminhoMonge ? loc(`ICARUS.Monge.Caminhos.${caminhoMonge}`) : "",
+      contador,
+      tabela: tabelaDeProgressao(classe, s.nivel),
+      mecanicas: MECANICAS_DE_CLASSE.get(classe.id)?.(actor) ?? []
+    } : { tem: false };
 
     ctx.identidade = ["origem", "profissao"].map(k => ({
       chave: k,
@@ -587,6 +599,14 @@ export class FichaPersonagem extends ActorSheet {
         return usarPoder(actor, itemDe());
       case "reacao-alternar":
         return alternarReacao(actor);
+      case "classe-mecanica": {
+        const fn = ACOES_DE_MECANICA.get(el.dataset.mecanica);
+        return fn ? fn(actor) : null;
+      }
+      case "classe-poder": {
+        const { DialogoPoderesClasse } = await import("./dialogo-poderes-classe.mjs");
+        return new DialogoPoderesClasse(actor).render(true);
+      }
       case "manobra":
         return abrirManobra(actor);
       case "aguardar":

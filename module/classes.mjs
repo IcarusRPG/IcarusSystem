@@ -11,6 +11,14 @@ import ICONES_CLASSES from "./dados/icones-classes.mjs";
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
 
+/**
+ * Mecânicas de classe na aba Classe: por id da classe, uma função (actor) → linhas
+ * [{ id, rotulo, info?, botao?, ativo?, dica?, desativado? }]. As ações dos botões ficam em
+ * ACOES_DE_MECANICA (id → async (actor) => …). Preenchidos por module/mecanicas-classe.mjs.
+ */
+export const MECANICAS_DE_CLASSE = new Map();
+export const ACOES_DE_MECANICA = new Map();
+
 /** Classe do personagem (dados do JSON) ou null (texto livre / nenhuma). */
 export const classeDoAtor = actor => classePorId(actor?._source?.system?.identidade?.classe ?? actor?.system?.identidade?.classe);
 

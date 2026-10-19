@@ -94,3 +94,17 @@ export function contagemDePoderes(classe, nivel, escolhidos) {
 export function tabelaDeProgressao(classe, nivel) {
   return (classe?.progressao ?? []).map(p => ({ ...p, atual: p.nivel === nivel, alcancado: p.nivel <= nivel }));
 }
+
+/* ------------------------------ Patamares ------------------------------ */
+
+/** Patamares (Tormenta 20 até o 20º; Paragon é o seguinte). */
+export const PATAMARES = [
+  { id: "iniciante", de: 1, ate: 4 },
+  { id: "veterano", de: 5, ate: 10 },
+  { id: "campeao", de: 11, ate: 16 },
+  { id: "lenda", de: 17, ate: 20 },
+  { id: "paragon", de: 21, ate: 25 }
+];
+
+/** Patamar de um nível ("iniciante", "veterano", "campeao", "lenda", "paragon"). */
+export const patamarDe = nivel => (PATAMARES.find(p => nivel >= p.de && nivel <= p.ate) ?? PATAMARES[0]).id;

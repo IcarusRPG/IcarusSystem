@@ -52,6 +52,8 @@ const TEMPLATES = [
   "actor/parts/morte.hbs",
   "actor/parts/inventario.hbs",
   "actor/parts/poderes.hbs",
+  "actor/parts/classe.hbs",
+  "actor/parts/recursos-classe.hbs",
   "actor/parts/diario.hbs",
   "actor/parts/efeitos.hbs",
   "item/poder.hbs",
