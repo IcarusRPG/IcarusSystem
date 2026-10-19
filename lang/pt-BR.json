@@ -886,6 +886,31 @@
       "Disparar": "Disparar",
       "Disparou": "{nome} age agora ({acao}), antes do gatilho: {gatilho}",
       "Perdeu": "{nome}: o gatilho \"{gatilho}\" não ocorreu; a ação se perdeu."
+    },
+    "Flanco": {
+      "Titulo": "Flanco",
+      "Rotulo": "Flanco (+{bonus})",
+      "Detectado": "Detectado: um aliado está do lado oposto de {alvo}.",
+      "Manual": "Não detectado pelos tokens: marque se um aliado está do lado oposto do alvo, corpo a corpo.",
+      "Linha": "Flanco: +{bonus} no ataque"
+    },
+    "Camuflagem": {
+      "Titulo": "Camuflagem",
+      "Rotulo": "Camuflagem do alvo",
+      "Tipos": {
+        "nenhuma": "Nenhuma",
+        "leve": "Leve (falha com 1–2)",
+        "total": "Total (falha com 1–5)"
+      },
+      "Dica": "Leve: neblina, folhagem, penumbra. Total: escuridão total, invisibilidade. Rola 1d10 antes do ataque.",
+      "Ignora": "Este personagem ignora camuflagem: nada é rolado.",
+      "Nomes": {
+        "leve": "leve",
+        "total": "total"
+      },
+      "Ignorou": "Ignora camuflagem",
+      "Falhou": "Falhou pela camuflagem ({tipo}): d10 = {d10} (falha com até {limite})",
+      "Passou": "Camuflagem {tipo}: d10 = {d10} (falharia com até {limite}): o ataque segue"
     }
   }
 }

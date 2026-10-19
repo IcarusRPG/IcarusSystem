@@ -525,3 +525,57 @@ export function podeReagir(system, statuses = []) {
   if (system?.reacao && system.reacao.disponivel === false) return { pode: false, motivo: "usada" };
   return { pode: true, motivo: "" };
 }
+
+/* ------------------------------ Flanco e camuflagem ------------------------------ */
+
+/** Bônus de flanco nos ataques corpo a corpo (regra oficial). */
+export const BONUS_FLANCO = 2;
+
+/**
+ * Duas caixas (em unidades de grade: x, y do canto e w, h do tamanho) são adjacentes?
+ * Encostam ou se sobrepõem, com tolerância de meio quadrado (grade quadrada ou hexagonal).
+ */
+export function adjacentes(a, b, tolerancia = 0.5) {
+  const gapX = Math.max(0, Math.max(a.x, b.x) - Math.min(a.x + a.w, b.x + b.w));
+  const gapY = Math.max(0, Math.max(a.y, b.y) - Math.min(a.y + a.h, b.y + b.h));
+  return Math.max(gapX, gapY) <= tolerancia;
+}
+
+const centro = c => ({ x: c.x + c.w / 2, y: c.y + c.h / 2 });
+
+/**
+ * Flanco: atacante e um aliado estão corpo a corpo com o alvo em lados opostos (o alvo entre os
+ * dois). "Oposto" = ângulo de pelo menos 135° entre as direções alvo→atacante e alvo→aliado,
+ * o que vale para grade quadrada e hexagonal.
+ * Aliado com flanco por poder (Companheiro de Crime: flanqueadorPor contém o alvo) conta em
+ * qualquer posição. Alvo com naoFlanqueavel nunca é flanqueado.
+ * @param {{x,y,w,h}} atacante
+ * @param {{x,y,w,h, uuid?, naoFlanqueavel?}} alvo
+ * @param {{x,y,w,h, flanqueadorPor?: string[]}[]} aliados
+ * @returns {boolean}
+ */
+export function estaFlanqueando(atacante, alvo, aliados = [], { anguloMinimo = 135 } = {}) {
+  if (!atacante || !alvo || alvo.naoFlanqueavel) return false;
+  if (!adjacentes(atacante, alvo)) return false;
+  const c = centro(alvo);
+  const a = centro(atacante);
+  const va = { x: a.x - c.x, y: a.y - c.y };
+  const limite = Math.cos((anguloMinimo * Math.PI) / 180);
+  return aliados.some(al => {
+    if ((al.flanqueadorPor ?? []).includes(alvo.uuid)) return true;
+    if (!adjacentes(al, alvo)) return false;
+    const b = centro(al);
+    const vb = { x: b.x - c.x, y: b.y - c.y };
+    const n = Math.hypot(va.x, va.y) * Math.hypot(vb.x, vb.y);
+    return n > 0 && (va.x * vb.x + va.y * vb.y) / n <= limite;
+  });
+}
+
+/** Camuflagem: chance de falha com 1d10 antes do ataque (leve: 1–2; total: 1–5). */
+export const FALHA_CAMUFLAGEM = { leve: 2, total: 5 };
+
+/** O ataque falha pela camuflagem com este d10? */
+export function falhaPorCamuflagem(d10, tipo) {
+  const limite = FALHA_CAMUFLAGEM[tipo];
+  return !!limite && Number(d10) <= limite;
+}

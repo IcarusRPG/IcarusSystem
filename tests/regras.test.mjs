@@ -165,3 +165,34 @@ test("Reação: 1 por rodada; Desprevenido ou Surpreendido não reagem", async (
   assert.deepEqual(podeReagir({ reacao: { disponivel: true } }, ["surpreendido"]), { pode: false, motivo: "surpreendido" });
   assert.equal(podeReagir({ reacao: { disponivel: true } }, ["abalado", "aguardando"]).pode, true);
 });
+
+test("Flanco: aliado do lado oposto, os dois corpo a corpo; não com aliado ao lado; poder conta em qualquer posição", async () => {
+  const { estaFlanqueando, adjacentes } = await import("../module/combate.mjs");
+  const q = (x, y, extra = {}) => ({ x, y, w: 1, h: 1, ...extra });
+  const alvo = q(5, 5, { uuid: "alvo" });
+  assert.equal(adjacentes(q(4, 5), alvo), true);
+  assert.equal(adjacentes(q(3, 5), alvo), false);
+  // Atacante a oeste, aliado a leste: flanco (para os dois)
+  assert.equal(estaFlanqueando(q(4, 5), alvo, [q(6, 5)]), true);
+  assert.equal(estaFlanqueando(q(6, 5), alvo, [q(4, 5)]), true);
+  // Diagonais opostas também
+  assert.equal(estaFlanqueando(q(4, 4), alvo, [q(6, 6)]), true);
+  // Aliado ao lado (90°): sem flanco
+  assert.equal(estaFlanqueando(q(4, 5), alvo, [q(5, 4)]), false);
+  // Atacante longe (à distância): sem flanco
+  assert.equal(estaFlanqueando(q(2, 5), alvo, [q(6, 5)]), false);
+  // Aliado longe, mas com flanco por poder (Companheiro de Crime)
+  assert.equal(estaFlanqueando(q(4, 5), alvo, [q(9, 9, { flanqueadorPor: ["alvo"] })]), true);
+  // Alvo que não pode ser flanqueado
+  assert.equal(estaFlanqueando(q(4, 5), { ...alvo, naoFlanqueavel: true }, [q(6, 5)]), false);
+  // Alvo Grande (2×2): aliados em lados opostos
+  const grande = { x: 5, y: 5, w: 2, h: 2, uuid: "g" };
+  assert.equal(estaFlanqueando(q(4, 5), grande, [q(7, 6)]), true);
+});
+
+test("Camuflagem: leve falha com 1–2; total com 1–5", async () => {
+  const { falhaPorCamuflagem } = await import("../module/combate.mjs");
+  assert.deepEqual([1, 2, 3].map(d => falhaPorCamuflagem(d, "leve")), [true, true, false]);
+  assert.deepEqual([1, 5, 6, 10].map(d => falhaPorCamuflagem(d, "total")), [true, true, false, false]);
+  assert.equal(falhaPorCamuflagem(1, "nenhuma"), false);
+});

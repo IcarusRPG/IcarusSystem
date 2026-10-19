@@ -28,6 +28,7 @@ import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";
 import { registrarAcoes } from "./module/acoes.mjs";
+import "./module/regras-ataque.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
