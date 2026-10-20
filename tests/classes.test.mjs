@@ -235,8 +235,8 @@ test("11/17. Vínculo Selvagem (Anexo B): 6 fichas; PV = 10 + ⌊nível/2⌋; De
   assert.equal(atorLobo.system.pericias.luta.treino, 1, "a Luta é da ficha do animal");
   assert.equal(atorLobo.system.atributos.DES.base, 2);
   assert.ok(atores.every(a => a.flags["icarus-rpg"].provisorio));
-  const teixugo = atores.find(a => a.flags["icarus-rpg"].id === "teixugo-gigante");
-  assert.deepEqual(teixugo.items.filter(i => i.type === "arma").map(i => i.flags["icarus-rpg"].somaNivel), [true, false]);
+  const texugo = atores.find(a => a.flags["icarus-rpg"].id === "texugo-gigante");
+  assert.deepEqual(texugo.items.filter(i => i.type === "arma").map(i => i.flags["icarus-rpg"].somaNivel), [true, false]);
 });
 
 test("12. Pistoleiro: máximo do Tiro Carregado; Mestre da Recarga exige Duas Pistolas e 11º nível", async () => {

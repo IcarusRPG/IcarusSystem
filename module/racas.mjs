@@ -9,6 +9,7 @@
  * Base, Temp, Outros, treino, deslocamento e tamanho digitados pelo jogador nunca são alterados.
  */
 import { SISTEMA_ID, ICONE_PADRAO, ATRIBUTOS } from "./config.mjs";
+import { marcarTreinoDaRaca } from "./assistente.mjs";
 import { RACAS, racaPorId, iconeDaRaca, resolverRaca, descricaoHTML } from "./data/racas.mjs";
 import { DialogoEscolhasRaca } from "./sheets/dialogo-escolhas-raca.mjs";
 
@@ -81,6 +82,10 @@ export async function aplicarRaca(actor, racaId, escolhas = {}) {
     [`flags.${FLAG}.escolhasRaca`]: raca ? JSON.stringify(escolhas ?? {}) : ""
   };
   for (const k of ATRIBUTOS) atualizacao[`system.atributos.${k}.racial`] = resolvido?.racial[k] ?? 0;
+  // Fonte do treino (para o reset de classe): perícias que os poderes raciais treinam
+  const treinadasPelaRaca = (resolvido?.poderes ?? []).flatMap(p => p.efeitos ?? [])
+    .map(e => String(e.chave).match(/^system\.pericias\.(\w+)\.treino$/)?.[1]).filter(Boolean);
+  Object.assign(atualizacao, marcarTreinoDaRaca(actor, treinadasPelaRaca));
   await actor.update(atualizacao);
   if (!raca) return [];
 

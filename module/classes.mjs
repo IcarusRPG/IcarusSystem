@@ -91,8 +91,9 @@ export async function aplicarClasse(actor, novoId) {
   if (!nova || atual?.id === nova.id) return false;
   // Trocar de classe (ou sair de uma "Outra" com itens de classe): reset limpo com confirmação
   if (atual || itensDeOrigemDeClasse(actor).length) {
-    if (!(await confirmarReset(actor, nova.nome))) return false;
-    await resetarClasse(actor);
+    const confirmado = await confirmarReset(actor, nova.nome);
+    if (!confirmado) return false;
+    await resetarClasse(actor, confirmado);
   }
   const src = actor._source.system;
   const prof = proficienciasDaClasse(nova.id);
@@ -131,8 +132,9 @@ export async function aplicarClasse(actor, novoId) {
 /** Classe em texto livre ("Outra") ou nenhuma: sem automação; havendo classe, faz o reset antes. */
 export async function classeLivre(actor, texto) {
   if (classeDoAtor(actor) || itensDeOrigemDeClasse(actor).length) {
-    if (!(await confirmarReset(actor, texto || loc("ICARUS.Classe.Nenhuma")))) return false;
-    await resetarClasse(actor);
+    const confirmado = await confirmarReset(actor, texto || loc("ICARUS.Classe.Nenhuma"));
+    if (!confirmado) return false;
+    await resetarClasse(actor, confirmado);
   }
   await actor.update({ "system.identidade.classe": texto, [`flags.${SISTEMA_ID}.-=classeId`]: null });
   return true;

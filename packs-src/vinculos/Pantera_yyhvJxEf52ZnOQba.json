@@ -2,7 +2,7 @@
   "_id": "yyhvJxEf52ZnOQba",
   "name": "Pantera",
   "type": "personagem",
-  "img": "icons/svg/pawprint.svg",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Vinculo%20Selvagem%20-%20Pantera.png",
   "folder": null,
   "sort": 200,
   "system": {
@@ -85,7 +85,7 @@
     "actorLink": true,
     "disposition": 1,
     "texture": {
-      "src": "icons/svg/pawprint.svg"
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Vinculo%20Selvagem%20-%20Pantera.png"
     }
   },
   "items": [
@@ -143,10 +143,14 @@
   "flags": {
     "icarus-rpg": {
       "id": "pantera",
+      "vinculoId": "pantera",
       "vinculo": {
         "animal": "pantera"
       },
       "provisorio": true
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
     }
   },
   "_key": "!actors!yyhvJxEf52ZnOQba"

@@ -2,7 +2,7 @@ import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESIS
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
-import { classePorId, idDaClassePorNome } from "../classes-dados.mjs";
+import { classePorId, idDaClassePorNome, blocoDoVinculo } from "../classes-dados.mjs";
 import { SISTEMA_ID } from "../config.mjs";
 
 const CHAVE_RD = /^system\.resistencias\.(rdGeral|reducao\.(\w+))$/;
@@ -169,6 +169,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
   prepareDerivedData() {
     const actor = this.parent;
     const rd = actor ? fontesDeRD(actor) : undefined;
-    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd });
+    const f = actor?.flags?.[SISTEMA_ID];
+    const vinculo = f?.vinculo ? blocoDoVinculo(f, globalThis.game?.actors) : null;
+    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null });
   }
 }

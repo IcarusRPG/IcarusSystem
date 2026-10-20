@@ -11,7 +11,7 @@
  *   ficha do próprio animal. Controlável pelos donos do patrulheiro (flags invocadoPor). O animal
  *   não pode ser curado; a 0 PV o token some e ele pode ser invocado de novo com todos os PV.
  */
-import { SISTEMA_ID, PERICIAS } from "../config.mjs";
+import { SISTEMA_ID, PERICIAS, FICHA_ANIMAL } from "../config.mjs";
 import { dadosPorNivel, estatisticasDoVinculo } from "../classes-dados.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, alvosMarcados } from "../combate-chat.mjs";
 import { documentosDeVinculos } from "../dados-compendios.mjs";
@@ -112,10 +112,12 @@ export async function invocarAnimal(actor) {
     "system.pv.value": e.pv,
     "system.defesa.outros": e.defesaOutros,
     [`flags.${SISTEMA_ID}.cd`]: e.cd,
-    [`flags.${SISTEMA_ID}.invocadoPor`]: actor.id
+    [`flags.${SISTEMA_ID}.invocadoPor`]: actor.id,
+    [`flags.${SISTEMA_ID}.vinculoId`]: animal.id,
+    "flags.core.sheetClass": FICHA_ANIMAL
   };
   await animalAtor.update(mudancas, { icarusInvocacao: true });
-  // Dano dos ataques + metade do nível do patrulheiro (Teixugo: só a mordida)
+  // Dano dos ataques + metade do nível do patrulheiro (Texugo: só a mordida)
   const armas = animalAtor.items.filter(i => i.type === "arma");
   await animalAtor.updateEmbeddedDocuments("Item", armas.map(arma => ({
     _id: arma.id, "system.bonusDano": arma.flags?.[SISTEMA_ID]?.somaNivel === false ? 0 : e.bonusDano

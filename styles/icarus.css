@@ -940,3 +940,74 @@ body.game {
 .ficha-icarus .opcao-texto .desc-poder { font-size: 13px; color: #c3d2dc; }
 .ficha-icarus .opcao-texto .desc-poder p { margin: 0; }
 .ficha-icarus .contador-vagas { float: right; font-size: 13px; color: var(--ic-ciano-titulo); }
+
+/* ---------------- Ficha dos animais do Vínculo (bloco de estatísticas) ---------------- */
+.ficha-animal .window-content { padding: 0; }
+.ficha-animal-corpo { padding: 0; }
+.ficha-animal-corpo .fa-provisorio {
+  margin: 0; padding: 6px 12px; font-size: 14px;
+  color: var(--ic-ouro-claro); background: var(--ic-ouro-apagado); border-bottom: 1px solid var(--ic-ouro-escuro);
+}
+.ficha-animal-corpo .fa-cabecalho {
+  display: flex; gap: 14px; align-items: center; padding: 12px;
+  background: var(--ic-cabecalho); border-bottom: 1px solid var(--ic-borda);
+}
+.ficha-animal-corpo .fa-retrato {
+  width: 168px; height: 168px; flex: none; object-fit: cover;
+  border: 2px solid var(--ic-moldura); border-radius: 6px; background: var(--ic-fundo); cursor: pointer;
+}
+.ficha-animal-corpo .fa-identidade { flex: 1; min-width: 0; }
+.ficha-animal-corpo .fa-nome { margin: 0 0 4px; border: 0; font-family: var(--ic-f-titulo); font-size: 26px; color: var(--ic-ouro-claro); }
+.ficha-animal-corpo .fa-linha { margin: 2px 0; color: var(--ic-apagado); }
+.ficha-animal-corpo .fa-lapis {
+  align-self: flex-start; padding: 6px 8px;
+  background: var(--ic-btn); border: 1px solid var(--ic-btn-borda); border-radius: 4px;
+}
+.ficha-animal-corpo .fa-lapis.ativo { color: var(--ic-ciano); border-color: var(--ic-ciano); }
+.ficha-animal-corpo .fa-corpo { flex: 1; overflow-y: auto; padding: 4px 12px 12px; }
+.ficha-animal-corpo .fa-bloco { padding: 8px 0; border-bottom: 1px solid var(--ic-linha); }
+.ficha-animal-corpo .fa-bloco p { margin: 4px 0; }
+.ficha-animal-corpo .fa-titulo {
+  margin: 0 0 6px; border: 0; font-family: var(--ic-f-titulo); font-size: 16px; color: var(--ic-ciano-titulo);
+}
+.ficha-animal-corpo .fa-rotulo { font-weight: 700; color: var(--ic-ciano-titulo); }
+.ficha-animal-corpo .fa-grande { font-size: 20px; color: var(--ic-branco); }
+.ficha-animal-corpo .fa-rolavel { color: var(--ic-texto); cursor: pointer; border-bottom: 1px dotted var(--ic-moldura); }
+.ficha-animal-corpo .fa-rolavel:hover { color: var(--ic-ciano); text-shadow: none; }
+.ficha-animal-corpo .fa-pv { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+.ficha-animal-corpo .fa-barra {
+  position: relative; flex: 1; height: 20px; border-radius: 3px; overflow: hidden;
+  background: var(--ic-pv-fundo); border: 1px solid var(--ic-borda);
+}
+.ficha-animal-corpo .fa-barra-cheia { height: 100%; background: var(--ic-pv); }
+.ficha-animal-corpo .fa-barra span { position: absolute; inset: 0; text-align: center; line-height: 18px; font-weight: 700; color: var(--ic-branco); }
+.ficha-animal-corpo .fa-ataque, .ficha-animal-corpo .fa-habilidade {
+  display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; justify-content: space-between;
+  padding: 6px 0; border-top: 1px solid var(--ic-linha);
+}
+.ficha-animal-corpo .fa-ataque:first-of-type, .ficha-animal-corpo .fa-habilidade:first-of-type { border-top: 0; }
+.ficha-animal-corpo .fa-ataque p, .ficha-animal-corpo .fa-texto { flex: 1 1 260px; margin: 0; }
+.ficha-animal-corpo .fa-texto p { display: inline; margin: 0; }
+.ficha-animal-corpo .fa-nota, .ficha-animal-corpo .fa-nota p { display: inline; color: var(--ic-apagado); }
+.ficha-animal-corpo .fa-botoes { display: flex; gap: 6px; }
+.ficha-animal-corpo .fa-botoes button, .ficha-animal-corpo .fa-habilidade button {
+  padding: 5px 9px; background: var(--ic-btn); border: 1px solid var(--ic-btn-borda); border-radius: 4px;
+}
+.ficha-animal-corpo .fa-botoes button:hover, .ficha-animal-corpo .fa-habilidade button:hover { background: var(--ic-btn-hover); }
+.ficha-animal-corpo .fa-atributos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; text-align: center; }
+.ficha-animal-corpo .fa-atributo { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.ficha-animal-corpo .fa-atributo .fa-rolavel { border: 0; }
+.ficha-animal-corpo input[type="number"], .ficha-animal-corpo input[type="text"], .ficha-animal-corpo select {
+  background: var(--ic-campo); border: 1px solid var(--ic-campo-borda); color: var(--ic-texto); border-radius: 3px;
+}
+.ficha-animal-corpo .fa-atributo input { width: 52px; text-align: center; }
+.ficha-animal-corpo .fa-edita input { width: 56px; margin-left: 4px; }
+.ficha-animal-corpo .fa-ataque-edita { display: flex; flex: 1 1 260px; gap: 6px; align-items: center; }
+.ficha-animal-corpo .fa-ataque-edita input[type="text"] { width: 120px; }
+.ficha-animal-corpo .fa-pericias-edita { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px 12px; }
+.ficha-animal-corpo .fa-pericias-edita label { display: flex; justify-content: space-between; gap: 6px; align-items: center; }
+@container (max-width: 440px) {
+  .ficha-animal-corpo .fa-cabecalho { flex-wrap: wrap; }
+  .ficha-animal-corpo .fa-retrato { width: 120px; height: 120px; }
+  .ficha-animal-corpo .fa-atributos { grid-template-columns: repeat(3, 1fr); }
+}

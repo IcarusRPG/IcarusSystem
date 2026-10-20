@@ -1,0 +1,95 @@
+<div class="ficha-icarus ficha-animal-corpo">
+  {{#if provisorio}}<p class="fa-provisorio"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "ICARUS.FichaAnimal.Provisoria"}}</p>{{/if}}
+
+  <header class="fa-cabecalho">
+    <img class="fa-retrato" src="{{img}}" alt="{{nome}}" {{#if editavel}}data-action="imagem"{{/if}}>
+    <div class="fa-identidade">
+      <h1 class="fa-nome">{{nome}}</h1>
+      <p class="fa-linha">{{linha}}</p>
+      <p class="fa-linha"><span class="fa-rotulo">{{localize "ICARUS.Nivel.Rotulo"}}</span> <strong>{{nivel}}</strong>
+        · <span class="fa-rotulo">{{localize "ICARUS.FichaAnimal.Dono"}}</span> <strong>{{dono}}</strong></p>
+    </div>
+    {{#if editavel}}
+    <button type="button" class="fa-lapis {{#if editando}}ativo{{/if}}" data-action="editar" data-tooltip="{{localize "ICARUS.FichaAnimal.Editar"}}" aria-label="{{localize "ICARUS.FichaAnimal.Editar"}}"><i class="fa-solid fa-pencil"></i></button>
+    {{/if}}
+  </header>
+
+  <div class="fa-corpo">
+    <section class="fa-bloco">
+      <p><span class="fa-rotulo">{{localize "ICARUS.Pericias.iniciativa"}}</span>
+        <a class="fa-rolavel" data-action="pericia" data-pericia="iniciativa">{{iniciativa.total}}</a></p>
+      <p><span class="fa-rotulo">{{localize "ICARUS.FichaAnimal.Percepcao"}}</span>
+        {{#each percepcao}}<a class="fa-rolavel" data-action="pericia" data-pericia="{{chave}}">{{nome}} {{total}}</a>{{#unless @last}}, {{/unless}}{{/each}}</p>
+    </section>
+
+    <section class="fa-bloco">
+      <p><span class="fa-rotulo">{{localize "ICARUS.Defesa.Rotulo"}}</span> <strong class="fa-grande">{{defesa}}</strong>
+        {{#if editando}}<label class="fa-edita">{{localize "ICARUS.FichaAnimal.DefesaBonus"}}
+          <input type="number" name="flags.icarus-rpg.ajustes.defesaBonus" value="{{defesaBonus}}" step="1"></label>{{/if}}
+        · {{#each resistencias}}<a class="fa-rolavel" data-action="pericia" data-pericia="{{chave}}">{{nome}} {{total}}</a>{{#unless @last}}, {{/unless}}{{/each}}</p>
+      <div class="fa-pv" data-tooltip="{{localize "ICARUS.FichaAnimal.SemCura"}}">
+        <span class="fa-rotulo">{{localize "ICARUS.PV.Rotulo"}}</span>
+        <div class="fa-barra"><div class="fa-barra-cheia" style="width: {{pv.pct}}%"></div><span>{{pv.value}} / {{pv.max}}</span></div>
+      </div>
+      <p><span class="fa-rotulo">{{localize "ICARUS.Deslocamento"}}</span>
+        {{#each deslocamentos}}{{nome}} {{valor}}{{#unless @last}}, {{/unless}}{{/each}}
+        {{#if rd}} · <span class="fa-rotulo">RD</span> {{rd}}{{/if}}</p>
+    </section>
+
+    <section class="fa-bloco">
+      <h2 class="fa-titulo">{{localize "ICARUS.FichaAnimal.CorpoACorpo"}}</h2>
+      {{#each ataques}}
+      <div class="fa-ataque" data-item-id="{{id}}">
+        {{#if ../editando}}
+        <div class="fa-ataque-edita">
+          <input type="text" data-ataque-campo="name" value="{{nome}}" aria-label="{{localize "ICARUS.FichaAnimal.Nome"}}">
+          <input type="text" data-ataque-campo="system.dano" value="{{danoDado}}" aria-label="{{localize "ICARUS.FichaAnimal.Dado"}}">
+          <label><input type="checkbox" data-ataque-campo="somaNivel" {{checked somaNivel}}> {{localize "ICARUS.FichaAnimal.SomaNivel"}}</label>
+        </div>
+        {{else}}
+        <p><strong>{{nome}}</strong> {{bonus}} ({{dano}} {{tipos}}){{#if nota}} <span class="fa-nota">{{{nota}}}</span>{{/if}}</p>
+        {{/if}}
+        <div class="fa-botoes">
+          <button type="button" data-action="rolarAtaque"><i class="fa-solid fa-dice-d20"></i> {{localize "ICARUS.FichaAnimal.RolarAtaque"}}</button>
+          <button type="button" data-action="rolarDano"><i class="fa-solid fa-burst"></i> {{localize "ICARUS.FichaAnimal.RolarDano"}}</button>
+        </div>
+      </div>
+      {{/each}}
+    </section>
+
+    {{#if habilidades.length}}
+    <section class="fa-bloco">
+      <h2 class="fa-titulo">{{localize "ICARUS.FichaAnimal.Habilidades"}}</h2>
+      {{#each habilidades}}
+      <div class="fa-habilidade" data-item-id="{{id}}">
+        <div class="fa-texto"><strong>{{nome}}.</strong> {{{texto}}}</div>
+        <button type="button" data-action="usar">{{localize "ICARUS.FichaAnimal.Usar"}}</button>
+      </div>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    <section class="fa-bloco fa-atributos">
+      {{#each atributos}}
+      <div class="fa-atributo">
+        <a class="fa-rolavel" data-action="atributo" data-atributo="{{chave}}"><span class="fa-rotulo">{{chave}}</span> <strong>{{total}}</strong></a>
+        {{#if ../editando}}<input type="number" name="system.atributos.{{chave}}.base" value="{{base}}" step="1" aria-label="{{chave}}">{{/if}}
+      </div>
+      {{/each}}
+    </section>
+
+    <section class="fa-bloco">
+      <h2 class="fa-titulo">{{localize "ICARUS.FichaAnimal.Pericias"}}</h2>
+      {{#if editando}}
+      <div class="fa-pericias-edita">
+        {{#each pericias}}
+        <label>{{nome}} ({{atributo}})
+          <select name="system.pericias.{{chave}}.treino">{{selectOptions ../treinos selected=treino}}</select></label>
+        {{/each}}
+      </div>
+      {{else}}
+      <p>{{#each pericias}}<a class="fa-rolavel" data-action="pericia" data-pericia="{{chave}}">{{nome}} {{total}}</a>{{#unless @last}}, {{/unless}}{{/each}}</p>
+      {{/if}}
+    </section>
+  </div>
+</div>

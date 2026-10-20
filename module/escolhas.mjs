@@ -15,6 +15,7 @@ import { SISTEMA_ID, ATRIBUTOS, PERICIAS } from "./config.mjs";
 import { patamarDe, podeAumentarAtributo, normalizarNome, classePorId } from "./classes-dados.mjs";
 import ARMAS from "./dados/armas.mjs";
 import VINCULOS from "./dados/vinculos.mjs";
+import { marcarTreino } from "./assistente.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -130,7 +131,10 @@ async function telaPericias(actor, classe, entrada) {
   if (escolha.length !== quantidade) { ui.notifications.warn(fmt("ICARUS.Comuns.EscolhaN", { n: quantidade })); return null; }
   const nomes = escolha.map(k => loc(`ICARUS.Pericias.${k}`)).join(", ");
   // Treinar (nao-treinadas) ou especializar (treinadas): derivado do item, remover desfaz
-  if (filtro === "nao-treinadas") return { flags: { periciasTreinadas: escolha }, sufixo: nomes };
+  if (filtro === "nao-treinadas") {
+    await actor.update(marcarTreino(actor, escolha, "classe"));
+    return { flags: { periciasTreinadas: escolha }, sufixo: nomes };
+  }
   if (quantidade === 1 && filtro === "treinadas-nao-especialistas") return { flags: { periciaEspecializada: { pericia: escolha[0] } }, sufixo: nomes };
   return { flags: { periciaRefinada: escolha }, sufixo: nomes };
 }

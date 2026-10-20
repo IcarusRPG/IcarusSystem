@@ -3571,8 +3571,8 @@
               "descricao": "Defesa +1; deslocamento 9 m, salto de 6 m. Mordida: 1d6 de dano de Perfuração. <em>Língua Agarrante:</em> quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Agarrado; enquanto agarra um alvo, o sapo não pode atacar outro."
             },
             {
-              "nome": "Teixugo Gigante",
-              "descricao": "Defesa +2; deslocamento 6 m, escavação 6 m. <em>Ataque Duplo:</em> o teixugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do seu nível."
+              "nome": "Texugo Gigante",
+              "descricao": "Defesa +2; deslocamento 6 m, escavação 6 m. <em>Ataque Duplo:</em> o texugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do seu nível."
             }
           ],
           "escolha": {
@@ -3584,7 +3584,7 @@
               "Cobra Voadora",
               "Urso Negro",
               "Sapo Gigante",
-              "Teixugo Gigante"
+              "Texugo Gigante"
             ]
           }
         },

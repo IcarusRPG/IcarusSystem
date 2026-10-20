@@ -7,7 +7,8 @@ export default {
     "cd": "10 + metade do nível do patrulheiro + Destreza do patrulheiro",
     "dano": "dano do ataque + metade do nível do patrulheiro (arredondada para baixo)",
     "treino": "perícias listadas em treinadas têm treino +2; \"outros\" soma ao total",
-    "provisorio": true
+    "provisorio": true,
+    "atributoPericia": "atributoPericia troca o atributo de uma perícia do animal (ex.: Luta da Cobra Voadora usa DES)"
   },
   "vinculos": [
     {
@@ -53,7 +54,8 @@ export default {
           "nome": "Derrubar",
           "texto": "Uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Caído."
         }
-      ]
+      ],
+      "atributoPericia": {}
     },
     {
       "id": "pantera",
@@ -98,7 +100,8 @@ export default {
           "nome": "Bote",
           "texto": "Se a mordida derruba o alvo (ele fica Caído), a pantera faz imediatamente um segundo ataque de mordida."
         }
-      ]
+      ],
+      "atributoPericia": {}
     },
     {
       "id": "cobra-voadora",
@@ -140,7 +143,10 @@ export default {
           "nome": "Ataque e Recuo",
           "texto": "Uma vez por rodada, depois de atacar, a cobra pode se deslocar até 6 m como ação livre."
         }
-      ]
+      ],
+      "atributoPericia": {
+        "Luta": "DES"
+      }
     },
     {
       "id": "urso-negro",
@@ -176,7 +182,8 @@ export default {
           "pericia": "Luta"
         }
       ],
-      "habilidades": []
+      "habilidades": [],
+      "atributoPericia": {}
     },
     {
       "id": "sapo-gigante",
@@ -216,11 +223,12 @@ export default {
           "nome": "Língua Agarrante",
           "texto": "Quando a mordida acerta, o alvo faz um teste de Fortitude ou fica Agarrado; enquanto agarra um alvo, o sapo não pode atacar outro."
         }
-      ]
+      ],
+      "atributoPericia": {}
     },
     {
-      "id": "teixugo-gigante",
-      "nome": "Teixugo Gigante",
+      "id": "texugo-gigante",
+      "nome": "Texugo Gigante",
       "tamanho": "medio",
       "atributos": {
         "FOR": 1,
@@ -261,9 +269,10 @@ export default {
       "habilidades": [
         {
           "nome": "Ataque Duplo",
-          "texto": "O teixugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro."
+          "texto": "O texugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro."
         }
-      ]
+      ],
+      "atributoPericia": {}
     }
   ]
 };
