@@ -343,7 +343,7 @@ export function documentosDeVinculos(dados, pericias) {
               bonusAtaque: 0, bonusDano: 0, quantidade: 1, espacos: 0, preco: 0,
               descricao: atq.extra ? `<p>${escapar(atq.extra)}</p>` : ""
             },
-            // Teixugo: só a mordida soma a metade do nível do patrulheiro
+            // Texugo: só a mordida soma a metade do nível do patrulheiro
             flags: { [SISTEMA_ID]: { natural: true, somaNivel: !/só a mordida soma/i.test(atq.extra ?? "") || /mordida/i.test(atq.nome) } }
           })),
           ...(a.habilidades ?? []).map((h, j) => ({

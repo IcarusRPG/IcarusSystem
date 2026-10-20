@@ -219,8 +219,8 @@ export default {
       ]
     },
     {
-      "id": "teixugo-gigante",
-      "nome": "Teixugo Gigante",
+      "id": "texugo-gigante",
+      "nome": "Texugo Gigante",
       "tamanho": "medio",
       "atributos": {
         "FOR": 1,
@@ -261,7 +261,7 @@ export default {
       "habilidades": [
         {
           "nome": "Ataque Duplo",
-          "texto": "O teixugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro."
+          "texto": "O texugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro."
         }
       ]
     }

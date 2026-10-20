@@ -1,6 +1,6 @@
 {
-  "_id": "8ukA1JO6ccBSztxY",
-  "name": "Teixugo Gigante",
+  "_id": "7qDtZ7udev7LCskD",
+  "name": "Texugo Gigante",
   "type": "personagem",
   "img": "icons/svg/pawprint.svg",
   "folder": null,
@@ -71,7 +71,7 @@
     "notas": "<p><strong>Vínculo Selvagem (valores provisórios).</strong> Deslocamentos: escavacao 6 m.</p>"
   },
   "prototypeToken": {
-    "name": "Teixugo Gigante",
+    "name": "Texugo Gigante",
     "actorLink": true,
     "disposition": 1,
     "texture": {
@@ -80,7 +80,7 @@
   },
   "items": [
     {
-      "_id": "i0eBn8yuth0MLRnW",
+      "_id": "Vff01ks19Cygw16b",
       "name": "Mordida",
       "type": "arma",
       "img": "icons/svg/claw.svg",
@@ -110,10 +110,10 @@
           "somaNivel": true
         }
       },
-      "_key": "!actors.items!8ukA1JO6ccBSztxY.i0eBn8yuth0MLRnW"
+      "_key": "!actors.items!7qDtZ7udev7LCskD.Vff01ks19Cygw16b"
     },
     {
-      "_id": "Qi3w3rXeDm4FlhyG",
+      "_id": "vG1hDDjV3tX2ORiV",
       "name": "Garras",
       "type": "arma",
       "img": "icons/svg/claw.svg",
@@ -143,34 +143,34 @@
           "somaNivel": false
         }
       },
-      "_key": "!actors.items!8ukA1JO6ccBSztxY.Qi3w3rXeDm4FlhyG"
+      "_key": "!actors.items!7qDtZ7udev7LCskD.vG1hDDjV3tX2ORiV"
     },
     {
-      "_id": "ZHPN3Ce7PHW0nL74",
+      "_id": "bgtvqZLZcGeRv9FP",
       "name": "Ataque Duplo",
       "type": "poder",
       "img": "icons/svg/pawprint.svg",
       "system": {
         "fonte": "geral",
-        "descricao": "<p>O teixugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro.</p>"
+        "descricao": "<p>O texugo faz dois ataques com a mesma ação, uma mordida de 1d6 de Perfuração e garras de 1d4 de Corte; só a mordida soma a metade do nível do patrulheiro.</p>"
       },
       "flags": {
         "icarus-rpg": {
           "vinculo": true
         }
       },
-      "_key": "!actors.items!8ukA1JO6ccBSztxY.ZHPN3Ce7PHW0nL74"
+      "_key": "!actors.items!7qDtZ7udev7LCskD.bgtvqZLZcGeRv9FP"
     }
   ],
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "teixugo-gigante",
+      "id": "texugo-gigante",
       "vinculo": {
-        "animal": "teixugo-gigante"
+        "animal": "texugo-gigante"
       },
       "provisorio": true
     }
   },
-  "_key": "!actors!8ukA1JO6ccBSztxY"
+  "_key": "!actors!7qDtZ7udev7LCskD"
 }

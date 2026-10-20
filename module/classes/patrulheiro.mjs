@@ -115,7 +115,7 @@ export async function invocarAnimal(actor) {
     [`flags.${SISTEMA_ID}.invocadoPor`]: actor.id
   };
   await animalAtor.update(mudancas, { icarusInvocacao: true });
-  // Dano dos ataques + metade do nível do patrulheiro (Teixugo: só a mordida)
+  // Dano dos ataques + metade do nível do patrulheiro (Texugo: só a mordida)
   const armas = animalAtor.items.filter(i => i.type === "arma");
   await animalAtor.updateEmbeddedDocuments("Item", armas.map(arma => ({
     _id: arma.id, "system.bonusDano": arma.flags?.[SISTEMA_ID]?.somaNivel === false ? 0 : e.bonusDano

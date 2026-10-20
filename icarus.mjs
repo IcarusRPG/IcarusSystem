@@ -36,6 +36,7 @@ import "./module/classes/guerreiro.mjs";
 import "./module/classes/samurai.mjs";
 import "./module/classes/monge.mjs";
 import "./module/recursos.mjs";
+import { registrarMigracoes } from "./module/migracoes.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";
@@ -131,6 +132,7 @@ Hooks.once("init", () => {
   // Iniciativa = 1d20 + total da perícia Iniciativa
   CONFIG.Combat.initiative = { formula: "1d20 + @pericias.iniciativa.total", decimals: 0 };
   registrarIniciativa();
+  registrarMigracoes();
 
   // Efeitos de itens passam para o personagem sem serem copiados
   CONFIG.ActiveEffect.legacyTransferral = false;
