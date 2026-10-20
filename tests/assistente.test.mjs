@@ -26,7 +26,7 @@ function atorFalso() {
     uuid: "Actor.x", statuses: new Set(),
     _source: { system: { identidade: { classe: "ladino" }, classeConfig: { pvInicial: 16, pvPorNivel: 4, pmInicial: 4, pmPorNivel: 4, pvAtributo: "CON", pmAtributo: null, pmAtributoSoNoPrimeiroNivel: false, manual: false },
       proficiencias: { armas: ["simples", "marciais-leves-ageis"], armaduras: ["leve"], escudo: false, tunicas: false, texto: "" },
-      pericias: { furtividade: { treino: 0 }, prestidigitacao: { treino: 0 }, atletismo: { treino: 0 } } } },
+      pericias: Object.fromEntries(["acrobacia","adestramento","atletismo","atuacao","audicao","barganha","cavalgar","concentracao","cura","diplomacia","enganacao","fortitude","furtividade","historia","iniciativa","intimidacao","intuicao","investigacao","luta","misticismo","navegacao","nobreza","olfato","pontaria","prestidigitacao","reflexos","religiao","sobrevivencia","visao","vontade"].map(k => [k, { treino: 0 }])) } },
     flags: { "icarus-rpg": {} },
     items: [],
     getFlag(s, k) { return this.flags[s]?.[k]; },
@@ -77,4 +77,37 @@ test("14. Trocar Ladino → reset: sai o que é da classe, fica o que é da raç
   assert.equal(ator._source.system.classeConfig.pvInicial, 16);
   assert.equal(ator.flags["icarus-rpg"].furia, true);
   assert.equal(ator.flags["icarus-rpg"].snapshotTrocaClasse, undefined);
+});
+
+test("Parte 1: plano das perícias — tira a fonte classe; raça segue pelos efeitos; origem/outro ficam", async () => {
+  const { planoDePericias } = await import("../module/assistente.mjs");
+  const treinos = { furtividade: 1, acrobacia: 1, atletismo: 0, historia: 1, cura: 1 };
+  const treinoPor = { furtividade: ["classe", "raca"], acrobacia: ["classe"], atletismo: ["classe"], historia: ["classe", "origem"] };
+  const r = planoDePericias({ treinos, treinoPor });
+  // Só da classe → 0; classe + raça → salvo 0 (a raça segue treinando pelo efeito); origem → fica
+  assert.deepEqual(r.treinos, { furtividade: 0, acrobacia: 0 });
+  assert.deepEqual(r.treinoPor, { furtividade: ["raca"], historia: ["origem"], cura: ["outro"] });
+});
+
+test("Parte 1: ficha antiga (sem treinoPor) usa o diálogo Manter; raciais viram fonte raca", async () => {
+  const { planoDePericias } = await import("../module/assistente.mjs");
+  const treinos = { furtividade: 1, acrobacia: 1, luta: 1 };
+  const r = planoDePericias({ treinos, treinoPor: null, manter: new Set(["furtividade", "luta"]), raciais: new Set(["furtividade"]) });
+  assert.deepEqual(r.treinos, { acrobacia: 0 });
+  assert.deepEqual(r.treinoPor, { furtividade: ["raca"], luta: ["outro"] });
+});
+
+test("Parte 1: Ladino → reset limpa as perícias da classe e o Desfazer volta treinoPor e treinos", async () => {
+  const ator = atorFalso();
+  await ator.update({ "system.pericias.furtividade.treino": 1, "system.pericias.atletismo.treino": 1, ...marcarTreinoDaClasse(ator, ["furtividade", "atletismo"]) });
+  // Poder racial que treina Furtividade (efeito)
+  ator.items.push(item({ id: "r9", name: "Sombra (racial)", type: "poder", system: { fonte: "raca" }, effects: [{ changes: [{ key: "system.pericias.furtividade.treino", mode: 4, value: "1" }] }], flags: {} }));
+  await ator.update({ "flags.icarus-rpg.treinoPor.furtividade": ["classe", "raca"] });
+  await resetarClasse(ator);
+  assert.equal(ator._source.system.pericias.atletismo.treino, 0);
+  assert.equal(ator._source.system.pericias.furtividade.treino, 0, "salvo volta a 0; a raça segue treinando pelo efeito");
+  assert.deepEqual(ator.flags["icarus-rpg"].treinoPor, { furtividade: ["raca"] });
+  await desfazerTrocaDeClasse(ator);
+  assert.equal(ator._source.system.pericias.atletismo.treino, 1);
+  assert.deepEqual(ator.flags["icarus-rpg"].treinoPor, { furtividade: ["classe", "raca"], atletismo: ["classe"] });
 });

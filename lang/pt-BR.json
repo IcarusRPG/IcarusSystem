@@ -1226,7 +1226,11 @@
       "Voltar": "Voltar",
       "ChegouAo": "{nome} chegou ao {nivel}º nível",
       "DesceuNivel": "{nome}: o nível baixou; nenhum item de classe foi removido (remova à mão se quiser).",
-      "ReceberHabilidades": "Receber habilidades do nível"
+      "ReceberHabilidades": "Receber habilidades do nível",
+      "TrocarConfirmar": "Trocar de classe",
+      "ManterTitulo": "Perícias treinadas: manter?",
+      "ManterDica": "Esta ficha é de antes do rastreio de treino. Marque as perícias que NÃO vieram da classe (as de poderes raciais já vêm marcadas); as desmarcadas voltam a não treinadas.",
+      "Racial": "poder racial"
     },
     "Migracao": {
       "Feita": "Icarus RPG: dados atualizados para a versão {versao} ({n} ator(es))."
