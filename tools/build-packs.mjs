@@ -14,7 +14,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
 import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "../module/dados-compendios.mjs";
-import { PERICIAS } from "../module/config.mjs";
+import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -49,6 +49,18 @@ for (const d of novos.panteao.divindades) confere("panteão/simbolos", novos.ico
 for (const c of novos.classes.classes) confere("classes", novos.iconesClasses[c.id], `classe ${c.nome}`);
 for (const m of novos.macros.macros) if (m.icone) confere(path.posix.dirname(m.icone), path.posix.basename(m.icone), `macro ${m.nome}`);
 for (const [chave, rel] of Object.entries(IMAGENS_SISTEMA)) confere(path.posix.dirname(rel), path.posix.basename(rel), `interface (${chave})`);
+// Animais do Vínculo: "Vinculo Selvagem - <Nome>.png" com tolerância (acento, maiúsculas, espaços)
+{
+  const dir = path.join(RAIZ, "img", "Icones", ...PASTA_ICONES_PODERES.split("/"));
+  const chave = s => normalizado(s).replace(/\s+/g, " ").trim();
+  const noDisco = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
+  novos.vinculos.imagens = {};
+  for (const v of novos.vinculos.vinculos) {
+    const achado = noDisco.find(f => chave(f) === chave(arquivoDoVinculo(v.nome)));
+    novos.vinculos.imagens[v.id] = achado ?? null;
+    if (!achado) semImagem.push(`vínculo ${v.nome} (pata padrão; esperado img/Icones/${PASTA_ICONES_PODERES}/${arquivoDoVinculo(v.nome)})`);
+  }
+}
 if (faltandoArquivo.length) {
   console.error(`ERRO: ${faltandoArquivo.length} ícone(s) mapeado(s) não existem no disco:\n  - ${faltandoArquivo.join("\n  - ")}`);
   process.exit(1);

@@ -3,7 +3,7 @@ import {
 } from "../config.mjs";
 import { ehProficiente, textoCritico, modosDeAtaque } from "../combate.mjs";
 import { SISTEMA_ID } from "../config.mjs";
-import { danoDesarmadoDoMonge } from "../classes-dados.mjs";
+import { danoDesarmadoDoMonge, donoDoVinculo } from "../classes-dados.mjs";
 
 const fields = foundry.data.fields;
 const inteiro = (initial = 0, opcoes = {}) =>
@@ -63,6 +63,12 @@ export class ArmaData extends foundry.abstract.TypeDataModel {
         const e = i.flags?.[SISTEMA_ID]?.armaExotica;
         return e && (e.id === meuId || String(e.nome).toLowerCase() === nome);
       });
+    }
+    // Arma natural do animal do Vínculo: dano = dado + metade do nível do dono (só as que somam),
+    // sem atributo (Anexo B)
+    if (flags?.natural && dono?.flags?.[SISTEMA_ID]?.vinculo) {
+      this.semAtributoNoDano = true;
+      this.bonusDano = flags.somaNivel === false ? 0 : donoDoVinculo(dono.flags[SISTEMA_ID], globalThis.game?.actors).metade;
     }
     this.textoCritico = textoCritico(this);
     this.modos = modosDeAtaque(this);

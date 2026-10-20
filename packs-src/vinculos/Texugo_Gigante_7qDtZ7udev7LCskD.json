@@ -2,7 +2,7 @@
   "_id": "7qDtZ7udev7LCskD",
   "name": "Texugo Gigante",
   "type": "personagem",
-  "img": "icons/svg/pawprint.svg",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Vinculo%20Selvagem%20-%20Texugo%20Gigante.png",
   "folder": null,
   "sort": 600,
   "system": {
@@ -75,7 +75,7 @@
     "actorLink": true,
     "disposition": 1,
     "texture": {
-      "src": "icons/svg/pawprint.svg"
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Vinculo%20Selvagem%20-%20Texugo%20Gigante.png"
     }
   },
   "items": [
@@ -166,10 +166,14 @@
   "flags": {
     "icarus-rpg": {
       "id": "texugo-gigante",
+      "vinculoId": "texugo-gigante",
       "vinculo": {
         "animal": "texugo-gigante"
       },
       "provisorio": true
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
     }
   },
   "_key": "!actors!7qDtZ7udev7LCskD"

@@ -6,7 +6,7 @@
  * (id texugo-gigante): flags de vínculo dos patrulheiros, atores do animal já invocados, itens de
  * escolha ("Vínculo Selvagem (Teixugo Gigante)") e o documento antigo do compêndio Vínculos.
  */
-import { SISTEMA_ID } from "./config.mjs";
+import { SISTEMA_ID, FICHA_ANIMAL } from "./config.mjs";
 
 const ANTIGO_ID = "teixugo-gigante";
 const NOVO_ID = "texugo-gigante";
@@ -48,8 +48,29 @@ export async function migrarTexugo() {
   return atores;
 }
 
+/**
+ * 0.9.0 — animais do Vínculo já criados passam a abrir na ficha de bloco de estatísticas
+ * (flags.core.sheetClass) e ganham a flag vinculoId. Quem já escolheu outra ficha à mão fica como está.
+ * @returns {Promise<number>} atores alterados
+ */
+export async function migrarFichaDosAnimais() {
+  let atores = 0;
+  for (const actor of game.actors ?? []) {
+    const f = actor.flags?.[SISTEMA_ID] ?? {};
+    const id = f.vinculoId ?? f.vinculo?.animal;
+    if (!id) continue;
+    const mudancas = {};
+    if (!f.vinculoId) mudancas[`flags.${SISTEMA_ID}.vinculoId`] = id;
+    if (!actor.flags?.core?.sheetClass) mudancas["flags.core.sheetClass"] = FICHA_ANIMAL;
+    if (!Object.keys(mudancas).length) continue;
+    await actor.update(mudancas);
+    atores++;
+  }
+  return atores;
+}
+
 /** Migrações por versão: registradas para rodar uma vez (configuração de mundo "migracao"). */
-const MIGRACOES = [{ versao: "0.9.0", rodar: migrarTexugo }];
+const MIGRACOES = [{ versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) }];
 
 export function registrarMigracoes() {
   game.settings.register(SISTEMA_ID, "migracao", { scope: "world", config: false, type: String, default: "0.0.0" });

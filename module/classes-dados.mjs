@@ -7,6 +7,7 @@ import { SISTEMA_ID, ICONE_PADRAO, PERICIAS } from "./config.mjs";
 import CLASSES_JSON from "./dados/classes.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
 import PROFICIENCIAS_CLASSES from "./dados/proficiencias-classes.mjs";
+import VINCULOS from "./dados/vinculos.mjs";
 
 export const CLASSES = CLASSES_JSON.classes;
 export const PASTA_ICONES_CLASSES = `systems/${SISTEMA_ID}/img/Icones/classes`;
@@ -301,6 +302,37 @@ export function estatisticasDoVinculo(animal, p) {
     bonusDano: metade,
     cd: 10 + metade + (Number(p.DES) || 0)
   };
+}
+
+/** Entrada de vinculos.json do ator do animal (flags vinculoId / vinculo.animal / id), ou null. */
+export function animalDoVinculo(flags) {
+  const id = flags?.vinculoId ?? flags?.vinculo?.animal ?? flags?.id;
+  return id ? VINCULOS.vinculos.find(v => v.id === id) ?? null : null;
+}
+
+/**
+ * Dono do animal (flags.invocadoPor = id do ator do patrulheiro) e o nível que vale para o animal.
+ * Sem dono no mundo: nível 1 e dono null.
+ * @param {object} flags   flags["icarus-rpg"] do animal
+ * @param {{ get(id): object }} [atores]  game.actors
+ */
+export function donoDoVinculo(flags, atores) {
+  const dono = flags?.invocadoPor ? atores?.get?.(flags.invocadoPor) ?? null : null;
+  const nivel = Math.max(1, Math.trunc(Number(dono?.system?.nivel)) || 1);
+  return { dono, nivel, metade: Math.floor(nivel / 2) };
+}
+
+/**
+ * Bloco de estatísticas do animal que depende do dono: Defesa = 10 + ⌊N/2⌋ + defesaBonus;
+ * PV = 10 + ⌊N/2⌋; dano das armas naturais + ⌊N/2⌋ (só as que somam). defesaBonus vem do ajuste da
+ * ficha (flags.ajustes.defesaBonus, modo edição) ou de vinculos.json.
+ */
+export function blocoDoVinculo(flags, atores) {
+  const animal = animalDoVinculo(flags);
+  const { dono, nivel, metade } = donoDoVinculo(flags, atores);
+  const ajuste = flags?.ajustes?.defesaBonus;
+  const defesaBonus = Number.isFinite(ajuste) ? ajuste : animal?.defesaBonus ?? 0;
+  return { animal, dono, nivel, metade, defesaBonus, pv: 10 + metade, defesa: 10 + metade + defesaBonus };
 }
 
 /* ------------------------------ Regras numéricas das classes ------------------------------ */

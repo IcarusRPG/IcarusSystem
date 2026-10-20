@@ -9,6 +9,7 @@ import { ArmaData } from "./module/data/item-arma.mjs";
 import { MunicaoData } from "./module/data/item-municao.mjs";
 import { ClasseData } from "./module/data/item-classe.mjs";
 import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
+import { FichaAnimal } from "./module/sheets/ficha-animal.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
 import { rolarTeste, rolarPericia, rolarAtributo } from "./module/rolls.mjs";
 import { criarKaelen, verificarKaelen, dadosKaelen } from "./module/dev/kaelen.mjs";
@@ -140,6 +141,8 @@ Hooks.once("init", () => {
   // Fichas
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet(SISTEMA_ID, FichaPersonagem, { types: ["personagem"], makeDefault: true, label: "ICARUS.Ficha.Personagem" });
+  // Animais do Vínculo: escolhida por flags.core.sheetClass (FICHA_ANIMAL); as outras fichas não mudam
+  Actors.registerSheet(SISTEMA_ID, FichaAnimal, { types: ["personagem"], makeDefault: false, label: "ICARUS.Ficha.Animal" });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 

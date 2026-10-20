@@ -14,7 +14,8 @@
   "ICARUS": {
     "Ficha": {
       "Personagem": "Ficha de Personagem (Icarus RPG)",
-      "Item": "Ficha de Item (Icarus RPG)"
+      "Item": "Ficha de Item (Icarus RPG)",
+      "Animal": "Ficha de Animal do Vínculo (Icarus RPG)"
     },
     "Identidade": {
       "Nome": "Nome do personagem",
@@ -1234,6 +1235,35 @@
     },
     "Migracao": {
       "Feita": "Icarus RPG: dados atualizados para a versão {versao} ({n} ator(es))."
+    },
+    "FichaAnimal": {
+      "Provisoria": "Ficha provisória: valores do Anexo B ainda em revisão.",
+      "Dono": "Dono",
+      "Animal": "Animal",
+      "Vinculo": "Vínculo Selvagem",
+      "Editar": "Editar a ficha (atributos, treino, Defesa e ataques)",
+      "Percepcao": "Percepção",
+      "DefesaBonus": "Bônus de Defesa",
+      "SemCura": "O animal não pode ser curado: invocar de novo devolve os PV.",
+      "CorpoACorpo": "Corpo a Corpo",
+      "Nome": "Nome",
+      "Dado": "Dado de dano",
+      "SomaNivel": "Soma metade do nível",
+      "RolarAtaque": "Rolar ataque",
+      "RolarDano": "Rolar dano",
+      "Habilidades": "Habilidades",
+      "Usar": "Usar",
+      "Pericias": "Perícias",
+      "Treinada": "Treinada (+2)",
+      "Especialista": "Especialista (+4)",
+      "Deslocamentos": {
+        "terrestre": "Terrestre",
+        "escalada": "Escalada",
+        "voo": "Voo",
+        "salto": "Salto",
+        "escavacao": "Escavação",
+        "natacao": "Natação"
+      }
     }
   }
 }

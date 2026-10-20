@@ -3,7 +3,7 @@
  * documentos dos compêndios. Sem dependência do Foundry: usado pelo build (Node), pelo plano B
  * (dentro do Foundry) e pelos testes.
  */
-import { SISTEMA_ID, ICONE_PADRAO } from "./config.mjs";
+import { SISTEMA_ID, ICONE_PADRAO, arquivoDoVinculo, imagemDoVinculo, ICONE_VINCULO_PADRAO, FICHA_ANIMAL } from "./config.mjs";
 import { idEstavel } from "./dados-itens.mjs";
 
 const normalizar = t => String(t).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -306,7 +306,10 @@ const chavePericia = (nome, pericias) => pericias.find(p => normalizar(p.nome) =
  * jogador; atributos como modificadores diretos, perícias treinadas (+2) e "outros", ataques como
  * armas (Luta do animal) e habilidades como poderes. Os valores que dependem do patrulheiro (PV,
  * Defesa, dano) são recalculados ao invocar (module/classes/patrulheiro.mjs).
- * @param {{ vinculos }} dados   vinculos.json
+ * Imagem: dados.imagens[id] (nome do arquivo achado pelo build em img/Icones/poderes e habilidades;
+ * null = sem arquivo → pata padrão); sem o mapa (plano B no Foundry), o caminho padrão da constante.
+ * Ficha: flags.core.sheetClass = FICHA_ANIMAL (ficha de bloco de estatísticas, module/sheets/ficha-animal.mjs).
+ * @param {{ vinculos, imagens? }} dados   vinculos.json (+ imagens do build)
  * @param {{ chave, nome }[]} pericias  PERICIAS de config.mjs
  */
 export function documentosDeVinculos(dados, pericias) {
@@ -317,9 +320,13 @@ export function documentosDeVinculos(dados, pericias) {
       const pericia = {};
       for (const nome of a.treinadas ?? []) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), treino: 1 }; }
       for (const [nome, v] of Object.entries(a.outros ?? {})) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), outros: v }; }
+      // atributoPericia: a perícia usa outro atributo (ex.: Luta da Cobra Voadora com DES)
+      for (const [nome, at] of Object.entries(a.atributoPericia ?? {})) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), atributo: at }; }
+      const arquivo = dados.imagens ? dados.imagens[a.id] : arquivoDoVinculo(a.nome);
+      const img = arquivo ? imagemDoVinculo(a.nome, arquivo) : ICONE_VINCULO_PADRAO;
       const movimentos = Object.entries(a.deslocamentos ?? {}).filter(([k]) => k !== "terrestre").map(([k, v]) => `${k} ${v} m`).join(", ");
       return {
-        _id: actorId, name: a.nome, type: "personagem", img: "icons/svg/pawprint.svg", folder: null, sort: (i + 1) * 100,
+        _id: actorId, name: a.nome, type: "personagem", img, folder: null, sort: (i + 1) * 100,
         system: {
           nivel: 1, tamanho: a.tamanho === "pequeno" ? "pequeno" : "medio",
           atributos: Object.fromEntries(Object.entries(a.atributos ?? {}).map(([k, v]) => [k, { base: v, racial: 0, temp: 0 }])),
@@ -331,7 +338,7 @@ export function documentosDeVinculos(dados, pericias) {
           pericias: pericia,
           notas: `<p><strong>Vínculo Selvagem (valores provisórios).</strong>${movimentos ? ` Deslocamentos: ${escapar(movimentos)}.` : ""}</p>`
         },
-        prototypeToken: { name: a.nome, actorLink: true, disposition: 1, texture: { src: "icons/svg/pawprint.svg" } },
+        prototypeToken: { name: a.nome, actorLink: true, disposition: 1, texture: { src: img } },
         items: [
           ...a.ataques.map((atq, j) => ({
             _id: idEstavel(`vinculo:${a.id}:ataque:${j}`), name: atq.nome, type: "arma", img: "icons/svg/claw.svg",
@@ -352,7 +359,7 @@ export function documentosDeVinculos(dados, pericias) {
           }))
         ],
         effects: [],
-        flags: { [SISTEMA_ID]: { id: a.id, vinculo: { animal: a.id }, provisorio: true } }
+        flags: { [SISTEMA_ID]: { id: a.id, vinculoId: a.id, vinculo: { animal: a.id }, provisorio: true }, core: { sheetClass: FICHA_ANIMAL } }
       };
     })
   };

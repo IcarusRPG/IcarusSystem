@@ -127,6 +127,19 @@ export const PASTA_ICONES_ARMAS = `systems/${SISTEMA_ID}/img/Icones/itens/equipa
 export const PASTA_ICONES_MUNICOES = `systems/${SISTEMA_ID}/img/Icones/itens/equipamentos/munições`;
 
 /**
+ * Imagens dos animais do Vínculo Selvagem: img/Icones/poderes e habilidades/Vinculo Selvagem - <Nome>.png
+ * (relativo a img/Icones/). O build procura o arquivo com tolerância (sem acento/maiúsculas);
+ * sem arquivo, o animal usa ICONE_VINCULO_PADRAO e é listado no build.
+ */
+export const PASTA_ICONES_PODERES = "poderes e habilidades";
+export const arquivoDoVinculo = nome => `Vinculo Selvagem - ${nome}.png`;
+export const imagemDoVinculo = (nome, arquivo = arquivoDoVinculo(nome)) =>
+  encodeURI(`systems/${SISTEMA_ID}/img/Icones/${PASTA_ICONES_PODERES}/${arquivo}`);
+export const ICONE_VINCULO_PADRAO = "icons/svg/pawprint.svg";
+/** Ficha dos animais do Vínculo (flags.core.sheetClass): "<sistema>.<classe registrada>". */
+export const FICHA_ANIMAL = `${SISTEMA_ID}.FichaAnimal`;
+
+/**
  * Carga: capacidade = CARGA_BASE + CARGA_POR_FOR × FOR (total), em espaços.
  * Valor de referência do Tormenta 20, a conferir no livro do Icarus. Sobrecarga ainda não tem efeito.
  */

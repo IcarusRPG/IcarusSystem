@@ -33,6 +33,10 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   }
   const total = k => (ATRIBUTOS.includes(k) ? s.atributos[k].total : null);
 
+  // Animal do Vínculo Selvagem: PV = 10 + metade do nível do dono (opcoes.vinculo, ver blocoDoVinculo)
+  const vinculo = opcoes.vinculo ?? null;
+  if (vinculo) { s.classeConfig.manual = true; s.pv.max = vinculo.pv; s.vinculo = vinculo; }
+
   // PV e PM: fórmula da classe + bônus por nível (poderes) + bônus fixo
   const cc = s.classeConfig;
   const porNivel = bonusDeNivel({
@@ -64,6 +68,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.defesa.origensPenalidade = penalidades;
   s.defesa.armadura = armadura;
   s.defesa.escudo = escudo;
+  // Animal: a Defesa é 10 + metade do nível do dono + defesaBonus (sem a DES do animal)
+  if (vinculo) s.defesa.outros = vinculo.defesa - 10 - s.atributos.DES.total;
   s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
   // Habilidades de classe com bônus passivo (Pele Rija, Defesa Interior, Passo Ligeiro)
   const vestidos = itens.map(i => ({ type: i.type, system: i.system }));

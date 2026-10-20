@@ -173,8 +173,9 @@ export function calcularDano(system, arma, modo, { duasMaos = false, outraExtrem
 
   const partes = [];
   const valorAtributo = numero(system.atributos?.[atributo]?.total);
-  if (!semAtributo && REGRAS.danoSomaFOR[modo] && valorAtributo !== 0) partes.push({ rotulo: atributo, valor: valorAtributo });
-  if (numero(arma.bonusDano)) partes.push({ rotulo: "item", valor: numero(arma.bonusDano) });
+  if (!semAtributo && !arma.semAtributoNoDano && REGRAS.danoSomaFOR[modo] && valorAtributo !== 0) partes.push({ rotulo: atributo, valor: valorAtributo });
+  // Arma natural do animal do Vínculo: o bônus é a metade do nível do dono
+  if (numero(arma.bonusDano)) partes.push({ rotulo: arma.semAtributoNoDano ? "½ nível" : "item", valor: numero(arma.bonusDano) });
 
   const fixos = partes.map(p => `${p.valor < 0 ? "-" : "+"} ${Math.abs(p.valor)}`).join(" ");
   const textoFixos = partes.map(p => `${p.valor < 0 ? "−" : "+"} ${Math.abs(p.valor)} (${p.rotulo})`).join(" ");

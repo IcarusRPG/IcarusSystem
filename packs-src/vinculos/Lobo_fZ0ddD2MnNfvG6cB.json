@@ -2,7 +2,7 @@
   "_id": "fZ0ddD2MnNfvG6cB",
   "name": "Lobo",
   "type": "personagem",
-  "img": "icons/svg/pawprint.svg",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Vinculo%20Selvagem%20-%20Lobo.png",
   "folder": null,
   "sort": 100,
   "system": {
@@ -81,7 +81,7 @@
     "actorLink": true,
     "disposition": 1,
     "texture": {
-      "src": "icons/svg/pawprint.svg"
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Vinculo%20Selvagem%20-%20Lobo.png"
     }
   },
   "items": [
@@ -155,10 +155,14 @@
   "flags": {
     "icarus-rpg": {
       "id": "lobo",
+      "vinculoId": "lobo",
       "vinculo": {
         "animal": "lobo"
       },
       "provisorio": true
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
     }
   },
   "_key": "!actors!fZ0ddD2MnNfvG6cB"
