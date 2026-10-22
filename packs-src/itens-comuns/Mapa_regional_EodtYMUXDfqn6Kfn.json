@@ -1,0 +1,34 @@
+{
+  "_id": "EodtYMUXDfqn6Kfn",
+  "name": "Mapa regional",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Pergaminho com estradas, vilas, rios e marcos de uma região (escolhida pelo jogador, de onde ele cresceu ou viajou). <strong>Exploração:</strong> em caminhos mapeados da região, o Mestre não pede teste para se orientar. <strong>Roleplay:</strong> mostrá-lo a moradores ajuda a pedir direções e a descobrir pontos de interesse. Pode ser anotado com perigos e rotas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "mapa-regional",
+      "escolhaTexto": ""
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 100,
+  "_key": "!items!EodtYMUXDfqn6Kfn"
+}

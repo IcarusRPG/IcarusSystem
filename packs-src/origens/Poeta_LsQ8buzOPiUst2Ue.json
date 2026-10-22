@@ -1,0 +1,27 @@
+{
+  "_id": "LsQ8buzOPiUst2Ue",
+  "name": "Poeta",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1900,
+  "system": {
+    "origemId": "poeta",
+    "pericia": "historia",
+    "texto": "Versos, épicos, sátiras e cartas de amor por encomenda. Você coleciona histórias e sabe contar uma de modo que as pessoas se lembrem dela.",
+    "itens": {
+      "fixos": [
+        "estojo-de-escrita",
+        "livro-de-poemas"
+      ],
+      "escolhas": []
+    },
+    "poderId": "satira-cortante"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "poeta"
+    }
+  },
+  "_key": "!items!LsQ8buzOPiUst2Ue"
+}

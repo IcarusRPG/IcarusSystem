@@ -1,0 +1,33 @@
+{
+  "_id": "zwBW5hIJ1hruTf2X",
+  "name": "Balança de bolso",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 1000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Balança de latão com pesos aferidos. <strong>Utilidade:</strong> mede metais e especiarias e confere a pureza de moedas, descobrindo falsificações. <strong>Roleplay:</strong> mostra que o personagem sabe o valor das coisas e confia em números."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "balanca-de-bolso"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2500,
+  "_key": "!items!zwBW5hIJ1hruTf2X"
+}

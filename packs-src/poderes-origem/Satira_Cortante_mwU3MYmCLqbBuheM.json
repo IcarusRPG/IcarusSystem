@@ -1,0 +1,26 @@
+{
+  "_id": "mwU3MYmCLqbBuheM",
+  "name": "Sátira Cortante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": 1,
+    "acao": "padrao",
+    "descricao": "<p>Como ação padrão, você gasta 1 PM e recita versos ferinos contra uma criatura em alcance curto que entenda você. Ela faz um teste de Vontade (CD 10 + metade do seu nível + Carisma) ou fica Abalada até o fim do próximo turno dela.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__satira-cortante",
+      "auto": true,
+      "origemId": "poeta",
+      "poderId": "satira-cortante",
+      "usoLimitado": null,
+      "cdAtributo": "CAR"
+    }
+  },
+  "folder": null,
+  "sort": 1900,
+  "_key": "!items!mwU3MYmCLqbBuheM"
+}

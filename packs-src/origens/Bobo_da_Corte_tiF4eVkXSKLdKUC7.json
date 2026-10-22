@@ -1,0 +1,27 @@
+{
+  "_id": "tiF4eVkXSKLdKUC7",
+  "name": "Bobo da Corte",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 300,
+  "system": {
+    "origemId": "bobo-da-corte",
+    "pericia": "prestidigitacao",
+    "texto": "Você fazia o rei rir, e às vezes o fazia pensar. Quem diverte os poderosos aprende a dizer verdades disfarçadas de piada.",
+    "itens": {
+      "fixos": [
+        "traje-de-bobo-com-guizos",
+        "bolas-de-malabarismo"
+      ],
+      "escolhas": []
+    },
+    "poderId": "gracejo"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bobo-da-corte"
+    }
+  },
+  "_key": "!items!tiF4eVkXSKLdKUC7"
+}

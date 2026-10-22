@@ -1,0 +1,26 @@
+{
+  "_id": "IBVLniTkKDWwQbih",
+  "name": "Primeiros Socorros",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "movimento",
+    "descricao": "<p>Uma vez por cena, como ação de movimento, você toca um aliado que esteja em Teste de Morte (0 PV): ele é estabilizado automaticamente e recupera 1d6 PV + metade do seu nível.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__primeiros-socorros",
+      "auto": true,
+      "origemId": "curandeiro",
+      "poderId": "primeiros-socorros",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 600,
+  "_key": "!items!IBVLniTkKDWwQbih"
+}

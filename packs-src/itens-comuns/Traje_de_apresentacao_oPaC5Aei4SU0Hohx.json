@@ -1,0 +1,39 @@
+{
+  "_id": "oPaC5Aei4SU0Hohx",
+  "name": "Traje de apresentação",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 2000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "atuacao",
+        "valor": 2,
+        "condicao": "enquanto realiza uma apresentação"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Roupa de palco para atuar, tocar ou dançar, de tecidos que balançam e cabem em movimento. <strong>Bônus:</strong> +2 em Atuação enquanto o traje estiver vestido e o personagem estiver realizando uma apresentação, qualquer que seja. <strong>Roleplay:</strong> o público reconhece o personagem como artista."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-de-apresentacao"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1800,
+  "_key": "!items!oPaC5Aei4SU0Hohx"
+}

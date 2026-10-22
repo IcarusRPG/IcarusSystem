@@ -1,0 +1,27 @@
+{
+  "_id": "3DGhJ3hPa1ZeTjmZ",
+  "name": "Realeza",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 2000,
+  "system": {
+    "origemId": "realeza",
+    "pericia": "diplomacia",
+    "texto": "Você nasceu em uma casa governante: coroa, trono, súditos. Fugiu do palácio, foi exilado ou só está viajando incógnito, mas o sangue não mente.",
+    "itens": {
+      "fixos": [
+        "joia-de-familia",
+        "traje-real"
+      ],
+      "escolhas": []
+    },
+    "poderId": "voz-de-comando"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "realeza"
+    }
+  },
+  "_key": "!items!3DGhJ3hPa1ZeTjmZ"
+}

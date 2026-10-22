@@ -1,0 +1,39 @@
+{
+  "_id": "uiUaZn79GGp2zotZ",
+  "name": "Símbolo sagrado",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "religiao",
+        "valor": 1,
+        "condicao": null
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Pingente, amuleto ou estatueta com o símbolo da divindade do personagem. <strong>Bônus:</strong> +1 em Religião enquanto o símbolo estiver à mostra. <strong>Utilidade:</strong> foco para orações e rituais (e para o sistema de magias, quando exigir um foco divino). <strong>Roleplay:</strong> devotos o reconhecem; hostilidade de quem odeia a fé."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "simbolo-sagrado"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4400,
+  "_key": "!items!uiUaZn79GGp2zotZ"
+}

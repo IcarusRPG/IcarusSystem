@@ -1,0 +1,33 @@
+{
+  "_id": "RS7Hpt8EcXzHX7bc",
+  "name": "Bolas de malabarismo",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 200,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Três bolas de couro recheadas de areia. <strong>Utilidade:</strong> exibições e passatempo; distraem crianças e plateias. <strong>Combate:</strong> arremessar as bolas para chamar atenção é uma ação de movimento e distrai uma criatura que não esteja em combate (a critério do Mestre)."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bolas-de-malabarismo"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2800,
+  "_key": "!items!RS7Hpt8EcXzHX7bc"
+}

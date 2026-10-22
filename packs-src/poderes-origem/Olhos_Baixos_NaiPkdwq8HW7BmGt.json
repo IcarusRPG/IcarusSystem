@@ -1,0 +1,26 @@
+{
+  "_id": "NaiPkdwq8HW7BmGt",
+  "name": "Olhos Baixos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Quando você não age de modo claramente hostil, pessoas comuns (que não sejam guardas ou vigias treinados) não o consideram uma ameaça: você entra em residências, festas e locais de serviço sem ser questionado e escuta conversas sem que notem.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__olhos-baixos",
+      "auto": true,
+      "origemId": "servo",
+      "poderId": "olhos-baixos",
+      "usoLimitado": null,
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 2400,
+  "_key": "!items!NaiPkdwq8HW7BmGt"
+}

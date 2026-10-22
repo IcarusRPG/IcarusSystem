@@ -1,0 +1,33 @@
+{
+  "_id": "DhkE4HPt3MfTdXu7",
+  "name": "Manto de pele",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 600,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Pele curtida de animal usada como capa. <strong>Clima:</strong> protege de frio intenso. <strong>Roleplay:</strong> povos de fora das cidades reconhecem o estilo; moradores urbanos estranham."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "manto-de-pele"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 1000,
+  "_key": "!items!DhkE4HPt3MfTdXu7"
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "dpTX5s9K0l06DcTW",
+  "name": "Bússola",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 2500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "sobrevivencia",
+        "valor": 2,
+        "condicao": "ao se orientar em locais fechados (matas, cavernas, ruínas, labirintos)"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Agulha imantada em caixa de latão que sempre aponta o norte. <strong>Bônus:</strong> +2 em Sobrevivência ao se orientar em locais fechados (matas, cavernas, ruínas, labirintos). <strong>Exploração:</strong> impede de se perder em terra e mar aberto. Perde a função perto de magia forte e muito ferro (pista para o Mestre). <strong>Roleplay:</strong> navegadores e mercadores a respeitam."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bussola"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 800,
+  "_key": "!items!dpTX5s9K0l06DcTW"
+}

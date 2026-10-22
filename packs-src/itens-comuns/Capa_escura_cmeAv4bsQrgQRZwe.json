@@ -1,0 +1,39 @@
+{
+  "_id": "cmeAv4bsQrgQRZwe",
+  "name": "Capa escura",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "furtividade",
+        "valor": 1,
+        "condicao": "à noite"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Capa de tecido fosco, cor de carvão. <strong>Bônus:</strong> +1 em Furtividade à noite, enquanto a capa estiver vestida. <strong>Furtividade:</strong> à noite ou em penumbra, o Mestre também pode conceder camuflagem leve. <strong>Roleplay:</strong> esconde o brasão ou cor das roupas por baixo."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "capa-escura"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 2100,
+  "_key": "!items!cmeAv4bsQrgQRZwe"
+}

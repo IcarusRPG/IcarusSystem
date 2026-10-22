@@ -1,0 +1,26 @@
+{
+  "_id": "hUkAKvc9pWdNOhRp",
+  "name": "Disciplina de Quartel",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "reacao",
+    "descricao": "<p>Uma vez por cena, você pode gastar a sua reação para dar +2 de Defesa a um aliado adjacente contra um ataque.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__disciplina-de-quartel",
+      "auto": true,
+      "origemId": "soldado",
+      "poderId": "disciplina-de-quartel",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 2500,
+  "_key": "!items!hUkAKvc9pWdNOhRp"
+}

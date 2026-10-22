@@ -1,0 +1,26 @@
+{
+  "_id": "O35IL1BYi9IlMkbS",
+  "name": "Charme Fatal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": 2,
+    "acao": "padrao",
+    "descricao": "<p>Como ação padrão, você gasta 2 PM e lança um olhar sedutor a uma criatura em alcance curto que possa ser atraída por você. Ela faz um teste de Vontade (CD 10 + metade do seu nível + Carisma) ou fica Fascinada até o fim do seu próximo turno (a condição acaba se ela for ameaçada ou atacada). Além disso, uma vez por cidade, você consegue hospedagem gratuita com um \"amigo\".</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__charme-fatal",
+      "auto": true,
+      "origemId": "gigolo",
+      "poderId": "charme-fatal",
+      "usoLimitado": null,
+      "cdAtributo": "CAR"
+    }
+  },
+  "folder": null,
+  "sort": 1100,
+  "_key": "!items!O35IL1BYi9IlMkbS"
+}

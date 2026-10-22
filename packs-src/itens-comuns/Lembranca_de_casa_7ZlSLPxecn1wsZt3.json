@@ -1,0 +1,33 @@
+{
+  "_id": "7ZlSLPxecn1wsZt3",
+  "name": "Lembrança de casa",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Um pequeno objeto pessoal de um lar perdido (brinquedo, retrato, pedra, colar). <strong>Roleplay:</strong> liga o personagem ao seu passado e motiva suas escolhas. Sem valor de venda."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "lembranca-de-casa"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4800,
+  "_key": "!items!7ZlSLPxecn1wsZt3"
+}

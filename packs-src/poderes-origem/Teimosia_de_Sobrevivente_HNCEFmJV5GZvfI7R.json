@@ -1,0 +1,26 @@
+{
+  "_id": "HNCEFmJV5GZvfI7R",
+  "name": "Teimosia de Sobrevivente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Uma vez por cena, quando seus PV caem a menos da metade do máximo, você recebe PV temporários iguais ao seu nível.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__teimosia-de-sobrevivente",
+      "auto": true,
+      "origemId": "refugiado",
+      "poderId": "teimosia-de-sobrevivente",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 2100,
+  "_key": "!items!HNCEFmJV5GZvfI7R"
+}

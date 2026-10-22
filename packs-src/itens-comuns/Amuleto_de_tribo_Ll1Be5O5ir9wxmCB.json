@@ -1,0 +1,33 @@
+{
+  "_id": "Ll1Be5O5ir9wxmCB",
+  "name": "Amuleto de tribo",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Colar de ossos, penas ou pedras que identifica a tribo ou bando em que o personagem cresceu. <strong>Roleplay:</strong> é reconhecido por quem pertence ao mesmo povo (honra, hospitalidade, rivalidades)."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "amuleto-de-tribo"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4500,
+  "_key": "!items!Ll1Be5O5ir9wxmCB"
+}

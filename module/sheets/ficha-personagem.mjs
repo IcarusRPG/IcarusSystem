@@ -28,6 +28,9 @@ import { aplicarClasse, classeLivre, contadorDePoderes, MECANICAS_DE_CLASSE } fr
 import { acaoDaMecanica } from "../classes/comum.mjs";
 import { escolhaPendente, entradaDoItem, resolverEscolha } from "../escolhas.mjs";
 import { desfazerTrocaDeClasse } from "../assistente.mjs";
+import { trocarOrigem, reaplicarOrigem, desfazerTrocaDeOrigem, opcoesDeOrigem, escolhasDoItemComum, itemComumComEscolhas } from "../origens.mjs";
+import { origemPorId, itemComumPorId, ehVestimenta, estaVestido, textoDoBonus } from "../origens-dados.mjs";
+import { usarItemComum, temUsar, alternarVestido } from "../itens-comuns.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
@@ -140,7 +143,8 @@ export class FichaPersonagem extends ActorSheet {
       ...r, opcoes: RECARGAS.map(v => ({ valor: v, rotulo: loc(`ICARUS.Recursos.Recargas.${v}`), selecionado: v === r.recarga }))
     }));
 
-    ctx.identidade = ["origem", "profissao"].map(k => ({
+    ctx.origem = { ...opcoesDeOrigem(src.identidade.origem), desfazer: !!actor.getFlag(SISTEMA_ID, "snapshotTrocaOrigem") };
+    ctx.identidade = ["profissao"].map(k => ({
       chave: k,
       rotulo: loc(`ICARUS.Identidade.${k}`),
       valor: src.identidade[k],
@@ -201,7 +205,8 @@ export class FichaPersonagem extends ActorSheet {
         : "";
       const condicao = d.condicao ? `${comSinal(d.condicao)} ${d.origemCondicao}` : "";
       const falha = d.falhaAuto ? game.i18n.format("ICARUS.Condicoes.FalhaAuto", { condicao: d.falhaAuto }) : "";
-      const origem = [dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`), penalidade, condicao, falha].filter(Boolean).join("\n");
+      const deItens = (d.bonusItens ?? []).map(b => `${comSinal(b.valor)} ${b.origem}`).join("\n");
+      const origem = [dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`), deItens, penalidade, condicao, falha].filter(Boolean).join("\n");
       const rolar = game.i18n.format("ICARUS.Pericia.Rolar", { pericia: nome, total: comSinal(d.total) });
       return {
         chave: p.chave,
@@ -326,8 +331,19 @@ export class FichaPersonagem extends ActorSheet {
         categoria: i.system.categoria ? loc(`ICARUS.Armaduras.Categorias.${i.system.categoria}`) : "",
         penalidade: i.system.penalidade ? comSinal(-i.system.penalidade) : "",
         espacos: espacosDoItem(i),
-        preco: preco(i.system.preco)
+        preco: preco(i.system.preco),
+        // Itens comuns e vestimentas (Limite de 5): Vestir/Tirar, fora do limite, usos e bônus
+        itemComum: i.system.tipo === "item-comum",
+        vestimenta: ehVestimenta(i),
+        vestido: estaVestido(i),
+        foraDoLimite: (s.vestimentas?.fora ?? []).includes(i.id),
+        usar: temUsar(i),
+        usos: i.system.usos?.max > 0 ? `${i.system.usos.atual}/${i.system.usos.max}` : "",
+        semUsos: i.system.usos?.max > 0 && i.system.usos.atual <= 0,
+        bonusTexto: (i.system.bonus ?? []).map(b => textoDoBonus(b, i.flags?.[SISTEMA_ID]?.escolhaBonus)).join("; "),
+        precoVenda: i.system.precoVenda ? formatarPreco(i.system.precoVenda) : ""
       }));
+    ctx.vestimentas = s.vestimentas ? { ...s.vestimentas, texto: game.i18n.format("ICARUS.ItensComuns.Contador", { n: s.vestimentas.vestidas, limite: s.vestimentas.limite }) } : null;
 
     // Armas: bônus de ataque e dano calculados pelas regras de combate
     const itens = itensDoAtor(actor);
@@ -343,7 +359,8 @@ export class FichaPersonagem extends ActorSheet {
       preco: preco(i.system.precoPacote)
     }));
     ctx.moedas = { ...src.moedas, total: formatarPreco(s.moedas.total) === "—" ? "R$ 0" : formatarPreco(s.moedas.total), ouro: precoEmOuro(s.moedas.total) };
-    ctx.carga = s.carga;
+    // Carga: valor exato no cálculo; arredonda para cima só ao exibir (meio espaço ocupa 1)
+    ctx.carga = { ...s.carga, usado: Math.ceil(s.carga.usado) };
 
     // Bloco Ataques (aba Características): só as armas empunhadas
     ctx.ataques = ctx.armas.filter(a => a.empunhada);
@@ -352,7 +369,7 @@ export class FichaPersonagem extends ActorSheet {
 
     // Poderes agrupados por fonte (Raça primeiro, com o ícone da raça)
     const poderes = actor.items.filter(i => i.type === "poder").sort((a, b) => (a.sort || 0) - (b.sort || 0));
-    const subtitulo = { raca: ctx.raca.nome, classe: classe?.nome ?? src.identidade.classe, origem: src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
+    const subtitulo = { raca: ctx.raca.nome, classe: classe?.nome ?? src.identidade.classe, origem: origemPorId(src.identidade.origem)?.nome ?? src.identidade.origem, profissao: src.identidade.profissao, divindade: div?.nome ?? outra };
     ctx.gruposPoder = await Promise.all(FONTES_PODER.map(async fonte => {
       const lista = poderes.filter(p => p.system.fonte === fonte);
       const nomeFonte = loc(`ICARUS.Poderes.Fontes.${fonte}`);
@@ -563,6 +580,10 @@ export class FichaPersonagem extends ActorSheet {
       }
       if (!mudou) this.render(false);
     });
+    html.on("change", ".sel-origem", async ev => {
+      const mudou = await trocarOrigem(this.actor, ev.currentTarget.value);
+      if (!mudou) this.render(false);  // cancelou: volta a combobox para a origem atual
+    });
     html.on("change", ".sel-raca", async ev => {
       const mudou = await trocarRaca(this.actor, ev.currentTarget.value);
       if (!mudou) this.render(false);  // cancelou: volta a combobox para a raça atual
@@ -634,6 +655,15 @@ export class FichaPersonagem extends ActorSheet {
         return sugerirRecursos(actor);
       case "recurso-classe-descanso":
         return recarregarRecursos(actor, "descanso");
+      case "recurso-novo-dia":
+        return recarregarRecursos(actor, "dia");
+      case "recurso-nova-cidade":
+        return recarregarRecursos(actor, "cidade");
+      case "recurso-recarregar": {
+        const id = el.closest("[data-recurso-id]")?.dataset.recursoId;
+        const r = s.recursos.find(x => x.id === id);
+        return r ? alterarRecurso(actor, id, { valor: r.max }) : null;
+      }
       case "recurso-classe-excluir":
         return removerRecurso(actor, el.closest("[data-recurso-id]")?.dataset.recursoId);
       case "recurso-classe-delta": {
@@ -645,6 +675,10 @@ export class FichaPersonagem extends ActorSheet {
         const fn = acaoDaMecanica(el.dataset.mecanica);
         return fn ? fn(actor) : null;
       }
+      case "origem-reaplicar":
+        return reaplicarOrigem(actor);
+      case "origem-desfazer":
+        return desfazerTrocaDeOrigem(actor);
       case "classe-desfazer":
         return desfazerTrocaDeClasse(actor);
       case "classe-poder": {
@@ -692,8 +726,14 @@ export class FichaPersonagem extends ActorSheet {
         return this._confirmarExclusao(itemDe());
       case "item-equipar": {
         const item = itemDe();
+        // Armadura e túnica contam no Limite de Vestimentas (escudo não)
+        if (item && ehVestimenta(item)) return alternarVestido(actor, item);
         return item?.update({ "system.equipado": !item.system.equipado });
       }
+      case "item-vestir":
+        return alternarVestido(actor, itemDe());
+      case "item-usar":
+        return usarItemComum(actor, itemDe());
       case "efeito-criar": {
         const [efeito] = await actor.createEmbeddedDocuments("ActiveEffect", [{
           name: game.i18n.localize("ICARUS.Efeitos.Novo"),
@@ -750,8 +790,17 @@ export class FichaPersonagem extends ActorSheet {
     const item = await Item.implementation.fromDropData(data);
     if (!item) return false;
     if (item.parent?.uuid === this.actor.uuid) return super._onDropItem(event, data);
-    const dados = item.toObject();
+    let dados = item.toObject();
     delete dados._id;
+    // Item comum com escolha de bônus ou texto livre: pergunta antes de criar
+    const comum = dados.type === "equipamento" && dados.system?.tipo === "item-comum" ? itemComumPorId(dados.flags?.[SISTEMA_ID]?.id) : null;
+    if (comum) {
+      const escolhas = await escolhasDoItemComum(comum);
+      if (!escolhas) return false;
+      const base = itemComumComEscolhas(comum, escolhas, { img: dados.img });
+      dados = { ...dados, name: base.name, flags: foundry.utils.mergeObject(dados.flags ?? {}, base.flags), system: { ...dados.system, origemItem: false } };
+      delete dados.flags[SISTEMA_ID].assinatura;
+    }
     let comprar = false;
     if (item.pack && precoDoItem(dados) > 0) {
       const escolha = await perguntarCompra(this.actor, dados);

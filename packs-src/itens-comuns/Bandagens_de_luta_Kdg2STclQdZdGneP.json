@@ -1,0 +1,39 @@
+{
+  "_id": "Kdg2STclQdZdGneP",
+  "name": "Bandagens de luta",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 100,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "ataqueDesarmado",
+        "valor": 1,
+        "condicao": "em testes de ataque desarmado"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Faixas de linho para enrolar mãos e pulsos antes de lutar. <strong>Bônus:</strong> +1 em testes de ataque desarmado enquanto as bandagens estiverem enroladas. Também protegem os dedos em socos contra superfícies duras. <strong>Roleplay:</strong> lutadores e arruaceiros reconhecem quem as usa."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bandagens-de-luta"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 3000,
+  "_key": "!items!Kdg2STclQdZdGneP"
+}

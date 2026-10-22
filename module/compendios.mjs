@@ -19,6 +19,8 @@ import CLASSES from "./dados/classes.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
 import PROFICIENCIAS_CLASSES from "./dados/proficiencias-classes.mjs";
 import VINCULOS from "./dados/vinculos.mjs";
+import { documentosDeOrigens } from "./origens-dados.mjs";
+import { idEstavel } from "./dados-itens.mjs";
 
 /** Dados das armas (mantido por compatibilidade com a verificação de armas). */
 export async function carregarDadosDeArmas() {
@@ -34,7 +36,7 @@ export function todosOsDocumentos() {
     condicoes: CONDICOES, macros: MACROS, nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
   });
   const classes = documentosDeClasses({ classes: CLASSES, iconesClasses: ICONES_CLASSES, proficienciasClasses: PROFICIENCIAS_CLASSES });
-  return { armas: armas.armas, municoes: armas.municoes, ...novos, ...classes, vinculos: documentosDeVinculos(VINCULOS, PERICIAS) };
+  return { armas: armas.armas, municoes: armas.municoes, ...novos, ...classes, vinculos: documentosDeVinculos(VINCULOS, PERICIAS), ...documentosDeOrigens({}, idEstavel) };
 }
 
 export async function popularCompendios() {

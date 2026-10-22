@@ -1,0 +1,27 @@
+{
+  "_id": "frKmhrzlSTowx80W",
+  "name": "Estudioso",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 900,
+  "system": {
+    "origemId": "estudioso",
+    "pericia": "misticismo",
+    "texto": "Livros, bibliotecas e debates. Você sabe a data da batalha, o nome do rei e a diferença entre as duas versões da lenda.",
+    "itens": {
+      "fixos": [
+        "estojo-de-escrita-completo",
+        "livro-raro-de-estudo"
+      ],
+      "escolhas": []
+    },
+    "poderId": "conhecimento-util"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "estudioso"
+    }
+  },
+  "_key": "!items!frKmhrzlSTowx80W"
+}

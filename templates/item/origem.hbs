@@ -1,0 +1,13 @@
+<form class="{{cssClass}} ficha-icarus ficha-item" autocomplete="off">
+  <header class="item-cab">
+    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
+    <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+  </header>
+  <div class="painel item-desc">
+    <p>{{source.texto}}</p>
+    <p><span class="rot">{{localize "ICARUS.Origens.Pericia"}}</span> {{origem.pericia}}</p>
+    <p><span class="rot">{{localize "ICARUS.Origens.Poder"}}</span> <b>{{origem.poder.nome}}</b>: {{origem.poder.descricao}}</p>
+    <p><span class="rot">{{localize "ICARUS.Origens.Itens"}}</span> {{origem.itens}}</p>
+    <p class="dica">{{localize "ICARUS.Origens.DicaItem"}}</p>
+  </div>
+</form>

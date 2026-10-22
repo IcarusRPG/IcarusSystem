@@ -4,6 +4,7 @@ import {
 import { numero } from "../regras.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
 import { textoCritico, faixaCritico } from "../combate.mjs";
+import { opcoesDeBonus, textoDoBonus, origemPorId, itemComumPorId, ATAQUE_DESARMADO } from "../origens-dados.mjs";
 
 /**
  * Ficha dos itens (um template por tipo: poder, equipamento, arma, municao).
@@ -52,6 +53,25 @@ export class FichaItem extends ItemSheet {
     if (item.type === "equipamento") {
       ctx.opcoesCategoriaArmadura = { "": "ICARUS.Armaduras.SemCategoria", ...opcoes(CATEGORIAS_ARMADURA, "ICARUS.Armaduras.Categorias") };
       ctx.provisorio = (s.provisorio ?? []).map(c => loc(`ICARUS.Armaduras.Campos.${c}`)).join(", ");
+      if (src.tipo === "item-comum") {
+        const opcoes = opcoesDeBonus(src);
+        const escolhida = item.flags?.[SISTEMA_ID]?.escolhaBonus ?? null;
+        const nome = k => (k === ATAQUE_DESARMADO ? loc("ICARUS.ItensComuns.AtaqueDesarmado") : loc(`ICARUS.Pericias.${k}`));
+        ctx.itemComum = {
+          bonus: (src.bonus ?? []).map(b => textoDoBonus(b, escolhida)),
+          opcoesBonus: opcoes ? Object.fromEntries(opcoes.map(k => [k, nome(k)])) : null,
+          escolhaBonus: escolhida,
+          precoVendaReais: src.precoVenda === null || src.precoVenda === undefined ? "" : src.precoVenda / 100
+        };
+      }
+    }
+    if (item.type === "origem") {
+      const o = origemPorId(src.origemId);
+      ctx.origem = {
+        pericia: loc(`ICARUS.Pericias.${src.pericia}`),
+        poder: o?.poder ?? { nome: "", descricao: "" },
+        itens: [...src.itens.fixos.map(id => itemComumPorId(id)?.nome ?? id), ...src.itens.escolhas.map(g => g.map(id => itemComumPorId(id)?.nome ?? id).join(" ou "))].join(", ")
+      };
     }
     ctx.descricaoHTML = await TextEditor.enrichHTML(src.descricao, { async: true, secrets: item.isOwner, relativeTo: item });
 
@@ -112,6 +132,11 @@ export class FichaItem extends ItemSheet {
       const centavos = Math.max(0, Math.round(numero(formData.precoReais) * 100));
       formData[this.item.type === "municao" ? "system.precoPacote" : "system.preco"] = centavos;
       delete formData.precoReais;
+    }
+    if ("precoVendaReais" in formData) {
+      const v = String(formData.precoVendaReais ?? "").trim();
+      formData["system.precoVenda"] = v === "" ? null : Math.max(0, Math.round(numero(v) * 100));
+      delete formData.precoVendaReais;
     }
     if (this.item.type === "arma" && "system.carregados" in formData) {
       const cap = numero(formData["system.capacidadeDisparos"] ?? this.item.system.capacidadeDisparos);

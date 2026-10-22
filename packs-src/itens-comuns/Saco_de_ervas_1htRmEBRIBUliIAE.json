@@ -1,0 +1,33 @@
+{
+  "_id": "1htRmEBRIBUliIAE",
+  "name": "Saco de ervas",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "cura",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 2,
+      "atual": 2
+    },
+    "origemItem": false,
+    "descricao": "Ervas secas e raízes de uso medicinal e culinário (camomila, hortelã, alho-bravo, casca de salgueiro...). Tem 2 usos. <strong>Descanso:</strong> em 10 minutos, 1 uso prepara um chá que encerra uma destas condições em uma criatura: Envenenado, Enjoado, Abalado ou Fatigado. <strong>Utilidade:</strong> cataplasmas e temperos. <strong>Roleplay:</strong> remédios caseiros e trocas com herbalistas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "saco-de-ervas"
+    }
+  },
+  "folder": "GfWnAR5d1SN8UN3C",
+  "sort": 3500,
+  "_key": "!items!1htRmEBRIBUliIAE"
+}

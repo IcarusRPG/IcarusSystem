@@ -7,6 +7,8 @@
       <button type="button" class="btn peq tracejado" data-action="recurso-classe-novo">{{localize "ICARUS.Recursos.Adicionar"}}</button>
       <button type="button" class="btn peq" data-action="recurso-classe-sugerir" data-tooltip="{{localize "ICARUS.Recursos.SugerirDica"}}">{{localize "ICARUS.Recursos.Sugerir"}}</button>
       <button type="button" class="btn peq" data-action="recurso-classe-descanso">{{localize "ICARUS.Recursos.Descansar"}}</button>
+      <button type="button" class="btn peq" data-action="recurso-novo-dia" data-tooltip="{{localize "ICARUS.Recursos.NovoDiaDica"}}">{{localize "ICARUS.Recursos.NovoDia"}}</button>
+      <button type="button" class="btn peq" data-action="recurso-nova-cidade" data-tooltip="{{localize "ICARUS.Recursos.NovaCidadeDica"}}">{{localize "ICARUS.Recursos.NovaCidade"}}</button>
     </span>
     {{/if}}
   </div>
@@ -21,6 +23,7 @@
     <select class="campo" data-recurso-campo="recarga" aria-label="{{localize "ICARUS.Recursos.Recarga"}}"{{#unless @root.editable}} disabled{{/unless}}>
       {{#each opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
     </select>
+    {{#if @root.editable}}<button type="button" class="btn icone" data-action="recurso-recarregar" aria-label="{{localize "ICARUS.Recursos.Recarregar"}} {{nome}}" data-tooltip="{{localize "ICARUS.Recursos.Recarregar"}}"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i></button>{{/if}}
     {{#if @root.editable}}<button type="button" class="btn icone" data-action="recurso-classe-excluir" aria-label="{{localize "ICARUS.Acoes.Excluir"}} {{nome}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>{{/if}}
   </div>
   {{else}}

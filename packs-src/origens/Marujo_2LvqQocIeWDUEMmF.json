@@ -1,0 +1,27 @@
+{
+  "_id": "2LvqQocIeWDUEMmF",
+  "name": "Marujo",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1500,
+  "system": {
+    "origemId": "marujo",
+    "pericia": "navegacao",
+    "texto": "Convés, vela, tempestade, porto e briga em porto. Você conhece o mar e a linguagem de quem vive nele.",
+    "itens": {
+      "fixos": [
+        "corda-de-marinheiro-15-m",
+        "bussola"
+      ],
+      "escolhas": []
+    },
+    "poderId": "sorte-de-marujo"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "marujo"
+    }
+  },
+  "_key": "!items!2LvqQocIeWDUEMmF"
+}

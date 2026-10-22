@@ -1,0 +1,27 @@
+{
+  "_id": "M0zY3zskd2vjemn0",
+  "name": "Batedor",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 200,
+  "system": {
+    "origemId": "batedor",
+    "pericia": "audicao",
+    "texto": "Você ia na frente do bando, do exército ou da caravana, e voltava para contar o que viu: emboscada, ponte caída, fumaça no horizonte.",
+    "itens": {
+      "fixos": [
+        "luneta",
+        "capa-de-viagem"
+      ],
+      "escolhas": []
+    },
+    "poderId": "recuo-de-batedor"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "batedor"
+    }
+  },
+  "_key": "!items!M0zY3zskd2vjemn0"
+}

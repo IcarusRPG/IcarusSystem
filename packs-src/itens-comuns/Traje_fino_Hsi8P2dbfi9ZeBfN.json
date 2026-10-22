@@ -1,0 +1,33 @@
+{
+  "_id": "Hsi8P2dbfi9ZeBfN",
+  "name": "Traje fino",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 5000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Veludo, brocado e botões de prata: roupa de gente rica. <strong>Acesso:</strong> abre as portas de cortes e salões da nobreza. <strong>Roleplay:</strong> é lido como sinal de riqueza e linhagem, o que também atrai ladrões."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-fino"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1600,
+  "_key": "!items!Hsi8P2dbfi9ZeBfN"
+}

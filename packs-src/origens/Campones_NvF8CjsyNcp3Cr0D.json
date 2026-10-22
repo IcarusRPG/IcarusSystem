@@ -1,0 +1,27 @@
+{
+  "_id": "NvF8CjsyNcp3Cr0D",
+  "name": "Camponês",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 400,
+  "system": {
+    "origemId": "campones",
+    "pericia": "adestramento",
+    "texto": "Dias de sol a sol na terra, nas ceifas, no gado. Você conhece o preço do pão e o peso de uma enxada.",
+    "itens": {
+      "fixos": [
+        "enxada",
+        "sacola-de-graos-e-sementes"
+      ],
+      "escolhas": []
+    },
+    "poderId": "corpo-calejado"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "campones"
+    }
+  },
+  "_key": "!items!NvF8CjsyNcp3Cr0D"
+}

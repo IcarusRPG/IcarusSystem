@@ -10,6 +10,9 @@
     <span class="rolagem-total">{{total}}</span>
   </div>
   {{#if modoRotulo}}<div class="rolagem-modo">{{modoRotulo}}</div>{{/if}}
+  {{#each extras}}<div class="linha-extra">{{this}}</div>{{/each}}
+  {{#if quebraGazuas}}<div class="linha-aviso">{{localize "ICARUS.ItensComuns.GazuasQuebram"}}</div>
+  <button type="button" class="btn peq" data-action="quebrar-gazuas">{{localize "ICARUS.ItensComuns.QuebrarGazuas"}}</button>{{/if}}
   {{#if minimoAplicado}}<div class="linha-aviso">{{minimoAplicado}}</div>{{/if}}
   {{#if critico}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Critico"}}</div>{{/if}}
   {{#if falha}}<div class="rolagem-selo">{{localize "ICARUS.Rolagem.Falha"}}</div>{{/if}}

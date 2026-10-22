@@ -1,0 +1,33 @@
+{
+  "_id": "XqTHHFkuREROBrWf",
+  "name": "Traje elegante",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 3000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Camisa de seda, colete e casaco bem cortados, com perfume discreto. <strong>Acesso:</strong> permite entrar em tavernas finas, festas e salões menores sem ser barrado. <strong>Roleplay:</strong> causa boa primeira impressão em ambientes sofisticados."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-elegante"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1500,
+  "_key": "!items!XqTHHFkuREROBrWf"
+}

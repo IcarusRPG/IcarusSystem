@@ -1,0 +1,26 @@
+{
+  "_id": "27kAP9gq67PnHD0L",
+  "name": "Sangue da Arena",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Uma vez por cena, quando você reduz uma criatura a 0 PV com um ataque corpo a corpo, você recupera 1d6 PV + metade do seu nível.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__sangue-da-arena",
+      "auto": true,
+      "origemId": "gladiador",
+      "poderId": "sangue-da-arena",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1200,
+  "_key": "!items!27kAP9gq67PnHD0L"
+}

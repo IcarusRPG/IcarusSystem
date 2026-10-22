@@ -1,0 +1,33 @@
+{
+  "_id": "2ORwdfS858VOsl3F",
+  "name": "Bandeja de serviço",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 1000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Bandeja de prata com jarra e duas taças, própria de criados de casas nobres. <strong>Acesso:</strong> carregando a bandeja, o personagem circula em festas, salões e residências como criado, o que reforça o poder Olhos Baixos. <strong>Utilidade:</strong> permite servir bebida e comida a vários convidados; com a oportunidade certa, serve também para misturar uma poção, sonífero ou veneno na bebida de alguém sem chamar atenção (a critério do Mestre). <strong>Roleplay:</strong> ninguém repara em quem serve."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bandeja-de-servico"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 3300,
+  "_key": "!items!2ORwdfS858VOsl3F"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "I8L0eXtgJzR9J8XB",
+  "name": "Soldado",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 2500,
+  "system": {
+    "origemId": "soldado",
+    "pericia": "luta",
+    "texto": "Quartel, marcha e fileira: você serviu a um exército, a um senhor ou a uma companhia mercenária.",
+    "itens": {
+      "fixos": [
+        "insignia-da-unidade",
+        "racao-de-campanha-7-dias"
+      ],
+      "escolhas": []
+    },
+    "poderId": "disciplina-de-quartel"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "soldado"
+    }
+  },
+  "_key": "!items!I8L0eXtgJzR9J8XB"
+}

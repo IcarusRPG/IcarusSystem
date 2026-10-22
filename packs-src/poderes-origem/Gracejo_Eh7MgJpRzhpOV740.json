@@ -1,0 +1,26 @@
+{
+  "_id": "Eh7MgJpRzhpOV740",
+  "name": "Gracejo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": 1,
+    "acao": "movimento",
+    "descricao": "<p>Como ação de movimento, você gasta 1 PM e faz uma piada ou careta para uma criatura em alcance curto que entenda você. Ela faz um teste de Vontade (CD 10 + metade do seu nível + Carisma) ou fica Desprevenida até o início do seu próximo turno.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__gracejo",
+      "auto": true,
+      "origemId": "bobo-da-corte",
+      "poderId": "gracejo",
+      "usoLimitado": null,
+      "cdAtributo": "CAR"
+    }
+  },
+  "folder": null,
+  "sort": 300,
+  "_key": "!items!Eh7MgJpRzhpOV740"
+}

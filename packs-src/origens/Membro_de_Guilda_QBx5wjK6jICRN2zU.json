@@ -1,0 +1,31 @@
+{
+  "_id": "QBx5wjK6jICRN2zU",
+  "name": "Membro de Guilda",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1700,
+  "system": {
+    "origemId": "membro-de-guilda",
+    "pericia": "barganha",
+    "texto": "Mercadores, artesãos, ladrões ou aventureiros: toda guilda tem regras, mensalidade e proteção. Você tinha um lugar à mesa.",
+    "itens": {
+      "fixos": [
+        "insignia-da-guilda"
+      ],
+      "escolhas": [
+        [
+          "balanca-de-bolso",
+          "ferramentas-leves-de-oficio"
+        ]
+      ]
+    },
+    "poderId": "rede-de-contatos"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "membro-de-guilda"
+    }
+  },
+  "_key": "!items!QBx5wjK6jICRN2zU"
+}

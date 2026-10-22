@@ -1,0 +1,33 @@
+{
+  "_id": "02MZaeLpqPRO5Thj",
+  "name": "Maleta de curandeiro",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "cura",
+    "quantidade": 1,
+    "preco": 3000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 10,
+      "atual": 10
+    },
+    "origemItem": false,
+    "descricao": "Estojo com ataduras, agulha, linha, bisturi e pinças. Tem 10 usos. <strong>Combate:</strong> como ação completa, gasta 1 uso para encerrar a condição Sangrando em uma criatura adjacente. <strong>Utilidade:</strong> necessária para tratar ferimentos de forma adequada (além de um curativo improvisado). <strong>Roleplay:</strong> transforma o personagem no médico do grupo."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "maleta-de-curandeiro"
+    }
+  },
+  "folder": "GfWnAR5d1SN8UN3C",
+  "sort": 3400,
+  "_key": "!items!02MZaeLpqPRO5Thj"
+}

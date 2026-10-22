@@ -7,8 +7,9 @@
  */
 import { INICIO_DO_TURNO } from "./acoes.mjs";
 import { FIM_DA_CENA } from "./condicoes-foundry.mjs";
+import { RECARGAS } from "./config.mjs";
 
-export const RECARGAS = ["cena", "rodada", "descanso"];
+export { RECARGAS };
 
 /** Frequência citada no texto ("uma vez por cena" → "cena"), ou null. */
 export function frequenciaDoTexto(html) {

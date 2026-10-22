@@ -1,0 +1,33 @@
+{
+  "_id": "ivZg9oTwzQm2DvLT",
+  "name": "Uniforme da casa",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Roupa padronizada de criados de uma casa nobre, com o brasão da família. <strong>Acesso:</strong> permite circular em residências e festas como criado, sem ser questionado (trabalha junto com o poder Olhos Baixos). <strong>Roleplay:</strong> identifica a casa a que serviu."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "uniforme-da-casa"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 2000,
+  "_key": "!items!ivZg9oTwzQm2DvLT"
+}

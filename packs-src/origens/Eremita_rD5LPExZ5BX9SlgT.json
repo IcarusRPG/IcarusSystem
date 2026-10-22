@@ -1,0 +1,27 @@
+{
+  "_id": "rD5LPExZ5BX9SlgT",
+  "name": "Eremita",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 700,
+  "system": {
+    "origemId": "eremita",
+    "pericia": "concentracao",
+    "texto": "Anos de silêncio e solidão numa montanha, numa gruta ou num templo esquecido. Você voltou ao mundo com uma mente quieta.",
+    "itens": {
+      "fixos": [
+        "barraca-pequena",
+        "saco-de-ervas"
+      ],
+      "escolhas": []
+    },
+    "poderId": "mente-quieta"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "eremita"
+    }
+  },
+  "_key": "!items!rD5LPExZ5BX9SlgT"
+}

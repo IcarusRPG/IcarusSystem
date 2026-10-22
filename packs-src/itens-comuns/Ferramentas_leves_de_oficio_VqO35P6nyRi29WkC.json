@@ -1,0 +1,34 @@
+{
+  "_id": "VqO35P6nyRi29WkC",
+  "name": "Ferramentas leves de ofício",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 1500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Pequeno conjunto de ferramentas de um ofício (martelo e pregos, agulhas e linhas, formões, cinzéis...), à escolha do jogador. <strong>Utilidade:</strong> pequenos reparos em itens, equipamento e fabricação de objetos simples. <strong>Roleplay:</strong> liga o personagem ao seu ofício e à guilda."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "ferramentas-leves-de-oficio",
+      "escolhaTexto": ""
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2600,
+  "_key": "!items!VqO35P6nyRi29WkC"
+}

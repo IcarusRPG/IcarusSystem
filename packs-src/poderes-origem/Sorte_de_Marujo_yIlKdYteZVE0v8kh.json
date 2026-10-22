@@ -1,0 +1,26 @@
+{
+  "_id": "yIlKdYteZVE0v8kh",
+  "name": "Sorte de Marujo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": 2,
+    "acao": "livre",
+    "descricao": "<p>Uma vez por dia, quando você rolar um 1 natural em um teste, pode gastar 2 PM (como ação livre) para rolar o dado novamente e ficar com o novo resultado.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__sorte-de-marujo",
+      "auto": true,
+      "origemId": "marujo",
+      "poderId": "sorte-de-marujo",
+      "usoLimitado": "dia",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1500,
+  "_key": "!items!yIlKdYteZVE0v8kh"
+}

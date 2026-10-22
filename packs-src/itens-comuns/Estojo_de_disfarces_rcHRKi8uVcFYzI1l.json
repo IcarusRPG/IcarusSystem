@@ -1,0 +1,39 @@
+{
+  "_id": "rcHRKi8uVcFYzI1l",
+  "name": "Estojo de disfarces",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 2000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "enganacao",
+        "valor": 3,
+        "condicao": "para se passar pela identidade disfarçada"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 10,
+      "atual": 10
+    },
+    "origemItem": false,
+    "descricao": "Maquiagem, cola, barbas falsas, perucas e pinturas em um estojo de couro. Tem 10 usos. <strong>Uso:</strong> aplicar um disfarce leva 1 hora e gasta 1 uso. <strong>Bônus:</strong> +3 em Enganação para se passar pela identidade disfarçada. O disfarce dura até ser lavado ou tirado. <strong>Roleplay:</strong> permite assumir identidades falsas ao longo da aventura."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "estojo-de-disfarces"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2300,
+  "_key": "!items!rcHRKi8uVcFYzI1l"
+}

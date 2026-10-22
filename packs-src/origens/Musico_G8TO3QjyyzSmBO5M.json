@@ -1,0 +1,27 @@
+{
+  "_id": "G8TO3QjyyzSmBO5M",
+  "name": "Músico",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1800,
+  "system": {
+    "origemId": "musico",
+    "pericia": "atuacao",
+    "texto": "Sua vida foi o som: tavernas, casamentos, procissões, cortes. Uma canção certa muda o humor de uma sala.",
+    "itens": {
+      "fixos": [
+        "instrumento-musical",
+        "traje-de-apresentacao"
+      ],
+      "escolhas": []
+    },
+    "poderId": "cancao-de-marcha"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "musico"
+    }
+  },
+  "_key": "!items!G8TO3QjyyzSmBO5M"
+}

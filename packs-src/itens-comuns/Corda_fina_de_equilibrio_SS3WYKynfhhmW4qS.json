@@ -1,0 +1,33 @@
+{
+  "_id": "SS3WYKynfhhmW4qS",
+  "name": "Corda fina de equilíbrio",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Corda estreita de 6 m, própria de acrobatas. <strong>Exploração:</strong> esticada entre dois pontos fixos, serve de ponte para atravessar vãos de até 6 m (o personagem precisa se equilibrar). <strong>Roleplay:</strong> treino e apresentações acrobáticas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "corda-fina-de-equilibrio"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2900,
+  "_key": "!items!SS3WYKynfhhmW4qS"
+}

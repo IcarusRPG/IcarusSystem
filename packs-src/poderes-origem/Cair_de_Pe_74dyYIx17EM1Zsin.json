@@ -1,0 +1,26 @@
+{
+  "_id": "74dyYIx17EM1Zsin",
+  "name": "Cair de Pé",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "reacao",
+    "descricao": "<p>Uma vez por cena, quando você ficaria Caído, pode gastar a sua reação para evitar a condição e se mover até 1,5 m. Você também se equilibra em superfícies estreitas sem a penalidade de deslocamento.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__cair-de-pe",
+      "auto": true,
+      "origemId": "circense",
+      "poderId": "cair-de-pe",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 500,
+  "_key": "!items!74dyYIx17EM1Zsin"
+}

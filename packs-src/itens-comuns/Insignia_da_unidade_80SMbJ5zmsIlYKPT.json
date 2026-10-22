@@ -1,0 +1,43 @@
+{
+  "_id": "80SMbJ5zmsIlYKPT",
+  "name": "Insígnia da unidade",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": null,
+        "valor": 1,
+        "condicao": null,
+        "escolha": [
+          "intimidacao",
+          "diplomacia"
+        ]
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Broche ou faixa com o emblema do exército, companhia ou tropa em que o personagem serviu. <strong>Bônus:</strong> +1 em Intimidação ou em Diplomacia (o jogador escolhe ao pegar o item), enquanto a insígnia estiver à mostra. <strong>Acesso:</strong> ex-camaradas e postos militares amistosos reconhecem o portador e tratam-no com cordialidade. <strong>Roleplay:</strong> pode render ou atrair inimigos de guerra."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "insignia-da-unidade"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4300,
+  "_key": "!items!80SMbJ5zmsIlYKPT"
+}

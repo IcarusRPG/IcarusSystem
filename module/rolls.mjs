@@ -2,6 +2,7 @@ import { SISTEMA_ID } from "./config.mjs";
 import { numero, comSinal } from "./regras.mjs";
 import { rolarD20, vantagemDasFlags, minimoDasFlags } from "./combate.mjs";
 import { minimoD20DeHabilidades } from "./classes-dados.mjs";
+import { condicionaisDaPericia, temGazuas, resultadoDaFechadura, vestimentasAtivas } from "./origens-dados.mjs";
 
 const TEMPLATE_CARTAO = `systems/${SISTEMA_ID}/templates/chat/rolagem.hbs`;
 
@@ -41,11 +42,13 @@ export function dadosDoCard(r) {
  * @param {string[]} [opcoes.escopos]   Escopos das flags de vantagem/desvantagem e de mínimo do d20
  * @param {boolean} [opcoes.vantagem] / [opcoes.desvantagem]  pedidos no clique
  */
-export async function rolarTeste(actor, { rotulo, modificador, tipo, chave, escopos = [], vantagem = false, desvantagem = false }) {
-  const mod = numero(modificador);
+export async function rolarTeste(actor, { rotulo, modificador, tipo, chave, escopos = [], vantagem = false, desvantagem = false, extras = [], fechadura = null }) {
+  // Bônus de itens marcados na rolagem e a penalidade sem gazuas entram no modificador
+  const mod = numero(modificador) + extras.reduce((soma, e) => soma + numero(e.valor), 0);
   const v = vantagemDaRolagem(actor, escopos, { vantagem, desvantagem });
   const minimo = Math.max(minimoDasFlags(actor?.flags?.[SISTEMA_ID], escopos) ?? 0, minimoD20DeHabilidades(actor?.items ?? [], chave) ?? 0) || null;
   const r = await rolarD20({ ...v, bonus: mod, minimo });
+  const quebra = fechadura ? resultadoDaFechadura({ ...fechadura, natural: r.natural }).quebra : false;
 
   const content = await renderTemplate(TEMPLATE_CARTAO, {
     rotulo,
@@ -54,7 +57,9 @@ export async function rolarTeste(actor, { rotulo, modificador, tipo, chave, esco
     formula: `d20 ${comSinal(mod)}`,
     total: r.total,
     critico: r.natural === 20,
-    falha: r.natural === 1
+    falha: r.natural === 1,
+    extras: extras.map(e => `${comSinal(e.valor)} ${e.rotulo}`),
+    quebraGazuas: quebra
   });
 
   const dados = {
@@ -66,6 +71,39 @@ export async function rolarTeste(actor, { rotulo, modificador, tipo, chave, esco
   };
   ChatMessage.applyRollMode(dados, game.settings.get("core", "rollMode"));
   return ChatMessage.create(dados);
+}
+
+/**
+ * Bônus de itens na rolagem (itens comuns): caixas para os bônus condicionais aplicáveis (todas
+ * desmarcadas) e, em Prestidigitação, "Abrir fechadura/tranca" (−5 sem gazuas). Sem nada a
+ * perguntar, devolve {} e rola direto. @returns {Promise<{extras, fechadura}|null>} null = cancelou
+ */
+export async function perguntarBonusDeItens(actor, chave) {
+  const itens = [...(actor.items ?? [])];
+  const condicionais = condicionaisDaPericia(itens, chave, vestimentasAtivas(itens).ativas);
+  const fechadura = chave === "prestidigitacao";
+  if (!condicionais.length && !fechadura) return {};
+  const esc = t => Handlebars.escapeExpression(String(t ?? ""));
+  const gazuas = temGazuas(itens);
+  const caixas = condicionais.map(c => `<label class="chk"><input type="checkbox" name="bonus" value="${esc(c.id)}"> ${comSinal(c.valor)} ${esc(c.condicao)} <small>(${esc(c.origem)})</small></label>`);
+  if (fechadura) caixas.push(`<label class="chk"><input type="checkbox" name="fechadura"> ${esc(game.i18n.localize("ICARUS.ItensComuns.AbrirFechadura"))} <small>(${esc(game.i18n.localize(gazuas ? "ICARUS.ItensComuns.ComGazuas" : "ICARUS.ItensComuns.SemGazuasPenalidade"))})</small></label>`);
+  const r = await foundry.applications.api.DialogV2.wait({
+    window: { title: game.i18n.format("ICARUS.ItensComuns.RolarTitulo", { pericia: game.i18n.localize(`ICARUS.Pericias.${chave}`) }) },
+    content: `<div class="icarus-uso"><fieldset><legend>${esc(game.i18n.localize("ICARUS.ItensComuns.BonusDeItens"))}</legend>${caixas.join("")}</fieldset></div>`,
+    buttons: [
+      { action: "rolar", label: game.i18n.localize("ICARUS.ItensComuns.Rolar"), icon: "fa-solid fa-dice-d20", default: true, callback: (ev, b) => {
+        const marcados = new Set([...b.form.querySelectorAll("input[name=bonus]:checked")].map(i => i.value));
+        const abrir = !!b.form.querySelector("input[name=fechadura]:checked");
+        const extras = condicionais.filter(c => marcados.has(c.id)).map(c => ({ valor: c.valor, rotulo: c.origem }));
+        const pen = resultadoDaFechadura({ abrir, gazuas, natural: 0 }).modificador;
+        if (pen) extras.push({ valor: pen, rotulo: game.i18n.localize("ICARUS.ItensComuns.SemGazuasRotulo") });
+        return { extras, fechadura: abrir ? { abrir, gazuas } : null };
+      } },
+      { action: "cancelar", label: game.i18n.localize("ICARUS.Testes.Cancelar") }
+    ],
+    rejectClose: false
+  });
+  return r && typeof r === "object" ? r : null;
 }
 
 /** Rola uma perícia do personagem (inclui as Resistências). opcoes = { vantagem, desvantagem }. */
@@ -82,7 +120,10 @@ export async function rolarPericia(actor, chave, opcoes = {}) {
     return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content });
   }
   const resistencia = ["fortitude", "reflexos", "vontade"].includes(chave);
+  const deItens = opcoes.semItens ? {} : await perguntarBonusDeItens(actor, chave);
+  if (!deItens) return null;
   return rolarTeste(actor, {
+    ...deItens,
     rotulo: game.i18n.localize(`ICARUS.Pericias.${chave}`),
     modificador: pericia.total,
     tipo: resistencia ? "resistencia" : "pericia",

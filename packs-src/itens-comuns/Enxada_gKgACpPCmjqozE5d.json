@@ -1,0 +1,33 @@
+{
+  "_id": "gKgACpPCmjqozE5d",
+  "name": "Enxada",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 300,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 2,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Ferramenta agrícola de lâmina larga e cabo de madeira. *Não é arma.* <strong>Utilidade:</strong> cava um buraco de 1 m³ em 10 minutos. <strong>Combate:</strong> se usada como arma, conta como arma improvisada (ver Regras de combate com armas). <strong>Roleplay:</strong> denuncia um passado de trabalho no campo."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "enxada"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 1100,
+  "_key": "!items!gKgACpPCmjqozE5d"
+}

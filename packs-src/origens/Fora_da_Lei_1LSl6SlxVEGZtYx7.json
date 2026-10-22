@@ -1,0 +1,27 @@
+{
+  "_id": "1LSl6SlxVEGZtYx7",
+  "name": "Fora da Lei",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1000,
+  "system": {
+    "origemId": "fora-da-lei",
+    "pericia": "furtividade",
+    "texto": "Furtos, contrabando, golpes pequenos e grandes, ou uma vida fugindo da guarda. Você conhece os becos, os atalhos e quem aceita suborno.",
+    "itens": {
+      "fixos": [
+        "gazuas",
+        "capa-escura"
+      ],
+      "escolhas": []
+    },
+    "poderId": "contatos-do-submundo"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "fora-da-lei"
+    }
+  },
+  "_key": "!items!1LSl6SlxVEGZtYx7"
+}

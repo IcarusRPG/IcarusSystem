@@ -1,0 +1,40 @@
+{
+  "_id": "y1P7u5MZnb2ydWxO",
+  "name": "Gazuas",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 2500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "prestidigitacao",
+        "valor": -5,
+        "condicao": "ao abrir portas, fechaduras ou trancas SEM gazuas (penalidade por não ter o item)",
+        "penalidadeSemItem": true
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Conjunto de ganchos, tensores e limas finas. <strong>Penalidade sem elas:</strong> qualquer teste de Prestidigitação para abrir portas, fechaduras, trancas e similares sofre –5 sem as gazuas. <strong>Quebra:</strong> ao usar as gazuas e tirar 1 natural no teste, elas quebram. <strong>Roleplay:</strong> denunciam a vida do personagem à margem da lei."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "gazuas"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2400,
+  "_key": "!items!y1P7u5MZnb2ydWxO"
+}

@@ -1,0 +1,26 @@
+{
+  "_id": "xERuIrSEGwhkCCji",
+  "name": "Voz de Comando",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "padrao",
+    "descricao": "<p>Uma vez por cena, como ação padrão, você dá uma ordem a um aliado em alcance curto que o ouça: ele faz imediatamente um ataque ou se move até metade do seu deslocamento, como ação livre. Além disso, uma vez por cidade, você consegue audiência com a autoridade local.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "origem__voz-de-comando",
+      "auto": true,
+      "origemId": "realeza",
+      "poderId": "voz-de-comando",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 2000,
+  "_key": "!items!xERuIrSEGwhkCCji"
+}

@@ -8,7 +8,8 @@
       "equipamento": "Equipamento",
       "arma": "Arma",
       "municao": "Munição",
-      "classe": "Classe"
+      "classe": "Classe",
+      "origem": "Origem"
     }
   },
   "ICARUS": {
@@ -219,6 +220,7 @@
         "escudo": "Escudo",
         "consumivel": "Consumível",
         "profissao": "Item de profissão",
+        "item-comum": "Item comum",
         "outro": "Outro"
       }
     },
@@ -1169,14 +1171,21 @@
       "Recargas": {
         "cena": "por cena",
         "rodada": "por rodada",
-        "descanso": "por descanso"
+        "descanso": "por descanso",
+        "dia": "por dia",
+        "cidade": "por cidade"
       },
       "Sugerir": "Sugerir pelos textos",
       "SugerirDica": "Cria um recurso para cada habilidade ou poder da ficha que diz \"uma vez por cena/rodada/turno/dia\".",
       "Descansar": "Descanso: recarregar",
       "Vazio": "Nenhum recurso. Use + Recurso ou Sugerir pelos textos.",
       "NadaSugerido": "Nenhuma habilidade ou poder novo com uso limitado no texto.",
-      "Sugeridos": "Recursos criados: {lista}"
+      "Sugeridos": "Recursos criados: {lista}",
+      "NovoDia": "Novo dia",
+      "NovaCidade": "Nova cidade",
+      "NovoDiaDica": "Recarrega os recursos \"por dia\".",
+      "NovaCidadeDica": "Recarrega os recursos \"por cidade\".",
+      "Recarregar": "Recarregar"
     },
     "Escolhas": {
       "Permanente": "Escolha permanente: só muda pelo reset de classe ou pelo Mestre.",
@@ -1264,6 +1273,75 @@
         "escavacao": "Escavação",
         "natacao": "Natação"
       }
+    },
+    "Origens": {
+      "Pericia": "Perícia treinada:",
+      "Poder": "Poder de Origem:",
+      "Itens": "Itens comuns:",
+      "DicaItem": "Escolha a origem no cabeçalho da ficha do personagem: a perícia, o poder e os itens entram sozinhos.",
+      "Titulo": "Origem — {nome}",
+      "Nenhuma": "— Nenhuma —",
+      "Livre": "Origem livre (sem automação)",
+      "Treinada": "Treinada, +2",
+      "JaTreinado": "Você já é treinado em {pericia}: escolha outra perícia (a origem nunca deixa especialista).",
+      "OutraPericia": "Outra perícia",
+      "UmDosDois": "Escolha um",
+      "ItensGratis": "Os itens entram no inventário sem custo (não contam na riqueza inicial).",
+      "Confirmar": "Confirmar",
+      "TrocarTitulo": "Trocar de origem",
+      "TrocarTexto": "Trocar para {nova}? Saem o Poder de Origem, os itens de origem que você não editou e o treino dado pela origem:",
+      "RemoverTexto": "Remover a origem? Saem o Poder de Origem, os itens de origem que você não editou e o treino dado pela origem:",
+      "TrocarDica": "Itens que você comprou, editou ou multiplicou ficam. Dá para desfazer.",
+      "Reaplicar": "Reaplicar origem",
+      "Reaplicada": "Origem {origem} reaplicada.",
+      "SemOrigem": "Este personagem não tem uma origem do sistema.",
+      "Desfazer": "Desfazer troca de origem",
+      "Desfeita": "Troca de origem desfeita.",
+      "SemUso": "{poder} já foi usado (recarga: {recarga}).",
+      "CD": "CD {cd} (10 + metade do nível + {atributo})",
+      "CondicaoSugerida": "O alvo faz um teste de Vontade. Em falha, aplique a condição do texto pelo painel de condições.",
+      "AbrirResistencia": "Teste de Resistência: Vontade, CD {cd}",
+      "SoMestreAbre": "O Mestre abre o Teste de Resistência."
+    },
+    "ItensComuns": {
+      "Vestimenta": "Vestimenta (conta no limite de 5)",
+      "Vestido": "Vestido",
+      "ValeEnquantoPossui": "Bônus vale enquanto possuir",
+      "SemVenda": "Item pessoal (sem venda)",
+      "PrecoVenda": "Venda por até (R$)",
+      "UsosAtual": "Usos restantes",
+      "UsosMax": "Usos máximos",
+      "EscolhaBonus": "Bônus em",
+      "AtaqueDesarmado": "Ataque desarmado",
+      "QualTexto": "Qual {texto}?",
+      "Usar": "Usar",
+      "Usos": "usos",
+      "UsoGasto": "Usou 1 (restam {atual}/{max})",
+      "Usou": "Usou o item",
+      "SemUsos": "{item} não tem usos restantes.",
+      "Vestir": "Vestir",
+      "Tirar": "Tirar",
+      "Vestimentas": "Vestimentas",
+      "Contador": "Vestimentas: {n}/{limite}",
+      "LimiteDica": "Roupas, armaduras, túnicas, capas e adornos (escudo não conta).",
+      "Excedido": "Acima do limite (ficha antiga): as últimas vestidas não valem. Tire uma.",
+      "Limite": "Limite de {n} vestimentas: tire uma antes.",
+      "ForaDoLimite": "Fora do limite: não vale",
+      "VendePor": "vende por até",
+      "SemGazuas": "Não há gazuas no inventário.",
+      "QuebrarGazuas": "Quebrar gazuas",
+      "QuebrarConfirmar": "Tirou 1 natural com as gazuas: elas quebram. Remover as gazuas de {nome}?",
+      "Quebrou": "As gazuas de {nome} quebraram.",
+      "SoDono": "Só o dono do personagem pode fazer isso.",
+      "AbrirFechadura": "Abrir fechadura/tranca",
+      "ComGazuas": "com gazuas",
+      "SemGazuasPenalidade": "sem gazuas: −5",
+      "SemGazuasRotulo": "sem gazuas",
+      "RolarTitulo": "Rolar {pericia}",
+      "BonusDeItens": "Bônus de itens",
+      "Rolar": "Rolar",
+      "GazuasQuebram": "1 natural: as gazuas quebram.",
+      "EntrouTirado": "{item} entrou no inventário sem estar vestido: o limite de {n} vestimentas está cheio."
     }
   }
 }
