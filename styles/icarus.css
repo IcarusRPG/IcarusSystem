@@ -1024,3 +1024,9 @@ body.game {
 .dialogo-origem fieldset { border: 1px solid var(--ic-borda); border-radius: 4px; padding: 4px 8px; }
 .dialogo-origem .aviso { color: var(--ic-ouro-claro); }
 .ficha-item .bonus-lista { margin: 4px 12px; padding-left: 16px; }
+.ficha-icarus .item.esmaecida { opacity: 0.55; }
+.ficha-icarus .item.fora-limite { outline: 1px dashed var(--ic-ouro-escuro); }
+.ficha-icarus .item-nome .item-bonus { color: var(--ic-ciano-titulo); }
+.ficha-icarus .item-nome .aviso-limite { color: var(--ic-ouro-claro); }
+.ficha-icarus .caixa-vestimentas { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.ficha-icarus .caixa-vestimentas.excedida .grande { color: var(--ic-ouro-claro); }

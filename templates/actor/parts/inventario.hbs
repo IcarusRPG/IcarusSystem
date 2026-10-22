@@ -70,11 +70,17 @@
     <section class="painel lista">
       <div class="lista-cab"><h3 class="titulo-painel">{{localize "ICARUS.Inventario.Equipamento"}}</h3></div>
       {{#each equipamentos}}
-      <div class="item" data-item-id="{{id}}">
+      <div class="item{{#if semUsos}} esmaecida{{/if}}{{#if foraDoLimite}} fora-limite{{/if}}" data-item-id="{{id}}">
         <img class="item-img" src="{{img}}" alt="" width="32" height="32">
-        <div class="item-nome"><b>{{name}}</b><small>{{#if categoria}}{{categoria}}{{else}}{{tipo}}{{/if}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}}{{#if penalidade}} · {{localize "ICARUS.Armaduras.Penalidade"}} {{penalidade}}{{/if}} · {{espacos}} {{localize "ICARUS.Inventario.EspacosCurto"}} · <span title="{{preco.ouro}}">{{preco.texto}}</span></small></div>
+        <div class="item-nome"><b>{{name}}</b>{{#if bonusTexto}}<small class="item-bonus">{{bonusTexto}}</small>{{/if}}{{#if foraDoLimite}}<small class="aviso-limite">{{localize "ICARUS.ItensComuns.ForaDoLimite"}}</small>{{/if}}<small>{{#if categoria}}{{categoria}}{{else}}{{tipo}}{{/if}}{{#if equipavel}} · {{bonus}} {{localize "ICARUS.Defesa.Rotulo"}}{{/if}}{{#if penalidade}} · {{localize "ICARUS.Armaduras.Penalidade"}} {{penalidade}}{{/if}} · {{espacos}} {{localize "ICARUS.Inventario.EspacosCurto"}} · <span title="{{preco.ouro}}">{{preco.texto}}</span>{{#if precoVenda}} · {{localize "ICARUS.ItensComuns.VendePor"}} {{precoVenda}}{{/if}}{{#if usos}} · {{localize "ICARUS.ItensComuns.Usos"}} {{usos}}{{/if}}</small></div>
         <div class="item-qtd">×{{quantidade}}</div>
-        {{#if equipavel}}
+        {{#if usar}}<button type="button" class="btn peq" data-action="item-usar"{{#unless @root.editable}} disabled{{/unless}}>{{localize "ICARUS.ItensComuns.Usar"}}</button>{{/if}}
+        {{#if itemComum}}{{#if vestimenta}}
+        <button type="button" class="btn equipar{{#if vestido}} on{{/if}}" data-action="item-vestir" aria-pressed="{{#if vestido}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
+          {{#if vestido}}{{localize "ICARUS.ItensComuns.Tirar"}}{{else}}{{localize "ICARUS.ItensComuns.Vestir"}}{{/if}}
+        </button>
+        {{else}}<span class="equipar-vazio"></span>{{/if}}
+        {{else if equipavel}}
         <button type="button" class="btn equipar{{#if equipado}} on{{/if}}" data-action="item-equipar" aria-pressed="{{#if equipado}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled{{/unless}}>
           {{#if equipado}}{{localize "ICARUS.Inventario.Equipado"}}{{else}}{{localize "ICARUS.Inventario.Equipar"}}{{/if}}
         </button>
@@ -114,6 +120,13 @@
       </div>
       <div class="moedas-total" title="{{moedas.ouro}}">{{localize "ICARUS.Moedas.Total"}}: <b>{{moedas.total}}</b></div>
     </div>
+    {{#if vestimentas}}
+    <div class="painel caixa-vestimentas{{#if vestimentas.excedido}} excedida{{/if}}">
+      <h3 class="titulo-painel">{{localize "ICARUS.ItensComuns.Vestimentas"}}</h3>
+      <span class="grande">{{vestimentas.vestidas}} / {{vestimentas.limite}}</span>
+      <span class="dica">{{#if vestimentas.excedido}}{{localize "ICARUS.ItensComuns.Excedido"}}{{else}}{{localize "ICARUS.ItensComuns.LimiteDica"}}{{/if}}</span>
+    </div>
+    {{/if}}
     <div class="painel caixa-carga{{#if carga.excedida}} excedida{{/if}}">
       <h3 class="titulo-painel">{{localize "ICARUS.Carga.Titulo"}}</h3>
       <span class="grande">{{carga.usado}} / {{carga.capacidade}}</span>

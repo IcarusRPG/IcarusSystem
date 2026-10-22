@@ -121,3 +121,40 @@ test("2. Já treinado na perícia da origem: escolhe outra; Reaplicar não dupli
   assert.equal(ator._source.system.recursos.length, 1);
   assert.equal(ator._source.system.pericias.diplomacia.treino, 1);
 });
+
+test("8/9. Usar gasta 1 uso (Saco de ervas: 2); a trava bloqueia a 6ª vestimenta, salvo a exceção do Mestre", async () => {
+  const cards = [];
+  const ganchos = {};
+  globalThis.TextEditor = { enrichHTML: async t => t };
+  globalThis.ChatMessage = { create: async d => cards.push(d), getSpeaker: () => ({}) };
+  globalThis.Hooks = { on: (n, f) => { ganchos[n] = f; } };
+  foundry.utils.hasProperty = (o, k) => getP(o, k) !== undefined;
+  const { usarItemComum, registrarItensComuns } = await import("../module/itens-comuns.mjs");
+  const { dadosDoItemComum, itemComumPorId } = await import("../module/origens-dados.mjs");
+  const doc = (id, extra = {}) => {
+    const d = dadosDoItemComum(itemComumPorId(id));
+    const it = { ...d, id: `${id}-${Math.random()}`, system: { ...d.system, ...extra },
+      async update(m) { for (const [k, v] of Object.entries(m)) setP(this, k, v); } };
+    return it;
+  };
+  const ervas = doc("saco-de-ervas");
+  assert.deepEqual(ervas.system.usos, { max: 2, atual: 2 });
+  await usarItemComum({}, ervas);
+  await usarItemComum({}, ervas);
+  assert.equal(ervas.system.usos.atual, 0);
+  assert.equal(cards.length, 2);
+  await usarItemComum({}, ervas);
+  assert.equal(cards.length, 2, "sem usos: não posta");
+
+  registrarItensComuns();
+  const vestidas = ["capa-de-viagem", "manto-de-pele", "traje-elegante", "anel-de-sinete", "simbolo-sagrado"].map(id => doc(id, { vestido: true }));
+  const sexta = doc("traje-real");
+  const ator = { items: [...vestidas, sexta] };
+  sexta.parent = ator;
+  assert.equal(ganchos.preUpdateItem(sexta, { system: { vestido: true } }, {}), false, "6ª bloqueada");
+  const m = { system: { vestido: true } };
+  assert.notEqual(ganchos.preUpdateItem(sexta, m, { icarusExcecaoVestimenta: true }), false, "exceção do Mestre passa");
+  assert.ok(m.flags["icarus-rpg"].vestidoEm, "registra quando foi vestida");
+  vestidas[0].system.vestido = false;
+  assert.notEqual(ganchos.preUpdateItem(sexta, { system: { vestido: true } }, {}), false, "com uma a menos, veste");
+});

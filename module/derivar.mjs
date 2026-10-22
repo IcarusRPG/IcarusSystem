@@ -8,6 +8,7 @@ import { bonusDeItensDeClasse, passivosDeClasse } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
+import { vestimentasAtivas, bonusDeItens, ehVestimenta, ATAQUE_DESARMADO } from "./origens-dados.mjs";
 import {
   numero, limitar, nivelValido, ehParagon, totalAtributo, bonusTreino, totalPericia,
   maximoPelaClasse, maximoFinal, bonusDeNivel, calcularDefesa, emQuadrados
@@ -26,6 +27,11 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
 
   // Atributos: Total = Base + Raça + Temp + Aumentos de Atributo (poder comum, derivado dos itens)
   const deClasse = bonusDeItensDeClasse(itens);
+  // Limite de Vestimentas: só as primeiras 5 vestidas valem (bônus e Defesa)
+  const vest = vestimentasAtivas(itens);
+  s.vestimentas = { vestidas: vest.vestidas, limite: vest.limite, excedido: vest.vestidas > vest.limite, fora: vest.fora };
+  const deItens = bonusDeItens(itens, vest.ativas);
+  s.bonusDesarmado = deItens[ATAQUE_DESARMADO] ?? [];
   for (const k of ATRIBUTOS) {
     const a = s.atributos[k];
     a.aumento = deClasse.aumentos[k] ?? 0;
@@ -60,6 +66,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     if (item.type !== "equipamento") continue;
     const e = item.system;
     if (!e.equipado || !TIPOS_EQUIPAVEIS.includes(e.tipo)) continue;
+    // Armadura/túnica além do limite de vestimentas não vale Defesa
+    if (ehVestimenta(item) && !vest.ativas.has(item.id ?? item._id)) continue;
     if (e.tipo === "armadura") armadura += numero(e.bonusDefesa);
     else escudo += numero(e.bonusDefesa);
     if (numero(e.penalidade) > 0) penalidades.push({ nome: item.name ?? "", valor: numero(e.penalidade) });
@@ -95,6 +103,9 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
+    // Bônus incondicionais de itens comuns em uso (o mesmo item não soma consigo mesmo)
+    d.bonusItens = deItens[p.chave] ?? [];
+    d.total += d.bonusItens.reduce((soma, b) => soma + b.valor, 0);
     const c = cond.pericias[p.chave];
     d.condicao = c?.valor ?? 0;
     d.origemCondicao = c?.origem ?? "";
@@ -153,6 +164,7 @@ export function espacosDoItem(item) {
   const e = item.system ?? {};
   if (item.type === "arma") return numero(e.espacos) * numero(e.quantidade);
   if (item.type === "municao") return Math.ceil(Math.max(0, numero(e.quantidade)) / TAMANHO_PACOTE);
-  if (item.type === "equipamento") return numero(e.espacos);
+  // Itens comuns: espaços × quantidade (0,5 = miudeza; dois ocupam 1 espaço)
+  if (item.type === "equipamento") return numero(e.espacos) * (e.tipo === "item-comum" ? Math.max(0, numero(e.quantidade)) : 1);
   return 0;
 }

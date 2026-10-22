@@ -29,7 +29,8 @@ import { acaoDaMecanica } from "../classes/comum.mjs";
 import { escolhaPendente, entradaDoItem, resolverEscolha } from "../escolhas.mjs";
 import { desfazerTrocaDeClasse } from "../assistente.mjs";
 import { trocarOrigem, reaplicarOrigem, desfazerTrocaDeOrigem, opcoesDeOrigem, escolhasDoItemComum, itemComumComEscolhas } from "../origens.mjs";
-import { origemPorId, itemComumPorId } from "../origens-dados.mjs";
+import { origemPorId, itemComumPorId, ehVestimenta, estaVestido, textoDoBonus } from "../origens-dados.mjs";
+import { usarItemComum, temUsar, alternarVestido } from "../itens-comuns.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
@@ -204,7 +205,8 @@ export class FichaPersonagem extends ActorSheet {
         : "";
       const condicao = d.condicao ? `${comSinal(d.condicao)} ${d.origemCondicao}` : "";
       const falha = d.falhaAuto ? game.i18n.format("ICARUS.Condicoes.FalhaAuto", { condicao: d.falhaAuto }) : "";
-      const origem = [dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`), penalidade, condicao, falha].filter(Boolean).join("\n");
+      const deItens = (d.bonusItens ?? []).map(b => `${comSinal(b.valor)} ${b.origem}`).join("\n");
+      const origem = [dica(`${k}.treino`, `${k}.outros`, `${k}.atributo`), deItens, penalidade, condicao, falha].filter(Boolean).join("\n");
       const rolar = game.i18n.format("ICARUS.Pericia.Rolar", { pericia: nome, total: comSinal(d.total) });
       return {
         chave: p.chave,
@@ -329,8 +331,19 @@ export class FichaPersonagem extends ActorSheet {
         categoria: i.system.categoria ? loc(`ICARUS.Armaduras.Categorias.${i.system.categoria}`) : "",
         penalidade: i.system.penalidade ? comSinal(-i.system.penalidade) : "",
         espacos: espacosDoItem(i),
-        preco: preco(i.system.preco)
+        preco: preco(i.system.preco),
+        // Itens comuns e vestimentas (Limite de 5): Vestir/Tirar, fora do limite, usos e bônus
+        itemComum: i.system.tipo === "item-comum",
+        vestimenta: ehVestimenta(i),
+        vestido: estaVestido(i),
+        foraDoLimite: (s.vestimentas?.fora ?? []).includes(i.id),
+        usar: temUsar(i),
+        usos: i.system.usos?.max > 0 ? `${i.system.usos.atual}/${i.system.usos.max}` : "",
+        semUsos: i.system.usos?.max > 0 && i.system.usos.atual <= 0,
+        bonusTexto: (i.system.bonus ?? []).map(b => textoDoBonus(b, i.flags?.[SISTEMA_ID]?.escolhaBonus)).join("; "),
+        precoVenda: i.system.precoVenda ? formatarPreco(i.system.precoVenda) : ""
       }));
+    ctx.vestimentas = s.vestimentas ? { ...s.vestimentas, texto: game.i18n.format("ICARUS.ItensComuns.Contador", { n: s.vestimentas.vestidas, limite: s.vestimentas.limite }) } : null;
 
     // Armas: bônus de ataque e dano calculados pelas regras de combate
     const itens = itensDoAtor(actor);
@@ -346,7 +359,8 @@ export class FichaPersonagem extends ActorSheet {
       preco: preco(i.system.precoPacote)
     }));
     ctx.moedas = { ...src.moedas, total: formatarPreco(s.moedas.total) === "—" ? "R$ 0" : formatarPreco(s.moedas.total), ouro: precoEmOuro(s.moedas.total) };
-    ctx.carga = s.carga;
+    // Carga: valor exato no cálculo; arredonda para cima só ao exibir (meio espaço ocupa 1)
+    ctx.carga = { ...s.carga, usado: Math.ceil(s.carga.usado) };
 
     // Bloco Ataques (aba Características): só as armas empunhadas
     ctx.ataques = ctx.armas.filter(a => a.empunhada);
@@ -703,8 +717,14 @@ export class FichaPersonagem extends ActorSheet {
         return this._confirmarExclusao(itemDe());
       case "item-equipar": {
         const item = itemDe();
+        // Armadura e túnica contam no Limite de Vestimentas (escudo não)
+        if (item && ehVestimenta(item)) return alternarVestido(actor, item);
         return item?.update({ "system.equipado": !item.system.equipado });
       }
+      case "item-vestir":
+        return alternarVestido(actor, itemDe());
+      case "item-usar":
+        return usarItemComum(actor, itemDe());
       case "efeito-criar": {
         const [efeito] = await actor.createEmbeddedDocuments("ActiveEffect", [{
           name: game.i18n.localize("ICARUS.Efeitos.Novo"),

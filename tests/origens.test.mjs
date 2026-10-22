@@ -73,3 +73,63 @@ test("4. Item de origem editado ou multiplicado não sai na troca (assinatura)",
   assert.equal(assinaturaDoItem({ ...d, system: { ...d.system, vestido: true } }), a, "vestir não é editar");
   assert.notEqual(assinaturaDoItem({ ...d, name: "Traje do rei" }), a);
 });
+
+/* ---------- Derivado: bônus de itens, Limite de Vestimentas e carga ---------- */
+const { derivarPersonagem } = await import("../module/derivar.mjs");
+const { sistemaCompleto } = await import("./simulacao.mjs");
+let seq = 0;
+const comum = (id, extra = {}, flags = {}) => {
+  const d = dadosDoItemComum(itemComumPorId(id));
+  return { ...d, id: `x${++seq}`, flags: { "icarus-rpg": { ...d.flags["icarus-rpg"], ...flags } }, system: { ...d.system, ...extra } };
+};
+const deriva = itens => derivarPersonagem(sistemaCompleto({ atributos: { DES: { base: 2 } } }), itens);
+
+test("5. Traje real vestido soma +1 Diplomacia (e some ao tirar); dois iguais não duplicam; tooltip com o nome", () => {
+  assert.equal(deriva([comum("traje-real")]).pericias.diplomacia.total, 0, "não vestido");
+  const s = deriva([comum("traje-real", { vestido: true })]);
+  assert.equal(s.pericias.diplomacia.total, 1);
+  assert.deepEqual(s.pericias.diplomacia.bonusItens, [{ valor: 1, origem: "Traje real" }]);
+  assert.equal(deriva([comum("traje-real", { vestido: true }), comum("traje-real", { vestido: true })]).pericias.diplomacia.total, 1);
+  // Itens diferentes somam: Traje real + Joia de família
+  assert.equal(deriva([comum("traje-real", { vestido: true }), comum("joia-de-familia", { vestido: true })]).pericias.diplomacia.total, 2);
+});
+
+test("5. Livro raro: +1 na perícia escolhida sem estar vestido; sai do inventário, perde o bônus", () => {
+  const livro = comum("livro-raro-de-estudo", {}, { escolhaBonus: "historia" });
+  assert.equal(deriva([livro]).pericias.historia.total, 1);
+  assert.equal(deriva([]).pericias.historia.total, 0);
+  assert.equal(deriva([comum("livro-raro-de-estudo", { quantidade: 0 }, { escolhaBonus: "historia" })]).pericias.historia.total, 0);
+});
+
+test("6. Bônus condicionais não somam no total (ficam para a rolagem); elo com ataque desarmado é automático", async () => {
+  const { condicionaisDaPericia, vestimentasAtivas } = await import("../module/origens-dados.mjs");
+  const itens = [comum("luneta"), comum("traje-de-apresentacao", { vestido: true }), comum("traje-de-apresentacao")];
+  const s = deriva(itens);
+  assert.equal(s.pericias.visao.total, 0);
+  assert.deepEqual(condicionaisDaPericia(itens, "visao").map(c => c.valor), [5]);
+  assert.deepEqual(condicionaisDaPericia(itens, "atuacao").map(c => c.valor), [2], "só o vestido, uma vez");
+  assert.deepEqual(condicionaisDaPericia([comum("traje-de-apresentacao")], "atuacao", vestimentasAtivas([]).ativas), [], "tirado: não aparece");
+  const elo = deriva([comum("elo-de-corrente-quebrada", { vestido: true }, { escolhaBonus: "ataqueDesarmado" }), comum("bandagens-de-luta", { vestido: true })]);
+  assert.deepEqual(elo.bonusDesarmado.map(b => b.valor), [1, 1], "elo e bandagens somam (itens diferentes)");
+});
+
+test("9. Limite de 5 vestimentas: a 6ª não vale (nem bônus, nem Defesa); escudo não conta", () => {
+  const armadura = { id: "arm", name: "Couro", type: "equipamento", flags: { "icarus-rpg": { vestidoEm: 9e12 } }, system: { tipo: "armadura", categoria: "leve", equipado: true, bonusDefesa: 2, penalidade: 0, quantidade: 1, espacos: 2 } };
+  const escudo = { id: "esc", name: "Escudo", type: "equipamento", flags: {}, system: { tipo: "escudo", categoria: "escudo", equipado: true, bonusDefesa: 1, penalidade: 0, quantidade: 1, espacos: 1 } };
+  const cinco = ["capa-de-viagem", "manto-de-pele", "traje-elegante", "anel-de-sinete", "simbolo-sagrado"].map((id, n) => comum(id, { vestido: true }, { vestidoEm: n + 1 }));
+  const s = deriva([...cinco, armadura, escudo]);
+  assert.equal(s.vestimentas.vestidas, 6);
+  assert.equal(s.vestimentas.excedido, true);
+  assert.deepEqual(s.vestimentas.fora, ["arm"], "a última vestida fica fora");
+  assert.equal(s.defesa.armadura, 0, "armadura fora do limite não dá Defesa");
+  assert.equal(s.defesa.escudo, 1, "escudo não conta no limite");
+  assert.equal(s.pericias.religiao.total, 1, "símbolo sagrado (5ª) vale");
+  const s2 = deriva([...cinco.slice(0, 4), armadura]);
+  assert.equal(s2.defesa.armadura, 2);
+});
+
+test("12. Carga: dois itens de 0,5 ocupam 1 espaço; frações no cálculo", () => {
+  const s = deriva([comum("bussola"), comum("mapa-regional"), comum("capuz-escuro")]);
+  assert.equal(s.carga.usado, 1.5);
+  assert.equal(Math.ceil(s.carga.usado), 2);
+});

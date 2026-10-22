@@ -1303,7 +1303,30 @@
       "UsosMax": "Usos máximos",
       "EscolhaBonus": "Bônus em",
       "AtaqueDesarmado": "Ataque desarmado",
-      "QualTexto": "Qual {texto}?"
+      "QualTexto": "Qual {texto}?",
+      "Usar": "Usar",
+      "Usos": "usos",
+      "UsoGasto": "Usou 1 (restam {atual}/{max})",
+      "Usou": "Usou o item",
+      "SemUsos": "{item} não tem usos restantes.",
+      "Vestir": "Vestir",
+      "Tirar": "Tirar",
+      "Vestimentas": "Vestimentas",
+      "Contador": "Vestimentas: {n}/{limite}",
+      "LimiteDica": "Roupas, armaduras, túnicas, capas e adornos (escudo não conta).",
+      "Excedido": "Acima do limite: as últimas vestidas não valem. Tire uma.",
+      "Limite": "Limite de {n} vestimentas: tire uma antes.",
+      "LimiteTitulo": "Limite de vestimentas",
+      "LimiteExcecaoDica": "Exceção do Mestre: a peça fica vestida, mas não vale nada (nem bônus, nem Defesa) até outra sair.",
+      "VestirMesmoAssim": "Vestir mesmo assim",
+      "Excecao": "Exceção do Mestre: {nome} vestiu {item} além do limite de {n} vestimentas (não vale até outra sair).",
+      "ForaDoLimite": "Fora do limite: não vale",
+      "VendePor": "vende por até",
+      "SemGazuas": "Não há gazuas no inventário.",
+      "QuebrarGazuas": "Quebrar gazuas",
+      "QuebrarConfirmar": "Tirou 1 natural com as gazuas: elas quebram. Remover as gazuas de {nome}?",
+      "Quebrou": "As gazuas de {nome} quebraram.",
+      "SoDono": "Só o dono do personagem pode fazer isso."
     }
   }
 }
