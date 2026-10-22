@@ -1,0 +1,25 @@
+{
+  "_id": "QFCECDvHKvVcOalp",
+  "name": "Contatos do Submundo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Uma vez por cidade grande, você consegue contato com o submundo local: vender itens sem perguntas, abrigo seguro por uma noite ou um rumor sobre quem manda ali.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "fora-da-lei",
+      "poderId": "contatos-do-submundo",
+      "usoLimitado": "cidade",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1000,
+  "_key": "!items!QFCECDvHKvVcOalp"
+}

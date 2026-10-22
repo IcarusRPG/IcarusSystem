@@ -1,0 +1,33 @@
+{
+  "_id": "rzH6qgqRC3d3Seo6",
+  "name": "Barraca pequena",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 1200,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 2,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Lona e estacas; cabem duas criaturas Médias, ou uma criatura Grande (como um Talokan). Leva 10 minutos para montar. <strong>Descanso:</strong> permite descansar ao relento sem sofrer o clima. <strong>Exploração:</strong> serve de abrigo improvisado e de ponto de encontro do grupo. <strong>Roleplay:</strong> marca o acampamento do personagem."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "barraca-pequena"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 500,
+  "_key": "!items!rzH6qgqRC3d3Seo6"
+}

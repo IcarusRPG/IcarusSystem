@@ -1,0 +1,39 @@
+{
+  "_id": "rsbRgCn0JMPLdkb5",
+  "name": "Joia de família",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": 20000,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "diplomacia",
+        "valor": 1,
+        "condicao": null
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Colar, broche ou pulseira herdado de gerações anteriores. <strong>Bônus:</strong> +1 em Diplomacia enquanto a joia estiver à mostra. <strong>Venda:</strong> pode ser vendida por até R$ 200. <strong>Utilidade:</strong> pode provar a linhagem do personagem (a critério do Mestre) ou ser penhorada por um favor importante, com direito de resgate. Vendê-la tem consequências narrativas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "joia-de-familia"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4100,
+  "_key": "!items!rsbRgCn0JMPLdkb5"
+}

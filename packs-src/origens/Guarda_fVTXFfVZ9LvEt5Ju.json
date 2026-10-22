@@ -1,0 +1,27 @@
+{
+  "_id": "fVTXFfVZ9LvEt5Ju",
+  "name": "Guarda",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1300,
+  "system": {
+    "origemId": "guarda",
+    "pericia": "investigacao",
+    "texto": "Você patrulhava muralhas, vigiava portões e separava briga de taverna.",
+    "itens": {
+      "fixos": [
+        "apito",
+        "algemas"
+      ],
+      "escolhas": []
+    },
+    "poderId": "faro-para-mentiras"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "guarda"
+    }
+  },
+  "_key": "!items!fVTXFfVZ9LvEt5Ju"
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "aTCBftjeYso56NdS",
+  "name": "Luneta",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 4000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "visao",
+        "valor": 5,
+        "condicao": "ao observar algo a distância com a luneta"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Tubo de latão com lentes que aproxima o que está longe. <strong>Bônus:</strong> +5 em Visão ao observar algo a distância com a luneta. <strong>Exploração:</strong> vê detalhes a até o dobro do alcance normal de visão (em luz e clima normais). <strong>Combate:</strong> como ação de movimento, observa um ponto distante e descobre número de criaturas, armamento e brasões. <strong>Roleplay:</strong> espionar à distância."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "luneta"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 300,
+  "_key": "!items!aTCBftjeYso56NdS"
+}

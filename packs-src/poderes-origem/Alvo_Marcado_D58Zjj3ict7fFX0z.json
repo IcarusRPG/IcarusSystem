@@ -1,0 +1,25 @@
+{
+  "_id": "D58Zjj3ict7fFX0z",
+  "name": "Alvo Marcado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "movimento",
+    "descricao": "<p>Como ação de movimento, você estuda uma criatura que consiga ver. Você recebe +2 no primeiro teste de ataque contra ela na cena. Uma vez por cena.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "matador-de-aluguel",
+      "poderId": "alvo-marcado",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1600,
+  "_key": "!items!D58Zjj3ict7fFX0z"
+}

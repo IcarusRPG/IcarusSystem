@@ -16,6 +16,8 @@ import { documentosDosCompendios } from "../module/dados-itens.mjs";
 import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "../module/dados-compendios.mjs";
 import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
+import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
+import { idEstavel } from "../module/dados-itens.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
@@ -61,6 +63,19 @@ for (const [chave, rel] of Object.entries(IMAGENS_SISTEMA)) confere(path.posix.d
     if (!achado) semImagem.push(`vínculo ${v.nome} (pata padrão; esperado img/Icones/${PASTA_ICONES_PODERES}/${arquivoDoVinculo(v.nome)})`);
   }
 }
+// Origens, poderes de origem e itens comuns: ícone só com nome igual (normalizado) em
+// img/Icones/poderes e habilidades/ (poderes e itens) ou img/Icones/origens/ (origens); senão o padrão
+const imagensOrigens = {};
+for (const [pasta, prefixo] of [[PASTA_ICONES_PODERES, ""], ["origens", "origem:"]]) {
+  const dir = path.join(RAIZ, "img", "Icones", ...pasta.split("/"));
+  if (!fs.existsSync(dir)) continue;
+  for (const f of fs.readdirSync(dir).filter(f => /\.(png|jpe?g|webp|svg)$/i.test(f)))
+    imagensOrigens[prefixo + chaveDeNome(f.replace(/\.[^.]+$/, ""))] = encodeURI(`systems/icarus-rpg/img/Icones/${pasta}/${f}`);
+}
+const docsOrigens = documentosDeOrigens({ origens: ler("origens"), itens: ler("itens-comuns"), imagens: imagensOrigens }, idEstavel);
+const semIconeOrigens = [...docsOrigens.origens.itens, ...docsOrigens["poderes-origem"].itens, ...docsOrigens["itens-comuns"].itens]
+  .filter(d => !d.img.includes("/img/Icones/poderes") && !d.img.includes("/img/Icones/origens")).map(d => d.name);
+if (semIconeOrigens.length) console.warn(`Origens/poderes/itens comuns sem ícone próprio (dado azul): ${semIconeOrigens.length}`);
 if (faltandoArquivo.length) {
   console.error(`ERRO: ${faltandoArquivo.length} ícone(s) mapeado(s) não existem no disco:\n  - ${faltandoArquivo.join("\n  - ")}`);
   process.exit(1);
@@ -83,7 +98,8 @@ const PACOTES = {
   classes: docsClasses.classes,
   "habilidades-classe": docsClasses["habilidades-classe"],
   "poderes-classe": docsClasses["poderes-classe"],
-  vinculos: documentosDeVinculos(novos.vinculos, PERICIAS)
+  vinculos: documentosDeVinculos(novos.vinculos, PERICIAS),
+  ...docsOrigens
 };
 
 /** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */

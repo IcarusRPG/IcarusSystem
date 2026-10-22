@@ -1,0 +1,43 @@
+{
+  "_id": "em6JCVGF0fOa8NCd",
+  "name": "Traje colorido",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 600,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": null,
+        "valor": 1,
+        "condicao": null,
+        "escolha": [
+          "atuacao",
+          "enganacao"
+        ]
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Roupa de cores vivas feita para ser vista de longe: calças bufantes, colete bordado e lenço. <strong>Bônus:</strong> +1 em Atuação ou em Enganação (o jogador escolhe ao pegar o item), enquanto o traje estiver vestido. <strong>Utilidade:</strong> chama atenção, útil para distrair guardas e plateias enquanto aliados agem (a critério do Mestre). <strong>Desvantagem:</strong> não serve para furtividade. <strong>Roleplay:</strong> identifica o personagem com circos, feiras e festas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-colorido"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1300,
+  "_key": "!items!em6JCVGF0fOa8NCd"
+}

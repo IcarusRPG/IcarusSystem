@@ -67,7 +67,8 @@
         "htmlFields": [
           "intro"
         ]
-      }
+      },
+      "origem": {}
     }
   },
   "packs": [
@@ -200,6 +201,45 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "origens",
+      "label": "Icarus — Origens",
+      "path": "packs/origens",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "poderes-origem",
+      "label": "Icarus — Poderes de Origem",
+      "path": "packs/poderes-origem",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "itens-comuns",
+      "label": "Icarus — Itens Comuns",
+      "path": "packs/itens-comuns",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -217,7 +257,10 @@
         "classes",
         "habilidades-classe",
         "poderes-classe",
-        "vinculos"
+        "vinculos",
+        "origens",
+        "poderes-origem",
+        "itens-comuns"
       ]
     }
   ],

@@ -1,0 +1,25 @@
+{
+  "_id": "zpC2XmZzAGzTgGLu",
+  "name": "Refúgio da Fé",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Você recebe pousada simples e informações em qualquer templo, de qualquer divindade, para você e até 4 aliados, uma vez por cidade.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "religioso",
+      "poderId": "refugio-da-fe",
+      "usoLimitado": "cidade",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 2200,
+  "_key": "!items!zpC2XmZzAGzTgGLu"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "9FA3RC1eU9LF6TnC",
+  "name": "Rede de Contatos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Uma vez por cidade onde sua guilda tenha presença, ela fornece hospedagem simples, um rumor útil e 10% de desconto em itens do ofício.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "membro-de-guilda",
+      "poderId": "rede-de-contatos",
+      "usoLimitado": "cidade",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1700,
+  "_key": "!items!9FA3RC1eU9LF6TnC"
+}

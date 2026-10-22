@@ -1,0 +1,33 @@
+{
+  "_id": "xIHfSYmcv0ajZPeN",
+  "name": "Algemas",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 1000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Par de argolas de ferro ligadas por corrente, com chave. Prendem os pulsos de uma criatura de tamanho Médio. <strong>Combate:</strong> como ação padrão, algema uma criatura Indefesa, Agarrada ou rendida. Para se soltar sem a chave, a criatura faz um teste de Atletismo ou Prestidigitação (CD 20) ou arromba a fechadura. <strong>Roleplay:</strong> prisões e capturas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "algemas"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 3200,
+  "_key": "!items!xIHfSYmcv0ajZPeN"
+}

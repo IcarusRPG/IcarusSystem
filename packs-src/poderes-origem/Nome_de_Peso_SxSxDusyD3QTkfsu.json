@@ -1,0 +1,25 @@
+{
+  "_id": "SxSxDusyD3QTkfsu",
+  "name": "Nome de Peso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Uma vez por cidade, o seu sobrenome abre portas: você consegue uma audiência com uma autoridade ou nobre local, ou crédito de até R$ 20 vezes o seu nível, que precisa ser reposto depois.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "herdeiro",
+      "poderId": "nome-de-peso",
+      "usoLimitado": "cidade",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1400,
+  "_key": "!items!SxSxDusyD3QTkfsu"
+}

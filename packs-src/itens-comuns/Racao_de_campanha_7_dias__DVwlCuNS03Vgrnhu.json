@@ -1,0 +1,33 @@
+{
+  "_id": "DVwlCuNS03Vgrnhu",
+  "name": "Ração de campanha (7 dias)",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 400,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 2,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Pão seco, carne curada, frutas secas e sal, embrulhados em pano. <strong>Sobrevivência:</strong> alimenta uma pessoa por 7 dias e não estraga. <strong>Roleplay:</strong> repartir ração com um NPC faminto costuma render gratidão."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "racao-de-campanha-7-dias"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 900,
+  "_key": "!items!DVwlCuNS03Vgrnhu"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "DTMTWSFDBl9XZ8Zm",
+  "name": "Traje de bobo com guizos",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 800,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Roupa de duas cores, chapéu de pontas e guizos. <strong>Utilidade:</strong> como ação livre, o personagem agita os guizos para chamar atenção. <strong>Desvantagem:</strong> os guizos tilintam a cada passo (impedem andar em silêncio). <strong>Roleplay:</strong> na corte, quem veste o traje pode fazer piadas e debochar até de nobres sem ser punido, porque todos o reconhecem como bobo (a critério do Mestre)."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-de-bobo-com-guizos"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1400,
+  "_key": "!items!DTMTWSFDBl9XZ8Zm"
+}

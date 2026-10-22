@@ -1,0 +1,39 @@
+{
+  "_id": "6JFAjNu8qk8lxWiW",
+  "name": "Corda de marinheiro (15 m)",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "pontaria",
+        "valor": 3,
+        "condicao": "no teste de Pontaria para prender a corda em um ponto alto"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Corda trançada de cânhamo, resistente à água salgada; aguenta o peso de duas pessoas. <strong>Uso:</strong> para prender a corda em um ponto alto (gancho, galho, ameia), o personagem faz um teste de Pontaria, com <strong>+3</strong> de bônus por usar a corda. Prendida, permite subir ou descer até 15 m. <strong>Combate:</strong> como ação de movimento, estica a corda entre dois pontos: criaturas que passem por ali correndo fazem Reflexos (CD 10) ou ficam Caídas. <strong>Utilidade:</strong> amarrar cargas, prisioneiros e pontes improvisadas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "corda-de-marinheiro-15-m"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 700,
+  "_key": "!items!6JFAjNu8qk8lxWiW"
+}

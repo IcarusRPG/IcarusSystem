@@ -1,0 +1,43 @@
+{
+  "_id": "aAnqvvcyPuauUA7b",
+  "name": "Elo de corrente quebrada",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": null,
+        "valor": 1,
+        "condicao": null,
+        "escolha": [
+          "intimidacao",
+          "ataqueDesarmado"
+        ]
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Um elo de ferro de uma corrente rompida, guardado como lembrança da servidão e da liberdade conquistada. <strong>Bônus:</strong> +1 em Intimidação ou +1 em testes de ataque desarmado (o jogador escolhe ao pegar o item), enquanto o elo estiver à mostra ou preso ao pulso. <strong>Roleplay:</strong> peça de ligação emocional; pode ser mostrado a outros que viveram servidão para criar confiança."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "elo-de-corrente-quebrada"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4700,
+  "_key": "!items!aAnqvvcyPuauUA7b"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "yKum0omb5smcWiCR",
+  "name": "Curandeiro",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 600,
+  "system": {
+    "origemId": "curandeiro",
+    "pericia": "cura",
+    "texto": "Remédio de ervas, parto, febre e osso quebrado: você era a pessoa a quem chamavam na madrugada.",
+    "itens": {
+      "fixos": [
+        "maleta-de-curandeiro",
+        "saco-de-ervas"
+      ],
+      "escolhas": []
+    },
+    "poderId": "primeiros-socorros"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "curandeiro"
+    }
+  },
+  "_key": "!items!yKum0omb5smcWiCR"
+}

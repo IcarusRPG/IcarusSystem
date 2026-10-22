@@ -1,0 +1,25 @@
+{
+  "_id": "xpMxuzuUE1881p3H",
+  "name": "Sede de Liberdade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "livre",
+    "descricao": "<p>Uma vez por cena, como ação livre, você encerra as condições Agarrado ou Enredado. Além disso, você se solta de cordas e algemas comuns em 1 minuto, sem teste.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "escravo",
+      "poderId": "sede-de-liberdade",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 800,
+  "_key": "!items!xpMxuzuUE1881p3H"
+}

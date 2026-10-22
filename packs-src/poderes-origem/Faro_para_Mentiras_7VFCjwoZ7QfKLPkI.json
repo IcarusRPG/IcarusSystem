@@ -1,0 +1,25 @@
+{
+  "_id": "7VFCjwoZ7QfKLPkI",
+  "name": "Faro para Mentiras",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": 2,
+    "acao": "livre",
+    "descricao": "<p>Como ação livre, você gasta 2 PM e sabe se a resposta que uma criatura em alcance curto acabou de dar à sua pergunta foi uma mentira.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "guarda",
+      "poderId": "faro-para-mentiras",
+      "usoLimitado": null,
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1300,
+  "_key": "!items!7VFCjwoZ7QfKLPkI"
+}

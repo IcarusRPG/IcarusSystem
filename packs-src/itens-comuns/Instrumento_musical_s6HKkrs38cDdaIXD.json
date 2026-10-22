@@ -1,0 +1,45 @@
+{
+  "_id": "s6HKkrs38cDdaIXD",
+  "name": "Instrumento musical",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 1500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "atuacao",
+        "valor": 1,
+        "condicao": "quando o instrumento é usado"
+      },
+      {
+        "pericia": "diplomacia",
+        "valor": 1,
+        "condicao": "quando usado em festas e ambientes nobres"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Alaúde, flauta, tambor, gaita ou outro, à escolha do jogador. <strong>Bônus:</strong> +1 em Atuação quando usado. Em festas e ambientes nobres, também dá +1 em Diplomacia, além do bônus de Atuação. <strong>Roleplay:</strong> ganhar a vida, animar festas e conquistar plateias."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "instrumento-musical",
+      "escolhaTexto": ""
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 2700,
+  "_key": "!items!s6HKkrs38cDdaIXD"
+}

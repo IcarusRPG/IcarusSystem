@@ -8,7 +8,8 @@
       "equipamento": "Equipamento",
       "arma": "Arma",
       "municao": "Munição",
-      "classe": "Classe"
+      "classe": "Classe",
+      "origem": "Origem"
     }
   },
   "ICARUS": {
@@ -219,6 +220,7 @@
         "escudo": "Escudo",
         "consumivel": "Consumível",
         "profissao": "Item de profissão",
+        "item-comum": "Item comum",
         "outro": "Outro"
       }
     },
@@ -1264,6 +1266,23 @@
         "escavacao": "Escavação",
         "natacao": "Natação"
       }
+    },
+    "Origens": {
+      "Pericia": "Perícia treinada:",
+      "Poder": "Poder de Origem:",
+      "Itens": "Itens comuns:",
+      "DicaItem": "Escolha a origem no cabeçalho da ficha do personagem: a perícia, o poder e os itens entram sozinhos."
+    },
+    "ItensComuns": {
+      "Vestimenta": "Vestimenta (conta no limite de 5)",
+      "Vestido": "Vestido",
+      "ValeEnquantoPossui": "Bônus vale enquanto possuir",
+      "SemVenda": "Item pessoal (sem venda)",
+      "PrecoVenda": "Venda por até (R$)",
+      "UsosAtual": "Usos restantes",
+      "UsosMax": "Usos máximos",
+      "EscolhaBonus": "Bônus em",
+      "AtaqueDesarmado": "Ataque desarmado"
     }
   }
 }

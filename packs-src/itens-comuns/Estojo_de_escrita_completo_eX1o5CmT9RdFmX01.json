@@ -1,0 +1,33 @@
+{
+  "_id": "eX1o5CmT9RdFmX01",
+  "name": "Estojo de escrita completo",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "escrita",
+    "quantidade": 1,
+    "preco": 1500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Penas variadas, tintas coloridas, lacre, selo e régua. <strong>Utilidade:</strong> redigir contratos com selo, copiar documentos e produzir mapas detalhados. <strong>Roleplay:</strong> escribas e estudiosos reconhecem a qualidade."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "estojo-de-escrita-completo"
+    }
+  },
+  "folder": "0apUs7mIrIIHkuGN",
+  "sort": 3700,
+  "_key": "!items!eX1o5CmT9RdFmX01"
+}

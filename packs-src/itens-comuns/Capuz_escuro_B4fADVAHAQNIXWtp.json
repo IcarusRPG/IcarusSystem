@@ -1,0 +1,39 @@
+{
+  "_id": "B4fADVAHAQNIXWtp",
+  "name": "Capuz escuro",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 300,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "intimidacao",
+        "valor": 1,
+        "condicao": null
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Capuz de tecido fosco que esconde o rosto e os cabelos. <strong>Bônus:</strong> +1 em Intimidação enquanto o capuz estiver vestido. <strong>Identidade:</strong> esconde o rosto de quem o vê de frente. <strong>Desvantagem:</strong> não esconde o corpo nem dá camuflagem. <strong>Roleplay:</strong> o estilo é típico de assassinos e mercenários."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "capuz-escuro"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 2200,
+  "_key": "!items!B4fADVAHAQNIXWtp"
+}

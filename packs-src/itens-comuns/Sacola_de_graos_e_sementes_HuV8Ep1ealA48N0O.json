@@ -1,0 +1,33 @@
+{
+  "_id": "HuV8Ep1ealA48N0O",
+  "name": "Sacola de grãos e sementes",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 100,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Saco de pano com cevada, trigo e sementes variadas. <strong>Sobrevivência:</strong> rende comida simples para 3 dias. <strong>Utilidade:</strong> atrai aves e animais pequenos e acalma montarias famintas. <strong>Roleplay:</strong> presente humilde para quem vive da terra."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "sacola-de-graos-e-sementes"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 1200,
+  "_key": "!items!HuV8Ep1ealA48N0O"
+}

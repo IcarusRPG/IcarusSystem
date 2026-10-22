@@ -1,0 +1,27 @@
+{
+  "_id": "UWKMKnjRQfDIgXs8",
+  "name": "Religioso",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 2200,
+  "system": {
+    "origemId": "religioso",
+    "pericia": "religiao",
+    "texto": "Em um mundo cheio de templos, muitos entram cedo em uma ordem: por fé, por tradição de família ou porque alguém os deixou à porta de um mosteiro. Suas lembranças são de orações, cânticos e cuidar do altar.",
+    "itens": {
+      "fixos": [
+        "simbolo-sagrado",
+        "traje-de-cerimonia"
+      ],
+      "escolhas": []
+    },
+    "poderId": "refugio-da-fe"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "religioso"
+    }
+  },
+  "_key": "!items!UWKMKnjRQfDIgXs8"
+}

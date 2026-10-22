@@ -1,0 +1,33 @@
+{
+  "_id": "ue1pRtdK9dI4zGFO",
+  "name": "Kit de viagem (odre e panela)",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 300,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Odre de couro (2 litros) e panela de ferro com tampa e cabo dobrável. <strong>Descanso:</strong> permite uma refeição quente por descanso. <strong>Combate:</strong> como ação padrão, gastar 1 litro do odre apaga a condição Em Chamas em uma criatura adjacente (2 usos antes de reabastecer). <strong>Roleplay:</strong> cozinhar para o grupo ou para estranhos abre conversa."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "kit-de-viagem-odre-e-panela"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 200,
+  "_key": "!items!ue1pRtdK9dI4zGFO"
+}

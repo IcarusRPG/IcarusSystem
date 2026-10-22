@@ -1,0 +1,33 @@
+{
+  "_id": "0xQfK0iHx9bJNaqS",
+  "name": "Capa de viagem",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 400,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Capa grossa de lã encerada, com capuz. <strong>Clima:</strong> protege de chuva, vento e frio comum (sem penalidades por clima leve). <strong>Roleplay:</strong> o capuz esconde parte do rosto e dá ar de viajante anônimo."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "capa-de-viagem"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 400,
+  "_key": "!items!0xQfK0iHx9bJNaqS"
+}

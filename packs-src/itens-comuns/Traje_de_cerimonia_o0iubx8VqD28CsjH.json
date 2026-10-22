@@ -1,0 +1,33 @@
+{
+  "_id": "o0iubx8VqD28CsjH",
+  "name": "Traje de cerimônia",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 1500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Túnica ou hábito para ritos religiosos, nas cores da fé do personagem. <strong>Acesso:</strong> permite participar de cultos e entrar em áreas de clero. <strong>Roleplay:</strong> é reconhecido por devotos da mesma fé."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-de-cerimonia"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1900,
+  "_key": "!items!o0iubx8VqD28CsjH"
+}

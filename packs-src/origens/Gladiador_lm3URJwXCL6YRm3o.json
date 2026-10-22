@@ -1,0 +1,27 @@
+{
+  "_id": "lm3URJwXCL6YRm3o",
+  "name": "Gladiador",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1200,
+  "system": {
+    "origemId": "gladiador",
+    "pericia": "intimidacao",
+    "texto": "Você lutava em arenas, rodas de briga ou torneios, com a plateia berrando e o dinheiro mudando de mão.",
+    "itens": {
+      "fixos": [
+        "bandagens-de-luta",
+        "trofeu-de-arena"
+      ],
+      "escolhas": []
+    },
+    "poderId": "sangue-da-arena"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "gladiador"
+    }
+  },
+  "_key": "!items!lm3URJwXCL6YRm3o"
+}

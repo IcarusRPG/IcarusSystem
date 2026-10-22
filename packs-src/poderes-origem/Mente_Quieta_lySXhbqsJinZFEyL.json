@@ -1,0 +1,25 @@
+{
+  "_id": "lySXhbqsJinZFEyL",
+  "name": "Mente Quieta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "livre",
+    "descricao": "<p>Uma vez por cena, como ação livre, quando você ficar Abalado, Apavorado ou Fascinado, você encerra imediatamente a condição.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "eremita",
+      "poderId": "mente-quieta",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 700,
+  "_key": "!items!lySXhbqsJinZFEyL"
+}

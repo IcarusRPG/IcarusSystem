@@ -1,0 +1,33 @@
+{
+  "_id": "qqvmDleRGJNqS3us",
+  "name": "Troféu de arena",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Prêmio das lutas (taça, coroa de louros ou cinturão). <strong>Roleplay:</strong> mostra reputação; fãs e rivais o reconhecem. Pode abrir portas em lugares que gostam de lutas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "trofeu-de-arena"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4600,
+  "_key": "!items!qqvmDleRGJNqS3us"
+}

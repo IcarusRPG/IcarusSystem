@@ -1,0 +1,33 @@
+{
+  "_id": "RA0qSr9YjrsShbpb",
+  "name": "Perfume fino",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 1500,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 10,
+      "atual": 10
+    },
+    "origemItem": false,
+    "descricao": "Frasco de essência de flores raras. Tem 10 aplicações. <strong>Utilidade:</strong> deixa um cheiro marcante e agradável, e mascara odores (dificulta ser rastreado pelo faro). <strong>Roleplay:</strong> causa boa impressão em encontros sociais e festas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "perfume-fino"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4900,
+  "_key": "!items!RA0qSr9YjrsShbpb"
+}

@@ -1,0 +1,46 @@
+{
+  "_id": "or2bP4FTBQc8F700",
+  "name": "Livro raro de estudo",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "escrita",
+    "quantidade": 1,
+    "preco": 5000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": null,
+        "valor": 1,
+        "condicao": null,
+        "escolha": [
+          "historia",
+          "investigacao",
+          "misticismo",
+          "nobreza"
+        ]
+      }
+    ],
+    "valeEnquantoPossui": true,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Volume antigo sobre um tema à escolha do jogador (a história de uma cidade, uma criatura, um ofício ou uma religião), aprovado pelo Mestre. <strong>Bônus:</strong> +1 em uma perícia baseada em Inteligência à escolha do jogador (História, Investigação, Misticismo ou Nobreza). Não precisa estar com o livro em mãos, mas <strong>se o personagem perdê-lo ou vendê-lo, perde o bônus</strong>. <strong>Exploração:</strong> ao consultá-lo por 1 hora, o Mestre pode fornecer uma pista sobre aquele tema (uma vez por aventura). <strong>Roleplay:</strong> colecionadores e bibliotecas pagam ou trocam favores por ele."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "livro-raro-de-estudo",
+      "escolhaTexto": ""
+    }
+  },
+  "folder": "0apUs7mIrIIHkuGN",
+  "sort": 3800,
+  "_key": "!items!or2bP4FTBQc8F700"
+}

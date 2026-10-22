@@ -1,0 +1,27 @@
+{
+  "_id": "NNOuGSWzYyDE2ic7",
+  "name": "Refugiado",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 2100,
+  "system": {
+    "origemId": "refugiado",
+    "pericia": "vontade",
+    "texto": "Guerra, fome ou desastre tirou o seu lar. Você sobreviveu, e carrega a teimosia de quem já perdeu tudo uma vez.",
+    "itens": {
+      "fixos": [
+        "trouxa-de-viagem",
+        "lembranca-de-casa"
+      ],
+      "escolhas": []
+    },
+    "poderId": "teimosia-de-sobrevivente"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "refugiado"
+    }
+  },
+  "_key": "!items!NNOuGSWzYyDE2ic7"
+}

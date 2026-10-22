@@ -1,0 +1,27 @@
+{
+  "_id": "oAFZQHHLgJi4bE8G",
+  "name": "Servo",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 2400,
+  "system": {
+    "origemId": "servo",
+    "pericia": "intuicao",
+    "texto": "Você serviu em casa alheia: cozinha, estábulo, corredor de palácio. Quem serve vê tudo, escuta tudo e quase nunca é notado.",
+    "itens": {
+      "fixos": [
+        "uniforme-da-casa",
+        "bandeja-de-servico"
+      ],
+      "escolhas": []
+    },
+    "poderId": "olhos-baixos"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "servo"
+    }
+  },
+  "_key": "!items!oAFZQHHLgJi4bE8G"
+}

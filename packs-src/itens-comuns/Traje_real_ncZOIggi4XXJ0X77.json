@@ -1,0 +1,39 @@
+{
+  "_id": "ncZOIggi4XXJ0X77",
+  "name": "Traje real",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "traje",
+    "quantidade": 1,
+    "preco": 10000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "diplomacia",
+        "valor": 1,
+        "condicao": null
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Veste de gala bordada com o brasão da casa, em tecidos raros. <strong>Bônus:</strong> +1 em Diplomacia enquanto o traje estiver vestido. <strong>Acesso:</strong> guardas e funcionários hesitam em barrar quem o veste. <strong>Roleplay:</strong> identifica o portador como alguém de alto escalão, para o bem (honras) e para o mal (assassinos e sequestradores)."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "traje-real"
+    }
+  },
+  "folder": "2lsALGG3qGPy7m5z",
+  "sort": 1700,
+  "_key": "!items!ncZOIggi4XXJ0X77"
+}

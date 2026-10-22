@@ -1,0 +1,27 @@
+{
+  "_id": "2spbUS1vsMWPDB51",
+  "name": "Gigolô",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1100,
+  "system": {
+    "origemId": "gigolo",
+    "pericia": "enganacao",
+    "texto": "Você viveu do charme: companhia paga, presentes de admiradores, festas em casas que não eram a sua. Aprendeu a ler quem quer ser agradado.",
+    "itens": {
+      "fixos": [
+        "perfume-fino",
+        "traje-elegante"
+      ],
+      "escolhas": []
+    },
+    "poderId": "charme-fatal"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "gigolo"
+    }
+  },
+  "_key": "!items!2spbUS1vsMWPDB51"
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "NUIu0IcuQtB6N34f",
+  "name": "Insígnia da guilda",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": null,
+        "valor": 1,
+        "condicao": null,
+        "escolha": [
+          "intimidacao",
+          "diplomacia"
+        ]
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Medalhão ou broche com o símbolo da guilda do personagem. <strong>Bônus:</strong> +1 em Intimidação ou em Diplomacia (o jogador escolhe ao pegar o item), enquanto a insígnia estiver à mostra. <strong>Acesso:</strong> identifica o portador como membro e abre a sede da guilda (trabalha com o poder Rede de Contatos). <strong>Roleplay:</strong> perdê-la ou ser expulso tem consequências narrativas."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "insignia-da-guilda"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4200,
+  "_key": "!items!NUIu0IcuQtB6N34f"
+}

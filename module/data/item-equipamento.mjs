@@ -21,7 +21,22 @@ export class EquipamentoData extends foundry.abstract.TypeDataModel {
       acoplado: new fields.BooleanField({ initial: false }),
       provisorio: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
       preco: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),
-      espacos: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 1 }),
+      // Espaços na carga: 1 por padrão, 0,5 para miudezas e 2 para volumosos (frações valem)
+      espacos: new fields.NumberField({ required: true, nullable: false, min: 0, initial: 1 }),
+      // Itens comuns (tipo "item-comum", compêndio Itens Comuns): categoria, venda, vestimenta,
+      // bônus de perícia ({ pericia, valor, condicao, escolha[], penalidadeSemItem }), usos e origem
+      categoriaItem: new fields.StringField({ required: true, blank: true, initial: "" }),
+      precoVenda: new fields.NumberField({ required: true, nullable: true, integer: true, min: 0, initial: null }),
+      semVenda: new fields.BooleanField({ initial: false }),
+      vestimenta: new fields.BooleanField({ initial: false }),
+      vestido: new fields.BooleanField({ initial: false }),
+      bonus: new fields.ArrayField(new fields.ObjectField()),
+      valeEnquantoPossui: new fields.BooleanField({ initial: false }),
+      usos: new fields.SchemaField({
+        max: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),
+        atual: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 })
+      }),
+      origemItem: new fields.BooleanField({ initial: false }),
       descricao: new fields.HTMLField({ required: true, blank: true, initial: "" })
     };
   }

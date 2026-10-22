@@ -1,0 +1,33 @@
+{
+  "_id": "l22JvQMhxAQz6A1f",
+  "name": "Trouxa de viagem",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "viagem",
+    "quantidade": 1,
+    "preco": 200,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 1,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Saco de pano com alças: roupa de reposição, cobertor fino e ração para 1 dia. <strong>Descanso:</strong> o cobertor garante um descanso confortável em chão duro. <strong>Utilidade:</strong> carrega itens pequenos. <strong>Roleplay:</strong> é tudo que o personagem tem ao começar."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "trouxa-de-viagem"
+    }
+  },
+  "folder": "ozSHAroken7IZN3l",
+  "sort": 600,
+  "_key": "!items!l22JvQMhxAQz6A1f"
+}

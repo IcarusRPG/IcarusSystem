@@ -1,0 +1,27 @@
+{
+  "_id": "cioZJHJHqMbEvCCj",
+  "name": "Matador de Aluguel",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 1600,
+  "system": {
+    "origemId": "matador-de-aluguel",
+    "pericia": "pontaria",
+    "texto": "Alguém pagava, você resolvia. Sem perguntas, sem testemunhas, sem remorso em público. Agora talvez você esteja fugindo do contrato ou do contratante.",
+    "itens": {
+      "fixos": [
+        "estojo-de-disfarces",
+        "capuz-escuro"
+      ],
+      "escolhas": []
+    },
+    "poderId": "alvo-marcado"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "matador-de-aluguel"
+    }
+  },
+  "_key": "!items!cioZJHJHqMbEvCCj"
+}

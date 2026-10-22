@@ -1,0 +1,27 @@
+{
+  "_id": "tATNLgGKjIwLESH4",
+  "name": "Selvagem",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 2300,
+  "system": {
+    "origemId": "selvagem",
+    "pericia": "olfato",
+    "texto": "Você cresceu longe das cidades, em uma tribo, num bando ou sozinho, aprendendo com o clima e as feras.",
+    "itens": {
+      "fixos": [
+        "amuleto-de-tribo",
+        "manto-de-pele"
+      ],
+      "escolhas": []
+    },
+    "poderId": "pele-de-fera"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "selvagem"
+    }
+  },
+  "_key": "!items!tATNLgGKjIwLESH4"
+}

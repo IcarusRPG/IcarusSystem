@@ -1,0 +1,33 @@
+{
+  "_id": "fvCkr1Ank3eUDvcu",
+  "name": "Apito",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "ferramenta",
+    "quantidade": 1,
+    "preco": 100,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Apito de metal que se ouve a 100 m em ambiente aberto. <strong>Combate:</strong> como ação livre, avisa aliados em alcance longo (sinal combinado) ou chama guardas próximos (o Mestre decide quem responde). <strong>Roleplay:</strong> símbolo de autoridade."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "apito"
+    }
+  },
+  "folder": "jaMxuCuvMdhBcBwf",
+  "sort": 3100,
+  "_key": "!items!fvCkr1Ank3eUDvcu"
+}

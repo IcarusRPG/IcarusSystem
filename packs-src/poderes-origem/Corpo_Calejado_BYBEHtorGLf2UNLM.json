@@ -1,0 +1,25 @@
+{
+  "_id": "BYBEHtorGLf2UNLM",
+  "name": "Corpo Calejado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "livre",
+    "descricao": "<p>Uma vez por dia, você pode rolar novamente um teste de Fortitude que tenha acabado de falhar, ficando com o novo resultado.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "campones",
+      "poderId": "corpo-calejado",
+      "usoLimitado": "dia",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 400,
+  "_key": "!items!BYBEHtorGLf2UNLM"
+}

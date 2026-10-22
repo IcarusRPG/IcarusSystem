@@ -1,0 +1,39 @@
+{
+  "_id": "IFXjylKCqHptoFl5",
+  "name": "Livro de poemas",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "escrita",
+    "quantidade": 1,
+    "preco": 0,
+    "precoVenda": null,
+    "semVenda": true,
+    "espacos": 0.5,
+    "vestimenta": false,
+    "vestido": false,
+    "bonus": [
+      {
+        "pericia": "atuacao",
+        "valor": 1,
+        "condicao": "ao usar o livro em uma apresentação"
+      }
+    ],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Caderno encadernado com poemas e canções do próprio personagem. <strong>Bônus:</strong> +1 em Atuação ao usar o livro em uma apresentação. <strong>Roleplay:</strong> pode ser lido em voz alta, oferecido de presente a um NPC ou usado como prova de autoria. Tem valor sentimental."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "livro-de-poemas"
+    }
+  },
+  "folder": "0apUs7mIrIIHkuGN",
+  "sort": 3900,
+  "_key": "!items!IFXjylKCqHptoFl5"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "1pVRHGPOr7Afh9jn",
+  "name": "Anel de sinete",
+  "type": "equipamento",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "tipo": "item-comum",
+    "categoriaItem": "insignia",
+    "quantidade": 1,
+    "preco": 4000,
+    "precoVenda": null,
+    "semVenda": false,
+    "espacos": 0.5,
+    "vestimenta": true,
+    "vestido": false,
+    "bonus": [],
+    "valeEnquantoPossui": false,
+    "usos": {
+      "max": 0,
+      "atual": 0
+    },
+    "origemItem": false,
+    "descricao": "Anel de prata com o brasão da família. <strong>Utilidade:</strong> lacra cartas e documentos e prova a linhagem do portador. <strong>Roleplay:</strong> perder o anel pode permitir falsificações em seu nome."
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "anel-de-sinete"
+    }
+  },
+  "folder": "8QheE69QSoG6ltBK",
+  "sort": 4000,
+  "_key": "!items!1pVRHGPOr7Afh9jn"
+}

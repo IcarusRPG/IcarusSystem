@@ -1,0 +1,27 @@
+{
+  "_id": "CYYA0zuCVE75RB9Y",
+  "name": "Escravo",
+  "type": "origem",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "9ORbWy7ZF3DNoxzL",
+  "sort": 800,
+  "system": {
+    "origemId": "escravo",
+    "pericia": "atletismo",
+    "texto": "Você viveu sob o jugo de outra pessoa: mina, galera, casa grande ou arena. Fugiu, foi libertado ou comprou sua liberdade, e não pretende perdê-la de novo.",
+    "itens": {
+      "fixos": [
+        "elo-de-corrente-quebrada",
+        "trouxa-de-viagem"
+      ],
+      "escolhas": []
+    },
+    "poderId": "sede-de-liberdade"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "escravo"
+    }
+  },
+  "_key": "!items!CYYA0zuCVE75RB9Y"
+}

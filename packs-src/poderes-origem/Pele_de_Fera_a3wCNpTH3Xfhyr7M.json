@@ -1,0 +1,25 @@
+{
+  "_id": "a3wCNpTH3Xfhyr7M",
+  "name": "Pele de Fera",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "passivo",
+    "descricao": "<p>Uma vez por cena, você recebe RD 3 contra o primeiro dano causado por uma criatura selvagem (animal, fera ou monstro natural) ou por uma armadilha.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "selvagem",
+      "poderId": "pele-de-fera",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 2300,
+  "_key": "!items!a3wCNpTH3Xfhyr7M"
+}

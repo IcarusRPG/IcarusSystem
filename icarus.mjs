@@ -8,6 +8,7 @@ import { EquipamentoData } from "./module/data/item-equipamento.mjs";
 import { ArmaData } from "./module/data/item-arma.mjs";
 import { MunicaoData } from "./module/data/item-municao.mjs";
 import { ClasseData } from "./module/data/item-classe.mjs";
+import { OrigemData } from "./module/data/item-origem.mjs";
 import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaAnimal } from "./module/sheets/ficha-animal.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
@@ -118,6 +119,7 @@ Hooks.once("init", () => {
   CONFIG.Item.dataModels.arma = ArmaData;
   CONFIG.Item.dataModels.municao = MunicaoData;
   CONFIG.Item.dataModels.classe = ClasseData;
+  CONFIG.Item.dataModels.origem = OrigemData;
 
   // Opções de mundo
   registrarConfiguracoesDeCombate();
@@ -144,7 +146,7 @@ Hooks.once("init", () => {
   // Animais do Vínculo: escolhida por flags.core.sheetClass (FICHA_ANIMAL); as outras fichas não mudam
   Actors.registerSheet(SISTEMA_ID, FichaAnimal, { types: ["personagem"], makeDefault: false, label: "ICARUS.Ficha.Animal" });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe"], makeDefault: true, label: "ICARUS.Ficha.Item" });
+  Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe", "origem"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 
   return loadTemplates(TEMPLATES);
 });

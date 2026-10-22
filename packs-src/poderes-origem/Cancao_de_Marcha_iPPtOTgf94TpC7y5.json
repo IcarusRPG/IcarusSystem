@@ -1,0 +1,25 @@
+{
+  "_id": "iPPtOTgf94TpC7y5",
+  "name": "Canção de Marcha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "system": {
+    "fonte": "origem",
+    "grupo": "Origem",
+    "custoPM": null,
+    "acao": "padrao",
+    "descricao": "<p>Uma vez por cena, como ação padrão, você toca ou canta, e você e os aliados em alcance curto recebem +3 m de deslocamento até o fim da cena.</p>"
+  },
+  "flags": {
+    "icarus-rpg": {
+      "auto": true,
+      "origemId": "musico",
+      "poderId": "cancao-de-marcha",
+      "usoLimitado": "cena",
+      "cdAtributo": null
+    }
+  },
+  "folder": null,
+  "sort": 1800,
+  "_key": "!items!iPPtOTgf94TpC7y5"
+}
