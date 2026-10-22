@@ -87,6 +87,9 @@ export const METROS_POR_QUADRADO = 1.5;
  * Tipos de item "equipamento" (armaduras, escudos, túnicas, consumíveis e outros).
  * Armas são um tipo de item próprio ("arma"). Só armadura e escudo podem ser equipados e somam na Defesa.
  */
+/** Recargas dos recursos: cena (Encerrar cena), rodada (início do turno), descanso, dia e cidade (manuais). */
+export const RECARGAS = ["cena", "rodada", "descanso", "dia", "cidade"];
+
 export const TIPOS_EQUIPAMENTO = ["armadura", "escudo", "consumivel", "profissao", "item-comum", "outro"];
 export const TIPOS_EQUIPAVEIS = ["armadura", "escudo"];
 

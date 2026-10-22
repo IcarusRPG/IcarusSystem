@@ -17,7 +17,7 @@ const FLAG = SISTEMA_ID;
 
 /** Poder criado automaticamente pela raça (será removido ao trocar de raça). */
 export function ehPoderRacialAuto(item) {
-  return item.type === "poder" && item.flags?.[FLAG]?.auto === true;
+  return item.type === "poder" && item.flags?.[FLAG]?.auto === true && !item.flags?.[FLAG]?.origemId;
 }
 
 /** Escolhas da raça guardadas no personagem (para "Reaplicar raça"). */

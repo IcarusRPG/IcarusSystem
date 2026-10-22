@@ -37,6 +37,23 @@
         </div>
       </div>
 
+      {{!-- Origem: combobox; a troca concede perícia, poder e itens (module/origens.mjs) --}}
+      <div class="campo-origem">
+        <label class="rot" for="{{actor.id}}-origem">{{localize "ICARUS.Identidade.origem"}}</label>
+        <div class="origem-linha">
+          <select id="{{actor.id}}-origem" class="campo sel-origem" aria-describedby="{{actor.id}}-origem-texto">
+            {{#each origem.opcoes}}<option value="{{valor}}"{{#if selecionado}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+          </select>
+          {{#if origem.id}}{{#if editable}}
+          <button type="button" class="btn icone" data-action="origem-reaplicar" title="{{localize 'ICARUS.Origens.Reaplicar'}}" aria-label="{{localize 'ICARUS.Origens.Reaplicar'}}"><i class="fa-solid fa-rotate" aria-hidden="true"></i></button>
+          {{/if}}{{/if}}
+          {{#if origem.desfazer}}{{#if editable}}
+          <button type="button" class="btn icone" data-action="origem-desfazer" title="{{localize 'ICARUS.Origens.Desfazer'}}" aria-label="{{localize 'ICARUS.Origens.Desfazer'}}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></button>
+          {{/if}}{{/if}}
+        </div>
+        <span class="origem-texto" id="{{actor.id}}-origem-texto" title="{{origem.texto}}">{{origem.texto}}</span>
+      </div>
+
       {{#each identidade}}
       <label>
         <span class="rot">{{rotulo}}</span>

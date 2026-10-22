@@ -51,3 +51,25 @@ test("11/12. Joia sem preço de compra e venda R$ 200; espaços fracionários; i
   assert.deepEqual(dadosDoItemComum(itemComumPorId("saco-de-ervas")).system.usos, { max: 2, atual: 2 });
   assert.equal(dadosDoItemComum(itemComumPorId("instrumento-musical"), { escolhaTexto: "alaúde" }).name, "Instrumento musical (alaúde)");
 });
+
+test("2/4. Perícia da origem: já treinado escolhe outra; trocar de origem tira só a fonte origem", async () => {
+  const { periciaDaOrigem, semFonteOrigem, origemPorId } = await import("../module/origens-dados.mjs");
+  const musico = origemPorId("musico");
+  assert.deepEqual(periciaDaOrigem(musico, { atuacao: 0 }).pericia, "atuacao");
+  const ja = periciaDaOrigem(musico, { atuacao: 1 });
+  assert.equal(ja.precisaEscolher, true);
+  assert.equal(ja.opcoes.includes("atuacao"), false);
+  assert.equal(periciaDaOrigem(musico, { atuacao: 1 }, "luta").pericia, "luta");
+  const r = semFonteOrigem({ atuacao: ["origem"], luta: ["classe", "origem"], furtividade: ["raca", "origem"], cura: ["classe"] },
+    { atuacao: 1, luta: 1, furtividade: 1, cura: 1 });
+  assert.deepEqual(r.treinos, { atuacao: 0, furtividade: 0 }, "só origem → 0; classe fica; raça treina pelo efeito");
+  assert.deepEqual(r.treinoPor, { luta: ["classe"], furtividade: ["raca"], cura: ["classe"] });
+});
+
+test("4. Item de origem editado ou multiplicado não sai na troca (assinatura)", async () => {
+  const { assinaturaDoItem, dadosDoItemComum, itemComumPorId } = await import("../module/origens-dados.mjs");
+  const d = dadosDoItemComum(itemComumPorId("traje-real"), { origemItem: true });
+  const a = assinaturaDoItem(d);
+  assert.equal(assinaturaDoItem({ ...d, system: { ...d.system, vestido: true } }), a, "vestir não é editar");
+  assert.notEqual(assinaturaDoItem({ ...d, name: "Traje do rei" }), a);
+});

@@ -3,7 +3,8 @@ import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
 import { classePorId, idDaClassePorNome, blocoDoVinculo } from "../classes-dados.mjs";
-import { SISTEMA_ID } from "../config.mjs";
+import { SISTEMA_ID, RECARGAS } from "../config.mjs";
+import { origemPorId, idDaOrigemPorNome } from "../origens-dados.mjs";
 
 const CHAVE_RD = /^system\.resistencias\.(rdGeral|reducao\.(\w+))$/;
 
@@ -123,7 +124,7 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         nome: texto(),
         valor: inteiro(0, { min: 0 }),
         max: inteiro(1, { min: 0 }),
-        recarga: new fields.StringField({ required: true, blank: false, initial: "cena", choices: ["cena", "rodada", "descanso"] })
+        recarga: new fields.StringField({ required: true, blank: false, initial: "cena", choices: RECARGAS })
       })),
       // Reação da rodada (renova no início do turno do personagem)
       reacao: new fields.SchemaField({ disponivel: new fields.BooleanField({ initial: true }) }),
@@ -142,6 +143,12 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     if (typeof raca === "string" && raca && !racaPorId(raca)) {
       const id = idDaRacaPorNome(raca);
       if (id) source.identidade.raca = id;
+    }
+    // Origem era texto livre: se bate com o nome de uma origem do sistema, vira o id
+    const origem = source.identidade?.origem;
+    if (typeof origem === "string" && origem && !origemPorId(origem)) {
+      const id = idDaOrigemPorNome(origem);
+      if (id) source.identidade.origem = id;
     }
     // Classe também era texto livre: se bate com o nome de uma classe do sistema, vira o id
     const classe = source.identidade?.classe;

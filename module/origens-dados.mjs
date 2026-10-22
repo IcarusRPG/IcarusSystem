@@ -93,6 +93,15 @@ export function dadosDoPoderDeOrigem(origem, { img = ICONE_PADRAO, _id } = {}) {
   };
 }
 
+/**
+ * Assinatura do item concedido pela origem (nome, preço, espaços, bônus e escolha): se o jogador
+ * mudar algum desses campos, o item conta como editado e fica na troca de origem.
+ */
+export function assinaturaDoItem(item) {
+  const s = item.system ?? {};
+  return JSON.stringify([item.name, s.preco ?? 0, s.espacos ?? 1, s.bonus ?? [], item.flags?.[SISTEMA_ID]?.escolhaBonus ?? null]);
+}
+
 /* ------------------------------ Vestimentas ------------------------------ */
 
 /** Conta no limite de vestimentas? Itens comuns vestíveis, armaduras e túnicas (escudo não). */

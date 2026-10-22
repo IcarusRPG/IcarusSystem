@@ -1171,7 +1171,9 @@
       "Recargas": {
         "cena": "por cena",
         "rodada": "por rodada",
-        "descanso": "por descanso"
+        "descanso": "por descanso",
+        "dia": "por dia",
+        "cidade": "por cidade"
       },
       "Sugerir": "Sugerir pelos textos",
       "SugerirDica": "Cria um recurso para cada habilidade ou poder da ficha que diz \"uma vez por cena/rodada/turno/dia\".",
@@ -1271,7 +1273,25 @@
       "Pericia": "Perícia treinada:",
       "Poder": "Poder de Origem:",
       "Itens": "Itens comuns:",
-      "DicaItem": "Escolha a origem no cabeçalho da ficha do personagem: a perícia, o poder e os itens entram sozinhos."
+      "DicaItem": "Escolha a origem no cabeçalho da ficha do personagem: a perícia, o poder e os itens entram sozinhos.",
+      "Titulo": "Origem — {nome}",
+      "Nenhuma": "— Nenhuma —",
+      "Livre": "Origem livre (sem automação)",
+      "Treinada": "Treinada, +2",
+      "JaTreinado": "Você já é treinado em {pericia}: escolha outra perícia (a origem nunca deixa especialista).",
+      "OutraPericia": "Outra perícia",
+      "UmDosDois": "Escolha um",
+      "ItensGratis": "Os itens entram no inventário sem custo (não contam na riqueza inicial).",
+      "Confirmar": "Confirmar",
+      "TrocarTitulo": "Trocar de origem",
+      "TrocarTexto": "Trocar para {nova}? Saem o Poder de Origem, os itens de origem que você não editou e o treino dado pela origem:",
+      "RemoverTexto": "Remover a origem? Saem o Poder de Origem, os itens de origem que você não editou e o treino dado pela origem:",
+      "TrocarDica": "Itens que você comprou, editou ou multiplicou ficam. Dá para desfazer.",
+      "Reaplicar": "Reaplicar origem",
+      "Reaplicada": "Origem {origem} reaplicada.",
+      "SemOrigem": "Este personagem não tem uma origem do sistema.",
+      "Desfazer": "Desfazer troca de origem",
+      "Desfeita": "Troca de origem desfeita."
     },
     "ItensComuns": {
       "Vestimenta": "Vestimenta (conta no limite de 5)",
@@ -1282,7 +1302,8 @@
       "UsosAtual": "Usos restantes",
       "UsosMax": "Usos máximos",
       "EscolhaBonus": "Bônus em",
-      "AtaqueDesarmado": "Ataque desarmado"
+      "AtaqueDesarmado": "Ataque desarmado",
+      "QualTexto": "Qual {texto}?"
     }
   }
 }
