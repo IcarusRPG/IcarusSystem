@@ -1326,7 +1326,15 @@
       "QuebrarGazuas": "Quebrar gazuas",
       "QuebrarConfirmar": "Tirou 1 natural com as gazuas: elas quebram. Remover as gazuas de {nome}?",
       "Quebrou": "As gazuas de {nome} quebraram.",
-      "SoDono": "Só o dono do personagem pode fazer isso."
+      "SoDono": "Só o dono do personagem pode fazer isso.",
+      "AbrirFechadura": "Abrir fechadura/tranca",
+      "ComGazuas": "com gazuas",
+      "SemGazuasPenalidade": "sem gazuas: −5",
+      "SemGazuasRotulo": "sem gazuas",
+      "RolarTitulo": "Rolar {pericia}",
+      "BonusDeItens": "Bônus de itens",
+      "Rolar": "Rolar",
+      "GazuasQuebram": "1 natural: as gazuas quebram."
     }
   }
 }

@@ -5,6 +5,7 @@
  */
 import { SISTEMA_ID } from "./config.mjs";
 import { ehVestimenta, estaVestido, vestimentasAtivas, LIMITE_VESTIMENTAS } from "./origens-dados.mjs";
+import { MODIFICADORES_ATAQUE } from "./combate-chat.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 const loc = k => game.i18n.localize(k);
@@ -53,6 +54,17 @@ export async function quebrarGazuas(actor) {
   else await gazuas.delete();
   return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p>${esc(fmt("ICARUS.ItensComuns.Quebrou", { nome: actor.name }))}</p>` });
 }
+
+/** Ataque desarmado? (arma natural marcada, ex.: Monge, ou arma chamada "Desarmado") */
+export const ehAtaqueDesarmado = item => !!item?.flags?.[F]?.desarmado || /^desarmad/i.test(item?.name ?? "");
+
+// Bandagens de luta e Elo de corrente quebrada (opção ataque desarmado): somam sozinhos nos
+// testes de ataque desarmado (itens diferentes somam; o mesmo item, uma vez)
+MODIFICADORES_ATAQUE.push(({ actor, item }) => {
+  const bonus = actor.system.bonusDesarmado ?? [];
+  if (!bonus.length || !ehAtaqueDesarmado(item)) return null;
+  return { bonus: bonus.reduce((soma, b) => soma + b.valor, 0), linhas: bonus.map(b => `+${b.valor} ${b.origem}`) };
+});
 
 /* ------------------------------ Limite de Vestimentas ------------------------------ */
 

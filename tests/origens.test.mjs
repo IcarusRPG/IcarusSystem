@@ -133,3 +133,13 @@ test("12. Carga: dois itens de 0,5 ocupam 1 espaço; frações no cálculo", () 
   assert.equal(s.carga.usado, 1.5);
   assert.equal(Math.ceil(s.carga.usado), 2);
 });
+
+test("7. Gazuas: abrir fechadura sem gazuas −5; com gazuas 0; 1 natural com gazuas quebra", async () => {
+  const { resultadoDaFechadura, temGazuas } = await import("../module/origens-dados.mjs");
+  assert.deepEqual(resultadoDaFechadura({ abrir: true, gazuas: false, natural: 1 }), { modificador: -5, quebra: false });
+  assert.deepEqual(resultadoDaFechadura({ abrir: true, gazuas: true, natural: 7 }), { modificador: 0, quebra: false });
+  assert.deepEqual(resultadoDaFechadura({ abrir: true, gazuas: true, natural: 1 }), { modificador: 0, quebra: true });
+  assert.deepEqual(resultadoDaFechadura({ abrir: false, gazuas: false, natural: 1 }), { modificador: 0, quebra: false });
+  assert.equal(temGazuas([comum("gazuas")]), true);
+  assert.equal(temGazuas([comum("gazuas", { quantidade: 0 })]), false);
+});
