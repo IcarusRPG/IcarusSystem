@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__passo-firme",
       "auto": true,
       "origemId": "andarilho",
       "poderId": "passo-firme",

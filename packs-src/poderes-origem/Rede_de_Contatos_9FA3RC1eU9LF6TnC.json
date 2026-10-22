@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__rede-de-contatos",
       "auto": true,
       "origemId": "membro-de-guilda",
       "poderId": "rede-de-contatos",

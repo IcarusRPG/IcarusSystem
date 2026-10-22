@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__conhecimento-util",
       "auto": true,
       "origemId": "estudioso",
       "poderId": "conhecimento-util",

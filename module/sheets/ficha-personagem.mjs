@@ -655,6 +655,15 @@ export class FichaPersonagem extends ActorSheet {
         return sugerirRecursos(actor);
       case "recurso-classe-descanso":
         return recarregarRecursos(actor, "descanso");
+      case "recurso-novo-dia":
+        return recarregarRecursos(actor, "dia");
+      case "recurso-nova-cidade":
+        return recarregarRecursos(actor, "cidade");
+      case "recurso-recarregar": {
+        const id = el.closest("[data-recurso-id]")?.dataset.recursoId;
+        const r = s.recursos.find(x => x.id === id);
+        return r ? alterarRecurso(actor, id, { valor: r.max }) : null;
+      }
       case "recurso-classe-excluir":
         return removerRecurso(actor, el.closest("[data-recurso-id]")?.dataset.recursoId);
       case "recurso-classe-delta": {

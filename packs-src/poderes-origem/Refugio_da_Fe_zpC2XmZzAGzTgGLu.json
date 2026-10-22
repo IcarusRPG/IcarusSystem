@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__refugio-da-fe",
       "auto": true,
       "origemId": "religioso",
       "poderId": "refugio-da-fe",

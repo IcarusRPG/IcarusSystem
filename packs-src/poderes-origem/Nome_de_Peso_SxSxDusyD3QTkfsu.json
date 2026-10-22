@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__nome-de-peso",
       "auto": true,
       "origemId": "herdeiro",
       "poderId": "nome-de-peso",

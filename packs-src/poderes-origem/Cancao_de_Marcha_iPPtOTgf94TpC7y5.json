@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__cancao-de-marcha",
       "auto": true,
       "origemId": "musico",
       "poderId": "cancao-de-marcha",

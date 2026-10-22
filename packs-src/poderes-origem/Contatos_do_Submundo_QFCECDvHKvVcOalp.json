@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__contatos-do-submundo",
       "auto": true,
       "origemId": "fora-da-lei",
       "poderId": "contatos-do-submundo",

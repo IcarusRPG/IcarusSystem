@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__satira-cortante",
       "auto": true,
       "origemId": "poeta",
       "poderId": "satira-cortante",

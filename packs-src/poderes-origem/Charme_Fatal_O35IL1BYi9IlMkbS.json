@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__charme-fatal",
       "auto": true,
       "origemId": "gigolo",
       "poderId": "charme-fatal",

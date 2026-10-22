@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__pele-de-fera",
       "auto": true,
       "origemId": "selvagem",
       "poderId": "pele-de-fera",

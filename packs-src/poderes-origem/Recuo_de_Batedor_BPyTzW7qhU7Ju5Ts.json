@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__recuo-de-batedor",
       "auto": true,
       "origemId": "batedor",
       "poderId": "recuo-de-batedor",

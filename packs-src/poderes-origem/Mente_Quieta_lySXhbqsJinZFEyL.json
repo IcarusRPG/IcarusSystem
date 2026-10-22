@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__mente-quieta",
       "auto": true,
       "origemId": "eremita",
       "poderId": "mente-quieta",

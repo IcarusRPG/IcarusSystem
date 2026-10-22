@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  ORIGENS, ITENS_COMUNS, documentosDeOrigens, itensDaOrigem, origemPorId, itemComumPorId, dadosDoItemComum
+  ORIGENS, ITENS_COMUNS, documentosDeOrigens, itensDaOrigem, origemPorId, itemComumPorId, dadosDoItemComum, dadosDoPoderDeOrigem
 } from "../module/origens-dados.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
 import { PERICIAS } from "../module/config.mjs";
@@ -142,4 +142,16 @@ test("7. Gazuas: abrir fechadura sem gazuas −5; com gazuas 0; 1 natural com ga
   assert.deepEqual(resultadoDaFechadura({ abrir: false, gazuas: false, natural: 1 }), { modificador: 0, quebra: false });
   assert.equal(temGazuas([comum("gazuas")]), true);
   assert.equal(temGazuas([comum("gazuas", { quantidade: 0 })]), false);
+});
+
+test("10. Poderes: uso limitado (cena/dia/cidade), CD 10 + metade do nível + CAR, Sorte de Marujo e Faro gastam 2 PM", async () => {
+  const { calcularCD } = await import("../module/combate.mjs");
+  const p = id => ORIGENS.find(o => o.poder.id === id).poder;
+  assert.deepEqual(["passo-firme", "corpo-calejado", "contatos-do-submundo", "refugio-da-fe"].map(id => p(id).usoLimitado), ["cena", "dia", "cidade", "cidade"]);
+  assert.deepEqual(["gracejo", "charme-fatal", "satira-cortante"].map(id => p(id).cdAtributo), ["CAR", "CAR", "CAR"]);
+  assert.equal(p("sorte-de-marujo").custoPM, 2);
+  assert.equal(p("faro-para-mentiras").custoPM, 2);
+  assert.equal(calcularCD({ nivel: 5, atributos: { CAR: { total: 3 } } }, "CAR").cd, 15);
+  const d = dadosDoPoderDeOrigem(origemPorId("bobo-da-corte"));
+  assert.equal(d.flags["icarus-rpg"].id, "origem__gracejo", "gancho do Usar pelo id");
 });

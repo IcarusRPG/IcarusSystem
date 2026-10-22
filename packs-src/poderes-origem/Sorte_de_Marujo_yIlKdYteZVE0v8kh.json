@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__sorte-de-marujo",
       "auto": true,
       "origemId": "marujo",
       "poderId": "sorte-de-marujo",

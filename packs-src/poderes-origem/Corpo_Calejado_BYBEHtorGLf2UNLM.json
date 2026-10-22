@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__corpo-calejado",
       "auto": true,
       "origemId": "campones",
       "poderId": "corpo-calejado",

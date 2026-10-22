@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__teimosia-de-sobrevivente",
       "auto": true,
       "origemId": "refugiado",
       "poderId": "teimosia-de-sobrevivente",

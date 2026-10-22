@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__sangue-da-arena",
       "auto": true,
       "origemId": "gladiador",
       "poderId": "sangue-da-arena",

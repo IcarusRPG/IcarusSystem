@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__cair-de-pe",
       "auto": true,
       "origemId": "circense",
       "poderId": "cair-de-pe",

@@ -89,7 +89,7 @@ export function dadosDoPoderDeOrigem(origem, { img = ICONE_PADRAO, _id } = {}) {
     type: "poder",
     img,
     system: { fonte: "origem", grupo: "Origem", custoPM: p.custoPM ?? null, acao: p.acao ?? "", descricao: `<p>${p.descricao}</p>` },
-    flags: { [SISTEMA_ID]: { auto: true, origemId: origem.id, poderId: p.id, usoLimitado: p.usoLimitado ?? null, cdAtributo: p.cdAtributo ?? null } }
+    flags: { [SISTEMA_ID]: { id: `origem__${p.id}`, auto: true, origemId: origem.id, poderId: p.id, usoLimitado: p.usoLimitado ?? null, cdAtributo: p.cdAtributo ?? null } }
   };
 }
 

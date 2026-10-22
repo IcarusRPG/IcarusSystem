@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__olhos-baixos",
       "auto": true,
       "origemId": "servo",
       "poderId": "olhos-baixos",

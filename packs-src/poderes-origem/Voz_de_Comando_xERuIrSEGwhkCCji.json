@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__voz-de-comando",
       "auto": true,
       "origemId": "realeza",
       "poderId": "voz-de-comando",

@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__primeiros-socorros",
       "auto": true,
       "origemId": "curandeiro",
       "poderId": "primeiros-socorros",

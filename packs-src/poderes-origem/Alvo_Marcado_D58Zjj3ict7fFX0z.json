@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__alvo-marcado",
       "auto": true,
       "origemId": "matador-de-aluguel",
       "poderId": "alvo-marcado",

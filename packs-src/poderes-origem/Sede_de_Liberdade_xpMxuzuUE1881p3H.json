@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__sede-de-liberdade",
       "auto": true,
       "origemId": "escravo",
       "poderId": "sede-de-liberdade",

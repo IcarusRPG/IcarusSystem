@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__faro-para-mentiras",
       "auto": true,
       "origemId": "guarda",
       "poderId": "faro-para-mentiras",

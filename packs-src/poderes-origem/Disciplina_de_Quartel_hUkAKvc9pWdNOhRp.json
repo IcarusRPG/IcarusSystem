@@ -12,6 +12,7 @@
   },
   "flags": {
     "icarus-rpg": {
+      "id": "origem__disciplina-de-quartel",
       "auto": true,
       "origemId": "soldado",
       "poderId": "disciplina-de-quartel",

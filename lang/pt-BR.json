@@ -1180,7 +1180,12 @@
       "Descansar": "Descanso: recarregar",
       "Vazio": "Nenhum recurso. Use + Recurso ou Sugerir pelos textos.",
       "NadaSugerido": "Nenhuma habilidade ou poder novo com uso limitado no texto.",
-      "Sugeridos": "Recursos criados: {lista}"
+      "Sugeridos": "Recursos criados: {lista}",
+      "NovoDia": "Novo dia",
+      "NovaCidade": "Nova cidade",
+      "NovoDiaDica": "Recarrega os recursos \"por dia\".",
+      "NovaCidadeDica": "Recarrega os recursos \"por cidade\".",
+      "Recarregar": "Recarregar"
     },
     "Escolhas": {
       "Permanente": "Escolha permanente: só muda pelo reset de classe ou pelo Mestre.",
@@ -1291,7 +1296,12 @@
       "Reaplicada": "Origem {origem} reaplicada.",
       "SemOrigem": "Este personagem não tem uma origem do sistema.",
       "Desfazer": "Desfazer troca de origem",
-      "Desfeita": "Troca de origem desfeita."
+      "Desfeita": "Troca de origem desfeita.",
+      "SemUso": "{poder} já foi usado (recarga: {recarga}).",
+      "CD": "CD {cd} (10 + metade do nível + {atributo})",
+      "CondicaoSugerida": "O alvo faz um teste de Vontade. Em falha, aplique a condição do texto pelo painel de condições.",
+      "AbrirResistencia": "Teste de Resistência: Vontade, CD {cd}",
+      "SoMestreAbre": "O Mestre abre o Teste de Resistência."
     },
     "ItensComuns": {
       "Vestimenta": "Vestimenta (conta no limite de 5)",
