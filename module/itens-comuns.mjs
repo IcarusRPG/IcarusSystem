@@ -1,6 +1,6 @@
 /**
  * Itens comuns no Foundry: "Usar" (itens com usos e o Kit de viagem), "Quebrar gazuas" e o
- * Limite de Vestimentas (vestir/tirar, bloqueio da 6ª peça com a exceção do Mestre).
+ * Limite de Vestimentas (vestir/tirar; a 6ª peça é sempre bloqueada, para todos).
  * Nada aqui automatiza o efeito do item: o card no chat traz o texto e o Mestre aplica.
  */
 import { SISTEMA_ID } from "./config.mjs";
@@ -72,51 +72,45 @@ MODIFICADORES_ATAQUE.push(({ actor, item }) => {
 export const campoVestido = item => (item.system.tipo === "item-comum" ? "system.vestido" : "system.equipado");
 
 /**
- * Vestir/Tirar. Vestir a 6ª peça: bloqueia com aviso; o Mestre pode "Vestir mesmo assim"
- * (fica fora do limite: não vale nada até outra sair) e isso vai para o chat.
+ * Peças vestidas que contam para vestir esta: trocar de armadura não conta a antiga, que o
+ * equipar desveste sozinho (só uma armadura equipada por vez, module/armaduras.mjs).
  */
+export function vestidasParaVestir(itens, item) {
+  const troca = item.system.tipo === "armadura" ? itens.filter(i => i.id !== item.id && i.type === "equipamento" && i.system.tipo === "armadura" && i.system.equipado) : [];
+  return vestimentasAtivas(itens.filter(i => !troca.includes(i))).vestidas;
+}
+
+/** Vestir/Tirar. Com 5 peças vestidas, a 6ª é bloqueada para todos (regra do núcleo, sem exceção). */
 export async function alternarVestido(actor, item) {
   if (!ehVestimenta(item)) return null;
   if (estaVestido(item)) return item.update({ [campoVestido(item)]: false });
-  return vestir(actor, item);
-}
-
-async function vestir(actor, item) {
-  const { vestidas } = vestimentasAtivas(actor.items.contents ?? [...actor.items]);
-  if (vestidas < LIMITE_VESTIMENTAS) return item.update({ [campoVestido(item)]: true, [`flags.${F}.vestidoEm`]: Date.now() });
-  const aviso = fmt("ICARUS.ItensComuns.Limite", { n: LIMITE_VESTIMENTAS });
-  if (!game.user.isGM) return ui.notifications.warn(aviso);
-  const r = await DialogV2.wait({
-    window: { title: loc("ICARUS.ItensComuns.LimiteTitulo") },
-    content: `<p>${esc(aviso)}</p><p class="dica">${esc(loc("ICARUS.ItensComuns.LimiteExcecaoDica"))}</p>`,
-    buttons: [
-      { action: "mesmo", label: loc("ICARUS.ItensComuns.VestirMesmoAssim"), icon: "fa-solid fa-shirt" },
-      { action: "cancelar", label: loc("ICARUS.Testes.Cancelar"), default: true }
-    ],
-    rejectClose: false
-  });
-  if (r !== "mesmo") return null;
-  await item.update({ [campoVestido(item)]: true, [`flags.${F}.vestidoEm`]: Date.now() }, { icarusExcecaoVestimenta: true });
-  return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p>${esc(fmt("ICARUS.ItensComuns.Excecao", { item: item.name, nome: actor.name, n: LIMITE_VESTIMENTAS }))}</p>` });
+  if (vestidasParaVestir([...actor.items], item) >= LIMITE_VESTIMENTAS) return ui.notifications.warn(fmt("ICARUS.ItensComuns.Limite", { n: LIMITE_VESTIMENTAS }));
+  return item.update({ [campoVestido(item)]: true, [`flags.${F}.vestidoEm`]: Date.now() });
 }
 
 /**
- * Trava central: qualquer caminho que tente vestir a 6ª peça (ficha do item, outra tela) é
- * bloqueado, salvo a exceção do Mestre. Registra a hora em que a peça foi vestida.
+ * Trava central: nenhum caminho (ficha do item, outra tela, item que chega já vestido) deixa
+ * passar de 5 vestimentas. Registra a hora em que a peça foi vestida.
  */
 export function registrarItensComuns() {
-  Hooks.on("preUpdateItem", (item, mudancas, opcoes) => {
+  Hooks.on("preUpdateItem", (item, mudancas) => {
     const actor = item.parent;
     if (!actor || !ehVestimenta(item) || estaVestido(item)) return;
     const vai = foundry.utils.getProperty(mudancas, campoVestido(item)) === true;
     if (!vai) return;
-    if (!foundry.utils.hasProperty(mudancas, `flags.${F}.vestidoEm`)) foundry.utils.setProperty(mudancas, `flags.${F}.vestidoEm`, Date.now());
-    if (opcoes.icarusExcecaoVestimenta) return;
-    const { vestidas } = vestimentasAtivas([...actor.items]);
-    if (vestidas >= LIMITE_VESTIMENTAS) {
+    if (vestidasParaVestir([...actor.items], item) >= LIMITE_VESTIMENTAS) {
       ui.notifications.warn(fmt("ICARUS.ItensComuns.Limite", { n: LIMITE_VESTIMENTAS }));
       return false;
     }
+    if (!foundry.utils.hasProperty(mudancas, `flags.${F}.vestidoEm`)) foundry.utils.setProperty(mudancas, `flags.${F}.vestidoEm`, Date.now());
+  });
+  // Item que chega vestido (arrastado de outra ficha) com o limite cheio: entra tirado
+  Hooks.on("preCreateItem", item => {
+    const actor = item.parent;
+    if (!actor || !ehVestimenta(item) || !estaVestido(item)) return;
+    if (vestidasParaVestir([...actor.items], item) < LIMITE_VESTIMENTAS) return;
+    item.updateSource({ [campoVestido(item)]: false });
+    ui.notifications.warn(fmt("ICARUS.ItensComuns.EntrouTirado", { item: item.name, n: LIMITE_VESTIMENTAS }));
   });
   // Card de rolagem: "Quebrar gazuas"
   Hooks.on("renderChatMessage", (mensagem, html) => {

@@ -1324,12 +1324,8 @@
       "Vestimentas": "Vestimentas",
       "Contador": "Vestimentas: {n}/{limite}",
       "LimiteDica": "Roupas, armaduras, túnicas, capas e adornos (escudo não conta).",
-      "Excedido": "Acima do limite: as últimas vestidas não valem. Tire uma.",
+      "Excedido": "Acima do limite (ficha antiga): as últimas vestidas não valem. Tire uma.",
       "Limite": "Limite de {n} vestimentas: tire uma antes.",
-      "LimiteTitulo": "Limite de vestimentas",
-      "LimiteExcecaoDica": "Exceção do Mestre: a peça fica vestida, mas não vale nada (nem bônus, nem Defesa) até outra sair.",
-      "VestirMesmoAssim": "Vestir mesmo assim",
-      "Excecao": "Exceção do Mestre: {nome} vestiu {item} além do limite de {n} vestimentas (não vale até outra sair).",
       "ForaDoLimite": "Fora do limite: não vale",
       "VendePor": "vende por até",
       "SemGazuas": "Não há gazuas no inventário.",
@@ -1344,7 +1340,8 @@
       "RolarTitulo": "Rolar {pericia}",
       "BonusDeItens": "Bônus de itens",
       "Rolar": "Rolar",
-      "GazuasQuebram": "1 natural: as gazuas quebram."
+      "GazuasQuebram": "1 natural: as gazuas quebram.",
+      "EntrouTirado": "{item} entrou no inventário sem estar vestido: o limite de {n} vestimentas está cheio."
     }
   }
 }

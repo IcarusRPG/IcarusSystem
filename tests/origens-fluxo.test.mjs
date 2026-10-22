@@ -122,7 +122,7 @@ test("2. Já treinado na perícia da origem: escolhe outra; Reaplicar não dupli
   assert.equal(ator._source.system.pericias.diplomacia.treino, 1);
 });
 
-test("8/9. Usar gasta 1 uso (Saco de ervas: 2); a trava bloqueia a 6ª vestimenta, salvo a exceção do Mestre", async () => {
+test("8/9. Usar gasta 1 uso (Saco de ervas: 2); a 6ª vestimenta é sempre bloqueada", async () => {
   const cards = [];
   const ganchos = {};
   globalThis.TextEditor = { enrichHTML: async t => t };
@@ -152,9 +152,21 @@ test("8/9. Usar gasta 1 uso (Saco de ervas: 2); a trava bloqueia a 6ª vestiment
   const ator = { items: [...vestidas, sexta] };
   sexta.parent = ator;
   assert.equal(ganchos.preUpdateItem(sexta, { system: { vestido: true } }, {}), false, "6ª bloqueada");
+  assert.equal(ganchos.preUpdateItem(sexta, { system: { vestido: true } }, { icarusExcecaoVestimenta: true }), false, "sem exceção, nem para o Mestre");
+  // Item que chega já vestido com o limite cheio entra tirado
+  const chegando = doc("capuz-escuro", { vestido: true });
+  chegando.parent = ator;
+  chegando.updateSource = function (m) { for (const [k, v] of Object.entries(m)) setP(this, k, v); };
+  ganchos.preCreateItem(chegando);
+  assert.equal(chegando.system.vestido, false);
+  // Trocar de armadura no limite: a antiga sai, então passa
+  const armadura = n => ({ id: `arm${n}`, name: "Couro", type: "equipamento", flags: {}, system: { tipo: "armadura", categoria: "leve", equipado: n === 1, quantidade: 1 } });
+  const nova = armadura(2);
+  const atorArm = { items: [...vestidas.slice(0, 4), armadura(1), nova] };
+  nova.parent = atorArm;
+  assert.notEqual(ganchos.preUpdateItem(nova, { system: { equipado: true } }, {}), false, "troca de armadura no limite");
   const m = { system: { vestido: true } };
-  assert.notEqual(ganchos.preUpdateItem(sexta, m, { icarusExcecaoVestimenta: true }), false, "exceção do Mestre passa");
-  assert.ok(m.flags["icarus-rpg"].vestidoEm, "registra quando foi vestida");
   vestidas[0].system.vestido = false;
-  assert.notEqual(ganchos.preUpdateItem(sexta, { system: { vestido: true } }, {}), false, "com uma a menos, veste");
+  assert.notEqual(ganchos.preUpdateItem(sexta, m, {}), false, "com uma a menos, veste");
+  assert.ok(m.flags["icarus-rpg"].vestidoEm, "registra quando foi vestida");
 });
