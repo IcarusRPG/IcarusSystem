@@ -14,7 +14,7 @@ globalThis.foundry = { utils: { randomID: () => "id", getProperty: getP } };
 globalThis.ui = { notifications: { info: m => avisos.push(["info", m]), warn: m => avisos.push(["warn", m]), error: m => avisos.push(["error", m]) } };
 globalThis.Hooks = { once() {}, on() {} };
 
-const { aplicarNoAtor, aplicarToken, motivoDaRecusa, contextoDoToken, retratoDoAtor } = await import("../module/token.mjs");
+const { aplicarNoAtor, aplicarToken, motivoDaRecusa, contextoDoToken, retratoDoAtor, gravarNoMundo, classeFilePicker } = await import("../module/token.mjs");
 
 function cenario({ vinculado = true, podeEnviar = false, mestre = null } = {}) {
   const atualizacoesCena = [];
@@ -86,4 +86,31 @@ test("2/9. Contexto da aba: galeria do manifesto; sem retrato (ícone padrão) a
   actor.flags["icarus-rpg"].token = { retratoSrc: "retratos/antigo.webp" };
   assert.equal(contextoDoToken(actor, true).retratoMudou, true);
   assert.equal(contextoDoToken(actor, true).tokensNaCena, true);
+});
+
+test("6. Gravar no mundo: cria a pasta só se faltar e envia o PNG (FilePicker pelo nome global, não por globalThis)", async () => {
+  cenario();
+  const chamadas = [];
+  let existe = false;
+  class FP {
+    static browse(_s, p) { chamadas.push(["browse", p]); return existe ? Promise.resolve({}) : Promise.reject(new Error("não existe")); }
+    static createDirectory(_s, p) { chamadas.push(["criar", p]); existe = true; return Promise.resolve(); }
+    static upload(_s, p, arq) { chamadas.push(["upload", p, arq.name, arq.type]); return Promise.resolve({ status: "success", path: `${p}/${arq.name}` }); }
+  }
+  // No Foundry v12 o FilePicker é global do script; aqui fica no escopo global do Node
+  globalThis.FilePicker = FP;
+  assert.equal(classeFilePicker(), FP);
+  const blob = new Blob([new Uint8Array([0x89, 0x50, 0x4e, 0x47])], { type: "image/png" });
+  assert.equal(await gravarNoMundo("a1", blob), "worlds/mundo/icarus-tokens/a1.png");
+  assert.deepEqual(chamadas.map(c => c[0]), ["browse", "criar", "upload"]);
+  assert.deepEqual(chamadas[2].slice(2), ["a1.png", "image/png"]);
+  chamadas.length = 0;
+  await gravarNoMundo("a1", blob);
+  assert.deepEqual(chamadas.map(c => c[0]), ["browse", "upload"], "pasta já existe: não cria de novo");
+  // v13: foundry.applications.apps.FilePicker tem preferência
+  class FP13 { static get implementation() { return FP13; } }
+  globalThis.foundry.applications = { apps: { FilePicker: FP13 } };
+  assert.equal(classeFilePicker(), FP13);
+  delete globalThis.foundry.applications;
+  delete globalThis.FilePicker;
 });
