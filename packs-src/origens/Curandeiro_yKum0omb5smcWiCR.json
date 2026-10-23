@@ -8,6 +8,7 @@
   "system": {
     "origemId": "curandeiro",
     "pericia": "cura",
+    "periciaBonus": 2,
     "texto": "Remédio de ervas, parto, febre e osso quebrado: você era a pessoa a quem chamavam na madrugada.",
     "itens": {
       "fixos": [

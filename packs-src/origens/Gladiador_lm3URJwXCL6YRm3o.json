@@ -8,6 +8,7 @@
   "system": {
     "origemId": "gladiador",
     "pericia": "intimidacao",
+    "periciaBonus": 2,
     "texto": "Você lutava em arenas, rodas de briga ou torneios, com a plateia berrando e o dinheiro mudando de mão.",
     "itens": {
       "fixos": [

@@ -3,19 +3,18 @@
  * trocar (reset limpo com "Desfazer") e reaplicar. Dados e regras puras: module/origens-dados.mjs.
  *
  * Aplicar a origem:
- * - perícia Treinada (+2) com a fonte "origem" em flags.treinoPor (nunca especialista; se já for
- *   treinado, o jogador escolhe outra perícia não treinada);
+ * - bônus de +2 na perícia da origem: Efeito Ativo no ator (system.pericias.<chave>.outros,
+ *   flags.fonte = "origem"). Não treina, não usa treinoPor e soma com treino ou especialização;
  * - Poder de Origem: item "poder" automático (flags auto + origemId), com recurso se tiver uso limitado;
  * - 2 itens comuns grátis (origemItem), com as escolhas de bônus e de texto livre.
  * Trocar de origem remove o poder, os itens de origem que o jogador não editou nem multiplicou, o
- * recurso e a fonte "origem" do treino (a perícia só volta a não treinada sem outra fonte).
+ * recurso e o efeito de bônus; o treino fica como está (a troca de classe também não toca no bônus).
  */
 import { SISTEMA_ID, ICONE_PADRAO, PERICIAS } from "./config.mjs";
 import {
   ORIGENS, origemPorId, itemComumPorId, itensDaOrigem, opcoesDeBonus, dadosDoItemComum, dadosDoPoderDeOrigem,
-  periciaDaOrigem, semFonteOrigem, assinaturaDoItem, ATAQUE_DESARMADO, textoDoBonus
+  assinaturaDoItem, ATAQUE_DESARMADO, textoDoBonus, efeitoDeOrigem, ehEfeitoDeOrigem, semFonteOrigem
 } from "./origens-dados.mjs";
-import { marcarTreino } from "./assistente.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 const loc = k => game.i18n.localize(k);
@@ -35,9 +34,6 @@ export function itensDeOrigemRemoviveis(actor) {
 
 /** Recurso do poder de uso limitado (id estável por poder). */
 export const idDoRecurso = poderId => `origem-${poderId}`;
-
-/** Treino efetivo (com raça e classe) por perícia. */
-const treinosDoAtor = actor => Object.fromEntries(PERICIAS.map(p => [p.chave, actor.system.pericias[p.chave]?.treino ?? 0]));
 
 /* ------------------------------ Diálogo de escolhas ------------------------------ */
 
@@ -62,18 +58,13 @@ const lerCampos = (form, prefixo) => ({
 });
 
 /**
- * Diálogo "Origem — <Nome>": perícia (outra se já treinado), poder, itens (um de cada grupo) e as
- * escolhas dos itens. @returns {Promise<object|null>} escolhas ({ pericia, grupos[], itens{} }) ou null
+ * Diálogo "Origem — <Nome>": bônus de perícia (só texto), poder, itens (um de cada grupo) e as
+ * escolhas dos itens. @returns {Promise<object|null>} escolhas ({ grupos[], itens{} }) ou null
  */
 export async function escolherOrigem(actor, origem, anteriores = {}) {
-  const pericia = periciaDaOrigem(origem, treinosDoAtor(actor), anteriores.pericia);
   const poder = origem.poder;
   const custo = poder.custoPM ? ` · ${poder.custoPM} PM` : "";
-  const blocoPericia = pericia.precisaEscolher
-    ? `<p class="aviso">${esc(fmt("ICARUS.Origens.JaTreinado", { pericia: nomePericia(origem.pericia) }))}</p>
-       <label class="f"><span class="rot">${esc(loc("ICARUS.Origens.OutraPericia"))}</span>
-       <select name="pericia">${pericia.opcoes.map(k => `<option value="${k}"${k === anteriores.pericia ? " selected" : ""}>${esc(nomePericia(k))}</option>`).join("")}</select></label>`
-    : `<p><b>${esc(nomePericia(origem.pericia))}</b> (${esc(loc("ICARUS.Origens.Treinada"))})</p>`;
+  const blocoPericia = `<p>${esc(fmt("ICARUS.Origens.BonusPericia", { valor: origem.periciaBonus ?? 2, pericia: nomePericia(origem.pericia) }))}</p>`;
   const fixos = origem.itens.fixos.map(id => {
     const it = itemComumPorId(id);
     return `<li><b>${esc(it.nome)}</b>${it.bonus?.length ? ` <small>${esc(it.bonus.map(b => textoDoBonus(b)).join("; "))}</small>` : ""}${camposDoItem(it, `item.${id}`, anteriores.itens?.[id])}</li>`;
@@ -97,7 +88,6 @@ export async function escolherOrigem(actor, origem, anteriores = {}) {
       { action: "ok", label: loc("ICARUS.Origens.Confirmar"), default: true, callback: (ev, b) => {
         const form = b.form;
         const escolhas = {
-          pericia: pericia.precisaEscolher ? form.querySelector("[name=pericia]")?.value ?? null : origem.pericia,
           grupos: origem.itens.escolhas.map((g, n) => Number(form.querySelector(`[name="grupo.${n}"]:checked`)?.value ?? 0)),
           itens: {}
         };
@@ -145,17 +135,17 @@ async function iconeDoPacote(pacote, idFlag, valor) {
   return indice?.find(e => foundry.utils.getProperty(e, `flags.${F}.${idFlag}`) === valor)?.img ?? ICONE_PADRAO;
 }
 
+/** Efeitos Ativos do bônus de perícia da origem no ator (flags.fonte = "origem"). */
+export const efeitosDeOrigem = actor => [...(actor.effects ?? [])].filter(ehEfeitoDeOrigem);
+
 /** Aplica a origem com as escolhas (sem reset; quem chama tira a anterior antes). */
 export async function aplicarOrigem(actor, origemId, escolhas) {
   const origem = origemPorId(origemId);
   if (!origem) return;
-  const pericia = escolhas.pericia ?? origem.pericia;
   const atualizacao = {
     "system.identidade.origem": origem.id,
-    [`flags.${F}.escolhasOrigem`]: JSON.stringify(escolhas),
-    ...marcarTreino(actor, [pericia], "origem")
+    [`flags.${F}.escolhasOrigem`]: JSON.stringify({ grupos: escolhas.grupos ?? [], itens: escolhas.itens ?? {} })
   };
-  if ((actor._source.system.pericias[pericia]?.treino ?? 0) < 1) atualizacao[`system.pericias.${pericia}.treino`] = 1;
   // Uso limitado: 1 recurso (cena, dia ou cidade)
   const p = origem.poder;
   if (p.usoLimitado) {
@@ -171,6 +161,23 @@ export async function aplicarOrigem(actor, origemId, escolhas) {
     itens.push(itemComumComEscolhas(item, escolhas.itens?.[id], { origemItem: true, img: await iconeDoPacote("itens-comuns", "id", id) }));
   }
   await actor.createEmbeddedDocuments("Item", [dadosDoPoderDeOrigem(origem, { img: imgPoder }), ...itens]);
+  // Bônus de perícia (+2 em "outros"): não treina e soma com treino ou especialização
+  await actor.createEmbeddedDocuments("ActiveEffect", [efeitoDeOrigem(origem, { img: imgPoder })]);
+}
+
+/** Estado que o "Desfazer" devolve: poder, itens, efeito de bônus, treino, treinoPor e recursos. */
+export function fotoDaOrigem(actor) {
+  const src = actor._source.system;
+  const flags = actor.flags?.[F] ?? {};
+  return {
+    origem: src.identidade.origem,
+    escolhasOrigem: flags.escolhasOrigem ?? "",
+    itens: oQueSai(actor).map(i => i.toObject()),
+    efeitos: efeitosDeOrigem(actor).map(e => e.toObject()),
+    treinos: Object.fromEntries(PERICIAS.map(p => [p.chave, src.pericias[p.chave].treino])),
+    treinoPor: foundry.utils.deepClone(flags.treinoPor ?? {}),
+    recursos: foundry.utils.deepClone(src.recursos ?? [])
+  };
 }
 
 /** O que a troca remove (para a confirmação). */
@@ -179,34 +186,23 @@ export function oQueSai(actor) {
 }
 
 /**
- * Tira a origem atual: poder, itens não editados, recurso e a fonte "origem" do treino.
+ * Tira a origem atual: poder, itens não editados, recurso e o efeito de bônus de perícia.
+ * O treino e o treinoPor não mudam (a origem não treina).
  * @param {{ snapshot?: boolean }} [op]  guarda o snapshot para "Desfazer"
  */
 export async function removerOrigem(actor, { snapshot = true } = {}) {
   const src = actor._source.system;
-  const flags = actor.flags?.[F] ?? {};
-  const sair = oQueSai(actor);
   const origemAtual = origemPorId(src.identidade.origem);
-  if (snapshot) {
-    await actor.setFlag(F, "snapshotTrocaOrigem", {
-      origem: src.identidade.origem,
-      escolhasOrigem: flags.escolhasOrigem ?? "",
-      itens: sair.map(i => i.toObject()),
-      treinos: Object.fromEntries(PERICIAS.map(p => [p.chave, src.pericias[p.chave].treino])),
-      treinoPor: foundry.utils.deepClone(flags.treinoPor ?? {}),
-      recursos: foundry.utils.deepClone(src.recursos ?? [])
-    });
-  }
+  if (snapshot) await actor.setFlag(F, "snapshotTrocaOrigem", fotoDaOrigem(actor));
+  const sair = oQueSai(actor);
   if (sair.length) await actor.deleteEmbeddedDocuments("Item", sair.map(i => i.id));
-  const plano = semFonteOrigem(flags.treinoPor ?? {}, Object.fromEntries(PERICIAS.map(p => [p.chave, src.pericias[p.chave].treino])));
-  const mudancas = {
+  const efeitos = efeitosDeOrigem(actor);
+  if (efeitos.length) await actor.deleteEmbeddedDocuments("ActiveEffect", efeitos.map(e => e.id));
+  await actor.update({
     "system.identidade.origem": "",
     [`flags.${F}.escolhasOrigem`]: "",
     "system.recursos": (src.recursos ?? []).filter(r => !origemAtual || r.id !== idDoRecurso(origemAtual.poder.id))
-  };
-  for (const [k, v] of Object.entries(plano.treinos)) mudancas[`system.pericias.${k}.treino`] = v;
-  await actor.update({ ...mudancas, [`flags.${F}.-=treinoPor`]: null });
-  await actor.update({ [`flags.${F}.treinoPor`]: plano.treinoPor });
+  });
 }
 
 /**
@@ -244,20 +240,29 @@ export async function reaplicarOrigem(actor) {
   if (!origem) return ui.notifications.warn(loc("ICARUS.Origens.SemOrigem"));
   let escolhas = {};
   try { escolhas = JSON.parse(actor.flags?.[F]?.escolhasOrigem || "{}"); } catch { escolhas = {}; }
+  // Sem as escolhas guardadas (ficha antiga): pergunta de novo antes de tirar
+  if (!escolhas.grupos) {
+    const novas = await escolherOrigem(actor, origem, escolhas);
+    if (!novas) return;
+    escolhas = novas;
+  }
   await removerOrigem(actor, { snapshot: false });
-  // Sem as escolhas guardadas (ou com a perícia agora treinada por outra fonte): pergunta de novo
-  const precisa = !escolhas.grupos || periciaDaOrigem(origem, treinosDoAtor(actor), escolhas.pericia).precisaEscolher && !escolhas.pericia;
-  if (precisa) escolhas = (await escolherOrigem(actor, origem, escolhas)) ?? escolhas;
   await aplicarOrigem(actor, origem.id, escolhas);
   ui.notifications.info(fmt("ICARUS.Origens.Reaplicada", { origem: origem.nome }));
 }
 
-/** "Desfazer troca de origem": volta poder, itens, treino, treinoPor e recursos do snapshot. */
+/**
+ * "Desfazer troca de origem" (e da migração do bônus): volta poder, itens, efeito de bônus,
+ * treino, treinoPor e recursos do snapshot.
+ */
 export async function desfazerTrocaDeOrigem(actor) {
   const snap = actor.getFlag(F, "snapshotTrocaOrigem");
   if (!snap) return;
   await removerOrigem(actor, { snapshot: false });
   if (snap.itens?.length) await actor.createEmbeddedDocuments("Item", snap.itens, { keepId: true });
+  if (snap.efeitos?.length) await actor.createEmbeddedDocuments("ActiveEffect", snap.efeitos, { keepId: true });
+  // Desfazer a migração do bônus: ela volta a ser oferecida
+  if (snap.migracao) await actor.unsetFlag?.(F, "migracaoOrigemBonus");
   const mudancas = {
     "system.identidade.origem": snap.origem,
     [`flags.${F}.escolhasOrigem`]: snap.escolhasOrigem,
@@ -284,4 +289,71 @@ export function opcoesDeOrigem(valor) {
       ...ORIGENS.map(o => ({ valor: o.id, rotulo: o.nome, selecionado: o.id === origem?.id }))
     ]
   };
+}
+
+/* ------------------------------ Migração: origem que treinava ------------------------------ */
+
+/**
+ * Fichas de antes da correção (a origem treinava a perícia, ou outra se já fosse treinado): o que a
+ * migração muda em cada uma. Só entram atores com uma origem do sistema e sem a marca da migração.
+ * @returns {{ actor, origem, tira: string[], zera: string[] }[]}
+ */
+export function planoDaMigracaoDeOrigem(atores) {
+  const planos = [];
+  for (const actor of atores) {
+    if (actor.type !== "personagem" || actor.flags?.[F]?.migracaoOrigemBonus) continue;
+    const origem = origemPorId(actor._source.system.identidade.origem);
+    if (!origem) continue;
+    const treinoPor = actor.flags?.[F]?.treinoPor ?? {};
+    const tira = Object.keys(treinoPor).filter(k => treinoPor[k].includes("origem"));
+    const treinos = Object.fromEntries(PERICIAS.map(p => [p.chave, actor._source.system.pericias[p.chave].treino]));
+    const zera = Object.keys(semFonteOrigem(treinoPor, treinos).treinos);
+    if (!tira.length && efeitosDeOrigem(actor).length) continue;
+    planos.push({ actor, origem, tira, zera });
+  }
+  return planos;
+}
+
+/** Aplica a migração num ator (snapshot para "Desfazer", tira a fonte origem, cria o +2, marca). */
+export async function migrarAtorDeOrigem({ actor, origem }) {
+  await actor.setFlag(F, "snapshotTrocaOrigem", { ...fotoDaOrigem(actor), migracao: true });
+  const src = actor._source.system;
+  const plano = semFonteOrigem(actor.flags?.[F]?.treinoPor ?? {}, Object.fromEntries(PERICIAS.map(p => [p.chave, src.pericias[p.chave].treino])));
+  const mudancas = { [`flags.${F}.-=treinoPor`]: null };
+  for (const [k, v] of Object.entries(plano.treinos)) mudancas[`system.pericias.${k}.treino`] = v;
+  await actor.update(mudancas);
+  await actor.update({ [`flags.${F}.treinoPor`]: plano.treinoPor, [`flags.${F}.migracaoOrigemBonus`]: true });
+  if (!efeitosDeOrigem(actor).length) {
+    const img = actor.items.find(ehPoderDeOrigemAuto)?.img ?? ICONE_PADRAO;
+    await actor.createEmbeddedDocuments("ActiveEffect", [efeitoDeOrigem(origem, { img })]);
+  }
+}
+
+/**
+ * Migração com confirmação (lista o que muda em cada ficha). Rodar de novo não muda nada.
+ * Uso manual (Mestre): await game.icarus.migrarBonusDeOrigem()
+ * @returns {Promise<number|false>} atores migrados, ou false se o Mestre recusou
+ */
+export async function migrarBonusDeOrigem(atores = game.actors) {
+  const planos = planoDaMigracaoDeOrigem([...atores]);
+  if (!planos.length) return 0;
+  const linha = p => {
+    const zera = p.zera.map(nomePericia), fica = p.tira.filter(k => !p.zera.includes(k)).map(nomePericia);
+    return `<li><b>${esc(p.actor.name)}</b> (${esc(p.origem.nome)}): ${esc(fmt("ICARUS.Origens.MigrarBonus", { valor: p.origem.periciaBonus ?? 2, pericia: nomePericia(p.origem.pericia) }))}`
+      + (zera.length ? ` · ${esc(fmt("ICARUS.Origens.MigrarZera", { pericias: zera.join(", ") }))}` : "")
+      + (fica.length ? ` · ${esc(fmt("ICARUS.Origens.MigrarFica", { pericias: fica.join(", ") }))}` : "") + "</li>";
+  };
+  const ok = await DialogV2.confirm({
+    window: { title: loc("ICARUS.Origens.MigrarTitulo") },
+    content: `<div class="icarus-uso"><p>${esc(loc("ICARUS.Origens.MigrarTexto"))}</p><ul class="lista-reset">${planos.map(linha).join("")}</ul>
+      <p class="dica">${esc(loc("ICARUS.Origens.MigrarDica"))}</p></div>`,
+    rejectClose: false
+  });
+  if (!ok) {
+    ui.notifications.info(loc("ICARUS.Origens.MigrarDepois"));
+    return false;
+  }
+  for (const p of planos) await migrarAtorDeOrigem(p);
+  ui.notifications.info(fmt("ICARUS.Origens.Migrados", { n: planos.length }));
+  return planos.length;
 }

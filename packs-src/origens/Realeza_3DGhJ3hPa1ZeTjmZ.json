@@ -8,6 +8,7 @@
   "system": {
     "origemId": "realeza",
     "pericia": "diplomacia",
+    "periciaBonus": 2,
     "texto": "Você nasceu em uma casa governante: coroa, trono, súditos. Fugiu do palácio, foi exilado ou só está viajando incógnito, mas o sangue não mente.",
     "itens": {
       "fixos": [

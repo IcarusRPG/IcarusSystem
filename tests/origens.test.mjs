@@ -52,14 +52,25 @@ test("11/12. Joia sem preço de compra e venda R$ 200; espaços fracionários; i
   assert.equal(dadosDoItemComum(itemComumPorId("instrumento-musical"), { escolhaTexto: "alaúde" }).name, "Instrumento musical (alaúde)");
 });
 
-test("2/4. Perícia da origem: já treinado escolhe outra; trocar de origem tira só a fonte origem", async () => {
-  const { periciaDaOrigem, semFonteOrigem, origemPorId } = await import("../module/origens-dados.mjs");
-  const musico = origemPorId("musico");
-  assert.deepEqual(periciaDaOrigem(musico, { atuacao: 0 }).pericia, "atuacao");
-  const ja = periciaDaOrigem(musico, { atuacao: 1 });
-  assert.equal(ja.precisaEscolher, true);
-  assert.equal(ja.opcoes.includes("atuacao"), false);
-  assert.equal(periciaDaOrigem(musico, { atuacao: 1 }, "luta").pericia, "luta");
+test("2. Origem: +2 de bônus na perícia (Efeito Ativo em outros, fonte origem); soma com treino; todas têm periciaBonus 2", async () => {
+  const { efeitoDeOrigem, ehEfeitoDeOrigem } = await import("../module/origens-dados.mjs");
+  assert.ok(ORIGENS.every(o => o.periciaBonus === 2));
+  const e = efeitoDeOrigem(origemPorId("curandeiro"));
+  assert.deepEqual(e.changes, [{ key: "system.pericias.cura.outros", mode: 2, value: "2" }]);
+  assert.equal(ehEfeitoDeOrigem(e), true);
+  // O Efeito soma em "outros" antes do derivado: não treinado +2; treinado +2 +2 = +4
+  const { derivarPersonagem } = await import("../module/derivar.mjs");
+  const { sistemaCompleto } = await import("./simulacao.mjs");
+  assert.equal(derivarPersonagem(sistemaCompleto({ pericias: { cura: { treino: 0, outros: 2 } } })).pericias.cura.total, 2);
+  const treinado = derivarPersonagem(sistemaCompleto({ pericias: { cura: { treino: 1, outros: 2 } } })).pericias.cura;
+  assert.equal(treinado.total, 4);
+  assert.equal(treinado.treino, 1, "continua só treinado");
+  const doc = documentosDeOrigens({}, idEstavel).origens.itens.find(o => o.system.origemId === "curandeiro");
+  assert.equal(doc.system.periciaBonus, 2);
+});
+
+test("6. Migração: tirar a fonte origem do treinoPor (perícia só volta a 0 sem outra fonte)", async () => {
+  const { semFonteOrigem } = await import("../module/origens-dados.mjs");
   const r = semFonteOrigem({ atuacao: ["origem"], luta: ["classe", "origem"], furtividade: ["raca", "origem"], cura: ["classe"] },
     { atuacao: 1, luta: 1, furtividade: 1, cura: 1 });
   assert.deepEqual(r.treinos, { atuacao: 0, furtividade: 0 }, "só origem → 0; classe fica; raça treina pelo efeito");

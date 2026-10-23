@@ -8,6 +8,7 @@
   "system": {
     "origemId": "marujo",
     "pericia": "navegacao",
+    "periciaBonus": 2,
     "texto": "Convés, vela, tempestade, porto e briga em porto. Você conhece o mar e a linguagem de quem vive nele.",
     "itens": {
       "fixos": [

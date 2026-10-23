@@ -8,6 +8,7 @@
   "system": {
     "origemId": "campones",
     "pericia": "adestramento",
+    "periciaBonus": 2,
     "texto": "Dias de sol a sol na terra, nas ceifas, no gado. Você conhece o preço do pão e o peso de uma enxada.",
     "itens": {
       "fixos": [

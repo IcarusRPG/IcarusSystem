@@ -8,6 +8,7 @@
   "system": {
     "origemId": "soldado",
     "pericia": "luta",
+    "periciaBonus": 2,
     "texto": "Quartel, marcha e fileira: você serviu a um exército, a um senhor ou a uma companhia mercenária.",
     "itens": {
       "fixos": [

@@ -8,6 +8,7 @@
   "system": {
     "origemId": "refugiado",
     "pericia": "vontade",
+    "periciaBonus": 2,
     "texto": "Guerra, fome ou desastre tirou o seu lar. Você sobreviveu, e carrega a teimosia de quem já perdeu tudo uma vez.",
     "itens": {
       "fixos": [
