@@ -2,7 +2,7 @@
   "_id": "6JFAjNu8qk8lxWiW",
   "name": "Corda de marinheiro (15 m)",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Corda%20de%20marinheiro%20(15%20m).png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",

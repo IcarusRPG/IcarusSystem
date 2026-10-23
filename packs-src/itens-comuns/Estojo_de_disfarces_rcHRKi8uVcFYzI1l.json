@@ -2,7 +2,7 @@
   "_id": "rcHRKi8uVcFYzI1l",
   "name": "Estojo de disfarces",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Estojo%20de%20disfarces.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "ferramenta",

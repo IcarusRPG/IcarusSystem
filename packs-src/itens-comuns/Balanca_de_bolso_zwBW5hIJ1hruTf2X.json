@@ -2,7 +2,7 @@
   "_id": "zwBW5hIJ1hruTf2X",
   "name": "Balança de bolso",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Balan%C3%A7a%20de%20bolso.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "ferramenta",

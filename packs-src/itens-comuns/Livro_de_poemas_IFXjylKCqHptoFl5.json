@@ -2,7 +2,7 @@
   "_id": "IFXjylKCqHptoFl5",
   "name": "Livro de poemas",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Livro%20de%20poemas.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "escrita",

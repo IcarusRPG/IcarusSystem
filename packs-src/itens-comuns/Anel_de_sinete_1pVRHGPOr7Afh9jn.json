@@ -2,7 +2,7 @@
   "_id": "1pVRHGPOr7Afh9jn",
   "name": "Anel de sinete",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Anel%20de%20sinete.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "insignia",

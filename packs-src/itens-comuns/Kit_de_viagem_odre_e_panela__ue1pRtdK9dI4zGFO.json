@@ -2,7 +2,7 @@
   "_id": "ue1pRtdK9dI4zGFO",
   "name": "Kit de viagem (odre e panela)",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Kit%20de%20viagem%20(odre%20e%20panela).png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",

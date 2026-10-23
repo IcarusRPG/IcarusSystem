@@ -2,7 +2,7 @@
   "_id": "o0iubx8VqD28CsjH",
   "name": "Traje de cerimônia",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Traje%20de%20cerim%C3%B4nia.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "traje",

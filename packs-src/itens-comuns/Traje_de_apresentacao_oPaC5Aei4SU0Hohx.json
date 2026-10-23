@@ -2,7 +2,7 @@
   "_id": "oPaC5Aei4SU0Hohx",
   "name": "Traje de apresentação",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Traje%20de%20apresenta%C3%A7%C3%A3o.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "traje",

@@ -2,7 +2,7 @@
   "_id": "HuV8Ep1ealA48N0O",
   "name": "Sacola de grãos e sementes",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Sacola%20de%20gr%C3%A3os%20e%20sementes.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",

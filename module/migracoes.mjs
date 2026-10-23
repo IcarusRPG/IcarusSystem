@@ -6,7 +6,8 @@
  * (id texugo-gigante): flags de vínculo dos patrulheiros, atores do animal já invocados, itens de
  * escolha ("Vínculo Selvagem (Teixugo Gigante)") e o documento antigo do compêndio Vínculos.
  */
-import { SISTEMA_ID, FICHA_ANIMAL } from "./config.mjs";
+import { SISTEMA_ID, FICHA_ANIMAL, ICONE_PADRAO } from "./config.mjs";
+import { iconeDoItemComum } from "./origens-dados.mjs";
 import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./origens.mjs";
 
 const ANTIGO_ID = "teixugo-gigante";
@@ -70,6 +71,29 @@ export async function migrarFichaDosAnimais() {
   return atores;
 }
 
+/**
+ * Itens comuns que ainda estão com o ícone padrão (dado azul) recebem o ícone próprio
+ * (img/Icones/itens/itens de origem). Ícone escolhido pelo jogador fica como está. Atores e itens
+ * soltos no mundo. @param {Iterable} atores  @param {Iterable} [itensDoMundo]
+ * @returns {Promise<number>} itens atualizados
+ */
+export async function atualizarIconesDeItensComuns(atores = game.actors, itensDoMundo = game.items ?? []) {
+  const novoIcone = item => {
+    if (item.type !== "equipamento" || item.system?.tipo !== "item-comum" || item.img !== ICONE_PADRAO) return null;
+    return iconeDoItemComum(item.flags?.[SISTEMA_ID]?.id);
+  };
+  let n = 0;
+  for (const actor of atores) {
+    const mudancas = actor.items.map(i => ({ _id: i.id, img: novoIcone(i) })).filter(m => m.img);
+    if (mudancas.length) { await actor.updateEmbeddedDocuments("Item", mudancas); n += mudancas.length; }
+  }
+  for (const item of itensDoMundo) {
+    const img = novoIcone(item);
+    if (img) { await item.update({ img }); n++; }
+  }
+  return n;
+}
+
 /** Migrações por versão: registradas para rodar uma vez (configuração de mundo "migracao"). */
 const MIGRACOES = [
   { versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) },
@@ -78,7 +102,9 @@ const MIGRACOES = [
   { versao: "0.10.1", rodar: async () => Number(await migrarBonusDeOrigem()) || 0 },
   // 0.10.2 — todas as origens dão 2 itens fixos: Circense e Membro de Guilda recebem (com confirmação)
   // o item que faltou; recusar não repete (game.icarus.adicionarItensDeOrigem())
-  { versao: "0.10.2", rodar: async () => Number(await adicionarItensQueFaltam()) || 0 }
+  { versao: "0.10.2", rodar: async () => Number(await adicionarItensQueFaltam()) || 0 },
+  // 0.11.1 — ícones dos itens comuns (itens de origem) no lugar do dado azul
+  { versao: "0.11.1", rodar: () => atualizarIconesDeItensComuns() }
 ];
 
 export function registrarMigracoes() {
@@ -90,7 +116,7 @@ export function registrarMigracoes() {
     for (const m of MIGRACOES) {
       if (!maior(m.versao, feita)) continue;
       const n = await m.rodar();
-      console.log(`Icarus RPG | Migração ${m.versao}: ${n} ator(es) alterado(s).`);
+      console.log(`Icarus RPG | Migração ${m.versao}: ${n} alteração(ões).`);
       if (n) ui.notifications.info(game.i18n.format("ICARUS.Migracao.Feita", { versao: m.versao, n }));
       await game.settings.set(SISTEMA_ID, "migracao", m.versao);
     }

@@ -51,6 +51,8 @@ for (const d of novos.panteao.divindades) confere("panteão/simbolos", novos.ico
 for (const c of novos.classes.classes) confere("classes", novos.iconesClasses[c.id], `classe ${c.nome}`);
 for (const m of novos.macros.macros) if (m.icone) confere(path.posix.dirname(m.icone), path.posix.basename(m.icone), `macro ${m.nome}`);
 for (const [chave, rel] of Object.entries(IMAGENS_SISTEMA)) confere(path.posix.dirname(rel), path.posix.basename(rel), `interface (${chave})`);
+const iconesItens = ler("icones-itens-comuns");
+for (const it of ler("itens-comuns").itens) confere("itens/itens de origem", iconesItens[it.id], `item comum ${it.nome}`);
 // Animais do Vínculo: "Vinculo Selvagem - <Nome>.png" com tolerância (acento, maiúsculas, espaços)
 {
   const dir = path.join(RAIZ, "img", "Icones", ...PASTA_ICONES_PODERES.split("/"));
@@ -74,7 +76,7 @@ for (const [pasta, prefixo] of [[PASTA_ICONES_PODERES, ""], ["origens", "origem:
 }
 const docsOrigens = documentosDeOrigens({ origens: ler("origens"), itens: ler("itens-comuns"), imagens: imagensOrigens }, idEstavel);
 const semIconeOrigens = [...docsOrigens.origens.itens, ...docsOrigens["poderes-origem"].itens, ...docsOrigens["itens-comuns"].itens]
-  .filter(d => !d.img.includes("/img/Icones/poderes") && !d.img.includes("/img/Icones/origens")).map(d => d.name);
+  .filter(d => !/\/img\/Icones\/(poderes|origens|itens)/.test(decodeURI(d.img))).map(d => d.name);
 if (semIconeOrigens.length) console.warn(`Origens/poderes/itens comuns sem ícone próprio (dado azul): ${semIconeOrigens.length}`);
 if (faltandoArquivo.length) {
   console.error(`ERRO: ${faltandoArquivo.length} ícone(s) mapeado(s) não existem no disco:\n  - ${faltandoArquivo.join("\n  - ")}`);

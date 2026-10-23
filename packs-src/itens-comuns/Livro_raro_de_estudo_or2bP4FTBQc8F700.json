@@ -2,7 +2,7 @@
   "_id": "or2bP4FTBQc8F700",
   "name": "Livro raro de estudo",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Livro%20raro%20de%20estudo.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "escrita",

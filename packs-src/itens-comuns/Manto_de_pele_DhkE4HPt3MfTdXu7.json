@@ -2,7 +2,7 @@
   "_id": "DhkE4HPt3MfTdXu7",
   "name": "Manto de pele",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Manto%20de%20pele.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",
