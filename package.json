@@ -7,7 +7,8 @@
     "build:packs": "node tools/gerar-dados.mjs && node tools/build-packs.mjs",
     "extract:packs": "node tools/extract-packs.mjs",
     "test": "node --test tests/*.test.mjs",
-    "gerar:dados": "node tools/gerar-dados.mjs"
+    "gerar:dados": "node tools/gerar-dados.mjs",
+    "build:tokens": "node tools/build-tokens.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "1.1.0"

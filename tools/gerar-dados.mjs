@@ -13,7 +13,7 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const GERADOS = [
   "armas", "tipos-dano", "armaduras", "poderes-concedidos", "panteao", "condicoes",
   "icones-armaduras", "icones-divindades", "icones-condicoes", "macros",
-  "classes", "icones-classes", "proficiencias-classes", "vinculos", "origens", "itens-comuns"
+  "classes", "icones-classes", "proficiencias-classes", "vinculos", "origens", "itens-comuns", "tokens"
 ];
 
 /** Conteúdo do módulo gerado para um JSON. */
