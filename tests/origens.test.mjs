@@ -170,3 +170,28 @@ test("10. Poderes: uso limitado (cena/dia/cidade), CD 10 + metade do nível + CA
   const d = dadosDoPoderDeOrigem(origemPorId("bobo-da-corte"));
   assert.equal(d.flags["icarus-rpg"].id, "origem__gracejo", "gancho do Usar pelo id");
 });
+
+test("Ícones dos itens comuns: os 49 têm arquivo; a migração troca só o dado azul", async () => {
+  const ICONES = (await import("../module/dados/icones-itens-comuns.mjs")).default;
+  const { iconeDoItemComum, PASTA_ICONES_ITENS_COMUNS } = await import("../module/origens-dados.mjs");
+  assert.equal(Object.keys(ICONES).length, 49);
+  for (const [id, arq] of Object.entries(ICONES)) assert.ok(fs.existsSync(path.join(RAIZ, "img/Icones", PASTA_ICONES_ITENS_COMUNS, arq)), id);
+  assert.equal(ICONES["trouxa-de-viagem"], "Trouxa de viagem.png");
+  assert.match(iconeDoItemComum("uniforme-da-casa"), /itens%20de%20origem\/Uniforme%20da%20casa\.png$/);
+  // Migração: só itens comuns com o dado azul
+  globalThis.foundry ??= { data: {}, utils: {} };
+  globalThis.foundry.applications ??= { api: { DialogV2: {} } };
+  globalThis.Hooks ??= { once() {}, on() {} };
+  globalThis.game ??= {};
+  const { atualizarIconesDeItensComuns } = await import("../module/migracoes.mjs");
+  const { ICONE_PADRAO } = await import("../module/config.mjs");
+  const mudou = [];
+  const ator = { items: [
+    { id: "a", type: "equipamento", img: ICONE_PADRAO, system: { tipo: "item-comum" }, flags: { "icarus-rpg": { id: "gazuas" } } },
+    { id: "b", type: "equipamento", img: "meu.png", system: { tipo: "item-comum" }, flags: { "icarus-rpg": { id: "apito" } } },
+    { id: "c", type: "equipamento", img: ICONE_PADRAO, system: { tipo: "armadura" }, flags: {} }
+  ], async updateEmbeddedDocuments(_t, m) { mudou.push(...m); } };
+  assert.equal(await atualizarIconesDeItensComuns([ator], []), 1);
+  assert.deepEqual(mudou.map(m => m._id), ["a"]);
+  assert.match(mudou[0].img, /Gazuas\.png$/);
+});

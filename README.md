@@ -154,6 +154,11 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - **Nova regra derivada:** a fórmula vai em `module/regras.mjs` (com teste), e o cálculo em `prepareDerivedData` de `module/data/actor-personagem.mjs`.
 - **Novo tipo de ator ou item:** crie o modelo em `module/data/`, registre em `icarus.mjs` e declare em `documentTypes` no `system.json`.
 
+## Ícones dos itens comuns
+
+- `img/Icones/itens/itens de origem/<Nome do item>.png` (256×256, fundo transparente), mapa em `tools/dados/icones-itens-comuns.json`.
+- Atualizar: `npm run build:icones-itens -- --de "<pasta itens de origem>"` reduz as imagens e refaz o mapa (casa pelo nome do item; exceções no script). Itens já nas fichas que estavam com o dado azul recebem o ícone pela migração 0.11.1.
+
 ## Tokens dos personagens
 
 - Molduras: `img/Icones/tokens/personagens/` (só a pasta *Token Personagens*; nomes ASCII com hífens) e miniaturas em `miniaturas/`. O manifesto `tools/dados/tokens.json` traz o nome de exibição, o nome original, a caixa da abertura e o raio de fechamento da máscara (aros com frestas, como o Anátema).

@@ -2,7 +2,7 @@
   "_id": "0xQfK0iHx9bJNaqS",
   "name": "Capa de viagem",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Capa%20de%20viagem.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",

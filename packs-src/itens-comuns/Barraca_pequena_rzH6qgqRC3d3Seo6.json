@@ -2,7 +2,7 @@
   "_id": "rzH6qgqRC3d3Seo6",
   "name": "Barraca pequena",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Barraca%20pequena.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",

@@ -2,7 +2,7 @@
   "_id": "cmeAv4bsQrgQRZwe",
   "name": "Capa escura",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Capa%20escura.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "traje",

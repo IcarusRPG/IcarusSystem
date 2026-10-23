@@ -2,7 +2,7 @@
   "_id": "DVwlCuNS03Vgrnhu",
   "name": "Ração de campanha (7 dias)",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Ra%C3%A7%C3%A3o%20de%20campanha%20(7%20dias).png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "viagem",

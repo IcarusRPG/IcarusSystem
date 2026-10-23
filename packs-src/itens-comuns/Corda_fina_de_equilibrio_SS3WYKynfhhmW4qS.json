@@ -2,7 +2,7 @@
   "_id": "SS3WYKynfhhmW4qS",
   "name": "Corda fina de equilíbrio",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Corda%20fina%20de%20equil%C3%ADbrio.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "ferramenta",

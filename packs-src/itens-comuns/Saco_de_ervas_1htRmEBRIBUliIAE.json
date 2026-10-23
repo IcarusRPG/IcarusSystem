@@ -2,7 +2,7 @@
   "_id": "1htRmEBRIBUliIAE",
   "name": "Saco de ervas",
   "type": "equipamento",
-  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Saco%20de%20ervas.png",
   "system": {
     "tipo": "item-comum",
     "categoriaItem": "cura",

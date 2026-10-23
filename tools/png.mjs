@@ -81,3 +81,24 @@ export function reduzir({ w, h, px }, lado) {
   }
   return out;
 }
+
+/** Encaixa a imagem num quadrado de `lado` px (proporção mantida, centralizada, fundo transparente). */
+export function encaixarEmQuadrado({ w, h, px }, lado) {
+  const escala = lado / Math.max(w, h);
+  const nw = Math.max(1, Math.round(w * escala)), nh = Math.max(1, Math.round(h * escala));
+  const ox = Math.floor((lado - nw) / 2), oy = Math.floor((lado - nh) / 2);
+  const out = new Uint8Array(lado * lado * 4);
+  for (let y = 0; y < nh; y++) for (let x = 0; x < nw; x++) {
+    const x0 = Math.floor(x * w / nw), x1 = Math.max(x0 + 1, Math.floor((x + 1) * w / nw));
+    const y0 = Math.floor(y * h / nh), y1 = Math.max(y0 + 1, Math.floor((y + 1) * h / nh));
+    let r = 0, g = 0, b = 0, a = 0, n = 0;
+    for (let yy = y0; yy < y1; yy++) for (let xx = x0; xx < x1; xx++) {
+      const i = (yy * w + xx) * 4, al = px[i + 3];
+      r += px[i] * al; g += px[i + 1] * al; b += px[i + 2] * al; a += al; n++;
+    }
+    const o = ((oy + y) * lado + ox + x) * 4;
+    if (a) { out[o] = Math.round(r / a); out[o + 1] = Math.round(g / a); out[o + 2] = Math.round(b / a); }
+    out[o + 3] = Math.round(a / n);
+  }
+  return out;
+}

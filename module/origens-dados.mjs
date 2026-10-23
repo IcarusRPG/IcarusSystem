@@ -14,9 +14,14 @@
 import { SISTEMA_ID, ICONE_PADRAO, PERICIAS } from "./config.mjs";
 import ORIGENS_JSON from "./dados/origens.mjs";
 import ITENS_JSON from "./dados/itens-comuns.mjs";
+import ICONES_ITENS from "./dados/icones-itens-comuns.mjs";
 
 export const ORIGENS = [...ORIGENS_JSON.origens].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
 export const ITENS_COMUNS = ITENS_JSON.itens;
+/** Pasta dos ícones dos itens comuns (relativa a img/Icones/); o mapa id → arquivo vem de tools/dados/icones-itens-comuns.json. */
+export const PASTA_ICONES_ITENS_COMUNS = "itens/itens de origem";
+/** Ícone do item comum (URL codificada), ou null se o item não tiver ícone próprio. */
+export const iconeDoItemComum = id => (ICONES_ITENS[id] ? encodeURI(`systems/${SISTEMA_ID}/img/Icones/${PASTA_ICONES_ITENS_COMUNS}/${ICONES_ITENS[id]}`) : null);
 export const LIMITE_VESTIMENTAS = ITENS_JSON.limiteVestimentas ?? 5;
 export const CATEGORIAS_ITEM_COMUM = ["viagem", "traje", "ferramenta", "cura", "escrita", "insignia"];
 /** "Bônus" fora das perícias: testes de ataque desarmado. */
@@ -266,7 +271,7 @@ export function documentosDeOrigens({ origens = ORIGENS_JSON, itens = ITENS_JSON
     },
     "itens-comuns": {
       pastas: pastasItens,
-      itens: itens.itens.map((it, i) => ({ ...dadosDoItemComum(it, { img: img(it.nome), _id: idEstavel(`item-comum:${it.id}`) }), folder: pastaDe(it.categoria), sort: (i + 1) * 100 }))
+      itens: itens.itens.map((it, i) => ({ ...dadosDoItemComum(it, { img: iconeDoItemComum(it.id) ?? img(it.nome), _id: idEstavel(`item-comum:${it.id}`) }), folder: pastaDe(it.categoria), sort: (i + 1) * 100 }))
     }
   };
 }
