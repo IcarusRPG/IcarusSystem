@@ -27,6 +27,8 @@ import { registrarPoderesDeOrigem } from "./module/origens-poderes.mjs";
 import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./module/origens.mjs";
 import { registrarTokens } from "./module/token.mjs";
 import { registrarMidias } from "./module/midias.mjs";
+import { registrarInteracao } from "./module/interacao.mjs";
+import { registrarPortaTrancada } from "./module/porta-trancada.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
@@ -77,6 +79,7 @@ const TEMPLATES = [
   "actor/parts/recursos-classe.hbs",
   "actor/parts/diario.hbs",
   "actor/parts/token.hbs",
+  "porta/cd.hbs",
   "actor/parts/efeitos.hbs",
   "item/poder.hbs",
   "item/equipamento.hbs",
@@ -136,6 +139,9 @@ Hooks.once("init", () => {
   registrarTelao();
   game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre, abrirPainel: abrirPainelDoMestre };
   game.icarus.testes = registrarTestes();
+  // Interação por proximidade (portas, tiles, notas, tokens) e porta trancada
+  registrarInteracao();
+  registrarPortaTrancada();
   game.icarus.migrarBonusDeOrigem = migrarBonusDeOrigem;
   game.icarus.adicionarItensDeOrigem = adicionarItensQueFaltam;
 

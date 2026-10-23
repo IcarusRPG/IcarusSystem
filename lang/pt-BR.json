@@ -1383,6 +1383,66 @@
       "RecusaTamanho": "A imagem passou de 2 MB.",
       "Pendente": "Token pendente: será aplicado quando um Mestre entrar.",
       "PendentesFeitos": "Tokens pendentes aplicados: {n} de {total}."
+    },
+    "Interacao": {
+      "Longe": "Você não está próximo o bastante para interagir com {objeto}. (Alcance: {alcance} m)",
+      "EstaPorta": "esta porta",
+      "EstaNota": "esta nota",
+      "EsteObjeto": "este objeto",
+      "SelecioneToken": "Selecione seu personagem para interagir.",
+      "CenaFora": "Cena \"{cena}\": o quadrado está em {distancia} {unidade}. A interação por proximidade espera 1,5 m por quadrado, em metros (Configurar Cena → Grade).",
+      "ExigirProximidade": "Exigir proximidade ({alcance} m)",
+      "ExigirProximidadeDica": "Icarus RPG: jogadores só interagem (duplo clique) estando perto.",
+      "Config": {
+        "Alcance": "Alcance de interação (m)",
+        "AlcanceDica": "Distância máxima para o personagem interagir com portas e objetos marcados. Padrão 1,5 m (1 quadrado). O Mestre é isento."
+      }
+    },
+    "Porta": {
+      "Titulo": "Porta trancada",
+      "Pergunta": "Esta porta está trancada. Deseja tentar abri-la?",
+      "SemMestre": "Não há Mestre online para conduzir o teste.",
+      "EmAndamento": "Há um teste em andamento.",
+      "Pedido": "Pedido enviado ao Mestre.",
+      "Expirou": "O pedido para abrir a porta expirou (sem resposta do Mestre).",
+      "Recusado": "O Mestre recusou a tentativa.",
+      "Invalido": "Não foi possível começar o teste (porta ou personagem não encontrado).",
+      "TituloMestre": "Tentativa de abrir porta",
+      "QuerAbrir": "Quer abrir a porta:",
+      "CDCampo": "CD do teste de Prestidigitação",
+      "PossuiGazuasSim": "Possui Gazuas: sim (teste normal).",
+      "PossuiGazuasNao": "Possui Gazuas: não (penalidade de −5).",
+      "Motivo": "Motivo (se recusar)",
+      "MotivoDica": "opcional",
+      "Confirmar": "Confirmar",
+      "Recusar": "Recusar",
+      "CDInvalida": "Informe uma CD válida.",
+      "CenaTitulo": "{nome} tenta abrir a porta",
+      "CliqueNoDado": "Clique no dado para rolar",
+      "Aguardando": "Aguardando {nome} rolar o dado…",
+      "Rolar": "Rolar",
+      "Enviado": "Rolado! Aguardando o resultado…",
+      "Sucesso": "SUCESSO",
+      "Falha": "FALHA",
+      "Total": "Total: {total}",
+      "TotalECD": "Total: {total} · CD {cd}",
+      "CDMestre": "CD {cd} (só você vê) · {gazuas}",
+      "ComGazuas": "com gazuas",
+      "SemGazuas": "sem gazuas (−5)",
+      "Cancelar": "Cancelar teste",
+      "ErroMidia": "A imagem da cena não carregou; o teste continua.",
+      "ErroVideo": "O vídeo não pôde ser reproduzido; resultado direto.",
+      "ChatSucesso": "{nome} conseguiu abrir a porta.",
+      "ChatFalha": "{nome} não conseguiu abrir a porta.",
+      "ChatMestre": "Porta ({nome}): CD {cd}, total {total}.",
+      "Config": {
+        "AoSucesso": "Porta trancada: em caso de sucesso",
+        "AoSucessoDica": "Abrir a porta ou só destrancá-la (fica fechada).",
+        "Abrir": "Abrir",
+        "Destrancar": "Só destrancar",
+        "MostrarCD": "Porta trancada: mostrar a CD aos jogadores",
+        "MostrarCDDica": "Desligado: a CD fica só com o Mestre."
+      }
     }
   }
 }

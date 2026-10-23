@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste da cena da porta trancada (Icarus RPG)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/styles/icarus.css">
+<style>
+  body { background: #333 url("/img/ui/wallpaper.webp") center/cover; margin: 0; height: 100vh; font-family: sans-serif; }
+  #sidebar { position: fixed; right: 0; top: 0; bottom: 0; width: 280px; background: #111; color: #ccc; padding: 8px; box-sizing: border-box; z-index: 80; }
+  #sidebar button { display: block; width: 100%; margin: 4px 0; }
+  #log { white-space: pre-wrap; font: 11px monospace; }
+</style>
+</head>
+<body>
+<!-- Fora do Foundry: o mesmo module/porta-trancada.mjs (OverlayPorta) com as mídias reais.
+     Servir a raiz do projeto com um servidor estático e abrir /tests/navegador/porta.html -->
+<div id="sidebar">
+  <b>Simulação</b>
+  <button id="jogador">Abrir cena (sou o jogador do teste)</button>
+  <button id="outro">Abrir cena (outro jogador)</button>
+  <button id="mestre">Abrir cena (Mestre, CD 15)</button>
+  <button id="sucesso">Mestre decide: total 18 (SUCESSO)</button>
+  <button id="falha">Mestre decide: total 9 (FALHA)</button>
+  <button id="aviso">Aviso de proximidade</button>
+  <div id="log"></div>
+</div>
+<script type="module">
+const lang = await (await fetch("/lang/pt-BR.json")).json();
+const pegar = k => k.split(".").reduce((o, p) => o?.[p], lang) ?? k;
+const enviados = [];
+class App { constructor(o) { this.options = o; } }
+globalThis.foundry = { utils: { randomID: () => Math.random().toString(36).slice(2, 10) }, applications: { api: { DialogV2: {}, ApplicationV2: App, HandlebarsApplicationMixin: c => c } } };
+globalThis.Handlebars = { escapeExpression: t => String(t) };
+globalThis.game = {
+  user: { id: "jogador1" }, users: { get: () => ({ isGM: true }), activeGM: null },
+  i18n: { localize: pegar, format: (k, d) => pegar(k).replace(/\{(\w+)\}/g, (_, n) => d[n]) },
+  socket: { emit: (c, m) => { enviados.push(m); log(`socket → ${m.acao}`); } },
+  settings: { get: () => false }
+};
+globalThis.ui = { notifications: { warn: m => log("aviso: " + m), info: m => log("info: " + m) } };
+globalThis.Hooks = { on() {}, once() {} };
+const log = m => { document.getElementById("log").textContent += m + "\n"; };
+const { OverlayPorta } = await import("/module/porta-trancada.mjs");
+const { avisar } = await import("/module/interacao.mjs");
+const { preCarregarMidias } = await import("/module/midias.mjs");
+log("pré-carga: " + JSON.stringify(await preCarregarMidias()));
+const base = { testeId: "t1", nome: "Alokerl", gazuas: false, actorId: "a1", tokenId: "k1", cenaId: "c1" };
+window.OverlayPorta = OverlayPorta;
+window.enviados = enviados;
+document.getElementById("jogador").onclick = () => OverlayPorta.abrir({ ...base, userId: "jogador1" });
+document.getElementById("outro").onclick = () => OverlayPorta.abrir({ ...base, userId: "outro" });
+document.getElementById("mestre").onclick = () => OverlayPorta.abrir({ ...base, userId: "outro" }, { souMestre: true, cd: 15 });
+document.getElementById("sucesso").onclick = () => OverlayPorta.rolando({ testeId: "t1", total: 18, sucesso: true }, () => log("terminou (sucesso)"));
+document.getElementById("falha").onclick = () => OverlayPorta.rolando({ testeId: "t1", total: 9, sucesso: false }, () => log("terminou (falha)"));
+document.getElementById("aviso").onclick = () => avisar(game.i18n.format("ICARUS.Interacao.Longe", { objeto: "esta porta", alcance: "1,5" }));
+</script>
+</body>
+</html>
