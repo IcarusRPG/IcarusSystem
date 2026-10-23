@@ -1,0 +1,14 @@
+<div class="icarus-uso porta-cd-corpo">
+  <p class="porta-cd-pedido">{{localize "ICARUS.Porta.QuerAbrir"}} <b>{{nome}}</b> <small>({{jogador}})</small></p>
+  <label class="linha">{{localize "ICARUS.Porta.CDCampo"}}
+    <input type="number" name="cd" value="{{ultimaCD}}" min="1" step="1" autofocus></label>
+  <p class="porta-cd-gazuas {{#if gazuas}}com{{else}}sem{{/if}}">
+    {{#if gazuas}}{{localize "ICARUS.Porta.PossuiGazuasSim"}}{{else}}{{localize "ICARUS.Porta.PossuiGazuasNao"}}{{/if}}
+  </p>
+  <label class="linha">{{localize "ICARUS.Porta.Motivo"}}
+    <input type="text" name="motivo" placeholder="{{localize 'ICARUS.Porta.MotivoDica'}}"></label>
+  <div class="botoes">
+    <button type="submit" class="btn"><i class="fa-solid fa-check" aria-hidden="true"></i> {{localize "ICARUS.Porta.Confirmar"}}</button>
+    <button type="button" class="btn" data-action="recusar"><i class="fa-solid fa-xmark" aria-hidden="true"></i> {{localize "ICARUS.Porta.Recusar"}}</button>
+  </div>
+</div>

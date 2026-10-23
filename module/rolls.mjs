@@ -106,7 +106,17 @@ export async function perguntarBonusDeItens(actor, chave) {
   return r && typeof r === "object" ? r : null;
 }
 
-/** Rola uma perícia do personagem (inclui as Resistências). opcoes = { vantagem, desvantagem }. */
+/** "Abrir fechadura/tranca" já marcado: −5 sem gazuas; com gazuas, normal (1 natural quebra). */
+export function fechaduraMarcada(actor) {
+  const gazuas = temGazuas([...(actor.items ?? [])]);
+  const pen = resultadoDaFechadura({ abrir: true, gazuas, natural: 0 }).modificador;
+  return {
+    extras: pen ? [{ valor: pen, rotulo: game.i18n.localize("ICARUS.ItensComuns.SemGazuasRotulo") }] : [],
+    fechadura: { abrir: true, gazuas }
+  };
+}
+
+/** Rola uma perícia do personagem (inclui as Resistências). opcoes = { vantagem, desvantagem, abrirFechadura }. */
 export async function rolarPericia(actor, chave, opcoes = {}) {
   const pericia = actor.system.pericias[chave];
   if (!pericia) return null;
@@ -120,7 +130,8 @@ export async function rolarPericia(actor, chave, opcoes = {}) {
     return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content });
   }
   const resistencia = ["fortitude", "reflexos", "vontade"].includes(chave);
-  const deItens = opcoes.semItens ? {} : await perguntarBonusDeItens(actor, chave);
+  // abrirFechadura: teste de abrir porta (module/porta-trancada.mjs) rola direto, com a caixa marcada
+  const deItens = opcoes.semItens ? {} : opcoes.abrirFechadura ? fechaduraMarcada(actor) : await perguntarBonusDeItens(actor, chave);
   if (!deItens) return null;
   return rolarTeste(actor, {
     ...deItens,

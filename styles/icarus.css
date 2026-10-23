@@ -1056,3 +1056,52 @@ body.game {
 .ficha-icarus .token-botoes .btn { flex: 1; }
 .ficha-icarus .token-aviso, .ficha-icarus .token-mensagem { margin: 0; padding: 6px 8px; border-radius: 4px; font-size: 13px; color: var(--ic-ouro-claro); background: var(--ic-ouro-apagado); }
 @container (max-width: 640px) { .ficha-icarus .token-aba { grid-template-columns: 1fr; } }
+
+/* ---------------- Interação por proximidade: aviso ---------------- */
+.icarus-aviso-interacao {
+  position: fixed; top: 72px; left: 50%; transform: translateX(-50%); z-index: 9999; max-width: min(90vw, 640px);
+  padding: 10px 18px; border-radius: 6px; font-family: var(--ic-f-corpo, sans-serif); font-size: 16px; text-align: center;
+  color: var(--ic-ouro-claro, #f1d98f); background: rgba(10, 17, 25, 0.95); border: 1px solid var(--ic-ouro, #d8b45a);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6); animation: icarus-aviso-entra 0.2s ease-out; transition: opacity 0.5s;
+}
+.icarus-aviso-interacao.saindo { opacity: 0; }
+@keyframes icarus-aviso-entra { from { opacity: 0; transform: translate(-50%, -8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+/* ---------------- Porta trancada: cena animada ---------------- */
+.icarus-porta-overlay {
+  position: fixed; top: 0; left: 0; bottom: 0; z-index: 60; display: flex; flex-direction: column;
+  background: rgba(2, 4, 7, 0.92); font-family: var(--ic-f-corpo, sans-serif);
+}
+.icarus-porta-overlay .porta-palco { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.icarus-porta-overlay .porta-estatica, .icarus-porta-overlay .porta-video { max-width: 100%; max-height: 100%; object-fit: contain; }
+.icarus-porta-overlay .porta-titulo {
+  position: absolute; top: 18px; left: 0; right: 0; text-align: center; font-family: var(--ic-f-titulo, serif); font-size: 28px;
+  color: var(--ic-ouro-claro, #f1d98f); text-shadow: 0 2px 8px #000;
+}
+.icarus-porta-overlay .porta-dado {
+  position: absolute; left: 50%; top: 55%; transform: translate(-50%, -50%); width: 150px; height: 150px; padding: 0;
+  border: 0; background: none; cursor: default; filter: drop-shadow(0 0 18px rgba(228, 87, 79, 0.6));
+}
+.icarus-porta-overlay .porta-dado img { width: 100%; height: 100%; object-fit: contain; }
+.icarus-porta-overlay .porta-dado-texto { font-size: 28px; font-weight: 700; color: #fff; }
+.icarus-porta-overlay .porta-dado.pode { cursor: pointer; animation: icarus-porta-pulso 1.4s ease-in-out infinite; }
+.icarus-porta-overlay .porta-dado.pode:hover { filter: drop-shadow(0 0 28px rgba(255, 120, 100, 0.95)); }
+.icarus-porta-overlay .porta-dado.girando { animation: icarus-porta-giro 0.7s linear infinite; }
+@keyframes icarus-porta-pulso { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.08); } }
+@keyframes icarus-porta-giro { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.icarus-porta-overlay .porta-dica { position: absolute; top: calc(55% + 90px); left: 0; right: 0; text-align: center; color: #e7eef3; font-size: 18px; text-shadow: 0 2px 6px #000; }
+.icarus-porta-overlay .porta-resultado {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; pointer-events: none;
+}
+.icarus-porta-overlay .porta-palavra { font-family: var(--ic-f-titulo, serif); font-size: clamp(56px, 11vw, 140px); font-weight: 700; letter-spacing: 0.06em; animation: icarus-porta-resultado 0.5s cubic-bezier(.2, 1.4, .4, 1); }
+.icarus-porta-overlay .porta-resultado.sucesso .porta-palavra { color: #4ade80; text-shadow: 0 0 30px rgba(74, 222, 128, 0.7), 0 4px 12px #000; }
+.icarus-porta-overlay .porta-resultado.falha .porta-palavra { color: #ef4444; text-shadow: 0 0 30px rgba(239, 68, 68, 0.7), 0 4px 12px #000; }
+.icarus-porta-overlay .porta-total { color: #cbd5e1; font-size: 18px; text-shadow: 0 2px 6px #000; }
+@keyframes icarus-porta-resultado { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
+.icarus-porta-overlay .porta-erro { position: absolute; bottom: 60px; left: 0; right: 0; text-align: center; color: var(--ic-ouro-claro, #f1d98f); }
+.icarus-porta-overlay .porta-mestre { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 8px; color: #e7eef3; background: rgba(10, 17, 25, 0.9); }
+.icarus-porta-overlay .porta-cancelar { width: auto; padding: 4px 12px; }
+@media (prefers-reduced-motion: reduce) { .icarus-porta-overlay * { animation: none !important; } }
+.icarus-porta-cd .porta-cd-gazuas.sem { color: var(--ic-ouro-claro, #f1d98f); }
+.icarus-porta-cd .botoes { display: flex; gap: 8px; margin-top: 8px; }
+.icarus-porta-cd .botoes .btn { flex: 1; }

@@ -154,6 +154,14 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - **Nova regra derivada:** a fórmula vai em `module/regras.mjs` (com teste), e o cálculo em `prepareDerivedData` de `module/data/actor-personagem.mjs`.
 - **Novo tipo de ator ou item:** crie o modelo em `module/data/`, registre em `icarus.mjs` e declare em `documentTypes` no `system.json`.
 
+## Interação por proximidade e porta trancada
+
+- **Cena:** use 1,5 m por quadrado, em metros (Configurar Cena → Grade: Distância 1,5, Unidade m). Se a cena estiver diferente, o Mestre recebe um aviso ao abri-la.
+- **Proximidade:** o jogador só abre/fecha portas (e usa tiles, notas e tokens marcados com **"Exigir proximidade"** nas configurações deles) a até 1,5 m do seu token (borda do token até a porta, contando diagonais; configurável em *Alcance de interação*). Longe, aparece o aviso. O Mestre é isento. API: `game.icarus.interacao.exigirProximidade(alvo)` / `checarProximidade(token, alvo)`.
+- **Porta trancada:** perto, o jogador confirma "Deseja tentar abri-la?"; o Mestre informa a CD de Prestidigitação (vê se o personagem tem gazuas: sem elas, −5) e todos veem a cena (imagem + dado vermelho; só o jogador do teste clica) → vídeo → **SUCESSO**/**FALHA**. A CD fica só com o Mestre; sucesso abre a porta (ou só destranca: configuração *Porta trancada: em caso de sucesso*). Um teste por vez; sem Mestre online, não começa; o pedido expira em 5 min.
+- **Socket** (`system.icarus-rpg`, ações `porta:*`): pedido → (recusa | cena) → total → rolando → (cancelar). Detalhes em `module/porta-trancada.mjs`.
+- Mídias em `img/animacoes/` (URLs em `module/midias.mjs`, pré-carregadas). Teste fora do Foundry: `/tests/navegador/porta.html`.
+
 ## Ícones dos itens comuns
 
 - `img/Icones/itens/itens de origem/<Nome do item>.png` (256×256, fundo transparente), mapa em `tools/dados/icones-itens-comuns.json`.
