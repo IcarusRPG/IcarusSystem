@@ -8,6 +8,7 @@
   "system": {
     "origemId": "andarilho",
     "pericia": "sobrevivencia",
+    "periciaBonus": 2,
     "texto": "Sua vida foi a estrada: vilas de passagem, trilhas, festas de colheita e noites sob as estrelas. Você conhece caminhos que não estão em mapa nenhum.",
     "itens": {
       "fixos": [

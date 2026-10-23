@@ -8,6 +8,7 @@
   "system": {
     "origemId": "gigolo",
     "pericia": "enganacao",
+    "periciaBonus": 2,
     "texto": "Você viveu do charme: companhia paga, presentes de admiradores, festas em casas que não eram a sua. Aprendeu a ler quem quer ser agradado.",
     "itens": {
       "fixos": [

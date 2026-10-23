@@ -8,6 +8,7 @@
   "system": {
     "origemId": "eremita",
     "pericia": "concentracao",
+    "periciaBonus": 2,
     "texto": "Anos de silêncio e solidão numa montanha, numa gruta ou num templo esquecido. Você voltou ao mundo com uma mente quieta.",
     "itens": {
       "fixos": [

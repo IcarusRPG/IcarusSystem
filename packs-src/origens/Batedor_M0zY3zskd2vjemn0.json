@@ -8,6 +8,7 @@
   "system": {
     "origemId": "batedor",
     "pericia": "audicao",
+    "periciaBonus": 2,
     "texto": "Você ia na frente do bando, do exército ou da caravana, e voltava para contar o que viu: emboscada, ponte caída, fumaça no horizonte.",
     "itens": {
       "fixos": [

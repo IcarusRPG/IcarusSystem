@@ -7,6 +7,7 @@
  * escolha ("Vínculo Selvagem (Teixugo Gigante)") e o documento antigo do compêndio Vínculos.
  */
 import { SISTEMA_ID, FICHA_ANIMAL } from "./config.mjs";
+import { migrarBonusDeOrigem } from "./origens.mjs";
 
 const ANTIGO_ID = "teixugo-gigante";
 const NOVO_ID = "texugo-gigante";
@@ -70,7 +71,12 @@ export async function migrarFichaDosAnimais() {
 }
 
 /** Migrações por versão: registradas para rodar uma vez (configuração de mundo "migracao"). */
-const MIGRACOES = [{ versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) }];
+const MIGRACOES = [
+  { versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) },
+  // 0.10.1 — a origem dá +2 de bônus na perícia (não treina): com confirmação; recusar não repete
+  // (o Mestre roda depois com game.icarus.migrarBonusDeOrigem())
+  { versao: "0.10.1", rodar: async () => Number(await migrarBonusDeOrigem()) || 0 }
+];
 
 export function registrarMigracoes() {
   game.settings.register(SISTEMA_ID, "migracao", { scope: "world", config: false, type: String, default: "0.0.0" });

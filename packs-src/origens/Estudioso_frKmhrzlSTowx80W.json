@@ -8,6 +8,7 @@
   "system": {
     "origemId": "estudioso",
     "pericia": "misticismo",
+    "periciaBonus": 2,
     "texto": "Livros, bibliotecas e debates. Você sabe a data da batalha, o nome do rei e a diferença entre as duas versões da lenda.",
     "itens": {
       "fixos": [

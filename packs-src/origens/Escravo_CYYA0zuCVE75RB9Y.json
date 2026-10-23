@@ -8,6 +8,7 @@
   "system": {
     "origemId": "escravo",
     "pericia": "atletismo",
+    "periciaBonus": 2,
     "texto": "Você viveu sob o jugo de outra pessoa: mina, galera, casa grande ou arena. Fugiu, foi libertado ou comprou sua liberdade, e não pretende perdê-la de novo.",
     "itens": {
       "fixos": [

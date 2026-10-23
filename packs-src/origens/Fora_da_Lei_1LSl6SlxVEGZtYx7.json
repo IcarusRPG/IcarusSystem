@@ -8,6 +8,7 @@
   "system": {
     "origemId": "fora-da-lei",
     "pericia": "furtividade",
+    "periciaBonus": 2,
     "texto": "Furtos, contrabando, golpes pequenos e grandes, ou uma vida fugindo da guarda. Você conhece os becos, os atalhos e quem aceita suborno.",
     "itens": {
       "fixos": [

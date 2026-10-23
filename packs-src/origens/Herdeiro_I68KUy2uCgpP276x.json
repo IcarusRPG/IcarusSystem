@@ -8,6 +8,7 @@
   "system": {
     "origemId": "herdeiro",
     "pericia": "nobreza",
+    "periciaBonus": 2,
     "texto": "Berço rico, de nobreza menor ou de fortuna de família. Você aprendeu etiqueta, heráldica e o preço de ser filho de quem é.",
     "itens": {
       "fixos": [

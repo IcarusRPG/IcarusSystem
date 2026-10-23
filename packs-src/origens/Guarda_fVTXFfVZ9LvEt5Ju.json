@@ -8,6 +8,7 @@
   "system": {
     "origemId": "guarda",
     "pericia": "investigacao",
+    "periciaBonus": 2,
     "texto": "Você patrulhava muralhas, vigiava portões e separava briga de taverna.",
     "itens": {
       "fixos": [

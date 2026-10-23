@@ -8,6 +8,7 @@
   "system": {
     "origemId": "religioso",
     "pericia": "religiao",
+    "periciaBonus": 2,
     "texto": "Em um mundo cheio de templos, muitos entram cedo em uma ordem: por fé, por tradição de família ou porque alguém os deixou à porta de um mosteiro. Suas lembranças são de orações, cânticos e cuidar do altar.",
     "itens": {
       "fixos": [

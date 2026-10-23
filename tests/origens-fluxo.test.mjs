@@ -1,4 +1,4 @@
-/** Origens no Foundry (ator simulado): aplicar, trocar, desfazer e a troca de classe preservando a origem. */
+/** Origens no Foundry (ator simulado): aplicar, trocar, desfazer, migração do bônus e a troca de classe preservando a origem. */
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
@@ -19,7 +19,7 @@ globalThis.game = { actors: [], packs: new Map(), i18n: { localize: k => k, form
 globalThis.Handlebars = { escapeExpression: t => t };
 globalThis.ui = { notifications: { info() {}, warn() {} } };
 
-const { trocarOrigem, desfazerTrocaDeOrigem, ehPoderDeOrigemAuto, reaplicarOrigem } = await import("../module/origens.mjs");
+const { trocarOrigem, desfazerTrocaDeOrigem, ehPoderDeOrigemAuto, reaplicarOrigem, migrarBonusDeOrigem } = await import("../module/origens.mjs");
 const { resetarClasse } = await import("../module/assistente.mjs");
 const { ehPoderRacialAuto } = await import("../module/racas.mjs");
 
@@ -29,97 +29,135 @@ function item(d) { return { ...d, toObject() { const { toObject, ...resto } = th
 function atorFalso() {
   let n = 0;
   return {
-    uuid: "Actor.x", statuses: new Set(),
+    uuid: "Actor.x", type: "personagem", name: "Lira", statuses: new Set(),
     _source: { system: {
       identidade: { classe: "ladino", origem: "" }, recursos: [],
       classeConfig: { pvInicial: 16, pvPorNivel: 4, pmInicial: 4, pmPorNivel: 4, pvAtributo: "CON", pmAtributo: null, pmAtributoSoNoPrimeiroNivel: false, manual: false },
       proficiencias: { armas: ["simples"], armaduras: [], escudo: false, tunicas: false, texto: "" },
-      pericias: Object.fromEntries(PERICIAS.map(k => [k, { treino: 0 }]))
+      pericias: Object.fromEntries(PERICIAS.map(k => [k, { treino: 0, outros: 0 }]))
     } },
     get system() { return this._source.system; },
     flags: { "icarus-rpg": {} },
     items: [],
+    effects: [],
     getFlag(s, k) { return this.flags[s]?.[k]; },
     async setFlag(s, k, v) { setP(this.flags, `${s}.${k}`, v); },
+    async unsetFlag(s, k) { delete this.flags[s]?.[k]; },
     async update(m) {
       for (const [k, v] of Object.entries(m)) {
         if (k.startsWith("system.")) setP(this._source, k, v);
         else if (k.startsWith("flags.")) setP(this, k, v);
       }
     },
-    async deleteEmbeddedDocuments(_t, ids) { this.items = this.items.filter(i => !ids.includes(i.id)); },
-    async createEmbeddedDocuments(_t, dados) {
+    async deleteEmbeddedDocuments(tipo, ids) {
+      if (tipo === "ActiveEffect") this.effects = this.effects.filter(e => !ids.includes(e.id));
+      else this.items = this.items.filter(i => !ids.includes(i.id));
+    },
+    async createEmbeddedDocuments(tipo, dados) {
       const novos = dados.map(d => item({ ...structuredClone(d), id: d._id ?? `i${++n}` }));
-      this.items.push(...novos);
+      (tipo === "ActiveEffect" ? this.effects : this.items).push(...novos);
       return novos;
     }
   };
 }
 const nomes = ator => ator.items.map(i => i.name).sort();
+/** Bônus somado pelos Efeitos Ativos em "outros" (o que o Foundry aplicaria). */
+const bonus = (ator, k) => ator.effects.flatMap(e => e.changes).filter(c => c.key === `system.pericias.${k}.outros`).reduce((s, c) => s + Number(c.value), 0);
 
-test("2/3. Escolher Músico: Atuação treinada (origem), poder, recurso e 2 itens grátis com o texto livre", async () => {
+test("2/3. Curandeiro não treinado: Cura +2 e continua não treinada; poder, recurso e 2 itens grátis", async () => {
   const ator = atorFalso();
-  respostaDialogo = { pericia: "atuacao", grupos: [], itens: { "instrumento-musical": { texto: "alaúde" }, "traje-de-apresentacao": {} } };
-  assert.equal(await trocarOrigem(ator, "musico"), true);
+  respostaDialogo = { grupos: [], itens: {} };
+  assert.equal(await trocarOrigem(ator, "curandeiro"), true);
   const s = ator._source.system;
-  assert.equal(s.identidade.origem, "musico");
-  assert.equal(s.pericias.atuacao.treino, 1);
-  assert.deepEqual(ator.flags["icarus-rpg"].treinoPor, { atuacao: ["origem"] });
-  assert.deepEqual(nomes(ator), ["Canção de Marcha", "Instrumento musical (alaúde)", "Traje de apresentação"]);
+  assert.equal(s.identidade.origem, "curandeiro");
+  assert.equal(s.pericias.cura.treino, 0, "a origem não treina");
+  assert.equal(bonus(ator, "cura"), 2);
+  assert.equal(ator.effects[0].flags["icarus-rpg"].fonte, "origem");
+  assert.deepEqual(ator.flags["icarus-rpg"].treinoPor, undefined, "não usa treinoPor");
+  assert.deepEqual(nomes(ator), ["Maleta de curandeiro", "Primeiros Socorros", "Saco de ervas"]);
   const poder = ator.items.find(ehPoderDeOrigemAuto);
-  assert.equal(poder.system.fonte, "origem");
   assert.equal(ehPoderRacialAuto(poder), false, "trocar de raça não apaga o poder de origem");
-  assert.deepEqual(s.recursos.map(r => [r.id, r.recarga, r.max]), [["origem-cancao-de-marcha", "cena", 1]]);
-  assert.ok(ator.items.filter(i => i.type === "equipamento").every(i => i.system.origemItem && i.system.quantidade === 1));
+  assert.deepEqual(s.recursos.map(r => [r.id, r.recarga, r.max]), [["origem-primeiros-socorros", "cena", 1]]);
+});
+
+test("2. Curandeiro já treinado em Cura: +2 da origem soma com o treino (+4), sem trocar de perícia", async () => {
+  const ator = atorFalso();
+  await ator.update({ "system.pericias.cura.treino": 1, "flags.icarus-rpg.treinoPor": { cura: ["classe"] } });
+  respostaDialogo = { grupos: [], itens: {} };
+  await trocarOrigem(ator, "curandeiro");
+  assert.equal(ator._source.system.pericias.cura.treino, 1);
+  assert.equal(2 * ator._source.system.pericias.cura.treino + bonus(ator, "cura"), 4);
+  assert.deepEqual(ator.flags["icarus-rpg"].treinoPor, { cura: ["classe"] });
+  await reaplicarOrigem(ator);
+  assert.equal(ator.items.length, 3, "reaplicar não duplica poder nem itens");
+  assert.equal(ator.effects.length, 1, "nem o bônus");
 });
 
 test("3. Circense: escolhe 1 de 2 itens e o bônus do Traje colorido", async () => {
   const ator = atorFalso();
-  respostaDialogo = { pericia: "acrobacia", grupos: [1], itens: { "traje-colorido": { bonus: "enganacao" } } };
+  respostaDialogo = { grupos: [1], itens: { "traje-colorido": { bonus: "enganacao" } } };
   await trocarOrigem(ator, "circense");
   assert.deepEqual(nomes(ator), ["Cair de Pé", "Corda fina de equilíbrio", "Traje colorido"]);
   assert.equal(ator.items.find(i => i.name === "Traje colorido").flags["icarus-rpg"].escolhaBonus, "enganacao");
 });
 
-test("4. Trocar de origem: sai o poder e os itens não editados; editado fica; Desfazer volta; troca de classe preserva", async () => {
+test("4/5. Trocar de origem tira o +2 antigo e põe o novo; treino intacto; troca de classe mantém o +2; Desfazer volta", async () => {
   const ator = atorFalso();
-  respostaDialogo = { pericia: "atuacao", grupos: [], itens: { "instrumento-musical": { texto: "flauta" } } };
+  respostaDialogo = { grupos: [], itens: { "instrumento-musical": { texto: "flauta" } } };
   await trocarOrigem(ator, "musico");
-  // Classe também treina Luta; trocar de classe não mexe na Atuação da origem
-  await ator.update({ "system.pericias.luta.treino": 1, "flags.icarus-rpg.treinoPor": { ...ator.flags["icarus-rpg"].treinoPor, luta: ["classe"] } });
+  await ator.update({ "system.pericias.luta.treino": 1, "flags.icarus-rpg.treinoPor": { luta: ["classe"] } });
   await resetarClasse(ator);
-  assert.equal(ator._source.system.pericias.atuacao.treino, 1, "a troca de classe preserva o treino de origem");
+  assert.equal(bonus(ator, "atuacao"), 2, "a troca de classe mantém o bônus de origem");
   assert.equal(ator._source.system.pericias.luta.treino, 0);
-  // O jogador renomeia o traje (editado: fica na troca)
   ator.items.find(i => i.name === "Traje de apresentação").name = "Traje de palco da Lira";
-  respostaDialogo = { pericia: "investigacao", grupos: [], itens: {} };
+  await ator.update({ "system.pericias.atuacao.treino": 1 });
+  respostaDialogo = { grupos: [], itens: {} };
   await trocarOrigem(ator, "guarda");
-  assert.equal(ator._source.system.pericias.atuacao.treino, 0, "só a origem treinava: volta a 0");
-  assert.equal(ator._source.system.pericias.investigacao.treino, 1);
+  assert.equal(bonus(ator, "atuacao"), 0);
+  assert.equal(bonus(ator, "investigacao"), 2);
+  assert.equal(ator._source.system.pericias.atuacao.treino, 1, "treino intacto");
+  assert.equal(ator._source.system.pericias.investigacao.treino, 0);
   assert.deepEqual(nomes(ator), ["Algemas", "Apito", "Faro para Mentiras", "Traje de palco da Lira"]);
-  assert.deepEqual(ator._source.system.recursos, [], "Faro para Mentiras não tem uso limitado");
-  assert.ok(ator.flags["icarus-rpg"].snapshotTrocaOrigem);
 
   await desfazerTrocaDeOrigem(ator);
   assert.equal(ator._source.system.identidade.origem, "musico");
-  assert.equal(ator._source.system.pericias.atuacao.treino, 1);
-  assert.equal(ator._source.system.pericias.investigacao.treino, 0);
+  assert.equal(bonus(ator, "atuacao"), 2);
+  assert.equal(bonus(ator, "investigacao"), 0);
   assert.deepEqual(nomes(ator), ["Canção de Marcha", "Instrumento musical (flauta)", "Traje de palco da Lira"]);
-  assert.equal(ator.flags["icarus-rpg"].treinoPor.atuacao.includes("origem"), true);
   assert.equal(ator.flags["icarus-rpg"].snapshotTrocaOrigem, undefined);
 });
 
-test("2. Já treinado na perícia da origem: escolhe outra; Reaplicar não duplica", async () => {
-  const ator = atorFalso();
-  await ator.update({ "system.pericias.atuacao.treino": 1, "flags.icarus-rpg.treinoPor": { atuacao: ["classe"] } });
-  respostaDialogo = { pericia: "diplomacia", grupos: [], itens: { "instrumento-musical": { texto: "tambor" } } };
-  await trocarOrigem(ator, "musico");
-  assert.equal(ator._source.system.pericias.diplomacia.treino, 1);
-  assert.deepEqual(ator.flags["icarus-rpg"].treinoPor, { atuacao: ["classe"], diplomacia: ["origem"] });
-  await reaplicarOrigem(ator);
-  assert.equal(ator.items.length, 3, "reaplicar não duplica poder nem itens");
-  assert.equal(ator._source.system.recursos.length, 1);
-  assert.equal(ator._source.system.pericias.diplomacia.treino, 1);
+test("6. Migração das fichas antigas: tira a fonte origem, põe o +2 na perícia da origem; rodar 2× não muda; Desfazer volta", async () => {
+  const antigo = (origem, treinoPor, treinos) => {
+    const a = atorFalso();
+    a._source.system.identidade.origem = origem;
+    a.flags["icarus-rpg"].treinoPor = treinoPor;
+    for (const [k, v] of Object.entries(treinos)) a._source.system.pericias[k].treino = v;
+    a.items.push(item({ id: "p1", name: "Poder", type: "poder", img: "x.png", system: { fonte: "origem" }, flags: { "icarus-rpg": { auto: true, origemId: origem } } }));
+    return a;
+  };
+  // Músico: Atuação só pela origem; Diplomacia pela classe e pela origem
+  const a = antigo("musico", { atuacao: ["origem"], diplomacia: ["classe", "origem"] }, { atuacao: 1, diplomacia: 1 });
+  // Guarda que já era treinado em Investigação e escolheu Luta ("outra perícia")
+  const b = antigo("guarda", { investigacao: ["classe"], luta: ["origem"] }, { investigacao: 1, luta: 1 });
+  const semOrigem = atorFalso();
+  assert.equal(await migrarBonusDeOrigem([a, b, semOrigem]), 2);
+  assert.equal(a._source.system.pericias.atuacao.treino, 0, "só a origem treinava");
+  assert.equal(a._source.system.pericias.diplomacia.treino, 1, "outra fonte: continua treinada");
+  assert.deepEqual(a.flags["icarus-rpg"].treinoPor, { diplomacia: ["classe"] });
+  assert.equal(bonus(a, "atuacao"), 2);
+  assert.equal(b._source.system.pericias.luta.treino, 0);
+  assert.equal(b._source.system.pericias.investigacao.treino, 1);
+  assert.equal(bonus(b, "investigacao"), 2, "o bônus vai para a perícia da origem");
+  assert.equal(b.effects[0].img, "x.png");
+  assert.equal(await migrarBonusDeOrigem([a, b]), 0, "rodar de novo não muda nada");
+  assert.equal(a.effects.length, 1);
+  await desfazerTrocaDeOrigem(a);
+  assert.equal(a._source.system.pericias.atuacao.treino, 1);
+  assert.deepEqual(a.flags["icarus-rpg"].treinoPor, { atuacao: ["origem"], diplomacia: ["classe", "origem"] });
+  assert.equal(a.effects.length, 0);
+  assert.equal(a.items.length, 1, "o poder volta");
+  assert.equal(a.flags["icarus-rpg"].migracaoOrigemBonus, undefined, "a migração volta a ser oferecida");
 });
 
 test("8/9. Usar gasta 1 uso (Saco de ervas: 2); a 6ª vestimenta é sempre bloqueada", async () => {

@@ -8,6 +8,7 @@
   "system": {
     "origemId": "selvagem",
     "pericia": "olfato",
+    "periciaBonus": 2,
     "texto": "Você cresceu longe das cidades, em uma tribo, num bando ou sozinho, aprendendo com o clima e as feras.",
     "itens": {
       "fixos": [

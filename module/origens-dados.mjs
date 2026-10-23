@@ -196,19 +196,31 @@ export function resultadoDaFechadura({ abrir, gazuas, natural }) {
 
 /* ------------------------------ Perícia da origem e treinoPor ------------------------------ */
 
-/**
- * Perícia que a origem treina: a da origem, ou outra (escolhida) se o personagem já for treinado.
- * @param {Record<string, number>} treinos  treino efetivo (derivado) por perícia
- * @returns {{ pericia: string|null, precisaEscolher: boolean, opcoes: string[] }}
- */
-export function periciaDaOrigem(origem, treinos, escolhida = null) {
-  const livres = PERICIAS.map(p => p.chave).filter(k => !(treinos[k] >= 1));
-  if (!(treinos[origem.pericia] >= 1)) return { pericia: origem.pericia, precisaEscolher: false, opcoes: livres };
-  return { pericia: escolhida && livres.includes(escolhida) ? escolhida : null, precisaEscolher: true, opcoes: livres };
-}
+/** Bônus de perícia da origem (padrão +2). */
+export const BONUS_ORIGEM_PADRAO = 2;
 
 /**
- * Tira a fonte "origem" do treinoPor. A perícia volta a não treinada (salvo 0) só se não sobrar
+ * Efeito Ativo do bônus de perícia da origem, no ator: +N em system.pericias.<chave>.outros
+ * (soma com treino e especialização; não treina). Marcado com flags.fonte = "origem".
+ */
+export function efeitoDeOrigem(origem, { img = ICONE_PADRAO } = {}) {
+  const valor = Number(origem.periciaBonus ?? BONUS_ORIGEM_PADRAO);
+  return {
+    name: `Origem: ${origem.nome}`,
+    img,
+    changes: [{ key: `system.pericias.${origem.pericia}.outros`, mode: 2, value: String(valor) }],
+    disabled: false,
+    flags: { [SISTEMA_ID]: { fonte: "origem", origemId: origem.id } }
+  };
+}
+
+/** É o efeito de bônus de uma origem? */
+export const ehEfeitoDeOrigem = efeito => efeito?.flags?.[SISTEMA_ID]?.fonte === "origem";
+
+/* ------------------------------ Migração (origem que treinava) ------------------------------ */
+
+/**
+ * Migração das fichas de antes da correção (a origem treinava a perícia): tira a fonte "origem" do treinoPor. A perícia volta a não treinada (salvo 0) só se não sobrar
  * outra fonte; a raça treina por efeito, então o salvo vai a 0 mesmo com "raca".
  * @returns {{ treinos: Record<string, number>, treinoPor: Record<string, string[]> }}
  */
@@ -246,7 +258,7 @@ export function documentosDeOrigens({ origens = ORIGENS_JSON, itens = ITENS_JSON
       itens: ordenadas.map((o, i) => ({
         _id: idEstavel(`origem:${o.id}`), name: o.nome, type: "origem", img: imagens[`origem:${chaveDeNome(o.nome)}`] ?? img(o.nome),
         folder: pastaOrigens._id, sort: (i + 1) * 100,
-        system: { origemId: o.id, pericia: o.pericia, texto: o.texto, itens: structuredClone(o.itens), poderId: o.poder.id },
+        system: { origemId: o.id, pericia: o.pericia, periciaBonus: o.periciaBonus ?? BONUS_ORIGEM_PADRAO, texto: o.texto, itens: structuredClone(o.itens), poderId: o.poder.id },
         flags: { [SISTEMA_ID]: { id: o.id } }
       }))
     },

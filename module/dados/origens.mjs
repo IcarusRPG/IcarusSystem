@@ -7,6 +7,7 @@ export default {
       "nome": "Andarilho",
       "texto": "Sua vida foi a estrada: vilas de passagem, trilhas, festas de colheita e noites sob as estrelas. Você conhece caminhos que não estão em mapa nenhum.",
       "pericia": "sobrevivencia",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "mapa-regional",
@@ -29,6 +30,7 @@ export default {
       "nome": "Batedor",
       "texto": "Você ia na frente do bando, do exército ou da caravana, e voltava para contar o que viu: emboscada, ponte caída, fumaça no horizonte.",
       "pericia": "audicao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "luneta",
@@ -51,6 +53,7 @@ export default {
       "nome": "Bobo da Corte",
       "texto": "Você fazia o rei rir, e às vezes o fazia pensar. Quem diverte os poderosos aprende a dizer verdades disfarçadas de piada.",
       "pericia": "prestidigitacao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "traje-de-bobo-com-guizos",
@@ -73,6 +76,7 @@ export default {
       "nome": "Camponês",
       "texto": "Dias de sol a sol na terra, nas ceifas, no gado. Você conhece o preço do pão e o peso de uma enxada.",
       "pericia": "adestramento",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "enxada",
@@ -95,6 +99,7 @@ export default {
       "nome": "Circense",
       "texto": "Trapézio, malabares, engolir fogo, domar leões. A vida no circo itinerante ensinou equilíbrio, risco e jeito com a plateia.",
       "pericia": "acrobacia",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "traje-colorido"
@@ -121,6 +126,7 @@ export default {
       "nome": "Curandeiro",
       "texto": "Remédio de ervas, parto, febre e osso quebrado: você era a pessoa a quem chamavam na madrugada.",
       "pericia": "cura",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "maleta-de-curandeiro",
@@ -143,6 +149,7 @@ export default {
       "nome": "Eremita",
       "texto": "Anos de silêncio e solidão numa montanha, numa gruta ou num templo esquecido. Você voltou ao mundo com uma mente quieta.",
       "pericia": "concentracao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "barraca-pequena",
@@ -165,6 +172,7 @@ export default {
       "nome": "Escravo",
       "texto": "Você viveu sob o jugo de outra pessoa: mina, galera, casa grande ou arena. Fugiu, foi libertado ou comprou sua liberdade, e não pretende perdê-la de novo.",
       "pericia": "atletismo",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "elo-de-corrente-quebrada",
@@ -187,6 +195,7 @@ export default {
       "nome": "Estudioso",
       "texto": "Livros, bibliotecas e debates. Você sabe a data da batalha, o nome do rei e a diferença entre as duas versões da lenda.",
       "pericia": "misticismo",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "estojo-de-escrita-completo",
@@ -209,6 +218,7 @@ export default {
       "nome": "Fora da Lei",
       "texto": "Furtos, contrabando, golpes pequenos e grandes, ou uma vida fugindo da guarda. Você conhece os becos, os atalhos e quem aceita suborno.",
       "pericia": "furtividade",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "gazuas",
@@ -231,6 +241,7 @@ export default {
       "nome": "Gigolô",
       "texto": "Você viveu do charme: companhia paga, presentes de admiradores, festas em casas que não eram a sua. Aprendeu a ler quem quer ser agradado.",
       "pericia": "enganacao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "perfume-fino",
@@ -253,6 +264,7 @@ export default {
       "nome": "Gladiador",
       "texto": "Você lutava em arenas, rodas de briga ou torneios, com a plateia berrando e o dinheiro mudando de mão.",
       "pericia": "intimidacao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "bandagens-de-luta",
@@ -275,6 +287,7 @@ export default {
       "nome": "Guarda",
       "texto": "Você patrulhava muralhas, vigiava portões e separava briga de taverna.",
       "pericia": "investigacao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "apito",
@@ -297,6 +310,7 @@ export default {
       "nome": "Herdeiro",
       "texto": "Berço rico, de nobreza menor ou de fortuna de família. Você aprendeu etiqueta, heráldica e o preço de ser filho de quem é.",
       "pericia": "nobreza",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "anel-de-sinete",
@@ -319,6 +333,7 @@ export default {
       "nome": "Marujo",
       "texto": "Convés, vela, tempestade, porto e briga em porto. Você conhece o mar e a linguagem de quem vive nele.",
       "pericia": "navegacao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "corda-de-marinheiro-15-m",
@@ -341,6 +356,7 @@ export default {
       "nome": "Matador de Aluguel",
       "texto": "Alguém pagava, você resolvia. Sem perguntas, sem testemunhas, sem remorso em público. Agora talvez você esteja fugindo do contrato ou do contratante.",
       "pericia": "pontaria",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "estojo-de-disfarces",
@@ -363,6 +379,7 @@ export default {
       "nome": "Membro de Guilda",
       "texto": "Mercadores, artesãos, ladrões ou aventureiros: toda guilda tem regras, mensalidade e proteção. Você tinha um lugar à mesa.",
       "pericia": "barganha",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "insignia-da-guilda"
@@ -389,6 +406,7 @@ export default {
       "nome": "Músico",
       "texto": "Sua vida foi o som: tavernas, casamentos, procissões, cortes. Uma canção certa muda o humor de uma sala.",
       "pericia": "atuacao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "instrumento-musical",
@@ -411,6 +429,7 @@ export default {
       "nome": "Poeta",
       "texto": "Versos, épicos, sátiras e cartas de amor por encomenda. Você coleciona histórias e sabe contar uma de modo que as pessoas se lembrem dela.",
       "pericia": "historia",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "estojo-de-escrita",
@@ -433,6 +452,7 @@ export default {
       "nome": "Realeza",
       "texto": "Você nasceu em uma casa governante: coroa, trono, súditos. Fugiu do palácio, foi exilado ou só está viajando incógnito, mas o sangue não mente.",
       "pericia": "diplomacia",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "joia-de-familia",
@@ -455,6 +475,7 @@ export default {
       "nome": "Refugiado",
       "texto": "Guerra, fome ou desastre tirou o seu lar. Você sobreviveu, e carrega a teimosia de quem já perdeu tudo uma vez.",
       "pericia": "vontade",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "trouxa-de-viagem",
@@ -477,6 +498,7 @@ export default {
       "nome": "Religioso",
       "texto": "Em um mundo cheio de templos, muitos entram cedo em uma ordem: por fé, por tradição de família ou porque alguém os deixou à porta de um mosteiro. Suas lembranças são de orações, cânticos e cuidar do altar.",
       "pericia": "religiao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "simbolo-sagrado",
@@ -499,6 +521,7 @@ export default {
       "nome": "Selvagem",
       "texto": "Você cresceu longe das cidades, em uma tribo, num bando ou sozinho, aprendendo com o clima e as feras.",
       "pericia": "olfato",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "amuleto-de-tribo",
@@ -521,6 +544,7 @@ export default {
       "nome": "Servo",
       "texto": "Você serviu em casa alheia: cozinha, estábulo, corredor de palácio. Quem serve vê tudo, escuta tudo e quase nunca é notado.",
       "pericia": "intuicao",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "uniforme-da-casa",
@@ -543,6 +567,7 @@ export default {
       "nome": "Soldado",
       "texto": "Quartel, marcha e fileira: você serviu a um exército, a um senhor ou a uma companhia mercenária.",
       "pericia": "luta",
+      "periciaBonus": 2,
       "itens": {
         "fixos": [
           "insignia-da-unidade",

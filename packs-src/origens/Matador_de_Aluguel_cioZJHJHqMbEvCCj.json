@@ -8,6 +8,7 @@
   "system": {
     "origemId": "matador-de-aluguel",
     "pericia": "pontaria",
+    "periciaBonus": 2,
     "texto": "Alguém pagava, você resolvia. Sem perguntas, sem testemunhas, sem remorso em público. Agora talvez você esteja fugindo do contrato ou do contratante.",
     "itens": {
       "fixos": [

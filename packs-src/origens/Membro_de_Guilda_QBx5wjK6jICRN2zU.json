@@ -8,6 +8,7 @@
   "system": {
     "origemId": "membro-de-guilda",
     "pericia": "barganha",
+    "periciaBonus": 2,
     "texto": "Mercadores, artesãos, ladrões ou aventureiros: toda guilda tem regras, mensalidade e proteção. Você tinha um lugar à mesa.",
     "itens": {
       "fixos": [

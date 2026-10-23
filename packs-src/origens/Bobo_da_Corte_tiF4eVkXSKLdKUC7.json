@@ -8,6 +8,7 @@
   "system": {
     "origemId": "bobo-da-corte",
     "pericia": "prestidigitacao",
+    "periciaBonus": 2,
     "texto": "Você fazia o rei rir, e às vezes o fazia pensar. Quem diverte os poderosos aprende a dizer verdades disfarçadas de piada.",
     "itens": {
       "fixos": [

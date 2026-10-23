@@ -8,6 +8,7 @@
   "system": {
     "origemId": "servo",
     "pericia": "intuicao",
+    "periciaBonus": 2,
     "texto": "Você serviu em casa alheia: cozinha, estábulo, corredor de palácio. Quem serve vê tudo, escuta tudo e quase nunca é notado.",
     "itens": {
       "fixos": [

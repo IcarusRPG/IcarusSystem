@@ -8,6 +8,7 @@
   "system": {
     "origemId": "musico",
     "pericia": "atuacao",
+    "periciaBonus": 2,
     "texto": "Sua vida foi o som: tavernas, casamentos, procissões, cortes. Uma canção certa muda o humor de uma sala.",
     "itens": {
       "fixos": [
