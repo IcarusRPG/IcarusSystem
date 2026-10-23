@@ -159,7 +159,7 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - Molduras: `img/Icones/tokens/personagens/` (só a pasta *Token Personagens*; nomes ASCII com hífens) e miniaturas em `miniaturas/`. O manifesto `tools/dados/tokens.json` traz o nome de exibição, o nome original, a caixa da abertura e o raio de fechamento da máscara (aros com frestas, como o Anátema).
 - Atualizar as molduras: `npm run build:tokens -- --de "<pasta Token Personagens>"` copia (sem sobrescrever arquivo diferente sem `--sobrescrever`), gera as miniaturas e o manifesto; `npm run build:tokens` só refaz o manifesto. Rodar de novo não muda nada.
 - **Upload pelos jogadores:** por padrão o Foundry não deixa jogadores enviarem arquivos. Sem essa permissão, o token é enviado pelo Mestre online (o sistema confere se o jogador é dono do ator, se é PNG e se tem até 2 MB). Sem Mestre online, os ajustes ficam salvos e o token é aplicado quando um Mestre entrar. Para dispensar o Mestre, conceda **"Upload New Files"** (Configurações → Configurar Permissões) aos jogadores.
-- Teste fora do Foundry: servir a raiz do projeto (`referencias/teste-telao/servidor.mjs`) e abrir `/referencias/teste-token/index.html`; no console, `await verificarVazamento()` confere, em todas as molduras e em posições/zoom extremos, que nenhum pixel do retrato fica fora da silhueta.
+- Teste fora do Foundry: servir a raiz do projeto com qualquer servidor estático e abrir `/tests/navegador/token.html` (`?retrato=<url>` troca o retrato); no console, `await verificarVazamento()` confere, em todas as molduras e em posições/zoom extremos, que nenhum pixel do retrato fica fora da silhueta.
 
 ## Raças
 
