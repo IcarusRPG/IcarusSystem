@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste do editor de token (Icarus RPG)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/styles/icarus.css">
+<style>
+  body { background: #1b1b1b; margin: 0; padding: 12px; color: #ddd; font-family: sans-serif; }
+  .ficha-icarus { max-width: 900px; height: auto; padding: 12px; }
+  #saida { margin-top: 12px; display: flex; gap: 12px; align-items: center; }
+  #saida img { width: 160px; height: 160px; background: repeating-conic-gradient(#333 0% 25%, #444 0% 50%) 50% / 16px 16px; }
+  #verificacao { white-space: pre; font: 12px monospace; }
+</style>
+</head>
+<body>
+<!-- Página de teste fora do Foundry: o mesmo module/token-editor.mjs da ficha, com as molduras reais.
+     Servir a raiz do projeto com qualquer servidor estático e abrir /tests/navegador/token.html -->
+<form class="ficha-icarus" onsubmit="return false">
+  <div class="token-aba">
+    <section class="painel token-galeria-painel">
+      <h3 class="titulo-painel">Molduras</h3>
+      <div class="token-galeria"></div>
+    </section>
+    <section class="painel token-editor">
+      <h3 class="titulo-painel">Token do personagem</h3>
+      <div class="token-previa-moldura"><canvas class="token-previa" width="320" height="320"></canvas></div>
+      <p class="token-mensagem" role="status" hidden></p>
+      <div class="token-controles">
+        <button type="button" class="btn quad" data-token-acao="menos">−</button>
+        <input class="token-zoom" type="range" min="1" max="5" step="0.01" value="1">
+        <button type="button" class="btn quad" data-token-acao="mais">+</button>
+        <button type="button" class="btn peq" data-token-acao="centralizar"><i class="fa-solid fa-crosshairs"></i> Centralizar</button>
+      </div>
+      <p class="dica">Arraste para mover, role para dar zoom.</p>
+      <div class="token-botoes">
+        <button type="button" class="btn" data-token-acao="aplicar"><i class="fa-solid fa-check"></i> Aplicar token</button>
+        <button type="button" class="btn" data-token-acao="restaurar"><i class="fa-solid fa-rotate-left"></i> Restaurar</button>
+      </div>
+    </section>
+  </div>
+</form>
+<div id="saida"><img id="final" alt=""><span id="tamanho"></span></div>
+<div id="verificacao"></div>
+<script type="module">
+import TOKENS from "/module/dados/tokens.mjs";
+import { EditorDeToken, pngDentroDoLimite, compor, carregarImagem, mascaraDaMoldura } from "/module/token-editor.mjs";
+import { limitar } from "/module/token-mascara.mjs";
+
+const url = m => encodeURI(`/img/Icones/${TOKENS.pasta}/${m.arquivo}`);
+const params = new URLSearchParams(location.search);
+const retrato = params.get("retrato") ?? encodeURI("/img/Icones/classes/Guerreiro.png");
+const galeria = document.querySelector(".token-galeria");
+for (const m of TOKENS.tokens) galeria.insertAdjacentHTML("beforeend",
+  `<button type="button" class="token-mini" data-moldura="${m.id}" title="${m.nome}"><img src="${encodeURI(`/img/Icones/${TOKENS.pasta}/${m.miniatura}`)}" alt="" loading="lazy" width="80" height="80"><span class="token-mini-nome">${m.nome}</span></button>`);
+let estado = null;
+const editor = new EditorDeToken(document.querySelector(".token-aba"), {
+  manifesto: TOKENS, urlDaMoldura: url, estado, retratoAtual: retrato, editavel: true,
+  t: (k, d) => k + (d ? " " + JSON.stringify(d) : ""),
+  aoMudar: e => { window.ultimoRascunho = e; },
+  aoAplicar: async (partes, e) => {
+    const blob = await pngDentroDoLimite(partes);
+    document.getElementById("final").src = URL.createObjectURL(blob);
+    document.getElementById("tamanho").textContent = `${(blob.size / 1024).toFixed(0)} KB`;
+    editor.op.estado = { ...e, aplicado: { ...e } };
+    window.ultimoAplicado = e;
+  }
+});
+window.editor = editor;
+await editor.iniciar();
+
+/** Verificação: em posições/zooms extremos, nenhum pixel do retrato fica onde a silhueta é 0. */
+window.verificarVazamento = async () => {
+  const linhas = [];
+  const imgR = await carregarImagem(retrato);
+  for (const m of TOKENS.tokens) {
+    const mold = await carregarImagem(url(m));
+    const mask = await mascaraDaMoldura(m, mold);
+    let pior = 0;
+    // Nativa (silhueta exata) e 512 px (verdade = silhueta reduzida: onde o alfa dela é 0, é fora)
+    for (const N of [mold.naturalWidth, 512]) {
+    const c = document.createElement("canvas"); c.width = c.height = N;
+    const ctx = c.getContext("2d", { willReadFrequently: true });
+    const mk = document.createElement("canvas"); mk.width = mk.height = N;
+    const mctx = mk.getContext("2d", { willReadFrequently: true }); mctx.drawImage(mask, 0, 0, N, N);
+    const md = mctx.getImageData(0, 0, N, N).data;
+    for (const [x, y, escala] of [[-9, -9, 1], [9, 9, 1], [0.5, 0.5, 5], [-9, 9, 5], [0.1, 0.9, 2]]) {
+      const e = limitar({ x, y, escala }, { w: imgR.naturalWidth, h: imgR.naturalHeight }, m.abertura, N);
+      // Só o retrato recortado (sem a moldura por cima): onde a silhueta é 0, o alfa tem que ser 0
+      ctx.clearRect(0, 0, N, N);
+      const r = { ...e };
+      compor(ctx, N, { retrato: imgR, moldura: document.createElement("canvas"), mascara: mask, caixa: m.abertura, e: r });
+      const d = ctx.getImageData(0, 0, N, N).data;
+      let vaz = 0;
+      for (let i = 3; i < d.length; i += 4) if (md[i] === 0 && d[i] > 0) vaz++;
+      pior = Math.max(pior, vaz);
+    }
+    }
+    linhas.push(`${m.nome.padEnd(14)} pixels fora da silhueta: ${pior}`);
+  }
+  document.getElementById("verificacao").textContent = linhas.join("\n");
+  return linhas;
+};
+</script>
+</body>
+</html>

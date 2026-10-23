@@ -17,6 +17,7 @@
       <button type="button" class="item aba" data-tab="poderes" role="tab">{{localize "ICARUS.Abas.poderes"}}</button>
       <button type="button" class="item aba" data-tab="diario" role="tab">{{localize "ICARUS.Abas.diario"}}</button>
       <button type="button" class="item aba" data-tab="efeitos" role="tab">{{localize "ICARUS.Abas.efeitos"}}</button>
+      <button type="button" class="item aba" data-tab="token" role="tab">{{localize "ICARUS.Abas.token"}}</button>
     </div>
     {{#if editable}}
     <button type="button" class="btn btn-nivel" data-action="abrir-nivel" aria-label="{{localize 'ICARUS.NivelDialogo.Titulo'}}">
@@ -33,6 +34,7 @@
     <div class="tab" data-tab="poderes">{{> "systems/icarus-rpg/templates/actor/parts/poderes.hbs"}}</div>
     <div class="tab" data-tab="diario">{{> "systems/icarus-rpg/templates/actor/parts/diario.hbs"}}</div>
     <div class="tab" data-tab="efeitos">{{> "systems/icarus-rpg/templates/actor/parts/efeitos.hbs"}}</div>
+    <div class="tab" data-tab="token">{{> "systems/icarus-rpg/templates/actor/parts/token.hbs"}}</div>
   </section>
 
   <footer class="rodape">

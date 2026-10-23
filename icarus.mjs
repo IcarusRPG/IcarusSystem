@@ -25,6 +25,7 @@ import { registrarArmaduras } from "./module/armaduras.mjs";
 import { registrarItensComuns } from "./module/itens-comuns.mjs";
 import { registrarPoderesDeOrigem } from "./module/origens-poderes.mjs";
 import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./module/origens.mjs";
+import { registrarTokens } from "./module/token.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
@@ -53,6 +54,7 @@ registrarBotoesDoChat();
 registrarArmaduras();
 registrarItensComuns();
 registrarPoderesDeOrigem();
+registrarTokens();
 registrarBotoesDeDano();
 registrarMorte();
 registrarAtalhos();
@@ -72,6 +74,7 @@ const TEMPLATES = [
   "actor/parts/classe.hbs",
   "actor/parts/recursos-classe.hbs",
   "actor/parts/diario.hbs",
+  "actor/parts/token.hbs",
   "actor/parts/efeitos.hbs",
   "item/poder.hbs",
   "item/equipamento.hbs",

@@ -64,7 +64,8 @@
       "diario": "Diário",
       "efeitos": "Efeitos",
       "combate": "Combate",
-      "classe": "Classe"
+      "classe": "Classe",
+      "token": "Token"
     },
     "Rodape": {
       "Rolar": "Clique no total de um atributo ou perícia para rolar no chat"
@@ -1352,6 +1353,36 @@
       "Rolar": "Rolar",
       "GazuasQuebram": "1 natural: as gazuas quebram.",
       "EntrouTirado": "{item} entrou no inventário sem estar vestido: o limite de {n} vestimentas está cheio."
+    },
+    "Token": {
+      "Molduras": "Molduras",
+      "Editor": "Token do personagem",
+      "Previa": "Prévia do token",
+      "Menos": "Diminuir zoom",
+      "Mais": "Aumentar zoom",
+      "Zoom": "Zoom",
+      "Centralizar": "Centralizar",
+      "Ajuda": "Arraste para mover, role para dar zoom.",
+      "Aplicar": "Aplicar token",
+      "Restaurar": "Restaurar",
+      "AtualizarCena": "Atualizar também os tokens já colocados nas cenas",
+      "SoLeitura": "Só o dono do personagem (ou o Mestre) edita o token.",
+      "SemRetrato": "O personagem não tem imagem: escolha o retrato antes de montar o token.",
+      "EscolherRetrato": "Escolher retrato",
+      "RetratoMudou": "A imagem do personagem mudou desde o último token. Os ajustes foram mantidos.",
+      "UsarRetratoAtual": "Usar a imagem atual",
+      "SemMolduras": "Nenhuma moldura de token encontrada no sistema.",
+      "ErroMoldura": "A moldura \"{nome}\" não carregou (arquivo ausente ou bloqueado). Escolha outra.",
+      "ErroRetrato": "O retrato do personagem não carregou (arquivo ausente ou de outro site sem permissão). Escolha outra imagem.",
+      "Aplicado": "Token de {nome} aplicado.",
+      "ErroAplicar": "O token não foi aplicado (nada mudou). {motivo}",
+      "SemMestre": "Você não tem permissão de enviar arquivos e não há Mestre online. Os ajustes foram salvos: o token será aplicado quando o Mestre entrar.",
+      "MestreNaoRespondeu": "O Mestre não respondeu a tempo.",
+      "RecusaDono": "Só o dono do personagem pode aplicar o token.",
+      "RecusaTipo": "A imagem enviada não é um PNG válido.",
+      "RecusaTamanho": "A imagem passou de 2 MB.",
+      "Pendente": "Token pendente: será aplicado quando um Mestre entrar.",
+      "PendentesFeitos": "Tokens pendentes aplicados: {n} de {total}."
     }
   }
 }

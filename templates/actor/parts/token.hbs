@@ -1,0 +1,49 @@
+{{!-- Aba Token: galeria de molduras (manifesto) e editor em canvas (module/token-editor.mjs) --}}
+<div class="token-aba">
+  <section class="painel token-galeria-painel">
+    <h3 class="titulo-painel">{{localize "ICARUS.Token.Molduras"}}</h3>
+    <div class="token-galeria" role="group" aria-label="{{localize 'ICARUS.Token.Molduras'}}">
+      {{#each token.molduras}}
+      <button type="button" class="token-mini" data-moldura="{{id}}" title="{{nome}}" aria-label="{{nome}}" aria-pressed="false"{{#unless @root.token.editavel}} disabled{{/unless}}>
+        <img src="{{url}}" alt="" loading="lazy" width="80" height="80">
+        <span class="token-mini-nome">{{nome}}</span>
+      </button>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="painel token-editor">
+    <h3 class="titulo-painel">{{localize "ICARUS.Token.Editor"}}</h3>
+    {{#if token.pendente}}<p class="token-aviso">{{localize "ICARUS.Token.Pendente"}}</p>{{/if}}
+    {{#if token.semRetrato}}
+    <p class="token-aviso">{{localize "ICARUS.Token.SemRetrato"}}
+      {{#if token.editavel}}<button type="button" class="btn peq" data-token-acao="retrato">{{localize "ICARUS.Token.EscolherRetrato"}}</button>{{/if}}</p>
+    {{/if}}
+    {{#if token.retratoMudou}}
+    <p class="token-aviso">{{localize "ICARUS.Token.RetratoMudou"}}
+      {{#if token.editavel}}<button type="button" class="btn peq" data-token-acao="usar-retrato-atual">{{localize "ICARUS.Token.UsarRetratoAtual"}}</button>{{/if}}</p>
+    {{/if}}
+    <div class="token-previa-moldura">
+      <canvas class="token-previa" width="320" height="320" role="img" aria-label="{{localize 'ICARUS.Token.Previa'}}"></canvas>
+    </div>
+    <p class="token-mensagem" role="status" hidden></p>
+    {{#if token.editavel}}
+    <div class="token-controles">
+      <button type="button" class="btn quad" data-token-acao="menos" aria-label="{{localize 'ICARUS.Token.Menos'}}" title="{{localize 'ICARUS.Token.Menos'}}">−</button>
+      <input class="token-zoom" type="range" min="1" max="5" step="0.01" value="1" aria-label="{{localize 'ICARUS.Token.Zoom'}}">
+      <button type="button" class="btn quad" data-token-acao="mais" aria-label="{{localize 'ICARUS.Token.Mais'}}" title="{{localize 'ICARUS.Token.Mais'}}">+</button>
+      <button type="button" class="btn peq" data-token-acao="centralizar"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> {{localize "ICARUS.Token.Centralizar"}}</button>
+    </div>
+    <p class="dica">{{localize "ICARUS.Token.Ajuda"}}</p>
+    {{#if token.tokensNaCena}}
+    <label class="chk"><input type="checkbox" class="token-atualizar-cena" checked> {{localize "ICARUS.Token.AtualizarCena"}}</label>
+    {{/if}}
+    <div class="token-botoes">
+      <button type="button" class="btn" data-token-acao="aplicar"><i class="fa-solid fa-check" aria-hidden="true"></i> {{localize "ICARUS.Token.Aplicar"}}</button>
+      <button type="button" class="btn" data-token-acao="restaurar"{{#unless token.aplicado}} disabled{{/unless}}><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> {{localize "ICARUS.Token.Restaurar"}}</button>
+    </div>
+    {{else}}
+    <p class="dica">{{localize "ICARUS.Token.SoLeitura"}}</p>
+    {{/if}}
+  </section>
+</div>
