@@ -24,7 +24,7 @@ import { registrarTelao, abrirTelao } from "./module/telao/telao.mjs";
 import { registrarArmaduras } from "./module/armaduras.mjs";
 import { registrarItensComuns } from "./module/itens-comuns.mjs";
 import { registrarPoderesDeOrigem } from "./module/origens-poderes.mjs";
-import { migrarBonusDeOrigem } from "./module/origens.mjs";
+import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./module/origens.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
@@ -132,6 +132,7 @@ Hooks.once("init", () => {
   game.icarus.condicoes = { ...registrarCondicoes(), painel: abrirPainelDoMestre, abrirPainel: abrirPainelDoMestre };
   game.icarus.testes = registrarTestes();
   game.icarus.migrarBonusDeOrigem = migrarBonusDeOrigem;
+  game.icarus.adicionarItensDeOrigem = adicionarItensQueFaltam;
 
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {

@@ -17,12 +17,16 @@ test("1. 25 origens, 25 poderes e 49 itens; cada origem soma 2 itens que existem
   assert.equal(ITENS_COMUNS.length, 49);
   const chaves = new Set(PERICIAS.map(p => p.chave));
   for (const o of ORIGENS) {
-    assert.equal(o.itens.fixos.length + o.itens.escolhas.length, 2, o.id);
+    assert.equal(o.itens.fixos.length, 2, o.id);
+    assert.deepEqual(o.itens.escolhas, [], `${o.id}: sem escolha entre itens`);
     assert.ok(chaves.has(o.pericia), o.pericia);
     for (const id of [...o.itens.fixos, ...o.itens.escolhas.flat()]) assert.ok(itemComumPorId(id), id);
   }
   assert.equal(origemPorId("musico").pericia, "atuacao");
-  assert.deepEqual(itensDaOrigem(origemPorId("circense"), [1]), ["traje-colorido", "corda-fina-de-equilibrio"]);
+  assert.deepEqual(itensDaOrigem(origemPorId("circense")), ["bolas-de-malabarismo", "traje-colorido"]);
+  assert.deepEqual(itensDaOrigem(origemPorId("membro-de-guilda")), ["insignia-da-guilda", "balanca-de-bolso"]);
+  // Os que deixaram de vir da origem continuam no catálogo
+  assert.ok(itemComumPorId("corda-fina-de-equilibrio") && itemComumPorId("ferramentas-leves-de-oficio"));
   // JSON exatamente como o Anexo (uma linha)
   assert.equal(fs.readFileSync(path.join(RAIZ, "tools/dados/origens.json"), "utf8").trim().split("\n").length, 1);
 });

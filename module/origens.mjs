@@ -58,8 +58,8 @@ const lerCampos = (form, prefixo) => ({
 });
 
 /**
- * Diálogo "Origem — <Nome>": bônus de perícia (só texto), poder, itens (um de cada grupo) e as
- * escolhas dos itens. @returns {Promise<object|null>} escolhas ({ grupos[], itens{} }) ou null
+ * Diálogo "Origem — <Nome>": bônus de perícia (só texto), poder e os 2 itens fixos, com a
+ * personalização de cada item (bônus A ou B, texto livre). @returns {Promise<object|null>} escolhas ({ itens{} }) ou null
  */
 export async function escolherOrigem(actor, origem, anteriores = {}) {
   const poder = origem.poder;
@@ -69,16 +69,11 @@ export async function escolherOrigem(actor, origem, anteriores = {}) {
     const it = itemComumPorId(id);
     return `<li><b>${esc(it.nome)}</b>${it.bonus?.length ? ` <small>${esc(it.bonus.map(b => textoDoBonus(b)).join("; "))}</small>` : ""}${camposDoItem(it, `item.${id}`, anteriores.itens?.[id])}</li>`;
   });
-  const grupos = origem.itens.escolhas.map((g, n) => `<li><fieldset><legend>${esc(loc("ICARUS.Origens.UmDosDois"))}</legend>${g.map((id, j) => {
-    const it = itemComumPorId(id);
-    const marcado = (anteriores.grupos?.[n] ?? 0) === j;
-    return `<label class="chk"><input type="radio" name="grupo.${n}" value="${j}"${marcado ? " checked" : ""}> <b>${esc(it.nome)}</b></label>${camposDoItem(it, `item.${id}`, anteriores.itens?.[id])}`;
-  }).join("")}</fieldset></li>`);
   const content = `<div class="icarus-uso dialogo-origem">
     <p class="dica">${esc(origem.texto)}</p>
     <h4>${esc(loc("ICARUS.Origens.Pericia"))}</h4>${blocoPericia}
     <h4>${esc(loc("ICARUS.Origens.Poder"))}</h4><p><b>${esc(poder.nome)}</b> <small>${esc(loc(`ICARUS.Poderes.Acoes.${poder.acao}`))}${esc(custo)}</small><br>${esc(poder.descricao)}</p>
-    <h4>${esc(loc("ICARUS.Origens.Itens"))}</h4><ul class="itens-origem">${[...fixos, ...grupos].join("")}</ul>
+    <h4>${esc(loc("ICARUS.Origens.Itens"))}</h4><ul class="itens-origem">${fixos.join("")}</ul>
     <p class="dica">${esc(loc("ICARUS.Origens.ItensGratis"))}</p></div>`;
   const r = await DialogV2.wait({
     window: { title: fmt("ICARUS.Origens.Titulo", { nome: origem.nome }) },
@@ -87,11 +82,8 @@ export async function escolherOrigem(actor, origem, anteriores = {}) {
     buttons: [
       { action: "ok", label: loc("ICARUS.Origens.Confirmar"), default: true, callback: (ev, b) => {
         const form = b.form;
-        const escolhas = {
-          grupos: origem.itens.escolhas.map((g, n) => Number(form.querySelector(`[name="grupo.${n}"]:checked`)?.value ?? 0)),
-          itens: {}
-        };
-        for (const id of [...origem.itens.fixos, ...origem.itens.escolhas.flat()]) escolhas.itens[id] = lerCampos(form, `item.${id}`);
+        const escolhas = { itens: {} };
+        for (const id of origem.itens.fixos) escolhas.itens[id] = lerCampos(form, `item.${id}`);
         return escolhas;
       } },
       { action: "cancelar", label: loc("ICARUS.Testes.Cancelar") }
@@ -144,7 +136,7 @@ export async function aplicarOrigem(actor, origemId, escolhas) {
   if (!origem) return;
   const atualizacao = {
     "system.identidade.origem": origem.id,
-    [`flags.${F}.escolhasOrigem`]: JSON.stringify({ grupos: escolhas.grupos ?? [], itens: escolhas.itens ?? {} })
+    [`flags.${F}.escolhasOrigem`]: JSON.stringify({ itens: escolhas.itens ?? {} })
   };
   // Uso limitado: 1 recurso (cena, dia ou cidade)
   const p = origem.poder;
@@ -156,7 +148,7 @@ export async function aplicarOrigem(actor, origemId, escolhas) {
   await actor.update(atualizacao);
   const imgPoder = await iconeDoPacote("poderes-origem", "poderId", p.id);
   const itens = [];
-  for (const id of itensDaOrigem(origem, escolhas.grupos)) {
+  for (const id of itensDaOrigem(origem)) {
     const item = itemComumPorId(id);
     itens.push(itemComumComEscolhas(item, escolhas.itens?.[id], { origemItem: true, img: await iconeDoPacote("itens-comuns", "id", id) }));
   }
@@ -241,7 +233,7 @@ export async function reaplicarOrigem(actor) {
   let escolhas = {};
   try { escolhas = JSON.parse(actor.flags?.[F]?.escolhasOrigem || "{}"); } catch { escolhas = {}; }
   // Sem as escolhas guardadas (ficha antiga): pergunta de novo antes de tirar
-  if (!escolhas.grupos) {
+  if (!escolhas.itens) {
     const novas = await escolherOrigem(actor, origem, escolhas);
     if (!novas) return;
     escolhas = novas;
@@ -355,5 +347,55 @@ export async function migrarBonusDeOrigem(atores = game.actors) {
   }
   for (const p of planos) await migrarAtorDeOrigem(p);
   ui.notifications.info(fmt("ICARUS.Origens.Migrados", { n: planos.length }));
+  return planos.length;
+}
+
+/* ------------------------------ Migração: itens de origem sempre fixos ------------------------------ */
+
+/**
+ * Antes, Circense e Membro de Guilda escolhiam 1 de 2 itens; agora os 2 são fixos. Fichas com a
+ * origem já aplicada (com o Poder de Origem automático) que não têm o item que passou a ser fixo
+ * recebem a oferta de adicioná-lo. Nada é removido nem duplicado.
+ */
+export const ITEM_QUE_PASSOU_A_SER_FIXO = { circense: "bolas-de-malabarismo", "membro-de-guilda": "balanca-de-bolso" };
+
+/** @returns {{ actor, origem, itemId }[]} */
+export function planoDosItensQueFaltam(atores) {
+  const planos = [];
+  for (const actor of atores) {
+    if (actor.type !== "personagem" || actor.flags?.[F]?.migracaoItensOrigem) continue;
+    const origem = origemPorId(actor._source.system.identidade.origem);
+    const itemId = origem && ITEM_QUE_PASSOU_A_SER_FIXO[origem.id];
+    if (!itemId || !actor.items.some(ehPoderDeOrigemAuto)) continue;
+    if (actor.items.some(i => i.flags?.[F]?.id === itemId)) continue;
+    planos.push({ actor, origem, itemId });
+  }
+  return planos;
+}
+
+/**
+ * Oferece (com confirmação, listando) o item que faltou. Recusar não repete; o Mestre roda depois
+ * com game.icarus.adicionarItensDeOrigem(). @returns {Promise<number|false>}
+ */
+export async function adicionarItensQueFaltam(atores = game.actors) {
+  const planos = planoDosItensQueFaltam([...atores]);
+  if (!planos.length) return 0;
+  const ok = await DialogV2.confirm({
+    window: { title: loc("ICARUS.Origens.ItensFixosTitulo") },
+    content: `<div class="icarus-uso"><p>${esc(loc("ICARUS.Origens.ItensFixosTexto"))}</p><ul class="lista-reset">${planos.map(p =>
+      `<li><b>${esc(p.actor.name)}</b> (${esc(p.origem.nome)}): + ${esc(itemComumPorId(p.itemId).nome)}</li>`).join("")}</ul>
+      <p class="dica">${esc(loc("ICARUS.Origens.ItensFixosDica"))}</p></div>`,
+    rejectClose: false
+  });
+  if (!ok) {
+    ui.notifications.info(loc("ICARUS.Origens.ItensFixosDepois"));
+    return false;
+  }
+  for (const p of planos) {
+    const img = await iconeDoPacote("itens-comuns", "id", p.itemId);
+    await p.actor.createEmbeddedDocuments("Item", [itemComumComEscolhas(itemComumPorId(p.itemId), {}, { origemItem: true, img })]);
+    await p.actor.setFlag(F, "migracaoItensOrigem", true);
+  }
+  ui.notifications.info(fmt("ICARUS.Origens.ItensFixosFeito", { n: planos.length }));
   return planos.length;
 }

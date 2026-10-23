@@ -12,14 +12,10 @@
     "texto": "Mercadores, artesãos, ladrões ou aventureiros: toda guilda tem regras, mensalidade e proteção. Você tinha um lugar à mesa.",
     "itens": {
       "fixos": [
-        "insignia-da-guilda"
+        "insignia-da-guilda",
+        "balanca-de-bolso"
       ],
-      "escolhas": [
-        [
-          "balanca-de-bolso",
-          "ferramentas-leves-de-oficio"
-        ]
-      ]
+      "escolhas": []
     },
     "poderId": "rede-de-contatos"
   },

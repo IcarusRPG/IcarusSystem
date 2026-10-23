@@ -102,14 +102,10 @@ export default {
       "periciaBonus": 2,
       "itens": {
         "fixos": [
+          "bolas-de-malabarismo",
           "traje-colorido"
         ],
-        "escolhas": [
-          [
-            "bolas-de-malabarismo",
-            "corda-fina-de-equilibrio"
-          ]
-        ]
+        "escolhas": []
       },
       "poder": {
         "id": "cair-de-pe",
@@ -382,14 +378,10 @@ export default {
       "periciaBonus": 2,
       "itens": {
         "fixos": [
-          "insignia-da-guilda"
+          "insignia-da-guilda",
+          "balanca-de-bolso"
         ],
-        "escolhas": [
-          [
-            "balanca-de-bolso",
-            "ferramentas-leves-de-oficio"
-          ]
-        ]
+        "escolhas": []
       },
       "poder": {
         "id": "rede-de-contatos",
