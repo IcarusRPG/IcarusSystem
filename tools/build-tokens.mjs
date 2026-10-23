@@ -12,13 +12,16 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { cabecalhoPng, lerPng } from "./png.mjs";
+import { cabecalhoPng, lerPng, escreverPng, reduzir } from "./png.mjs";
 import { opacosDe, raioDeFechamento, silhueta, caixaDaAbertura } from "../module/token-mascara.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const PASTA_TOKENS = "tokens/personagens";
 const DESTINO = path.join(RAIZ, "img", "Icones", ...PASTA_TOKENS.split("/"));
 const MANIFESTO = path.join(RAIZ, "tools", "dados", "tokens.json");
+/** Miniaturas da galeria (as molduras têm 1–2 MB cada): lado em px e subpasta. */
+const LADO_MINIATURA = 160;
+const PASTA_MINIATURAS = "miniaturas";
 
 /** "Tokem esmeralda.png" → { arquivo: "token-esmeralda.png", nome: "Esmeralda" }. */
 export function normalizarNome(original) {
@@ -67,8 +70,13 @@ export function gerarManifesto(originais = {}) {
     const fechamento = raioDeFechamento(opacos, w, h);
     if (fechamento === null) { avisos.push(`${arquivo}: o aro não fecha nem com o maior raio; ficou fora do manifesto`); continue; }
     const c = caixaDaAbertura(opacos, silhueta(opacos, w, h, fechamento), w, h);
+    // Miniatura (determinística: rodar de novo gera os mesmos bytes)
+    fs.mkdirSync(path.join(DESTINO, PASTA_MINIATURAS), { recursive: true });
+    const mini = escreverPng(LADO_MINIATURA, LADO_MINIATURA, reduzir({ w, h, px }, LADO_MINIATURA));
+    const arqMini = path.join(DESTINO, PASTA_MINIATURAS, arquivo);
+    if (!fs.existsSync(arqMini) || !fs.readFileSync(arqMini).equals(mini)) fs.writeFileSync(arqMini, mini);
     const n = v => Math.round(v * 10000) / 10000;
-    tokens.push({ id, nome, arquivo, original, tamanho: w, fechamento, abertura: { x0: n(c.x0 / w), y0: n(c.y0 / h), x1: n((c.x1 + 1) / w), y1: n((c.y1 + 1) / h) } });
+    tokens.push({ id, nome, arquivo, miniatura: `${PASTA_MINIATURAS}/${arquivo}`, original, tamanho: w, fechamento, abertura: { x0: n(c.x0 / w), y0: n(c.y0 / h), x1: n((c.x1 + 1) / w), y1: n((c.y1 + 1) / h) } });
   }
   tokens.sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
   const manifesto = { versao: 1, pasta: PASTA_TOKENS, tokens };

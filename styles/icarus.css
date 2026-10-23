@@ -1030,3 +1030,29 @@ body.game {
 .ficha-icarus .item-nome .aviso-limite { color: var(--ic-ouro-claro); }
 .ficha-icarus .caixa-vestimentas { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .ficha-icarus .caixa-vestimentas.excedida .grande { color: var(--ic-ouro-claro); }
+
+/* ---------------- Aba Token (molduras e editor) ---------------- */
+.ficha-icarus .token-aba { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(280px, 1.4fr); gap: 12px; align-items: start; }
+.ficha-icarus .token-galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; max-height: 520px; overflow-y: auto; padding: 4px; }
+.ficha-icarus .token-mini {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px;
+  background: var(--ic-campo); border: 1px solid var(--ic-borda); border-radius: 6px;
+}
+.ficha-icarus .token-mini img { width: 72px; height: 72px; object-fit: contain; }
+.ficha-icarus .token-mini-nome { font-size: 11px; color: var(--ic-apagado); max-width: 80px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ficha-icarus .token-mini:hover:not(:disabled) { border-color: var(--ic-moldura); background: var(--ic-btn-hover); }
+.ficha-icarus .token-mini.ativa { border-color: var(--ic-ciano); box-shadow: 0 0 0 1px var(--ic-ciano) inset; }
+.ficha-icarus .token-mini.ativa .token-mini-nome { color: var(--ic-ciano-titulo); }
+.ficha-icarus .token-editor { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+.ficha-icarus .token-previa-moldura {
+  align-self: center; width: min(100%, 340px); aspect-ratio: 1; border-radius: 8px;
+  background: repeating-conic-gradient(#0d151d 0% 25%, #111c26 0% 50%) 50% / 24px 24px; border: 1px solid var(--ic-borda);
+}
+.ficha-icarus canvas.token-previa { width: 100%; height: 100%; display: block; cursor: grab; }
+.ficha-icarus canvas.token-previa.arrastando { cursor: grabbing; }
+.ficha-icarus .token-controles { display: flex; align-items: center; gap: 6px; }
+.ficha-icarus .token-controles .token-zoom { flex: 1; min-width: 60px; }
+.ficha-icarus .token-botoes { display: flex; gap: 8px; }
+.ficha-icarus .token-botoes .btn { flex: 1; }
+.ficha-icarus .token-aviso, .ficha-icarus .token-mensagem { margin: 0; padding: 6px 8px; border-radius: 4px; font-size: 13px; color: var(--ic-ouro-claro); background: var(--ic-ouro-apagado); }
+@container (max-width: 640px) { .ficha-icarus .token-aba { grid-template-columns: 1fr; } }

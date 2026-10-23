@@ -31,6 +31,7 @@ import { desfazerTrocaDeClasse } from "../assistente.mjs";
 import { trocarOrigem, reaplicarOrigem, desfazerTrocaDeOrigem, opcoesDeOrigem, escolhasDoItemComum, itemComumComEscolhas } from "../origens.mjs";
 import { origemPorId, itemComumPorId, ehVestimenta, estaVestido, textoDoBonus } from "../origens-dados.mjs";
 import { usarItemComum, temUsar, alternarVestido } from "../itens-comuns.mjs";
+import { contextoDoToken, ligarEditor } from "../token.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
 
@@ -361,6 +362,8 @@ export class FichaPersonagem extends ActorSheet {
     ctx.moedas = { ...src.moedas, total: formatarPreco(s.moedas.total) === "—" ? "R$ 0" : formatarPreco(s.moedas.total), ouro: precoEmOuro(s.moedas.total) };
     // Carga: valor exato no cálculo; arredonda para cima só ao exibir (meio espaço ocupa 1)
     ctx.carga = { ...s.carga, usado: Math.ceil(s.carga.usado) };
+    // Aba Token: galeria de molduras e editor (module/token.mjs)
+    ctx.token = contextoDoToken(actor, this.isEditable);
 
     // Bloco Ataques (aba Características): só as armas empunhadas
     ctx.ataques = ctx.armas.filter(a => a.empunhada);
@@ -510,8 +513,22 @@ export class FichaPersonagem extends ActorSheet {
     return origens;
   }
 
+  /** Aba Token: o editor só carrega as imagens quando a aba é aberta. */
+  _onChangeTab(event, tabs, active) {
+    super._onChangeTab?.(event, tabs, active);
+    if (active === "token") ligarEditor(this);
+  }
+
+  async close(options) {
+    this._editorToken?.destruir();
+    this._editorToken = null;
+    return super.close(options);
+  }
+
   activateListeners(html) {
     super.activateListeners(html);
+    // Redesenhou com a aba Token aberta: religa o editor (o canvas é novo)
+    if (this._tabs?.[0]?.active === "token") ligarEditor(this);
     // Rolar é permitido a quem é dono da ficha, mesmo com ela travada
     if (this.actor.isOwner) {
       // Shift = vantagem, Ctrl = desvantagem
