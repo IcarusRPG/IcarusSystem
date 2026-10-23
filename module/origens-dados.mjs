@@ -4,7 +4,7 @@
  * module/dados/*.mjs. A automação no Foundry fica em module/origens.mjs.
  *
  * Regras:
- * - Origem: 1 perícia Treinada (nunca especialista), 1 Poder de Origem e 2 itens comuns grátis.
+ * - Origem: +2 de bônus na perícia da origem (não treina), 1 Poder de Origem e 2 itens comuns fixos grátis.
  * - Bônus de item: os incondicionais somam no total da perícia quando o item está ativo (vestido e
  *   dentro do limite, ou "vale enquanto possui"); os condicionais aparecem como caixas na rolagem.
  *   Itens diferentes somam; o mesmo item nunca soma consigo mesmo (pelo id do compêndio).
@@ -31,10 +31,8 @@ export const itemComumPorId = id => ITENS_COMUNS.find(i => i.id === id) ?? null;
 export const idDaOrigemPorNome = nome => ORIGENS.find(o => normalizar(o.nome) === normalizar(nome))?.id ?? null;
 const nomePericia = k => PERICIAS.find(p => p.chave === k)?.nome ?? k;
 
-/** Os 2 itens que a origem concede: fixos + 1 de cada grupo de escolha (escolhas = índices). */
-export function itensDaOrigem(origem, escolhas = []) {
-  return [...origem.itens.fixos, ...origem.itens.escolhas.map((g, i) => g[escolhas[i] ?? 0] ?? g[0])];
-}
+/** Os 2 itens que a origem concede (sempre fixos; não há escolha entre itens). */
+export const itensDaOrigem = origem => [...origem.itens.fixos];
 
 /** O item pede escolha de bônus (+1 em A ou B)? Devolve as opções ou null. */
 export const opcoesDeBonus = item => item?.bonus?.find(b => Array.isArray(b.escolha) && b.escolha.length)?.escolha ?? null;

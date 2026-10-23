@@ -19,7 +19,7 @@ globalThis.game = { actors: [], packs: new Map(), i18n: { localize: k => k, form
 globalThis.Handlebars = { escapeExpression: t => t };
 globalThis.ui = { notifications: { info() {}, warn() {} } };
 
-const { trocarOrigem, desfazerTrocaDeOrigem, ehPoderDeOrigemAuto, reaplicarOrigem, migrarBonusDeOrigem } = await import("../module/origens.mjs");
+const { trocarOrigem, desfazerTrocaDeOrigem, ehPoderDeOrigemAuto, reaplicarOrigem, migrarBonusDeOrigem, adicionarItensQueFaltam } = await import("../module/origens.mjs");
 const { resetarClasse } = await import("../module/assistente.mjs");
 const { ehPoderRacialAuto } = await import("../module/racas.mjs");
 
@@ -93,11 +93,15 @@ test("2. Curandeiro já treinado em Cura: +2 da origem soma com o treino (+4), s
   assert.equal(ator.effects.length, 1, "nem o bônus");
 });
 
-test("3. Circense: escolhe 1 de 2 itens e o bônus do Traje colorido", async () => {
+test("B. Circense entrega Bolas de malabarismo + Traje colorido (com o bônus escolhido); Membro de Guilda, Insígnia + Balança", async () => {
   const ator = atorFalso();
-  respostaDialogo = { grupos: [1], itens: { "traje-colorido": { bonus: "enganacao" } } };
+  respostaDialogo = { itens: { "traje-colorido": { bonus: "enganacao" } } };
   await trocarOrigem(ator, "circense");
-  assert.deepEqual(nomes(ator), ["Cair de Pé", "Corda fina de equilíbrio", "Traje colorido"]);
+  assert.deepEqual(nomes(ator), ["Bolas de malabarismo", "Cair de Pé", "Traje colorido"]);
+  const guilda = atorFalso();
+  respostaDialogo = { itens: { "insignia-da-guilda": { bonus: "diplomacia" } } };
+  await trocarOrigem(guilda, "membro-de-guilda");
+  assert.deepEqual(nomes(guilda), ["Balança de bolso", "Insígnia da guilda", "Rede de Contatos"]);
   assert.equal(ator.items.find(i => i.name === "Traje colorido").flags["icarus-rpg"].escolhaBonus, "enganacao");
 });
 
@@ -158,6 +162,29 @@ test("6. Migração das fichas antigas: tira a fonte origem, põe o +2 na períc
   assert.equal(a.effects.length, 0);
   assert.equal(a.items.length, 1, "o poder volta");
   assert.equal(a.flags["icarus-rpg"].migracaoOrigemBonus, undefined, "a migração volta a ser oferecida");
+});
+
+test("B. Fichas antigas: Circense com a corda recebe as bolas (com confirmação); nada some nem duplica; rodar 2× não muda", async () => {
+  const { dadosDoItemComum, itemComumPorId } = await import("../module/origens-dados.mjs");
+  const antigo = (origem, idItem) => {
+    const a = atorFalso();
+    a._source.system.identidade.origem = origem;
+    a.items.push(item({ id: "p1", name: "Poder", type: "poder", system: { fonte: "origem" }, flags: { "icarus-rpg": { auto: true, origemId: origem } } }));
+    a.items.push(item({ ...dadosDoItemComum(itemComumPorId(idItem), { origemItem: true }), id: "x1" }));
+    return a;
+  };
+  const circense = antigo("circense", "corda-fina-de-equilibrio");
+  const guilda = antigo("membro-de-guilda", "ferramentas-leves-de-oficio");
+  const jaTem = antigo("circense", "bolas-de-malabarismo");
+  const semAutomacao = atorFalso();
+  semAutomacao._source.system.identidade.origem = "circense";
+  assert.equal(await adicionarItensQueFaltam([circense, guilda, jaTem, semAutomacao]), 2);
+  assert.deepEqual(nomes(circense), ["Bolas de malabarismo", "Corda fina de equilíbrio", "Poder"]);
+  assert.deepEqual(nomes(guilda), ["Balança de bolso", "Ferramentas leves de ofício", "Poder"]);
+  assert.equal(jaTem.items.length, 2, "quem já tem não ganha outro");
+  assert.equal(semAutomacao.items.length, 0, "origem sem a automação aplicada não ganha nada");
+  assert.ok(circense.items.find(i => i.name === "Bolas de malabarismo").system.origemItem);
+  assert.equal(await adicionarItensQueFaltam([circense, guilda]), 0, "rodar de novo não duplica");
 });
 
 test("8/9. Usar gasta 1 uso (Saco de ervas: 2); a 6ª vestimenta é sempre bloqueada", async () => {

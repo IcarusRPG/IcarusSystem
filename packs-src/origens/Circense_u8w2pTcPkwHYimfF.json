@@ -12,14 +12,10 @@
     "texto": "Trapézio, malabares, engolir fogo, domar leões. A vida no circo itinerante ensinou equilíbrio, risco e jeito com a plateia.",
     "itens": {
       "fixos": [
+        "bolas-de-malabarismo",
         "traje-colorido"
       ],
-      "escolhas": [
-        [
-          "bolas-de-malabarismo",
-          "corda-fina-de-equilibrio"
-        ]
-      ]
+      "escolhas": []
     },
     "poderId": "cair-de-pe"
   },

@@ -1282,7 +1282,6 @@
       "Titulo": "Origem — {nome}",
       "Nenhuma": "— Nenhuma —",
       "Livre": "Origem livre (sem automação)",
-      "UmDosDois": "Escolha um",
       "ItensGratis": "Os itens entram no inventário sem custo (não contam na riqueza inicial).",
       "Confirmar": "Confirmar",
       "TrocarTitulo": "Trocar de origem",
@@ -1307,7 +1306,12 @@
       "MigrarFica": "continua treinada (outra fonte): {pericias}",
       "MigrarDica": "Cada ficha ganha \"Desfazer troca de origem\" no cabeçalho para voltar como estava.",
       "MigrarDepois": "Correção das Origens adiada. O Mestre pode rodar depois com game.icarus.migrarBonusDeOrigem().",
-      "Migrados": "Origens corrigidas em {n} ficha(s)."
+      "Migrados": "Origens corrigidas em {n} ficha(s).",
+      "ItensFixosTitulo": "Correção das Origens: itens fixos",
+      "ItensFixosTexto": "Toda origem agora dá 2 itens fixos. Estas fichas ficaram sem o item que passou a ser fixo e vão recebê-lo (grátis):",
+      "ItensFixosDica": "Nenhum item é removido: os que o personagem já tem ficam como estão.",
+      "ItensFixosDepois": "Itens de origem não adicionados. O Mestre pode fazer depois com game.icarus.adicionarItensDeOrigem().",
+      "ItensFixosFeito": "Item de origem adicionado em {n} ficha(s)."
     },
     "ItensComuns": {
       "Vestimenta": "Vestimenta (conta no limite de 5)",
