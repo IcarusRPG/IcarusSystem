@@ -29,10 +29,24 @@ export const urlDaMoldura = m => encodeURI(`systems/${SISTEMA_ID}/img/Icones/${T
 export const urlDaMiniatura = m => encodeURI(`systems/${SISTEMA_ID}/img/Icones/${TOKENS.pasta}/${m.miniatura ?? m.arquivo}`);
 export const molduraPorId = id => TOKENS.tokens.find(m => m.id === id) ?? null;
 
+/**
+ * Classes do Foundry (FilePicker, Actor) são globais do script, mas não propriedades de globalThis:
+ * acessar pelo nome. No v13 o FilePicker fica em foundry.applications.apps.
+ */
+export function classeFilePicker() {
+  const v13 = foundry.applications?.apps?.FilePicker;
+  // eslint-disable-next-line no-undef
+  const v12 = typeof FilePicker !== "undefined" ? FilePicker : null;
+  const base = v13 ?? v12;
+  return base?.implementation ?? base;
+}
+// eslint-disable-next-line no-undef
+const iconePadraoDeAtor = () => (typeof Actor !== "undefined" ? Actor.DEFAULT_ICON : null);
+
 /** Retrato do ator, ou null se for o ícone padrão (sem imagem). */
 export function retratoDoAtor(actor) {
   const img = actor?.img;
-  const padroes = [ICONE_PADRAO, globalThis.Actor?.DEFAULT_ICON, "icons/svg/mystery-man.svg"].filter(Boolean);
+  const padroes = [ICONE_PADRAO, iconePadraoDeAtor(), "icons/svg/mystery-man.svg"].filter(Boolean);
   return !img || padroes.includes(img) ? null : img;
 }
 
@@ -57,9 +71,11 @@ export function contextoDoToken(actor, editavel) {
 
 /** Liga o editor na aba Token (chamado ao abrir a aba; refaz a cada render). */
 export async function ligarEditor(ficha) {
-  ficha._editorToken?.destruir();
   const raiz = ficha.element?.[0]?.querySelector(".token-editor");
   if (!raiz) return;
+  // O mesmo HTML não ganha dois editores (aba aberta + render chamam juntos)
+  if (ficha._editorToken?.raiz === raiz.closest(".token-aba")) return;
+  ficha._editorToken?.destruir();
   const actor = ficha.actor;
   const editor = new EditorDeToken(raiz.closest(".token-aba"), {
     manifesto: TOKENS,
@@ -92,21 +108,23 @@ export function salvarRascunho(actor, estado) {
 }
 
 export function escolherRetrato(actor) {
-  const Picker = globalThis.FilePicker?.implementation ?? globalThis.FilePicker;
+  const Picker = classeFilePicker();
   return new Picker({ type: "image", current: actor.img, callback: caminho => actor.update({ img: caminho }) }).browse();
 }
 
 /* ------------------------------ Aplicar ------------------------------ */
 
 const pastaDoMundo = () => `worlds/${game.world.id}/icarus-tokens`;
-const Picker = () => globalThis.FilePicker?.implementation ?? globalThis.FilePicker;
-
 /** Grava o PNG no mundo (quem chama tem permissão de upload). @returns {Promise<string>} caminho */
-async function gravarNoMundo(actorId, blob) {
+export async function gravarNoMundo(actorId, blob) {
+  const Picker = classeFilePicker();
+  if (!Picker) throw new Error("FilePicker");
   const pasta = pastaDoMundo();
-  await Picker().createDirectory("data", pasta).catch(() => null); // já existe: segue
+  // Cria a pasta só se ainda não existir (criar uma que já existe dá erro no servidor)
+  const existe = await Picker.browse("data", pasta).then(() => true).catch(() => false);
+  if (!existe) await Picker.createDirectory("data", pasta);
   const arquivo = new File([blob], `${actorId}.png`, { type: "image/png" });
-  const r = await Picker().upload("data", pasta, arquivo, {}, { notify: false });
+  const r = await Picker.upload("data", pasta, arquivo, {}, { notify: false });
   if (!r || r.status === "error" || !r.path) throw new Error(r?.message || "upload");
   return r.path;
 }
