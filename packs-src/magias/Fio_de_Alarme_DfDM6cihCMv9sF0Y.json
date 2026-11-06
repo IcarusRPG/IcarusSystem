@@ -1,0 +1,38 @@
+{
+  "_id": "DfDM6cihCMv9sF0Y",
+  "name": "Fio de Alarme",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/fio-de-alarme.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "esfera de 9 m de raio",
+    "duracao": "1 dia",
+    "resistencia": "",
+    "descricao": "<p>Você cria uma trama invisível ao redor de um ponto. Se uma criatura Média ou maior entrar na área sem dizer a palavra-chave que você escolheu, você ouve um alarme mental, mesmo dormindo (o alarme o acorda).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "o alarme também é sonoro, audível por todos até 18 m."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "fio-de-alarme"
+    }
+  },
+  "_key": "!items!DfDM6cihCMv9sF0Y"
+}

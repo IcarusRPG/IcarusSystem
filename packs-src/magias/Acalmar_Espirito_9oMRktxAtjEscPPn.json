@@ -1,0 +1,38 @@
+{
+  "_id": "9oMRktxAtjEscPPn",
+  "name": "Acalmar Espírito",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/acalmar-espirito.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você acalma a alma do alvo: ele deixa de ficar Abalado, e se estiver Apavorado passa a ficar só Abalado. Além disso, recebe +2 em testes de Vontade contra medo até o fim da cena.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "também remove Fascinado ou Frustrado."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "acalmar-espirito"
+    }
+  },
+  "_key": "!items!9oMRktxAtjEscPPn"
+}

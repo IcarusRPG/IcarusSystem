@@ -1,0 +1,38 @@
+{
+  "_id": "xPnHb1hGkbz5va3w",
+  "name": "Imobilizar",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/imobilizar.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo fica Paralisado. No fim de cada turno dele, ele repete o teste de Vontade; se passar, a magia termina. Dano não encerra o efeito.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo (a até 3 m do primeiro)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "imobilizar"
+    }
+  },
+  "_key": "!items!xPnHb1hGkbz5va3w"
+}

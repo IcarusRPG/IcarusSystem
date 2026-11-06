@@ -1,0 +1,38 @@
+{
+  "_id": "U0haZDlYunI4olSd",
+  "name": "Sentido de Perigo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sentido-de-perigo.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Um aviso sutil da divindade protege o alvo: ele nunca fica Desprevenido por surpresa, recebe +5 em Iniciativa e em Reflexos contra armadilhas e emboscadas e percebe perigos imediatos (como uma armadilha prestes a disparar) com um aviso de 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sentido-de-perigo"
+    }
+  },
+  "_key": "!items!U0haZDlYunI4olSd"
+}

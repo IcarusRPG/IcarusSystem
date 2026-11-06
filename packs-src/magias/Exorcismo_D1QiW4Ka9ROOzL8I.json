@@ -1,0 +1,33 @@
+{
+  "_id": "D1QiW4Ka9ROOzL8I",
+  "name": "Exorcismo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/exorcismo.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Vontade parcial",
+    "descricao": "<p>Você expulsa influências espirituais malignas. Se o alvo estiver possuído, dominado, Enfeitiçado ou Confuso por magia de nível 4 ou menor, ou por uma criatura profana, essas condições terminam. Se o alvo for um morto-vivo, espírito ou criatura profana, ele sofre 8d6 de dano de luz e, se falhar no teste, fica Atordoado por 1 rodada (se passar, sofre metade do dano).</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "exorcismo"
+    }
+  },
+  "_key": "!items!D1QiW4Ka9ROOzL8I"
+}

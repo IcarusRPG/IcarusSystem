@@ -1,0 +1,33 @@
+{
+  "_id": "E8pwUpyBnNq2zUd2",
+  "name": "Chuva de Meteoros",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/chuva-de-meteoros.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "até 4 pontos, esferas de 3 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Quatro bolas de rocha em chamas caem do céu em pontos que você escolhe. Cada uma causa 6d6 de dano de impacto e 6d6 de dano de fogo na área. Uma criatura atingida por mais de uma bola sofre o dano de cada uma.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chuva-de-meteoros"
+    }
+  },
+  "_key": "!items!E8pwUpyBnNq2zUd2"
+}

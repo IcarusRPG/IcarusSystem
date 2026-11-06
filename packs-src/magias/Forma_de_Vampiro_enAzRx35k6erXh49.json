@@ -1,0 +1,33 @@
+{
+  "_id": "enAzRx35k6erXh49",
+  "name": "Forma de Vampiro",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/forma-de-vampiro.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você assume forma sombria e predatória: deslocamento de voo 12 m, RD 5 contra dano não mágico, +2 em ataque e dano corpo a corpo e seu ataque desarmado drena 1d6 PV (você recupera o mesmo). Você pode virar névoa ou morcegos como ação de movimento.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "forma-de-vampiro"
+    }
+  },
+  "_key": "!items!enAzRx35k6erXh49"
+}

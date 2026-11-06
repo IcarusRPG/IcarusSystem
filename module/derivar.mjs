@@ -3,6 +3,7 @@
  * Sem dependência do Foundry: recebe o objeto "system" (já com os Efeitos Ativos aplicados)
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
+import { atributoDeMagia, cdDaMagia, nivelMaximoDeMagia } from "./magias-dados.mjs";
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
 import { bonusDeItensDeClasse, passivosDeClasse } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
@@ -54,6 +55,13 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.pm.bonusNivel = porNivel.pm;
   s.pv.max = maximoFinal({ manual: cc.manual, maximoManual: s.pv.max, maximoFormula: s.pv.formula, bonus: cc.bonusPv, bonusNivel: porNivel.pv });
   s.pm.max = maximoFinal({ manual: cc.manual, maximoManual: s.pm.max, maximoFormula: s.pm.formula, bonus: cc.bonusPm, bonusNivel: porNivel.pm });
+
+  // Magias: atributo-chave efetivo, CD e maior nível de magia acessível (só informativo)
+  if (s.magia) {
+    s.magia.atributoEfetivo = atributoDeMagia(s);
+    s.magia.cd = cdDaMagia(s);
+    s.magia.nivelMaximo = nivelMaximoDeMagia(s.nivel);
+  }
   s.pv.value = limitar(numero(s.pv.value), 0, s.pv.max);
   s.pm.value = limitar(numero(s.pm.value), 0, s.pm.max);
 

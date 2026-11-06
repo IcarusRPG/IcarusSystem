@@ -1,0 +1,33 @@
+{
+  "_id": "F3y578Zmj5dMqd0R",
+  "name": "Ler Pensamentos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ler-pensamentos.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você percebe os pensamentos de superfície do alvo: emoções, o que ele pensa agora e o que pretende fazer a seguir. Você recebe +5 em Intuição contra ele. O alvo não percebe a magia, a menos que passe no teste, caso em que sente um leve roçar na mente.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ler-pensamentos"
+    }
+  },
+  "_key": "!items!F3y578Zmj5dMqd0R"
+}

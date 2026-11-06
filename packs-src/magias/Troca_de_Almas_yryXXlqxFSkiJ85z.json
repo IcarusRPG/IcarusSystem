@@ -1,0 +1,33 @@
+{
+  "_id": "yryXXlqxFSkiJ85z",
+  "name": "Troca de Almas",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/troca-de-almas.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Sua alma e a do alvo trocam de corpo. Cada um usa os atributos físicos (Força, Destreza e Constituição), PV e ataques do corpo em que está, mantendo seus atributos mentais (Inteligência, Sabedoria e Carisma), perícias, PM e magias. Se um dos corpos chegar a 0 PV, a magia termina e as almas voltam aos corpos originais.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "troca-de-almas"
+    }
+  },
+  "_key": "!items!yryXXlqxFSkiJ85z"
+}

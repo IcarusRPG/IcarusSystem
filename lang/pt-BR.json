@@ -9,7 +9,8 @@
       "arma": "Arma",
       "municao": "Munição",
       "classe": "Classe",
-      "origem": "Origem"
+      "origem": "Origem",
+      "magia": "Magia"
     }
   },
   "ICARUS": {
@@ -65,7 +66,8 @@
       "efeitos": "Efeitos",
       "combate": "Combate",
       "classe": "Classe",
-      "token": "Token"
+      "token": "Token",
+      "magias": "Magias"
     },
     "Rodape": {
       "Rolar": "Clique no total de um atributo ou perícia para rolar no chat"
@@ -1544,6 +1546,50 @@
         "PM": "Animar também a perda e o ganho de PM",
         "PMDica": "Números azuis sobre o token quando os PM mudam."
       }
+    },
+    "Magias": {
+      "Magia": "Magia",
+      "Lancar": "Lançar",
+      "Nivel": "Nível",
+      "CustoPM": "Custo (PM)",
+      "Custo": "Custo",
+      "Escola": "Escola",
+      "Execucao": "Execução",
+      "Alcance": "Alcance",
+      "Alvo": "Alvo / área",
+      "Duracao": "Duração",
+      "Resistencia": "Resistência",
+      "Tradicoes": "Tradições",
+      "Afinidade": "Afinidade",
+      "TradicoesNomes": {
+        "arcana": "Arcana",
+        "divina": "Divina",
+        "sangue": "Sangue"
+      },
+      "CD": "CD",
+      "CDDica": "CD da magia = 10 + metade do nível + atributo-chave",
+      "AtributoChave": "Atributo-chave de magia",
+      "AtributoPadrao": "Padrão da classe ({atributo})",
+      "NivelMaximo": "Nível de magia pelo nível do personagem",
+      "NivelTitulo": "{n}º nível · {custo} PM",
+      "NivelCurto": "{n}º nível",
+      "AcimaDoNivel": "Acima do seu nível",
+      "AcimaDoNivelDica": "O nível do personagem ainda não alcança este nível de magia (1º, 5º, 9º, 13º e 17º). Nada é bloqueado.",
+      "Buscar": "Buscar magia…",
+      "TodosNiveis": "Todos os níveis",
+      "TodasEscolas": "Todas as escolas",
+      "VerTexto": "Descrição e aprimoramentos",
+      "Vazio": "Nenhuma magia. Arraste magias do compêndio \"Icarus — Magias\" para cá.",
+      "CustoBase": "Custo base",
+      "CustoTotal": "Custo total",
+      "PMAtual": "PM atual",
+      "Aprimoramentos": "Aprimoramentos",
+      "AprimoramentosMin": "aprimoramentos",
+      "AprimoramentosUsados": "Aprimoramentos usados",
+      "AprimoramentoDica": "Cada aprimoramento custa PM extra e pode ser usado uma vez por lançamento.",
+      "SemPM": "PM insuficiente: a magia custa {custo} PM e você tem {pm}.",
+      "ErroDevolvido": "Erro ao lançar a magia; os {custo} PM foram devolvidos.",
+      "SemConjurador": "Esta magia não está na ficha de um personagem."
     }
   }
 }

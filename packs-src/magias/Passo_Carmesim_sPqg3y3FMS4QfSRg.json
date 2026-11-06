@@ -1,0 +1,42 @@
+{
+  "_id": "sPqg3y3FMS4QfSRg",
+  "name": "Passo Carmesim",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/passo-carmesim.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Convocação",
+    "execucao": "movimento",
+    "alcance": "médio",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você se desfaz em uma poça de sangue e reaparece, por outra poça, em um espaço livre adjacente a uma criatura Sangrando ou a uma poça visível de sangue, a até 30 m. Funciona mesmo em locais sem linha de visão direta, desde que você conheça a posição do destino.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "você leva consigo 1 aliado adjacente."
+      },
+      {
+        "custo": 2,
+        "texto": "ao chegar, uma criatura Sangrando adjacente à sua escolha sofre 4d6 de dano de corte (Reflexos reduz à metade)."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "passo-carmesim"
+    }
+  },
+  "_key": "!items!sPqg3y3FMS4QfSRg"
+}

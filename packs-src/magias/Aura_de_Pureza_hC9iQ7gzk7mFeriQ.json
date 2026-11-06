@@ -1,0 +1,33 @@
+{
+  "_id": "hC9iQ7gzk7mFeriQ",
+  "name": "Aura de Pureza",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/aura-de-pureza.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Você e seus aliados na área recebem +5 em testes de resistência contra Doente, Envenenado e efeitos mentais, e RD 2 contra dano de veneno.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "aura-de-pureza"
+    }
+  },
+  "_key": "!items!hC9iQ7gzk7mFeriQ"
+}

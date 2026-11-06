@@ -1,0 +1,33 @@
+{
+  "_id": "doq9p73zKsSbtN7C",
+  "name": "Imagem de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/imagem-de-sangue.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 cópia",
+    "duracao": "cena",
+    "resistencia": "Vontade desacredita",
+    "descricao": "<p>Uma cópia sua feita de sangue surge no local escolhido e age como isca. Inimigos devem passar em Vontade para não escolherem a cópia como alvo no lugar de você, se ela estiver mais próxima. Quando a cópia sofre dano, ela explode e causa 2d6 de dano de trevas nas criaturas adjacentes (Reflexos reduz à metade).</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "imagem-de-sangue"
+    }
+  },
+  "_key": "!items!doq9p73zKsSbtN7C"
+}

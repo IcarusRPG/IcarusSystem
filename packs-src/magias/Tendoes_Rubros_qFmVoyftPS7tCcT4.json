@@ -1,0 +1,42 @@
+{
+  "_id": "qFmVoyftPS7tCcT4",
+  "name": "Tendões Rubros",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/tendoes-rubros.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "até 2 criaturas",
+    "duracao": "sustentada",
+    "resistencia": "Reflexos anula",
+    "descricao": "<p>Cordas de sangue brotam do chão e prendem as criaturas. Quem falhar no teste fica Agarrado e Sangrando, e sofre 2d6 de dano de corte no início de cada turno dele enquanto estiver preso. Como ação padrão, uma criatura presa pode tentar se soltar com um teste de Força ou Acrobacia (CD da magia). Se conseguir, a magia termina para ela.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 criatura, a até 3 m das outras."
+      },
+      {
+        "custo": 2,
+        "texto": "o dano periódico sobe +1d6."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tendoes-rubros"
+    }
+  },
+  "_key": "!items!qFmVoyftPS7tCcT4"
+}

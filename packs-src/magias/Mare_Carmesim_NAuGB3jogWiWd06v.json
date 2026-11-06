@@ -1,0 +1,38 @@
+{
+  "_id": "NAuGB3jogWiWd06v",
+  "name": "Maré Carmesim",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/mare-carmesim.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "esfera de 9 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Uma onda de sangue varre a área e causa 12d6 de dano de trevas. Criaturas que falharem ficam Sangrando e Lentas por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mare-carmesim"
+    }
+  },
+  "_key": "!items!NAuGB3jogWiWd06v"
+}

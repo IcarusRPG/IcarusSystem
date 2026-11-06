@@ -1,0 +1,38 @@
+{
+  "_id": "YTRi9dowLg9tWOjq",
+  "name": "Tempestade de Gelo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/tempestade-de-gelo.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Pedras de gelo despencam e causam 4d6 de dano de impacto e 4d6 de dano de frio. O solo na área vira gelo até o fim da cena: criaturas nele ficam Lentas.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano de frio."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tempestade-de-gelo"
+    }
+  },
+  "_key": "!items!YTRi9dowLg9tWOjq"
+}

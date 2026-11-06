@@ -1,0 +1,42 @@
+{
+  "_id": "6lbznfK8ThzdAZta",
+  "name": "Pulso de Mana",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/pulso-de-mana.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Um soco de força atinge o alvo, causando 2d6 de dano de impacto e empurrando-o 3 m para longe de você. Se passar no teste, o alvo sofre metade do dano e não é empurrado.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      },
+      {
+        "custo": 2,
+        "texto": "se o alvo falhar no teste, também fica Caído."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pulso-de-mana"
+    }
+  },
+  "_key": "!items!6lbznfK8ThzdAZta"
+}

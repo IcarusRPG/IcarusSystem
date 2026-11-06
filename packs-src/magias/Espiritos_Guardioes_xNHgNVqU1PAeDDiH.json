@@ -1,0 +1,33 @@
+{
+  "_id": "xNHgNVqU1PAeDDiH",
+  "name": "Espíritos Guardiões",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/espiritos-guardioes.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 4,5 m de raio ao seu redor",
+    "duracao": "sustentada",
+    "resistencia": "Vontade reduz à metade",
+    "descricao": "<p>Espíritos luminosos giram ao seu redor. Inimigos que entrarem na área ou começarem o turno nela sofrem 3d8 de dano de luz e ficam Lentos até o fim do turno. Seus aliados são ignorados.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "espiritos-guardioes"
+    }
+  },
+  "_key": "!items!xNHgNVqU1PAeDDiH"
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "oXet05J0IQqMFv7H",
+  "name": "Localizar Objeto",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/localizar-objeto.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "um objeto conhecido",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você sente a direção do objeto escolhido, desde que o conheça (já o tenha visto ou tocado) ou possa descrevê-lo com precisão, e que ele esteja a até 300 m. Uma barreira de chumbo bloqueia a magia.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o alcance sobe para 3 km."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "localizar-objeto"
+    }
+  },
+  "_key": "!items!oXet05J0IQqMFv7H"
+}

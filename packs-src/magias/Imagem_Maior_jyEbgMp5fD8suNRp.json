@@ -1,0 +1,38 @@
+{
+  "_id": "jyEbgMp5fD8suNRp",
+  "name": "Imagem Maior",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/imagem-maior.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "ilusão com até 12 m de lado",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você cria uma imagem ilusória com som, cheiro e temperatura, de tamanho até 12 m de lado, e a move como ação livre. A imagem não causa dano real, mas criaturas que falharem em um teste de Vontade tratam-na como real; se for atingida por um ataque ou tocada, a imagem desfaz-se para quem testar. A magia termina se você se afastar mais de 90 m.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "a ilusão afeta também o tato e pode causar medo (Abalado por 1 rodada em quem falhar)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "imagem-maior"
+    }
+  },
+  "_key": "!items!jyEbgMp5fD8suNRp"
+}

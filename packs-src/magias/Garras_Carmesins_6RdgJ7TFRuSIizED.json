@@ -1,0 +1,33 @@
+{
+  "_id": "6RdgJ7TFRuSIizED",
+  "name": "Garras Carmesins",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/garras-carmesins.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Garras ósseas cobertas de sangue surgem nos seus dedos. Seus ataques desarmados causam 1d8 de dano de corte (ou o seu dano desarmado normal, o que for maior) e podem ser usados com Luta ou Destreza. Quem sofrer dano das garras fica Sangrando se falhar em Fortitude.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "garras-carmesins"
+    }
+  },
+  "_key": "!items!6RdgJ7TFRuSIizED"
+}

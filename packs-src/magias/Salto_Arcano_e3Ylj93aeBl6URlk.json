@@ -1,0 +1,39 @@
+{
+  "_id": "e3Ylj93aeBl6URlk",
+  "name": "Salto Arcano",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/salto-arcano.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você enche as pernas do alvo de mana. Ele salta o dobro da distância normal, não sofre dano de queda de até 9 m e recebe +3 m de deslocamento.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "salto-arcano"
+    }
+  },
+  "_key": "!items!e3Ylj93aeBl6URlk"
+}

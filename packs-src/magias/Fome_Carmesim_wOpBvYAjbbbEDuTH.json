@@ -1,0 +1,38 @@
+{
+  "_id": "wOpBvYAjbbbEDuTH",
+  "name": "Fome Carmesim",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/fome-carmesim.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Seu sangue ferve e pede carnificina. Quando você reduz uma criatura a 0 PV com um ataque, recupera 1d6 PV (uma vez por rodada).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "a cura vira 2d6."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "fome-carmesim"
+    }
+  },
+  "_key": "!items!wOpBvYAjbbbEDuTH"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "cGkcga2oCIhPSVpB",
+  "name": "Santuário Consagrado",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/santuario-consagrado.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Abjuração",
+    "execucao": "completa",
+    "alcance": "toque",
+    "alvo": "esfera de 18 m de raio",
+    "duracao": "1 dia",
+    "resistencia": "",
+    "descricao": "<p>Você consagra o terreno com uma bênção poderosa. Criaturas profanas não podem entrar sem passar em um teste de Vontade, e seus aliados dentro recuperam o dobro de PV em descansos. Dura 1 dia, ou até que você saia da área.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "santuario-consagrado"
+    }
+  },
+  "_key": "!items!cGkcga2oCIhPSVpB"
+}

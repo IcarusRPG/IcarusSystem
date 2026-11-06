@@ -1,0 +1,38 @@
+{
+  "_id": "MDnQxsdEPtrVp1Ky",
+  "name": "Peste Carmesim",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/peste-carmesim.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Fortitude anula",
+    "descricao": "<p>Uma praga corrói o sangue do alvo. Se falhar no teste, ele fica Fraco e Sangrando. No início de cada turno do infectado, cada criatura adjacente a ele faz um teste de Fortitude; se falhar, contrai a mesma praga (com a mesma duração). A praga termina para quem passar no teste de Fortitude da condição Sangrando.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "a condição Fraco vira Debilitado."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "peste-carmesim"
+    }
+  },
+  "_key": "!items!MDnQxsdEPtrVp1Ky"
+}

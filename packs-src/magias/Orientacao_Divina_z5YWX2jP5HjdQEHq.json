@@ -1,0 +1,38 @@
+{
+  "_id": "z5YWX2jP5HjdQEHq",
+  "name": "Orientação Divina",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/orientacao-divina.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Adivinhação",
+    "execucao": "movimento",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você sussurra uma prece e o alvo recebe +2 no próximo teste de perícia que fizer até o fim do próximo turno dele.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "o bônus vira +4."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "orientacao-divina"
+    }
+  },
+  "_key": "!items!z5YWX2jP5HjdQEHq"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "64Q3dvyysbIP8aQh",
+  "name": "Criar Alimento",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/criar-alimento.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Convocação",
+    "execucao": "completa",
+    "alcance": "toque",
+    "alvo": "comida e água para 1 dia de até 3 criaturas",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você convoca uma refeição simples e água limpa, suficientes para sustentar até 3 criaturas por um dia. O alimento estraga depois de 24 horas.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+3 criaturas."
+      },
+      {
+        "custo": 2,
+        "texto": "a refeição é saborosa e fornece 5 PV temporários a quem comer (uma refeição assim por dia por criatura)."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "criar-alimento"
+    }
+  },
+  "_key": "!items!64Q3dvyysbIP8aQh"
+}

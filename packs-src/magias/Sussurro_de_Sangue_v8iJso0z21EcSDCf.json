@@ -1,0 +1,38 @@
+{
+  "_id": "v8iJso0z21EcSDCf",
+  "name": "Sussurro de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sussurro-de-sangue.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você planta no sangue do alvo um sussurro que ele ouve dentro da cabeça e que o enlouquece. Se falhar no teste, o alvo sofre –2 em testes de ataque e, no turno dele, ataca a criatura mais próxima (aliada ou inimiga), movendo-se até ela se for preciso. Se não houver nenhuma criatura ao alcance de um ataque, ele só se aproxima da mais próxima. Efeito mental.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sussurro-de-sangue"
+    }
+  },
+  "_key": "!items!v8iJso0z21EcSDCf"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "CHoQei2TGbfJCGlm",
+  "name": "Voo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/voo.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo ganha deslocamento de voo de 12 m. Se a magia acabar enquanto ele estiver no ar, ele cai, mas amortece a queda e sofre só metade do dano.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "voo"
+    }
+  },
+  "_key": "!items!CHoQei2TGbfJCGlm"
+}

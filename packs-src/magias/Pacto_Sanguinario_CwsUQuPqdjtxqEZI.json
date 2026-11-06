@@ -1,0 +1,33 @@
+{
+  "_id": "CwsUQuPqdjtxqEZI",
+  "name": "Pacto Sanguinário",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/pacto-sanguinario.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura voluntária",
+    "duracao": "1 dia",
+    "resistencia": "",
+    "descricao": "<p>Você e o alvo compartilham sangue: quando um sofre dano, o outro pode escolher sofrer metade dele. Vocês sentem a direção e distância um do outro no mesmo plano. A magia termina se o vínculo for rompido por Dissipar Magia.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pacto-sanguinario"
+    }
+  },
+  "_key": "!items!CwsUQuPqdjtxqEZI"
+}

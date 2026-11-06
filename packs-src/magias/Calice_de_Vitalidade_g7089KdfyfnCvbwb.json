@@ -1,0 +1,33 @@
+{
+  "_id": "g7089KdfyfnCvbwb",
+  "name": "Cálice de Vitalidade",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/calice-de-vitalidade.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Você drena os inimigos na área. Role 4d6 **uma única vez**: o resultado vale para todos os inimigos. Quem falhar no teste sofre esse valor como dano de trevas; quem passar sofre metade. A vida drenada, igual ao **dano rolado**, é dividida em partes iguais entre você e seus aliados na área, e cada um recupera a sua parte em PV.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "calice-de-vitalidade"
+    }
+  },
+  "_key": "!items!g7089KdfyfnCvbwb"
+}

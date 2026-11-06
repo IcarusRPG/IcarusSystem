@@ -1,0 +1,42 @@
+{
+  "_id": "7Xz1vvq8iQ6Au8Hb",
+  "name": "Ilusão Menor",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ilusao-menor.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "imagem de até um cubo de 3 m",
+    "duracao": "cena",
+    "resistencia": "Vontade desacredita",
+    "descricao": "<p>Você cria uma imagem imóvel, com som, de um objeto, uma pessoa ou um ruído. Quem interagir com a ilusão ou a estudar (ação de movimento) faz um teste de Vontade para perceber que é falsa; quem passa vê através dela.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "a imagem pode se mover dentro do alcance da magia."
+      },
+      {
+        "custo": 2,
+        "texto": "a ilusão também tem cheiro e tato."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ilusao-menor"
+    }
+  },
+  "_key": "!items!7Xz1vvq8iQ6Au8Hb"
+}

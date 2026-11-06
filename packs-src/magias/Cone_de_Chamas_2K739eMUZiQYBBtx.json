@@ -1,0 +1,42 @@
+{
+  "_id": "2K739eMUZiQYBBtx",
+  "name": "Cone de Chamas",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/cone-de-chamas.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "cone de 4,5 m a partir de você",
+    "alvo": "criaturas na área",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Um leque de chamas jorra de sua mão e causa 2d6 de dano de fogo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      },
+      {
+        "custo": 2,
+        "texto": "as criaturas que falharem no teste ficam Em Chamas."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "cone-de-chamas"
+    }
+  },
+  "_key": "!items!2K739eMUZiQYBBtx"
+}

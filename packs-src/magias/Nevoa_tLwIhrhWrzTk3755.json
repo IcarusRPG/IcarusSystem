@@ -1,0 +1,38 @@
+{
+  "_id": "tLwIhrhWrzTk3755",
+  "name": "Névoa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/nevoa.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma névoa espessa preenche a área e bloqueia a visão. Criaturas dentro dela têm camuflagem leve, e a visão além de 3 m fica impossível. Um vento forte dispersa a névoa em 4 rodadas.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "a névoa é fria e pesada: criaturas dentro dela ficam Lentas."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nevoa"
+    }
+  },
+  "_key": "!items!tLwIhrhWrzTk3755"
+}

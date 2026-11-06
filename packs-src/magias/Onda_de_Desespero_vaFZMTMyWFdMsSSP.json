@@ -1,0 +1,39 @@
+{
+  "_id": "vaFZMTMyWFdMsSSP",
+  "name": "Onda de Desespero",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/onda-de-desespero.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 12 m de raio",
+    "duracao": "cena",
+    "resistencia": "Vontade parcial",
+    "descricao": "<p>Uma onda de desesperança varre a área. Criaturas que falharem no teste ficam Esmorecidas e Pasmas por 1 rodada; quem passar fica apenas Esmorecida por 1 rodada. Criaturas aliadas à sua escolha são poupadas. Efeito mental.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "a condição Pasmo dura 1d4 rodadas."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "onda-de-desespero"
+    }
+  },
+  "_key": "!items!vaFZMTMyWFdMsSSP"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "RkBmMIqlNlTKLatj",
+  "name": "Ira dos Céus",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ira-dos-ceus.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "esfera de 12 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Uma tempestade de vento, trovões e granizo castiga a área, causando 6d6 de dano elétrico e 6d6 de dano de impacto. Criaturas voadoras na área sofrem –5 no teste e caem se falharem.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+1d6 de dano elétrico e +1d6 de dano de impacto."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ira-dos-ceus"
+    }
+  },
+  "_key": "!items!RkBmMIqlNlTKLatj"
+}

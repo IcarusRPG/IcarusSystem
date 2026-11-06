@@ -1,0 +1,33 @@
+{
+  "_id": "m4UEtGjVor48m4Dl",
+  "name": "Arma Espiritual",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/arma-espiritual.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Uma arma de luz espiritual surge e ataca sozinha. No momento em que é criada e em cada turno seu, como ação livre, ela atinge um alvo em alcance curto e causa 2d8 de dano de luz (acerta automaticamente). A arma ocupa um espaço, pode ser atacada e tem Defesa 10 + metade do seu nível e PV iguais a 2 × o seu nível. Ela é imune a condições, veneno e dano psíquico. Se for reduzida a 0 PV, a magia termina.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arma-espiritual"
+    }
+  },
+  "_key": "!items!m4UEtGjVor48m4Dl"
+}

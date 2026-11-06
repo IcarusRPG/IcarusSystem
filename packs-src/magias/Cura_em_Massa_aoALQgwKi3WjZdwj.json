@@ -1,0 +1,38 @@
+{
+  "_id": "aoALQgwKi3WjZdwj",
+  "name": "Cura em Massa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/cura-em-massa.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "até 6 criaturas",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Uma onda de luz envolve seus aliados e cura 3d8+3 PV de cada alvo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d8+1 de cura em cada alvo."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "cura-em-massa"
+    }
+  },
+  "_key": "!items!aoALQgwKi3WjZdwj"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "imuc16wb9z9VZAef",
+  "name": "Escudo Arcano",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/escudo-arcano.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "reação",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Quando for alvo de um ataque ou de Mísseis Mágicos, uma barreira surge diante de você: +5 na Defesa contra esse ataque. Além disso, você fica imune a Mísseis Mágicos até o início do seu próximo turno.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-arcano"
+    }
+  },
+  "_key": "!items!imuc16wb9z9VZAef"
+}

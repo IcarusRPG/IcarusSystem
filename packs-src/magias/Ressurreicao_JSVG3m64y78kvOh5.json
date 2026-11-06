@@ -1,0 +1,33 @@
+{
+  "_id": "JSVG3m64y78kvOh5",
+  "name": "Ressurreição",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ressurreicao.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura morta há até 7 dias",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você traz de volta uma criatura morta há até 7 dias (o corpo precisa estar inteiro). Ela volta com 1 PV e fica Debilitada e Fatigada por 7 dias. A criatura precisa estar disposta; sua alma não é obrigada a voltar.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ressurreicao"
+    }
+  },
+  "_key": "!items!JSVG3m64y78kvOh5"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "IGxhFnYKCLSWX31N",
+  "name": "Dominar Monstro",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/dominar-monstro.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Como Dominar Pessoa, mas afeta qualquer criatura capaz de entender uma língua ou instinto. Criaturas com ND (nível de desafio) maior que o seu nível têm +5 no teste de Vontade.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "dominar-monstro"
+    }
+  },
+  "_key": "!items!IGxhFnYKCLSWX31N"
+}

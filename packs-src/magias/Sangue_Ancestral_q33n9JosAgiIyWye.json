@@ -1,0 +1,33 @@
+{
+  "_id": "q33n9JosAgiIyWye",
+  "name": "Sangue Ancestral",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sangue-ancestral.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você desperta o poder do sangue primordial: +2 em Força, Destreza e Constituição até o fim da cena, imunidade a veneno e doença, regeneração de 5 PV por rodada e +1,5 m de deslocamento. Ao final da magia, você fica Exausto por 1 rodada.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sangue-ancestral"
+    }
+  },
+  "_key": "!items!q33n9JosAgiIyWye"
+}

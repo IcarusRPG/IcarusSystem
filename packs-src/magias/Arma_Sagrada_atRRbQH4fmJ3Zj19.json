@@ -1,0 +1,42 @@
+{
+  "_id": "atRRbQH4fmJ3Zj19",
+  "name": "Arma Sagrada",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/arma-sagrada.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 arma",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você abençoa uma arma, que brilha com luz dourada. Ela passa a ser mágica e causa +1d6 de dano de luz em cada ataque que acertar. Contra criaturas profanas, o dano de luz extra vira +2d6.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o bônus de dano de luz sobe +1d6 (+2d6 contra profanas)."
+      },
+      {
+        "custo": 2,
+        "texto": "+1 arma, que deve estar com o mesmo portador ou com um aliado a até 3 m."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arma-sagrada"
+    }
+  },
+  "_key": "!items!atRRbQH4fmJ3Zj19"
+}

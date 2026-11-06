@@ -1,0 +1,38 @@
+{
+  "_id": "8y6Z5Tv2zubETzuy",
+  "name": "Libertação das Almas",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/libertacao-das-almas.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 9 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você liberta as almas aprisionadas e rompe o que prende os vivos. Seus aliados na área têm encerradas as condições mentais, as maldições e os efeitos de possessão ou controle de magias de nível 5 ou menor, e recuperam 4d8 PV. A magia não causa dano a ninguém.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "a cura aumenta para 6d8 PV."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "libertacao-das-almas"
+    }
+  },
+  "_key": "!items!8y6Z5Tv2zubETzuy"
+}

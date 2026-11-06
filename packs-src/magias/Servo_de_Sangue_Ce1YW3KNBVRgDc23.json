@@ -1,0 +1,33 @@
+{
+  "_id": "Ce1YW3KNBVRgDc23",
+  "name": "Servo de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/servo-de-sangue.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 espaço",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Um servo feito de sangue (Médio) ergue-se do chão. Ele tem PV iguais ao seu nível x 3, Defesa 15 + metade do seu nível e causa 2d8+4 de dano de corte (com um ataque simples, no seu turno, como ação livre). Ele se desfaz ao chegar a 0 PV. Você só pode ter 1 servo de sangue ao mesmo tempo.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "servo-de-sangue"
+    }
+  },
+  "_key": "!items!Ce1YW3KNBVRgDc23"
+}

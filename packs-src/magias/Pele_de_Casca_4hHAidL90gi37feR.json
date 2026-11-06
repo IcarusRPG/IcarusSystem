@@ -1,0 +1,38 @@
+{
+  "_id": "4hHAidL90gi37feR",
+  "name": "Pele de Casca",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/pele-de-casca.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>A pele do alvo vira casca de árvore: ele recebe +3 na Defesa e RD 2 contra dano de corte e perfuração. Em troca, sofre +1d6 de dano sempre que sofrer dano de fogo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o bônus na Defesa vira +4."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pele-de-casca"
+    }
+  },
+  "_key": "!items!4hHAidL90gi37feR"
+}

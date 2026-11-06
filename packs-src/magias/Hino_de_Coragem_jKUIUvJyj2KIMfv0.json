@@ -1,0 +1,38 @@
+{
+  "_id": "jKUIUvJyj2KIMfv0",
+  "name": "Hino de Coragem",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/hino-de-coragem.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 9 m de raio, centrada em você",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Você entoa um hino sagrado que inflama o coração de seus aliados. Aliados na área ficam imunes às condições Abalado e Apavorado, recebem +2 em testes de resistência e causam +1d6 de dano em seus ataques. A magia termina se você ficar impedido de falar.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "o bônus de dano passa a +2d6 e o raio a 12 m."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "hino-de-coragem"
+    }
+  },
+  "_key": "!items!jKUIUvJyj2KIMfv0"
+}

@@ -166,6 +166,13 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
   - `audio/ui/seu-turno.ogg` — som curto (até 2 s) do "SEU TURNO".
 - Testes fora do Foundry: `/tests/navegador/token-barras.html` e `/tests/navegador/carrossel.html`.
 
+## Magias
+
+- **Compêndio "Icarus — Magias":** 200 magias por nível. Arraste para a ficha (aba **Magias**) e clique em **Lançar**.
+- **CD da magia** = 10 + metade do nível + atributo-chave (escolha na aba; padrão: o atributo de PM da classe).
+- **Ícones:** `img/magias/<id>.png`. Para adicionar ou trocar imagens: `npm run build:icones-magias -- --de "<pasta com os PNG>"` e depois `npm run build:packs`. O relatório fica em `tools/relatorio-icones-magias.md`.
+- **Macro:** arraste a magia da ficha para a barra de macros.
+
 ## Dano e cura no chat, números de PV
 
 - **Botões nas mensagens de dano:** Aplicar dano, Metade, Curar, Perda de PV (e Dobro, se ligado). Marque o alvo (T) ou selecione os tokens antes de clicar. Em tokens de outros jogadores o Mestre precisa estar online (ele aplica). O Mestre desfaz a última aplicação pelo botão ↶.

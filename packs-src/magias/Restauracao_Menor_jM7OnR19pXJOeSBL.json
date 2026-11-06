@@ -1,0 +1,38 @@
+{
+  "_id": "jM7OnR19pXJOeSBL",
+  "name": "Restauração Menor",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/restauracao-menor.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você remove uma condição do alvo entre: Abalado, Atordoado, Cego, Confuso, Doente, Enjoado, Envenenado, Fatigado, Ofuscado, Paralisado, Surdo (um tipo por lançamento, se a condição vier de uma magia ou efeito de nível 3 ou menor).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "remove uma segunda condição."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "restauracao-menor"
+    }
+  },
+  "_key": "!items!jM7OnR19pXJOeSBL"
+}

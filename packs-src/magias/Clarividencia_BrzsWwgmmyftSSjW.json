@@ -1,0 +1,38 @@
+{
+  "_id": "BrzsWwgmmyftSSjW",
+  "name": "Clarividência",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/clarividencia.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "um local conhecido",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Você cria um sensor invisível num local que já tenha visto ou cuja posição conheça. Enquanto sustenta a magia, você vê e ouve por ele como se estivesse lá. O sensor é pequeno e pode ser notado por criaturas que o procurem (Visão CD 25).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o sensor também enxerga no escuro e detecta magia."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clarividencia"
+    }
+  },
+  "_key": "!items!BrzsWwgmmyftSSjW"
+}

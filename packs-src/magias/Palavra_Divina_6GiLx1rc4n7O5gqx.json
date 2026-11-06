@@ -1,0 +1,33 @@
+{
+  "_id": "6GiLx1rc4n7O5gqx",
+  "name": "Palavra Divina",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/palavra-divina.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "todas as criaturas que a ouvirem",
+    "duracao": "instantânea",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você pronuncia uma palavra que ressoa de forma divina. Criaturas de nível/ND até o seu nível que falharem ficam Atordoadas por 1 rodada, Cegas por 1 minuto e Surdas por 1 minuto.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "palavra-divina"
+    }
+  },
+  "_key": "!items!6GiLx1rc4n7O5gqx"
+}

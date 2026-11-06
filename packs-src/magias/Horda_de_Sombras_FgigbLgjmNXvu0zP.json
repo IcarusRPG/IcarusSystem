@@ -1,0 +1,38 @@
+{
+  "_id": "FgigbLgjmNXvu0zP",
+  "name": "Horda de Sombras",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/horda-de-sombras.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Vontade reduz à metade",
+    "descricao": "<p>Sombras com garras e dentes brotam do chão e se lançam sobre as criaturas na área, que acreditam sofrer ferimentos reais: 8d6 de dano psíquico. Quem falhar no teste também fica Abalado até o fim da cena. Efeito mental.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+2d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "horda-de-sombras"
+    }
+  },
+  "_key": "!items!FgigbLgjmNXvu0zP"
+}

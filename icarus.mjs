@@ -31,6 +31,8 @@ import { registrarInteracao } from "./module/interacao.mjs";
 import { registrarPortaTrancada } from "./module/porta-trancada.mjs";
 import { registrarBarrasDoToken } from "./module/token-barras.mjs";
 import { registrarNumerosDePV } from "./module/numeros-pv.mjs";
+import { MagiaData } from "./module/data/item-magia.mjs";
+import { registrarMagias, lancarMagia } from "./module/magias.mjs";
 import { registrarCarrossel } from "./module/carrossel.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso, rolarCura } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
@@ -59,6 +61,7 @@ registrarInterface();
 registrarBotoesDoChat();
 registrarArmaduras();
 registrarItensComuns();
+registrarMagias();
 registrarPoderesDeOrigem();
 registrarTokens();
 registrarMidias();
@@ -88,6 +91,10 @@ const TEMPLATES = [
   "item/equipamento.hbs",
   "item/arma.hbs",
   "item/municao.hbs",
+  "item/magia.hbs",
+  "actor/parts/magias.hbs",
+  "chat/magia.hbs",
+  "dialogo-magia.hbs",
   "dialogo-nivel.hbs",
   "dialogo-escolhas-raca.hbs",
   "chat/rolagem.hbs",
@@ -122,7 +129,7 @@ Hooks.once("init", () => {
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
     aplicarClasse, concederHabilidades,
-    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarCura, rolarTesteDeMorte,
+    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarCura, rolarTesteDeMorte, lancarMagia,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
   };
@@ -135,6 +142,7 @@ Hooks.once("init", () => {
   CONFIG.Item.dataModels.municao = MunicaoData;
   CONFIG.Item.dataModels.classe = ClasseData;
   CONFIG.Item.dataModels.origem = OrigemData;
+  CONFIG.Item.dataModels.magia = MagiaData;
 
   // Opções de mundo
   registrarConfiguracoesDeCombate();

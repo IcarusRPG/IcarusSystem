@@ -1,0 +1,42 @@
+{
+  "_id": "po564T2AaV2JrTnw",
+  "name": "Cárcere de Espelhos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/carcere-de-espelhos.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Quatro espelhos de mana se erguem ao redor do alvo, um de cada lado, e o prendem numa cela. Ele não pode sair, mas pode agir dentro dela, e vê imagens de si mesmo por todo lado: fica Frustrado enquanto estiver preso. Cada espelho tem Defesa 10 + metade do seu nível e PV iguais a 3 × o seu nível. Quando um espelho é destruído, o cárcere se rompe e a magia termina. Quem atacar um espelho **de fora** sofre metade do dano causado a ele (do mesmo tipo); quem ataca de dentro não sofre isso.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "os espelhos drenam a mana de quem está preso: a cada ataque ou magia ofensiva que o alvo fizer de dentro do cárcere, ele perde 1d6 PM (não abaixo de 0)."
+      },
+      {
+        "custo": 3,
+        "texto": "o cárcere pode ser carregado (acompanha o alvo flutuando, sob seu controle, até 6 m por rodada)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "carcere-de-espelhos"
+    }
+  },
+  "_key": "!items!po564T2AaV2JrTnw"
+}

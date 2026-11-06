@@ -1,0 +1,33 @@
+{
+  "_id": "K3t6skDxHgSMAuqx",
+  "name": "Eclipse Arcano",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/eclipse-arcano.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 9 m de raio, centrada em você",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Um domo escuro e silencioso suprime a magia ao redor. Ninguém além de você pode lançar magias na área, e efeitos mágicos contínuos de outros ficam suspensos enquanto ela durar. Suas magias funcionam normalmente.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "eclipse-arcano"
+    }
+  },
+  "_key": "!items!K3t6skDxHgSMAuqx"
+}

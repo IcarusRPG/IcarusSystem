@@ -1,0 +1,33 @@
+{
+  "_id": "zRrWc8GjltAOk8R4",
+  "name": "Maldição de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/maldicao-de-sangue.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "permanente",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo é amaldiçoado: toda vez que ele sofrer dano de corte ou perfuração, também perde 1d6 PV. O efeito só termina com Remover Maldição, com Dissipar Magia (CD +5) ou por vontade de quem lançou.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "maldicao-de-sangue"
+    }
+  },
+  "_key": "!items!zRrWc8GjltAOk8R4"
+}

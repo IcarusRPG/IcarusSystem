@@ -1,0 +1,39 @@
+{
+  "_id": "UBFsqk0V1FlnnSRy",
+  "name": "Enfeitiçar Pessoa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/enfeiticar-pessoa.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 humanoide",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo fica Enfeitiçado e acha você um amigo de confiança. Ele não obedece cegamente, mas aceita pedidos razoáveis. Se você ou seus aliados o atacarem, a magia termina. Quando termina, o alvo sabe que foi enfeitiçado.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "enfeiticar-pessoa"
+    }
+  },
+  "_key": "!items!UBFsqk0V1FlnnSRy"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "ljXiiglEcox4gl0H",
+  "name": "Escudo dos Antepassados",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/escudo-dos-antepassados.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Espiritual",
+    "execucao": "reação",
+    "alcance": "curto",
+    "alvo": "1 aliado",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Quando um aliado a até 9 m for sofrer dano, espíritos ancestrais se interpõem: o dano é reduzido em 2d8 + metade do seu nível.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d8 de redução."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-dos-antepassados"
+    }
+  },
+  "_key": "!items!ljXiiglEcox4gl0H"
+}
