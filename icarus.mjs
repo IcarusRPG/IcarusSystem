@@ -31,7 +31,7 @@ import { registrarInteracao } from "./module/interacao.mjs";
 import { registrarPortaTrancada } from "./module/porta-trancada.mjs";
 import { registrarBarrasDoToken } from "./module/token-barras.mjs";
 import { registrarCarrossel } from "./module/carrossel.mjs";
-import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
+import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso, rolarCura } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
 import { registrarMorte, rolarTesteDeMorte } from "./module/morte-foundry.mjs";
@@ -122,7 +122,7 @@ Hooks.once("init", () => {
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,
     telao: abrirTelao,
     aplicarClasse, concederHabilidades,
-    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarTesteDeMorte,
+    aplicarDano: aplicarNosSelecionados, rolarDanoAvulso, rolarCura, rolarTesteDeMorte,
     criarKaelen, verificarKaelen, verificarArmas,
     verificarRacas: () => verificarRacas({ dadosBase: dadosKaelen() })
   };

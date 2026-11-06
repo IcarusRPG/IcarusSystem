@@ -3,5 +3,5 @@
   <ul class="linhas-dano">
     {{#each linhas}}<li>{{this}}</li>{{/each}}
   </ul>
-  <div class="linha-aviso">{{localize "ICARUS.Dano.Provisorio"}}</div>
+  {{#if provisorio}}<div class="linha-aviso">{{localize "ICARUS.Dano.Provisorio"}}</div>{{/if}}
 </div>

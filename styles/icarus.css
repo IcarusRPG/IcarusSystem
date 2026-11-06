@@ -1298,3 +1298,35 @@ body.game {
 }
 .icarus-carrossel .carta-rolar:hover { transform: scale(1.1); }
 .icarus-carrossel .carta-rolar:disabled { opacity: 0.5; animation: none; }
+
+/* ==========================================================================
+   Botões de dano e cura no chat (barra montada na renderização: module/dano.mjs)
+   ========================================================================== */
+.icarus-aplicar-caixa { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; padding-top: 6px; border-top: 1px solid rgba(216, 180, 90, 0.45); }
+.icarus-aplicar { display: flex; flex-wrap: wrap; gap: 5px; align-items: stretch; }
+.icarus-aplicar button {
+  flex: 1 1 auto; width: auto; min-width: 0; margin: 0; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  line-height: 26px; font-size: 12px; font-weight: 700; letter-spacing: .03em; color: #f3ecdc;
+  border: 1px solid var(--ap-cor, #d8b45a); border-radius: 5px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ap-cor, #d8b45a) 30%, #1a1d24) 0%, #0d1015 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 1px 2px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.icarus-aplicar button i { color: var(--ap-icone, var(--ap-cor, #d8b45a)); }
+.icarus-aplicar button:hover, .icarus-aplicar button:focus-visible {
+  outline: none; border-color: var(--ap-icone, #f1d98f);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 0 8px color-mix(in srgb, var(--ap-cor, #d8b45a) 70%, transparent);
+}
+.icarus-aplicar button:disabled { opacity: .5; cursor: progress; }
+.icarus-aplicar .ap-dano { --ap-cor: #b3121c; --ap-icone: #ff6b5e; }
+.icarus-aplicar .ap-metade { --ap-cor: #c2620f; --ap-icone: #ffa94d; }
+.icarus-aplicar .ap-dobro { --ap-cor: #7a1020; --ap-icone: #ff8fa0; }
+.icarus-aplicar .ap-cura { --ap-cor: #1f7a3a; --ap-icone: #6fe39a; }
+.icarus-aplicar .ap-perda { --ap-cor: #6b4a8f; --ap-icone: #c9a6ff; flex-grow: 0; }
+.icarus-aplicar .ap-desfazer { --ap-cor: #8b5cf6; --ap-icone: #d8c6ff; flex: none; padding: 0 7px; }
+.icarus-aplicacoes { font-size: 11px; line-height: 1.35; color: var(--ic-apagado, #9bb0be); }
+.icarus-aplicacoes .desfeita { text-decoration: line-through; opacity: .6; }
+.icarus-rolagem .dano-partes { display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.icarus-rolagem .dano-partes span { padding: 0 6px; border: 1px solid rgba(216, 180, 90, 0.35); border-radius: 10px; }
+.icarus-rolagem.icarus-cura { border-color: #1f7a3a; }
+.icarus-rolagem.icarus-cura .rolagem-total { color: #6fe39a; }
