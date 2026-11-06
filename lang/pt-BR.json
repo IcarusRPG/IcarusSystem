@@ -1524,6 +1524,22 @@
       "RolarTodos": "Rolar iniciativa de todos (sem iniciativa)",
       "RolarNPCs": "Rolar iniciativa só dos NPCs",
       "RolarEste": "Rolar iniciativa"
+    },
+    "Numeros": {
+      "Config": {
+        "Ativo": "Números de dano e cura sobre os tokens",
+        "AtivoDica": "Mostra −N em vermelho quando um token perde PV e +N em verde quando ganha.",
+        "Tamanho": "Tamanho dos números de dano e cura",
+        "Pequeno": "Pequeno",
+        "Medio": "Médio",
+        "Grande": "Grande",
+        "Som": "Som dos números de dano e cura",
+        "SomDica": "Toca audio/ui/dano.ogg e audio/ui/cura.ogg, se existirem na pasta do sistema.",
+        "Npc": "Mostrar números de dano e cura de NPCs aos jogadores",
+        "NpcDica": "Desligado, só o Mestre vê os números dos NPCs e monstros.",
+        "PM": "Animar também a perda e o ganho de PM",
+        "PMDica": "Números azuis sobre o token quando os PM mudam."
+      }
     }
   }
 }
