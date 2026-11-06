@@ -30,6 +30,7 @@ import { registrarMidias } from "./module/midias.mjs";
 import { registrarInteracao } from "./module/interacao.mjs";
 import { registrarPortaTrancada } from "./module/porta-trancada.mjs";
 import { registrarBarrasDoToken } from "./module/token-barras.mjs";
+import { registrarCarrossel } from "./module/carrossel.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
@@ -145,6 +146,8 @@ Hooks.once("init", () => {
   registrarPortaTrancada();
   // Barras de PV/PM e escudo de Defesa no token
   registrarBarrasDoToken();
+  // Carrossel de combate (depois das barras: usa as configurações delas)
+  registrarCarrossel();
   game.icarus.migrarBonusDeOrigem = migrarBonusDeOrigem;
   game.icarus.adicionarItensDeOrigem = adicionarItensQueFaltam;
 

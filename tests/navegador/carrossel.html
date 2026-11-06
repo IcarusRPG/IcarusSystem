@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste do carrossel de combate (Icarus RPG)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/styles/icarus.css">
+<style>
+  body { margin: 0; height: 100vh; background: #2b3324 url("/img/ui/wallpaper.webp") center / cover; font-family: sans-serif; overflow: hidden; }
+  #navigation { position: fixed; top: 8px; left: 120px; height: 32px; width: 420px; background: rgba(0,0,0,.7); color: #ccc; padding: 6px; box-sizing: border-box; }
+  #controls { position: fixed; top: 50px; left: 8px; width: 46px; height: 300px; background: rgba(0,0,0,.6); }
+  #sidebar { position: fixed; right: 0; top: 0; bottom: 0; width: 300px; background: #111; color: #ccc; padding: 8px; box-sizing: border-box; }
+  #sidebar button { display: block; width: 100%; margin: 3px 0; }
+  #log { font: 11px monospace; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<!-- Fora do Foundry: o mesmo module/carrossel.mjs com um combate simulado. Servir a raiz e abrir /tests/navegador/carrossel.html -->
+<nav id="navigation">Barra de cenas</nav>
+<nav id="controls"></nav>
+<aside id="sidebar">
+  <b>Simulação</b>
+  <button id="mestre">Ver como Mestre</button>
+  <button id="jogador">Ver como jogador (dono da Lira)</button>
+  <button id="comecar">Começar combate</button>
+  <button id="proximo">Próximo turno</button>
+  <button id="entrar">Entra combatente</button>
+  <button id="sair">Sai combatente</button>
+  <button id="dano">Dano na Lira (−8)</button>
+  <div id="log"></div>
+</aside>
+<script type="module">
+const lang = await (await fetch("/lang/pt-BR.json")).json();
+const pegar = k => k.split(".").reduce((o, p) => o?.[p], lang) ?? k;
+const ganchos = {};
+const cfg = new Map(Object.entries({ carrosselAtivo: true, carrosselForcar: false, carrosselMostrar: true, carrosselPosicao: "topo", carrosselTamanho: "m",
+  carrosselBarras: true, carrosselBanner: true, carrosselSom: false, hudNpcModo: "mestre", hudMostrarPM: true, hudMostrarDefesa: true, hudTexto: "passarMouse" }));
+const img = n => `/img/Icones/tokens/personagens/miniaturas/token-${n}.png`;
+const mk = (id, nome, ini, extra = {}) => ({ id, name: nome, initiative: ini, hidden: false, isDefeated: false, img: img(extra.img ?? "dourado"),
+  token: { disposition: extra.disp ?? 1, texture: { src: img(extra.img ?? "dourado") } },
+  actor: { isOwner: !!extra.dono, hasPlayerOwner: extra.pj ?? true, system: { pv: { value: extra.pv ?? 20, max: 30 }, pm: { value: 5, max: 10 } }, sheet: { render() {} } }, ...extra.cb });
+const turnos = [
+  mk("c1", "Lira", 22, { img: "ladino", dono: true, pv: 14 }), mk("c2", "Ogro das Cavernas", 19, { img: "barbaro", pj: false, disp: -1 }),
+  mk("c3", "Alokerl", 17, { img: "guerreiro" }), mk("c4", "Assassino", 15, { img: "anatema", pj: false, disp: -1, cb: { hidden: true } }),
+  mk("c5", "Bia, a Clériga", 12, { img: "clerigo" }), mk("c6", "Rato Gigante", 9, { img: "rubro-negro", pj: false, disp: -1, pv: 0 }),
+  mk("c7", "Mercador", 6, { img: "nobre", pj: false, disp: 0 }), mk("c8", "Druida", 4, { img: "druida" })
+];
+const combate = { id: "cb1", scene: null, started: false, round: 0, turn: 0, turns: turnos, combatants: { get size() { return combate.turns.length; }, get: id => combate.turns.find(t => t.id === id) },
+  get combatant() { return this.turns[this.turn]; }, previousTurn() {}, nextTurn() {}, startCombat() {}, endCombat() {} };
+globalThis.game = { user: { isGM: true }, combat: combate, modules: new Map(), settings: { register() {}, get: (_s, k) => cfg.get(k) },
+  i18n: { localize: pegar, format: (k, d) => pegar(k).replace(/\{(\w+)\}/g, (_, n) => d[n]) } };
+globalThis.canvas = { scene: { id: "cena" }, animatePan() {} };
+globalThis.ui = { notifications: { info() {} } };
+globalThis.Hooks = { on: (n, f) => ((ganchos[n] ??= []).push(f)), once: (n, f) => ((ganchos[n] ??= []).push(f)) };
+const disparar = n => (ganchos[n] ?? []).forEach(f => f());
+const { registrarCarrossel } = await import("/module/carrossel.mjs");
+registrarCarrossel();
+await Promise.all((ganchos.ready ?? []).map(f => f()));
+const log = m => (document.getElementById("log").textContent += m + "\n");
+const id = x => document.getElementById(x);
+id("mestre").onclick = () => { game.user.isGM = true; disparar("updateCombat"); };
+id("jogador").onclick = () => { game.user.isGM = false; disparar("updateCombat"); };
+id("comecar").onclick = () => { combate.started = true; combate.round = 1; combate.turn = 0; disparar("updateCombat"); };
+id("proximo").onclick = () => { combate.turn++; if (combate.turn >= combate.turns.length) { combate.turn = 0; combate.round++; } disparar("updateCombat"); };
+let n = 9;
+id("entrar").onclick = () => { combate.turns.splice(3, 0, mk(`c${n++}`, "Lobo", 16, { img: "patrulheiro", pj: false, disp: -1 })); disparar("createCombatant"); };
+id("sair").onclick = () => { combate.turns.splice(3, 1); disparar("deleteCombatant"); };
+id("dano").onclick = () => { turnos[0].actor.system.pv.value -= 8; disparar("updateActor"); };
+window.combate = combate; window.disparar = disparar; window.cfg = cfg;
+log("pronto");
+</script>
+</body>
+</html>

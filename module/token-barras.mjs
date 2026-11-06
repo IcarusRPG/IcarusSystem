@@ -10,6 +10,10 @@
  */
 import { SISTEMA_ID } from "./config.mjs";
 import { fracao, pvBaixo, visibilidade, layoutDoHud, textoDaBarra } from "./token-barras-dados.mjs";
+import ARQUIVOS_UI from "./dados/arquivos-ui.mjs";
+
+/** O arquivo opcional de interface existe no sistema? (lista gerada no build: tools/gerar-dados.mjs) */
+export const existeArquivoUi = rel => ARQUIVOS_UI.arquivos.includes(rel);
 
 const F = SISTEMA_ID;
 const ANIMACAO_MS = 300;
@@ -245,7 +249,7 @@ export function registrarBarrasDoToken() {
     Hooks.on(h, doc => { const a = doc.parent?.documentName === "Actor" ? doc.parent : doc.parent?.parent; if (a) atualizarDoAtor(a); });
   }
   Hooks.once("ready", async () => {
-    const existe = await fetch(ARTE_ESCUDO, { method: "HEAD" }).then(r => r.ok).catch(() => false);
-    if (existe) { arteEscudo = await PIXI.Assets.load(ARTE_ESCUDO).catch(() => null); atualizarTodos(); }
+    // A lista do build diz se a arte existe (sem pedir ao servidor: arquivo ausente daria 404 no console)
+    if (existeArquivoUi("img/ui/escudo-defesa.png")) { arteEscudo = await PIXI.Assets.load(ARTE_ESCUDO).catch(() => null); atualizarTodos(); }
   });
 }

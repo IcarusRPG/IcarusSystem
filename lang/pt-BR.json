@@ -1459,6 +1459,36 @@
         "TextoSempre": "Sempre",
         "TextoNunca": "Nunca"
       }
+    },
+    "Carrossel": {
+      "Titulo": "Carrossel de combate",
+      "Rodada": "Rodada",
+      "RodadaN": "RODADA {n}",
+      "SeuTurno": "SEU TURNO",
+      "Anterior": "Turno anterior",
+      "Proximo": "Próximo turno (ou começar)",
+      "Encerrar": "Encerrar combate",
+      "RolarEsquerda": "Rolar para a esquerda",
+      "RolarDireita": "Rolar para a direita",
+      "Concorrente": "O módulo Combat Carousel está ativo: o carrossel do Icarus fica desligado (pode forçar nas configurações do sistema).",
+      "Config": {
+        "Ativo": "Carrossel de combate (mundo)",
+        "AtivoDica": "Mostra as cartas dos combatentes no topo da tela durante o combate.",
+        "Forcar": "Carrossel: mostrar mesmo com o módulo Combat Carousel",
+        "ForcarDica": "Com o módulo ativo, o carrossel do Icarus fica desligado para não duplicar.",
+        "Mostrar": "Carrossel: mostrar para mim",
+        "Posicao": "Carrossel: posição",
+        "Topo": "Topo",
+        "Base": "Base",
+        "Tamanho": "Carrossel: tamanho das cartas",
+        "Pequeno": "Pequeno",
+        "Medio": "Médio",
+        "Grande": "Grande",
+        "Barras": "Carrossel: mini barras de PV/PM",
+        "Banner": "Carrossel: banner de nova rodada",
+        "Som": "Carrossel: som de \"seu turno\"",
+        "SomDica": "Toca audio/ui/seu-turno.ogg, se o arquivo existir no sistema."
+      }
     }
   }
 }
