@@ -460,7 +460,8 @@ export class FichaPersonagem extends ActorSheet {
       semProficiencia: !a.proficiente,
       esmaecida: semArma,
       // Botões: Atacar (corpo a corpo) só com a arma na mão; Arremessar / Disparar conforme o modo
-      modos: a.modos.map(m => ({ modo: m, rotulo: loc(`ICARUS.Armas.Botoes.${m}`), desligado: semArma })),
+      modos: a.modos.map(m => ({ modo: m, rotulo: loc(`ICARUS.Armas.Botoes.${m}`), desligado: semArma,
+        detalhado: a.modos.length > 1 ? game.i18n.format("ICARUS.Armas.Botoes.detalhadoModo", { modo: loc(`ICARUS.Armas.Botoes.${m}`) }) : loc("ICARUS.Armas.Botoes.detalhado") })),
       ehFogo: a.grupo === "fogo",
       espacos: espacosDoItem(item),
       preco: { texto: formatarPreco(a.preco), ouro: precoEmOuro(a.preco) }
@@ -536,7 +537,12 @@ export class FichaPersonagem extends ActorSheet {
       html.on("click", "[data-action='rolar-atributo']", ev => rolarAtributo(this.actor, ev.currentTarget.dataset.atributo, modoDoEvento(ev)));
       // Armas: atacar, dano e recarregar também valem com a ficha travada
       const armaDe = el => this.actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
+      // "Atacar" rola na hora; "Ataque detalhado" abre o diálogo (flanco, camuflagem, bônus extra...)
       html.on("click", "[data-action='arma-atacar']", ev => {
+        const item = armaDe(ev.currentTarget);
+        if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo, { ...modoDoEvento(ev), rapido: true });
+      });
+      html.on("click", "[data-action='arma-atacar-detalhado']", ev => {
         const item = armaDe(ev.currentTarget);
         if (item) rolarAtaque(this.actor, item, ev.currentTarget.dataset.modo, modoDoEvento(ev));
       });

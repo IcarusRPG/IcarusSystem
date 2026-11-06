@@ -417,7 +417,11 @@
         "distancia": "Disparar",
         "fogo": "Disparar",
         "dano": "Dano",
-        "recarregar": "Recarregar"
+        "recarregar": "Recarregar",
+        "detalhado": "Ataque detalhado",
+        "detalhadoModo": "Detalhado ({modo})",
+        "detalhadoDica": "Abre a janela do ataque: vantagem, bônus extra, flanco, camuflagem, duas armas e poderes.",
+        "rapidoDica": "Rola o ataque na hora (Shift: vantagem, Ctrl: desvantagem). Flanco detectado e poderes pré-marcados entram sozinhos."
       },
       "Modos": {
         "corpo-a-corpo": "Corpo a corpo",

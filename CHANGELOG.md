@@ -1,5 +1,11 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.14.2
+
+### Ataque
+- **Atacar** (ficha do personagem e do animal) rola o teste na hora, sem abrir a janela: Shift = vantagem, Ctrl = desvantagem; flanco detectado pelos tokens e poderes que já vêm marcados (Ataque Furtivo, Contra a presa) entram sozinhos, como se a janela fosse confirmada sem mudanças.
+- Novo botão **Ataque detalhado** abre a janela de antes (bônus extra, flanco manual, camuflagem, duas armas, poderes). Armas com mais de um modo têm um por modo no inventário ("Detalhado (Arremessar)"); no painel de Ataques, o ícone de controles.
+
 ## 0.14.1
 
 ### Botões de dano e cura

@@ -64,27 +64,49 @@ export function alvosMarcados() {
 }
 
 /**
- * Ataque com uma arma. Pela ficha abre o diálogo de ataque (Shift = vantagem, Ctrl = desvantagem
- * já pré-selecionados); confirmar rola. Sem munição, descarregada ou sem a arma: avisa e não ataca.
+ * Escolhas que o diálogo de ataque teria sem mexer em nada: cada campo das seções com o valor
+ * inicial (flanco detectado, Ataque Furtivo / Contra a presa pré-marcados, camuflagem "nenhuma"...).
+ * Campo desativado não conta (no formulário ele não seria enviado).
+ */
+export function escolhasPadrao(secoes = [], { vantagem = false, desvantagem = false } = {}) {
+  const escolhas = { vantagem: !!vantagem, desvantagem: !!desvantagem, bonusExtra: 0 };
+  for (const secao of secoes) {
+    for (const c of secao?.campos ?? []) {
+      if (!c?.nome || c.desativado) continue;
+      if (c.tipo === "checkbox") escolhas[c.nome] = !!c.valor;
+      else if (c.tipo === "select") escolhas[c.nome] = (c.opcoes ?? []).find(o => o.selecionado)?.valor ?? c.opcoes?.[0]?.valor;
+      else if (c.tipo === "number") escolhas[c.nome] = Number(c.valor) || 0;
+    }
+  }
+  return escolhas;
+}
+
+/**
+ * Ataque com uma arma. Sem munição, descarregada ou sem a arma: avisa e não ataca.
+ * - Pela ficha, "Atacar" rola na hora (opcoes.rapido) com as escolhas padrão do diálogo;
+ *   "Ataque detalhado" abre o diálogo (Shift = vantagem, Ctrl = desvantagem pré-selecionados).
  * @param {object} [opcoes]
  * @param {boolean} [opcoes.criarMensagem=true]  false = só gasta e rola, sem diálogo (verificação)
  * @param {boolean} [opcoes.dialogo=true]        false = rola direto com as opções dadas
+ * @param {boolean} [opcoes.rapido=false]        true = rola direto com as escolhas padrão do diálogo
  */
 export async function rolarAtaque(actor, item, modo, opcoes = {}) {
-  const { criarMensagem = true, dialogo = true } = opcoes;
+  const { criarMensagem = true, dialogo = true, rapido = false } = opcoes;
   if (!criarMensagem || !dialogo) return executarAtaque(actor, item, modo, opcoes);
-  const { DialogoAtaque } = await import("./apps/dialogo-ataque.mjs");
   const contexto = await contextoDoDialogo(actor, item, modo);
+  const aoConfirmar = async escolhas => {
+    if (escolhas.duasArmas) return agredirComDuasArmas(actor, item, modo, escolhas);
+    const r = await executarAtaque(actor, item, modo, { ...escolhas });
+    // Ataques adicionais pedidos no diálogo (ex.: Rajada de Golpes do Monge)
+    for (const extra of ATAQUES_ADICIONAIS) await extra(actor, item, modo, escolhas);
+    return r;
+  };
+  if (rapido) return aoConfirmar(escolhasPadrao(contexto.secoes, opcoes));
+  const { DialogoAtaque } = await import("./apps/dialogo-ataque.mjs");
   return new DialogoAtaque({
     actor, item, modo, contexto,
     preset: { vantagem: !!opcoes.vantagem, desvantagem: !!opcoes.desvantagem },
-    aoConfirmar: async escolhas => {
-      if (escolhas.duasArmas) return agredirComDuasArmas(actor, item, modo, escolhas);
-      const r = await executarAtaque(actor, item, modo, { ...escolhas });
-      // Ataques adicionais pedidos no diálogo (ex.: Rajada de Golpes do Monge)
-      for (const extra of ATAQUES_ADICIONAIS) await extra(actor, item, modo, escolhas);
-      return r;
-    }
+    aoConfirmar
   }).render(true);
 }
 

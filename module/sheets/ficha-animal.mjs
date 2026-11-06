@@ -33,6 +33,7 @@ export class FichaAnimal extends HandlebarsApplicationMixin(ActorSheetV2) {
       editar: FichaAnimal._alternarEdicao,
       imagem: FichaAnimal._imagem,
       rolarAtaque: FichaAnimal._rolarAtaque,
+      rolarAtaqueDetalhado: FichaAnimal._rolarAtaqueDetalhado,
       rolarDano: FichaAnimal._rolarDano,
       usar: FichaAnimal._usar,
       pericia: FichaAnimal._pericia,
@@ -119,6 +120,11 @@ export class FichaAnimal extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static _rolarAtaque(event, alvo) {
+    const item = this.document.items.get(alvo.closest("[data-item-id]")?.dataset.itemId);
+    if (item) rolarAtaque(this.document, item, MODO, { ...modoDoEvento(event), rapido: true });
+  }
+
+  static _rolarAtaqueDetalhado(event, alvo) {
     const item = this.document.items.get(alvo.closest("[data-item-id]")?.dataset.itemId);
     if (item) rolarAtaque(this.document, item, MODO, modoDoEvento(event));
   }

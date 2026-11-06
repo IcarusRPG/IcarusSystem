@@ -58,6 +58,7 @@
         </div>
         <div class="ataque-botoes">
           {{#each modos}}<button type="button" class="btn total" data-action="arma-atacar" data-modo="{{modo}}" title="{{rotulo}} ({{../ataqueDica}})"{{#if desligado}} disabled{{/if}}>{{#if @first}}{{../ataque}}{{else}}<i class="fa-solid fa-share" aria-label="{{rotulo}}"></i>{{/if}}</button>{{/each}}
+          {{#each modos}}{{#if @first}}<button type="button" class="btn icone" data-action="arma-atacar-detalhado" data-modo="{{modo}}" title="{{detalhado}}" aria-label="{{detalhado}}"{{#if desligado}} disabled{{/if}}><i class="fa-solid fa-sliders" aria-hidden="true"></i></button>{{/if}}{{/each}}
           {{#if ehFogo}}<button type="button" class="btn icone" data-action="arma-recarregar" title="{{localize 'ICARUS.Armas.Botoes.recarregar'}}" aria-label="{{localize 'ICARUS.Armas.Botoes.recarregar'}}"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i></button>{{/if}}
         </div>
       </div>

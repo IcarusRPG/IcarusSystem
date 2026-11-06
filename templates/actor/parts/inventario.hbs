@@ -24,7 +24,8 @@
         <span class="col-alcance">{{alcance}}</span>
         <span class="col-municao">{{municao}}</span>
         <div class="arma-acoes">
-          {{#each modos}}<button type="button" class="btn peq" data-action="arma-atacar" data-modo="{{modo}}"{{#if desligado}} disabled{{/if}}>{{rotulo}}</button>{{/each}}
+          {{#each modos}}<button type="button" class="btn peq" data-action="arma-atacar" data-modo="{{modo}}" title="{{localize 'ICARUS.Armas.Botoes.rapidoDica'}}"{{#if desligado}} disabled{{/if}}>{{rotulo}}</button>{{/each}}
+          {{#each modos}}<button type="button" class="btn peq" data-action="arma-atacar-detalhado" data-modo="{{modo}}" title="{{localize 'ICARUS.Armas.Botoes.detalhadoDica'}}"{{#if desligado}} disabled{{/if}}>{{detalhado}}</button>{{/each}}
           <button type="button" class="btn peq" data-action="arma-dano">{{localize "ICARUS.Armas.Botoes.dano"}}</button>
           {{#if ehFogo}}<button type="button" class="btn peq" data-action="arma-recarregar">{{localize "ICARUS.Armas.Botoes.recarregar"}}</button>{{/if}}
           {{#if @root.editable}}
