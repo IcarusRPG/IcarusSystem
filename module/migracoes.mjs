@@ -94,6 +94,25 @@ export async function atualizarIconesDeItensComuns(atores = game.actors, itensDo
   return n;
 }
 
+/** Barras do token: bar1 = PV e bar2 = PM (atributos rastreáveis do personagem). */
+export const BARRAS_DO_TOKEN = { "prototypeToken.bar1.attribute": "pv", "prototypeToken.bar2.attribute": "pm" };
+
+/**
+ * Atores personagem com o prototypeToken sem bar1 = PV e bar2 = PM passam a ter. Idempotente:
+ * quem já tem não é tocado. @returns {Promise<number>} atores alterados
+ */
+export async function configurarBarrasDosTokens(atores = game.actors) {
+  let n = 0;
+  for (const actor of atores) {
+    if (actor.type !== "personagem") continue;
+    const mudancas = Object.fromEntries(Object.entries(BARRAS_DO_TOKEN).filter(([k, v]) => foundry.utils.getProperty(actor, k) !== v));
+    if (!Object.keys(mudancas).length) continue;
+    await actor.update(mudancas);
+    n++;
+  }
+  return n;
+}
+
 /** Migrações por versão: registradas para rodar uma vez (configuração de mundo "migracao"). */
 const MIGRACOES = [
   { versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) },
@@ -104,7 +123,9 @@ const MIGRACOES = [
   // o item que faltou; recusar não repete (game.icarus.adicionarItensDeOrigem())
   { versao: "0.10.2", rodar: async () => Number(await adicionarItensQueFaltam()) || 0 },
   // 0.11.1 — ícones dos itens comuns (itens de origem) no lugar do dado azul
-  { versao: "0.11.1", rodar: () => atualizarIconesDeItensComuns() }
+  { versao: "0.11.1", rodar: () => atualizarIconesDeItensComuns() },
+  // 0.13.0 — barras do token: bar1 = PV, bar2 = PM
+  { versao: "0.13.0", rodar: () => configurarBarrasDosTokens() }
 ];
 
 export function registrarMigracoes() {
