@@ -95,7 +95,6 @@ const TEMPLATES = [
   "chat/ataque.hbs",
   "chat/dano.hbs",
   "chat/aviso.hbs",
-  "chat/dano-aplicado.hbs",
   "chat/condicao.hbs",
   "chat/lembrete.hbs",
   "chat/poder-uso.hbs",

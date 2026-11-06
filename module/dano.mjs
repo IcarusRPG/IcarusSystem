@@ -9,7 +9,8 @@
  * Alvos: os tokens marcados (T); sem alvo, os selecionados. Lembretes de turno já sabem o ator.
  * Permissão: o jogador altera direto os atores que possui; para os outros, pede ao Mestre ativo pelo
  *   socket (ação "dano:aplicar"). O Mestre recalcula o valor pela mensagem (o jogador não manda número).
- * Registro: flags["icarus-rpg"].aplicacoes (alvo, antes, depois, quem); o Mestre desfaz a última.
+ * Registro: flags["icarus-rpg"].aplicacoes (alvo, antes, depois, cálculo, quem), mostrado na própria
+ *   mensagem ("Aplicado em X (−11)", cálculo na dica); sem mensagem de confirmação. O Mestre desfaz a última.
  * Regras do cálculo: module/dano-aplicacao.mjs. PV temporários ainda não existem no modelo.
  */
 import { SISTEMA_ID, REGRAS_DANO } from "./config.mjs";
@@ -119,30 +120,33 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
     linha,
     registro: {
       alvo: nome, tokenUuid: alvo?.documentName === "Token" ? alvo.uuid : null, actorUuid: actor.uuid,
-      botao, antes: calc.antes, depois, usuario: usuarioId, quando: Date.now(), desfeita: false
+      botao, antes: calc.antes, depois, detalhe: linha, usuario: usuarioId, quando: Date.now(), desfeita: false
     }
   };
 }
 
-/** Aplica em vários alvos, grava o registro e posta a confirmação (sussurrada ao autor e ao Mestre). */
+/**
+ * Aplica em vários alvos e grava o registro na própria mensagem (sem mensagem nova no chat:
+ * o cálculo fica na dica do "Aplicado em …"). Só o que não pôde ser aplicado vira aviso.
+ */
 async function aplicarEmVarios(mensagem, alvos, botao, dados, usuarioId) {
-  const linhas = [];
+  const falhas = [];
   const registros = [];
   for (const alvo of alvos) {
     const r = await aplicarNoAlvo(alvo, botao, dados, usuarioId);
-    linhas.push(r.linha);
     if (r.registro) registros.push(r.registro);
+    else falhas.push(r.linha);
   }
   if (registros.length) await registrar(mensagem, registros);
-  await confirmar(linhas, botao, usuarioId);
+  avisarFalhas(falhas, usuarioId);
+  return registros;
 }
 
-async function confirmar(linhas, botao, usuarioId) {
-  if (!linhas.length) return;
-  const titulo = loc(botao === "cura" ? "ICARUS.Dano.TituloCura" : botao === "perda" ? "ICARUS.Dano.TituloPerda" : "ICARUS.Dano.TituloAplicado");
-  const content = await renderTemplate(`${T}/dano-aplicado.hbs`, { titulo, linhas, provisorio: botao !== "cura" && botao !== "perda" });
-  const para = new Set([usuarioId, ...game.users.filter(u => u.isGM).map(u => u.id)]);
-  return ChatMessage.create({ speaker: { alias: (game.users.get(usuarioId) ?? game.user).name }, content, whisper: [...para] });
+function avisarFalhas(falhas, usuarioId) {
+  if (!falhas.length) return;
+  const texto = falhas.join(" · ");
+  if (usuarioId === game.user.id) ui.notifications.warn(texto);
+  else game.socket.emit(CANAL, { acao: "dano:recusa", para: usuarioId, texto });
 }
 
 /* Gravações nas flags da mensagem: uma de cada vez neste cliente (não perde registro em cliques rápidos). */
@@ -252,7 +256,7 @@ export async function aoReceberDano(msg, remetente) {
     }).map(r => ({
       alvo: fromUuidSync(r.tokenUuid ?? "")?.name ?? fromUuidSync(r.actorUuid).name, tokenUuid: typeof r.tokenUuid === "string" ? r.tokenUuid : null,
       actorUuid: r.actorUuid, botao: ACOES.includes(r.botao) ? r.botao : "dano",
-      antes: r.antes, depois: r.depois, usuario: de, quando: Date.now(), desfeita: false
+      antes: r.antes, depois: r.depois, detalhe: typeof r.detalhe === "string" ? r.detalhe.slice(0, 300) : "", usuario: de, quando: Date.now(), desfeita: false
     }));
     if (registros.length) await registrar(mensagem, registros);
     return;
@@ -297,7 +301,7 @@ export function htmlDaBarra(dados, aplicacoes = [], { dobro = false, mestre = fa
     ? `<button type="button" class="ap-desfazer" data-icarus-desfazer title="${esc(loc("ICARUS.Dano.Desfazer"))}" aria-label="${esc(loc("ICARUS.Dano.Desfazer"))}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></button>`
     : "";
   const registro = aplicacoes.length
-    ? `<div class="icarus-aplicacoes">${esc(loc("ICARUS.Dano.AplicadoEm"))} ${aplicacoes.slice(-8).map(a => `<span class="${a.desfeita ? "desfeita" : ""}">${esc(textoDoRegistro(a))}</span>`).join(", ")}${aplicacoes.length > 8 ? " …" : ""}</div>`
+    ? `<div class="icarus-aplicacoes">${esc(loc("ICARUS.Dano.AplicadoEm"))} ${aplicacoes.slice(-8).map(a => `<span class="${a.desfeita ? "desfeita" : ""}"${a.detalhe ? ` title="${esc(a.detalhe)}"` : ""}>${esc(textoDoRegistro(a))}</span>`).join(", ")}${aplicacoes.length > 8 ? " …" : ""}</div>`
     : "";
   return `<div class="icarus-aplicar" role="group" aria-label="${esc(loc("ICARUS.Dano.Grupo"))}">${botoes}${desfazer}</div>${registro}`;
 }
@@ -370,5 +374,6 @@ export async function aplicarNosSelecionados(valor, tipo, { modo = "dano", multi
   if (!tokens.length) return ui.notifications.warn(loc("ICARUS.Dano.SemSelecao"));
   const linhas = [];
   for (const t of tokens) linhas.push((await aplicarNoAlvo(t, botao, { componentes: [{ tipo: tipo || "dano", valor: total }], critico: false }, game.user.id)).linha);
-  return confirmar(linhas, botao, game.user.id);
+  ui.notifications.info(linhas.join(" · "));
+  return linhas;
 }

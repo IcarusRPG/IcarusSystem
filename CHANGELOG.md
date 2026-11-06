@@ -1,12 +1,17 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.14.1
+
+### Botões de dano e cura
+- Sem mensagem de confirmação no chat ("Dano aplicado", "Cura aplicada", "Perda de PV aplicada"): o registro fica só na própria mensagem da rolagem ("Aplicado em X (−11)"), com o cálculo na dica ao passar o mouse. Só o que não pôde ser aplicado vira aviso.
+
 ## 0.14.0
 
 ### Botões de dano e cura no chat
 - Toda rolagem de dano do sistema (armas, ficha, animal, lembretes de turno, `rolarDanoAvulso`) passa por uma função só e ganha a barra **Aplicar dano** (vermelho), **Metade** (laranja), **Curar** (verde) e **Perda de PV**; **Dobro** é opção do mundo (desligado). Dica com o valor exato ("Aplicar 7", "Curar 14").
 - Aplica nos **alvos marcados** (T); sem alvo, nos **tokens selecionados**. Tokens de outros jogadores: o pedido vai ao Mestre ativo, que confere (usuário ligado, cena, alvo marcado, mensagem visível) e recalcula o valor pela mensagem — o jogador nunca envia números.
 - Cálculo: metade antes da RD; imunidade, vulnerabilidade e redução **por tipo** em cada componente; RD geral uma vez; mínimo 0. Cura até o máximo, não cura morto nem o animal do Vínculo Selvagem. Dano em quem está Morrendo conta falha no teste de morte.
-- Confirmação sussurrada ao autor e ao Mestre com o cálculo ("Ogro: −11 PV (14 Corte → RD 3 → 11) · PV 40 → 29"); registro "Aplicado em …" na própria mensagem; **Desfazer** (só Mestre) reverte a última aplicação.
+- Registro "Aplicado em …" na própria mensagem; **Desfazer** (só Mestre) reverte a última aplicação.
 - Rolagens com vários tipos (`rolarDanoAvulso({ partes: [{ formula, tipo }] })`) e de cura (`game.icarus.rolarCura`).
 - Mensagens antigas trocam os botões velhos pela barra nova; opção "Mostrar botões em qualquer rolagem" (desligada) para `/r`.
 

@@ -60,15 +60,14 @@ globalThis.game = {
 const { aoReceberDano, htmlDaBarra } = await import("../module/dano.mjs");
 const pedido = (extra = {}) => ({ acao: "dano:aplicar", botao: "dano", mensagemId: "m1", alvos: ["Scene.c1.Token.t1"], origem: "alvos", ...extra });
 
-test("Jogador pede dano no monstro marcado: o Mestre aplica com RD, registra e confirma em sussurro", async () => {
+test("Jogador pede dano no monstro marcado: o Mestre aplica com RD e registra (sem mensagem nova no chat)", async () => {
   await aoReceberDano(pedido(), "j1");
   assert.equal(ogro.system.pv.value, 29); // 40 − (14 − 3)
   const reg = msgs.get("m1").flags["icarus-rpg"].aplicacoes;
   assert.equal(reg.length, 1);
   assert.deepEqual([reg[0].alvo, reg[0].antes, reg[0].depois, reg[0].usuario], ["Ogro", 40, 29, "j1"]);
-  const conf = chat.at(-1);
-  assert.deepEqual(conf.whisper.sort(), ["j1", "mestre"]);
-  assert.match(conf.content, /14 ICARUS.TiposDano.corte → RD 3 → 11/);
+  assert.match(reg[0].detalhe, /14 ICARUS.TiposDano.corte → RD 3 → 11/);
+  assert.equal(chat.length, 0, "nenhuma mensagem de confirmação");
 });
 
 test("O valor vem da mensagem: total absurdo ou campos extras do jogador são ignorados/recusados", async () => {
@@ -126,7 +125,8 @@ test("Registro vindo do jogador: só atores que ele possui", async () => {
 
 test("Barra: dicas com o valor exato, desfazer só para o Mestre, registro visível", () => {
   const dados = { rollType: "dano", total: 14 };
-  const html = htmlDaBarra(dados, [{ alvo: "Ogro", antes: 40, depois: 29 }], { mestre: true });
+  const html = htmlDaBarra(dados, [{ alvo: "Ogro", antes: 40, depois: 29, detalhe: "Ogro: −11 PV (14 Corte → RD 3 → 11)" }], { mestre: true });
+  assert.ok(html.includes(`title="Ogro: −11 PV (14 Corte → RD 3 → 11)">Ogro (−11)</span>`));
   assert.match(html, /data-icarus-botao="dano" title="ICARUS.Dano.DicaAplicar \{"n":14\}"/);
   assert.match(html, /data-icarus-botao="metade" title="ICARUS.Dano.DicaAplicar \{"n":7\}"/);
   assert.match(html, /data-icarus-botao="cura" title="ICARUS.Dano.DicaCurar \{"n":14\}"/);
