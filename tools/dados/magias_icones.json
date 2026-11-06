@@ -1,0 +1,802 @@
+[
+  {
+    "id": "misseis-magicos",
+    "arquivo": "misseis-magicos.png"
+  },
+  {
+    "id": "cone-de-chamas",
+    "arquivo": "cone-de-chamas.png"
+  },
+  {
+    "id": "luz",
+    "arquivo": "luz.png"
+  },
+  {
+    "id": "detectar-magia",
+    "arquivo": "detectar-magia.png"
+  },
+  {
+    "id": "armadura-arcana",
+    "arquivo": "armadura-arcana.png"
+  },
+  {
+    "id": "sono",
+    "arquivo": "sono.png"
+  },
+  {
+    "id": "ilusao-menor",
+    "arquivo": "ilusao-menor.png"
+  },
+  {
+    "id": "escudo-arcano",
+    "arquivo": "escudo-arcano.png"
+  },
+  {
+    "id": "pulso-de-mana",
+    "arquivo": "pulso-de-mana.png"
+  },
+  {
+    "id": "fio-de-alarme",
+    "arquivo": "fio-de-alarme.png"
+  },
+  {
+    "id": "imagem-espelhada",
+    "arquivo": "imagem-espelhada.png"
+  },
+  {
+    "id": "teia",
+    "arquivo": "teia.png"
+  },
+  {
+    "id": "nevoa",
+    "arquivo": "nevoa.png"
+  },
+  {
+    "id": "invisibilidade",
+    "arquivo": "invisibilidade.png"
+  },
+  {
+    "id": "flecha-acida",
+    "arquivo": "flecha-acida.png"
+  },
+  {
+    "id": "passo-nebuloso",
+    "arquivo": "passo-nebuloso.png"
+  },
+  {
+    "id": "levitacao",
+    "arquivo": "levitacao.png"
+  },
+  {
+    "id": "despedacar",
+    "arquivo": "despedacar.png"
+  },
+  {
+    "id": "ancora-de-mana",
+    "arquivo": "ancora-de-mana.png"
+  },
+  {
+    "id": "ler-pensamentos",
+    "arquivo": "ler-pensamentos.png"
+  },
+  {
+    "id": "bola-de-fogo",
+    "arquivo": "bola-de-fogo.png"
+  },
+  {
+    "id": "relampago",
+    "arquivo": "relampago.png"
+  },
+  {
+    "id": "velocidade",
+    "arquivo": "velocidade.png"
+  },
+  {
+    "id": "lentidao",
+    "arquivo": "lentidao.png"
+  },
+  {
+    "id": "voo",
+    "arquivo": "voo.png"
+  },
+  {
+    "id": "dissipar-magia",
+    "arquivo": "dissipar-magia.png"
+  },
+  {
+    "id": "imobilizar",
+    "arquivo": "imobilizar.png"
+  },
+  {
+    "id": "clarividencia",
+    "arquivo": "clarividencia.png"
+  },
+  {
+    "id": "carcere-de-espelhos",
+    "arquivo": "carcere-de-espelhos.png"
+  },
+  {
+    "id": "muralha-de-fogo",
+    "arquivo": "muralha-de-fogo.png"
+  },
+  {
+    "id": "tempestade-de-gelo",
+    "arquivo": "tempestade-de-gelo.png"
+  },
+  {
+    "id": "confusao",
+    "arquivo": "confusao.png"
+  },
+  {
+    "id": "dominar-pessoa",
+    "arquivo": "dominar-pessoa.png"
+  },
+  {
+    "id": "pele-de-pedra",
+    "arquivo": "pele-de-pedra.png"
+  },
+  {
+    "id": "porta-dimensional",
+    "arquivo": "porta-dimensional.png"
+  },
+  {
+    "id": "videncia",
+    "arquivo": "videncia.png"
+  },
+  {
+    "id": "tormenta-de-estilhacos",
+    "arquivo": "tormenta-de-estilhacos.png"
+  },
+  {
+    "id": "desintegrar",
+    "arquivo": "desintegrar.png"
+  },
+  {
+    "id": "cone-glacial",
+    "arquivo": "cone-glacial.png"
+  },
+  {
+    "id": "teleporte",
+    "arquivo": "teleporte.png"
+  },
+  {
+    "id": "dominar-monstro",
+    "arquivo": "dominar-monstro.png"
+  },
+  {
+    "id": "chuva-de-meteoros",
+    "arquivo": "chuva-de-meteoros.png"
+  },
+  {
+    "id": "parar-o-tempo",
+    "arquivo": "parar-o-tempo.png"
+  },
+  {
+    "id": "colapso-gravitacional",
+    "arquivo": "colapso-gravitacional.png"
+  },
+  {
+    "id": "eclipse-arcano",
+    "arquivo": "eclipse-arcano.png"
+  },
+  {
+    "id": "curar-ferimentos",
+    "arquivo": "curar-ferimentos.png"
+  },
+  {
+    "id": "bencao",
+    "arquivo": "bencao.png"
+  },
+  {
+    "id": "escudo-da-fe",
+    "arquivo": "escudo-da-fe.png"
+  },
+  {
+    "id": "chama-sagrada",
+    "arquivo": "chama-sagrada.png"
+  },
+  {
+    "id": "palavra-de-comando",
+    "arquivo": "palavra-de-comando.png"
+  },
+  {
+    "id": "protecao-contra-o-mal",
+    "arquivo": "protecao-contra-o-mal.png"
+  },
+  {
+    "id": "santuario",
+    "arquivo": "santuario.png"
+  },
+  {
+    "id": "orientacao-divina",
+    "arquivo": "orientacao-divina.png"
+  },
+  {
+    "id": "cipos-prensores",
+    "arquivo": "cipos-prensores.png"
+  },
+  {
+    "id": "falar-com-animais",
+    "arquivo": "falar-com-animais.png"
+  },
+  {
+    "id": "restauracao-menor",
+    "arquivo": "restauracao-menor.png"
+  },
+  {
+    "id": "arma-espiritual",
+    "arquivo": "arma-espiritual.png"
+  },
+  {
+    "id": "silencio",
+    "arquivo": "silencio.png"
+  },
+  {
+    "id": "arma-sagrada",
+    "arquivo": "arma-sagrada.png"
+  },
+  {
+    "id": "oracao",
+    "arquivo": "oracao.png"
+  },
+  {
+    "id": "lanca-de-luz",
+    "arquivo": "lanca-de-luz.png"
+  },
+  {
+    "id": "pele-de-casca",
+    "arquivo": "pele-de-casca.png"
+  },
+  {
+    "id": "remover-maldicao",
+    "arquivo": "remover-maldicao.png"
+  },
+  {
+    "id": "espiritos-guardioes",
+    "arquivo": "espiritos-guardioes.png"
+  },
+  {
+    "id": "revivificar",
+    "arquivo": "revivificar.png"
+  },
+  {
+    "id": "luz-do-dia",
+    "arquivo": "luz-do-dia.png"
+  },
+  {
+    "id": "cura-em-massa",
+    "arquivo": "cura-em-massa.png"
+  },
+  {
+    "id": "protecao-contra-energia",
+    "arquivo": "protecao-contra-energia.png"
+  },
+  {
+    "id": "chamar-relampagos",
+    "arquivo": "chamar-relampagos.png"
+  },
+  {
+    "id": "banimento",
+    "arquivo": "banimento.png"
+  },
+  {
+    "id": "guardiao-da-fe",
+    "arquivo": "guardiao-da-fe.png"
+  },
+  {
+    "id": "liberdade-de-movimento",
+    "arquivo": "liberdade-de-movimento.png"
+  },
+  {
+    "id": "aura-de-pureza",
+    "arquivo": "aura-de-pureza.png"
+  },
+  {
+    "id": "muralha-de-espinhos",
+    "arquivo": "muralha-de-espinhos.png"
+  },
+  {
+    "id": "martelo-do-julgamento",
+    "arquivo": "martelo-do-julgamento.png"
+  },
+  {
+    "id": "cura-completa",
+    "arquivo": "cura-completa.png"
+  },
+  {
+    "id": "ressurreicao",
+    "arquivo": "ressurreicao.png"
+  },
+  {
+    "id": "coluna-flamejante",
+    "arquivo": "coluna-flamejante.png"
+  },
+  {
+    "id": "julgamento-final",
+    "arquivo": "julgamento-final.png"
+  },
+  {
+    "id": "santuario-consagrado",
+    "arquivo": "santuario-consagrado.png"
+  },
+  {
+    "id": "palavra-divina",
+    "arquivo": "palavra-divina.png"
+  },
+  {
+    "id": "toque-vampirico",
+    "arquivo": "toque-vampirico.png"
+  },
+  {
+    "id": "sangria",
+    "arquivo": "sangria.png"
+  },
+  {
+    "id": "lamina-rubra",
+    "arquivo": "lamina-rubra.png"
+  },
+  {
+    "id": "escudo-carmesim",
+    "arquivo": "escudo-carmesim.png"
+  },
+  {
+    "id": "faro-de-sangue",
+    "arquivo": "faro-de-sangue.png"
+  },
+  {
+    "id": "fome-carmesim",
+    "arquivo": "fome-carmesim.png"
+  },
+  {
+    "id": "marca-de-sangue",
+    "arquivo": "marca-de-sangue.png"
+  },
+  {
+    "id": "garras-carmesins",
+    "arquivo": "garras-carmesins.png"
+  },
+  {
+    "id": "veu-rubro",
+    "arquivo": "veu-rubro.png"
+  },
+  {
+    "id": "vinculo-de-dor",
+    "arquivo": "vinculo-de-dor.png"
+  },
+  {
+    "id": "hemorragia",
+    "arquivo": "hemorragia.png"
+  },
+  {
+    "id": "drenar-vigor",
+    "arquivo": "drenar-vigor.png"
+  },
+  {
+    "id": "sangue-vivo",
+    "arquivo": "sangue-vivo.png"
+  },
+  {
+    "id": "sede-de-sangue",
+    "arquivo": "sede-de-sangue.png"
+  },
+  {
+    "id": "maldicao-de-sangue",
+    "arquivo": "maldicao-de-sangue.png"
+  },
+  {
+    "id": "chuva-de-sangue",
+    "arquivo": "chuva-de-sangue.png"
+  },
+  {
+    "id": "banquete-rubro",
+    "arquivo": "banquete-rubro.png"
+  },
+  {
+    "id": "corpo-de-sangue",
+    "arquivo": "corpo-de-sangue.png"
+  },
+  {
+    "id": "tendoes-rubros",
+    "arquivo": "tendoes-rubros.png"
+  },
+  {
+    "id": "marionete-de-sangue",
+    "arquivo": "marionete-de-sangue.png"
+  },
+  {
+    "id": "passo-carmesim",
+    "arquivo": "passo-carmesim.png"
+  },
+  {
+    "id": "lancas-de-sangue",
+    "arquivo": "lancas-de-sangue.png"
+  },
+  {
+    "id": "explosao-hemorragica",
+    "arquivo": "explosao-hemorragica.png"
+  },
+  {
+    "id": "metamorfose-sanguinea",
+    "arquivo": "metamorfose-sanguinea.png"
+  },
+  {
+    "id": "peste-carmesim",
+    "arquivo": "peste-carmesim.png"
+  },
+  {
+    "id": "glifo-de-sangue",
+    "arquivo": "glifo-de-sangue.png"
+  },
+  {
+    "id": "nuvem-de-morcegos",
+    "arquivo": "nuvem-de-morcegos.png"
+  },
+  {
+    "id": "mare-carmesim",
+    "arquivo": "mare-carmesim.png"
+  },
+  {
+    "id": "exsanguinar",
+    "arquivo": "exsanguinar.png"
+  },
+  {
+    "id": "sangue-ancestral",
+    "arquivo": "sangue-ancestral.png"
+  },
+  {
+    "id": "pacto-sanguinario",
+    "arquivo": "pacto-sanguinario.png"
+  },
+  {
+    "id": "sentenca-de-sangue",
+    "arquivo": "sentenca-de-sangue.png"
+  },
+  {
+    "id": "forma-de-vampiro",
+    "arquivo": "forma-de-vampiro.png"
+  },
+  {
+    "id": "eclipse-carmesim",
+    "arquivo": "eclipse-carmesim.png"
+  },
+  {
+    "id": "chicote-de-sangue",
+    "arquivo": "chicote-de-sangue.png"
+  },
+  {
+    "id": "imagem-de-sangue",
+    "arquivo": "imagem-de-sangue.png"
+  },
+  {
+    "id": "calice-de-vitalidade",
+    "arquivo": "calice-de-vitalidade.png"
+  },
+  {
+    "id": "servo-de-sangue",
+    "arquivo": "servo-de-sangue.png"
+  },
+  {
+    "id": "olhar-espiritual",
+    "arquivo": "olhar-espiritual.png"
+  },
+  {
+    "id": "golpe-espiritual",
+    "arquivo": "golpe-espiritual.png"
+  },
+  {
+    "id": "passo-espectral",
+    "arquivo": "passo-espectral.png"
+  },
+  {
+    "id": "veu-da-alma",
+    "arquivo": "veu-da-alma.png"
+  },
+  {
+    "id": "projecao-espiritual",
+    "arquivo": "projecao-espiritual.png"
+  },
+  {
+    "id": "lamento-espectral",
+    "arquivo": "lamento-espectral.png"
+  },
+  {
+    "id": "forma-eterea",
+    "arquivo": "forma-eterea.png"
+  },
+  {
+    "id": "rasgar-o-veu",
+    "arquivo": "rasgar-o-veu.png"
+  },
+  {
+    "id": "troca-de-almas",
+    "arquivo": "troca-de-almas.png"
+  },
+  {
+    "id": "hoste-ancestral",
+    "arquivo": "hoste-ancestral.png"
+  },
+  {
+    "id": "falar-com-espiritos",
+    "arquivo": "falar-com-espiritos.png"
+  },
+  {
+    "id": "acalmar-espirito",
+    "arquivo": "acalmar-espirito.png"
+  },
+  {
+    "id": "escudo-dos-antepassados",
+    "arquivo": "escudo-dos-antepassados.png"
+  },
+  {
+    "id": "exortar-espiritos",
+    "arquivo": "exortar-espiritos.png"
+  },
+  {
+    "id": "falar-com-os-mortos",
+    "arquivo": "falar-com-os-mortos.png"
+  },
+  {
+    "id": "selo-de-descanso",
+    "arquivo": "selo-de-descanso.png"
+  },
+  {
+    "id": "sentinela-ancestral",
+    "arquivo": "sentinela-ancestral.png"
+  },
+  {
+    "id": "exorcismo",
+    "arquivo": "exorcismo.png"
+  },
+  {
+    "id": "manto-sagrado",
+    "arquivo": "manto-sagrado.png"
+  },
+  {
+    "id": "forma-selvagem",
+    "arquivo": "forma-selvagem.png"
+  },
+  {
+    "id": "restauracao",
+    "arquivo": "restauracao.png"
+  },
+  {
+    "id": "mao-arcana",
+    "arquivo": "mao-arcana.png"
+  },
+  {
+    "id": "criar-alimento",
+    "arquivo": "criar-alimento.png"
+  },
+  {
+    "id": "disfarce-ilusorio",
+    "arquivo": "disfarce-ilusorio.png"
+  },
+  {
+    "id": "ruido-fantasma",
+    "arquivo": "ruido-fantasma.png"
+  },
+  {
+    "id": "raio-debilitante",
+    "arquivo": "raio-debilitante.png"
+  },
+  {
+    "id": "salto-arcano",
+    "arquivo": "salto-arcano.png"
+  },
+  {
+    "id": "arma-encantada",
+    "arquivo": "arma-encantada.png"
+  },
+  {
+    "id": "resistencia-a-energia",
+    "arquivo": "resistencia-a-energia.png"
+  },
+  {
+    "id": "tranca-arcana",
+    "arquivo": "tranca-arcana.png"
+  },
+  {
+    "id": "localizar-objeto",
+    "arquivo": "localizar-objeto.png"
+  },
+  {
+    "id": "sentidos-agudos",
+    "arquivo": "sentidos-agudos.png"
+  },
+  {
+    "id": "hipnotismo",
+    "arquivo": "hipnotismo.png"
+  },
+  {
+    "id": "enfeiticar-pessoa",
+    "arquivo": "enfeiticar-pessoa.png"
+  },
+  {
+    "id": "acalmar-emocoes",
+    "arquivo": "acalmar-emocoes.png"
+  },
+  {
+    "id": "escuridao",
+    "arquivo": "escuridao.png"
+  },
+  {
+    "id": "patas-de-aranha",
+    "arquivo": "patas-de-aranha.png"
+  },
+  {
+    "id": "espirito-mensageiro",
+    "arquivo": "espirito-mensageiro.png"
+  },
+  {
+    "id": "linguas",
+    "arquivo": "linguas.png"
+  },
+  {
+    "id": "sentido-de-perigo",
+    "arquivo": "sentido-de-perigo.png"
+  },
+  {
+    "id": "chamado-selvagem",
+    "arquivo": "chamado-selvagem.png"
+  },
+  {
+    "id": "imagem-maior",
+    "arquivo": "imagem-maior.png"
+  },
+  {
+    "id": "terreno-ilusorio",
+    "arquivo": "terreno-ilusorio.png"
+  },
+  {
+    "id": "espectro-ilusorio",
+    "arquivo": "espectro-ilusorio.png"
+  },
+  {
+    "id": "manto-de-sombras",
+    "arquivo": "manto-de-sombras.png"
+  },
+  {
+    "id": "esqueleto-servil",
+    "arquivo": "esqueleto-servil.png"
+  },
+  {
+    "id": "rogar-maldicao",
+    "arquivo": "rogar-maldicao.png"
+  },
+  {
+    "id": "forma-gasosa",
+    "arquivo": "forma-gasosa.png"
+  },
+  {
+    "id": "algemas-espirituais",
+    "arquivo": "algemas-espirituais.png"
+  },
+  {
+    "id": "visao-da-verdade",
+    "arquivo": "visao-da-verdade.png"
+  },
+  {
+    "id": "enfeiticar-em-massa",
+    "arquivo": "enfeiticar-em-massa.png"
+  },
+  {
+    "id": "assassino-fantasmagorico",
+    "arquivo": "assassino-fantasmagorico.png"
+  },
+  {
+    "id": "duplicata-ilusoria",
+    "arquivo": "duplicata-ilusoria.png"
+  },
+  {
+    "id": "muralha-de-ossos",
+    "arquivo": "muralha-de-ossos.png"
+  },
+  {
+    "id": "nuvem-de-podridao",
+    "arquivo": "nuvem-de-podridao.png"
+  },
+  {
+    "id": "aprisionamento",
+    "arquivo": "aprisionamento.png"
+  },
+  {
+    "id": "alterar-destino",
+    "arquivo": "alterar-destino.png"
+  },
+  {
+    "id": "projetar-consciencia",
+    "arquivo": "projetar-consciencia.png"
+  },
+  {
+    "id": "semiplano",
+    "arquivo": "semiplano.png"
+  },
+  {
+    "id": "tempestade-de-relampagos",
+    "arquivo": "tempestade-de-relampagos.png"
+  },
+  {
+    "id": "ira-dos-ceus",
+    "arquivo": "ira-dos-ceus.png"
+  },
+  {
+    "id": "prisao-de-ilusoes",
+    "arquivo": "prisao-de-ilusoes.png"
+  },
+  {
+    "id": "veu-da-divindade",
+    "arquivo": "veu-da-divindade.png"
+  },
+  {
+    "id": "convocar-espirito-da-natureza",
+    "arquivo": "convocar-espirito-da-natureza.png"
+  },
+  {
+    "id": "horda-de-sombras",
+    "arquivo": "horda-de-sombras.png"
+  },
+  {
+    "id": "semblante-divino",
+    "arquivo": "semblante-divino.png"
+  },
+  {
+    "id": "inversao-da-gravidade",
+    "arquivo": "inversao-da-gravidade.png"
+  },
+  {
+    "id": "onda-de-desespero",
+    "arquivo": "onda-de-desespero.png"
+  },
+  {
+    "id": "forma-de-colosso",
+    "arquivo": "forma-de-colosso.png"
+  },
+  {
+    "id": "onda-necrotica",
+    "arquivo": "onda-necrotica.png"
+  },
+  {
+    "id": "moldar-pensamentos",
+    "arquivo": "moldar-pensamentos.png"
+  },
+  {
+    "id": "hino-de-coragem",
+    "arquivo": "hino-de-coragem.png"
+  },
+  {
+    "id": "ancestral-convocado",
+    "arquivo": "ancestral-convocado.png"
+  },
+  {
+    "id": "prisao-dimensional",
+    "arquivo": "prisao-dimensional.png"
+  },
+  {
+    "id": "sussurro-de-sangue",
+    "arquivo": "sussurro-de-sangue.png"
+  },
+  {
+    "id": "oferenda-de-sangue",
+    "arquivo": "oferenda-de-sangue.png"
+  },
+  {
+    "id": "libertacao-das-almas",
+    "arquivo": "libertacao-das-almas.png"
+  },
+  {
+    "id": "tribunal-das-almas",
+    "arquivo": "tribunal-das-almas.png"
+  },
+  {
+    "id": "arvore-da-vida",
+    "arquivo": "arvore-da-vida.png"
+  },
+  {
+    "id": "augurio",
+    "arquivo": "augurio.png"
+  },
+  {
+    "id": "comunhao-com-a-natureza",
+    "arquivo": "comunhao-com-a-natureza.png"
+  }
+]

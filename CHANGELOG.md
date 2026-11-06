@@ -1,5 +1,13 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.15.0
+
+### Magias — Fase 1: ícones
+- Dados das 200 magias em `tools/dados/magias.json` (fonte da verdade, texto sem alteração).
+- 200 ícones em `img/magias/<id>.png` (256×256), gerados de `Downloads/img/Icones/Magias` por `npm run build:icones-magias -- --de "<pasta>"`: casamento por nome em ASCII; "Manto de Sombra.png" → Manto de Sombras (exceção confirmada). Repetível: rodar de novo pega imagens novas e não regrava as iguais.
+- Manifesto `tools/dados/magias_icones.json` e relatório `tools/relatorio-icones-magias.md` (magias sem imagem e imagens sem magia).
+- Leitor de PNG dos builds aceita PNG RGB; gravador com filtro por linha (opcional) para imagens opacas.
+
 ## 0.14.2
 
 ### Ataque
