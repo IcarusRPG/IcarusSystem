@@ -157,7 +157,7 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 ## Barras do token e carrossel de combate
 
 - **Token:** barras de PV e PM abaixo do token e escudo com a Defesa (Configurações do sistema → "Token: …" para quem vê o quê). NPC = ator sem dono jogador.
-- **Carrossel:** aparece com um combate na cena (mesmo antes de começar). Configurações do mundo (ligar, forçar com o módulo Combat Carousel) e de cada usuário (mostrar, posição, tamanho, mini barras, banner de rodada, som).
+- **Carrossel:** aparece com um combate na cena (mesmo antes de começar). Cada um arrasta pela alça (duplo clique volta ao lugar padrão). Iniciativa: dado na carta sem iniciativa, "Rolar iniciativa" (jogador) e rolar todos / só NPCs (Mestre). Configurações do mundo (ligar, forçar com o módulo Combat Carousel) e de cada usuário (mostrar, posição, tamanho, mini barras, banner de rodada, som).
 - **Artes opcionais** (use se existirem; depois de adicionar, rode `npm run gerar:dados` para o sistema enxergá-las):
   - `img/ui/escudo-defesa.png` — brasão do escudo, ~128×148, fundo transparente (o número da Defesa é escrito por cima).
   - `img/ui/carrossel/carta.png` e `carta-ativa.png` — moldura da carta, 256×256 (o retrato fica por cima, com 8% de margem).

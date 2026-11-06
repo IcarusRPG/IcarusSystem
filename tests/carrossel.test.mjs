@@ -1,7 +1,7 @@
 /** Carrossel de combate: cartas visíveis, turno, próximos, ocultos, derrotados e barras. */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { cartasDoCombate, rodadaNova } from "../module/carrossel-dados.mjs";
+import { cartasDoCombate, rodadaNova, paraRolar, limitarNaTela } from "../module/carrossel-dados.mjs";
 
 const hud = { npcModo: "mestre", mostrarPM: true, mostrarDefesa: true, texto: "passarMouse" };
 const c = (id, extra = {}) => ({ id, nome: id, img: `${id}.png`, iniciativa: 10, oculto: false, derrotado: false, disposicao: 1, ehPJ: true, pv: { value: 10, max: 20 }, pm: { value: 3, max: 6 }, ...extra });
@@ -43,4 +43,20 @@ test("Banner de rodada só quando a rodada muda (e é maior que 0)", () => {
   assert.equal(rodadaNova(2, 2), false);
   assert.equal(rodadaNova(0, 0), false);
   assert.equal(rodadaNova(0, 1), true);
+});
+
+test("Rolar iniciativa: jogador só os seus sem iniciativa; Mestre todos sem iniciativa", () => {
+  const combs = [c("Ana", { dono: true, iniciativa: null }), c("Bia", { iniciativa: null }), c("Ogro", { ehPJ: false, iniciativa: null }), c("Caio", { dono: true, iniciativa: 14 })];
+  const jogador = cartasDoCombate({ combatentes: combs, turnoId: null, visao: { ehMestre: false, hud, mostrarBarras: true } });
+  assert.deepEqual(paraRolar(jogador), ["Ana"]);
+  const mestre = cartasDoCombate({ combatentes: combs, turnoId: null, visao: { ehMestre: true, hud, mostrarBarras: true } });
+  assert.deepEqual(paraRolar(mestre), ["Ana", "Bia", "Ogro"]);
+});
+
+test("Faixa arrastada fica sempre inteira na tela", () => {
+  const tela = { W: 1400, H: 800 }, tam = { w: 900, h: 180 };
+  assert.deepEqual(limitarNaTela({ x: 100, y: 200 }, tam, tela), { x: 100, y: 200 });
+  assert.deepEqual(limitarNaTela({ x: -50, y: -20 }, tam, tela), { x: 4, y: 4 });
+  assert.deepEqual(limitarNaTela({ x: 1200, y: 790 }, tam, tela), { x: 496, y: 616 });
+  assert.deepEqual(limitarNaTela({ x: 50, y: 50 }, { w: 2000, h: 900 }, tela), { x: 4, y: 4 }, "maior que a tela: encosta no canto");
 });

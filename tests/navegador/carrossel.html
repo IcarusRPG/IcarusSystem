@@ -27,6 +27,7 @@
   <button id="entrar">Entra combatente</button>
   <button id="sair">Sai combatente</button>
   <button id="dano">Dano na Lira (−8)</button>
+  <button id="semIni">Tirar a iniciativa de todos</button>
   <div id="log"></div>
 </aside>
 <script type="module">
@@ -38,7 +39,7 @@ const cfg = new Map(Object.entries({ carrosselAtivo: true, carrosselForcar: fals
 const img = n => `/img/Icones/tokens/personagens/miniaturas/token-${n}.png`;
 const mk = (id, nome, ini, extra = {}) => ({ id, name: nome, initiative: ini, hidden: false, isDefeated: false, img: img(extra.img ?? "dourado"),
   token: { disposition: extra.disp ?? 1, texture: { src: img(extra.img ?? "dourado") } },
-  actor: { isOwner: !!extra.dono, hasPlayerOwner: extra.pj ?? true, system: { pv: { value: extra.pv ?? 20, max: 30 }, pm: { value: 5, max: 10 } }, sheet: { render() {} } }, ...extra.cb });
+  isOwner: !!extra.dono, actor: { isOwner: !!extra.dono, hasPlayerOwner: extra.pj ?? true, system: { pv: { value: extra.pv ?? 20, max: 30 }, pm: { value: 5, max: 10 } }, sheet: { render() {} } }, ...extra.cb });
 const turnos = [
   mk("c1", "Lira", 22, { img: "ladino", dono: true, pv: 14 }), mk("c2", "Ogro das Cavernas", 19, { img: "barbaro", pj: false, disp: -1 }),
   mk("c3", "Alokerl", 17, { img: "guerreiro" }), mk("c4", "Assassino", 15, { img: "anatema", pj: false, disp: -1, cb: { hidden: true } }),
@@ -46,8 +47,12 @@ const turnos = [
   mk("c7", "Mercador", 6, { img: "nobre", pj: false, disp: 0 }), mk("c8", "Druida", 4, { img: "druida" })
 ];
 const combate = { id: "cb1", scene: null, started: false, round: 0, turn: 0, turns: turnos, combatants: { get size() { return combate.turns.length; }, get: id => combate.turns.find(t => t.id === id) },
-  get combatant() { return this.turns[this.turn]; }, previousTurn() {}, nextTurn() {}, startCombat() {}, endCombat() {} };
-globalThis.game = { user: { isGM: true }, combat: combate, modules: new Map(), settings: { register() {}, get: (_s, k) => cfg.get(k) },
+  get combatant() { return this.turns[this.turn]; }, previousTurn() {}, nextTurn() {}, startCombat() {}, endCombat() {},
+  rolados: [],
+  async rollInitiative(ids) { for (const id of ids) { const cb = this.combatants.get(id); cb.initiative = 1 + Math.floor(Math.random() * 20); this.rolados.push(id); } disparar("updateCombatant"); },
+  async rollAll() { return this.rollInitiative(this.turns.filter(t => t.initiative == null).map(t => t.id)); },
+  async rollNPC() { return this.rollInitiative(this.turns.filter(t => t.initiative == null && !t.actor.hasPlayerOwner).map(t => t.id)); } };
+globalThis.game = { user: { isGM: true }, combat: combate, modules: new Map(), settings: { register() {}, get: (_s, k) => cfg.get(k) ?? null, set: async (_s, k, v) => cfg.set(k, v) },
   i18n: { localize: pegar, format: (k, d) => pegar(k).replace(/\{(\w+)\}/g, (_, n) => d[n]) } };
 globalThis.canvas = { scene: { id: "cena" }, animatePan() {} };
 globalThis.ui = { notifications: { info() {} } };
@@ -65,6 +70,7 @@ id("proximo").onclick = () => { combate.turn++; if (combate.turn >= combate.turn
 let n = 9;
 id("entrar").onclick = () => { combate.turns.splice(3, 0, mk(`c${n++}`, "Lobo", 16, { img: "patrulheiro", pj: false, disp: -1 })); disparar("createCombatant"); };
 id("sair").onclick = () => { combate.turns.splice(3, 1); disparar("deleteCombatant"); };
+id("semIni").onclick = () => { for (const t of combate.turns) t.initiative = null; disparar("updateCombatant"); };
 id("dano").onclick = () => { turnos[0].actor.system.pv.value -= 8; disparar("updateActor"); };
 window.combate = combate; window.disparar = disparar; window.cfg = cfg;
 log("pronto");

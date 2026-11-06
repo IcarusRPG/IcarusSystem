@@ -11,7 +11,7 @@ export const DISPOSICOES = { "-2": "secreto", "-1": "hostil", 0: "neutro", 1: "a
 
 /**
  * @param {object} p
- * @param {{ id, nome, img, iniciativa, oculto, derrotado, disposicao, ehPJ, pv?, pm? }[]} p.combatentes  em ordem
+ * @param {{ id, nome, img, iniciativa, oculto, derrotado, disposicao, ehPJ, dono?, pv?, pm? }[]} p.combatentes  em ordem
  * @param {string|null} p.turnoId   combatente do turno (null = combate não começou)
  * @param {{ ehMestre: boolean, hud: object, mostrarBarras: boolean }} p.visao
  * @returns {object[]} cartas visíveis
@@ -30,6 +30,8 @@ export function cartasDoCombate({ combatentes, turnoId, visao }) {
       nome: c.nome,
       img: c.img,
       iniciativa: c.iniciativa ?? null,
+      // Dado na carta: sem iniciativa ainda, e o usuário é o Mestre ou o dono do combatente
+      podeRolar: (c.iniciativa === null || c.iniciativa === undefined) && (visao.ehMestre || !!c.dono),
       ativo: c.id === turnoId,
       proximo: proximos.get(c.id) ?? 0,
       oculto: !!c.oculto,
@@ -43,3 +45,18 @@ export function cartasDoCombate({ combatentes, turnoId, visao }) {
 
 /** Rodada nova (para o banner)? */
 export const rodadaNova = (antes, depois) => Number(depois) > 0 && Number(depois) !== Number(antes);
+
+/** Combatentes que este usuário pode rolar agora (sem iniciativa; Mestre: todos; jogador: os seus). */
+export const paraRolar = cartas => cartas.filter(c => c.podeRolar).map(c => c.id);
+
+/**
+ * Posição livre (arrastada) dentro da tela: a faixa inteira fica visível (margem de 4 px).
+ * @param {{ x: number, y: number }} p   canto superior esquerdo (px)
+ * @param {{ w: number, h: number }} tam  tamanho da faixa
+ * @param {{ W: number, H: number }} tela
+ */
+export function limitarNaTela(p, tam, tela, margem = 4) {
+  const x = Math.min(Math.max(margem, p.x), Math.max(margem, tela.W - tam.w - margem));
+  const y = Math.min(Math.max(margem, p.y), Math.max(margem, tela.H - tam.h - margem));
+  return { x: Math.round(x), y: Math.round(y) };
+}
