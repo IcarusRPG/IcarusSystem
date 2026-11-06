@@ -1135,6 +1135,8 @@ body.game {
 }
 @keyframes carrossel-brasas { from { transform: translateY(0); } to { transform: translateY(-45%); } }
 .icarus-carrossel .carrossel-trilho {
+  /* O trilho é quem encolhe (rola); alça, rodada e botões ficam sempre inteiros */
+  flex: 1 1 auto; min-width: 0;
   display: flex; align-items: flex-start; gap: 10px; overflow-x: auto; overflow-y: visible; scrollbar-width: none;
   /* Espaço para a coroa e a runa da carta ativa (a rolagem horizontal também corta na vertical) */
   padding: calc(var(--carta) * 0.5) calc(var(--carta) * 0.3) calc(var(--carta) * 0.2); pointer-events: auto; position: relative; z-index: 1;
@@ -1154,7 +1156,7 @@ body.game {
 }
 .icarus-carrossel .carrossel-rodada span { font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; }
 .icarus-carrossel .carrossel-rodada b { font-size: calc(var(--carta) * 0.24); line-height: 1; }
-.icarus-carrossel .carrossel-mestre { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 4px; }
+.icarus-carrossel .carrossel-mestre { position: relative; z-index: 2; flex: none; display: flex; flex-direction: column; gap: 4px; }
 .icarus-carrossel .carrossel-mestre button {
   padding: 5px 7px; border: 1px solid rgba(216, 180, 90, 0.55); border-radius: 6px; background: rgba(30, 16, 50, 0.95); color: var(--ouro-claro);
 }
@@ -1268,3 +1270,31 @@ body.game {
 @media (prefers-reduced-motion: reduce) {
   .icarus-carrossel *, .icarus-carrossel *::before, .icarus-banner-rodada, .icarus-seu-turno { animation: none !important; transition: none !important; }
 }
+
+/* Carrossel: alça de mover e iniciativa */
+.icarus-carrossel .carrossel-alca {
+  position: relative; z-index: 2; flex: none; align-self: stretch; padding: 0 5px; border: 0; border-radius: 6px;
+  background: rgba(216, 180, 90, 0.12); color: var(--ouro-claro); cursor: grab; touch-action: none;
+}
+.icarus-carrossel .carrossel-alca:hover { background: rgba(216, 180, 90, 0.25); }
+.icarus-carrossel.arrastando .carrossel-alca { cursor: grabbing; }
+.icarus-carrossel.arrastando .carrossel-faixa { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 0 1px var(--ouro), inset 0 0 18px rgba(139, 92, 246, 0.35); }
+.icarus-carrossel .carrossel-iniciativa { position: relative; z-index: 2; flex: none; display: flex; flex-direction: column; gap: 4px; }
+.icarus-carrossel .carrossel-iniciativa:not(:has(button:not([hidden]))) { display: none; }
+.icarus-carrossel .carrossel-iniciativa button {
+  padding: 5px 7px; border: 1px solid rgba(216, 180, 90, 0.7); border-radius: 6px; color: #1a0f2b;
+  background: radial-gradient(circle at 35% 30%, #fff1c2, #d8b45a 55%, #8a6a22 100%);
+  box-shadow: 0 0 8px rgba(216, 180, 90, 0.55); animation: carrossel-rolar 1.6s ease-in-out infinite;
+}
+.icarus-carrossel .carrossel-iniciativa button[hidden] { display: none; }
+@keyframes carrossel-rolar { 0%, 100% { box-shadow: 0 0 6px rgba(216, 180, 90, 0.45); } 50% { box-shadow: 0 0 14px rgba(241, 217, 143, 0.95); } }
+.icarus-carrossel .carta-ini[hidden], .icarus-carrossel .carta-rolar[hidden] { display: none; }
+.icarus-carrossel .carta-rolar {
+  position: absolute; right: -8%; bottom: -8%; z-index: 4; display: grid; place-items: center; padding: 0;
+  width: calc(var(--carta) * 0.36); height: calc(var(--carta) * 0.36); min-width: 24px; min-height: 24px; border-radius: 50%;
+  border: 1px solid #fff1c2; color: #fff; font-size: calc(var(--carta) * 0.2);
+  background: radial-gradient(circle at 35% 30%, #ff8a7a, #b3121c 55%, #5a0a10 100%);
+  box-shadow: 0 0 0 2px #2a1640, 0 0 10px rgba(228, 87, 79, 0.8); animation: carrossel-rolar 1.6s ease-in-out infinite;
+}
+.icarus-carrossel .carta-rolar:hover { transform: scale(1.1); }
+.icarus-carrossel .carta-rolar:disabled { opacity: 0.5; animation: none; }

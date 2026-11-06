@@ -1488,7 +1488,12 @@
         "Banner": "Carrossel: banner de nova rodada",
         "Som": "Carrossel: som de \"seu turno\"",
         "SomDica": "Toca audio/ui/seu-turno.ogg, se o arquivo existir no sistema."
-      }
+      },
+      "Mover": "Arraste para mover o carrossel (duplo clique: volta ao lugar padrão)",
+      "RolarMeus": "Rolar iniciativa (seus personagens)",
+      "RolarTodos": "Rolar iniciativa de todos (sem iniciativa)",
+      "RolarNPCs": "Rolar iniciativa só dos NPCs",
+      "RolarEste": "Rolar iniciativa"
     }
   }
 }

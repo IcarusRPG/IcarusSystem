@@ -7,9 +7,12 @@
  * Arte opcional em img/ui/carrossel/ (carta.png, carta-ativa.png, faixa.png, banner-rodada.png) e
  * som opcional em audio/ui/seu-turno.ogg: usados se existirem; senão, CSS.
  * Se o módulo "Combat Carousel" estiver ativo, o nosso fica desligado (o Mestre pode forçar).
+ * Cada usuário arrasta a faixa pela alça (posição salva só para ele; duplo clique volta ao padrão).
+ * Iniciativa: dado na carta sem iniciativa (dono ou Mestre), "Rolar iniciativa" (os seus) e, para o
+ * Mestre, rolar de todos e só dos NPCs (pelo Combat do Foundry: fórmula do sistema).
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { cartasDoCombate, rodadaNova } from "./carrossel-dados.mjs";
+import { cartasDoCombate, rodadaNova, paraRolar, limitarNaTela } from "./carrossel-dados.mjs";
 import { existeArquivoUi } from "./token-barras.mjs";
 
 const F = SISTEMA_ID;
@@ -40,7 +43,7 @@ function combatentesDe(combate) {
     return {
       id: cb.id, nome: cb.name, img: cb.token?.texture?.src || cb.img || actor?.img,
       iniciativa: cb.initiative, oculto: cb.hidden, derrotado: cb.isDefeated,
-      disposicao: cb.token?.disposition ?? 0, ehPJ: !!actor?.hasPlayerOwner,
+      disposicao: cb.token?.disposition ?? 0, ehPJ: !!actor?.hasPlayerOwner, dono: !!cb.isOwner,
       pv: s?.pv ? { value: s.pv.value, max: s.pv.max } : null, pm: s?.pm ? { value: s.pm.value, max: s.pm.max } : null
     };
   });
@@ -70,10 +73,16 @@ class Carrossel {
     el.setAttribute("aria-label", loc("ICARUS.Carrossel.Titulo"));
     el.innerHTML = `
       <div class="carrossel-faixa">
+        <button type="button" class="carrossel-alca" aria-label=""><i class="fa-solid fa-grip-vertical" aria-hidden="true"></i></button>
         <div class="carrossel-rodada" aria-live="polite"><span></span><b></b></div>
         <button type="button" class="carrossel-seta esq" aria-label=""><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
         <div class="carrossel-trilho" role="list"></div>
         <button type="button" class="carrossel-seta dir" aria-label=""><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="carrossel-iniciativa">
+          <button type="button" data-rolar="meus" aria-label="" hidden><i class="fa-solid fa-dice-d20" aria-hidden="true"></i></button>
+          <button type="button" data-rolar="todos" aria-label="" hidden><i class="fa-solid fa-dice" aria-hidden="true"></i></button>
+          <button type="button" data-rolar="npcs" aria-label="" hidden><i class="fa-solid fa-dragon" aria-hidden="true"></i></button>
+        </div>
         <div class="carrossel-mestre" hidden>
           <button type="button" data-acao="anterior" aria-label=""><i class="fa-solid fa-backward-step" aria-hidden="true"></i></button>
           <button type="button" data-acao="proximo" aria-label=""><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
@@ -86,6 +95,12 @@ class Carrossel {
       b.title = b.ariaLabel = loc(titulos[b.dataset.acao]);
       b.addEventListener("click", () => this.acaoDoMestre(b.dataset.acao));
     }
+    const rotulosRolar = { meus: "ICARUS.Carrossel.RolarMeus", todos: "ICARUS.Carrossel.RolarTodos", npcs: "ICARUS.Carrossel.RolarNPCs" };
+    for (const b of el.querySelectorAll("[data-rolar]")) {
+      b.title = b.ariaLabel = loc(rotulosRolar[b.dataset.rolar]);
+      b.addEventListener("click", () => this.rolar(b.dataset.rolar));
+    }
+    this.ligarAlca(el.querySelector(".carrossel-alca"));
     const trilho = el.querySelector(".carrossel-trilho");
     el.querySelector(".esq").title = el.querySelector(".esq").ariaLabel = loc("ICARUS.Carrossel.RolarEsquerda");
     el.querySelector(".dir").title = el.querySelector(".dir").ariaLabel = loc("ICARUS.Carrossel.RolarDireita");
@@ -105,6 +120,58 @@ class Carrossel {
     this.el?.remove();
     this.el = null;
     this.cartas.clear();
+  }
+
+  /**
+   * Alça: arrasta a faixa (ponteiro/toque) e salva a posição deste usuário; duplo clique volta ao padrão.
+   */
+  ligarAlca(alca) {
+    alca.title = alca.ariaLabel = loc("ICARUS.Carrossel.Mover");
+    alca.addEventListener("pointerdown", ev => {
+      if (ev.button !== 0) return;
+      ev.preventDefault();
+      alca.setPointerCapture(ev.pointerId);
+      const r = this.el.getBoundingClientRect();
+      this.arrasto = { dx: ev.clientX - r.left, dy: ev.clientY - r.top };
+      this.el.classList.add("arrastando");
+    });
+    alca.addEventListener("pointermove", ev => {
+      if (!this.arrasto) return;
+      this.aplicarLugar({ x: ev.clientX - this.arrasto.dx, y: ev.clientY - this.arrasto.dy });
+    });
+    const soltar = () => {
+      if (!this.arrasto) return;
+      this.arrasto = null;
+      this.el.classList.remove("arrastando");
+      const r = this.el.getBoundingClientRect();
+      game.settings.set(F, "carrosselLugar", { x: Math.round(r.left), y: Math.round(r.top) });
+    };
+    alca.addEventListener("pointerup", soltar);
+    alca.addEventListener("pointercancel", soltar);
+    alca.addEventListener("dblclick", async () => {
+      await game.settings.set(F, "carrosselLugar", null);
+      this.posicionar();
+    });
+  }
+
+  /** Põe a faixa na posição livre, sempre inteira na tela. */
+  aplicarLugar(p) {
+    const r = this.el.getBoundingClientRect();
+    const { x, y } = limitarNaTela(p, { w: r.width, h: r.height }, { W: window.innerWidth, H: window.innerHeight });
+    this.el.style.left = `${x}px`;
+    this.el.style.top = `${y}px`;
+    this.el.style.bottom = "";
+  }
+
+  /** Rolar iniciativa: os seus (jogador), todos ou só NPCs (Mestre), ou um combatente da carta. */
+  async rolar(quem, id = null) {
+    const c = game.combat;
+    if (!c) return;
+    if (id) return c.rollInitiative([id]);
+    if (quem === "todos" && game.user.isGM) return c.rollAll();
+    if (quem === "npcs" && game.user.isGM) return c.rollNPC();
+    const ids = paraRolar(cartasDoCombate({ combatentes: combatentesDe(c), turnoId: null, visao: visao() }));
+    if (ids.length) return c.rollInitiative(ids);
   }
 
   /** Abaixo da barra de cenas (ou acima da hotbar), entre a esquerda e a barra lateral; até 70% da tela. */
@@ -131,6 +198,10 @@ class Carrossel {
     }
     el.classList.remove("tam-p", "tam-m", "tam-g");
     el.classList.add(`tam-${cfg("carrosselTamanho")}`);
+    // Posição livre (arrastada por este usuário), se houver
+    const lugar = cfg("carrosselLugar");
+    el.classList.toggle("movido", !!lugar);
+    if (lugar && !this.arrasto) this.aplicarLugar(lugar);
   }
 
   agendar() {
@@ -149,6 +220,11 @@ class Carrossel {
     const cartas = cartasDoCombate({ combatentes: combatentesDe(combate), turnoId, visao: visao() });
     this.el.querySelector(".carrossel-rodada b").textContent = combate.started ? String(combate.round) : "–";
     this.el.querySelector(".carrossel-mestre").hidden = !game.user.isGM;
+    // Botões de iniciativa: jogador rola os seus; Mestre rola todos ou só os NPCs (se faltar alguém)
+    const faltam = paraRolar(cartas).length > 0;
+    this.el.querySelector('[data-rolar="meus"]').hidden = game.user.isGM || !faltam;
+    this.el.querySelector('[data-rolar="todos"]').hidden = !game.user.isGM || !faltam;
+    this.el.querySelector('[data-rolar="npcs"]').hidden = !game.user.isGM || !cartas.some(x => x.podeRolar && !combate.combatants.get(x.id)?.actor?.hasPlayerOwner);
     this.reconciliar(cartas);
     // Rodada nova e turno novo (mesmo combate)
     const mesmo = this.ultimo.combateId === combate.id;
@@ -183,10 +259,15 @@ class Carrossel {
       <div class="carta-moldura">
         <div class="carta-retrato"><img alt="" draggable="false"></div>
         <span class="carta-ini"></span>
+        <button type="button" class="carta-rolar" aria-label="" hidden><i class="fa-solid fa-dice-d20" aria-hidden="true"></i></button>
         <span class="carta-estado" aria-hidden="true"></span>
       </div>
       <div class="carta-nome"></div>
       <div class="carta-barras"><i class="pv"><b></b></i><i class="pm"><b></b></i></div>`;
+    const dado = el.querySelector(".carta-rolar");
+    dado.title = dado.ariaLabel = loc("ICARUS.Carrossel.RolarEste");
+    dado.addEventListener("click", ev => { ev.stopPropagation(); dado.disabled = true; this.rolar(null, id).finally(() => { dado.disabled = false; }); });
+    dado.addEventListener("dblclick", ev => ev.stopPropagation());
     el.addEventListener("click", () => focarCombatente(id));
     el.addEventListener("keydown", ev => { if (ev.key === "Enter") focarCombatente(id); });
     el.addEventListener("dblclick", () => abrirFicha(id));
@@ -208,6 +289,9 @@ class Carrossel {
     el.querySelector(".carta-nome").textContent = c.nome;
     el.title = c.nome;
     el.querySelector(".carta-ini").textContent = c.iniciativa === null ? "–" : String(c.iniciativa);
+    // Sem iniciativa e com permissão: o selo vira um dado para rolar
+    el.querySelector(".carta-ini").hidden = c.podeRolar;
+    el.querySelector(".carta-rolar").hidden = !c.podeRolar;
     const estado = el.querySelector(".carta-estado");
     estado.innerHTML = c.derrotado ? `<i class="fa-solid fa-skull"></i>` : c.oculto ? `<i class="fa-solid fa-eye-slash"></i>` : "";
     for (const tipo of ["pv", "pm"]) {
@@ -317,6 +401,8 @@ export function registrarCarrossel() {
     choices: { p: "ICARUS.Carrossel.Config.Pequeno", m: "ICARUS.Carrossel.Config.Medio", g: "ICARUS.Carrossel.Config.Grande" } });
   reg("carrosselBarras", "client", { name: "ICARUS.Carrossel.Config.Barras", type: Boolean, default: true });
   reg("carrosselBanner", "client", { name: "ICARUS.Carrossel.Config.Banner", type: Boolean, default: true });
+  // Posição arrastada (por usuário); sem onChange: muda só ao arrastar ou no duplo clique da alça
+  game.settings.register(F, "carrosselLugar", { scope: "client", config: false, type: Object, default: null });
   reg("carrosselSom", "client", { name: "ICARUS.Carrossel.Config.Som", hint: "ICARUS.Carrossel.Config.SomDica", type: Boolean, default: true });
 
   const atualizar = () => carrossel.agendar();

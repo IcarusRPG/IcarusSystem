@@ -1,5 +1,12 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.13.1
+
+### Carrossel de combate
+- **Mover:** alça na ponta da faixa para arrastar o carrossel (Mestre e jogadores); a posição fica salva para cada usuário e a faixa nunca sai da tela. Duplo clique na alça volta ao lugar padrão.
+- **Rolar iniciativa:** dado vermelho na carta de quem ainda não tem iniciativa (para o dono e para o Mestre); botão "Rolar iniciativa" para os personagens do jogador; para o Mestre, rolar de todos e só dos NPCs. Usa a fórmula do sistema (1d20 + Iniciativa).
+- Com pouco espaço, o trilho das cartas encolhe (e rola) sem cortar a alça e os botões.
+
 ## 0.13.0
 
 ### Barras de PV/PM e escudo de Defesa no token
