@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { GERADOS, moduloDe } from "../tools/gerar-dados.mjs";
+import { GERADOS, moduloDe, listarArquivosUi } from "../tools/gerar-dados.mjs";
 import { documentosNovos, mudancasDoPoder, metaDoPoder } from "../module/dados-compendios.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
 import { ICONE_PADRAO, PERICIAS } from "../module/config.mjs";
@@ -25,6 +25,10 @@ test("module/dados está em sincronia com tools/dados (rode npm run gerar:dados 
     const gerado = fs.readFileSync(path.join(RAIZ, "module", "dados", `${nome}.mjs`), "utf8");
     assert.equal(gerado.replace(/\r\n/g, "\n"), moduloDe(nome), `module/dados/${nome}.mjs desatualizado`);
   }
+});
+
+test("Lista de arquivos opcionais de interface (img/ui, audio/ui) em dia com o disco", () => {
+  assert.deepEqual(ler("arquivos-ui"), listarArquivosUi(), "rode npm run gerar:dados");
 });
 
 test("Anexos: 13 tipos de dano, 12 armaduras, 60 poderes, 20 divindades, 36 condições, todos coerentes", () => {

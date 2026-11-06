@@ -1443,6 +1443,52 @@
         "MostrarCD": "Porta trancada: mostrar a CD aos jogadores",
         "MostrarCDDica": "Desligado: a CD fica só com o Mestre."
       }
+    },
+    "Hud": {
+      "Config": {
+        "Ativo": "Token: barras de PV/PM e escudo de Defesa",
+        "AtivoDica": "Desenha as barras do Icarus abaixo do token (no lugar das barras padrão) e o escudo com a Defesa.",
+        "Npc": "Token: barras de NPCs e monstros",
+        "NpcDica": "Personagens de jogadores mostram PV, PM e Defesa para todos. NPCs (sem dono jogador):",
+        "NpcMestre": "Só o Mestre vê",
+        "NpcPorcentagem": "Jogadores veem só o PV, sem números",
+        "PM": "Token: mostrar a barra de PM",
+        "Defesa": "Token: mostrar o escudo de Defesa",
+        "Texto": "Token: texto atual/máx das barras",
+        "TextoMouse": "Ao passar o mouse (ou com o token selecionado)",
+        "TextoSempre": "Sempre",
+        "TextoNunca": "Nunca"
+      }
+    },
+    "Carrossel": {
+      "Titulo": "Carrossel de combate",
+      "Rodada": "Rodada",
+      "RodadaN": "RODADA {n}",
+      "SeuTurno": "SEU TURNO",
+      "Anterior": "Turno anterior",
+      "Proximo": "Próximo turno (ou começar)",
+      "Encerrar": "Encerrar combate",
+      "RolarEsquerda": "Rolar para a esquerda",
+      "RolarDireita": "Rolar para a direita",
+      "Concorrente": "O módulo Combat Carousel está ativo: o carrossel do Icarus fica desligado (pode forçar nas configurações do sistema).",
+      "Config": {
+        "Ativo": "Carrossel de combate (mundo)",
+        "AtivoDica": "Mostra as cartas dos combatentes no topo da tela durante o combate.",
+        "Forcar": "Carrossel: mostrar mesmo com o módulo Combat Carousel",
+        "ForcarDica": "Com o módulo ativo, o carrossel do Icarus fica desligado para não duplicar.",
+        "Mostrar": "Carrossel: mostrar para mim",
+        "Posicao": "Carrossel: posição",
+        "Topo": "Topo",
+        "Base": "Base",
+        "Tamanho": "Carrossel: tamanho das cartas",
+        "Pequeno": "Pequeno",
+        "Medio": "Médio",
+        "Grande": "Grande",
+        "Barras": "Carrossel: mini barras de PV/PM",
+        "Banner": "Carrossel: banner de nova rodada",
+        "Som": "Carrossel: som de \"seu turno\"",
+        "SomDica": "Toca audio/ui/seu-turno.ogg, se o arquivo existir no sistema."
+      }
     }
   }
 }

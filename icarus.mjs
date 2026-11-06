@@ -29,6 +29,8 @@ import { registrarTokens } from "./module/token.mjs";
 import { registrarMidias } from "./module/midias.mjs";
 import { registrarInteracao } from "./module/interacao.mjs";
 import { registrarPortaTrancada } from "./module/porta-trancada.mjs";
+import { registrarBarrasDoToken } from "./module/token-barras.mjs";
+import { registrarCarrossel } from "./module/carrossel.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
@@ -45,7 +47,7 @@ import "./module/classes/guerreiro.mjs";
 import "./module/classes/samurai.mjs";
 import "./module/classes/monge.mjs";
 import "./module/recursos.mjs";
-import { registrarMigracoes } from "./module/migracoes.mjs";
+import { registrarMigracoes, BARRAS_DO_TOKEN } from "./module/migracoes.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
 import { registrarAtalhos } from "./module/atalhos.mjs";
 import { registrarIniciativa } from "./module/iniciativa.mjs";
@@ -142,6 +144,10 @@ Hooks.once("init", () => {
   // Interação por proximidade (portas, tiles, notas, tokens) e porta trancada
   registrarInteracao();
   registrarPortaTrancada();
+  // Barras de PV/PM e escudo de Defesa no token
+  registrarBarrasDoToken();
+  // Carrossel de combate (depois das barras: usa as configurações delas)
+  registrarCarrossel();
   game.icarus.migrarBonusDeOrigem = migrarBonusDeOrigem;
   game.icarus.adicionarItensDeOrigem = adicionarItensQueFaltam;
 
@@ -172,7 +178,8 @@ Hooks.once("init", () => {
 /** Personagem novo recebe o dado azul como imagem e token, e o token fica ligado à ficha. */
 Hooks.on("preCreateActor", (actor, dados) => {
   if (actor.type !== "personagem") return;
-  const atualizacao = { "prototypeToken.actorLink": true };
+  // Token ligado à ficha, com as barras PV (bar1) e PM (bar2)
+  const atualizacao = { "prototypeToken.actorLink": true, ...BARRAS_DO_TOKEN };
   if (!dados.img || dados.img === Actor.DEFAULT_ICON) {
     atualizacao.img = ICONE_PADRAO;
     atualizacao["prototypeToken.texture.src"] = ICONE_PADRAO;

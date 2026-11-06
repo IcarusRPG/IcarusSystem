@@ -13,8 +13,28 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const GERADOS = [
   "armas", "tipos-dano", "armaduras", "poderes-concedidos", "panteao", "condicoes",
   "icones-armaduras", "icones-divindades", "icones-condicoes", "macros",
-  "classes", "icones-classes", "proficiencias-classes", "vinculos", "origens", "itens-comuns", "tokens", "icones-itens-comuns"
+  "classes", "icones-classes", "proficiencias-classes", "vinculos", "origens", "itens-comuns", "tokens", "icones-itens-comuns", "arquivos-ui"
 ];
+
+/**
+ * Arquivos opcionais de interface que existem (arte do escudo e do carrossel, som de "seu turno"):
+ * listados no build para o sistema não precisar pedir ao servidor (pedido de arquivo ausente
+ * aparece como erro 404 no console). Grava tools/dados/arquivos-ui.json.
+ */
+export const PASTAS_UI = ["img/ui", "audio/ui"];
+export function listarArquivosUi() {
+  const lista = [];
+  const andar = rel => {
+    const abs = path.join(RAIZ, ...rel.split("/"));
+    if (!fs.existsSync(abs)) return;
+    for (const e of fs.readdirSync(abs, { withFileTypes: true })) {
+      if (e.isDirectory()) andar(`${rel}/${e.name}`);
+      else lista.push(`${rel}/${e.name}`);
+    }
+  };
+  for (const p of PASTAS_UI) andar(p);
+  return { arquivos: lista.sort() };
+}
 
 /** Conteúdo do módulo gerado para um JSON. */
 export function moduloDe(nome) {
@@ -26,6 +46,7 @@ export function moduloDe(nome) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const destino = path.join(RAIZ, "module", "dados");
   fs.mkdirSync(destino, { recursive: true });
+  fs.writeFileSync(path.join(RAIZ, "tools", "dados", "arquivos-ui.json"), JSON.stringify(listarArquivosUi(), null, 2) + "\n");
   for (const nome of GERADOS) {
     fs.writeFileSync(path.join(destino, `${nome}.mjs`), moduloDe(nome));
     console.log(`module/dados/${nome}.mjs`);

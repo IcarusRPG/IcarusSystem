@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste das barras do token (Icarus RPG)</title>
+<style>body { margin: 0; background: #1b1f16; font-family: sans-serif; color: #ddd; } #log { position: fixed; right: 8px; top: 8px; font: 12px monospace; white-space: pre; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+</head>
+<body>
+<!-- Fora do Foundry: o mesmo module/token-barras.mjs desenhando em tokens PIXI simulados (PixiJS 7.2.4, o do Foundry v12).
+     Servir a raiz do projeto e abrir /tests/navegador/token-barras.html -->
+<div id="log"></div>
+<script type="module">
+const app = new PIXI.Application({ width: 900, height: 520, backgroundColor: 0x2a3322, antialias: true, resolution: devicePixelRatio, autoDensity: true });
+document.body.appendChild(app.view);
+const ganchos = {};
+const cfg = new Map([["hudAtivo", true], ["hudNpcModo", "mestre"], ["hudMostrarPM", true], ["hudMostrarDefesa", true], ["hudTexto", "passarMouse"]]);
+globalThis.game = { user: { isGM: false }, settings: { register() {}, get: (_s, k) => cfg.get(k) } };
+globalThis.canvas = { app, tokens: { placeables: [] } };
+globalThis.Hooks = { on: (n, f) => (ganchos[n] = f), once: (n, f) => (ganchos[n] = f) };
+const { registrarBarrasDoToken, atualizarTodos } = await import("/module/token-barras.mjs");
+registrarBarrasDoToken();
+
+const textura = await PIXI.Assets.load("/img/Icones/tokens/personagens/miniaturas/token-guerreiro.png");
+const texturaNpc = await PIXI.Assets.load("/img/Icones/tokens/personagens/miniaturas/token-anatema.png");
+function token({ x, y, tam = 1, nome, pv, pvMax, pm, pmMax, defesa, pj = true, tex = textura, hover = false }) {
+  const t = new PIXI.Container();
+  t.position.set(x, y);
+  t.w = t.h = 100 * tam;
+  const s = t.addChild(new PIXI.Sprite(tex)); s.width = s.height = t.w;
+  t.nameplate = t.addChild(new PIXI.Text(nome, { fontSize: 14, fill: 0xffffff, stroke: 0, strokeThickness: 3 }));
+  t.nameplate.anchor.set(0.5, 0); t.nameplate.position.set(t.w / 2, t.h + 2);
+  t.bars = t.addChild(new PIXI.Container());
+  t.hover = hover;
+  t.actor = { hasPlayerOwner: pj, system: { pv: { value: pv, max: pvMax }, pm: { value: pm, max: pmMax }, defesa: { total: defesa } } };
+  app.stage.addChild(t);
+  canvas.tokens.placeables.push(t);
+  ganchos.drawToken(t);
+  ganchos.refreshToken(t);
+  return t;
+}
+const pj = token({ x: 40, y: 60, nome: "Alokerl", pv: 30, pvMax: 39, pm: 6, pmMax: 9, defesa: 16 });
+const grande = token({ x: 200, y: 60, tam: 2, nome: "Ogro (2×2)", pv: 50, pvMax: 80, pm: 10, pmMax: 10, defesa: 14, hover: true });
+const baixo = token({ x: 460, y: 60, nome: "Lira (PV baixo)", pv: 4, pvMax: 30, pm: 2, pmMax: 12, defesa: 13 });
+const npc = token({ x: 620, y: 60, nome: "Bandido (NPC)", pv: 10, pvMax: 20, pm: 0, pmMax: 0, defesa: 12, pj: false, tex: texturaNpc });
+const log = m => (document.getElementById("log").textContent += m + "\n");
+window.app = app; window.tokens = { pj, grande, baixo, npc }; window.ganchos = ganchos; window.cfg = cfg; window.atualizarTodos = atualizarTodos;
+// Dano no PJ depois de 1 s: anima
+setTimeout(() => { pj.actor.system.pv.value = 12; ganchos.refreshToken(pj); log("dano: Alokerl 30 → 12"); }, 1000);
+window.pronto = true;
+</script>
+</body>
+</html>

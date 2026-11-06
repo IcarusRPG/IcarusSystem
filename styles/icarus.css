@@ -1105,3 +1105,166 @@ body.game {
 .icarus-porta-cd .porta-cd-gazuas.sem { color: var(--ic-ouro-claro, #f1d98f); }
 .icarus-porta-cd .botoes { display: flex; gap: 8px; margin-top: 8px; }
 .icarus-porta-cd .botoes .btn { flex: 1; }
+
+/* ---------------- Carrossel de combate ---------------- */
+.icarus-carrossel {
+  --carta: 84px; --ouro: #d8b45a; --ouro-claro: #f1d98f; --roxo: #8b5cf6; --roxo-escuro: #1a0f2b;
+  position: fixed; z-index: 35; pointer-events: none; display: flex; justify-content: center;
+  font-family: var(--ic-f-corpo, "Signika", sans-serif);
+}
+.icarus-carrossel.tam-p { --carta: 64px; }
+.icarus-carrossel.tam-g { --carta: 108px; }
+@media (max-width: 1100px) { .icarus-carrossel { --carta: 64px; } .icarus-carrossel.tam-g { --carta: 84px; } }
+.icarus-carrossel .carrossel-faixa {
+  position: relative; display: flex; align-items: center; gap: 6px; max-width: 100%; padding: 6px 10px; border-radius: 14px;
+  background:
+    radial-gradient(ellipse at center, rgba(40, 20, 70, 0.55) 0%, rgba(6, 4, 12, 0.82) 75%),
+    var(--carrossel-arte-faixa, none) center / cover;
+  border: 1px solid rgba(216, 180, 90, 0.45);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), inset 0 0 18px rgba(139, 92, 246, 0.25);
+  overflow: hidden;
+}
+/* Brasas / poeira de mana subindo */
+.icarus-carrossel .carrossel-faixa::before {
+  content: ""; position: absolute; inset: -40% 0 0 0; pointer-events: none; opacity: 0.55;
+  background-image:
+    radial-gradient(2px 2px at 10% 90%, #f1d98f, transparent), radial-gradient(1.5px 1.5px at 30% 80%, #c4b5fd, transparent),
+    radial-gradient(2px 2px at 55% 95%, #fbbf24, transparent), radial-gradient(1.5px 1.5px at 75% 85%, #a78bfa, transparent),
+    radial-gradient(2px 2px at 90% 92%, #f1d98f, transparent);
+  animation: carrossel-brasas 7s linear infinite;
+}
+@keyframes carrossel-brasas { from { transform: translateY(0); } to { transform: translateY(-45%); } }
+.icarus-carrossel .carrossel-trilho {
+  display: flex; align-items: flex-start; gap: 10px; overflow-x: auto; overflow-y: visible; scrollbar-width: none;
+  /* Espaço para a coroa e a runa da carta ativa (a rolagem horizontal também corta na vertical) */
+  padding: calc(var(--carta) * 0.5) calc(var(--carta) * 0.3) calc(var(--carta) * 0.2); pointer-events: auto; position: relative; z-index: 1;
+}
+.icarus-carrossel .carrossel-trilho::-webkit-scrollbar { display: none; }
+.icarus-carrossel button { pointer-events: auto; width: auto; line-height: 1; cursor: pointer; }
+.icarus-carrossel .carrossel-seta {
+  position: relative; z-index: 2; padding: 6px 4px; border: 1px solid rgba(216, 180, 90, 0.5); border-radius: 6px;
+  background: rgba(20, 12, 34, 0.9); color: var(--ouro-claro);
+}
+.icarus-carrossel .carrossel-seta[hidden], .icarus-carrossel .carrossel-mestre[hidden] { display: none; }
+.icarus-carrossel .carrossel-rodada {
+  position: relative; z-index: 2; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: calc(var(--carta) * 0.62); height: calc(var(--carta) * 0.62); min-width: 42px; min-height: 42px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff1c2, #d8b45a 40%, #6b4e14 100%); color: #1a0f2b;
+  box-shadow: 0 0 0 2px #3b1d5c, 0 0 14px rgba(216, 180, 90, 0.5); font-family: var(--ic-f-titulo, "Cinzel", serif);
+}
+.icarus-carrossel .carrossel-rodada span { font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; }
+.icarus-carrossel .carrossel-rodada b { font-size: calc(var(--carta) * 0.24); line-height: 1; }
+.icarus-carrossel .carrossel-mestre { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 4px; }
+.icarus-carrossel .carrossel-mestre button {
+  padding: 5px 7px; border: 1px solid rgba(216, 180, 90, 0.55); border-radius: 6px; background: rgba(30, 16, 50, 0.95); color: var(--ouro-claro);
+}
+.icarus-carrossel .carrossel-mestre button:hover, .icarus-carrossel .carrossel-seta:hover { box-shadow: 0 0 10px rgba(216, 180, 90, 0.6); }
+
+/* Carta */
+.icarus-carrossel .carta {
+  --disp: #facc15;
+  position: relative; flex: none; width: var(--carta); cursor: pointer; outline: none;
+  transform: scale(0.86); opacity: 0.72; filter: saturate(0.8);
+  transition: transform 0.45s cubic-bezier(.2, .9, .3, 1.2), opacity 0.45s, filter 0.45s, margin 0.45s;
+}
+.icarus-carrossel .carta[data-disposicao="aliado"] { --disp: #4ade80; }
+.icarus-carrossel .carta[data-disposicao="hostil"] { --disp: #ef4444; }
+.icarus-carrossel .carta[data-disposicao="neutro"] { --disp: #facc15; }
+.icarus-carrossel .carta[data-disposicao="secreto"] { --disp: #a855f7; }
+.icarus-carrossel .carta.entrando { opacity: 0; transform: scale(0.5) translateY(-10px); }
+.icarus-carrossel .carta.saindo { opacity: 0; transform: scale(0.5); }
+.icarus-carrossel .carta.proxima-1 { transform: scale(0.94); opacity: 0.95; filter: none; }
+.icarus-carrossel .carta.proxima-2 { transform: scale(0.9); opacity: 0.88; filter: none; }
+.icarus-carrossel .carta:hover, .icarus-carrossel .carta:focus-visible { opacity: 1; filter: none; }
+.icarus-carrossel .carta.ativa { transform: scale(1.14); opacity: 1; filter: none; z-index: 3; margin: 0 calc(var(--carta) * 0.08); }
+.icarus-carrossel .carta-moldura {
+  position: relative; aspect-ratio: 1; border-radius: 12px;
+  background: var(--carrossel-arte-carta, linear-gradient(145deg, #4b2a74 0%, #22113a 42%, #140a24 60%, #3b1d5c 100%));
+  background-size: cover;
+  border: 2px solid var(--ouro);
+  box-shadow: inset 0 0 0 2px #2a1640, inset 0 2px 3px rgba(255, 255, 255, 0.25), inset 0 -3px 0 var(--disp), 0 3px 8px rgba(0, 0, 0, 0.7);
+}
+/* Rebites nos cantos */
+.icarus-carrossel .carta-moldura::before {
+  content: ""; position: absolute; inset: 3px; pointer-events: none; z-index: 2; border-radius: 9px;
+  background:
+    radial-gradient(circle at 6px 6px, #f1d98f 1.6px, transparent 2.2px), radial-gradient(circle at calc(100% - 6px) 6px, #f1d98f 1.6px, transparent 2.2px),
+    radial-gradient(circle at 6px calc(100% - 6px), #f1d98f 1.6px, transparent 2.2px), radial-gradient(circle at calc(100% - 6px) calc(100% - 6px), #f1d98f 1.6px, transparent 2.2px);
+}
+.icarus-carrossel .carta-retrato { position: absolute; inset: 8%; border-radius: 9px; overflow: hidden; background: #0b0614; box-shadow: inset 0 0 6px #000; }
+.icarus-carrossel .carta-retrato img { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
+.icarus-carrossel .carta-ini {
+  position: absolute; right: -8%; bottom: -8%; z-index: 3; display: grid; place-items: center;
+  width: calc(var(--carta) * 0.34); height: calc(var(--carta) * 0.34); min-width: 22px; min-height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff1c2, #d8b45a 45%, #6b4e14 100%); color: #1a0f2b;
+  font: 700 calc(var(--carta) * 0.16) / 1 var(--ic-f-titulo, "Cinzel", serif); box-shadow: 0 0 0 2px #2a1640, 0 2px 4px #000;
+}
+.icarus-carrossel .carta-estado { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3; font-size: calc(var(--carta) * 0.36); color: #e5e7eb; text-shadow: 0 0 6px #000; }
+.icarus-carrossel .carta-nome {
+  margin-top: 5px; text-align: center; font: 600 11px / 1.2 var(--ic-f-titulo, "Cinzel", serif); color: #ede9fe;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 3px #000;
+}
+.icarus-carrossel .carta.ativa .carta-nome { color: var(--ouro-claro); }
+.icarus-carrossel .carta-barras { display: flex; flex-direction: column; gap: 2px; margin-top: 3px; }
+.icarus-carrossel .carta-barras i {
+  position: relative; display: block; height: 5px; border-radius: 3px; overflow: hidden; background: #0b0d14; border: 1px solid #5a4a22;
+}
+.icarus-carrossel .carta-barras i[hidden] { display: none; }
+.icarus-carrossel .carta-barras i b { position: absolute; inset: 0; width: calc(var(--f, 0) * 100%); transition: width 0.3s; }
+.icarus-carrossel .carta-barras .pv b { background: linear-gradient(180deg, #ff5a4f, #b3121c 60%); }
+.icarus-carrossel .carta-barras .pm b { background: linear-gradient(180deg, #6fa0ff, #1d4ed8 60%); }
+.icarus-carrossel .carta.derrotada { filter: grayscale(1) brightness(0.65); opacity: 0.6; }
+.icarus-carrossel .carta.oculta .carta-moldura { border-style: dashed; opacity: 0.75; }
+/* Carta ativa: brilho pulsante, runa girando e coroa */
+.icarus-carrossel .carta.ativa .carta-moldura {
+  background: var(--carrossel-arte-cartaAtiva, var(--carrossel-arte-carta, linear-gradient(145deg, #6d3fb0 0%, #2d1650 42%, #1a0d30 60%, #5b33a0 100%)));
+  background-size: cover;
+  animation: carta-pulso 1.8s ease-in-out infinite;
+}
+@keyframes carta-pulso {
+  0%, 100% { box-shadow: inset 0 0 0 2px #2a1640, inset 0 -3px 0 var(--disp), 0 0 10px 2px rgba(216, 180, 90, 0.55), 0 0 22px 4px rgba(139, 92, 246, 0.35); }
+  50% { box-shadow: inset 0 0 0 2px #2a1640, inset 0 -3px 0 var(--disp), 0 0 18px 5px rgba(241, 217, 143, 0.85), 0 0 34px 8px rgba(139, 92, 246, 0.55); }
+}
+.icarus-carrossel .carta-runa {
+  position: absolute; left: 50%; top: calc(var(--carta) / 2); width: calc(var(--carta) * 1.32); height: calc(var(--carta) * 1.32);
+  transform: translate(-50%, -50%); z-index: -1; display: none; border-radius: 50%; opacity: 0.6; pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, rgba(216, 180, 90, 0.75) 0deg 3deg, transparent 3deg 22.5deg);
+  -webkit-mask: radial-gradient(circle, transparent 54%, #000 55%, #000 62%, transparent 63%, transparent 68%, #000 69%, #000 71%, transparent 72%);
+          mask: radial-gradient(circle, transparent 54%, #000 55%, #000 62%, transparent 63%, transparent 68%, #000 69%, #000 71%, transparent 72%);
+  animation: carta-runa 14s linear infinite;
+}
+.icarus-carrossel .carta.ativa .carta-runa { display: block; }
+@keyframes carta-runa { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.icarus-carrossel .carta-coroa {
+  position: absolute; left: 50%; top: calc(var(--carta) * -0.32); transform: translateX(-50%); z-index: 4; display: none;
+  color: var(--ouro-claro); font-size: calc(var(--carta) * 0.22); text-shadow: 0 0 8px rgba(216, 180, 90, 0.9), 0 1px 2px #000;
+  animation: carta-coroa 1.6s ease-in-out infinite;
+}
+.icarus-carrossel .carta.ativa .carta-coroa { display: block; }
+@keyframes carta-coroa { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -3px); } }
+
+/* Banner de rodada e "SEU TURNO" (não bloqueiam a tela) */
+.icarus-banner-rodada, .icarus-seu-turno { position: fixed; left: 50%; z-index: 90; pointer-events: none; transform: translateX(-50%); }
+.icarus-banner-rodada { top: 38%; animation: banner-rodada 2.4s ease forwards; }
+.icarus-banner-rodada span {
+  display: block; padding: 14px 64px; font: 700 clamp(36px, 6vw, 72px) / 1 var(--ic-f-titulo, "Cinzel", serif); letter-spacing: 0.12em;
+  white-space: nowrap; color: #f1d98f; text-shadow: 0 0 18px rgba(216, 180, 90, 0.9), 0 0 42px rgba(139, 92, 246, 0.8), 0 4px 10px #000;
+  background: var(--carrossel-arte-banner, linear-gradient(90deg, transparent, rgba(26, 15, 43, 0.85) 20%, rgba(26, 15, 43, 0.85) 80%, transparent)) center / cover;
+  border-top: 1px solid rgba(216, 180, 90, 0.6); border-bottom: 1px solid rgba(216, 180, 90, 0.6);
+}
+@keyframes banner-rodada {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.6); filter: blur(4px); }
+  18% { opacity: 1; transform: translateX(-50%) scale(1.06); filter: none; }
+  30% { transform: translateX(-50%) scale(1); }
+  75% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) scale(1.04); }
+}
+.icarus-seu-turno {
+  top: 24%; padding: 10px 36px; border-radius: 10px; font: 700 clamp(28px, 4vw, 48px) / 1 var(--ic-f-titulo, "Cinzel", serif); letter-spacing: 0.1em;
+  white-space: nowrap; color: #fff; background: rgba(26, 15, 43, 0.9); border: 2px solid #d8b45a;
+  box-shadow: 0 0 24px rgba(216, 180, 90, 0.7), 0 0 50px rgba(139, 92, 246, 0.6); animation: seu-turno 2.2s ease forwards;
+}
+@keyframes seu-turno { 0% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.8); } 15% { opacity: 1; transform: translateX(-50%) scale(1.05); } 25% { transform: translateX(-50%) scale(1); } 80% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .icarus-carrossel *, .icarus-carrossel *::before, .icarus-banner-rodada, .icarus-seu-turno { animation: none !important; transition: none !important; }
+}

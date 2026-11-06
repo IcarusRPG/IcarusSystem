@@ -154,6 +154,18 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - **Nova regra derivada:** a fórmula vai em `module/regras.mjs` (com teste), e o cálculo em `prepareDerivedData` de `module/data/actor-personagem.mjs`.
 - **Novo tipo de ator ou item:** crie o modelo em `module/data/`, registre em `icarus.mjs` e declare em `documentTypes` no `system.json`.
 
+## Barras do token e carrossel de combate
+
+- **Token:** barras de PV e PM abaixo do token e escudo com a Defesa (Configurações do sistema → "Token: …" para quem vê o quê). NPC = ator sem dono jogador.
+- **Carrossel:** aparece com um combate na cena (mesmo antes de começar). Configurações do mundo (ligar, forçar com o módulo Combat Carousel) e de cada usuário (mostrar, posição, tamanho, mini barras, banner de rodada, som).
+- **Artes opcionais** (use se existirem; depois de adicionar, rode `npm run gerar:dados` para o sistema enxergá-las):
+  - `img/ui/escudo-defesa.png` — brasão do escudo, ~128×148, fundo transparente (o número da Defesa é escrito por cima).
+  - `img/ui/carrossel/carta.png` e `carta-ativa.png` — moldura da carta, 256×256 (o retrato fica por cima, com 8% de margem).
+  - `img/ui/carrossel/faixa.png` — fundo da faixa, ~1600×220.
+  - `img/ui/carrossel/banner-rodada.png` — fundo do banner "RODADA N", ~1200×200.
+  - `audio/ui/seu-turno.ogg` — som curto (até 2 s) do "SEU TURNO".
+- Testes fora do Foundry: `/tests/navegador/token-barras.html` e `/tests/navegador/carrossel.html`.
+
 ## Interação por proximidade e porta trancada
 
 - **Cena:** use 1,5 m por quadrado, em metros (Configurar Cena → Grade: Distância 1,5, Unidade m). Se a cena estiver diferente, o Mestre recebe um aviso ao abri-la.
