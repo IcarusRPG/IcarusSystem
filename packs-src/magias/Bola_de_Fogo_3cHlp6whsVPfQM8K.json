@@ -1,0 +1,42 @@
+{
+  "_id": "3cHlp6whsVPfQM8K",
+  "name": "Bola de Fogo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/bola-de-fogo.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Uma bolinha de fogo explode no ponto escolhido e causa 6d6 de dano de fogo. Objetos inflamáveis soltos na área pegam fogo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      },
+      {
+        "custo": 2,
+        "texto": "criaturas que falharem no teste ficam Em Chamas."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bola-de-fogo"
+    }
+  },
+  "_key": "!items!3cHlp6whsVPfQM8K"
+}

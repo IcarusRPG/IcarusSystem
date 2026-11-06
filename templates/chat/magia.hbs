@@ -1,0 +1,27 @@
+<div class="icarus-rolagem icarus-magia">
+  <div class="arma-cab">
+    <img src="{{img}}" alt="" width="44" height="44">
+    <div>
+      <h3 class="rolagem-nome">{{nome}}</h3>
+      <div class="rolagem-tipo">{{localize "ICARUS.Magias.Magia"}} · {{nivel}}º nível · {{escola}}</div>
+    </div>
+    {{#if cd}}<div class="magia-cd" title="{{localize 'ICARUS.Magias.CDDica'}}"><small>{{localize "ICARUS.Magias.CD"}}</small><b>{{cd}}</b></div>{{/if}}
+  </div>
+  <dl class="magia-ficha">
+    <dt>{{localize "ICARUS.Magias.Custo"}}</dt><dd>{{custo}} PM{{#if aprimoramentos.length}} ({{custoBase}} + {{localize "ICARUS.Magias.AprimoramentosMin"}}){{/if}}</dd>
+    <dt>{{localize "ICARUS.Magias.Execucao"}}</dt><dd>{{execucao}}</dd>
+    <dt>{{localize "ICARUS.Magias.Alcance"}}</dt><dd>{{alcance}}</dd>
+    <dt>{{localize "ICARUS.Magias.Alvo"}}</dt><dd>{{alvo}}</dd>
+    <dt>{{localize "ICARUS.Magias.Duracao"}}</dt><dd>{{duracao}}</dd>
+    {{#if resistencia}}<dt>{{localize "ICARUS.Magias.Resistencia"}}</dt><dd>{{resistencia}}</dd>{{/if}}
+  </dl>
+  <details class="magia-desc" open><summary>{{localize "ICARUS.Item.Descricao"}}</summary>{{{descricao}}}</details>
+  {{#if aprimoramentos.length}}
+  <div class="magia-aprimoramentos"><b>{{localize "ICARUS.Magias.AprimoramentosUsados"}}</b>
+    <ul>{{#each aprimoramentos}}<li><b>+{{custo}} PM</b> {{texto}}</li>{{/each}}</ul>
+  </div>
+  {{/if}}
+  {{#if alvos.length}}
+  <div class="linha-alvo"><b>{{localize "ICARUS.Ataque.Alvos"}}:</b> {{#each alvos}}{{nome}}{{#unless @last}}, {{/unless}}{{/each}}</div>
+  {{/if}}
+</div>

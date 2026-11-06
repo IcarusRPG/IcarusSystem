@@ -1,0 +1,33 @@
+{
+  "_id": "wsntojgIm6SaWiuS",
+  "name": "Revivificar",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/revivificar.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura morta há até 1 minuto",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você traz de volta ao mundo uma criatura que morreu há não mais que 1 minuto. Ela retorna com 1 PV e fica Fatigada até um descanso. Não funciona em quem morreu de velhice, ou cuja cabeça ou corpo tenham sido destruídos.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "revivificar"
+    }
+  },
+  "_key": "!items!wsntojgIm6SaWiuS"
+}

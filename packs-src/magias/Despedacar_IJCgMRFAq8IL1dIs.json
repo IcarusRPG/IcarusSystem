@@ -1,0 +1,38 @@
+{
+  "_id": "IJCgMRFAq8IL1dIs",
+  "name": "Despedaçar",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/despedacar.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 3 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Um estrondo de vibração fere a área, causando 4d6 de dano de impacto. Objetos frágeis e não vigiados na área se quebram.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "despedacar"
+    }
+  },
+  "_key": "!items!IJCgMRFAq8IL1dIs"
+}

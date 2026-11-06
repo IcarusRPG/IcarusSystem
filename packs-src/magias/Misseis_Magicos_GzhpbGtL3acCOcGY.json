@@ -1,0 +1,38 @@
+{
+  "_id": "GzhpbGtL3acCOcGY",
+  "name": "Mísseis Mágicos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/misseis-magicos.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "até 3 criaturas",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Três dardos de mana disparam de suas mãos e acertam automaticamente, sem teste de ataque. Cada dardo causa 1d4+1 de dano de essência. Você divide os dardos entre os alvos como quiser.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1 dardo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "misseis-magicos"
+    }
+  },
+  "_key": "!items!GzhpbGtL3acCOcGY"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "DaJYss2yWiqJOHZf",
+  "name": "Chama Sagrada",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/chama-sagrada.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos anula",
+    "descricao": "<p>Uma coluna de luz desce sobre o alvo e causa 3d6 de dano de luz. Criaturas de natureza profana sofrem +1d6.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chama-sagrada"
+    }
+  },
+  "_key": "!items!DaJYss2yWiqJOHZf"
+}

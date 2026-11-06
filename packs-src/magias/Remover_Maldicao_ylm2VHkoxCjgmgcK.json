@@ -1,0 +1,33 @@
+{
+  "_id": "ylm2VHkoxCjgmgcK",
+  "name": "Remover Maldição",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/remover-maldicao.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura ou objeto",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você rompe as maldições que pesam sobre o alvo. Maldições de magias de nível 3 ou menor terminam automaticamente; maldições mais fortes pedem um teste de Religião contra CD 15 + 2 × o nível da maldição (ou o nível da magia que a criou). Em um objeto amaldiçoado, a maldição some e o objeto pode ser largado, mas o item continua mágico.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "remover-maldicao"
+    }
+  },
+  "_key": "!items!ylm2VHkoxCjgmgcK"
+}

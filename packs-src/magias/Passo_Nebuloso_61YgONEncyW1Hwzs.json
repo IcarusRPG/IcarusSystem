@@ -1,0 +1,38 @@
+{
+  "_id": "61YgONEncyW1Hwzs",
+  "name": "Passo Nebuloso",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/passo-nebuloso.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Convocação",
+    "execucao": "movimento",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você some em uma névoa prateada e reaparece em um espaço livre que enxergue, a até 9 m.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "você leva consigo 1 criatura adjacente voluntária."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "passo-nebuloso"
+    }
+  },
+  "_key": "!items!61YgONEncyW1Hwzs"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Ct8RIqM8i7n3xQu6",
+  "name": "Projetar Consciência",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/projetar-consciencia.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Adivinhação",
+    "execucao": "completa",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "sustentada (concentração)",
+    "resistencia": "",
+    "descricao": "<p>Sua mente viaja para qualquer ponto do mundo que você conheça. Você vê e ouve o local como se estivesse lá, mas sem tocar nem agir. Pode se comunicar com criaturas que reconheçam sua presença. O seu corpo fica Indefeso.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "você pode lançar magias de 1º a 3º nível à distância através da projeção."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "projetar-consciencia"
+    }
+  },
+  "_key": "!items!Ct8RIqM8i7n3xQu6"
+}

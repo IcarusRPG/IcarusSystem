@@ -1,0 +1,38 @@
+{
+  "_id": "Ly6N0odz0Fcl4yBL",
+  "name": "Assassino Fantasmagórico",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/assassino-fantasmagorico.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "sustentada (concentração)",
+    "resistencia": "Vontade parcial",
+    "descricao": "<p>Você cria o pior pesadelo do alvo, que o persegue. No início de cada turno do alvo, ele faz um teste de Vontade: se falhar, sofre 6d6 de dano psíquico e fica Apavorado; se passar, sofre metade e a magia termina. Só o alvo vê a ilusão.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "aumenta o dano em +2d6."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "assassino-fantasmagorico"
+    }
+  },
+  "_key": "!items!Ly6N0odz0Fcl4yBL"
+}

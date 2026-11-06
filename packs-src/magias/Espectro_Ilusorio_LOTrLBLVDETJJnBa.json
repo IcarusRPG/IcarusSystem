@@ -1,0 +1,38 @@
+{
+  "_id": "LOTrLBLVDETJJnBa",
+  "name": "Espectro Ilusório",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/espectro-ilusorio.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "sustentada (concentração)",
+    "resistencia": "Vontade parcial",
+    "descricao": "<p>Você cria a imagem do maior medo do alvo. Se falhar no teste, ele fica Apavorado enquanto você sustentar; se passar, fica apenas Abalado por 1 rodada. A criatura vê o espectro, mas só ela. Efeito mental.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "espectro-ilusorio"
+    }
+  },
+  "_key": "!items!LOTrLBLVDETJJnBa"
+}

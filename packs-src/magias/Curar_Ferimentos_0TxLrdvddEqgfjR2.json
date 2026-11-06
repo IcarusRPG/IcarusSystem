@@ -1,0 +1,38 @@
+{
+  "_id": "0TxLrdvddEqgfjR2",
+  "name": "Curar Ferimentos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/curar-ferimentos.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Energia vital flui da sua mão e cura 2d8+2 PV do alvo. Se for lançada contra mortos-vivos, causa esse valor como dano de luz (Vontade reduz à metade).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d8+1 de cura."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "curar-ferimentos"
+    }
+  },
+  "_key": "!items!0TxLrdvddEqgfjR2"
+}

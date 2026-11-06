@@ -1,0 +1,33 @@
+{
+  "_id": "9paL478AWsdbjtQE",
+  "name": "Escudo da Fé",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/escudo-da-fe.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "reação",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Quando um aliado a até 9 m for alvo de um ataque, um clarão o protege: ele recebe +4 na Defesa contra esse ataque.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-da-fe"
+    }
+  },
+  "_key": "!items!9paL478AWsdbjtQE"
+}

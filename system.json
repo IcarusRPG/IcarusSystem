@@ -2,7 +2,7 @@
   "id": "icarus-rpg",
   "title": "Icarus RPG",
   "description": "Sistema do Icarus RPG, um RPG de fantasia medieval original com testes de d20 + modificador.",
-  "version": "0.14.2",
+  "version": "0.16.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -68,7 +68,12 @@
           "intro"
         ]
       },
-      "origem": {}
+      "origem": {},
+      "magia": {
+        "htmlFields": [
+          "descricao"
+        ]
+      }
     }
   },
   "packs": [
@@ -240,6 +245,19 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "magias",
+      "label": "Icarus — Magias",
+      "path": "packs/magias",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -260,7 +278,8 @@
         "vinculos",
         "origens",
         "poderes-origem",
-        "itens-comuns"
+        "itens-comuns",
+        "magias"
       ]
     }
   ],
@@ -272,6 +291,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.14.2/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.16.0/icarus-rpg.zip",
   "socket": true
 }

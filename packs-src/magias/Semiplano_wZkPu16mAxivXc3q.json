@@ -1,0 +1,38 @@
+{
+  "_id": "wZkPu16mAxivXc3q",
+  "name": "Semiplano",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/semiplano.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Convocação",
+    "execucao": "completa",
+    "alcance": "pessoal",
+    "alvo": "espaço extradimensional de 3 cômodos",
+    "duracao": "1 dia",
+    "resistencia": "",
+    "descricao": "<p>Você cria uma pequena dimensão com a forma de um salão confortável de até 100 m², que acomoda você e até 8 criaturas à escolha. Ele só pode ser acessado por um portal no ponto onde você lançou a magia (que desaparece ao fim). Dentro, você tem controle de luz e temperatura e há mobília e comida simples.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "a duração passa a 1 semana."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "semiplano"
+    }
+  },
+  "_key": "!items!wZkPu16mAxivXc3q"
+}

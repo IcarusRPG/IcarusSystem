@@ -1,0 +1,38 @@
+{
+  "_id": "P1LDQlTHMZR6h8Qn",
+  "name": "Lâmina Rubra",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/lamina-rubra.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "uma arma de sangue",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você forma na mão uma arma de sangue endurecido (qualquer arma corpo a corpo simples de uma mão). Ela é uma arma mágica: causa dano normal do tipo da arma e, quando acerta, você recupera 1 PV. Se você for conjurador, seus testes de Luta com a lâmina usam o **atributo-chave** com o qual lança magias, no lugar de Força ou Destreza; se não for, usa o atributo normal da arma. Ela se desfaz se você a soltar.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "a arma também causa +1d6 de dano de trevas."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lamina-rubra"
+    }
+  },
+  "_key": "!items!P1LDQlTHMZR6h8Qn"
+}

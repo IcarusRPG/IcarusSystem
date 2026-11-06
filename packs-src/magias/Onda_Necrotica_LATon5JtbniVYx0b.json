@@ -1,0 +1,38 @@
+{
+  "_id": "LATon5JtbniVYx0b",
+  "name": "Onda Necrótica",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/onda-necrotica.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "esfera de 12 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Uma onda de energia da morte varre a área, causando 12d6 de dano de trevas. Criaturas que falharem no teste ficam também Enjoadas por 1 rodada. Mortos-vivos na área não sofrem dano e recuperam PV iguais à metade do dano rolado. Plantas comuns na área murcham.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+2d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "onda-necrotica"
+    }
+  },
+  "_key": "!items!LATon5JtbniVYx0b"
+}

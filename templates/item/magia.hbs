@@ -1,0 +1,36 @@
+<form class="{{cssClass}} ficha-icarus ficha-item ficha-magia" autocomplete="off">
+  <header class="item-cab">
+    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
+    <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
+    {{#if magia.podeLancar}}<button type="button" class="btn primario" data-action="magia-lancar"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Magias.Lancar"}}</button>{{/if}}
+  </header>
+  <div class="item-campos">
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Nivel"}}</span>
+      <input class="campo" type="number" name="system.nivel" value="{{source.nivel}}" min="1" max="5" step="1"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.CustoPM"}}</span>
+      <input class="campo" type="number" name="system.custoPM" value="{{source.custoPM}}" min="0" step="1"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Escola"}}</span>
+      <input class="campo" type="text" name="system.escola" value="{{source.escola}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Execucao"}}</span>
+      <input class="campo" type="text" name="system.execucao" value="{{source.execucao}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Alcance"}}</span>
+      <input class="campo" type="text" name="system.alcance" value="{{source.alcance}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Alvo"}}</span>
+      <input class="campo" type="text" name="system.alvo" value="{{source.alvo}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Duracao"}}</span>
+      <input class="campo" type="text" name="system.duracao" value="{{source.duracao}}"></label>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.Resistencia"}}</span>
+      <input class="campo" type="text" name="system.resistencia" value="{{source.resistencia}}" placeholder="—"></label>
+  </div>
+  {{#if magia.tradicoes}}<p class="magia-tradicoes">{{localize "ICARUS.Magias.Tradicoes"}}: {{magia.tradicoes}}{{#if source.afinidade}} · {{localize "ICARUS.Magias.Afinidade"}}: {{source.afinidade}}{{/if}}</p>{{/if}}
+  <div class="painel item-desc">
+    <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
+    {{editor descricaoHTML target="system.descricao" button=true editable=editable engine="prosemirror"}}
+  </div>
+  {{#if source.aprimoramentos.length}}
+  <div class="painel magia-aprimoramentos">
+    <h3 class="titulo-painel">{{localize "ICARUS.Magias.Aprimoramentos"}}</h3>
+    <ul>{{#each source.aprimoramentos}}<li><b>+{{custo}} PM</b> {{texto}}</li>{{/each}}</ul>
+  </div>
+  {{/if}}
+</form>

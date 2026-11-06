@@ -1,0 +1,33 @@
+{
+  "_id": "qADehPKutQNbjAzp",
+  "name": "Proteção contra Energia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/protecao-contra-energia.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Escolha um tipo: fogo, frio, elétrico ou ácido. O alvo recebe Redução 5 a esse tipo, e um bônus de +2 em testes de resistência contra magias desse tipo.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "protecao-contra-energia"
+    }
+  },
+  "_key": "!items!qADehPKutQNbjAzp"
+}

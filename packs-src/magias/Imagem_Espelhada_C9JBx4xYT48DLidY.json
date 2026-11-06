@@ -1,0 +1,38 @@
+{
+  "_id": "C9JBx4xYT48DLidY",
+  "name": "Imagem Espelhada",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/imagem-espelhada.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Três cópias ilusórias suas surgem e se movem junto com você. Sempre que for alvo de um ataque, role 1d6: com 3 cópias, em 1–3 o ataque atinge uma cópia, erra você e a destrói; com 2 cópias, em 1–2; com 1 cópia, em 1. Quando as três se desfazem, a magia termina.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 cópia (máximo 5; o intervalo de acerto na cópia acompanha o número de cópias)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "imagem-espelhada"
+    }
+  },
+  "_key": "!items!C9JBx4xYT48DLidY"
+}

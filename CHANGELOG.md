@@ -1,5 +1,22 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.16.0
+
+### Magias — Fase 2: compêndio, aba e lançar
+- Novo tipo de item **Magia** (nível, custo, escola, execução, alcance, alvo, duração, resistência, descrição, aprimoramentos, tradições, afinidade, concentração).
+- Compêndio **Icarus — Magias**: as 200 magias em pastas por nível, com o ícone de cada uma; ids estáveis (o build repetido não duplica nada).
+- Ficha: aba **Magias** com CD da magia, **atributo-chave** (padrão: o de PM da classe; senão Inteligência), nível de magia alcançado pelo nível do personagem (só informativo, nada é bloqueado), busca e filtros por nível e escola, magias agrupadas por nível com ícone, custo, escola, descrição e aprimoramentos.
+- **Lançar** (aba, ficha do item ou macro arrastada para a barra): diálogo com aprimoramentos (cada um uma vez), custo total e PM atual; sem PM suficiente o botão fica desabilitado com o motivo. Ao lançar, debita o PM (devolve se der erro) e manda o cartão da magia ao chat com CD, custo pago, aprimoramentos usados e alvos marcados.
+- Ainda sem automação de dano, resistência e efeitos (Fase 3 em diante).
+
+## 0.15.0
+
+### Magias — Fase 1: ícones
+- Dados das 200 magias em `tools/dados/magias.json` (fonte da verdade, texto sem alteração).
+- 200 ícones em `img/magias/<id>.png` (256×256), gerados de `Downloads/img/Icones/Magias` por `npm run build:icones-magias -- --de "<pasta>"`: casamento por nome em ASCII; "Manto de Sombra.png" → Manto de Sombras (exceção confirmada). Repetível: rodar de novo pega imagens novas e não regrava as iguais.
+- Manifesto `tools/dados/magias_icones.json` e relatório `tools/relatorio-icones-magias.md` (magias sem imagem e imagens sem magia).
+- Leitor de PNG dos builds aceita PNG RGB; gravador com filtro por linha (opcional) para imagens opacas.
+
 ## 0.14.2
 
 ### Ataque

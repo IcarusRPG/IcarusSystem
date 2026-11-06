@@ -1,0 +1,33 @@
+{
+  "_id": "kL9wjE4IdpjrQSSs",
+  "name": "Sentinela Ancestral",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sentinela-ancestral.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Um ancestral vela pelo alvo. A primeira vez que ele seria reduzido a 0 PV por dano ou por perda de PV, ele fica com 1 PV, e a magia termina. Também protege contra efeitos que matem instantaneamente: o efeito falha e a magia termina.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sentinela-ancestral"
+    }
+  },
+  "_key": "!items!kL9wjE4IdpjrQSSs"
+}

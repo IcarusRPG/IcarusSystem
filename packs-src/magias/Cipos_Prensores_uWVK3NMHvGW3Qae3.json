@@ -1,0 +1,38 @@
+{
+  "_id": "uWVK3NMHvGW3Qae3",
+  "name": "Cipós Prensores",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/cipos-prensores.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "quadrado de 6 m",
+    "duracao": "cena",
+    "resistencia": "Reflexos anula",
+    "descricao": "<p>Plantas brotam e agarram as criaturas na área. Quem falhar no teste sofre 2d6 de dano de impacto (os cipós apertam) e fica Enredado. Uma criatura Enredada se liberta com uma ação padrão e um teste de Força ou Acrobacia (CD da magia). Em terreno sem plantas, os cipós vêm do chão.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "criaturas que falharem por 5 ou mais ficam também Imóveis."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "cipos-prensores"
+    }
+  },
+  "_key": "!items!uWVK3NMHvGW3Qae3"
+}

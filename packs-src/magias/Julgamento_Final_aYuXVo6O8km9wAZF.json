@@ -1,0 +1,33 @@
+{
+  "_id": "aYuXVo6O8km9wAZF",
+  "name": "Julgamento Final",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/julgamento-final.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Vontade parcial",
+    "descricao": "<p>Uma sentença divina recai sobre o alvo e causa 12d6 de dano de luz. Se falhar no teste, o alvo também fica Vulnerável e Abalado até o fim da cena; se passar, sofre metade do dano.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "julgamento-final"
+    }
+  },
+  "_key": "!items!aYuXVo6O8km9wAZF"
+}

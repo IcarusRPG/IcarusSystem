@@ -1,0 +1,33 @@
+{
+  "_id": "VSq0QSqBdYmbz2F3",
+  "name": "Drenar Vigor",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/drenar-vigor.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude parcial",
+    "descricao": "<p>Você sorve a energia do alvo: ele fica Fatigado e perde 3d6 PV, que você recupera. Se passar no teste, só perde metade e não fica Fatigado.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "drenar-vigor"
+    }
+  },
+  "_key": "!items!VSq0QSqBdYmbz2F3"
+}

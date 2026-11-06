@@ -1,0 +1,38 @@
+{
+  "_id": "qM37y5GSut7KrvbK",
+  "name": "Chamado Selvagem",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/chamado-selvagem.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "até 3 animais",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você chama animais da região, que atendem ao chamado e lutam por você: até 3 animais de ND até 1, ou 1 animal de ND até 3. Eles obedecem a comandos simples e agem no seu turno. Se não houver animais por perto, a magia falha (e o PM se perde).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "os animais chamados são de ND até 2 (ou 1 de ND até 5)."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chamado-selvagem"
+    }
+  },
+  "_key": "!items!qM37y5GSut7KrvbK"
+}

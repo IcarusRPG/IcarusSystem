@@ -1,0 +1,33 @@
+{
+  "_id": "4uYVCMm3wz4BvD3H",
+  "name": "Sede de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sede-de-sangue.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo mergulha em frenesi: +2 em ataque e dano corpo a corpo, +3 m de deslocamento, mas –2 na Defesa. Ele não pode parar de atacar enquanto houver inimigo adjacente.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sede-de-sangue"
+    }
+  },
+  "_key": "!items!4uYVCMm3wz4BvD3H"
+}

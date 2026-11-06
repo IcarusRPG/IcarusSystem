@@ -1,0 +1,33 @@
+{
+  "_id": "1t2yYLesssB8e6pj",
+  "name": "Explosão Hemorrágica",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/explosao-hemorragica.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude parcial",
+    "descricao": "<p>Se o alvo estiver Sangrando, o sangue dele explode: sofre 10d6 de dano de trevas e as criaturas adjacentes sofrem 4d6 (Reflexos reduz à metade). Se o alvo passar no teste, sofre metade do dano e as adjacentes não sofrem nada. Não funciona contra alvos sem a condição Sangrando.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "explosao-hemorragica"
+    }
+  },
+  "_key": "!items!1t2yYLesssB8e6pj"
+}

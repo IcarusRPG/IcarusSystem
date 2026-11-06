@@ -1,0 +1,38 @@
+{
+  "_id": "tq1DL1tgYSmcH5lD",
+  "name": "Comunhão com a Natureza",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/comunhao-com-a-natureza.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você se funde aos ritmos do mundo natural. Ao lançar, você sabe a direção do norte, o clima das próximas 24 horas e a posição de animais e plantas hostis a até 1 km. Além disso, você recebe 4 dados de 1d6: antes de rolar um teste de Percepção, Sobrevivência, Furtividade ou Adestramento, você pode gastar quantos dados quiser e somar o resultado ao teste (dados gastos são perdidos). Dados não usados somem ao fim da cena.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "você recebe +2 dados de 1d6 e a duração passa a 1 dia."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "comunhao-com-a-natureza"
+    }
+  },
+  "_key": "!items!tq1DL1tgYSmcH5lD"
+}

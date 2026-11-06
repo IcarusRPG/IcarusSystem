@@ -1,0 +1,38 @@
+{
+  "_id": "3TGeJpKj2QDMgWn1",
+  "name": "Chuva de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/chuva-de-sangue.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Gotas ácidas de sangue caem do céu e causam 6d6 de dano de ácido. Quem falhar no teste também fica Sangrando.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chuva-de-sangue"
+    }
+  },
+  "_key": "!items!3TGeJpKj2QDMgWn1"
+}

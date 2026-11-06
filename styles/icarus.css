@@ -1330,3 +1330,50 @@ body.game {
 .icarus-rolagem .dano-partes span { padding: 0 6px; border: 1px solid rgba(216, 180, 90, 0.35); border-radius: 10px; }
 .icarus-rolagem.icarus-cura { border-color: #1f7a3a; }
 .icarus-rolagem.icarus-cura .rolagem-total { color: #6fe39a; }
+
+/* ==========================================================================
+   Magias: aba da ficha, diálogo de lançar e cartão do chat
+   ========================================================================== */
+.ficha-icarus .aba-magias { display: flex; flex-direction: column; gap: 10px; }
+.ficha-icarus .magias-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 10px 14px; }
+.ficha-icarus .magias-topo .f { display: flex; flex-direction: column; gap: 2px; min-width: 200px; }
+.ficha-icarus .magias-cd, .icarus-rolagem .magia-cd {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 56px; padding: 4px 8px;
+  border: 1px solid var(--ic-ouro); border-radius: 8px; background: rgba(216, 180, 90, 0.08);
+}
+.ficha-icarus .magias-cd small, .icarus-rolagem .magia-cd small { font-size: 10px; letter-spacing: .15em; color: var(--ic-ouro-claro); }
+.ficha-icarus .magias-cd b, .icarus-rolagem .magia-cd b { font-family: var(--ic-f-titulo); font-size: 22px; color: var(--ic-branco); line-height: 1; }
+.ficha-icarus .magias-info { color: var(--ic-apagado); font-size: 13px; }
+.ficha-icarus .magias-info b { color: var(--ic-texto); }
+.ficha-icarus .magias-filtros { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+.ficha-icarus .aba-magias [hidden] { display: none !important; }
+.ficha-icarus .card-magia { display: flex; gap: 10px; align-items: flex-start; }
+.ficha-icarus .card-magia .magia-icone { width: 48px; height: 48px; flex: none; border: 0; border-radius: 6px; object-fit: cover; }
+.ficha-icarus .card-magia .card-corpo { flex: 1; min-width: 0; }
+.ficha-icarus .magia-detalhe summary { cursor: pointer; font-size: 12px; color: var(--ic-ciano-titulo); }
+.ficha-icarus .magia-apr, .icarus-rolagem .magia-aprimoramentos ul, .ficha-magia .magia-aprimoramentos ul { margin: 4px 0 0; padding-left: 18px; font-size: 13px; }
+.ficha-icarus .tag-aviso { color: var(--ic-ouro-claro); border-color: var(--ic-ouro); }
+.ficha-magia .item-cab .btn.primario { margin-left: auto; flex: none; }
+.ficha-magia .magia-tradicoes { margin: 0 14px; font-size: 13px; color: var(--ic-apagado); }
+
+.dialogo-magia { display: flex; flex-direction: column; gap: 10px; padding: 12px; }
+.dialogo-magia .magia-cab { display: flex; gap: 12px; align-items: center; }
+.dialogo-magia .magia-cab img { border: 0; border-radius: 8px; }
+.dialogo-magia .magia-cab strong { display: block; font-family: var(--ic-f-titulo); font-size: 18px; }
+.dialogo-magia .magia-sub { display: block; font-size: 12px; color: var(--ic-apagado); }
+.dialogo-magia .magia-linha { display: flex; justify-content: space-between; align-items: baseline; }
+.dialogo-magia .magia-total b { font-size: 18px; color: var(--ic-ouro-claro); }
+.dialogo-magia .magia-aprimoramento { display: block; margin: 4px 0; line-height: 1.35; }
+.dialogo-magia .magia-motivo { margin: 0; color: var(--ic-pv); font-weight: 700; }
+.dialogo-magia .magia-motivo[hidden] { display: none; }
+
+.icarus-rolagem.icarus-magia { border-color: #8b5cf6; }
+.icarus-rolagem.icarus-magia .arma-cab img { width: 44px; height: 44px; border-radius: 6px; }
+.icarus-rolagem .magia-cd { margin-left: auto; }
+.icarus-rolagem .magia-ficha { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 0; font-size: 13px; }
+.icarus-rolagem .magia-ficha dt { color: var(--ic-apagado2); }
+.icarus-rolagem .magia-ficha dd { margin: 0; color: var(--ic-texto); }
+.icarus-rolagem .magia-desc { font-size: 13px; color: var(--ic-texto); }
+.icarus-rolagem .magia-desc summary { cursor: pointer; color: var(--ic-ciano-titulo); font-size: 12px; }
+.icarus-rolagem .magia-desc p { margin: 4px 0; }
+.icarus-rolagem .magia-aprimoramentos { font-size: 13px; color: var(--ic-texto); }

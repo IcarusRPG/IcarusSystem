@@ -1,0 +1,39 @@
+{
+  "_id": "sQ7bNhIsqsbtA75d",
+  "name": "Manto de Sombras",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/manto-de-sombras.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Sombras mágicas cobrem você. Você recebe +5 em Furtividade, camuflagem em penumbra ou escuridão e RD 3 contra dano de luz (respeitando o teto de RD). Uma vez por rodada, quando alguém falhar em acertar você, você pode se mover 3 m sem provocar ataque de oportunidade.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 criatura tocada."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "manto-de-sombras"
+    }
+  },
+  "_key": "!items!sQ7bNhIsqsbtA75d"
+}

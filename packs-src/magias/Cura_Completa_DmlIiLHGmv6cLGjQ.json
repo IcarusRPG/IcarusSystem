@@ -1,0 +1,33 @@
+{
+  "_id": "DmlIiLHGmv6cLGjQ",
+  "name": "Cura Completa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/cura-completa.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Energia vital absoluta restaura 15d8+15 PV do alvo e remove todas as condições de Metabolismo, Cansaço e Veneno, além de Cego, Surdo e Doente. Pode ser usada em criatura com 0 PV.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "cura-completa"
+    }
+  },
+  "_key": "!items!DmlIiLHGmv6cLGjQ"
+}

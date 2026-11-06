@@ -1,0 +1,38 @@
+{
+  "_id": "blSeMdoKsucP73vn",
+  "name": "Palavra de Comando",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/palavra-de-comando.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você dá uma ordem de uma palavra (&quot;Fuja&quot;, &quot;Largue&quot;, &quot;Pare&quot;, &quot;Ajoelhe&quot;). Se falhar, o alvo a obedece no próximo turno dele, a menos que seja suicida ou impossível.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "palavra-de-comando"
+    }
+  },
+  "_key": "!items!blSeMdoKsucP73vn"
+}

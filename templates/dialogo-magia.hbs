@@ -1,0 +1,31 @@
+<div class="ficha-icarus dialogo-magia">
+  <header class="magia-cab">
+    <img src="{{img}}" alt="" width="56" height="56">
+    <div>
+      <strong>{{nome}}</strong>
+      <span class="magia-sub">{{nivel}}º nível · {{meta}}</span>
+      {{#if cd}}<span class="magia-sub">{{localize "ICARUS.Magias.CD"}} <b>{{cd}}</b></span>{{/if}}
+    </div>
+  </header>
+
+  <div class="magia-linha"><span>{{localize "ICARUS.Magias.CustoBase"}}</span><b>{{custoBase}} PM</b></div>
+
+  {{#if aprimoramentos.length}}
+  <fieldset class="ataque-secao">
+    <legend>{{localize "ICARUS.Magias.Aprimoramentos"}}</legend>
+    {{#each aprimoramentos}}
+    <label class="chk magia-aprimoramento"><input type="checkbox" name="aprimoramento" value="{{indice}}"> <b>+{{custo}} PM</b> {{texto}}</label>
+    {{/each}}
+    <small class="ataque-dica">{{localize "ICARUS.Magias.AprimoramentoDica"}}</small>
+  </fieldset>
+  {{/if}}
+
+  <div class="magia-linha magia-total"><span>{{localize "ICARUS.Magias.CustoTotal"}}</span><b><span data-custo-total>{{custoTotal}}</span> PM</b></div>
+  <div class="magia-linha"><span>{{localize "ICARUS.Magias.PMAtual"}}</span><b>{{pmAtual}} / {{pmMax}}</b></div>
+  <p class="magia-motivo" data-motivo{{#if pode}} hidden{{/if}}>{{motivo}}</p>
+
+  <footer class="rodape-config">
+    <button type="button" class="btn" data-action="cancelar">{{localize "ICARUS.Testes.Cancelar"}}</button>
+    <button type="submit" class="btn primario"{{#unless pode}} disabled{{/unless}}><i class="fa-solid fa-wand-sparkles"></i> {{localize "ICARUS.Magias.Lancar"}}</button>
+  </footer>
+</div>

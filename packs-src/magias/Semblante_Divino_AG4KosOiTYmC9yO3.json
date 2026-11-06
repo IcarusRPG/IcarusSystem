@@ -1,0 +1,38 @@
+{
+  "_id": "AG4KosOiTYmC9yO3",
+  "name": "Semblante Divino",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/semblante-divino.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Sua divindade lhe dá uma aparência avassaladora: luz, asas ou uma forma colossal ilusória. Você recebe +5 em Diplomacia e Intimidação. Inimigos em alcance curto que o vejam ficam Abalados se falharem no teste de Vontade (uma vez por inimigo por cena). A ilusão não causa dano e não muda seus atributos.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "o alcance pessoal passa a toque (1 criatura voluntária adicional)."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "semblante-divino"
+    }
+  },
+  "_key": "!items!AG4KosOiTYmC9yO3"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "rVg5v32QP9yNKxwS",
+  "name": "Silêncio",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/silencio.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "cena",
+    "resistencia": "Vontade anula (só criaturas)",
+    "descricao": "<p>Nenhum som é produzido ou atravessa a área. Criaturas dentro ficam Surdas e não conseguem lançar magias enquanto estiverem na área.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "silencio"
+    }
+  },
+  "_key": "!items!rVg5v32QP9yNKxwS"
+}

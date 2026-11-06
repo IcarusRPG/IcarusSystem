@@ -1,0 +1,38 @@
+{
+  "_id": "ca4urdEUstHWzIJ1",
+  "name": "Sangue Vivo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sangue-vivo.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você faz o sangue circular à força: recupera 3d8 PV e remove Sangrando. Não funciona em criaturas sem sangue.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "você também recebe +2 em Fortitude até o fim da cena."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sangue-vivo"
+    }
+  },
+  "_key": "!items!ca4urdEUstHWzIJ1"
+}

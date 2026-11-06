@@ -1,0 +1,38 @@
+{
+  "_id": "0woi3bGXJ68NN1A3",
+  "name": "Lentidão",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/lentidao.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "até 3 criaturas",
+    "duracao": "cena",
+    "resistencia": "Fortitude anula",
+    "descricao": "<p>Os alvos movem-se como se estivessem em melaço: ficam Lentos, sofrem –2 na Defesa e em Reflexos e só podem fazer uma ação padrão ou uma de movimento por rodada. Um alvo repete o teste no fim de cada turno dele para encerrar o efeito.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+2 alvos."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lentidao"
+    }
+  },
+  "_key": "!items!0woi3bGXJ68NN1A3"
+}

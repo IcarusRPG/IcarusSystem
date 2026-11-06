@@ -1,0 +1,4982 @@
+{
+ "versao": 1,
+ "custoPorNivel": {
+  "1": 1,
+  "2": 3,
+  "3": 6,
+  "4": 10,
+  "5": 15
+ },
+ "nivelPersonagemParaNivelMagia": {
+  "1": 1,
+  "2": 5,
+  "3": 9,
+  "4": 13,
+  "5": 17
+ },
+ "tradicoes": [
+  "arcana",
+  "divina",
+  "sangue"
+ ],
+ "escolas": [
+  "Abjuração",
+  "Adivinhação",
+  "Convocação",
+  "Encantamento",
+  "Evocação",
+  "Ilusão",
+  "Necromancia",
+  "Transmutação",
+  "Espiritual"
+ ],
+ "magias": [
+  {
+   "id": "misseis-magicos",
+   "nome": "Mísseis Mágicos",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "até 3 criaturas",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Três dardos de mana disparam de suas mãos e acertam automaticamente, sem teste de ataque. Cada dardo causa 1d4+1 de dano de essência. Você divide os dardos entre os alvos como quiser.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1 dardo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "cone-de-chamas",
+   "nome": "Cone de Chamas",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "cone de 4,5 m a partir de você",
+   "alvo": "criaturas na área",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Um leque de chamas jorra de sua mão e causa 2d6 de dano de fogo.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    },
+    {
+     "custo": 2,
+     "texto": "as criaturas que falharem no teste ficam Em Chamas."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "luz",
+   "nome": "Luz",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 objeto",
+   "duracao": "cena",
+   "resistencia": "— (Vontade anula, só no aprimoramento)",
+   "descricao": "O objeto emite luz forte num raio de 9 m e penumbra por mais 9 m.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "a luz vira um clarão. Uma criatura à sua escolha em alcance curto fica Ofuscada por 1 rodada (Vontade anula)."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "detectar-magia",
+   "nome": "Detectar Magia",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "cone de 18 m",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Você percebe a presença de magia na área: itens, efeitos e criaturas. Como ação de movimento, você se concentra em um alvo que enxergue e descobre se ele tem magia, a escola dela e se é fraca (níveis 1 e 2), moderada (3 e 4) ou forte (5).",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "você também descobre o nome da magia e seu efeito geral."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "armadura-arcana",
+   "nome": "Armadura Arcana",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma película de mana envolve seu corpo e lhe dá +4 na Defesa. Esse bônus não se acumula com outros bônus de Defesa de magias.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "muda o alcance para toque e o alvo para 1 criatura."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sono",
+   "nome": "Sono",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo cai em sono profundo e fica Inconsciente. Ele acorda se sofrer dano ou se alguém gastar uma ação padrão para sacudi-lo. Não afeta criaturas imunes a efeitos mentais.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "afeta +1 criatura, que deve estar a até 3 m do alvo original."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ilusao-menor",
+   "nome": "Ilusão Menor",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "imagem de até um cubo de 3 m",
+   "duracao": "cena",
+   "resistencia": "Vontade desacredita",
+   "descricao": "Você cria uma imagem imóvel, com som, de um objeto, uma pessoa ou um ruído. Quem interagir com a ilusão ou a estudar (ação de movimento) faz um teste de Vontade para perceber que é falsa; quem passa vê através dela.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "a imagem pode se mover dentro do alcance da magia."
+    },
+    {
+     "custo": 2,
+     "texto": "a ilusão também tem cheiro e tato."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "escudo-arcano",
+   "nome": "Escudo Arcano",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "reação",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Quando for alvo de um ataque ou de Mísseis Mágicos, uma barreira surge diante de você: +5 na Defesa contra esse ataque. Além disso, você fica imune a Mísseis Mágicos até o início do seu próximo turno.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "pulso-de-mana",
+   "nome": "Pulso de Mana",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Um soco de força atinge o alvo, causando 2d6 de dano de impacto e empurrando-o 3 m para longe de você. Se passar no teste, o alvo sofre metade do dano e não é empurrado.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    },
+    {
+     "custo": 2,
+     "texto": "se o alvo falhar no teste, também fica Caído."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "fio-de-alarme",
+   "nome": "Fio de Alarme",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "esfera de 9 m de raio",
+   "duracao": "1 dia",
+   "resistencia": null,
+   "descricao": "Você cria uma trama invisível ao redor de um ponto. Se uma criatura Média ou maior entrar na área sem dizer a palavra-chave que você escolheu, você ouve um alarme mental, mesmo dormindo (o alarme o acorda).",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "o alarme também é sonoro, audível por todos até 18 m."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "imagem-espelhada",
+   "nome": "Imagem Espelhada",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Três cópias ilusórias suas surgem e se movem junto com você. Sempre que for alvo de um ataque, role 1d6: com 3 cópias, em 1–3 o ataque atinge uma cópia, erra você e a destrói; com 2 cópias, em 1–2; com 1 cópia, em 1. Quando as três se desfazem, a magia termina.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 cópia (máximo 5; o intervalo de acerto na cópia acompanha o número de cópias)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "teia",
+   "nome": "Teia",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "cubo de 6 m",
+   "duracao": "cena",
+   "resistencia": "Reflexos anula",
+   "descricao": "Fios resistentes preenchem a área. Criaturas que falharem no teste ficam Enredadas. Uma criatura Enredada pode gastar uma ação padrão e passar em um teste de Força ou Acrobacia (CD da magia) para se livrar. A teia é **altamente inflamável**: qualquer fogo que a toque a incendeia por inteiro de uma vez, destruindo-a em 1 rodada e causando 2d6 de dano de fogo a quem estiver nela.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "criaturas que falharem no teste por 5 ou mais também ficam Imóveis."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "nevoa",
+   "nome": "Névoa",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma névoa espessa preenche a área e bloqueia a visão. Criaturas dentro dela têm camuflagem leve, e a visão além de 3 m fica impossível. Um vento forte dispersa a névoa em 4 rodadas.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "a névoa é fria e pesada: criaturas dentro dela ficam Lentas."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "invisibilidade",
+   "nome": "Invisibilidade",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura ou objeto",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo some da vista: ganha camuflagem total e +10 em Furtividade contra quem depender da visão. A magia termina se o alvo atacar, causar dano ou lançar uma magia ofensiva.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo, que deve estar ao alcance de toque (adjacente a você) no momento do lançamento."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "flecha-acida",
+   "nome": "Flecha Ácida",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma flecha de ácido atinge o alvo e causa 4d6 de dano de ácido. Se falhar no teste, o alvo sofre mais 2d6 de ácido no início do próximo turno dele.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano inicial."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "passo-nebuloso",
+   "nome": "Passo Nebuloso",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Convocação",
+   "execucao": "movimento",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você some em uma névoa prateada e reaparece em um espaço livre que enxergue, a até 9 m.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "você leva consigo 1 criatura adjacente voluntária."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "levitacao",
+   "nome": "Levitação",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura ou objeto de até 150 kg",
+   "duracao": "cena",
+   "resistencia": "Vontade anula (se involuntário)",
+   "descricao": "O alvo flutua. Você pode movê-lo 6 m para cima ou para baixo por rodada (ação livre, no seu turno). Não há movimento horizontal por conta própria, mas o alvo pode se empurrar em paredes e objetos.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 criatura ou objeto, alvo a até 3 m do primeiro."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "despedacar",
+   "nome": "Despedaçar",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 3 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Um estrondo de vibração fere a área, causando 4d6 de dano de impacto. Objetos frágeis e não vigiados na área se quebram.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ancora-de-mana",
+   "nome": "Âncora de Mana",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Uma corrente invisível de mana prende o alvo ao ponto onde ele estava. Ele não pode se afastar mais de 6 m desse ponto, nem teletransportar-se, nem mudar de plano. Movimento forçado (empurrões, ventos) ainda funciona.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o alcance da corrente cai para 3 m."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ler-pensamentos",
+   "nome": "Ler Pensamentos",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você percebe os pensamentos de superfície do alvo: emoções, o que ele pensa agora e o que pretende fazer a seguir. Você recebe +5 em Intuição contra ele. O alvo não percebe a magia, a menos que passe no teste, caso em que sente um leve roçar na mente.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "bola-de-fogo",
+   "nome": "Bola de Fogo",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma bolinha de fogo explode no ponto escolhido e causa 6d6 de dano de fogo. Objetos inflamáveis soltos na área pegam fogo.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    },
+    {
+     "custo": 2,
+     "texto": "criaturas que falharem no teste ficam Em Chamas."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "relampago",
+   "nome": "Relâmpago",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "linha de 18 m",
+   "alvo": "criaturas na linha",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Um raio parte de suas mãos e causa 6d6 de dano elétrico. Quem falhar no teste também fica Ofuscado por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "velocidade",
+   "nome": "Velocidade",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo acelera: seu deslocamento aumenta em 6 m, ele recebe +2 na Defesa e em Reflexos e, uma vez por rodada, pode fazer uma ação de movimento adicional. Quando a magia termina, o alvo fica Fatigado por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    },
+    {
+     "custo": 4,
+     "texto": "a ação adicional por rodada passa a ser uma **ação padrão** em vez de uma ação de movimento (ela não pode ser usada para lançar magias)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "lentidao",
+   "nome": "Lentidão",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "até 3 criaturas",
+   "duracao": "cena",
+   "resistencia": "Fortitude anula",
+   "descricao": "Os alvos movem-se como se estivessem em melaço: ficam Lentos, sofrem –2 na Defesa e em Reflexos e só podem fazer uma ação padrão ou uma de movimento por rodada. Um alvo repete o teste no fim de cada turno dele para encerrar o efeito.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+2 alvos."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "voo",
+   "nome": "Voo",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo ganha deslocamento de voo de 12 m. Se a magia acabar enquanto ele estiver no ar, ele cai, mas amortece a queda e sofre só metade do dano.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "dissipar-magia",
+   "nome": "Dissipar Magia",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura, objeto ou esfera de 3 m de raio",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você tenta encerrar uma magia ativa. Faça um teste de Misticismo (se a magia for arcana ou de sangue) ou de Religião (se for divina) contra CD 15 + 2 × o nível da magia alvo. Se passar, a magia termina. Efeitos instantâneos não podem ser dissipados.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "o teste recebe +5."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "imobilizar",
+   "nome": "Imobilizar",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo fica Paralisado. No fim de cada turno dele, ele repete o teste de Vontade; se passar, a magia termina. Dano não encerra o efeito.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo (a até 3 m do primeiro)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "clarividencia",
+   "nome": "Clarividência",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "um local conhecido",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Você cria um sensor invisível num local que já tenha visto ou cuja posição conheça. Enquanto sustenta a magia, você vê e ouve por ele como se estivesse lá. O sensor é pequeno e pode ser notado por criaturas que o procurem (Visão CD 25).",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o sensor também enxerga no escuro e detecta magia."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "carcere-de-espelhos",
+   "nome": "Cárcere de Espelhos",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Quatro espelhos de mana se erguem ao redor do alvo, um de cada lado, e o prendem numa cela. Ele não pode sair, mas pode agir dentro dela, e vê imagens de si mesmo por todo lado: fica Frustrado enquanto estiver preso. Cada espelho tem Defesa 10 + metade do seu nível e PV iguais a 3 × o seu nível. Quando um espelho é destruído, o cárcere se rompe e a magia termina. Quem atacar um espelho **de fora** sofre metade do dano causado a ele (do mesmo tipo); quem ataca de dentro não sofre isso.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "os espelhos drenam a mana de quem está preso: a cada ataque ou magia ofensiva que o alvo fizer de dentro do cárcere, ele perde 1d6 PM (não abaixo de 0)."
+    },
+    {
+     "custo": 3,
+     "texto": "o cárcere pode ser carregado (acompanha o alvo flutuando, sob seu controle, até 6 m por rodada)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "muralha-de-fogo",
+   "nome": "Muralha de Fogo",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "muralha de até 18 m de comprimento, 3 m de altura",
+   "duracao": "cena",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma cortina de chamas bloqueia a visão. Criaturas que atravessarem a muralha sofrem 6d6 de dano de fogo e ficam Em Chamas. Criaturas adjacentes a ela no início do turno sofrem 2d6 de fogo.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1d6 de dano em ambos os efeitos."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "tempestade-de-gelo",
+   "nome": "Tempestade de Gelo",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Pedras de gelo despencam e causam 4d6 de dano de impacto e 4d6 de dano de frio. O solo na área vira gelo até o fim da cena: criaturas nele ficam Lentas.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano de frio."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "confusao",
+   "nome": "Confusão",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "1d4 rodadas",
+   "resistencia": "Vontade anula",
+   "descricao": "As criaturas na área ficam Confusas pela duração. A cada turno, repetem o teste de Vontade; se passarem, a condição termina para elas.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "aumenta o raio da esfera em +3 m."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "dominar-pessoa",
+   "nome": "Dominar Pessoa",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 humanoide",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você controla as ações do alvo, que obedece mesmo contra a vontade. Ordens contrárias à sua natureza dão um novo teste ao alvo. Se você ordenar algo suicida ou que o faça se ferir, a ordem é recusada e o efeito termina: o alvo fica livre da magia. Você precisa de uma ação livre por rodada para dar comandos.",
+   "aprimoramentos": [
+    {
+     "custo": 4,
+     "texto": "o alvo pode ser qualquer criatura que entenda uma língua."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "pele-de-pedra",
+   "nome": "Pele de Pedra",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "A pele do alvo se torna rochosa: ele recebe RD 5 contra dano de corte, perfuração e impacto (respeitando o teto de RD do núcleo). O alvo sofre –3 em testes de Acrobacia e Furtividade.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "porta-dimensional",
+   "nome": "Porta Dimensional",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "você e 1 criatura voluntária adjacente",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você abre uma porta de luz e vocês dois reaparecem em um ponto livre que enxerguem ou descrevam (direção e distância) a até 90 m. Chegar a um ponto ocupado ou impossível causa 4d6 de dano de impacto e a magia falha.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "videncia",
+   "nome": "Vidência",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "1 criatura",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você observa à distância uma criatura que conheça ou possua algo dela (fio de cabelo, objeto pessoal). Se ela passar, o alvo sente ser observado e a magia falha. Se falhar, você a vê e ouve num raio de 9 m ao seu redor, em qualquer distância no mesmo plano.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "tormenta-de-estilhacos",
+   "nome": "Tormenta de Estilhaços",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 4,5 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Estilhaços de cristal em tempestade cobrem a área e causam 8d6 de dano de corte. Quem falhar no teste também fica Sangrando.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "desintegrar",
+   "nome": "Desintegrar",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura ou objeto",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude parcial",
+   "descricao": "Um raio esverdeado atinge o alvo e causa 14d6 de dano de essência. Se passar no teste, sofre 5d6. Uma criatura reduzida a 0 PV por esta magia é desintegrada, sem deixar nada além de poeira.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "cone-glacial",
+   "nome": "Cone Glacial",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "cone de 12 m",
+   "alvo": "criaturas na área",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Uma rajada de frio extremo causa 12d6 de dano de frio. Quem falhar no teste também fica Lento por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "teleporte",
+   "nome": "Teleporte",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "você e até 5 criaturas voluntárias",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você leva o grupo a um local no mesmo plano. O local precisa ser conhecido: se você o conhece bem, chega com precisão; se só o visitou uma vez, desvia até 90 m; se só ouviu falar, a magia falha e o PM se perde.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "dominar-monstro",
+   "nome": "Dominar Monstro",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Como Dominar Pessoa, mas afeta qualquer criatura capaz de entender uma língua ou instinto. Criaturas com ND (nível de desafio) maior que o seu nível têm +5 no teste de Vontade.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "chuva-de-meteoros",
+   "nome": "Chuva de Meteoros",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "até 4 pontos, esferas de 3 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Quatro bolas de rocha em chamas caem do céu em pontos que você escolhe. Cada uma causa 6d6 de dano de impacto e 6d6 de dano de fogo na área. Uma criatura atingida por mais de uma bola sofre o dano de cada uma.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "parar-o-tempo",
+   "nome": "Parar o Tempo",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "O tempo parece parar ao seu redor: você faz 3 turnos extras seguidos. Nesse período, você não pode causar dano nem aplicar condições a outras criaturas, nem afetar objetos carregados ou vestidos por outras criaturas. Magias com duração que você lançar continuam ativas ao final.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "colapso-gravitacional",
+   "nome": "Colapso Gravitacional",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Um ponto de gravidade crescente no centro da área puxa tudo para si. Criaturas na área sofrem 10d6 de dano de impacto e são puxadas até 6 m em direção ao centro. Se falharem no teste, também ficam Caídas e Lentas até o fim da cena.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "eclipse-arcano",
+   "nome": "Eclipse Arcano",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 9 m de raio, centrada em você",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Um domo escuro e silencioso suprime a magia ao redor. Ninguém além de você pode lançar magias na área, e efeitos mágicos contínuos de outros ficam suspensos enquanto ela durar. Suas magias funcionam normalmente.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "curar-ferimentos",
+   "nome": "Curar Ferimentos",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Energia vital flui da sua mão e cura 2d8+2 PV do alvo. Se for lançada contra mortos-vivos, causa esse valor como dano de luz (Vontade reduz à metade).",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d8+1 de cura."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "bencao",
+   "nome": "Bênção",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "até 3 criaturas",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Os alvos sentem a proteção divina e recebem +1 em testes de ataque e em testes de resistência.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 criatura."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "escudo-da-fe",
+   "nome": "Escudo da Fé",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "reação",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Quando um aliado a até 9 m for alvo de um ataque, um clarão o protege: ele recebe +4 na Defesa contra esse ataque.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "chama-sagrada",
+   "nome": "Chama Sagrada",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos anula",
+   "descricao": "Uma coluna de luz desce sobre o alvo e causa 3d6 de dano de luz. Criaturas de natureza profana sofrem +1d6.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "palavra-de-comando",
+   "nome": "Palavra de Comando",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Vontade anula",
+   "descricao": "Você dá uma ordem de uma palavra (\"Fuja\", \"Largue\", \"Pare\", \"Ajoelhe\"). Se falhar, o alvo a obedece no próximo turno dele, a menos que seja suicida ou impossível.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "protecao-contra-o-mal",
+   "nome": "Proteção contra o Mal",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo recebe +2 em Defesa e em testes de resistência contra criaturas profanas (mortos-vivos, demônios, espíritos malignos) e contra efeitos mentais que dominem ou enfeitiçem. Essas criaturas sofrem –2 ao atacá-lo corpo a corpo.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "santuario",
+   "nome": "Santuário",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula (do atacante)",
+   "descricao": "Uma aura sagrada cerca o alvo. Quem tentar atacá-lo ou fazê-lo alvo de magia ofensiva deve passar num teste de Vontade, ou escolher outro alvo ou perder a ação. A magia termina se o alvo atacar ou lançar magia ofensiva.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "orientacao-divina",
+   "nome": "Orientação Divina",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Adivinhação",
+   "execucao": "movimento",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você sussurra uma prece e o alvo recebe +2 no próximo teste de perícia que fizer até o fim do próximo turno dele.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "o bônus vira +4."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "cipos-prensores",
+   "nome": "Cipós Prensores",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "quadrado de 6 m",
+   "duracao": "cena",
+   "resistencia": "Reflexos anula",
+   "descricao": "Plantas brotam e agarram as criaturas na área. Quem falhar no teste sofre 2d6 de dano de impacto (os cipós apertam) e fica Enredado. Uma criatura Enredada se liberta com uma ação padrão e um teste de Força ou Acrobacia (CD da magia). Em terreno sem plantas, os cipós vêm do chão.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "criaturas que falharem por 5 ou mais ficam também Imóveis."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "falar-com-animais",
+   "nome": "Falar com Animais",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você entende e se comunica com animais. Eles não ficam mais amistosos, mas respondem com honestidade ao que sabem e podem lhe dizer o que viram.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "restauracao-menor",
+   "nome": "Restauração Menor",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você remove uma condição do alvo entre: Abalado, Atordoado, Cego, Confuso, Doente, Enjoado, Envenenado, Fatigado, Ofuscado, Paralisado, Surdo (um tipo por lançamento, se a condição vier de uma magia ou efeito de nível 3 ou menor).",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "remove uma segunda condição."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "arma-espiritual",
+   "nome": "Arma Espiritual",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Uma arma de luz espiritual surge e ataca sozinha. No momento em que é criada e em cada turno seu, como ação livre, ela atinge um alvo em alcance curto e causa 2d8 de dano de luz (acerta automaticamente). A arma ocupa um espaço, pode ser atacada e tem Defesa 10 + metade do seu nível e PV iguais a 2 × o seu nível. Ela é imune a condições, veneno e dano psíquico. Se for reduzida a 0 PV, a magia termina.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "silencio",
+   "nome": "Silêncio",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "cena",
+   "resistencia": "Vontade anula (só criaturas)",
+   "descricao": "Nenhum som é produzido ou atravessa a área. Criaturas dentro ficam Surdas e não conseguem lançar magias enquanto estiverem na área.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "arma-sagrada",
+   "nome": "Arma Sagrada",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 arma",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você abençoa uma arma, que brilha com luz dourada. Ela passa a ser mágica e causa +1d6 de dano de luz em cada ataque que acertar. Contra criaturas profanas, o dano de luz extra vira +2d6.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o bônus de dano de luz sobe +1d6 (+2d6 contra profanas)."
+    },
+    {
+     "custo": 2,
+     "texto": "+1 arma, que deve estar com o mesmo portador ou com um aliado a até 3 m."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "oracao",
+   "nome": "Oração",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "aliados e inimigos em esfera de 9 m de raio",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Você inspira seus aliados e abate os inimigos: aliados na área recebem +1 em testes de perícia e de ataque, e inimigos sofrem –1 nos mesmos testes. Os efeitos duram enquanto estiverem na área.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "lanca-de-luz",
+   "nome": "Lança de Luz",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Um raio dourado atinge o alvo e causa 5d6 de dano de luz. Criaturas de natureza profana sofrem +2d6 e ficam Ofuscadas por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "pele-de-casca",
+   "nome": "Pele de Casca",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "A pele do alvo vira casca de árvore: ele recebe +3 na Defesa e RD 2 contra dano de corte e perfuração. Em troca, sofre +1d6 de dano sempre que sofrer dano de fogo.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o bônus na Defesa vira +4."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "remover-maldicao",
+   "nome": "Remover Maldição",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura ou objeto",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você rompe as maldições que pesam sobre o alvo. Maldições de magias de nível 3 ou menor terminam automaticamente; maldições mais fortes pedem um teste de Religião contra CD 15 + 2 × o nível da maldição (ou o nível da magia que a criou). Em um objeto amaldiçoado, a maldição some e o objeto pode ser largado, mas o item continua mágico.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "espiritos-guardioes",
+   "nome": "Espíritos Guardiões",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 4,5 m de raio ao seu redor",
+   "duracao": "sustentada",
+   "resistencia": "Vontade reduz à metade",
+   "descricao": "Espíritos luminosos giram ao seu redor. Inimigos que entrarem na área ou começarem o turno nela sofrem 3d8 de dano de luz e ficam Lentos até o fim do turno. Seus aliados são ignorados.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "revivificar",
+   "nome": "Revivificar",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura morta há até 1 minuto",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você traz de volta ao mundo uma criatura que morreu há não mais que 1 minuto. Ela retorna com 1 PV e fica Fatigada até um descanso. Não funciona em quem morreu de velhice, ou cuja cabeça ou corpo tenham sido destruídos.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "luz-do-dia",
+   "nome": "Luz do Dia",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 18 m de raio",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Um globo de luz do sol ilumina a área. Magias de escuridão de nível 3 ou menor nessa área são dissipadas, e criaturas sensíveis à luz solar sofrem –2 em testes enquanto estiverem nela.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "cura-em-massa",
+   "nome": "Cura em Massa",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "até 6 criaturas",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Uma onda de luz envolve seus aliados e cura 3d8+3 PV de cada alvo.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d8+1 de cura em cada alvo."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "protecao-contra-energia",
+   "nome": "Proteção contra Energia",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Escolha um tipo: fogo, frio, elétrico ou ácido. O alvo recebe Redução 5 a esse tipo, e um bônus de +2 em testes de resistência contra magias desse tipo.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "chamar-relampagos",
+   "nome": "Chamar Relâmpagos",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 ponto no céu",
+   "duracao": "sustentada",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma tempestade se forma sobre o alvo. Quando a magia é lançada, e depois como ação padrão em cada turno seu, um raio cai em um ponto à sua escolha e causa 4d6 de dano elétrico em esfera de 3 m de raio. Só funciona ao ar livre.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "banimento",
+   "nome": "Banimento",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo, se for extraplanar (espírito, demônio, elemental ou fada), é banido ao seu plano natal. Outras criaturas, se falharem, ficam Atordoadas por 1 rodada.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "guardiao-da-fe",
+   "nome": "Guardião da Fé",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 espaço",
+   "duracao": "cena",
+   "resistencia": "Vontade reduz à metade",
+   "descricao": "Um guardião espiritual surge e protege uma área de 3 m de raio. Inimigos que entrarem na área ou começarem o turno nela sofrem 6d6 de dano de luz. O guardião some após causar 30 de dano no total.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "liberdade-de-movimento",
+   "nome": "Liberdade de Movimento",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo não pode ficar Agarrado, Enredado, Imóvel, Lento ou Paralisado por efeitos mágicos, e age normalmente mesmo na água. Condições já ativas continuam.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "aura-de-pureza",
+   "nome": "Aura de Pureza",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Você e seus aliados na área recebem +5 em testes de resistência contra Doente, Envenenado e efeitos mentais, e RD 2 contra dano de veneno.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "muralha-de-espinhos",
+   "nome": "Muralha de Espinhos",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "muralha de até 18 m de comprimento, 3 m de altura",
+   "duracao": "cena",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma barreira densa de espinhos bloqueia a visão e o movimento. Atravessá-la custa 6 m de deslocamento por quadrado, e quem o fizer sofre 4d6 de dano de perfuração e fica Sangrando.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "martelo-do-julgamento",
+   "nome": "Martelo do Julgamento",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude parcial",
+   "descricao": "Um martelo de luz cai sobre o alvo e causa 8d6 de dano de luz e 4d6 de dano de impacto. Se passar no teste, sofre metade e não fica Atordoado; se falhar, fica Atordoado por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano de luz."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "cura-completa",
+   "nome": "Cura Completa",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Energia vital absoluta restaura 15d8+15 PV do alvo e remove todas as condições de Metabolismo, Cansaço e Veneno, além de Cego, Surdo e Doente. Pode ser usada em criatura com 0 PV.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ressurreicao",
+   "nome": "Ressurreição",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura morta há até 7 dias",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você traz de volta uma criatura morta há até 7 dias (o corpo precisa estar inteiro). Ela volta com 1 PV e fica Debilitada e Fatigada por 7 dias. A criatura precisa estar disposta; sua alma não é obrigada a voltar.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "coluna-flamejante",
+   "nome": "Coluna Flamejante",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "cilindro de 6 m de raio e 30 m de altura",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma coluna de fogo e luz desce do céu e causa 6d6 de dano de fogo e 6d6 de dano de luz.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de um dos tipos de dano."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "julgamento-final",
+   "nome": "Julgamento Final",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Vontade parcial",
+   "descricao": "Uma sentença divina recai sobre o alvo e causa 12d6 de dano de luz. Se falhar no teste, o alvo também fica Vulnerável e Abalado até o fim da cena; se passar, sofre metade do dano.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "santuario-consagrado",
+   "nome": "Santuário Consagrado",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Abjuração",
+   "execucao": "completa",
+   "alcance": "toque",
+   "alvo": "esfera de 18 m de raio",
+   "duracao": "1 dia",
+   "resistencia": null,
+   "descricao": "Você consagra o terreno com uma bênção poderosa. Criaturas profanas não podem entrar sem passar em um teste de Vontade, e seus aliados dentro recuperam o dobro de PV em descansos. Dura 1 dia, ou até que você saia da área.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "palavra-divina",
+   "nome": "Palavra Divina",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "todas as criaturas que a ouvirem",
+   "duracao": "instantânea",
+   "resistencia": "Vontade anula",
+   "descricao": "Você pronuncia uma palavra que ressoa de forma divina. Criaturas de nível/ND até o seu nível que falharem ficam Atordoadas por 1 rodada, Cegas por 1 minuto e Surdas por 1 minuto.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "toque-vampirico",
+   "nome": "Toque Vampírico",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Você toca o alvo e drena sua vida: ele sofre 3d6 de dano de trevas e você recupera PV igual à metade do dano causado (não excede seu máximo). Não funciona em construtos e mortos-vivos.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sangria",
+   "nome": "Sangria",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude anula",
+   "descricao": "Você abre feridas invisíveis no corpo do alvo. Se falhar no teste, ele fica Sangrando. Se já estiver Sangrando, perde 2d6 PV (perda de PV, não dano).",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1 alvo, a até 3 m do primeiro."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "lamina-rubra",
+   "nome": "Lâmina Rubra",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "uma arma de sangue",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você forma na mão uma arma de sangue endurecido (qualquer arma corpo a corpo simples de uma mão). Ela é uma arma mágica: causa dano normal do tipo da arma e, quando acerta, você recupera 1 PV. Se você for conjurador, seus testes de Luta com a lâmina usam o **atributo-chave** com o qual lança magias, no lugar de Força ou Destreza; se não for, usa o atributo normal da arma. Ela se desfaz se você a soltar.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "a arma também causa +1d6 de dano de trevas."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "escudo-carmesim",
+   "nome": "Escudo Carmesim",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma membrana de sangue coagulado cobre seu corpo: +2 na Defesa e RD 2 contra dano de corte e perfuração. Sempre que sofrer dano de corte ou perfuração de um atacante adjacente, ele é respingado e sofre 1d6 de dano de trevas.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "faro-de-sangue",
+   "nome": "Faro de Sangue",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você sente o sangue pulsando ao redor: percebe, até 30 m, a posição de criaturas vivas com PV abaixo de metade do máximo ou Sangrando, mesmo atrás de paredes, e recebe +5 em Olfato e Sobrevivência para rastrear ferido.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "fome-carmesim",
+   "nome": "Fome Carmesim",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Seu sangue ferve e pede carnificina. Quando você reduz uma criatura a 0 PV com um ataque, recupera 1d6 PV (uma vez por rodada).",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "a cura vira 2d6."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "marca-de-sangue",
+   "nome": "Marca de Sangue",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Você marca o alvo com uma tatuagem de sangue invisível. Você sabe sempre a direção e a distância aproximada dele, em qualquer lugar do mesmo plano, e ele sofre –2 em Furtividade contra você.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "garras-carmesins",
+   "nome": "Garras Carmesins",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Garras ósseas cobertas de sangue surgem nos seus dedos. Seus ataques desarmados causam 1d8 de dano de corte (ou o seu dano desarmado normal, o que for maior) e podem ser usados com Luta ou Destreza. Quem sofrer dano das garras fica Sangrando se falhar em Fortitude.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "veu-rubro",
+   "nome": "Véu Rubro",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma névoa de sangue vaporizado cobre a área: camuflagem leve, e quem respirar nela sofre 1d6 de dano de veneno no início do turno. Criaturas Sangrando na área ficam Enjoadas.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "vinculo-de-dor",
+   "nome": "Vínculo de Dor",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Um fio de sangue liga você e o alvo. Metade do dano que você sofrer (de qualquer tipo) é transferido para o alvo, que sofre o dano como perda de PV, sem Redução. A magia termina se você ficar a mais de 30 m dele.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "hemorragia",
+   "nome": "Hemorragia",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Você agrava os ferimentos do alvo: ele sofre 4d6 de dano de trevas, ou 6d6 se estiver Sangrando.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "drenar-vigor",
+   "nome": "Drenar Vigor",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude parcial",
+   "descricao": "Você sorve a energia do alvo: ele fica Fatigado e perde 3d6 PV, que você recupera. Se passar no teste, só perde metade e não fica Fatigado.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sangue-vivo",
+   "nome": "Sangue Vivo",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você faz o sangue circular à força: recupera 3d8 PV e remove Sangrando. Não funciona em criaturas sem sangue.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "você também recebe +2 em Fortitude até o fim da cena."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sede-de-sangue",
+   "nome": "Sede de Sangue",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo mergulha em frenesi: +2 em ataque e dano corpo a corpo, +3 m de deslocamento, mas –2 na Defesa. Ele não pode parar de atacar enquanto houver inimigo adjacente.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "maldicao-de-sangue",
+   "nome": "Maldição de Sangue",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "permanente",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo é amaldiçoado: toda vez que ele sofrer dano de corte ou perfuração, também perde 1d6 PV. O efeito só termina com Remover Maldição, com Dissipar Magia (CD +5) ou por vontade de quem lançou.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "chuva-de-sangue",
+   "nome": "Chuva de Sangue",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Gotas ácidas de sangue caem do céu e causam 6d6 de dano de ácido. Quem falhar no teste também fica Sangrando.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "banquete-rubro",
+   "nome": "Banquete Rubro",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "esfera de 3 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Você arranca a vida das criaturas na área. Role 5d6 **uma única vez**: o resultado vale para todas as criaturas. Quem falhar no teste sofre esse valor como dano de trevas; quem passar sofre metade. Você recupera PV iguais à **metade do dano rolado** (uma vez só, não importa quantas criaturas sejam afetadas). Sem criaturas vivas afetadas, você não recupera nada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "corpo-de-sangue",
+   "nome": "Corpo de Sangue",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Seu corpo vira sangue líquido: você pode passar por frestas, não pode ser Agarrado ou Enredado, e recebe RD 5 contra dano de corte, perfuração e impacto. Você não pode vestir armadura nem carregar mais de 5 espaços de itens. Enquanto estiver sob o efeito, você não pode atacar nem lançar magias.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "tendoes-rubros",
+   "nome": "Tendões Rubros",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "até 2 criaturas",
+   "duracao": "sustentada",
+   "resistencia": "Reflexos anula",
+   "descricao": "Cordas de sangue brotam do chão e prendem as criaturas. Quem falhar no teste fica Agarrado e Sangrando, e sofre 2d6 de dano de corte no início de cada turno dele enquanto estiver preso. Como ação padrão, uma criatura presa pode tentar se soltar com um teste de Força ou Acrobacia (CD da magia). Se conseguir, a magia termina para ela.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 criatura, a até 3 m das outras."
+    },
+    {
+     "custo": 2,
+     "texto": "o dano periódico sobe +1d6."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "marionete-de-sangue",
+   "nome": "Marionete de Sangue",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você controla o sangue do alvo, que age como sua marionete por 1 turno: no início do próximo turno dele, você dita suas ações (movimento e uma ação padrão). Depois, ele repete o teste. Não pode forçá-lo a atos suicidas.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "passo-carmesim",
+   "nome": "Passo Carmesim",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Convocação",
+   "execucao": "movimento",
+   "alcance": "médio",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você se desfaz em uma poça de sangue e reaparece, por outra poça, em um espaço livre adjacente a uma criatura Sangrando ou a uma poça visível de sangue, a até 30 m. Funciona mesmo em locais sem linha de visão direta, desde que você conheça a posição do destino.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "você leva consigo 1 aliado adjacente."
+    },
+    {
+     "custo": 2,
+     "texto": "ao chegar, uma criatura Sangrando adjacente à sua escolha sofre 4d6 de dano de corte (Reflexos reduz à metade)."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "lancas-de-sangue",
+   "nome": "Lanças de Sangue",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "até 3 criaturas",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Três lanças de sangue saem do seu corpo e atingem alvos diferentes (ou o mesmo): cada uma causa 4d6 de dano de perfuração e deixa o alvo Sangrando se falhar no teste.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1 lança."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "explosao-hemorragica",
+   "nome": "Explosão Hemorrágica",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude parcial",
+   "descricao": "Se o alvo estiver Sangrando, o sangue dele explode: sofre 10d6 de dano de trevas e as criaturas adjacentes sofrem 4d6 (Reflexos reduz à metade). Se o alvo passar no teste, sofre metade do dano e as adjacentes não sofrem nada. Não funciona contra alvos sem a condição Sangrando.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "metamorfose-sanguinea",
+   "nome": "Metamorfose Sanguínea",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você assume forma de horror sanguíneo: +4 na Defesa, +2 em ataques e dano corpo a corpo, 15 PV temporários e o efeito de Garras Carmesins. Você não pode lançar outras magias durante a transformação.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "peste-carmesim",
+   "nome": "Peste Carmesim",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Fortitude anula",
+   "descricao": "Uma praga corrói o sangue do alvo. Se falhar no teste, ele fica Fraco e Sangrando. No início de cada turno do infectado, cada criatura adjacente a ele faz um teste de Fortitude; se falhar, contrai a mesma praga (com a mesma duração). A praga termina para quem passar no teste de Fortitude da condição Sangrando.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "a condição Fraco vira Debilitado."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "glifo-de-sangue",
+   "nome": "Glifo de Sangue",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "completa",
+   "alcance": "toque",
+   "alvo": "uma superfície ou objeto, até 3 m",
+   "duracao": "1 dia",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Você desenha um glifo de sangue que arde em silêncio. Quando uma criatura (que não seja você nem aliados que você tenha indicado) tocar o glifo, abrir o objeto marcado ou entrar na área, ele explode em uma esfera de 4,5 m de raio e causa 8d6 de dano de trevas. Quem falhar no teste fica Sangrando. Encontrar o glifo exige um teste de Investigação contra a CD da magia. A magia termina quando o glifo explode.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "nuvem-de-morcegos",
+   "nome": "Nuvem de Morcegos",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 4,5 m de raio",
+   "duracao": "sustentada",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Um enxame de morcegos de sangue cobre a área e causa 4d6 de dano de perfuração no início de cada turno seu a todas as criaturas nela, A visão fica limitada: camuflagem leve.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "mare-carmesim",
+   "nome": "Maré Carmesim",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 9 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Uma onda de sangue varre a área e causa 12d6 de dano de trevas. Criaturas que falharem ficam Sangrando e Lentas por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "exsanguinar",
+   "nome": "Exsanguinar",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude parcial",
+   "descricao": "Você arranca todo o sangue do alvo: ele sofre 15d6 de dano de trevas e perde metade dos PV restantes. Se passar no teste, sofre metade do dano e não perde PV extra. Se for reduzido a 0 PV, sua alma é consumida e ele não pode ser revivido por magias de nível 4 ou menos.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sangue-ancestral",
+   "nome": "Sangue Ancestral",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você desperta o poder do sangue primordial: +2 em Força, Destreza e Constituição até o fim da cena, imunidade a veneno e doença, regeneração de 5 PV por rodada e +1,5 m de deslocamento. Ao final da magia, você fica Exausto por 1 rodada.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "pacto-sanguinario",
+   "nome": "Pacto Sanguinário",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura voluntária",
+   "duracao": "1 dia",
+   "resistencia": null,
+   "descricao": "Você e o alvo compartilham sangue: quando um sofre dano, o outro pode escolher sofrer metade dele. Vocês sentem a direção e distância um do outro no mesmo plano. A magia termina se o vínculo for rompido por Dissipar Magia.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sentenca-de-sangue",
+   "nome": "Sentença de Sangue",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 criatura",
+   "duracao": "1 dia",
+   "resistencia": "Vontade anula",
+   "descricao": "Você marca o alvo com uma sentença. Ele sofre –2 em todos os testes, e você causa +2d6 de dano de trevas contra ele em magias e armas que você use. A marca só se rompe se ele morrer, se você morrer ou se a magia terminar.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "forma-de-vampiro",
+   "nome": "Forma de Vampiro",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você assume forma sombria e predatória: deslocamento de voo 12 m, RD 5 contra dano não mágico, +2 em ataque e dano corpo a corpo e seu ataque desarmado drena 1d6 PV (você recupera o mesmo). Você pode virar névoa ou morcegos como ação de movimento.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "eclipse-carmesim",
+   "nome": "Eclipse Carmesim",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 12 m de raio ao seu redor",
+   "duracao": "sustentada",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "O céu escurece em vermelho. No início de cada turno seu, inimigos na área sofrem 4d6 de dano de trevas e você recupera 10 PV. Aliados na área recebem +1 em ataques e dano.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "chicote-de-sangue",
+   "nome": "Chicote de Sangue",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma corda de sangue estala e atinge o alvo, causando 3d6 de dano de corte. Se falhar no teste, o alvo é puxado até 3 m na sua direção.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "imagem-de-sangue",
+   "nome": "Imagem de Sangue",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 cópia",
+   "duracao": "cena",
+   "resistencia": "Vontade desacredita",
+   "descricao": "Uma cópia sua feita de sangue surge no local escolhido e age como isca. Inimigos devem passar em Vontade para não escolherem a cópia como alvo no lugar de você, se ela estiver mais próxima. Quando a cópia sofre dano, ela explode e causa 2d6 de dano de trevas nas criaturas adjacentes (Reflexos reduz à metade).",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "calice-de-vitalidade",
+   "nome": "Cálice de Vitalidade",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Você drena os inimigos na área. Role 4d6 **uma única vez**: o resultado vale para todos os inimigos. Quem falhar no teste sofre esse valor como dano de trevas; quem passar sofre metade. A vida drenada, igual ao **dano rolado**, é dividida em partes iguais entre você e seus aliados na área, e cada um recupera a sua parte em PV.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "servo-de-sangue",
+   "nome": "Servo de Sangue",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 espaço",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Um servo feito de sangue (Médio) ergue-se do chão. Ele tem PV iguais ao seu nível x 3, Defesa 15 + metade do seu nível e causa 2d8+4 de dano de corte (com um ataque simples, no seu turno, como ação livre). Ele se desfaz ao chegar a 0 PV. Você só pode ter 1 servo de sangue ao mesmo tempo.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "olhar-espiritual",
+   "nome": "Olhar Espiritual",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você enxerga o lado espiritual do mundo. Enquanto durar, vê criaturas incorpóreas, etéreas e espíritos como se fossem sólidos; percebe, em alcance médio, a presença de mortos-vivos e de criaturas animadas por necromancia, mesmo escondidos; e recebe +2 em Intuição contra criaturas profanas.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "você também percebe se uma criatura a até 9 m está possuída, dominada ou sob efeito mental (sem saber qual)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "golpe-espiritual",
+   "nome": "Golpe Espiritual",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Vontade reduz à metade",
+   "descricao": "Uma lança de energia espiritual atravessa o corpo do alvo e fere sua alma, causando 3d6 de dano de essência. Contra criaturas incorpóreas e espíritos, causa +1d6.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "passo-espectral",
+   "nome": "Passo Espectral",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Espiritual",
+   "execucao": "movimento",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "até o fim do seu turno",
+   "resistencia": null,
+   "descricao": "Seu corpo vira uma sombra espiritual. Até o fim do seu turno, você atravessa criaturas e obstáculos finos (cortinas, portas de madeira, grades), ignora terreno difícil e tem camuflagem leve. Enquanto estiver sob o efeito, você não pode atacar nem lançar magias. Se terminar o turno dentro de um obstáculo sólido, é expelido para o espaço livre mais próximo e sofre 4d6 de dano de impacto.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "a duração vai até o início do seu próximo turno."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "veu-da-alma",
+   "nome": "Véu da Alma",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Um véu espiritual protege a alma do alvo: ele recebe +5 em testes de resistência contra magias de Necromancia e contra efeitos que drenem vida ou causem perda de PV. Além disso, não pode ser transformado em morto-vivo nem ter a alma aprisionada.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "projecao-espiritual",
+   "nome": "Projeção Espiritual",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Seu espírito deixa o corpo e viaja, incorpóreo e invisível a quem não enxerga o lado espiritual. Ele voa com deslocamento 18 m, atravessa objetos e criaturas, vê e ouve normalmente e pode se afastar até 90 m do corpo. O espírito não afeta o mundo físico nem lança magias, mas pode falar com outros espíritos. Seu corpo fica Inconsciente e Indefeso. Se o corpo sofrer dano, ou se a magia terminar, o espírito volta de imediato.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "o espírito pode se afastar até 1 km do corpo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "lamento-espectral",
+   "nome": "Lamento Espectral",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "cone de 9 m",
+   "alvo": "criaturas na área",
+   "duracao": "instantânea",
+   "resistencia": "Vontade reduz à metade",
+   "descricao": "Um coro de espíritos geme através de você, causando 6d6 de dano de essência. Quem falhar no teste também fica Abalado por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "forma-eterea",
+   "nome": "Forma Etérea",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você passa ao Plano Etéreo, a fronteira entre o mundo material e o espiritual. Fica invisível e incorpóreo para o plano material: atravessa objetos e criaturas e só é percebido por quem enxerga o lado espiritual. Você não pode afetar nem ser afetado por nada do plano material, salvo por efeitos de essência e por criaturas etéreas. Se a magia terminar com você dentro de um objeto sólido, é expelido para o espaço livre mais próximo e sofre 6d6 de dano de impacto.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "rasgar-o-veu",
+   "nome": "Rasgar o Véu",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 9 m de raio",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Você rasga a fronteira entre os mundos na área. Criaturas incorpóreas ou etéreas ficam sólidas e visíveis, e magias de invisibilidade ou de Forma Etérea afetando criaturas na área terminam, se elas falharem no teste. Mortos-vivos e espíritos na área sofrem –2 na Defesa e em testes de ataque.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "troca-de-almas",
+   "nome": "Troca de Almas",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Sua alma e a do alvo trocam de corpo. Cada um usa os atributos físicos (Força, Destreza e Constituição), PV e ataques do corpo em que está, mantendo seus atributos mentais (Inteligência, Sabedoria e Carisma), perícias, PM e magias. Se um dos corpos chegar a 0 PV, a magia termina e as almas voltam aos corpos originais.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "hoste-ancestral",
+   "nome": "Hoste Ancestral",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 9 m de raio, centrada em você",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Os espíritos dos ancestrais se reúnem ao seu redor. Você e seus aliados na área recebem +2 em testes de ataque e de resistência e RD 3 (respeitando o teto de RD do núcleo). Mortos-vivos e espíritos hostis na área sofrem 4d6 de dano de luz no início de cada turno seu.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "falar-com-espiritos",
+   "nome": "Falar com Espíritos",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "espíritos em esfera de 9 m de raio",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você escuta e conversa com os espíritos na área, como fantasmas, espíritos do local e almas presas. Eles respondem com honestidade ao que sabem, mas não ficam amistosos nem obrigados a ajudar. Você recebe +5 em Diplomacia e Intimidação contra eles.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "acalmar-espirito",
+   "nome": "Acalmar Espírito",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você acalma a alma do alvo: ele deixa de ficar Abalado, e se estiver Apavorado passa a ficar só Abalado. Além disso, recebe +2 em testes de Vontade contra medo até o fim da cena.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "também remove Fascinado ou Frustrado."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "escudo-dos-antepassados",
+   "nome": "Escudo dos Antepassados",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Espiritual",
+   "execucao": "reação",
+   "alcance": "curto",
+   "alvo": "1 aliado",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Quando um aliado a até 9 m for sofrer dano, espíritos ancestrais se interpõem: o dano é reduzido em 2d8 + metade do seu nível.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1d8 de redução."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "exortar-espiritos",
+   "nome": "Exortar Espíritos",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Vontade anula",
+   "descricao": "Você impõe sua fé aos espíritos hostis. Mortos-vivos, espíritos e criaturas incorpóreas na área que falharem no teste ficam Apavorados por 1 rodada e depois Abalados até o fim da cena.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "as criaturas afetadas também sofrem 3d6 de dano de luz."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "falar-com-os-mortos",
+   "nome": "Falar com os Mortos",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Espiritual",
+   "execucao": "completa",
+   "alcance": "toque",
+   "alvo": "1 cadáver",
+   "duracao": "5 minutos",
+   "resistencia": "Vontade anula (a cada pergunta)",
+   "descricao": "Você chama o espírito que ainda se demora junto ao corpo e faz até 3 perguntas. O espírito responde em frases curtas o que souber; a cada pergunta, ele faz um teste de Vontade e, se passar, recusa-se a responder. Só funciona em corpos mortos há até 7 dias, e uma única vez por corpo.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "selo-de-descanso",
+   "nome": "Selo de Descanso",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Espiritual",
+   "execucao": "completa",
+   "alcance": "toque",
+   "alvo": "1 cadáver ou esfera de 9 m de raio",
+   "duracao": "1 dia",
+   "resistencia": null,
+   "descricao": "Você sela o descanso dos mortos. Corpos na área não podem ser animados nem transformados em mortos-vivos. Mortos-vivos que entrarem na área sofrem –2 na Defesa e em testes de ataque.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sentinela-ancestral",
+   "nome": "Sentinela Ancestral",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Um ancestral vela pelo alvo. A primeira vez que ele seria reduzido a 0 PV por dano ou por perda de PV, ele fica com 1 PV, e a magia termina. Também protege contra efeitos que matem instantaneamente: o efeito falha e a magia termina.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "exorcismo",
+   "nome": "Exorcismo",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": "Vontade parcial",
+   "descricao": "Você expulsa influências espirituais malignas. Se o alvo estiver possuído, dominado, Enfeitiçado ou Confuso por magia de nível 4 ou menor, ou por uma criatura profana, essas condições terminam. Se o alvo for um morto-vivo, espírito ou criatura profana, ele sofre 8d6 de dano de luz e, se falhar no teste, fica Atordoado por 1 rodada (se passar, sofre metade do dano).",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "manto-sagrado",
+   "nome": "Manto Sagrado",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 6 m de raio, centrada em você",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Uma aura de luz sagrada irradia de você. Você e seus aliados na área recebem +2 na Defesa e RD 3 (respeitando o teto de RD do núcleo). Criaturas profanas que iniciarem o turno na área sofrem 2d8 de dano de luz.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "forma-selvagem",
+   "nome": "Forma Selvagem",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você assume a forma de um animal Médio ou Grande, à sua escolha entre três formas. **Predador:** +6 m de deslocamento, +5 em Furtividade e Olfato e ataque desarmado de 2d8 de dano de corte. **Montanha:** RD 5 e 15 PV temporários. **Ave:** deslocamento de voo de 12 m e +5 em Visão. Você mantém seus atributos mentais, mas não pode lançar magias nem usar itens na forma animal. Voltar à forma normal é uma ação livre.",
+   "aprimoramentos": [],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "restauracao",
+   "nome": "Restauração",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você remove duas condições do alvo, à sua escolha, entre: Alquebrado, Debilitado, Doente, Esmorecido, Exausto, Fatigado, Fraco e Frustrado. Alternativamente, encerra uma maldição de nível 4 ou menor sobre ele.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "remove mais uma condição."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "mao-arcana",
+   "nome": "Mão Arcana",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "uma mão de força",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Uma mão translúcida de força surge e obedece a você. Ela tem Força equivalente a +0 e carrega até 5 kg, podendo abrir portas e recipientes não trancados, pegar e entregar objetos e puxar cordas. Ela não ataca, não ativa itens mágicos nem tem Defesa (some se sofrer qualquer dano). Você move a mão como ação livre, dentro do alcance.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "a mão carrega até 25 kg."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "criar-alimento",
+   "nome": "Criar Alimento",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Convocação",
+   "execucao": "completa",
+   "alcance": "toque",
+   "alvo": "comida e água para 1 dia de até 3 criaturas",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você convoca uma refeição simples e água limpa, suficientes para sustentar até 3 criaturas por um dia. O alimento estraga depois de 24 horas.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+3 criaturas."
+    },
+    {
+     "custo": 2,
+     "texto": "a refeição é saborosa e fornece 5 PV temporários a quem comer (uma refeição assim por dia por criatura)."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "disfarce-ilusorio",
+   "nome": "Disfarce Ilusório",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": "Vontade anula (para desmascarar)",
+   "descricao": "Você altera sua aparência: rosto, altura (até 30 cm para mais ou para menos), cabelo, roupas e voz. Você recebe +5 em Enganação para se passar por outra pessoa. A ilusão não muda o tato: quem tocar você ou examinar com atenção pode fazer um teste de Vontade para perceber a farsa. Você não imita uma pessoa específica de forma perfeita (apenas –5 em Enganação se tentar).",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "o alcance muda para toque e o alvo muda para 1 criatura."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ruido-fantasma",
+   "nome": "Ruído Fantasma",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "um ponto ou uma criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Você cria um som ilusório (passos, vozes, uma explosão distante, um rugido) vindo de um ponto à sua escolha, que você pode mover pelo alcance como ação livre. Criaturas que ouvem o som e falham no teste acreditam nele e podem ser atraídas ou assustadas, conforme o mestre. Se o som imitar uma fala, você controla o conteúdo.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "o som afeta uma área de esfera de 9 m e pode ficar ensurdecedor (criaturas na área que falharem ficam Surdas por 1 rodada)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "raio-debilitante",
+   "nome": "Raio Debilitante",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Fortitude anula",
+   "descricao": "Um raio cinzento drena a força do alvo, que fica Fraco pela duração.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "muda a condição para Debilitado."
+    },
+    {
+     "custo": 1,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "salto-arcano",
+   "nome": "Salto Arcano",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você enche as pernas do alvo de mana. Ele salta o dobro da distância normal, não sofre dano de queda de até 9 m e recebe +3 m de deslocamento.",
+   "aprimoramentos": [
+    {
+     "custo": 1,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "arma-encantada",
+   "nome": "Arma Encantada",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 arma",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "A arma recebe +1 em testes de ataque e causa +1 de dano, e é considerada mágica (afeta criaturas incorpóreas).",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o bônus passa a +2 em ataque e +2 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "resistencia-a-energia",
+   "nome": "Resistência a Energia",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo recebe RD 5 contra um tipo de dano de energia à sua escolha (fogo, frio, elétrico, ácido, luz ou trevas), respeitando o teto de RD do núcleo.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 alvo."
+    },
+    {
+     "custo": 3,
+     "texto": "a RD aumenta para 8."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "tranca-arcana",
+   "nome": "Tranca Arcana",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 porta, baú ou item que feche",
+   "duracao": "permanente",
+   "resistencia": null,
+   "descricao": "Você sela o objeto com uma tranca mágica que só você (e quem você escolher na hora) abre sem esforço. Abrir à força exige um teste de Força CD 30; arrombar com Prestidigitação sofre –10. Dissipar Magia remove a tranca. Você pode abrir seus próprios selos como ação de movimento.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "a tranca também dá a você um alerta telepático se alguém tentar abrir o objeto."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "localizar-objeto",
+   "nome": "Localizar Objeto",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "um objeto conhecido",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você sente a direção do objeto escolhido, desde que o conheça (já o tenha visto ou tocado) ou possa descrevê-lo com precisão, e que ele esteja a até 300 m. Uma barreira de chumbo bloqueia a magia.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o alcance sobe para 3 km."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sentidos-agudos",
+   "nome": "Sentidos Agudos",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Seus sentidos se aguçam: você recebe +5 em Percepção e Investigação, enxerga no escuro em alcance curto e vê objetos pequenos a grande distância como se estivessem próximos.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o alcance pessoal passa a toque (1 criatura)."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "hipnotismo",
+   "nome": "Hipnotismo",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "criaturas em esfera de 6 m de raio",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você move as mãos e murmura palavras em ritmo cadenciado. Criaturas na área que falharem no teste ficam Fascinadas. Se uma criatura sofrer qualquer dano ou ameaça evidente, a condição termina para ela.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "aumenta o raio em +3 m."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "enfeiticar-pessoa",
+   "nome": "Enfeitiçar Pessoa",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 humanoide",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo fica Enfeitiçado e acha você um amigo de confiança. Ele não obedece cegamente, mas aceita pedidos razoáveis. Se você ou seus aliados o atacarem, a magia termina. Quando termina, o alvo sabe que foi enfeitiçado.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "acalmar-emocoes",
+   "nome": "Acalmar Emoções",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 3 m de raio",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Você suprime emoções fortes na área. **Aliados** na área que estejam Abalados, Apavorados, Enfeitiçados ou Frustrados perdem essas condições automaticamente, sem teste. **Inimigos** na área fazem um teste de Vontade: se falharem, ficam impedidos de agir de forma violenta (não podem atacar nem lançar magias ofensivas) enquanto durar a magia. Se sofrerem dano ou forem ameaçados de forma evidente, a magia termina para eles.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "aumenta o raio em +1,5 m."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "escuridao",
+   "nome": "Escuridão",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma escuridão mágica preenche a área, bloqueando toda luz, inclusive visão no escuro. Dentro dela, criaturas ficam sob camuflagem total. Luzes de magias de nível 2 ou menor são apagadas. Luz (nível 1) e Luz do Dia dissipam uma à outra se a de nível maior vencer.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o raio aumenta em +3 m."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "patas-de-aranha",
+   "nome": "Patas de Aranha",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo escala paredes e tetos sem teste, com deslocamento normal, e fica com as mãos livres para segurar objetos. Ele também ignora a condição Desprevenido por estar escalando.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "espirito-mensageiro",
+   "nome": "Espírito Mensageiro",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "1 criatura conhecida",
+   "duracao": "1 dia",
+   "resistencia": null,
+   "descricao": "Você libera um espírito que viaja até uma criatura que você conheça (ou cujo nome saiba), a até 1 km, e entrega uma mensagem de até 25 palavras. O espírito traz de volta uma resposta de até 25 palavras. Ele não atravessa barreiras de ferro puro.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "o alcance passa a 10 km."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "linguas",
+   "nome": "Línguas",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo entende qualquer idioma falado ou escrito e fala com qualquer criatura que tenha idioma. Não compreende códigos ou significado oculto.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sentido-de-perigo",
+   "nome": "Sentido de Perigo",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Um aviso sutil da divindade protege o alvo: ele nunca fica Desprevenido por surpresa, recebe +5 em Iniciativa e em Reflexos contra armadilhas e emboscadas e percebe perigos imediatos (como uma armadilha prestes a disparar) com um aviso de 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "chamado-selvagem",
+   "nome": "Chamado Selvagem",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "até 3 animais",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você chama animais da região, que atendem ao chamado e lutam por você: até 3 animais de ND até 1, ou 1 animal de ND até 3. Eles obedecem a comandos simples e agem no seu turno. Se não houver animais por perto, a magia falha (e o PM se perde).",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "os animais chamados são de ND até 2 (ou 1 de ND até 5)."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "imagem-maior",
+   "nome": "Imagem Maior",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "ilusão com até 12 m de lado",
+   "duracao": "sustentada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você cria uma imagem ilusória com som, cheiro e temperatura, de tamanho até 12 m de lado, e a move como ação livre. A imagem não causa dano real, mas criaturas que falharem em um teste de Vontade tratam-na como real; se for atingida por um ataque ou tocada, a imagem desfaz-se para quem testar. A magia termina se você se afastar mais de 90 m.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "a ilusão afeta também o tato e pode causar medo (Abalado por 1 rodada em quem falhar)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "terreno-ilusorio",
+   "nome": "Terreno Ilusório",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Ilusão",
+   "execucao": "completa",
+   "alcance": "longo",
+   "alvo": "área de até 100 m",
+   "duracao": "1 dia",
+   "resistencia": "Vontade anula",
+   "descricao": "Você disfarça um trecho de terreno: um campo vira pântano, uma trilha desaparece sob mato, um desfiladeiro parece plano. Estruturas pequenas podem sumir ou aparecer. Criaturas que interagem fisicamente com o terreno falso e passam em Vontade enxergam a verdade.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "a duração passa a permanente até ser dissipada."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "espectro-ilusorio",
+   "nome": "Espectro Ilusório",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "sustentada (concentração)",
+   "resistencia": "Vontade parcial",
+   "descricao": "Você cria a imagem do maior medo do alvo. Se falhar no teste, ele fica Apavorado enquanto você sustentar; se passar, fica apenas Abalado por 1 rodada. A criatura vê o espectro, mas só ela. Efeito mental.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "manto-de-sombras",
+   "nome": "Manto de Sombras",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Sombras mágicas cobrem você. Você recebe +5 em Furtividade, camuflagem em penumbra ou escuridão e RD 3 contra dano de luz (respeitando o teto de RD). Uma vez por rodada, quando alguém falhar em acertar você, você pode se mover 3 m sem provocar ataque de oportunidade.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 criatura tocada."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "esqueleto-servil",
+   "nome": "Esqueleto Servil",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Necromancia",
+   "execucao": "completa",
+   "alcance": "curto",
+   "alvo": "1 esqueleto ou zumbi",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você ergue um morto-vivo de ossos e carne seca a partir de restos presentes. Ele obedece cegamente, age no seu turno (uma ação padrão e uma de movimento) e é frágil: **não tem Defesa** (todo ataque contra ele acerta) e tem **PV iguais ao seu nível de personagem**. Deslocamento 9 m. **Ataque:** corpo a corpo, bônus de Luta igual a 2 (treino) + metade do seu nível de personagem, causando 1d8 + metade do seu nível de dano de corte ou impacto. Ele é imune a efeitos mentais, veneno e fadiga. Se chegar a 0 PV ou se a magia terminar, vira pó.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "você ergue 1 morto-vivo adicional."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "rogar-maldicao",
+   "nome": "Rogar Maldição",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo sofre uma maldição à sua escolha: –5 em testes de um atributo (e perícias baseadas nele), –3 em ataques e dano, ou perde 1 PM no início de cada turno seu. A maldição pode ser removida por Remover Maldição ou Dissipar Magia.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "a duração passa a \"1 semana\"."
+    }
+   ],
+   "tradicoes": [
+    "divina",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "forma-gasosa",
+   "nome": "Forma Gasosa",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "O alvo vira uma nuvem de vapor: incorpóreo, voa com deslocamento 3 m, não carrega objetos além de roupas e é imune a dano físico, mas sofre dano dobrado de fogo, elétrico e magia de vento e não pode lançar magias. Entra por frestas e rachaduras.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "algemas-espirituais",
+   "nome": "Algemas Espirituais",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Correntes de luz prendem a alma do alvo. Se o alvo for uma criatura **incorpórea, um espírito ou um morto-vivo**, ele fica Paralisado; ao final de cada turno dele, tem direito a um novo teste. Contra qualquer outra criatura, as correntes só a deixam Lenta.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "visao-da-verdade",
+   "nome": "Visão da Verdade",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você enxerga a realidade: percebe ilusões, camuflagem mágica, criaturas invisíveis e transmutadas (vê a forma verdadeira) em alcance médio, enxerga no escuro e atravessa névoa. Você também vê criaturas e conjuradores que estejam no plano imaterial (etéreos ou sob efeitos da escola Espiritual, como Forma Etérea), como se estivessem no plano material, mas sem poder tocá-los.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+1 criatura tocada."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "enfeiticar-em-massa",
+   "nome": "Enfeitiçar em Massa",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "até 6 criaturas",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Como Enfeitiçar Pessoa, mas afeta até 6 criaturas à sua escolha. Se uma delas for atacada por você ou por aliados seus, a magia termina para todas.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "a magia pode afetar monstros e espíritos."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "assassino-fantasmagorico",
+   "nome": "Assassino Fantasmagórico",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "sustentada (concentração)",
+   "resistencia": "Vontade parcial",
+   "descricao": "Você cria o pior pesadelo do alvo, que o persegue. No início de cada turno do alvo, ele faz um teste de Vontade: se falhar, sofre 6d6 de dano psíquico e fica Apavorado; se passar, sofre metade e a magia termina. Só o alvo vê a ilusão.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "aumenta o dano em +2d6."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "duplicata-ilusoria",
+   "nome": "Duplicata Ilusória",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você cria uma imagem ilusória idêntica a você e fica invisível. Você move a duplicata em alcance médio, e ela copia seus movimentos e fala. Inimigos que a atacarem têm 50% de chance de errar o ataque. Se você atacar ou lançar uma magia, a invisibilidade termina.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "você cria 2 duplicatas."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "muralha-de-ossos",
+   "nome": "Muralha de Ossos",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "muralha de ossos de até 9 m x 3 m",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma barreira de ossos afiados surge. Ela bloqueia a passagem, tem Defesa 15 e 50 PV e causa 4d6 de dano de perfuração a quem tentar atravessá-la (Reflexos reduz à metade).",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "a muralha cobre o dobro da área."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "nuvem-de-podridao",
+   "nome": "Nuvem de Podridão",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "cena",
+   "resistencia": "Fortitude parcial",
+   "descricao": "Uma nuvem verde-escura apodrece o que toca. Criaturas na área sofrem 6d6 de dano de trevas ao entrar e no início de cada turno; quem passar sofre metade e fica Enjoado. Cura mágica recebida dentro da nuvem é reduzida pela metade.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+2d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "aprisionamento",
+   "nome": "Aprisionamento",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Abjuração",
+   "execucao": "completa",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "1 dia",
+   "resistencia": "Vontade anula",
+   "descricao": "Você prende o alvo de uma das formas à escolha: **prisão** (cápsula de força que o isola), **sono eterno** (fica Inconsciente em estase), **correntes** (fica Paralisado e preso ao ponto) ou **semiplano** (levado a uma cela fora do mundo). A prisão dura no máximo 1 dia, ou menos se você a encerrar antes (ação livre) ou se Dissipar Magia a desfizer.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "o alcance passa a médio e você pode afetar até 2 criaturas."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "alterar-destino",
+   "nome": "Alterar Destino",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Adivinhação",
+   "execucao": "reação",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Quando você ou um aliado a até 9 m falhar em um teste, você enxerga o futuro e pode refazer o teste, ficando com o melhor resultado. Pode ser usada só uma vez por cena.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "você pode usá-la em qualquer criatura a até 30 m."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "projetar-consciencia",
+   "nome": "Projetar Consciência",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Adivinhação",
+   "execucao": "completa",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "sustentada (concentração)",
+   "resistencia": null,
+   "descricao": "Sua mente viaja para qualquer ponto do mundo que você conheça. Você vê e ouve o local como se estivesse lá, mas sem tocar nem agir. Pode se comunicar com criaturas que reconheçam sua presença. O seu corpo fica Indefeso.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "você pode lançar magias de 1º a 3º nível à distância através da projeção."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "semiplano",
+   "nome": "Semiplano",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Convocação",
+   "execucao": "completa",
+   "alcance": "pessoal",
+   "alvo": "espaço extradimensional de 3 cômodos",
+   "duracao": "1 dia",
+   "resistencia": null,
+   "descricao": "Você cria uma pequena dimensão com a forma de um salão confortável de até 100 m², que acomoda você e até 8 criaturas à escolha. Ele só pode ser acessado por um portal no ponto onde você lançou a magia (que desaparece ao fim). Dentro, você tem controle de luz e temperatura e há mobília e comida simples.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "a duração passa a 1 semana."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "tempestade-de-relampagos",
+   "nome": "Tempestade de Relâmpagos",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 12 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Relâmpagos caem do céu (ou do teto) na área, causando 12d6 de dano elétrico. Criaturas com armadura metálica sofrem +1d6 de dano. Uma criatura que falhar fica Atordoada por 1 rodada.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+2d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ira-dos-ceus",
+   "nome": "Ira dos Céus",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Evocação",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 12 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Reflexos reduz à metade",
+   "descricao": "Uma tempestade de vento, trovões e granizo castiga a área, causando 6d6 de dano elétrico e 6d6 de dano de impacto. Criaturas voadoras na área sofrem –5 no teste e caem se falharem.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+1d6 de dano elétrico e +1d6 de dano de impacto."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "prisao-de-ilusoes",
+   "nome": "Prisão de Ilusões",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 criatura",
+   "duracao": "sustentada (concentração)",
+   "resistencia": "Vontade anula",
+   "descricao": "O alvo é preso em uma realidade falsa e repetitiva (um corredor sem fim, uma cela, uma festa). Se falhar, fica Pasmo (sem ações) enquanto você sustentar. Se sofrer dano, tem direito a novo teste.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "veu-da-divindade",
+   "nome": "Véu da Divindade",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "até 6 criaturas",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Sua divindade cobre você e os aliados: eles não podem ser vistos por adivinhação ou vidência, e à percepção alheia parecem estar em outro lugar a até 9 m. Ataques contra eles têm 25% de chance de errar.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+3 alvos."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "convocar-espirito-da-natureza",
+   "nome": "Convocar Espírito da Natureza",
+   "nivel": 3,
+   "custoPM": 6,
+   "escola": "Convocação",
+   "execucao": "completa",
+   "alcance": "curto",
+   "alvo": "1 espírito",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você chama um espírito da natureza, que se manifesta num ponto livre dentro do alcance e obedece a você. Escolha um dos três tipos ao lançar. O espírito age no seu turno (uma ação padrão e uma de movimento), conta como criatura do tipo espírito e **tem estatísticas próprias**, sem usar as suas. **Bônus de ataque** = atributo do espírito + 2 (treino) + metade do seu nível de personagem. **CD das habilidades do espírito** = 10 + metade do seu nível de personagem + atributo do espírito. Se chegar a 0 PV, ou se a magia terminar, ele se dissolve. Nas fichas abaixo, **N é o nível mais alto de magia que você consegue lançar** (3 no nível 9, 4 no nível 13 e 5 no nível 17). **Guardião da Floresta** (corpo de raízes e casca; Força +3): Defesa 12 + metade do seu nível; PV 15×N; PM 0; deslocamento 9 m. *Raízes:* ataque corpo a corpo, 3d6 de dano de impacto. *Prender:* uma vez por rodada, o alvo atingido faz Reflexos ou fica Enredado. *Casca Espessa:* RD 3 (respeitando o teto de RD). **Espírito da Tempestade** (vento e relâmpago; Destreza +3): Defesa 10 + metade do seu nível; PV 10×N; PM 6; voo 12 m. *Descarga:* ataque à distância (curto), 2d6 de dano elétrico. *Raio em Linha* (2 PM, uma vez por rodada): linha de 9 m, 4d6 de dano elétrico, Reflexos reduz à metade. *Corpo de Vento:* camuflagem leve; quem o ataca à distância tem –2. **Espírito da Fonte** (água e vida; Sabedoria +3): Defesa 10 + metade do seu nível; PV 10×N; PM 6; deslocamento 9 m, natação 12 m. *Toque Rejuvenescedor* (2 PM, uma vez por rodada): toca uma criatura e cura 3d8+3 PV. *Fonte Purificadora* (2 PM): remove uma condição de Envenenado, Doente ou Enjoado de uma criatura tocada. *Névoa de Orvalho:* aliados adjacentes ao espírito recebem +1 na Defesa.",
+   "aprimoramentos": [
+    {
+     "custo": 3,
+     "texto": "o espírito tem +50% PV e seus ataques causam +1d6 de dano."
+    },
+    {
+     "custo": 6,
+     "texto": "você convoca um segundo espírito, de tipo diferente do primeiro (ambos agem no seu turno)."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "horda-de-sombras",
+   "nome": "Horda de Sombras",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Vontade reduz à metade",
+   "descricao": "Sombras com garras e dentes brotam do chão e se lançam sobre as criaturas na área, que acreditam sofrer ferimentos reais: 8d6 de dano psíquico. Quem falhar no teste também fica Abalado até o fim da cena. Efeito mental.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+2d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "semblante-divino",
+   "nome": "Semblante Divino",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Sua divindade lhe dá uma aparência avassaladora: luz, asas ou uma forma colossal ilusória. Você recebe +5 em Diplomacia e Intimidação. Inimigos em alcance curto que o vejam ficam Abalados se falharem no teste de Vontade (uma vez por inimigo por cena). A ilusão não causa dano e não muda seus atributos.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "o alcance pessoal passa a toque (1 criatura voluntária adicional)."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "inversao-da-gravidade",
+   "nome": "Inversão da Gravidade",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 6 m de raio",
+   "duracao": "sustentada (concentração)",
+   "resistencia": "Reflexos anula",
+   "descricao": "A gravidade na área se inverte. Criaturas e objetos soltos que falharem no teste são arremessados 9 m para cima e ficam Caídas e Desprevenidas, flutuando contra o teto ou o céu. Quando a magia termina, elas caem e sofrem 6d6 de dano de impacto (a queda não anula Reflexos). Criaturas que passaram no teste sofrem apenas –2 na Defesa enquanto estiverem na área.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+1d6 de dano de queda por 3 m a mais de altura (até +3d6)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "onda-de-desespero",
+   "nome": "Onda de Desespero",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 12 m de raio",
+   "duracao": "cena",
+   "resistencia": "Vontade parcial",
+   "descricao": "Uma onda de desesperança varre a área. Criaturas que falharem no teste ficam Esmorecidas e Pasmas por 1 rodada; quem passar fica apenas Esmorecida por 1 rodada. Criaturas aliadas à sua escolha são poupadas. Efeito mental.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "a condição Pasmo dura 1d4 rodadas."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "forma-de-colosso",
+   "nome": "Forma de Colosso",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Transmutação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você cresce até se tornar Enorme (ocupa 4 quadrados, 3 m de lado), com músculos e pele reforçados. Você recebe +5 em testes de Força e Atletismo, RD 5 (respeitando o teto de RD), +3 m de deslocamento e +2d6 de dano nos ataques corpo a corpo, e alcance natural de 3 m. Você não pode lançar magias, ler pergaminhos nem usar itens de ativação enquanto durar. Armaduras e roupas se ajustam ao novo tamanho.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "o bônus de dano passa a +3d6 e a RD a 8."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "onda-necrotica",
+   "nome": "Onda Necrótica",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Necromancia",
+   "execucao": "padrão",
+   "alcance": "longo",
+   "alvo": "esfera de 12 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Fortitude reduz à metade",
+   "descricao": "Uma onda de energia da morte varre a área, causando 12d6 de dano de trevas. Criaturas que falharem no teste ficam também Enjoadas por 1 rodada. Mortos-vivos na área não sofrem dano e recuperam PV iguais à metade do dano rolado. Plantas comuns na área murcham.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+2d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "moldar-pensamentos",
+   "nome": "Moldar Pensamentos",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Ilusão",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "sustentada (concentração)",
+   "resistencia": "Vontade anula",
+   "descricao": "Você reescreve a percepção do alvo, que só enxerga o que você decide. Escolha um efeito ao lançar. **Mundo Falso:** o alvo percebe os arredores como você descrever (aliados parecem inimigos e o contrário, um abismo parece chão firme, uma porta trancada parece aberta) e age de acordo, ficando Desprevenido contra o que não percebe. Você pode mudar a ilusão como ação livre, no seu turno. **Dor Imaginária:** o alvo sente ferimentos que não existem; no início de cada turno dele, sofre 6d6 de dano psíquico (sem teste adicional). Se sofrer dano real de uma fonte alheia à ilusão, tem direito a um novo teste. Efeito mental.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "você também implanta uma lembrança falsa de até 1 hora de duração no alvo; ela permanece depois que a magia termina."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": true
+  },
+  {
+   "id": "hino-de-coragem",
+   "nome": "Hino de Coragem",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "esfera de 9 m de raio, centrada em você",
+   "duracao": "sustentada",
+   "resistencia": null,
+   "descricao": "Você entoa um hino sagrado que inflama o coração de seus aliados. Aliados na área ficam imunes às condições Abalado e Apavorado, recebem +2 em testes de resistência e causam +1d6 de dano em seus ataques. A magia termina se você ficar impedido de falar.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "o bônus de dano passa a +2d6 e o raio a 12 m."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "ancestral-convocado",
+   "nome": "Ancestral Convocado",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Espiritual",
+   "execucao": "completa",
+   "alcance": "curto",
+   "alvo": "1 espírito",
+   "duracao": "1 hora",
+   "resistencia": null,
+   "descricao": "Você chama o espírito de um ancestral, herói ou sábio do passado, que você nomeia ou descreve, e ele se manifesta incorpóreo e amistoso. O ancestral não luta, não lança magias e não pode ser ferido nem afetado por nada. Enquanto a magia durar, ele responde com honestidade a até 3 perguntas suas sobre o passado, tradições, lugares e criaturas que conheceu em vida, dentro do que realmente sabia, e aconselha você: você e uma criatura tocada recebem +5 em testes de uma perícia de conhecimento ou ofício ligada ao que o ancestral dominava em vida, à sua escolha, até o fim da duração.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "o ancestral responde a +2 perguntas."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "prisao-dimensional",
+   "nome": "Prisão Dimensional",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Abjuração",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "1 rodada",
+   "resistencia": "Vontade anula",
+   "descricao": "Você abre uma fenda para outro plano. Se o alvo falhar no teste, é arrancado deste mundo e desaparece: ele não pode agir, não pode ser alvo de nada e nada o afeta enquanto estiver fora. No início do seu próximo turno, ele retorna ao espaço que ocupava (ou ao espaço livre mais próximo) e **perde 5d6 PV** (perda de PV, não dano). Efeitos que já estavam sobre ele continuam passando o tempo, e magias de concentração que ele mantinha terminam. Uma mesma criatura só pode ser afetada por esta magia **uma vez por cena**.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o alvo fica fora por mais 1 rodada (ele só retorna no início do segundo turno seu depois do lançamento)."
+    }
+   ],
+   "tradicoes": [
+    "arcana"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "sussurro-de-sangue",
+   "nome": "Sussurro de Sangue",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "curto",
+   "alvo": "1 criatura",
+   "duracao": "cena",
+   "resistencia": "Vontade anula",
+   "descricao": "Você planta no sangue do alvo um sussurro que ele ouve dentro da cabeça e que o enlouquece. Se falhar no teste, o alvo sofre –2 em testes de ataque e, no turno dele, ataca a criatura mais próxima (aliada ou inimiga), movendo-se até ela se for preciso. Se não houver nenhuma criatura ao alcance de um ataque, ele só se aproxima da mais próxima. Efeito mental.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 alvo."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "oferenda-de-sangue",
+   "nome": "Oferenda de Sangue",
+   "nivel": 1,
+   "custoPM": 1,
+   "escola": "Encantamento",
+   "execucao": "padrão",
+   "alcance": "toque",
+   "alvo": "1 aliado voluntário",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você corta a própria palma e marca o aliado com seu sangue, fortalecendo sua vontade de lutar. Você perde 1d6 PV (perda de PV, não dano) e o aliado recebe +2 em testes de ataque e +2 de dano até o fim da cena.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "+1 aliado (você perde mais 1d6 PV para cada aliado adicional)."
+    }
+   ],
+   "tradicoes": [
+    "sangue"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "libertacao-das-almas",
+   "nome": "Libertação das Almas",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 9 m de raio",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você liberta as almas aprisionadas e rompe o que prende os vivos. Seus aliados na área têm encerradas as condições mentais, as maldições e os efeitos de possessão ou controle de magias de nível 5 ou menor, e recuperam 4d8 PV. A magia não causa dano a ninguém.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "a cura aumenta para 6d8 PV."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "tribunal-das-almas",
+   "nome": "Tribunal das Almas",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Espiritual",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "esfera de 9 m de raio",
+   "duracao": "instantânea",
+   "resistencia": "Vontade reduz à metade",
+   "descricao": "Um tribunal invisível julga as almas na área. Mortos-vivos, espíritos e criaturas profanas sofrem 14d6 de dano de luz; os demais sofrem 7d6 de dano de essência e ficam Abalados. A magia não cura ninguém.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "+2d6 de dano."
+    }
+   ],
+   "tradicoes": [
+    "arcana",
+    "divina"
+   ],
+   "afinidade": null,
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "arvore-da-vida",
+   "nome": "Árvore da Vida",
+   "nivel": 5,
+   "custoPM": 15,
+   "escola": "Convocação",
+   "execucao": "padrão",
+   "alcance": "médio",
+   "alvo": "1 árvore (Enorme)",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Uma árvore imensa, de seiva luminosa, brota do chão em um espaço livre dentro do alcance (ocupa 3 m x 3 m). Ela tem Defesa 5 e 60 PV, e nenhuma criatura pode ser empurrada ou derrubada por ela. Aliados adjacentes à árvore recuperam 1d8+4 PV no início de cada turno seu, e quem estiver atrás dela recebe cobertura total contra ataques à distância vindos do outro lado. Se a árvore chegar a 0 PV, ela murcha e a magia termina.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "a cura passa a 2d8+4 PV e a árvore a 100 PV."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "augurio",
+   "nome": "Augúrio",
+   "nivel": 2,
+   "custoPM": 3,
+   "escola": "Adivinhação",
+   "execucao": "completa",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "instantânea",
+   "resistencia": null,
+   "descricao": "Você escolhe uma divindade para lhe responder e pergunta a ela se uma ação planejada para as próximas 3 horas trará bons, maus ou ambos os resultados (ou nenhum, se for indiferente). A resposta é \"bom\", \"mau\", \"ambos\" ou \"nada\". Se perguntar de novo sobre a mesma ação, a resposta é igual.",
+   "aprimoramentos": [
+    {
+     "custo": 2,
+     "texto": "o prazo da previsão sobe para 24 horas."
+    },
+    {
+     "custo": 5,
+     "texto": "o prazo da previsão sobe para 7 dias e você pode perguntar também a um espírito. Em vez de \"bom\", \"mau\", \"ambos\" ou \"nada\", o Mestre responde com uma frase curta, um enigma ou um presságio verdadeiros, mas não necessariamente completos."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": null,
+   "original": false,
+   "validada": true,
+   "concentracao": false
+  },
+  {
+   "id": "comunhao-com-a-natureza",
+   "nome": "Comunhão com a Natureza",
+   "nivel": 4,
+   "custoPM": 10,
+   "escola": "Adivinhação",
+   "execucao": "padrão",
+   "alcance": "pessoal",
+   "alvo": "você",
+   "duracao": "cena",
+   "resistencia": null,
+   "descricao": "Você se funde aos ritmos do mundo natural. Ao lançar, você sabe a direção do norte, o clima das próximas 24 horas e a posição de animais e plantas hostis a até 1 km. Além disso, você recebe 4 dados de 1d6: antes de rolar um teste de Percepção, Sobrevivência, Furtividade ou Adestramento, você pode gastar quantos dados quiser e somar o resultado ao teste (dados gastos são perdidos). Dados não usados somem ao fim da cena.",
+   "aprimoramentos": [
+    {
+     "custo": 5,
+     "texto": "você recebe +2 dados de 1d6 e a duração passa a 1 dia."
+    }
+   ],
+   "tradicoes": [
+    "divina"
+   ],
+   "afinidade": "natureza",
+   "original": true,
+   "validada": true,
+   "concentracao": false
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "wls3fda85FBrtB9u",
+  "name": "Passo Espectral",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/passo-espectral.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Espiritual",
+    "execucao": "movimento",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "até o fim do seu turno",
+    "resistencia": "",
+    "descricao": "<p>Seu corpo vira uma sombra espiritual. Até o fim do seu turno, você atravessa criaturas e obstáculos finos (cortinas, portas de madeira, grades), ignora terreno difícil e tem camuflagem leve. Enquanto estiver sob o efeito, você não pode atacar nem lançar magias. Se terminar o turno dentro de um obstáculo sólido, é expelido para o espaço livre mais próximo e sofre 4d6 de dano de impacto.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "a duração vai até o início do seu próximo turno."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "passo-espectral"
+    }
+  },
+  "_key": "!items!wls3fda85FBrtB9u"
+}

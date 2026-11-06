@@ -1,0 +1,38 @@
+{
+  "_id": "3keX52cOEvFiziOS",
+  "name": "Olhar Espiritual",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/olhar-espiritual.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você enxerga o lado espiritual do mundo. Enquanto durar, vê criaturas incorpóreas, etéreas e espíritos como se fossem sólidos; percebe, em alcance médio, a presença de mortos-vivos e de criaturas animadas por necromancia, mesmo escondidos; e recebe +2 em Intuição contra criaturas profanas.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "você também percebe se uma criatura a até 9 m está possuída, dominada ou sob efeito mental (sem saber qual)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "olhar-espiritual"
+    }
+  },
+  "_key": "!items!3keX52cOEvFiziOS"
+}

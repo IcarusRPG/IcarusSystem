@@ -1,0 +1,38 @@
+{
+  "_id": "Nfu7QbHTq8d4XHue",
+  "name": "Ruído Fantasma",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ruido-fantasma.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "um ponto ou uma criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você cria um som ilusório (passos, vozes, uma explosão distante, um rugido) vindo de um ponto à sua escolha, que você pode mover pelo alcance como ação livre. Criaturas que ouvem o som e falham no teste acreditam nele e podem ser atraídas ou assustadas, conforme o mestre. Se o som imitar uma fala, você controla o conteúdo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "o som afeta uma área de esfera de 9 m e pode ficar ensurdecedor (criaturas na área que falharem ficam Surdas por 1 rodada)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ruido-fantasma"
+    }
+  },
+  "_key": "!items!Nfu7QbHTq8d4XHue"
+}

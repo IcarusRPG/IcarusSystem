@@ -1,0 +1,38 @@
+{
+  "_id": "N2ddWcGakAfpmfiQ",
+  "name": "Levitação",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/levitacao.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura ou objeto de até 150 kg",
+    "duracao": "cena",
+    "resistencia": "Vontade anula (se involuntário)",
+    "descricao": "<p>O alvo flutua. Você pode movê-lo 6 m para cima ou para baixo por rodada (ação livre, no seu turno). Não há movimento horizontal por conta própria, mas o alvo pode se empurrar em paredes e objetos.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 criatura ou objeto, alvo a até 3 m do primeiro."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "levitacao"
+    }
+  },
+  "_key": "!items!N2ddWcGakAfpmfiQ"
+}

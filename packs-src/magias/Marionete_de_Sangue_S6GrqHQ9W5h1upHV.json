@@ -1,0 +1,33 @@
+{
+  "_id": "S6GrqHQ9W5h1upHV",
+  "name": "Marionete de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/marionete-de-sangue.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você controla o sangue do alvo, que age como sua marionete por 1 turno: no início do próximo turno dele, você dita suas ações (movimento e uma ação padrão). Depois, ele repete o teste. Não pode forçá-lo a atos suicidas.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "marionete-de-sangue"
+    }
+  },
+  "_key": "!items!S6GrqHQ9W5h1upHV"
+}

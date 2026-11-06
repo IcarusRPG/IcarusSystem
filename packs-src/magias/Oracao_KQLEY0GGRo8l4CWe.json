@@ -1,0 +1,33 @@
+{
+  "_id": "KQLEY0GGRo8l4CWe",
+  "name": "Oração",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/oracao.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "aliados e inimigos em esfera de 9 m de raio",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Você inspira seus aliados e abate os inimigos: aliados na área recebem +1 em testes de perícia e de ataque, e inimigos sofrem –1 nos mesmos testes. Os efeitos duram enquanto estiverem na área.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "oracao"
+    }
+  },
+  "_key": "!items!KQLEY0GGRo8l4CWe"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "z4AfUyRzuSCncaW1",
+  "name": "Patas de Aranha",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/patas-de-aranha.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo escala paredes e tetos sem teste, com deslocamento normal, e fica com as mãos livres para segurar objetos. Ele também ignora a condição Desprevenido por estar escalando.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "patas-de-aranha"
+    }
+  },
+  "_key": "!items!z4AfUyRzuSCncaW1"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "5qYTviBRqaUlE8sd",
+  "name": "Colapso Gravitacional",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/colapso-gravitacional.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Um ponto de gravidade crescente no centro da área puxa tudo para si. Criaturas na área sofrem 10d6 de dano de impacto e são puxadas até 6 m em direção ao centro. Se falharem no teste, também ficam Caídas e Lentas até o fim da cena.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "colapso-gravitacional"
+    }
+  },
+  "_key": "!items!5qYTviBRqaUlE8sd"
+}

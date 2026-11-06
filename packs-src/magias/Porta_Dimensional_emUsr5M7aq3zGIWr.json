@@ -1,0 +1,33 @@
+{
+  "_id": "emUsr5M7aq3zGIWr",
+  "name": "Porta Dimensional",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/porta-dimensional.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "você e 1 criatura voluntária adjacente",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você abre uma porta de luz e vocês dois reaparecem em um ponto livre que enxerguem ou descrevam (direção e distância) a até 90 m. Chegar a um ponto ocupado ou impossível causa 4d6 de dano de impacto e a magia falha.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "porta-dimensional"
+    }
+  },
+  "_key": "!items!emUsr5M7aq3zGIWr"
+}

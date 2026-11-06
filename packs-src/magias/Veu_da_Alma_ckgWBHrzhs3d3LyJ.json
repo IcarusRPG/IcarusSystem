@@ -1,0 +1,38 @@
+{
+  "_id": "ckgWBHrzhs3d3LyJ",
+  "name": "Véu da Alma",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/veu-da-alma.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Um véu espiritual protege a alma do alvo: ele recebe +5 em testes de resistência contra magias de Necromancia e contra efeitos que drenem vida ou causem perda de PV. Além disso, não pode ser transformado em morto-vivo nem ter a alma aprisionada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "veu-da-alma"
+    }
+  },
+  "_key": "!items!ckgWBHrzhs3d3LyJ"
+}

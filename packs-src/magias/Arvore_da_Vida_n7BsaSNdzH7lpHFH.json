@@ -1,0 +1,38 @@
+{
+  "_id": "n7BsaSNdzH7lpHFH",
+  "name": "Árvore da Vida",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/arvore-da-vida.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 árvore (Enorme)",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma árvore imensa, de seiva luminosa, brota do chão em um espaço livre dentro do alcance (ocupa 3 m x 3 m). Ela tem Defesa 5 e 60 PV, e nenhuma criatura pode ser empurrada ou derrubada por ela. Aliados adjacentes à árvore recuperam 1d8+4 PV no início de cada turno seu, e quem estiver atrás dela recebe cobertura total contra ataques à distância vindos do outro lado. Se a árvore chegar a 0 PV, ela murcha e a magia termina.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "a cura passa a 2d8+4 PV e a árvore a 100 PV."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arvore-da-vida"
+    }
+  },
+  "_key": "!items!n7BsaSNdzH7lpHFH"
+}

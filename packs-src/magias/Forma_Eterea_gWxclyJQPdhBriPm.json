@@ -1,0 +1,33 @@
+{
+  "_id": "gWxclyJQPdhBriPm",
+  "name": "Forma Etérea",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/forma-eterea.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você passa ao Plano Etéreo, a fronteira entre o mundo material e o espiritual. Fica invisível e incorpóreo para o plano material: atravessa objetos e criaturas e só é percebido por quem enxerga o lado espiritual. Você não pode afetar nem ser afetado por nada do plano material, salvo por efeitos de essência e por criaturas etéreas. Se a magia terminar com você dentro de um objeto sólido, é expelido para o espaço livre mais próximo e sofre 6d6 de dano de impacto.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "forma-eterea"
+    }
+  },
+  "_key": "!items!gWxclyJQPdhBriPm"
+}

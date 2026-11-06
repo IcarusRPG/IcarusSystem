@@ -1,0 +1,34 @@
+{
+  "_id": "klOjyfKluXrvtcg9",
+  "name": "Pele de Pedra",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/pele-de-pedra.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>A pele do alvo se torna rochosa: ele recebe RD 5 contra dano de corte, perfuração e impacto (respeitando o teto de RD do núcleo). O alvo sofre –3 em testes de Acrobacia e Furtividade.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "pele-de-pedra"
+    }
+  },
+  "_key": "!items!klOjyfKluXrvtcg9"
+}

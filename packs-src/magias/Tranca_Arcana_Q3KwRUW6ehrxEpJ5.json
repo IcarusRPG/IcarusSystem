@@ -1,0 +1,38 @@
+{
+  "_id": "Q3KwRUW6ehrxEpJ5",
+  "name": "Tranca Arcana",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/tranca-arcana.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 porta, baú ou item que feche",
+    "duracao": "permanente",
+    "resistencia": "",
+    "descricao": "<p>Você sela o objeto com uma tranca mágica que só você (e quem você escolher na hora) abre sem esforço. Abrir à força exige um teste de Força CD 30; arrombar com Prestidigitação sofre –10. Dissipar Magia remove a tranca. Você pode abrir seus próprios selos como ação de movimento.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "a tranca também dá a você um alerta telepático se alguém tentar abrir o objeto."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tranca-arcana"
+    }
+  },
+  "_key": "!items!Q3KwRUW6ehrxEpJ5"
+}

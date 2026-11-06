@@ -1,0 +1,38 @@
+{
+  "_id": "vj9XQw7bVbsBBlJq",
+  "name": "Chicote de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/chicote-de-sangue.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Uma corda de sangue estala e atinge o alvo, causando 3d6 de dano de corte. Se falhar no teste, o alvo é puxado até 3 m na sua direção.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chicote-de-sangue"
+    }
+  },
+  "_key": "!items!vj9XQw7bVbsBBlJq"
+}

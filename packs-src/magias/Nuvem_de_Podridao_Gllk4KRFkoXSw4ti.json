@@ -1,0 +1,38 @@
+{
+  "_id": "Gllk4KRFkoXSw4ti",
+  "name": "Nuvem de Podridão",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/nuvem-de-podridao.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "cena",
+    "resistencia": "Fortitude parcial",
+    "descricao": "<p>Uma nuvem verde-escura apodrece o que toca. Criaturas na área sofrem 6d6 de dano de trevas ao entrar e no início de cada turno; quem passar sofre metade e fica Enjoado. Cura mágica recebida dentro da nuvem é reduzida pela metade.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+2d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nuvem-de-podridao"
+    }
+  },
+  "_key": "!items!Gllk4KRFkoXSw4ti"
+}

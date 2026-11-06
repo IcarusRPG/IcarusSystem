@@ -1,0 +1,33 @@
+{
+  "_id": "SVvwMF7pQykP7CQX",
+  "name": "Metamorfose Sanguínea",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/metamorfose-sanguinea.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você assume forma de horror sanguíneo: +4 na Defesa, +2 em ataques e dano corpo a corpo, 15 PV temporários e o efeito de Garras Carmesins. Você não pode lançar outras magias durante a transformação.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "metamorfose-sanguinea"
+    }
+  },
+  "_key": "!items!SVvwMF7pQykP7CQX"
+}

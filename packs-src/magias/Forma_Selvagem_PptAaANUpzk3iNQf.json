@@ -1,0 +1,33 @@
+{
+  "_id": "PptAaANUpzk3iNQf",
+  "name": "Forma Selvagem",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/forma-selvagem.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você assume a forma de um animal Médio ou Grande, à sua escolha entre três formas. **Predador:** +6 m de deslocamento, +5 em Furtividade e Olfato e ataque desarmado de 2d8 de dano de corte. **Montanha:** RD 5 e 15 PV temporários. **Ave:** deslocamento de voo de 12 m e +5 em Visão. Você mantém seus atributos mentais, mas não pode lançar magias nem usar itens na forma animal. Voltar à forma normal é uma ação livre.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "forma-selvagem"
+    }
+  },
+  "_key": "!items!PptAaANUpzk3iNQf"
+}

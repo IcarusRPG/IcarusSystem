@@ -1,0 +1,59 @@
+<div class="aba-magias">
+  <div class="painel magias-topo">
+    <div class="magias-cd" title="{{localize 'ICARUS.Magias.CDDica'}}"><small>{{localize "ICARUS.Magias.CD"}}</small><b>{{magias.cd}}</b></div>
+    <label class="f"><span class="rot">{{localize "ICARUS.Magias.AtributoChave"}}</span>
+      <select class="campo" name="system.magia.atributo"{{#unless editable}} disabled{{/unless}}>
+        {{#each magias.opcoesAtributo}}<option value="{{valor}}"{{#if (eq valor ../magias.atributo)}} selected{{/if}}>{{rotulo}}</option>{{/each}}
+      </select></label>
+    <span class="magias-info">{{localize "ICARUS.Magias.NivelMaximo"}}: <b>{{magias.nivelMaximo}}º</b></span>
+    <span class="magias-info">PM <b>{{system.pm.value}} / {{system.pm.max}}</b></span>
+  </div>
+  <div class="magias-filtros">
+    <input class="campo" type="search" data-filtro="busca" placeholder="{{localize 'ICARUS.Magias.Buscar'}}" aria-label="{{localize 'ICARUS.Magias.Buscar'}}">
+    <select class="campo" data-filtro="nivel" aria-label="{{localize 'ICARUS.Magias.Nivel'}}">
+      <option value="">{{localize "ICARUS.Magias.TodosNiveis"}}</option>
+      {{#each magias.niveis}}<option value="{{valor}}">{{rotulo}}</option>{{/each}}
+    </select>
+    <select class="campo" data-filtro="escola" aria-label="{{localize 'ICARUS.Magias.Escola'}}">
+      <option value="">{{localize "ICARUS.Magias.TodasEscolas"}}</option>
+      {{#each magias.escolas}}<option value="{{this}}">{{this}}</option>{{/each}}
+    </select>
+  </div>
+  {{#each magias.grupos}}
+  <section class="grupo" data-grupo-nivel="{{nivel}}">
+    <div class="grupo-cab">
+      <span class="losango"></span>
+      <h3>{{titulo}}</h3>
+      <span class="fio"></span>
+      {{#unless acessivel}}<span class="tag tag-aviso" title="{{localize 'ICARUS.Magias.AcimaDoNivelDica'}}">{{localize "ICARUS.Magias.AcimaDoNivel"}}</span>{{/unless}}
+    </div>
+    <div class="cards">
+      {{#each magias}}
+      <article class="painel card com-icone card-magia" data-item-id="{{id}}" data-magia data-nivel="{{nivel}}" data-escola="{{escola}}" data-busca="{{busca}}" data-abrir-item>
+        <img class="magia-icone" src="{{img}}" alt="" width="48" height="48" onerror="this.onerror=null;this.src='{{@root.iconePadrao}}'">
+        <div class="card-corpo">
+          <div class="card-topo">
+            <b>{{nome}}</b>
+            <span class="custo">{{custo}} PM</span>
+          </div>
+          <div class="card-meta">{{meta}}{{#if resistencia}} · {{resistencia}}{{/if}}</div>
+          <details class="magia-detalhe"><summary>{{localize "ICARUS.Magias.VerTexto"}}</summary>
+            <div class="card-texto">{{{descricao}}}</div>
+            {{#if aprimoramentos.length}}<ul class="magia-apr">{{#each aprimoramentos}}<li><b>+{{custo}} PM</b> {{texto}}</li>{{/each}}</ul>{{/if}}
+          </details>
+          <div class="card-acoes">
+            {{#if @root.owner}}<button type="button" class="btn peq primario" data-action="magia-lancar"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Magias.Lancar"}}</button>{{/if}}
+            {{#if @root.editable}}
+            <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{nome}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+            <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{nome}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+            {{/if}}
+          </div>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </section>
+  {{else}}
+  <div class="card-vazio">{{localize "ICARUS.Magias.Vazio"}}</div>
+  {{/each}}
+</div>

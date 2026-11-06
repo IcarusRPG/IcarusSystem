@@ -1,0 +1,38 @@
+{
+  "_id": "HwHgVkzZNjBeYsvx",
+  "name": "Moldar Pensamentos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/moldar-pensamentos.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "sustentada (concentração)",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você reescreve a percepção do alvo, que só enxerga o que você decide. Escolha um efeito ao lançar. **Mundo Falso:** o alvo percebe os arredores como você descrever (aliados parecem inimigos e o contrário, um abismo parece chão firme, uma porta trancada parece aberta) e age de acordo, ficando Desprevenido contra o que não percebe. Você pode mudar a ilusão como ação livre, no seu turno. **Dor Imaginária:** o alvo sente ferimentos que não existem; no início de cada turno dele, sofre 6d6 de dano psíquico (sem teste adicional). Se sofrer dano real de uma fonte alheia à ilusão, tem direito a um novo teste. Efeito mental.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "você também implanta uma lembrança falsa de até 1 hora de duração no alvo; ela permanece depois que a magia termina."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "moldar-pensamentos"
+    }
+  },
+  "_key": "!items!HwHgVkzZNjBeYsvx"
+}

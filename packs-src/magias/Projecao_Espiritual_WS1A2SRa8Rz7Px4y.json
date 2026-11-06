@@ -1,0 +1,38 @@
+{
+  "_id": "WS1A2SRa8Rz7Px4y",
+  "name": "Projeção Espiritual",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/projecao-espiritual.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Seu espírito deixa o corpo e viaja, incorpóreo e invisível a quem não enxerga o lado espiritual. Ele voa com deslocamento 18 m, atravessa objetos e criaturas, vê e ouve normalmente e pode se afastar até 90 m do corpo. O espírito não afeta o mundo físico nem lança magias, mas pode falar com outros espíritos. Seu corpo fica Inconsciente e Indefeso. Se o corpo sofrer dano, ou se a magia terminar, o espírito volta de imediato.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "o espírito pode se afastar até 1 km do corpo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "projecao-espiritual"
+    }
+  },
+  "_key": "!items!WS1A2SRa8Rz7Px4y"
+}
