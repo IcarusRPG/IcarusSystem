@@ -166,6 +166,14 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
   - `audio/ui/seu-turno.ogg` — som curto (até 2 s) do "SEU TURNO".
 - Testes fora do Foundry: `/tests/navegador/token-barras.html` e `/tests/navegador/carrossel.html`.
 
+## Dano e cura no chat, números de PV
+
+- **Botões nas mensagens de dano:** Aplicar dano, Metade, Curar, Perda de PV (e Dobro, se ligado). Marque o alvo (T) ou selecione os tokens antes de clicar. Em tokens de outros jogadores o Mestre precisa estar online (ele aplica). O Mestre desfaz a última aplicação pelo botão ↶.
+- **Macros:** `game.icarus.rolarDanoAvulso({ titulo, partes: [{ formula: "6d6", tipo: "eletrico" }, { formula: "6d6", tipo: "impacto" }] })` e `game.icarus.rolarCura({ titulo, formula: "2d4 + 2" })`.
+- **Números sobre o token:** −N vermelho / +N verde quando o PV muda (PM em azul, se ligado). Configurações: "Números de dano e cura…" e "Mostrar números… de NPCs aos jogadores".
+- **Sons opcionais:** `audio/ui/dano.ogg` e `audio/ui/cura.ogg` (curtos; rode `npm run gerar:dados` depois de adicionar).
+- Testes fora do Foundry: `/tests/navegador/chat-dano.html` e `/tests/navegador/numeros-pv.html`.
+
 ## Interação por proximidade e porta trancada
 
 - **Cena:** use 1,5 m por quadrado, em metros (Configurar Cena → Grade: Distância 1,5, Unidade m). Se a cena estiver diferente, o Mestre recebe um aviso ao abri-la.

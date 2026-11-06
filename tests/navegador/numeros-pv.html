@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste dos números de PV (Icarus RPG)</title>
+<style>body { margin: 0; background: #1b1f16; font-family: sans-serif; color: #ddd; } #log { position: fixed; right: 8px; top: 8px; font: 12px monospace; white-space: pre; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+</head>
+<body>
+<!-- Fora do Foundry: o mesmo module/numeros-pv.mjs com tokens PIXI simulados (PixiJS 7.2.4, o do Foundry v12).
+     Servir a raiz do projeto e abrir /tests/navegador/numeros-pv.html -->
+<div id="log"></div>
+<script type="module">
+const app = new PIXI.Application({ width: 900, height: 520, backgroundColor: 0x2a3322, antialias: true, resolution: devicePixelRatio, autoDensity: true });
+document.body.appendChild(app.view);
+const ganchos = {};
+const cfg = new Map([["numerosAtivo", true], ["numerosTamanho", "m"], ["numerosSom", false], ["numerosNpc", true], ["numerosPM", true]]);
+const interface_ = app.stage.addChild(new PIXI.Container());
+globalThis.game = { user: { isGM: false }, settings: { register() {}, get: (_s, k) => cfg.get(k) } };
+globalThis.canvas = { app, stage: app.stage, interface: interface_, grid: { size: 100 }, scene: { id: "cena" }, tokens: { placeables: [] } };
+globalThis.Hooks = { on: (n, f) => ((ganchos[n] ??= []).push(f)), once: (n, f) => ((ganchos[n] ??= []).push(f)) };
+const disparar = (n, ...a) => (ganchos[n] ?? []).forEach(f => f(...a));
+const { registrarNumerosDePV, _numeros } = await import("/module/numeros-pv.mjs");
+registrarNumerosDePV();
+
+const textura = await PIXI.Assets.load("/img/Icones/tokens/personagens/miniaturas/token-guerreiro.png");
+const texturaNpc = await PIXI.Assets.load("/img/Icones/tokens/personagens/miniaturas/token-anatema.png");
+let n = 0;
+function token({ x, y, tam = 1, pv, pm = 5, pj = true, hidden = false, linked = true }) {
+  const id = `t${++n}`;
+  const t = new PIXI.Container();
+  t.position.set(x, y);
+  t.id = id; t.w = t.h = 100 * tam; t.isVisible = !hidden;
+  const s = t.addChild(new PIXI.Sprite(pj ? textura : texturaNpc)); s.width = s.height = t.w;
+  const actor = { hasPlayerOwner: pj, isToken: !linked, system: { pv: { value: pv, max: pv }, pm: { value: pm, max: 10 } } };
+  const doc = { uuid: `Scene.cena.Token.${id}`, parent: { id: "cena" }, hidden, actor, object: t };
+  actor.token = doc;
+  actor.getActiveTokens = () => [doc];
+  t.document = doc;
+  app.stage.addChildAt(t, 0);
+  canvas.tokens.placeables.push(t);
+  disparar("drawToken", t);
+  return doc;
+}
+/** Atualização como o Foundry: muda e dispara updateActor (vinculado) ou updateToken (delta). */
+function mudar(doc, campo, valor) {
+  const opts = {};
+  const mudou = { system: { [campo]: { value: valor } } };
+  disparar(doc.actor.isToken ? "preUpdateToken" : "preUpdateActor", doc.actor.isToken ? doc : doc.actor, doc.actor.isToken ? { delta: mudou } : mudou, opts);
+  doc.actor.system[campo].value = valor;
+  if (doc.actor.isToken) { disparar("updateToken", doc, { delta: mudou }, opts); disparar("updateActor", doc.actor, mudou, opts); }
+  else disparar("updateActor", doc.actor, mudou, opts);
+}
+const pj = token({ x: 60, y: 200, pv: 30 });
+const grande = token({ x: 260, y: 160, tam: 2, pv: 80, pj: false, linked: false });
+const oculto = token({ x: 540, y: 200, pv: 20, pj: false, hidden: true });
+const npc = token({ x: 700, y: 200, pv: 20, pj: false });
+const log = m => (document.getElementById("log").textContent += m + "\n");
+window.app = app; window.tk = { pj, grande, oculto, npc }; window.mudar = mudar; window.cfg = cfg; window._numeros = _numeros; window.disparar = disparar; window.token = token; window.game = game;
+window.pronto = true;
+log("pronto");
+</script>
+</body>
+</html>

@@ -1,5 +1,22 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.14.0
+
+### Botões de dano e cura no chat
+- Toda rolagem de dano do sistema (armas, ficha, animal, lembretes de turno, `rolarDanoAvulso`) passa por uma função só e ganha a barra **Aplicar dano** (vermelho), **Metade** (laranja), **Curar** (verde) e **Perda de PV**; **Dobro** é opção do mundo (desligado). Dica com o valor exato ("Aplicar 7", "Curar 14").
+- Aplica nos **alvos marcados** (T); sem alvo, nos **tokens selecionados**. Tokens de outros jogadores: o pedido vai ao Mestre ativo, que confere (usuário ligado, cena, alvo marcado, mensagem visível) e recalcula o valor pela mensagem — o jogador nunca envia números.
+- Cálculo: metade antes da RD; imunidade, vulnerabilidade e redução **por tipo** em cada componente; RD geral uma vez; mínimo 0. Cura até o máximo, não cura morto nem o animal do Vínculo Selvagem. Dano em quem está Morrendo conta falha no teste de morte.
+- Confirmação sussurrada ao autor e ao Mestre com o cálculo ("Ogro: −11 PV (14 Corte → RD 3 → 11) · PV 40 → 29"); registro "Aplicado em …" na própria mensagem; **Desfazer** (só Mestre) reverte a última aplicação.
+- Rolagens com vários tipos (`rolarDanoAvulso({ partes: [{ formula, tipo }] })`) e de cura (`game.icarus.rolarCura`).
+- Mensagens antigas trocam os botões velhos pela barra nova; opção "Mostrar botões em qualquer rolagem" (desligada) para `/r`.
+
+### Números de PV sobre os tokens
+- Perdeu PV: **−N vermelho** com "pop" e tremida, subindo e sumindo (~1,25 s); ganhou: **+N verde** com brilho suave. PM em azul (opção do mundo, desligada).
+- Funciona com qualquer mudança de PV (botão do chat, ficha, efeitos), em tokens vinculados e não vinculados, para todos os clientes; carregar a cena ou criar o token não anima.
+- Números maiores acima de 25% do PV máximo; caveira quando chega a 0 PV; vários números no mesmo token saem em cascata para os lados; no máximo 12 ao mesmo tempo; respeita "reduzir movimento".
+- Quem vê: personagens de jogadores para todos; NPCs conforme a opção do mundo (ligada); nunca em token que o jogador não enxerga.
+- Opções de cada usuário: ligar, tamanho (pequeno/médio/grande), som (`audio/ui/dano.ogg` e `cura.ogg`, se existirem).
+
 ## 0.13.1
 
 ### Carrossel de combate

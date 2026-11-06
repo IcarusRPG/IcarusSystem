@@ -5,6 +5,7 @@
 import { SISTEMA_ID } from "./config.mjs";
 import { comSinal, numero } from "./regras.mjs";
 import { vantagemDaRolagem, dadosDoCard } from "./rolls.mjs";
+import { criarMensagemDeDano } from "./dano.mjs";
 import {
   calcularAtaque, calcularDano, planejarAtaque, planejarRecarga, faixaCritico, alcanceDoModo, totalMunicao,
   MARCA_DO_BOTAO, botaoUsado, rolarD20, modoD20, resolverAtaque, resolverAtaqueMultiplo
@@ -233,17 +234,18 @@ export async function rolarDano(actor, item, modo, opcoes = {}) {
   const arma = item.system;
   const dano = calcularDano(actor.system, arma, modo, opcoes);
   const roll = await new Roll(dano.formula).evaluate();
-  const content = await renderTemplate(`${T}/dano.hbs`, {
-    arma: { nome: item.name, img: item.img },
-    texto: dano.texto,
-    total: roll.total,
-    critico: !!opcoes.critico,
-    mult: arma.criticoMult,
-    extra: opcoes.outraExtremidade ? loc("ICARUS.Armas.Card.OutraExtremidade") : opcoes.duasMaos ? loc("ICARUS.Armas.Card.DuasMaos") : "",
-    tipos: (arma.tiposDano ?? []).map(t => loc(`ICARUS.TiposDano.${t}`)).join(" e "),
-    botoes: true
+  // Mesma função de todas as rolagens de dano (botões de aplicar no chat)
+  return criarMensagemDeDano({
+    actor, rolls: [roll], rollType: "dano", critico: !!opcoes.critico,
+    componentes: [{ tipo: arma.tiposDano?.[0] || "dano", valor: Math.max(0, roll.total) }],
+    card: {
+      arma: { nome: item.name, img: item.img },
+      texto: dano.texto,
+      mult: arma.criticoMult,
+      extra: opcoes.outraExtremidade ? loc("ICARUS.Armas.Card.OutraExtremidade") : opcoes.duasMaos ? loc("ICARUS.Armas.Card.DuasMaos") : "",
+      tipos: (arma.tiposDano ?? []).map(t => loc(`ICARUS.TiposDano.${t}`)).join(" e ")
+    }
   });
-  return enviar(actor, content, { rolls: [roll], flags: { dano: { total: roll.total, tipo: arma.tiposDano?.[0] || "dano" } } });
 }
 
 /** Recarregar arma de fogo (ação de movimento). Não gasta Balas: o gasto é no disparo. */

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste dos botões de dano no chat (Icarus RPG)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/styles/icarus.css">
+<style>
+  body { margin: 0; background: #1b1f16; font-family: sans-serif; color: #ddd; display: flex; gap: 16px; padding: 16px; }
+  #chat { width: 300px; display: flex; flex-direction: column; gap: 8px; }
+  .chat-message { background: #e9e4d8 url(); border: 1px solid #555; border-radius: 4px; padding: 6px; color: #191813; }
+  .message-content .icarus-rolagem { background: #0c131b; border: 1px solid #1c2d3b; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+  #log { font: 12px monospace; white-space: pre-wrap; width: 380px; }
+</style>
+</head>
+<body>
+<!-- Fora do Foundry: o mesmo module/dano.mjs montando a barra em mensagens simuladas. Servir a raiz e abrir /tests/navegador/chat-dano.html -->
+<div id="chat"></div>
+<div id="log"></div>
+<script type="module">
+const lang = await (await fetch("/lang/pt-BR.json")).json();
+const pegar = k => k.split(".").reduce((o, p) => o?.[p], lang) ?? k;
+const ganchos = {};
+const cfg = new Map([["danoJogadoresOutros", "alvos"], ["danoBotaoDobro", true], ["danoQualquerRolagem", false]]);
+const log = m => (document.getElementById("log").textContent += m + "\n");
+globalThis.foundry = { utils: { deepClone: o => structuredClone(o), escapeHTML: s => String(s).replace(/[&<>"]/g, c => `&#${c.charCodeAt(0)};`) } };
+globalThis.Hooks = { on: (n, f) => ((ganchos[n] ??= []).push(f)), once: (n, f) => ((ganchos[n] ??= []).push(f)) };
+globalThis.ui = { notifications: { warn: m => log("AVISO: " + m), info: m => log("INFO: " + m) } };
+globalThis.renderTemplate = async (_t, d) => `<div class="icarus-rolagem"><b>${d.titulo}</b><ul>${d.linhas.map(l => `<li>${l}</li>`).join("")}</ul></div>`;
+globalThis.ChatMessage = { create: async d => { log("CHAT (sussurro " + d.whisper + "): " + d.content.replace(/<[^>]+>/g, " ")); }, getSpeaker: () => ({}) };
+const ogro = { name: "Ogro", uuid: "Actor.ogro", isOwner: true, statuses: new Set(), getFlag: () => null,
+  system: { pv: { value: 40, max: 40 }, resistencias: { rdGeral: 3, reducao: { impacto: 2 }, imunidade: {}, vulnerabilidade: {} } },
+  async update(m) { this.system.pv.value = m["system.pv.value"]; log(`Ogro PV → ${this.system.pv.value}`); } };
+globalThis.fromUuidSync = u => (u === "Scene.c1.Token.t1" ? token : u === "Actor.ogro" ? ogro : null);
+const token = { uuid: "Scene.c1.Token.t1", name: "Ogro", actor: ogro, actorLink: true, documentName: "Token" };
+globalThis.canvas = { tokens: { controlled: [{ document: token }] } };
+globalThis.game = {
+  release: { generation: 12 }, user: { id: "mestre", isGM: true, targets: new Set() },
+  users: { activeGM: { isSelf: true }, get: () => ({ name: "Mestre" }), filter: () => [{ id: "mestre" }] },
+  i18n: { localize: pegar, format: (k, d) => pegar(k).replace(/\{(\w+)\}/g, (_, n) => d[n]) },
+  settings: { register() {}, get: (_s, k) => cfg.get(k) }, socket: { on() {}, emit() {} }
+};
+const { registrarBotoesDeDano } = await import("/module/dano.mjs");
+registrarBotoesDeDano();
+(ganchos.setup ?? []).forEach(f => f());
+const render = ganchos.renderChatMessage[0];
+
+function mensagem(id, flags, corpo) {
+  const m = { id, flags: { "icarus-rpg": flags }, rolls: [], isOwner: true, isRoll: true,
+    getFlag(_s, k) { return this.flags["icarus-rpg"][k]; },
+    async setFlag(_s, k, v) { this.flags["icarus-rpg"][k] = v; desenhar(this); } };
+  m.corpo = corpo;
+  desenhar(m);
+  return m;
+}
+function desenhar(m) {
+  let li = document.getElementById(m.id);
+  if (!li) { li = document.createElement("li"); li.id = m.id; li.className = "chat-message"; document.getElementById("chat").appendChild(li); }
+  li.innerHTML = `<div class="message-content">${m.corpo}</div>`;
+  render(m, [li]);
+}
+const card = (nome, formula, total, tipo, extra = "") => `<div class="icarus-rolagem icarus-dano"><div class="arma-cab"><img src="/icons/svg/sword.svg" alt="" width="36" height="36"><div><h3 class="rolagem-nome">${nome}</h3><div class="rolagem-tipo">Dano</div></div></div><div class="rolagem-dados"><span class="rolagem-formula">${formula}</span><span class="rolagem-total">${total}</span></div>${extra}<div class="linha-municao">Tipo de dano: ${tipo}</div></div>`;
+window.m1 = mensagem("m1", { dano: { rollType: "dano", total: 14, componentes: [{ tipo: "corte", valor: 14 }] }, aplicacoes: [] }, card("Espada longa", "1d8 + 4 (FOR)", 14, "Corte"));
+window.m2 = mensagem("m2", { dano: { rollType: "dano", total: 24, componentes: [{ tipo: "eletrico", valor: 13 }, { tipo: "impacto", valor: 11 }] }, aplicacoes: [] }, card("Relâmpago trovejante", "6d6 (Elétrico) + 6d6 (Impacto)", 24, "Elétrico e Impacto"));
+window.m3 = mensagem("m3", { dano: { rollType: "cura", total: 9, componentes: [{ tipo: "dano", valor: 9 }] }, aplicacoes: [] }, `<div class="icarus-rolagem icarus-dano icarus-cura"><div class="arma-cab"><div><h3 class="rolagem-nome">Poção de cura</h3><div class="rolagem-tipo">Cura</div></div></div><div class="rolagem-dados"><span class="rolagem-formula">2d4 + 2</span><span class="rolagem-total">9</span></div></div>`);
+// Mensagem antiga (botões no HTML salvo): devem sumir e entrar a barra nova
+window.m4 = mensagem("m4", { dano: { total: 6, tipo: "fogo" } }, card("Em chamas (antiga)", "1d6", 6, "Fogo", `<div class="rolagem-botoes"><button data-icarus-aplicar="dano">Aplicar dano</button></div><div class="linha-municao">Selecione os tokens…</div>`));
+window.ogro = ogro;
+window.pronto = true;
+</script>
+</body>
+</html>
