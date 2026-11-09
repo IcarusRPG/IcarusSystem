@@ -3,7 +3,7 @@
   "name": "Dissipar Magia",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/dissipar-magia.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "dissipar-magia"
+      "id": "dissipar-magia",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!vYg35qG3yqbVTMdF"

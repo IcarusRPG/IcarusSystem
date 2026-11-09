@@ -3,7 +3,7 @@
   "name": "Garras Carmesins",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/garras-carmesins.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "zjRz1s2rdXuaPFZX",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "garras-carmesins"
+      "id": "garras-carmesins",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!6RdgJ7TFRuSIizED"

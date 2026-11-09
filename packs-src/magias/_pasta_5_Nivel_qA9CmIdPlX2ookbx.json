@@ -1,0 +1,15 @@
+{
+  "_id": "qA9CmIdPlX2ookbx",
+  "name": "5º Nível",
+  "type": "Item",
+  "folder": "7dgr66CMnsh789dN",
+  "sorting": "a",
+  "sort": 5000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-divina-5"
+    }
+  },
+  "_key": "!folders!qA9CmIdPlX2ookbx"
+}

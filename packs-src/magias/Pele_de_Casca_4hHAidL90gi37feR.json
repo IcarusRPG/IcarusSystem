@@ -3,7 +3,7 @@
   "name": "Pele de Casca",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/pele-de-casca.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "pele-de-casca"
+      "id": "pele-de-casca",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!4hHAidL90gi37feR"

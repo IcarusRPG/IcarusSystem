@@ -3,7 +3,7 @@
   "name": "Servo de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/servo-de-sangue.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "ZmD5QhJFF9hPy6Bn",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "servo-de-sangue"
+      "id": "servo-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!Ce1YW3KNBVRgDc23"

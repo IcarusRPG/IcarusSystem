@@ -3,7 +3,7 @@
   "name": "Nuvem de Morcegos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/nuvem-de-morcegos.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "ZmD5QhJFF9hPy6Bn",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "nuvem-de-morcegos"
+      "id": "nuvem-de-morcegos",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!GCadzI2AoaVhP0on"

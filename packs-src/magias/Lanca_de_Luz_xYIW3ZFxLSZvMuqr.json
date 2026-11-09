@@ -3,7 +3,7 @@
   "name": "Lança de Luz",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/lanca-de-luz.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "lanca-de-luz"
+      "id": "lanca-de-luz",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!xYIW3ZFxLSZvMuqr"

@@ -3,7 +3,7 @@
   "name": "Cura em Massa",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/cura-em-massa.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "cura-em-massa"
+      "id": "cura-em-massa",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!aoALQgwKi3WjZdwj"

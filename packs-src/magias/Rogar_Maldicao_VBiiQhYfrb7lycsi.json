@@ -1,0 +1,40 @@
+{
+  "_id": "VBiiQhYfrb7lycsi",
+  "name": "Rogar Maldição",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/rogar-maldicao.png",
+  "folder": "U9hafKNruwp72xCq",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo sofre uma maldição à sua escolha: –5 em testes de um atributo (e perícias baseadas nele), –3 em ataques e dano, ou perde 1 PM no início de cada turno seu. A maldição pode ser removida por Remover Maldição ou Dissipar Magia.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "a duração passa a \"1 semana\"."
+      }
+    ],
+    "tradicoes": [
+      "divina",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "rogar-maldicao",
+      "tradicao": "sangue"
+    }
+  },
+  "_key": "!items!VBiiQhYfrb7lycsi"
+}

@@ -3,7 +3,7 @@
   "name": "Escudo Arcano",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/escudo-arcano.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "escudo-arcano"
+      "id": "escudo-arcano",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!imuc16wb9z9VZAef"

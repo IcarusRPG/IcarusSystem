@@ -1,0 +1,40 @@
+{
+  "_id": "ObCSFdlkltXYRI6w",
+  "name": "Tribunal das Almas",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/tribunal-das-almas.png",
+  "folder": "qA9CmIdPlX2ookbx",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 9 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Vontade reduz à metade",
+    "descricao": "<p>Um tribunal invisível julga as almas na área. Mortos-vivos, espíritos e criaturas profanas sofrem 14d6 de dano de luz; os demais sofrem 7d6 de dano de essência e ficam Abalados. A magia não cura ninguém.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+2d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tribunal-das-almas",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!ObCSFdlkltXYRI6w"
+}

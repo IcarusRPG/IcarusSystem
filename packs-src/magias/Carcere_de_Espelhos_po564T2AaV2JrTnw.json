@@ -3,7 +3,7 @@
   "name": "Cárcere de Espelhos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/carcere-de-espelhos.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "carcere-de-espelhos"
+      "id": "carcere-de-espelhos",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!po564T2AaV2JrTnw"

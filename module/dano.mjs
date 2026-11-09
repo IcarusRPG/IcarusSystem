@@ -65,14 +65,14 @@ export async function criarMensagemDeDano({ actor = null, rolls = [], rollType =
  * - cura: true para rolagens de cura (botão Curar).
  * - alvoUuid: aplica direto nesse ator (lembretes de turno); sem ele, nos alvos/selecionados.
  */
-export async function rolarDanoAvulso({ formula, tipo = "dano", partes = null, titulo, img = "icons/svg/fire.svg", actor = null, perda = false, cura = false, alvoUuid = null }) {
+export async function rolarDanoAvulso({ formula, tipo = "dano", partes = null, titulo, img = "icons/svg/fire.svg", actor = null, perda = false, cura = false, alvoUuid = null, flags = {} }) {
   const lista = partes?.length ? partes : [{ formula, tipo }];
   const rolls = [];
   for (const p of lista) rolls.push(await new Roll(p.formula).evaluate());
   const componentes = lista.map((p, i) => ({ tipo: cura ? "dano" : p.tipo || "dano", valor: Math.max(0, rolls[i].total) }));
   const tipos = cura ? "" : perda ? loc("ICARUS.Dano.PerdaDePV") : [...new Set(componentes.map(c => nomeDoTipo(c.tipo)))].join(" e ");
   return criarMensagemDeDano({
-    actor, rolls, rollType: cura ? "cura" : "dano", componentes, perda, alvoUuid,
+    actor, rolls, rollType: cura ? "cura" : "dano", componentes, perda, alvoUuid, flags,
     card: {
       arma: { nome: titulo, img: cura && img === "icons/svg/fire.svg" ? "icons/svg/regen.svg" : img },
       texto: lista.map((p, i) => (lista.length > 1 && !cura ? `${p.formula} (${nomeDoTipo(componentes[i].tipo)})` : p.formula)).join(" + "),
@@ -83,7 +83,7 @@ export async function rolarDanoAvulso({ formula, tipo = "dano", partes = null, t
 }
 
 /** Rolagem de cura (botão Curar). */
-export const rolarCura = ({ formula, titulo, img = "icons/svg/regen.svg", actor = null }) => rolarDanoAvulso({ formula, titulo, img, actor, cura: true });
+export const rolarCura = ({ formula, titulo, img = "icons/svg/regen.svg", actor = null, flags = {} }) => rolarDanoAvulso({ formula, titulo, img, actor, cura: true, flags });
 
 /* ------------------------------ Aplicar ------------------------------ */
 
@@ -204,20 +204,28 @@ async function aoClicar(mensagem, botao) {
   if (proprios.length) await aplicarEmVarios(mensagem, proprios, botao, dados, game.user.id);
 }
 
-/** Mestre: desfaz a última aplicação desta mensagem (PV volta ao valor anterior). */
-async function desfazer(mensagem) {
-  if (!game.user.isGM) return;
+/**
+ * Voltar: desfaz a última aplicação desta mensagem (PV volta ao valor anterior).
+ * O Mestre desfaz qualquer uma; o jogador, só a que ele mesmo aplicou (pelo Mestre, que confere).
+ */
+async function desfazer(mensagem, usuarioId = game.user.id) {
   const lista = foundry.utils.deepClone(mensagem.getFlag(F, "aplicacoes") ?? []);
   const i = ultimaDesfazivel(lista);
   if (i < 0) return;
   const a = lista[i];
+  if (!game.user.isGM) {
+    if (a.usuario !== game.user.id) return;
+    if (!game.users.activeGM) return ui.notifications.warn(loc("ICARUS.Dano.SemMestre"));
+    return game.socket.emit(CANAL, { acao: "dano:desfazer", mensagemId: mensagem.id });
+  }
+  if (usuarioId !== game.user.id && a.usuario !== usuarioId) return recusar(usuarioId, "ICARUS.Dano.PedidoInvalido");
   const alvo = a.tokenUuid ? fromUuidSync(a.tokenUuid) : null;
   const actor = alvo?.actor ?? fromUuidSync(a.actorUuid);
   if (actor) await actor.update({ "system.pv.value": a.antes }, { icarusDesfazer: true });
   else ui.notifications.warn(fmt("ICARUS.Dano.DesfazerSemAlvo", { nome: a.alvo }));
   lista[i].desfeita = true;
   await emFila(() => mensagem.setFlag(F, "aplicacoes", lista));
-  ui.notifications.info(fmt("ICARUS.Dano.Desfeito", { nome: a.alvo, pv: a.antes }));
+  if (usuarioId === game.user.id) ui.notifications.info(fmt("ICARUS.Dano.Desfeito", { nome: a.alvo, pv: a.antes }));
 }
 
 /* ------------------------------ Socket (lado do Mestre) ------------------------------ */
@@ -262,6 +270,9 @@ export async function aoReceberDano(msg, remetente) {
     return;
   }
 
+  // Jogador pede para voltar a última aplicação que ele fez
+  if (msg.acao === "dano:desfazer") return desfazer(mensagem, de);
+
   if (msg.acao !== "dano:aplicar") return;
   const pedido = validarPedido(msg);
   if (!pedido) return recusar(de, "ICARUS.Dano.PedidoInvalido");
@@ -290,15 +301,17 @@ const DICAS = { dano: "ICARUS.Dano.DicaAplicar", metade: "ICARUS.Dano.DicaAplica
 const ROTULOS = { dano: "ICARUS.Dano.Aplicar", metade: "ICARUS.Dano.Metade", dobro: "ICARUS.Dano.Dobro", cura: "ICARUS.Dano.Curar", perda: "ICARUS.Dano.AplicarPerda" };
 
 /** HTML da barra e do registro (exportada para os testes do navegador). */
-export function htmlDaBarra(dados, aplicacoes = [], { dobro = false, mestre = false } = {}) {
+export function htmlDaBarra(dados, aplicacoes = [], { dobro = false, mestre = false, usuario = null } = {}) {
   const botoes = botoesDaBarra(dados.rollType, { dobro }).map(b => {
     const n = valorDoBotao(dados.total, b);
     const dica = esc(fmt(DICAS[b], { n }));
     return `<button type="button" class="ap-${b}" data-icarus-botao="${b}" title="${dica}" aria-label="${esc(loc(ROTULOS[b]))}: ${dica}">`
       + `<i class="fa-solid ${ICONES[b]}" aria-hidden="true"></i><span>${esc(loc(ROTULOS[b]))}</span></button>`;
   }).join("");
-  const desfazer = mestre && ultimaDesfazivel(aplicacoes) >= 0
-    ? `<button type="button" class="ap-desfazer" data-icarus-desfazer title="${esc(loc("ICARUS.Dano.Desfazer"))}" aria-label="${esc(loc("ICARUS.Dano.Desfazer"))}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></button>`
+  // Voltar: o Mestre sempre; o jogador, se a última aplicação foi dele
+  const ultima = aplicacoes[ultimaDesfazivel(aplicacoes)];
+  const desfazer = ultima && (mestre || (usuario && ultima.usuario === usuario))
+    ? `<button type="button" class="ap-desfazer" data-icarus-desfazer title="${esc(loc("ICARUS.Dano.Desfazer"))}" aria-label="${esc(loc("ICARUS.Dano.Desfazer"))}"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span>${esc(loc("ICARUS.Dano.Voltar"))}</span></button>`
     : "";
   const registro = aplicacoes.length
     ? `<div class="icarus-aplicacoes">${esc(loc("ICARUS.Dano.AplicadoEm"))} ${aplicacoes.slice(-8).map(a => `<span class="${a.desfeita ? "desfeita" : ""}"${a.detalhe ? ` title="${esc(a.detalhe)}"` : ""}>${esc(textoDoRegistro(a))}</span>`).join(", ")}${aplicacoes.length > 8 ? " …" : ""}</div>`
@@ -321,7 +334,7 @@ function aoRenderizar(mensagem, html) {
   const conteudo = raiz.querySelector(".icarus-rolagem") ?? raiz.querySelector(".message-content") ?? raiz;
   const caixa = document.createElement("div");
   caixa.className = "icarus-aplicar-caixa";
-  caixa.innerHTML = htmlDaBarra(dados, flags?.aplicacoes ?? [], { dobro: cfg("danoBotaoDobro"), mestre: game.user.isGM });
+  caixa.innerHTML = htmlDaBarra(dados, flags?.aplicacoes ?? [], { dobro: cfg("danoBotaoDobro"), mestre: game.user.isGM, usuario: game.user.id });
   conteudo.appendChild(caixa);
   caixa.querySelectorAll("[data-icarus-botao]").forEach(botao => {
     botao.addEventListener("click", async ev => {

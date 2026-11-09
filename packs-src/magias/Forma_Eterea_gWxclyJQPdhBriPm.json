@@ -3,7 +3,7 @@
   "name": "Forma Etérea",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/forma-eterea.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "forma-eterea"
+      "id": "forma-eterea",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!gWxclyJQPdhBriPm"

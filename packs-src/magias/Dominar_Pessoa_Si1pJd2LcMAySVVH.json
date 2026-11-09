@@ -3,7 +3,7 @@
   "name": "Dominar Pessoa",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/dominar-pessoa.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "dominar-pessoa"
+      "id": "dominar-pessoa",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!Si1pJd2LcMAySVVH"

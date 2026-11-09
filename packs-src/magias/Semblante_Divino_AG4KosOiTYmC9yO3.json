@@ -3,7 +3,7 @@
   "name": "Semblante Divino",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/semblante-divino.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "semblante-divino"
+      "id": "semblante-divino",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!AG4KosOiTYmC9yO3"

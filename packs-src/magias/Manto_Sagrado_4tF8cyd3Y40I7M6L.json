@@ -3,7 +3,7 @@
   "name": "Manto Sagrado",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/manto-sagrado.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "manto-sagrado"
+      "id": "manto-sagrado",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!4tF8cyd3Y40I7M6L"

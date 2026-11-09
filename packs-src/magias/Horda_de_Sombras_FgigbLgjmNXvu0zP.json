@@ -3,7 +3,7 @@
   "name": "Horda de Sombras",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/horda-de-sombras.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "horda-de-sombras"
+      "id": "horda-de-sombras",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!FgigbLgjmNXvu0zP"

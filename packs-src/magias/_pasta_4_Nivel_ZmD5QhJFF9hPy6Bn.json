@@ -1,0 +1,15 @@
+{
+  "_id": "ZmD5QhJFF9hPy6Bn",
+  "name": "4º Nível",
+  "type": "Item",
+  "folder": "MRHnmfMOa2I2TwTJ",
+  "sorting": "a",
+  "sort": 4000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-sangue-4"
+    }
+  },
+  "_key": "!folders!ZmD5QhJFF9hPy6Bn"
+}

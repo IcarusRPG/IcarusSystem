@@ -3,7 +3,7 @@
   "name": "Sentido de Perigo",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sentido-de-perigo.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sentido-de-perigo"
+      "id": "sentido-de-perigo",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!U0haZDlYunI4olSd"

@@ -3,7 +3,7 @@
   "name": "Coluna Flamejante",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/coluna-flamejante.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "qA9CmIdPlX2ookbx",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "coluna-flamejante"
+      "id": "coluna-flamejante",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!zG5ZLVaCwdxGb2Fy"

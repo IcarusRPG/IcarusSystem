@@ -3,7 +3,7 @@
   "name": "Comunhão com a Natureza",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/comunhao-com-a-natureza.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "comunhao-com-a-natureza"
+      "id": "comunhao-com-a-natureza",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!tq1DL1tgYSmcH5lD"

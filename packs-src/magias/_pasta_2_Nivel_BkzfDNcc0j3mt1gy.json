@@ -1,0 +1,15 @@
+{
+  "_id": "BkzfDNcc0j3mt1gy",
+  "name": "2º Nível",
+  "type": "Item",
+  "folder": "FVbajyUQTrrKbqXw",
+  "sorting": "a",
+  "sort": 2000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-arcana-2"
+    }
+  },
+  "_key": "!folders!BkzfDNcc0j3mt1gy"
+}

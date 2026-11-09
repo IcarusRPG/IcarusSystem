@@ -3,7 +3,7 @@
   "name": "Banquete Rubro",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/banquete-rubro.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "U9hafKNruwp72xCq",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "banquete-rubro"
+      "id": "banquete-rubro",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!FYcAqnraleIcoqQv"

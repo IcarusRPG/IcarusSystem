@@ -3,7 +3,7 @@
   "name": "Cálice de Vitalidade",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/calice-de-vitalidade.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "U9hafKNruwp72xCq",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "calice-de-vitalidade"
+      "id": "calice-de-vitalidade",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!g7089KdfyfnCvbwb"

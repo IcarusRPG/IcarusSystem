@@ -3,7 +3,7 @@
   "name": "Falar com os Mortos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/falar-com-os-mortos.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "falar-com-os-mortos"
+      "id": "falar-com-os-mortos",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!qFJFYuL4BFx2SXwe"

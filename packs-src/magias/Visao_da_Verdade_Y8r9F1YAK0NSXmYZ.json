@@ -3,7 +3,7 @@
   "name": "Visão da Verdade",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/visao-da-verdade.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "visao-da-verdade"
+      "id": "visao-da-verdade",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!Y8r9F1YAK0NSXmYZ"

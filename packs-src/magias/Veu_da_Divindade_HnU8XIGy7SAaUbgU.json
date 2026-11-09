@@ -3,7 +3,7 @@
   "name": "Véu da Divindade",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/veu-da-divindade.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "qA9CmIdPlX2ookbx",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "veu-da-divindade"
+      "id": "veu-da-divindade",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!HnU8XIGy7SAaUbgU"

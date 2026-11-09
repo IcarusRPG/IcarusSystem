@@ -3,7 +3,7 @@
   "name": "Onda Necrótica",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/onda-necrotica.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "Q4DGUrEYlwfKlqZn",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "onda-necrotica"
+      "id": "onda-necrotica",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!LATon5JtbniVYx0b"

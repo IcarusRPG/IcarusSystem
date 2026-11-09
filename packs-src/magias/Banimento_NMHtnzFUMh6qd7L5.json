@@ -3,7 +3,7 @@
   "name": "Banimento",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/banimento.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "banimento"
+      "id": "banimento",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!NMHtnzFUMh6qd7L5"

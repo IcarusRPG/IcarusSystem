@@ -1,0 +1,15 @@
+{
+  "_id": "LTX5ZIDWEie3iCBv",
+  "name": "4º Nível",
+  "type": "Item",
+  "folder": "7dgr66CMnsh789dN",
+  "sorting": "a",
+  "sort": 4000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-divina-4"
+    }
+  },
+  "_key": "!folders!LTX5ZIDWEie3iCBv"
+}

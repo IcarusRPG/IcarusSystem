@@ -3,7 +3,7 @@
   "name": "Relâmpago",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/relampago.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "relampago"
+      "id": "relampago",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!F394fxnEXslsYuHi"

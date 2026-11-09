@@ -3,7 +3,7 @@
   "name": "Selo de Descanso",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/selo-de-descanso.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "selo-de-descanso"
+      "id": "selo-de-descanso",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!4YLCOmhJcZ6f8GdF"

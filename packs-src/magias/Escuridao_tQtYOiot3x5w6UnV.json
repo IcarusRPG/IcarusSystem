@@ -1,0 +1,41 @@
+{
+  "_id": "tQtYOiot3x5w6UnV",
+  "name": "Escuridão",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/escuridao.png",
+  "folder": "AiCnBpJtoWzUmvFz",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma escuridão mágica preenche a área, bloqueando toda luz, inclusive visão no escuro. Dentro dela, criaturas ficam sob camuflagem total. Luzes de magias de nível 2 ou menor são apagadas. Luz (nível 1) e Luz do Dia dissipam uma à outra se a de nível maior vencer.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o raio aumenta em +3 m."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escuridao",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!tQtYOiot3x5w6UnV"
+}

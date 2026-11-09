@@ -3,7 +3,7 @@
   "name": "Salto Arcano",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/salto-arcano.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "salto-arcano"
+      "id": "salto-arcano",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!e3Ylj93aeBl6URlk"

@@ -38,7 +38,7 @@ jobs:
         run: npm run build:packs
 
       - name: Montar o pacote
-        run: zip -r icarus-rpg.zip system.json icarus.mjs module templates styles fonts lang img packs tools/dados macros README.md -x "*.DS_Store" "img/Logo oficial/*" "img/Wallpaper Icarus System.png"
+        run: zip -r icarus-rpg.zip system.json icarus.mjs module templates styles fonts lang img packs tools/dados macros README.md $(ls -d audio 2>/dev/null) -x "*.DS_Store" "img/Logo oficial/*" "img/Wallpaper Icarus System.png"
 
       - name: Publicar release
         env:

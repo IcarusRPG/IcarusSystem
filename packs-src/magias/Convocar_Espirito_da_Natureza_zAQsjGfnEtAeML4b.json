@@ -1,0 +1,44 @@
+{
+  "_id": "zAQsjGfnEtAeML4b",
+  "name": "Convocar Espírito da Natureza",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/convocar-espirito-da-natureza.png",
+  "folder": "AttWRSvLnF3bhlQG",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Convocação",
+    "execucao": "completa",
+    "alcance": "curto",
+    "alvo": "1 espírito",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você chama um espírito da natureza, que se manifesta num ponto livre dentro do alcance e obedece a você. Escolha um dos três tipos ao lançar. O espírito age no seu turno (uma ação padrão e uma de movimento), conta como criatura do tipo espírito e **tem estatísticas próprias**, sem usar as suas. **Bônus de ataque** = atributo do espírito + 2 (treino) + metade do seu nível de personagem. **CD das habilidades do espírito** = 10 + metade do seu nível de personagem + atributo do espírito. Se chegar a 0 PV, ou se a magia terminar, ele se dissolve. Nas fichas abaixo, **N é o nível mais alto de magia que você consegue lançar** (3 no nível 9, 4 no nível 13 e 5 no nível 17). **Guardião da Floresta** (corpo de raízes e casca; Força +3): Defesa 12 + metade do seu nível; PV 15×N; PM 0; deslocamento 9 m. *Raízes:* ataque corpo a corpo, 3d6 de dano de impacto. *Prender:* uma vez por rodada, o alvo atingido faz Reflexos ou fica Enredado. *Casca Espessa:* RD 3 (respeitando o teto de RD). **Espírito da Tempestade** (vento e relâmpago; Destreza +3): Defesa 10 + metade do seu nível; PV 10×N; PM 6; voo 12 m. *Descarga:* ataque à distância (curto), 2d6 de dano elétrico. *Raio em Linha* (2 PM, uma vez por rodada): linha de 9 m, 4d6 de dano elétrico, Reflexos reduz à metade. *Corpo de Vento:* camuflagem leve; quem o ataca à distância tem –2. **Espírito da Fonte** (água e vida; Sabedoria +3): Defesa 10 + metade do seu nível; PV 10×N; PM 6; deslocamento 9 m, natação 12 m. *Toque Rejuvenescedor* (2 PM, uma vez por rodada): toca uma criatura e cura 3d8+3 PV. *Fonte Purificadora* (2 PM): remove uma condição de Envenenado, Doente ou Enjoado de uma criatura tocada. *Névoa de Orvalho:* aliados adjacentes ao espírito recebem +1 na Defesa.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "o espírito tem +50% PV e seus ataques causam +1d6 de dano."
+      },
+      {
+        "custo": 6,
+        "texto": "você convoca um segundo espírito, de tipo diferente do primeiro (ambos agem no seu turno)."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "convocar-espirito-da-natureza",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!zAQsjGfnEtAeML4b"
+}

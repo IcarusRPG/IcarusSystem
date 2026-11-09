@@ -3,7 +3,7 @@
   "name": "Tempestade de Gelo",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/tempestade-de-gelo.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "tempestade-de-gelo"
+      "id": "tempestade-de-gelo",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!YTRi9dowLg9tWOjq"

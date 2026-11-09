@@ -3,7 +3,7 @@
   "name": "Ilusão Menor",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/ilusao-menor.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "ilusao-menor"
+      "id": "ilusao-menor",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!7Xz1vvq8iQ6Au8Hb"

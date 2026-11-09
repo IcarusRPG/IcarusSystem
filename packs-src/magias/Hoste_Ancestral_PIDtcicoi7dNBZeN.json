@@ -1,0 +1,35 @@
+{
+  "_id": "PIDtcicoi7dNBZeN",
+  "name": "Hoste Ancestral",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/hoste-ancestral.png",
+  "folder": "qA9CmIdPlX2ookbx",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 9 m de raio, centrada em você",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Os espíritos dos ancestrais se reúnem ao seu redor. Você e seus aliados na área recebem +2 em testes de ataque e de resistência e RD 3 (respeitando o teto de RD do núcleo). Mortos-vivos e espíritos hostis na área sofrem 4d6 de dano de luz no início de cada turno seu.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "hoste-ancestral",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!PIDtcicoi7dNBZeN"
+}

@@ -3,7 +3,7 @@
   "name": "Imagem Maior",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/imagem-maior.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "imagem-maior"
+      "id": "imagem-maior",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!jyEbgMp5fD8suNRp"

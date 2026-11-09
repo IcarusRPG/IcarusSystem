@@ -3,7 +3,7 @@
   "name": "Liberdade de Movimento",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/liberdade-de-movimento.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "liberdade-de-movimento"
+      "id": "liberdade-de-movimento",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!AMLWmCIkhtHZRrjQ"

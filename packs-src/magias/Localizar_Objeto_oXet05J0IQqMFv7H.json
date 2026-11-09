@@ -3,7 +3,7 @@
   "name": "Localizar Objeto",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/localizar-objeto.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "BkzfDNcc0j3mt1gy",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "localizar-objeto"
+      "id": "localizar-objeto",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!oXet05J0IQqMFv7H"

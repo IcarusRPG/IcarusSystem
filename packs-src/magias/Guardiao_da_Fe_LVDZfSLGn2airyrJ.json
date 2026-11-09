@@ -3,7 +3,7 @@
   "name": "Guardião da Fé",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/guardiao-da-fe.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "guardiao-da-fe"
+      "id": "guardiao-da-fe",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!LVDZfSLGn2airyrJ"

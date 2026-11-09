@@ -1,0 +1,40 @@
+{
+  "_id": "GABr3GNpIvpiH6Qe",
+  "name": "Luz",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/luz.png",
+  "folder": "ZwfyhJXsP3ec802U",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 objeto",
+    "duracao": "cena",
+    "resistencia": "— (Vontade anula, só no aprimoramento)",
+    "descricao": "<p>O objeto emite luz forte num raio de 9 m e penumbra por mais 9 m.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "a luz vira um clarão. Uma criatura à sua escolha em alcance curto fica Ofuscada por 1 rodada (Vontade anula)."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "luz",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!GABr3GNpIvpiH6Qe"
+}

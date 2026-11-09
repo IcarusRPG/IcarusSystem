@@ -3,7 +3,7 @@
   "name": "Julgamento Final",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/julgamento-final.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "qA9CmIdPlX2ookbx",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "julgamento-final"
+      "id": "julgamento-final",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!aYuXVo6O8km9wAZF"

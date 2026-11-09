@@ -2,7 +2,8 @@
   <header class="item-cab">
     <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
     <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
-    {{#if magia.podeLancar}}<button type="button" class="btn primario" data-action="magia-lancar"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Magias.Lancar"}}</button>{{/if}}
+    {{#if magia.podeLancar}}<button type="button" class="btn primario" data-action="magia-lancar"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Magias.Lancar"}}</button>
+    {{#if source.aprimoramentos.length}}<button type="button" class="btn" data-action="magia-lancar-aprimorado"><i class="fa-solid fa-sliders" aria-hidden="true"></i> {{localize "ICARUS.Magias.LancarAprimorado"}}</button>{{/if}}{{/if}}
   </header>
   <div class="item-campos">
     <label class="f"><span class="rot">{{localize "ICARUS.Magias.Nivel"}}</span>

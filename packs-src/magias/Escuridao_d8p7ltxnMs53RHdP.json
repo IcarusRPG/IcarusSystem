@@ -3,7 +3,7 @@
   "name": "Escuridão",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/escuridao.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "BkzfDNcc0j3mt1gy",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -33,7 +33,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "escuridao"
+      "id": "escuridao",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!d8p7ltxnMs53RHdP"

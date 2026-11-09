@@ -3,7 +3,7 @@
   "name": "Aura de Pureza",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/aura-de-pureza.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "aura-de-pureza"
+      "id": "aura-de-pureza",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!hC9iQ7gzk7mFeriQ"

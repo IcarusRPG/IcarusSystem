@@ -3,7 +3,7 @@
   "name": "Marionete de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/marionete-de-sangue.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "U9hafKNruwp72xCq",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "marionete-de-sangue"
+      "id": "marionete-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!S6GrqHQ9W5h1upHV"

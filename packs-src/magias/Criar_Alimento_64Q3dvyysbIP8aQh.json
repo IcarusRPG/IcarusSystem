@@ -3,7 +3,7 @@
   "name": "Criar Alimento",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/criar-alimento.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "criar-alimento"
+      "id": "criar-alimento",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!64Q3dvyysbIP8aQh"

@@ -3,7 +3,7 @@
   "name": "Mão Arcana",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/mao-arcana.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "mao-arcana"
+      "id": "mao-arcana",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!UBvQdOtWjoFTj3V0"

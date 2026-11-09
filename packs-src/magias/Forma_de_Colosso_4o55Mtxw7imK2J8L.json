@@ -3,7 +3,7 @@
   "name": "Forma de Colosso",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/forma-de-colosso.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "Q4DGUrEYlwfKlqZn",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "forma-de-colosso"
+      "id": "forma-de-colosso",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!4o55Mtxw7imK2J8L"

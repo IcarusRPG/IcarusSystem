@@ -3,7 +3,7 @@
   "name": "Fome Carmesim",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/fome-carmesim.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "mr9rbyuFben6yQcw",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "fome-carmesim"
+      "id": "fome-carmesim",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!wOpBvYAjbbbEDuTH"

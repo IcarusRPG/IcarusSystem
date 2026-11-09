@@ -3,7 +3,7 @@
   "name": "Pele de Pedra",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/pele-de-pedra.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -27,7 +27,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "pele-de-pedra"
+      "id": "pele-de-pedra",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!klOjyfKluXrvtcg9"

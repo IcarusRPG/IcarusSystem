@@ -1,0 +1,15 @@
+{
+  "_id": "C10Sls1lg5NeIGDY",
+  "name": "4º Nível",
+  "type": "Item",
+  "folder": "FVbajyUQTrrKbqXw",
+  "sorting": "a",
+  "sort": 4000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-arcana-4"
+    }
+  },
+  "_key": "!folders!C10Sls1lg5NeIGDY"
+}

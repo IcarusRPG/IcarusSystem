@@ -3,7 +3,7 @@
   "name": "Muralha de Espinhos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/muralha-de-espinhos.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "muralha-de-espinhos"
+      "id": "muralha-de-espinhos",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!TDpBzzrQ8DlDdPEj"

@@ -1,0 +1,40 @@
+{
+  "_id": "IHhGkwOS7VjHiTZS",
+  "name": "Visão da Verdade",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/visao-da-verdade.png",
+  "folder": "LTX5ZIDWEie3iCBv",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você enxerga a realidade: percebe ilusões, camuflagem mágica, criaturas invisíveis e transmutadas (vê a forma verdadeira) em alcance médio, enxerga no escuro e atravessa névoa. Você também vê criaturas e conjuradores que estejam no plano imaterial (etéreos ou sob efeitos da escola Espiritual, como Forma Etérea), como se estivessem no plano material, mas sem poder tocá-los.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+1 criatura tocada."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "visao-da-verdade",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!IHhGkwOS7VjHiTZS"
+}

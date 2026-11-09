@@ -3,7 +3,7 @@
   "name": "Vidência",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/videncia.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "videncia"
+      "id": "videncia",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!qCFnFsvM4xegIB5t"

@@ -1,0 +1,15 @@
+{
+  "_id": "U9hafKNruwp72xCq",
+  "name": "3º Nível",
+  "type": "Item",
+  "folder": "MRHnmfMOa2I2TwTJ",
+  "sorting": "a",
+  "sort": 3000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-sangue-3"
+    }
+  },
+  "_key": "!folders!U9hafKNruwp72xCq"
+}

@@ -3,7 +3,7 @@
   "name": "Restauração Menor",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/restauracao-menor.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "restauracao-menor"
+      "id": "restauracao-menor",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!jM7OnR19pXJOeSBL"

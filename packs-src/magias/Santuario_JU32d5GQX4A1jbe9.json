@@ -3,7 +3,7 @@
   "name": "Santuário",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/santuario.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "santuario"
+      "id": "santuario",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!JU32d5GQX4A1jbe9"

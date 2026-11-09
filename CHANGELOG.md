@@ -1,5 +1,16 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.17.0
+
+### Magias — lançar rola o dano, efeitos, animações
+- **Compêndio em árvore:** Divinas / Arcanas / Sangue → 1º a 5º Nível. Magia de mais de uma tradição aparece em cada pasta.
+- **Lançar** (como o Atacar): lança na hora, sem janela — gasta o PM, manda o cartão e **rola o dano** (com Aplicar dano, Metade, Curar, Perda de PV e **Voltar**) ou a **cura**. **Lançar aprimorado** abre a janela dos aprimoramentos (o dano extra entra na rolagem).
+- **Efeitos e condições:** o cartão da magia traz **Aplicar condição** / **Aplicar efeito** e **Voltar**. Condições pelo sistema de condições; bônus e penalidades viram um Efeito Ativo com o ícone da magia (aparece no token) em Defesa, perícias, testes de resistência, RD e Redução por tipo. Bônus de Defesa de magias não acumulam (vale o maior). Aplicar de novo não duplica. Efeitos de cena terminam com o fim do combate ou "Encerrar cena".
+- **Animações** das magias de dano em todos os clientes, sem módulos: projétil, explosão, cone, linha, pilar, chuva e aura, com cor e partículas por elemento (fogo, frio, elétrico, ácido, luz, trevas, essência, sangue…). Vídeo próprio opcional em `img/animacoes/magias/<id>.webm`; som opcional em `audio/magias/<elemento>.ogg`. Opções: ligar, intensidade e som.
+- Automação proposta para as 200 magias a partir do texto (`tools/dados/magias_automacao.json`, relatório `tools/relatorio_automacao.md`); ajustes por magia continuam por validação.
+- **Voltar** no dano: quem aplicou também pode voltar a própria aplicação (antes só o Mestre).
+- Armas: "Ataque detalhado" passa a se chamar **Ataque aprimorado**.
+
 ## 0.16.0
 
 ### Magias — Fase 2: compêndio, aba e lançar

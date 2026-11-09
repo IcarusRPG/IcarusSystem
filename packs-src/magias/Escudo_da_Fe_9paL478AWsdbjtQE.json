@@ -3,7 +3,7 @@
   "name": "Escudo da Fé",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/escudo-da-fe.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "escudo-da-fe"
+      "id": "escudo-da-fe",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!9paL478AWsdbjtQE"

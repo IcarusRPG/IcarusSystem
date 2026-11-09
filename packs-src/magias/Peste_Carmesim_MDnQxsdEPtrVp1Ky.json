@@ -3,7 +3,7 @@
   "name": "Peste Carmesim",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/peste-carmesim.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "ZmD5QhJFF9hPy6Bn",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "peste-carmesim"
+      "id": "peste-carmesim",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!MDnQxsdEPtrVp1Ky"

@@ -3,7 +3,7 @@
   "name": "Eclipse Carmesim",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/eclipse-carmesim.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "EKVq8fCPe6d4qpfc",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "eclipse-carmesim"
+      "id": "eclipse-carmesim",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!2EZbRtmBUtIIZpUP"

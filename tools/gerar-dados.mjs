@@ -13,7 +13,7 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const GERADOS = [
   "armas", "tipos-dano", "armaduras", "poderes-concedidos", "panteao", "condicoes",
   "icones-armaduras", "icones-divindades", "icones-condicoes", "macros",
-  "classes", "icones-classes", "proficiencias-classes", "vinculos", "origens", "itens-comuns", "tokens", "icones-itens-comuns", "arquivos-ui"
+  "classes", "icones-classes", "proficiencias-classes", "vinculos", "origens", "itens-comuns", "tokens", "icones-itens-comuns", "arquivos-ui", "magias_automacao"
 ];
 
 /**
@@ -21,7 +21,7 @@ export const GERADOS = [
  * listados no build para o sistema não precisar pedir ao servidor (pedido de arquivo ausente
  * aparece como erro 404 no console). Grava tools/dados/arquivos-ui.json.
  */
-export const PASTAS_UI = ["img/ui", "audio/ui"];
+export const PASTAS_UI = ["img/ui", "audio/ui", "img/animacoes/magias", "audio/magias"];
 export function listarArquivosUi() {
   const lista = [];
   const andar = rel => {

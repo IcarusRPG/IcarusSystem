@@ -3,7 +3,7 @@
   "name": "Rogar Maldição",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/rogar-maldicao.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "rogar-maldicao"
+      "id": "rogar-maldicao",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!THzecgYA7afpIQld"

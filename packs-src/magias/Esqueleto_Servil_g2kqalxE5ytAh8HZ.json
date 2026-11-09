@@ -3,7 +3,7 @@
   "name": "Esqueleto Servil",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/esqueleto-servil.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "esqueleto-servil"
+      "id": "esqueleto-servil",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!g2kqalxE5ytAh8HZ"

@@ -3,7 +3,7 @@
   "name": "Despedaçar",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/despedacar.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "BkzfDNcc0j3mt1gy",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "despedacar"
+      "id": "despedacar",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!IJCgMRFAq8IL1dIs"

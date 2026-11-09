@@ -1,0 +1,15 @@
+{
+  "_id": "MRHnmfMOa2I2TwTJ",
+  "name": "Sangue",
+  "type": "Item",
+  "folder": null,
+  "sorting": "m",
+  "sort": 300000,
+  "color": "#4a0e14",
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-sangue"
+    }
+  },
+  "_key": "!folders!MRHnmfMOa2I2TwTJ"
+}

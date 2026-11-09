@@ -3,7 +3,7 @@
   "name": "Tormenta de Estilhaços",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/tormenta-de-estilhacos.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "tormenta-de-estilhacos"
+      "id": "tormenta-de-estilhacos",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!6zP5BVqAbmICnqtu"

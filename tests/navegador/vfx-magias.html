@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teste das animações de magia (Icarus RPG)</title>
+<style>body { margin: 0; background: #1b1f16; font-family: sans-serif; color: #ddd; } #barra { position: fixed; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+</head>
+<body>
+<!-- Fora do Foundry: module/vfx-magias.mjs com tokens PIXI simulados (PixiJS 7.2.4, o do Foundry v12).
+     Servir a raiz do projeto e abrir /tests/navegador/vfx-magias.html -->
+<div id="barra"></div>
+<script type="module">
+const app = new PIXI.Application({ width: 1000, height: 600, backgroundColor: 0x2a3322, antialias: true });
+document.body.appendChild(app.view);
+const iface = app.stage.addChild(new PIXI.Container());
+const cfg = new Map([["magiasAnimacoes", true], ["magiasIntensidade", "media"], ["magiasSom", false]]);
+const docs = {};
+globalThis.game = { user: { isGM: true }, settings: { register() {}, get: (_s, k) => cfg.get(k) } };
+globalThis.canvas = { ready: true, app, stage: app.stage, interface: iface, grid: { size: 100 }, scene: { id: "cena", grid: { distance: 1.5 } } };
+globalThis.Hooks = { on() {}, once() {} };
+globalThis.fromUuidSync = u => docs[u];
+const { tocarAnimacao } = await import("/module/vfx-magias.mjs");
+const tex = await PIXI.Assets.load("/img/Icones/tokens/personagens/miniaturas/token-guerreiro.png");
+const texNpc = await PIXI.Assets.load("/img/Icones/tokens/personagens/miniaturas/token-anatema.png");
+function token(id, x, y, t = tex) {
+  const c = app.stage.addChildAt(new PIXI.Container(), 0);
+  c.position.set(x, y); c.w = c.h = 100; c.isVisible = true;
+  const s = c.addChild(new PIXI.Sprite(t)); s.width = s.height = 100;
+  docs[`Scene.cena.Token.${id}`] = { uuid: `Scene.cena.Token.${id}`, parent: { id: "cena" }, object: c, hidden: false };
+}
+token("mago", 80, 250);
+token("a1", 650, 150, texNpc); token("a2", 760, 300, texNpc); token("a3", 620, 400, texNpc);
+const todos = ["Scene.cena.Token.a1", "Scene.cena.Token.a2", "Scene.cena.Token.a3"];
+const CASOS = {
+  "Mísseis (projétil, essência)": { preset: "projetil", elemento: "essencia" },
+  "Bola de Fogo (explosão 6 m)": { preset: "explosao", elemento: "fogo", area: { forma: "esfera", tamanho: 6 } },
+  "Cone Glacial (cone 9 m)": { preset: "cone", elemento: "frio", area: { forma: "cone", tamanho: 9 } },
+  "Relâmpago (linha 18 m)": { preset: "linha", elemento: "eletrico", area: { forma: "linha", tamanho: 18 } },
+  "Coluna Flamejante (pilar)": { preset: "pilar", elemento: "luz", area: { forma: "esfera", tamanho: 6 } },
+  "Chuva de Sangue (chuva)": { preset: "chuva", elemento: "sangue", area: { forma: "quadrado", tamanho: 3 } },
+  "Toque (aura, trevas)": { preset: "aura", elemento: "trevas" },
+  "Ácido (projétil)": { preset: "projetil", elemento: "acido" }
+};
+window.tocar = nome => tocarAnimacao({ ...CASOS[nome], origem: "Scene.cena.Token.mago", alvos: todos });
+for (const nome of Object.keys(CASOS)) {
+  const b = document.createElement("button"); b.textContent = nome; b.onclick = () => window.tocar(nome);
+  document.getElementById("barra").appendChild(b);
+}
+window.CASOS = CASOS; window.app = app; window.iface = iface;
+window.pronto = true;
+</script>
+</body>
+</html>

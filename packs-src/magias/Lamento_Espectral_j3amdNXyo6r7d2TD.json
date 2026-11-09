@@ -3,7 +3,7 @@
   "name": "Lamento Espectral",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/lamento-espectral.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "lamento-espectral"
+      "id": "lamento-espectral",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!j3amdNXyo6r7d2TD"

@@ -1,0 +1,44 @@
+{
+  "_id": "jOH7cpZmHpe6Gqny",
+  "name": "Resistência a Energia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/resistencia-a-energia.png",
+  "folder": "AiCnBpJtoWzUmvFz",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo recebe RD 5 contra um tipo de dano de energia à sua escolha (fogo, frio, elétrico, ácido, luz ou trevas), respeitando o teto de RD do núcleo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 alvo."
+      },
+      {
+        "custo": 3,
+        "texto": "a RD aumenta para 8."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "resistencia-a-energia",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!jOH7cpZmHpe6Gqny"
+}

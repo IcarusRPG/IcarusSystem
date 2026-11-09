@@ -3,7 +3,7 @@
   "name": "Libertação das Almas",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/libertacao-das-almas.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "qA9CmIdPlX2ookbx",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "libertacao-das-almas"
+      "id": "libertacao-das-almas",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!8y6Z5Tv2zubETzuy"

@@ -3,7 +3,7 @@
   "name": "Detectar Magia",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/detectar-magia.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "detectar-magia"
+      "id": "detectar-magia",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!ULmBwIZTFioWcOH2"

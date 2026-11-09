@@ -3,7 +3,7 @@
   "name": "Falar com Espíritos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/falar-com-espiritos.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "falar-com-espiritos"
+      "id": "falar-com-espiritos",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!LDThs8pKfcaQKwnS"

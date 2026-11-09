@@ -3,7 +3,7 @@
   "name": "Toque Vampírico",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/toque-vampirico.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "mr9rbyuFben6yQcw",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "toque-vampirico"
+      "id": "toque-vampirico",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!1mS9hWtEQbNYFNYM"
