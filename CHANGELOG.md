@@ -1,5 +1,14 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.18.0
+
+### Magias — área no mapa
+- **Posicionar a área:** ao lançar uma magia de área (esfera, cilindro, cone, linha, cubo/quadrado), o modelo aparece no mapa antes de gastar o PM. Esfera e quadrado seguem o mouse (encaixam na grade; **Shift** solta); cone e linha saem do seu token e apontam para o mouse. **Clique** lança; **clique direito** ou **Esc** cancela (sem gastar PM). Magias "pessoal" / "centrada em você" ficam no conjurador sem precisar posicionar.
+- **Alvos automáticos:** os tokens dentro da área viram os alvos (o conjurador fica de fora no cone, na linha e nas áreas ao seu redor), então os botões de dano e de efeito já pegam quem foi atingido.
+- **Animação na área:** a explosão, a chuva, o pilar e a onda acontecem no ponto do modelo; o cone e a linha seguem a direção em que o modelo aponta. O vídeo próprio também é posicionado e girado.
+- O modelo de magia instantânea some depois da animação; o das outras durações fica até alguém apagar.
+- Opção do cliente "Posicionar a área das magias no mapa" (ligada) para voltar ao modo antigo.
+
 ## 0.17.0
 
 ### Magias — lançar rola o dano, efeitos, animações

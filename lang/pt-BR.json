@@ -1622,6 +1622,11 @@
         "Alta": "Alta",
         "Som": "Som das magias",
         "SomDica": "Toca audio/magias/<elemento>.ogg, se existir."
+      },
+      "Area": {
+        "Instrucoes": "{nome}: posicione a área no mapa — clique para lançar; clique direito ou Esc cancela. Shift solta da grade; Ctrl + roda gira.",
+        "Opcao": "Posicionar a área das magias no mapa",
+        "OpcaoDica": "Ao lançar uma magia de área, posicione o modelo no mapa; os tokens dentro dela viram os alvos e a animação acontece ali."
       }
     }
   }

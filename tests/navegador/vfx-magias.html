@@ -47,6 +47,39 @@ for (const nome of Object.keys(CASOS)) {
   const b = document.createElement("button"); b.textContent = nome; b.onclick = () => window.tocar(nome);
   document.getElementById("barra").appendChild(b);
 }
+// Área posicionada: escolha o caso e clique no mapa (esfera/quadrado no ponto; cone/linha do mago na direção do clique)
+const AREAS = {
+  "Área: Bola de Fogo no clique": { preset: "explosao", elemento: "fogo", area: { forma: "esfera", tamanho: 6 } },
+  "Área: Cone Glacial para o clique": { preset: "cone", elemento: "frio", area: { forma: "cone", tamanho: 9, angulo: 53.13 } },
+  "Área: Relâmpago para o clique": { preset: "linha", elemento: "eletrico", area: { forma: "linha", tamanho: 18 } },
+  "Área: Chuva de Sangue no clique": { preset: "chuva", elemento: "sangue", area: { forma: "esfera", tamanho: 6 } },
+  "Área: Aura (trevas) no clique": { preset: "aura", elemento: "trevas", area: { forma: "esfera", tamanho: 4.5 } }
+};
+let modo = null;
+const marca = app.stage.addChild(new PIXI.Graphics());
+window.areaNoPonto = (nome, x, y) => {
+  const c = AREAS[nome];
+  const mago = { x: 130, y: 300 };
+  const reta = c.area.forma === "cone" || c.area.forma === "linha";
+  const area = reta ? { ...c.area, x: mago.x, y: mago.y, direcao: Math.atan2(y - mago.y, x - mago.x) * 180 / Math.PI, cena: "cena" }
+    : { ...c.area, x, y, cena: "cena" };
+  const px = m => m / 1.5 * 100;
+  marca.clear().lineStyle(2, 0xffffff, 0.6);
+  if (c.area.forma === "esfera") marca.drawCircle(area.x, area.y, px(c.area.tamanho));
+  else {
+    const a = area.direcao * Math.PI / 180, L = px(c.area.tamanho);
+    if (c.area.forma === "linha") marca.moveTo(area.x, area.y).lineTo(area.x + Math.cos(a) * L, area.y + Math.sin(a) * L);
+    else { const h = 26.565 * Math.PI / 180; marca.moveTo(area.x, area.y).lineTo(area.x + Math.cos(a - h) * L, area.y + Math.sin(a - h) * L).moveTo(area.x, area.y).lineTo(area.x + Math.cos(a + h) * L, area.y + Math.sin(a + h) * L); }
+  }
+  tocarAnimacao({ ...c, area, origem: "Scene.cena.Token.mago", alvos: [] });
+  return area;
+};
+for (const nome of Object.keys(AREAS)) {
+  const b = document.createElement("button"); b.textContent = nome; b.onclick = () => { modo = nome; b.blur(); };
+  document.getElementById("barra").appendChild(b);
+}
+app.view.addEventListener("click", e => { if (modo) window.areaNoPonto(modo, e.offsetX, e.offsetY); });
+window.AREAS = AREAS;
 window.CASOS = CASOS; window.app = app; window.iface = iface;
 window.pronto = true;
 </script>
