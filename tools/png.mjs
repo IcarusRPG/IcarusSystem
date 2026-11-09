@@ -1,6 +1,7 @@
 /**
  * Leitor mínimo de PNG (sem dependências) para os scripts de build: cabeçalho e pixels RGBA de
- * 8 bits sem entrelaçamento (o formato das molduras de token).
+ * 8 bits sem entrelaçamento (molduras de token). PNG RGB de 8 bits (sem alfa, como os ícones das
+ * magias) também é lido e vira RGBA opaco.
  */
 import fs from "node:fs";
 import zlib from "node:zlib";
@@ -13,18 +14,18 @@ export function cabecalhoPng(buffer) {
   return { png, largura: buffer.readUInt32BE(16), altura: buffer.readUInt32BE(20), bits: buffer[24], tipoCor, entrelacado: buffer[28], temAlfa: tipoCor === 4 || tipoCor === 6 };
 }
 
-/** Pixels RGBA (Uint8Array w*h*4). Só RGBA 8 bits sem entrelaçamento. */
+/** Pixels RGBA (Uint8Array w*h*4). RGBA ou RGB, 8 bits, sem entrelaçamento. */
 export function lerPng(arquivo) {
   const b = fs.readFileSync(arquivo);
   const cab = cabecalhoPng(b);
-  if (!cab.png || cab.bits !== 8 || cab.tipoCor !== 6 || cab.entrelacado) throw new Error(`${arquivo}: só PNG RGBA 8 bits sem entrelaçamento`);
+  if (!cab.png || cab.bits !== 8 || ![2, 6].includes(cab.tipoCor) || cab.entrelacado) throw new Error(`${arquivo}: só PNG RGB/RGBA 8 bits sem entrelaçamento`);
   const idat = [];
   for (let p = 8; p < b.length;) {
     const n = b.readUInt32BE(p), tipo = b.toString("ascii", p + 4, p + 8);
     if (tipo === "IDAT") idat.push(b.subarray(p + 8, p + 8 + n));
     p += 12 + n;
   }
-  const w = cab.largura, h = cab.altura, bpp = 4, linha = w * bpp;
+  const w = cab.largura, h = cab.altura, bpp = cab.tipoCor === 6 ? 4 : 3, linha = w * bpp;
   const raw = zlib.inflateSync(Buffer.concat(idat));
   const px = new Uint8Array(w * h * bpp);
   for (let y = 0; y < h; y++) {
@@ -43,7 +44,11 @@ export function lerPng(arquivo) {
       px[o + x] = v & 255;
     }
   }
-  return { w, h, px };
+  if (bpp === 4) return { w, h, px };
+  // RGB → RGBA opaco
+  const rgba = new Uint8Array(w * h * 4);
+  for (let i = 0, j = 0; i < px.length; i += 3, j += 4) { rgba[j] = px[i]; rgba[j + 1] = px[i + 1]; rgba[j + 2] = px[i + 2]; rgba[j + 3] = 255; }
+  return { w, h, px: rgba };
 }
 
 const TABELA_CRC = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
@@ -55,12 +60,37 @@ function bloco(tipo, dados) {
   return Buffer.concat([tam, t, dados, crc]);
 }
 
-/** PNG RGBA 8 bits (sem filtro, deflate nível 9). Determinístico: mesmos pixels, mesmos bytes. */
-export function escreverPng(w, h, px) {
+/**
+ * PNG RGBA 8 bits, deflate nível 9. Determinístico: mesmos pixels, mesmos bytes.
+ * Sem filtro por padrão (bytes dos builds antigos não mudam); { filtrar: true } escolhe o filtro
+ * de cada linha (menor soma), bem menor para imagens opacas cheias de detalhe (ícones de magia).
+ */
+export function escreverPng(w, h, px, { filtrar = false } = {}) {
   const ihdr = Buffer.alloc(13);
   ihdr.writeUInt32BE(w, 0); ihdr.writeUInt32BE(h, 4); ihdr[8] = 8; ihdr[9] = 6;
-  const linhas = Buffer.alloc(h * (w * 4 + 1));
-  for (let y = 0; y < h; y++) Buffer.from(px.buffer, px.byteOffset + y * w * 4, w * 4).copy(linhas, y * (w * 4 + 1) + 1);
+  const linha = w * 4;
+  const linhas = Buffer.alloc(h * (linha + 1));
+  for (let y = 0; y < h; y++) {
+    const o = y * linha, destino = y * (linha + 1);
+    if (!filtrar) { Buffer.from(px.buffer, px.byteOffset + o, linha).copy(linhas, destino + 1); continue; }
+    let melhor = null, soma = Infinity, tipo = 0;
+    for (let f = 0; f <= 4; f++) {
+      const out = Buffer.alloc(linha);
+      let s = 0;
+      for (let x = 0; x < linha; x++) {
+        const v = px[o + x], a = x >= 4 ? px[o + x - 4] : 0, c = y ? px[o - linha + x] : 0, ac = x >= 4 && y ? px[o - linha + x - 4] : 0;
+        let pred = 0;
+        if (f === 1) pred = a; else if (f === 2) pred = c; else if (f === 3) pred = (a + c) >> 1;
+        else if (f === 4) { const p = a + c - ac, pa = Math.abs(p - a), pb = Math.abs(p - c), pc = Math.abs(p - ac); pred = pa <= pb && pa <= pc ? a : pb <= pc ? c : ac; }
+        const r = (v - pred) & 255;
+        out[x] = r;
+        s += r < 128 ? r : 256 - r;
+      }
+      if (s < soma) { soma = s; melhor = out; tipo = f; }
+    }
+    linhas[destino] = tipo;
+    melhor.copy(linhas, destino + 1);
+  }
   return Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), bloco("IHDR", ihdr), bloco("IDAT", zlib.deflateSync(linhas, { level: 9 })), bloco("IEND", Buffer.alloc(0))]);
 }
 
