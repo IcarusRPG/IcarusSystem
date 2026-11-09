@@ -1,0 +1,38 @@
+{
+  "_id": "TsqC21EmzPQA18aT",
+  "name": "Bênção",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/bencao.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "até 3 criaturas",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Os alvos sentem a proteção divina e recebem +1 em testes de ataque e em testes de resistência.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 criatura."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bencao"
+    }
+  },
+  "_key": "!items!TsqC21EmzPQA18aT"
+}

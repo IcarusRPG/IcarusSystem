@@ -1,0 +1,33 @@
+{
+  "_id": "bXKZvWrYkvRRfwSc",
+  "name": "Teleporte",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/teleporte.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "você e até 5 criaturas voluntárias",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você leva o grupo a um local no mesmo plano. O local precisa ser conhecido: se você o conhece bem, chega com precisão; se só o visitou uma vez, desvia até 90 m; se só ouviu falar, a magia falha e o PM se perde.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "teleporte"
+    }
+  },
+  "_key": "!items!bXKZvWrYkvRRfwSc"
+}

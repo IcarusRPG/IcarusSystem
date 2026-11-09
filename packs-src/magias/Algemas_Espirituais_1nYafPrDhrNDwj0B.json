@@ -1,0 +1,38 @@
+{
+  "_id": "1nYafPrDhrNDwj0B",
+  "name": "Algemas Espirituais",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/algemas-espirituais.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Correntes de luz prendem a alma do alvo. Se o alvo for uma criatura **incorpórea, um espírito ou um morto-vivo**, ele fica Paralisado; ao final de cada turno dele, tem direito a um novo teste. Contra qualquer outra criatura, as correntes só a deixam Lenta.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "algemas-espirituais"
+    }
+  },
+  "_key": "!items!1nYafPrDhrNDwj0B"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "xH2kcr05S5f0qdGN",
+  "name": "Muralha de Ossos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/muralha-de-ossos.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "muralha de ossos de até 9 m x 3 m",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma barreira de ossos afiados surge. Ela bloqueia a passagem, tem Defesa 15 e 50 PV e causa 4d6 de dano de perfuração a quem tentar atravessá-la (Reflexos reduz à metade).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "a muralha cobre o dobro da área."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "muralha-de-ossos"
+    }
+  },
+  "_key": "!items!xH2kcr05S5f0qdGN"
+}

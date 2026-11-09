@@ -1,0 +1,38 @@
+{
+  "_id": "UVKYLQwsilikGRB5",
+  "name": "Muralha de Fogo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/muralha-de-fogo.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "muralha de até 18 m de comprimento, 3 m de altura",
+    "duracao": "cena",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Uma cortina de chamas bloqueia a visão. Criaturas que atravessarem a muralha sofrem 6d6 de dano de fogo e ficam Em Chamas. Criaturas adjacentes a ela no início do turno sofrem 2d6 de fogo.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1d6 de dano em ambos os efeitos."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "muralha-de-fogo"
+    }
+  },
+  "_key": "!items!UVKYLQwsilikGRB5"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "IjoA2kYCyNm3tSy9",
+  "name": "Véu Rubro",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/veu-rubro.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma névoa de sangue vaporizado cobre a área: camuflagem leve, e quem respirar nela sofre 1d6 de dano de veneno no início do turno. Criaturas Sangrando na área ficam Enjoadas.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "veu-rubro"
+    }
+  },
+  "_key": "!items!IjoA2kYCyNm3tSy9"
+}

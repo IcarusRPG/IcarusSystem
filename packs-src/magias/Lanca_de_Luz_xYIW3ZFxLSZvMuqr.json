@@ -1,0 +1,38 @@
+{
+  "_id": "xYIW3ZFxLSZvMuqr",
+  "name": "Lança de Luz",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/lanca-de-luz.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Um raio dourado atinge o alvo e causa 5d6 de dano de luz. Criaturas de natureza profana sofrem +2d6 e ficam Ofuscadas por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lanca-de-luz"
+    }
+  },
+  "_key": "!items!xYIW3ZFxLSZvMuqr"
+}

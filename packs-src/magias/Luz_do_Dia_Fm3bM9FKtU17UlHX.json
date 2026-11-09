@@ -1,0 +1,33 @@
+{
+  "_id": "Fm3bM9FKtU17UlHX",
+  "name": "Luz do Dia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/luz-do-dia.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 18 m de raio",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Um globo de luz do sol ilumina a área. Magias de escuridão de nível 3 ou menor nessa área são dissipadas, e criaturas sensíveis à luz solar sofrem –2 em testes enquanto estiverem nela.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "luz-do-dia"
+    }
+  },
+  "_key": "!items!Fm3bM9FKtU17UlHX"
+}

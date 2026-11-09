@@ -1,0 +1,38 @@
+{
+  "_id": "IlYjAoLO7nFY2b4W",
+  "name": "Prisão de Ilusões",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/prisao-de-ilusoes.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "sustentada (concentração)",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo é preso em uma realidade falsa e repetitiva (um corredor sem fim, uma cela, uma festa). Se falhar, fica Pasmo (sem ações) enquanto você sustentar. Se sofrer dano, tem direito a novo teste.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "prisao-de-ilusoes"
+    }
+  },
+  "_key": "!items!IlYjAoLO7nFY2b4W"
+}

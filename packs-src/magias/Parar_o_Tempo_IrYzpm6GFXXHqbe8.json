@@ -1,0 +1,33 @@
+{
+  "_id": "IrYzpm6GFXXHqbe8",
+  "name": "Parar o Tempo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/parar-o-tempo.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>O tempo parece parar ao seu redor: você faz 3 turnos extras seguidos. Nesse período, você não pode causar dano nem aplicar condições a outras criaturas, nem afetar objetos carregados ou vestidos por outras criaturas. Magias com duração que você lançar continuam ativas ao final.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "parar-o-tempo"
+    }
+  },
+  "_key": "!items!IrYzpm6GFXXHqbe8"
+}

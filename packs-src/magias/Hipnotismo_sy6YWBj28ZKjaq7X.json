@@ -1,0 +1,38 @@
+{
+  "_id": "sy6YWBj28ZKjaq7X",
+  "name": "Hipnotismo",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/hipnotismo.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "criaturas em esfera de 6 m de raio",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você move as mãos e murmura palavras em ritmo cadenciado. Criaturas na área que falharem no teste ficam Fascinadas. Se uma criatura sofrer qualquer dano ou ameaça evidente, a condição termina para ela.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "aumenta o raio em +3 m."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "hipnotismo"
+    }
+  },
+  "_key": "!items!sy6YWBj28ZKjaq7X"
+}

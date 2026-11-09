@@ -1,0 +1,39 @@
+{
+  "_id": "d1e6xjqxj2DGLJcx",
+  "name": "Espírito Mensageiro",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/espirito-mensageiro.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "1 criatura conhecida",
+    "duracao": "1 dia",
+    "resistencia": "",
+    "descricao": "<p>Você libera um espírito que viaja até uma criatura que você conheça (ou cujo nome saiba), a até 1 km, e entrega uma mensagem de até 25 palavras. O espírito traz de volta uma resposta de até 25 palavras. Ele não atravessa barreiras de ferro puro.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "o alcance passa a 10 km."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "espirito-mensageiro"
+    }
+  },
+  "_key": "!items!d1e6xjqxj2DGLJcx"
+}

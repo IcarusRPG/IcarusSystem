@@ -1,0 +1,33 @@
+{
+  "_id": "FNzjNnejy8yQg27p",
+  "name": "Faro de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/faro-de-sangue.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você sente o sangue pulsando ao redor: percebe, até 30 m, a posição de criaturas vivas com PV abaixo de metade do máximo ou Sangrando, mesmo atrás de paredes, e recebe +5 em Olfato e Sobrevivência para rastrear ferido.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "faro-de-sangue"
+    }
+  },
+  "_key": "!items!FNzjNnejy8yQg27p"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "unnsYEspki165xWh",
+  "name": "Invisibilidade",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/invisibilidade.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura ou objeto",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo some da vista: ganha camuflagem total e +10 em Furtividade contra quem depender da visão. A magia termina se o alvo atacar, causar dano ou lançar uma magia ofensiva.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo, que deve estar ao alcance de toque (adjacente a você) no momento do lançamento."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "invisibilidade"
+    }
+  },
+  "_key": "!items!unnsYEspki165xWh"
+}

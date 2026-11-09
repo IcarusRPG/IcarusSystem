@@ -1,0 +1,33 @@
+{
+  "_id": "4tj09auAiqxvZX4T",
+  "name": "Corpo de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/corpo-de-sangue.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Seu corpo vira sangue líquido: você pode passar por frestas, não pode ser Agarrado ou Enredado, e recebe RD 5 contra dano de corte, perfuração e impacto. Você não pode vestir armadura nem carregar mais de 5 espaços de itens. Enquanto estiver sob o efeito, você não pode atacar nem lançar magias.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "corpo-de-sangue"
+    }
+  },
+  "_key": "!items!4tj09auAiqxvZX4T"
+}

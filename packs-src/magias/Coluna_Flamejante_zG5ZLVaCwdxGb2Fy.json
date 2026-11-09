@@ -1,0 +1,38 @@
+{
+  "_id": "zG5ZLVaCwdxGb2Fy",
+  "name": "Coluna Flamejante",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/coluna-flamejante.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "cilindro de 6 m de raio e 30 m de altura",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Uma coluna de fogo e luz desce do céu e causa 6d6 de dano de fogo e 6d6 de dano de luz.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de um dos tipos de dano."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "coluna-flamejante"
+    }
+  },
+  "_key": "!items!zG5ZLVaCwdxGb2Fy"
+}

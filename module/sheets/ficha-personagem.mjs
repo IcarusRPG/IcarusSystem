@@ -34,6 +34,7 @@ import { usarItemComum, temUsar, alternarVestido } from "../itens-comuns.mjs";
 import { contextoDoToken, ligarEditor } from "../token.mjs";
 import { RECARGAS, adicionarRecurso, alterarRecurso, removerRecurso, recarregarRecursos, sugerirRecursos } from "../recursos.mjs";
 import { abrirManobra } from "../manobras.mjs";
+import { contextoDasMagias, ligarFiltrosDasMagias, lancarMagia } from "../magias.mjs";
 
 const T = `systems/${SISTEMA_ID}/templates/actor`;
 
@@ -364,6 +365,8 @@ export class FichaPersonagem extends ActorSheet {
     ctx.carga = { ...s.carga, usado: Math.ceil(s.carga.usado) };
     // Aba Token: galeria de molduras e editor (module/token.mjs)
     ctx.token = contextoDoToken(actor, this.isEditable);
+    // Aba Magias: agrupadas por nível, CD e atributo-chave
+    ctx.magias = contextoDasMagias(actor);
 
     // Bloco Ataques (aba Características): só as armas empunhadas
     ctx.ataques = ctx.armas.filter(a => a.empunhada);
@@ -556,6 +559,14 @@ export class FichaPersonagem extends ActorSheet {
       html.on("click", "[data-action='arma-recarregar']", ev => {
         const item = armaDe(ev.currentTarget);
         if (item) recarregar(this.actor, item);
+      });
+    }
+    // Magias: busca e filtros (só escondem cartões) e Lançar (dono, mesmo com a ficha travada)
+    ligarFiltrosDasMagias(this, html);
+    if (this.actor.isOwner) {
+      html.on("click", "[data-action='magia-lancar']", ev => {
+        const item = this.actor.items.get(ev.currentTarget.closest("[data-item-id]")?.dataset.itemId);
+        if (item) lancarMagia(this.actor, item);
       });
     }
     // Clicar no card do poder abre a ficha do item (fora dos botões)

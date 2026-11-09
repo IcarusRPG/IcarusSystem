@@ -1,0 +1,38 @@
+{
+  "_id": "AihQM3n8LqcSmQ1R",
+  "name": "Ancestral Convocado",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ancestral-convocado.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Espiritual",
+    "execucao": "completa",
+    "alcance": "curto",
+    "alvo": "1 espírito",
+    "duracao": "1 hora",
+    "resistencia": "",
+    "descricao": "<p>Você chama o espírito de um ancestral, herói ou sábio do passado, que você nomeia ou descreve, e ele se manifesta incorpóreo e amistoso. O ancestral não luta, não lança magias e não pode ser ferido nem afetado por nada. Enquanto a magia durar, ele responde com honestidade a até 3 perguntas suas sobre o passado, tradições, lugares e criaturas que conheceu em vida, dentro do que realmente sabia, e aconselha você: você e uma criatura tocada recebem +5 em testes de uma perícia de conhecimento ou ofício ligada ao que o ancestral dominava em vida, à sua escolha, até o fim da duração.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "o ancestral responde a +2 perguntas."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ancestral-convocado"
+    }
+  },
+  "_key": "!items!AihQM3n8LqcSmQ1R"
+}

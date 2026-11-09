@@ -1,0 +1,33 @@
+{
+  "_id": "F8VEm1uC5OHnY2T5",
+  "name": "Vínculo de Dor",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/vinculo-de-dor.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Um fio de sangue liga você e o alvo. Metade do dano que você sofrer (de qualquer tipo) é transferido para o alvo, que sofre o dano como perda de PV, sem Redução. A magia termina se você ficar a mais de 30 m dele.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "vinculo-de-dor"
+    }
+  },
+  "_key": "!items!F8VEm1uC5OHnY2T5"
+}

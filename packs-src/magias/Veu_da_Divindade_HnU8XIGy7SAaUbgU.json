@@ -1,0 +1,38 @@
+{
+  "_id": "HnU8XIGy7SAaUbgU",
+  "name": "Véu da Divindade",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/veu-da-divindade.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "até 6 criaturas",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Sua divindade cobre você e os aliados: eles não podem ser vistos por adivinhação ou vidência, e à percepção alheia parecem estar em outro lugar a até 9 m. Ataques contra eles têm 25% de chance de errar.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "+3 alvos."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "veu-da-divindade"
+    }
+  },
+  "_key": "!items!HnU8XIGy7SAaUbgU"
+}

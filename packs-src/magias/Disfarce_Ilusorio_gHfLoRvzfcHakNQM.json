@@ -1,0 +1,38 @@
+{
+  "_id": "gHfLoRvzfcHakNQM",
+  "name": "Disfarce Ilusório",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/disfarce-ilusorio.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Ilusão",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "Vontade anula (para desmascarar)",
+    "descricao": "<p>Você altera sua aparência: rosto, altura (até 30 cm para mais ou para menos), cabelo, roupas e voz. Você recebe +5 em Enganação para se passar por outra pessoa. A ilusão não muda o tato: quem tocar você ou examinar com atenção pode fazer um teste de Vontade para perceber a farsa. Você não imita uma pessoa específica de forma perfeita (apenas –5 em Enganação se tentar).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "o alcance muda para toque e o alvo muda para 1 criatura."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "disfarce-ilusorio"
+    }
+  },
+  "_key": "!items!gHfLoRvzfcHakNQM"
+}

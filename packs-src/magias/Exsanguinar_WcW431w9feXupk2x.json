@@ -1,0 +1,33 @@
+{
+  "_id": "WcW431w9feXupk2x",
+  "name": "Exsanguinar",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/exsanguinar.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude parcial",
+    "descricao": "<p>Você arranca todo o sangue do alvo: ele sofre 15d6 de dano de trevas e perde metade dos PV restantes. Se passar no teste, sofre metade do dano e não perde PV extra. Se for reduzido a 0 PV, sua alma é consumida e ele não pode ser revivido por magias de nível 4 ou menos.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "exsanguinar"
+    }
+  },
+  "_key": "!items!WcW431w9feXupk2x"
+}

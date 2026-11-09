@@ -1,0 +1,38 @@
+{
+  "_id": "ACxUaAmSbvO85skr",
+  "name": "Martelo do Julgamento",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/martelo-do-julgamento.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude parcial",
+    "descricao": "<p>Um martelo de luz cai sobre o alvo e causa 8d6 de dano de luz e 4d6 de dano de impacto. Se passar no teste, sofre metade e não fica Atordoado; se falhar, fica Atordoado por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano de luz."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "martelo-do-julgamento"
+    }
+  },
+  "_key": "!items!ACxUaAmSbvO85skr"
+}

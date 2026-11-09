@@ -1,0 +1,38 @@
+{
+  "_id": "Si1pJd2LcMAySVVH",
+  "name": "Dominar Pessoa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/dominar-pessoa.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 humanoide",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você controla as ações do alvo, que obedece mesmo contra a vontade. Ordens contrárias à sua natureza dão um novo teste ao alvo. Se você ordenar algo suicida ou que o faça se ferir, a ordem é recusada e o efeito termina: o alvo fica livre da magia. Você precisa de uma ação livre por rodada para dar comandos.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 4,
+        "texto": "o alvo pode ser qualquer criatura que entenda uma língua."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "dominar-pessoa"
+    }
+  },
+  "_key": "!items!Si1pJd2LcMAySVVH"
+}

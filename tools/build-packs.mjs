@@ -18,6 +18,7 @@ import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo } from "../module/conf
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
+import { documentosDeMagias } from "../module/magias-dados.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
@@ -101,7 +102,9 @@ const PACOTES = {
   "habilidades-classe": docsClasses["habilidades-classe"],
   "poderes-classe": docsClasses["poderes-classe"],
   vinculos: documentosDeVinculos(novos.vinculos, PERICIAS),
-  ...docsOrigens
+  ...docsOrigens,
+  // Magias: tools/dados/magias.json + ícones (img/magias, manifesto magias_icones.json); sem ícone = dado azul
+  magias: documentosDeMagias(ler("magias"), ler("magias_icones"), idEstavel)
 };
 
 /** Põe _key no documento e nos embutidos (efeitos de itens, páginas de diários). */

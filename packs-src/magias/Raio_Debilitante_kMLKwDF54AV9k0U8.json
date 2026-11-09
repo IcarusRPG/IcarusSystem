@@ -1,0 +1,43 @@
+{
+  "_id": "kMLKwDF54AV9k0U8",
+  "name": "Raio Debilitante",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/raio-debilitante.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Fortitude anula",
+    "descricao": "<p>Um raio cinzento drena a força do alvo, que fica Fraco pela duração.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "muda a condição para Debilitado."
+      },
+      {
+        "custo": 1,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "raio-debilitante"
+    }
+  },
+  "_key": "!items!kMLKwDF54AV9k0U8"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "1NWOobFNG0IhCROm",
+  "name": "Restauração",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/restauracao.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você remove duas condições do alvo, à sua escolha, entre: Alquebrado, Debilitado, Doente, Esmorecido, Exausto, Fatigado, Fraco e Frustrado. Alternativamente, encerra uma maldição de nível 4 ou menor sobre ele.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "remove mais uma condição."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "restauracao"
+    }
+  },
+  "_key": "!items!1NWOobFNG0IhCROm"
+}

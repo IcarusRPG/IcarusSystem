@@ -1,0 +1,38 @@
+{
+  "_id": "tP6InfytLDDMXTot",
+  "name": "Exortar Espíritos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/exortar-espiritos.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você impõe sua fé aos espíritos hostis. Mortos-vivos, espíritos e criaturas incorpóreas na área que falharem no teste ficam Apavorados por 1 rodada e depois Abalados até o fim da cena.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "as criaturas afetadas também sofrem 3d6 de dano de luz."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "exortar-espiritos"
+    }
+  },
+  "_key": "!items!tP6InfytLDDMXTot"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "1mS9hWtEQbNYFNYM",
+  "name": "Toque Vampírico",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/toque-vampirico.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Você toca o alvo e drena sua vida: ele sofre 3d6 de dano de trevas e você recupera PV igual à metade do dano causado (não excede seu máximo). Não funciona em construtos e mortos-vivos.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "toque-vampirico"
+    }
+  },
+  "_key": "!items!1mS9hWtEQbNYFNYM"
+}

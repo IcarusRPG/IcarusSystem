@@ -1,0 +1,38 @@
+{
+  "_id": "KX9FokJjMfufdVRj",
+  "name": "Golpe Espiritual",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/golpe-espiritual.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Vontade reduz à metade",
+    "descricao": "<p>Uma lança de energia espiritual atravessa o corpo do alvo e fere sua alma, causando 3d6 de dano de essência. Contra criaturas incorpóreas e espíritos, causa +1d6.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "golpe-espiritual"
+    }
+  },
+  "_key": "!items!KX9FokJjMfufdVRj"
+}

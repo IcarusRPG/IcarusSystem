@@ -1,0 +1,38 @@
+{
+  "_id": "k9ybSiqYdA7p2023",
+  "name": "Prisão Dimensional",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/prisao-dimensional.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "1 rodada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você abre uma fenda para outro plano. Se o alvo falhar no teste, é arrancado deste mundo e desaparece: ele não pode agir, não pode ser alvo de nada e nada o afeta enquanto estiver fora. No início do seu próximo turno, ele retorna ao espaço que ocupava (ou ao espaço livre mais próximo) e **perde 5d6 PV** (perda de PV, não dano). Efeitos que já estavam sobre ele continuam passando o tempo, e magias de concentração que ele mantinha terminam. Uma mesma criatura só pode ser afetada por esta magia **uma vez por cena**.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o alvo fica fora por mais 1 rodada (ele só retorna no início do segundo turno seu depois do lançamento)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "prisao-dimensional"
+    }
+  },
+  "_key": "!items!k9ybSiqYdA7p2023"
+}

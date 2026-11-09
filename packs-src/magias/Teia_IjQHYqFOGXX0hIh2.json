@@ -1,0 +1,38 @@
+{
+  "_id": "IjQHYqFOGXX0hIh2",
+  "name": "Teia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/teia.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "cubo de 6 m",
+    "duracao": "cena",
+    "resistencia": "Reflexos anula",
+    "descricao": "<p>Fios resistentes preenchem a área. Criaturas que falharem no teste ficam Enredadas. Uma criatura Enredada pode gastar uma ação padrão e passar em um teste de Força ou Acrobacia (CD da magia) para se livrar. A teia é **altamente inflamável**: qualquer fogo que a toque a incendeia por inteiro de uma vez, destruindo-a em 1 rodada e causando 2d6 de dano de fogo a quem estiver nela.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "criaturas que falharem no teste por 5 ou mais também ficam Imóveis."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "teia"
+    }
+  },
+  "_key": "!items!IjQHYqFOGXX0hIh2"
+}

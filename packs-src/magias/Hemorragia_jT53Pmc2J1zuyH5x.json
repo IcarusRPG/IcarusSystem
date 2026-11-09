@@ -1,0 +1,38 @@
+{
+  "_id": "jT53Pmc2J1zuyH5x",
+  "name": "Hemorragia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/hemorragia.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Você agrava os ferimentos do alvo: ele sofre 4d6 de dano de trevas, ou 6d6 se estiver Sangrando.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "hemorragia"
+    }
+  },
+  "_key": "!items!jT53Pmc2J1zuyH5x"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "2EZbRtmBUtIIZpUP",
+  "name": "Eclipse Carmesim",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/eclipse-carmesim.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 12 m de raio ao seu redor",
+    "duracao": "sustentada",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>O céu escurece em vermelho. No início de cada turno seu, inimigos na área sofrem 4d6 de dano de trevas e você recupera 10 PV. Aliados na área recebem +1 em ataques e dano.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "eclipse-carmesim"
+    }
+  },
+  "_key": "!items!2EZbRtmBUtIIZpUP"
+}

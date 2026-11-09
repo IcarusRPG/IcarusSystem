@@ -1,0 +1,33 @@
+{
+  "_id": "GCadzI2AoaVhP0on",
+  "name": "Nuvem de Morcegos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/nuvem-de-morcegos.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 4,5 m de raio",
+    "duracao": "sustentada",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Um enxame de morcegos de sangue cobre a área e causa 4d6 de dano de perfuração no início de cada turno seu a todas as criaturas nela, A visão fica limitada: camuflagem leve.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nuvem-de-morcegos"
+    }
+  },
+  "_key": "!items!GCadzI2AoaVhP0on"
+}

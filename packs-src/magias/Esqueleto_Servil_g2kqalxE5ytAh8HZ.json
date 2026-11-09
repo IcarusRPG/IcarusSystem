@@ -1,0 +1,39 @@
+{
+  "_id": "g2kqalxE5ytAh8HZ",
+  "name": "Esqueleto Servil",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/esqueleto-servil.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Necromancia",
+    "execucao": "completa",
+    "alcance": "curto",
+    "alvo": "1 esqueleto ou zumbi",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você ergue um morto-vivo de ossos e carne seca a partir de restos presentes. Ele obedece cegamente, age no seu turno (uma ação padrão e uma de movimento) e é frágil: **não tem Defesa** (todo ataque contra ele acerta) e tem **PV iguais ao seu nível de personagem**. Deslocamento 9 m. **Ataque:** corpo a corpo, bônus de Luta igual a 2 (treino) + metade do seu nível de personagem, causando 1d8 + metade do seu nível de dano de corte ou impacto. Ele é imune a efeitos mentais, veneno e fadiga. Se chegar a 0 PV ou se a magia terminar, vira pó.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "você ergue 1 morto-vivo adicional."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "esqueleto-servil"
+    }
+  },
+  "_key": "!items!g2kqalxE5ytAh8HZ"
+}

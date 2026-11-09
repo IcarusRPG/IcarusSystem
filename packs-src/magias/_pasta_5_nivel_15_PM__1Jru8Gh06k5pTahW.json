@@ -1,0 +1,15 @@
+{
+  "_id": "1Jru8Gh06k5pTahW",
+  "name": "5º nível (15 PM)",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 5000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-5"
+    }
+  },
+  "_key": "!folders!1Jru8Gh06k5pTahW"
+}

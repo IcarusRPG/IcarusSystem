@@ -87,6 +87,10 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
       pv: new fields.SchemaField({ value: inteiro(0, { min: 0 }), max: inteiro(0, { min: 0 }) }),
       pm: new fields.SchemaField({ value: inteiro(0, { min: 0 }), max: inteiro(0, { min: 0 }) }),
       defesa: new fields.SchemaField({ outros: inteiro(0) }),
+      // Magias: atributo-chave da CD (vazio = o de PM da classe; sem classe, Inteligência)
+      magia: new fields.SchemaField({
+        atributo: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", ...ATRIBUTOS_CHAVE_PM] })
+      }),
       deslocamento: new fields.NumberField({ required: true, nullable: false, initial: 9, min: 0 }),
       tamanho: new fields.StringField({ required: true, blank: false, initial: "medio", choices: Object.keys(TAMANHOS) }),
       pericias: new fields.SchemaField(Object.fromEntries(PERICIAS.map(p => [p.chave, new fields.SchemaField({

@@ -1,0 +1,33 @@
+{
+  "_id": "4YLCOmhJcZ6f8GdF",
+  "name": "Selo de Descanso",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/selo-de-descanso.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Espiritual",
+    "execucao": "completa",
+    "alcance": "toque",
+    "alvo": "1 cadáver ou esfera de 9 m de raio",
+    "duracao": "1 dia",
+    "resistencia": "",
+    "descricao": "<p>Você sela o descanso dos mortos. Corpos na área não podem ser animados nem transformados em mortos-vivos. Mortos-vivos que entrarem na área sofrem –2 na Defesa e em testes de ataque.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "selo-de-descanso"
+    }
+  },
+  "_key": "!items!4YLCOmhJcZ6f8GdF"
+}

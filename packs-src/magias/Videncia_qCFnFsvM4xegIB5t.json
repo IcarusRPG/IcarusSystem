@@ -1,0 +1,33 @@
+{
+  "_id": "qCFnFsvM4xegIB5t",
+  "name": "Vidência",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/videncia.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "1 criatura",
+    "duracao": "sustentada",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você observa à distância uma criatura que conheça ou possua algo dela (fio de cabelo, objeto pessoal). Se ela passar, o alvo sente ser observado e a magia falha. Se falhar, você a vê e ouve num raio de 9 m ao seu redor, em qualquer distância no mesmo plano.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "videncia"
+    }
+  },
+  "_key": "!items!qCFnFsvM4xegIB5t"
+}

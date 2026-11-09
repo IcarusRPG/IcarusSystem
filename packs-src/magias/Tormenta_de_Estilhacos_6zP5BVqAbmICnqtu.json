@@ -1,0 +1,38 @@
+{
+  "_id": "6zP5BVqAbmICnqtu",
+  "name": "Tormenta de Estilhaços",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/tormenta-de-estilhacos.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 4,5 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Estilhaços de cristal em tempestade cobrem a área e causam 8d6 de dano de corte. Quem falhar no teste também fica Sangrando.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tormenta-de-estilhacos"
+    }
+  },
+  "_key": "!items!6zP5BVqAbmICnqtu"
+}

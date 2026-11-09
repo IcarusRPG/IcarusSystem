@@ -1,0 +1,38 @@
+{
+  "_id": "ShEIH6OVs93RCeq6",
+  "name": "Aprisionamento",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/aprisionamento.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Abjuração",
+    "execucao": "completa",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "1 dia",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você prende o alvo de uma das formas à escolha: **prisão** (cápsula de força que o isola), **sono eterno** (fica Inconsciente em estase), **correntes** (fica Paralisado e preso ao ponto) ou **semiplano** (levado a uma cela fora do mundo). A prisão dura no máximo 1 dia, ou menos se você a encerrar antes (ação livre) ou se Dissipar Magia a desfizer.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "o alcance passa a médio e você pode afetar até 2 criaturas."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "aprisionamento"
+    }
+  },
+  "_key": "!items!ShEIH6OVs93RCeq6"
+}

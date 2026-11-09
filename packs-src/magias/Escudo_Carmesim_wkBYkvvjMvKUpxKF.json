@@ -1,0 +1,33 @@
+{
+  "_id": "wkBYkvvjMvKUpxKF",
+  "name": "Escudo Carmesim",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/escudo-carmesim.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma membrana de sangue coagulado cobre seu corpo: +2 na Defesa e RD 2 contra dano de corte e perfuração. Sempre que sofrer dano de corte ou perfuração de um atacante adjacente, ele é respingado e sofre 1d6 de dano de trevas.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "escudo-carmesim"
+    }
+  },
+  "_key": "!items!wkBYkvvjMvKUpxKF"
+}

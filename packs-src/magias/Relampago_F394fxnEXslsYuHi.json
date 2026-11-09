@@ -1,0 +1,38 @@
+{
+  "_id": "F394fxnEXslsYuHi",
+  "name": "Relâmpago",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/relampago.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "linha de 18 m",
+    "alvo": "criaturas na linha",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Um raio parte de suas mãos e causa 6d6 de dano elétrico. Quem falhar no teste também fica Ofuscado por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "relampago"
+    }
+  },
+  "_key": "!items!F394fxnEXslsYuHi"
+}

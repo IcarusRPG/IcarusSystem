@@ -1,0 +1,33 @@
+{
+  "_id": "ntu7ePLGkuJXLzG8",
+  "name": "Rasgar o Véu",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/rasgar-o-veu.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 9 m de raio",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você rasga a fronteira entre os mundos na área. Criaturas incorpóreas ou etéreas ficam sólidas e visíveis, e magias de invisibilidade ou de Forma Etérea afetando criaturas na área terminam, se elas falharem no teste. Mortos-vivos e espíritos na área sofrem –2 na Defesa e em testes de ataque.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "rasgar-o-veu"
+    }
+  },
+  "_key": "!items!ntu7ePLGkuJXLzG8"
+}

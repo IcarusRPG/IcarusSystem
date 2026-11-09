@@ -1,0 +1,33 @@
+{
+  "_id": "AMLWmCIkhtHZRrjQ",
+  "name": "Liberdade de Movimento",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/liberdade-de-movimento.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo não pode ficar Agarrado, Enredado, Imóvel, Lento ou Paralisado por efeitos mágicos, e age normalmente mesmo na água. Condições já ativas continuam.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "liberdade-de-movimento"
+    }
+  },
+  "_key": "!items!AMLWmCIkhtHZRrjQ"
+}

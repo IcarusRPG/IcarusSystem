@@ -1,0 +1,38 @@
+{
+  "_id": "vyDdzEKrsTqVC5S4",
+  "name": "Confusão",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/confusao.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 6 m de raio",
+    "duracao": "1d4 rodadas",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>As criaturas na área ficam Confusas pela duração. A cada turno, repetem o teste de Vontade; se passarem, a condição termina para elas.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "aumenta o raio da esfera em +3 m."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "confusao"
+    }
+  },
+  "_key": "!items!vyDdzEKrsTqVC5S4"
+}

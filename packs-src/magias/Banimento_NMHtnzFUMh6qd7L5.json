@@ -1,0 +1,33 @@
+{
+  "_id": "NMHtnzFUMh6qd7L5",
+  "name": "Banimento",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/banimento.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo, se for extraplanar (espírito, demônio, elemental ou fada), é banido ao seu plano natal. Outras criaturas, se falharem, ficam Atordoadas por 1 rodada.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "banimento"
+    }
+  },
+  "_key": "!items!NMHtnzFUMh6qd7L5"
+}

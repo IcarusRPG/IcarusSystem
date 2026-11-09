@@ -1,0 +1,33 @@
+{
+  "_id": "QSq3tXEzC34rfd2v",
+  "name": "Sentença de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sentenca-de-sangue.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "1 criatura",
+    "duracao": "1 dia",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você marca o alvo com uma sentença. Ele sofre –2 em todos os testes, e você causa +2d6 de dano de trevas contra ele em magias e armas que você use. A marca só se rompe se ele morrer, se você morrer ou se a magia terminar.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sentenca-de-sangue"
+    }
+  },
+  "_key": "!items!QSq3tXEzC34rfd2v"
+}

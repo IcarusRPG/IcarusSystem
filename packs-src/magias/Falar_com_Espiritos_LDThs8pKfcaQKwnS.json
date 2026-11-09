@@ -1,0 +1,33 @@
+{
+  "_id": "LDThs8pKfcaQKwnS",
+  "name": "Falar com Espíritos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/falar-com-espiritos.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "espíritos em esfera de 9 m de raio",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você escuta e conversa com os espíritos na área, como fantasmas, espíritos do local e almas presas. Eles respondem com honestidade ao que sabem, mas não ficam amistosos nem obrigados a ajudar. Você recebe +5 em Diplomacia e Intimidação contra eles.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "falar-com-espiritos"
+    }
+  },
+  "_key": "!items!LDThs8pKfcaQKwnS"
+}

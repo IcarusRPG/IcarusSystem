@@ -1,0 +1,38 @@
+{
+  "_id": "c1AAYFKTSEc2VQ68",
+  "name": "Desintegrar",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/desintegrar.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura ou objeto",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude parcial",
+    "descricao": "<p>Um raio esverdeado atinge o alvo e causa 14d6 de dano de essência. Se passar no teste, sofre 5d6. Uma criatura reduzida a 0 PV por esta magia é desintegrada, sem deixar nada além de poeira.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "desintegrar"
+    }
+  },
+  "_key": "!items!c1AAYFKTSEc2VQ68"
+}

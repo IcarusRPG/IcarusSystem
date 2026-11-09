@@ -1,0 +1,38 @@
+{
+  "_id": "FYcAqnraleIcoqQv",
+  "name": "Banquete Rubro",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/banquete-rubro.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "esfera de 3 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Você arranca a vida das criaturas na área. Role 5d6 **uma única vez**: o resultado vale para todas as criaturas. Quem falhar no teste sofre esse valor como dano de trevas; quem passar sofre metade. Você recupera PV iguais à **metade do dano rolado** (uma vez só, não importa quantas criaturas sejam afetadas). Sem criaturas vivas afetadas, você não recupera nada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "banquete-rubro"
+    }
+  },
+  "_key": "!items!FYcAqnraleIcoqQv"
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "i4UUjj71Mjo79OLV",
+  "name": "Proteção contra o Mal",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/protecao-contra-o-mal.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo recebe +2 em Defesa e em testes de resistência contra criaturas profanas (mortos-vivos, demônios, espíritos malignos) e contra efeitos mentais que dominem ou enfeitiçem. Essas criaturas sofrem –2 ao atacá-lo corpo a corpo.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "protecao-contra-o-mal"
+    }
+  },
+  "_key": "!items!i4UUjj71Mjo79OLV"
+}

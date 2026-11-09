@@ -1,0 +1,38 @@
+{
+  "_id": "WJV6yvBU0AqY8nvh",
+  "name": "Cone Glacial",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/cone-glacial.png",
+  "folder": "1Jru8Gh06k5pTahW",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "cone de 12 m",
+    "alvo": "criaturas na área",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude reduz à metade",
+    "descricao": "<p>Uma rajada de frio extremo causa 12d6 de dano de frio. Quem falhar no teste também fica Lento por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "cone-glacial"
+    }
+  },
+  "_key": "!items!WJV6yvBU0AqY8nvh"
+}

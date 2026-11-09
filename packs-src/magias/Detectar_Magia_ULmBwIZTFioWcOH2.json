@@ -1,0 +1,39 @@
+{
+  "_id": "ULmBwIZTFioWcOH2",
+  "name": "Detectar Magia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/detectar-magia.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "cone de 18 m",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Você percebe a presença de magia na área: itens, efeitos e criaturas. Como ação de movimento, você se concentra em um alvo que enxergue e descobre se ele tem magia, a escola dela e se é fraca (níveis 1 e 2), moderada (3 e 4) ou forte (5).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "você também descobre o nome da magia e seu efeito geral."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "detectar-magia"
+    }
+  },
+  "_key": "!items!ULmBwIZTFioWcOH2"
+}

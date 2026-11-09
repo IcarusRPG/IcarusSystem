@@ -1,0 +1,33 @@
+{
+  "_id": "fUCqNOyVOuaEIqQd",
+  "name": "Falar com Animais",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/falar-com-animais.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você entende e se comunica com animais. Eles não ficam mais amistosos, mas respondem com honestidade ao que sabem e podem lhe dizer o que viram.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "falar-com-animais"
+    }
+  },
+  "_key": "!items!fUCqNOyVOuaEIqQd"
+}

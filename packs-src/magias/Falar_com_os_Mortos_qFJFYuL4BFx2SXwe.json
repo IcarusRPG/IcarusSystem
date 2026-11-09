@@ -1,0 +1,33 @@
+{
+  "_id": "qFJFYuL4BFx2SXwe",
+  "name": "Falar com os Mortos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/falar-com-os-mortos.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Espiritual",
+    "execucao": "completa",
+    "alcance": "toque",
+    "alvo": "1 cadáver",
+    "duracao": "5 minutos",
+    "resistencia": "Vontade anula (a cada pergunta)",
+    "descricao": "<p>Você chama o espírito que ainda se demora junto ao corpo e faz até 3 perguntas. O espírito responde em frases curtas o que souber; a cada pergunta, ele faz um teste de Vontade e, se passar, recusa-se a responder. Só funciona em corpos mortos há até 7 dias, e uma única vez por corpo.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "falar-com-os-mortos"
+    }
+  },
+  "_key": "!items!qFJFYuL4BFx2SXwe"
+}

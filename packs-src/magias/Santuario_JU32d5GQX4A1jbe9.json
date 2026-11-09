@@ -1,0 +1,33 @@
+{
+  "_id": "JU32d5GQX4A1jbe9",
+  "name": "Santuário",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/santuario.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula (do atacante)",
+    "descricao": "<p>Uma aura sagrada cerca o alvo. Quem tentar atacá-lo ou fazê-lo alvo de magia ofensiva deve passar num teste de Vontade, ou escolher outro alvo ou perder a ação. A magia termina se o alvo atacar ou lançar magia ofensiva.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "santuario"
+    }
+  },
+  "_key": "!items!JU32d5GQX4A1jbe9"
+}

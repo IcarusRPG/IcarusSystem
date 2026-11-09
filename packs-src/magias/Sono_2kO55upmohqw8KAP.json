@@ -1,0 +1,38 @@
+{
+  "_id": "2kO55upmohqw8KAP",
+  "name": "Sono",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sono.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>O alvo cai em sono profundo e fica Inconsciente. Ele acorda se sofrer dano ou se alguém gastar uma ação padrão para sacudi-lo. Não afeta criaturas imunes a efeitos mentais.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "afeta +1 criatura, que deve estar a até 3 m do alvo original."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sono"
+    }
+  },
+  "_key": "!items!2kO55upmohqw8KAP"
+}

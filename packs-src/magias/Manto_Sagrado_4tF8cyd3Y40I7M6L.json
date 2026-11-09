@@ -1,0 +1,33 @@
+{
+  "_id": "4tF8cyd3Y40I7M6L",
+  "name": "Manto Sagrado",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/manto-sagrado.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "esfera de 6 m de raio, centrada em você",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Uma aura de luz sagrada irradia de você. Você e seus aliados na área recebem +2 na Defesa e RD 3 (respeitando o teto de RD do núcleo). Criaturas profanas que iniciarem o turno na área sofrem 2d8 de dano de luz.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "manto-sagrado"
+    }
+  },
+  "_key": "!items!4tF8cyd3Y40I7M6L"
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "rNhi2DUAoKvPc7rt",
+  "name": "Sentidos Agudos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sentidos-agudos.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Seus sentidos se aguçam: você recebe +5 em Percepção e Investigação, enxerga no escuro em alcance curto e vê objetos pequenos a grande distância como se estivessem próximos.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o alcance pessoal passa a toque (1 criatura)."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sentidos-agudos"
+    }
+  },
+  "_key": "!items!rNhi2DUAoKvPc7rt"
+}

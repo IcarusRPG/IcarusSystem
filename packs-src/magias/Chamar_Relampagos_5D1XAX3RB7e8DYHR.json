@@ -1,0 +1,33 @@
+{
+  "_id": "5D1XAX3RB7e8DYHR",
+  "name": "Chamar Relâmpagos",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/chamar-relampagos.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "1 ponto no céu",
+    "duracao": "sustentada",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Uma tempestade se forma sobre o alvo. Quando a magia é lançada, e depois como ação padrão em cada turno seu, um raio cai em um ponto à sua escolha e causa 4d6 de dano elétrico em esfera de 3 m de raio. Só funciona ao ar livre.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": false,
+    "concentracao": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "chamar-relampagos"
+    }
+  },
+  "_key": "!items!5D1XAX3RB7e8DYHR"
+}

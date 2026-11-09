@@ -1,0 +1,38 @@
+{
+  "_id": "fw3Gd44PW8EQCREE",
+  "name": "Acalmar Emoções",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/acalmar-emocoes.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "esfera de 3 m de raio",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você suprime emoções fortes na área. **Aliados** na área que estejam Abalados, Apavorados, Enfeitiçados ou Frustrados perdem essas condições automaticamente, sem teste. **Inimigos** na área fazem um teste de Vontade: se falharem, ficam impedidos de agir de forma violenta (não podem atacar nem lançar magias ofensivas) enquanto durar a magia. Se sofrerem dano ou forem ameaçados de forma evidente, a magia termina para eles.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "aumenta o raio em +1,5 m."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "acalmar-emocoes"
+    }
+  },
+  "_key": "!items!fw3Gd44PW8EQCREE"
+}

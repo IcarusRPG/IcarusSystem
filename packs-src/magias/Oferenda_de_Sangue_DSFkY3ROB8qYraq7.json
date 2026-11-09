@@ -1,0 +1,38 @@
+{
+  "_id": "DSFkY3ROB8qYraq7",
+  "name": "Oferenda de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/oferenda-de-sangue.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 aliado voluntário",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Você corta a própria palma e marca o aliado com seu sangue, fortalecendo sua vontade de lutar. Você perde 1d6 PV (perda de PV, não dano) e o aliado recebe +2 em testes de ataque e +2 de dano até o fim da cena.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "+1 aliado (você perde mais 1d6 PV para cada aliado adicional)."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "oferenda-de-sangue"
+    }
+  },
+  "_key": "!items!DSFkY3ROB8qYraq7"
+}

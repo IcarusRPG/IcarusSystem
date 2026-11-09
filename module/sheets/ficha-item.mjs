@@ -105,6 +105,14 @@ export class FichaItem extends ItemSheet {
       ctx.rotuloDanoExtra = s.propriedades.includes("dupla") ? loc("ICARUS.Armas.DanoOutraExtremidade") : loc("ICARUS.Armas.DanoDuasMaos");
     }
 
+    if (item.type === "magia") {
+      const dono = item.parent;
+      ctx.magia = {
+        podeLancar: !!dono?.isOwner && dono.type === "personagem",
+        tradicoes: (s.tradicoes ?? []).map(t => loc(`ICARUS.Magias.TradicoesNomes.${t}`)).join(", ")
+      };
+    }
+
     if (item.type === "municao") {
       ctx.opcoesTipoMunicao = opcoes(TIPOS_MUNICAO, "ICARUS.Municao.Tipos");
       ctx.pacotes = game.i18n.format("ICARUS.Municao.Pacotes", {
@@ -116,6 +124,11 @@ export class FichaItem extends ItemSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
+    // Magia de um personagem: Lançar direto da ficha do item
+    html.on("click", "[data-action='magia-lancar']", async () => {
+      const { lancarMagia } = await import("../magias.mjs");
+      lancarMagia(this.item.parent, this.item);
+    });
     if (!this.isEditable) return;
     // Chips de propriedades e tipos de dano (listas): liga e desliga
     html.on("click", "[data-chip-lista]", ev => {

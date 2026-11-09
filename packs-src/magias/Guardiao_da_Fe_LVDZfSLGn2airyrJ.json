@@ -1,0 +1,33 @@
+{
+  "_id": "LVDZfSLGn2airyrJ",
+  "name": "Guardião da Fé",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/guardiao-da-fe.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 espaço",
+    "duracao": "cena",
+    "resistencia": "Vontade reduz à metade",
+    "descricao": "<p>Um guardião espiritual surge e protege uma área de 3 m de raio. Inimigos que entrarem na área ou começarem o turno nela sofrem 6d6 de dano de luz. O guardião some após causar 30 de dano no total.</p>",
+    "aprimoramentos": [],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "guardiao-da-fe"
+    }
+  },
+  "_key": "!items!LVDZfSLGn2airyrJ"
+}

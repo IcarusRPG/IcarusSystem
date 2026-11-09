@@ -1,0 +1,38 @@
+{
+  "_id": "FlXkAK5hBZcRFBQi",
+  "name": "Armadura Arcana",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/armadura-arcana.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>Uma película de mana envolve seu corpo e lhe dá +4 na Defesa. Esse bônus não se acumula com outros bônus de Defesa de magias.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "muda o alcance para toque e o alvo para 1 criatura."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "armadura-arcana"
+    }
+  },
+  "_key": "!items!FlXkAK5hBZcRFBQi"
+}

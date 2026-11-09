@@ -1,0 +1,38 @@
+{
+  "_id": "j3amdNXyo6r7d2TD",
+  "name": "Lamento Espectral",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/lamento-espectral.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Espiritual",
+    "execucao": "padrão",
+    "alcance": "cone de 9 m",
+    "alvo": "criaturas na área",
+    "duracao": "instantânea",
+    "resistencia": "Vontade reduz à metade",
+    "descricao": "<p>Um coro de espíritos geme através de você, causando 6d6 de dano de essência. Quem falhar no teste também fica Abalado por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lamento-espectral"
+    }
+  },
+  "_key": "!items!j3amdNXyo6r7d2TD"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "c9ipnbMg3FFyB7t2",
+  "name": "Arma Encantada",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/arma-encantada.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 arma",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>A arma recebe +1 em testes de ataque e causa +1 de dano, e é considerada mágica (afeta criaturas incorpóreas).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o bônus passa a +2 em ataque e +2 de dano."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arma-encantada"
+    }
+  },
+  "_key": "!items!c9ipnbMg3FFyB7t2"
+}

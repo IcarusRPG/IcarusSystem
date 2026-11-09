@@ -1,0 +1,15 @@
+{
+  "_id": "DonGVlH2jlJtpC2i",
+  "name": "2º nível (3 PM)",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 2000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-2"
+    }
+  },
+  "_key": "!folders!DonGVlH2jlJtpC2i"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "lKKVczMzCr5fE3ez",
+  "name": "Velocidade",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/velocidade.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo acelera: seu deslocamento aumenta em 6 m, ele recebe +2 na Defesa e em Reflexos e, uma vez por rodada, pode fazer uma ação de movimento adicional. Quando a magia termina, o alvo fica Fatigado por 1 rodada.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      },
+      {
+        "custo": 4,
+        "texto": "a ação adicional por rodada passa a ser uma **ação padrão** em vez de uma ação de movimento (ela não pode ser usada para lançar magias)."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "velocidade"
+    }
+  },
+  "_key": "!items!lKKVczMzCr5fE3ez"
+}

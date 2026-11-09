@@ -1,0 +1,42 @@
+{
+  "_id": "GUlzx7rUjxpJYb7Q",
+  "name": "Augúrio",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/augurio.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Adivinhação",
+    "execucao": "completa",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você escolhe uma divindade para lhe responder e pergunta a ela se uma ação planejada para as próximas 3 horas trará bons, maus ou ambos os resultados (ou nenhum, se for indiferente). A resposta é &quot;bom&quot;, &quot;mau&quot;, &quot;ambos&quot; ou &quot;nada&quot;. Se perguntar de novo sobre a mesma ação, a resposta é igual.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o prazo da previsão sobe para 24 horas."
+      },
+      {
+        "custo": 5,
+        "texto": "o prazo da previsão sobe para 7 dias e você pode perguntar também a um espírito. Em vez de \"bom\", \"mau\", \"ambos\" ou \"nada\", o Mestre responde com uma frase curta, um enigma ou um presságio verdadeiros, mas não necessariamente completos."
+      }
+    ],
+    "tradicoes": [
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "augurio"
+    }
+  },
+  "_key": "!items!GUlzx7rUjxpJYb7Q"
+}

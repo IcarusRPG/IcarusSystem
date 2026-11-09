@@ -1,0 +1,38 @@
+{
+  "_id": "Inbf81GKhsXolCKt",
+  "name": "Âncora de Mana",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/ancora-de-mana.png",
+  "folder": "DonGVlH2jlJtpC2i",
+  "sort": 0,
+  "system": {
+    "nivel": 2,
+    "custoPM": 3,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Uma corrente invisível de mana prende o alvo ao ponto onde ele estava. Ele não pode se afastar mais de 6 m desse ponto, nem teletransportar-se, nem mudar de plano. Movimento forçado (empurrões, ventos) ainda funciona.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 2,
+        "texto": "o alcance da corrente cai para 3 m."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ancora-de-mana"
+    }
+  },
+  "_key": "!items!Inbf81GKhsXolCKt"
+}

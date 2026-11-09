@@ -1,0 +1,38 @@
+{
+  "_id": "FA2d27YByemlCsnV",
+  "name": "Lanças de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/lancas-de-sangue.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Evocação",
+    "execucao": "padrão",
+    "alcance": "longo",
+    "alvo": "até 3 criaturas",
+    "duracao": "instantânea",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Três lanças de sangue saem do seu corpo e atingem alvos diferentes (ou o mesmo): cada uma causa 4d6 de dano de perfuração e deixa o alvo Sangrando se falhar no teste.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1 lança."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lancas-de-sangue"
+    }
+  },
+  "_key": "!items!FA2d27YByemlCsnV"
+}

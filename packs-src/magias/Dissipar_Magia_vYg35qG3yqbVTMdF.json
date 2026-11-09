@@ -1,0 +1,39 @@
+{
+  "_id": "vYg35qG3yqbVTMdF",
+  "name": "Dissipar Magia",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/dissipar-magia.png",
+  "folder": "HPZtBsrJiegn77h6",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Abjuração",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "1 criatura, objeto ou esfera de 3 m de raio",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Você tenta encerrar uma magia ativa. Faça um teste de Misticismo (se a magia for arcana ou de sangue) ou de Religião (se for divina) contra CD 15 + 2 × o nível da magia alvo. Se passar, a magia termina. Efeitos instantâneos não podem ser dissipados.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "o teste recebe +5."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "dissipar-magia"
+    }
+  },
+  "_key": "!items!vYg35qG3yqbVTMdF"
+}

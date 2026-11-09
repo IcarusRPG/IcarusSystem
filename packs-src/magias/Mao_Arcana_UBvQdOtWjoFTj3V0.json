@@ -1,0 +1,38 @@
+{
+  "_id": "UBvQdOtWjoFTj3V0",
+  "name": "Mão Arcana",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/mao-arcana.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Convocação",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "uma mão de força",
+    "duracao": "sustentada",
+    "resistencia": "",
+    "descricao": "<p>Uma mão translúcida de força surge e obedece a você. Ela tem Força equivalente a +0 e carrega até 5 kg, podendo abrir portas e recipientes não trancados, pegar e entregar objetos e puxar cordas. Ela não ataca, não ativa itens mágicos nem tem Defesa (some se sofrer qualquer dano). Você move a mão como ação livre, dentro do alcance.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "a mão carrega até 25 kg."
+      }
+    ],
+    "tradicoes": [
+      "arcana"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mao-arcana"
+    }
+  },
+  "_key": "!items!UBvQdOtWjoFTj3V0"
+}

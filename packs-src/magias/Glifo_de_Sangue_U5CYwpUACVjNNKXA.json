@@ -1,0 +1,38 @@
+{
+  "_id": "U5CYwpUACVjNNKXA",
+  "name": "Glifo de Sangue",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/glifo-de-sangue.png",
+  "folder": "5rjo7naertU2eqpk",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Abjuração",
+    "execucao": "completa",
+    "alcance": "toque",
+    "alvo": "uma superfície ou objeto, até 3 m",
+    "duracao": "1 dia",
+    "resistencia": "Reflexos reduz à metade",
+    "descricao": "<p>Você desenha um glifo de sangue que arde em silêncio. Quando uma criatura (que não seja você nem aliados que você tenha indicado) tocar o glifo, abrir o objeto marcado ou entrar na área, ele explode em uma esfera de 4,5 m de raio e causa 8d6 de dano de trevas. Quem falhar no teste fica Sangrando. Encontrar o glifo exige um teste de Investigação contra a CD da magia. A magia termina quando o glifo explode.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1d6 de dano."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "glifo-de-sangue"
+    }
+  },
+  "_key": "!items!U5CYwpUACVjNNKXA"
+}

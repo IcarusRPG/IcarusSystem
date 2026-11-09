@@ -1,0 +1,38 @@
+{
+  "_id": "4JtIZu9SnHLs9pme",
+  "name": "Sangria",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/sangria.png",
+  "folder": "HFgbEcFt4D1pasjt",
+  "sort": 0,
+  "system": {
+    "nivel": 1,
+    "custoPM": 1,
+    "escola": "Necromancia",
+    "execucao": "padrão",
+    "alcance": "curto",
+    "alvo": "1 criatura",
+    "duracao": "instantânea",
+    "resistencia": "Fortitude anula",
+    "descricao": "<p>Você abre feridas invisíveis no corpo do alvo. Se falhar no teste, ele fica Sangrando. Se já estiver Sangrando, perde 2d6 PV (perda de PV, não dano).</p>",
+    "aprimoramentos": [
+      {
+        "custo": 1,
+        "texto": "+1 alvo, a até 3 m do primeiro."
+      }
+    ],
+    "tradicoes": [
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": true,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "sangria"
+    }
+  },
+  "_key": "!items!4JtIZu9SnHLs9pme"
+}
