@@ -9,7 +9,8 @@
  * Regras puras: module/magias-dados.mjs.
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento } from "./magias-dados.mjs";
+import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao } from "./magias-dados.mjs";
+import { areaNoMapa } from "./magias-area.mjs";
 import { rolarDanoAvulso, rolarCura } from "./dano.mjs";
 import AUTOMACAO from "./dados/magias_automacao.mjs";
 
@@ -117,12 +118,16 @@ export async function executarLancamento(actor, item, indices = []) {
     ui.notifications.warn(fmt("ICARUS.Magias.SemPM", { custo: custo.total, pm: antes }));
     return null;
   }
+  const plano = planoDoLancamento(automacaoDaMagia(item), custo.indices);
+  // Magia de área: posicionar no mapa antes de gastar o PM (cancelar = não lança)
+  const area = await areaNoMapa({ actor, item, tokenConjurador: tokenDoConjurador(actor), cor: plano.vfx?.cor ?? null,
+    instantanea: tipoDeDuracao(s.duracao) === "instantanea" });
+  if (area === null) return null;
   await actor.update({ "system.pm.value": antes - custo.total });
   let cartao = null;
   try {
-    const plano = planoDoLancamento(automacaoDaMagia(item), custo.indices);
     cartao = await cartaoDaMagia(actor, item, custo, plano);
-    await rolagensDaMagia(actor, item, plano, cartao);
+    await rolagensDaMagia(actor, item, plano, cartao, area ?? null);
     return cartao;
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);
@@ -135,11 +140,11 @@ export async function executarLancamento(actor, item, indices = []) {
 }
 
 /** Dano e cura da magia, com a marca da animação (tocada em todos os clientes). */
-async function rolagensDaMagia(actor, item, plano, cartao) {
+async function rolagensDaMagia(actor, item, plano, cartao, areaPosicionada = null) {
   const token = tokenDoConjurador(actor);
   const alvos = [...(game.user.targets ?? [])].map(t => t.document?.uuid).filter(Boolean);
   const marca = { magia: { id: item.flags?.[F]?.id ?? item.id, cartaoId: cartao?.id ?? null, cd: actor.system.magia?.cd ?? null, resistencia: plano.dano?.resistencia ?? null } };
-  const vfx = plano.vfx ? { magiaVfx: { ...plano.vfx, id: item.flags?.[F]?.id ?? null, origem: token?.uuid ?? null, alvos, area: plano.dano?.area ?? null } } : {};
+  const vfx = plano.vfx ? { magiaVfx: { ...plano.vfx, id: item.flags?.[F]?.id ?? null, origem: token?.uuid ?? null, alvos, area: areaPosicionada ?? plano.dano?.area ?? null } } : {};
   if (plano.dano) {
     await rolarDanoAvulso({ partes: plano.dano.partes, titulo: item.name, img: item.img, actor, flags: { ...marca, ...vfx } });
   }

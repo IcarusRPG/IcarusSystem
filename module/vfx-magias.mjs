@@ -6,6 +6,8 @@
  *   1. vídeo do usuário em img/animacoes/magias/<id>.webm (ou .mp4), se existir (lista do build);
  *   2. efeito procedural (PIXI) pelo preset do bloco de automação:
  *      projetil, explosao, cone, linha, pilar, chuva, aura, nuvem — cor e partículas pelo elemento.
+ * Área posicionada no mapa (module/magias-area.mjs): a animação acontece no ponto do modelo e, no cone e
+ * na linha, sai da origem do modelo na direção em que ele aponta.
  * Duração ~1 a 1,6 s; respeita "reduzir movimento" (só um clarão) e a opção do usuário.
  * Som opcional: audio/magias/<elemento>.ogg.
  */
@@ -37,13 +39,32 @@ const INTENSIDADE = { baixa: 0.5, media: 1, alta: 1.6 };
 const centro = t => ({ x: t.x + t.w / 2, y: t.y + t.h / 2 });
 const metrosEmPx = m => (Number(m) || 0) / (canvas.scene?.grid?.distance || canvas.dimensions?.distance || 1.5) * (canvas.grid?.size ?? 100);
 
-/** Pontos da animação: origem (conjurador) e alvos visíveis; centro = média dos alvos. */
-export function pontosDaAnimacao(origem, alvos) {
+/** A área foi posicionada no mapa (tem ponto)? */
+export const areaPosicionada = area => Number.isFinite(area?.x) && Number.isFinite(area?.y);
+
+/**
+ * Pontos da animação: origem (conjurador) e alvos visíveis; centro = média dos alvos.
+ * Com a área posicionada: centro = ponto do modelo; cone e linha saem do ponto do modelo (saida) na direção dele.
+ */
+export function pontosDaAnimacao(origem, alvos, area = null) {
   const o = origem ? centro(origem) : null;
   const a = alvos.map(centro);
-  const meio = a.length ? { x: a.reduce((s, p) => s + p.x, 0) / a.length, y: a.reduce((s, p) => s + p.y, 0) / a.length } : o;
-  return { origem: o, alvos: a, meio };
+  let meio = a.length ? { x: a.reduce((s, p) => s + p.x, 0) / a.length, y: a.reduce((s, p) => s + p.y, 0) / a.length } : o;
+  let saida = o, direcao = null;
+  if (areaPosicionada(area)) {
+    if (area.forma === "cone" || area.forma === "linha") {
+      saida = { x: area.x, y: area.y };
+      direcao = (area.direcao ?? 0) * Math.PI / 180;
+    } else meio = { x: area.x, y: area.y };
+  }
+  return { origem: o, alvos: a, meio, saida, direcao };
 }
+
+/** Raio (px) da área para a animação: raio da esfera, metade do lado do quadrado. */
+const raioDaArea = area => {
+  if (!area?.tamanho) return null;
+  return metrosEmPx(area.forma === "quadrado" ? area.tamanho / 2 : area.tamanho);
+};
 
 /* ------------------------------ Partículas ------------------------------ */
 
@@ -172,8 +193,8 @@ function tocarProcedural(dados, pontos) {
   const k = INTENSIDADE[cfg("magiasIntensidade")] ?? 1;
   const n = m => Math.max(4, Math.round(m * k));
   const cena = new Cena();
-  const { origem, alvos, meio } = pontos;
-  const raioArea = dados.area?.tamanho ? metrosEmPx(dados.area.tamanho) : grade * 1.2;
+  const { origem, alvos, meio, saida, direcao } = pontos;
+  const raioArea = raioDaArea(dados.area) ?? grade * 1.2;
   const preset = dados.preset;
   if (globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
     for (const p of alvos.length ? alvos : [meio]) if (p) clarao(cena, el, p, grade * 0.8, { duracao: 500 });
@@ -186,14 +207,16 @@ function tocarProcedural(dados, pontos) {
     const atraso = origem && origem !== meio ? Math.min(700, 250 + Math.hypot(meio.x - origem.x, meio.y - origem.y) * 0.5) : 0;
     clarao(cena, el, meio, raioArea, { atraso, duracao: 800 });
     estouro(cena, el, meio, raioArea, n(60), { atraso, duracao: 900 });
-  } else if ((preset === "cone" || preset === "linha") && origem) {
-    const destino = meio && meio !== origem ? meio : { x: origem.x + grade, y: origem.y };
-    const ang = Math.atan2(destino.y - origem.y, destino.x - origem.x);
-    const alcance = dados.area?.tamanho ? metrosEmPx(dados.area.tamanho) : Math.hypot(destino.x - origem.x, destino.y - origem.y);
-    if (preset === "cone") estouro(cena, el, origem, alcance, n(70), { direcao: ang, abertura: Math.PI / 3, duracao: 900 });
-    else {
-      const fim = { x: origem.x + Math.cos(ang) * alcance, y: origem.y + Math.sin(ang) * alcance };
-      feixe(cena, el, origem, fim, grade * 0.18);
+  } else if ((preset === "cone" || preset === "linha") && saida) {
+    const destino = meio && meio !== saida ? meio : { x: saida.x + grade, y: saida.y };
+    const ang = direcao ?? Math.atan2(destino.y - saida.y, destino.x - saida.x);
+    const alcance = dados.area?.tamanho ? metrosEmPx(dados.area.tamanho) : Math.hypot(destino.x - saida.x, destino.y - saida.y);
+    if (preset === "cone") {
+      const abertura = (dados.area?.angulo ?? 60) * Math.PI / 180;
+      estouro(cena, el, saida, alcance, n(70), { direcao: ang, abertura, duracao: 900 });
+    } else {
+      const fim = { x: saida.x + Math.cos(ang) * alcance, y: saida.y + Math.sin(ang) * alcance };
+      feixe(cena, el, saida, fim, grade * 0.18);
       for (const a of alvos) estouro(cena, el, a, grade * 0.5, n(10), { atraso: 150, duracao: 500 });
     }
   } else if (preset === "pilar" && meio) {
@@ -208,6 +231,10 @@ function tocarProcedural(dados, pontos) {
       const p = { x: meio.x + aleat(-1, 1) * raioArea, y: meio.y + aleat(-1, 1) * raioArea };
       projetil(cena, el, { x: p.x - grade * 0.5, y: p.y - grade * 3 }, p, grade * 0.08, n(4), { atraso: i * 50 });
     }
+  } else if (areaPosicionada(dados.area) && meio) {
+    // aura / nuvem numa área posicionada: onda na área toda
+    clarao(cena, el, meio, raioArea, { duracao: 900 });
+    estouro(cena, el, meio, raioArea, n(40), { duracao: 900 });
   } else {
     // aura / nuvem / sem alvo: anel pulsando em cada alvo (ou no conjurador)
     for (const p of alvos.length ? alvos : [origem].filter(Boolean)) {
@@ -226,7 +253,11 @@ function arquivoDeVideo(id) {
 }
 
 async function tocarVideo(src, pontos, dados) {
-  const p = pontos.meio ?? pontos.origem;
+  const reta = pontos.direcao !== null && pontos.saida;
+  const alcance = dados.area?.tamanho ? metrosEmPx(dados.area.tamanho) : (canvas.grid?.size ?? 100) * 2;
+  // Cone e linha: o vídeo deitado na direção do modelo, do ponto de saída até o alcance
+  const p = reta ? { x: pontos.saida.x + Math.cos(pontos.direcao) * alcance / 2, y: pontos.saida.y + Math.sin(pontos.direcao) * alcance / 2 }
+    : pontos.meio ?? pontos.origem;
   if (!p) return;
   const textura = await PIXI.Assets.load(src).catch(() => null);
   if (!textura) return tocarProcedural(dados, pontos);
@@ -236,8 +267,14 @@ async function tocarVideo(src, pontos, dados) {
   video.currentTime = 0;
   const sprite = new PIXI.Sprite(textura);
   sprite.anchor.set(0.5);
-  const lado = dados.area?.tamanho ? metrosEmPx(dados.area.tamanho) * 2 : (canvas.grid?.size ?? 100) * 2;
-  sprite.width = sprite.height = lado;
+  if (reta) {
+    sprite.width = alcance;
+    sprite.height = dados.area?.forma === "cone" ? alcance : (canvas.grid?.size ?? 100);
+    sprite.rotation = pontos.direcao;
+  } else {
+    const lado = (raioDaArea(dados.area) ?? canvas.grid?.size ?? 100) * 2;
+    sprite.width = sprite.height = lado;
+  }
   sprite.position.set(p.x, p.y);
   sprite.eventMode = "none";
   (canvas.interface ?? canvas.stage).addChild(sprite);
@@ -256,8 +293,10 @@ export function tocarAnimacao(dados) {
   const origemDoc = dados.origem ? fromUuidSync(dados.origem) : null;
   const alvos = (dados.alvos ?? []).map(u => fromUuidSync(u)).filter(visivel).map(d => d.object);
   const origem = visivel(origemDoc) ? origemDoc.object : null;
-  if (!origem && !alvos.length) return;
-  const pontos = pontosDaAnimacao(origem, alvos);
+  const area = areaPosicionada(dados.area) && (!dados.area.cena || dados.area.cena === canvas.scene?.id) ? dados.area : null;
+  if (!origem && !alvos.length && !area) return;
+  const pontos = pontosDaAnimacao(origem, alvos, area);
+  if (!area && dados.area) dados = { ...dados, area: { forma: dados.area.forma, tamanho: dados.area.tamanho } };
   const video = arquivoDeVideo(dados.id);
   if (video) tocarVideo(video, pontos, dados);
   else tocarProcedural(dados, pontos);

@@ -170,6 +170,7 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 
 - **Compêndio "Icarus — Magias":** árvore Divinas / Arcanas / Sangue → 1º a 5º Nível. Arraste para a ficha (aba **Magias**).
 - **Lançar** rola na hora (dano ou cura com os botões de aplicar); **Lançar aprimorado** abre os aprimoramentos. Efeitos e condições: botões **Aplicar** e **Voltar** no cartão.
+- **Área no mapa:** magia de área pede o ponto (esfera/quadrado) ou a direção (cone/linha) antes de gastar o PM; quem fica dentro vira alvo e a animação acontece ali. Clique lança; clique direito/Esc cancela.
 - **Animações:** procedurais por elemento; vídeo próprio em `img/animacoes/magias/<id>.webm` e som em `audio/magias/<elemento>.ogg` (rode `npm run gerar:dados` depois de adicionar). Teste fora do Foundry: `/tests/navegador/vfx-magias.html`.
 - **Automação:** `npm run magias:automacao` refaz a proposta a partir do texto (mantém as validadas); relatório em `tools/relatorio_automacao.md`.
 - **CD da magia** = 10 + metade do nível + atributo-chave (escolha na aba; padrão: o atributo de PM da classe).
