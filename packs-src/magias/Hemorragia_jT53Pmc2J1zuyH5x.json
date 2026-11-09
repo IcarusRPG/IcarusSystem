@@ -3,7 +3,7 @@
   "name": "Hemorragia",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/hemorragia.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "zjRz1s2rdXuaPFZX",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "hemorragia"
+      "id": "hemorragia",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!jT53Pmc2J1zuyH5x"

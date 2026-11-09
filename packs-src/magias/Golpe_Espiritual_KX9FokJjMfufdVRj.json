@@ -3,7 +3,7 @@
   "name": "Golpe Espiritual",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/golpe-espiritual.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "golpe-espiritual"
+      "id": "golpe-espiritual",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!KX9FokJjMfufdVRj"

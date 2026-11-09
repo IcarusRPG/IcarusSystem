@@ -1,0 +1,40 @@
+{
+  "_id": "HbQtMpkbdm2mIiXM",
+  "name": "Enfeitiçar em Massa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/enfeiticar-em-massa.png",
+  "folder": "ZmD5QhJFF9hPy6Bn",
+  "sort": 0,
+  "system": {
+    "nivel": 4,
+    "custoPM": 10,
+    "escola": "Encantamento",
+    "execucao": "padrão",
+    "alcance": "médio",
+    "alvo": "até 6 criaturas",
+    "duracao": "cena",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Como Enfeitiçar Pessoa, mas afeta até 6 criaturas à sua escolha. Se uma delas for atacada por você ou por aliados seus, a magia termina para todas.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "a magia pode afetar monstros e espíritos."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "enfeiticar-em-massa",
+      "tradicao": "sangue"
+    }
+  },
+  "_key": "!items!HbQtMpkbdm2mIiXM"
+}

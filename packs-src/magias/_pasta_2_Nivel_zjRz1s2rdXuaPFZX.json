@@ -1,0 +1,15 @@
+{
+  "_id": "zjRz1s2rdXuaPFZX",
+  "name": "2º Nível",
+  "type": "Item",
+  "folder": "MRHnmfMOa2I2TwTJ",
+  "sorting": "a",
+  "sort": 2000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-sangue-2"
+    }
+  },
+  "_key": "!folders!zjRz1s2rdXuaPFZX"
+}

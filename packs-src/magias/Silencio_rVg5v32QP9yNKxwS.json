@@ -3,7 +3,7 @@
   "name": "Silêncio",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/silencio.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "silencio"
+      "id": "silencio",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!rVg5v32QP9yNKxwS"

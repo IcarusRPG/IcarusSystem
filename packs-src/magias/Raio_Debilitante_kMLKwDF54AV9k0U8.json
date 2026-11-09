@@ -3,7 +3,7 @@
   "name": "Raio Debilitante",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/raio-debilitante.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "raio-debilitante"
+      "id": "raio-debilitante",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!kMLKwDF54AV9k0U8"

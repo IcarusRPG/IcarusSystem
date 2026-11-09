@@ -3,7 +3,7 @@
   "name": "Fio de Alarme",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/fio-de-alarme.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "fio-de-alarme"
+      "id": "fio-de-alarme",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!DfDM6cihCMv9sF0Y"

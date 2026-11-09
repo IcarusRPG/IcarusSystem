@@ -3,7 +3,7 @@
   "name": "Revivificar",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/revivificar.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "revivificar"
+      "id": "revivificar",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!wsntojgIm6SaWiuS"

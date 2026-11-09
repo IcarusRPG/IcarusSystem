@@ -3,7 +3,7 @@
   "name": "Teia",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/teia.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "teia"
+      "id": "teia",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!IjQHYqFOGXX0hIh2"

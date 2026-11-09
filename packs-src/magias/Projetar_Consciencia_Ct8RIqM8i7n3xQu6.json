@@ -3,7 +3,7 @@
   "name": "Projetar Consciência",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/projetar-consciencia.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "Q4DGUrEYlwfKlqZn",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "projetar-consciencia"
+      "id": "projetar-consciencia",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!Ct8RIqM8i7n3xQu6"

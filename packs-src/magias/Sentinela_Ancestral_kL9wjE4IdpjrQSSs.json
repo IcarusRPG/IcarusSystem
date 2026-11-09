@@ -3,7 +3,7 @@
   "name": "Sentinela Ancestral",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sentinela-ancestral.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sentinela-ancestral"
+      "id": "sentinela-ancestral",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!kL9wjE4IdpjrQSSs"

@@ -3,7 +3,7 @@
   "name": "Rasgar o Véu",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/rasgar-o-veu.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "rasgar-o-veu"
+      "id": "rasgar-o-veu",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!ntu7ePLGkuJXLzG8"

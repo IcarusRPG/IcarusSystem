@@ -3,7 +3,7 @@
   "name": "Semiplano",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/semiplano.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "Q4DGUrEYlwfKlqZn",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "semiplano"
+      "id": "semiplano",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!wZkPu16mAxivXc3q"

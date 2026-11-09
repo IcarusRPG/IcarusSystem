@@ -564,9 +564,9 @@ export class FichaPersonagem extends ActorSheet {
     // Magias: busca e filtros (só escondem cartões) e Lançar (dono, mesmo com a ficha travada)
     ligarFiltrosDasMagias(this, html);
     if (this.actor.isOwner) {
-      html.on("click", "[data-action='magia-lancar']", ev => {
+      html.on("click", "[data-action='magia-lancar'], [data-action='magia-lancar-aprimorado']", ev => {
         const item = this.actor.items.get(ev.currentTarget.closest("[data-item-id]")?.dataset.itemId);
-        if (item) lancarMagia(this.actor, item);
+        if (item) lancarMagia(this.actor, item, { aprimorado: ev.currentTarget.dataset.action === "magia-lancar-aprimorado" });
       });
     }
     // Clicar no card do poder abre a ficha do item (fora dos botões)

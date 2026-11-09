@@ -3,7 +3,7 @@
   "name": "Restauração",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/restauracao.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "restauracao"
+      "id": "restauracao",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!1NWOobFNG0IhCROm"

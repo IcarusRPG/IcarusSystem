@@ -42,13 +42,21 @@ test("Duração: sustentada, concentração, cena, instantânea", () => {
   assert.equal(tipoDeDuracao("instantânea"), "instantanea");
 });
 
-test("Compêndio: 200 magias, 5 pastas, ids estáveis e texto igual ao JSON; build repetível", () => {
+test("Compêndio: árvore Divinas/Arcanas/Sangue → níveis, ids estáveis e texto igual ao JSON; build repetível", () => {
   const a = documentosDeMagias(dados, ler("magias_icones"), idEstavel);
   const b = documentosDeMagias(dados, ler("magias_icones"), idEstavel);
   assert.deepEqual(a, b);
-  assert.equal(a.itens.length, 200);
-  assert.equal(a.pastas.length, 5);
-  assert.equal(new Set(a.itens.map(i => i._id)).size, 200);
+  // Uma cópia por tradição (Divinas, Arcanas, Sangue), cada uma em 1º a 5º Nível
+  const copias = dados.magias.reduce((s, m) => s + m.tradicoes.length, 0);
+  assert.equal(a.itens.length, copias);
+  assert.equal(a.pastas.length, 3 + 15);
+  assert.deepEqual(a.pastas.filter(p => !p.folder).map(p => p.name), ["Divinas", "Arcanas", "Sangue"]);
+  assert.equal(new Set(a.itens.map(i => i._id)).size, copias);
+  assert.equal(new Set(a.itens.map(i => i.flags["icarus-rpg"].id)).size, 200);
+  const pastaDe = id => a.pastas.find(p => p._id === id);
+  const bolaDoc = a.itens.find(i => i.flags["icarus-rpg"].id === "bola-de-fogo");
+  assert.equal(pastaDe(bolaDoc.folder).name, "3º Nível");
+  assert.equal(pastaDe(pastaDe(bolaDoc.folder).folder).name, "Arcanas");
   const doc = a.itens.find(i => i.flags["icarus-rpg"].id === "bola-de-fogo");
   assert.equal(doc.img, "systems/icarus-rpg/img/magias/bola-de-fogo.png");
   assert.ok(doc.system.descricao.includes("6d6 de dano de fogo"));

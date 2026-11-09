@@ -3,7 +3,7 @@
   "name": "Forma de Vampiro",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/forma-de-vampiro.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "EKVq8fCPe6d4qpfc",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "forma-de-vampiro"
+      "id": "forma-de-vampiro",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!enAzRx35k6erXh49"

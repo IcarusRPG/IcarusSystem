@@ -10,7 +10,8 @@
     "gerar:dados": "node tools/gerar-dados.mjs",
     "build:tokens": "node tools/build-tokens.mjs",
     "build:icones-itens": "node tools/build-icones-itens.mjs",
-    "build:icones-magias": "node tools/build-icones-magias.mjs"
+    "build:icones-magias": "node tools/build-icones-magias.mjs",
+    "magias:automacao": "node tools/extrair-automacao-magias.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "1.1.0"

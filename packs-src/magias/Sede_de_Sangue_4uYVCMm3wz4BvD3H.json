@@ -3,7 +3,7 @@
   "name": "Sede de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sede-de-sangue.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "U9hafKNruwp72xCq",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sede-de-sangue"
+      "id": "sede-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!4uYVCMm3wz4BvD3H"

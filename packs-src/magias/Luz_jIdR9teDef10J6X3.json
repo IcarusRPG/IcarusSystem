@@ -3,7 +3,7 @@
   "name": "Luz",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/luz.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "luz"
+      "id": "luz",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!jIdR9teDef10J6X3"

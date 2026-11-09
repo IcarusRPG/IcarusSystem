@@ -3,7 +3,7 @@
   "name": "Oração",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/oracao.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "oracao"
+      "id": "oracao",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!KQLEY0GGRo8l4CWe"

@@ -3,7 +3,7 @@
   "name": "Maré Carmesim",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/mare-carmesim.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "EKVq8fCPe6d4qpfc",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "mare-carmesim"
+      "id": "mare-carmesim",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!NAuGB3jogWiWd06v"

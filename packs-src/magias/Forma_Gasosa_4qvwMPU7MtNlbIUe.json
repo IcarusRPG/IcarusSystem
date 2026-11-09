@@ -1,0 +1,40 @@
+{
+  "_id": "4qvwMPU7MtNlbIUe",
+  "name": "Forma Gasosa",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/forma-gasosa.png",
+  "folder": "U9hafKNruwp72xCq",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Transmutação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo vira uma nuvem de vapor: incorpóreo, voa com deslocamento 3 m, não carrega objetos além de roupas e é imune a dano físico, mas sofre dano dobrado de fogo, elétrico e magia de vento e não pode lançar magias. Entra por frestas e rachaduras.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "sangue"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "forma-gasosa",
+      "tradicao": "sangue"
+    }
+  },
+  "_key": "!items!4qvwMPU7MtNlbIUe"
+}

@@ -420,8 +420,8 @@
         "fogo": "Disparar",
         "dano": "Dano",
         "recarregar": "Recarregar",
-        "detalhado": "Ataque detalhado",
-        "detalhadoModo": "Detalhado ({modo})",
+        "detalhado": "Ataque aprimorado",
+        "detalhadoModo": "Aprimorado ({modo})",
         "detalhadoDica": "Abre a janela do ataque: vantagem, bônus extra, flanco, camuflagem, duas armas e poderes.",
         "rapidoDica": "Rola o ataque na hora (Shift: vantagem, Ctrl: desvantagem). Flanco detectado e poderes pré-marcados entram sozinhos."
       },
@@ -694,7 +694,7 @@
       "DicaPerda": "Perda de {n} PV (ignora resistências)",
       "Grupo": "Aplicar o resultado nos alvos marcados ou nos tokens selecionados",
       "AplicadoEm": "Aplicado em",
-      "Desfazer": "Desfazer a última aplicação (só o Mestre)",
+      "Desfazer": "Voltar: desfaz a última aplicação (o Mestre, qualquer uma; o jogador, a que ele aplicou)",
       "Desfeito": "Desfeito: {nome} voltou a {pv} PV.",
       "DesfazerSemAlvo": "{nome} não existe mais; só o registro foi desfeito.",
       "SemPV": "{nome}: sem PV para alterar.",
@@ -716,7 +716,8 @@
         "DobroDica": "Mostra também o botão que aplica o dobro do dano.",
         "Qualquer": "Mostrar botões em qualquer rolagem",
         "QualquerDica": "Rolagens manuais (/r) e mensagens antigas também ganham os botões, usando o total da rolagem como dano sem tipo."
-      }
+      },
+      "Voltar": "Voltar"
     },
     "Condicoes": {
       "Titulo": "Condições",
@@ -1589,7 +1590,39 @@
       "AprimoramentoDica": "Cada aprimoramento custa PM extra e pode ser usado uma vez por lançamento.",
       "SemPM": "PM insuficiente: a magia custa {custo} PM e você tem {pm}.",
       "ErroDevolvido": "Erro ao lançar a magia; os {custo} PM foram devolvidos.",
-      "SemConjurador": "Esta magia não está na ficha de um personagem."
+      "SemConjurador": "Esta magia não está na ficha de um personagem.",
+      "LancarAprimorado": "Lançar aprimorado",
+      "LancarDica": "Lança na hora, sem aprimoramentos: gasta o PM, manda o cartão e rola o dano ou a cura.",
+      "LancarAprimoradoDica": "Abre a janela para escolher os aprimoramentos (cada um custa PM extra).",
+      "ErroRolagem": "A magia foi lançada, mas a rolagem falhou. Veja o console (F12).",
+      "Efeitos": {
+        "AplicarCondicao": "Aplicar condição",
+        "AplicarEfeito": "Aplicar efeito",
+        "Grupo": "Aplicar o efeito da magia nos alvos marcados ou nos tokens selecionados",
+        "SoQuemFalha": "só em quem falhar no teste de {teste}",
+        "VoltarDica": "Voltar: desfaz a última aplicação deste cartão (o Mestre, qualquer uma; o jogador, a que ele aplicou)",
+        "NadaNovo": "Nada novo para aplicar (o alvo já tem esse efeito ou essa condição).",
+        "Chaves": {
+          "defesa": "Defesa",
+          "ataque": "ataque",
+          "dano": "dano",
+          "resistencia": "testes de resistência",
+          "pericia": "perícia",
+          "rd": "RD",
+          "reducao": "Redução",
+          "testes": "todos os testes"
+        }
+      },
+      "Config": {
+        "Animacoes": "Animações das magias",
+        "AnimacoesDica": "Efeito visual no mapa quando uma magia de dano é lançada (vídeo próprio em img/animacoes/magias/<id>.webm, se existir).",
+        "Intensidade": "Intensidade das animações das magias",
+        "Baixa": "Baixa",
+        "Media": "Média",
+        "Alta": "Alta",
+        "Som": "Som das magias",
+        "SomDica": "Toca audio/magias/<elemento>.ogg, se existir."
+      }
     }
   }
 }

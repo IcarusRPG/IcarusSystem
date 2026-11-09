@@ -3,7 +3,7 @@
   "name": "Chicote de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/chicote-de-sangue.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "mr9rbyuFben6yQcw",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "chicote-de-sangue"
+      "id": "chicote-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!vj9XQw7bVbsBBlJq"

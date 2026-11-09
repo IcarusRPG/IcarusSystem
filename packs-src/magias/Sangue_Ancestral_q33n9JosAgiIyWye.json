@@ -3,7 +3,7 @@
   "name": "Sangue Ancestral",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sangue-ancestral.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "EKVq8fCPe6d4qpfc",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sangue-ancestral"
+      "id": "sangue-ancestral",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!q33n9JosAgiIyWye"

@@ -3,7 +3,7 @@
   "name": "Vínculo de Dor",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/vinculo-de-dor.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "zjRz1s2rdXuaPFZX",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "vinculo-de-dor"
+      "id": "vinculo-de-dor",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!F8VEm1uC5OHnY2T5"

@@ -3,7 +3,7 @@
   "name": "Chuva de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/chuva-de-sangue.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "U9hafKNruwp72xCq",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "chuva-de-sangue"
+      "id": "chuva-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!3TGeJpKj2QDMgWn1"

@@ -1,0 +1,15 @@
+{
+  "_id": "FVbajyUQTrrKbqXw",
+  "name": "Arcanas",
+  "type": "Item",
+  "folder": null,
+  "sorting": "m",
+  "sort": 200000,
+  "color": "#2a1640",
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-arcana"
+    }
+  },
+  "_key": "!folders!FVbajyUQTrrKbqXw"
+}

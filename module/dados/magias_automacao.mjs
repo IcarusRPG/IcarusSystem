@@ -1,0 +1,4688 @@
+// GERADO por tools/gerar-dados.mjs a partir de tools/dados/magias_automacao.json — não edite à mão.
+export default {
+  "versao": 1,
+  "magias": [
+    {
+      "id": "misseis-magicos",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "1d4+1+1d4+1+1d4+1",
+              "tipoDano": "essencia"
+            }
+          ],
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d4+1",
+                  "tipoDano": "essencia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "mudancas": [
+            {
+              "chave": "dano",
+              "valor": 1,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "essencia",
+        "cor": "#b06cff"
+      },
+      "notas": [
+        "dano condicional ou por dardo: \"Cada dardo causa 1d4+1 de dano de essência\"",
+        "3 dardos de 1d4+1 somados num alvo; dividir entre alvos é à mão",
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "cone-de-chamas",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d6",
+              "tipoDano": "fogo"
+            }
+          ],
+          "area": {
+            "forma": "cone",
+            "tamanho": 4.5
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "fogo"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "cone",
+        "elemento": "fogo",
+        "cor": "#ff7a1a"
+      },
+      "notas": []
+    },
+    {
+      "id": "luz",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "resistência não reconhecida: \"— (Vontade anula, só no aprimoramento)\""
+      ]
+    },
+    {
+      "id": "detectar-magia",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "armadura-arcana",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 4,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sono",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "inconsciente"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "ilusao-menor",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "escudo-arcano",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 5,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "pulso-de-mana",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "impacto"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": []
+    },
+    {
+      "id": "fio-de-alarme",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "imagem-espelhada",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "teia",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "enredado"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"qualquer fogo que a toque a incendeia por inteiro de uma vez, destruindo-a em 1 rodada e causando 2d6 de dano de fogo a quem estiver nela\""
+      ]
+    },
+    {
+      "id": "nevoa",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "invisibilidade",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "flecha-acida",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "acido"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "acido"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "acido",
+        "cor": "#7ee04a"
+      },
+      "notas": []
+    },
+    {
+      "id": "passo-nebuloso",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "levitacao",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "resistência com ressalva: se involuntário"
+      ]
+    },
+    {
+      "id": "despedacar",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 3
+          },
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "impacto"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": []
+    },
+    {
+      "id": "ancora-de-mana",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "ler-pensamentos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "bola-de-fogo",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "fogo"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "fogo"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "fogo",
+        "cor": "#ff7a1a"
+      },
+      "notas": []
+    },
+    {
+      "id": "relampago",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "eletrico"
+            }
+          ],
+          "area": {
+            "forma": "linha",
+            "tamanho": 18
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "eletrico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "ofuscado"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "linha",
+        "elemento": "eletrico",
+        "cor": "#b9e4ff"
+      },
+      "notas": []
+    },
+    {
+      "id": "velocidade",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 2,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "pericia:reflexos",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ],
+          "condicoes": [
+            "fatigado"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "lentidao",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": -2,
+              "modo": "somar"
+            },
+            {
+              "chave": "pericia:reflexos",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ],
+          "condicoes": [
+            "lento"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "voo",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "dissipar-magia",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "imobilizar",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "condicoes": [
+            "paralisado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "clarividencia",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "carcere-de-espelhos",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "frustrado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "muralha-de-fogo",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "fogo"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "fogo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "em-chamas"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "fogo",
+        "cor": "#ff7a1a"
+      },
+      "notas": []
+    },
+    {
+      "id": "tempestade-de-gelo",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "impacto"
+            },
+            {
+              "formula": "4d6",
+              "tipoDano": "frio"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "frio"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "lento"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "confusao",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 4
+          },
+          "condicoes": [
+            "confuso"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "dominar-pessoa",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "pele-de-pedra",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "reducao:corte",
+              "valor": 5,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:perfuracao",
+              "valor": 5,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:impacto",
+              "valor": 5,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "porta-dimensional",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": []
+    },
+    {
+      "id": "videncia",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "tormenta-de-estilhacos",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "8d6",
+              "tipoDano": "corte"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 4.5
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "corte"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "sangrando"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "arcano",
+        "cor": "#d8b45a"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "desintegrar",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "14d6",
+              "tipoDano": "essencia"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "essencia"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "essencia",
+        "cor": "#b06cff"
+      },
+      "notas": [
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "cone-glacial",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "12d6",
+              "tipoDano": "frio"
+            }
+          ],
+          "area": {
+            "forma": "cone",
+            "tamanho": 12
+          },
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "frio"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "lento"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "cone",
+        "elemento": "frio",
+        "cor": "#7fd4ff"
+      },
+      "notas": []
+    },
+    {
+      "id": "teleporte",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "dominar-monstro",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "chuva-de-meteoros",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "impacto"
+            },
+            {
+              "formula": "6d6",
+              "tipoDano": "fogo"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": []
+    },
+    {
+      "id": "parar-o-tempo",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "colapso-gravitacional",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "10d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6
+          },
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "impacto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "caido"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "eclipse-arcano",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "curar-ferimentos",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "cura",
+          "formula": "2d8+2",
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "cura",
+                  "formulaExtra": "1d8+1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "contra mortos-vivos vira dano (aplicar à mão)"
+      ]
+    },
+    {
+      "id": "bencao",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 1,
+              "modo": "somar"
+            },
+            {
+              "chave": "resistencia",
+              "valor": 1,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "escudo-da-fe",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 4,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "chama-sagrada",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "3d6",
+              "tipoDano": "luz"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "luz"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": []
+    },
+    {
+      "id": "palavra-de-comando",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "protecao-contra-o-mal",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 2,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "resistencia",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "santuario",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "resistência com ressalva: do atacante"
+      ]
+    },
+    {
+      "id": "orientacao-divina",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "cipos-prensores",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "area": {
+            "forma": "quadrado",
+            "tamanho": 6
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "enredado"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "chuva",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": []
+    },
+    {
+      "id": "falar-com-animais",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "restauracao-menor",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "arma-espiritual",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"No momento em que é criada e em cada turno seu, como ação livre, ela atinge um alvo em alcance curto e causa 2d8 de dano de luz (acerta automaticamente)\"",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "silencio",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "surdo"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula",
+            "nota": "só criaturas"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "resistência com ressalva: só criaturas"
+      ]
+    },
+    {
+      "id": "arma-sagrada",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "1d6",
+              "tipoDano": "luz"
+            }
+          ],
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "aura",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": []
+    },
+    {
+      "id": "oracao",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "lanca-de-luz",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "5d6",
+              "tipoDano": "luz"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "luz"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "ofuscado"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": []
+    },
+    {
+      "id": "pele-de-casca",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "1d6",
+              "tipoDano": "dano"
+            }
+          ],
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 3,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "reducao:corte",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:perfuracao",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "aura",
+        "elemento": "arcano",
+        "cor": "#a78bfa"
+      },
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "remover-maldicao",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "espiritos-guardioes",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "3d8",
+              "tipoDano": "luz"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 4.5
+          },
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "metade"
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "condicoes": [
+            "lento"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "revivificar",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "fatigado"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "luz-do-dia",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "cura-em-massa",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "cura",
+          "formula": "3d8+3",
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "cura",
+                  "formulaExtra": "1d8+1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "protecao-contra-energia",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "resistencia",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "chamar-relampagos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Quando a magia é lançada, e depois como ação padrão em cada turno seu, um raio cai em um ponto à sua escolha e causa 4d6 de dano elétrico em esfera de 3 m de raio\"",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "banimento",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "atordoado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "guardiao-da-fe",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "luz"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "metade"
+          },
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": []
+    },
+    {
+      "id": "liberdade-de-movimento",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "agarrado"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "aura-de-pureza",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "mudancas": [
+            {
+              "chave": "resistencia",
+              "valor": 5,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:veneno",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "muralha-de-espinhos",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "perfuracao"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "sangrando"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#d8b45a"
+      },
+      "notas": []
+    },
+    {
+      "id": "martelo-do-julgamento",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "8d6",
+              "tipoDano": "luz"
+            },
+            {
+              "formula": "4d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "luz"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "atordoado"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": [
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "cura-completa",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "ressurreicao",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "debilitado"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "coluna-flamejante",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "fogo"
+            },
+            {
+              "formula": "6d6",
+              "tipoDano": "luz"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6,
+            "cilindro": true
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "fogo"
+                }
+              ],
+              "nota": "o jogador escolhe o tipo"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "pilar",
+        "elemento": "fogo",
+        "cor": "#ff7a1a"
+      },
+      "notas": []
+    },
+    {
+      "id": "julgamento-final",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "12d6",
+              "tipoDano": "luz"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "parcial"
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "vulneravel"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura",
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "santuario-consagrado",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "palavra-divina",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "atordoado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "toque-vampirico",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "3d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "trevas"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "aura",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": []
+    },
+    {
+      "id": "sangria",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "sangrando"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "lamina-rubra",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "arma",
+          "nota": "ataque com Luta; dano da arma conjurada"
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "escudo-carmesim",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "1d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 2,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "reducao:corte",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:perfuracao",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "faro-de-sangue",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "fome-carmesim",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "cura",
+          "formula": "1d6",
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "marca-de-sangue",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "garras-carmesins",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "1d8",
+              "tipoDano": "corte"
+            }
+          ],
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "sangrando"
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#d8b45a"
+      },
+      "notas": []
+    },
+    {
+      "id": "veu-rubro",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "enjoado"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"camuflagem leve, e quem respirar nela sofre 1d6 de dano de veneno no início do turno\""
+      ]
+    },
+    {
+      "id": "vinculo-de-dor",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "hemorragia",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "trevas"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": []
+    },
+    {
+      "id": "drenar-vigor",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "fatigado"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura",
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "sangue-vivo",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "cura",
+          "formula": "3d8",
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sede-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "defesa",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "maldicao-de-sangue",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "chuva-de-sangue",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "acido"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6
+          },
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "acido"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "sangrando"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "sangue",
+        "cor": "#7ee04a"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "banquete-rubro",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "corpo-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "reducao:corte",
+              "valor": 5,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:perfuracao",
+              "valor": 5,
+              "modo": "somar"
+            },
+            {
+              "chave": "reducao:impacto",
+              "valor": 5,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "tendoes-rubros",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "condicoes": [
+            "agarrado"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Quem falhar no teste fica Agarrado e Sangrando, e sofre 2d6 de dano de corte no início de cada turno dele enquanto estiver preso\"",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "marionete-de-sangue",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "passo-carmesim",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "lancas-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "perfuracao"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#d8b45a"
+      },
+      "notas": []
+    },
+    {
+      "id": "explosao-hemorragica",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "10d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          },
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": [
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "metamorfose-sanguinea",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 4,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "ataque",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "peste-carmesim",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "fraco"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "glifo-de-sangue",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "outra",
+            "texto": "1 dia"
+          },
+          "condicoes": [
+            "sangrando"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Quando uma criatura (que não seja você nem aliados que você tenha indicado) tocar o glifo, abrir o objeto marcado ou entrar na área, ele explode em uma esfera de 4,5 m de raio e causa 8d6 de dano de trevas\""
+      ]
+    },
+    {
+      "id": "nuvem-de-morcegos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Um enxame de morcegos de sangue cobre a área e causa 4d6 de dano de perfuração no início de cada turno seu a todas as criaturas nela, A visão fica limitada: camuflagem leve\"",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "mare-carmesim",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "12d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 9
+          },
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "trevas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "sangrando"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "exsanguinar",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "15d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          },
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": [
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "sangue-ancestral",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "exausto"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "pacto-sanguinario",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sentenca-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "outra",
+            "texto": "1 dia"
+          },
+          "mudancas": [
+            {
+              "chave": "testes",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#6b3fa0"
+      },
+      "notas": []
+    },
+    {
+      "id": "forma-de-vampiro",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "eclipse-carmesim",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 1,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": 1,
+              "modo": "somar"
+            }
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"No início de cada turno seu, inimigos na área sofrem 4d6 de dano de trevas e você recupera 10 PV\"",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "chicote-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "3d6",
+              "tipoDano": "corte"
+            }
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "corte"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#d8b45a"
+      },
+      "notas": []
+    },
+    {
+      "id": "imagem-de-sangue",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Quando a cópia sofre dano, ela explode e causa 2d6 de dano de trevas nas criaturas adjacentes (Reflexos reduz à metade)\""
+      ]
+    },
+    {
+      "id": "calice-de-vitalidade",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "servo-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d8+4",
+              "tipoDano": "corte"
+            }
+          ],
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "dano",
+              "valor": 4,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "sangue",
+        "cor": "#d8b45a"
+      },
+      "notas": []
+    },
+    {
+      "id": "olhar-espiritual",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "golpe-espiritual",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "3d6",
+              "tipoDano": "essencia"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "essencia"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "essencia",
+        "cor": "#b06cff"
+      },
+      "notas": []
+    },
+    {
+      "id": "passo-espectral",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Se terminar o turno dentro de um obstáculo sólido, é expelido para o espaço livre mais próximo e sofre 4d6 de dano de impacto\""
+      ]
+    },
+    {
+      "id": "veu-da-alma",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "resistencia",
+              "valor": 5,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "projecao-espiritual",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "condicoes": [
+            "inconsciente"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "lamento-espectral",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "essencia"
+            }
+          ],
+          "area": {
+            "forma": "cone",
+            "tamanho": 9
+          },
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "essencia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "abalado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "cone",
+        "elemento": "essencia",
+        "cor": "#b06cff"
+      },
+      "notas": []
+    },
+    {
+      "id": "forma-eterea",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Se a magia terminar com você dentro de um objeto sólido, é expelido para o espaço livre mais próximo e sofre 6d6 de dano de impacto\""
+      ]
+    },
+    {
+      "id": "rasgar-o-veu",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": -2,
+              "modo": "somar"
+            },
+            {
+              "chave": "ataque",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "troca-de-almas",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "hoste-ancestral",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "resistencia",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "rd",
+              "valor": 3,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Mortos-vivos e espíritos hostis na área sofrem 4d6 de dano de luz no início de cada turno seu\"",
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "falar-com-espiritos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "acalmar-espirito",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "abalado"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir",
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "escudo-dos-antepassados",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "exortar-espiritos",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "apavorado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "falar-com-os-mortos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "resistência com ressalva: a cada pergunta"
+      ]
+    },
+    {
+      "id": "selo-de-descanso",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "outra",
+            "texto": "1 dia"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": -2,
+              "modo": "somar"
+            },
+            {
+              "chave": "ataque",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sentinela-ancestral",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "exorcismo",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "atordoado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Se o alvo for um morto-vivo, espírito ou criatura profana, ele sofre 8d6 de dano de luz e, se falhar no teste, fica Atordoado por 1 rodada (se passar, sofre metade do dano)\"",
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "manto-sagrado",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d8",
+              "tipoDano": "luz"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 2,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "rd",
+              "valor": 3,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "luz",
+        "cor": "#ffd76a"
+      },
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "forma-selvagem",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d8",
+              "tipoDano": "corte"
+            }
+          ],
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "rd",
+              "valor": 5,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#d8b45a"
+      },
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "restauracao",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "mao-arcana",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "criar-alimento",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "disfarce-ilusorio",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "resistência com ressalva: para desmascarar",
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "ruido-fantasma",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "raio-debilitante",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "fraco"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "salto-arcano",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "arma-encantada",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 1,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": 1,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "resistencia-a-energia",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "tranca-arcana",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "localizar-objeto",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sentidos-agudos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "hipnotismo",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "condicoes": [
+            "fascinado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "enfeiticar-pessoa",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "enfeiticado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "acalmar-emocoes",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "escuridao",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "patas-de-aranha",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "espirito-mensageiro",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "linguas",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sentido-de-perigo",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "pericia:reflexos",
+              "valor": 5,
+              "modo": "somar"
+            }
+          ],
+          "condicoes": [
+            "desprevenido"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "chamado-selvagem",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "imagem-maior",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "terreno-ilusorio",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "espectro-ilusorio",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "concentracao"
+          },
+          "condicoes": [
+            "apavorado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)",
+        "duração concentracao"
+      ]
+    },
+    {
+      "id": "manto-de-sombras",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "reducao:luz",
+              "valor": 3,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "esqueleto-servil",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "rogar-maldicao",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": -3,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": -3,
+              "modo": "somar"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "forma-gasosa",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "algemas-espirituais",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "paralisado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "visao-da-verdade",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "enfeiticar-em-massa",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "assassino-fantasmagorico",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "concentracao"
+          },
+          "condicoes": [
+            "apavorado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"se falhar, sofre 6d6 de dano psíquico e fica Apavorado; se passar, sofre metade e a magia termina\"",
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)",
+        "duração concentracao"
+      ]
+    },
+    {
+      "id": "duplicata-ilusoria",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "muralha-de-ossos",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "4d6",
+              "tipoDano": "perfuracao"
+            }
+          ],
+          "aprimoramentos": []
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#d8b45a"
+      },
+      "notas": []
+    },
+    {
+      "id": "nuvem-de-podridao",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "enjoado"
+          ],
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Criaturas na área sofrem 6d6 de dano de trevas ao entrar e no início de cada turno; quem passar sofre metade e fica Enjoado\"",
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "aprisionamento",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "outra",
+            "texto": "1 dia"
+          },
+          "condicoes": [
+            "inconsciente",
+            "paralisado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "alterar-destino",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "projetar-consciencia",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "concentracao"
+          },
+          "condicoes": [
+            "indefeso"
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "duração concentracao"
+      ]
+    },
+    {
+      "id": "semiplano",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "tempestade-de-relampagos",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "12d6",
+              "tipoDano": "eletrico"
+            },
+            {
+              "formula": "1d6",
+              "tipoDano": "dano"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 12
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "2d6",
+                  "tipoDano": "eletrico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "rodadas",
+            "rodadas": 1
+          },
+          "condicoes": [
+            "atordoado"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "eletrico",
+        "cor": "#b9e4ff"
+      },
+      "notas": []
+    },
+    {
+      "id": "ira-dos-ceus",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "6d6",
+              "tipoDano": "eletrico"
+            },
+            {
+              "formula": "6d6",
+              "tipoDano": "impacto"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 12
+          },
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "eletrico"
+                },
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "impacto"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "eletrico",
+        "cor": "#b9e4ff"
+      },
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "prisao-de-ilusoes",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "concentracao"
+          },
+          "condicoes": [
+            "pasmo"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "duração concentracao"
+      ]
+    },
+    {
+      "id": "veu-da-divindade",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "convocar-espirito-da-natureza",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "3d6",
+              "tipoDano": "impacto"
+            },
+            {
+              "formula": "2d6",
+              "tipoDano": "eletrico"
+            },
+            {
+              "formula": "4d6",
+              "tipoDano": "eletrico"
+            }
+          ],
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "1d6",
+                  "tipoDano": "impacto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "cura",
+          "formula": "3d8+3",
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": 1,
+              "modo": "somar",
+              "grupoAcumulo": "defesa-magia"
+            },
+            {
+              "chave": "rd",
+              "valor": 3,
+              "modo": "somar"
+            }
+          ],
+          "condicoes": [
+            "enredado"
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#c9a26b"
+      },
+      "notas": []
+    },
+    {
+      "id": "horda-de-sombras",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "8d6",
+              "tipoDano": "psiquico"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 6
+          },
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "2d6",
+                  "tipoDano": "psiquico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "abalado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "espirito",
+        "cor": "#c7b8ff"
+      },
+      "notas": [
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "semblante-divino",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "abalado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "inversao-da-gravidade",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "concentracao"
+          },
+          "mudancas": [
+            {
+              "chave": "defesa",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ],
+          "condicoes": [
+            "caido"
+          ],
+          "resistencia": {
+            "atributo": "reflexos",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Quando a magia termina, elas caem e sofrem 6d6 de dano de impacto (a queda não anula Reflexos)\"",
+        "duração concentracao"
+      ]
+    },
+    {
+      "id": "onda-de-desespero",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "condicoes": [
+            "esmorecido"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "parcial"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "resistência parcial: o efeito no sucesso fica no texto (o Mestre aplica)"
+      ]
+    },
+    {
+      "id": "forma-de-colosso",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "2d6",
+              "tipoDano": "dano"
+            }
+          ],
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "rd",
+              "valor": 5,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "projetil",
+        "elemento": "arcano",
+        "cor": "#a78bfa"
+      },
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "onda-necrotica",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "12d6",
+              "tipoDano": "trevas"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 12
+          },
+          "resistencia": {
+            "atributo": "fortitude",
+            "efeito": "metade"
+          },
+          "aprimoramentos": [
+            {
+              "indice": 0,
+              "extras": [
+                {
+                  "tipo": "dano",
+                  "formulaExtra": "2d6",
+                  "tipoDano": "trevas"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "trevas",
+        "cor": "#6b3fa0"
+      },
+      "notas": []
+    },
+    {
+      "id": "moldar-pensamentos",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"** o alvo sente ferimentos que não existem; no início de cada turno dele, sofre 6d6 de dano psíquico (sem teste adicional)\"",
+        "duração concentracao"
+      ]
+    },
+    {
+      "id": "hino-de-coragem",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "dano",
+          "componentes": [
+            {
+              "formula": "1d6",
+              "tipoDano": "dano"
+            }
+          ],
+          "area": {
+            "forma": "esfera",
+            "tamanho": 9
+          },
+          "aprimoramentos": []
+        },
+        {
+          "tipo": "efeito",
+          "alvo": "pessoal",
+          "duracao": {
+            "tipo": "sustentada"
+          },
+          "mudancas": [
+            {
+              "chave": "resistencia",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": {
+        "preset": "explosao",
+        "elemento": "arcano",
+        "cor": "#a78bfa"
+      },
+      "notas": [
+        "duração sustentada"
+      ]
+    },
+    {
+      "id": "ancestral-convocado",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": [
+        "bônus/penalidade com condição (\"contra\", \"até o fim\", \"próximo teste\"): conferir"
+      ]
+    },
+    {
+      "id": "prisao-dimensional",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "sussurro-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": -2,
+              "modo": "somar"
+            }
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "oferenda-de-sangue",
+      "revisao": "auto",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "cena"
+          },
+          "mudancas": [
+            {
+              "chave": "ataque",
+              "valor": 2,
+              "modo": "somar"
+            },
+            {
+              "chave": "dano",
+              "valor": 2,
+              "modo": "somar"
+            }
+          ]
+        }
+      ],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "libertacao-das-almas",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "tribunal-das-almas",
+      "revisao": "manual",
+      "validada": false,
+      "acoes": [
+        {
+          "tipo": "efeito",
+          "alvo": "alvo",
+          "duracao": {
+            "tipo": "instantanea"
+          },
+          "condicoes": [
+            "abalado"
+          ],
+          "resistencia": {
+            "atributo": "vontade",
+            "efeito": "anula"
+          }
+        }
+      ],
+      "vfx": null,
+      "notas": [
+        "dano condicional ou por situação: \"Mortos-vivos, espíritos e criaturas profanas sofrem 14d6 de dano de luz; os demais sofrem 7d6 de dano de essência e ficam Abalados\"",
+        "dano condicional ou por situação: \"Mortos-vivos, espíritos e criaturas profanas sofrem 14d6 de dano de luz; os demais sofrem 7d6 de dano de essência e ficam Abalados\"",
+        "efeito com duração instantânea: conferir quanto tempo dura"
+      ]
+    },
+    {
+      "id": "arvore-da-vida",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "augurio",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    },
+    {
+      "id": "comunhao-com-a-natureza",
+      "revisao": "somente-texto",
+      "validada": false,
+      "acoes": [],
+      "vfx": null,
+      "notas": []
+    }
+  ]
+};

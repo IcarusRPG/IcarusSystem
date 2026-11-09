@@ -102,23 +102,40 @@ export function systemDaMagia(m) {
  * @param {(texto:string)=>string} idEstavel
  */
 export function documentosDeMagias(dados, manifesto, idEstavel) {
-  const pastas = NIVEIS_MAGIA.map(n => ({
-    _id: idEstavel(`pasta:magias:${n}`), name: `${n}º nível (${CUSTO_POR_NIVEL[n]} PM)`, type: "Item", folder: null,
-    sorting: "a", sort: n * 1000, color: null, flags: { [SISTEMA_ID]: { id: `magias-${n}` } }
-  }));
-  const itens = dados.magias.map(m => ({
-    _id: idEstavel(`magia:${m.id}`),
-    name: m.nome,
-    type: "magia",
-    img: iconeDaMagia(m.id, manifesto),
-    folder: idEstavel(`pasta:magias:${m.nivel}`),
-    sort: 0,
-    system: systemDaMagia(m),
-    effects: [],
-    flags: { [SISTEMA_ID]: { id: m.id } }
-  }));
+  // Árvore: Divinas / Arcanas / Sangue → 1º a 5º Nível. Magia de mais de uma tradição aparece em cada uma.
+  const pastas = [];
+  TRADICOES_COMPENDIO.forEach((t, i) => {
+    const mae = idEstavel(`pasta:magias:${t.id}`);
+    pastas.push({ _id: mae, name: t.nome, type: "Item", folder: null, sorting: "m", sort: (i + 1) * 100000, color: t.cor, flags: { [SISTEMA_ID]: { id: `magias-${t.id}` } } });
+    for (const n of NIVEIS_MAGIA) pastas.push({
+      _id: idEstavel(`pasta:magias:${t.id}:${n}`), name: `${n}º Nível`, type: "Item", folder: mae,
+      sorting: "a", sort: n * 1000, color: null, flags: { [SISTEMA_ID]: { id: `magias-${t.id}-${n}` } }
+    });
+  });
+  const itens = [];
+  for (const m of dados.magias) {
+    (m.tradicoes ?? []).filter(t => TRADICOES_COMPENDIO.some(x => x.id === t)).forEach((t, i) => itens.push({
+      // A primeira cópia mantém o id da versão 0.16.0
+      _id: idEstavel(i === 0 ? `magia:${m.id}` : `magia:${t}:${m.id}`),
+      name: m.nome,
+      type: "magia",
+      img: iconeDaMagia(m.id, manifesto),
+      folder: idEstavel(`pasta:magias:${t}:${m.nivel}`),
+      sort: 0,
+      system: systemDaMagia(m),
+      effects: [],
+      flags: { [SISTEMA_ID]: { id: m.id, tradicao: t } }
+    }));
+  }
   return { pastas, itens };
 }
+
+/** Pastas de tradição do compêndio (ordem da árvore). */
+export const TRADICOES_COMPENDIO = [
+  { id: "divina", nome: "Divinas", cor: "#5a4a22" },
+  { id: "arcana", nome: "Arcanas", cor: "#2a1640" },
+  { id: "sangue", nome: "Sangue", cor: "#4a0e14" }
+];
 
 /**
  * Lista da aba Magias: agrupa por nível, com filtro de texto, nível e escola.
@@ -132,4 +149,88 @@ export function gruposDeMagias(itens, { busca = "", nivel = "", escola = "" } = 
     nivel: n, custo: CUSTO_POR_NIVEL[n],
     magias: itens.filter(i => Number(i.system.nivel) === n && passa(i)).sort((a, b) => a.name.localeCompare(b.name, "pt-BR"))
   })).filter(g => g.magias.length);
+}
+
+/* ------------------------------ Automação (Fase 3/4) ------------------------------ */
+
+/**
+ * O que um lançamento faz, a partir do bloco de automação (tools/dados/magias_automacao.json) e dos
+ * aprimoramentos escolhidos: dano (partes por tipo, com o dano extra dos aprimoramentos somado à
+ * parte do mesmo tipo), cura, efeitos (bônus/penalidade/condição) e se cria arma.
+ * @returns {{ dano: {partes:{formula,tipo}[], resistencia, area}|null, cura: {formula}|null, efeitos: object[], arma: boolean, vfx: object|null }}
+ */
+export function planoDoLancamento(automacao, indices = []) {
+  const plano = { dano: null, cura: null, efeitos: [], arma: false, vfx: automacao?.vfx ?? null };
+  if (!automacao) return plano;
+  const escolhidos = new Set(indices);
+  const extrasDe = acao => (acao.aprimoramentos ?? []).filter(a => escolhidos.has(a.indice)).flatMap(a => a.extras ?? []);
+  for (const acao of automacao.acoes ?? []) {
+    if (acao.tipo === "dano") {
+      const partes = acao.componentes.map(c => ({ formula: c.formula, tipo: c.tipoDano || "dano" }));
+      for (const e of extrasDe(acao).filter(x => x.tipo === "dano")) {
+        const parte = partes.find(p => p.tipo === (e.tipoDano || "dano"));
+        if (parte) parte.formula = `${parte.formula}+${e.formulaExtra}`;
+        else partes.push({ formula: e.formulaExtra, tipo: e.tipoDano || "dano" });
+      }
+      plano.dano = { partes, resistencia: acao.resistencia ?? null, area: acao.area ?? null };
+    } else if (acao.tipo === "cura") {
+      const extras = extrasDe(acao).filter(x => x.tipo === "cura").map(x => x.formulaExtra);
+      plano.cura = { formula: [acao.formula, ...extras].join("+") };
+    } else if (acao.tipo === "efeito") {
+      plano.efeitos.push(acao);
+    } else if (acao.tipo === "arma") {
+      plano.arma = true;
+    }
+  }
+  return plano;
+}
+
+/** Perícias de teste de resistência (bônus "em testes de resistência"). */
+const PERICIAS_RESISTENCIA = ["fortitude", "reflexos", "vontade"];
+const MODO_SOMAR = 2; // CONST.ACTIVE_EFFECT_MODES.ADD
+
+/**
+ * Mudanças do bloco → changes do Efeito Ativo, só em campos que o sistema já tem.
+ * O que não tem campo (bônus de ataque, de dano, "todos os testes") volta em semCampo (fica no texto).
+ * @returns {{ changes:{key,mode,value}[], semCampo:object[], defesaMagia:number }}
+ */
+export function mudancasParaEfeito(mudancas = []) {
+  const changes = [];
+  const semCampo = [];
+  let defesaMagia = 0;
+  const somar = (key, value) => changes.push({ key, mode: MODO_SOMAR, value: String(value) });
+  for (const m of mudancas) {
+    const [chave, sub] = String(m.chave).split(":");
+    if (chave === "defesa") {
+      // Bônus de Defesa de magias: não acumulam (vale o maior); fica marcado no efeito
+      if (m.grupoAcumulo === "defesa-magia") defesaMagia = Math.max(defesaMagia, m.valor);
+      somar("system.defesa.outros", m.valor);
+    } else if (chave === "pericia" && sub) somar(`system.pericias.${sub}.outros`, m.valor);
+    else if (chave === "resistencia") for (const p of PERICIAS_RESISTENCIA) somar(`system.pericias.${p}.outros`, m.valor);
+    else if (chave === "rd") somar("system.resistencias.rdGeral", m.valor);
+    else if (chave === "reducao" && sub) somar(`system.resistencias.reducao.${sub}`, m.valor);
+    else semCampo.push(m);
+  }
+  return { changes, semCampo, defesaMagia };
+}
+
+/** Duração do Efeito Ativo a partir da duração do bloco (rodadas com combate; cena/sustentada pelo "fim da cena"). */
+export function duracaoDoEfeito(duracao = {}, combate = null) {
+  if (duracao.tipo === "rodadas") {
+    return { duration: { rounds: Math.max(1, Number(duracao.rodadas) || 1), ...(combate ? { combat: combate.id, startRound: combate.round, startTurn: combate.turn } : {}) }, flag: "rodadas" };
+  }
+  if (duracao.tipo === "instantanea") return { duration: { rounds: 1, ...(combate ? { combat: combate.id, startRound: combate.round, startTurn: combate.turn } : {}) }, flag: "rodadas" };
+  return { duration: {}, flag: ["cena", "sustentada", "concentracao"].includes(duracao.tipo) ? "cena" : "remover" };
+}
+
+/**
+ * Não acumular bônus de Defesa de magias: dado o novo bônus e os efeitos ativos de magia do ator
+ * (com o valor de cada um), diz quais ficam ligados. Vale o maior; os outros ficam desligados.
+ * @param {{id:string, valor:number, ligado:boolean}[]} atuais
+ * @returns {{ ligar: string[], desligar: string[], novoLigado: boolean }}
+ */
+export function acumuloDeDefesa(atuais, novoValor) {
+  const maior = Math.max(0, ...atuais.map(a => a.valor));
+  if (novoValor > maior) return { ligar: [], desligar: atuais.filter(a => a.ligado).map(a => a.id), novoLigado: true };
+  return { ligar: [], desligar: [], novoLigado: false };
 }

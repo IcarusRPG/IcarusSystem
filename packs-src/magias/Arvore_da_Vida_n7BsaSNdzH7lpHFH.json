@@ -3,7 +3,7 @@
   "name": "Árvore da Vida",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/arvore-da-vida.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "qA9CmIdPlX2ookbx",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "arvore-da-vida"
+      "id": "arvore-da-vida",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!n7BsaSNdzH7lpHFH"

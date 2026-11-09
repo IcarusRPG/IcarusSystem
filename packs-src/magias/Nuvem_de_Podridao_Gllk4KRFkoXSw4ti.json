@@ -3,7 +3,7 @@
   "name": "Nuvem de Podridão",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/nuvem-de-podridao.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "nuvem-de-podridao"
+      "id": "nuvem-de-podridao",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!Gllk4KRFkoXSw4ti"

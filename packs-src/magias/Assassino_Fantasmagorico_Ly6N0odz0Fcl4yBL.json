@@ -3,7 +3,7 @@
   "name": "Assassino Fantasmagórico",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/assassino-fantasmagorico.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "assassino-fantasmagorico"
+      "id": "assassino-fantasmagorico",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!Ly6N0odz0Fcl4yBL"

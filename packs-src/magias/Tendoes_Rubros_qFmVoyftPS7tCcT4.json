@@ -3,7 +3,7 @@
   "name": "Tendões Rubros",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/tendoes-rubros.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "U9hafKNruwp72xCq",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "tendoes-rubros"
+      "id": "tendoes-rubros",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!qFmVoyftPS7tCcT4"

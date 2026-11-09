@@ -3,7 +3,7 @@
   "name": "Acalmar Espírito",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/acalmar-espirito.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "acalmar-espirito"
+      "id": "acalmar-espirito",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!9oMRktxAtjEscPPn"

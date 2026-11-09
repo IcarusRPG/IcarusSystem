@@ -3,7 +3,7 @@
   "name": "Chamado Selvagem",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/chamado-selvagem.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "chamado-selvagem"
+      "id": "chamado-selvagem",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!qM37y5GSut7KrvbK"

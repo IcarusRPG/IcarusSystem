@@ -3,7 +3,7 @@
   "name": "Luz do Dia",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/luz-do-dia.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "AttWRSvLnF3bhlQG",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "luz-do-dia"
+      "id": "luz-do-dia",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!Fm3bM9FKtU17UlHX"

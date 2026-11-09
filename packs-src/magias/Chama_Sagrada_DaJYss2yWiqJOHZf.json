@@ -3,7 +3,7 @@
   "name": "Chama Sagrada",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/chama-sagrada.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "chama-sagrada"
+      "id": "chama-sagrada",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!DaJYss2yWiqJOHZf"

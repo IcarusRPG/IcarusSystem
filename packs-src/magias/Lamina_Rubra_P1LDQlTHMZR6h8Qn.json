@@ -3,7 +3,7 @@
   "name": "Lâmina Rubra",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/lamina-rubra.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "mr9rbyuFben6yQcw",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "lamina-rubra"
+      "id": "lamina-rubra",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!P1LDQlTHMZR6h8Qn"

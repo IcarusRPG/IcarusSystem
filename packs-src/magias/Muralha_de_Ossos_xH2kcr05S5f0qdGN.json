@@ -3,7 +3,7 @@
   "name": "Muralha de Ossos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/muralha-de-ossos.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "muralha-de-ossos"
+      "id": "muralha-de-ossos",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!xH2kcr05S5f0qdGN"

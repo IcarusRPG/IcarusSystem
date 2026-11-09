@@ -3,7 +3,7 @@
   "name": "Ruído Fantasma",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/ruido-fantasma.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "ruido-fantasma"
+      "id": "ruido-fantasma",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!Nfu7QbHTq8d4XHue"

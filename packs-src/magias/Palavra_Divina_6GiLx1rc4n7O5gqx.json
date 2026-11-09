@@ -3,7 +3,7 @@
   "name": "Palavra Divina",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/palavra-divina.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "qA9CmIdPlX2ookbx",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "palavra-divina"
+      "id": "palavra-divina",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!6GiLx1rc4n7O5gqx"

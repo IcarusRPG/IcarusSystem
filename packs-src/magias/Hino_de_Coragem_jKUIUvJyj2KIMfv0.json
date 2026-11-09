@@ -3,7 +3,7 @@
   "name": "Hino de Coragem",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/hino-de-coragem.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "hino-de-coragem"
+      "id": "hino-de-coragem",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!jKUIUvJyj2KIMfv0"

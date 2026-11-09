@@ -3,7 +3,7 @@
   "name": "Tempestade de Relâmpagos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/tempestade-de-relampagos.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "Q4DGUrEYlwfKlqZn",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "tempestade-de-relampagos"
+      "id": "tempestade-de-relampagos",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!Q7J3IYM3Olx2pDSL"

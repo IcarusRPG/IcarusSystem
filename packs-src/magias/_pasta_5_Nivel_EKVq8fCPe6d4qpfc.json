@@ -1,0 +1,15 @@
+{
+  "_id": "EKVq8fCPe6d4qpfc",
+  "name": "5º Nível",
+  "type": "Item",
+  "folder": "MRHnmfMOa2I2TwTJ",
+  "sorting": "a",
+  "sort": 5000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-sangue-5"
+    }
+  },
+  "_key": "!folders!EKVq8fCPe6d4qpfc"
+}

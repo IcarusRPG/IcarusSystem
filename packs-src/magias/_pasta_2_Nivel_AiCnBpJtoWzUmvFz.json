@@ -1,0 +1,15 @@
+{
+  "_id": "AiCnBpJtoWzUmvFz",
+  "name": "2º Nível",
+  "type": "Item",
+  "folder": "7dgr66CMnsh789dN",
+  "sorting": "a",
+  "sort": 2000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-divina-2"
+    }
+  },
+  "_key": "!folders!AiCnBpJtoWzUmvFz"
+}

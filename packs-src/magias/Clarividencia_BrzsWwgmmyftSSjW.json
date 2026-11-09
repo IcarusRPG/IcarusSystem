@@ -3,7 +3,7 @@
   "name": "Clarividência",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/clarividencia.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "clarividencia"
+      "id": "clarividencia",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!BrzsWwgmmyftSSjW"

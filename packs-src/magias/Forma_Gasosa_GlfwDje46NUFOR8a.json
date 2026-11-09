@@ -3,7 +3,7 @@
   "name": "Forma Gasosa",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/forma-gasosa.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "forma-gasosa"
+      "id": "forma-gasosa",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!GlfwDje46NUFOR8a"

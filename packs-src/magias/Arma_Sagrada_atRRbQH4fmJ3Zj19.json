@@ -3,7 +3,7 @@
   "name": "Arma Sagrada",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/arma-sagrada.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "arma-sagrada"
+      "id": "arma-sagrada",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!atRRbQH4fmJ3Zj19"

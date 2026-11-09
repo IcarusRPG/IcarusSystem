@@ -125,9 +125,9 @@ export class FichaItem extends ItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
     // Magia de um personagem: Lançar direto da ficha do item
-    html.on("click", "[data-action='magia-lancar']", async () => {
+    html.on("click", "[data-action='magia-lancar'], [data-action='magia-lancar-aprimorado']", async ev => {
       const { lancarMagia } = await import("../magias.mjs");
-      lancarMagia(this.item.parent, this.item);
+      lancarMagia(this.item.parent, this.item, { aprimorado: ev.currentTarget.dataset.action === "magia-lancar-aprimorado" });
     });
     if (!this.isEditable) return;
     // Chips de propriedades e tipos de dano (listas): liga e desliga

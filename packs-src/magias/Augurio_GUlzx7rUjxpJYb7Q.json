@@ -3,7 +3,7 @@
   "name": "Augúrio",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/augurio.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "augurio"
+      "id": "augurio",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!GUlzx7rUjxpJYb7Q"

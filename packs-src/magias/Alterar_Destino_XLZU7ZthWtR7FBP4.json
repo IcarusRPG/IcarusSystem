@@ -1,0 +1,40 @@
+{
+  "_id": "XLZU7ZthWtR7FBP4",
+  "name": "Alterar Destino",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/alterar-destino.png",
+  "folder": "qA9CmIdPlX2ookbx",
+  "sort": 0,
+  "system": {
+    "nivel": 5,
+    "custoPM": 15,
+    "escola": "Adivinhação",
+    "execucao": "reação",
+    "alcance": "pessoal",
+    "alvo": "você",
+    "duracao": "instantânea",
+    "resistencia": "",
+    "descricao": "<p>Quando você ou um aliado a até 9 m falhar em um teste, você enxerga o futuro e pode refazer o teste, ficando com o melhor resultado. Pode ser usada só uma vez por cena.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 5,
+        "texto": "você pode usá-la em qualquer criatura a até 30 m."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "alterar-destino",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!XLZU7ZthWtR7FBP4"
+}

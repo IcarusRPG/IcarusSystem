@@ -3,7 +3,7 @@
   "name": "Projeção Espiritual",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/projecao-espiritual.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "projecao-espiritual"
+      "id": "projecao-espiritual",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!WS1A2SRa8Rz7Px4y"

@@ -3,7 +3,7 @@
   "name": "Bola de Fogo",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/bola-de-fogo.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "bola-de-fogo"
+      "id": "bola-de-fogo",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!3cHlp6whsVPfQM8K"

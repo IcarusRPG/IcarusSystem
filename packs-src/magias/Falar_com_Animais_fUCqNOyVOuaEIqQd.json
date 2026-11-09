@@ -3,7 +3,7 @@
   "name": "Falar com Animais",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/falar-com-animais.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "ZwfyhJXsP3ec802U",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "falar-com-animais"
+      "id": "falar-com-animais",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!fUCqNOyVOuaEIqQd"

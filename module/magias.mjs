@@ -9,7 +9,9 @@
  * Regras puras: module/magias-dados.mjs.
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA } from "./magias-dados.mjs";
+import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento } from "./magias-dados.mjs";
+import { rolarDanoAvulso, rolarCura } from "./dano.mjs";
+import AUTOMACAO from "./dados/magias_automacao.mjs";
 
 const F = SISTEMA_ID;
 const T = `systems/${SISTEMA_ID}/templates`;
@@ -91,9 +93,20 @@ export class DialogoMagia extends HandlebarsApplicationMixin(ApplicationV2) {
 /** Alvos marcados (T) para o cartão. */
 const alvosMarcados = () => [...(game.user.targets ?? [])].map(t => ({ uuid: t.document?.uuid, nome: t.name, img: t.document?.texture?.src }));
 
+/** Bloco de automação da magia (tools/dados/magias_automacao.json), pelo id do compêndio. */
+export function automacaoDaMagia(item) {
+  const id = item.flags?.[F]?.id;
+  return id ? AUTOMACAO.magias.find(m => m.id === id) ?? null : null;
+}
+
+/** Token do conjurador na cena exibida (origem da animação). */
+const tokenDoConjurador = actor => (actor.getActiveTokens?.(false, true) ?? []).find(t => t.parent?.id === canvas?.scene?.id) ?? null;
+
 /**
- * Lança: confere PM, debita, cria o cartão; se o cartão falhar, devolve o PM.
- * @returns {Promise<ChatMessage|null>}
+ * Lança: confere PM, debita, manda o cartão e, conforme a automação da magia, rola o dano (com os
+ * botões Aplicar dano / Metade / Curar / Perda de PV / Voltar) e a cura; efeitos e condições ficam
+ * no cartão (Aplicar / Voltar). Se algo falhar, devolve o PM.
+ * @returns {Promise<ChatMessage|null>}  o cartão da magia
  */
 export async function executarLancamento(actor, item, indices = []) {
   const s = item.system;
@@ -105,17 +118,37 @@ export async function executarLancamento(actor, item, indices = []) {
     return null;
   }
   await actor.update({ "system.pm.value": antes - custo.total });
+  let cartao = null;
   try {
-    return await cartaoDaMagia(actor, item, custo);
+    const plano = planoDoLancamento(automacaoDaMagia(item), custo.indices);
+    cartao = await cartaoDaMagia(actor, item, custo, plano);
+    await rolagensDaMagia(actor, item, plano, cartao);
+    return cartao;
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);
-    await actor.update({ "system.pm.value": actor.system.pm.value + custo.total });
-    ui.notifications.error(fmt("ICARUS.Magias.ErroDevolvido", { custo: custo.total }));
-    return null;
+    if (!cartao) {
+      await actor.update({ "system.pm.value": actor.system.pm.value + custo.total });
+      ui.notifications.error(fmt("ICARUS.Magias.ErroDevolvido", { custo: custo.total }));
+    } else ui.notifications.error(loc("ICARUS.Magias.ErroRolagem"));
+    return cartao;
   }
 }
 
-async function cartaoDaMagia(actor, item, custo) {
+/** Dano e cura da magia, com a marca da animação (tocada em todos os clientes). */
+async function rolagensDaMagia(actor, item, plano, cartao) {
+  const token = tokenDoConjurador(actor);
+  const alvos = [...(game.user.targets ?? [])].map(t => t.document?.uuid).filter(Boolean);
+  const marca = { magia: { id: item.flags?.[F]?.id ?? item.id, cartaoId: cartao?.id ?? null, cd: actor.system.magia?.cd ?? null, resistencia: plano.dano?.resistencia ?? null } };
+  const vfx = plano.vfx ? { magiaVfx: { ...plano.vfx, id: item.flags?.[F]?.id ?? null, origem: token?.uuid ?? null, alvos, area: plano.dano?.area ?? null } } : {};
+  if (plano.dano) {
+    await rolarDanoAvulso({ partes: plano.dano.partes, titulo: item.name, img: item.img, actor, flags: { ...marca, ...vfx } });
+  }
+  if (plano.cura) {
+    await rolarCura({ formula: plano.cura.formula, titulo: item.name, img: item.img, actor, flags: { ...marca, ...(plano.dano ? {} : vfx) } });
+  }
+}
+
+async function cartaoDaMagia(actor, item, custo, plano = { efeitos: [] }) {
   const s = item.system;
   const cd = actor.system.magia?.cd ?? null;
   const alvos = alvosMarcados();
@@ -125,25 +158,30 @@ async function cartaoDaMagia(actor, item, custo) {
     duracao: s.duracao, resistencia: s.resistencia, cd,
     descricao: await TextEditor.enrichHTML(s.descricao, { async: true }),
     aprimoramentos: custo.indices.map(i => s.aprimoramentos[i]),
-    alvos
+    alvos, arma: plano.arma
   });
   const dados = {
     speaker: ChatMessage.getSpeaker({ actor }),
     content,
     flags: { [F]: { magia: {
-      id: item.flags?.[F]?.id ?? item.id, itemUuid: item.uuid, actorUuid: actor.uuid, nome: item.name, nivel: s.nivel,
-      cd, custo: custo.total, aprimoramentos: custo.indices, alvos: alvos.map(a => ({ uuid: a.uuid, nome: a.nome }))
-    } } }
+      id: item.flags?.[F]?.id ?? item.id, itemUuid: item.uuid, actorUuid: actor.uuid, nome: item.name, img: item.img, nivel: s.nivel,
+      cd, custo: custo.total, aprimoramentos: custo.indices, alvos: alvos.map(a => ({ uuid: a.uuid, nome: a.nome })),
+      // Efeitos (bônus, penalidade, condição): botões Aplicar / Voltar no cartão (module/magias-efeitos.mjs)
+      efeitos: plano.efeitos
+    }, efeitosAplicados: [] } }
   };
   ChatMessage.applyRollMode(dados, game.settings.get("core", "rollMode"));
   return ChatMessage.create(dados);
 }
 
 /**
- * Botão Lançar (ficha, item, macro): abre o diálogo.
+ * Lançar (ficha, item, macro): como o ataque, lança na hora, sem aprimoramentos.
+ * Lançar aprimorado: abre o diálogo com os aprimoramentos e o custo total.
  * @param {Actor|string} alvo  o ator, ou o uuid do item (macro)
+ * @param {Item|null} item
+ * @param {{ aprimorado?: boolean }} [opcoes]
  */
-export async function lancarMagia(alvo, item = null) {
+export async function lancarMagia(alvo, item = null, { aprimorado = false } = {}) {
   let actor = alvo;
   if (typeof alvo === "string") {
     item = await fromUuid(alvo);
@@ -151,6 +189,7 @@ export async function lancarMagia(alvo, item = null) {
   }
   if (!actor || item?.type !== "magia") return ui.notifications.warn(loc("ICARUS.Magias.SemConjurador"));
   if (!actor.isOwner) return ui.notifications.warn(fmt("ICARUS.Dano.SemPermissao", { nome: actor.name }));
+  if (!aprimorado) return executarLancamento(actor, item, []);
   return new DialogoMagia({ actor, item, aoConfirmar: indices => executarLancamento(actor, item, indices) }).render(true);
 }
 
@@ -167,7 +206,7 @@ export function contextoDasMagias(actor) {
     magias: g.magias.map(i => ({
       id: i.id, nome: i.name, img: i.img, custo: i.system.custoPM, escola: i.system.escola, nivel: i.system.nivel,
       meta: metaDaMagia(i.system), resistencia: i.system.resistencia, descricao: i.system.descricao,
-      aprimoramentos: i.system.aprimoramentos, busca: i.name.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+      aprimoramentos: i.system.aprimoramentos, temAprimoramentos: i.system.aprimoramentos.length > 0, busca: i.name.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
     }))
   }));
   return {

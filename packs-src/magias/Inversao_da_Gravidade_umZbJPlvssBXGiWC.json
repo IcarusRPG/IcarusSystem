@@ -3,7 +3,7 @@
   "name": "Inversão da Gravidade",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/inversao-da-gravidade.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "C10Sls1lg5NeIGDY",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "inversao-da-gravidade"
+      "id": "inversao-da-gravidade",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!umZbJPlvssBXGiWC"

@@ -3,7 +3,7 @@
   "name": "Martelo do Julgamento",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/martelo-do-julgamento.png",
-  "folder": "5rjo7naertU2eqpk",
+  "folder": "LTX5ZIDWEie3iCBv",
   "sort": 0,
   "system": {
     "nivel": 4,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "martelo-do-julgamento"
+      "id": "martelo-do-julgamento",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!ACxUaAmSbvO85skr"

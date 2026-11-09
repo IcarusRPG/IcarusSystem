@@ -1,0 +1,40 @@
+{
+  "_id": "r8pEyhpl2SES0lkx",
+  "name": "Línguas",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/linguas.png",
+  "folder": "AttWRSvLnF3bhlQG",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Adivinhação",
+    "execucao": "padrão",
+    "alcance": "toque",
+    "alvo": "1 criatura",
+    "duracao": "cena",
+    "resistencia": "",
+    "descricao": "<p>O alvo entende qualquer idioma falado ou escrito e fala com qualquer criatura que tenha idioma. Não compreende códigos ou significado oculto.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "+1 alvo."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "linguas",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!r8pEyhpl2SES0lkx"
+}

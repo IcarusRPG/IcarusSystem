@@ -1377,3 +1377,9 @@ body.game {
 .icarus-rolagem .magia-desc summary { cursor: pointer; color: var(--ic-ciano-titulo); font-size: 12px; }
 .icarus-rolagem .magia-desc p { margin: 4px 0; }
 .icarus-rolagem .magia-aprimoramentos { font-size: 13px; color: var(--ic-texto); }
+
+/* Magias: botões Aplicar condição / efeito no cartão */
+.icarus-aplicar .ap-efeito { --ap-cor: #6b3fa0; --ap-icone: #d8c6ff; flex-direction: column; line-height: 1.2; padding: 4px 8px; }
+.icarus-aplicar .ap-condicao { --ap-cor: #8a5a12; --ap-icone: #ffcf7a; }
+.icarus-aplicar .ap-efeito small { font-weight: 400; font-size: 10px; opacity: .85; }
+.icarus-aplicar .ap-desfazer span { margin-left: 2px; }

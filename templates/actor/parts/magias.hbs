@@ -42,7 +42,8 @@
             {{#if aprimoramentos.length}}<ul class="magia-apr">{{#each aprimoramentos}}<li><b>+{{custo}} PM</b> {{texto}}</li>{{/each}}</ul>{{/if}}
           </details>
           <div class="card-acoes">
-            {{#if @root.owner}}<button type="button" class="btn peq primario" data-action="magia-lancar"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Magias.Lancar"}}</button>{{/if}}
+            {{#if @root.owner}}<button type="button" class="btn peq primario" data-action="magia-lancar" title="{{localize 'ICARUS.Magias.LancarDica'}}"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> {{localize "ICARUS.Magias.Lancar"}}</button>
+            {{#if temAprimoramentos}}<button type="button" class="btn peq" data-action="magia-lancar-aprimorado" title="{{localize 'ICARUS.Magias.LancarAprimoradoDica'}}"><i class="fa-solid fa-sliders" aria-hidden="true"></i> {{localize "ICARUS.Magias.LancarAprimorado"}}</button>{{/if}}{{/if}}
             {{#if @root.editable}}
             <button type="button" class="btn icone" data-action="item-editar" aria-label="{{localize 'ICARUS.Acoes.Editar'}} {{nome}}"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
             <button type="button" class="btn icone" data-action="item-excluir" aria-label="{{localize 'ICARUS.Acoes.Excluir'}} {{nome}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>

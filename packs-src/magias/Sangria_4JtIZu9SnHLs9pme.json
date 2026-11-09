@@ -3,7 +3,7 @@
   "name": "Sangria",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sangria.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "mr9rbyuFben6yQcw",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sangria"
+      "id": "sangria",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!4JtIZu9SnHLs9pme"

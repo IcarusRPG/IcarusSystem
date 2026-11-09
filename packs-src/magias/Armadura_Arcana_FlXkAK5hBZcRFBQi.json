@@ -3,7 +3,7 @@
   "name": "Armadura Arcana",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/armadura-arcana.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "armadura-arcana"
+      "id": "armadura-arcana",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!FlXkAK5hBZcRFBQi"

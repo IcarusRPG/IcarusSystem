@@ -3,7 +3,7 @@
   "name": "Pulso de Mana",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/pulso-de-mana.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "eKkzrWuUSDijAmXe",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -35,7 +35,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "pulso-de-mana"
+      "id": "pulso-de-mana",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!6lbznfK8ThzdAZta"

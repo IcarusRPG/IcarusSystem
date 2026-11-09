@@ -1,0 +1,40 @@
+{
+  "_id": "OKMzWTrSN1osfGm6",
+  "name": "Terreno Ilusório",
+  "type": "magia",
+  "img": "systems/icarus-rpg/img/magias/terreno-ilusorio.png",
+  "folder": "AttWRSvLnF3bhlQG",
+  "sort": 0,
+  "system": {
+    "nivel": 3,
+    "custoPM": 6,
+    "escola": "Ilusão",
+    "execucao": "completa",
+    "alcance": "longo",
+    "alvo": "área de até 100 m",
+    "duracao": "1 dia",
+    "resistencia": "Vontade anula",
+    "descricao": "<p>Você disfarça um trecho de terreno: um campo vira pântano, uma trilha desaparece sob mato, um desfiladeiro parece plano. Estruturas pequenas podem sumir ou aparecer. Criaturas que interagem fisicamente com o terreno falso e passam em Vontade enxergam a verdade.</p>",
+    "aprimoramentos": [
+      {
+        "custo": 3,
+        "texto": "a duração passa a permanente até ser dissipada."
+      }
+    ],
+    "tradicoes": [
+      "arcana",
+      "divina"
+    ],
+    "afinidade": "natureza",
+    "original": false,
+    "concentracao": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "terreno-ilusorio",
+      "tradicao": "divina"
+    }
+  },
+  "_key": "!items!OKMzWTrSN1osfGm6"
+}

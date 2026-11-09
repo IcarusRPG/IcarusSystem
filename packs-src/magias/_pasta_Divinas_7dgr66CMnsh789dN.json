@@ -1,0 +1,15 @@
+{
+  "_id": "7dgr66CMnsh789dN",
+  "name": "Divinas",
+  "type": "Item",
+  "folder": null,
+  "sorting": "m",
+  "sort": 100000,
+  "color": "#5a4a22",
+  "flags": {
+    "icarus-rpg": {
+      "id": "magias-divina"
+    }
+  },
+  "_key": "!folders!7dgr66CMnsh789dN"
+}

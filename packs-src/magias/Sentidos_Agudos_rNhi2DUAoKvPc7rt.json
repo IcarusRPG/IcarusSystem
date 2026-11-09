@@ -3,7 +3,7 @@
   "name": "Sentidos Agudos",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sentidos-agudos.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "BkzfDNcc0j3mt1gy",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -32,7 +32,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sentidos-agudos"
+      "id": "sentidos-agudos",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!rNhi2DUAoKvPc7rt"

@@ -3,7 +3,7 @@
   "name": "Marca de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/marca-de-sangue.png",
-  "folder": "HFgbEcFt4D1pasjt",
+  "folder": "mr9rbyuFben6yQcw",
   "sort": 0,
   "system": {
     "nivel": 1,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "marca-de-sangue"
+      "id": "marca-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!yYwBTiincteKX2Dk"

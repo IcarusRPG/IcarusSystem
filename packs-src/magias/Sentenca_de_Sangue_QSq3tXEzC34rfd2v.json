@@ -3,7 +3,7 @@
   "name": "Sentença de Sangue",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/sentenca-de-sangue.png",
-  "folder": "1Jru8Gh06k5pTahW",
+  "folder": "EKVq8fCPe6d4qpfc",
   "sort": 0,
   "system": {
     "nivel": 5,
@@ -26,7 +26,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "sentenca-de-sangue"
+      "id": "sentenca-de-sangue",
+      "tradicao": "sangue"
     }
   },
   "_key": "!items!QSq3tXEzC34rfd2v"

@@ -3,7 +3,7 @@
   "name": "Cipós Prensores",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/cipos-prensores.png",
-  "folder": "DonGVlH2jlJtpC2i",
+  "folder": "AiCnBpJtoWzUmvFz",
   "sort": 0,
   "system": {
     "nivel": 2,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "cipos-prensores"
+      "id": "cipos-prensores",
+      "tradicao": "divina"
     }
   },
   "_key": "!items!uWVK3NMHvGW3Qae3"

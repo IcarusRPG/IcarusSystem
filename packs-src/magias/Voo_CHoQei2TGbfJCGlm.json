@@ -3,7 +3,7 @@
   "name": "Voo",
   "type": "magia",
   "img": "systems/icarus-rpg/img/magias/voo.png",
-  "folder": "HPZtBsrJiegn77h6",
+  "folder": "neaHnWznquqmXN8p",
   "sort": 0,
   "system": {
     "nivel": 3,
@@ -31,7 +31,8 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "voo"
+      "id": "voo",
+      "tradicao": "arcana"
     }
   },
   "_key": "!items!CHoQei2TGbfJCGlm"
