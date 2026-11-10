@@ -20,6 +20,14 @@
   </fieldset>
   {{/if}}
 
+  {{#if pacto}}
+  <fieldset class="ataque-secao">
+    <legend>{{localize "ICARUS.Magias.Pacto"}}</legend>
+    <label class="linha">{{localize "ICARUS.Magias.PactoPM"}} <input type="number" name="pacto" value="0" min="0" max="{{maxPacto}}" step="1"></label>
+    <small class="ataque-dica" data-pacto-info></small>
+  </fieldset>
+  {{/if}}
+
   <div class="magia-linha magia-total"><span>{{localize "ICARUS.Magias.CustoTotal"}}</span><b><span data-custo-total>{{custoTotal}}</span> PM</b></div>
   <div class="magia-linha"><span>{{localize "ICARUS.Magias.PMAtual"}}</span><b>{{pmAtual}} / {{pmMax}}</b></div>
   <p class="magia-motivo" data-motivo{{#if pode}} hidden{{/if}}>{{motivo}}</p>

@@ -221,6 +221,7 @@
       "Tipos": {
         "armadura": "Armadura",
         "escudo": "Escudo",
+        "foco": "Foco arcano",
         "consumivel": "Consumível",
         "profissao": "Item de profissão",
         "item-comum": "Item comum",
@@ -1629,6 +1630,16 @@
         "Instrucoes": "{nome}: posicione a área no mapa — clique para lançar; clique direito ou Esc cancela. Shift solta da grade; Ctrl + roda gira.",
         "Opcao": "Posicionar a área das magias no mapa",
         "OpcaoDica": "Ao lançar uma magia de área, posicione o modelo no mapa; os tokens dentro dela viram os alvos e a animação acontece ali."
+      },
+      "Pacto": "Pacto de Sangue",
+      "PactoPM": "PM pagos com sangue (2 PV cada)",
+      "PactoPago": "com sangue:",
+      "PactoInfo": "Paga {pm} PM e perde {pv} PV (perda de PV, sem RD). Máximo: {max} PM.",
+      "Conhecidas": {
+        "Tradicao": "Esta magia não é da sua lista ({tradicao}).",
+        "Nivel": "Magia de {nivel}º nível: você só lança até o {max}º nível.",
+        "Limite": "Você já conhece o máximo de magias ({limite}). Troque uma ao subir de nível ou no descanso (Grimório Vivo).",
+        "Mestre": "Aviso para o Mestre: {motivo} (adicionada mesmo assim)."
       }
     },
     "Arcanista": {
@@ -1638,7 +1649,27 @@
         "mago": "Mago (3 + INT por nível; magias Arcanas)",
         "feiticeiro": "Feiticeiro (4 + CAR por nível; magias Arcanas)",
         "sangue": "Mago de Sangue (3 + INT por nível; magias de Sangue)"
-      }
+      },
+      "SemFoco": "{nome} é Mago e precisa empunhar um foco arcano (cetro, livro, orbe, varinha ou bordão) para lançar.",
+      "Foco": "Foco arcano",
+      "FocoNenhum": "nenhum em mãos",
+      "FocoLiberado": "liberado pelo Mestre",
+      "LiberarFoco": "Liberar sem foco (Mestre)",
+      "BloquearFoco": "Voltar a exigir o foco",
+      "Conhecidas": "Magias conhecidas",
+      "ConhecidasInfo": "{n} de {limite}",
+      "FocoDestruido": "O foco {item} de {nome} foi destruído. Só volta a lançar ao empunhar outro.",
+      "ManaTexto": "Mana Transbordante: {nome} recupera 2 PM no início do turno.",
+      "ManaBotao": "Recuperar 2 PM",
+      "Sopro": "Sopro do Dragão",
+      "SoproInfo": "{dados} de {elemento} · cone de 6 m · 4 PM",
+      "Soprar": "Soprar",
+      "Elemento": "Elemento do dragão",
+      "SoproTexto": "Cone de 6 m: cada criatura faz Reflexos (CD {cd}); falha sofre {dados}, sucesso metade. O elemento fica fixo depois da primeira escolha.",
+      "SoproChat": "{nome} usa o Sopro do Dragão ({pm} PM). Reflexos CD {cd}: quem passar sofre metade (botão Metade)."
+    },
+    "Objetos": {
+      "Destruido": "{item} de {nome} foi destruído (0 PV). Não se conserta: é preciso fabricar outro."
     }
   }
 }

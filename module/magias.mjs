@@ -9,7 +9,9 @@
  * Regras puras: module/magias-dados.mjs.
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao } from "./magias-dados.mjs";
+import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao, ajustesDoArcanista, maximoDoPacto } from "./magias-dados.mjs";
+import { temHabilidadeNosItens, linhagemDasEscolhas } from "./classes-dados.mjs";
+import { focoEmpunhado, linhagemPrecisaDeFoco } from "./objetos-dados.mjs";
 import { areaNoMapa } from "./magias-area.mjs";
 import { rolarDanoAvulso, rolarCura } from "./dano.mjs";
 import AUTOMACAO from "./dados/magias_automacao.mjs";
@@ -47,19 +49,28 @@ export class DialogoMagia extends HandlebarsApplicationMixin(ApplicationV2) {
   async _prepareContext() {
     const { actor, item } = this.dados;
     const s = item.system;
+    const arc = arcanistaDoAtor(actor);
     return {
       img: item.img, nome: item.name, nivel: s.nivel, escola: s.escola, meta: metaDaMagia(s),
-      custoBase: s.custoPM, pmAtual: actor.system.pm.value, pmMax: actor.system.pm.max, cd: actor.system.magia?.cd,
+      custoBase: s.custoPM, pmAtual: actor.system.pm.value, pmMax: actor.system.pm.max,
+      cd: (actor.system.magia?.cd ?? 0) + (arc ? ajustesDoArcanista(s, arc).cd : 0) || null,
       aprimoramentos: s.aprimoramentos.map((a, i) => ({ indice: i, custo: a.custo, texto: a.texto })),
-      ...this.estado([])
+      // Pacto de Sangue (Mago de Sangue): pagar parte do custo com PV (2 PV por PM)
+      pacto: !!arc?.pacto, pvAtual: actor.system.pv?.value,
+      ...this.estado([], 0)
     };
   }
 
-  /** Custo total e se dá para lançar com os aprimoramentos marcados. */
-  estado(indices) {
-    const c = custoDoLancamento(this.dados.item.system, indices);
-    const p = podeLancar(this.dados.actor.system.pm.value, c.total);
-    return { custoTotal: c.total, pode: p.pode, motivo: p.pode ? "" : fmt("ICARUS.Magias.SemPM", { custo: c.total, pm: this.dados.actor.system.pm.value }) };
+  /** Custo total, PM e PV a pagar e se dá para lançar com os aprimoramentos e o Pacto marcados. */
+  estado(indices, pacto = 0) {
+    const { actor, item } = this.dados;
+    const c = custoFinal(actor, item, indices);
+    const maxPacto = arcanistaDoAtor(actor)?.pacto ? maximoDoPacto(c.total, actor.system.pv?.value ?? 0) : 0;
+    const comSangue = Math.min(Math.max(0, Math.trunc(pacto) || 0), maxPacto);
+    const pm = c.total - comSangue;
+    const p = podeLancar(actor.system.pm.value, pm);
+    return { custoTotal: c.total, maxPacto, comSangue, pvPacto: comSangue * 2, pmAPagar: pm, pode: p.pode,
+      motivo: p.pode ? "" : fmt("ICARUS.Magias.SemPM", { custo: pm, pm: actor.system.pm.value }) };
   }
 
   _onRender(contexto, opcoes) {
@@ -67,21 +78,28 @@ export class DialogoMagia extends HandlebarsApplicationMixin(ApplicationV2) {
     const form = this.element;
     const atualizar = () => {
       const indices = [...form.querySelectorAll("input[name='aprimoramento']:checked")].map(i => Number(i.value));
-      const e = this.estado(indices);
+      const campoPacto = form.querySelector("input[name='pacto']");
+      const e = this.estado(indices, Number(campoPacto?.value) || 0);
       form.querySelector("[data-custo-total]").textContent = e.custoTotal;
+      if (campoPacto) {
+        campoPacto.max = e.maxPacto;
+        if (Number(campoPacto.value) > e.maxPacto) campoPacto.value = e.maxPacto;
+        form.querySelector("[data-pacto-info]").textContent = fmt("ICARUS.Magias.PactoInfo", { pm: e.pmAPagar, pv: e.pvPacto, max: e.maxPacto });
+      }
       const botao = form.querySelector("button[type='submit']");
       botao.disabled = !e.pode;
       const motivo = form.querySelector("[data-motivo]");
       motivo.textContent = e.motivo;
       motivo.hidden = e.pode;
     };
+    form.querySelectorAll("input[name='aprimoramento'], input[name='pacto']").forEach(i => i.addEventListener("input", atualizar));
     form.querySelectorAll("input[name='aprimoramento']").forEach(i => i.addEventListener("change", atualizar));
     atualizar();
   }
 
   static async _aoEnviar(event, form) {
     const indices = [...form.querySelectorAll("input[name='aprimoramento']:checked")].map(i => Number(i.value));
-    await this.dados.aoConfirmar(indices);
+    await this.dados.aoConfirmar(indices, { pacto: Number(form.querySelector("input[name='pacto']")?.value) || 0 });
   }
 
   static _aoCancelar() {
@@ -109,41 +127,92 @@ const tokenDoConjurador = actor => (actor.getActiveTokens?.(false, true) ?? []).
  * no cartão (Aplicar / Voltar). Se algo falhar, devolve o PM.
  * @returns {Promise<ChatMessage|null>}  o cartão da magia
  */
-export async function executarLancamento(actor, item, indices = []) {
+export async function executarLancamento(actor, item, indices = [], { pacto = 0 } = {}) {
   const s = item.system;
-  const custo = custoDoLancamento(s, indices);
+  // Mago sem foco arcano em mãos não lança (o Mestre pode liberar na aba Classe)
+  const semFoco = bloqueioDeFoco(actor);
+  if (semFoco) {
+    ui.notifications.warn(fmt(semFoco, { nome: actor.name }));
+    return null;
+  }
+  const arc = arcanistaDoAtor(actor);
+  const custo = custoFinal(actor, item, indices);
+  const comSangue = arc?.pacto ? Math.min(Math.max(0, Math.trunc(pacto) || 0), maximoDoPacto(custo.total, actor.system.pv?.value ?? 0)) : 0;
+  const pmAPagar = custo.total - comSangue;
   const antes = actor.system.pm.value;
-  const ok = podeLancar(antes, custo.total);
+  const ok = podeLancar(antes, pmAPagar);
   if (!ok.pode) {
-    ui.notifications.warn(fmt("ICARUS.Magias.SemPM", { custo: custo.total, pm: antes }));
+    ui.notifications.warn(fmt("ICARUS.Magias.SemPM", { custo: pmAPagar, pm: antes }));
     return null;
   }
   const plano = planoDoLancamento(automacaoDaMagia(item), custo.indices);
+  // Canalização Arcana: soma o atributo-chave ao dano total (uma vez, não por dado)
+  if (arc?.canalizacao && plano.dano?.partes?.length) {
+    const atr = Math.trunc(Number(actor.system.atributos?.[actor.system.magia?.atributoEfetivo]?.total) || 0);
+    if (atr > 0) plano.dano.partes[0] = { ...plano.dano.partes[0], formula: `${plano.dano.partes[0].formula}+${atr}` };
+  }
   // Magia de área: posicionar no mapa antes de gastar o PM (cancelar = não lança)
   const area = await areaNoMapa({ actor, item, tokenConjurador: tokenDoConjurador(actor), cor: plano.vfx?.cor ?? null,
     instantanea: tipoDeDuracao(s.duracao) === "instantanea" });
   if (area === null) return null;
-  await actor.update({ "system.pm.value": antes - custo.total });
+  // Pacto de Sangue: 2 PV por PM, perda de PV (sem RD)
+  const pvAntes = actor.system.pv?.value ?? 0;
+  await actor.update({ "system.pm.value": antes - pmAPagar, ...(comSangue ? { "system.pv.value": pvAntes - comSangue * 2 } : {}) });
   let cartao = null;
   try {
-    cartao = await cartaoDaMagia(actor, item, custo, plano);
-    await rolagensDaMagia(actor, item, plano, cartao, area ?? null);
+    cartao = await cartaoDaMagia(actor, item, { ...custo, comSangue, pmAPagar }, plano);
+    await rolagensDaMagia(actor, item, plano, cartao, area ?? null, custo.ajusteCd);
     return cartao;
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);
     if (!cartao) {
-      await actor.update({ "system.pm.value": actor.system.pm.value + custo.total });
-      ui.notifications.error(fmt("ICARUS.Magias.ErroDevolvido", { custo: custo.total }));
+      await actor.update({ "system.pm.value": actor.system.pm.value + pmAPagar, ...(comSangue ? { "system.pv.value": actor.system.pv.value + comSangue * 2 } : {}) });
+      ui.notifications.error(fmt("ICARUS.Magias.ErroDevolvido", { custo: pmAPagar }));
     } else ui.notifications.error(loc("ICARUS.Magias.ErroRolagem"));
     return cartao;
   }
 }
 
+/* ------------------------------ Arcanista ------------------------------ */
+
+const temDoArcanista = (itens, id) => temHabilidadeNosItens([...(itens ?? [])], "arcanista", id);
+
+/** Situação do Arcanista para lançar (null fora do Arcanista). */
+export function arcanistaDoAtor(actor) {
+  if (actor?.system?.identidade?.classe !== "arcanista") return null;
+  const itens = [...(actor.items ?? [])];
+  const escolas = itens.filter(i => ["arcanista__escola-predileta", "arcanista__segunda-escola"].includes(i.flags?.[F]?.id))
+    .map(i => i.flags[F].escola).filter(Boolean);
+  return {
+    linhagem: linhagemDasEscolhas(actor.getFlag?.(F, "escolhasClasse")),
+    escolas,
+    maestria: temDoArcanista(itens, "maestria-de-escola"),
+    pacto: temDoArcanista(itens, "pacto-de-sangue"),
+    canalizacao: temDoArcanista(itens, "canalizacao-arcana")
+  };
+}
+
+/** Custo do lançamento com os ajustes do Arcanista (Maestria −1 PM, mínimo 1) e o ajuste de CD. */
+export function custoFinal(actor, item, indices) {
+  const c = custoDoLancamento(item.system, indices);
+  const arc = arcanistaDoAtor(actor);
+  const aj = arc ? ajustesDoArcanista(item.system, arc) : { cd: 0, desconto: 0 };
+  return { ...c, total: aj.desconto ? Math.max(1, c.total - aj.desconto) : c.total, ajusteCd: aj.cd };
+}
+
+/** Motivo (chave) para o Mago não lançar: sem foco em mãos e sem liberação do Mestre. */
+export function bloqueioDeFoco(actor) {
+  const arc = arcanistaDoAtor(actor);
+  if (!arc || !linhagemPrecisaDeFoco(arc.linhagem) || actor.getFlag?.(F, "focoLiberado")) return null;
+  return focoEmpunhado(actor.items ?? []) ? null : "ICARUS.Arcanista.SemFoco";
+}
+
 /** Dano e cura da magia, com a marca da animação (tocada em todos os clientes). */
-async function rolagensDaMagia(actor, item, plano, cartao, areaPosicionada = null) {
+async function rolagensDaMagia(actor, item, plano, cartao, areaPosicionada = null, ajusteCd = 0) {
   const token = tokenDoConjurador(actor);
   const alvos = [...(game.user.targets ?? [])].map(t => t.document?.uuid).filter(Boolean);
-  const marca = { magia: { id: item.flags?.[F]?.id ?? item.id, cartaoId: cartao?.id ?? null, cd: actor.system.magia?.cd ?? null, resistencia: plano.dano?.resistencia ?? null } };
+  const cdBase = actor.system.magia?.cd ?? null;
+  const marca = { magia: { id: item.flags?.[F]?.id ?? item.id, cartaoId: cartao?.id ?? null, cd: cdBase === null ? null : cdBase + ajusteCd, resistencia: plano.dano?.resistencia ?? null } };
   const vfx = plano.vfx ? { magiaVfx: { ...plano.vfx, id: item.flags?.[F]?.id ?? null, origem: token?.uuid ?? null, alvos, area: areaPosicionada ?? plano.dano?.area ?? null } } : {};
   if (plano.dano) {
     await rolarDanoAvulso({ partes: plano.dano.partes, titulo: item.name, img: item.img, actor, flags: { ...marca, ...vfx } });
@@ -155,11 +224,11 @@ async function rolagensDaMagia(actor, item, plano, cartao, areaPosicionada = nul
 
 async function cartaoDaMagia(actor, item, custo, plano = { efeitos: [] }) {
   const s = item.system;
-  const cd = actor.system.magia?.cd ?? null;
+  const cd = actor.system.magia?.cd === undefined || actor.system.magia?.cd === null ? null : actor.system.magia.cd + (custo.ajusteCd ?? 0);
   const alvos = alvosMarcados();
   const content = await renderTemplate(`${T}/chat/magia.hbs`, {
     img: item.img, nome: item.name, nivel: s.nivel, escola: s.escola,
-    custo: custo.total, custoBase: custo.base, execucao: s.execucao, alcance: s.alcance, alvo: s.alvo,
+    custo: custo.total, custoBase: custo.base, comSangue: custo.comSangue ?? 0, pvSangue: (custo.comSangue ?? 0) * 2, execucao: s.execucao, alcance: s.alcance, alvo: s.alvo,
     duracao: s.duracao, resistencia: s.resistencia, cd,
     descricao: await TextEditor.enrichHTML(s.descricao, { async: true }),
     aprimoramentos: custo.indices.map(i => s.aprimoramentos[i]),
@@ -195,7 +264,7 @@ export async function lancarMagia(alvo, item = null, { aprimorado = false } = {}
   if (!actor || item?.type !== "magia") return ui.notifications.warn(loc("ICARUS.Magias.SemConjurador"));
   if (!actor.isOwner) return ui.notifications.warn(fmt("ICARUS.Dano.SemPermissao", { nome: actor.name }));
   if (!aprimorado) return executarLancamento(actor, item, []);
-  return new DialogoMagia({ actor, item, aoConfirmar: indices => executarLancamento(actor, item, indices) }).render(true);
+  return new DialogoMagia({ actor, item, aoConfirmar: (indices, opcoes) => executarLancamento(actor, item, indices, opcoes) }).render(true);
 }
 
 /* ------------------------------ Aba da ficha ------------------------------ */
