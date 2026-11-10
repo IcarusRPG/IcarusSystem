@@ -1,0 +1,38 @@
+{
+  "_id": "uk5wC85Qsri5NEuX",
+  "name": "Conjuração Divina",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "rb6ZvmvPX7n8gGjN",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você lança magias da lista <strong>Divina</strong>, usando Sabedoria como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º, nível 4 no 13º e nível 5 no 17º.<ul class=\"subs-classe\"><li><strong>Magias conhecidas.</strong> Você conhece 3 magias no 1º nível e aprende <strong>mais 1 a cada nível</strong>. Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra.</li><li><strong>Armadura.</strong> Você pode lançar magias usando qualquer armadura e escudo em que tenha proficiência.</li><li><strong>Símbolo Sagrado.</strong> O símbolo sagrado (R$ 5, 0,5 espaço) é o seu item de fé. Você não precisa dele para lançar magias, mas vários poderes o exigem.</li></ul>",
+    "classe": "clerigo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__conjuracao-divina",
+      "classe": "clerigo",
+      "habilidade": "conjuracao-divina",
+      "inferido": false
+    }
+  },
+  "_key": "!items!uk5wC85Qsri5NEuX"
+}

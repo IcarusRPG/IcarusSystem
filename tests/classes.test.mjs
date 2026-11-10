@@ -8,11 +8,11 @@ import { CLASSES, classePorId, iconeDaClasse, idDaClassePorNome } from "../modul
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("10 classes, 103 habilidades e 386 poderes no JSON (contagens por classe do prompt)", () => {
-  assert.deepEqual(CLASSES.map(c => c.id), ["guerreiro", "samurai", "barbaro", "ladino", "patrulheiro", "monge", "pistoleiro", "arcanista", "nobre", "bardo"]);
-  assert.deepEqual(CLASSES.map(c => [c.habilidades.length, c.poderes.length]), [[6, 36], [5, 51], [6, 31], [7, 36], [5, 29], [10, 31], [5, 31], [21, 53], [8, 38], [30, 50]]);
-  assert.equal(CLASSES.reduce((s, c) => s + c.habilidades.length, 0), 103);
-  assert.equal(CLASSES.reduce((s, c) => s + c.poderes.length, 0), 386);
+test("11 classes, 108 habilidades e 414 poderes no JSON (contagens por classe do prompt)", () => {
+  assert.deepEqual(CLASSES.map(c => c.id), ["guerreiro", "samurai", "barbaro", "ladino", "patrulheiro", "monge", "pistoleiro", "arcanista", "nobre", "bardo", "clerigo"]);
+  assert.deepEqual(CLASSES.map(c => [c.habilidades.length, c.poderes.length]), [[6, 36], [5, 51], [6, 31], [7, 36], [5, 29], [10, 31], [5, 31], [21, 53], [8, 38], [30, 50], [5, 28]]);
+  assert.equal(CLASSES.reduce((s, c) => s + c.habilidades.length, 0), 108);
+  assert.equal(CLASSES.reduce((s, c) => s + c.poderes.length, 0), 414);
 });
 
 test("Ícones das classes existem no disco (Bárbaro com acento)", () => {
@@ -26,24 +26,24 @@ test("Ícones das classes existem no disco (Bárbaro com acento)", () => {
   assert.equal(classePorId("monge").pm.atributoSoNoPrimeiroNivel, true);
 });
 
-test("Compêndios de classes: 10 classes, 103 habilidades e 386 poderes; pastas por classe > grupo; idempotente", async () => {
+test("Compêndios de classes: 11 classes, 108 habilidades e 414 poderes; pastas por classe > grupo; idempotente", async () => {
   const { documentosDeClasses } = await import("../module/dados-compendios.mjs");
   const ler = n => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${n}.json`), "utf8"));
   const d = { classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes") };
   const docs = documentosDeClasses(d);
-  assert.equal(docs.classes.itens.length, 10);
-  assert.equal(docs["habilidades-classe"].itens.length, 103);
-  assert.equal(docs["poderes-classe"].itens.length, 386);
+  assert.equal(docs.classes.itens.length, 11);
+  assert.equal(docs["habilidades-classe"].itens.length, 108);
+  assert.equal(docs["poderes-classe"].itens.length, 414);
   const pastas = new Set(docs["poderes-classe"].pastas.map(p => p._id));
   for (const p of docs["poderes-classe"].itens) assert.ok(pastas.has(p.folder), `${p.name} sem pasta (${p.system.grupo})`);
   const ids = docs["poderes-classe"].itens.map(p => p._id);
   assert.equal(new Set(ids).size, ids.length, "ids repetidos");
-  assert.equal(new Set(docs["habilidades-classe"].itens.map(p => p._id)).size, 103);
+  assert.equal(new Set(docs["habilidades-classe"].itens.map(p => p._id)).size, 108);
   assert.deepEqual(documentosDeClasses(d), docs);
   // Poderes comuns em cada classe, com ids diferentes
   const comuns = docs["poderes-classe"].itens.filter(p => p.name === "Aumento de Atributo");
-  assert.equal(comuns.length, 10);
-  assert.equal(new Set(comuns.map(p => p._id)).size, 10);
+  assert.equal(comuns.length, 11);
+  assert.equal(new Set(comuns.map(p => p._id)).size, 11);
   // Ícone da classe em todos
   const monge = docs.classes.itens.find(c => c.system.classeId === "monge");
   assert.ok(docs["poderes-classe"].itens.filter(p => p.system.classe === "monge").every(p => p.img === monge.img));
@@ -290,7 +290,7 @@ test("Recursos de classe: frequência pelo texto (uma vez por cena/rodada/turno/
 });
 
 test("16. Telas de escolha: tipos e opções do JSON; caminhos batem com as subs; Treino Extra treina por item", async () => {
-  const tipos = new Set(["caminho", "atributo", "pericias", "tipo-dano", "terreno", "arma-exotica", "escola", "escolas", "magias"]);
+  const tipos = new Set(["caminho", "atributo", "pericias", "tipo-dano", "terreno", "arma-exotica", "escola", "escolas", "magias", "divindade"]);
   const comEscolha = CLASSES.flatMap(c => [...c.habilidades, ...c.poderes].filter(p => p.escolha).map(p => ({ c, p })));
   for (const { c, p } of comEscolha) {
     assert.ok(tipos.has(p.escolha.tipo), `${c.id}/${p.id}: tipo ${p.escolha.tipo}`);

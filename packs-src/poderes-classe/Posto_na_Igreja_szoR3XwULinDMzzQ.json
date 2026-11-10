@@ -1,0 +1,38 @@
+{
+  "_id": "szoR3XwULinDMzzQ",
+  "name": "Posto na Igreja",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você tem uma posição formal numa igreja reconhecida pelos fiéis da sua divindade. Os efeitos exatos variam com a igreja e ficam a cargo do Mestre. Como regra geral, você recebe +5 em Diplomacia ou Intimidação ao lidar com devotos da sua divindade e paga <strong>metade do preço</strong> de itens alquímicos, poções e serviços em templos dela.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__posto-na-igreja",
+      "classe": "clerigo",
+      "poder": "posto-na-igreja",
+      "inferido": false
+    }
+  },
+  "_key": "!items!szoR3XwULinDMzzQ"
+}

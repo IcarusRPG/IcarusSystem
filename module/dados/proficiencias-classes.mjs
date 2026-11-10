@@ -108,5 +108,15 @@ export default {
     ],
     "escudo": false,
     "tunicas": false
+  },
+  "clerigo": {
+    "armas": [
+      "simples"
+    ],
+    "armaduras": [
+      "pesada"
+    ],
+    "escudo": true,
+    "tunicas": false
   }
 };

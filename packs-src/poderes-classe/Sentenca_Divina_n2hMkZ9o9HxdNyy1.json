@@ -1,0 +1,38 @@
+{
+  "_id": "n2hMkZ9o9HxdNyy1",
+  "name": "Sentença Divina",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e escolhe uma criatura em alcance curto. Até o fim da cena, as suas magias e habilidades de clérigo contra ela têm <strong>+2 na CD</strong>, e você causa <strong>+1d6</strong> de dano de Essência nos seus ataques contra ela. Só uma Sentença pode estar ativa por vez.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__sentenca-divina",
+      "classe": "clerigo",
+      "poder": "sentenca-divina",
+      "inferido": true
+    }
+  },
+  "_key": "!items!n2hMkZ9o9HxdNyy1"
+}

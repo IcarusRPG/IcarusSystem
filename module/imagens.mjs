@@ -24,6 +24,18 @@ const ausentes = new Set();
 /** URL da imagem, ou o dado azul se o arquivo não foi encontrado no servidor. */
 export const imagemOuPadrao = chave => (ausentes.has(chave) ? ICONE_PADRAO : imagemDoSistema(chave));
 
+/** Ícones dos focos arcanos que o manifesto lista mas o servidor não tem (aviso no console). */
+export async function verificarIconesDosFocos() {
+  const { default: FOCOS } = await import("./dados/focos_icones.mjs");
+  const pasta = `systems/${SISTEMA_ID}/img/Icones/itens/equipamentos/focos arcanos`;
+  const faltando = (await Promise.all(FOCOS.filter(m => m.arquivo).map(async m => {
+    const ok = await fetch(encodeURI(`${pasta}/${m.arquivo}`), { method: "HEAD" }).then(r => r.ok).catch(() => false);
+    return ok ? null : `${m.nome} (${m.arquivo})`;
+  }))).filter(Boolean);
+  if (faltando.length) console.warn(`Icarus RPG | Ícones de focos arcanos não encontrados: ${faltando.join(", ")}`);
+  return faltando;
+}
+
 /** Confere no servidor se as imagens existem; avisa no console as que faltarem. */
 export async function verificarImagensDoSistema() {
   const resultados = await Promise.all(Object.keys(IMAGENS_SISTEMA).map(async chave => {

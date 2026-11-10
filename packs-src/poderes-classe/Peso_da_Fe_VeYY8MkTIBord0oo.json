@@ -1,0 +1,38 @@
+{
+  "_id": "VeYY8MkTIBord0oo",
+  "name": "Peso da Fé",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você reduz em <strong>2</strong> (mínimo 0) a penalidade de armadura e escudo que você veste.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__peso-da-fe",
+      "classe": "clerigo",
+      "poder": "peso-da-fe",
+      "inferido": false
+    }
+  },
+  "_key": "!items!VeYY8MkTIBord0oo"
+}

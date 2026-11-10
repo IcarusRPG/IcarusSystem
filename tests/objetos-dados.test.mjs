@@ -36,3 +36,24 @@ test("6 focos: preços, RD/PV por material; o Bordão Arcano é arma e foco (RD 
   assert.equal(ehFoco(bordao), false, "Bordão comum não é foco");
   assert.equal(new Set(itens.map(i => i._id)).size, 6);
 });
+
+test("Ícones dos focos: casamento tolerante (acento, caixa, plural), manifesto e imagem no item", async () => {
+  const { chaveDoFoco, casarFocos, focosDosDados, iconesDosFocos } = await import("../tools/build-icones-focos.mjs");
+  assert.equal(chaveDoFoco("Cetro de ossos.png"), chaveDoFoco("Cetro de Osso"));
+  assert.equal(chaveDoFoco("GRIMÓRIO.PNG"), "grimorio");
+  const focos = focosDosDados(dados);
+  assert.deepEqual(focos.map(f => f.nome), ["Varinha", "Cetro de Osso", "Grimório", "Cetro de Ferro", "Orbe de Prata", "Bordão Arcano"]);
+  const { manifesto, sobrando } = casarFocos(focos, ["Varinha.png", "Cetro de ossos.png", "Orbe de prata.png", "Dragão.png"]);
+  assert.deepEqual(manifesto.filter(m => !m.arquivo).map(m => m.nome), ["Grimório", "Cetro de Ferro", "Bordão Arcano"]);
+  assert.deepEqual(sobrando, ["Dragão.png"]);
+  // O manifesto do repositório tem os 6, e os arquivos existem
+  const repo = ler("focos_icones");
+  assert.equal(repo.filter(m => m.arquivo).length, 6);
+  for (const m of repo) assert.ok(fs.existsSync(new URL(`../img/Icones/itens/equipamentos/focos arcanos/${m.arquivo}`, import.meta.url)), m.arquivo);
+  const bordao = { _id: "x", name: "Bordão", type: "arma", img: "b.png", system: { dano: "1d6", propriedades: [], preco: 0 }, flags: { "icarus-rpg": { id: "bordao" } } };
+  const { itens } = documentosDeFocos(dados, idEstavel, { bordao, icones: iconesDosFocos(repo) });
+  assert.ok(itens.every(i => i.img.includes("focos%20arcanos/")), "todos com a imagem própria");
+  assert.equal(itens.find(i => i.name === "Grimório").img, "systems/icarus-rpg/img/Icones/itens/equipamentos/focos%20arcanos/Grim%C3%B3rio.png");
+  const sem = documentosDeFocos(dados, idEstavel, { bordao }).itens;
+  assert.equal(sem[0].img, "icons/svg/item-bag.svg", "sem manifesto: ícone padrão");
+});

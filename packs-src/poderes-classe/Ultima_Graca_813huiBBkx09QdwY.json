@@ -1,0 +1,38 @@
+{
+  "_id": "813huiBBkx09QdwY",
+  "name": "Última Graça",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando um aliado em alcance curto <strong>chega a 0 PV</strong>, você pode gastar uma reação e 3 PM: ele fica com <strong>1 PV</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__ultima-graca",
+      "classe": "clerigo",
+      "poder": "ultima-graca",
+      "inferido": true
+    }
+  },
+  "_key": "!items!813huiBBkx09QdwY"
+}

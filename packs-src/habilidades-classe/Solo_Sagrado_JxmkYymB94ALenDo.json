@@ -1,0 +1,38 @@
+{
+  "_id": "JxmkYymB94ALenDo",
+  "name": "Solo Sagrado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "rb6ZvmvPX7n8gGjN",
+  "sort": 5002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 4 PM e consagra uma área de 4,5 m de raio, centrada em um ponto em alcance curto. Até o fim da cena, <strong>você e os seus aliados</strong> dentro da área recebem <strong>+1 em testes de resistência</strong>, e criaturas <strong>mortas-vivas</strong> dentro da área sofrem <strong>–1 em testes de ataque</strong>. Só um Solo Sagrado pode estar ativo por vez. <em>Divino.</em>",
+    "classe": "clerigo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__solo-sagrado",
+      "classe": "clerigo",
+      "habilidade": "solo-sagrado",
+      "inferido": true
+    }
+  },
+  "_key": "!items!JxmkYymB94ALenDo"
+}

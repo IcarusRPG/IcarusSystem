@@ -127,7 +127,7 @@ const tokenDoConjurador = actor => (actor.getActiveTokens?.(false, true) ?? []).
  * no cartão (Aplicar / Voltar). Se algo falhar, devolve o PM.
  * @returns {Promise<ChatMessage|null>}  o cartão da magia
  */
-export async function executarLancamento(actor, item, indices = [], { pacto = 0 } = {}) {
+export async function executarLancamento(actor, item, indices = [], { pacto = 0, semCustoBase = false } = {}) {
   const s = item.system;
   // Mago sem foco arcano em mãos não lança (o Mestre pode liberar na aba Classe)
   const semFoco = bloqueioDeFoco(actor);
@@ -138,7 +138,8 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0 
   const arc = arcanistaDoAtor(actor);
   const custo = custoFinal(actor, item, indices);
   const comSangue = arc?.pacto ? Math.min(Math.max(0, Math.trunc(pacto) || 0), maximoDoPacto(custo.total, actor.system.pv?.value ?? 0)) : 0;
-  const pmAPagar = custo.total - comSangue;
+  // Milagre (Clérigo): a magia sai sem o custo base; aprimoramentos pagos normalmente
+  const pmAPagar = semCustoBase ? Math.max(0, custo.total - custo.base) : custo.total - comSangue;
   const antes = actor.system.pm.value;
   const ok = podeLancar(antes, pmAPagar);
   if (!ok.pode) {

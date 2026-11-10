@@ -5594,22 +5594,22 @@
     "atributo": "CON"
    },
    "pm": {
-    "inicial": 3,
-    "porNivel": 3,
-    "atributoSoNoPrimeiroNivel": false,
-    "texto": "Mago e Mago de Sangue: 3 + Inteligência por nível. Feiticeiro: 4 + Carisma por nível",
+    "inicial": 5,
+    "porNivel": 5,
+    "atributoSoNoPrimeiroNivel": true,
+    "texto": "Mago e Mago de Sangue: 5 + Inteligência no 1º nível; +5 por nível seguinte. Feiticeiro: 6 + Carisma no 1º nível; +6 por nível seguinte",
     "atributo": "INT",
     "porLinhagem": {
      "mago": {
-      "base": 3,
+      "base": 5,
       "atributo": "INT"
      },
      "feiticeiro": {
-      "base": 4,
+      "base": 6,
       "atributo": "CAR"
      },
      "sangue": {
-      "base": 3,
+      "base": 5,
       "atributo": "INT"
      }
     }
@@ -5875,7 +5875,7 @@
      "id": "sangue-dotado",
      "nome": "Sangue Dotado",
      "nivel": 1,
-     "descricao": "Você usa Carisma como atributo-chave e não precisa de foco: a mana vem de dentro. Você tem mais PM que as outras linhagens (4 + Carisma por nível). Em troca, conhece menos magias. Você também é treinado em Diplomacia ou Intimidação, à sua escolha.",
+     "descricao": "Você usa Carisma como atributo-chave e não precisa de foco: a mana vem de dentro. Você tem mais PM que as outras linhagens (incremento de 6 por nível, contra 5). Em troca, conhece menos magias. Você também é treinado em Diplomacia ou Intimidação, à sua escolha.",
      "custoPM": null,
      "acao": "passivo",
      "subs": []
@@ -7754,10 +7754,10 @@
     "atributo": "CON"
    },
    "pm": {
-    "inicial": 3,
-    "porNivel": 3,
-    "atributoSoNoPrimeiroNivel": false,
-    "texto": "3 + Carisma por nível",
+    "inicial": 4,
+    "porNivel": 4,
+    "atributoSoNoPrimeiroNivel": true,
+    "texto": "4 + Carisma no 1º nível; +4 por nível seguinte",
     "atributo": "CAR"
    },
    "atributoChave": "Carisma",
@@ -9005,6 +9005,686 @@
      "atributoMinimo": null,
      "requerPoderes": [],
      "requerGrupo": "Estilo Clássica",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "aumento-de-atributo",
+     "nome": "Aumento de Atributo",
+     "grupo": "Poderes comuns",
+     "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "atributo",
+      "quantidade": 1
+     }
+    },
+    {
+     "id": "pericia-especializada",
+     "nome": "Perícia Especializada",
+     "grupo": "Poderes comuns",
+     "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+     "prerequisito": "10º nível",
+     "nivelMinimo": 10,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "pericias",
+      "quantidade": 1,
+      "filtro": "treinadas-nao-especialistas"
+     }
+    }
+   ]
+  },
+  {
+   "id": "clerigo",
+   "nome": "Clérigo",
+   "papel": "Conjurador Divino",
+   "pv": {
+    "inicial": 16,
+    "porNivel": 4,
+    "atributo": "CON"
+   },
+   "pm": {
+    "inicial": 4,
+    "porNivel": 4,
+    "atributoSoNoPrimeiroNivel": true,
+    "texto": "4 + Sabedoria no 1º nível; +4 por nível seguinte",
+    "atributo": "SAB"
+   },
+   "atributoChave": "Sabedoria",
+   "pericias": {
+    "obrigatorias": "Religião e Vontade",
+    "escolha": 4,
+    "lista": [
+     "Atletismo",
+     "Concentração",
+     "Cura",
+     "Diplomacia",
+     "Fortitude",
+     "História",
+     "Iniciativa",
+     "Intuição",
+     "Luta",
+     "Misticismo",
+     "Nobreza"
+    ]
+   },
+   "proficiencias": "Armas simples, armaduras pesadas, escudos",
+   "intro": [
+    "O clérigo é a voz de uma divindade no mundo. Não herdou o poder, não o estudou em livros: recebeu-o em troca de fé, e o mantém enquanto cumpre os Dogmas. Cura quem sofre, protege quem cai e castiga quem desafia o que ele jurou defender.",
+    "Não existe um clérigo genérico. O devoto de Sólem acende luz em lugares escuros; o de Nocturna caminha entre segredos; o de Irae troveja contra os fracos de espírito. O que une todos é a certeza de que a divindade ouve, e de que cada oração deve ser pronunciada com o corpo, não só com a boca."
+   ],
+   "progressao": [
+    {
+     "nivel": 1,
+     "habilidades": [
+      "Fé Jurada",
+      "Conjuração Divina"
+     ],
+     "poder": false
+    },
+    {
+     "nivel": 2,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 3,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 4,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 5,
+     "habilidades": [
+      "Solo Sagrado"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 6,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 7,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 8,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 9,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 10,
+     "habilidades": [
+      "Intervenção Divina"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 11,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 12,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 13,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 14,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 15,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 16,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 17,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 18,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 19,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 20,
+     "habilidades": [
+      "Milagre"
+     ],
+     "poder": true
+    }
+   ],
+   "habilidades": [
+    {
+     "id": "fe-jurada",
+     "nome": "Fé Jurada",
+     "nivel": 1,
+     "descricao": "Você se torna devoto de <strong>uma divindade do Panteão</strong> (seção 16), e a escolha é permanente. Ao contrário dos devotos comuns, você recebe <strong>os três Poderes Concedidos</strong> da sua divindade, e deve seguir os <strong>Dogmas e Restrições</strong> dela. Se você agir contra um Dogma, a <strong>primeira vez</strong> você perde <strong>todos os seus PM por 1d4 dias</strong>. Na <strong>segunda vez</strong>, a divindade o abandona e você se torna um <strong>Anátema</strong>.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": [],
+     "escolha": {
+      "tipo": "divindade",
+      "permanente": true,
+      "opcoes": [
+       "Alétris",
+       "Amorina",
+       "Béllica",
+       "Etheria",
+       "Floressa",
+       "Justar",
+       "Logos",
+       "Nocturna",
+       "Odincia",
+       "Sólem",
+       "Ardor",
+       "Draconara",
+       "Eternus",
+       "Expiria",
+       "Fraudulus",
+       "Insidia",
+       "Irae",
+       "Mentis",
+       "Paxus",
+       "Valorus"
+      ]
+     }
+    },
+    {
+     "id": "conjuracao-divina",
+     "nome": "Conjuração Divina",
+     "nivel": 1,
+     "descricao": "Você lança magias da lista <strong>Divina</strong>, usando Sabedoria como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º, nível 4 no 13º e nível 5 no 17º.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": [
+      {
+       "nome": "Magias conhecidas",
+       "descricao": "Você conhece 3 magias no 1º nível e aprende <strong>mais 1 a cada nível</strong>. Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra."
+      },
+      {
+       "nome": "Armadura",
+       "descricao": "Você pode lançar magias usando qualquer armadura e escudo em que tenha proficiência."
+      },
+      {
+       "nome": "Símbolo Sagrado",
+       "descricao": "O símbolo sagrado (R$ 5, 0,5 espaço) é o seu item de fé. Você não precisa dele para lançar magias, mas vários poderes o exigem."
+      }
+     ]
+    },
+    {
+     "id": "solo-sagrado",
+     "nome": "Solo Sagrado",
+     "nivel": 5,
+     "descricao": "Como ação padrão, você gasta 4 PM e consagra uma área de 4,5 m de raio, centrada em um ponto em alcance curto. Até o fim da cena, <strong>você e os seus aliados</strong> dentro da área recebem <strong>+1 em testes de resistência</strong>, e criaturas <strong>mortas-vivas</strong> dentro da área sofrem <strong>–1 em testes de ataque</strong>. Só um Solo Sagrado pode estar ativo por vez. <em>Divino.</em>",
+     "custoPM": 4,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "intervencao-divina",
+     "nome": "Intervenção Divina",
+     "nivel": 10,
+     "descricao": "Como ação padrão, você gasta 5 PM e pede ajuda diretamente à sua divindade, descrevendo o que precisa. O Mestre decide como ela responde: o pedido deve respeitar os Dogmas e o tom da divindade, e pode reproduzir o efeito de qualquer magia divina ou Poder Concedido, ou algo ainda mais amplo, a critério do Mestre. Role <strong>1d100</strong>: se o resultado for <strong>igual ou menor que o seu nível de clérigo</strong>, a divindade responde. Se der certo, você não pode usar a Intervenção Divina de novo por <strong>7 dias</strong>. Se der errado, você pode tentar de novo depois de uma noite de descanso (pagando os 5 PM outra vez). No <strong>20º nível</strong>, a Intervenção Divina funciona <strong>automaticamente</strong>, sem rolar o dado. <em>Divino.</em>",
+     "custoPM": 5,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "milagre",
+     "nome": "Milagre",
+     "nivel": 20,
+     "descricao": "Como ação completa, você gasta 15 PM e canaliza o poder da sua divindade: você lança <strong>três magias divinas quaisquer</strong> (de qualquer nível, inclusive magias que você não conhece), como ação livre e <strong>sem gastar PM</strong> (você ainda paga os outros custos). Você pode aplicar aprimoramentos, mas precisa pagá-los. Depois de usar o Milagre, você fica <strong>Atordoado</strong> por 1d4 rodadas (mesmo se for imune): o corpo mortal não foi feito para tanto poder.",
+     "custoPM": 15,
+     "acao": "completa",
+     "subs": []
+    }
+   ],
+   "grupos": [
+    "Poderes gerais",
+    "Poderes comuns"
+   ],
+   "poderes": [
+    {
+     "id": "arma-consagrada",
+     "nome": "Arma Consagrada",
+     "grupo": "Poderes gerais",
+     "descricao": "Você pode gastar uma ação de movimento e 3 PM para consagrar uma arma que esteja empunhando e na qual seja proficiente. Até o fim da cena, a arma é considerada <strong>mágica</strong>, emite luz (como uma tocha), o dano dela aumenta em <strong>um passo</strong> e você usa <strong>Sabedoria</strong> nos testes de ataque e nas rolagens de dano com ela, no lugar de Força ou Destreza.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 3,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "onda-de-fe",
+     "nome": "Onda de Fé",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação padrão, você gasta PM (limitado à sua Sabedoria + 2) e libera uma onda de poder sagrado em alcance curto. Para cada PM gasto, a onda <strong>cura 1d6 PV</strong> nas criaturas vivas à sua escolha e causa <strong>1d6 de dano de Essência</strong> nos mortos-vivos (Vontade, CD de clérigo, reduz o dano à metade). <em>Divino.</em>",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "onda-ampla",
+     "nome": "Onda Ampla",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando usa a Onda de Fé, você pode gastar +2 PM para aumentar o alcance para <strong>médio</strong>.",
+     "prerequisito": "Onda de Fé",
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "onda-de-fe"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "banir-os-mortos",
+     "nome": "Banir os Mortos",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação padrão, você gasta 3 PM e faz todos os mortos-vivos em alcance curto fazerem um teste de Vontade (CD de clérigo). Quem falhar fica <strong>Apavorado</strong> por 1d6 rodadas.",
+     "prerequisito": "Onda de Fé",
+     "nivelMinimo": null,
+     "custoPM": 3,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "onda-de-fe"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "cura-compartilhada",
+     "nome": "Cura Compartilhada",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando lança uma magia que cura uma criatura, você pode gastar +2 PM para que outra criatura em alcance curto (inclusive você) recupere PV iguais à <strong>metade</strong> da cura original.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "teologia",
+     "nome": "Teologia",
+     "grupo": "Poderes gerais",
+     "descricao": "Você aprende duas magias divinas de qualquer nível que possa lançar. Você pode escolher este poder quantas vezes quiser.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "magias",
+      "quantidade": 2
+     }
+    },
+    {
+     "id": "magia-consagrada",
+     "nome": "Magia Consagrada",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando lança uma magia divina que causa dano, você pode gastar +1 PM para mudar o tipo de dano da magia para <strong>Essência</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "reza-rapida",
+     "nome": "Reza Rápida",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando lança uma magia divina com execução de ação padrão, você pode gastar +2 PM para lançá-la como <strong>ação de movimento</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "prece-breve",
+     "nome": "Prece Breve",
+     "grupo": "Poderes gerais",
+     "descricao": "Você pode gastar uma ação de movimento para fazer uma prece curta. Se fizer isso, a CD para resistir à sua próxima habilidade de clérigo (usada até o fim do seu próximo turno) aumenta em <strong>+2</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "simbolo-radiante",
+     "nome": "Símbolo Radiante",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação de movimento, você gasta 1 PM e faz uma prece que acende o seu símbolo sagrado até o fim da cena. Ele emite uma luz dourada que ilumina como uma tocha. Enquanto você empunhar o símbolo aceso, o custo em PM das suas magias divinas diminui em <strong>1</strong> (mínimo 1).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "posto-na-igreja",
+     "nome": "Posto na Igreja",
+     "grupo": "Poderes gerais",
+     "descricao": "Você tem uma posição formal numa igreja reconhecida pelos fiéis da sua divindade. Os efeitos exatos variam com a igreja e ficam a cargo do Mestre. Como regra geral, você recebe +5 em Diplomacia ou Intimidação ao lidar com devotos da sua divindade e paga <strong>metade do preço</strong> de itens alquímicos, poções e serviços em templos dela.",
+     "prerequisito": "5º nível",
+     "nivelMinimo": 5,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "ultima-graca",
+     "nome": "Última Graça",
+     "grupo": "Poderes gerais",
+     "descricao": "Uma vez por cena, quando um aliado em alcance curto <strong>chega a 0 PV</strong>, você pode gastar uma reação e 3 PM: ele fica com <strong>1 PV</strong>.",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": 3,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "absolvicao",
+     "nome": "Absolvição",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura: você remove dela uma condição entre Abalado, Apavorado, Esmorecido, Frustrado, Confuso ou Enfeitiçado.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "muralha-sagrada",
+     "nome": "Muralha Sagrada",
+     "grupo": "Poderes gerais",
+     "descricao": "Enquanto você empunha um escudo, aliados adjacentes a você recebem <strong>+1 na Defesa</strong>. Se a sua divindade for protetora (Sólem, Paxus, Valorus ou Béllica), o bônus passa a ser <strong>+2</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "peso-da-fe",
+     "nome": "Peso da Fé",
+     "grupo": "Poderes gerais",
+     "descricao": "Você reduz em <strong>2</strong> (mínimo 0) a penalidade de armadura e escudo que você veste.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "sentenca-divina",
+     "nome": "Sentença Divina",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação padrão, você gasta 2 PM e escolhe uma criatura em alcance curto. Até o fim da cena, as suas magias e habilidades de clérigo contra ela têm <strong>+2 na CD</strong>, e você causa <strong>+1d6</strong> de dano de Essência nos seus ataques contra ela. Só uma Sentença pode estar ativa por vez.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "fe-inabalavel",
+     "nome": "Fé Inabalável",
+     "grupo": "Poderes gerais",
+     "descricao": "Você recebe +2 em Vontade e fica imune à condição <strong>Frustrado</strong>. Você recebe +5 em testes de resistência contra efeitos que tentem forçá-lo a violar um Dogma.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "misericordia",
+     "nome": "Misericórdia",
+     "grupo": "Poderes gerais",
+     "descricao": "Suas magias de cura aumentam em <strong>+1d6</strong> PV curados por nível da magia (nível 1: +1d6; nível 5: +5d6).",
+     "prerequisito": "8º nível",
+     "nivelMinimo": 8,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "palavra-de-resguardo",
+     "nome": "Palavra de Resguardo",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando um aliado em alcance curto sofreria dano, você pode gastar uma reação e 2 PM: o dano é reduzido em <strong>1d8 + Sabedoria</strong> (mínimo 1 de redução).",
+     "prerequisito": "4º nível",
+     "nivelMinimo": 4,
+     "custoPM": 2,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "reerguer",
+     "nome": "Reerguer",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação de movimento, você gasta 1 PM: um aliado <strong>Caído</strong> em alcance curto se levanta sem gastar ação e recebe <strong>PV temporários</strong> iguais a 1d6 + Sabedoria até o fim da cena.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "cura-reconfortante",
+     "nome": "Cura Reconfortante",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando você lança uma magia que cura uma criatura, ela também remove a condição <strong>Abalado</strong> ou <strong>Apavorado</strong> (à sua escolha).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "fe-como-escudo",
+     "nome": "Fé como Escudo",
+     "grupo": "Poderes gerais",
+     "descricao": "Uma vez por cena, quando você ou um aliado em alcance curto faz um teste de resistência, você pode gastar uma reação e 2 PM para que a criatura receba <strong>+5</strong> nesse teste (declare antes de saber o resultado).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "passo-abencoado",
+     "nome": "Passo Abençoado",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação de movimento, você gasta 2 PM: você e os seus aliados em alcance curto recebem <strong>+3 m de deslocamento</strong> e ignoram terreno difícil até o fim da cena.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "sono-abencoado",
+     "nome": "Sono Abençoado",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando você e os seus aliados descansam juntos, vocês oram em conjunto: cada um recupera <strong>PV adicionais</strong> iguais ao seu nível de clérigo + Sabedoria e remove uma condição à sua escolha (que possa ser removida pelo descanso).",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "couraca-consagrada",
+     "nome": "Couraça Consagrada",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação de movimento, você gasta 2 PM: até o fim da cena, você recebe <strong>+1 de Defesa</strong> e <strong>RD 3</strong> contra dano de Corte, Perfuração e Impacto, enquanto estiver usando armadura.",
+     "prerequisito": "8º nível",
+     "nivelMinimo": 8,
+     "custoPM": 2,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "corpo-puro",
+     "nome": "Corpo Puro",
+     "grupo": "Poderes gerais",
+     "descricao": "Você fica imune a <strong>doenças</strong> e recebe +5 em testes de resistência contra <strong>venenos</strong> e <strong>maldições</strong>.",
+     "prerequisito": "8º nível",
+     "nivelMinimo": 8,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
      "repetivel": false,
      "maxEscolhas": null
     },

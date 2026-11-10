@@ -1,0 +1,38 @@
+{
+  "_id": "5I9XbyIL8P7gZp3X",
+  "name": "Palavra de Resguardo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "4º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um aliado em alcance curto sofreria dano, você pode gastar uma reação e 2 PM: o dano é reduzido em <strong>1d8 + Sabedoria</strong> (mínimo 1 de redução).",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__palavra-de-resguardo",
+      "classe": "clerigo",
+      "poder": "palavra-de-resguardo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!5I9XbyIL8P7gZp3X"
+}

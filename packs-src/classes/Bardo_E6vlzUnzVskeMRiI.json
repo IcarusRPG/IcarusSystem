@@ -15,11 +15,11 @@
       "atributo": "CON"
     },
     "pm": {
-      "inicial": 3,
-      "porNivel": 3,
+      "inicial": 4,
+      "porNivel": 4,
       "atributo": "CAR",
-      "atributoSoNoPrimeiroNivel": false,
-      "texto": "3 + Carisma por nível"
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "4 + Carisma no 1º nível; +4 por nível seguinte"
     },
     "pericias": {
       "obrigatorias": "Atuação e Vontade",

@@ -134,13 +134,26 @@ export const LINHAGENS = ["mago", "feiticeiro", "sangue"];
 export const linhagemDasEscolhas = escolhas => LINHAGENS[escolhas?.linhagem] ?? null;
 
 /**
- * PM pela linhagem (classes.json pm.porLinhagem): (base + atributo) × nível. Sem linhagem, a
- * fórmula padrão da classe (3 + INT). Devolve os campos do classeConfig.
+ * PM pela linhagem (classes.json pm.porLinhagem): base × nível + atributo (o atributo entra uma vez,
+ * no 1º nível: pm.atributoSoNoPrimeiroNivel, o mesmo caminho do Monge). Sem linhagem, a fórmula
+ * padrão da classe. Devolve os campos do classeConfig.
  */
 export function pmDaLinhagem(classe, linhagem) {
   const l = classe?.pm?.porLinhagem?.[linhagem];
-  if (!l) return { pmInicial: classe?.pm?.inicial ?? 0, pmPorNivel: classe?.pm?.porNivel ?? 0, pmAtributo: classe?.pm?.atributo ?? null };
-  return { pmInicial: l.base, pmPorNivel: l.base, pmAtributo: l.atributo };
+  const pmAtributoSoNoPrimeiroNivel = !!classe?.pm?.atributoSoNoPrimeiroNivel;
+  if (!l) return { pmInicial: classe?.pm?.inicial ?? 0, pmPorNivel: classe?.pm?.porNivel ?? 0, pmAtributo: classe?.pm?.atributo ?? null, pmAtributoSoNoPrimeiroNivel };
+  return { pmInicial: l.base, pmPorNivel: l.base, pmAtributo: l.atributo, pmAtributoSoNoPrimeiroNivel };
+}
+
+/**
+ * classeConfig de PM que a regra atual dá a um personagem (classes conjuradoras: base × nível +
+ * atributo uma vez). null se a classe não é do sistema. O atributo de PM escolhido na ficha fica.
+ * @param {object} classe  @param {string|null} linhagem  @param {string|null} [atributoAtual]
+ */
+export function pmPelaRegra(classe, linhagem = null, atributoAtual = null) {
+  if (!classe?.pm) return null;
+  const pm = pmDaLinhagem(classe, linhagem);
+  return { ...pm, pmAtributo: atributoAtual ?? pm.pmAtributo };
 }
 
 /** Tradição da lista de magias pela linhagem (Mago e Feiticeiro: Arcana; Mago de Sangue: Sangue). */

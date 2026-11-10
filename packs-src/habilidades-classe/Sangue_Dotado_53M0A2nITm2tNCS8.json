@@ -15,7 +15,7 @@
     "sustentada": false,
     "divindade": "",
     "tipoDano": "",
-    "descricao": "Você usa Carisma como atributo-chave e não precisa de foco: a mana vem de dentro. Você tem mais PM que as outras linhagens (4 + Carisma por nível). Em troca, conhece menos magias. Você também é treinado em Diplomacia ou Intimidação, à sua escolha.",
+    "descricao": "Você usa Carisma como atributo-chave e não precisa de foco: a mana vem de dentro. Você tem mais PM que as outras linhagens (incremento de 6 por nível, contra 5). Em troca, conhece menos magias. Você também é treinado em Diplomacia ou Intimidação, à sua escolha.",
     "classe": "arcanista",
     "tipoPoder": "habilidade",
     "grupo": "",

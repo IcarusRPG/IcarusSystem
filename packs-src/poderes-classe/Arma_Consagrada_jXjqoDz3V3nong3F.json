@@ -1,0 +1,38 @@
+{
+  "_id": "jXjqoDz3V3nong3F",
+  "name": "Arma Consagrada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar uma ação de movimento e 3 PM para consagrar uma arma que esteja empunhando e na qual seja proficiente. Até o fim da cena, a arma é considerada <strong>mágica</strong>, emite luz (como uma tocha), o dano dela aumenta em <strong>um passo</strong> e você usa <strong>Sabedoria</strong> nos testes de ataque e nas rolagens de dano com ela, no lugar de Força ou Destreza.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__arma-consagrada",
+      "classe": "clerigo",
+      "poder": "arma-consagrada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!jXjqoDz3V3nong3F"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Otl7si4cq2JLgIDI",
+  "name": "Cura Compartilhada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando lança uma magia que cura uma criatura, você pode gastar +2 PM para que outra criatura em alcance curto (inclusive você) recupere PV iguais à <strong>metade</strong> da cura original.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__cura-compartilhada",
+      "classe": "clerigo",
+      "poder": "cura-compartilhada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Otl7si4cq2JLgIDI"
+}

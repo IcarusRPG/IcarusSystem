@@ -1,0 +1,38 @@
+{
+  "_id": "ttLUsg8J4hUCGYMN",
+  "name": "Reerguer",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 1 PM: um aliado <strong>Caído</strong> em alcance curto se levanta sem gastar ação e recebe <strong>PV temporários</strong> iguais a 1d6 + Sabedoria até o fim da cena.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__reerguer",
+      "classe": "clerigo",
+      "poder": "reerguer",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ttLUsg8J4hUCGYMN"
+}

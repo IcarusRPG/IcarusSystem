@@ -1,0 +1,38 @@
+{
+  "_id": "8krRtW3xAxDdJKtH",
+  "name": "Sono Abençoado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você e os seus aliados descansam juntos, vocês oram em conjunto: cada um recupera <strong>PV adicionais</strong> iguais ao seu nível de clérigo + Sabedoria e remove uma condição à sua escolha (que possa ser removida pelo descanso).",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__sono-abencoado",
+      "classe": "clerigo",
+      "poder": "sono-abencoado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!8krRtW3xAxDdJKtH"
+}

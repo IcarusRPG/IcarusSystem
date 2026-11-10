@@ -1,0 +1,38 @@
+{
+  "_id": "wvulGneLRIOcReHv",
+  "name": "Absolvição",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura: você remove dela uma condição entre Abalado, Apavorado, Esmorecido, Frustrado, Confuso ou Enfeitiçado.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__absolvicao",
+      "classe": "clerigo",
+      "poder": "absolvicao",
+      "inferido": true
+    }
+  },
+  "_key": "!items!wvulGneLRIOcReHv"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "j36pkuiMAXmbnRR8",
+  "name": "Onda Ampla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Onda de Fé",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa a Onda de Fé, você pode gastar +2 PM para aumentar o alcance para <strong>médio</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "onda-de-fe"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__onda-ampla",
+      "classe": "clerigo",
+      "poder": "onda-ampla",
+      "inferido": true
+    }
+  },
+  "_key": "!items!j36pkuiMAXmbnRR8"
+}

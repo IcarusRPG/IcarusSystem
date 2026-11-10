@@ -9,6 +9,71 @@
 import { SISTEMA_ID, FICHA_ANIMAL, ICONE_PADRAO } from "./config.mjs";
 import { iconeDoItemComum } from "./origens-dados.mjs";
 import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./origens.mjs";
+import { classePorId, linhagemDasEscolhas, pmPelaRegra } from "./classes-dados.mjs";
+import FOCOS_ICONES from "./dados/focos_icones.mjs";
+
+/** Ícone novo de um foco arcano (por flags id "foco:<id>") se o item ainda está com o ícone padrão. */
+export function iconeNovoDoFoco(item) {
+  const id = item?.flags?.[SISTEMA_ID]?.id;
+  const m = FOCOS_ICONES.find(x => x.id === id && x.arquivo);
+  if (!m) return null;
+  const padrao = !item.img || item.img === "icons/svg/item-bag.svg" || item.img === ICONE_PADRAO || decodeURI(item.img).includes("/equipamentos/armas/");
+  return padrao ? encodeURI(`systems/${SISTEMA_ID}/img/Icones/itens/equipamentos/focos arcanos/${m.arquivo}`) : null;
+}
+
+/** 0.25.0 — focos arcanos já nas fichas e no mundo com o ícone padrão recebem a imagem própria. */
+export async function atualizarIconesDosFocos(atores = game.actors, itensDoMundo = game.items ?? []) {
+  let n = 0;
+  for (const actor of atores ?? []) {
+    const mudancas = actor.items.map(i => ({ _id: i.id, img: iconeNovoDoFoco(i) })).filter(m => m.img);
+    if (mudancas.length) { await actor.updateEmbeddedDocuments("Item", mudancas); n += mudancas.length; }
+  }
+  for (const item of itensDoMundo) {
+    const img = iconeNovoDoFoco(item);
+    if (img) { await item.update({ img }); n++; }
+  }
+  return n;
+}
+
+const CAMPOS_PM = ["pmInicial", "pmPorNivel", "pmAtributo", "pmAtributoSoNoPrimeiroNivel"];
+/** Classes cuja regra de PM mudou (as outras ficam como estão, mesmo com ajuste à mão). */
+const CONJURADORES = new Set(["arcanista", "bardo", "clerigo"]);
+
+/**
+ * Mudanças no classeConfig de PM para a regra atual (conjuradores: base × nível + atributo uma
+ * vez). Ficha em modo manual ou sem classe do sistema: nada. O atributo de PM escolhido fica.
+ * @returns {object|null}  caminhos → valores (null se nada muda)
+ */
+export function mudancasDePM(actor) {
+  const s = actor._source?.system ?? actor.system;
+  const classe = classePorId(s?.identidade?.classe);
+  if (!classe || !CONJURADORES.has(classe.id) || s.classeConfig?.manual) return null;
+  const linhagem = classe.id === "arcanista" ? linhagemDasEscolhas(actor.flags?.[SISTEMA_ID]?.escolhasClasse) : null;
+  const alvo = pmPelaRegra(classe, linhagem, s.classeConfig?.pmAtributo ?? null);
+  const mudancas = {};
+  for (const k of CAMPOS_PM) if ((s.classeConfig?.[k] ?? null) !== (alvo[k] ?? null)) mudancas[`system.classeConfig.${k}`] = alvo[k];
+  return Object.keys(mudancas).length ? mudancas : null;
+}
+
+/**
+ * 0.25.0 — PM dos conjuradores (Núcleo, seção 4): o atributo-chave soma uma vez, no 1º nível; as
+ * bases subiram (Mago 5, Feiticeiro 6, Bardo 4). Recalcula o classeConfig e corta o PM atual no
+ * novo máximo. @returns {Promise<number>} fichas alteradas
+ */
+export async function migrarPMDosConjuradores(atores = game.actors) {
+  let n = 0;
+  for (const actor of atores ?? []) {
+    if (actor.type !== "personagem") continue;
+    const mudancas = mudancasDePM(actor);
+    if (!mudancas) continue;
+    await actor.update(mudancas);
+    const pm = actor.system.pm;
+    if (pm.value > pm.max) await actor.update({ "system.pm.value": pm.max });
+    console.log(`Icarus RPG | PM recalculado: ${actor.name} (máximo ${pm.max}).`);
+    n++;
+  }
+  return n;
+}
 
 const ANTIGO_ID = "teixugo-gigante";
 const NOVO_ID = "texugo-gigante";
@@ -125,7 +190,9 @@ const MIGRACOES = [
   // 0.11.1 — ícones dos itens comuns (itens de origem) no lugar do dado azul
   { versao: "0.11.1", rodar: () => atualizarIconesDeItensComuns() },
   // 0.13.0 — barras do token: bar1 = PV, bar2 = PM
-  { versao: "0.13.0", rodar: () => configurarBarrasDosTokens() }
+  { versao: "0.13.0", rodar: () => configurarBarrasDosTokens() },
+  // 0.25.0 — regra nova do PM dos conjuradores (Arcanista, Bardo) e ícones dos focos arcanos
+  { versao: "0.25.0", rodar: async () => (await migrarPMDosConjuradores()) + (await atualizarIconesDosFocos()) }
 ];
 
 export function registrarMigracoes() {

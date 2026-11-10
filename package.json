@@ -11,7 +11,8 @@
     "build:tokens": "node tools/build-tokens.mjs",
     "build:icones-itens": "node tools/build-icones-itens.mjs",
     "build:icones-magias": "node tools/build-icones-magias.mjs",
-    "magias:automacao": "node tools/extrair-automacao-magias.mjs"
+    "magias:automacao": "node tools/extrair-automacao-magias.mjs",
+    "build:icones-focos": "node tools/build-icones-focos.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "1.1.0"

@@ -1,0 +1,38 @@
+{
+  "_id": "dkZbqXAS98xyFP35",
+  "name": "Milagre",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "rb6ZvmvPX7n8gGjN",
+  "sort": 20004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 15,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "completa",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação completa, você gasta 15 PM e canaliza o poder da sua divindade: você lança <strong>três magias divinas quaisquer</strong> (de qualquer nível, inclusive magias que você não conhece), como ação livre e <strong>sem gastar PM</strong> (você ainda paga os outros custos). Você pode aplicar aprimoramentos, mas precisa pagá-los. Depois de usar o Milagre, você fica <strong>Atordoado</strong> por 1d4 rodadas (mesmo se for imune): o corpo mortal não foi feito para tanto poder.",
+    "classe": "clerigo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__milagre",
+      "classe": "clerigo",
+      "habilidade": "milagre",
+      "inferido": true
+    }
+  },
+  "_key": "!items!dkZbqXAS98xyFP35"
+}
