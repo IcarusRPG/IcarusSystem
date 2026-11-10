@@ -1740,7 +1740,14 @@
       "PagarDinheiro": "{nome} custa {valor}. Pagar?",
       "SemDinheiro": "{nome} não tem {valor}.",
       "EncorajamentoChat": "{nome} encoraja {alvo}: o próximo teste é com vantagem.",
-      "UmAliado": "um aliado"
+      "UmAliado": "um aliado",
+      "Escolta": "Escolta Contratada",
+      "EscoltaPronta": "pronta: absorve {valor} de dano (uma vez por cena)",
+      "EscoltaUsada": "já absorveu nesta cena ({valor})",
+      "EscoltaDispensar": "Dispensar a escolta (fim da aventura)",
+      "EscoltaAbsorve": "Escolta de {nome}",
+      "EscoltaChat": "{nome} contrata uma escolta até o fim da aventura: uma vez por cena, absorve {valor} de dano dele ou de um aliado adjacente.",
+      "EscoltaContratar": "Contratar escolta (local civilizado, 1 hora)"
     }
   }
 }
