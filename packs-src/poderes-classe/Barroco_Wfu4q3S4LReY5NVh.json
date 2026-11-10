@@ -1,0 +1,38 @@
+{
+  "_id": "Wfu4q3S4LReY5NVh",
+  "name": "Barroco",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "j7mVuByBZwbSmln7",
+  "sort": 4500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, quando você lança uma magia, pode gastar +1 PM para receber <strong>+2</strong> no teste de Atuação ou de Concentração relacionado a ela.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Clássica",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Clássica",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__barroco",
+      "classe": "bardo",
+      "poder": "barroco",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Wfu4q3S4LReY5NVh"
+}

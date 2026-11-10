@@ -1,0 +1,38 @@
+{
+  "_id": "NjrK4Sw661eyKQTm",
+  "name": "Roda de Samba",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 9024,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Aliados em alcance curto que comecem o turno sob a sua Execução podem usar a reação para <strong>trocar de lugar</strong> (1,5 m) com outro aliado em alcance curto, sem provocar reações.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__roda-de-samba",
+      "classe": "bardo",
+      "habilidade": "roda-de-samba",
+      "inferido": true
+    }
+  },
+  "_key": "!items!NjrK4Sw661eyKQTm"
+}

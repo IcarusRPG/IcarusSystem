@@ -1,0 +1,38 @@
+{
+  "_id": "nJUxI5VScBP7TuWi",
+  "name": "Gingado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 3023,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sua Cadência também concede aos aliados <strong>vantagem em Reflexos</strong> e remove a condição <strong>Lento</strong> em quem a receber.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__gingado",
+      "classe": "bardo",
+      "habilidade": "gingado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!nJUxI5VScBP7TuWi"
+}

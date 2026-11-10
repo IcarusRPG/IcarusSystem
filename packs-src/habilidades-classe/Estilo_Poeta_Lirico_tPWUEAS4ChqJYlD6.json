@@ -1,0 +1,38 @@
+{
+  "_id": "tPWUEAS4ChqJYlD6",
+  "name": "Estilo: Poeta Lírico",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 10,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Tece palavras de amor, saudade e perda que ferem e curam.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__estilo-poeta-lirico",
+      "classe": "bardo",
+      "habilidade": "estilo-poeta-lirico",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tPWUEAS4ChqJYlD6"
+}

@@ -7743,6 +7743,1311 @@
      }
     }
    ]
+  },
+  {
+   "id": "bardo",
+   "nome": "Bardo",
+   "papel": "Suporte / Inspiração",
+   "pv": {
+    "inicial": 14,
+    "porNivel": 4,
+    "atributo": "CON"
+   },
+   "pm": {
+    "inicial": 3,
+    "porNivel": 3,
+    "atributoSoNoPrimeiroNivel": false,
+    "texto": "3 + Carisma por nível",
+    "atributo": "CAR"
+   },
+   "atributoChave": "Carisma",
+   "pericias": {
+    "obrigatorias": "Atuação e Vontade",
+    "escolha": 6,
+    "lista": [
+     "Acrobacia",
+     "Barganha",
+     "Concentração",
+     "Cura",
+     "Diplomacia",
+     "Enganação",
+     "Furtividade",
+     "História",
+     "Iniciativa",
+     "Intimidação",
+     "Intuição",
+     "Investigação",
+     "Luta",
+     "Misticismo",
+     "Nobreza",
+     "Pontaria",
+     "Prestidigitação",
+     "Reflexos",
+     "Religião"
+    ]
+   },
+   "proficiencias": "Armas simples, armas marciais Leves ou Ágeis, armaduras leves",
+   "intro": [
+    "O bardo é quem transforma a arte em arma, em remédio e em feitiço. Alguns carregam a palavra: versos que levantam um exército ou derrubam um rei. Outros carregam o som: um instrumento, um ritmo, um riff que faz o chão tremer. Nos dois casos, o que importa é que a plateia sente, e quem sente, age.",
+    "Não existe um bardo \"puro\". O poeta pode ser épico, lírico ou satírico. O músico pode ser pesado como o metal, solto como a música popular ou preciso como a clássica. O que une todos é a crença de que uma boa obra muda o resultado de uma luta."
+   ],
+   "progressao": [
+    {
+     "nivel": 1,
+     "habilidades": [
+      "Conjuração Bárdica",
+      "Chama da Musa (+1)",
+      "Caminho"
+     ],
+     "poder": false
+    },
+    {
+     "nivel": 2,
+     "habilidades": [
+      "Talento de Palco"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 3,
+     "habilidades": [
+      "Estilo"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 4,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 5,
+     "habilidades": [
+      "Chama da Musa (+2)"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 6,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 7,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 8,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 9,
+     "habilidades": [
+      "Chama da Musa (+3)",
+      "Estilo Aprofundado"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 10,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 11,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 12,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 13,
+     "habilidades": [
+      "Chama da Musa (+4)"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 14,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 15,
+     "habilidades": [
+      "Estilo Supremo"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 16,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 17,
+     "habilidades": [
+      "Chama da Musa (+5)"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 18,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 19,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 20,
+     "habilidades": [
+      "Obra-Prima"
+     ],
+     "poder": true
+    }
+   ],
+   "habilidades": [
+    {
+     "id": "conjuracao-bardica",
+     "nome": "Conjuração Bárdica",
+     "nivel": 1,
+     "descricao": "Você lança magias da lista <strong>Arcana</strong>, usando Carisma como atributo-chave (CD = 10 + metade do seu nível + Carisma). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º e nível 4 no 13º (o bardo <strong>não</strong> alcança o nível 5).",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": [
+      {
+       "nome": "Escolas",
+       "descricao": "Você escolhe <strong>três escolas de magia</strong> (permanente): Encantamento, mais as duas que você preferir. Você só aprende magias dessas escolas."
+      },
+      {
+       "nome": "Magias conhecidas",
+       "descricao": "Você conhece 2 magias no 1º nível e aprende <strong>mais 1 a cada nível par</strong> (2º, 4º, …). Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra."
+      },
+      {
+       "nome": "Armadura",
+       "descricao": "Você pode lançar magias usando <strong>armadura leve</strong>."
+      }
+     ],
+     "escolha": {
+      "tipo": "escolas",
+      "quantidade": 3,
+      "obrigatoria": [
+       "Encantamento"
+      ],
+      "opcoes": [
+       "Abjuração",
+       "Adivinhação",
+       "Convocação",
+       "Encantamento",
+       "Evocação",
+       "Ilusão",
+       "Necromancia",
+       "Transmutação",
+       "Espiritual"
+      ],
+      "permanente": true
+     }
+    },
+    {
+     "id": "chama-da-musa",
+     "nome": "Chama da Musa",
+     "nivel": 1,
+     "descricao": "Como ação padrão, você gasta 2 PM e inspira você e os seus aliados em alcance curto: todos recebem <strong>+1 em testes de perícia</strong> até o fim da cena. A cada nível em que a Chama aumenta (5º, 9º, 13º, 17º), o bônus sobe em +1 (máximo +5). Ao usar a Chama, você pode gastar +2 PM para aumentar o bônus em +1 (uma vez por uso). Dependendo do Caminho, a Chama também afeta outros testes (ver abaixo). Só uma Chama pode estar ativa por vez.",
+     "custoPM": 2,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "talento-de-palco",
+     "nome": "Talento de Palco",
+     "nivel": 2,
+     "descricao": "Quando faz um teste de perícia em que não seja treinado, você pode gastar 1 PM para receber o bônus de treino nesse teste.",
+     "custoPM": 1,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "caminho",
+     "nome": "Caminho",
+     "nivel": 1,
+     "descricao": "Você escolhe um Caminho, e a escolha é permanente.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": [
+      {
+       "nome": "Caminho da Poesia",
+       "descricao": "Sua arte é a palavra. A Chama da Musa também concede o bônus aos <strong>testes de resistência</strong> dos aliados. Você ganha <strong>Verso</strong>: como ação padrão, você gasta 1 PM e fala um verso para uma criatura que possa ouvi-lo em alcance curto, à sua escolha entre <strong>Louvor</strong> (aliado: ele soma 1d6 a um teste de perícia, de resistência ou de ataque feito até o início do seu próximo turno, declarando depois de rolar; o dado aumenta para 1d8 no 5º nível, 1d10 no 11º e 1d12 no 17º) e <strong>Escárnio</strong> (inimigo: teste de Vontade, CD = 10 + metade do seu nível + Carisma; se falhar, fica Frustrado até o início do seu próximo turno; <em>Mental</em>)."
+      },
+      {
+       "nome": "Caminho da Música",
+       "descricao": "Sua arte é o som. Você precisa empunhar um <strong>instrumento musical</strong> (R$ 15, 1 espaço; sacar é ação de movimento) para usar as habilidades do Caminho. A Chama da Musa também concede o bônus aos <strong>testes de ataque</strong> dos aliados. Você ganha <strong>Execução</strong>: como ação padrão, você gasta 1 PM e toca uma melodia em alcance curto, que dura até o início do seu próximo turno, à sua escolha entre <strong>Cadência</strong> (aliados: +3 m de deslocamento e +1 de Defesa) e <strong>Dissonância</strong> (inimigos: teste de Vontade, CD = 10 + metade do seu nível + Carisma; se falhar, ficam Abalados; <em>Mental, Sônico</em>). Você pode manter a Execução no turno seguinte como ação de movimento, sem novo custo, mas só se continuar tocando (ficar Surdo ou sem o instrumento a encerra)."
+      }
+     ],
+     "escolha": {
+      "tipo": "caminho",
+      "permanente": true,
+      "opcoes": [
+       "Caminho da Poesia",
+       "Caminho da Música"
+      ]
+     }
+    },
+    {
+     "id": "estilo",
+     "nome": "Estilo",
+     "nivel": 3,
+     "descricao": "Dentro do seu Caminho, você escolhe um <strong>Estilo</strong> (permanente). Cada Estilo concede uma habilidade agora, outra no 9º nível (<strong>Estilo Aprofundado</strong>) e outra no 15º (<strong>Estilo Supremo</strong>), além de uma lista de poderes própria.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": [],
+     "escolha": {
+      "tipo": "caminho",
+      "permanente": true,
+      "opcoes": [
+       "Poeta Épico",
+       "Poeta Lírico",
+       "Poeta Satírico",
+       "Heavy Metal",
+       "MPB",
+       "Clássica"
+      ],
+      "porCaminho": {
+       "Poesia": [
+        "Poeta Épico",
+        "Poeta Lírico",
+        "Poeta Satírico"
+       ],
+       "Música": [
+        "Heavy Metal",
+        "MPB",
+        "Clássica"
+       ]
+      }
+     }
+    },
+    {
+     "id": "obra-prima",
+     "nome": "Obra-Prima",
+     "nivel": 20,
+     "descricao": "Você pode usar a Chama da Musa como ação livre. Enquanto estiver sob a sua Chama, qualquer habilidade de bardo (inclusive magias) que você use tem o custo em PM <strong>reduzido pela metade</strong> (depois de aplicar qualquer outra redução).",
+     "custoPM": null,
+     "acao": "livre",
+     "subs": []
+    },
+    {
+     "id": "estilo-poeta-epico",
+     "nome": "Estilo: Poeta Épico",
+     "nivel": null,
+     "descricao": "Canta feitos que ainda não aconteceram, de modo que se tornam verdade.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "canto-de-herois",
+     "nome": "Canto de Heróis",
+     "nivel": 3,
+     "descricao": "Seu Louvor passa a dar também <strong>+2 PV temporários por nível do bardo</strong> ao aliado (somem ao fim da cena).",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "epopeia-viva",
+     "nome": "Epopeia Viva",
+     "nivel": 9,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 4 PM. Até o fim da cena, você e os aliados em alcance curto recebem <strong>+1 em ataques e em dano</strong> enquanto estiverem dentro de alcance curto de você.",
+     "custoPM": 4,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "fim-de-saga",
+     "nome": "Fim de Saga",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, quando você ou um aliado em alcance curto chegaria a 0 PV, ele fica com 1 PV e recebe PV temporários iguais ao seu nível + Carisma.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "estilo-poeta-lirico",
+     "nome": "Estilo: Poeta Lírico",
+     "nivel": null,
+     "descricao": "Tece palavras de amor, saudade e perda que ferem e curam.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "verso-de-amor",
+     "nome": "Verso de Amor",
+     "nivel": 3,
+     "descricao": "Seu Louvor passa a curar o aliado em <strong>1d6 PV</strong> por nível ímpar do bardo arredondado para cima (1d6 no 1º, 2d6 no 3º, …, até 5d6 no 9º).",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "melancolia",
+     "nome": "Melancolia",
+     "nivel": 9,
+     "descricao": "Seu Escárnio passa a também deixar o alvo <strong>Esmorecido</strong> (em vez de só Frustrado) se ele falhar por 5 ou mais.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "eterno-retorno",
+     "nome": "Eterno Retorno",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e toca um aliado que tenha caído a 0 PV na última rodada: ele volta com metade dos PV máximos e remove todas as condições.",
+     "custoPM": 8,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "estilo-poeta-satirico",
+     "nome": "Estilo: Poeta Satírico",
+     "nivel": null,
+     "descricao": "Ri do poderoso, e o poderoso treme.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "lingua-afiada",
+     "nome": "Língua Afiada",
+     "nivel": 3,
+     "descricao": "Seu Escárnio funciona como <strong>ação de movimento</strong> e, se o alvo falhar, também sofre <strong>–2 na Defesa</strong> até o início do seu próximo turno.",
+     "custoPM": null,
+     "acao": "movimento",
+     "subs": []
+    },
+    {
+     "id": "martir-da-piada",
+     "nome": "Mártir da Piada",
+     "nivel": 9,
+     "descricao": "Quando uma criatura Frustrada por você ataca um aliado, você pode usar a sua reação para fazê-la atacar a si mesma ou a uma criatura adjacente à sua escolha (Vontade, CD de bardo anula).",
+     "custoPM": null,
+     "acao": "reacao",
+     "subs": []
+    },
+    {
+     "id": "rei-dos-tolos",
+     "nome": "Rei dos Tolos",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM. Todos os inimigos em alcance curto fazem um teste de Vontade (CD de bardo). Quem falhar fica <strong>Confuso</strong> por 1d4 rodadas. <em>Mental.</em>",
+     "custoPM": 6,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "estilo-heavy-metal",
+     "nome": "Estilo: Heavy Metal",
+     "nivel": null,
+     "descricao": "Barulho que vira armadura. Peso que vira dano.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "riff-pesado",
+     "nome": "Riff Pesado",
+     "nivel": 3,
+     "descricao": "Sua Execução (Cadência) passa a conceder também +1 de dano nos ataques dos aliados, e a Dissonância causa <strong>1d6 de dano sônico</strong> por 2 níveis do bardo (arredondado para cima) a quem falhar.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "muralha-de-som",
+     "nome": "Muralha de Som",
+     "nivel": 9,
+     "descricao": "Enquanto você mantiver uma Execução, você e os aliados em alcance curto recebem <strong>RD 3</strong> contra dano de <strong>Corte, Perfuração e Impacto</strong>.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "estadio-lotado",
+     "nome": "Estádio Lotado",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação completa, você gasta 8 PM e toca um solo devastador: todos os inimigos em um cone de 9 m sofrem 8d6 de dano sônico (Reflexos, CD de bardo, reduz à metade) e ficam <strong>Atordoados</strong> por 1 rodada se falharem por 5 ou mais.",
+     "custoPM": 8,
+     "acao": "completa",
+     "subs": []
+    },
+    {
+     "id": "estilo-mpb",
+     "nome": "Estilo: MPB",
+     "nivel": null,
+     "descricao": "Ritmo, calor e festa. A plateia vira parte da música.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "gingado",
+     "nome": "Gingado",
+     "nivel": 3,
+     "descricao": "Sua Cadência também concede aos aliados <strong>vantagem em Reflexos</strong> e remove a condição <strong>Lento</strong> em quem a receber.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "roda-de-samba",
+     "nome": "Roda de Samba",
+     "nivel": 9,
+     "descricao": "Aliados em alcance curto que comecem o turno sob a sua Execução podem usar a reação para <strong>trocar de lugar</strong> (1,5 m) com outro aliado em alcance curto, sem provocar reações.",
+     "custoPM": null,
+     "acao": "reacao",
+     "subs": []
+    },
+    {
+     "id": "carnaval",
+     "nome": "Carnaval",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM. Até o fim da cena, você e os aliados em alcance curto recebem <strong>+2 em testes de perícia e de resistência</strong> e removem uma condição à sua escolha (uma por criatura).",
+     "custoPM": 8,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "estilo-classica",
+     "nome": "Estilo: Clássica",
+     "nivel": null,
+     "descricao": "A partitura é lei, e quem a segue tem vantagem.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "partitura",
+     "nome": "Partitura",
+     "nivel": 3,
+     "descricao": "Seu bônus da Chama da Musa aumenta em <strong>+1</strong> (e a Chama da Musa passa a poder ser usada como <strong>ação de movimento</strong> em vez de padrão).",
+     "custoPM": null,
+     "acao": "movimento",
+     "subs": []
+    },
+    {
+     "id": "concerto",
+     "nome": "Concerto",
+     "nivel": 9,
+     "descricao": "Quando você usa Execução, pode gastar +2 PM para afetar <strong>todos</strong> os aliados em alcance médio (em vez de curto) e conceder a eles <strong>+1 em testes de resistência</strong>.",
+     "custoPM": 2,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "sinfonia",
+     "nome": "Sinfonia",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e rege uma sinfonia: até o fim da cena, o seu Louvor/Escárnio ou a sua Execução (conforme o Caminho) passa a <strong>não custar PM</strong> e pode ser usado como ação livre uma vez por rodada.",
+     "custoPM": 8,
+     "acao": "padrao",
+     "subs": []
+    }
+   ],
+   "grupos": [
+    "Poderes gerais",
+    "Poderes do Caminho da Poesia",
+    "Poderes do Caminho da Música",
+    "Poderes do Poeta Épico",
+    "Poderes do Poeta Lírico",
+    "Poderes do Poeta Satírico",
+    "Poderes de Heavy Metal",
+    "Poderes de MPB",
+    "Poderes da Clássica",
+    "Poderes comuns"
+   ],
+   "poderes": [
+    {
+     "id": "repertorio-ampliado",
+     "nome": "Repertório Ampliado",
+     "grupo": "Poderes gerais",
+     "descricao": "Você aprende duas magias de qualquer nível que possa lançar, das escolas que você conhece. Você pode escolher este poder várias vezes.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "magias",
+      "quantidade": 2
+     }
+    },
+    {
+     "id": "voz-de-ouro",
+     "nome": "Voz de Ouro",
+     "grupo": "Poderes gerais",
+     "descricao": "Você recebe +2 em Atuação e +2 em Diplomacia.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "fama",
+     "nome": "Fama",
+     "grupo": "Poderes gerais",
+     "descricao": "Suas apresentações o tornaram conhecido. Quando usa Atuação para impressionar uma plateia, o bônus que você recebe em perícias baseadas em Carisma aumenta para +5. Por outro lado, pode ser difícil passar despercebido em grandes cidades.",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "mestre-dos-rumores",
+     "nome": "Mestre dos Rumores",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando faz um teste de Investigação para interrogar ou de Enganação para intriga, você rola dois dados e fica com o melhor. Você pode fazer esses testes em ambientes sociais (taverna, festival, corte) em uma hora, em vez de um dia.",
+     "prerequisito": "treinado em Enganação e Investigação",
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "arte-magica",
+     "nome": "Arte Mágica",
+     "grupo": "Poderes gerais",
+     "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, a CD das suas habilidades de bardo aumenta em +2.",
+     "prerequisito": "5º nível",
+     "nivelMinimo": 5,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "danca-das-laminas",
+     "nome": "Dança das Lâminas",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando você lança uma magia com execução de ação padrão, pode gastar 1 PM para fazer um ataque corpo a corpo como ação livre.",
+     "prerequisito": "Esgrima Poética, 10º nível",
+     "nivelMinimo": 10,
+     "custoPM": 1,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "esgrima-poetica"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "esgrima-poetica",
+     "nome": "Esgrima Poética",
+     "grupo": "Poderes gerais",
+     "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, você pode usar Atuação no lugar de Luta nos testes de ataque com armas corpo a corpo Leves ou de uma mão.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "golpe-magico",
+     "nome": "Golpe Mágico",
+     "grupo": "Poderes gerais",
+     "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, sempre que você acertar um ataque corpo a corpo, recebe <strong>2 PM temporários</strong> (acumulam, até o seu nível por cena; somem ao fim da cena).",
+     "prerequisito": "Esgrima Poética",
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "esgrima-poetica"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "golpe-elemental",
+     "nome": "Golpe Elemental",
+     "grupo": "Poderes gerais",
+     "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, quando acerta um ataque corpo a corpo, você pode gastar 1 PM para causar <strong>1d6</strong> de dano extra de Ácido, Elétrico, Fogo ou Frio (à escolha). A cada quatro níveis, você pode gastar +1 PM para aumentar o dano em +1d6.",
+     "prerequisito": "Golpe Mágico",
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "golpe-magico"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "chama-marcial",
+     "nome": "Chama Marcial",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando você usa a Chama da Musa, o bônus também vale para as <strong>rolagens de dano</strong> dos aliados.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "lendas-e-historias",
+     "nome": "Lendas e Histórias",
+     "grupo": "Poderes gerais",
+     "descricao": "Você é um arquivo vivo de relatos, canções e folclore. Você pode gastar 1 PM para rolar novamente um teste recém-feito de História, Misticismo, Nobreza ou Religião para informação, identificar criaturas ou identificar itens mágicos.",
+     "prerequisito": "Inteligência 1",
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": {
+      "INT": 1
+     },
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "manipular",
+     "nome": "Manipular",
+     "grupo": "Poderes gerais",
+     "descricao": "Você pode gastar 1 PM para fazer uma criatura <strong>fascinada</strong> por você ficar <strong>enfeitiçada</strong> até o fim da cena (Vontade, CD de bardo anula). Se a criatura passar, fica imune a este efeito por um dia. Usar este poder não conta como ameaça à criatura fascinada.",
+     "prerequisito": "Fascinar",
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "fascinar"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "fascinar",
+     "nome": "Fascinar",
+     "grupo": "Poderes gerais",
+     "descricao": "Como ação padrão, você gasta 2 PM e faz um teste de Atuação oposto ao de Vontade de uma criatura em alcance curto. Se vencer, ela fica <strong>fascinada</strong> enquanto você se concentrar (ação padrão por rodada). Um alvo hostil ou em combate recebe +5 no teste e tem direito a novo teste sempre que você se concentrar. Se passar, fica imune por um dia. <em>Mental.</em>",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "fascinar-em-massa",
+     "nome": "Fascinar em Massa",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando usa Fascinar, você pode gastar +2 PM para afetar todas as criaturas à sua escolha no alcance (um único teste de Atuação, oposto pela Vontade de cada uma).",
+     "prerequisito": "Fascinar",
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [
+      "fascinar"
+     ],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "parodia",
+     "nome": "Paródia",
+     "grupo": "Poderes gerais",
+     "descricao": "Uma vez por rodada, quando vê outra criatura lançando uma magia em alcance médio, você pode pagar 1 PM e fazer um teste de Atuação (CD 15 + custo em PM da magia). Se passar, até o fim do seu próximo turno você pode lançar essa magia (se a conhecer e puder lançá-la).",
+     "prerequisito": "8º nível",
+     "nivelMinimo": 8,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "gestos-magicos",
+     "nome": "Gestos Mágicos",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando faz uma ação padrão, você pode aproveitar os seus gestos para lançar uma magia com execução de ação completa ou menor. Faça um teste de Atuação (CD 15 + custo em PM da magia). Se passar, você lança a magia como ação livre. Se falhar, a magia não funciona, mas você gasta os PM. Outras criaturas só percebem que você lançou uma magia com um teste de Misticismo (CD 20).",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": null,
+     "acao": "completa",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "melodia-restauradora",
+     "nome": "Melodia Restauradora",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando você usa Execução com Cadência, pode gastar +2 PM para remover do grupo uma condição à sua escolha (Abalado, Alquebrado, Apavorado, Atordoado, Cego, Confuso, Enfeitiçado, Esmorecido, Exausto, Fatigado, Frustrado, Pasmo ou Surdo).",
+     "prerequisito": "Caminho da Música",
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "voz-de-comando",
+     "nome": "Voz de Comando",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando um aliado em alcance curto falha em um teste, você pode gastar 2 PM para que ele o repita com vantagem.",
+     "prerequisito": "8º nível",
+     "nivelMinimo": 8,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "rima-rapida",
+     "nome": "Rima Rápida",
+     "grupo": "Poderes do Caminho da Poesia",
+     "descricao": "Você pode usar Verso como ação de movimento uma vez por rodada, ao custo de +1 PM.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Caminho da Poesia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "verso-duplo",
+     "nome": "Verso Duplo",
+     "grupo": "Poderes do Caminho da Poesia",
+     "descricao": "Quando você usa Verso, pode gastar +2 PM para afetar uma criatura adicional em alcance curto.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Caminho da Poesia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "verso-livre",
+     "nome": "Verso Livre",
+     "grupo": "Poderes do Caminho da Poesia",
+     "descricao": "Seu Louvor passa a poder ser usado em você mesmo.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Caminho da Poesia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "solo",
+     "nome": "Solo",
+     "grupo": "Poderes do Caminho da Música",
+     "descricao": "Quando você usa Execução, pode gastar +1 PM para que ela tenha efeito só sobre você, mas com bônus dobrados.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Caminho da Música",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "instrumento-de-estimacao",
+     "nome": "Instrumento de Estimação",
+     "grupo": "Poderes do Caminho da Música",
+     "descricao": "Seu instrumento musical é uma obra superior: você recebe +1 em Atuação ao usá-lo e ele recebe RD 5 e PV 10 (conforme <em>Quebrando Objetos</em>).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Caminho da Música",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "backing-vocal",
+     "nome": "Backing Vocal",
+     "grupo": "Poderes do Caminho da Música",
+     "descricao": "Uma vez por cena, quando um aliado em alcance curto usa uma habilidade que custa PM, você pode gastar uma reação e 1 PM para reduzir o custo dela em 1 PM.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Caminho da Música",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "epopeia",
+     "nome": "Epopeia",
+     "grupo": "Poderes do Poeta Épico",
+     "descricao": "Quando você usa a Epopeia Viva, o bônus de ataque e de dano passa a ser +2.",
+     "prerequisito": "11º nível",
+     "nivelMinimo": 11,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Épico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "ode",
+     "nome": "Ode",
+     "grupo": "Poderes do Poeta Épico",
+     "descricao": "Como ação padrão, você gasta 3 PM e canta uma ode a um aliado: até o fim da cena ele tem <strong>+2 em testes de resistência contra medo e contra efeitos mentais</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 3,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Épico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "saga",
+     "nome": "Saga",
+     "grupo": "Poderes do Poeta Épico",
+     "descricao": "Uma vez por cena, quando um aliado em alcance curto mata uma criatura inimiga, você pode usar a sua reação e gastar 2 PM para que o aliado faça um ataque extra contra outra criatura.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Épico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "hino-de-guerra",
+     "nome": "Hino de Guerra",
+     "grupo": "Poderes do Poeta Épico",
+     "descricao": "Como ação de movimento, você gasta 2 PM: aliados em alcance curto ganham <strong>+1d4 de dano</strong> no próximo ataque que acertarem até o fim do seu próximo turno.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Épico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "soneto",
+     "nome": "Soneto",
+     "grupo": "Poderes do Poeta Lírico",
+     "descricao": "Quando você cura com Verso de Amor, a cura pode ser dividida entre até <strong>três aliados</strong> à sua escolha (você escolhe a divisão).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Lírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "haicai",
+     "nome": "Haicai",
+     "grupo": "Poderes do Poeta Lírico",
+     "descricao": "Como ação livre, uma vez por rodada, você pode usar Verso gastando só <strong>1 PM</strong>, mas ele só pode ser Louvor e a cura é reduzida à metade.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "livre",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Lírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "madrigal",
+     "nome": "Madrigal",
+     "grupo": "Poderes do Poeta Lírico",
+     "descricao": "Como ação padrão, você gasta 4 PM e faz uma criatura em alcance curto ficar <strong>fascinada</strong> por você por 1 rodada (Vontade, CD de bardo anula). <em>Mental.</em>",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 4,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Lírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "elegia",
+     "nome": "Elegia",
+     "grupo": "Poderes do Poeta Lírico",
+     "descricao": "Uma criatura <strong>Esmorecida</strong> ou <strong>Frustrada</strong> por você sofre –2 adicional em testes de Vontade contra você até o fim da cena.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Lírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "epigrama",
+     "nome": "Epigrama",
+     "grupo": "Poderes do Poeta Satírico",
+     "descricao": "Seu Escárnio passa a causar 1d6 de dano psíquico <strong>não letal</strong> por 2 níveis do bardo (arredondado para cima) a quem falhar.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Satírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "satira",
+     "nome": "Sátira",
+     "grupo": "Poderes do Poeta Satírico",
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 3 PM e afeta todos os inimigos em alcance curto com <strong>Frustrado</strong> (Vontade, CD de bardo anula).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 3,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Satírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "cordel",
+     "nome": "Cordel",
+     "grupo": "Poderes do Poeta Satírico",
+     "descricao": "Quando um inimigo Frustrado por você rola um teste de ataque, você pode gastar 1 PM e a sua reação para fazê-lo rolar com <strong>desvantagem</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Satírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "limerique",
+     "nome": "Limerique",
+     "grupo": "Poderes do Poeta Satírico",
+     "descricao": "Como ação livre, uma vez por rodada, você pode fazer a criatura Frustrada por você <strong>provocá-lo</strong> (ela deve atacá-lo se puder) até o fim do próximo turno dela (Vontade, CD de bardo anula).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "livre",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Poeta Satírico",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "power-metal",
+     "nome": "Power Metal",
+     "grupo": "Poderes de Heavy Metal",
+     "descricao": "Quando você usa Execução com Cadência, aliados também recebem <strong>+2 PV temporários por nível do bardo</strong> até o fim da cena.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Heavy Metal",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "nu-metal",
+     "nome": "Nu Metal",
+     "grupo": "Poderes de Heavy Metal",
+     "descricao": "Sua Dissonância passa a deixar <strong>Frustrados</strong> os que falharem e a causar <strong>+1d6</strong> de dano sônico.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Heavy Metal",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "prog-metal",
+     "nome": "Prog Metal",
+     "grupo": "Poderes de Heavy Metal",
+     "descricao": "Uma vez por rodada, quando você usa Execução, pode gastar +2 PM para trocar de Cadência para Dissonância (ou o inverso) <strong>como ação livre</strong> no mesmo turno.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "livre",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Heavy Metal",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "black-metal",
+     "nome": "Black Metal",
+     "grupo": "Poderes de Heavy Metal",
+     "descricao": "Sua Dissonância passa a deixar os que falharem <strong>Apavorados</strong> por 1 rodada (Abalados nas rodadas seguintes se você mantiver a Execução), e você recebe <strong>+2 em Intimidação</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Heavy Metal",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "bossa-nova",
+     "nome": "Bossa Nova",
+     "grupo": "Poderes de MPB",
+     "descricao": "Quando você mantém uma Execução, os aliados em alcance curto recuperam <strong>1d4 PV</strong> no início de cada turno seu.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo MPB",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "samba",
+     "nome": "Samba",
+     "grupo": "Poderes de MPB",
+     "descricao": "Sua Cadência também concede <strong>+3 m de deslocamento adicionais</strong> e permite aos aliados <strong>ignorar terreno difícil</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo MPB",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "carimbo",
+     "nome": "Carimbó",
+     "grupo": "Poderes de MPB",
+     "descricao": "Como ação padrão, você gasta 3 PM: criaturas à sua escolha em alcance curto fazem um teste de Vontade (CD de bardo) ou ficam <strong>Lentas</strong> por 1 rodada, presas num ritmo hipnótico.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 3,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo MPB",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "forro",
+     "nome": "Forró",
+     "grupo": "Poderes de MPB",
+     "descricao": "Dois aliados à sua escolha em alcance curto, que estejam <strong>adjacentes entre si</strong>, recebem <strong>+2 em ataques e em testes de perícia</strong> enquanto permanecerem adjacentes e você mantiver a Execução.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo MPB",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "barroco",
+     "nome": "Barroco",
+     "grupo": "Poderes da Clássica",
+     "descricao": "Uma vez por rodada, quando você lança uma magia, pode gastar +1 PM para receber <strong>+2</strong> no teste de Atuação ou de Concentração relacionado a ela.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Clássica",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "romantismo",
+     "nome": "Romantismo",
+     "grupo": "Poderes da Clássica",
+     "descricao": "Quando você cura com magia ou habilidade, a cura aumenta em <strong>+1d6</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Clássica",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "contemporaneo",
+     "nome": "Contemporâneo",
+     "grupo": "Poderes da Clássica",
+     "descricao": "Sua Dissonância passa a afetar <strong>também aliados de inimigos</strong> (criaturas que a CD de bardo não dissipe), e seu alcance passa a ser médio.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Clássica",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "renascimento",
+     "nome": "Renascimento",
+     "grupo": "Poderes da Clássica",
+     "descricao": "Sua Chama da Musa passa a ter alcance <strong>médio</strong> e dura até o fim da <strong>aventura</strong> (uma Chama por vez, e você pode encerrá-la quando quiser).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Estilo Clássica",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "aumento-de-atributo",
+     "nome": "Aumento de Atributo",
+     "grupo": "Poderes comuns",
+     "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "atributo",
+      "quantidade": 1
+     }
+    },
+    {
+     "id": "pericia-especializada",
+     "nome": "Perícia Especializada",
+     "grupo": "Poderes comuns",
+     "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+     "prerequisito": "10º nível",
+     "nivelMinimo": 10,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "pericias",
+      "quantidade": 1,
+      "filtro": "treinadas-nao-especialistas"
+     }
+    }
+   ]
   }
  ]
 }

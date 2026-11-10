@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "soqueira-com-espinhos"
+      "id": "soqueira-com-espinhos",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!e8MFGv2IDjLNpr3Q"

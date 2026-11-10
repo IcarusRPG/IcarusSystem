@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "cimitarra"
+      "id": "cimitarra",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!I9RV0e1vCkJnLwLN"

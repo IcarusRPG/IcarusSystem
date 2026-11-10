@@ -1,0 +1,38 @@
+{
+  "_id": "LWmUSnjyIBSiWbjm",
+  "name": "Power Metal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "OMjR03llKVPIi7MM",
+  "sort": 3700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa Execução com Cadência, aliados também recebem <strong>+2 PV temporários por nível do bardo</strong> até o fim da cena.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Heavy Metal",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Heavy Metal",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__power-metal",
+      "classe": "bardo",
+      "poder": "power-metal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LWmUSnjyIBSiWbjm"
+}

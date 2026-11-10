@@ -1,0 +1,38 @@
+{
+  "_id": "PVt3zMCfSjhcssSt",
+  "name": "Prog Metal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "OMjR03llKVPIi7MM",
+  "sort": 3900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, quando você usa Execução, pode gastar +2 PM para trocar de Cadência para Dissonância (ou o inverso) <strong>como ação livre</strong> no mesmo turno.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Heavy Metal",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Heavy Metal",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__prog-metal",
+      "classe": "bardo",
+      "poder": "prog-metal",
+      "inferido": true
+    }
+  },
+  "_key": "!items!PVt3zMCfSjhcssSt"
+}

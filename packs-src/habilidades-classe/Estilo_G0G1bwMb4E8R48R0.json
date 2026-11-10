@@ -1,0 +1,38 @@
+{
+  "_id": "G0G1bwMb4E8R48R0",
+  "name": "Estilo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 3004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Dentro do seu Caminho, você escolhe um <strong>Estilo</strong> (permanente). Cada Estilo concede uma habilidade agora, outra no 9º nível (<strong>Estilo Aprofundado</strong>) e outra no 15º (<strong>Estilo Supremo</strong>), além de uma lista de poderes própria.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__estilo",
+      "classe": "bardo",
+      "habilidade": "estilo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!G0G1bwMb4E8R48R0"
+}

@@ -38,7 +38,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "espada-curta"
+      "id": "espada-curta",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!by7a2vBhR6GvC7hK"

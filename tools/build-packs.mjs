@@ -19,7 +19,7 @@ import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
 import { documentosDeMagias } from "../module/magias-dados.mjs";
-import { documentosDeFocos } from "../module/objetos-dados.mjs";
+import { documentosDeFocos, aplicarObjetosNosCompendios } from "../module/objetos-dados.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
@@ -78,8 +78,10 @@ for (const [pasta, prefixo] of [[PASTA_ICONES_PODERES, ""], ["origens", "origem:
 }
 const docsOrigens = documentosDeOrigens({ origens: ler("origens"), itens: ler("itens-comuns"), imagens: imagensOrigens }, idEstavel);
 // Focos arcanos (tools/dados/objetos.json) entram no compêndio Itens Comuns, pasta própria
+const objetosDados = ler("objetos");
 {
-  const focos = documentosDeFocos(ler("objetos"), idEstavel);
+  const bordao = documentosDosCompendios(armas).armas.itens.find(d => d.flags?.["icarus-rpg"]?.id === "bordao");
+  const focos = documentosDeFocos(objetosDados, idEstavel, { bordao });
   docsOrigens["itens-comuns"].pastas.push(focos.pasta);
   docsOrigens["itens-comuns"].itens.push(...focos.itens);
 }
@@ -95,6 +97,9 @@ if (semImagem.length) console.warn(`Sem imagem no mapa (usam o dado azul): ${sem
 /* ---------- Documentos ---------- */
 const docsArmas = documentosDosCompendios(armas);
 const docsNovos = documentosNovos(novos);
+// RD/PV (Quebrar) nas armas, armaduras e escudos, pela tabela validada de objetos.json
+const semRdPv = aplicarObjetosNosCompendios(objetosDados, docsArmas.armas.itens, docsNovos["armaduras-escudos"].itens);
+if (semRdPv.length) console.warn(`Sem RD/PV na tabela de objetos: ${semRdPv.join(", ")}`);
 const docsClasses = documentosDeClasses(novos);
 
 /** Cada pacote: lista de [documento, coleção] já com as chaves. */

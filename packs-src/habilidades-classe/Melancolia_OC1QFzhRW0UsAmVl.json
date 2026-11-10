@@ -1,0 +1,38 @@
+{
+  "_id": "OC1QFzhRW0UsAmVl",
+  "name": "Melancolia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 9012,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Escárnio passa a também deixar o alvo <strong>Esmorecido</strong> (em vez de só Frustrado) se ele falhar por 5 ou mais.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__melancolia",
+      "classe": "bardo",
+      "habilidade": "melancolia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!OC1QFzhRW0UsAmVl"
+}

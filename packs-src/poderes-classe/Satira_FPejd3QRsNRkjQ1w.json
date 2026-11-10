@@ -1,0 +1,38 @@
+{
+  "_id": "FPejd3QRsNRkjQ1w",
+  "name": "Sátira",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "oLqfNa3katI51EyL",
+  "sort": 3400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 3 PM e afeta todos os inimigos em alcance curto com <strong>Frustrado</strong> (Vontade, CD de bardo anula).",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Satírico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Satírico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__satira",
+      "classe": "bardo",
+      "poder": "satira",
+      "inferido": true
+    }
+  },
+  "_key": "!items!FPejd3QRsNRkjQ1w"
+}

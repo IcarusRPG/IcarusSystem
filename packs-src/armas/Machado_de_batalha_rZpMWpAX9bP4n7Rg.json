@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "machado-de-batalha"
+      "id": "machado-de-batalha",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!rZpMWpAX9bP4n7Rg"

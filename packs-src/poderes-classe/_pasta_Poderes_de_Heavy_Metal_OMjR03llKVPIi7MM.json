@@ -1,0 +1,15 @@
+{
+  "_id": "OMjR03llKVPIi7MM",
+  "name": "Poderes de Heavy Metal",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 700,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-de-heavy-metal"
+    }
+  },
+  "_key": "!folders!OMjR03llKVPIi7MM"
+}

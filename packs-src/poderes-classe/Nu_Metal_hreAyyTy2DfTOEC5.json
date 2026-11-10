@@ -1,0 +1,38 @@
+{
+  "_id": "hreAyyTy2DfTOEC5",
+  "name": "Nu Metal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "OMjR03llKVPIi7MM",
+  "sort": 3800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sua Dissonância passa a deixar <strong>Frustrados</strong> os que falharem e a causar <strong>+1d6</strong> de dano sônico.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Heavy Metal",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Heavy Metal",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__nu-metal",
+      "classe": "bardo",
+      "poder": "nu-metal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!hreAyyTy2DfTOEC5"
+}

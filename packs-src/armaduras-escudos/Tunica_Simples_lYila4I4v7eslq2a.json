@@ -24,7 +24,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "tunica-simples"
+      "id": "tunica-simples",
+      "objeto": {
+        "rd": 0,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!lYila4I4v7eslq2a"

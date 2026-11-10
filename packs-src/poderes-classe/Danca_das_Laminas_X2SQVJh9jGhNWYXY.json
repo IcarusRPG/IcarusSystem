@@ -1,0 +1,40 @@
+{
+  "_id": "X2SQVJh9jGhNWYXY",
+  "name": "Dança das Lâminas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Esgrima Poética, 10º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você lança uma magia com execução de ação padrão, pode gastar 1 PM para fazer um ataque corpo a corpo como ação livre.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "esgrima-poetica"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__danca-das-laminas",
+      "classe": "bardo",
+      "poder": "danca-das-laminas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!X2SQVJh9jGhNWYXY"
+}

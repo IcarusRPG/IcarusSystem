@@ -1,0 +1,38 @@
+{
+  "_id": "ziAshQu8b5Izibcq",
+  "name": "Romantismo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "j7mVuByBZwbSmln7",
+  "sort": 4600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você cura com magia ou habilidade, a cura aumenta em <strong>+1d6</strong>.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Clássica",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Clássica",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__romantismo",
+      "classe": "bardo",
+      "poder": "romantismo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ziAshQu8b5Izibcq"
+}

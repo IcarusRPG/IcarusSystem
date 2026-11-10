@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "gadanho"
+      "id": "gadanho",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!KDhbR7dORFW8aJ5C"

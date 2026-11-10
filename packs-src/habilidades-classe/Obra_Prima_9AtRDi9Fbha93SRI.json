@@ -1,0 +1,38 @@
+{
+  "_id": "9AtRDi9Fbha93SRI",
+  "name": "Obra-Prima",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 20005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar a Chama da Musa como ação livre. Enquanto estiver sob a sua Chama, qualquer habilidade de bardo (inclusive magias) que você use tem o custo em PM <strong>reduzido pela metade</strong> (depois de aplicar qualquer outra redução).",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__obra-prima",
+      "classe": "bardo",
+      "habilidade": "obra-prima",
+      "inferido": true
+    }
+  },
+  "_key": "!items!9AtRDi9Fbha93SRI"
+}

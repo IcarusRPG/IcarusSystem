@@ -1,0 +1,38 @@
+{
+  "_id": "X0iELzaKxkHqfRZW",
+  "name": "Repertório Ampliado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende duas magias de qualquer nível que possa lançar, das escolas que você conhece. Você pode escolher este poder várias vezes.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__repertorio-ampliado",
+      "classe": "bardo",
+      "poder": "repertorio-ampliado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!X0iELzaKxkHqfRZW"
+}

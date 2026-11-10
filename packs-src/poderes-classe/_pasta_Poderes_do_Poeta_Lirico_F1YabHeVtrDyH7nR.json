@@ -1,0 +1,15 @@
+{
+  "_id": "F1YabHeVtrDyH7nR",
+  "name": "Poderes do Poeta Lírico",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-do-poeta-lirico"
+    }
+  },
+  "_key": "!folders!F1YabHeVtrDyH7nR"
+}

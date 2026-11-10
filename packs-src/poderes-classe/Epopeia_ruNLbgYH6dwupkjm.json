@@ -1,0 +1,38 @@
+{
+  "_id": "ruNLbgYH6dwupkjm",
+  "name": "Epopeia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "f4O38jEEwT5m8yKV",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "11º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa a Epopeia Viva, o bônus de ataque e de dano passa a ser +2.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Épico",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Épico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__epopeia",
+      "classe": "bardo",
+      "poder": "epopeia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ruNLbgYH6dwupkjm"
+}

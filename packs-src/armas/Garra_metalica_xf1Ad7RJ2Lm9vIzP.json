@@ -38,7 +38,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "garra-metalica"
+      "id": "garra-metalica",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!xf1Ad7RJ2Lm9vIzP"

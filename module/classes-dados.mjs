@@ -186,7 +186,8 @@ export const patamarDe = nivel => (PATAMARES.find(p => nivel >= p.de && nivel <=
 export const ESCOLHA_SEGUE = { "caminho-aprofundado": "caminho-do-monge", "caminho-supremo": "caminho-do-monge", "o-apice-da-senda": "senda-do-combatente" };
 
 /** Habilidades da classe com escolha entre subitens (as que não seguem outra). */
-export const habilidadesComEscolha = classe => (classe?.habilidades ?? []).filter(h => h.subs?.length && !ESCOLHA_SEGUE[h.id]);
+// Só caminhos com subitens (Heranças e Conjuração Bárdica têm subitens, mas não são escolha de caminho)
+export const habilidadesComEscolha = classe => (classe?.habilidades ?? []).filter(h => h.subs?.length && h.escolha?.tipo === "caminho" && !ESCOLHA_SEGUE[h.id]);
 
 /** Nome sem o parêntese ("Kyudo (Arco)" → "kyudo"). */
 const nucleo = nome => normalizarNome(String(nome).replace(/\(.*?\)/g, ""));

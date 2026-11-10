@@ -1,0 +1,38 @@
+{
+  "_id": "zfiafruTFVOjJ81e",
+  "name": "Mestre dos Rumores",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "treinado em Enganação e Investigação",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando faz um teste de Investigação para interrogar ou de Enganação para intriga, você rola dois dados e fica com o melhor. Você pode fazer esses testes em ambientes sociais (taverna, festival, corte) em uma hora, em vez de um dia.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__mestre-dos-rumores",
+      "classe": "bardo",
+      "poder": "mestre-dos-rumores",
+      "inferido": false
+    }
+  },
+  "_key": "!items!zfiafruTFVOjJ81e"
+}

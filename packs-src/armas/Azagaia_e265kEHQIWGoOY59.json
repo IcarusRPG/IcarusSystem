@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "azagaia"
+      "id": "azagaia",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!e265kEHQIWGoOY59"

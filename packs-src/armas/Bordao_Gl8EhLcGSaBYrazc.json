@@ -38,7 +38,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "bordao"
+      "id": "bordao",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!Gl8EhLcGSaBYrazc"

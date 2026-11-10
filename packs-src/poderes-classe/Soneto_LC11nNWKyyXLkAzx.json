@@ -1,0 +1,38 @@
+{
+  "_id": "LC11nNWKyyXLkAzx",
+  "name": "Soneto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "F1YabHeVtrDyH7nR",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você cura com Verso de Amor, a cura pode ser dividida entre até <strong>três aliados</strong> à sua escolha (você escolhe a divisão).",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Lírico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Lírico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__soneto",
+      "classe": "bardo",
+      "poder": "soneto",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LC11nNWKyyXLkAzx"
+}

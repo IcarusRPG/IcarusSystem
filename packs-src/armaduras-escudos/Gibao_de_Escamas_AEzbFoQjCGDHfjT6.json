@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "gibao-de-escamas"
+      "id": "gibao-de-escamas",
+      "objeto": {
+        "rd": 8,
+        "pvMax": 30,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!AEzbFoQjCGDHfjT6"

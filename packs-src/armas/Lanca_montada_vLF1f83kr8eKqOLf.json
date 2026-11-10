@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "lanca-montada"
+      "id": "lanca-montada",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!vLF1f83kr8eKqOLf"

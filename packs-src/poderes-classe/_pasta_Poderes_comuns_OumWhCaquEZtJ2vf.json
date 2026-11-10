@@ -1,0 +1,15 @@
+{
+  "_id": "OumWhCaquEZtJ2vf",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 1000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-comuns"
+    }
+  },
+  "_key": "!folders!OumWhCaquEZtJ2vf"
+}

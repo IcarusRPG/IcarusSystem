@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "pistola"
+      "id": "pistola",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!8f7LVSFabOc0lilV"

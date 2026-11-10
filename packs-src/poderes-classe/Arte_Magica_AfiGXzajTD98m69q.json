@@ -1,0 +1,38 @@
+{
+  "_id": "AfiGXzajTD98m69q",
+  "name": "Arte Mágica",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, a CD das suas habilidades de bardo aumenta em +2.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__arte-magica",
+      "classe": "bardo",
+      "poder": "arte-magica",
+      "inferido": false
+    }
+  },
+  "_key": "!items!AfiGXzajTD98m69q"
+}

@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "espada-longa"
+      "id": "espada-longa",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!bTgYku7JALYBaMJS"

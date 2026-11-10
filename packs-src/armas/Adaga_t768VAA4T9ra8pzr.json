@@ -39,7 +39,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "adaga"
+      "id": "adaga",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!t768VAA4T9ra8pzr"

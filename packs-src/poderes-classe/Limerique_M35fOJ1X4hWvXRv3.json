@@ -1,0 +1,38 @@
+{
+  "_id": "M35fOJ1X4hWvXRv3",
+  "name": "Limerique",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "oLqfNa3katI51EyL",
+  "sort": 3600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação livre, uma vez por rodada, você pode fazer a criatura Frustrada por você <strong>provocá-lo</strong> (ela deve atacá-lo se puder) até o fim do próximo turno dela (Vontade, CD de bardo anula).",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Satírico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Satírico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__limerique",
+      "classe": "bardo",
+      "poder": "limerique",
+      "inferido": true
+    }
+  },
+  "_key": "!items!M35fOJ1X4hWvXRv3"
+}

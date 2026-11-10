@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "couro-reforcado"
+      "id": "couro-reforcado",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 20,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!bsXPRm5huYebaZrN"

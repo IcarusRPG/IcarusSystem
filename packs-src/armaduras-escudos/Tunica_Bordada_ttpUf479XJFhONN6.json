@@ -25,7 +25,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "tunica-bordada"
+      "id": "tunica-bordada",
+      "objeto": {
+        "rd": 0,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!ttpUf479XJFhONN6"

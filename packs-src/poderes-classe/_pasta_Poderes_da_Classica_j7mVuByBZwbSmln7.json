@@ -1,0 +1,15 @@
+{
+  "_id": "j7mVuByBZwbSmln7",
+  "name": "Poderes da Clássica",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 900,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-da-classica"
+    }
+  },
+  "_key": "!folders!j7mVuByBZwbSmln7"
+}

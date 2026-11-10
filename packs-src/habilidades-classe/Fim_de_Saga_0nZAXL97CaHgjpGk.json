@@ -1,0 +1,38 @@
+{
+  "_id": "0nZAXL97CaHgjpGk",
+  "name": "Fim de Saga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 15009,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando você ou um aliado em alcance curto chegaria a 0 PV, ele fica com 1 PV e recebe PV temporários iguais ao seu nível + Carisma.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__fim-de-saga",
+      "classe": "bardo",
+      "habilidade": "fim-de-saga",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0nZAXL97CaHgjpGk"
+}

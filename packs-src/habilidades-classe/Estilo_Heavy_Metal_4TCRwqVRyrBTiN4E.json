@@ -1,0 +1,38 @@
+{
+  "_id": "4TCRwqVRyrBTiN4E",
+  "name": "Estilo: Heavy Metal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 18,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Barulho que vira armadura. Peso que vira dano.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__estilo-heavy-metal",
+      "classe": "bardo",
+      "habilidade": "estilo-heavy-metal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!4TCRwqVRyrBTiN4E"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "f4O38jEEwT5m8yKV",
+  "name": "Poderes do Poeta Épico",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-do-poeta-epico"
+    }
+  },
+  "_key": "!folders!f4O38jEEwT5m8yKV"
+}

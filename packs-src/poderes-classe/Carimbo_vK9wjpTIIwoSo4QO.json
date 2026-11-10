@@ -1,0 +1,38 @@
+{
+  "_id": "vK9wjpTIIwoSo4QO",
+  "name": "Carimbó",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "bH8bB2QmgffzMcf3",
+  "sort": 4300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 3 PM: criaturas à sua escolha em alcance curto fazem um teste de Vontade (CD de bardo) ou ficam <strong>Lentas</strong> por 1 rodada, presas num ritmo hipnótico.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de MPB",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo MPB",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__carimbo",
+      "classe": "bardo",
+      "poder": "carimbo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!vK9wjpTIIwoSo4QO"
+}

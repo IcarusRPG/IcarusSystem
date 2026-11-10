@@ -1,0 +1,38 @@
+{
+  "_id": "jFckjGeiYgOfs9m7",
+  "name": "Rei dos Tolos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 15017,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 6,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM. Todos os inimigos em alcance curto fazem um teste de Vontade (CD de bardo). Quem falhar fica <strong>Confuso</strong> por 1d4 rodadas. <em>Mental.</em>",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__rei-dos-tolos",
+      "classe": "bardo",
+      "habilidade": "rei-dos-tolos",
+      "inferido": true
+    }
+  },
+  "_key": "!items!jFckjGeiYgOfs9m7"
+}

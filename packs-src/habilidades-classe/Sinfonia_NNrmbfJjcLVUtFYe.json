@@ -1,0 +1,38 @@
+{
+  "_id": "NNrmbfJjcLVUtFYe",
+  "name": "Sinfonia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 15029,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 8,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e rege uma sinfonia: até o fim da cena, o seu Louvor/Escárnio ou a sua Execução (conforme o Caminho) passa a <strong>não custar PM</strong> e pode ser usado como ação livre uma vez por rodada.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__sinfonia",
+      "classe": "bardo",
+      "habilidade": "sinfonia",
+      "inferido": true
+    }
+  },
+  "_key": "!items!NNrmbfJjcLVUtFYe"
+}

@@ -38,7 +38,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "corrente-de-espinhos"
+      "id": "corrente-de-espinhos",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!Nkz6aOot8ViWeJUO"

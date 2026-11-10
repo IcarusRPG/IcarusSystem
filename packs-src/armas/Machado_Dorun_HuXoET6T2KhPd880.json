@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "machado-dorun"
+      "id": "machado-dorun",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!HuXoET6T2KhPd880"

@@ -1,0 +1,38 @@
+{
+  "_id": "xiRYnfFIsCIQHEAk",
+  "name": "Verso Livre",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Q9IUjlpryxu4UvVz",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Louvor passa a poder ser usado em você mesmo.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Poesia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Poesia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__verso-livre",
+      "classe": "bardo",
+      "poder": "verso-livre",
+      "inferido": false
+    }
+  },
+  "_key": "!items!xiRYnfFIsCIQHEAk"
+}

@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "pistola-de-cano-curto"
+      "id": "pistola-de-cano-curto",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!HLgTZa8qQGlta4MM"

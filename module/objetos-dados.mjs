@@ -37,11 +37,11 @@ export function danoNoObjeto({ pv, rd = 0 }, dano) {
 
 const flags = item => item?.flags?.[F] ?? {};
 
-/** O item é o Bordão (arma que também é foco)? */
-const ehBordao = item => item?.type === "arma" && (flags(item).id === "bordao" || semAcento(item.name) === "bordao");
-
-/** O item é um foco arcano (equipamento "foco", flag focoArcano ou o Bordão)? */
-export const ehFoco = item => (item?.type === "equipamento" && (item.system?.tipo === "foco" || !!flags(item).focoArcano)) || ehBordao(item);
+/**
+ * O item é um foco arcano? Equipamento "foco" ou qualquer item com flags.focoArcano (o Bordão
+ * Arcano é uma arma com a flag; o Bordão comum não é foco).
+ */
+export const ehFoco = item => (item?.type === "equipamento" && item.system?.tipo === "foco") || (["equipamento", "arma"].includes(item?.type) && !!flags(item).focoArcano);
 
 /** O item foi destruído (0 PV)? */
 export const estaDestruido = item => !!flags(item).destruido;
@@ -64,7 +64,7 @@ export function objetoDoItem(item) {
   const f = flags(item);
   let base = f.objeto ?? null;
   if (!base && ehFoco(item)) {
-    const material = f.focoArcano?.material ?? (ehBordao(item) ? OBJETOS.focoBordao.material : "madeira");
+    const material = f.focoArcano?.material ?? "madeira";
     const m = OBJETOS.materiaisFoco[material] ?? OBJETOS.materiaisFoco.madeira;
     base = { rd: m.rd, pvMax: m.pv, tamanho: "minusculo" };
   }
@@ -97,18 +97,58 @@ export function mudancasDoDanoNoItem(item, dano, manual = null) {
 
 /* ------------------------------ Compêndio ------------------------------ */
 
-/** Itens dos focos arcanos (pasta "Focos arcanos" no compêndio Itens Comuns). */
-export function documentosDeFocos(dados, idEstavel, img = "icons/svg/item-bag.svg") {
+/** Nome para casar com a tabela: sem acento, minúsculo, sem o parêntese ("Escudo Leve (Broquel)" → "escudo leve"). */
+const chaveDeNome = nome => semAcento(String(nome).replace(/\(.*?\)/g, ""));
+
+/**
+ * RD/PV de uma arma, armadura ou escudo do compêndio pela tabela validada (itensPorNome); sem linha,
+ * pela categoria da armadura. Devolve { rd, pvMax, tamanho } ou null (para relatar).
+ */
+export function objetoDoCompendio(dados, tipo, nome, categoria = "") {
+  const lista = tipo === "arma" ? dados.itensPorNome.armas : dados.itensPorNome.armaduras;
+  const linha = lista.find(x => chaveDeNome(x.nome) === chaveDeNome(nome));
+  const v = linha ?? (tipo !== "arma" ? dados.porCategoriaArmadura[categoria] : null);
+  if (!v) return null;
+  const tamanho = tipo === "arma" ? (/duas-maos/.test(linha?.categoria) ? "medio" : "pequeno") : "medio";
+  return { rd: v.rd, pvMax: v.pv, tamanho };
+}
+
+/** Grava RD/PV (flags.objeto) nos documentos de armas e armaduras/escudos; devolve os nomes sem valor. */
+export function aplicarObjetosNosCompendios(dados, armas, armaduras) {
+  const semValor = [];
+  for (const [tipo, docs] of [["arma", armas], ["armadura", armaduras]]) {
+    for (const d of docs) {
+      const o = objetoDoCompendio(dados, tipo, d.name, d.system?.categoria);
+      if (!o) { semValor.push(d.name); continue; }
+      d.flags = { ...d.flags, [F]: { ...(d.flags?.[F] ?? {}), objeto: o } };
+    }
+  }
+  return semValor;
+}
+
+/**
+ * Focos arcanos (pasta "Focos arcanos" no compêndio Itens Comuns): os 5 equipamentos e o Bordão
+ * Arcano (cópia do Bordão do compêndio de armas, com a flag de foco). Preços em Reais no JSON.
+ */
+export function documentosDeFocos(dados, idEstavel, { img = "icons/svg/item-bag.svg", bordao = null } = {}) {
   const pasta = { _id: idEstavel("pasta:focos-arcanos"), name: "Focos arcanos", type: "Item", folder: null, sorting: "m", sort: 900000, color: "#3a2a5a", flags: {} };
   const itens = dados.focos.map((f, i) => {
     const m = dados.materiaisFoco[f.material];
     return {
       _id: idEstavel(`foco:${f.id}`), name: f.nome, type: "equipamento", img, folder: pasta._id, sort: (i + 1) * 100,
-      system: { tipo: "foco", quantidade: 1, equipado: false, espacos: f.espacos ?? 1, preco: 0,
-        descricao: `<p>${f.descricao}</p><p><strong>${m.nome}:</strong> RD ${m.rd}, PV ${m.pv}.</p>` },
+      system: { tipo: "foco", quantidade: 1, equipado: false, espacos: f.espacos ?? 1, preco: Math.round((f.preco ?? 0) * 100),
+        descricao: `<p>${f.descricao}</p><p><strong>${f.materialNome ?? m.nome}:</strong> RD ${m.rd}, PV ${m.pv}. ${f.maos === 2 ? "Duas mãos." : "Uma mão."}</p>` },
       effects: [],
-      flags: { [F]: { id: `foco:${f.id}`, focoArcano: { material: f.material }, objeto: { rd: m.rd, pvMax: m.pv, tamanho: f.tamanho }, pvObjeto: m.pv } }
+      flags: { [F]: { id: `foco:${f.id}`, focoArcano: { material: f.material, maos: f.maos ?? 1 }, objeto: { rd: m.rd, pvMax: m.pv, tamanho: f.tamanho }, pvObjeto: m.pv } }
     };
   });
+  if (bordao && dados.bordaoArcano) {
+    const b = dados.bordaoArcano;
+    itens.push({
+      ...structuredClone(bordao), _id: idEstavel(`foco:${b.id}`), name: b.nome, folder: pasta._id, sort: (itens.length + 1) * 100,
+      system: { ...structuredClone(bordao.system), preco: Math.round(b.preco * 100), espacos: b.espacos, descricao: `<p>${b.descricao}</p><p><strong>Madeira, duas mãos:</strong> RD ${b.rd}, PV ${b.pv}.</p>` },
+      flags: { [F]: { ...(bordao.flags?.[F] ?? {}), id: `foco:${b.id}`, focoArcano: { material: b.material, maos: 2 }, objeto: { rd: b.rd, pvMax: b.pv, tamanho: "medio" }, pvObjeto: b.pv } }
+    });
+  }
   return { pasta, itens };
 }

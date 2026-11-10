@@ -1,0 +1,15 @@
+{
+  "_id": "o2wX3UcDc28bFZdS",
+  "name": "Poderes do Caminho da Música",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-do-caminho-da-musica"
+    }
+  },
+  "_key": "!folders!o2wX3UcDc28bFZdS"
+}

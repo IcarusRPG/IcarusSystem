@@ -1,0 +1,38 @@
+{
+  "_id": "iykWjqoazdqFXYEh",
+  "name": "Chama Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa a Chama da Musa, o bônus também vale para as <strong>rolagens de dano</strong> dos aliados.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__chama-marcial",
+      "classe": "bardo",
+      "poder": "chama-marcial",
+      "inferido": false
+    }
+  },
+  "_key": "!items!iykWjqoazdqFXYEh"
+}

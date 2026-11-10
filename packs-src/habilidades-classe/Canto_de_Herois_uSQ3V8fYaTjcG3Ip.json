@@ -1,0 +1,38 @@
+{
+  "_id": "uSQ3V8fYaTjcG3Ip",
+  "name": "Canto de Heróis",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 3007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Louvor passa a dar também <strong>+2 PV temporários por nível do bardo</strong> ao aliado (somem ao fim da cena).",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__canto-de-herois",
+      "classe": "bardo",
+      "habilidade": "canto-de-herois",
+      "inferido": false
+    }
+  },
+  "_key": "!items!uSQ3V8fYaTjcG3Ip"
+}

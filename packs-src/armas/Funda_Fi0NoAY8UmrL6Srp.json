@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "funda"
+      "id": "funda",
+      "objeto": {
+        "rd": 0,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!Fi0NoAY8UmrL6Srp"

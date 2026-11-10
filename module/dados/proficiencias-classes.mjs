@@ -97,5 +97,16 @@ export default {
     ],
     "escudo": true,
     "tunicas": true
+  },
+  "bardo": {
+    "armas": [
+      "simples",
+      "marciais-leves-ageis"
+    ],
+    "armaduras": [
+      "leve"
+    ],
+    "escudo": false,
+    "tunicas": false
   }
 };

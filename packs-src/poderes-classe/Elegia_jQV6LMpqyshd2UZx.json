@@ -1,0 +1,38 @@
+{
+  "_id": "jQV6LMpqyshd2UZx",
+  "name": "Elegia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "F1YabHeVtrDyH7nR",
+  "sort": 3200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma criatura <strong>Esmorecida</strong> ou <strong>Frustrada</strong> por você sofre –2 adicional em testes de Vontade contra você até o fim da cena.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Lírico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Lírico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__elegia",
+      "classe": "bardo",
+      "poder": "elegia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jQV6LMpqyshd2UZx"
+}

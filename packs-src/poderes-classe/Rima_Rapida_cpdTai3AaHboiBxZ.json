@@ -1,0 +1,38 @@
+{
+  "_id": "cpdTai3AaHboiBxZ",
+  "name": "Rima Rápida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Q9IUjlpryxu4UvVz",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar Verso como ação de movimento uma vez por rodada, ao custo de +1 PM.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Poesia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Poesia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__rima-rapida",
+      "classe": "bardo",
+      "poder": "rima-rapida",
+      "inferido": true
+    }
+  },
+  "_key": "!items!cpdTai3AaHboiBxZ"
+}

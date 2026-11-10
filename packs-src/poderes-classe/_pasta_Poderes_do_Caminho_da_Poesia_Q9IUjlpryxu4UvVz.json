@@ -1,0 +1,15 @@
+{
+  "_id": "Q9IUjlpryxu4UvVz",
+  "name": "Poderes do Caminho da Poesia",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-do-caminho-da-poesia"
+    }
+  },
+  "_key": "!folders!Q9IUjlpryxu4UvVz"
+}

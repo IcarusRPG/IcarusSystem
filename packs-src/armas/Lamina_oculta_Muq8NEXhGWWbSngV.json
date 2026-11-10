@@ -39,7 +39,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "lamina-oculta"
+      "id": "lamina-oculta",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!Muq8NEXhGWWbSngV"

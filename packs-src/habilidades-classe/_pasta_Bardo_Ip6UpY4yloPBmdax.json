@@ -1,0 +1,15 @@
+{
+  "_id": "Ip6UpY4yloPBmdax",
+  "name": "Bardo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1000000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:bardo"
+    }
+  },
+  "_key": "!folders!Ip6UpY4yloPBmdax"
+}

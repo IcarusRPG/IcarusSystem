@@ -38,7 +38,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "chakram"
+      "id": "chakram",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!CLCBTax80E2zpbGn"

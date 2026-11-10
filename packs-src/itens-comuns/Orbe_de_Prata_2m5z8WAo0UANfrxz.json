@@ -1,32 +1,33 @@
 {
-  "_id": "DhqRKzaDxdh9s31s",
-  "name": "Orbe",
+  "_id": "2m5z8WAo0UANfrxz",
+  "name": "Orbe de Prata",
   "type": "equipamento",
   "img": "icons/svg/item-bag.svg",
   "folder": "kRhtB1wumBEac1wy",
-  "sort": 300,
+  "sort": 500,
   "system": {
     "tipo": "foco",
     "quantidade": 1,
     "equipado": false,
     "espacos": 1,
-    "preco": 0,
-    "descricao": "<p>Foco arcano (orbe engastado em madeira ou osso). Ocupa uma mão.</p><p><strong>Madeira ou osso:</strong> RD 5, PV 5.</p>"
+    "preco": 15000,
+    "descricao": "<p>Foco arcano de metal. Ocupa uma mão.</p><p><strong>Metal:</strong> RD 10, PV 5. Uma mão.</p>"
   },
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "foco:orbe",
+      "id": "foco:orbe-de-prata",
       "focoArcano": {
-        "material": "madeira"
+        "material": "metal",
+        "maos": 1
       },
       "objeto": {
-        "rd": 5,
+        "rd": 10,
         "pvMax": 5,
         "tamanho": "minusculo"
       },
       "pvObjeto": 5
     }
   },
-  "_key": "!items!DhqRKzaDxdh9s31s"
+  "_key": "!items!2m5z8WAo0UANfrxz"
 }

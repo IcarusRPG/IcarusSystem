@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "clava"
+      "id": "clava",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!0dvna88duW32vhPv"

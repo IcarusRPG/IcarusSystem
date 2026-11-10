@@ -1,0 +1,38 @@
+{
+  "_id": "DrTai8YpkFoVQpEU",
+  "name": "Eterno Retorno",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 15013,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 8,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e toca um aliado que tenha caído a 0 PV na última rodada: ele volta com metade dos PV máximos e remove todas as condições.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__eterno-retorno",
+      "classe": "bardo",
+      "habilidade": "eterno-retorno",
+      "inferido": true
+    }
+  },
+  "_key": "!items!DrTai8YpkFoVQpEU"
+}
