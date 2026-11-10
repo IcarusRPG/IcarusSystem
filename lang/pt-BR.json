@@ -718,7 +718,8 @@
         "Qualquer": "Mostrar botões em qualquer rolagem",
         "QualquerDica": "Rolagens manuais (/r) e mensagens antigas também ganham os botões, usando o total da rolagem como dano sem tipo."
       },
-      "Voltar": "Voltar"
+      "Voltar": "Voltar",
+      "IgnorouAlvosDaArea": "Os alvos marcados pela área de outra magia não valem para este dano: aplicado nos tokens selecionados."
     },
     "Condicoes": {
       "Titulo": "Condições",

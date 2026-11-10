@@ -186,7 +186,21 @@ function posicionar(area, { origem, cor, ficha }) {
 }
 
 /** Marca como alvos (do usuário) os tokens dentro da área; o conjurador fica de fora quando a área sai dele. */
-function marcarAlvosNaArea(areaPos, tokenConjurador) {
+/**
+ * Últimos alvos marcados por uma área: { magiaId, ids } (só neste cliente). Servem para aquela
+ * magia; outro dano aplicado depois não usa esses alvos (module/dano.mjs → alvosDaAreaDeOutraMagia).
+ */
+let ultimaArea = null;
+export const ultimaAreaMarcada = () => ultimaArea;
+
+/** Os alvos atuais são os que a área de outra magia marcou (e o usuário não mexeu)? */
+export function alvosDaAreaDeOutraMagia(idsAtuais, magiaIdDaMensagem) {
+  if (!ultimaArea || !idsAtuais.length) return false;
+  const iguais = idsAtuais.length === ultimaArea.ids.length && idsAtuais.every(id => ultimaArea.ids.includes(id));
+  return iguais && ultimaArea.magiaId !== (magiaIdDaMensagem ?? null);
+}
+
+function marcarAlvosNaArea(areaPos, tokenConjurador, magiaId = null) {
   const opcoes = { pxPorMetro: pxPorMetro(), largura: larguraPadrao(), angulo: anguloPadrao(), folga: 1 };
   const tirarConjurador = apontaDoConjurador(areaPos) || areaPos.noConjurador;
   const dentro = canvas.tokens.placeables.filter(t => (game.user.isGM || (!t.document.hidden && t.visible !== false))
@@ -195,6 +209,7 @@ function marcarAlvosNaArea(areaPos, tokenConjurador) {
   for (const t of [...game.user.targets]) t.setTarget(false, { releaseOthers: false, groupSelection: true });
   for (const t of dentro) t.setTarget(true, { releaseOthers: false, groupSelection: true });
   game.user.broadcastActivity?.({ targets: game.user.targets.ids ?? [...game.user.targets].map(t => t.id) });
+  ultimaArea = { magiaId, ids: dentro.map(t => t.document.uuid) };
   return dentro;
 }
 
@@ -228,7 +243,7 @@ export async function areaNoMapa({ actor, item, tokenConjurador, cor, instantane
   } catch (erro) {
     console.warn("Icarus RPG | não foi possível criar o modelo da área", erro);
   }
-  marcarAlvosNaArea(areaPos, tokenConjurador);
+  marcarAlvosNaArea(areaPos, tokenConjurador, item.flags?.[F]?.id ?? item.id);
   return areaPos;
 }
 

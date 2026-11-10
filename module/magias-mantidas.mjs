@@ -15,6 +15,7 @@ import { temHabilidadeNosItens } from "./classes-dados.mjs";
 import { INICIO_DO_TURNO } from "./acoes.mjs";
 import { FIM_DA_CENA } from "./condicoes-foundry.mjs";
 import { rolarD20 } from "./combate.mjs";
+import { AO_SOFRER_DANO } from "./dano.mjs";
 
 const F = SISTEMA_ID;
 const loc = k => game.i18n.localize(k);
@@ -89,6 +90,11 @@ FIM_DA_CENA.push(async actor => {
   if (mantidasDoAtor(actor).length) await actor.unsetFlag(F, "magiasMantidas");
 });
 
+// Sofreu dano (aplicado pelo chat, por quem aplicou: jogador ou Mestre): cartão do teste
+AO_SOFRER_DANO.push(async (actor, dano) => {
+  if (mantidasDoAtor(actor).some(m => m.tipo === "concentracao")) await cartaoDeConcentracao(actor, dano);
+});
+
 /** Cartão com os botões "Teste de Concentração CD N" (um por magia de concentração). */
 async function cartaoDeConcentracao(actor, dano) {
   const conc = mantidasDoAtor(actor).filter(m => m.tipo === "concentracao");
@@ -138,15 +144,6 @@ function aoRenderizar(mensagem, html) {
 export function registrarMagiasMantidas() {
   if ((game.release?.generation ?? 12) >= 13) Hooks.on("renderChatMessageHTML", aoRenderizar);
   else Hooks.on("renderChatMessage", aoRenderizar);
-  // Sofreu dano (PV caiu) com magia de concentração: cartão do teste (só no cliente que aplicou)
-  Hooks.on("preUpdateActor", (actor, mudancas, opcoes) => {
-    if (foundry.utils.getProperty(mudancas, "system.pv.value") !== undefined) opcoes.icarusPvAntes = actor.system.pv?.value;
-  });
-  Hooks.on("updateActor", (actor, mudancas, opcoes, userId) => {
-    if (userId !== game.user.id || opcoes.icarusPvAntes === undefined) return;
-    const dano = opcoes.icarusPvAntes - (actor.system.pv?.value ?? 0);
-    if (dano > 0 && mantidasDoAtor(actor).some(m => m.tipo === "concentracao")) cartaoDeConcentracao(actor, dano);
-  });
   // Condições que quebram a concentração
   Hooks.on("createActiveEffect", (efeito, opcoes, userId) => {
     const actor = efeito.parent;

@@ -20,6 +20,7 @@ import {
 } from "./dano-aplicacao.mjs";
 import { registrarDanoEmMorrendo } from "./morte-foundry.mjs";
 import { aplicarCondicao } from "./condicoes-foundry.mjs";
+import { alvosDaAreaDeOutraMagia } from "./magias-area.mjs";
 
 const F = SISTEMA_ID;
 const CANAL = `system.${SISTEMA_ID}`;
@@ -101,6 +102,9 @@ const nomeDe = alvo => alvo?.name ?? atorDe(alvo)?.name ?? "?";
  */
 export const ABSORVEDORES_DE_DANO = [];
 
+/** Depois de aplicar dano (não cura) num ator: async (actor, dano) => void. Ex.: Teste de Concentração. */
+export const AO_SOFRER_DANO = [];
+
 async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
   const actor = atorDe(alvo);
   const nome = nomeDe(alvo);
@@ -135,6 +139,9 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
   const depois = actor.system.pv.value;
   // Dano sofrido em Morrendo: 1 falha no teste de morte (2 se crítico), como no botão da ficha
   if (calc.modo !== "cura" && calc.final > 0 && calc.antes === 0 && morrendo && !naoLetal) await registrarDanoEmMorrendo(actor, dados.critico);
+  if (calc.modo !== "cura" && calc.final > 0) {
+    for (const fn of AO_SOFRER_DANO) { try { await fn(actor, calc.final); } catch (erro) { console.error("Icarus RPG | ao sofrer dano", erro); } }
+  }
   // A 0 PV por dano não letal: se rende (Diplomacia) ou fica Apavorado e foge (Intimidação)
   let rendeu = "";
   if (naoLetal && depois === 0 && calc.antes > 0) {
@@ -206,7 +213,12 @@ async function aoClicar(mensagem, botao) {
     return aplicarEmVarios(mensagem, [actor], botao, dados, game.user.id);
   }
 
-  const marcados = [...(game.user.targets ?? [])].map(t => t.document).filter(Boolean);
+  let marcados = [...(game.user.targets ?? [])].map(t => t.document).filter(Boolean);
+  // Alvos que a área de OUTRA magia marcou: não valem para este dano (usa os tokens selecionados)
+  if (alvosDaAreaDeOutraMagia(marcados.map(t => t.uuid), mensagem.flags?.[F]?.magia?.id)) {
+    marcados = [];
+    ui.notifications.info(loc("ICARUS.Dano.IgnorouAlvosDaArea"));
+  }
   const origem = marcados.length ? "alvos" : "selecionados";
   const tokens = marcados.length ? marcados : (canvas?.tokens?.controlled ?? []).map(t => t.document);
   if (!tokens.length) return ui.notifications.warn(loc("ICARUS.Dano.SemSelecao"));
