@@ -1241,7 +1241,9 @@
       "Concluir": "Concluir escolha",
       "Alterar": "Escolher/alterar",
       "Pendentes": "Escolhas pendentes",
-      "NenhumaPendente": "Nenhuma escolha pendente."
+      "NenhumaPendente": "Nenhuma escolha pendente.",
+      "Escola": "Escolha uma escola de magia.",
+      "RequerLinhagem": "{item} é só para a Linhagem {linhagem}."
     },
     "Assistente": {
       "TrocarTitulo": "Trocar de classe",
@@ -1627,6 +1629,15 @@
         "Instrucoes": "{nome}: posicione a área no mapa — clique para lançar; clique direito ou Esc cancela. Shift solta da grade; Ctrl + roda gira.",
         "Opcao": "Posicionar a área das magias no mapa",
         "OpcaoDica": "Ao lançar uma magia de área, posicione o modelo no mapa; os tokens dentro dela viram os alvos e a animação acontece ali."
+      }
+    },
+    "Arcanista": {
+      "Linhagem": "Linhagem",
+      "SemLinhagem": "Escolha a Linhagem (por enquanto o PM usa 3 + Inteligência)",
+      "Linhagens": {
+        "mago": "Mago (3 + INT por nível; magias Arcanas)",
+        "feiticeiro": "Feiticeiro (4 + CAR por nível; magias Arcanas)",
+        "sangue": "Mago de Sangue (3 + INT por nível; magias de Sangue)"
       }
     }
   }

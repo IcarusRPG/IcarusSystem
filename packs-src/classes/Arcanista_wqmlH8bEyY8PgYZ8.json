@@ -1,0 +1,178 @@
+{
+  "_id": "wqmlH8bEyY8PgYZ8",
+  "name": "Arcanista",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 800,
+  "system": {
+    "classeId": "arcanista",
+    "papel": "Conjurador Arcano",
+    "atributoChave": "Mago e Mago de Sangue: Inteligência. Feiticeiro: Carisma",
+    "pv": {
+      "inicial": 12,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 3,
+      "porNivel": 3,
+      "atributo": "INT",
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "Mago e Mago de Sangue: 3 + Inteligência por nível. Feiticeiro: 4 + Carisma por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Misticismo e Vontade",
+      "escolha": 4,
+      "lista": [
+        "Concentração",
+        "Diplomacia",
+        "Enganação",
+        "História",
+        "Iniciativa",
+        "Intimidação",
+        "Intuição",
+        "Investigação",
+        "Nobreza",
+        "Prestidigitação",
+        "Religião"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples. Túnicas. Nenhuma armadura, nenhum escudo",
+      "armas": [
+        "simples"
+      ],
+      "armaduras": [],
+      "escudo": false,
+      "tunicas": true
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Conjuração Arcana",
+          "Linhagem"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Dom da Linhagem",
+          "2º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "3º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [
+          "Dom Aprofundado"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [
+          "4º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Dom Supremo",
+          "5º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Mana Transbordante"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>A mana corre por tudo, mas poucos aprendem a dobrá-la. O arcanista é quem aprendeu. Uns a conquistaram linha por linha, com livros, noites em claro e fórmulas que falharam mil vezes. Outros nasceram com ela correndo nas veias, herança de seres antigos que o mundo já não vê. E há os que descobriram que o próprio sangue guarda mana, e que ela não pede licença a ninguém.</p><p>O que une os três é que nenhum deles recebe o poder de presente de um deus. O arcanista paga por ele: com estudo, com linhagem ou com a própria carne.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista"
+    }
+  },
+  "_key": "!items!wqmlH8bEyY8PgYZ8"
+}

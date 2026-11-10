@@ -1,0 +1,38 @@
+{
+  "_id": "0OxA0uxn2nCiCNRk",
+  "name": "Escriba Arcano",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende a inscrever magias em pergaminhos. Gaste 1 hora e uma quantidade de PM igual ao custo de uma magia que você conhece, de nível 1 a 3, para criar um pergaminho com ela. Qualquer criatura treinada em Misticismo pode usá-lo uma vez, como ação padrão, sem gastar PM, usando a CD das suas magias na época da inscrição. Você pode ter ao mesmo tempo um número de pergaminhos seus ainda não usados igual ao seu atributo-chave (mínimo 1).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__escriba-arcano",
+      "classe": "arcanista",
+      "poder": "escriba-arcano",
+      "inferido": true
+    }
+  },
+  "_key": "!items!0OxA0uxn2nCiCNRk"
+}

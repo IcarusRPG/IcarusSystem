@@ -4921,7 +4921,6 @@ export default {
       },
       "proficiencias": "Armas simples, armas de fogo, armaduras leves",
       "intro": [
-        "Combate à Distância",
         "A pólvora trocou o duelo de espadas por algo mais honesto: quem atira primeiro e melhor volta para casa. O pistoleiro não confia em encantos nem em ancestrais. Confia na mão firme, no cano limpo e no segundo exato em que o dedo aperta o gatilho.",
         "Há duelistas que vivem de honra, caçadores de recompensa que vivem de contratos, contrabandistas, soldados de fronteira e artilheiros sem exército. O que os une é o respeito pela arma, que é cara, barulhenta e não perdoa quem esquece de recarregá-la."
       ],
@@ -5539,6 +5538,2166 @@ export default {
           "nivelMinimo": 8,
           "custoPM": 2,
           "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aumento-de-atributo",
+          "nome": "Aumento de Atributo",
+          "grupo": "Poderes comuns",
+          "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
+        },
+        {
+          "id": "pericia-especializada",
+          "nome": "Perícia Especializada",
+          "grupo": "Poderes comuns",
+          "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+          "prerequisito": "10º nível",
+          "nivelMinimo": 10,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
+        }
+      ]
+    },
+    {
+      "id": "arcanista",
+      "nome": "Arcanista",
+      "papel": "Conjurador Arcano",
+      "pv": {
+        "inicial": 12,
+        "porNivel": 4,
+        "atributo": "CON"
+      },
+      "pm": {
+        "inicial": 3,
+        "porNivel": 3,
+        "atributoSoNoPrimeiroNivel": false,
+        "texto": "Mago e Mago de Sangue: 3 + Inteligência por nível. Feiticeiro: 4 + Carisma por nível",
+        "atributo": "INT",
+        "porLinhagem": {
+          "mago": {
+            "base": 3,
+            "atributo": "INT"
+          },
+          "feiticeiro": {
+            "base": 4,
+            "atributo": "CAR"
+          },
+          "sangue": {
+            "base": 3,
+            "atributo": "INT"
+          }
+        }
+      },
+      "atributoChave": "Mago e Mago de Sangue: Inteligência. Feiticeiro: Carisma",
+      "pericias": {
+        "obrigatorias": "Misticismo e Vontade",
+        "escolha": 4,
+        "lista": [
+          "Concentração",
+          "Diplomacia",
+          "Enganação",
+          "História",
+          "Iniciativa",
+          "Intimidação",
+          "Intuição",
+          "Investigação",
+          "Nobreza",
+          "Prestidigitação",
+          "Religião"
+        ]
+      },
+      "proficiencias": "Armas simples. Túnicas. Nenhuma armadura, nenhum escudo",
+      "intro": [
+        "A mana corre por tudo, mas poucos aprendem a dobrá-la. O arcanista é quem aprendeu. Uns a conquistaram linha por linha, com livros, noites em claro e fórmulas que falharam mil vezes. Outros nasceram com ela correndo nas veias, herança de seres antigos que o mundo já não vê. E há os que descobriram que o próprio sangue guarda mana, e que ela não pede licença a ninguém.",
+        "O que une os três é que nenhum deles recebe o poder de presente de um deus. O arcanista paga por ele: com estudo, com linhagem ou com a própria carne."
+      ],
+      "progressao": [
+        {
+          "nivel": 1,
+          "habilidades": [
+            "Conjuração Arcana",
+            "Linhagem"
+          ],
+          "poder": false
+        },
+        {
+          "nivel": 2,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 3,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 4,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 5,
+          "habilidades": [
+            "Dom da Linhagem",
+            "2º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 6,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 7,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 8,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 9,
+          "habilidades": [
+            "3º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 10,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 11,
+          "habilidades": [
+            "Dom Aprofundado"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 12,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 13,
+          "habilidades": [
+            "4º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 14,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 15,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 16,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 17,
+          "habilidades": [
+            "Dom Supremo",
+            "5º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 18,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 19,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 20,
+          "habilidades": [
+            "Mana Transbordante"
+          ],
+          "poder": true
+        }
+      ],
+      "habilidades": [
+        {
+          "id": "conjuracao-arcana",
+          "nome": "Conjuração Arcana",
+          "nivel": 1,
+          "descricao": "Você lança magias gastando PM, como descrito na seção 17. A CD das suas magias é 10 + metade do seu nível + o seu atributo-chave. Você só lança magias de um nível quando atinge o nível de personagem indicado na tabela (1º, 5º, 9º, 13º e 17º para os níveis de magia 1 a 5). Magias conhecidas: o Mago e o Mago de Sangue conhecem 3 magias no 1º nível e +1 a cada nível; o Feiticeiro conhece 3 no 1º nível e +1 a cada nível ímpar a partir do 3º. O Mago e o Feiticeiro usam a lista Arcana; o Mago de Sangue, a lista de Sangue. Toda magia aprendida deve ser de um nível que você já possa lançar, e ao subir de nível você pode trocar uma magia conhecida por outra da sua lista.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "linhagem",
+          "nome": "Linhagem",
+          "nivel": 1,
+          "descricao": "Você escolhe uma linhagem, e a escolha é permanente. Cada linhagem concede uma habilidade agora, outra no 5º nível (Dom da Linhagem), outra no 11º (Dom Aprofundado) e a final no 17º (Dom Supremo), além de poderes próprios.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Mago",
+              "Feiticeiro",
+              "Mago de Sangue"
+            ]
+          }
+        },
+        {
+          "id": "mana-transbordante",
+          "nome": "Mana Transbordante",
+          "nivel": 20,
+          "descricao": "Você soma +2 na CD de todas as suas magias e, no início de cada turno seu em combate, recupera 2 PM.",
+          "custoPM": 2,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "linhagem-do-mago",
+          "nome": "Linhagem do Mago",
+          "nivel": null,
+          "descricao": "O Mago estudou a mana até ela obedecer. Só lança magias arcanas, e é quem conhece mais magias.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "foco-arcano",
+          "nome": "Foco Arcano",
+          "nivel": 1,
+          "descricao": "Você precisa estar empunhando um foco arcano para lançar magias: um cetro, um livro, um orbe, uma varinha ou um bordão. O foco ocupa uma mão (o bordão ocupa as duas, como arma). Sem o foco em mãos, você não pode lançar magias. Sacar ou apanhar um foco é uma ação de movimento, e o Mago pode carregar um foco reserva. <strong>O foco pode ser destruído</strong> (pela manobra Quebrar ou por dano, ver <em>Quebrando Objetos</em>, seção 1); as estatísticas dele estão na tabela de armas, armaduras e escudos. Sem foco, o Mago só volta a lançar magias ao empunhar outro.",
+          "custoPM": null,
+          "acao": "movimento",
+          "subs": []
+        },
+        {
+          "id": "grimorio-vivo",
+          "nome": "Grimório Vivo",
+          "nivel": 1,
+          "descricao": "Ao fim de uma noite de descanso, você pode trocar uma magia que conhece por outra da lista arcana, de nível que possa lançar.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "escola-predileta",
+          "nome": "Escola Predileta",
+          "nivel": 5,
+          "descricao": "Escolha uma das nove escolas. A CD das suas magias dessa escola aumenta em +1, e você aprende uma magia adicional dessa escola (de nível que possa lançar).",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "escola",
+            "quantidade": 1,
+            "opcoes": [
+              "Abjuração",
+              "Adivinhação",
+              "Convocação",
+              "Encantamento",
+              "Evocação",
+              "Ilusão",
+              "Necromancia",
+              "Transmutação",
+              "Espiritual"
+            ]
+          }
+        },
+        {
+          "id": "maestria-de-escola",
+          "nome": "Maestria de Escola",
+          "nivel": 11,
+          "descricao": "As suas magias da Escola Predileta custam 1 PM a menos (mínimo 1 PM).",
+          "custoPM": 1,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "palavra-de-poder",
+          "nome": "Palavra de Poder",
+          "nivel": 17,
+          "descricao": "Uma vez por cena, você lança uma magia de até 4º nível sem pagar o custo base em PM. Os aprimoramentos você paga normalmente.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "linhagem-do-feiticeiro",
+          "nome": "Linhagem do Feiticeiro",
+          "nivel": null,
+          "descricao": "O Feiticeiro nasceu com a mana. O sangue dele guarda a bênção de um ser ancestral que o mundo já não vê: dragões, leviatãs, fênix. A herança é uma só e define o que ele faz de especial.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "sangue-dotado",
+          "nome": "Sangue Dotado",
+          "nivel": 1,
+          "descricao": "Você usa Carisma como atributo-chave e não precisa de foco: a mana vem de dentro. Você tem mais PM que as outras linhagens (4 + Carisma por nível). Em troca, conhece menos magias. Você também é treinado em Diplomacia ou Intimidação, à sua escolha.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "heranca-ancestral",
+          "nome": "Herança Ancestral",
+          "nivel": 1,
+          "descricao": "Escolha o ser ancestral que abençoou o seu sangue. A escolha é permanente e define as suas habilidades de 1º, 5º, 11º e 17º nível.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Dragão",
+              "Leviatã",
+              "Fênix"
+            ],
+            "requerLinhagem": "Feiticeiro"
+          }
+        },
+        {
+          "id": "heranca-de-dragao",
+          "nome": "Herança de Dragão",
+          "nivel": null,
+          "descricao": "Escolha um elemento: Fogo, Frio, Elétrico ou Ácido. Essa é a energia dos seus dons de dragão.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [
+            {
+              "nome": "Escamas Dracônicas (1º nível)",
+              "descricao": "Enquanto não estiver usando armadura nem escudo, você recebe +2 na Defesa."
+            },
+            {
+              "nome": "Sopro do Dragão (5º nível, Dom da Linhagem)",
+              "descricao": "Como ação padrão, você gasta 4 PM e sopra um cone de 6 m. Cada criatura na área faz um teste de Reflexos (CD das suas magias): falha, sofre 4d6 de dano do seu elemento; sucesso, metade. O dano aumenta para 6d6 no 11º nível e para 8d6 no 17º."
+            },
+            {
+              "nome": "Alma do Elemento (11º nível, Dom Aprofundado)",
+              "descricao": "Você recebe Redução de dano 5 contra o seu elemento. Uma vez por rodada, ao causar dano do seu elemento com uma magia ou com o Sopro, você causa 1d6 de dano adicional."
+            },
+            {
+              "nome": "Forma do Dragão (17º nível, Dom Supremo)",
+              "descricao": "Como ação de movimento, você gasta 6 PM e assume uma forma dracônica até o fim da cena. Você ganha deslocamento de voo igual ao seu deslocamento, e o Sopro do Dragão não custa PM (uma vez por rodada)."
+            }
+          ]
+        },
+        {
+          "id": "heranca-de-leviata",
+          "nome": "Herança de Leviatã",
+          "nivel": null,
+          "descricao": "Os leviatãs eram monstros primordiais dos mares, mais antigos que os continentes. Diz-se que as marés ainda obedecem ao sangue deles.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [
+            {
+              "nome": "Pele das Profundezas (1º nível)",
+              "descricao": "Você respira debaixo d'água, nada com o seu deslocamento normal, recebe Redução de Frio 3 e +2 em Atletismo."
+            },
+            {
+              "nome": "Maré Voraz (5º nível, Dom da Linhagem)",
+              "descricao": "Como ação padrão, você gasta 4 PM e faz tentáculos de água gelada brotarem em uma esfera de 3 m de raio, em alcance curto. Cada criatura na área faz um teste de Reflexos (CD das suas magias): falha, sofre 4d6 de dano de Frio e fica Enredada até o fim do seu próximo turno; sucesso, metade e não fica Enredada. O dano aumenta para 6d6 no 11º nível e para 8d6 no 17º."
+            },
+            {
+              "nome": "Corrente Abissal (11º nível, Dom Aprofundado)",
+              "descricao": "Uma vez por rodada, ao causar dano de Frio com uma magia ou com a Maré Voraz, você deixa o alvo Lento até o fim do próximo turno dele."
+            },
+            {
+              "nome": "Forma do Leviatã (17º nível, Dom Supremo)",
+              "descricao": "Como ação de movimento, você gasta 6 PM e assume a forma de um monstro marinho até o fim da cena. A Maré Voraz não custa PM (uma vez por rodada), o raio dela aumenta em 3 m, e criaturas que ficarem Enredadas por ela sofrem 2d6 de dano de Frio no início de cada turno delas, enquanto estiverem Enredadas."
+            }
+          ]
+        },
+        {
+          "id": "heranca-de-fenix",
+          "nome": "Herança de Fênix",
+          "nivel": null,
+          "descricao": "As fênix morriam em fogo e voltavam do fogo. Foram as últimas a se calar.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [
+            {
+              "nome": "Coração de Brasa (1º nível)",
+              "descricao": "Você recebe Redução de Fogo 3, Redução de Trevas 3 e +2 em Vontade."
+            },
+            {
+              "nome": "Alento da Fênix (5º nível, Dom da Linhagem)",
+              "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura (ou a si mesmo), que recupera 1d8 + Carisma PV. A cura aumenta em 1d8 no 9º, no 13º e no 17º nível."
+            },
+            {
+              "nome": "Cinzas Quentes (11º nível, Dom Aprofundado)",
+              "descricao": "O Alento da Fênix passa a ser uma ação de movimento e também remove do alvo uma destas condições: Abalado, Apavorado, Enjoado, Fatigado ou Sangrando."
+            },
+            {
+              "nome": "Renascimento (17º nível, Dom Supremo)",
+              "descricao": "Uma vez por dia, quando seus PV chegariam a 0, você fica com metade dos seus PV máximos (sem gastar ação nem PM). Cada criatura adjacente faz um teste de Reflexos (CD das suas magias): falha, sofre 3d6 de dano de Fogo e 3d6 de dano de Luz; sucesso, metade."
+            }
+          ]
+        },
+        {
+          "id": "linhagem-do-mago-de-sangue",
+          "nome": "Linhagem do Mago de Sangue",
+          "nivel": null,
+          "descricao": "O Mago de Sangue descobriu que o sangue, aquilo que pulsa, também carrega mana. Usa Inteligência, só lança magias de Sangue e não precisa de foco: o próprio sangue é o foco.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "sangue-como-foco",
+          "nome": "Sangue como Foco",
+          "nivel": 1,
+          "descricao": "Você usa Inteligência como atributo-chave e não precisa de foco para lançar magias: o seu sangue é o foco. As suas magias vêm da lista de Sangue.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "pacto-de-sangue",
+          "nome": "Pacto de Sangue",
+          "nivel": 1,
+          "descricao": "Ao lançar uma magia, você pode pagar parte do custo em PV: cada 1 PM do custo pode ser trocado por 2 PV. Você só pode trocar até metade do custo da magia (arredondado para cima). Esses PV são <strong>perda de PV</strong>, não dano (não são reduzidos por RD nem por PV temporários), e você não pode usar o Pacto se isso fosse reduzir os seus PV a 0 ou menos.",
+          "custoPM": 1,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "ferida-aberta",
+          "nome": "Ferida Aberta",
+          "nivel": 5,
+          "descricao": "Quando uma magia sua causa dano a uma criatura, você pode gastar 1 PM (uma vez por turno). A criatura faz um teste de Fortitude (CD das suas magias) ou fica Sangrando.",
+          "custoPM": 1,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "sede-arcana",
+          "nome": "Sede Arcana",
+          "nivel": 11,
+          "descricao": "Uma vez por rodada, ao causar dano com uma magia a uma criatura Sangrando, você recupera 1d6 + Inteligência PV.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "colheita-rubra",
+          "nome": "Colheita Rubra",
+          "nivel": 17,
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM. Cada criatura Sangrando em alcance curto faz um teste de Fortitude (CD das suas magias): falha, sofre 6d6 de dano de Trevas; sucesso, metade. Você recupera PV igual à metade do dano total causado.",
+          "custoPM": 6,
+          "acao": "padrao",
+          "subs": []
+        }
+      ],
+      "grupos": [
+        "Poderes gerais",
+        "Poderes da Linhagem do Mago",
+        "Poderes da Linhagem do Feiticeiro",
+        "Poderes da Linhagem do Mago de Sangue",
+        "Poderes comuns"
+      ],
+      "poderes": [
+        {
+          "id": "saber-ampliado",
+          "nome": "Saber Ampliado",
+          "grupo": "Poderes gerais",
+          "descricao": "Você aprende 2 magias adicionais da sua lista, de níveis que possa lançar.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "conjuracao-dupla",
+          "nome": "Conjuração Dupla",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando lança uma magia com execução padrão, você pode gastar 4 PM (como ação livre) para ganhar uma ação padrão adicional, que só pode ser usada para lançar uma segunda magia. A segunda magia pode ser <strong>qualquer magia que você possa lançar</strong>, de qualquer nível e execução (ela é lançada como se tivesse execução padrão). Você só pode usar este poder uma vez por turno e só pode manter uma magia de concentração por vez, como de costume.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 4,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "contra-magia",
+          "nome": "Contra-Magia",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando uma criatura que você enxerga, em alcance médio, lança uma magia, você pode gastar a sua reação e uma quantidade de PM igual ao custo de uma magia do mesmo nível (1, 3, 6, 10 ou 15) e fazer um teste de Misticismo contra CD 15 + 2 × o nível da magia. Se passar, a magia falha sem efeito (o conjurador gasta os PM normalmente). Se falhar, os seus PM são perdidos. Este poder é opcional, como todos os outros.",
+          "prerequisito": "conhecer a magia Dissipar Magia",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "contra-magia-aprimorada",
+          "nome": "Contra-Magia Aprimorada",
+          "grupo": "Poderes gerais",
+          "descricao": "Você soma +5 nos testes de Contra-Magia e, quando anula uma magia, recupera metade dos PM gastos (arredondado para baixo).",
+          "prerequisito": "Contra-Magia",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "contra-magia"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "magia-potente",
+          "nome": "Magia Potente",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia que causa dano, você pode gastar 2 PM para causar +1d6 de dano. Você só pode usar este poder uma vez por magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "alcance-ampliado",
+          "nome": "Alcance Ampliado",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia, você pode gastar 1 PM para aumentar o alcance um passo: de toque para curto, de curto para médio, de médio para longo. Você só pode usar este poder uma vez por magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "area-ampliada",
+          "nome": "Área Ampliada",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia de área, você pode gastar 2 PM para aumentar as dimensões da área em 50% (arredonde para múltiplos de 1,5 m). Você só pode usar este poder uma vez por magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "magia-seletiva",
+          "nome": "Magia Seletiva",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia de área, você pode gastar 1 PM <strong>por criatura</strong> que deseje deixar fora da área. Cada criatura escolhida não sofre o efeito da magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "poder-pungente",
+          "nome": "Poder Pungente",
+          "grupo": "Poderes gerais",
+          "descricao": "Você soma +1 na CD das suas magias.",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mana-extra",
+          "nome": "Mana Extra",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe +1 PM por nível de Arcanista (retroativo).",
+          "prerequisito": "4º nível",
+          "nivelMinimo": 4,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "surto-arcano",
+          "nome": "Surto Arcano",
+          "grupo": "Poderes gerais",
+          "descricao": "Uma vez por cena, como ação livre, você recupera PM igual à metade do seu nível (arredondado para baixo) + o seu atributo-chave (mínimo 2).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "livre",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "veu-de-mana",
+          "nome": "Véu de Mana",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando é alvo de um ataque, você pode gastar 2 PM e a sua reação para receber +4 na Defesa contra esse ataque.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "passo-arcano",
+          "nome": "Passo Arcano",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação de movimento, você gasta 2 PM e se teletransporta até 9 m para um espaço livre que possa ver.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mente-inabalavel",
+          "nome": "Mente Inabalável",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe +2 em Concentração e em Vontade.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "defesa-arcana",
+          "nome": "Defesa Arcana",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe +2 em testes de resistência contra magias.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mente-dividida",
+          "nome": "Mente Dividida",
+          "grupo": "Poderes gerais",
+          "descricao": "Você pode manter duas magias de concentração ao mesmo tempo. Se perder a concentração de uma, perde a outra também.",
+          "prerequisito": "11º nível",
+          "nivelMinimo": 11,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "erudito-arcano",
+          "nome": "Erudito Arcano",
+          "grupo": "Poderes gerais",
+          "descricao": "Você se torna treinado em uma perícia baseada em Inteligência à sua escolha (História, Investigação, Misticismo ou Nobreza), caso não seja treinado nela. Você pode escolher este poder várias vezes, cada vez para uma perícia diferente.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "opcoes": [
+              "História",
+              "Investigação",
+              "Misticismo",
+              "Nobreza"
+            ]
+          }
+        },
+        {
+          "id": "olho-arcano",
+          "nome": "Olho Arcano",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando uma criatura lança uma magia que você possa ver ou ouvir, você sabe qual é a magia e o nível dela (ação livre). Você recebe +2 nos testes de Contra-Magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "livre",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "familiar",
+          "nome": "Familiar",
+          "grupo": "Poderes gerais",
+          "descricao": "Você tem um pequeno animal (gato, coruja, corvo, rato, sapo ou serpente) que o acompanha. Como ação de movimento, você pode ver e ouvir pelo familiar até o fim da cena, em alcance longo, e ele pode entregar magias de toque suas. Ele não ataca. Se morrer, volta ao fim da cena seguinte.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "canalizacao-arcana",
+          "nome": "Canalização Arcana",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia que causa dano, você soma o seu atributo-chave de conjuração ao dano total que ela causa (uma vez por alvo, e não por dado).",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "escriba-arcano",
+          "nome": "Escriba Arcano",
+          "grupo": "Poderes gerais",
+          "descricao": "Você aprende a inscrever magias em pergaminhos. Gaste 1 hora e uma quantidade de PM igual ao custo de uma magia que você conhece, de nível 1 a 3, para criar um pergaminho com ela. Qualquer criatura treinada em Misticismo pode usá-lo uma vez, como ação padrão, sem gastar PM, usando a CD das suas magias na época da inscrição. Você pode ter ao mesmo tempo um número de pergaminhos seus ainda não usados igual ao seu atributo-chave (mínimo 1).",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dadiva-de-mana",
+          "nome": "Dádiva de Mana",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação padrão, você toca uma criatura e transfere para ela até metade do seu nível (mínimo 2) em PM seus. Ela recupera essa quantidade de PM, sem passar do máximo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mestre-do-elemento",
+          "nome": "Mestre do Elemento",
+          "grupo": "Poderes gerais",
+          "descricao": "Escolha um tipo de dano entre Fogo, Frio, Elétrico e Ácido. As suas magias desse tipo causam +2 de dano e ignoram até 3 pontos de Redução desse tipo do alvo. Você pode escolher este poder várias vezes, cada vez para um tipo diferente.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "tipo-dano",
+            "opcoes": [
+              "Fogo",
+              "Frio",
+              "Elétrico",
+              "Ácido"
+            ]
+          }
+        },
+        {
+          "id": "ressonancia-arcana",
+          "nome": "Ressonância Arcana",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando você lança uma magia da mesma escola da última magia que lançou na mesma cena, ela custa 1 PM a menos (mínimo 1). Este desconto não acumula com a Maestria de Escola do Mago.",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "reflexos-magicos",
+          "nome": "Reflexos Mágicos",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe +2 em Reflexos e em Iniciativa.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "magia-duradoura",
+          "nome": "Magia Duradoura",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia sustentada, você pode gastar 2 PM adicionais para que ela dure até o fim da cena sem que você precise pagar 1 PM por turno. Você só pode usar este poder uma vez por magia.",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "absorcao-de-mana",
+          "nome": "Absorção de Mana",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando você passa em um teste de resistência contra uma magia, você pode usar a sua reação para absorver parte da mana dela e recuperar PM igual ao nível da magia (de 1 a 5).",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "conjuracao-discreta",
+          "nome": "Conjuração Discreta",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia, você pode gastar 1 PM para lançá-la sem gestos nem palavras chamativos. Quem quiser perceber que você lançou uma magia faz um teste de Misticismo ou Visão contra CD 15 + 2 × o nível da magia. A magia continua tendo o efeito normal.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "fragilizar",
+          "nome": "Fragilizar",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia que permite teste de resistência, você pode gastar 1 PM para impor –2 nesse teste ao alvo (ou a um alvo à sua escolha, se houver vários). Você só pode usar este poder uma vez por magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "transmutar-elemento",
+          "nome": "Transmutar Elemento",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao lançar uma magia que causa dano de Fogo, Frio, Elétrico ou Ácido, você pode gastar 1 PM para trocar o tipo desse dano por um destes outros três. Você só pode usar este poder uma vez por magia.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "evasao-arcana",
+          "nome": "Evasão Arcana",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando passa em um teste de Reflexos contra um efeito que causaria metade do dano, você não sofre nenhum dano. Se falhar, sofre apenas metade.",
+          "prerequisito": "11º nível",
+          "nivelMinimo": 11,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "segunda-chance",
+          "nome": "Segunda Chance",
+          "grupo": "Poderes gerais",
+          "descricao": "Uma vez por dia, você pode rolar novamente um teste de Vontade, Concentração ou Misticismo que tenha acabado de falhar, ficando com o novo resultado.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "constituicao-arcana",
+          "nome": "Constituição Arcana",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe +1 PV por nível de Arcanista (retroativo) e +2 em Fortitude.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "protecao-elemental",
+          "nome": "Proteção Elemental",
+          "grupo": "Poderes gerais",
+          "descricao": "Escolha um tipo de dano entre Fogo, Frio, Elétrico, Ácido, Luz, Trevas ou Essência. Você recebe Redução desse tipo 3 (respeitando o teto de RD do Núcleo). Você pode escolher este poder várias vezes, cada vez para um tipo diferente.",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "tipo-dano",
+            "opcoes": [
+              "Fogo",
+              "Frio",
+              "Elétrico",
+              "Ácido",
+              "Luz",
+              "Trevas",
+              "Essência"
+            ]
+          }
+        },
+        {
+          "id": "conhecimento-variado",
+          "nome": "Conhecimento Variado",
+          "grupo": "Poderes gerais",
+          "descricao": "Você se torna treinado em duas perícias à sua escolha, que ainda não sejam treinadas. Você pode escolher este poder várias vezes.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 2,
+            "filtro": "nao-treinadas"
+          }
+        },
+        {
+          "id": "treino-marcial",
+          "nome": "Treino Marcial",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe proficiência com armas marciais.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "foco-atado",
+          "nome": "Foco Atado",
+          "grupo": "Poderes da Linhagem do Mago",
+          "descricao": "O seu foco não pode ser Desarmado nem tirado de você contra a sua vontade, e volta à sua mão como ação livre se estiver a até 9 m. Ele ainda pode ser destruído.",
+          "prerequisito": "Foco Arcano",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "livre",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "grimorio-vasto",
+          "nome": "Grimório Vasto",
+          "grupo": "Poderes da Linhagem do Mago",
+          "descricao": "Ao usar o Grimório Vivo, você pode trocar até 3 magias.",
+          "prerequisito": "Grimório Vivo",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "segunda-escola",
+          "nome": "Segunda Escola",
+          "grupo": "Poderes da Linhagem do Mago",
+          "descricao": "Escolha uma segunda escola. Você recebe os benefícios da Escola Predileta (+1 CD e uma magia adicional) e da Maestria de Escola para essa escola.",
+          "prerequisito": "Maestria de Escola, 13º nível",
+          "nivelMinimo": 13,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago",
+          "repetivel": false,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "escola",
+            "quantidade": 1,
+            "opcoes": [
+              "Abjuração",
+              "Adivinhação",
+              "Convocação",
+              "Encantamento",
+              "Evocação",
+              "Ilusão",
+              "Necromancia",
+              "Transmutação",
+              "Espiritual"
+            ]
+          }
+        },
+        {
+          "id": "magia-instintiva",
+          "nome": "Magia Instintiva",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Uma vez por cena, você lança uma magia que conhece, de nível 1 ou 2, sem pagar o custo em PM.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "presenca-ancestral",
+          "nome": "Presença Ancestral",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Você recebe +2 em Diplomacia, Enganação e Intimidação.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "sopro-intenso",
+          "nome": "Sopro Intenso",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "O cone do Sopro do Dragão aumenta para 9 m e o dano aumenta em 2d6.",
+          "prerequisito": "Herança de Dragão, 9º nível",
+          "nivelMinimo": 9,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "presenca-draconica",
+          "nome": "Presença Dracônica",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Como ação padrão, você gasta 2 PM. Criaturas à sua escolha em alcance curto fazem um teste de Vontade (CD das suas magias) ou ficam Abaladas até o fim da cena.",
+          "prerequisito": "Herança de Dragão",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "corpo-fluido",
+          "nome": "Corpo Fluido",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Você recebe +5 em testes contra a manobra Agarrar e em testes para se livrar da condição Enredado.",
+          "prerequisito": "Herança de Leviatã",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "nevoa-abissal",
+          "nome": "Névoa Abissal",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Como ação padrão, você gasta 2 PM e faz uma névoa fria e escura cobrir uma esfera de 6 m de raio, em alcance curto, até o fim da cena. Quem está dentro da névoa tem camuflagem leve.",
+          "prerequisito": "Herança de Leviatã",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "brasa-protetora",
+          "nome": "Brasa Protetora",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Quando um aliado a até 9 m sofre dano, você pode gastar 2 PM e a sua reação para reduzir esse dano em 1d8 + o seu Carisma.",
+          "prerequisito": "Herança de Fênix",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "chama-duradoura",
+          "nome": "Chama Duradoura",
+          "grupo": "Poderes da Linhagem do Feiticeiro",
+          "descricao": "Uma criatura que recebe o Alento da Fênix também recebe +2 na Defesa e em testes de resistência até o início do seu próximo turno.",
+          "prerequisito": "Alento da Fênix",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Feiticeiro",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "pacto-profundo",
+          "nome": "Pacto Profundo",
+          "grupo": "Poderes da Linhagem do Mago de Sangue",
+          "descricao": "Você pode trocar PM por PV no Pacto de Sangue até o custo inteiro da magia (em vez de metade).",
+          "prerequisito": "Pacto de Sangue, 9º nível",
+          "nivelMinimo": 9,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago de Sangue",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "ferida-funda",
+          "nome": "Ferida Funda",
+          "grupo": "Poderes da Linhagem do Mago de Sangue",
+          "descricao": "O dano do Sangrando que você causa com a Ferida Aberta aumenta para 2d6 por turno.",
+          "prerequisito": "Ferida Aberta",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago de Sangue",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "transfusao",
+          "nome": "Transfusão",
+          "grupo": "Poderes da Linhagem do Mago de Sangue",
+          "descricao": "Como ação padrão, você toca um aliado e perde até 5 + o seu nível em PV (perda de PV). O aliado recupera o mesmo valor em PV.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago de Sangue",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "sangue-frio",
+          "nome": "Sangue Frio",
+          "grupo": "Poderes da Linhagem do Mago de Sangue",
+          "descricao": "Você recebe +5 em testes de Constituição para remover a condição Sangrando e +2 em Fortitude.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Linhagem do Mago de Sangue",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aumento-de-atributo",
+          "nome": "Aumento de Atributo",
+          "grupo": "Poderes comuns",
+          "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
+        },
+        {
+          "id": "pericia-especializada",
+          "nome": "Perícia Especializada",
+          "grupo": "Poderes comuns",
+          "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+          "prerequisito": "10º nível",
+          "nivelMinimo": 10,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nobre",
+      "nome": "Nobre",
+      "papel": "Líder / Diplomata",
+      "pv": {
+        "inicial": 16,
+        "porNivel": 4,
+        "atributo": "CON"
+      },
+      "pm": {
+        "inicial": 4,
+        "porNivel": 4,
+        "atributoSoNoPrimeiroNivel": false,
+        "texto": "4 por nível",
+        "atributo": null
+      },
+      "atributoChave": "Carisma",
+      "pericias": {
+        "obrigatorias": "Vontade e (Diplomacia ou Intimidação)",
+        "escolha": 4,
+        "lista": [
+          "Adestramento",
+          "Atuação",
+          "Barganha",
+          "Cavalgar",
+          "Diplomacia",
+          "Enganação",
+          "Fortitude",
+          "História",
+          "Iniciativa",
+          "Intimidação",
+          "Intuição",
+          "Investigação",
+          "Luta",
+          "Nobreza",
+          "Pontaria"
+        ]
+      },
+      "proficiencias": "Armas marciais, armaduras pesadas, escudos, túnicas",
+      "intro": [
+        "Há quem nasça com um nome que abre portas, e quem o conquiste. O nobre é quem aprendeu que o nome pesa tanto quanto a espada: uma palavra dita na hora certa decide uma guerra, um favor cobrado vale um exército, e uma entrada bem feita faz o salão inteiro se calar. O que une todos os nobres é a certeza de que mandar é um ofício, e ele treinou para isso."
+      ],
+      "progressao": [
+        {
+          "nivel": 1,
+          "habilidades": [
+            "Postura Altiva",
+            "Dote",
+            "Brio"
+          ],
+          "poder": false
+        },
+        {
+          "nivel": 2,
+          "habilidades": [
+            "Palavra Cortante (2d6)"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 3,
+          "habilidades": [
+            "Rendimentos"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 4,
+          "habilidades": [
+            "Brado de Comando"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 5,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 6,
+          "habilidades": [
+            "Palavra Cortante (4d6)"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 7,
+          "habilidades": [
+            "Majestade"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 8,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 9,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 10,
+          "habilidades": [
+            "Palavra Cortante (6d6)"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 11,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 12,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 13,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 14,
+          "habilidades": [
+            "Palavra Cortante (8d6)"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 15,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 16,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 17,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 18,
+          "habilidades": [
+            "Palavra Cortante (10d6)"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 19,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 20,
+          "habilidades": [
+            "Coroação"
+          ],
+          "poder": true
+        }
+      ],
+      "habilidades": [
+        {
+          "id": "postura-altiva",
+          "nome": "Postura Altiva",
+          "nivel": 1,
+          "descricao": "Você pode usar o seu Carisma no lugar da Destreza na Defesa.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "dote",
+          "nome": "Dote",
+          "nivel": 1,
+          "descricao": "Você recebe R$ 1.500 em dinheiro, além da riqueza inicial normal do seu nível, para gastar como quiser.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "brio",
+          "nome": "Brio",
+          "nivel": 1,
+          "descricao": "Quando faz um teste de perícia, você pode gastar uma quantidade de PM à sua escolha, limitada pelo seu Carisma (mínimo 1). Para cada PM gasto, você recebe +2 no teste.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "palavra-cortante",
+          "nome": "Palavra Cortante",
+          "nivel": 2,
+          "descricao": "Como ação padrão, você gasta 1 PM e faz um teste de Diplomacia ou Intimidação, oposto ao teste de Vontade de uma criatura inteligente em alcance curto (Inteligência –3 ou maior). Se vencer, você causa 2d6 de dano Psíquico não letal à criatura; se perder, causa metade. Se a criatura for reduzida a 0 PV, em vez de cair Inconsciente ela se rende (se você usou Diplomacia) ou fica Apavorada e foge de você da maneira mais eficiente possível (se usou Intimidação). Dano não letal nunca deixa a criatura Morrendo. O dano aumenta para 4d6 no 6º nível, 6d6 no 10º, 8d6 no 14º e 10d6 no 18º. <em>Mental.</em>",
+          "custoPM": 1,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "rendimentos",
+          "nome": "Rendimentos",
+          "nivel": 3,
+          "descricao": "Você passa a receber dinheiro da sua família, de um patrono ou dos seus negócios. Uma vez por aventura, faça um teste de Carisma com bônus igual ao seu nível. Você recebe uma quantia em Reais igual ao resultado do teste, em porcentagem, da Riqueza inicial do seu nível (seção 14). Por exemplo, um nobre de 5º nível (Riqueza inicial R$ 1.800) que tire 20 no teste recebe 20% de R$ 1.800, ou seja, R$ 360. Esta habilidade depende da sua relação com a família ou os negócios e de onde você está: um nobre isolado nos ermos dificilmente recebe dinheiro.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "brado-de-comando",
+          "nome": "Brado de Comando",
+          "nivel": 4,
+          "descricao": "Como ação de movimento, você gasta uma quantidade de PM à sua escolha, limitada pelo seu Carisma. Até o início do seu próximo turno, todos os seus aliados em alcance curto recebem um bônus nos testes de perícia igual à quantidade de PM gasta.",
+          "custoPM": null,
+          "acao": "movimento",
+          "subs": []
+        },
+        {
+          "id": "majestade",
+          "nome": "Majestade",
+          "nivel": 7,
+          "descricao": "Sempre que uma criatura inteligente tentar machucá-lo (causar dano com um ataque, magia ou habilidade), você pode gastar 2 PM. A criatura faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, ela não consegue machucá-lo e perde a ação. Você só pode usar esta habilidade uma vez por cena contra cada criatura.",
+          "custoPM": 2,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "coroacao",
+          "nome": "Coroação",
+          "nivel": 20,
+          "descricao": "A CD para resistir à sua Majestade aumenta em +5. Uma criatura que falhe no teste de Vontade por 10 ou mais se arrepende tanto de ter tentado machucá-lo que passa a lutar ao seu lado (e a seguir as suas ordens, se puder entendê-lo) pelo resto da cena. Além disso, uma criatura reduzida a 0 PV pela sua Palavra Cortante não sofre esse dano: em vez disso, passa a lutar ao seu lado pelo resto da cena.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        }
+      ],
+      "grupos": [
+        "Poderes de comando",
+        "Poderes de corte e intriga",
+        "Poderes de influência e riqueza",
+        "Poderes comuns"
+      ],
+      "poderes": [
+        {
+          "id": "plano-de-batalha",
+          "nome": "Plano de Batalha",
+          "grupo": "Poderes de comando",
+          "descricao": "Como ação padrão, você gasta 1 PM por aliado que quiser direcionar (limitado pelo seu Carisma), em alcance curto. No próximo turno de cada aliado direcionado, ele ganha uma ação de movimento adicional.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 1,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "marechal",
+          "nome": "Marechal",
+          "grupo": "Poderes de comando",
+          "descricao": "Quando você usa o Plano de Batalha, os aliados direcionados também recebem +1 nos testes de ataque até o fim do próximo turno deles.",
+          "prerequisito": "Plano de Batalha, 12º nível",
+          "nivelMinimo": 12,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "plano-de-batalha"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "ordem-de-carga",
+          "nome": "Ordem de Carga",
+          "grupo": "Poderes de comando",
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 4 PM. Até um número de aliados em alcance curto igual ao seu Carisma (mínimo 1) se deslocam imediatamente até metade do deslocamento deles e fazem um ataque com +2 no teste de ataque, sem gastar as ações deles.",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": 4,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "estandarte-da-familia",
+          "nome": "Estandarte da Família",
+          "grupo": "Poderes de comando",
+          "descricao": "Como ação de movimento, você gasta 2 PM e ergue o estandarte da sua família: um item de 1 espaço que você carrega ou crava no chão em um espaço adjacente. Até o fim da cena, você e os seus aliados a até 9 m do estandarte recebem +1 nos testes de ataque e +2 em testes de resistência contra medo. Só um estandarte pode estar erguido por vez. Se ele for derrubado ou destruído, o efeito termina. O estandarte é um objeto Pequeno (Defesa 12, RD 5, PV 10) e pode ser alvo da manobra Quebrar ou de ataques.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "estandarte-reforcado",
+          "nome": "Estandarte Reforçado",
+          "grupo": "Poderes de comando",
+          "descricao": "O seu Estandarte da Família passa a ter RD 10 e 20 PV, e o alcance dos efeitos dele aumenta em 3 m.",
+          "prerequisito": "Estandarte da Família, 12º nível",
+          "nivelMinimo": 12,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "estandarte-da-familia"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "hino-de-guerra",
+          "nome": "Hino de Guerra",
+          "grupo": "Poderes de comando",
+          "descricao": "Como ação de movimento, você gasta 2 PM. Até o fim do seu próximo turno, os aliados a até 9 m do seu estandarte causam +1d6 de dano no primeiro ataque que acertarem.",
+          "prerequisito": "Estandarte da Família",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "estandarte-da-familia"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "brado-tiranico",
+          "nome": "Brado Tirânico",
+          "grupo": "Poderes de comando",
+          "descricao": "Você pode usar a Palavra Cortante como ação completa, em vez de padrão. Se fizer isso, os seus dados de dano aumentam para d8 e você atinge todos os inimigos em alcance curto.",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": null,
+          "acao": "completa",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "palavra-de-encorajamento",
+          "nome": "Palavra de Encorajamento",
+          "grupo": "Poderes de comando",
+          "descricao": "Sua presença faz as pessoas darem o melhor de si. Quando um aliado em alcance curto faz um teste, você pode gastar 2 PM para que ele role esse teste com vantagem.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "momento-de-gloria",
+          "nome": "Momento de Glória",
+          "grupo": "Poderes de comando",
+          "descricao": "Uma vez por rodada, você pode gastar 5 PM para que um aliado em alcance curto ganhe uma ação padrão adicional no próximo turno dele. Você só pode usar esta habilidade uma vez por cena em cada aliado.",
+          "prerequisito": "Palavra de Encorajamento, 8º nível",
+          "nivelMinimo": 8,
+          "custoPM": 5,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "palavra-de-encorajamento"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "exemplo-de-lider",
+          "nome": "Exemplo de Líder",
+          "grupo": "Poderes de comando",
+          "descricao": "Você pode gastar 2 PM para servir de inspiração. Até o início do seu próximo turno, sempre que você passar em um teste de perícia, aliados em alcance curto que fizerem um teste da mesma perícia podem usar o resultado do seu teste em vez de fazer o próprio.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "interceder",
+          "nome": "Interceder",
+          "grupo": "Poderes de comando",
+          "descricao": "Quando um aliado adjacente é alvo de um ataque, você pode gastar 1 PM e a sua reação para ser o alvo do ataque no lugar dele.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "ordem-de-marcha",
+          "nome": "Ordem de Marcha",
+          "grupo": "Poderes de comando",
+          "descricao": "Você e os seus aliados em alcance curto recebem +2 em Iniciativa. No início do combate, depois de rolar a Iniciativa, você pode trocar a sua posição na ordem com a de um aliado.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "fio-da-intriga",
+          "nome": "Fio da Intriga",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Como ação padrão, você gasta 2 PM. Uma criatura inteligente em alcance curto faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, fica Frustrada até o fim da cena. <em>Mental.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "discordia",
+          "nome": "Discórdia",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Como ação padrão, você gasta 4 PM. Uma criatura inteligente em alcance curto faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, na próxima ação dela ela ataca a criatura aliada dela mais próxima; se não houver, ela perde a ação. Uma mesma criatura só sofre este efeito uma vez por cena. <em>Mental. Pré-requisito: Fio da Intriga, 10º nível.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 4,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "decreto-absoluto",
+          "nome": "Decreto Absoluto",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e dá uma ordem de uma palavra (como \"Parem\", \"Fujam\", \"Ajoelhem\" ou \"Larguem\"). As criaturas inteligentes à sua escolha em alcance curto fazem um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Quem falhar obedece à ordem no próximo turno. Ordens que causem dano à própria criatura são ignoradas. <em>Mental. Pré-requisito: 16º nível.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 8,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "duelo-de-honra",
+          "nome": "Duelo de Honra",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Como ação padrão, você gasta 2 PM e desafia uma criatura inteligente em alcance curto. Ela faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, até o fim da cena ela sofre –2 nos testes de ataque contra qualquer criatura que não seja você. O efeito termina se você ficar Inconsciente. <em>Mental.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "resposta-afiada",
+          "nome": "Resposta Afiada",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Quando você passa em um teste de resistência contra um efeito mental causado por uma criatura, você pode gastar 1 PM e a sua reação. A criatura faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma) ou fica Frustrada até o início do próximo turno dela.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "voz-sedutora",
+          "nome": "Voz Sedutora",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Você pode gastar uma ação padrão e 4 PM para gerar o efeito da magia Enfeitiçar Pessoa em todos os humanoides em alcance curto (CD = 10 + metade do seu nível + Carisma). Esta não é uma habilidade mágica: vem da sua capacidade de influenciar as pessoas.",
+          "prerequisito": "Eloquência, 8º nível",
+          "nivelMinimo": 8,
+          "custoPM": 4,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "eloquencia"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "majestade-plena",
+          "nome": "Majestade Plena",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "A Majestade passa a funcionar contra qualquer criatura com valor de Inteligência (inclusive animais, embora continue sem funcionar contra criaturas sem Inteligência). Além disso, você pode usá-la mais de uma vez contra uma mesma criatura na mesma cena.",
+          "prerequisito": "16º nível",
+          "nivelMinimo": 16,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mascara-de-cortesia",
+          "nome": "Máscara de Cortesia",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Você recebe +5 em Enganação para mentir e para esconder as suas intenções. Uma vez por cena, quando alguém tenta descobrir que você mente (Intuição), você pode forçá-lo a rolar o teste duas vezes e ficar com o pior resultado.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "olhos-e-ouvidos",
+          "nome": "Olhos e Ouvidos",
+          "grupo": "Poderes de corte e intriga",
+          "descricao": "Uma vez por cena, como ação livre, você gasta 2 PM e o Mestre revela uma informação útil sobre uma criatura que você possa ver (uma fraqueza, uma atitude ou a sua habilidade principal), sem teste. Seus informantes e a sua rede de contatos trabalham por você.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "livre",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "educacao-privilegiada",
+          "nome": "Educação Privilegiada",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você se torna treinado em duas perícias da lista de perícias do Nobre à sua escolha, caso não seja treinado nelas.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 2,
+            "filtro": "nao-treinadas"
+          }
+        },
+        {
+          "id": "eloquencia",
+          "nome": "Eloquência",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Quando faz um teste de perícia baseada em Carisma, você pode gastar 2 PM para receber um bônus no teste igual à metade do seu nível.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "etiqueta-de-salao",
+          "nome": "Etiqueta de Salão",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você pode gastar 1 PM para rolar novamente um teste recém-realizado de Diplomacia, Intuição ou Nobreza.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "voz-imponente",
+          "nome": "Voz Imponente",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você recebe +2 em Diplomacia e Intimidação. Suas habilidades de Nobre com alcance curto passam para alcance médio.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "nome-conhecido",
+          "nome": "Nome Conhecido",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você recebe +2 em Diplomacia, Intimidação e Nobreza contra criaturas que conheçam o seu nome, a sua família ou o seu título (a critério do Mestre).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "brasao",
+          "nome": "Brasão",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você adquire um título de nobreza. Converse com o Mestre para definir os benefícios exatos. Como regra geral, no início de cada aventura você recebe R$ igual a 5% da Riqueza inicial do seu nível (rendimentos do seu título) ou o auxílio de um membro da sua corte, a critério do Mestre.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "cobrar-favores",
+          "nome": "Cobrar Favores",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você pode usar a sua influência para pedir favores a pessoas poderosas. Isso gasta 5 PM e uma hora de conversa, ou mais, a critério do Mestre, e funciona como um teste de Diplomacia contra a CD definida pelo Mestre. Você pode pedir favores caros, difíceis ou perigosos (um convite para uma festa privada, uma carona de navio ou acesso aos planos militares do reino). Se falhar, você não pode pedir o mesmo favor por pelo menos uma semana.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 5,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "anfitriao",
+          "nome": "Anfitrião",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Ao chegar a uma cidade ou comunidade civilizada onde o seu nome tenha alguma influência, você e um número de aliados igual ao seu Carisma são recebidos com hospedagem e refeições sem custo (a critério do Mestre).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "arma-de-familia",
+          "nome": "Arma de Família",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Escolha uma arma que você possua. Ela é uma herança da sua família e você recebe +1 nas rolagens de dano com ela. Se você a perder, o Mestre pode fazer com que ela volte às suas mãos na aventura seguinte.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "cofre-da-familia",
+          "nome": "Cofre da Família",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você pode pagar o custo em PM das suas habilidades de Nobre com dinheiro: cada 1 PM pode ser pago com R$ igual a 10 × o seu nível. Você só pode pagar com dinheiro, em cada cena, uma quantidade de PM igual ao seu Carisma.",
+          "prerequisito": "Rendimentos",
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "bolsa-aberta",
+          "nome": "Bolsa Aberta",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Cada 1 PM pago com o Cofre da Família custa só 5 × o seu nível em Reais (em vez de 10 ×).",
+          "prerequisito": "Cofre da Família, 10º nível",
+          "nivelMinimo": 10,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "cofre-da-familia"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "patrocinar",
+          "nome": "Patrocinar",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Como ação padrão, você paga R$ igual a 20 × o seu nível e toca um aliado. Até o início do seu próximo turno, ele recebe +2 em todos os testes de perícia e de ataque.",
+          "prerequisito": "Rendimentos",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "contratos-vantajosos",
+          "nome": "Contratos Vantajosos",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Você recebe +5 em Barganha e, em locais civilizados, compra itens com 10% de desconto.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "escolta-contratada",
+          "nome": "Escolta Contratada",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Quando está em um local civilizado, você pode gastar uma hora e R$ igual a 10% da Riqueza inicial do seu nível para contratar uma escolta que o acompanha até o fim da aventura. Uma vez por cena, quando você ou um aliado adjacente sofreria dano, a escolta absorve uma quantidade desse dano igual a 3 × o seu nível.",
+          "prerequisito": "Rendimentos, 8º nível",
+          "nivelMinimo": 8,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dinheiro-resolve",
+          "nome": "Dinheiro Resolve",
+          "grupo": "Poderes de influência e riqueza",
+          "descricao": "Uma vez por cena, quando você ou um aliado em alcance curto falha em um teste de perícia ou de resistência, você pode gastar uma reação e pagar R$ igual a 100 × o seu nível para que a criatura role o teste novamente e fique com o melhor resultado.",
+          "prerequisito": "Rendimentos, 14º nível",
+          "nivelMinimo": 14,
+          "custoPM": null,
+          "acao": "reacao",
           "atributoMinimo": null,
           "requerPoderes": [],
           "requerGrupo": null,

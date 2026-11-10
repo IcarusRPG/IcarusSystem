@@ -1,0 +1,38 @@
+{
+  "_id": "vNLIhrFCCA8Wx4sK",
+  "name": "Coroação",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 20007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A CD para resistir à sua Majestade aumenta em +5. Uma criatura que falhe no teste de Vontade por 10 ou mais se arrepende tanto de ter tentado machucá-lo que passa a lutar ao seu lado (e a seguir as suas ordens, se puder entendê-lo) pelo resto da cena. Além disso, uma criatura reduzida a 0 PV pela sua Palavra Cortante não sofre esse dano: em vez disso, passa a lutar ao seu lado pelo resto da cena.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__coroacao",
+      "classe": "nobre",
+      "habilidade": "coroacao",
+      "inferido": false
+    }
+  },
+  "_key": "!items!vNLIhrFCCA8Wx4sK"
+}

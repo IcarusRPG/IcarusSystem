@@ -1,0 +1,38 @@
+{
+  "_id": "3G7725NsU9ApyYSg",
+  "name": "Ferida Aberta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 5018,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma magia sua causa dano a uma criatura, você pode gastar 1 PM (uma vez por turno). A criatura faz um teste de Fortitude (CD das suas magias) ou fica Sangrando.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__ferida-aberta",
+      "classe": "arcanista",
+      "habilidade": "ferida-aberta",
+      "inferido": true
+    }
+  },
+  "_key": "!items!3G7725NsU9ApyYSg"
+}

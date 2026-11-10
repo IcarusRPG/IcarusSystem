@@ -1,0 +1,38 @@
+{
+  "_id": "6PMNCE7kRLg7jXxG",
+  "name": "Transfusão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "vVmFLBjJeB3LAr2c",
+  "sort": 5000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você toca um aliado e perde até 5 + o seu nível em PV (perda de PV). O aliado recupera o mesmo valor em PV.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago de Sangue",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago de Sangue",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__transfusao",
+      "classe": "arcanista",
+      "poder": "transfusao",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6PMNCE7kRLg7jXxG"
+}

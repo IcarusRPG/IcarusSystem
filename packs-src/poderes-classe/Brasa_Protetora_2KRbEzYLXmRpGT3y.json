@@ -1,0 +1,38 @@
+{
+  "_id": "2KRbEzYLXmRpGT3y",
+  "name": "Brasa Protetora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Herança de Fênix",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um aliado a até 9 m sofre dano, você pode gastar 2 PM e a sua reação para reduzir esse dano em 1d8 + o seu Carisma.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__brasa-protetora",
+      "classe": "arcanista",
+      "poder": "brasa-protetora",
+      "inferido": true
+    }
+  },
+  "_key": "!items!2KRbEzYLXmRpGT3y"
+}

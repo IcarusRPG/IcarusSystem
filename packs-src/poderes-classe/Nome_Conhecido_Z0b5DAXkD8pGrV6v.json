@@ -1,0 +1,38 @@
+{
+  "_id": "Z0b5DAXkD8pGrV6v",
+  "name": "Nome Conhecido",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Diplomacia, Intimidação e Nobreza contra criaturas que conheçam o seu nome, a sua família ou o seu título (a critério do Mestre).",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__nome-conhecido",
+      "classe": "nobre",
+      "poder": "nome-conhecido",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Z0b5DAXkD8pGrV6v"
+}

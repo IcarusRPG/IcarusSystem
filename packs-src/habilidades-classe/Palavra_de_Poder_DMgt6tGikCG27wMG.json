@@ -1,0 +1,38 @@
+{
+  "_id": "DMgt6tGikCG27wMG",
+  "name": "Palavra de Poder",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 17008,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 17,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, você lança uma magia de até 4º nível sem pagar o custo base em PM. Os aprimoramentos você paga normalmente.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 17,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__palavra-de-poder",
+      "classe": "arcanista",
+      "habilidade": "palavra-de-poder",
+      "inferido": false
+    }
+  },
+  "_key": "!items!DMgt6tGikCG27wMG"
+}

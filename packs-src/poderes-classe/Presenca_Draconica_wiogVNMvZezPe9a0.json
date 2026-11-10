@@ -1,0 +1,38 @@
+{
+  "_id": "wiogVNMvZezPe9a0",
+  "name": "Presença Dracônica",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Herança de Dragão",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM. Criaturas à sua escolha em alcance curto fazem um teste de Vontade (CD das suas magias) ou ficam Abaladas até o fim da cena.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__presenca-draconica",
+      "classe": "arcanista",
+      "poder": "presenca-draconica",
+      "inferido": true
+    }
+  },
+  "_key": "!items!wiogVNMvZezPe9a0"
+}

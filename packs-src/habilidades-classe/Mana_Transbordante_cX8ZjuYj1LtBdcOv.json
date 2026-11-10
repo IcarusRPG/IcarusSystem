@@ -1,0 +1,38 @@
+{
+  "_id": "cX8ZjuYj1LtBdcOv",
+  "name": "Mana Transbordante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 20002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você soma +2 na CD de todas as suas magias e, no início de cada turno seu em combate, recupera 2 PM.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__mana-transbordante",
+      "classe": "arcanista",
+      "habilidade": "mana-transbordante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!cX8ZjuYj1LtBdcOv"
+}

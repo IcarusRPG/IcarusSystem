@@ -1,0 +1,38 @@
+{
+  "_id": "kpGgNhOji9cL3KLR",
+  "name": "Mente Dividida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "11º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode manter duas magias de concentração ao mesmo tempo. Se perder a concentração de uma, perde a outra também.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__mente-dividida",
+      "classe": "arcanista",
+      "poder": "mente-dividida",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kpGgNhOji9cL3KLR"
+}

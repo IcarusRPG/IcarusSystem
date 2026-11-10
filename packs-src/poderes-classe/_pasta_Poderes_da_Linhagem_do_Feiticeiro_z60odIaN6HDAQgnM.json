@@ -1,0 +1,15 @@
+{
+  "_id": "z60odIaN6HDAQgnM",
+  "name": "Poderes da Linhagem do Feiticeiro",
+  "type": "Item",
+  "folder": "R2fcPGbFGhlukzXb",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:arcanista:poderes-da-linhagem-do-feiticeiro"
+    }
+  },
+  "_key": "!folders!z60odIaN6HDAQgnM"
+}

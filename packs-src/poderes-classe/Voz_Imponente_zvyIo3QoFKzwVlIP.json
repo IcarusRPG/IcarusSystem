@@ -1,0 +1,38 @@
+{
+  "_id": "zvyIo3QoFKzwVlIP",
+  "name": "Voz Imponente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Diplomacia e Intimidação. Suas habilidades de Nobre com alcance curto passam para alcance médio.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__voz-imponente",
+      "classe": "nobre",
+      "poder": "voz-imponente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!zvyIo3QoFKzwVlIP"
+}

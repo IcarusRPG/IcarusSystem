@@ -1,0 +1,15 @@
+{
+  "_id": "i2gBagL4Hs1NL8yf",
+  "name": "Nobre",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 900000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:nobre"
+    }
+  },
+  "_key": "!folders!i2gBagL4Hs1NL8yf"
+}

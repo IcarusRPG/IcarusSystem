@@ -1,0 +1,40 @@
+{
+  "_id": "tJmfWykMBSEX7SIK",
+  "name": "Marechal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Plano de Batalha, 12º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa o Plano de Batalha, os aliados direcionados também recebem +1 nos testes de ataque até o fim do próximo turno deles.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 12,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "plano-de-batalha"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__marechal",
+      "classe": "nobre",
+      "poder": "marechal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tJmfWykMBSEX7SIK"
+}

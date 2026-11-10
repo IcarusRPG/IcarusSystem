@@ -1,0 +1,38 @@
+{
+  "_id": "uPpCyDzmkWVhtma5",
+  "name": "Ordem de Marcha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você e os seus aliados em alcance curto recebem +2 em Iniciativa. No início do combate, depois de rolar a Iniciativa, você pode trocar a sua posição na ordem com a de um aliado.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__ordem-de-marcha",
+      "classe": "nobre",
+      "poder": "ordem-de-marcha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!uPpCyDzmkWVhtma5"
+}

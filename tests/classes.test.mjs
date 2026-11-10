@@ -8,10 +8,11 @@ import { CLASSES, classePorId, iconeDaClasse, idDaClassePorNome } from "../modul
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("7 classes, 44 habilidades e 245 poderes no JSON", () => {
-  assert.deepEqual(CLASSES.map(c => c.id), ["guerreiro", "samurai", "barbaro", "ladino", "patrulheiro", "monge", "pistoleiro"]);
-  assert.equal(CLASSES.reduce((s, c) => s + c.habilidades.length, 0), 44);
-  assert.equal(CLASSES.reduce((s, c) => s + c.poderes.length, 0), 245);
+test("9 classes, 73 habilidades e 336 poderes no JSON (contagens por classe do prompt)", () => {
+  assert.deepEqual(CLASSES.map(c => c.id), ["guerreiro", "samurai", "barbaro", "ladino", "patrulheiro", "monge", "pistoleiro", "arcanista", "nobre"]);
+  assert.deepEqual(CLASSES.map(c => [c.habilidades.length, c.poderes.length]), [[6, 36], [5, 51], [6, 31], [7, 36], [5, 29], [10, 31], [5, 31], [21, 53], [8, 38]]);
+  assert.equal(CLASSES.reduce((s, c) => s + c.habilidades.length, 0), 73);
+  assert.equal(CLASSES.reduce((s, c) => s + c.poderes.length, 0), 336);
 });
 
 test("Ícones das classes existem no disco (Bárbaro com acento)", () => {
@@ -25,24 +26,24 @@ test("Ícones das classes existem no disco (Bárbaro com acento)", () => {
   assert.equal(classePorId("monge").pm.atributoSoNoPrimeiroNivel, true);
 });
 
-test("Compêndios de classes: 7 classes, 44 habilidades e 245 poderes; pastas por classe > grupo; idempotente", async () => {
+test("Compêndios de classes: 9 classes, 73 habilidades e 336 poderes; pastas por classe > grupo; idempotente", async () => {
   const { documentosDeClasses } = await import("../module/dados-compendios.mjs");
   const ler = n => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${n}.json`), "utf8"));
   const d = { classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes") };
   const docs = documentosDeClasses(d);
-  assert.equal(docs.classes.itens.length, 7);
-  assert.equal(docs["habilidades-classe"].itens.length, 44);
-  assert.equal(docs["poderes-classe"].itens.length, 245);
+  assert.equal(docs.classes.itens.length, 9);
+  assert.equal(docs["habilidades-classe"].itens.length, 73);
+  assert.equal(docs["poderes-classe"].itens.length, 336);
   const pastas = new Set(docs["poderes-classe"].pastas.map(p => p._id));
   for (const p of docs["poderes-classe"].itens) assert.ok(pastas.has(p.folder), `${p.name} sem pasta (${p.system.grupo})`);
   const ids = docs["poderes-classe"].itens.map(p => p._id);
   assert.equal(new Set(ids).size, ids.length, "ids repetidos");
-  assert.equal(new Set(docs["habilidades-classe"].itens.map(p => p._id)).size, 44);
+  assert.equal(new Set(docs["habilidades-classe"].itens.map(p => p._id)).size, 73);
   assert.deepEqual(documentosDeClasses(d), docs);
   // Poderes comuns em cada classe, com ids diferentes
   const comuns = docs["poderes-classe"].itens.filter(p => p.name === "Aumento de Atributo");
-  assert.equal(comuns.length, 7);
-  assert.equal(new Set(comuns.map(p => p._id)).size, 7);
+  assert.equal(comuns.length, 9);
+  assert.equal(new Set(comuns.map(p => p._id)).size, 9);
   // Ícone da classe em todos
   const monge = docs.classes.itens.find(c => c.system.classeId === "monge");
   assert.ok(docs["poderes-classe"].itens.filter(p => p.system.classe === "monge").every(p => p.img === monge.img));
@@ -289,12 +290,13 @@ test("Recursos de classe: frequência pelo texto (uma vez por cena/rodada/turno/
 });
 
 test("16. Telas de escolha: tipos e opções do JSON; caminhos batem com as subs; Treino Extra treina por item", async () => {
-  const tipos = new Set(["caminho", "atributo", "pericias", "tipo-dano", "terreno", "arma-exotica"]);
+  const tipos = new Set(["caminho", "atributo", "pericias", "tipo-dano", "terreno", "arma-exotica", "escola"]);
   const comEscolha = CLASSES.flatMap(c => [...c.habilidades, ...c.poderes].filter(p => p.escolha).map(p => ({ c, p })));
   for (const { c, p } of comEscolha) {
     assert.ok(tipos.has(p.escolha.tipo), `${c.id}/${p.id}: tipo ${p.escolha.tipo}`);
-    if (p.escolha.tipo === "pericias") assert.ok(["nao-treinadas", "treinadas", "treinadas-nao-especialistas"].includes(p.escolha.filtro), p.id);
-    if (p.escolha.tipo === "caminho") assert.deepEqual(p.escolha.opcoes, p.subs.map(s => s.nome), `${c.id}/${p.id}: opções = subs`);
+    if (p.escolha.tipo === "pericias") assert.ok(["nao-treinadas", "treinadas", "treinadas-nao-especialistas"].includes(p.escolha.filtro) || p.escolha.opcoes?.length, p.id);
+    // Caminho com subitens: opções = subs (Linhagem e Herança não têm subs: usam habilidades marcadoras)
+    if (p.escolha.tipo === "caminho" && p.subs?.length) assert.deepEqual(p.escolha.opcoes, p.subs.map(s => s.nome), `${c.id}/${p.id}: opções = subs`);
   }
   const nomes = comEscolha.map(x => x.p.nome);
   for (const n of ["Senda do Combatente", "Caminho do Monge", "Vínculo Selvagem", "Perícia Refinada", "Aumento de Atributo", "Perícia Especializada", "Treino Extra", "Treinamento Extra", "Arma Exótica", "Corpo Temperado", "Especialista em Terreno"]) {

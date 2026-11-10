@@ -1,0 +1,38 @@
+{
+  "_id": "RqQ8myk7QkH965ot",
+  "name": "Conjuração Discreta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia, você pode gastar 1 PM para lançá-la sem gestos nem palavras chamativos. Quem quiser perceber que você lançou uma magia faz um teste de Misticismo ou Visão contra CD 15 + 2 × o nível da magia. A magia continua tendo o efeito normal.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__conjuracao-discreta",
+      "classe": "arcanista",
+      "poder": "conjuracao-discreta",
+      "inferido": true
+    }
+  },
+  "_key": "!items!RqQ8myk7QkH965ot"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "fcvhsbq55O29Cl0O",
+  "name": "Ressonância Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você lança uma magia da mesma escola da última magia que lançou na mesma cena, ela custa 1 PM a menos (mínimo 1). Este desconto não acumula com a Maestria de Escola do Mago.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__ressonancia-arcana",
+      "classe": "arcanista",
+      "poder": "ressonancia-arcana",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fcvhsbq55O29Cl0O"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "5sPwvaZPXVz5DcNK",
+  "name": "Herança de Fênix",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 14,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "As fênix morriam em fogo e voltavam do fogo. Foram as últimas a se calar.<ul class=\"subs-classe\"><li><strong>Coração de Brasa (1º nível).</strong> Você recebe Redução de Fogo 3, Redução de Trevas 3 e +2 em Vontade.</li><li><strong>Alento da Fênix (5º nível, Dom da Linhagem).</strong> Como ação padrão, você gasta 2 PM e toca uma criatura (ou a si mesmo), que recupera 1d8 + Carisma PV. A cura aumenta em 1d8 no 9º, no 13º e no 17º nível.</li><li><strong>Cinzas Quentes (11º nível, Dom Aprofundado).</strong> O Alento da Fênix passa a ser uma ação de movimento e também remove do alvo uma destas condições: Abalado, Apavorado, Enjoado, Fatigado ou Sangrando.</li><li><strong>Renascimento (17º nível, Dom Supremo).</strong> Uma vez por dia, quando seus PV chegariam a 0, você fica com metade dos seus PV máximos (sem gastar ação nem PM). Cada criatura adjacente faz um teste de Reflexos (CD das suas magias): falha, sofre 3d6 de dano de Fogo e 3d6 de dano de Luz; sucesso, metade.</li></ul>",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__heranca-de-fenix",
+      "classe": "arcanista",
+      "habilidade": "heranca-de-fenix",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5sPwvaZPXVz5DcNK"
+}

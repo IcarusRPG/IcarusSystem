@@ -1,0 +1,38 @@
+{
+  "_id": "yBPjoMBOjFyzrYwb",
+  "name": "Névoa Abissal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Herança de Leviatã",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e faz uma névoa fria e escura cobrir uma esfera de 6 m de raio, em alcance curto, até o fim da cena. Quem está dentro da névoa tem camuflagem leve.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__nevoa-abissal",
+      "classe": "arcanista",
+      "poder": "nevoa-abissal",
+      "inferido": true
+    }
+  },
+  "_key": "!items!yBPjoMBOjFyzrYwb"
+}

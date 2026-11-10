@@ -1,0 +1,38 @@
+{
+  "_id": "tWpV4crIx4GPbwZc",
+  "name": "Proteção Elemental",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha um tipo de dano entre Fogo, Frio, Elétrico, Ácido, Luz, Trevas ou Essência. Você recebe Redução desse tipo 3 (respeitando o teto de RD do Núcleo). Você pode escolher este poder várias vezes, cada vez para um tipo diferente.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__protecao-elemental",
+      "classe": "arcanista",
+      "poder": "protecao-elemental",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tWpV4crIx4GPbwZc"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "PZNlZ60Q3N8NFg71",
+  "name": "Absorção de Mana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você passa em um teste de resistência contra uma magia, você pode usar a sua reação para absorver parte da mana dela e recuperar PM igual ao nível da magia (de 1 a 5).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__absorcao-de-mana",
+      "classe": "arcanista",
+      "poder": "absorcao-de-mana",
+      "inferido": true
+    }
+  },
+  "_key": "!items!PZNlZ60Q3N8NFg71"
+}

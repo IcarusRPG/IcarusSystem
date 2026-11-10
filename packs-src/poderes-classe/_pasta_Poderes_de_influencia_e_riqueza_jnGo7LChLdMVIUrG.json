@@ -1,0 +1,15 @@
+{
+  "_id": "jnGo7LChLdMVIUrG",
+  "name": "Poderes de influência e riqueza",
+  "type": "Item",
+  "folder": "HOqyU7rqM0OoSEQe",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:nobre:poderes-de-influencia-e-riqueza"
+    }
+  },
+  "_key": "!folders!jnGo7LChLdMVIUrG"
+}

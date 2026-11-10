@@ -104,7 +104,7 @@ function linhasDaClasse(actor) {
   }
   // Habilidades do nível que faltam (assistente fechado sem confirmar)
   const tem = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.id));
-  const faltam = habilidadesAteNivel(classe, actor.system.nivel).filter(h => !tem.has(`${classe.id}__${h.id}`));
+  const faltam = habilidadesAteNivel(classe, actor.system.nivel, escolhas).filter(h => !tem.has(`${classe.id}__${h.id}`));
   if (faltam.length) linhas.push({ id: "classe:conceder", rotulo: loc("ICARUS.Assistente.ReceberHabilidades"), botao: true, ativo: true, info: faltam.map(h => h.nome).join(", ") });
   // Escolhas pendentes (itens criados sem a escolha feita)
   for (const item of pendentesDoAtor(actor)) {

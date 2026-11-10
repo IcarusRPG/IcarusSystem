@@ -5,14 +5,17 @@
  *                animal). permanente = só muda pelo reset de classe ou pelo Mestre.
  *   atributo     1 dos 6 (desabilita o que já recebeu aumento neste patamar)
  *   pericias     "quantidade" perícias com "filtro": nao-treinadas | treinadas | treinadas-nao-especialistas
- *   tipo-dano    1 entre "opcoes" (Corpo Temperado: Redução 5 desse tipo)
+ *   tipo-dano    1 entre "opcoes", sem repetir o tipo no mesmo poder (Corpo Temperado e Proteção
+ *                Elemental: Redução desse tipo, pelo número do texto)
+ *   escola       1 escola de magia entre "opcoes", sem repetir uma escola já escolhida
+ *   (caminho com requerLinhagem: só para quem tem essa Linhagem; pericias com "opcoes": só elas)
  *   terreno      1 entre "opcoes", sem repetir um terreno já escolhido
  *   arma-exotica 1 arma exótica do compêndio de armas, sem repetir
  * O resultado fica nas flags do item (e o nome ganha a escolha: "Aumento de Atributo (Destreza)").
  * Fechar a tela sem escolher deixa o item "pendente de escolha" (aviso na ficha e botão para concluir).
  */
 import { SISTEMA_ID, ATRIBUTOS, PERICIAS } from "./config.mjs";
-import { patamarDe, podeAumentarAtributo, normalizarNome, classePorId } from "./classes-dados.mjs";
+import { patamarDe, podeAumentarAtributo, normalizarNome, classePorId, marcadorDaOpcao, chaveDaPericia } from "./classes-dados.mjs";
 import ARMAS from "./dados/armas.mjs";
 import VINCULOS from "./dados/vinculos.mjs";
 import { marcarTreino } from "./assistente.mjs";
@@ -61,7 +64,8 @@ async function escolherUm(titulo, texto, opcoes, { aviso = "" } = {}) {
 async function telaCaminho(actor, classe, entrada) {
   const subs = entrada.subs ?? [];
   const cartoes = entrada.escolha.opcoes.map((nome, i) => {
-    const sub = subs.find(s => normalizarNome(s.nome) === normalizarNome(nome)) ?? subs[i];
+    // Sem subitens (Linhagem, Herança): a descrição vem da habilidade da opção ("Linhagem do Mago")
+    const sub = subs.find(s => normalizarNome(s.nome) === normalizarNome(nome)) ?? subs[i] ?? marcadorDaOpcao(classe, entrada.id, i);
     const animal = VINCULOS.vinculos.find(v => normalizarNome(v.nome) === normalizarNome(nome));
     const ficha = animal ? miniFicha(animal) : "";
     return `<div class="cartao-escolha"><h4>${esc(nome)}</h4><div>${sub?.descricao ?? ""}</div>${ficha}</div>`;
@@ -105,7 +109,10 @@ async function telaAtributo(actor, classe, entrada, { forcado }) {
 
 /** Perícias: lista filtrada, quantidade exata, treino atual → resultado. */
 async function telaPericias(actor, classe, entrada) {
-  const { quantidade = 1, filtro } = entrada.escolha;
+  const { quantidade = 1 } = entrada.escolha;
+  // Com "opcoes" (Erudito Arcano): só essas e só as não treinadas (repetível, cada vez uma diferente)
+  const filtro = entrada.escolha.filtro ?? (entrada.escolha.opcoes ? "nao-treinadas" : undefined);
+  const daLista = entrada.escolha.opcoes ? new Set(entrada.escolha.opcoes.map(chaveDaPericia).filter(Boolean)) : null;
   const treino = k => actor.system.pericias[k].treino;
   const especialistas = new Set(PERICIAS.filter(p => treino(p.chave) >= 2).map(p => p.chave));
   const passa = {
@@ -114,7 +121,7 @@ async function telaPericias(actor, classe, entrada) {
     "treinadas-nao-especialistas": k => treino(k) === 1
   }[filtro] ?? (() => true);
   const vira = filtro === "nao-treinadas" ? 1 : 2;
-  const opcoes = PERICIAS.map(p => p.chave).filter(passa);
+  const opcoes = PERICIAS.map(p => p.chave).filter(k => passa(k) && (!daLista || daLista.has(k)));
   if (opcoes.length < quantidade) { ui.notifications.warn(loc("ICARUS.Comuns.SemPericias")); return null; }
   const rotulo = n => loc(`ICARUS.Treino.${n}`);
   const content = `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Escolhas.PericiasTexto", { n: quantidade }))}</p><div class="grade-pericias-classe">${opcoes.map(k =>
@@ -139,12 +146,24 @@ async function telaPericias(actor, classe, entrada) {
   return { flags: { periciaRefinada: escolha }, sufixo: nomes };
 }
 
-/** Tipo de dano (Corpo Temperado): Redução 5 do tipo, como fonte de RD do item. */
+/**
+ * Tipo de dano: sem repetir o tipo no mesmo poder (repetível). Se o texto dá Redução desse tipo
+ * (Corpo Temperado 5, Proteção Elemental 3), vira fonte de RD do item; senão só guarda o tipo
+ * (Mestre do Elemento).
+ */
 async function telaTipoDano(actor, classe, entrada) {
-  const nome = await escolherUm(entrada.nome, "", entrada.escolha.opcoes.map(o => ({ valor: o, rotulo: o })));
+  const ja = new Set(actor.items.filter(i => i.flags?.[SISTEMA_ID]?.id === `${classe.id}__${entrada.id}`).map(i => i.flags?.[SISTEMA_ID]?.tipoDano).filter(Boolean));
+  const nome = await escolherUm(entrada.nome, "", entrada.escolha.opcoes.map(o => ({ valor: o, rotulo: o, desativado: ja.has(TIPO_DANO(o)) })));
   if (!nome) return null;
-  const valor = Number(String(entrada.descricao).match(/Redução de dano desse tipo (\d+)/i)?.[1] ?? 5);
-  return { flags: { tipoDano: TIPO_DANO(nome), rd: [{ valor, tipo: TIPO_DANO(nome) }] }, sufixo: nome };
+  const rd = String(entrada.descricao).match(/Redução (?:de dano )?desse tipo (\d+)/i);
+  return { flags: { tipoDano: TIPO_DANO(nome), ...(rd ? { rd: [{ valor: Number(rd[1]), tipo: TIPO_DANO(nome) }] } : {}) }, sufixo: nome };
+}
+
+/** Escola de magia (Escola Predileta, Segunda Escola): sem repetir uma escola já escolhida. */
+async function telaEscola(actor, classe, entrada) {
+  const ja = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.escola).filter(Boolean));
+  const escola = await escolherUm(entrada.nome, loc("ICARUS.Escolhas.Escola"), entrada.escolha.opcoes.map(o => ({ valor: o, rotulo: o, desativado: ja.has(o) })));
+  return escola ? { flags: { escola }, sufixo: escola } : null;
 }
 
 /** Terreno (Especialista em Terreno): não repete um terreno já escolhido. */
@@ -163,7 +182,7 @@ async function telaArmaExotica(actor, classe, entrada) {
   return arma ? { flags: { armaExotica: { id: arma.id, nome: arma.nome } }, sufixo: arma.nome } : null;
 }
 
-const TELAS = { caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
+const TELAS = { escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
 
 /** Depois de uma escolha de caminho (por id da habilidade): (actor, índice, item) => Promise. */
 export const APOS_CAMINHO = new Map();
@@ -183,6 +202,16 @@ export async function resolverEscolha(actor, item, { forcado = false } = {}) {
   }
   const tela = TELAS[entrada.escolha.tipo];
   if (!tela) return false;
+  // Herança Ancestral: só para a Linhagem pedida (Feiticeiro)
+  const requer = entrada.escolha.requerLinhagem;
+  if (requer) {
+    const li = classe.habilidades.find(h => h.id === "linhagem")?.escolha?.opcoes ?? [];
+    const indice = (actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {}).linhagem;
+    if (li[indice] !== requer) {
+      ui.notifications.warn(fmt("ICARUS.Escolhas.RequerLinhagem", { item: entrada.nome, linhagem: requer }));
+      return false;
+    }
+  }
   const r = await tela(actor, classe, entrada, { forcado });
   if (!r) {
     if (!f.escolhaFeita) ui.notifications.info(fmt("ICARUS.Escolhas.Pendente", { item: item.name }));

@@ -1,0 +1,38 @@
+{
+  "_id": "QtmrdKWbOPSFS0fD",
+  "name": "Postura Altiva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar o seu Carisma no lugar da Destreza na Defesa.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__postura-altiva",
+      "classe": "nobre",
+      "habilidade": "postura-altiva",
+      "inferido": false
+    }
+  },
+  "_key": "!items!QtmrdKWbOPSFS0fD"
+}

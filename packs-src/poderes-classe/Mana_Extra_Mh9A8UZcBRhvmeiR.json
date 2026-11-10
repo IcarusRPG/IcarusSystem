@@ -1,0 +1,38 @@
+{
+  "_id": "Mh9A8UZcBRhvmeiR",
+  "name": "Mana Extra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "4º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 PM por nível de Arcanista (retroativo).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__mana-extra",
+      "classe": "arcanista",
+      "poder": "mana-extra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Mh9A8UZcBRhvmeiR"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "J415JO84PQHTG1VT",
+  "name": "Ordem de Carga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 4 PM. Até um número de aliados em alcance curto igual ao seu Carisma (mínimo 1) se deslocam imediatamente até metade do deslocamento deles e fazem um ataque com +2 no teste de ataque, sem gastar as ações deles.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__ordem-de-carga",
+      "classe": "nobre",
+      "poder": "ordem-de-carga",
+      "inferido": true
+    }
+  },
+  "_key": "!items!J415JO84PQHTG1VT"
+}

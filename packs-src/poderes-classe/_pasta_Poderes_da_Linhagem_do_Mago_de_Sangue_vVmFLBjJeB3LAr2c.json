@@ -1,0 +1,15 @@
+{
+  "_id": "vVmFLBjJeB3LAr2c",
+  "name": "Poderes da Linhagem do Mago de Sangue",
+  "type": "Item",
+  "folder": "R2fcPGbFGhlukzXb",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:arcanista:poderes-da-linhagem-do-mago-de-sangue"
+    }
+  },
+  "_key": "!folders!vVmFLBjJeB3LAr2c"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "EgRZ1BMOJ3e8Uhcy",
+  "name": "Segunda Escola",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "GI8OcgLXVR40hZDl",
+  "sort": 3900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Maestria de Escola, 13º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha uma segunda escola. Você recebe os benefícios da Escola Predileta (+1 CD e uma magia adicional) e da Maestria de Escola para essa escola.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago",
+    "nivelMinimo": 13,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__segunda-escola",
+      "classe": "arcanista",
+      "poder": "segunda-escola",
+      "inferido": false
+    }
+  },
+  "_key": "!items!EgRZ1BMOJ3e8Uhcy"
+}

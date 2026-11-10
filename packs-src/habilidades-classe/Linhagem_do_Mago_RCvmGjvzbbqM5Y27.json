@@ -1,0 +1,38 @@
+{
+  "_id": "RCvmGjvzbbqM5Y27",
+  "name": "Linhagem do Mago",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 3,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O Mago estudou a mana até ela obedecer. Só lança magias arcanas, e é quem conhece mais magias.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__linhagem-do-mago",
+      "classe": "arcanista",
+      "habilidade": "linhagem-do-mago",
+      "inferido": false
+    }
+  },
+  "_key": "!items!RCvmGjvzbbqM5Y27"
+}

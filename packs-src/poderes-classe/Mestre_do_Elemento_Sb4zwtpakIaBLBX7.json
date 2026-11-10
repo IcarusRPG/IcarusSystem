@@ -1,0 +1,38 @@
+{
+  "_id": "Sb4zwtpakIaBLBX7",
+  "name": "Mestre do Elemento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha um tipo de dano entre Fogo, Frio, Elétrico e Ácido. As suas magias desse tipo causam +2 de dano e ignoram até 3 pontos de Redução desse tipo do alvo. Você pode escolher este poder várias vezes, cada vez para um tipo diferente.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__mestre-do-elemento",
+      "classe": "arcanista",
+      "poder": "mestre-do-elemento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Sb4zwtpakIaBLBX7"
+}

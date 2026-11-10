@@ -1,0 +1,38 @@
+{
+  "_id": "YVjKhvMdOGu9ri9l",
+  "name": "Chama Duradoura",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Alento da Fênix",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma criatura que recebe o Alento da Fênix também recebe +2 na Defesa e em testes de resistência até o início do seu próximo turno.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__chama-duradoura",
+      "classe": "arcanista",
+      "poder": "chama-duradoura",
+      "inferido": false
+    }
+  },
+  "_key": "!items!YVjKhvMdOGu9ri9l"
+}

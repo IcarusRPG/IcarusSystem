@@ -1,0 +1,38 @@
+{
+  "_id": "3auqxDPnfxZulsrz",
+  "name": "Passo Arcano",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e se teletransporta até 9 m para um espaço livre que possa ver.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__passo-arcano",
+      "classe": "arcanista",
+      "poder": "passo-arcano",
+      "inferido": true
+    }
+  },
+  "_key": "!items!3auqxDPnfxZulsrz"
+}

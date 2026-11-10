@@ -1,0 +1,38 @@
+{
+  "_id": "mWD4UyBxtFAG1EiZ",
+  "name": "Conhecimento Variado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna treinado em duas perícias à sua escolha, que ainda não sejam treinadas. Você pode escolher este poder várias vezes.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__conhecimento-variado",
+      "classe": "arcanista",
+      "poder": "conhecimento-variado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!mWD4UyBxtFAG1EiZ"
+}

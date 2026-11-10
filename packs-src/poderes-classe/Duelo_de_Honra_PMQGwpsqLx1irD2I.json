@@ -1,0 +1,38 @@
+{
+  "_id": "PMQGwpsqLx1irD2I",
+  "name": "Duelo de Honra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e desafia uma criatura inteligente em alcance curto. Ela faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, até o fim da cena ela sofre –2 nos testes de ataque contra qualquer criatura que não seja você. O efeito termina se você ficar Inconsciente. <em>Mental.</em>",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__duelo-de-honra",
+      "classe": "nobre",
+      "poder": "duelo-de-honra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!PMQGwpsqLx1irD2I"
+}

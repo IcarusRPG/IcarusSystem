@@ -1,0 +1,38 @@
+{
+  "_id": "cwn6u33xuThnEVvA",
+  "name": "Pacto Profundo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "vVmFLBjJeB3LAr2c",
+  "sort": 4800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Pacto de Sangue, 9º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode trocar PM por PV no Pacto de Sangue até o custo inteiro da magia (em vez de metade).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago de Sangue",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago de Sangue",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__pacto-profundo",
+      "classe": "arcanista",
+      "poder": "pacto-profundo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!cwn6u33xuThnEVvA"
+}

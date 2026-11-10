@@ -1,0 +1,15 @@
+{
+  "_id": "R2fcPGbFGhlukzXb",
+  "name": "Arcanista",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 800000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:arcanista"
+    }
+  },
+  "_key": "!folders!R2fcPGbFGhlukzXb"
+}

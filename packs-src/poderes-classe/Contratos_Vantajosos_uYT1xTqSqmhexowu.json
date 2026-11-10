@@ -1,0 +1,38 @@
+{
+  "_id": "uYT1xTqSqmhexowu",
+  "name": "Contratos Vantajosos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 3400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em Barganha e, em locais civilizados, compra itens com 10% de desconto.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__contratos-vantajosos",
+      "classe": "nobre",
+      "poder": "contratos-vantajosos",
+      "inferido": false
+    }
+  },
+  "_key": "!items!uYT1xTqSqmhexowu"
+}

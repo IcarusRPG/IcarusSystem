@@ -1,0 +1,15 @@
+{
+  "_id": "ibcIasmqOybDo6gS",
+  "name": "Arcanista",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 800000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:arcanista"
+    }
+  },
+  "_key": "!folders!ibcIasmqOybDo6gS"
+}

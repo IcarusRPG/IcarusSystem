@@ -1,0 +1,38 @@
+{
+  "_id": "fLFL3OuFwB8qRxhu",
+  "name": "Surto Arcano",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação livre, você recupera PM igual à metade do seu nível (arredondado para baixo) + o seu atributo-chave (mínimo 2).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__surto-arcano",
+      "classe": "arcanista",
+      "poder": "surto-arcano",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fLFL3OuFwB8qRxhu"
+}

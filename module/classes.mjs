@@ -60,7 +60,7 @@ export async function concederHabilidades(actor, { nivel = actor.system.nivel, a
   const classe = classeDoAtor(actor);
   if (!classe) return [];
   const tem = new Set(itensDeClasse(actor, "habilidade").map(i => i.flags?.[SISTEMA_ID]?.id));
-  const novas = habilidadesAteNivel(classe, nivel)
+  const novas = habilidadesAteNivel(classe, nivel, actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {})
     .filter(h => !tem.has(idDeClasse(classe.id, h.id)))
     .map(h => {
       const d = dadosDaHabilidade(classe, h, ICONES_CLASSES);

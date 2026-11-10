@@ -1,0 +1,38 @@
+{
+  "_id": "XTP8oumdfUlt8izH",
+  "name": "Sede Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 11019,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 11,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, ao causar dano com uma magia a uma criatura Sangrando, você recupera 1d6 + Inteligência PV.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__sede-arcana",
+      "classe": "arcanista",
+      "habilidade": "sede-arcana",
+      "inferido": false
+    }
+  },
+  "_key": "!items!XTP8oumdfUlt8izH"
+}

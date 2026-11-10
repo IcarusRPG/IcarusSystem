@@ -1,0 +1,38 @@
+{
+  "_id": "UbeQRXiGU17w01CT",
+  "name": "Dote",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe R$ 1.500 em dinheiro, além da riqueza inicial normal do seu nível, para gastar como quiser.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__dote",
+      "classe": "nobre",
+      "habilidade": "dote",
+      "inferido": false
+    }
+  },
+  "_key": "!items!UbeQRXiGU17w01CT"
+}

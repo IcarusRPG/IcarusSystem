@@ -1,0 +1,38 @@
+{
+  "_id": "6VNbKYR8SFRuPAMt",
+  "name": "Olhos e Ouvidos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação livre, você gasta 2 PM e o Mestre revela uma informação útil sobre uma criatura que você possa ver (uma fraqueza, uma atitude ou a sua habilidade principal), sem teste. Seus informantes e a sua rede de contatos trabalham por você.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__olhos-e-ouvidos",
+      "classe": "nobre",
+      "poder": "olhos-e-ouvidos",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6VNbKYR8SFRuPAMt"
+}

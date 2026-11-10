@@ -1,0 +1,15 @@
+{
+  "_id": "kmyK9SJVhjAiTHrA",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "R2fcPGbFGhlukzXb",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:arcanista:poderes-gerais"
+    }
+  },
+  "_key": "!folders!kmyK9SJVhjAiTHrA"
+}

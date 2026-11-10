@@ -1,0 +1,38 @@
+{
+  "_id": "1L2OwtTesygbsqkK",
+  "name": "Constituição Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 PV por nível de Arcanista (retroativo) e +2 em Fortitude.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__constituicao-arcana",
+      "classe": "arcanista",
+      "poder": "constituicao-arcana",
+      "inferido": false
+    }
+  },
+  "_key": "!items!1L2OwtTesygbsqkK"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "lHksGvzaX6j0TQXt",
+  "name": "Área Ampliada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia de área, você pode gastar 2 PM para aumentar as dimensões da área em 50% (arredonde para múltiplos de 1,5 m). Você só pode usar este poder uma vez por magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__area-ampliada",
+      "classe": "arcanista",
+      "poder": "area-ampliada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!lHksGvzaX6j0TQXt"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "OhSM6FnPbNcXNrna",
+  "name": "Segunda Chance",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, você pode rolar novamente um teste de Vontade, Concentração ou Misticismo que tenha acabado de falhar, ficando com o novo resultado.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__segunda-chance",
+      "classe": "arcanista",
+      "poder": "segunda-chance",
+      "inferido": false
+    }
+  },
+  "_key": "!items!OhSM6FnPbNcXNrna"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "0Q5PRb6IosFrqRPX",
+  "name": "Linhagem do Mago de Sangue",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 15,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O Mago de Sangue descobriu que o sangue, aquilo que pulsa, também carrega mana. Usa Inteligência, só lança magias de Sangue e não precisa de foco: o próprio sangue é o foco.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__linhagem-do-mago-de-sangue",
+      "classe": "arcanista",
+      "habilidade": "linhagem-do-mago-de-sangue",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0Q5PRb6IosFrqRPX"
+}

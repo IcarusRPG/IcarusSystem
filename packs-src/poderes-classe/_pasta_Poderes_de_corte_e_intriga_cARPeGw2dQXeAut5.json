@@ -1,0 +1,15 @@
+{
+  "_id": "cARPeGw2dQXeAut5",
+  "name": "Poderes de corte e intriga",
+  "type": "Item",
+  "folder": "HOqyU7rqM0OoSEQe",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:nobre:poderes-de-corte-e-intriga"
+    }
+  },
+  "_key": "!folders!cARPeGw2dQXeAut5"
+}

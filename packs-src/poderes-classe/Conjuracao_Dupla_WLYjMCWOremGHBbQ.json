@@ -1,0 +1,38 @@
+{
+  "_id": "WLYjMCWOremGHBbQ",
+  "name": "Conjuração Dupla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando lança uma magia com execução padrão, você pode gastar 4 PM (como ação livre) para ganhar uma ação padrão adicional, que só pode ser usada para lançar uma segunda magia. A segunda magia pode ser <strong>qualquer magia que você possa lançar</strong>, de qualquer nível e execução (ela é lançada como se tivesse execução padrão). Você só pode usar este poder uma vez por turno e só pode manter uma magia de concentração por vez, como de costume.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__conjuracao-dupla",
+      "classe": "arcanista",
+      "poder": "conjuracao-dupla",
+      "inferido": true
+    }
+  },
+  "_key": "!items!WLYjMCWOremGHBbQ"
+}

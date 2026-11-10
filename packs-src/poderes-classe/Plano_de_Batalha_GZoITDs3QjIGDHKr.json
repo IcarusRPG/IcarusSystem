@@ -1,0 +1,38 @@
+{
+  "_id": "GZoITDs3QjIGDHKr",
+  "name": "Plano de Batalha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 1 PM por aliado que quiser direcionar (limitado pelo seu Carisma), em alcance curto. No próximo turno de cada aliado direcionado, ele ganha uma ação de movimento adicional.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__plano-de-batalha",
+      "classe": "nobre",
+      "poder": "plano-de-batalha",
+      "inferido": true
+    }
+  },
+  "_key": "!items!GZoITDs3QjIGDHKr"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "za2fwoT9gecuVmMn",
+  "name": "Arma de Família",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha uma arma que você possua. Ela é uma herança da sua família e você recebe +1 nas rolagens de dano com ela. Se você a perder, o Mestre pode fazer com que ela volte às suas mãos na aventura seguinte.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__arma-de-familia",
+      "classe": "nobre",
+      "poder": "arma-de-familia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!za2fwoT9gecuVmMn"
+}

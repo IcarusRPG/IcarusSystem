@@ -1,0 +1,38 @@
+{
+  "_id": "gv4pyAd6Zx3qpDkr",
+  "name": "Maestria de Escola",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 11007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 11,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "As suas magias da Escola Predileta custam 1 PM a menos (mínimo 1 PM).",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__maestria-de-escola",
+      "classe": "arcanista",
+      "habilidade": "maestria-de-escola",
+      "inferido": true
+    }
+  },
+  "_key": "!items!gv4pyAd6Zx3qpDkr"
+}

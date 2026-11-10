@@ -1,0 +1,38 @@
+{
+  "_id": "Mk8iTJ4UMK0SewtF",
+  "name": "Escola Predileta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 5006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha uma das nove escolas. A CD das suas magias dessa escola aumenta em +1, e você aprende uma magia adicional dessa escola (de nível que possa lançar).",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__escola-predileta",
+      "classe": "arcanista",
+      "habilidade": "escola-predileta",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Mk8iTJ4UMK0SewtF"
+}

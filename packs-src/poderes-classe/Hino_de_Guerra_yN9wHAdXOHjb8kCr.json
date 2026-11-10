@@ -1,0 +1,40 @@
+{
+  "_id": "yN9wHAdXOHjb8kCr",
+  "name": "Hino de Guerra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Estandarte da Família",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM. Até o fim do seu próximo turno, os aliados a até 9 m do seu estandarte causam +1d6 de dano no primeiro ataque que acertarem.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "estandarte-da-familia"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__hino-de-guerra",
+      "classe": "nobre",
+      "poder": "hino-de-guerra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!yN9wHAdXOHjb8kCr"
+}

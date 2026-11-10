@@ -1,0 +1,38 @@
+{
+  "_id": "boeiSv4ScZIxeaCM",
+  "name": "Magia Seletiva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia de área, você pode gastar 1 PM <strong>por criatura</strong> que deseje deixar fora da área. Cada criatura escolhida não sofre o efeito da magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__magia-seletiva",
+      "classe": "arcanista",
+      "poder": "magia-seletiva",
+      "inferido": true
+    }
+  },
+  "_key": "!items!boeiSv4ScZIxeaCM"
+}

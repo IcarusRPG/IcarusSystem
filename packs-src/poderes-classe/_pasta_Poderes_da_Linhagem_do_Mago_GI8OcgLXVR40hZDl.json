@@ -1,0 +1,15 @@
+{
+  "_id": "GI8OcgLXVR40hZDl",
+  "name": "Poderes da Linhagem do Mago",
+  "type": "Item",
+  "folder": "R2fcPGbFGhlukzXb",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:arcanista:poderes-da-linhagem-do-mago"
+    }
+  },
+  "_key": "!folders!GI8OcgLXVR40hZDl"
+}

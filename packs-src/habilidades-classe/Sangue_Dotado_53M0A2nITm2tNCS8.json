@@ -1,0 +1,38 @@
+{
+  "_id": "53M0A2nITm2tNCS8",
+  "name": "Sangue Dotado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 1010,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa Carisma como atributo-chave e não precisa de foco: a mana vem de dentro. Você tem mais PM que as outras linhagens (4 + Carisma por nível). Em troca, conhece menos magias. Você também é treinado em Diplomacia ou Intimidação, à sua escolha.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__sangue-dotado",
+      "classe": "arcanista",
+      "habilidade": "sangue-dotado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!53M0A2nITm2tNCS8"
+}

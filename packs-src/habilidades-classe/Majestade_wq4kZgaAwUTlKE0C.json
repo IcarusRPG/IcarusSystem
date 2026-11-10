@@ -1,0 +1,38 @@
+{
+  "_id": "wq4kZgaAwUTlKE0C",
+  "name": "Majestade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 7006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 7,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sempre que uma criatura inteligente tentar machucá-lo (causar dano com um ataque, magia ou habilidade), você pode gastar 2 PM. A criatura faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, ela não consegue machucá-lo e perde a ação. Você só pode usar esta habilidade uma vez por cena contra cada criatura.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 7,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__majestade",
+      "classe": "nobre",
+      "habilidade": "majestade",
+      "inferido": true
+    }
+  },
+  "_key": "!items!wq4kZgaAwUTlKE0C"
+}
