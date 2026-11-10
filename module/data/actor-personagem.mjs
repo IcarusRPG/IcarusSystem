@@ -182,6 +182,6 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     const rd = actor ? fontesDeRD(actor) : undefined;
     const f = actor?.flags?.[SISTEMA_ID];
     const vinculo = f?.vinculo ? blocoDoVinculo(f, globalThis.game?.actors) : null;
-    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null });
+    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null, defesaAtributo: actor?.flags?.["icarus-rpg"]?.defesaAtributo });
   }
 }

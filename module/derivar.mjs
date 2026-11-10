@@ -89,7 +89,9 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.defesa.escudo = escudo;
   // Animal: a Defesa é 10 + metade do nível do dono + defesaBonus (sem a DES do animal)
   if (vinculo) s.defesa.outros = vinculo.defesa - 10 - s.atributos.DES.total;
-  s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
+  // Postura Altiva (Nobre): Carisma no lugar da Destreza na Defesa (flags.defesaAtributo = "CAR")
+  s.defesa.atributo = opcoes.defesaAtributo === "CAR" && temHabilidadeNosItens(itens, "nobre", "postura-altiva") ? "CAR" : "DES";
+  s.defesa.total = calcularDefesa({ des: s.atributos[s.defesa.atributo].total, armadura, escudo, outros: s.defesa.outros });
   // Habilidades de classe com bônus passivo (Pele Rija, Defesa Interior, Passo Ligeiro)
   const vestidos = itens.map(i => ({ type: i.type, system: i.system }));
   const passivos = passivosDeClasse(itens, {

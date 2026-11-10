@@ -28,6 +28,8 @@ export const reacaoDoAtor = actor => podeReagir(actor.system, actor.statuses ?? 
  * acrescentam aqui. antes(actor, item, uso) pode devolver false para cancelar; depois(actor, item, uso).
  */
 export const GANCHOS_DE_PODER = new Map();
+/** Antes de pagar qualquer poder: (actor, item, uso) => Promise<false|void>; pode mudar uso.pm. */
+export const ANTES_DE_USAR = [];
 
 /**
  * Usar um poder pela ficha: confirmação com o custo em PM editável (o custo do item é sugestão),
@@ -68,15 +70,17 @@ export async function usarPoder(actor, item, { custo = null } = {}) {
     rejectClose: false
   });
   if (pm === null || pm === undefined || pm === "cancelar") return null;
-  if (pm > actor.system.pm.value) {
-    ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: actor.system.pm.value }));
+  const uso = { pm, reacao, forcado };
+  // Ganchos de todos os poderes (Cofre da Família, custo em dinheiro): podem trocar PM por dinheiro
+  for (const fn of ANTES_DE_USAR) if ((await fn(actor, item, uso)) === false) return null;
+  if (uso.pm > actor.system.pm.value) {
+    ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: uso.pm, atual: actor.system.pm.value }));
     return null;
   }
-  const uso = { pm, reacao, forcado };
   const gancho = GANCHOS_DE_PODER.get(item.flags?.[SISTEMA_ID]?.id);
   if (gancho?.antes && (await gancho.antes(actor, item, uso)) === false) return null;
   const mudancas = {};
-  if (pm) mudancas["system.pm.value"] = actor.system.pm.value - pm;
+  if (uso.pm) mudancas["system.pm.value"] = actor.system.pm.value - uso.pm;
   if (reacao) mudancas["system.reacao.disponivel"] = false;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
   await cardDeUso(actor, item, uso);

@@ -171,7 +171,8 @@ export class FichaPersonagem extends ActorSheet {
       penalidade: s.defesa.penalidade ? game.i18n.format("ICARUS.Armaduras.PenalidadeTotal", { valor: comSinal(-s.defesa.penalidade) }) : "",
       avisoAcoplado: conflitoEscudoAcoplado(actor) ? loc("ICARUS.Armaduras.AvisoAcoplado") : "",
       formula: game.i18n.format("ICARUS.Defesa.Formula", {
-        des: semMais(s.atributos.DES.total), armadura: semMais(s.defesa.armadura),
+        // Postura Altiva: CAR no lugar de DES
+        atributo: s.defesa.atributo ?? "DES", des: semMais(s.atributos[s.defesa.atributo ?? "DES"].total), armadura: semMais(s.defesa.armadura),
         escudo: semMais(s.defesa.escudo), outros: semMais(s.defesa.outros)
       })
     };
