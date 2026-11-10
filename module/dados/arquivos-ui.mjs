@@ -3,6 +3,8 @@ export default {
   "arquivos": [
     "img/ui/logo-icarus.webp",
     "img/ui/pausa-dado.webp",
+    "img/ui/wallpaper-fvtt.png",
+    "img/ui/wallpaper-fvtt.webp",
     "img/ui/wallpaper.webp"
   ]
 };

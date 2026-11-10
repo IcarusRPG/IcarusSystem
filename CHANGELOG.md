@@ -1,5 +1,17 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.25.0
+
+### Clérigo, PM dos conjuradores, imagens dos focos e papel de parede
+- **Correção de regra: PM dos conjuradores** (Núcleo, seção 4). O atributo-chave soma ao PM **uma vez, no 1º nível**; cada nível seguinte soma só o incremento da classe: **PM = base × nível + atributo**. Bases novas: Mago e Mago de Sangue 5 (INT), Feiticeiro 6 (CAR), Bardo 4 (CAR), Clérigo 4 (SAB); o Monge já era assim. Fichas já existentes de Arcanista e Bardo são recalculadas na primeira abertura do mundo pelo Mestre (o PM atual não passa do novo máximo; fichas em modo manual ficam como estão).
+- **Clérigo** (11 classes; 5 habilidades e 28 poderes): PV 16 + CON (+4 + CON por nível), PM 4 + SAB no 1º (+4 por nível), Religião e Vontade + 4 perícias, armas simples, todas as armaduras e escudos, sem túnicas.
+- **Fé Jurada:** escolha permanente de 1 das 20 divindades; grava a devoção da ficha e concede os **3 Poderes Concedidos**. Só o Mestre troca. A aba Classe mostra o Dogma.
+- **Agir contra um Dogma** (botão do Mestre): na 1ª vez zera o PM e bloqueia a recuperação por 1d4 dias (contador "Passou 1 dia"); na 2ª a divindade abandona o clérigo (sai a devoção e os Poderes Concedidos, aviso de **Anátema**; a classe não muda sozinha).
+- **Conjuração Divina:** lista Divina com Sabedoria, magias até o 5º nível (17º), conhecidas nível + 2 (+2 por Teologia).
+- **Onda de Fé** (até SAB + 2 PM: cura Nd6 nos vivos e Nd6 de Essência nos mortos-vivos; Onda Ampla), **Solo Sagrado**, **Intervenção Divina** (1d100 ≤ nível, sempre no 20º; 7 dias de espera ou uma noite depois da falha), **Milagre** (3 magias Divinas sem o custo base, depois Atordoado 1d4 rodadas), **Palavra de Resguardo** (reduz o próximo dano do aliado), **Última Graça**, **Fé como Escudo** e **Arma Consagrada**.
+- **Imagens dos 6 focos arcanos** (Varinha, Cetro de Osso, Grimório, Cetro de Ferro, Orbe de Prata e Bordão Arcano) no compêndio Itens Comuns e nas fichas que ainda tinham o ícone padrão. Script repetível: `npm run build:icones-focos -- --de "<pasta>"`.
+- **Papel de parede do sistema** no cartão "Icarus RPG" da tela de configuração (`media` do tipo `setup` e `background` no `system.json`, arquivo `img/ui/wallpaper-fvtt.webp`). O fundo "sem cena" (`img/ui/wallpaper.webp`) não mudou.
+
 ## 0.24.1
 
 ### Bardo: tipos de dano do Heavy Metal
