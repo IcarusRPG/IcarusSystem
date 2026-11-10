@@ -14,6 +14,7 @@
  *   (caminho com requerLinhagem: só para quem tem essa Linhagem; pericias com "opcoes": só elas)
  *   terreno      1 entre "opcoes", sem repetir um terreno já escolhido
  *   arma-exotica 1 arma exótica do compêndio de armas, sem repetir
+ *   divindade    1 das divindades do Panteão (Fé Jurada do Clérigo; "opcoes" = nomes do panteao.json)
  * O resultado fica nas flags do item (e o nome ganha a escolha: "Aumento de Atributo (Destreza)").
  * Fechar a tela sem escolher deixa o item "pendente de escolha" (aviso na ficha e botão para concluir).
  */
@@ -22,6 +23,7 @@ import { patamarDe, podeAumentarAtributo, normalizarNome, classePorId, marcadorD
 import ARMAS from "./dados/armas.mjs";
 import VINCULOS from "./dados/vinculos.mjs";
 import { marcarTreino } from "./assistente.mjs";
+import { DIVINDADES, idDaDivindadePorNome } from "./panteao.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -224,10 +226,34 @@ async function telaArmaExotica(actor, classe, entrada) {
   return arma ? { flags: { armaExotica: { id: arma.id, nome: arma.nome } }, sufixo: arma.nome } : null;
 }
 
-const TELAS = { escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
+/** Divindade (Fé Jurada): uma lista com as opções do JSON; devolve o id do Panteão. */
+async function telaDivindade(actor, classe, entrada) {
+  const opcoes = (entrada.escolha.opcoes ?? DIVINDADES.map(d => d.nome)).map(nome => ({ nome, id: idDaDivindadePorNome(nome) })).filter(o => o.id);
+  const atual = actor.system?.identidade?.divindade;
+  const content = `<div class="icarus-uso"><p>${esc(loc("ICARUS.Escolhas.Divindade"))}</p>
+    <select name="divindade">${opcoes.map(o => {
+      const d = DIVINDADES.find(x => x.id === o.id);
+      return `<option value="${o.id}"${o.id === atual ? " selected" : ""}>${esc(o.nome)}${d?.titulo ? ` — ${esc(d.titulo)}` : ""}</option>`;
+    }).join("")}</select>
+    <p class="dica">${esc(loc("ICARUS.Escolhas.DivindadePermanente"))}</p></div>`;
+  const r = await DialogV2.wait({
+    window: { title: entrada.nome }, content,
+    buttons: [
+      { action: "ok", label: loc("ICARUS.Devocao.Confirmar"), default: true, callback: (ev, b) => b.form.elements.divindade.value },
+      { action: "cancelar", label: loc("ICARUS.Escolhas.DecidirDepois") }
+    ],
+    rejectClose: false
+  });
+  const o = opcoes.find(x => x.id === r);
+  return o ? { flags: { divindade: o.id }, sufixo: o.nome } : null;
+}
+
+const TELAS = { divindade: telaDivindade,  escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
 
 /** Depois de uma escolha de caminho (por id da habilidade): (actor, índice, item) => Promise. */
 export const APOS_CAMINHO = new Map();
+/** Depois das outras escolhas (por id da entrada): (actor, flags da escolha, item) => Promise. Ex.: Fé Jurada. */
+export const APOS_ESCOLHA = new Map();
 
 /**
  * Abre a tela da escolha de um item de classe e grava o resultado (flags + nome). Sem escolha
@@ -269,6 +295,6 @@ export async function resolverEscolha(actor, item, { forcado = false } = {}) {
     const escolhas = { ...(actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {}), [entrada.id]: r.indice };
     await actor.setFlag(SISTEMA_ID, "escolhasClasse", escolhas);
     await APOS_CAMINHO.get(entrada.id)?.(actor, r.indice, item);
-  }
+  } else await APOS_ESCOLHA.get(entrada.id)?.(actor, r.flags, item);
   return true;
 }

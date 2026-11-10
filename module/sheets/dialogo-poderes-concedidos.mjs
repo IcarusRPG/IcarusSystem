@@ -96,6 +96,13 @@ export class DialogoPoderesConcedidos extends HandlebarsApplicationMixin(Applica
 export async function trocarDivindade(actor, novoId) {
   const atual = actor._source.system.identidade.divindade;
   if (novoId === atual) return;
+  // Clérigo com a Fé Jurada feita: só o Mestre troca a divindade
+  const { divindadeTravada } = await import("../classes/clerigo.mjs");
+  if (divindadeTravada(actor)) {
+    ui.notifications.warn(game.i18n.localize("ICARUS.Clerigo.DivindadeTravada"));
+    actor.sheet?.render(false);
+    return;
+  }
   const daAnterior = actor.items.filter(i => i.flags?.[SISTEMA_ID]?.concedido && i.flags[SISTEMA_ID].divindade === atual);
   if (atual && daAnterior.length) {
     const anterior = divindadePorId(atual)?.nome ?? atual;
