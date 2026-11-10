@@ -15,6 +15,8 @@ import { focoEmpunhado, linhagemPrecisaDeFoco } from "./objetos-dados.mjs";
 import { areaNoMapa } from "./magias-area.mjs";
 import { rolarDanoAvulso, rolarCura } from "./dano.mjs";
 import AUTOMACAO from "./dados/magias_automacao.mjs";
+import { registrarMantida, mantidasDoAtor } from "./magias-mantidas.mjs";
+import { cdDeConcentracao } from "./magias-dados.mjs";
 
 const F = SISTEMA_ID;
 const T = `systems/${SISTEMA_ID}/templates`;
@@ -163,6 +165,8 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   try {
     cartao = await cartaoDaMagia(actor, item, { ...custo, comSangue, pmAPagar }, plano);
     await rolagensDaMagia(actor, item, plano, cartao, area ?? null, custo.ajusteCd);
+    // Sustentada (1 PM por turno) ou concentração (teste ao sofrer dano): passa a ser mantida
+    await registrarMantida(actor, item);
     return cartao;
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);
@@ -291,8 +295,13 @@ export function contextoDasMagias(actor) {
       aprimoramentos: i.system.aprimoramentos, temAprimoramentos: i.system.aprimoramentos.length > 0, busca: i.name.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
     }))
   }));
+  // Magias mantidas (sustentada: 1 PM por turno; concentração: teste ao sofrer dano)
+  const mantidas = mantidasDoAtor(actor).map(m => ({ ...m,
+    info: m.tipo === "sustentada" ? (m.duradoura ? loc("ICARUS.Mantidas.InfoDuradoura") : loc("ICARUS.Mantidas.InfoSustentada"))
+      : fmt("ICARUS.Mantidas.InfoConcentracao", { cd: cdDeConcentracao(m.nivel) }) }));
   return {
     total: itens.length,
+    mantidas,
     grupos,
     cd: s.magia?.cd,
     atributo: s.magia?.atributo ?? "",

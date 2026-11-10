@@ -12,7 +12,7 @@
     "execucao": "padrão",
     "alcance": "médio",
     "alvo": "1 criatura",
-    "duracao": "sustentada (concentração)",
+    "duracao": "concentração",
     "resistencia": "Vontade parcial",
     "descricao": "<p>Você cria a imagem do maior medo do alvo. Se falhar no teste, ele fica Apavorado enquanto você sustentar; se passar, fica apenas Abalado por 1 rodada. A criatura vê o espectro, mas só ela. Efeito mental.</p>",
     "aprimoramentos": [

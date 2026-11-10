@@ -634,6 +634,10 @@ export class FichaPersonagem extends ActorSheet {
     const s = actor.system;
     const itemDe = () => actor.items.get(el.closest("[data-item-id]")?.dataset.itemId);
     switch (acao) {
+      case "magia-encerrar-mantida": {
+        const { encerrarMantida } = await import("../magias-mantidas.mjs");
+        return encerrarMantida(actor, el.dataset.mantida);
+      }
       case "nivel": {
         const novo = limitar(s.nivel + Number(el.dataset.delta), 1, 25);
         if (novo > s.nivel && classePorId(actor._source.system.identidade.classe)) {

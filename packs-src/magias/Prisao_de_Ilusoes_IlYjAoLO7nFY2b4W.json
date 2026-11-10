@@ -12,7 +12,7 @@
     "execucao": "padrão",
     "alcance": "médio",
     "alvo": "1 criatura",
-    "duracao": "sustentada (concentração)",
+    "duracao": "concentração",
     "resistencia": "Vontade anula",
     "descricao": "<p>O alvo é preso em uma realidade falsa e repetitiva (um corredor sem fim, uma cela, uma festa). Se falhar, fica Pasmo (sem ações) enquanto você sustentar. Se sofrer dano, tem direito a novo teste.</p>",
     "aprimoramentos": [

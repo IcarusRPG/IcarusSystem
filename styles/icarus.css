@@ -1389,3 +1389,7 @@ body.game {
 .ficha-icarus .item.destruido, .ficha-icarus .arma-linha.destruido { filter: grayscale(.6); }
 .icarus-objeto .objeto-manual { margin: 4px 0; }
 .icarus-objeto-cartao h4 { margin: 0 0 4px; }
+
+/* Aba Magias: magias mantidas (sustentada / concentração) */
+.icarus .aba-magias .magias-mantidas { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-bottom: 6px; }
+.icarus .aba-magias .magia-mantida { display: inline-flex; align-items: center; gap: 4px; }
