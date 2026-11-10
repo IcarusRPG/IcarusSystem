@@ -8,7 +8,7 @@
     {{#if cd}}<div class="magia-cd" title="{{localize 'ICARUS.Magias.CDDica'}}"><small>{{localize "ICARUS.Magias.CD"}}</small><b>{{cd}}</b></div>{{/if}}
   </div>
   <dl class="magia-ficha">
-    <dt>{{localize "ICARUS.Magias.Custo"}}</dt><dd>{{custo}} PM{{#if aprimoramentos.length}} ({{custoBase}} + {{localize "ICARUS.Magias.AprimoramentosMin"}}){{/if}}</dd>
+    <dt>{{localize "ICARUS.Magias.Custo"}}</dt><dd>{{custo}} PM{{#if aprimoramentos.length}} ({{custoBase}} + {{localize "ICARUS.Magias.AprimoramentosMin"}}){{/if}}{{#if comSangue}} · {{localize "ICARUS.Magias.PactoPago"}} {{comSangue}} PM = {{pvSangue}} PV{{/if}}</dd>
     <dt>{{localize "ICARUS.Magias.Execucao"}}</dt><dd>{{execucao}}</dd>
     <dt>{{localize "ICARUS.Magias.Alcance"}}</dt><dd>{{alcance}}</dd>
     <dt>{{localize "ICARUS.Magias.Alvo"}}</dt><dd>{{alvo}}</dd>

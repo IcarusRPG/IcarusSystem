@@ -1,5 +1,47 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.23.0
+
+### Heranças automáticas e Escolta Contratada
+- **Heranças do Feiticeiro** valem sozinhas na ficha: **Escamas Dracônicas** (+2 Defesa sem armadura nem escudo), **Pele das Profundezas** (Redução de Frio 3, +2 Atletismo), **Coração de Brasa** (Redução de Fogo 3 e de Trevas 3, +2 Vontade) e **Alma do Elemento** (Redução 5 contra o elemento do dragão, a partir do 11º).
+- **Escolta Contratada:** botão "Contratar escolta" na aba Classe (cobra 10% da riqueza inicial do nível). Fica ativa até o Mestre dispensar; uma vez por cena, absorve **3 × o nível** do dano do Nobre ou de um aliado adjacente, automaticamente, ao aplicar o dano.
+
+## 0.22.0
+
+### Quebrar objetos (regra oficial)
+- **Atacar objeto** (aba Combate e macro `game.icarus.atacarObjeto()`): escolha a arma e o objeto — da tabela (pergaminho a celeiro), manual (tamanho, Defesa, RD, PV) ou um item do alvo marcado (arma em mãos, armadura/escudo vestidos, foco, Estandarte). Ataque contra a Defesa do objeto (pelo tamanho, +5 em movimento); o dano perde a **RD do objeto, sem o teto de RD** dos personagens; 0 PV = destruído.
+- **Manobra Quebrar:** ataque contra a **Defesa do alvo** (não mais teste oposto); se acertar, o dano vai ao item, não ao portador.
+- Item destruído: sai das mãos/equipado, perde o bônus (armadura/escudo), aparece **riscado** no inventário e avisa no chat. A ficha do item ganhou o quadro **Objeto (Quebrar)** com RD, PV e Destruído, editáveis (o Mestre pode reverter).
+- Item do alvo que o atacante não controla: o cartão traz **Aplicar no item (Mestre)**.
+- Armas, armaduras e escudos do compêndio ainda não têm RD/PV (o Núcleo não está no repositório): preencha na ficha do item ou nos campos manuais.
+
+## 0.21.0
+
+### Nobre: mecânicas centrais e dinheiro
+- **Postura Altiva:** botão na aba Classe troca Destreza por Carisma na Defesa (a fórmula da ficha mostra o atributo).
+- **Dote:** R$ 1.500 somados às moedas uma única vez, com confirmação.
+- **Brio:** campo "PM de Brio" no diálogo de teste de perícia (+2 por PM, até o Carisma, mínimo 1); o PM sai ao confirmar.
+- **Palavra Cortante:** 1 PM; rola o dano Psíquico **não letal** (Aplicar dano = venceu, Metade = perdeu) e o Mestre abre o Teste Oposto. A 0 PV o alvo se rende (Diplomacia) ou fica Apavorado e foge (Intimidação), sem ficar Morrendo. Brado Tirânico: d8.
+- **Rendimentos:** uma vez por aventura (o Mestre libera de novo): d20 + CAR + nível em % da riqueza inicial do nível (`tools/dados/riqueza.json`), com confirmação antes de somar.
+- **Brado de Comando:** PM até o Carisma; cartão com Aplicar efeito (+PM em todas as perícias por 1 rodada) e Voltar.
+- **Majestade:** 2 PM contra a criatura marcada, uma vez por cena por criatura; Vontade contra 10 + ½ nível + CAR (+5 com Coroação).
+- **Estandarte da Família:** erguer/baixar, com PV e RD registrados.
+- **Cofre da Família / Bolsa Aberta:** pagar PM dos poderes de Nobre com dinheiro, até o Carisma por cena. **Patrocinar, Dinheiro Resolve, Escolta Contratada** cobram o dinheiro com confirmação. O saldo nunca fica negativo.
+- **Palavra de Encorajamento:** o aliado marcado rola o próximo teste com vantagem.
+- **Educação Privilegiada:** só perícias da lista do Nobre.
+
+## 0.20.0
+
+### Arcanista: foco arcano e mecânicas centrais
+- **Foco arcano:** novo tipo de equipamento "Foco arcano" (Equipar = em mãos) e pasta **Focos arcanos** no compêndio Itens Comuns (Varinha, Cetro, Orbe: madeira RD 5/PV 5; Cetro de metal RD 10/PV 5; Grimório RD 0/PV 5). O Bordão empunhado também vale.
+- **Mago sem foco em mãos não lança** (aviso); o Mestre pode liberar na aba Classe. Feiticeiro e Mago de Sangue não precisam de foco. Foco com 0 PV fica destruído, sai das mãos e avisa no chat.
+- **Magias conhecidas:** limite pela linhagem e nível (+1 por Escola Predileta/Segunda Escola), só da lista da linhagem e de nível que já lança. O jogador é impedido; o Mestre recebe o aviso. Contador na aba Classe.
+- **Escola Predileta / Segunda Escola** +1 na CD da escola; **Maestria de Escola** −1 PM nelas (mínimo 1); **Mana Transbordante** +2 na CD e cartão "Recuperar 2 PM" no início do turno.
+- **Pacto de Sangue** no Lançar aprimorado: paga até metade do custo com PV (2 PV por PM, sem RD, sem chegar a 0).
+- **Canalização Arcana:** soma o atributo-chave ao dano total da magia.
+- **Sopro do Dragão** (Herança de Dragão, 5º): botão na aba Classe, 4 PM, cone de 6 m posicionado no mapa, 4d6/6d6/8d6 do elemento, Reflexos contra a CD das magias, com os botões de aplicar dano.
+- Tabela de objetos (`tools/dados/objetos.json`) para a regra de Quebrar.
+
 ## 0.19.0
 
 ### Arcanista e Nobre (dados, Linhagem, escolhas, túnicas)

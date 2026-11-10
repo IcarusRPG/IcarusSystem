@@ -36,6 +36,7 @@ import { registrarMagias, lancarMagia } from "./module/magias.mjs";
 import { registrarEfeitosDeMagias } from "./module/magias-efeitos.mjs";
 import { registrarAnimacoesDeMagias } from "./module/vfx-magias.mjs";
 import { registrarAreaDasMagias } from "./module/magias-area.mjs";
+import { registrarObjetos } from "./module/objetos.mjs";
 import { registrarCarrossel } from "./module/carrossel.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso, rolarCura } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
@@ -53,6 +54,7 @@ import "./module/classes/guerreiro.mjs";
 import "./module/classes/samurai.mjs";
 import "./module/classes/monge.mjs";
 import "./module/classes/arcanista.mjs";
+import "./module/classes/nobre.mjs";
 import "./module/recursos.mjs";
 import { registrarMigracoes, BARRAS_DO_TOKEN } from "./module/migracoes.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";
@@ -69,6 +71,7 @@ registrarMagias();
 registrarEfeitosDeMagias();
 registrarAnimacoesDeMagias();
 registrarAreaDasMagias();
+registrarObjetos();
 registrarPoderesDeOrigem();
 registrarTokens();
 registrarMidias();
@@ -131,6 +134,8 @@ Hooks.once("init", () => {
 
   CONFIG.ICARUS = ICARUS;
   game.icarus = {
+    // Quebrar objetos: game.icarus.atacarObjeto(actor) abre o diálogo
+    atacarObjeto: async actor => (await import("./module/objetos.mjs")).abrirAtacarObjeto(actor ?? canvas?.tokens?.controlled?.[0]?.actor ?? game.user.character),
     rolarTeste, rolarPericia, rolarAtributo,
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,

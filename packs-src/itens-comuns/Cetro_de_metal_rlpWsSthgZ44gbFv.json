@@ -1,0 +1,32 @@
+{
+  "_id": "rlpWsSthgZ44gbFv",
+  "name": "Cetro de metal",
+  "type": "equipamento",
+  "img": "icons/svg/item-bag.svg",
+  "folder": "kRhtB1wumBEac1wy",
+  "sort": 400,
+  "system": {
+    "tipo": "foco",
+    "quantidade": 1,
+    "equipado": false,
+    "espacos": 1,
+    "preco": 0,
+    "descricao": "<p>Foco arcano de metal. Ocupa uma mão.</p><p><strong>Metal:</strong> RD 10, PV 5.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "foco:cetro-de-metal",
+      "focoArcano": {
+        "material": "metal"
+      },
+      "objeto": {
+        "rd": 10,
+        "pvMax": 5,
+        "tamanho": "minusculo"
+      },
+      "pvObjeto": 5
+    }
+  },
+  "_key": "!items!rlpWsSthgZ44gbFv"
+}

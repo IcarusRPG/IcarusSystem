@@ -4,6 +4,7 @@ import {
 import { numero } from "../regras.mjs";
 import { formatarPreco, precoEmOuro } from "../moeda.mjs";
 import { textoCritico, faixaCritico } from "../combate.mjs";
+import { objetoDoItem } from "../objetos-dados.mjs";
 import { opcoesDeBonus, textoDoBonus, origemPorId, itemComumPorId, ATAQUE_DESARMADO } from "../origens-dados.mjs";
 
 /**
@@ -50,6 +51,12 @@ export class FichaItem extends ItemSheet {
     ctx.opcoesFrequencia = { "": "ICARUS.Poderes.SemFrequencia", ...opcoes(FREQUENCIAS_PODER, "ICARUS.Poderes.Frequencias") };
     ctx.opcoesTipo = opcoes(TIPOS_EQUIPAMENTO, "ICARUS.Equipamento.Tipos");
     ctx.equipavel = TIPOS_EQUIPAVEIS.includes(s.tipo);
+    // Objeto (Quebrar): RD, PV e destruído, editáveis (o Mestre pode reverter). Armas, armaduras, escudos e focos
+    if (item.type === "arma" || (item.type === "equipamento" && ["armadura", "escudo", "foco"].includes(s.tipo))) {
+      const f = item.flags?.[SISTEMA_ID] ?? {};
+      const o = objetoDoItem(item);
+      ctx.objeto = { rd: o?.rd ?? f.objeto?.rd ?? "", pvMax: o?.pvMax ?? f.objeto?.pvMax ?? "", pv: o?.pv ?? f.pvObjeto ?? "", destruido: !!f.destruido };
+    }
     if (item.type === "equipamento") {
       ctx.opcoesCategoriaArmadura = { "": "ICARUS.Armaduras.SemCategoria", ...opcoes(CATEGORIAS_ARMADURA, "ICARUS.Armaduras.Categorias") };
       ctx.provisorio = (s.provisorio ?? []).map(c => loc(`ICARUS.Armaduras.Campos.${c}`)).join(", ");

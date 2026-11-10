@@ -2,7 +2,7 @@ import { ATRIBUTOS, ATRIBUTOS_CHAVE_PM, PERICIAS, TAMANHOS, TIPOS_DANO_COM_RESIS
 import { derivarPersonagem } from "../derivar.mjs";
 import { racaPorId, idDaRacaPorNome } from "./racas.mjs";
 import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
-import { classePorId, idDaClassePorNome, blocoDoVinculo } from "../classes-dados.mjs";
+import { classePorId, idDaClassePorNome, blocoDoVinculo, dadosDasHerancas } from "../classes-dados.mjs";
 import { SISTEMA_ID, RECARGAS } from "../config.mjs";
 import { origemPorId, idDaOrigemPorNome } from "../origens-dados.mjs";
 
@@ -38,6 +38,9 @@ export function fontesDeRD(actor) {
     if (item.type === "equipamento" && !item.system?.equipado) continue;
     for (const r of lista) fontes.push({ tipo: r.tipo ?? null, valor: Number(r.valor) || 0, origem: item.name, chave: `${chaveDoItem(item)}|${r.tipo ?? "rdGeral"}` });
   }
+  // Heranças do Feiticeiro (Leviatã, Fênix, Alma do Elemento)
+  const herancas = dadosDasHerancas([...(actor.items ?? [])], { nivel: actor.system?.nivel ?? 1, elementoDragao: actor.flags?.[SISTEMA_ID]?.elementoDragao ?? null });
+  for (const r of herancas.rd) fontes.push({ tipo: r.tipo, valor: r.valor, origem: r.origem, chave: `heranca:${r.origem}|${r.tipo}` });
   const salvo = actor._source?.system?.resistencias ?? {};
   return { base: { rdGeral: salvo.rdGeral ?? 0, reducao: { ...(salvo.reducao ?? {}) } }, fontes };
 }
@@ -182,6 +185,6 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     const rd = actor ? fontesDeRD(actor) : undefined;
     const f = actor?.flags?.[SISTEMA_ID];
     const vinculo = f?.vinculo ? blocoDoVinculo(f, globalThis.game?.actors) : null;
-    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null });
+    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null, defesaAtributo: actor?.flags?.["icarus-rpg"]?.defesaAtributo });
   }
 }

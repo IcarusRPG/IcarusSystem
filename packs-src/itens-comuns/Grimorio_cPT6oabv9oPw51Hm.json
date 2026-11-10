@@ -1,0 +1,32 @@
+{
+  "_id": "cPT6oabv9oPw51Hm",
+  "name": "Grimório",
+  "type": "equipamento",
+  "img": "icons/svg/item-bag.svg",
+  "folder": "kRhtB1wumBEac1wy",
+  "sort": 500,
+  "system": {
+    "tipo": "foco",
+    "quantidade": 1,
+    "equipado": false,
+    "espacos": 1,
+    "preco": 0,
+    "descricao": "<p>Foco arcano: livro ou grimório. Ocupa uma mão.</p><p><strong>Livro ou grimório:</strong> RD 0, PV 5.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "foco:grimorio",
+      "focoArcano": {
+        "material": "livro"
+      },
+      "objeto": {
+        "rd": 0,
+        "pvMax": 5,
+        "tamanho": "minusculo"
+      },
+      "pvObjeto": 5
+    }
+  },
+  "_key": "!items!cPT6oabv9oPw51Hm"
+}

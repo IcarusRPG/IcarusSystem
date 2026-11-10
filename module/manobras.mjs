@@ -1,6 +1,7 @@
 /**
  * Manobras pela ficha (aba Combate) ou pelo card de ataque corpo a corpo: escolhe a manobra e o
  * alvo marcado, e inicia o teste oposto (module/testes-sessao.mjs → iniciarManobra).
+ * Quebrar: ataque contra a Defesa do alvo e dano no item (module/objetos.mjs).
  * A manobra é feita NO LUGAR de um ataque (aviso no diálogo).
  */
 import { MANOBRAS, MANOBRAS_A_DISTANCIA } from "./combate.mjs";
@@ -40,6 +41,11 @@ export async function abrirManobra(actor) {
   // À distância (Pontaria) só Desarmar, salvo poder que permita
   if (escolha.pericia === "pontaria" && !MANOBRAS_A_DISTANCIA.includes(escolha.manobra) && !escolha.poder) {
     return ui.notifications.warn(loc("ICARUS.Manobra.SoDesarmarDistancia"));
+  }
+  // Quebrar (regra oficial): ataque contra a Defesa do alvo; o dano vai ao item (RD e PV do item)
+  if (escolha.manobra === "quebrar") {
+    const { abrirAtacarObjeto } = await import("./objetos.mjs");
+    return abrirAtacarObjeto(actor, { alvo, quebrar: true });
   }
   const meu = tokenDoAtor(actor);
   return iniciarManobra({

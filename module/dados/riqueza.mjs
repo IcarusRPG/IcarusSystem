@@ -1,0 +1,27 @@
+// GERADO por tools/gerar-dados.mjs a partir de tools/dados/riqueza.json — não edite à mão.
+export default {
+  "_leiame": "Riqueza inicial (Reais) por nível (seção 14 do Núcleo). Usada pelo Nobre: Rendimentos (resultado do teste em % desta quantia) e Escolta Contratada (10%). Do 21º ao 25º vale a do 20º.",
+  "versao": 1,
+  "porNivel": {
+    "1": 300,
+    "2": 500,
+    "3": 800,
+    "4": 1200,
+    "5": 1800,
+    "6": 2500,
+    "7": 3500,
+    "8": 5000,
+    "9": 7000,
+    "10": 10000,
+    "11": 14000,
+    "12": 19000,
+    "13": 26000,
+    "14": 35000,
+    "15": 48000,
+    "16": 65000,
+    "17": 88000,
+    "18": 120000,
+    "19": 160000,
+    "20": 220000
+  }
+};

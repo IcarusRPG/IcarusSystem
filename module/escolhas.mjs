@@ -112,7 +112,9 @@ async function telaPericias(actor, classe, entrada) {
   const { quantidade = 1 } = entrada.escolha;
   // Com "opcoes" (Erudito Arcano): só essas e só as não treinadas (repetível, cada vez uma diferente)
   const filtro = entrada.escolha.filtro ?? (entrada.escolha.opcoes ? "nao-treinadas" : undefined);
-  const daLista = entrada.escolha.opcoes ? new Set(entrada.escolha.opcoes.map(chaveDaPericia).filter(Boolean)) : null;
+  // Educação Privilegiada: da lista de perícias da classe
+  const lista = entrada.escolha.opcoes ?? (entrada.id === "educacao-privilegiada" ? classe.pericias?.lista : null);
+  const daLista = lista ? new Set(lista.map(chaveDaPericia).filter(Boolean)) : null;
   const treino = k => actor.system.pericias[k].treino;
   const especialistas = new Set(PERICIAS.filter(p => treino(p.chave) >= 2).map(p => p.chave));
   const passa = {

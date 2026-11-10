@@ -5,7 +5,7 @@
  */
 import { atributoDeMagia, cdDaMagia, nivelMaximoDeMagia } from "./magias-dados.mjs";
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
-import { bonusDeItensDeClasse, passivosDeClasse } from "./classes-dados.mjs";
+import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens, dadosDasHerancas } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
@@ -59,7 +59,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   // Magias: atributo-chave efetivo, CD e maior nível de magia acessível (só informativo)
   if (s.magia) {
     s.magia.atributoEfetivo = atributoDeMagia(s);
-    s.magia.cd = cdDaMagia(s);
+    // Mana Transbordante (Arcanista, 20º): +2 na CD de todas as magias
+    s.magia.cd = cdDaMagia(s) + (temHabilidadeNosItens(itens, "arcanista", "mana-transbordante") ? 2 : 0);
     s.magia.nivelMaximo = nivelMaximoDeMagia(s.nivel);
   }
   s.pv.value = limitar(numero(s.pv.value), 0, s.pv.max);
@@ -74,6 +75,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     if (item.type !== "equipamento") continue;
     const e = item.system;
     if (!e.equipado || !TIPOS_EQUIPAVEIS.includes(e.tipo)) continue;
+    // Foco arcano não dá Defesa; item destruído (0 PV) perde o bônus
+    if (e.tipo === "foco" || item.flags?.["icarus-rpg"]?.destruido) continue;
     // Armadura/túnica além do limite de vestimentas não vale Defesa
     if (ehVestimenta(item) && !vest.ativas.has(item.id ?? item._id)) continue;
     if (e.tipo === "armadura") armadura += numero(e.bonusDefesa);
@@ -86,7 +89,9 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.defesa.escudo = escudo;
   // Animal: a Defesa é 10 + metade do nível do dono + defesaBonus (sem a DES do animal)
   if (vinculo) s.defesa.outros = vinculo.defesa - 10 - s.atributos.DES.total;
-  s.defesa.total = calcularDefesa({ des: s.atributos.DES.total, armadura, escudo, outros: s.defesa.outros });
+  // Postura Altiva (Nobre): Carisma no lugar da Destreza na Defesa (flags.defesaAtributo = "CAR")
+  s.defesa.atributo = opcoes.defesaAtributo === "CAR" && temHabilidadeNosItens(itens, "nobre", "postura-altiva") ? "CAR" : "DES";
+  s.defesa.total = calcularDefesa({ des: s.atributos[s.defesa.atributo].total, armadura, escudo, outros: s.defesa.outros });
   // Habilidades de classe com bônus passivo (Pele Rija, Defesa Interior, Passo Ligeiro)
   const vestidos = itens.map(i => ({ type: i.type, system: i.system }));
   const passivos = passivosDeClasse(itens, {
@@ -97,7 +102,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.defesa.condicao = cond.defesa;
   if (cond.defesa) s.defesa.total += cond.defesa.valor;
 
-  // Perícias: Atributo + Treino + Outros
+  // Perícias: Atributo + Treino + Outros (+ dons das Heranças: Atletismo do Leviatã, Vontade da Fênix)
+  const herancas = dadosDasHerancas(itens, { nivel: s.nivel });
   for (const p of PERICIAS) {
     const d = s.pericias[p.chave];
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
@@ -111,6 +117,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
+    d.bonusHeranca = herancas.pericias[p.chave] ?? [];
+    for (const b of d.bonusHeranca) d.total += b.valor;
     // Bônus incondicionais de itens comuns em uso (o mesmo item não soma consigo mesmo)
     d.bonusItens = deItens[p.chave] ?? [];
     d.total += d.bonusItens.reduce((soma, b) => soma + b.valor, 0);

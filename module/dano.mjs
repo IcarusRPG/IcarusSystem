@@ -19,6 +19,7 @@ import {
   ultimaDesfazivel, textoDoRegistro
 } from "./dano-aplicacao.mjs";
 import { registrarDanoEmMorrendo } from "./morte-foundry.mjs";
+import { aplicarCondicao } from "./condicoes-foundry.mjs";
 
 const F = SISTEMA_ID;
 const CANAL = `system.${SISTEMA_ID}`;
@@ -94,6 +95,12 @@ const nomeDe = alvo => alvo?.name ?? atorDe(alvo)?.name ?? "?";
 /**
  * Aplica um botão num alvo (quem chama já tem permissão sobre o ator). Devolve linha e registro.
  */
+/**
+ * Quem pode absorver parte de um dano antes de aplicar (ex.: Escolta Contratada do Nobre):
+ * async (alvo, actor, calc) => ({ absorvido: number, texto: string } | null). Só o modo "dano".
+ */
+export const ABSORVEDORES_DE_DANO = [];
+
 async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
   const actor = atorDe(alvo);
   const nome = nomeDe(alvo);
@@ -107,15 +114,37 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
     acao: botao, componentes: dados.componentes, resistencias: actor.system.resistencias,
     pv: actor.system.pv, regras: REGRAS_DANO, nomeDoTipo
   });
+  // Absorção (Escolta Contratada): tira do dano final antes de mexer nos PV
+  let absorcao = "";
+  if (calc.modo === "dano" && calc.final > 0) {
+    for (const fn of ABSORVEDORES_DE_DANO) {
+      const r = await fn(alvo, actor, calc);
+      if (!r?.absorvido) continue;
+      const a = Math.min(r.absorvido, calc.final);
+      calc.final -= a;
+      calc.depois = Math.max(0, calc.antes - calc.final);
+      calc.detalhe += ` → ${r.texto} −${a} → ${calc.final}`;
+      absorcao = r.texto;
+      if (!calc.final) break;
+    }
+  }
   const morrendo = actor.statuses?.has("morrendo");
-  if (calc.depois !== calc.antes) await actor.update({ "system.pv.value": calc.depois });
+  const naoLetal = calc.modo !== "cura" && dados.naoLetal;
+  // Não letal: não deixa Morrendo (opção lida em morte-foundry.mjs)
+  if (calc.depois !== calc.antes) await actor.update({ "system.pv.value": calc.depois }, naoLetal ? { icarusNaoLetal: true } : {});
   const depois = actor.system.pv.value;
   // Dano sofrido em Morrendo: 1 falha no teste de morte (2 se crítico), como no botão da ficha
-  if (calc.modo !== "cura" && calc.final > 0 && calc.antes === 0 && morrendo) await registrarDanoEmMorrendo(actor, dados.critico);
+  if (calc.modo !== "cura" && calc.final > 0 && calc.antes === 0 && morrendo && !naoLetal) await registrarDanoEmMorrendo(actor, dados.critico);
+  // A 0 PV por dano não letal: se rende (Diplomacia) ou fica Apavorado e foge (Intimidação)
+  let rendeu = "";
+  if (naoLetal && depois === 0 && calc.antes > 0) {
+    if (dados.naoLetal.pericia === "intimidacao") await aplicarCondicao(actor, "apavorado");
+    rendeu = loc(dados.naoLetal.pericia === "intimidacao" ? "ICARUS.Nobre.Foge" : "ICARUS.Nobre.SeRende");
+  }
   const diff = depois - calc.antes;
   const sinal = diff > 0 ? `+${diff}` : diff < 0 ? `−${-diff}` : "0";
   const linha = fmt("ICARUS.Dano.Linha", { nome, sinal, detalhe: calc.detalhe, antes: calc.antes, depois })
-    + (depois === 0 && calc.modo !== "cura" ? ` · ${loc("ICARUS.Dano.ZeroPV")}` : "");
+    + (depois === 0 && calc.modo !== "cura" ? ` · ${rendeu || loc("ICARUS.Dano.ZeroPV")}` : "");
   return {
     linha,
     registro: {
