@@ -1,7 +1,7 @@
 /**
  * Arcanista:
  * - Linhagem (1º, permanente): Mago, Feiticeiro ou Mago de Sangue. Ao escolher, o PM passa a
- *   (base + atributo) × nível pela linhagem (classes.json pm.porLinhagem), o atributo de conjuração
+ *   base × nível + atributo (uma vez) pela linhagem (classes.json pm.porLinhagem), o atributo de conjuração
  *   vira INT ou CAR (pmAtributo; a ficha pode trocar), a lista de magias é Arcana ou de Sangue e
  *   as habilidades do ramo são concedidas (classes-dados.mjs → condicoesDasHabilidades).
  * - Herança Ancestral (Feiticeiro): concede a habilidade da herança (Dragão, Leviatã, Fênix).
@@ -44,7 +44,8 @@ async function aplicarLinhagem(actor, indice) {
     Object.assign(mudancas, {
       "system.classeConfig.pmInicial": pm.pmInicial,
       "system.classeConfig.pmPorNivel": pm.pmPorNivel,
-      "system.classeConfig.pmAtributo": pm.pmAtributo
+      "system.classeConfig.pmAtributo": pm.pmAtributo,
+      "system.classeConfig.pmAtributoSoNoPrimeiroNivel": pm.pmAtributoSoNoPrimeiroNivel
     });
   } else ui.notifications.warn(fmt("ICARUS.Classe.Manual", { nome: actor.name }));
   await actor.update(mudancas);

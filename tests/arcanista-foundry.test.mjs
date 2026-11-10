@@ -46,13 +46,13 @@ function ator() {
 }
 const itemDe = (a, id) => a.items.find(i => i.flags["icarus-rpg"].id === idDeClasse("arcanista", id));
 
-test("Escolher Feiticeiro: PM 4 + CAR, tradição Arcana e as habilidades do Feiticeiro (com Herança Ancestral)", async () => {
+test("Escolher Feiticeiro: PM 6/nível + CAR (uma vez), tradição Arcana e as habilidades do Feiticeiro (com Herança Ancestral)", async () => {
   const a = ator();
   // Item da Linhagem (como o assistente cria)
   const [linhagem] = await a.createEmbeddedDocuments("Item", [{ type: "poder", name: "Linhagem", system: { fonte: "classe", tipoPoder: "habilidade", classe: "arcanista" }, flags: { "icarus-rpg": { id: idDeClasse("arcanista", "linhagem"), classe: "arcanista" } } }]);
   resposta = "1"; // Feiticeiro; a Herança Ancestral (concedida em seguida) recebe a mesma resposta: Leviatã
   assert.equal(await resolverEscolha(a, linhagem), true);
-  assert.deepEqual(a.system.classeConfig, { pmInicial: 4, pmPorNivel: 4, pmAtributo: "CAR", manual: false });
+  assert.deepEqual(a.system.classeConfig, { pmInicial: 6, pmPorNivel: 6, pmAtributo: "CAR", pmAtributoSoNoPrimeiroNivel: true, manual: false });
   assert.equal(a.flags["icarus-rpg"].tradicaoMagias, "arcana");
   assert.equal(a.flags["icarus-rpg"].escolhasClasse.linhagem, 1);
   assert.ok(itemDe(a, "sangue-dotado"), "habilidade do Feiticeiro");

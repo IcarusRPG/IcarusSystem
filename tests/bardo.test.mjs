@@ -28,7 +28,7 @@ globalThis.CONFIG = { statusEffects: [], sounds: {} };
 globalThis.ChatMessage = { create: async d => d, getSpeaker: () => ({}), applyRollMode() {} };
 globalThis.game = { user: { isGM: false, targets: new Set() }, i18n: { localize: k => k, format: k => k }, settings: { get: () => null } };
 
-const { classePorId, gruposEscolhidos, atendeGrupo, habilidadesAteNivel } = await import("../module/classes-dados.mjs");
+const { classePorId, gruposEscolhidos, atendeGrupo, habilidadesAteNivel, pmDaLinhagem } = await import("../module/classes-dados.mjs");
 const { derivarPersonagem } = await import("../module/derivar.mjs");
 const { sistemaCompleto } = await import("./simulacao.mjs");
 const { limiteDeMagiasDoBardo, motivoParaNaoAprender, bonusDaChama, dadoDoLouvor, custoComObraPrima, nivelMaximoDeMagia } = await import("../module/magias-dados.mjs");
@@ -42,13 +42,13 @@ const { idDeClasse } = await import("../module/dados-compendios.mjs");
 
 const bardo = classePorId("bardo");
 
-test("Critério 4a: Bardo nível 5, CON +1, CAR +3 → PV 35 e PM 30; magia até o 4º nível (nunca o 5º)", () => {
+test("Critério 4a: Bardo nível 5, CON +1, CAR +3 → PV 35 e PM 23 (4 × 5 + 3); magia até o 4º nível (nunca o 5º)", () => {
   const s = derivarPersonagem(sistemaCompleto({
     nivel: 5, identidade: { classe: "bardo" }, magia: { atributo: "" },
     atributos: { CON: { base: 1 }, CAR: { base: 3 } },
-    classeConfig: { pvInicial: 14, pvPorNivel: 4, pvAtributo: "CON", pmInicial: 3, pmPorNivel: 3, pmAtributo: "CAR" }
+    classeConfig: { pvInicial: 14, pvPorNivel: 4, pvAtributo: "CON", ...pmDaLinhagem(bardo, null) }
   }), []);
-  assert.deepEqual([s.pv.max, s.pm.max, s.magia.atributoEfetivo, s.magia.cd], [35, 30, "CAR", 15]);
+  assert.deepEqual([s.pv.max, s.pm.max, s.magia.atributoEfetivo, s.magia.cd], [35, 23, "CAR", 15]);
   const s17 = derivarPersonagem(sistemaCompleto({ nivel: 17, identidade: { classe: "bardo" }, magia: { atributo: "" } }), []);
   assert.equal(s17.magia.nivelMaximo, 4);
   assert.equal(nivelMaximoDeMagia(12, { teto: 4 }), 3);

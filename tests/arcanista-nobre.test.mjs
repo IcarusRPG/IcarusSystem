@@ -37,20 +37,23 @@ test("Poderes da linhagem: Mago não vê os do Mago de Sangue (e vice-versa)", (
 
 /** PV e PM máximos de um personagem com a classe (classeConfig como a ficha grava). */
 function maximos(classe, linhagem, nivel, atributos) {
-  const pm = linhagem === undefined ? { pmInicial: classe.pm.inicial, pmPorNivel: classe.pm.porNivel, pmAtributo: classe.pm.atributo ?? null } : pmDaLinhagem(classe, linhagem);
+  const pm = pmDaLinhagem(classe, linhagem);
   const s = derivarPersonagem(sistemaCompleto({
     nivel, magia: { atributo: "" },
     atributos: Object.fromEntries(Object.entries(atributos).map(([k, v]) => [k, { base: v }])),
-    classeConfig: { pvInicial: classe.pv.inicial, pvPorNivel: classe.pv.porNivel, pvAtributo: "CON", ...pm, pmAtributoSoNoPrimeiroNivel: !!classe.pm.atributoSoNoPrimeiroNivel }
+    classeConfig: { pvInicial: classe.pv.inicial, pvPorNivel: classe.pv.porNivel, pvAtributo: "CON", ...pm }
   }), []);
   return { pv: s.pv.max, pm: s.pm.max, cd: s.magia?.cd, atributoMagia: s.magia?.atributoEfetivo };
 }
 
-test("Critério 3: PM do Arcanista pela linhagem; PV do Arcanista nível 5 com CON +1 = 33", () => {
-  assert.equal(maximos(arcanista, "mago", 5, { INT: 3 }).pm, 30);
-  assert.equal(maximos(arcanista, "feiticeiro", 5, { CAR: 2 }).pm, 30);
-  assert.equal(maximos(arcanista, "sangue", 5, { INT: 1 }).pm, 20);
-  assert.equal(maximos(arcanista, undefined, 5, { INT: 3 }).pm, 30, "sem linhagem: 3 + INT");
+test("Critério 3: PM do Arcanista pela linhagem (base × nível + atributo uma vez); PV nível 5 com CON +1 = 33", () => {
+  assert.equal(maximos(arcanista, "mago", 5, { INT: 3 }).pm, 28);
+  assert.equal(maximos(arcanista, "feiticeiro", 5, { CAR: 2 }).pm, 32);
+  assert.equal(maximos(arcanista, "sangue", 5, { INT: 1 }).pm, 26);
+  assert.equal(maximos(arcanista, undefined, 5, { INT: 3 }).pm, 28, "sem linhagem: 5 × nível + INT");
+  // Subir de nível soma só o incremento; aumentar o atributo depois do 1º muda o máximo em 1
+  assert.equal(maximos(arcanista, "mago", 6, { INT: 3 }).pm - maximos(arcanista, "mago", 5, { INT: 3 }).pm, 5);
+  assert.equal(maximos(arcanista, "mago", 5, { INT: 4 }).pm, 29);
   assert.equal(maximos(arcanista, "mago", 5, { CON: 1 }).pv, 33);
   // Feiticeiro conjura com Carisma: CD = 10 + 2 + 2
   const f = maximos(arcanista, "feiticeiro", 5, { CAR: 2, INT: 4 });
