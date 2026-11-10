@@ -1,5 +1,10 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.25.3
+
+### Papel de parede: nome novo do arquivo
+- O papel de parede do cartão do sistema passou a se chamar `img/ui/wallpaper-sistema.webp` (o original em `wallpaper-sistema.png`). Com o nome antigo, o navegador continuava mostrando a imagem velha do cache.
+
 ## 0.25.2
 
 ### Papel de parede corrigido

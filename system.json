@@ -2,16 +2,16 @@
   "id": "icarus-rpg",
   "title": "Icarus RPG",
   "description": "Sistema do Icarus RPG, um RPG de fantasia medieval original com testes de d20 + modificador.",
-  "background": "systems/icarus-rpg/img/ui/wallpaper-fvtt.webp",
+  "background": "systems/icarus-rpg/img/ui/wallpaper-sistema.webp",
   "media": [
     {
       "type": "setup",
-      "url": "systems/icarus-rpg/img/ui/wallpaper-fvtt.webp",
-      "thumbnail": "systems/icarus-rpg/img/ui/wallpaper-fvtt.webp",
+      "url": "systems/icarus-rpg/img/ui/wallpaper-sistema.webp",
+      "thumbnail": "systems/icarus-rpg/img/ui/wallpaper-sistema.webp",
       "caption": "Icarus RPG"
     }
   ],
-  "version": "0.25.2",
+  "version": "0.25.3",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -300,6 +300,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.25.2/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.25.3/icarus-rpg.zip",
   "socket": true
 }
