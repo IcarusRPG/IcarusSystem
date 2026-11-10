@@ -8,6 +8,14 @@
     <span class="magias-info">{{localize "ICARUS.Magias.NivelMaximo"}}: <b>{{magias.nivelMaximo}}º</b></span>
     <span class="magias-info">PM <b>{{system.pm.value}} / {{system.pm.max}}</b></span>
   </div>
+  {{#if magias.mantidas.length}}
+  <div class="painel magias-mantidas">
+    <b>{{localize "ICARUS.Mantidas.Titulo"}}</b>
+    {{#each magias.mantidas}}
+    <span class="magia-mantida">{{nome}} <small>({{info}})</small>{{#if ../editable}} <button type="button" class="btn peq" data-action="magia-encerrar-mantida" data-mantida="{{id}}">{{localize "ICARUS.Mantidas.Encerrar"}}</button>{{/if}}</span>
+    {{/each}}
+  </div>
+  {{/if}}
   <div class="magias-filtros">
     <input class="campo" type="search" data-filtro="busca" placeholder="{{localize 'ICARUS.Magias.Buscar'}}" aria-label="{{localize 'ICARUS.Magias.Buscar'}}">
     <select class="campo" data-filtro="nivel" aria-label="{{localize 'ICARUS.Magias.Nivel'}}">

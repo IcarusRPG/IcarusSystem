@@ -300,3 +300,65 @@ export const dadoDoLouvor = nivel => (nivel >= 17 ? "1d12" : nivel >= 11 ? "1d10
 
 /** Obra-Prima: com a Chama ativa, custo em PM pela metade (para cima), depois das outras reduções. */
 export const custoComObraPrima = custo => (custo > 0 ? Math.max(1, Math.ceil(custo / 2)) : 0);
+
+/* ------------------------------ Sustentada × concentração ------------------------------ */
+
+/**
+ * Tipo de manutenção pela duração (tipos separados; nunca os dois):
+ * "sustentada" (1 PM no início de cada turno, sem teste) | "concentracao" (sem PM por turno, teste ao
+ * sofrer dano) | null. Só a duração conta: a marca "concentracao" antiga das sustentadas é ignorada.
+ */
+export function tipoDeManutencao(system) {
+  const t = tipoDeDuracao(system?.duracao);
+  return t === "sustentada" || t === "concentracao" ? t : null;
+}
+
+/** CD do Teste de Concentração: 10 + nível da magia + 2 (o nível do conjurador não entra). */
+export const cdDeConcentracao = nivelMagia => 10 + Math.max(1, Math.trunc(Number(nivelMagia) || 1)) + 2;
+
+/** Magias de concentração ao mesmo tempo: 1 (2 com Mente Dividida). */
+export const limiteDeConcentracao = menteDividida => (menteDividida ? 2 : 1);
+
+/** Condições que encerram a concentração. */
+export const CONDICOES_QUE_QUEBRAM_CONCENTRACAO = ["atordoado", "inconsciente", "paralisado", "pasmo", "indefeso"];
+
+/**
+ * Entra uma magia mantida. Concentração acima do limite: sai a mais antiga.
+ * @param {{id:string, tipo:string}[]} lista  @param {{id:string, tipo:string}} nova
+ * @returns {{ lista: object[], encerradas: object[] }}
+ */
+export function adicionarMantida(lista = [], nova, { menteDividida = false } = {}) {
+  let atual = lista.filter(m => m.id !== nova.id);
+  const encerradas = [];
+  if (nova.tipo === "concentracao") {
+    const conc = atual.filter(m => m.tipo === "concentracao");
+    const sobra = conc.length + 1 - limiteDeConcentracao(menteDividida);
+    if (sobra > 0) {
+      const saem = new Set(conc.slice(0, sobra).map(m => m.id));
+      encerradas.push(...atual.filter(m => saem.has(m.id)));
+      atual = atual.filter(m => !saem.has(m.id));
+    }
+  }
+  return { lista: [...atual, nova], encerradas };
+}
+
+/**
+ * Início do turno: 1 PM por magia sustentada (as de Magia Duradoura não pagam). Sem PM para todas,
+ * mantém na ordem em que foram lançadas e as outras terminam.
+ * @returns {{ custo:number, mantidas:object[], encerradas:object[] }}
+ */
+export function debitoDoTurno(lista = [], pm = 0) {
+  let resto = Math.max(0, Math.trunc(Number(pm) || 0));
+  const mantidas = [], encerradas = [];
+  for (const m of lista) {
+    if (m.tipo !== "sustentada" || m.duradoura) { mantidas.push(m); continue; }
+    if (resto >= 1) { resto--; mantidas.push(m); } else encerradas.push(m);
+  }
+  return { custo: Math.max(0, Math.trunc(Number(pm) || 0)) - resto, mantidas, encerradas };
+}
+
+/** Perdeu a concentração de uma magia: ela termina (com Mente Dividida, todas as de concentração). */
+export function perderConcentracao(lista = [], id, { menteDividida = false } = {}) {
+  const sai = m => m.tipo === "concentracao" && (menteDividida || m.id === id);
+  return { lista: lista.filter(m => !sai(m)), encerradas: lista.filter(sai) };
+}

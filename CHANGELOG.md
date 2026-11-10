@@ -1,5 +1,13 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.26.0
+
+### Sustentada × concentração (correção de regra)
+- `magias.json` atualizado: Espectro Ilusório, Assassino Fantasmagórico, Projetar Consciência, Prisão de Ilusões, Inversão da Gravidade e Moldar Pensamentos passam de "sustentada (concentração)" para **concentração**. As durações agora são tipos separados.
+- **Sustentada:** ao lançar, a magia fica mantida e custa **1 PM no início de cada turno** do conjurador; sem PM, termina. Nunca pede Teste de Concentração. **Magia Duradoura** (Arcanista) só vale para sustentadas: +2 PM ao lançar e ela não paga mais por turno.
+- **Concentração:** sem custo por turno; dura até o fim da cena ou até encerrar. Ao sofrer dano, o conjurador recebe o botão **"Teste de Concentração CD N"**, com **CD = 10 + nível da magia + 2** (3º nível → CD 15, qualquer que seja o nível do conjurador). Falhou, a magia termina. Só uma por vez (duas com **Mente Dividida**; perdeu uma, perde as duas). Termina também com Atordoado, Inconsciente, Paralisado, Pasmo ou Indefeso.
+- Aba Magias: lista das magias mantidas com o botão **Encerrar**. Todas terminam em "Encerrar cena".
+
 ## 0.25.3
 
 ### Papel de parede: nome novo do arquivo

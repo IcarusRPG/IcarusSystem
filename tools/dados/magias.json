@@ -3982,7 +3982,7 @@
    "execucao": "padrão",
    "alcance": "médio",
    "alvo": "1 criatura",
-   "duracao": "sustentada (concentração)",
+   "duracao": "concentração",
    "resistencia": "Vontade parcial",
    "descricao": "Você cria a imagem do maior medo do alvo. Se falhar no teste, ele fica Apavorado enquanto você sustentar; se passar, fica apenas Abalado por 1 rodada. A criatura vê o espectro, mas só ela. Efeito mental.",
    "aprimoramentos": [
@@ -4196,7 +4196,7 @@
    "execucao": "padrão",
    "alcance": "curto",
    "alvo": "1 criatura",
-   "duracao": "sustentada (concentração)",
+   "duracao": "concentração",
    "resistencia": "Vontade parcial",
    "descricao": "Você cria o pior pesadelo do alvo, que o persegue. No início de cada turno do alvo, ele faz um teste de Vontade: se falhar, sofre 6d6 de dano psíquico e fica Apavorado; se passar, sofre metade e a magia termina. Só o alvo vê a ilusão.",
    "aprimoramentos": [
@@ -4353,7 +4353,7 @@
    "execucao": "completa",
    "alcance": "pessoal",
    "alvo": "você",
-   "duracao": "sustentada (concentração)",
+   "duracao": "concentração",
    "resistencia": null,
    "descricao": "Sua mente viaja para qualquer ponto do mundo que você conheça. Você vê e ouve o local como se estivesse lá, mas sem tocar nem agir. Pode se comunicar com criaturas que reconheçam sua presença. O seu corpo fica Indefeso.",
    "aprimoramentos": [
@@ -4457,7 +4457,7 @@
    "execucao": "padrão",
    "alcance": "médio",
    "alvo": "1 criatura",
-   "duracao": "sustentada (concentração)",
+   "duracao": "concentração",
    "resistencia": "Vontade anula",
    "descricao": "O alvo é preso em uma realidade falsa e repetitiva (um corredor sem fim, uma cela, uma festa). Se falhar, fica Pasmo (sem ações) enquanto você sustentar. Se sofrer dano, tem direito a novo teste.",
    "aprimoramentos": [
@@ -4592,7 +4592,7 @@
    "execucao": "padrão",
    "alcance": "médio",
    "alvo": "esfera de 6 m de raio",
-   "duracao": "sustentada (concentração)",
+   "duracao": "concentração",
    "resistencia": "Reflexos anula",
    "descricao": "A gravidade na área se inverte. Criaturas e objetos soltos que falharem no teste são arremessados 9 m para cima e ficam Caídas e Desprevenidas, flutuando contra o teto ou o céu. Quando a magia termina, elas caem e sofrem 6d6 de dano de impacto (a queda não anula Reflexos). Criaturas que passaram no teste sofrem apenas –2 na Defesa enquanto estiverem na área.",
    "aprimoramentos": [
@@ -4697,7 +4697,7 @@
    "execucao": "padrão",
    "alcance": "curto",
    "alvo": "1 criatura",
-   "duracao": "sustentada (concentração)",
+   "duracao": "concentração",
    "resistencia": "Vontade anula",
    "descricao": "Você reescreve a percepção do alvo, que só enxerga o que você decide. Escolha um efeito ao lançar. **Mundo Falso:** o alvo percebe os arredores como você descrever (aliados parecem inimigos e o contrário, um abismo parece chão firme, uma porta trancada parece aberta) e age de acordo, ficando Desprevenido contra o que não percebe. Você pode mudar a ilusão como ação livre, no seu turno. **Dor Imaginária:** o alvo sente ferimentos que não existem; no início de cada turno dele, sofre 6d6 de dano psíquico (sem teste adicional). Se sofrer dano real de uma fonte alheia à ilusão, tem direito a um novo teste. Efeito mental.",
    "aprimoramentos": [

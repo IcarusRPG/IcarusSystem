@@ -12,7 +12,7 @@
     "execucao": "padrão",
     "alcance": "médio",
     "alvo": "esfera de 6 m de raio",
-    "duracao": "sustentada (concentração)",
+    "duracao": "concentração",
     "resistencia": "Reflexos anula",
     "descricao": "<p>A gravidade na área se inverte. Criaturas e objetos soltos que falharem no teste são arremessados 9 m para cima e ficam Caídas e Desprevenidas, flutuando contra o teto ou o céu. Quando a magia termina, elas caem e sofrem 6d6 de dano de impacto (a queda não anula Reflexos). Criaturas que passaram no teste sofrem apenas –2 na Defesa enquanto estiverem na área.</p>",
     "aprimoramentos": [

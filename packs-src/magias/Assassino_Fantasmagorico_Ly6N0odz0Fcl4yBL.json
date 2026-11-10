@@ -12,7 +12,7 @@
     "execucao": "padrão",
     "alcance": "curto",
     "alvo": "1 criatura",
-    "duracao": "sustentada (concentração)",
+    "duracao": "concentração",
     "resistencia": "Vontade parcial",
     "descricao": "<p>Você cria o pior pesadelo do alvo, que o persegue. No início de cada turno do alvo, ele faz um teste de Vontade: se falhar, sofre 6d6 de dano psíquico e fica Apavorado; se passar, sofre metade e a magia termina. Só o alvo vê a ilusão.</p>",
     "aprimoramentos": [

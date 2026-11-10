@@ -1873,6 +1873,24 @@
       "ArmaQualquer": "a próxima arma que empunhar",
       "ArmaRotulo": "Arma Consagrada: Sabedoria (+{sab}) no ataque e no dano, +1 passo de dano",
       "ArmaLinha": "Arma Consagrada: Sabedoria no ataque e no dano, +1 passo de dano"
+    },
+    "Mantidas": {
+      "Titulo": "Magias mantidas:",
+      "Encerrar": "Encerrar",
+      "InfoSustentada": "sustentada · 1 PM por turno",
+      "InfoDuradoura": "sustentada · Magia Duradoura, sem custo por turno",
+      "InfoConcentracao": "concentração · teste CD {cd} ao sofrer dano",
+      "Duradoura": "Magia Duradoura",
+      "DuradouraTexto": "Gastar 2 PM a mais para {magia} durar até o fim da cena sem pagar 1 PM por turno?",
+      "LimiteConcentracao": "{nome} só mantém uma magia de concentração por vez (duas com Mente Dividida): {magias} terminou.",
+      "Encerrou": "{nome} encerrou: {magias}.",
+      "Quebrou": "{nome} ficou {condicao} e perdeu a concentração: {magias} terminou.",
+      "Debito": "{nome} paga {pm} PM para manter: {magias}.",
+      "SemPM": "{nome} não tem PM para manter: {magias} terminou.",
+      "SofreuDano": "{nome} sofreu {dano} de dano mantendo uma magia de concentração.",
+      "Botao": "Teste de Concentração CD {cd} ({magia})",
+      "Passou": "{nome} manteve a concentração em {magia} ({total} contra CD {cd}).",
+      "Falhou": "{nome} perdeu a concentração: {magia} terminou ({total} contra CD {cd})."
     }
   }
 }
