@@ -231,3 +231,29 @@ test("Migração 0.25.0: focos nas fichas com o ícone padrão recebem a imagem;
   assert.equal(iconeNovoDoFoco(foco("foco:grimorio", "worlds/x/meu.png")), null);
   assert.equal(iconeNovoDoFoco(foco("adaga", "icons/svg/item-bag.svg")), null);
 });
+
+test("Arma Consagrada: +1 passo no dado da arma, Sabedoria no ataque e no dano, só na arma consagrada", async () => {
+  const { subirPasso, calcularDano } = await import("../module/combate.mjs");
+  const { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE } = await import("../module/combate-chat.mjs");
+  assert.deepEqual(["1d4", "1d6", "1d8", "1d10", "1d12", "3d6", "4d6", "2d6", "2d12", "1d3"].map(d => subirPasso(d)),
+    ["1d6", "1d8", "1d10", "1d12", "3d6", "4d6", "4d8", "2d8", "3d12", "1d4"]);
+  assert.equal(subirPasso("1d6", 2), "1d10");
+  assert.equal(subirPasso("2d4+1"), "2d4+1", "fórmula composta fica");
+  const sistema = { atributos: { FOR: { total: 1 }, SAB: { total: 4 } } };
+  assert.equal(calcularDano(sistema, { dano: "1d8" }, "corpo-a-corpo", { atributo: "SAB", passosDano: 1 }).formula, "1d10 + 4");
+  // Ator com a maça consagrada
+  const flags = { "icarus-rpg": { armaConsagrada: "maca" } };
+  const ator = { flags, getFlag: (_s, k) => flags["icarus-rpg"][k], items: [], system: {
+    atributos: { FOR: { total: 1 }, DES: { total: 0 }, SAB: { total: 4 } }, pericias: { luta: { total: 3, atributo: "FOR" } }, proficiencias: { armas: ["simples"], armaduras: [] }, bonus: {} } };
+  const maca = { id: "maca", type: "arma", system: { dano: "1d8", propriedades: [], categoria: "simples" } };
+  const adaga = { id: "adaga", type: "arma", system: { dano: "1d4", propriedades: [], categoria: "simples" } };
+  const secoes = arma => PROVEDORES_ATAQUE.map(p => p(ator, arma, "corpo-a-corpo")).filter(s => s?.id === "arma-consagrada");
+  assert.equal(secoes(maca).length, 1);
+  assert.equal(secoes(maca)[0].campos[0].valor, true, "marcada por padrão");
+  assert.equal(secoes(adaga).length, 0, "só a arma consagrada");
+  const mods = await Promise.all(MODIFICADORES_ATAQUE.map(m => m({ actor: ator, item: maca, modo: "corpo-a-corpo", opcoes: { armaConsagrada: true }, alvos: [] })));
+  const m = mods.find(x => x?.passosDano);
+  assert.deepEqual([m.bonus, m.atributoDano, m.passosDano], [3, "SAB", 1]);
+  const desmarcado = await Promise.all(MODIFICADORES_ATAQUE.map(f => f({ actor: ator, item: maca, modo: "corpo-a-corpo", opcoes: {}, alvos: [] })));
+  assert.ok(!desmarcado.some(x => x?.passosDano), "desmarcada no diálogo: nada muda");
+});

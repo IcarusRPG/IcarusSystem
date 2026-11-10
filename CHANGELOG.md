@@ -1,5 +1,10 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.25.1
+
+### Clérigo: Arma Consagrada no ataque
+- Ao usar **Arma Consagrada**, a arma empunhada fica consagrada até o fim da cena. No diálogo de ataque dela aparece a opção **Arma Consagrada** (já marcada): **Sabedoria** no lugar do atributo no teste de ataque e no dano, e o dado da arma sobe **um passo** (1d4 → 1d6 → 1d8 → 1d10 → 1d12 → 3d6 → 4d6 → 4d8…; com 2 ou mais dados, o tipo do dado sobe: 2d6 → 2d8, 2d12 → 3d12). O ataque rápido também usa.
+
 ## 0.25.0
 
 ### Clérigo, PM dos conjuradores, imagens dos focos e papel de parede
