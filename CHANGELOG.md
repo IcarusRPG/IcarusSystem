@@ -1,5 +1,14 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.22.0
+
+### Quebrar objetos (regra oficial)
+- **Atacar objeto** (aba Combate e macro `game.icarus.atacarObjeto()`): escolha a arma e o objeto — da tabela (pergaminho a celeiro), manual (tamanho, Defesa, RD, PV) ou um item do alvo marcado (arma em mãos, armadura/escudo vestidos, foco, Estandarte). Ataque contra a Defesa do objeto (pelo tamanho, +5 em movimento); o dano perde a **RD do objeto, sem o teto de RD** dos personagens; 0 PV = destruído.
+- **Manobra Quebrar:** ataque contra a **Defesa do alvo** (não mais teste oposto); se acertar, o dano vai ao item, não ao portador.
+- Item destruído: sai das mãos/equipado, perde o bônus (armadura/escudo), aparece **riscado** no inventário e avisa no chat. A ficha do item ganhou o quadro **Objeto (Quebrar)** com RD, PV e Destruído, editáveis (o Mestre pode reverter).
+- Item do alvo que o atacante não controla: o cartão traz **Aplicar no item (Mestre)**.
+- Armas, armaduras e escudos do compêndio ainda não têm RD/PV (o Núcleo não está no repositório): preencha na ficha do item ou nos campos manuais.
+
 ## 0.21.0
 
 ### Nobre: mecânicas centrais e dinheiro
