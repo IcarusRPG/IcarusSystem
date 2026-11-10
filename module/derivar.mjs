@@ -3,7 +3,7 @@
  * Sem dependência do Foundry: recebe o objeto "system" (já com os Efeitos Ativos aplicados)
  * e a lista de itens, e preenche os campos derivados. Os testes usam esta mesma função.
  */
-import { atributoDeMagia, cdDaMagia, nivelMaximoDeMagia } from "./magias-dados.mjs";
+import { atributoDeMagia, cdDaMagia, nivelMaximoDeMagia, tetoDeMagiaDaClasse } from "./magias-dados.mjs";
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
 import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens, dadosDasHerancas } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
@@ -61,7 +61,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     s.magia.atributoEfetivo = atributoDeMagia(s);
     // Mana Transbordante (Arcanista, 20º): +2 na CD de todas as magias
     s.magia.cd = cdDaMagia(s) + (temHabilidadeNosItens(itens, "arcanista", "mana-transbordante") ? 2 : 0);
-    s.magia.nivelMaximo = nivelMaximoDeMagia(s.nivel);
+    s.magia.nivelMaximo = nivelMaximoDeMagia(s.nivel, { teto: tetoDeMagiaDaClasse(s.identidade?.classe) });
   }
   s.pv.value = limitar(numero(s.pv.value), 0, s.pv.max);
   s.pm.value = limitar(numero(s.pm.value), 0, s.pm.max);

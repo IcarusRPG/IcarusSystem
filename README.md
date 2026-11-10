@@ -170,6 +170,7 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 
 - **Compêndio "Icarus — Magias":** árvore Divinas / Arcanas / Sangue → 1º a 5º Nível. Arraste para a ficha (aba **Magias**).
 - **Lançar** rola na hora (dano ou cura com os botões de aplicar); **Lançar aprimorado** abre os aprimoramentos. Efeitos e condições: botões **Aplicar** e **Voltar** no cartão.
+- **Bardo:** Caminho e Estilo, Chama da Musa, Verso, Execução, magias de 3 escolas (até o 4º nível). Botões na aba Classe.
 - **Arcanista e Nobre:** Linhagem (PM e lista de magias), foco arcano, magias conhecidas, Pacto de Sangue, Sopro do Dragão; Postura Altiva, Brio, Palavra Cortante (não letal), Rendimentos e poderes pagos com dinheiro. Botões na aba Classe.
 - **Quebrar objetos:** botão **Atacar objeto** na aba Combate (tabela em `tools/dados/objetos.json`); a manobra Quebrar ataca a Defesa do alvo e o dano vai ao item.
 - **Área no mapa:** magia de área pede o ponto (esfera/quadrado) ou a direção (cone/linha) antes de gastar o PM; quem fica dentro vira alvo e a animação acontece ali. Clique lança; clique direito/Esc cancela.

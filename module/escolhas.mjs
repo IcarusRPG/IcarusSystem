@@ -8,6 +8,9 @@
  *   tipo-dano    1 entre "opcoes", sem repetir o tipo no mesmo poder (Corpo Temperado e Proteção
  *                Elemental: Redução desse tipo, pelo número do texto)
  *   escola       1 escola de magia entre "opcoes", sem repetir uma escola já escolhida
+ *   escolas      "quantidade" escolas (Conjuração Bárdica: 3, com as "obrigatoria" já marcadas)
+ *   magias       Repertório Ampliado: +"quantidade" magias conhecidas (o jogador arrasta as magias)
+ *   (caminho com porCaminho: só as opções do Caminho escolhido — Estilo do Bardo)
  *   (caminho com requerLinhagem: só para quem tem essa Linhagem; pericias com "opcoes": só elas)
  *   terreno      1 entre "opcoes", sem repetir um terreno já escolhido
  *   arma-exotica 1 arma exótica do compêndio de armas, sem repetir
@@ -63,7 +66,18 @@ async function escolherUm(titulo, texto, opcoes, { aviso = "" } = {}) {
 /** Caminho/Senda/Vínculo: cartões lado a lado com a descrição (e a mini-ficha do animal). */
 async function telaCaminho(actor, classe, entrada) {
   const subs = entrada.subs ?? [];
+  // Estilo do Bardo: só as opções do Caminho escolhido (porCaminho: { Poesia: [...], Música: [...] })
+  let permitidas = null;
+  if (entrada.escolha.porCaminho) {
+    const caminho = classe.habilidades.find(h => h.id === "caminho");
+    const escolhido = caminho?.escolha?.opcoes?.[(actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {}).caminho];
+    const chave = escolhido ? Object.keys(entrada.escolha.porCaminho).find(k => normalizarNome(escolhido).includes(normalizarNome(k))) : null;
+    if (!chave) { ui.notifications.warn(loc("ICARUS.Escolhas.CaminhoPrimeiro")); return null; }
+    permitidas = new Set(entrada.escolha.porCaminho[chave]);
+  }
+  const visivel = nome => !permitidas || permitidas.has(nome);
   const cartoes = entrada.escolha.opcoes.map((nome, i) => {
+    if (!visivel(nome)) return "";
     // Sem subitens (Linhagem, Herança): a descrição vem da habilidade da opção ("Linhagem do Mago")
     const sub = subs.find(s => normalizarNome(s.nome) === normalizarNome(nome)) ?? subs[i] ?? marcadorDaOpcao(classe, entrada.id, i);
     const animal = VINCULOS.vinculos.find(v => normalizarNome(v.nome) === normalizarNome(nome));
@@ -74,11 +88,11 @@ async function telaCaminho(actor, classe, entrada) {
     window: { title: entrada.nome },
     position: { width: Math.min(1100, 260 * entrada.escolha.opcoes.length + 60) },
     content: `<div class="icarus-uso escolha-caminho">${entrada.escolha.permanente ? `<p class="aviso">${esc(loc("ICARUS.Escolhas.Permanente"))}</p>` : ""}<div class="cartoes-escolha">${cartoes}</div></div>`,
-    buttons: entrada.escolha.opcoes.map((nome, i) => ({ action: String(i), label: nome })),
+    buttons: entrada.escolha.opcoes.map((nome, i) => ({ action: String(i), label: nome })).filter(b => visivel(b.label)),
     rejectClose: false
   });
   const i = Number(r);
-  if (!Number.isInteger(i) || !entrada.escolha.opcoes[i]) return null;
+  if (!Number.isInteger(i) || !entrada.escolha.opcoes[i] || !visivel(entrada.escolha.opcoes[i])) return null;
   return { flags: { caminho: { indice: i, opcao: entrada.escolha.opcoes[i] } }, sufixo: entrada.escolha.opcoes[i], indice: i };
 }
 
@@ -161,6 +175,32 @@ async function telaTipoDano(actor, classe, entrada) {
   return { flags: { tipoDano: TIPO_DANO(nome), ...(rd ? { rd: [{ valor: Number(rd[1]), tipo: TIPO_DANO(nome) }] } : {}) }, sufixo: nome };
 }
 
+/** Escolas (Conjuração Bárdica): exatamente "quantidade", com as obrigatórias marcadas e travadas. */
+async function telaEscolas(actor, classe, entrada) {
+  const { quantidade = 3, obrigatoria = [], opcoes = [] } = entrada.escolha;
+  const content = `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Escolhas.EscolasTexto", { n: quantidade, obrigatorias: obrigatoria.join(", ") }))}</p>
+    <div class="grade-pericias-classe">${opcoes.map(o => `<label class="chk"><input type="checkbox" name="escola" value="${esc(o)}"${obrigatoria.includes(o) ? " checked disabled" : ""}> ${esc(o)}</label>`).join("")}</div></div>`;
+  const r = await DialogV2.wait({
+    window: { title: entrada.nome }, content,
+    buttons: [
+      { action: "ok", label: loc("ICARUS.Devocao.Confirmar"), default: true, callback: (ev, b) => [...b.form.querySelectorAll("input[name=escola]:checked")].map(i => i.value) },
+      { action: "cancelar", label: loc("ICARUS.Escolhas.DecidirDepois") }
+    ],
+    rejectClose: false
+  });
+  if (!Array.isArray(r)) return null;
+  const escolas = [...new Set([...obrigatoria, ...r])];
+  if (escolas.length !== quantidade) { ui.notifications.warn(fmt("ICARUS.Comuns.EscolhaN", { n: quantidade })); return null; }
+  return { flags: { escolas }, sufixo: escolas.join(", ") };
+}
+
+/** Repertório Ampliado: +N magias conhecidas (das escolas que conhece); o jogador arrasta as magias. */
+async function telaMagias(actor, classe, entrada) {
+  const n = entrada.escolha.quantidade ?? 2;
+  const ok = await DialogV2.confirm({ window: { title: entrada.nome }, content: `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Escolhas.MagiasTexto", { n }))}</p></div>`, rejectClose: false });
+  return ok ? { flags: { magiasExtras: n }, sufixo: `+${n}` } : null;
+}
+
 /** Escola de magia (Escola Predileta, Segunda Escola): sem repetir uma escola já escolhida. */
 async function telaEscola(actor, classe, entrada) {
   const ja = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.escola).filter(Boolean));
@@ -184,7 +224,7 @@ async function telaArmaExotica(actor, classe, entrada) {
   return arma ? { flags: { armaExotica: { id: arma.id, nome: arma.nome } }, sufixo: arma.nome } : null;
 }
 
-const TELAS = { escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
+const TELAS = { escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
 
 /** Depois de uma escolha de caminho (por id da habilidade): (actor, índice, item) => Promise. */
 export const APOS_CAMINHO = new Map();

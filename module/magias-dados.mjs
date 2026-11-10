@@ -33,10 +33,13 @@ export function cdDaMagia(system) {
 }
 
 /** Maior nível de magia que o nível do personagem alcança (1 a 5). Só informativo: nada é bloqueado. */
-export function nivelMaximoDeMagia(nivelPersonagem) {
+export function nivelMaximoDeMagia(nivelPersonagem, { teto = 5 } = {}) {
   const n = Math.trunc(Number(nivelPersonagem) || 1);
-  return NIVEIS_MAGIA.filter(m => n >= NIVEL_PERSONAGEM_POR_NIVEL_MAGIA[m]).at(-1) ?? 1;
+  return Math.min(teto, NIVEIS_MAGIA.filter(m => n >= NIVEL_PERSONAGEM_POR_NIVEL_MAGIA[m]).at(-1) ?? 1);
 }
+
+/** Teto do nível de magia pela classe (o Bardo nunca alcança o 5º). */
+export const tetoDeMagiaDaClasse = classe => (classe === "bardo" ? 4 : 5);
 
 /**
  * Custo total de um lançamento: custo base + aprimoramentos escolhidos (índices; cada um uma vez).
@@ -208,6 +211,8 @@ export function mudancasParaEfeito(mudancas = []) {
     } else if (chave === "pericia" && sub) somar(`system.pericias.${sub}.outros`, m.valor);
     else if (chave === "resistencia") for (const p of PERICIAS_RESISTENCIA) somar(`system.pericias.${p}.outros`, m.valor);
     else if (chave === "rd") somar("system.resistencias.rdGeral", m.valor);
+    else if (chave === "ataque") somar("system.bonus.ataque", m.valor);
+    else if (chave === "deslocamento") somar("system.deslocamento", m.valor);
     else if (chave === "reducao" && sub) somar(`system.resistencias.reducao.${sub}`, m.valor);
     else semCampo.push(m);
   }
@@ -251,11 +256,13 @@ export function limiteDeMagiasConhecidas(linhagem, nivel, extras = 0) {
  * Pode aprender a magia? Confere a tradição (Arcana ou Sangue), o nível de magia que já lança e o
  * limite de conhecidas. Devolve o primeiro motivo (chave de tradução + dados) ou null.
  * @param {{ nivel:number, tradicoes:string[] }} magia  system da magia
- * @param {{ nivel:number, tradicao:string|null, conhecidas:number, limite:number }} p
+ * @param {{ nivel:number, tradicao:string|null, conhecidas:number, limite:number, escolas?:string[], teto?:number }} p
+ *   escolas: só dessas escolas (Bardo); teto: maior nível de magia da classe
  */
 export function motivoParaNaoAprender(magia, p) {
   if (p.tradicao && (magia.tradicoes ?? []).length && !magia.tradicoes.includes(p.tradicao)) return { chave: "ICARUS.Magias.Conhecidas.Tradicao", dados: { tradicao: p.tradicao } };
-  const max = nivelMaximoDeMagia(p.nivel);
+  if (p.escolas?.length && !p.escolas.includes(magia.escola)) return { chave: "ICARUS.Magias.Conhecidas.Escola", dados: { escolas: p.escolas.join(", ") } };
+  const max = nivelMaximoDeMagia(p.nivel, { teto: p.teto ?? 5 });
   if (Number(magia.nivel) > max) return { chave: "ICARUS.Magias.Conhecidas.Nivel", dados: { nivel: magia.nivel, max } };
   if (p.conhecidas >= p.limite) return { chave: "ICARUS.Magias.Conhecidas.Limite", dados: { limite: p.limite } };
   return null;
@@ -279,3 +286,17 @@ export function maximoDoPacto(custoTotal, pvAtual) {
   const peloPv = Math.max(0, Math.floor((Math.max(0, pvAtual) - 1) / 2));
   return Math.min(metade, peloPv);
 }
+
+/* ------------------------------ Bardo ------------------------------ */
+
+/** Magias conhecidas do Bardo: 2 no 1º e +1 a cada nível par (2 + ⌊nível/2⌋); +2 por Repertório Ampliado. */
+export const limiteDeMagiasDoBardo = (nivel, repertorios = 0) => 2 + Math.floor(Math.max(1, Math.trunc(Number(nivel) || 1)) / 2) + 2 * Math.max(0, repertorios);
+
+/** Chama da Musa: +1 no 1º; +2 no 5º; +3 no 9º; +4 no 13º; +5 no 17º (+1 pagando 2 PM a mais). */
+export const bonusDaChama = nivel => Math.min(5, 1 + Math.floor((Math.max(1, Math.trunc(Number(nivel) || 1)) - 1) / 4));
+
+/** Louvor (Verso da Poesia): 1d6; 1d8 no 5º; 1d10 no 11º; 1d12 no 17º. */
+export const dadoDoLouvor = nivel => (nivel >= 17 ? "1d12" : nivel >= 11 ? "1d10" : nivel >= 5 ? "1d8" : "1d6");
+
+/** Obra-Prima: com a Chama ativa, custo em PM pela metade (para cima), depois das outras reduções. */
+export const custoComObraPrima = custo => (custo > 0 ? Math.max(1, Math.ceil(custo / 2)) : 0);

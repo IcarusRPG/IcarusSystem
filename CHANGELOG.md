@@ -1,5 +1,18 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.24.0
+
+### Bardo, RD/PV de todos os itens e os 6 focos arcanos
+- **Bardo** (10 classes; 30 habilidades e 50 poderes): PV 14 + CON, PM (3 + CAR) × nível; armas simples e marciais leves ou ágeis, armaduras leves, sem túnicas.
+- **Conjuração Bárdica:** lista Arcana com Carisma; magias até o 4º nível (nunca o 5º); 3 escolas permanentes (Encantamento obrigatória) e só magias delas; conhecidas 2 + ⌊nível/2⌋ (+2 por Repertório Ampliado).
+- **Caminho** (Poesia/Música) e **Estilo** permanentes: o Estilo só lista as opções do Caminho; habilidades do Estilo no 3º, 9º e 15º; poderes do Caminho e do Estilo só para quem escolheu.
+- **Chama da Musa:** +1 a +5 nos testes de perícia até o fim da cena (Poesia: também resistência; Música: também ataque), +2 PM para +1; só uma ativa por vez.
+- **Talento de Palco** no diálogo de perícia não treinada; **Verso** (Louvor e Escárnio); **Execução** (Cadência e Dissonância, exige instrumento; Muralha de Som, Riff Pesado, Nu Metal); **Estádio Lotado**; **Obra-Prima** (metade do PM com a Chama ativa); Voz de Comando, Fascinar e Manipular.
+- **RD/PV** de todas as 46 armas e dos 12 itens de armaduras e escudos (tabela validada), já nos compêndios.
+- **6 focos arcanos** com preço: Varinha R$ 20, Cetro de Osso R$ 40, Grimório R$ 60, Cetro de Ferro R$ 90, Orbe de Prata R$ 150 e **Bordão Arcano** R$ 45 (arma e foco). O Bordão comum deixa de ser foco.
+- Efeitos de magia e de classe agora aplicam bônus de **ataque** e de **deslocamento**.
+- Correção: Heranças do Arcanista não aparecem mais como "escolher" pendente na aba Classe.
+
 ## 0.23.0
 
 ### Heranças automáticas e Escolta Contratada
