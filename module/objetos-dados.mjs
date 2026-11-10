@@ -69,6 +69,9 @@ export function objetoDoItem(item) {
     base = { rd: m.rd, pvMax: m.pv, tamanho: "minusculo" };
   }
   if (!base) return null;
+  // Dado incompleto (só a RD preenchida na ficha): sem PV não há objeto
+  if (!Number.isFinite(Number(base.pvMax)) || base.pvMax === "" || base.pvMax === null) return null;
+  base = { ...base, rd: Math.max(0, Math.trunc(Number(base.rd) || 0)), pvMax: Math.trunc(Number(base.pvMax)) };
   const pv = Number.isFinite(f.pvObjeto) ? f.pvObjeto : base.pvMax;
   return { rd: base.rd, pvMax: base.pvMax, pv, tamanho: base.tamanho ?? "minusculo", destruido: !!f.destruido || pv <= 0 };
 }
@@ -77,8 +80,10 @@ export function objetoDoItem(item) {
  * Mudanças do item depois de sofrer dano: PV e, ao zerar, destruído e fora de "em mãos"/"equipado".
  * @returns {{ mudancas:object, efetivo:number, pv:number, destruido:boolean }}
  */
-export function mudancasDoDanoNoItem(item, dano) {
-  const obj = objetoDoItem(item);
+export function mudancasDoDanoNoItem(item, dano, manual = null) {
+  // Item sem RD/PV gravados (armas e armaduras do compêndio): usa os valores manuais do diálogo
+  const obj = objetoDoItem(item) ?? (manual ? { rd: manual.rd, pvMax: manual.pv, pv: manual.pv, tamanho: "pequeno" } : null);
+  if (!obj) return null;
   const r = danoNoObjeto({ pv: obj.pv, rd: obj.rd }, dano);
   const mudancas = { [`flags.${F}.pvObjeto`]: r.pv };
   if (!flags(item).objeto) mudancas[`flags.${F}.objeto`] = { rd: obj.rd, pvMax: obj.pvMax, tamanho: obj.tamanho };

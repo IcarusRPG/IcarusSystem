@@ -94,6 +94,18 @@
     <p class="dica">{{localize "ICARUS.Inventario.Preco"}}: <span title="{{preco.ouro}}">{{preco.texto}}</span></p>
   </fieldset>
 
+  {{#if objeto}}
+  <fieldset class="painel objeto-item">
+    <legend>{{localize "ICARUS.Objetos.Legenda"}}{{#if objeto.destruido}} · <b class="aviso">{{localize "ICARUS.Objetos.DestruidoCurto"}}</b>{{/if}}</legend>
+    <div class="grade-campos">
+      <label class="f"><span class="rot">RD</span><input class="campo" type="number" name="flags.icarus-rpg.objeto.rd" value="{{objeto.rd}}" min="0" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Objetos.PvMax"}}</span><input class="campo" type="number" name="flags.icarus-rpg.objeto.pvMax" value="{{objeto.pvMax}}" min="1" step="1"></label>
+      <label class="f"><span class="rot">{{localize "ICARUS.Objetos.PvAtuais"}}</span><input class="campo" type="number" name="flags.icarus-rpg.pvObjeto" value="{{objeto.pv}}" step="1"></label>
+      <label class="chk"><input type="checkbox" name="flags.icarus-rpg.destruido" {{checked objeto.destruido}}> {{localize "ICARUS.Objetos.Destruido2"}}</label>
+    </div>
+    <p class="dica">{{localize "ICARUS.Objetos.LegendaDica"}}</p>
+  </fieldset>
+  {{/if}}
   <div class="painel item-desc">
     <h3 class="titulo-painel">{{localize "ICARUS.Item.Descricao"}}</h3>
     {{#if textoPropriedades}}<p class="dica">{{textoPropriedades}}</p>{{/if}}

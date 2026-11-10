@@ -134,6 +134,8 @@ Hooks.once("init", () => {
 
   CONFIG.ICARUS = ICARUS;
   game.icarus = {
+    // Quebrar objetos: game.icarus.atacarObjeto(actor) abre o diálogo
+    atacarObjeto: async actor => (await import("./module/objetos.mjs")).abrirAtacarObjeto(actor ?? canvas?.tokens?.controlled?.[0]?.actor ?? game.user.character),
     rolarTeste, rolarPericia, rolarAtributo,
     aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas,
     rolarAtaque, rolarDano, recarregar, recolherArma, adicionarItem, popularCompendios,

@@ -344,13 +344,14 @@ export class FichaPersonagem extends ActorSheet {
         usos: i.system.usos?.max > 0 ? `${i.system.usos.atual}/${i.system.usos.max}` : "",
         semUsos: i.system.usos?.max > 0 && i.system.usos.atual <= 0,
         bonusTexto: (i.system.bonus ?? []).map(b => textoDoBonus(b, i.flags?.[SISTEMA_ID]?.escolhaBonus)).join("; "),
-        precoVenda: i.system.precoVenda ? formatarPreco(i.system.precoVenda) : ""
+        precoVenda: i.system.precoVenda ? formatarPreco(i.system.precoVenda) : "",
+        destruido: !!i.flags?.[SISTEMA_ID]?.destruido
       }));
     ctx.vestimentas = s.vestimentas ? { ...s.vestimentas, texto: game.i18n.format("ICARUS.ItensComuns.Contador", { n: s.vestimentas.vestidas, limite: s.vestimentas.limite }) } : null;
 
     // Armas: bônus de ataque e dano calculados pelas regras de combate
     const itens = itensDoAtor(actor);
-    ctx.armas = actor.items.filter(i => i.type === "arma").sort(ordenar).map(i => this._linhaDaArma(i, itens));
+    ctx.armas = actor.items.filter(i => i.type === "arma").sort(ordenar).map(i => ({ ...this._linhaDaArma(i, itens), destruido: !!i.flags?.[SISTEMA_ID]?.destruido }));
     ctx.municoes = actor.items.filter(i => i.type === "municao").sort(ordenar).map(i => ({
       id: i.id, name: i.name, img: i.img,
       tipo: loc(`ICARUS.Municao.Tipos.${i.system.tipo}`),
@@ -722,6 +723,10 @@ export class FichaPersonagem extends ActorSheet {
       }
       case "manobra":
         return abrirManobra(actor);
+      case "atacar-objeto": {
+        const { abrirAtacarObjeto } = await import("../objetos.mjs");
+        return abrirAtacarObjeto(actor);
+      }
       case "aguardar":
         return aguardar(actor);
       case "aguardar-disparar":
