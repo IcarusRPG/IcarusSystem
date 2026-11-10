@@ -15,7 +15,7 @@
     "sustentada": false,
     "divindade": "",
     "tipoDano": "",
-    "descricao": "Você precisa estar empunhando um foco arcano para lançar magias: um cetro, um livro, um orbe, uma varinha ou um bordão. O foco ocupa uma mão (o bordão ocupa as duas, como arma). Sem o foco em mãos, você não pode lançar magias. Sacar ou apanhar um foco é uma ação de movimento, e o Mago pode carregar um foco reserva. <strong>O foco pode ser destruído</strong> (pela manobra Quebrar ou por dano, ver <em>Quebrando Objetos</em>, seção 1); as estatísticas dele estão na tabela de armas, armaduras e escudos. Sem foco, o Mago só volta a lançar magias ao empunhar outro.",
+    "descricao": "Você precisa estar empunhando um foco arcano para lançar magias: um cetro, um livro, um orbe, uma varinha ou um bordão. O foco ocupa uma mão (o bordão ocupa as duas, como arma). Sem o foco em mãos, você não pode lançar magias. Sacar ou apanhar um foco é uma ação de movimento, e o Mago pode carregar um foco reserva. <strong>O foco pode ser destruído</strong> (pela manobra Quebrar ou por dano, ver <em>Quebrando Objetos</em>, seção 1); os focos disponíveis e as estatísticas deles estão na seção 14 (<em>Focos Arcanos</em>). Sem foco, o Mago só volta a lançar magias ao empunhar outro.",
     "classe": "arcanista",
     "tipoPoder": "habilidade",
     "grupo": "",
