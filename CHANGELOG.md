@@ -1,5 +1,11 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.23.0
+
+### Heranças automáticas e Escolta Contratada
+- **Heranças do Feiticeiro** valem sozinhas na ficha: **Escamas Dracônicas** (+2 Defesa sem armadura nem escudo), **Pele das Profundezas** (Redução de Frio 3, +2 Atletismo), **Coração de Brasa** (Redução de Fogo 3 e de Trevas 3, +2 Vontade) e **Alma do Elemento** (Redução 5 contra o elemento do dragão, a partir do 11º).
+- **Escolta Contratada:** botão "Contratar escolta" na aba Classe (cobra 10% da riqueza inicial do nível). Fica ativa até o Mestre dispensar; uma vez por cena, absorve **3 × o nível** do dano do Nobre ou de um aliado adjacente, automaticamente, ao aplicar o dano.
+
 ## 0.22.0
 
 ### Quebrar objetos (regra oficial)

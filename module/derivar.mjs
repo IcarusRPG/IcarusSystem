@@ -5,7 +5,7 @@
  */
 import { atributoDeMagia, cdDaMagia, nivelMaximoDeMagia } from "./magias-dados.mjs";
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
-import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens } from "./classes-dados.mjs";
+import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens, dadosDasHerancas } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
@@ -102,7 +102,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.defesa.condicao = cond.defesa;
   if (cond.defesa) s.defesa.total += cond.defesa.valor;
 
-  // Perícias: Atributo + Treino + Outros
+  // Perícias: Atributo + Treino + Outros (+ dons das Heranças: Atletismo do Leviatã, Vontade da Fênix)
+  const herancas = dadosDasHerancas(itens, { nivel: s.nivel });
   for (const p of PERICIAS) {
     const d = s.pericias[p.chave];
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
@@ -116,6 +117,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
+    d.bonusHeranca = herancas.pericias[p.chave] ?? [];
+    for (const b of d.bonusHeranca) d.total += b.valor;
     // Bônus incondicionais de itens comuns em uso (o mesmo item não soma consigo mesmo)
     d.bonusItens = deItens[p.chave] ?? [];
     d.total += d.bonusItens.reduce((soma, b) => soma + b.valor, 0);

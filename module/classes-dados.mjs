@@ -312,7 +312,8 @@ export const temHabilidadeNosItens = (itens, classeId, habId) => (itens ?? []).s
  * Bônus passivos derivados de habilidades (regras no texto do Anexo A):
  * - Pele Rija (Bárbaro): +2 Defesa sem armadura ou com leve, e sem túnica;
  * - Defesa Interior (Monge): +SAB na Defesa sem armadura nem escudo (túnica não impede);
- * - Passo Ligeiro (Monge): +3 m de deslocamento sem armadura.
+ * - Passo Ligeiro (Monge): +3 m de deslocamento sem armadura;
+ * - Escamas Dracônicas (Arcanista, Herança de Dragão): +2 Defesa sem armadura nem escudo (túnica não impede).
  * @param {object[]} itens
  * @param {{ tipoArmadura: string, usandoEscudo: boolean, vestindoTunica: boolean, SAB: number }} situacao
  * @returns {{ defesa: {valor, origem}[], deslocamento: {valor, origem}[] }}
@@ -328,7 +329,33 @@ export function passivosDeClasse(itens, situacao) {
     defesa.push({ valor: situacao.SAB, origem: "Defesa Interior" });
   }
   if (temHabilidadeNosItens(itens, "monge", "passo-ligeiro") && semArmadura) deslocamento.push({ valor: 3, origem: "Passo Ligeiro" });
+  if (temHabilidadeNosItens(itens, "arcanista", "heranca-de-dragao") && semArmadura && !situacao.usandoEscudo) defesa.push({ valor: 2, origem: "Escamas Dracônicas" });
   return { defesa, deslocamento };
+}
+
+/**
+ * Dons passivos das Heranças do Feiticeiro (texto da habilidade):
+ * - Pele das Profundezas (Leviatã, 1º): Redução de Frio 3 e +2 em Atletismo;
+ * - Coração de Brasa (Fênix, 1º): Redução de Fogo 3, Redução de Trevas 3 e +2 em Vontade;
+ * - Alma do Elemento (Dragão, 11º): Redução 5 contra o elemento do dragão (escolhido no Sopro).
+ * @returns {{ rd: {tipo, valor, origem}[], pericias: Object<string, {valor, origem}[]> }}
+ */
+export function dadosDasHerancas(itens, { nivel = 1, elementoDragao = null } = {}) {
+  const rd = [];
+  const pericias = {};
+  const pericia = (chave, valor, origem) => (pericias[chave] ??= []).push({ valor, origem });
+  if (temHabilidadeNosItens(itens, "arcanista", "heranca-de-leviata")) {
+    rd.push({ tipo: "frio", valor: 3, origem: "Pele das Profundezas" });
+    pericia("atletismo", 2, "Pele das Profundezas");
+  }
+  if (temHabilidadeNosItens(itens, "arcanista", "heranca-de-fenix")) {
+    rd.push({ tipo: "fogo", valor: 3, origem: "Coração de Brasa" }, { tipo: "trevas", valor: 3, origem: "Coração de Brasa" });
+    pericia("vontade", 2, "Coração de Brasa");
+  }
+  if (temHabilidadeNosItens(itens, "arcanista", "heranca-de-dragao") && nivel >= 11 && elementoDragao) {
+    rd.push({ tipo: elementoDragao, valor: 5, origem: "Alma do Elemento" });
+  }
+  return { rd, pericias };
 }
 
 /** Perícia Infalível (Ladino, 11º): d20 menor que 10 conta como 10 nestas perícias. */

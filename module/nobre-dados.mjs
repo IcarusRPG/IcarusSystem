@@ -54,5 +54,8 @@ export function custoEmDinheiro(id, nivel) {
   return 0;
 }
 
+/** Escolta Contratada: absorve 3 × o nível do dano, uma vez por cena. */
+export const absorcaoDaEscolta = nivel => 3 * nivelValido(nivel);
+
 /** Estandarte da Família: objeto Pequeno, Defesa 12, RD 5, PV 10 (Reforçado: RD 10, PV 20). */
 export const estandarte = reforcado => ({ defesa: 12, rd: reforcado ? 10 : 5, pvMax: reforcado ? 20 : 10, tamanho: "pequeno" });

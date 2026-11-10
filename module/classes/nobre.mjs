@@ -17,6 +17,9 @@
  *   5 × com Bolsa Aberta), até o Carisma em PM por cena. Patrocinar, Dinheiro Resolve e Escolta
  *   Contratada cobram o dinheiro com confirmação. Saldo nunca fica negativo.
  * - Palavra de Encorajamento: 2 PM; o aliado marcado rola o próximo teste com vantagem.
+ * - Escolta Contratada: ao pagar, fica ativa até o fim da aventura (flags.escolta; o Mestre dispensa).
+ *   Uma vez por cena, quando o Nobre ou um aliado adjacente sofreria dano, absorve 3 × o nível
+ *   automaticamente (module/dano.mjs → ABSORVEDORES_DE_DANO).
  */
 import { SISTEMA_ID, PERICIAS } from "../config.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
@@ -25,10 +28,10 @@ import { usarPoder, ANTES_DE_USAR, GANCHOS_DE_PODER, FIM_DO_COMBATE } from "../a
 import { FIM_DA_CENA } from "../condicoes-foundry.mjs";
 import { registrarLinhas, itemDeClasse, avisarNoChat, USO_PROPRIO } from "./comum.mjs";
 import { debitar, creditar, formatarPreco, CENTAVOS_POR_REAL } from "../moeda.mjs";
-import { rolarDanoAvulso } from "../dano.mjs";
+import { rolarDanoAvulso, ABSORVEDORES_DE_DANO } from "../dano.mjs";
 import {
   VALOR_DOTE, valorDosRendimentos, riquezaInicial, danoDaPalavraCortante, cdDaMajestade, majestadeUsadaContra,
-  maximoDoBrado, reaisPorPM, restanteDoCofre, custoEmDinheiro, estandarte
+  maximoDoBrado, reaisPorPM, restanteDoCofre, custoEmDinheiro, estandarte, absorcaoDaEscolta
 } from "../nobre-dados.mjs";
 
 const F = SISTEMA_ID;
@@ -236,11 +239,59 @@ GANCHOS_DE_PODER.set("nobre__palavra-de-encorajamento", {
   }
 });
 
+/* ---------------- Escolta Contratada ---------------- */
+
+GANCHOS_DE_PODER.set("nobre__escolta-contratada", {
+  depois: async actor => {
+    await actor.setFlag(F, "escolta", { ativa: true, usadaNaCena: false });
+    return avisarNoChat(actor, fmt("ICARUS.Nobre.EscoltaChat", { nome: actor.name, valor: absorcaoDaEscolta(actor.system.nivel) }));
+  }
+});
+ACOES_DE_MECANICA.set("nobre:contratar", actor => {
+  const item = itemDeClasse(actor, "nobre", "escolta-contratada");
+  return item ? usarPoder(actor, item, { custo: 0 }) : null;
+});
+ACOES_DE_MECANICA.set("nobre:escolta", actor => (game.user.isGM ? actor.unsetFlag(F, "escolta") : null));
+
+/** O token do alvo está no mesmo lugar ou adjacente ao token (distância ≤ 1 quadrado entre as bordas)? */
+function adjacente(a, b) {
+  if (!a || !b || a.parent?.id !== b.parent?.id) return false;
+  const g = a.parent?.grid?.size ?? canvas?.grid?.size ?? 100;
+  const caixa = t => ({ x1: t.x, y1: t.y, x2: t.x + (t.width ?? 1) * g, y2: t.y + (t.height ?? 1) * g });
+  const p = caixa(a), q = caixa(b);
+  const dx = Math.max(0, Math.max(p.x1, q.x1) - Math.min(p.x2, q.x2));
+  const dy = Math.max(0, Math.max(p.y1, q.y1) - Math.min(p.y2, q.y2));
+  return Math.max(dx, dy) <= g * 1.01;
+}
+
+ABSORVEDORES_DE_DANO.push(async (alvo, actor) => {
+  const alvoToken = alvo?.documentName === "Token" ? alvo : null;
+  // O próprio Nobre, ou um Nobre com escolta ativa adjacente ao alvo, na mesma cena
+  const candidatos = [];
+  if (ehNobre(actor)) candidatos.push(actor);
+  const cena = alvoToken?.parent;
+  for (const t of cena?.tokens ?? []) {
+    const nobre = t.actor;
+    if (!nobre || nobre === actor || !ehNobre(nobre) || candidatos.includes(nobre)) continue;
+    if (adjacente(t, alvoToken)) candidatos.push(nobre);
+  }
+  for (const nobre of candidatos) {
+    const e = nobre.getFlag(F, "escolta");
+    if (!e?.ativa || e.usadaNaCena || !(nobre.isOwner || game.user.isGM)) continue;
+    await nobre.setFlag(F, "escolta", { ...e, usadaNaCena: true });
+    return { absorvido: absorcaoDaEscolta(nobre.system.nivel), texto: fmt("ICARUS.Nobre.EscoltaAbsorve", { nome: nobre.name }) };
+  }
+  return null;
+});
+
 /* ---------------- Fim da cena / combate ---------------- */
 
 const limparCena = async actor => {
   if (!ehNobre(actor)) return;
   for (const k of ["cofreNaCena", "majestade", "estandarte"]) if (actor.getFlag(F, k) !== undefined) await actor.unsetFlag(F, k);
+  // A escolta continua até o fim da aventura; só volta a poder absorver
+  const e = actor.getFlag(F, "escolta");
+  if (e?.usadaNaCena) await actor.setFlag(F, "escolta", { ...e, usadaNaCena: false });
 };
 FIM_DA_CENA.push(limparCena);
 FIM_DO_COMBATE.push(limparCena);
@@ -266,6 +317,14 @@ registrarLinhas("nobre", actor => {
     const e = actor.getFlag(F, "estandarte");
     linhas.push({ id: "nobre:estandarte", rotulo: loc("ICARUS.Nobre.Estandarte"), botao: true, ativo: !!e?.ativo,
       info: e?.ativo ? fmt("ICARUS.Nobre.EstandarteAtivo", { pv: e.pv, max: e.pvMax, rd: e.rd }) : "2 PM" });
+  }
+  const escolta = actor.getFlag(F, "escolta");
+  if (tem(actor, "escolta-contratada") && !escolta?.ativa) {
+    linhas.push({ id: "nobre:contratar", rotulo: loc("ICARUS.Nobre.EscoltaContratar"), botao: true, info: reais(custoEmDinheiro("escolta-contratada", actor.system.nivel)) });
+  }
+  if (escolta?.ativa) {
+    linhas.push({ id: "nobre:escolta", rotulo: loc("ICARUS.Nobre.Escolta"), ...(game.user.isGM ? { botao: true, dica: loc("ICARUS.Nobre.EscoltaDispensar") } : {}),
+      info: fmt(escolta.usadaNaCena ? "ICARUS.Nobre.EscoltaUsada" : "ICARUS.Nobre.EscoltaPronta", { valor: absorcaoDaEscolta(actor.system.nivel) }) });
   }
   if (tem(actor, "cofre-da-familia")) {
     linhas.push({ id: "nobre:cofre", rotulo: loc("ICARUS.Nobre.Cofre"),

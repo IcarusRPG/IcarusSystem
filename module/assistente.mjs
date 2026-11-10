@@ -28,7 +28,7 @@ export const FONTES_DE_TREINO = ["classe", "raca", "origem", "profissao", "outro
 export const FLAGS_DE_CLASSE = [
   "classeId", "escolhasClasse", "caminho", "vinculoAnimal", "furia", "presa", "bracosAstrais",
   "furtivoUsadoNaRodada", "kiaiUsadoNaRodada", "tiroLendarioUsado", "saqueUsadoNoTurno", "folegoUsado", "agredirExtra",
-  "periciasClasse", "treinoAntesClasse", "proficienciasAntesClasse", "periciaRefinada", "periciaEspecializada", "tradicaoMagias", "focoLiberado", "elementoDragao", "defesaAtributo", "rendimentos", "cofreNaCena", "majestade", "estandarte"
+  "periciasClasse", "treinoAntesClasse", "proficienciasAntesClasse", "periciaRefinada", "periciaEspecializada", "tradicaoMagias", "focoLiberado", "elementoDragao", "defesaAtributo", "rendimentos", "cofreNaCena", "majestade", "estandarte", "escolta"
 ];
 const STATUS_DE_CLASSE = ["furia", "bracos-astrais"];
 
