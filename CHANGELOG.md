@@ -1,5 +1,11 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.24.1
+
+### Bardo: tipos de dano do Heavy Metal
+- `classes.json` atualizado: o dano "sônico" virou tipos que já existem. **Estádio Lotado**: 8d6 de **Impacto**. **Dissonância**: Riff Pesado causa **Impacto** e Nu Metal **+1d6 Psíquico** (partes separadas, cada uma com a sua Redução).
+- Texto do Foco Arcano aponta para a seção de Focos Arcanos.
+
 ## 0.24.0
 
 ### Bardo, RD/PV de todos os itens e os 6 focos arcanos

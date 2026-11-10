@@ -15,7 +15,7 @@
     "sustentada": false,
     "divindade": "",
     "tipoDano": "",
-    "descricao": "Uma vez por cena, como ação completa, você gasta 8 PM e toca um solo devastador: todos os inimigos em um cone de 9 m sofrem 8d6 de dano sônico (Reflexos, CD de bardo, reduz à metade) e ficam <strong>Atordoados</strong> por 1 rodada se falharem por 5 ou mais.",
+    "descricao": "Uma vez por cena, como ação completa, você gasta 8 PM e toca um solo devastador: todos os inimigos em um cone de 9 m sofrem 8d6 de dano de Impacto (Reflexos, CD de bardo, reduz à metade) e ficam <strong>Atordoados</strong> por 1 rodada se falharem por 5 ou mais.",
     "classe": "bardo",
     "tipoPoder": "habilidade",
     "grupo": "",

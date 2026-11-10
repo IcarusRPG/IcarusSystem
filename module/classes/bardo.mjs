@@ -14,9 +14,9 @@
  * - Verso (Poesia): 1 PM; Louvor rola o dado do aliado; Escárnio: cartão com Frustrado (Vontade anula).
  * - Execução (Música): exige instrumento musical (o Mestre pode liberar); 1 PM; Cadência (+1 Defesa,
  *   +3 m, 1 rodada; Muralha de Som: RD 3 contra Corte/Perfuração/Impacto) ou Dissonância (Abalado,
- *   Vontade anula; Riff Pesado/Nu Metal: dano). flags.execucao { tipo, ativa }; Manter sem custo.
+ *   Vontade anula; Riff Pesado: Impacto; Nu Metal: Psíquico). flags.execucao { tipo, ativa }; Manter sem custo.
  * - Obra-Prima (20º): com a Chama ativa, custo em PM das habilidades de Bardo e das magias pela metade.
- * - Estádio Lotado (Heavy Metal, 15º): 8 PM, uma vez por cena, 8d6 (sônico), Reflexos reduz à metade.
+ * - Estádio Lotado (Heavy Metal, 15º): 8 PM, uma vez por cena, 8d6 de Impacto, Reflexos reduz à metade.
  * - Voz de Comando: vantagem no próximo teste do aliado marcado. Fascinar: o Mestre abre o Teste
  *   Oposto (Atuação × Vontade). Manipular: cartão com Enfeitiçado (Vontade anula).
  */
@@ -179,10 +179,13 @@ async function cartaoDaExecucao(actor, tipo) {
   const condicoes = ["abalado", ...(tem(actor, "nu-metal") ? ["frustrado"] : [])];
   await cartaoDeEfeito(actor, { id: "dissonancia", nome: loc("ICARUS.Bardo.Dissonancia"), texto: fmt("ICARUS.Bardo.DissonanciaChat", { nome: actor.name, cd }),
     efeito: { tipo: "efeito", alvo: "inimigos", duracao: { tipo: "rodadas", rodadas: 1 }, condicoes, resistencia: { atributo: "vontade", efeito: "anula" } } });
-  // Riff Pesado (Heavy Metal): 1d6 por 2 níveis (para cima) a quem falhar; Nu Metal: +1d6
-  if (tem(actor, "riff-pesado")) {
-    const dados = Math.ceil(actor.system.nivel / 2) + (tem(actor, "nu-metal") ? 1 : 0);
-    await rolarDanoAvulso({ partes: [{ formula: `${dados}d6`, tipo: "dano" }], titulo: `${loc("ICARUS.Bardo.Dissonancia")} (${loc("ICARUS.Bardo.Sonico")})`, img: actor.img, actor,
+  // Heavy Metal, a quem falhar: Riff Pesado 1d6 de Impacto por 2 níveis (para cima); Nu Metal +1d6 Psíquico
+  const partes = [
+    ...(tem(actor, "riff-pesado") ? [{ formula: `${Math.ceil(actor.system.nivel / 2)}d6`, tipo: "impacto" }] : []),
+    ...(tem(actor, "nu-metal") ? [{ formula: "1d6", tipo: "psiquico" }] : [])
+  ];
+  if (partes.length) {
+    await rolarDanoAvulso({ partes, titulo: loc("ICARUS.Bardo.Dissonancia"), img: actor.img, actor,
       flags: { magia: { id: "dissonancia", cd, resistencia: { atributo: "vontade", efeito: "anula" } } } });
   }
   if (game.user.isGM) return game.icarus.testes.abrirResistencia({ tipos: ["vontade"], pericia: "vontade", origem: loc("ICARUS.Bardo.Dissonancia"), cd });
@@ -230,7 +233,7 @@ ACOES_DE_MECANICA.set("bardo:estadio", async actor => {
   if (!ok || (await gastarPM(actor, 8)) === false) return;
   await actor.setFlag(F, "estadioUsado", true);
   await avisarNoChat(actor, fmt("ICARUS.Bardo.EstadioChat", { nome: actor.name, cd: cdDoBardo(actor) }));
-  return rolarDanoAvulso({ partes: [{ formula: "8d6", tipo: "dano" }], titulo: `${loc("ICARUS.Bardo.Estadio")} (${loc("ICARUS.Bardo.Sonico")})`, img: actor.img, actor,
+  return rolarDanoAvulso({ partes: [{ formula: "8d6", tipo: "impacto" }], titulo: loc("ICARUS.Bardo.Estadio"), img: actor.img, actor,
     flags: { magia: { id: "estadio-lotado", cd: cdDoBardo(actor), resistencia: { atributo: "reflexos", efeito: "metade" } } } });
 });
 

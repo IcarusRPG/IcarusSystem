@@ -15,7 +15,7 @@
     "sustentada": false,
     "divindade": "",
     "tipoDano": "",
-    "descricao": "Sua Execução (Cadência) passa a conceder também +1 de dano nos ataques dos aliados, e a Dissonância causa <strong>1d6 de dano sônico</strong> por 2 níveis do bardo (arredondado para cima) a quem falhar.",
+    "descricao": "Sua Execução (Cadência) passa a conceder também +1 de dano nos ataques dos aliados, e a Dissonância causa <strong>1d6 de dano de Impacto</strong> por 2 níveis do bardo (arredondado para cima) a quem falhar.",
     "classe": "bardo",
     "tipoPoder": "habilidade",
     "grupo": "",

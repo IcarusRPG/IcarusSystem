@@ -116,3 +116,33 @@ test("Obra-Prima: com a Chama ativa, magia custa metade (para cima); Talento de 
   assert.equal(r.extras.at(-1).rotulo, "ICARUS.Bardo.TalentoRotulo");
   assert.deepEqual(await perguntarBonusDeItens(ator(null, [habilidade("talento-de-palco")]), "diplomacia"), {}, "treinada: sem Talento");
 });
+
+test("Tipos de dano do Heavy Metal: Estádio Lotado 8d6 de Impacto; Dissonância com Riff Pesado (Impacto) e Nu Metal (Psíquico)", async () => {
+  const { ACOES_DE_MECANICA } = await import("../module/classes.mjs");
+  const criadas = [];
+  globalThis.ChatMessage.create = async d => { criadas.push(d); return d; };
+  globalThis.Roll = class { constructor(f) { this.formula = f; } async evaluate() { this.total = 7; return this; } };
+  globalThis.renderTemplate = async (_t, d) => JSON.stringify(d);
+  game.icarus = { testes: { abrirResistencia() {} } };
+  const flags = {};
+  const habilidade = id => ({ type: "poder", name: id, flags: { "icarus-rpg": { id: `bardo__${id}` } } });
+  const ator = {
+    name: "Bardo", img: "", uuid: "Actor.b", statuses: new Set(),
+    items: [habilidade("estadio-lotado"), habilidade("riff-pesado"), habilidade("nu-metal"), { type: "equipamento", name: "Instrumento musical", flags: { "icarus-rpg": { id: "instrumento-musical" } } }],
+    system: { nivel: 15, identidade: { classe: "bardo" }, pm: { value: 20, max: 40 }, atributos: { CAR: { total: 3 } } },
+    _source: { system: { identidade: { classe: "bardo" } } },
+    getFlag: (_s, k) => flags[k], async setFlag(_s, k, v) { flags[k] = v; }, async unsetFlag(_s, k) { delete flags[k]; },
+    async update(m) { if ("system.pm.value" in m) this.system.pm.value = m["system.pm.value"]; }
+  };
+  await ACOES_DE_MECANICA.get("bardo:estadio")(ator);
+  const estadio = criadas.find(m => m.flags?.["icarus-rpg"]?.dano);
+  assert.deepEqual(estadio.flags["icarus-rpg"].dano.componentes.map(c => c.tipo), ["impacto"]);
+  assert.equal(estadio.rolls[0].formula, "8d6");
+  assert.equal(ator.system.pm.value, 12);
+  criadas.length = 0;
+  resposta = "dissonancia";
+  await ACOES_DE_MECANICA.get("bardo:execucao")(ator);
+  const dano = criadas.find(m => m.flags?.["icarus-rpg"]?.dano);
+  assert.deepEqual(dano.flags["icarus-rpg"].dano.componentes.map(c => c.tipo), ["impacto", "psiquico"]);
+  assert.deepEqual(dano.rolls.map(r => r.formula), ["8d6", "1d6"]);
+});

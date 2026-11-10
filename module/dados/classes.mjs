@@ -5807,7 +5807,7 @@ export default {
           "id": "foco-arcano",
           "nome": "Foco Arcano",
           "nivel": 1,
-          "descricao": "Você precisa estar empunhando um foco arcano para lançar magias: um cetro, um livro, um orbe, uma varinha ou um bordão. O foco ocupa uma mão (o bordão ocupa as duas, como arma). Sem o foco em mãos, você não pode lançar magias. Sacar ou apanhar um foco é uma ação de movimento, e o Mago pode carregar um foco reserva. <strong>O foco pode ser destruído</strong> (pela manobra Quebrar ou por dano, ver <em>Quebrando Objetos</em>, seção 1); as estatísticas dele estão na tabela de armas, armaduras e escudos. Sem foco, o Mago só volta a lançar magias ao empunhar outro.",
+          "descricao": "Você precisa estar empunhando um foco arcano para lançar magias: um cetro, um livro, um orbe, uma varinha ou um bordão. O foco ocupa uma mão (o bordão ocupa as duas, como arma). Sem o foco em mãos, você não pode lançar magias. Sacar ou apanhar um foco é uma ação de movimento, e o Mago pode carregar um foco reserva. <strong>O foco pode ser destruído</strong> (pela manobra Quebrar ou por dano, ver <em>Quebrando Objetos</em>, seção 1); os focos disponíveis e as estatísticas deles estão na seção 14 (<em>Focos Arcanos</em>). Sem foco, o Mago só volta a lançar magias ao empunhar outro.",
           "custoPM": null,
           "acao": "movimento",
           "subs": []
@@ -7989,7 +7989,7 @@ export default {
             },
             {
               "nome": "Caminho da Música",
-              "descricao": "Sua arte é o som. Você precisa empunhar um <strong>instrumento musical</strong> (R$ 15, 1 espaço; sacar é ação de movimento) para usar as habilidades do Caminho. A Chama da Musa também concede o bônus aos <strong>testes de ataque</strong> dos aliados. Você ganha <strong>Execução</strong>: como ação padrão, você gasta 1 PM e toca uma melodia em alcance curto, que dura até o início do seu próximo turno, à sua escolha entre <strong>Cadência</strong> (aliados: +3 m de deslocamento e +1 de Defesa) e <strong>Dissonância</strong> (inimigos: teste de Vontade, CD = 10 + metade do seu nível + Carisma; se falhar, ficam Abalados; <em>Mental, Sônico</em>). Você pode manter a Execução no turno seguinte como ação de movimento, sem novo custo, mas só se continuar tocando (ficar Surdo ou sem o instrumento a encerra)."
+              "descricao": "Sua arte é o som. Você precisa empunhar um <strong>instrumento musical</strong> (R$ 15, 1 espaço; sacar é ação de movimento) para usar as habilidades do Caminho. A Chama da Musa também concede o bônus aos <strong>testes de ataque</strong> dos aliados. Você ganha <strong>Execução</strong>: como ação padrão, você gasta 1 PM e toca uma melodia em alcance curto, que dura até o início do seu próximo turno, à sua escolha entre <strong>Cadência</strong> (aliados: +3 m de deslocamento e +1 de Defesa) e <strong>Dissonância</strong> (inimigos: teste de Vontade, CD = 10 + metade do seu nível + Carisma; se falhar, ficam Abalados; <em>Mental</em>). Você pode manter a Execução no turno seguinte como ação de movimento, sem novo custo, mas só se continuar tocando (ficar Surdo ou sem o instrumento a encerra)."
             }
           ],
           "escolha": {
@@ -8164,7 +8164,7 @@ export default {
           "id": "riff-pesado",
           "nome": "Riff Pesado",
           "nivel": 3,
-          "descricao": "Sua Execução (Cadência) passa a conceder também +1 de dano nos ataques dos aliados, e a Dissonância causa <strong>1d6 de dano sônico</strong> por 2 níveis do bardo (arredondado para cima) a quem falhar.",
+          "descricao": "Sua Execução (Cadência) passa a conceder também +1 de dano nos ataques dos aliados, e a Dissonância causa <strong>1d6 de dano de Impacto</strong> por 2 níveis do bardo (arredondado para cima) a quem falhar.",
           "custoPM": null,
           "acao": "passivo",
           "subs": []
@@ -8182,7 +8182,7 @@ export default {
           "id": "estadio-lotado",
           "nome": "Estádio Lotado",
           "nivel": 15,
-          "descricao": "Uma vez por cena, como ação completa, você gasta 8 PM e toca um solo devastador: todos os inimigos em um cone de 9 m sofrem 8d6 de dano sônico (Reflexos, CD de bardo, reduz à metade) e ficam <strong>Atordoados</strong> por 1 rodada se falharem por 5 ou mais.",
+          "descricao": "Uma vez por cena, como ação completa, você gasta 8 PM e toca um solo devastador: todos os inimigos em um cone de 9 m sofrem 8d6 de dano de Impacto (Reflexos, CD de bardo, reduz à metade) e ficam <strong>Atordoados</strong> por 1 rodada se falharem por 5 ou mais.",
           "custoPM": 8,
           "acao": "completa",
           "subs": []
@@ -8848,7 +8848,7 @@ export default {
           "id": "nu-metal",
           "nome": "Nu Metal",
           "grupo": "Poderes de Heavy Metal",
-          "descricao": "Sua Dissonância passa a deixar <strong>Frustrados</strong> os que falharem e a causar <strong>+1d6</strong> de dano sônico.",
+          "descricao": "Sua Dissonância passa a deixar <strong>Frustrados</strong> os que falharem e a causar <strong>+1d6</strong> de dano Psíquico.",
           "prerequisito": null,
           "nivelMinimo": null,
           "custoPM": null,
