@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "armadura-de-placas"
+      "id": "armadura-de-placas",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 40,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!aKqUtceuvFEGg8GW"

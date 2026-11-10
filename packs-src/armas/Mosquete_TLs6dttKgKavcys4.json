@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "mosquete"
+      "id": "mosquete",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!TLs6dttKgKavcys4"

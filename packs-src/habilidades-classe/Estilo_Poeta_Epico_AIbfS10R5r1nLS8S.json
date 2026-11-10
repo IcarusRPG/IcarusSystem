@@ -1,0 +1,38 @@
+{
+  "_id": "AIbfS10R5r1nLS8S",
+  "name": "Estilo: Poeta Épico",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 6,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Canta feitos que ainda não aconteceram, de modo que se tornam verdade.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__estilo-poeta-epico",
+      "classe": "bardo",
+      "habilidade": "estilo-poeta-epico",
+      "inferido": false
+    }
+  },
+  "_key": "!items!AIbfS10R5r1nLS8S"
+}

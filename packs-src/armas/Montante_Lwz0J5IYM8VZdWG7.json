@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "montante"
+      "id": "montante",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!Lwz0J5IYM8VZdWG7"

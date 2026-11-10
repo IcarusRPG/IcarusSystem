@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "arco-curto"
+      "id": "arco-curto",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!DIyYXqTAlpPtc5YJ"

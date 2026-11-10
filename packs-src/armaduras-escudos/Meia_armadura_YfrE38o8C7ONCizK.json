@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "meia-armadura"
+      "id": "meia-armadura",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 40,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!YfrE38o8C7ONCizK"

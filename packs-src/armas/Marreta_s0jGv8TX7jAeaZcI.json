@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "marreta"
+      "id": "marreta",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!s0jGv8TX7jAeaZcI"

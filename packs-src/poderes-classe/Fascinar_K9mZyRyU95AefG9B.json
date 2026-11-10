@@ -1,0 +1,38 @@
+{
+  "_id": "K9mZyRyU95AefG9B",
+  "name": "Fascinar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e faz um teste de Atuação oposto ao de Vontade de uma criatura em alcance curto. Se vencer, ela fica <strong>fascinada</strong> enquanto você se concentrar (ação padrão por rodada). Um alvo hostil ou em combate recebe +5 no teste e tem direito a novo teste sempre que você se concentrar. Se passar, fica imune por um dia. <em>Mental.</em>",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__fascinar",
+      "classe": "bardo",
+      "poder": "fascinar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!K9mZyRyU95AefG9B"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "9U6lCn6ToskDdhat",
+  "name": "Estilo: Clássica",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 26,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A partitura é lei, e quem a segue tem vantagem.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__estilo-classica",
+      "classe": "bardo",
+      "habilidade": "estilo-classica",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9U6lCn6ToskDdhat"
+}

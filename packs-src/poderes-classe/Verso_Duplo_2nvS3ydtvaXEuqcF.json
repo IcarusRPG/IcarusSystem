@@ -1,0 +1,38 @@
+{
+  "_id": "2nvS3ydtvaXEuqcF",
+  "name": "Verso Duplo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Q9IUjlpryxu4UvVz",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa Verso, pode gastar +2 PM para afetar uma criatura adicional em alcance curto.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Poesia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Poesia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__verso-duplo",
+      "classe": "bardo",
+      "poder": "verso-duplo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!2nvS3ydtvaXEuqcF"
+}

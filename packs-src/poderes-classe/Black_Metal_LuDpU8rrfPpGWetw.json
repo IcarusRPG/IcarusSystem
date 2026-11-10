@@ -1,0 +1,38 @@
+{
+  "_id": "LuDpU8rrfPpGWetw",
+  "name": "Black Metal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "OMjR03llKVPIi7MM",
+  "sort": 4000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sua Dissonância passa a deixar os que falharem <strong>Apavorados</strong> por 1 rodada (Abalados nas rodadas seguintes se você mantiver a Execução), e você recebe <strong>+2 em Intimidação</strong>.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Heavy Metal",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Heavy Metal",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__black-metal",
+      "classe": "bardo",
+      "poder": "black-metal",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LuDpU8rrfPpGWetw"
+}

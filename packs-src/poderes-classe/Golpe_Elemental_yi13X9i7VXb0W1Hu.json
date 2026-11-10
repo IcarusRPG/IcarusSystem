@@ -1,0 +1,40 @@
+{
+  "_id": "yi13X9i7VXb0W1Hu",
+  "name": "Golpe Elemental",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Golpe Mágico",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, quando acerta um ataque corpo a corpo, você pode gastar 1 PM para causar <strong>1d6</strong> de dano extra de Ácido, Elétrico, Fogo ou Frio (à escolha). A cada quatro níveis, você pode gastar +1 PM para aumentar o dano em +1d6.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "golpe-magico"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__golpe-elemental",
+      "classe": "bardo",
+      "poder": "golpe-elemental",
+      "inferido": true
+    }
+  },
+  "_key": "!items!yi13X9i7VXb0W1Hu"
+}

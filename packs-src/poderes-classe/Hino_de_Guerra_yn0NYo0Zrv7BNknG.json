@@ -1,0 +1,38 @@
+{
+  "_id": "yn0NYo0Zrv7BNknG",
+  "name": "Hino de Guerra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "f4O38jEEwT5m8yKV",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM: aliados em alcance curto ganham <strong>+1d4 de dano</strong> no próximo ataque que acertarem até o fim do seu próximo turno.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Épico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Épico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__hino-de-guerra",
+      "classe": "bardo",
+      "poder": "hino-de-guerra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!yn0NYo0Zrv7BNknG"
+}

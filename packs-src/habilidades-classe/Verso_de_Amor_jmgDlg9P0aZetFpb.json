@@ -1,0 +1,38 @@
+{
+  "_id": "jmgDlg9P0aZetFpb",
+  "name": "Verso de Amor",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 3011,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Louvor passa a curar o aliado em <strong>1d6 PV</strong> por nível ímpar do bardo arredondado para cima (1d6 no 1º, 2d6 no 3º, …, até 5d6 no 9º).",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__verso-de-amor",
+      "classe": "bardo",
+      "habilidade": "verso-de-amor",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jmgDlg9P0aZetFpb"
+}

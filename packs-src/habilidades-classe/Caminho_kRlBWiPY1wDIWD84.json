@@ -1,0 +1,38 @@
+{
+  "_id": "kRlBWiPY1wDIWD84",
+  "name": "Caminho",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 1003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe um Caminho, e a escolha é permanente.<ul class=\"subs-classe\"><li><strong>Caminho da Poesia.</strong> Sua arte é a palavra. A Chama da Musa também concede o bônus aos <strong>testes de resistência</strong> dos aliados. Você ganha <strong>Verso</strong>: como ação padrão, você gasta 1 PM e fala um verso para uma criatura que possa ouvi-lo em alcance curto, à sua escolha entre <strong>Louvor</strong> (aliado: ele soma 1d6 a um teste de perícia, de resistência ou de ataque feito até o início do seu próximo turno, declarando depois de rolar; o dado aumenta para 1d8 no 5º nível, 1d10 no 11º e 1d12 no 17º) e <strong>Escárnio</strong> (inimigo: teste de Vontade, CD = 10 + metade do seu nível + Carisma; se falhar, fica Frustrado até o início do seu próximo turno; <em>Mental</em>).</li><li><strong>Caminho da Música.</strong> Sua arte é o som. Você precisa empunhar um <strong>instrumento musical</strong> (R$ 15, 1 espaço; sacar é ação de movimento) para usar as habilidades do Caminho. A Chama da Musa também concede o bônus aos <strong>testes de ataque</strong> dos aliados. Você ganha <strong>Execução</strong>: como ação padrão, você gasta 1 PM e toca uma melodia em alcance curto, que dura até o início do seu próximo turno, à sua escolha entre <strong>Cadência</strong> (aliados: +3 m de deslocamento e +1 de Defesa) e <strong>Dissonância</strong> (inimigos: teste de Vontade, CD = 10 + metade do seu nível + Carisma; se falhar, ficam Abalados; <em>Mental, Sônico</em>). Você pode manter a Execução no turno seguinte como ação de movimento, sem novo custo, mas só se continuar tocando (ficar Surdo ou sem o instrumento a encerra).</li></ul>",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__caminho",
+      "classe": "bardo",
+      "habilidade": "caminho",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kRlBWiPY1wDIWD84"
+}

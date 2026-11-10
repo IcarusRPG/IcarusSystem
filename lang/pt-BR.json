@@ -1244,7 +1244,10 @@
       "Pendentes": "Escolhas pendentes",
       "NenhumaPendente": "Nenhuma escolha pendente.",
       "Escola": "Escolha uma escola de magia.",
-      "RequerLinhagem": "{item} é só para a Linhagem {linhagem}."
+      "RequerLinhagem": "{item} é só para a Linhagem {linhagem}.",
+      "CaminhoPrimeiro": "Escolha o Caminho antes do Estilo.",
+      "EscolasTexto": "Escolha {n} escolas de magia (permanente). Obrigatória: {obrigatorias}. Você só aprende magias delas.",
+      "MagiasTexto": "Você aprende mais {n} magias das escolas que conhece: o limite de magias conhecidas sobe {n}. Arraste as magias do compêndio para a ficha."
     },
     "Assistente": {
       "TrocarTitulo": "Trocar de classe",
@@ -1639,7 +1642,8 @@
         "Tradicao": "Esta magia não é da sua lista ({tradicao}).",
         "Nivel": "Magia de {nivel}º nível: você só lança até o {max}º nível.",
         "Limite": "Você já conhece o máximo de magias ({limite}). Troque uma ao subir de nível ou no descanso (Grimório Vivo).",
-        "Mestre": "Aviso para o Mestre: {motivo} (adicionada mesmo assim)."
+        "Mestre": "Aviso para o Mestre: {motivo} (adicionada mesmo assim).",
+        "Escola": "O Bardo só aprende magias das escolas dele ({escolas})."
       }
     },
     "Arcanista": {
@@ -1748,6 +1752,53 @@
       "EscoltaAbsorve": "Escolta de {nome}",
       "EscoltaChat": "{nome} contrata uma escolta até o fim da aventura: uma vez por cena, absorve {valor} de dano dele ou de um aliado adjacente.",
       "EscoltaContratar": "Contratar escolta (local civilizado, 1 hora)"
+    },
+    "Bardo": {
+      "TalentoCampo": "Talento de Palco: 1 PM para somar o bônus de treino (+{bonus})",
+      "TalentoRotulo": "Talento de Palco",
+      "Caminho": "Caminho",
+      "Caminhos": {
+        "poesia": "Poesia",
+        "musica": "Música"
+      },
+      "ChamaRotulo": "Chama da Musa",
+      "ChamaAtiva": "Chama da Musa ativa (clique para encerrar)",
+      "ChamaAtivaInfo": "+{bonus} até o fim da cena",
+      "ChamaJaAtiva": "Só uma Chama da Musa pode estar ativa por vez.",
+      "ChamaExtra": "+2 PM para +1 no bônus (uma vez por uso)",
+      "ChamaTexto": "2 PM: você e os aliados em alcance curto recebem +{bonus} em testes de perícia até o fim da cena.",
+      "Chama": "{nome} acende a Chama da Musa: +{bonus} nos testes de perícia até o fim da cena. Marque os aliados (e você) e clique em Aplicar efeito.",
+      "ChamaPoesia": "{nome} acende a Chama da Musa (Poesia): +{bonus} nos testes de perícia e de resistência até o fim da cena. Marque os aliados e clique em Aplicar efeito.",
+      "ChamaMusica": "{nome} acende a Chama da Musa (Música): +{bonus} nos testes de perícia e de ataque até o fim da cena. Marque os aliados e clique em Aplicar efeito.",
+      "Verso": "Verso (Poesia)",
+      "VersoTexto": "1 PM. Louvor: o aliado soma {dado} a um teste até o início do seu próximo turno. Escárnio: Vontade CD {cd} ou fica Frustrado.",
+      "Louvor": "Louvor",
+      "Escarnio": "Escárnio",
+      "LouvorChat": "{nome} declama um Louvor para {alvo}: +{valor} num teste até o início do próximo turno do bardo (declarar depois de rolar).",
+      "EscarnioChat": "{nome} faz um Escárnio: Vontade CD {cd}. Quem falhar fica Frustrado até o início do próximo turno do bardo (marque e clique em Aplicar condição).",
+      "Execucao": "Execução (Música)",
+      "ExecucaoTexto": "1 PM, até o início do seu próximo turno. Cadência: aliados +1 Defesa e +3 m. Dissonância: inimigos fazem Vontade CD {cd} ou ficam Abalados.",
+      "Cadencia": "Cadência",
+      "Dissonancia": "Dissonância",
+      "Sonico": "sônico",
+      "CadenciaChat": "{nome} toca uma Cadência: aliados em alcance curto recebem +1 de Defesa e +3 m de deslocamento até o início do próximo turno do bardo (marque e clique em Aplicar efeito).",
+      "DissonanciaChat": "{nome} toca uma Dissonância: inimigos em alcance curto fazem Vontade CD {cd}; quem falhar fica Abalado (marque e clique em Aplicar condição).",
+      "SemInstrumento": "{nome} precisa de um instrumento musical para a Execução (o Mestre pode liberar na aba Classe).",
+      "SemInstrumentoCurto": "sem instrumento musical",
+      "ExecucaoEncerrada": "Sem instrumento ou Surdo: a Execução termina.",
+      "Manter": "Manter {tipo} (movimento, sem custo)",
+      "Encerrar": "Encerrar a Execução",
+      "LiberarInstrumento": "Liberar Execução sem instrumento (Mestre)",
+      "Estadio": "Estádio Lotado",
+      "EstadioUsado": "O Estádio Lotado já foi usado nesta cena.",
+      "EstadioTexto": "Ação completa, {pm} PM, uma vez por cena: cone de 9 m, 8d6 de dano sônico; Reflexos CD {cd} reduz à metade.",
+      "EstadioChat": "{nome} toca o Estádio Lotado: inimigos no cone de 9 m fazem Reflexos CD {cd} (quem passar: Metade). Quem falhar por 5 ou mais fica Atordoado por 1 rodada.",
+      "ObraPrima": "Obra-Prima",
+      "ObraPrimaInfo": "Chama ativa: habilidades de Bardo e magias custam metade do PM",
+      "VozChat": "{nome} usa a Voz de Comando: {alvo} repete o teste com vantagem.",
+      "FascinarChat": "{nome} usa Fascinar: Mestre, Teste Oposto de Atuação contra a Vontade do alvo.",
+      "Manipular": "Manipular",
+      "ManipularChat": "{nome} usa Manipular: a criatura fascinada faz Vontade CD {cd}; se falhar fica Enfeitiçada até o fim da cena."
     }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "_id": "1gQFpyo9inwMY3op",
+  "name": "Muralha de Som",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 9020,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto você mantiver uma Execução, você e os aliados em alcance curto recebem <strong>RD 3</strong> contra dano de <strong>Corte, Perfuração e Impacto</strong>.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__muralha-de-som",
+      "classe": "bardo",
+      "habilidade": "muralha-de-som",
+      "inferido": false
+    }
+  },
+  "_key": "!items!1gQFpyo9inwMY3op"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "Ci4fLAtVMq03BTaf",
+  "name": "Manipular",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Fascinar",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar 1 PM para fazer uma criatura <strong>fascinada</strong> por você ficar <strong>enfeitiçada</strong> até o fim da cena (Vontade, CD de bardo anula). Se a criatura passar, fica imune a este efeito por um dia. Usar este poder não conta como ameaça à criatura fascinada.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "fascinar"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__manipular",
+      "classe": "bardo",
+      "poder": "manipular",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Ci4fLAtVMq03BTaf"
+}

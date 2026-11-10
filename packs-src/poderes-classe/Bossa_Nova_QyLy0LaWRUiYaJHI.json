@@ -1,0 +1,38 @@
+{
+  "_id": "QyLy0LaWRUiYaJHI",
+  "name": "Bossa Nova",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "bH8bB2QmgffzMcf3",
+  "sort": 4100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você mantém uma Execução, os aliados em alcance curto recuperam <strong>1d4 PV</strong> no início de cada turno seu.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de MPB",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo MPB",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__bossa-nova",
+      "classe": "bardo",
+      "poder": "bossa-nova",
+      "inferido": false
+    }
+  },
+  "_key": "!items!QyLy0LaWRUiYaJHI"
+}

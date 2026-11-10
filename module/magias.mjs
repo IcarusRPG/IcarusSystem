@@ -9,7 +9,7 @@
  * Regras puras: module/magias-dados.mjs.
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao, ajustesDoArcanista, maximoDoPacto } from "./magias-dados.mjs";
+import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao, ajustesDoArcanista, maximoDoPacto, custoComObraPrima } from "./magias-dados.mjs";
 import { temHabilidadeNosItens, linhagemDasEscolhas } from "./classes-dados.mjs";
 import { focoEmpunhado, linhagemPrecisaDeFoco } from "./objetos-dados.mjs";
 import { areaNoMapa } from "./magias-area.mjs";
@@ -197,8 +197,15 @@ export function custoFinal(actor, item, indices) {
   const c = custoDoLancamento(item.system, indices);
   const arc = arcanistaDoAtor(actor);
   const aj = arc ? ajustesDoArcanista(item.system, arc) : { cd: 0, desconto: 0 };
-  return { ...c, total: aj.desconto ? Math.max(1, c.total - aj.desconto) : c.total, ajusteCd: aj.cd };
+  let total = aj.desconto ? Math.max(1, c.total - aj.desconto) : c.total;
+  // Obra-Prima (Bardo, 20º): com a Chama da Musa ativa, metade do custo (depois das outras reduções)
+  if (obraPrimaAtiva(actor)) total = custoComObraPrima(total);
+  return { ...c, total, ajusteCd: aj.cd };
 }
+
+/** Bardo com Obra-Prima e a Chama da Musa ativa? */
+export const obraPrimaAtiva = actor => actor?.system?.identidade?.classe === "bardo" && !!actor.getFlag?.(F, "chamaAtiva")
+  && temHabilidadeNosItens([...(actor.items ?? [])], "bardo", "obra-prima");
 
 /** Motivo (chave) para o Mago não lançar: sem foco em mãos e sem liberação do Mestre. */
 export function bloqueioDeFoco(actor) {

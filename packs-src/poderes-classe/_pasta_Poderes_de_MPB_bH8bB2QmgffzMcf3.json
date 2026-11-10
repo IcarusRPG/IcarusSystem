@@ -1,0 +1,15 @@
+{
+  "_id": "bH8bB2QmgffzMcf3",
+  "name": "Poderes de MPB",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 800,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-de-mpb"
+    }
+  },
+  "_key": "!folders!bH8bB2QmgffzMcf3"
+}

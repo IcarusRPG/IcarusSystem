@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "chicote"
+      "id": "chicote",
+      "objeto": {
+        "rd": 0,
+        "pvMax": 2,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!3YteGGqfuMeuvufE"

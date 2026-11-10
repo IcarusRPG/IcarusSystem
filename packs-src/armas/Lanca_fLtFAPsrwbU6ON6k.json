@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "lanca"
+      "id": "lanca",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!fLtFAPsrwbU6ON6k"

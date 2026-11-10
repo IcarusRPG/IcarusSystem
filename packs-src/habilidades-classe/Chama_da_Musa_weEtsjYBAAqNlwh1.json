@@ -1,0 +1,38 @@
+{
+  "_id": "weEtsjYBAAqNlwh1",
+  "name": "Chama da Musa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e inspira você e os seus aliados em alcance curto: todos recebem <strong>+1 em testes de perícia</strong> até o fim da cena. A cada nível em que a Chama aumenta (5º, 9º, 13º, 17º), o bônus sobe em +1 (máximo +5). Ao usar a Chama, você pode gastar +2 PM para aumentar o bônus em +1 (uma vez por uso). Dependendo do Caminho, a Chama também afeta outros testes (ver abaixo). Só uma Chama pode estar ativa por vez.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__chama-da-musa",
+      "classe": "bardo",
+      "habilidade": "chama-da-musa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!weEtsjYBAAqNlwh1"
+}

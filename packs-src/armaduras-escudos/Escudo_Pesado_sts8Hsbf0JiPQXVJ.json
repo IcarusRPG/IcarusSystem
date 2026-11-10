@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "escudo-pesado"
+      "id": "escudo-pesado",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 20,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!sts8Hsbf0JiPQXVJ"

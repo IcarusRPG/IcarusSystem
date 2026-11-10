@@ -1,0 +1,38 @@
+{
+  "_id": "Hu5urqHA4aoxqXP2",
+  "name": "Haicai",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "F1YabHeVtrDyH7nR",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação livre, uma vez por rodada, você pode usar Verso gastando só <strong>1 PM</strong>, mas ele só pode ser Louvor e a cura é reduzida à metade.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Lírico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Lírico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__haicai",
+      "classe": "bardo",
+      "poder": "haicai",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Hu5urqHA4aoxqXP2"
+}

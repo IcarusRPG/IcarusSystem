@@ -1,0 +1,15 @@
+{
+  "_id": "23RChukKYGQlM625",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-gerais"
+    }
+  },
+  "_key": "!folders!23RChukKYGQlM625"
+}

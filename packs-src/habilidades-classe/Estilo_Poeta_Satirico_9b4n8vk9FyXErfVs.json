@@ -1,0 +1,38 @@
+{
+  "_id": "9b4n8vk9FyXErfVs",
+  "name": "Estilo: Poeta Satírico",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 14,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ri do poderoso, e o poderoso treme.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__estilo-poeta-satirico",
+      "classe": "bardo",
+      "habilidade": "estilo-poeta-satirico",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9b4n8vk9FyXErfVs"
+}

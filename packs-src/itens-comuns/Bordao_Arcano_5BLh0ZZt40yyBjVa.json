@@ -1,0 +1,55 @@
+{
+  "_id": "5BLh0ZZt40yyBjVa",
+  "name": "Bordão Arcano",
+  "type": "arma",
+  "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Bord%C3%A3o.png",
+  "folder": "kRhtB1wumBEac1wy",
+  "sort": 600,
+  "system": {
+    "categoria": "simples",
+    "grupo": "corpo-a-corpo",
+    "empunhadura": "duas-maos",
+    "dano": "1d6",
+    "danoExtra": "1d6",
+    "criticoMargem": 20,
+    "criticoMult": 2,
+    "alcance": "corpo-a-corpo",
+    "alcanceArremesso": "",
+    "tiposDano": [
+      "impacto"
+    ],
+    "propriedades": [
+      "duas-maos",
+      "dupla"
+    ],
+    "municaoTipo": "",
+    "capacidadeDisparos": 0,
+    "carregados": 0,
+    "preco": 4500,
+    "espacos": 2,
+    "quantidade": 1,
+    "empunhada": false,
+    "proficiencia": "auto",
+    "bonusAtaque": 0,
+    "bonusDano": 0,
+    "municaoUsada": "auto",
+    "descricao": "<p>Bordão gravado para servir de foco arcano. Arma simples (1d6 / 1d6, Dupla, Impacto) de duas mãos: pode ser usado como arma e como foco ao mesmo tempo.</p><p><strong>Madeira, duas mãos:</strong> RD 5, PV 10.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "foco:bordao-arcano",
+      "focoArcano": {
+        "material": "madeira",
+        "maos": 2
+      },
+      "objeto": {
+        "rd": 5,
+        "pvMax": 10,
+        "tamanho": "medio"
+      },
+      "pvObjeto": 10
+    }
+  },
+  "_key": "!items!5BLh0ZZt40yyBjVa"
+}

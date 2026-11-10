@@ -1,0 +1,38 @@
+{
+  "_id": "sBYOtlXIWWad4oUJ",
+  "name": "Esgrima Poética",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, você pode usar Atuação no lugar de Luta nos testes de ataque com armas corpo a corpo Leves ou de uma mão.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__esgrima-poetica",
+      "classe": "bardo",
+      "poder": "esgrima-poetica",
+      "inferido": false
+    }
+  },
+  "_key": "!items!sBYOtlXIWWad4oUJ"
+}

@@ -37,7 +37,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "nunchaku"
+      "id": "nunchaku",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!0MvDm0p7ZFtIEVBK"

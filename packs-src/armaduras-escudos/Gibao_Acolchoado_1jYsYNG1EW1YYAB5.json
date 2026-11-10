@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "gibao-acolchoado"
+      "id": "gibao-acolchoado",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 20,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!1jYsYNG1EW1YYAB5"

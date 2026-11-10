@@ -1,0 +1,38 @@
+{
+  "_id": "cqSeiMqV4ZwAvtMq",
+  "name": "Renascimento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "j7mVuByBZwbSmln7",
+  "sort": 4800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sua Chama da Musa passa a ter alcance <strong>médio</strong> e dura até o fim da <strong>aventura</strong> (uma Chama por vez, e você pode encerrá-la quando quiser).",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Clássica",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Clássica",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__renascimento",
+      "classe": "bardo",
+      "poder": "renascimento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!cqSeiMqV4ZwAvtMq"
+}

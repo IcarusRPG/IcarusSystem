@@ -35,7 +35,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "besta-leve"
+      "id": "besta-leve",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 5,
+        "tamanho": "pequeno"
+      }
     }
   },
   "_key": "!items!msPABdxmgvGDQx7H"

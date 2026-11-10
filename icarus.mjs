@@ -55,6 +55,7 @@ import "./module/classes/samurai.mjs";
 import "./module/classes/monge.mjs";
 import "./module/classes/arcanista.mjs";
 import "./module/classes/nobre.mjs";
+import "./module/classes/bardo.mjs";
 import "./module/recursos.mjs";
 import { registrarMigracoes, BARRAS_DO_TOKEN } from "./module/migracoes.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";

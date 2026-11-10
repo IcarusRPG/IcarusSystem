@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "escudo-acoplado"
+      "id": "escudo-acoplado",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 20,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!ynKBrCnOUvzGFSrt"

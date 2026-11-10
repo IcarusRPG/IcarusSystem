@@ -1,0 +1,38 @@
+{
+  "_id": "APhtCeKuKhvOWifE",
+  "name": "Samba",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "bH8bB2QmgffzMcf3",
+  "sort": 4200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sua Cadência também concede <strong>+3 m de deslocamento adicionais</strong> e permite aos aliados <strong>ignorar terreno difícil</strong>.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de MPB",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo MPB",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__samba",
+      "classe": "bardo",
+      "poder": "samba",
+      "inferido": false
+    }
+  },
+  "_key": "!items!APhtCeKuKhvOWifE"
+}

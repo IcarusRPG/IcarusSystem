@@ -1,0 +1,38 @@
+{
+  "_id": "b3YUpSDDJVlQH3L6",
+  "name": "Forró",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "bH8bB2QmgffzMcf3",
+  "sort": 4400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Dois aliados à sua escolha em alcance curto, que estejam <strong>adjacentes entre si</strong>, recebem <strong>+2 em ataques e em testes de perícia</strong> enquanto permanecerem adjacentes e você mantiver a Execução.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de MPB",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo MPB",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__forro",
+      "classe": "bardo",
+      "poder": "forro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!b3YUpSDDJVlQH3L6"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "FKozmmS2m7tWcp87",
+  "name": "Contemporâneo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "j7mVuByBZwbSmln7",
+  "sort": 4700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Sua Dissonância passa a afetar <strong>também aliados de inimigos</strong> (criaturas que a CD de bardo não dissipe), e seu alcance passa a ser médio.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Clássica",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Clássica",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__contemporaneo",
+      "classe": "bardo",
+      "poder": "contemporaneo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!FKozmmS2m7tWcp87"
+}

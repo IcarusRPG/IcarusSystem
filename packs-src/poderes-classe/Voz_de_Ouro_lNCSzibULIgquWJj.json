@@ -1,0 +1,38 @@
+{
+  "_id": "lNCSzibULIgquWJj",
+  "name": "Voz de Ouro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Atuação e +2 em Diplomacia.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__voz-de-ouro",
+      "classe": "bardo",
+      "poder": "voz-de-ouro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!lNCSzibULIgquWJj"
+}

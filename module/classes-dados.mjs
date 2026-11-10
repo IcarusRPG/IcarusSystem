@@ -186,10 +186,11 @@ export const patamarDe = nivel => (PATAMARES.find(p => nivel >= p.de && nivel <=
 export const ESCOLHA_SEGUE = { "caminho-aprofundado": "caminho-do-monge", "caminho-supremo": "caminho-do-monge", "o-apice-da-senda": "senda-do-combatente" };
 
 /** Habilidades da classe com escolha entre subitens (as que não seguem outra). */
-export const habilidadesComEscolha = classe => (classe?.habilidades ?? []).filter(h => h.subs?.length && !ESCOLHA_SEGUE[h.id]);
+// Só caminhos com subitens (Heranças e Conjuração Bárdica têm subitens, mas não são escolha de caminho)
+export const habilidadesComEscolha = classe => (classe?.habilidades ?? []).filter(h => h.subs?.length && h.escolha?.tipo === "caminho" && !ESCOLHA_SEGUE[h.id]);
 
 /** Nome sem o parêntese ("Kyudo (Arco)" → "kyudo"). */
-const nucleo = nome => normalizarNome(String(nome).replace(/\(.*?\)/g, ""));
+const nucleo = nome => normalizarNome(String(nome).replace(/\(.*?\)/g, "")).replace(/[:;,.]/g, "").replace(/\s+/g, " ").trim();
 
 /**
  * Subitem escolhido de uma habilidade (índice) a partir das escolhas guardadas
@@ -218,7 +219,7 @@ export function gruposEscolhidos(classe, escolhas = {}) {
 /** O grupo exigido pelo poder ("Senda do Kyudo", "Caminho Astral") foi escolhido? */
 export function atendeGrupo(requerGrupo, grupos = []) {
   if (!requerGrupo) return true;
-  const alvo = normalizarNome(requerGrupo);
+  const alvo = nucleo(requerGrupo);
   // Palavra inteira no fim: "Linhagem do Mago" não libera "Linhagem do Mago de Sangue"
   const termina = (a, b) => a === b || a.endsWith(` ${b}`);
   return grupos.some(g => { const n = nucleo(g); return n && (termina(alvo, n) || termina(n, alvo)); });

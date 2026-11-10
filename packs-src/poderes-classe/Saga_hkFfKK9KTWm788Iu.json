@@ -1,0 +1,38 @@
+{
+  "_id": "hkFfKK9KTWm788Iu",
+  "name": "Saga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "f4O38jEEwT5m8yKV",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando um aliado em alcance curto mata uma criatura inimiga, você pode usar a sua reação e gastar 2 PM para que o aliado faça um ataque extra contra outra criatura.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Épico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Épico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__saga",
+      "classe": "bardo",
+      "poder": "saga",
+      "inferido": true
+    }
+  },
+  "_key": "!items!hkFfKK9KTWm788Iu"
+}

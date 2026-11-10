@@ -1,0 +1,38 @@
+{
+  "_id": "Qani7KEpQCrOaEIC",
+  "name": "Mártir da Piada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 9016,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura Frustrada por você ataca um aliado, você pode usar a sua reação para fazê-la atacar a si mesma ou a uma criatura adjacente à sua escolha (Vontade, CD de bardo anula).",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__martir-da-piada",
+      "classe": "bardo",
+      "habilidade": "martir-da-piada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Qani7KEpQCrOaEIC"
+}

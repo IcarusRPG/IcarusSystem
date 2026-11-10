@@ -9,16 +9,17 @@
     "tipo": "foco",
     "quantidade": 1,
     "equipado": false,
-    "espacos": 0.5,
-    "preco": 0,
-    "descricao": "<p>Foco arcano de madeira ou osso. Ocupa uma mão.</p><p><strong>Madeira ou osso:</strong> RD 5, PV 5.</p>"
+    "espacos": 1,
+    "preco": 2000,
+    "descricao": "<p>Foco arcano de madeira. Ocupa uma mão. Barata: serve bem de foco reserva.</p><p><strong>Madeira ou osso:</strong> RD 5, PV 5. Uma mão.</p>"
   },
   "effects": [],
   "flags": {
     "icarus-rpg": {
       "id": "foco:varinha",
       "focoArcano": {
-        "material": "madeira"
+        "material": "madeira",
+        "maos": 1
       },
       "objeto": {
         "rd": 5,

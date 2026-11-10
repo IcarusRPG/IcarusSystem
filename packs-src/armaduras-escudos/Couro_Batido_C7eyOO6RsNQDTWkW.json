@@ -23,7 +23,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "couro-batido"
+      "id": "couro-batido",
+      "objeto": {
+        "rd": 5,
+        "pvMax": 20,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!C7eyOO6RsNQDTWkW"

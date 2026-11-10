@@ -1,0 +1,38 @@
+{
+  "_id": "IhGX23V6tlC6KRA2",
+  "name": "Instrumento de Estimação",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "o2wX3UcDc28bFZdS",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu instrumento musical é uma obra superior: você recebe +1 em Atuação ao usá-lo e ele recebe RD 5 e PV 10 (conforme <em>Quebrando Objetos</em>).",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Música",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Música",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__instrumento-de-estimacao",
+      "classe": "bardo",
+      "poder": "instrumento-de-estimacao",
+      "inferido": false
+    }
+  },
+  "_key": "!items!IhGX23V6tlC6KRA2"
+}

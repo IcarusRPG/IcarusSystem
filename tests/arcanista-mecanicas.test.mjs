@@ -47,10 +47,11 @@ test("Critério 6: Mago sem foco não lança; com foco em mãos lança; Feiticei
   assert.ok(await executarLancamento(arcanista("feiticeiro"), bolaDeFogo));
   assert.ok(await executarLancamento(arcanista("sangue"), bolaDeFogo));
   assert.ok(await executarLancamento(arcanista("mago", [], { focoLiberado: true }), bolaDeFogo));
-  // Foco guardado (não equipado) ou destruído não vale; o Bordão empunhado vale
+  // Foco guardado (não equipado) ou destruído não vale; o Bordão Arcano empunhado vale, o Bordão comum não
   assert.equal(focoEmpunhado([{ ...foco(), system: { tipo: "foco", equipado: false } }]), null);
   assert.equal(focoEmpunhado([foco({ destruido: true })]), null);
-  assert.ok(focoEmpunhado([{ type: "arma", name: "Bordão", system: { empunhada: true }, flags: {} }]));
+  assert.ok(focoEmpunhado([{ type: "arma", name: "Bordão Arcano", system: { empunhada: true }, flags: { "icarus-rpg": { focoArcano: { material: "madeira" } } } }]));
+  assert.equal(focoEmpunhado([{ type: "arma", name: "Bordão", system: { empunhada: true }, flags: {} }]), null);
 });
 
 test("Critério 10 (foco): metal RD 10 / PV 5 com 20 de dano → 10 efetivo, destruído e fora de 'em mãos'", () => {

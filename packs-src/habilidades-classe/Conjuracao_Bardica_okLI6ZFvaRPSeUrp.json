@@ -1,0 +1,38 @@
+{
+  "_id": "okLI6ZFvaRPSeUrp",
+  "name": "Conjuração Bárdica",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você lança magias da lista <strong>Arcana</strong>, usando Carisma como atributo-chave (CD = 10 + metade do seu nível + Carisma). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º e nível 4 no 13º (o bardo <strong>não</strong> alcança o nível 5).<ul class=\"subs-classe\"><li><strong>Escolas.</strong> Você escolhe <strong>três escolas de magia</strong> (permanente): Encantamento, mais as duas que você preferir. Você só aprende magias dessas escolas.</li><li><strong>Magias conhecidas.</strong> Você conhece 2 magias no 1º nível e aprende <strong>mais 1 a cada nível par</strong> (2º, 4º, …). Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra.</li><li><strong>Armadura.</strong> Você pode lançar magias usando <strong>armadura leve</strong>.</li></ul>",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__conjuracao-bardica",
+      "classe": "bardo",
+      "habilidade": "conjuracao-bardica",
+      "inferido": false
+    }
+  },
+  "_key": "!items!okLI6ZFvaRPSeUrp"
+}

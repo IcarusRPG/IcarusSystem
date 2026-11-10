@@ -1,0 +1,38 @@
+{
+  "_id": "oiElem5JqV2wGG6L",
+  "name": "Madrigal",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "F1YabHeVtrDyH7nR",
+  "sort": 3100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 4 PM e faz uma criatura em alcance curto ficar <strong>fascinada</strong> por você por 1 rodada (Vontade, CD de bardo anula). <em>Mental.</em>",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Poeta Lírico",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Estilo Poeta Lírico",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__madrigal",
+      "classe": "bardo",
+      "poder": "madrigal",
+      "inferido": true
+    }
+  },
+  "_key": "!items!oiElem5JqV2wGG6L"
+}

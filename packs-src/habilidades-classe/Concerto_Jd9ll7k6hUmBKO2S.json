@@ -1,0 +1,38 @@
+{
+  "_id": "Jd9ll7k6hUmBKO2S",
+  "name": "Concerto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 9028,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa Execução, pode gastar +2 PM para afetar <strong>todos</strong> os aliados em alcance médio (em vez de curto) e conceder a eles <strong>+1 em testes de resistência</strong>.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__concerto",
+      "classe": "bardo",
+      "habilidade": "concerto",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Jd9ll7k6hUmBKO2S"
+}

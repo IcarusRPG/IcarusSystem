@@ -1,34 +1,597 @@
 {
-  "_leiame": "Quebrar objetos (regra oficial) e focos arcanos: fonte única. Defesa do objeto pelo tamanho (+5 se estiver em movimento); RD do material reduz todo dano e NÃO segue o teto de RD dos personagens; 0 PV ou menos = destruído (não se conserta: fabrica-se outro). Itens reduzidos têm PV ÷ 2, aumentados × 2, gigantes × 5. Focos: preço ainda não definido no Núcleo (0 = sem preço).",
-  "versao": 1,
-  "defesaPorTamanho": { "minusculo": 15, "pequeno": 12, "medio": 10, "grande": 8, "enorme": 5, "colossal": 0 },
-  "nomesTamanho": { "minusculo": "Minúsculo", "pequeno": "Pequeno", "medio": "Médio", "grande": "Grande", "enorme": "Enorme", "colossal": "Colossal" },
+  "_leiame": "Quebrar objetos (regra oficial) e focos arcanos: fonte única. Defesa do objeto pelo tamanho (+5 se estiver em movimento); RD do material reduz todo dano e NÃO segue o teto de RD dos personagens; 0 PV ou menos = destruído (não se conserta: fabrica-se outro). Itens reduzidos têm PV ÷ 2, aumentados × 2, gigantes × 5. RD/PV de armas, armaduras e escudos: tabela VALIDADA pelo Mestre (itensPorNome), aplicada por nome aos compêndios.",
+  "versao": 2,
+  "defesaPorTamanho": {
+    "minusculo": 15,
+    "pequeno": 12,
+    "medio": 10,
+    "grande": 8,
+    "enorme": 5,
+    "colossal": 0
+  },
+  "nomesTamanho": {
+    "minusculo": "Minúsculo",
+    "pequeno": "Pequeno",
+    "medio": "Médio",
+    "grande": "Grande",
+    "enorme": "Enorme",
+    "colossal": "Colossal"
+  },
   "bonusEmMovimento": 5,
-  "multiplicadorPv": { "reduzido": 0.5, "normal": 1, "aumentado": 2, "gigante": 5 },
+  "multiplicadorPv": {
+    "reduzido": 0.5,
+    "normal": 1,
+    "aumentado": 2,
+    "gigante": 5
+  },
   "objetos": [
-    { "id": "pergaminho", "nome": "Pergaminho", "tamanho": "minusculo", "rd": 0, "pv": 1 },
-    { "id": "corda", "nome": "Corda", "tamanho": "minusculo", "rd": 0, "pv": 2 },
-    { "id": "corrente", "nome": "Corrente", "tamanho": "minusculo", "rd": 10, "pv": 2 },
-    { "id": "cadeira", "nome": "Cadeira", "tamanho": "pequeno", "rd": 5, "pv": 5 },
-    { "id": "barril", "nome": "Barril", "tamanho": "medio", "rd": 5, "pv": 10 },
-    { "id": "porta-de-madeira", "nome": "Porta de madeira", "tamanho": "grande", "rd": 5, "pv": 20 },
-    { "id": "porta-de-pedra", "nome": "Porta de pedra", "tamanho": "grande", "rd": 8, "pv": 100 },
-    { "id": "porta-de-ferro", "nome": "Porta de ferro", "tamanho": "grande", "rd": 10, "pv": 100 },
-    { "id": "carroca", "nome": "Carroça", "tamanho": "grande", "rd": 5, "pv": 50 },
-    { "id": "casebre", "nome": "Casebre", "tamanho": "enorme", "rd": 5, "pv": 100 },
-    { "id": "celeiro", "nome": "Celeiro", "tamanho": "colossal", "rd": 5, "pv": 200 }
+    {
+      "id": "pergaminho",
+      "nome": "Pergaminho",
+      "tamanho": "minusculo",
+      "rd": 0,
+      "pv": 1
+    },
+    {
+      "id": "corda",
+      "nome": "Corda",
+      "tamanho": "minusculo",
+      "rd": 0,
+      "pv": 2
+    },
+    {
+      "id": "corrente",
+      "nome": "Corrente",
+      "tamanho": "minusculo",
+      "rd": 10,
+      "pv": 2
+    },
+    {
+      "id": "cadeira",
+      "nome": "Cadeira",
+      "tamanho": "pequeno",
+      "rd": 5,
+      "pv": 5
+    },
+    {
+      "id": "barril",
+      "nome": "Barril",
+      "tamanho": "medio",
+      "rd": 5,
+      "pv": 10
+    },
+    {
+      "id": "porta-de-madeira",
+      "nome": "Porta de madeira",
+      "tamanho": "grande",
+      "rd": 5,
+      "pv": 20
+    },
+    {
+      "id": "porta-de-pedra",
+      "nome": "Porta de pedra",
+      "tamanho": "grande",
+      "rd": 8,
+      "pv": 100
+    },
+    {
+      "id": "porta-de-ferro",
+      "nome": "Porta de ferro",
+      "tamanho": "grande",
+      "rd": 10,
+      "pv": 100
+    },
+    {
+      "id": "carroca",
+      "nome": "Carroça",
+      "tamanho": "grande",
+      "rd": 5,
+      "pv": 50
+    },
+    {
+      "id": "casebre",
+      "nome": "Casebre",
+      "tamanho": "enorme",
+      "rd": 5,
+      "pv": 100
+    },
+    {
+      "id": "celeiro",
+      "nome": "Celeiro",
+      "tamanho": "colossal",
+      "rd": 5,
+      "pv": 200
+    }
   ],
   "materiaisFoco": {
-    "madeira": { "nome": "Madeira ou osso", "rd": 5, "pv": 5 },
-    "metal": { "nome": "Metal", "rd": 10, "pv": 5 },
-    "livro": { "nome": "Livro ou grimório", "rd": 0, "pv": 5 }
+    "madeira": {
+      "nome": "Madeira ou osso",
+      "rd": 5,
+      "pv": 5
+    },
+    "metal": {
+      "nome": "Metal",
+      "rd": 10,
+      "pv": 5
+    },
+    "livro": {
+      "nome": "Livro ou grimório",
+      "rd": 0,
+      "pv": 5
+    }
   },
   "focos": [
-    { "id": "varinha", "nome": "Varinha", "material": "madeira", "tamanho": "minusculo", "espacos": 0.5, "descricao": "Foco arcano de madeira ou osso. Ocupa uma mão." },
-    { "id": "cetro", "nome": "Cetro", "material": "madeira", "tamanho": "minusculo", "espacos": 1, "descricao": "Foco arcano de madeira ou osso. Ocupa uma mão." },
-    { "id": "orbe", "nome": "Orbe", "material": "madeira", "tamanho": "minusculo", "espacos": 1, "descricao": "Foco arcano (orbe engastado em madeira ou osso). Ocupa uma mão." },
-    { "id": "cetro-de-metal", "nome": "Cetro de metal", "material": "metal", "tamanho": "minusculo", "espacos": 1, "descricao": "Foco arcano de metal. Ocupa uma mão." },
-    { "id": "grimorio", "nome": "Grimório", "material": "livro", "tamanho": "minusculo", "espacos": 1, "descricao": "Foco arcano: livro ou grimório. Ocupa uma mão." }
+    {
+      "id": "varinha",
+      "nome": "Varinha",
+      "material": "madeira",
+      "maos": 1,
+      "espacos": 1,
+      "preco": 20,
+      "tamanho": "minusculo",
+      "descricao": "Foco arcano de madeira. Ocupa uma mão. Barata: serve bem de foco reserva."
+    },
+    {
+      "id": "cetro-de-osso",
+      "nome": "Cetro de Osso",
+      "material": "madeira",
+      "materialNome": "Osso",
+      "maos": 1,
+      "espacos": 1,
+      "preco": 40,
+      "tamanho": "minusculo",
+      "descricao": "Foco arcano de osso. Ocupa uma mão."
+    },
+    {
+      "id": "grimorio",
+      "nome": "Grimório",
+      "material": "livro",
+      "maos": 1,
+      "espacos": 1,
+      "preco": 60,
+      "tamanho": "minusculo",
+      "descricao": "Foco arcano: livro ou grimório. Ocupa uma mão."
+    },
+    {
+      "id": "cetro-de-ferro",
+      "nome": "Cetro de Ferro",
+      "material": "metal",
+      "maos": 1,
+      "espacos": 1,
+      "preco": 90,
+      "tamanho": "minusculo",
+      "descricao": "Foco arcano de metal. Ocupa uma mão."
+    },
+    {
+      "id": "orbe-de-prata",
+      "nome": "Orbe de Prata",
+      "material": "metal",
+      "maos": 1,
+      "espacos": 1,
+      "preco": 150,
+      "tamanho": "minusculo",
+      "descricao": "Foco arcano de metal. Ocupa uma mão."
+    }
   ],
-  "focoBordao": { "material": "madeira", "nota": "O bordão (arma) também é foco arcano e ocupa as duas mãos." }
+  "categoriasArma": {
+    "madeira-leve": {
+      "rd": 5,
+      "pv": 2
+    },
+    "madeira-uma-mao": {
+      "rd": 5,
+      "pv": 5
+    },
+    "madeira-duas-maos": {
+      "rd": 5,
+      "pv": 10
+    },
+    "metal-leve": {
+      "rd": 10,
+      "pv": 2
+    },
+    "metal-uma-mao": {
+      "rd": 10,
+      "pv": 5
+    },
+    "metal-duas-maos": {
+      "rd": 10,
+      "pv": 10
+    },
+    "couro-uma-mao": {
+      "rd": 0,
+      "pv": 2
+    }
+  },
+  "itensPorNome": {
+    "armas": [
+      {
+        "nome": "Adaga",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Espada curta",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Foice",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Soqueira",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Clava",
+        "rd": 5,
+        "pv": 5,
+        "categoria": "madeira-uma-mao"
+      },
+      {
+        "nome": "Lança",
+        "rd": 5,
+        "pv": 5,
+        "categoria": "madeira-uma-mao"
+      },
+      {
+        "nome": "Maça",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Bordão",
+        "rd": 5,
+        "pv": 10,
+        "categoria": "madeira-duas-maos"
+      },
+      {
+        "nome": "Azagaia",
+        "rd": 5,
+        "pv": 5,
+        "categoria": "madeira-uma-mao"
+      },
+      {
+        "nome": "Besta leve",
+        "rd": 5,
+        "pv": 5,
+        "categoria": "madeira-uma-mao"
+      },
+      {
+        "nome": "Funda",
+        "rd": 0,
+        "pv": 2,
+        "categoria": "couro-uma-mao"
+      },
+      {
+        "nome": "Arco curto",
+        "rd": 5,
+        "pv": 10,
+        "categoria": "madeira-duas-maos"
+      },
+      {
+        "nome": "Machadinha",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Soqueira com espinhos",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Cimitarra",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Espada longa",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Florete",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Machado de batalha",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Mangual",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Martelo de guerra",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Picareta",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Tridente",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Bastão com arame",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Alabarda",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Alfange",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Gadanho",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Lança montada",
+        "rd": 5,
+        "pv": 10,
+        "categoria": "madeira-duas-maos"
+      },
+      {
+        "nome": "Machado de guerra",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Marreta",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Montante",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Arco longo",
+        "rd": 5,
+        "pv": 10,
+        "categoria": "madeira-duas-maos"
+      },
+      {
+        "nome": "Besta pesada",
+        "rd": 5,
+        "pv": 10,
+        "categoria": "madeira-duas-maos"
+      },
+      {
+        "nome": "Lâmina oculta",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Garra metálica",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Chicote",
+        "rd": 0,
+        "pv": 2,
+        "categoria": "couro-uma-mao"
+      },
+      {
+        "nome": "Espada bastarda",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Katana",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Machado Dorun",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Nunchaku",
+        "rd": 5,
+        "pv": 5,
+        "categoria": "madeira-uma-mao"
+      },
+      {
+        "nome": "Corrente de espinhos",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Naguinata",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Chakram",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Pistola",
+        "rd": 10,
+        "pv": 5,
+        "categoria": "metal-uma-mao"
+      },
+      {
+        "nome": "Pistola de cano curto",
+        "rd": 10,
+        "pv": 2,
+        "categoria": "metal-leve"
+      },
+      {
+        "nome": "Mosquete",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      },
+      {
+        "nome": "Mosquete de cano duplo",
+        "rd": 10,
+        "pv": 10,
+        "categoria": "metal-duas-maos"
+      }
+    ],
+    "armaduras": [
+      {
+        "nome": "Gibão Acolchoado",
+        "categoria": "leve",
+        "rd": 5,
+        "pv": 20
+      },
+      {
+        "nome": "Couro Batido",
+        "categoria": "leve",
+        "rd": 5,
+        "pv": 20
+      },
+      {
+        "nome": "Couro Reforçado",
+        "categoria": "leve",
+        "rd": 5,
+        "pv": 20
+      },
+      {
+        "nome": "Gibão de Escamas",
+        "categoria": "media",
+        "rd": 8,
+        "pv": 30
+      },
+      {
+        "nome": "Cota de Malha",
+        "categoria": "media",
+        "rd": 8,
+        "pv": 30
+      },
+      {
+        "nome": "Meia-armadura",
+        "categoria": "pesada",
+        "rd": 10,
+        "pv": 40
+      },
+      {
+        "nome": "Armadura de Placas",
+        "categoria": "pesada",
+        "rd": 10,
+        "pv": 40
+      },
+      {
+        "nome": "Túnica Simples",
+        "categoria": "tunica",
+        "rd": 0,
+        "pv": 10
+      },
+      {
+        "nome": "Túnica Bordada",
+        "categoria": "tunica",
+        "rd": 0,
+        "pv": 10
+      },
+      {
+        "nome": "Escudo Leve",
+        "categoria": "escudo-leve",
+        "rd": 5,
+        "pv": 10
+      },
+      {
+        "nome": "Escudo Pesado",
+        "categoria": "escudo-pesado",
+        "rd": 10,
+        "pv": 20
+      },
+      {
+        "nome": "Escudo Acoplado",
+        "categoria": "escudo-pesado",
+        "rd": 10,
+        "pv": 20
+      }
+    ]
+  },
+  "porCategoriaArmadura": {
+    "leve": {
+      "rd": 5,
+      "pv": 20
+    },
+    "media": {
+      "rd": 8,
+      "pv": 30
+    },
+    "pesada": {
+      "rd": 10,
+      "pv": 40
+    },
+    "tunica": {
+      "rd": 0,
+      "pv": 10
+    },
+    "escudo": {
+      "rd": 5,
+      "pv": 10
+    },
+    "escudo-acoplado": {
+      "rd": 10,
+      "pv": 20
+    }
+  },
+  "bordaoArcano": {
+    "id": "bordao-arcano",
+    "nome": "Bordão Arcano",
+    "armaBase": "bordao",
+    "material": "madeira",
+    "preco": 45,
+    "espacos": 2,
+    "rd": 5,
+    "pv": 10,
+    "descricao": "Bordão gravado para servir de foco arcano. Arma simples (1d6 / 1d6, Dupla, Impacto) de duas mãos: pode ser usado como arma e como foco ao mesmo tempo."
+  }
 }

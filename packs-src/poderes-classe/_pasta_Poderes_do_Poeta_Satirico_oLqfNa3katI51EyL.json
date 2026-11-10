@@ -1,0 +1,15 @@
+{
+  "_id": "oLqfNa3katI51EyL",
+  "name": "Poderes do Poeta Satírico",
+  "type": "Item",
+  "folder": "FnJkeHhm7LfpqYDL",
+  "sorting": "a",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:bardo:poderes-do-poeta-satirico"
+    }
+  },
+  "_key": "!folders!oLqfNa3katI51EyL"
+}

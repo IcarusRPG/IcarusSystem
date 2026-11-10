@@ -1,5 +1,5 @@
 import { SISTEMA_ID } from "./config.mjs";
-import { numero, comSinal } from "./regras.mjs";
+import { numero, comSinal, bonusTreino } from "./regras.mjs";
 import { rolarD20, vantagemDasFlags, minimoDasFlags } from "./combate.mjs";
 import { minimoD20DeHabilidades, temHabilidadeNosItens } from "./classes-dados.mjs";
 import { maximoDeBrio, bonusDeBrio } from "./nobre-dados.mjs";
@@ -88,15 +88,18 @@ export async function perguntarBonusDeItens(actor, chave) {
   const fechadura = chave === "prestidigitacao";
   // Brio (Nobre): PM gastos no teste, +2 cada, até o Carisma (mínimo 1)
   const maxBrio = temHabilidadeNosItens(itens, "nobre", "brio") ? maximoDeBrio(actor.system?.atributos?.CAR?.total, actor.system?.pm?.value) : 0;
-  if (!condicionais.length && !fechadura && !maxBrio) return {};
+  // Talento de Palco (Bardo): perícia não treinada, 1 PM para receber o bônus de treino
+  const talento = temHabilidadeNosItens(itens, "bardo", "talento-de-palco") && Number(actor.system?.pericias?.[chave]?.treino) === 0 && Number(actor.system?.pm?.value) >= 1;
+  if (!condicionais.length && !fechadura && !maxBrio && !talento) return {};
   const esc = t => Handlebars.escapeExpression(String(t ?? ""));
   const gazuas = temGazuas(itens);
   const caixas = condicionais.map(c => `<label class="chk"><input type="checkbox" name="bonus" value="${esc(c.id)}"> ${comSinal(c.valor)} ${esc(c.condicao)} <small>(${esc(c.origem)})</small></label>`);
   if (fechadura) caixas.push(`<label class="chk"><input type="checkbox" name="fechadura"> ${esc(game.i18n.localize("ICARUS.ItensComuns.AbrirFechadura"))} <small>(${esc(game.i18n.localize(gazuas ? "ICARUS.ItensComuns.ComGazuas" : "ICARUS.ItensComuns.SemGazuasPenalidade"))})</small></label>`);
+  const campoTalento = talento ? `<label class="chk"><input type="checkbox" name="talento"> ${esc(game.i18n.format("ICARUS.Bardo.TalentoCampo", { bonus: bonusTreino(1) }))}</label>` : "";
   const campoBrio = maxBrio ? `<label class="linha">${esc(game.i18n.format("ICARUS.Nobre.BrioCampo", { max: maxBrio }))} <input type="number" name="brio" value="0" min="0" max="${maxBrio}" step="1"></label>` : "";
   const r = await foundry.applications.api.DialogV2.wait({
     window: { title: game.i18n.format("ICARUS.ItensComuns.RolarTitulo", { pericia: game.i18n.localize(`ICARUS.Pericias.${chave}`) }) },
-    content: `<div class="icarus-uso">${caixas.length ? `<fieldset><legend>${esc(game.i18n.localize("ICARUS.ItensComuns.BonusDeItens"))}</legend>${caixas.join("")}</fieldset>` : ""}${campoBrio}</div>`,
+    content: `<div class="icarus-uso">${caixas.length ? `<fieldset><legend>${esc(game.i18n.localize("ICARUS.ItensComuns.BonusDeItens"))}</legend>${caixas.join("")}</fieldset>` : ""}${campoBrio}${campoTalento}</div>`,
     buttons: [
       { action: "rolar", label: game.i18n.localize("ICARUS.ItensComuns.Rolar"), icon: "fa-solid fa-dice-d20", default: true, callback: (ev, b) => {
         const marcados = new Set([...b.form.querySelectorAll("input[name=bonus]:checked")].map(i => i.value));
@@ -106,7 +109,9 @@ export async function perguntarBonusDeItens(actor, chave) {
         if (pen) extras.push({ valor: pen, rotulo: game.i18n.localize("ICARUS.ItensComuns.SemGazuasRotulo") });
         const brio = Math.min(maxBrio, Math.max(0, Math.trunc(Number(b.form.querySelector("input[name=brio]")?.value) || 0)));
         if (brio) extras.push({ valor: bonusDeBrio(brio), rotulo: game.i18n.format("ICARUS.Nobre.BrioRotulo", { pm: brio }) });
-        return { extras, fechadura: abrir ? { abrir, gazuas } : null, brio };
+        const comTalento = talento && !!b.form.querySelector("input[name=talento]:checked");
+        if (comTalento) extras.push({ valor: bonusTreino(1), rotulo: game.i18n.localize("ICARUS.Bardo.TalentoRotulo") });
+        return { extras, fechadura: abrir ? { abrir, gazuas } : null, brio, talento: comTalento ? 1 : 0 };
       } },
       { action: "cancelar", label: game.i18n.localize("ICARUS.Testes.Cancelar") }
     ],
@@ -143,8 +148,8 @@ export async function rolarPericia(actor, chave, opcoes = {}) {
   const deItens = opcoes.semItens ? {} : opcoes.abrirFechadura ? fechaduraMarcada(actor) : await perguntarBonusDeItens(actor, chave);
   if (!deItens) return null;
   // Brio: o PM sai depois de confirmar
-  const { brio = 0, ...semBrio } = deItens;
-  if (brio) await actor.update({ "system.pm.value": actor.system.pm.value - brio });
+  const { brio = 0, talento = 0, ...semBrio } = deItens;
+  if (brio + talento) await actor.update({ "system.pm.value": Math.max(0, actor.system.pm.value - brio - talento) });
   return rolarTeste(actor, {
     ...semBrio,
     rotulo: game.i18n.localize(`ICARUS.Pericias.${chave}`),

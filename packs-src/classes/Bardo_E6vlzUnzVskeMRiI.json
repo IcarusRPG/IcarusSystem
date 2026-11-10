@@ -1,0 +1,193 @@
+{
+  "_id": "E6vlzUnzVskeMRiI",
+  "name": "Bardo",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 1000,
+  "system": {
+    "classeId": "bardo",
+    "papel": "Suporte / Inspiração",
+    "atributoChave": "Carisma",
+    "pv": {
+      "inicial": 14,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 3,
+      "porNivel": 3,
+      "atributo": "CAR",
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "3 + Carisma por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Atuação e Vontade",
+      "escolha": 6,
+      "lista": [
+        "Acrobacia",
+        "Barganha",
+        "Concentração",
+        "Cura",
+        "Diplomacia",
+        "Enganação",
+        "Furtividade",
+        "História",
+        "Iniciativa",
+        "Intimidação",
+        "Intuição",
+        "Investigação",
+        "Luta",
+        "Misticismo",
+        "Nobreza",
+        "Pontaria",
+        "Prestidigitação",
+        "Reflexos",
+        "Religião"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armas marciais Leves ou Ágeis, armaduras leves",
+      "armas": [
+        "simples",
+        "marciais-leves-ageis"
+      ],
+      "armaduras": [
+        "leve"
+      ],
+      "escudo": false,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Conjuração Bárdica",
+          "Chama da Musa (+1)",
+          "Caminho"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Talento de Palco"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Estilo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Chama da Musa (+2)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Chama da Musa (+3)",
+          "Estilo Aprofundado"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [
+          "Chama da Musa (+4)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [
+          "Estilo Supremo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Chama da Musa (+5)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Obra-Prima"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O bardo é quem transforma a arte em arma, em remédio e em feitiço. Alguns carregam a palavra: versos que levantam um exército ou derrubam um rei. Outros carregam o som: um instrumento, um ritmo, um riff que faz o chão tremer. Nos dois casos, o que importa é que a plateia sente, e quem sente, age.</p><p>Não existe um bardo \"puro\". O poeta pode ser épico, lírico ou satírico. O músico pode ser pesado como o metal, solto como a música popular ou preciso como a clássica. O que une todos é a crença de que uma boa obra muda o resultado de uma luta.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo"
+    }
+  },
+  "_key": "!items!E6vlzUnzVskeMRiI"
+}

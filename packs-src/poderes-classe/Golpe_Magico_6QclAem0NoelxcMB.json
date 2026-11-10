@@ -1,0 +1,40 @@
+{
+  "_id": "6QclAem0NoelxcMB",
+  "name": "Golpe Mágico",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "Esgrima Poética",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sob efeito da sua Chama da Musa, sempre que você acertar um ataque corpo a corpo, recebe <strong>2 PM temporários</strong> (acumulam, até o seu nível por cena; somem ao fim da cena).",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "esgrima-poetica"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__golpe-magico",
+      "classe": "bardo",
+      "poder": "golpe-magico",
+      "inferido": true
+    }
+  },
+  "_key": "!items!6QclAem0NoelxcMB"
+}

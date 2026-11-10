@@ -38,7 +38,12 @@
   "effects": [],
   "flags": {
     "icarus-rpg": {
-      "id": "mosquete-de-cano-duplo"
+      "id": "mosquete-de-cano-duplo",
+      "objeto": {
+        "rd": 10,
+        "pvMax": 10,
+        "tamanho": "medio"
+      }
     }
   },
   "_key": "!items!jml3QcOkJwOymzJQ"

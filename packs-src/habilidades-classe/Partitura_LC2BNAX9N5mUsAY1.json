@@ -1,0 +1,38 @@
+{
+  "_id": "LC2BNAX9N5mUsAY1",
+  "name": "Partitura",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 3027,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu bônus da Chama da Musa aumenta em <strong>+1</strong> (e a Chama da Musa passa a poder ser usada como <strong>ação de movimento</strong> em vez de padrão).",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__partitura",
+      "classe": "bardo",
+      "habilidade": "partitura",
+      "inferido": true
+    }
+  },
+  "_key": "!items!LC2BNAX9N5mUsAY1"
+}

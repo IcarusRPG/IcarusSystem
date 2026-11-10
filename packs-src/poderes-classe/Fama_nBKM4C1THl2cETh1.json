@@ -1,0 +1,38 @@
+{
+  "_id": "nBKM4C1THl2cETh1",
+  "name": "Fama",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Suas apresentações o tornaram conhecido. Quando usa Atuação para impressionar uma plateia, o bônus que você recebe em perícias baseadas em Carisma aumenta para +5. Por outro lado, pode ser difícil passar despercebido em grandes cidades.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__fama",
+      "classe": "bardo",
+      "poder": "fama",
+      "inferido": false
+    }
+  },
+  "_key": "!items!nBKM4C1THl2cETh1"
+}

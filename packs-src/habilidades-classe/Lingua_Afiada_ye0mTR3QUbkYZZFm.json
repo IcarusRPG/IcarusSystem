@@ -1,0 +1,38 @@
+{
+  "_id": "ye0mTR3QUbkYZZFm",
+  "name": "Língua Afiada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 3015,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu Escárnio funciona como <strong>ação de movimento</strong> e, se o alvo falhar, também sofre <strong>–2 na Defesa</strong> até o início do seu próximo turno.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__lingua-afiada",
+      "classe": "bardo",
+      "habilidade": "lingua-afiada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ye0mTR3QUbkYZZFm"
+}

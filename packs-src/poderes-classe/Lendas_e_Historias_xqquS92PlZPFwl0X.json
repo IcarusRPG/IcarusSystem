@@ -1,0 +1,40 @@
+{
+  "_id": "xqquS92PlZPFwl0X",
+  "name": "Lendas e Histórias",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "23RChukKYGQlM625",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Inteligência 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você é um arquivo vivo de relatos, canções e folclore. Você pode gastar 1 PM para rolar novamente um teste recém-feito de História, Misticismo, Nobreza ou Religião para informação, identificar criaturas ou identificar itens mágicos.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "INT": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__lendas-e-historias",
+      "classe": "bardo",
+      "poder": "lendas-e-historias",
+      "inferido": true
+    }
+  },
+  "_key": "!items!xqquS92PlZPFwl0X"
+}

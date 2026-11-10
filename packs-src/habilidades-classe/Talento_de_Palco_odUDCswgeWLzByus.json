@@ -1,0 +1,38 @@
+{
+  "_id": "odUDCswgeWLzByus",
+  "name": "Talento de Palco",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "Ip6UpY4yloPBmdax",
+  "sort": 2002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando faz um teste de perícia em que não seja treinado, você pode gastar 1 PM para receber o bônus de treino nesse teste.",
+    "classe": "bardo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__talento-de-palco",
+      "classe": "bardo",
+      "habilidade": "talento-de-palco",
+      "inferido": true
+    }
+  },
+  "_key": "!items!odUDCswgeWLzByus"
+}

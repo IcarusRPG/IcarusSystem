@@ -1,0 +1,38 @@
+{
+  "_id": "ciPFiQFoOKVMaxHZ",
+  "name": "Solo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Bardo.png",
+  "folder": "o2wX3UcDc28bFZdS",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa Execução, pode gastar +1 PM para que ela tenha efeito só sobre você, mas com bônus dobrados.",
+    "classe": "bardo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Caminho da Música",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Caminho da Música",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "bardo__solo",
+      "classe": "bardo",
+      "poder": "solo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ciPFiQFoOKVMaxHZ"
+}
