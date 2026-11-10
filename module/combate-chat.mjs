@@ -181,6 +181,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
   const rollsExtras = [];
   let forcarAcerto = !!opcoes.forcarAcerto;
   let atributoDano = opcoes.atributoDano ?? "FOR";
+  let passosDano = 0;
   for (const mod of MODIFICADORES_ATAQUE) {
     const m = await mod({ actor, item, modo, opcoes, alvos });
     if (!m) continue;
@@ -196,6 +197,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
     if (m.rolls) rollsExtras.push(...m.rolls);
     if (m.forcarAcerto) forcarAcerto = true;
     if (m.atributoDano) atributoDano = m.atributoDano;
+    if (m.passosDano) passosDano += m.passosDano;
   }
 
   const v = vantagemDaRolagem(actor, ["ataque"], opcoes);
@@ -242,7 +244,7 @@ export async function executarAtaque(actor, item, modo, opcoes = {}) {
   });
   const mensagem = await enviar(actor, content, {
     rolls: [...rollsExtras, r.roll],
-    flags: { ataque: { actorUuid: actor.uuid, itemId: item.id, modo, podeCritico, arremessou, extrasDano, segundoSemAtributo: !!opcoes.segundoSemAtributo, outraExtremidade: !!opcoes.outraExtremidade, atributoDano } }
+    flags: { ataque: { actorUuid: actor.uuid, itemId: item.id, modo, podeCritico, arremessou, extrasDano, segundoSemAtributo: !!opcoes.segundoSemAtributo, outraExtremidade: !!opcoes.outraExtremidade, atributoDano, passosDano } }
   });
   return { roll: r.roll, d20: r.d20, total: r.total, plano, ameaca, podeCritico, resultados, mensagem };
 }
@@ -363,7 +365,7 @@ export function registrarBotoesDoChat() {
         if (marca === "danoRolado" && duasMaos) duasMaos.disabled = true;
 
         // Extras de poderes (Ataque Furtivo, Marca da Presa…) e "sem atributo" guardados no card
-        const doAtaque = { extras: dados.extrasDano ?? [], semAtributo: !!dados.segundoSemAtributo, atributo: dados.atributoDano ?? "FOR" };
+        const doAtaque = { extras: dados.extrasDano ?? [], semAtributo: !!dados.segundoSemAtributo, atributo: dados.atributoDano ?? "FOR", passosDano: dados.passosDano ?? 0 };
         if (acao === "dano") await rolarDano(ator, item, dados.modo, { ...doAtaque, duasMaos: comDuasMaos, outraExtremidade: !!dados.outraExtremidade });
         else if (acao === "critico" && dados.podeCritico) await rolarDano(ator, item, dados.modo, { ...doAtaque, duasMaos: comDuasMaos, critico: true, outraExtremidade: !!dados.outraExtremidade });
         else if (acao === "extremidade") await rolarDano(ator, item, dados.modo, { ...doAtaque, outraExtremidade: true });

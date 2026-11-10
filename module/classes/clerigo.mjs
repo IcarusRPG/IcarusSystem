@@ -17,7 +17,8 @@
  *   Atordoado por 1d4 rodadas (mesmo se imune).
  * - Palavra de Resguardo: 1d8 + SAB guardados no aliado (flags.resguardo) e tirados do próximo dano.
  * - Última Graça (1/cena): o aliado marcado a 0 PV fica com 1 PV. Fé como Escudo (1/cena): +5 no chat.
- * - Arma Consagrada: lembrete no chat (o diálogo de ataque não troca o atributo sozinho).
+ * - Arma Consagrada: até o fim da cena, a arma empunhada (flags.armaConsagrada = id) ganha no diálogo
+ *   de ataque a opção (marcada) "Arma Consagrada": Sabedoria no ataque e no dano e +1 passo de dano.
  */
 import { SISTEMA_ID } from "../config.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
@@ -26,7 +27,9 @@ import { GANCHOS_DE_PODER } from "../acoes.mjs";
 import { APOS_ESCOLHA } from "../escolhas.mjs";
 import { FIM_DA_CENA, aplicarCondicao } from "../condicoes-foundry.mjs";
 import { registrarLinhas, itemDeClasse, avisarNoChat, USO_PROPRIO } from "./comum.mjs";
-import { calcularCD } from "../combate.mjs";
+import { calcularCD, calcularAtaque } from "../combate.mjs";
+import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, itensDoAtor } from "../combate-chat.mjs";
+import { armasEmpunhadas } from "../regras-ataque.mjs";
 import { rolarDanoAvulso, rolarCura, ABSORVEDORES_DE_DANO } from "../dano.mjs";
 import { motivoParaNaoAprender } from "../magias-dados.mjs";
 import { executarLancamento } from "../magias.mjs";
@@ -303,9 +306,33 @@ GANCHOS_DE_PODER.set("clerigo__fe-como-escudo", {
 
 GANCHOS_DE_PODER.set("clerigo__arma-consagrada", {
   depois: async actor => {
-    await actor.setFlag(F, "armaConsagrada", true);
-    return avisarNoChat(actor, fmt("ICARUS.Clerigo.ArmaChat", { nome: actor.name, sab: sabedoria(actor) }));
+    // A arma empunhada agora (sem arma em mãos: vale para a próxima que atacar)
+    await actor.setFlag(F, "armaConsagrada", armasEmpunhadas(actor)[0]?.id ?? true);
+    return avisarNoChat(actor, fmt("ICARUS.Clerigo.ArmaChat", { nome: actor.name, sab: sabedoria(actor), arma: armasEmpunhadas(actor)[0]?.name ?? loc("ICARUS.Clerigo.ArmaQualquer") }));
   }
+});
+
+/** A arma do ataque é a consagrada? */
+const armaConsagrada = (actor, item) => {
+  const f = actor.getFlag?.(F, "armaConsagrada");
+  return !!f && item?.type === "arma" && (f === true || f === item.id);
+};
+
+PROVEDORES_ATAQUE.push((actor, item) => {
+  if (!armaConsagrada(actor, item)) return null;
+  return {
+    id: "arma-consagrada", titulo: loc("ICARUS.Clerigo.ArmaAtiva"),
+    campos: [{ tipo: "checkbox", nome: "armaConsagrada", valor: true, rotulo: fmt("ICARUS.Clerigo.ArmaRotulo", { sab: sabedoria(actor) }) }]
+  };
+});
+
+// Sabedoria no lugar do atributo do ataque e do dano; +1 passo no dado da arma
+MODIFICADORES_ATAQUE.push(({ actor, item, modo, opcoes }) => {
+  if (!opcoes.armaConsagrada || !armaConsagrada(actor, item)) return null;
+  const s = actor.system;
+  const atq = calcularAtaque(s, item.system, modo, itensDoAtor(actor));
+  const usado = atq.agil ? s.atributos.DES.total : s.atributos[s.pericias[atq.pericia]?.atributo]?.total ?? 0;
+  return { bonus: sabedoria(actor) - usado, atributoDano: "SAB", passosDano: 1, linhas: [loc("ICARUS.Clerigo.ArmaLinha")] };
 });
 
 /* ---------------- Fim da cena ---------------- */

@@ -1867,9 +1867,12 @@
       "UltimaGracaFeita": "Última Graça: {alvo} chegou a 0 PV e fica com 1 PV ({nome}).",
       "UltimaGracaChat": "Última Graça ({nome}): quando {alvo} chegar a 0 PV, fica com 1 PV. Marque o aliado a 0 PV para aplicar.",
       "FeEscudoChat": "Fé como Escudo ({nome}): {alvo} recebe +5 neste teste de resistência.",
-      "ArmaChat": "{nome} consagra a arma: ela fica mágica, ganha +1 passo de dano e usa Sabedoria (+{sab}) no ataque e no dano até o fim da cena (ajuste no diálogo de ataque).",
+      "ArmaChat": "{nome} consagra {arma}: ela fica mágica, emite luz como uma tocha, ganha +1 passo de dano e usa Sabedoria (+{sab}) no ataque e no dano até o fim da cena.",
       "ArmaAtiva": "Arma Consagrada",
-      "ArmaInfo": "+1 passo de dano · Sabedoria (+{sab}) no ataque e no dano"
+      "ArmaInfo": "+1 passo de dano · Sabedoria (+{sab}) no ataque e no dano",
+      "ArmaQualquer": "a próxima arma que empunhar",
+      "ArmaRotulo": "Arma Consagrada: Sabedoria (+{sab}) no ataque e no dano, +1 passo de dano",
+      "ArmaLinha": "Arma Consagrada: Sabedoria no ataque e no dano, +1 passo de dano"
     }
   }
 }

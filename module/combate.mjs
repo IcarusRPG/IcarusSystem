@@ -156,20 +156,42 @@ export function calcularAtaque(system, arma, modo, itens = []) {
 }
 
 /**
+ * Aumenta o dado de dano em "passos": 1d4 → 1d6 → 1d8 → 1d10 → 1d12 → 3d6 → 4d6 → 4d8 → 4d10 → 4d12;
+ * com mais de um dado, o tipo do dado sobe (2d4 → 2d6 … 2d12 → 3d12). Fórmula que não é um "NdX"
+ * simples fica como está.
+ */
+export function subirPasso(dado, passos = 1) {
+  let atual = String(dado ?? "").trim();
+  for (let i = 0; i < Math.max(0, Math.trunc(passos)); i++) {
+    const m = /^(\d+)d(\d+)$/i.exec(atual);
+    if (!m) return atual;
+    const n = Number(m[1]), x = Number(m[2]);
+    if (n === 1 && x < 12) atual = `1d${x < 4 ? 4 : x + 2}`;
+    else if (n === 1) atual = "3d6";
+    else if (n === 3 && x === 6) atual = "4d6";
+    else if (x < 12) atual = `${n}d${x + 2}`;
+    else atual = `${n + 1}d12`;
+  }
+  return atual;
+}
+
+/**
  * Fórmula de dano.
  * - duasMaos: usa danoExtra quando a arma tem dano de duas mãos (Espada bastarda, Katana).
  * - outraExtremidade: usa danoExtra da arma Dupla (Bordão, Corrente de espinhos).
  * - semAtributo: não soma o atributo (segundo ataque de duas armas, Rajada de Golpes).
  * - atributo: atributo somado no dano no lugar de FOR (ex.: SAB nos Braços Astrais).
+ * - passosDano: o dado da arma sobe N passos (Arma Consagrada).
  * - extras: dados extras de poderes [{ rotulo, formula, naoMultiplica? }] (Ataque Furtivo, Marca da Presa…).
  * - critico: (dados + bônus da arma + extras) × multiplicador. Extras com naoMultiplica ficam fora
  *   (regra oficial: só não multiplica o que o poder disser).
  * @returns {{ dado: string, partes: {rotulo:string, valor:number}[], formula: string, texto: string }}
  */
-export function calcularDano(system, arma, modo, { duasMaos = false, outraExtremidade = false, critico = false, semAtributo = false, atributo = "FOR", extras = [] } = {}) {
+export function calcularDano(system, arma, modo, { duasMaos = false, outraExtremidade = false, critico = false, semAtributo = false, atributo = "FOR", extras = [], passosDano = 0 } = {}) {
   const dupla = tem(arma, "dupla");
   let dado = arma.dano || "0";
   if (arma.danoExtra && ((dupla && outraExtremidade) || (!dupla && duasMaos))) dado = arma.danoExtra;
+  if (passosDano) dado = subirPasso(dado, passosDano);
 
   const partes = [];
   const valorAtributo = numero(system.atributos?.[atributo]?.total);
