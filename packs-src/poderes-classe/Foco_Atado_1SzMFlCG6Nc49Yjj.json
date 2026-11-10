@@ -1,0 +1,38 @@
+{
+  "_id": "1SzMFlCG6Nc49Yjj",
+  "name": "Foco Atado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "GI8OcgLXVR40hZDl",
+  "sort": 3700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Foco Arcano",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O seu foco não pode ser Desarmado nem tirado de você contra a sua vontade, e volta à sua mão como ação livre se estiver a até 9 m. Ele ainda pode ser destruído.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__foco-atado",
+      "classe": "arcanista",
+      "poder": "foco-atado",
+      "inferido": true
+    }
+  },
+  "_key": "!items!1SzMFlCG6Nc49Yjj"
+}

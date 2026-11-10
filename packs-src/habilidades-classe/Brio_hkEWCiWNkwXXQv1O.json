@@ -1,0 +1,38 @@
+{
+  "_id": "hkEWCiWNkwXXQv1O",
+  "name": "Brio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 1002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando faz um teste de perícia, você pode gastar uma quantidade de PM à sua escolha, limitada pelo seu Carisma (mínimo 1). Para cada PM gasto, você recebe +2 no teste.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__brio",
+      "classe": "nobre",
+      "habilidade": "brio",
+      "inferido": false
+    }
+  },
+  "_key": "!items!hkEWCiWNkwXXQv1O"
+}

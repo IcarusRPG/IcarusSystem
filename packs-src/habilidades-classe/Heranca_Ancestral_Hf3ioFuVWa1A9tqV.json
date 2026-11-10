@@ -1,0 +1,38 @@
+{
+  "_id": "Hf3ioFuVWa1A9tqV",
+  "name": "Herança Ancestral",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 1011,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha o ser ancestral que abençoou o seu sangue. A escolha é permanente e define as suas habilidades de 1º, 5º, 11º e 17º nível.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__heranca-ancestral",
+      "classe": "arcanista",
+      "habilidade": "heranca-ancestral",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Hf3ioFuVWa1A9tqV"
+}

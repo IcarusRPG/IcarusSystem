@@ -54,6 +54,12 @@ test("Compêndio: árvore Divinas/Arcanas/Sangue → níveis, ids estáveis e te
   assert.equal(new Set(a.itens.map(i => i._id)).size, copias);
   assert.equal(new Set(a.itens.map(i => i.flags["icarus-rpg"].id)).size, 200);
   const pastaDe = id => a.pastas.find(p => p._id === id);
+  // Dissipar Magia nas três tradições (uma cópia por pasta, ids diferentes, o mesmo id de magia)
+  const dissipar = a.itens.filter(i => i.flags["icarus-rpg"].id === "dissipar-magia");
+  assert.deepEqual(dissipar.map(d => pastaDe(pastaDe(d.folder).folder).name).sort(), ["Arcanas", "Divinas", "Sangue"]);
+  assert.equal(new Set(dissipar.map(d => d._id)).size, 3);
+  const porTradicao = t => dados.magias.filter(m => m.tradicoes.includes(t)).length;
+  assert.deepEqual([porTradicao("arcana"), porTradicao("divina"), porTradicao("sangue")], [97, 79, 51]);
   const bolaDoc = a.itens.find(i => i.flags["icarus-rpg"].id === "bola-de-fogo");
   assert.equal(pastaDe(bolaDoc.folder).name, "3º Nível");
   assert.equal(pastaDe(pastaDe(bolaDoc.folder).folder).name, "Arcanas");

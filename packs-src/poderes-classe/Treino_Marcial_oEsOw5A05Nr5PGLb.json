@@ -1,0 +1,38 @@
+{
+  "_id": "oEsOw5A05Nr5PGLb",
+  "name": "Treino Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe proficiência com armas marciais.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__treino-marcial",
+      "classe": "arcanista",
+      "poder": "treino-marcial",
+      "inferido": false
+    }
+  },
+  "_key": "!items!oEsOw5A05Nr5PGLb"
+}

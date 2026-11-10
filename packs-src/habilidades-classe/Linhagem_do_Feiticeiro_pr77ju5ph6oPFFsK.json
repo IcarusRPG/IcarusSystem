@@ -1,0 +1,38 @@
+{
+  "_id": "pr77ju5ph6oPFFsK",
+  "name": "Linhagem do Feiticeiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 9,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O Feiticeiro nasceu com a mana. O sangue dele guarda a bênção de um ser ancestral que o mundo já não vê: dragões, leviatãs, fênix. A herança é uma só e define o que ele faz de especial.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__linhagem-do-feiticeiro",
+      "classe": "arcanista",
+      "habilidade": "linhagem-do-feiticeiro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!pr77ju5ph6oPFFsK"
+}

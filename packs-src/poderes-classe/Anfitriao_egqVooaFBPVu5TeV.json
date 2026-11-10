@@ -1,0 +1,38 @@
+{
+  "_id": "egqVooaFBPVu5TeV",
+  "name": "Anfitrião",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao chegar a uma cidade ou comunidade civilizada onde o seu nome tenha alguma influência, você e um número de aliados igual ao seu Carisma são recebidos com hospedagem e refeições sem custo (a critério do Mestre).",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__anfitriao",
+      "classe": "nobre",
+      "poder": "anfitriao",
+      "inferido": false
+    }
+  },
+  "_key": "!items!egqVooaFBPVu5TeV"
+}

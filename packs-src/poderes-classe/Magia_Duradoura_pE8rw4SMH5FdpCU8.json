@@ -1,0 +1,38 @@
+{
+  "_id": "pE8rw4SMH5FdpCU8",
+  "name": "Magia Duradoura",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia sustentada, você pode gastar 2 PM adicionais para que ela dure até o fim da cena sem que você precise pagar 1 PM por turno. Você só pode usar este poder uma vez por magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__magia-duradoura",
+      "classe": "arcanista",
+      "poder": "magia-duradoura",
+      "inferido": true
+    }
+  },
+  "_key": "!items!pE8rw4SMH5FdpCU8"
+}

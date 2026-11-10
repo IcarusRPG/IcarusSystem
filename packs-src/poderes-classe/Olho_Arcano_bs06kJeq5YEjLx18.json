@@ -1,0 +1,38 @@
+{
+  "_id": "bs06kJeq5YEjLx18",
+  "name": "Olho Arcano",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura lança uma magia que você possa ver ou ouvir, você sabe qual é a magia e o nível dela (ação livre). Você recebe +2 nos testes de Contra-Magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__olho-arcano",
+      "classe": "arcanista",
+      "poder": "olho-arcano",
+      "inferido": true
+    }
+  },
+  "_key": "!items!bs06kJeq5YEjLx18"
+}

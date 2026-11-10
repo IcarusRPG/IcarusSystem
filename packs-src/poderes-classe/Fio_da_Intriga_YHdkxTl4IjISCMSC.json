@@ -1,0 +1,38 @@
+{
+  "_id": "YHdkxTl4IjISCMSC",
+  "name": "Fio da Intriga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM. Uma criatura inteligente em alcance curto faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, fica Frustrada até o fim da cena. <em>Mental.</em>",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__fio-da-intriga",
+      "classe": "nobre",
+      "poder": "fio-da-intriga",
+      "inferido": true
+    }
+  },
+  "_key": "!items!YHdkxTl4IjISCMSC"
+}

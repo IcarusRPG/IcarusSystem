@@ -1,0 +1,15 @@
+{
+  "_id": "L5mKjYxt1ZdyFvFN",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "R2fcPGbFGhlukzXb",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:arcanista:poderes-comuns"
+    }
+  },
+  "_key": "!folders!L5mKjYxt1ZdyFvFN"
+}

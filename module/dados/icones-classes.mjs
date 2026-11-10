@@ -7,5 +7,7 @@ export default {
   "ladino": "Ladino.png",
   "patrulheiro": "Patrulheiro.png",
   "monge": "Monge.png",
-  "pistoleiro": "Pistoleiro.png"
+  "pistoleiro": "Pistoleiro.png",
+  "arcanista": "Arcanista.png",
+  "nobre": "Nobre.png"
 };

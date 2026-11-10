@@ -1,0 +1,38 @@
+{
+  "_id": "w8pbDrUtSsHKfAAE",
+  "name": "Contra-Magia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "conhecer a magia Dissipar Magia",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura que você enxerga, em alcance médio, lança uma magia, você pode gastar a sua reação e uma quantidade de PM igual ao custo de uma magia do mesmo nível (1, 3, 6, 10 ou 15) e fazer um teste de Misticismo contra CD 15 + 2 × o nível da magia. Se passar, a magia falha sem efeito (o conjurador gasta os PM normalmente). Se falhar, os seus PM são perdidos. Este poder é opcional, como todos os outros.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__contra-magia",
+      "classe": "arcanista",
+      "poder": "contra-magia",
+      "inferido": true
+    }
+  },
+  "_key": "!items!w8pbDrUtSsHKfAAE"
+}

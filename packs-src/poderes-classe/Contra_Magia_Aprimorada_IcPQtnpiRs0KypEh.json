@@ -1,0 +1,40 @@
+{
+  "_id": "IcPQtnpiRs0KypEh",
+  "name": "Contra-Magia Aprimorada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Contra-Magia",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você soma +5 nos testes de Contra-Magia e, quando anula uma magia, recupera metade dos PM gastos (arredondado para baixo).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "contra-magia"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__contra-magia-aprimorada",
+      "classe": "arcanista",
+      "poder": "contra-magia-aprimorada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!IcPQtnpiRs0KypEh"
+}

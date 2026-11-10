@@ -1,0 +1,38 @@
+{
+  "_id": "5lcFLiuIBJy5xNCb",
+  "name": "Interceder",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um aliado adjacente é alvo de um ataque, você pode gastar 1 PM e a sua reação para ser o alvo do ataque no lugar dele.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__interceder",
+      "classe": "nobre",
+      "poder": "interceder",
+      "inferido": true
+    }
+  },
+  "_key": "!items!5lcFLiuIBJy5xNCb"
+}

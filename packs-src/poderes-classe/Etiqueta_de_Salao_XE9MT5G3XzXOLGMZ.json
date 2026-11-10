@@ -1,0 +1,38 @@
+{
+  "_id": "XE9MT5G3XzXOLGMZ",
+  "name": "Etiqueta de Salão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar 1 PM para rolar novamente um teste recém-realizado de Diplomacia, Intuição ou Nobreza.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__etiqueta-de-salao",
+      "classe": "nobre",
+      "poder": "etiqueta-de-salao",
+      "inferido": true
+    }
+  },
+  "_key": "!items!XE9MT5G3XzXOLGMZ"
+}

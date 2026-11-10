@@ -1,0 +1,38 @@
+{
+  "_id": "UDSM6quVCKR6LSNX",
+  "name": "Corpo Fluido",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Herança de Leviatã",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em testes contra a manobra Agarrar e em testes para se livrar da condição Enredado.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__corpo-fluido",
+      "classe": "arcanista",
+      "poder": "corpo-fluido",
+      "inferido": false
+    }
+  },
+  "_key": "!items!UDSM6quVCKR6LSNX"
+}

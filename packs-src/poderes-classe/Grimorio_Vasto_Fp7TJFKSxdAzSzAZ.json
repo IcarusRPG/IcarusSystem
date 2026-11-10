@@ -1,0 +1,38 @@
+{
+  "_id": "Fp7TJFKSxdAzSzAZ",
+  "name": "Grimório Vasto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "GI8OcgLXVR40hZDl",
+  "sort": 3800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Grimório Vivo",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao usar o Grimório Vivo, você pode trocar até 3 magias.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__grimorio-vasto",
+      "classe": "arcanista",
+      "poder": "grimorio-vasto",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Fp7TJFKSxdAzSzAZ"
+}

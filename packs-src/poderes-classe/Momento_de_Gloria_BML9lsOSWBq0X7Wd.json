@@ -1,0 +1,40 @@
+{
+  "_id": "BML9lsOSWBq0X7Wd",
+  "name": "Momento de Glória",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 5,
+    "prerequisito": "Palavra de Encorajamento, 8º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, você pode gastar 5 PM para que um aliado em alcance curto ganhe uma ação padrão adicional no próximo turno dele. Você só pode usar esta habilidade uma vez por cena em cada aliado.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "palavra-de-encorajamento"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__momento-de-gloria",
+      "classe": "nobre",
+      "poder": "momento-de-gloria",
+      "inferido": true
+    }
+  },
+  "_key": "!items!BML9lsOSWBq0X7Wd"
+}

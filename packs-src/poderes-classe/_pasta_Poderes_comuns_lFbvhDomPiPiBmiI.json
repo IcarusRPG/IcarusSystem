@@ -1,0 +1,15 @@
+{
+  "_id": "lFbvhDomPiPiBmiI",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "HOqyU7rqM0OoSEQe",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:nobre:poderes-comuns"
+    }
+  },
+  "_key": "!folders!lFbvhDomPiPiBmiI"
+}

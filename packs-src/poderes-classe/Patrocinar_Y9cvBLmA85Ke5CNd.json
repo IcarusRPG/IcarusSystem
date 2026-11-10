@@ -1,0 +1,38 @@
+{
+  "_id": "Y9cvBLmA85Ke5CNd",
+  "name": "Patrocinar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 3300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Rendimentos",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você paga R$ igual a 20 × o seu nível e toca um aliado. Até o início do seu próximo turno, ele recebe +2 em todos os testes de perícia e de ataque.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__patrocinar",
+      "classe": "nobre",
+      "poder": "patrocinar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Y9cvBLmA85Ke5CNd"
+}

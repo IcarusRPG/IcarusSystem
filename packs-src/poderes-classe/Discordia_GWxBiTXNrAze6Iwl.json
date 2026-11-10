@@ -1,0 +1,38 @@
+{
+  "_id": "GWxBiTXNrAze6Iwl",
+  "name": "Discórdia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 4 PM. Uma criatura inteligente em alcance curto faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Se falhar, na próxima ação dela ela ataca a criatura aliada dela mais próxima; se não houver, ela perde a ação. Uma mesma criatura só sofre este efeito uma vez por cena. <em>Mental. Pré-requisito: Fio da Intriga, 10º nível.</em>",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__discordia",
+      "classe": "nobre",
+      "poder": "discordia",
+      "inferido": true
+    }
+  },
+  "_key": "!items!GWxBiTXNrAze6Iwl"
+}

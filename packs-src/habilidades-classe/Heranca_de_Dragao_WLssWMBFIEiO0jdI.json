@@ -1,0 +1,38 @@
+{
+  "_id": "WLssWMBFIEiO0jdI",
+  "name": "Herança de Dragão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 12,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha um elemento: Fogo, Frio, Elétrico ou Ácido. Essa é a energia dos seus dons de dragão.<ul class=\"subs-classe\"><li><strong>Escamas Dracônicas (1º nível).</strong> Enquanto não estiver usando armadura nem escudo, você recebe +2 na Defesa.</li><li><strong>Sopro do Dragão (5º nível, Dom da Linhagem).</strong> Como ação padrão, você gasta 4 PM e sopra um cone de 6 m. Cada criatura na área faz um teste de Reflexos (CD das suas magias): falha, sofre 4d6 de dano do seu elemento; sucesso, metade. O dano aumenta para 6d6 no 11º nível e para 8d6 no 17º.</li><li><strong>Alma do Elemento (11º nível, Dom Aprofundado).</strong> Você recebe Redução de dano 5 contra o seu elemento. Uma vez por rodada, ao causar dano do seu elemento com uma magia ou com o Sopro, você causa 1d6 de dano adicional.</li><li><strong>Forma do Dragão (17º nível, Dom Supremo).</strong> Como ação de movimento, você gasta 6 PM e assume uma forma dracônica até o fim da cena. Você ganha deslocamento de voo igual ao seu deslocamento, e o Sopro do Dragão não custa PM (uma vez por rodada).</li></ul>",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__heranca-de-dragao",
+      "classe": "arcanista",
+      "habilidade": "heranca-de-dragao",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WLssWMBFIEiO0jdI"
+}

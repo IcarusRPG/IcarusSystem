@@ -1,0 +1,40 @@
+{
+  "_id": "bZBvJQCfQg4EnrSD",
+  "name": "Voz Sedutora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "Eloquência, 8º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar uma ação padrão e 4 PM para gerar o efeito da magia Enfeitiçar Pessoa em todos os humanoides em alcance curto (CD = 10 + metade do seu nível + Carisma). Esta não é uma habilidade mágica: vem da sua capacidade de influenciar as pessoas.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "eloquencia"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__voz-sedutora",
+      "classe": "nobre",
+      "poder": "voz-sedutora",
+      "inferido": true
+    }
+  },
+  "_key": "!items!bZBvJQCfQg4EnrSD"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "WD7nYVWL4UUgCqIg",
+  "name": "Linhagem",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe uma linhagem, e a escolha é permanente. Cada linhagem concede uma habilidade agora, outra no 5º nível (Dom da Linhagem), outra no 11º (Dom Aprofundado) e a final no 17º (Dom Supremo), além de poderes próprios.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__linhagem",
+      "classe": "arcanista",
+      "habilidade": "linhagem",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WD7nYVWL4UUgCqIg"
+}

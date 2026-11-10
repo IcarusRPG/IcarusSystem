@@ -1,0 +1,38 @@
+{
+  "_id": "EPCVuKTNGPLFXLVW",
+  "name": "Majestade Plena",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "16º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A Majestade passa a funcionar contra qualquer criatura com valor de Inteligência (inclusive animais, embora continue sem funcionar contra criaturas sem Inteligência). Além disso, você pode usá-la mais de uma vez contra uma mesma criatura na mesma cena.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": 16,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__majestade-plena",
+      "classe": "nobre",
+      "poder": "majestade-plena",
+      "inferido": false
+    }
+  },
+  "_key": "!items!EPCVuKTNGPLFXLVW"
+}

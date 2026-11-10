@@ -1,0 +1,38 @@
+{
+  "_id": "TiKDrm41uvyO8FuB",
+  "name": "Resposta Afiada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você passa em um teste de resistência contra um efeito mental causado por uma criatura, você pode gastar 1 PM e a sua reação. A criatura faz um teste de Vontade (CD = 10 + metade do seu nível + Carisma) ou fica Frustrada até o início do próximo turno dela.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__resposta-afiada",
+      "classe": "nobre",
+      "poder": "resposta-afiada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!TiKDrm41uvyO8FuB"
+}

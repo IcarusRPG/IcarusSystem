@@ -1,0 +1,38 @@
+{
+  "_id": "WICMzsDiE2qJRZSK",
+  "name": "Transmutar Elemento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia que causa dano de Fogo, Frio, Elétrico ou Ácido, você pode gastar 1 PM para trocar o tipo desse dano por um destes outros três. Você só pode usar este poder uma vez por magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__transmutar-elemento",
+      "classe": "arcanista",
+      "poder": "transmutar-elemento",
+      "inferido": true
+    }
+  },
+  "_key": "!items!WICMzsDiE2qJRZSK"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "9rqOpTk23irUoKRx",
+  "name": "Educação Privilegiada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna treinado em duas perícias da lista de perícias do Nobre à sua escolha, caso não seja treinado nelas.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__educacao-privilegiada",
+      "classe": "nobre",
+      "poder": "educacao-privilegiada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9rqOpTk23irUoKRx"
+}

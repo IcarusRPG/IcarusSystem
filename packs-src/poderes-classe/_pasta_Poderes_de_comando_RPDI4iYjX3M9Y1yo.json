@@ -1,0 +1,15 @@
+{
+  "_id": "RPDI4iYjX3M9Y1yo",
+  "name": "Poderes de comando",
+  "type": "Item",
+  "folder": "HOqyU7rqM0OoSEQe",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:nobre:poderes-de-comando"
+    }
+  },
+  "_key": "!folders!RPDI4iYjX3M9Y1yo"
+}

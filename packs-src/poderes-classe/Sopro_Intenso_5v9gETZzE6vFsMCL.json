@@ -1,0 +1,38 @@
+{
+  "_id": "5v9gETZzE6vFsMCL",
+  "name": "Sopro Intenso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Herança de Dragão, 9º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O cone do Sopro do Dragão aumenta para 9 m e o dano aumenta em 2d6.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__sopro-intenso",
+      "classe": "arcanista",
+      "poder": "sopro-intenso",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5v9gETZzE6vFsMCL"
+}

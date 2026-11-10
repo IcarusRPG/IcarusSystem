@@ -1,0 +1,38 @@
+{
+  "_id": "OeuUpqyaW6mepanl",
+  "name": "Sangue Frio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "vVmFLBjJeB3LAr2c",
+  "sort": 5100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em testes de Constituição para remover a condição Sangrando e +2 em Fortitude.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago de Sangue",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago de Sangue",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__sangue-frio",
+      "classe": "arcanista",
+      "poder": "sangue-frio",
+      "inferido": false
+    }
+  },
+  "_key": "!items!OeuUpqyaW6mepanl"
+}

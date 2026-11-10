@@ -1,0 +1,38 @@
+{
+  "_id": "kVRq7WViShnvRIN0",
+  "name": "Rendimentos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 3004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você passa a receber dinheiro da sua família, de um patrono ou dos seus negócios. Uma vez por aventura, faça um teste de Carisma com bônus igual ao seu nível. Você recebe uma quantia em Reais igual ao resultado do teste, em porcentagem, da Riqueza inicial do seu nível (seção 14). Por exemplo, um nobre de 5º nível (Riqueza inicial R$ 1.800) que tire 20 no teste recebe 20% de R$ 1.800, ou seja, R$ 360. Esta habilidade depende da sua relação com a família ou os negócios e de onde você está: um nobre isolado nos ermos dificilmente recebe dinheiro.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__rendimentos",
+      "classe": "nobre",
+      "habilidade": "rendimentos",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kVRq7WViShnvRIN0"
+}

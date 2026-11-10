@@ -1,0 +1,190 @@
+{
+  "_id": "mAPeWsKaA8TYsjcD",
+  "name": "Nobre",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 900,
+  "system": {
+    "classeId": "nobre",
+    "papel": "Líder / Diplomata",
+    "atributoChave": "Carisma",
+    "pv": {
+      "inicial": 16,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "4 por nível"
+    },
+    "pericias": {
+      "obrigatorias": "Vontade e (Diplomacia ou Intimidação)",
+      "escolha": 4,
+      "lista": [
+        "Adestramento",
+        "Atuação",
+        "Barganha",
+        "Cavalgar",
+        "Diplomacia",
+        "Enganação",
+        "Fortitude",
+        "História",
+        "Iniciativa",
+        "Intimidação",
+        "Intuição",
+        "Investigação",
+        "Luta",
+        "Nobreza",
+        "Pontaria"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas marciais, armaduras pesadas, escudos, túnicas",
+      "armas": [
+        "simples",
+        "marciais"
+      ],
+      "armaduras": [
+        "pesada"
+      ],
+      "escudo": true,
+      "tunicas": true
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Postura Altiva",
+          "Dote",
+          "Brio"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Palavra Cortante (2d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Rendimentos"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [
+          "Brado de Comando"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [
+          "Palavra Cortante (4d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [
+          "Majestade"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Palavra Cortante (6d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [
+          "Palavra Cortante (8d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [
+          "Palavra Cortante (10d6)"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Coroação"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>Há quem nasça com um nome que abre portas, e quem o conquiste. O nobre é quem aprendeu que o nome pesa tanto quanto a espada: uma palavra dita na hora certa decide uma guerra, um favor cobrado vale um exército, e uma entrada bem feita faz o salão inteiro se calar. O que une todos os nobres é a certeza de que mandar é um ofício, e ele treinou para isso.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre"
+    }
+  },
+  "_key": "!items!mAPeWsKaA8TYsjcD"
+}

@@ -76,8 +76,75 @@ export function parseObrigatorias(texto) {
 /** Nível em que a habilidade é recebida (null no JSON = 1º nível, ex.: Restrição de Equipamento). */
 export const nivelDaHabilidade = h => h.nivel ?? 1;
 
-/** Habilidades da classe recebidas até um nível (uma por habilidade; versões por nível ficam na descrição). */
-export const habilidadesAteNivel = (classe, nivel) => (classe?.habilidades ?? []).filter(h => nivelDaHabilidade(h) <= nivel);
+/* ------------------------------ Ramos (Linhagem, Herança) ------------------------------ */
+
+/**
+ * Caminhos sem subitens (Linhagem do Arcanista, Herança Ancestral): cada opção tem uma habilidade
+ * "marcador" sem nível cujo nome termina com a opção ("Linhagem do Mago", "Herança de Dragão").
+ * Marcador SEM subitens abre um bloco: as habilidades seguintes (até o próximo bloco) são daquela
+ * opção. Marcador COM subitens vale só para si (os subitens ficam na descrição do item).
+ * @returns {Map<string, {habilidade:string, indice:number}[]>}  id da habilidade → condições
+ */
+export function condicoesDasHabilidades(classe) {
+  const caminhos = (classe?.habilidades ?? []).filter(h => h.escolha?.tipo === "caminho" && !h.subs?.length);
+  const mapa = new Map();
+  if (!caminhos.length) return mapa;
+  const marcadorDe = h => {
+    if (h.nivel !== null && h.nivel !== undefined) return null;
+    const n = normalizarNome(h.nome);
+    for (const c of caminhos) {
+      const indice = c.escolha.opcoes.findIndex(o => n.endsWith(` ${normalizarNome(o)}`));
+      if (indice >= 0) return { habilidade: c.id, indice };
+    }
+    return null;
+  };
+  let bloco = null;
+  for (const h of classe.habilidades) {
+    const m = marcadorDe(h);
+    if (m && !h.subs?.length) { bloco = m; mapa.set(h.id, [m]); continue; }
+    const conds = [bloco, m].filter(Boolean);
+    if (conds.length) mapa.set(h.id, conds);
+  }
+  return mapa;
+}
+
+/** A habilidade está liberada pelas escolhas ({ [habilidadeId]: índice })? */
+export const habilidadeLiberada = (condicoes = [], escolhas = {}) => condicoes.every(c => escolhas?.[c.habilidade] === c.indice);
+
+/** Habilidade marcador da opção escolhida num caminho sem subitens ("Linhagem do Mago"), ou null. */
+export function marcadorDaOpcao(classe, habilidadeId, indice) {
+  for (const [id, conds] of condicoesDasHabilidades(classe)) {
+    const h = classe.habilidades.find(x => x.id === id);
+    if ((h.nivel === null || h.nivel === undefined) && conds.at(-1)?.habilidade === habilidadeId && conds.at(-1)?.indice === indice) return h;
+  }
+  return null;
+}
+
+/**
+ * Habilidades da classe recebidas até um nível (uma por habilidade; versões por nível ficam na descrição).
+ * As de um ramo (Linhagem, Herança) só entram com a opção escolhida.
+ */
+export function habilidadesAteNivel(classe, nivel, escolhas = {}) {
+  const condicoes = condicoesDasHabilidades(classe);
+  return (classe?.habilidades ?? []).filter(h => nivelDaHabilidade(h) <= nivel && habilidadeLiberada(condicoes.get(h.id), escolhas));
+}
+
+/** Linhagem do Arcanista: "mago" | "feiticeiro" | "sangue" (ou null antes de escolher). */
+export const LINHAGENS = ["mago", "feiticeiro", "sangue"];
+export const linhagemDasEscolhas = escolhas => LINHAGENS[escolhas?.linhagem] ?? null;
+
+/**
+ * PM pela linhagem (classes.json pm.porLinhagem): (base + atributo) × nível. Sem linhagem, a
+ * fórmula padrão da classe (3 + INT). Devolve os campos do classeConfig.
+ */
+export function pmDaLinhagem(classe, linhagem) {
+  const l = classe?.pm?.porLinhagem?.[linhagem];
+  if (!l) return { pmInicial: classe?.pm?.inicial ?? 0, pmPorNivel: classe?.pm?.porNivel ?? 0, pmAtributo: classe?.pm?.atributo ?? null };
+  return { pmInicial: l.base, pmPorNivel: l.base, pmAtributo: l.atributo };
+}
+
+/** Tradição da lista de magias pela linhagem (Mago e Feiticeiro: Arcana; Mago de Sangue: Sangue). */
+export const tradicaoDaLinhagem = linhagem => (linhagem === "sangue" ? "sangue" : linhagem ? "arcana" : null);
 
 /** Quantos poderes de classe a classe concede até o nível (linhas com poder: true). */
 export const poderesConcedidosAteNivel = (classe, nivel) => (classe?.progressao ?? []).filter(p => p.poder && p.nivel <= nivel).length;
@@ -134,19 +201,27 @@ export function escolhaDaHabilidade(habId, escolhas = {}) {
   return Number.isInteger(i) ? i : null;
 }
 
-/** Nomes dos grupos liberados pelas escolhas (ex.: "Caminho Astral", "Kyudo (Arco)"). */
+/** Nomes dos grupos liberados pelas escolhas (ex.: "Caminho Astral", "Kyudo (Arco)", "Linhagem do Mago"). */
 export function gruposEscolhidos(classe, escolhas = {}) {
-  return habilidadesComEscolha(classe).map(h => {
+  const comSubs = habilidadesComEscolha(classe).map(h => {
     const i = escolhaDaHabilidade(h.id, escolhas);
     return i === null ? null : h.subs[i]?.nome;
-  }).filter(Boolean);
+  });
+  // Caminhos sem subitens: o nome do marcador da opção ("Linhagem do Mago")
+  const semSubs = (classe?.habilidades ?? []).filter(h => h.escolha?.tipo === "caminho" && !h.subs?.length).map(h => {
+    const i = escolhas?.[h.id];
+    return Number.isInteger(i) ? marcadorDaOpcao(classe, h.id, i)?.nome ?? h.escolha.opcoes[i] : null;
+  });
+  return [...comSubs, ...semSubs].filter(Boolean);
 }
 
 /** O grupo exigido pelo poder ("Senda do Kyudo", "Caminho Astral") foi escolhido? */
 export function atendeGrupo(requerGrupo, grupos = []) {
   if (!requerGrupo) return true;
   const alvo = normalizarNome(requerGrupo);
-  return grupos.some(g => { const n = nucleo(g); return n && (alvo === n || alvo.includes(n) || n.includes(alvo)); });
+  // Palavra inteira no fim: "Linhagem do Mago" não libera "Linhagem do Mago de Sangue"
+  const termina = (a, b) => a === b || a.endsWith(` ${b}`);
+  return grupos.some(g => { const n = nucleo(g); return n && (termina(alvo, n) || termina(n, alvo)); });
 }
 
 /* ------------------------------ Pré-requisitos dos poderes ------------------------------ */

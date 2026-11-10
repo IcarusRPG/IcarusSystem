@@ -1,0 +1,38 @@
+{
+  "_id": "79U4U6oO2KFNTi6f",
+  "name": "Véu de Mana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando é alvo de um ataque, você pode gastar 2 PM e a sua reação para receber +4 na Defesa contra esse ataque.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__veu-de-mana",
+      "classe": "arcanista",
+      "poder": "veu-de-mana",
+      "inferido": true
+    }
+  },
+  "_key": "!items!79U4U6oO2KFNTi6f"
+}

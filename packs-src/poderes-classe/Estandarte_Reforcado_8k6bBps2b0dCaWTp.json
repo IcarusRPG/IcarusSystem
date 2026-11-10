@@ -1,0 +1,40 @@
+{
+  "_id": "8k6bBps2b0dCaWTp",
+  "name": "Estandarte Reforçado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Estandarte da Família, 12º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O seu Estandarte da Família passa a ter RD 10 e 20 PV, e o alcance dos efeitos dele aumenta em 3 m.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 12,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "estandarte-da-familia"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__estandarte-reforcado",
+      "classe": "nobre",
+      "poder": "estandarte-reforcado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!8k6bBps2b0dCaWTp"
+}

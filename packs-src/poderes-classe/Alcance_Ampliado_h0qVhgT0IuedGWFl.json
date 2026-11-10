@@ -1,0 +1,38 @@
+{
+  "_id": "h0qVhgT0IuedGWFl",
+  "name": "Alcance Ampliado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia, você pode gastar 1 PM para aumentar o alcance um passo: de toque para curto, de curto para médio, de médio para longo. Você só pode usar este poder uma vez por magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__alcance-ampliado",
+      "classe": "arcanista",
+      "poder": "alcance-ampliado",
+      "inferido": true
+    }
+  },
+  "_key": "!items!h0qVhgT0IuedGWFl"
+}

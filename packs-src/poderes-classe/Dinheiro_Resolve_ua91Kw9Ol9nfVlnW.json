@@ -1,0 +1,38 @@
+{
+  "_id": "ua91Kw9Ol9nfVlnW",
+  "name": "Dinheiro Resolve",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 3600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Rendimentos, 14º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando você ou um aliado em alcance curto falha em um teste de perícia ou de resistência, você pode gastar uma reação e pagar R$ igual a 100 × o seu nível para que a criatura role o teste novamente e fique com o melhor resultado.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": 14,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__dinheiro-resolve",
+      "classe": "nobre",
+      "poder": "dinheiro-resolve",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ua91Kw9Ol9nfVlnW"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "0OJVoHNOcwdy76uc",
+  "name": "Magia Instintiva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, você lança uma magia que conhece, de nível 1 ou 2, sem pagar o custo em PM.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__magia-instintiva",
+      "classe": "arcanista",
+      "poder": "magia-instintiva",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0OJVoHNOcwdy76uc"
+}

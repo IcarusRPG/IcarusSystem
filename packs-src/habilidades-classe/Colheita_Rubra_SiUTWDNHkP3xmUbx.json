@@ -1,0 +1,38 @@
+{
+  "_id": "SiUTWDNHkP3xmUbx",
+  "name": "Colheita Rubra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 17020,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 6,
+    "prerequisito": "",
+    "nivel": 17,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM. Cada criatura Sangrando em alcance curto faz um teste de Fortitude (CD das suas magias): falha, sofre 6d6 de dano de Trevas; sucesso, metade. Você recupera PV igual à metade do dano total causado.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 17,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__colheita-rubra",
+      "classe": "arcanista",
+      "habilidade": "colheita-rubra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!SiUTWDNHkP3xmUbx"
+}

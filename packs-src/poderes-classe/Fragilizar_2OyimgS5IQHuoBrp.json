@@ -1,0 +1,38 @@
+{
+  "_id": "2OyimgS5IQHuoBrp",
+  "name": "Fragilizar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia que permite teste de resistência, você pode gastar 1 PM para impor –2 nesse teste ao alvo (ou a um alvo à sua escolha, se houver vários). Você só pode usar este poder uma vez por magia.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__fragilizar",
+      "classe": "arcanista",
+      "poder": "fragilizar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!2OyimgS5IQHuoBrp"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "WixgLytHX86e7IZh",
+  "name": "Evasão Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 3100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "11º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando passa em um teste de Reflexos contra um efeito que causaria metade do dano, você não sofre nenhum dano. Se falhar, sofre apenas metade.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 11,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__evasao-arcana",
+      "classe": "arcanista",
+      "poder": "evasao-arcana",
+      "inferido": false
+    }
+  },
+  "_key": "!items!WixgLytHX86e7IZh"
+}

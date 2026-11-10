@@ -1,0 +1,15 @@
+{
+  "_id": "HOqyU7rqM0OoSEQe",
+  "name": "Nobre",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 900000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:nobre"
+    }
+  },
+  "_key": "!folders!HOqyU7rqM0OoSEQe"
+}

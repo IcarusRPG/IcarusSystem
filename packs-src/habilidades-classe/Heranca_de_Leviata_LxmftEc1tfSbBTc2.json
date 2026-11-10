@@ -1,0 +1,38 @@
+{
+  "_id": "LxmftEc1tfSbBTc2",
+  "name": "Herança de Leviatã",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 13,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Os leviatãs eram monstros primordiais dos mares, mais antigos que os continentes. Diz-se que as marés ainda obedecem ao sangue deles.<ul class=\"subs-classe\"><li><strong>Pele das Profundezas (1º nível).</strong> Você respira debaixo d'água, nada com o seu deslocamento normal, recebe Redução de Frio 3 e +2 em Atletismo.</li><li><strong>Maré Voraz (5º nível, Dom da Linhagem).</strong> Como ação padrão, você gasta 4 PM e faz tentáculos de água gelada brotarem em uma esfera de 3 m de raio, em alcance curto. Cada criatura na área faz um teste de Reflexos (CD das suas magias): falha, sofre 4d6 de dano de Frio e fica Enredada até o fim do seu próximo turno; sucesso, metade e não fica Enredada. O dano aumenta para 6d6 no 11º nível e para 8d6 no 17º.</li><li><strong>Corrente Abissal (11º nível, Dom Aprofundado).</strong> Uma vez por rodada, ao causar dano de Frio com uma magia ou com a Maré Voraz, você deixa o alvo Lento até o fim do próximo turno dele.</li><li><strong>Forma do Leviatã (17º nível, Dom Supremo).</strong> Como ação de movimento, você gasta 6 PM e assume a forma de um monstro marinho até o fim da cena. A Maré Voraz não custa PM (uma vez por rodada), o raio dela aumenta em 3 m, e criaturas que ficarem Enredadas por ela sofrem 2d6 de dano de Frio no início de cada turno delas, enquanto estiverem Enredadas.</li></ul>",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__heranca-de-leviata",
+      "classe": "arcanista",
+      "habilidade": "heranca-de-leviata",
+      "inferido": false
+    }
+  },
+  "_key": "!items!LxmftEc1tfSbBTc2"
+}

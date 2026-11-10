@@ -1,0 +1,38 @@
+{
+  "_id": "mj3CqJU27RZIhPBY",
+  "name": "Estandarte da Família",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e ergue o estandarte da sua família: um item de 1 espaço que você carrega ou crava no chão em um espaço adjacente. Até o fim da cena, você e os seus aliados a até 9 m do estandarte recebem +1 nos testes de ataque e +2 em testes de resistência contra medo. Só um estandarte pode estar erguido por vez. Se ele for derrubado ou destruído, o efeito termina. O estandarte é um objeto Pequeno (Defesa 12, RD 5, PV 10) e pode ser alvo da manobra Quebrar ou de ataques.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__estandarte-da-familia",
+      "classe": "nobre",
+      "poder": "estandarte-da-familia",
+      "inferido": true
+    }
+  },
+  "_key": "!items!mj3CqJU27RZIhPBY"
+}

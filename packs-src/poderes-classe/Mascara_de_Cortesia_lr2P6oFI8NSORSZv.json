@@ -1,0 +1,38 @@
+{
+  "_id": "lr2P6oFI8NSORSZv",
+  "name": "Máscara de Cortesia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +5 em Enganação para mentir e para esconder as suas intenções. Uma vez por cena, quando alguém tenta descobrir que você mente (Intuição), você pode forçá-lo a rolar o teste duas vezes e ficar com o pior resultado.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__mascara-de-cortesia",
+      "classe": "nobre",
+      "poder": "mascara-de-cortesia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!lr2P6oFI8NSORSZv"
+}

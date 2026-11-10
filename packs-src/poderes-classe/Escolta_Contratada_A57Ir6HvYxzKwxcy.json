@@ -1,0 +1,38 @@
+{
+  "_id": "A57Ir6HvYxzKwxcy",
+  "name": "Escolta Contratada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 3500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Rendimentos, 8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando está em um local civilizado, você pode gastar uma hora e R$ igual a 10% da Riqueza inicial do seu nível para contratar uma escolta que o acompanha até o fim da aventura. Uma vez por cena, quando você ou um aliado adjacente sofreria dano, a escolta absorve uma quantidade desse dano igual a 3 × o seu nível.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__escolta-contratada",
+      "classe": "nobre",
+      "poder": "escolta-contratada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!A57Ir6HvYxzKwxcy"
+}

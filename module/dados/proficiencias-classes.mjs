@@ -78,5 +78,24 @@ export default {
     ],
     "escudo": false,
     "tunicas": false
+  },
+  "arcanista": {
+    "armas": [
+      "simples"
+    ],
+    "armaduras": [],
+    "escudo": false,
+    "tunicas": true
+  },
+  "nobre": {
+    "armas": [
+      "simples",
+      "marciais"
+    ],
+    "armaduras": [
+      "pesada"
+    ],
+    "escudo": true,
+    "tunicas": true
   }
 };

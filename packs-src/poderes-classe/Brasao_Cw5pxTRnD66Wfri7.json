@@ -1,0 +1,38 @@
+{
+  "_id": "Cw5pxTRnD66Wfri7",
+  "name": "Brasão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você adquire um título de nobreza. Converse com o Mestre para definir os benefícios exatos. Como regra geral, no início de cada aventura você recebe R$ igual a 5% da Riqueza inicial do seu nível (rendimentos do seu título) ou o auxílio de um membro da sua corte, a critério do Mestre.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__brasao",
+      "classe": "nobre",
+      "poder": "brasao",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Cw5pxTRnD66Wfri7"
+}

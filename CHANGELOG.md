@@ -1,5 +1,15 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.19.0
+
+### Arcanista e Nobre (dados, Linhagem, escolhas, túnicas)
+- **classes.json** com 9 classes: **Arcanista** (21 habilidades, 53 poderes) e **Nobre** (8, 38), com ícones. **magias.json**: Dissipar Magia também na tradição Sangue (Arcana 97, Divina 79, Sangue 51).
+- **Linhagem do Arcanista** (1º, permanente): Mago, Feiticeiro ou Mago de Sangue. Só as habilidades e os poderes da linhagem escolhida aparecem; o PM vira (base + atributo) × nível (Mago e Mago de Sangue 3 + INT, Feiticeiro 4 + CAR) e a conjuração usa INT ou CAR. Antes de escolher: 3 + INT e aviso na aba Classe.
+- **Herança Ancestral** só para o Feiticeiro (Dragão, Leviatã, Fênix).
+- Novas telas de escolha: **escola de magia** (Escola Predileta, Segunda Escola, sem repetir), **tipo de dano** sem repetir o tipo (Mestre do Elemento; Proteção Elemental dá Redução 3 do tipo), **perícias de uma lista** (Erudito Arcano, repetível, cada vez uma diferente).
+- **Túnicas:** Arcanista e Nobre têm proficiência (túnica continua não sendo armadura).
+- Grupos de poderes: "Linhagem do Mago" não libera mais os poderes da "Linhagem do Mago de Sangue".
+
 ## 0.18.0
 
 ### Magias — área no mapa

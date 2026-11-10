@@ -1,0 +1,38 @@
+{
+  "_id": "xcUnY2fJ9AmDEk8L",
+  "name": "Reflexos Mágicos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Reflexos e em Iniciativa.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__reflexos-magicos",
+      "classe": "arcanista",
+      "poder": "reflexos-magicos",
+      "inferido": false
+    }
+  },
+  "_key": "!items!xcUnY2fJ9AmDEk8L"
+}

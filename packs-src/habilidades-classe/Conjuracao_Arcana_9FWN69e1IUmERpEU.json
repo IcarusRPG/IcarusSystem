@@ -1,0 +1,38 @@
+{
+  "_id": "9FWN69e1IUmERpEU",
+  "name": "Conjuração Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você lança magias gastando PM, como descrito na seção 17. A CD das suas magias é 10 + metade do seu nível + o seu atributo-chave. Você só lança magias de um nível quando atinge o nível de personagem indicado na tabela (1º, 5º, 9º, 13º e 17º para os níveis de magia 1 a 5). Magias conhecidas: o Mago e o Mago de Sangue conhecem 3 magias no 1º nível e +1 a cada nível; o Feiticeiro conhece 3 no 1º nível e +1 a cada nível ímpar a partir do 3º. O Mago e o Feiticeiro usam a lista Arcana; o Mago de Sangue, a lista de Sangue. Toda magia aprendida deve ser de um nível que você já possa lançar, e ao subir de nível você pode trocar uma magia conhecida por outra da sua lista.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__conjuracao-arcana",
+      "classe": "arcanista",
+      "habilidade": "conjuracao-arcana",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9FWN69e1IUmERpEU"
+}

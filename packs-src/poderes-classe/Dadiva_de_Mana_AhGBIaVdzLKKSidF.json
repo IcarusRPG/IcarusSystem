@@ -1,0 +1,38 @@
+{
+  "_id": "AhGBIaVdzLKKSidF",
+  "name": "Dádiva de Mana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você toca uma criatura e transfere para ela até metade do seu nível (mínimo 2) em PM seus. Ela recupera essa quantidade de PM, sem passar do máximo.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__dadiva-de-mana",
+      "classe": "arcanista",
+      "poder": "dadiva-de-mana",
+      "inferido": true
+    }
+  },
+  "_key": "!items!AhGBIaVdzLKKSidF"
+}

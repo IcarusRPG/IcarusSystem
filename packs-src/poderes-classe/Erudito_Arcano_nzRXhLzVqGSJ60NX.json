@@ -1,0 +1,38 @@
+{
+  "_id": "nzRXhLzVqGSJ60NX",
+  "name": "Erudito Arcano",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna treinado em uma perícia baseada em Inteligência à sua escolha (História, Investigação, Misticismo ou Nobreza), caso não seja treinado nela. Você pode escolher este poder várias vezes, cada vez para uma perícia diferente.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__erudito-arcano",
+      "classe": "arcanista",
+      "poder": "erudito-arcano",
+      "inferido": false
+    }
+  },
+  "_key": "!items!nzRXhLzVqGSJ60NX"
+}

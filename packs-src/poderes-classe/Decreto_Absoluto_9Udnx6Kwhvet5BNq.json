@@ -1,0 +1,38 @@
+{
+  "_id": "9Udnx6Kwhvet5BNq",
+  "name": "Decreto Absoluto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "cARPeGw2dQXeAut5",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 8,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e dá uma ordem de uma palavra (como \"Parem\", \"Fujam\", \"Ajoelhem\" ou \"Larguem\"). As criaturas inteligentes à sua escolha em alcance curto fazem um teste de Vontade (CD = 10 + metade do seu nível + Carisma). Quem falhar obedece à ordem no próximo turno. Ordens que causem dano à própria criatura são ignoradas. <em>Mental. Pré-requisito: 16º nível.</em>",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de corte e intriga",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__decreto-absoluto",
+      "classe": "nobre",
+      "poder": "decreto-absoluto",
+      "inferido": true
+    }
+  },
+  "_key": "!items!9Udnx6Kwhvet5BNq"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "p80tBJWl0JPtCYK7",
+  "name": "Canalização Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia que causa dano, você soma o seu atributo-chave de conjuração ao dano total que ela causa (uma vez por alvo, e não por dado).",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__canalizacao-arcana",
+      "classe": "arcanista",
+      "poder": "canalizacao-arcana",
+      "inferido": false
+    }
+  },
+  "_key": "!items!p80tBJWl0JPtCYK7"
+}

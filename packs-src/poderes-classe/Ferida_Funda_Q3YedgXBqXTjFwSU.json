@@ -1,0 +1,38 @@
+{
+  "_id": "Q3YedgXBqXTjFwSU",
+  "name": "Ferida Funda",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "vVmFLBjJeB3LAr2c",
+  "sort": 4900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Ferida Aberta",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O dano do Sangrando que você causa com a Ferida Aberta aumenta para 2d6 por turno.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Mago de Sangue",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Mago de Sangue",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__ferida-funda",
+      "classe": "arcanista",
+      "poder": "ferida-funda",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Q3YedgXBqXTjFwSU"
+}

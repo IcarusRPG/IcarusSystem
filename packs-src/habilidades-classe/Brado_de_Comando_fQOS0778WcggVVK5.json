@@ -1,0 +1,38 @@
+{
+  "_id": "fQOS0778WcggVVK5",
+  "name": "Brado de Comando",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 4005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 4,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta uma quantidade de PM à sua escolha, limitada pelo seu Carisma. Até o início do seu próximo turno, todos os seus aliados em alcance curto recebem um bônus nos testes de perícia igual à quantidade de PM gasta.",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__brado-de-comando",
+      "classe": "nobre",
+      "habilidade": "brado-de-comando",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fQOS0778WcggVVK5"
+}

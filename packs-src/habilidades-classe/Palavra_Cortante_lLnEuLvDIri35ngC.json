@@ -1,0 +1,38 @@
+{
+  "_id": "lLnEuLvDIri35ngC",
+  "name": "Palavra Cortante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "i2gBagL4Hs1NL8yf",
+  "sort": 2003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 1 PM e faz um teste de Diplomacia ou Intimidação, oposto ao teste de Vontade de uma criatura inteligente em alcance curto (Inteligência –3 ou maior). Se vencer, você causa 2d6 de dano Psíquico não letal à criatura; se perder, causa metade. Se a criatura for reduzida a 0 PV, em vez de cair Inconsciente ela se rende (se você usou Diplomacia) ou fica Apavorada e foge de você da maneira mais eficiente possível (se usou Intimidação). Dano não letal nunca deixa a criatura Morrendo. O dano aumenta para 4d6 no 6º nível, 6d6 no 10º, 8d6 no 14º e 10d6 no 18º. <em>Mental.</em>",
+    "classe": "nobre",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__palavra-cortante",
+      "classe": "nobre",
+      "habilidade": "palavra-cortante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!lLnEuLvDIri35ngC"
+}

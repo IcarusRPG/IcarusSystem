@@ -1,0 +1,38 @@
+{
+  "_id": "YXrq4RRrOMmtgWxE",
+  "name": "Saber Ampliado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "kmyK9SJVhjAiTHrA",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende 2 magias adicionais da sua lista, de níveis que possa lançar.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__saber-ampliado",
+      "classe": "arcanista",
+      "poder": "saber-ampliado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!YXrq4RRrOMmtgWxE"
+}

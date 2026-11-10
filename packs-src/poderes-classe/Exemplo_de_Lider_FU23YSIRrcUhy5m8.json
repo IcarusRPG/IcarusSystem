@@ -1,0 +1,38 @@
+{
+  "_id": "FU23YSIRrcUhy5m8",
+  "name": "Exemplo de Líder",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar 2 PM para servir de inspiração. Até o início do seu próximo turno, sempre que você passar em um teste de perícia, aliados em alcance curto que fizerem um teste da mesma perícia podem usar o resultado do seu teste em vez de fazer o próprio.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__exemplo-de-lider",
+      "classe": "nobre",
+      "poder": "exemplo-de-lider",
+      "inferido": true
+    }
+  },
+  "_key": "!items!FU23YSIRrcUhy5m8"
+}

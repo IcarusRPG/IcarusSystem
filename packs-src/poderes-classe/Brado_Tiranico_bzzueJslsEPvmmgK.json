@@ -1,0 +1,38 @@
+{
+  "_id": "bzzueJslsEPvmmgK",
+  "name": "Brado Tirânico",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "RPDI4iYjX3M9Y1yo",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "completa",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar a Palavra Cortante como ação completa, em vez de padrão. Se fizer isso, os seus dados de dano aumentam para d8 e você atinge todos os inimigos em alcance curto.",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de comando",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__brado-tiranico",
+      "classe": "nobre",
+      "poder": "brado-tiranico",
+      "inferido": true
+    }
+  },
+  "_key": "!items!bzzueJslsEPvmmgK"
+}

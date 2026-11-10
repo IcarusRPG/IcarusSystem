@@ -1,0 +1,38 @@
+{
+  "_id": "Tn8SYnivq1VL7zWt",
+  "name": "Presença Ancestral",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "z60odIaN6HDAQgnM",
+  "sort": 4100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Diplomacia, Enganação e Intimidação.",
+    "classe": "arcanista",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Linhagem do Feiticeiro",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Linhagem do Feiticeiro",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__presenca-ancestral",
+      "classe": "arcanista",
+      "poder": "presenca-ancestral",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Tn8SYnivq1VL7zWt"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "t8i2VCKzsApWWhWy",
+  "name": "Pacto de Sangue",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Arcanista.png",
+  "folder": "ibcIasmqOybDo6gS",
+  "sort": 1017,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao lançar uma magia, você pode pagar parte do custo em PV: cada 1 PM do custo pode ser trocado por 2 PV. Você só pode trocar até metade do custo da magia (arredondado para cima). Esses PV são <strong>perda de PV</strong>, não dano (não são reduzidos por RD nem por PV temporários), e você não pode usar o Pacto se isso fosse reduzir os seus PV a 0 ou menos.",
+    "classe": "arcanista",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "arcanista__pacto-de-sangue",
+      "classe": "arcanista",
+      "habilidade": "pacto-de-sangue",
+      "inferido": true
+    }
+  },
+  "_key": "!items!t8i2VCKzsApWWhWy"
+}

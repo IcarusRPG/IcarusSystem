@@ -1,0 +1,40 @@
+{
+  "_id": "PQdv6RgtR5KrKTYv",
+  "name": "Bolsa Aberta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Nobre.png",
+  "folder": "jnGo7LChLdMVIUrG",
+  "sort": 3200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Cofre da Família, 10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Cada 1 PM pago com o Cofre da Família custa só 5 × o seu nível em Reais (em vez de 10 ×).",
+    "classe": "nobre",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de influência e riqueza",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "cofre-da-familia"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "nobre__bolsa-aberta",
+      "classe": "nobre",
+      "poder": "bolsa-aberta",
+      "inferido": true
+    }
+  },
+  "_key": "!items!PQdv6RgtR5KrKTYv"
+}
