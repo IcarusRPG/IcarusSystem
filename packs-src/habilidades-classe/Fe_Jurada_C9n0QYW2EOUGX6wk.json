@@ -1,0 +1,38 @@
+{
+  "_id": "C9n0QYW2EOUGX6wk",
+  "name": "Fé Jurada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "rb6ZvmvPX7n8gGjN",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna devoto de <strong>uma divindade do Panteão</strong> (seção 16), e a escolha é permanente. Ao contrário dos devotos comuns, você recebe <strong>os três Poderes Concedidos</strong> da sua divindade, e deve seguir os <strong>Dogmas e Restrições</strong> dela. Se você agir contra um Dogma, a <strong>primeira vez</strong> você perde <strong>todos os seus PM por 1d4 dias</strong>. Na <strong>segunda vez</strong>, a divindade o abandona e você se torna um <strong>Anátema</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__fe-jurada",
+      "classe": "clerigo",
+      "habilidade": "fe-jurada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!C9n0QYW2EOUGX6wk"
+}

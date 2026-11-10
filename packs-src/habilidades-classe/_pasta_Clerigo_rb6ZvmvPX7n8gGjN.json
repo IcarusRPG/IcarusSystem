@@ -1,0 +1,15 @@
+{
+  "_id": "rb6ZvmvPX7n8gGjN",
+  "name": "Clérigo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:clerigo"
+    }
+  },
+  "_key": "!folders!rb6ZvmvPX7n8gGjN"
+}

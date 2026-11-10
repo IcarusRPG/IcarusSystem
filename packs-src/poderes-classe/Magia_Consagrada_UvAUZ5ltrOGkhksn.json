@@ -1,0 +1,38 @@
+{
+  "_id": "UvAUZ5ltrOGkhksn",
+  "name": "Magia Consagrada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando lança uma magia divina que causa dano, você pode gastar +1 PM para mudar o tipo de dano da magia para <strong>Essência</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__magia-consagrada",
+      "classe": "clerigo",
+      "poder": "magia-consagrada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!UvAUZ5ltrOGkhksn"
+}

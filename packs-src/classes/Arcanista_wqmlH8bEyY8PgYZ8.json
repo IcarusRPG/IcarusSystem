@@ -15,11 +15,11 @@
       "atributo": "CON"
     },
     "pm": {
-      "inicial": 3,
-      "porNivel": 3,
+      "inicial": 5,
+      "porNivel": 5,
       "atributo": "INT",
-      "atributoSoNoPrimeiroNivel": false,
-      "texto": "Mago e Mago de Sangue: 3 + Inteligência por nível. Feiticeiro: 4 + Carisma por nível"
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "Mago e Mago de Sangue: 5 + Inteligência no 1º nível; +5 por nível seguinte. Feiticeiro: 6 + Carisma no 1º nível; +6 por nível seguinte"
     },
     "pericias": {
       "obrigatorias": "Misticismo e Vontade",

@@ -1,0 +1,38 @@
+{
+  "_id": "59yI1qUK8GcfOr7E",
+  "name": "Intervenção Divina",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "rb6ZvmvPX7n8gGjN",
+  "sort": 10003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 5,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 5 PM e pede ajuda diretamente à sua divindade, descrevendo o que precisa. O Mestre decide como ela responde: o pedido deve respeitar os Dogmas e o tom da divindade, e pode reproduzir o efeito de qualquer magia divina ou Poder Concedido, ou algo ainda mais amplo, a critério do Mestre. Role <strong>1d100</strong>: se o resultado for <strong>igual ou menor que o seu nível de clérigo</strong>, a divindade responde. Se der certo, você não pode usar a Intervenção Divina de novo por <strong>7 dias</strong>. Se der errado, você pode tentar de novo depois de uma noite de descanso (pagando os 5 PM outra vez). No <strong>20º nível</strong>, a Intervenção Divina funciona <strong>automaticamente</strong>, sem rolar o dado. <em>Divino.</em>",
+    "classe": "clerigo",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__intervencao-divina",
+      "classe": "clerigo",
+      "habilidade": "intervencao-divina",
+      "inferido": true
+    }
+  },
+  "_key": "!items!59yI1qUK8GcfOr7E"
+}

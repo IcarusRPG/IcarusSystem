@@ -1,0 +1,38 @@
+{
+  "_id": "An5bskOj02FsB2VR",
+  "name": "Teologia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende duas magias divinas de qualquer nível que possa lançar. Você pode escolher este poder quantas vezes quiser.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__teologia",
+      "classe": "clerigo",
+      "poder": "teologia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!An5bskOj02FsB2VR"
+}

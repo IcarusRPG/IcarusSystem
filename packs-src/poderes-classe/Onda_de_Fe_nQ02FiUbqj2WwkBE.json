@@ -1,0 +1,38 @@
+{
+  "_id": "nQ02FiUbqj2WwkBE",
+  "name": "Onda de Fé",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta PM (limitado à sua Sabedoria + 2) e libera uma onda de poder sagrado em alcance curto. Para cada PM gasto, a onda <strong>cura 1d6 PV</strong> nas criaturas vivas à sua escolha e causa <strong>1d6 de dano de Essência</strong> nos mortos-vivos (Vontade, CD de clérigo, reduz o dano à metade). <em>Divino.</em>",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__onda-de-fe",
+      "classe": "clerigo",
+      "poder": "onda-de-fe",
+      "inferido": true
+    }
+  },
+  "_key": "!items!nQ02FiUbqj2WwkBE"
+}

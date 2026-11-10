@@ -1,0 +1,38 @@
+{
+  "_id": "ORhVOaTbraJOZ1pF",
+  "name": "Couraça Consagrada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM: até o fim da cena, você recebe <strong>+1 de Defesa</strong> e <strong>RD 3</strong> contra dano de Corte, Perfuração e Impacto, enquanto estiver usando armadura.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__couraca-consagrada",
+      "classe": "clerigo",
+      "poder": "couraca-consagrada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ORhVOaTbraJOZ1pF"
+}

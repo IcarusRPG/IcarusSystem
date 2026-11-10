@@ -1,0 +1,38 @@
+{
+  "_id": "ocRSodGLaXx7xgiT",
+  "name": "Corpo Puro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você fica imune a <strong>doenças</strong> e recebe +5 em testes de resistência contra <strong>venenos</strong> e <strong>maldições</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__corpo-puro",
+      "classe": "clerigo",
+      "poder": "corpo-puro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ocRSodGLaXx7xgiT"
+}

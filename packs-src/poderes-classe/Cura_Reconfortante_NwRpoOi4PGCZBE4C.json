@@ -1,0 +1,38 @@
+{
+  "_id": "NwRpoOi4PGCZBE4C",
+  "name": "Cura Reconfortante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você lança uma magia que cura uma criatura, ela também remove a condição <strong>Abalado</strong> ou <strong>Apavorado</strong> (à sua escolha).",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__cura-reconfortante",
+      "classe": "clerigo",
+      "poder": "cura-reconfortante",
+      "inferido": false
+    }
+  },
+  "_key": "!items!NwRpoOi4PGCZBE4C"
+}

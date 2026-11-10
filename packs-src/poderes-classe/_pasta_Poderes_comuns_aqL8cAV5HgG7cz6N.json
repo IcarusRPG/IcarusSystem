@@ -1,0 +1,15 @@
+{
+  "_id": "aqL8cAV5HgG7cz6N",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "7kFPkQw22DYhbT8V",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:clerigo:poderes-comuns"
+    }
+  },
+  "_key": "!folders!aqL8cAV5HgG7cz6N"
+}

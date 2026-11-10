@@ -1,0 +1,38 @@
+{
+  "_id": "6AAwbGxWD3W9uWPG",
+  "name": "Muralha Sagrada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto você empunha um escudo, aliados adjacentes a você recebem <strong>+1 na Defesa</strong>. Se a sua divindade for protetora (Sólem, Paxus, Valorus ou Béllica), o bônus passa a ser <strong>+2</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__muralha-sagrada",
+      "classe": "clerigo",
+      "poder": "muralha-sagrada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!6AAwbGxWD3W9uWPG"
+}

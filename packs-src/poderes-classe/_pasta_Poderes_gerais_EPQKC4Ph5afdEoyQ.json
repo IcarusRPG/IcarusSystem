@@ -1,0 +1,15 @@
+{
+  "_id": "EPQKC4Ph5afdEoyQ",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "7kFPkQw22DYhbT8V",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:clerigo:poderes-gerais"
+    }
+  },
+  "_key": "!folders!EPQKC4Ph5afdEoyQ"
+}

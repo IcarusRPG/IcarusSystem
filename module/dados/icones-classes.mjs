@@ -10,5 +10,6 @@ export default {
   "pistoleiro": "Pistoleiro.png",
   "arcanista": "Arcanista.png",
   "nobre": "Nobre.png",
-  "bardo": "Bardo.png"
+  "bardo": "Bardo.png",
+  "clerigo": "Clérigo.png"
 };

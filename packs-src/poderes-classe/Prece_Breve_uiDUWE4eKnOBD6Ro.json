@@ -1,0 +1,38 @@
+{
+  "_id": "uiDUWE4eKnOBD6Ro",
+  "name": "Prece Breve",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode gastar uma ação de movimento para fazer uma prece curta. Se fizer isso, a CD para resistir à sua próxima habilidade de clérigo (usada até o fim do seu próximo turno) aumenta em <strong>+2</strong>.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__prece-breve",
+      "classe": "clerigo",
+      "poder": "prece-breve",
+      "inferido": true
+    }
+  },
+  "_key": "!items!uiDUWE4eKnOBD6Ro"
+}

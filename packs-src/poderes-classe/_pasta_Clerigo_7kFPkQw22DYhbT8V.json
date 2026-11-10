@@ -1,0 +1,15 @@
+{
+  "_id": "7kFPkQw22DYhbT8V",
+  "name": "Clérigo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:clerigo"
+    }
+  },
+  "_key": "!folders!7kFPkQw22DYhbT8V"
+}

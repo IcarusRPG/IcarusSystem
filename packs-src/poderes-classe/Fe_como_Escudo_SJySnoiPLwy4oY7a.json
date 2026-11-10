@@ -1,0 +1,38 @@
+{
+  "_id": "SJySnoiPLwy4oY7a",
+  "name": "Fé como Escudo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando você ou um aliado em alcance curto faz um teste de resistência, você pode gastar uma reação e 2 PM para que a criatura receba <strong>+5</strong> nesse teste (declare antes de saber o resultado).",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__fe-como-escudo",
+      "classe": "clerigo",
+      "poder": "fe-como-escudo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!SJySnoiPLwy4oY7a"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "Gbr6GWeFeGo3oHi4",
+  "name": "Banir os Mortos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "Onda de Fé",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 3 PM e faz todos os mortos-vivos em alcance curto fazerem um teste de Vontade (CD de clérigo). Quem falhar fica <strong>Apavorado</strong> por 1d6 rodadas.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "onda-de-fe"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__banir-os-mortos",
+      "classe": "clerigo",
+      "poder": "banir-os-mortos",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Gbr6GWeFeGo3oHi4"
+}

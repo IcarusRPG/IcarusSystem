@@ -1,0 +1,38 @@
+{
+  "_id": "EArQ3TOkanorwisC",
+  "name": "Misericórdia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Suas magias de cura aumentam em <strong>+1d6</strong> PV curados por nível da magia (nível 1: +1d6; nível 5: +5d6).",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__misericordia",
+      "classe": "clerigo",
+      "poder": "misericordia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!EArQ3TOkanorwisC"
+}

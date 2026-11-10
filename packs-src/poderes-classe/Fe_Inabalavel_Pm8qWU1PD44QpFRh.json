@@ -1,0 +1,38 @@
+{
+  "_id": "Pm8qWU1PD44QpFRh",
+  "name": "Fé Inabalável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "EPQKC4Ph5afdEoyQ",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +2 em Vontade e fica imune à condição <strong>Frustrado</strong>. Você recebe +5 em testes de resistência contra efeitos que tentem forçá-lo a violar um Dogma.",
+    "classe": "clerigo",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo__fe-inabalavel",
+      "classe": "clerigo",
+      "poder": "fe-inabalavel",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Pm8qWU1PD44QpFRh"
+}

@@ -1,0 +1,172 @@
+{
+  "_id": "3Wk5W2qU56GDPjew",
+  "name": "Clérigo",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Cl%C3%A9rigo.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 1100,
+  "system": {
+    "classeId": "clerigo",
+    "papel": "Conjurador Divino",
+    "atributoChave": "Sabedoria",
+    "pv": {
+      "inicial": 16,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": "SAB",
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "4 + Sabedoria no 1º nível; +4 por nível seguinte"
+    },
+    "pericias": {
+      "obrigatorias": "Religião e Vontade",
+      "escolha": 4,
+      "lista": [
+        "Atletismo",
+        "Concentração",
+        "Cura",
+        "Diplomacia",
+        "Fortitude",
+        "História",
+        "Iniciativa",
+        "Intuição",
+        "Luta",
+        "Misticismo",
+        "Nobreza"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, armaduras pesadas, escudos",
+      "armas": [
+        "simples"
+      ],
+      "armaduras": [
+        "pesada"
+      ],
+      "escudo": true,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Fé Jurada",
+          "Conjuração Divina"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Solo Sagrado"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Intervenção Divina"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Milagre"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O clérigo é a voz de uma divindade no mundo. Não herdou o poder, não o estudou em livros: recebeu-o em troca de fé, e o mantém enquanto cumpre os Dogmas. Cura quem sofre, protege quem cai e castiga quem desafia o que ele jurou defender.</p><p>Não existe um clérigo genérico. O devoto de Sólem acende luz em lugares escuros; o de Nocturna caminha entre segredos; o de Irae troveja contra os fracos de espírito. O que une todos é a certeza de que a divindade ouve, e de que cada oração deve ser pronunciada com o corpo, não só com a boca.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "clerigo"
+    }
+  },
+  "_key": "!items!3Wk5W2qU56GDPjew"
+}
