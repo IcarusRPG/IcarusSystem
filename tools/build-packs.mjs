@@ -20,6 +20,7 @@ import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
 import { documentosDeMagias } from "../module/magias-dados.mjs";
 import { documentosDeFocos, aplicarObjetosNosCompendios } from "../module/objetos-dados.mjs";
+import { iconesDosFocos, PASTA_FOCOS } from "./build-icones-focos.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
@@ -81,7 +82,12 @@ const docsOrigens = documentosDeOrigens({ origens: ler("origens"), itens: ler("i
 const objetosDados = ler("objetos");
 {
   const bordao = documentosDosCompendios(armas).armas.itens.find(d => d.flags?.["icarus-rpg"]?.id === "bordao");
-  const focos = documentosDeFocos(objetosDados, idEstavel, { bordao });
+  // Ícones dos focos (tools/dados/focos_icones.json, gerado por build:icones-focos); sem imagem: padrão
+  const manifestoFocos = ler("focos_icones");
+  for (const m of manifestoFocos.filter(x => x.arquivo)) {
+    if (!fs.existsSync(path.join(RAIZ, ...PASTA_FOCOS.split("/"), m.arquivo))) faltandoArquivo.push(`${PASTA_FOCOS}/${m.arquivo}`);
+  }
+  const focos = documentosDeFocos(objetosDados, idEstavel, { bordao, icones: iconesDosFocos(manifestoFocos) });
   docsOrigens["itens-comuns"].pastas.push(focos.pasta);
   docsOrigens["itens-comuns"].itens.push(...focos.itens);
 }

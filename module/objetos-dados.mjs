@@ -130,12 +130,12 @@ export function aplicarObjetosNosCompendios(dados, armas, armaduras) {
  * Focos arcanos (pasta "Focos arcanos" no compêndio Itens Comuns): os 5 equipamentos e o Bordão
  * Arcano (cópia do Bordão do compêndio de armas, com a flag de foco). Preços em Reais no JSON.
  */
-export function documentosDeFocos(dados, idEstavel, { img = "icons/svg/item-bag.svg", bordao = null } = {}) {
+export function documentosDeFocos(dados, idEstavel, { img = "icons/svg/item-bag.svg", bordao = null, icones = {} } = {}) {
   const pasta = { _id: idEstavel("pasta:focos-arcanos"), name: "Focos arcanos", type: "Item", folder: null, sorting: "m", sort: 900000, color: "#3a2a5a", flags: {} };
   const itens = dados.focos.map((f, i) => {
     const m = dados.materiaisFoco[f.material];
     return {
-      _id: idEstavel(`foco:${f.id}`), name: f.nome, type: "equipamento", img, folder: pasta._id, sort: (i + 1) * 100,
+      _id: idEstavel(`foco:${f.id}`), name: f.nome, type: "equipamento", img: icones[`foco:${f.id}`] ?? img, folder: pasta._id, sort: (i + 1) * 100,
       system: { tipo: "foco", quantidade: 1, equipado: false, espacos: f.espacos ?? 1, preco: Math.round((f.preco ?? 0) * 100),
         descricao: `<p>${f.descricao}</p><p><strong>${f.materialNome ?? m.nome}:</strong> RD ${m.rd}, PV ${m.pv}. ${f.maos === 2 ? "Duas mãos." : "Uma mão."}</p>` },
       effects: [],
@@ -145,7 +145,7 @@ export function documentosDeFocos(dados, idEstavel, { img = "icons/svg/item-bag.
   if (bordao && dados.bordaoArcano) {
     const b = dados.bordaoArcano;
     itens.push({
-      ...structuredClone(bordao), _id: idEstavel(`foco:${b.id}`), name: b.nome, folder: pasta._id, sort: (itens.length + 1) * 100,
+      ...structuredClone(bordao), _id: idEstavel(`foco:${b.id}`), name: b.nome, folder: pasta._id, img: icones[`foco:${b.id}`] ?? bordao.img, sort: (itens.length + 1) * 100,
       system: { ...structuredClone(bordao.system), preco: Math.round(b.preco * 100), espacos: b.espacos, descricao: `<p>${b.descricao}</p><p><strong>Madeira, duas mãos:</strong> RD ${b.rd}, PV ${b.pv}.</p>` },
       flags: { [F]: { ...(bordao.flags?.[F] ?? {}), id: `foco:${b.id}`, focoArcano: { material: b.material, maos: 2 }, objeto: { rd: b.rd, pvMax: b.pv, tamanho: "medio" }, pvObjeto: b.pv } }
     });

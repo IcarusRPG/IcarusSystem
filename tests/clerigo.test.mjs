@@ -222,3 +222,12 @@ test("Magias do Clérigo: o jogador não passa do limite nem pega magia Arcana; 
   assert.equal(pre(magia(1, ["divina"])), undefined);
   game.user.isGM = false;
 });
+
+test("Migração 0.25.0: focos nas fichas com o ícone padrão recebem a imagem; ícone escolhido fica", async () => {
+  const { iconeNovoDoFoco } = await import("../module/migracoes.mjs");
+  const foco = (id, img) => ({ img, flags: { "icarus-rpg": { id } } });
+  assert.equal(iconeNovoDoFoco(foco("foco:grimorio", "icons/svg/item-bag.svg")), "systems/icarus-rpg/img/Icones/itens/equipamentos/focos%20arcanos/Grim%C3%B3rio.png");
+  assert.ok(iconeNovoDoFoco(foco("foco:bordao-arcano", "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Bord%C3%A3o.png")).includes("Bord%C3%A3o%20Arcano"));
+  assert.equal(iconeNovoDoFoco(foco("foco:grimorio", "worlds/x/meu.png")), null);
+  assert.equal(iconeNovoDoFoco(foco("adaga", "icons/svg/item-bag.svg")), null);
+});
