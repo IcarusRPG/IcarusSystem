@@ -55,7 +55,7 @@
     "Defesa": {
       "Rotulo": "Defesa",
       "Outros": "Outros",
-      "Formula": "10 + DES {des} + Armadura {armadura} + Escudo {escudo} + Outros {outros}"
+      "Formula": "10 + {atributo} {des} + Armadura {armadura} + Escudo {escudo} + Outros {outros}"
     },
     "Deslocamento": "Deslocamento",
     "Abas": {
@@ -1670,6 +1670,49 @@
     },
     "Objetos": {
       "Destruido": "{item} de {nome} foi destruído (0 PV). Não se conserta: é preciso fabricar outro."
+    },
+    "Nobre": {
+      "Postura": "Postura Altiva",
+      "PosturaCAR": "Defesa com Carisma (clique para Destreza)",
+      "PosturaDES": "Defesa com Destreza (clique para Carisma)",
+      "Dote": "Dote",
+      "DoteTexto": "Receber o Dote: {valor} somados às suas moedas (uma única vez)?",
+      "DoteChat": "{nome} recebe o Dote: {valor}.",
+      "BrioCampo": "PM de Brio (+2 por PM, até {max})",
+      "BrioRotulo": "Brio ({pm} PM)",
+      "Palavra": "Palavra Cortante",
+      "Pericia": "Perícia",
+      "Tiranico": "Brado Tirânico (ação completa, d8, todos os inimigos em alcance curto)",
+      "PalavraTexto": "1 PM. Teste oposto contra a Vontade do alvo. Venceu: dano cheio ({dano} Psíquico, não letal); perdeu: metade.",
+      "PalavraChat": "{nome} usa a Palavra Cortante ({pericia}). Mestre: Teste Oposto contra a Vontade do alvo; venceu = Aplicar dano, perdeu = Metade.",
+      "SeRende": "se rende (dano não letal)",
+      "Foge": "fica Apavorado e foge (dano não letal)",
+      "Rendimentos": "Rendimentos",
+      "RendimentosLivre": "uma vez por aventura",
+      "RendimentosUsados": "Rendimentos já recebidos nesta aventura.",
+      "RendimentosLiberar": "Liberar Rendimentos (nova aventura)",
+      "RendimentosConta": "Rendimentos: {total}% de {riqueza} (riqueza inicial do {nivel}º nível) = {valor}.",
+      "RendimentosConfirmar": "Somar às moedas? (o Mestre decide se a família alcança você)",
+      "Brado": "Brado de Comando",
+      "BradoInfo": "PM até {max}; bônus nas perícias dos aliados",
+      "BradoMax": "No Brado de Comando, no máximo {max} PM (Carisma).",
+      "BradoChat": "{nome} dá um Brado de Comando: +{n} nos testes de perícia dos aliados até o início do próximo turno. Marque os aliados e clique em Aplicar efeito.",
+      "Majestade": "Majestade",
+      "MajestadeSemAlvo": "Marque (T) a criatura que tenta machucar você.",
+      "MajestadeUsada": "A Majestade já foi usada contra {alvo} nesta cena.",
+      "MajestadeChat": "{nome} usa a Majestade contra {alvo}: teste de Vontade CD {cd}. Se falhar, não consegue machucá-lo e perde a ação.",
+      "Estandarte": "Estandarte da Família",
+      "EstandarteAtivo": "erguido · PV {pv}/{max} · RD {rd} (clique para baixar)",
+      "EstandarteChat": "{nome} ergue o Estandarte da Família (Defesa 12, RD {rd}, PV {pv}): aliados a até 9 m recebem +1 nos ataques e +2 contra medo.",
+      "EstandarteBaixado": "{nome} baixa o Estandarte da Família.",
+      "Cofre": "Cofre da Família",
+      "CofreTexto": "Pagar PM com dinheiro: {porPM} por PM (ainda {restante} PM nesta cena).",
+      "CofrePM": "PM pagos com dinheiro",
+      "CofreInfo": "{usado}/{max} PM pagos com dinheiro nesta cena · {porPM} por PM",
+      "PagarDinheiro": "{nome} custa {valor}. Pagar?",
+      "SemDinheiro": "{nome} não tem {valor}.",
+      "EncorajamentoChat": "{nome} encoraja {alvo}: o próximo teste é com vantagem.",
+      "UmAliado": "um aliado"
     }
   }
 }

@@ -19,6 +19,7 @@ import {
   ultimaDesfazivel, textoDoRegistro
 } from "./dano-aplicacao.mjs";
 import { registrarDanoEmMorrendo } from "./morte-foundry.mjs";
+import { aplicarCondicao } from "./condicoes-foundry.mjs";
 
 const F = SISTEMA_ID;
 const CANAL = `system.${SISTEMA_ID}`;
@@ -108,14 +109,22 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
     pv: actor.system.pv, regras: REGRAS_DANO, nomeDoTipo
   });
   const morrendo = actor.statuses?.has("morrendo");
-  if (calc.depois !== calc.antes) await actor.update({ "system.pv.value": calc.depois });
+  const naoLetal = calc.modo !== "cura" && dados.naoLetal;
+  // Não letal: não deixa Morrendo (opção lida em morte-foundry.mjs)
+  if (calc.depois !== calc.antes) await actor.update({ "system.pv.value": calc.depois }, naoLetal ? { icarusNaoLetal: true } : {});
   const depois = actor.system.pv.value;
   // Dano sofrido em Morrendo: 1 falha no teste de morte (2 se crítico), como no botão da ficha
-  if (calc.modo !== "cura" && calc.final > 0 && calc.antes === 0 && morrendo) await registrarDanoEmMorrendo(actor, dados.critico);
+  if (calc.modo !== "cura" && calc.final > 0 && calc.antes === 0 && morrendo && !naoLetal) await registrarDanoEmMorrendo(actor, dados.critico);
+  // A 0 PV por dano não letal: se rende (Diplomacia) ou fica Apavorado e foge (Intimidação)
+  let rendeu = "";
+  if (naoLetal && depois === 0 && calc.antes > 0) {
+    if (dados.naoLetal.pericia === "intimidacao") await aplicarCondicao(actor, "apavorado");
+    rendeu = loc(dados.naoLetal.pericia === "intimidacao" ? "ICARUS.Nobre.Foge" : "ICARUS.Nobre.SeRende");
+  }
   const diff = depois - calc.antes;
   const sinal = diff > 0 ? `+${diff}` : diff < 0 ? `−${-diff}` : "0";
   const linha = fmt("ICARUS.Dano.Linha", { nome, sinal, detalhe: calc.detalhe, antes: calc.antes, depois })
-    + (depois === 0 && calc.modo !== "cura" ? ` · ${loc("ICARUS.Dano.ZeroPV")}` : "");
+    + (depois === 0 && calc.modo !== "cura" ? ` · ${rendeu || loc("ICARUS.Dano.ZeroPV")}` : "");
   return {
     linha,
     registro: {

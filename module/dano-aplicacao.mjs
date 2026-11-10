@@ -133,7 +133,8 @@ export function dadosDaMensagem(flags, rolagens = [], { qualquerRolagem = false 
       ? d.componentes.map(c => ({ tipo: String(c?.tipo || "dano"), valor: inteiro(c?.valor) }))
       : [{ tipo: String(d.tipo || "dano"), valor: total }];
     if (componentes.some(c => !ok(c.valor))) componentes = [{ tipo: "dano", valor: total }];
-    return { rollType, total, componentes, alvoUuid: typeof d.alvoUuid === "string" ? d.alvoUuid : null, critico: !!d.critico, manual: false };
+    const naoLetal = flags?.naoLetal ? { pericia: flags.naoLetal.pericia === "intimidacao" ? "intimidacao" : "diplomacia" } : null;
+    return { rollType, total, componentes, alvoUuid: typeof d.alvoUuid === "string" ? d.alvoUuid : null, critico: !!d.critico, manual: false, naoLetal };
   }
   if (!qualquerRolagem || !rolagens.length) return null;
   const total = inteiro(rolagens.reduce((s, r) => s + (Number(r?.total) || 0), 0));

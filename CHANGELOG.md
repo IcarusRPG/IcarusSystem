@@ -1,5 +1,20 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.21.0
+
+### Nobre: mecânicas centrais e dinheiro
+- **Postura Altiva:** botão na aba Classe troca Destreza por Carisma na Defesa (a fórmula da ficha mostra o atributo).
+- **Dote:** R$ 1.500 somados às moedas uma única vez, com confirmação.
+- **Brio:** campo "PM de Brio" no diálogo de teste de perícia (+2 por PM, até o Carisma, mínimo 1); o PM sai ao confirmar.
+- **Palavra Cortante:** 1 PM; rola o dano Psíquico **não letal** (Aplicar dano = venceu, Metade = perdeu) e o Mestre abre o Teste Oposto. A 0 PV o alvo se rende (Diplomacia) ou fica Apavorado e foge (Intimidação), sem ficar Morrendo. Brado Tirânico: d8.
+- **Rendimentos:** uma vez por aventura (o Mestre libera de novo): d20 + CAR + nível em % da riqueza inicial do nível (`tools/dados/riqueza.json`), com confirmação antes de somar.
+- **Brado de Comando:** PM até o Carisma; cartão com Aplicar efeito (+PM em todas as perícias por 1 rodada) e Voltar.
+- **Majestade:** 2 PM contra a criatura marcada, uma vez por cena por criatura; Vontade contra 10 + ½ nível + CAR (+5 com Coroação).
+- **Estandarte da Família:** erguer/baixar, com PV e RD registrados.
+- **Cofre da Família / Bolsa Aberta:** pagar PM dos poderes de Nobre com dinheiro, até o Carisma por cena. **Patrocinar, Dinheiro Resolve, Escolta Contratada** cobram o dinheiro com confirmação. O saldo nunca fica negativo.
+- **Palavra de Encorajamento:** o aliado marcado rola o próximo teste com vantagem.
+- **Educação Privilegiada:** só perícias da lista do Nobre.
+
 ## 0.20.0
 
 ### Arcanista: foco arcano e mecânicas centrais

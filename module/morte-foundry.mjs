@@ -128,6 +128,8 @@ export function registrarMorte() {
   Hooks.on("updateActor", async (actor, mudancas, opcoes, userId) => {
     if (userId !== game.user.id || actor.type !== "personagem") return;
     if (foundry.utils.getProperty(mudancas, "system.pv.value") === undefined) return;
+    // Dano não letal (Palavra Cortante): a 0 PV não fica Morrendo
+    if (opcoes.icarusNaoLetal && actor.system.pv.value <= 0) return;
     const pv = actor.system.pv.value;
     const morrendo = actor.statuses.has("morrendo");
     if (pv <= 0 && !morrendo && !actor.statuses.has("dead") && !actor.system.morte.estavel) {
