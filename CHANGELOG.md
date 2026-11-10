@@ -1,5 +1,12 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.26.1
+
+### Correções: alvos da área e Teste de Concentração
+- Os alvos que a área de uma magia marca (por exemplo, a esfera da Inversão da Gravidade, que pegou o próprio conjurador) valem só para aquela magia. Um dano de outra origem aplicado depois vai para os tokens selecionados, com um aviso. Se o jogador mudar os alvos à mão, os novos alvos valem normalmente.
+- O cartão "Teste de Concentração CD N" agora sai direto do botão de aplicar dano (por quem aplicou, jogador ou Mestre), em vez de depender da atualização do PV.
+- A magia de concentração ou sustentada entra na lista de mantidas logo depois do cartão da magia, mesmo que a rolagem dê erro.
+
 ## 0.26.0
 
 ### Sustentada × concentração (correção de regra)

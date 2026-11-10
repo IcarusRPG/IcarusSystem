@@ -136,3 +136,14 @@ test("Barra: dicas com o valor exato, desfazer só para o Mestre, registro visí
   assert.doesNotMatch(htmlDaBarra(dados, [{ alvo: "Ogro", antes: 40, depois: 29 }], { mestre: false }), /data-icarus-desfazer/);
   assert.match(htmlDaBarra(dados, [], { dobro: true }), /DicaAplicar \{"n":28\}/);
 });
+
+test("Dano aplicado chama os ganchos de 'sofrer dano' (Teste de Concentração) com o valor final, e cura não", async () => {
+  const { AO_SOFRER_DANO } = await import("../module/dano.mjs");
+  const vistos = [];
+  const gancho = async (actor, dano) => vistos.push(dano);
+  AO_SOFRER_DANO.push(gancho);
+  await aoReceberDano(pedido(), "j1");
+  AO_SOFRER_DANO.splice(AO_SOFRER_DANO.indexOf(gancho), 1);
+  assert.equal(vistos.length, 1);
+  assert.ok(vistos[0] > 0);
+});

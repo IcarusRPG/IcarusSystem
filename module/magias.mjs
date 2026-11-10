@@ -164,9 +164,9 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   let cartao = null;
   try {
     cartao = await cartaoDaMagia(actor, item, { ...custo, comSangue, pmAPagar }, plano);
-    await rolagensDaMagia(actor, item, plano, cartao, area ?? null, custo.ajusteCd);
     // Sustentada (1 PM por turno) ou concentração (teste ao sofrer dano): passa a ser mantida
-    await registrarMantida(actor, item);
+    try { await registrarMantida(actor, item); } catch (erro) { console.error("Icarus RPG | magia mantida", erro); }
+    await rolagensDaMagia(actor, item, plano, cartao, area ?? null, custo.ajusteCd);
     return cartao;
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);

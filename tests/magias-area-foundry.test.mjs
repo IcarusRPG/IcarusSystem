@@ -68,3 +68,15 @@ test("Opção desligada: lança sem modelo (como antes)", async () => {
   assert.equal(modelos.length, 0);
   posicionar = true;
 });
+
+test("Os alvos que a área marcou valem para a própria magia; outro dano depois não os usa (a não ser que o usuário mude os alvos)", async () => {
+  const { ultimaAreaMarcada, alvosDaAreaDeOutraMagia } = await import("../module/magias-area.mjs");
+  posicionar = true;
+  await executarLancamento(ator(), magia, []);
+  assert.deepEqual(ultimaAreaMarcada(), { magiaId: "bola-de-fogo", ids: ["Scene.cena.Token.perto"] });
+  assert.equal(alvosDaAreaDeOutraMagia(["Scene.cena.Token.perto"], "bola-de-fogo"), false, "dano da própria Bola de Fogo");
+  assert.equal(alvosDaAreaDeOutraMagia(["Scene.cena.Token.perto"], undefined), true, "outro dano (sem magia)");
+  assert.equal(alvosDaAreaDeOutraMagia(["Scene.cena.Token.perto"], "raio"), true, "dano de outra magia");
+  assert.equal(alvosDaAreaDeOutraMagia(["Scene.cena.Token.longe"], undefined), false, "o usuário marcou outro alvo");
+  assert.equal(alvosDaAreaDeOutraMagia(["Scene.cena.Token.perto", "Scene.cena.Token.longe"], undefined), false);
+});

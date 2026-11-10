@@ -23,6 +23,8 @@ globalThis.game = { user: { id: "u1", isGM: false, targets: new Set() }, users: 
 const { tipoDeManutencao, cdDeConcentracao, adicionarMantida, debitoDoTurno, perderConcentracao, limiteDeConcentracao } = await import("../module/magias-dados.mjs");
 const { registrarMantida, testeDeConcentracao, encerrarMantida, registrarMagiasMantidas, mantidasDoAtor } = await import("../module/magias-mantidas.mjs");
 const { INICIO_DO_TURNO } = await import("../module/acoes.mjs");
+const { AO_SOFRER_DANO } = await import("../module/dano.mjs");
+const sofrerDano = async (a, dano) => { for (const fn of AO_SOFRER_DANO) await fn(a, dano); };
 registrarMagiasMantidas();
 
 const MAGIAS = JSON.parse(fs.readFileSync(new URL("../tools/dados/magias.json", import.meta.url), "utf8")).magias;
@@ -86,10 +88,7 @@ test("Sustentada: entra na lista e paga 1 PM no início do turno; nunca pede tes
   const b = ator();
   await registrarMantida(b, magia("luz-arcana", 1, "sustentada"));
   chat.length = 0;
-  const opcoes = {};
-  for (const fn of ganchos.preUpdateActor) fn(b, { "system.pv.value": 15 }, opcoes);
-  b.system.pv.value = 15;
-  for (const fn of ganchos.updateActor) fn(b, {}, opcoes, "u1");
+  await sofrerDano(b, 5);
   assert.equal(chat.filter(m => m.flags?.["icarus-rpg"]?.concentracao).length, 0);
 });
 
@@ -111,11 +110,7 @@ test("Concentração: sem PM por turno; ao sofrer dano, cartão com o teste CD 1
   for (const fn of INICIO_DO_TURNO) await fn(a);
   assert.equal(a.system.pm.value, 4);
   chat.length = 0;
-  const opcoes = {};
-  for (const fn of ganchos.preUpdateActor) fn(a, { "system.pv.value": 12 }, opcoes);
-  a.system.pv.value = 12;
-  for (const fn of ganchos.updateActor) fn(a, {}, opcoes, "u1");
-  await new Promise(r => setTimeout(r, 0));
+  await sofrerDano(a, 8);
   const cartao = chat.find(m => m.flags?.["icarus-rpg"]?.concentracao);
   assert.ok(cartao, "cartão do teste");
   d20 = 13; // 13 + 2 = 15: passa (CD 15)
@@ -135,4 +130,10 @@ test("Concentração termina com Atordoado (e as outras condições da lista); o
   assert.deepEqual(mantidasDoAtor(a).map(m => m.id), ["luz-arcana"], "a sustentada continua");
   await encerrarMantida(a, "luz-arcana");
   assert.equal(mantidasDoAtor(a).length, 0);
+});
+
+test("Alvos marcados pela área de uma magia não recebem o dano de outra coisa (a mesma magia, sim)", async () => {
+  const { alvosDaAreaDeOutraMagia, ultimaAreaMarcada } = await import("../module/magias-area.mjs");
+  assert.equal(ultimaAreaMarcada(), null);
+  assert.equal(alvosDaAreaDeOutraMagia(["Token.a"], null), false, "sem área marcada: alvos valem");
 });
