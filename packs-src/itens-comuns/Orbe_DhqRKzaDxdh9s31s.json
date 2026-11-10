@@ -1,0 +1,32 @@
+{
+  "_id": "DhqRKzaDxdh9s31s",
+  "name": "Orbe",
+  "type": "equipamento",
+  "img": "icons/svg/item-bag.svg",
+  "folder": "kRhtB1wumBEac1wy",
+  "sort": 300,
+  "system": {
+    "tipo": "foco",
+    "quantidade": 1,
+    "equipado": false,
+    "espacos": 1,
+    "preco": 0,
+    "descricao": "<p>Foco arcano (orbe engastado em madeira ou osso). Ocupa uma mão.</p><p><strong>Madeira ou osso:</strong> RD 5, PV 5.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "foco:orbe",
+      "focoArcano": {
+        "material": "madeira"
+      },
+      "objeto": {
+        "rd": 5,
+        "pvMax": 5,
+        "tamanho": "minusculo"
+      },
+      "pvObjeto": 5
+    }
+  },
+  "_key": "!items!DhqRKzaDxdh9s31s"
+}

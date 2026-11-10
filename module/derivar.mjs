@@ -5,7 +5,7 @@
  */
 import { atributoDeMagia, cdDaMagia, nivelMaximoDeMagia } from "./magias-dados.mjs";
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
-import { bonusDeItensDeClasse, passivosDeClasse } from "./classes-dados.mjs";
+import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
@@ -59,7 +59,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   // Magias: atributo-chave efetivo, CD e maior nível de magia acessível (só informativo)
   if (s.magia) {
     s.magia.atributoEfetivo = atributoDeMagia(s);
-    s.magia.cd = cdDaMagia(s);
+    // Mana Transbordante (Arcanista, 20º): +2 na CD de todas as magias
+    s.magia.cd = cdDaMagia(s) + (temHabilidadeNosItens(itens, "arcanista", "mana-transbordante") ? 2 : 0);
     s.magia.nivelMaximo = nivelMaximoDeMagia(s.nivel);
   }
   s.pv.value = limitar(numero(s.pv.value), 0, s.pv.max);
@@ -74,6 +75,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     if (item.type !== "equipamento") continue;
     const e = item.system;
     if (!e.equipado || !TIPOS_EQUIPAVEIS.includes(e.tipo)) continue;
+    // Foco arcano não dá Defesa; item destruído (0 PV) perde o bônus
+    if (e.tipo === "foco" || item.flags?.["icarus-rpg"]?.destruido) continue;
     // Armadura/túnica além do limite de vestimentas não vale Defesa
     if (ehVestimenta(item) && !vest.ativas.has(item.id ?? item._id)) continue;
     if (e.tipo === "armadura") armadura += numero(e.bonusDefesa);

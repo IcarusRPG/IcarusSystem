@@ -19,6 +19,7 @@ import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
 import { documentosDeMagias } from "../module/magias-dados.mjs";
+import { documentosDeFocos } from "../module/objetos-dados.mjs";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ler = nome => JSON.parse(fs.readFileSync(path.join(RAIZ, "tools", "dados", `${nome}.json`), "utf8"));
@@ -76,6 +77,12 @@ for (const [pasta, prefixo] of [[PASTA_ICONES_PODERES, ""], ["origens", "origem:
     imagensOrigens[prefixo + chaveDeNome(f.replace(/\.[^.]+$/, ""))] = encodeURI(`systems/icarus-rpg/img/Icones/${pasta}/${f}`);
 }
 const docsOrigens = documentosDeOrigens({ origens: ler("origens"), itens: ler("itens-comuns"), imagens: imagensOrigens }, idEstavel);
+// Focos arcanos (tools/dados/objetos.json) entram no compêndio Itens Comuns, pasta própria
+{
+  const focos = documentosDeFocos(ler("objetos"), idEstavel);
+  docsOrigens["itens-comuns"].pastas.push(focos.pasta);
+  docsOrigens["itens-comuns"].itens.push(...focos.itens);
+}
 const semIconeOrigens = [...docsOrigens.origens.itens, ...docsOrigens["poderes-origem"].itens, ...docsOrigens["itens-comuns"].itens]
   .filter(d => !/\/img\/Icones\/(poderes|origens|itens)/.test(decodeURI(d.img))).map(d => d.name);
 if (semIconeOrigens.length) console.warn(`Origens/poderes/itens comuns sem ícone próprio (dado azul): ${semIconeOrigens.length}`);

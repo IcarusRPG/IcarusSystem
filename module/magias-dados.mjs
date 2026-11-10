@@ -234,3 +234,48 @@ export function acumuloDeDefesa(atuais, novoValor) {
   if (novoValor > maior) return { ligar: [], desligar: atuais.filter(a => a.ligado).map(a => a.id), novoLigado: true };
   return { ligar: [], desligar: [], novoLigado: false };
 }
+
+/* ------------------------------ Arcanista: magias conhecidas e escolas ------------------------------ */
+
+/**
+ * Magias conhecidas do Arcanista: Mago e Mago de Sangue 3 no 1º e +1 por nível; Feiticeiro 3 no 1º e
+ * +1 a cada nível ímpar a partir do 3º. extras: magias adicionais (Escola Predileta, Segunda Escola).
+ */
+export function limiteDeMagiasConhecidas(linhagem, nivel, extras = 0) {
+  const n = Math.max(1, Math.trunc(Number(nivel) || 1));
+  const base = linhagem === "feiticeiro" ? 3 + Math.floor((n - 1) / 2) : 3 + (n - 1);
+  return base + Math.max(0, Math.trunc(Number(extras) || 0));
+}
+
+/**
+ * Pode aprender a magia? Confere a tradição (Arcana ou Sangue), o nível de magia que já lança e o
+ * limite de conhecidas. Devolve o primeiro motivo (chave de tradução + dados) ou null.
+ * @param {{ nivel:number, tradicoes:string[] }} magia  system da magia
+ * @param {{ nivel:number, tradicao:string|null, conhecidas:number, limite:number }} p
+ */
+export function motivoParaNaoAprender(magia, p) {
+  if (p.tradicao && (magia.tradicoes ?? []).length && !magia.tradicoes.includes(p.tradicao)) return { chave: "ICARUS.Magias.Conhecidas.Tradicao", dados: { tradicao: p.tradicao } };
+  const max = nivelMaximoDeMagia(p.nivel);
+  if (Number(magia.nivel) > max) return { chave: "ICARUS.Magias.Conhecidas.Nivel", dados: { nivel: magia.nivel, max } };
+  if (p.conhecidas >= p.limite) return { chave: "ICARUS.Magias.Conhecidas.Limite", dados: { limite: p.limite } };
+  return null;
+}
+
+/**
+ * Ajustes do Arcanista no lançamento, pelas escolas escolhidas e habilidades:
+ * Escola Predileta/Segunda Escola +1 na CD das magias da escola; Maestria de Escola −1 PM nelas
+ * (mínimo 1); Mana Transbordante +2 na CD de todas.
+ * @param {{ escola:string }} magia
+ * @param {{ escolas:string[], maestria:boolean, manaTransbordante:boolean }} a
+ */
+export function ajustesDoArcanista(magia, a = {}) {
+  const daEscola = (a.escolas ?? []).includes(magia.escola);
+  return { cd: (daEscola ? 1 : 0) + (a.manaTransbordante ? 2 : 0), desconto: daEscola && a.maestria ? 1 : 0 };
+}
+
+/** Pacto de Sangue: até metade do custo (arredondado para cima) em PM pago com 2 PV cada, sem chegar a 0 PV. */
+export function maximoDoPacto(custoTotal, pvAtual) {
+  const metade = Math.ceil(Math.max(0, custoTotal) / 2);
+  const peloPv = Math.max(0, Math.floor((Math.max(0, pvAtual) - 1) / 2));
+  return Math.min(metade, peloPv);
+}

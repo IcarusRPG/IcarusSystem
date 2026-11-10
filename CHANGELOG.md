@@ -1,5 +1,17 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.20.0
+
+### Arcanista: foco arcano e mecânicas centrais
+- **Foco arcano:** novo tipo de equipamento "Foco arcano" (Equipar = em mãos) e pasta **Focos arcanos** no compêndio Itens Comuns (Varinha, Cetro, Orbe: madeira RD 5/PV 5; Cetro de metal RD 10/PV 5; Grimório RD 0/PV 5). O Bordão empunhado também vale.
+- **Mago sem foco em mãos não lança** (aviso); o Mestre pode liberar na aba Classe. Feiticeiro e Mago de Sangue não precisam de foco. Foco com 0 PV fica destruído, sai das mãos e avisa no chat.
+- **Magias conhecidas:** limite pela linhagem e nível (+1 por Escola Predileta/Segunda Escola), só da lista da linhagem e de nível que já lança. O jogador é impedido; o Mestre recebe o aviso. Contador na aba Classe.
+- **Escola Predileta / Segunda Escola** +1 na CD da escola; **Maestria de Escola** −1 PM nelas (mínimo 1); **Mana Transbordante** +2 na CD e cartão "Recuperar 2 PM" no início do turno.
+- **Pacto de Sangue** no Lançar aprimorado: paga até metade do custo com PV (2 PV por PM, sem RD, sem chegar a 0).
+- **Canalização Arcana:** soma o atributo-chave ao dano total da magia.
+- **Sopro do Dragão** (Herança de Dragão, 5º): botão na aba Classe, 4 PM, cone de 6 m posicionado no mapa, 4d6/6d6/8d6 do elemento, Reflexos contra a CD das magias, com os botões de aplicar dano.
+- Tabela de objetos (`tools/dados/objetos.json`) para a regra de Quebrar.
+
 ## 0.19.0
 
 ### Arcanista e Nobre (dados, Linhagem, escolhas, túnicas)

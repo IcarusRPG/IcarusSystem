@@ -90,8 +90,9 @@ export const METROS_POR_QUADRADO = 1.5;
 /** Recargas dos recursos: cena (Encerrar cena), rodada (início do turno), descanso, dia e cidade (manuais). */
 export const RECARGAS = ["cena", "rodada", "descanso", "dia", "cidade"];
 
-export const TIPOS_EQUIPAMENTO = ["armadura", "escudo", "consumivel", "profissao", "item-comum", "outro"];
-export const TIPOS_EQUIPAVEIS = ["armadura", "escudo"];
+export const TIPOS_EQUIPAMENTO = ["armadura", "escudo", "foco", "consumivel", "profissao", "item-comum", "outro"];
+// Foco arcano: "equipado" = em mãos (empunhado)
+export const TIPOS_EQUIPAVEIS = ["armadura", "escudo", "foco"];
 
 /** Categorias de armadura e escudo (compêndio Armaduras e Escudos). Túnicas contam como armadura. */
 export const CATEGORIAS_ARMADURA = ["leve", "media", "pesada", "tunica", "escudo", "escudo-acoplado"];
