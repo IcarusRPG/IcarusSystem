@@ -1,5 +1,10 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.25.2
+
+### Papel de parede corrigido
+- `img/ui/wallpaper-fvtt.png` e `wallpaper-fvtt.webp` trocados pela imagem certa (1920×1080, com o logo Icarus). O cartão do sistema na tela de configuração continua apontando para o mesmo arquivo.
+
 ## 0.25.1
 
 ### Clérigo: Arma Consagrada no ataque
