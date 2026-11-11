@@ -178,6 +178,8 @@ ACOES_DE_MECANICA.set("clerigo:dia", async actor => {
   if (actor.getFlag(F, "milFormasDia")) mudancas[`flags.${F}.-=milFormasDia`] = null;
   // Anátema: Banho Rubro (1 vez por dia) volta
   if (actor.getFlag(F, "banhoRubroDia")) mudancas[`flags.${F}.-=banhoRubroDia`] = null;
+  // Místico: Meditação e Ascensão Espiritual voltam
+  for (const k of ["meditacaoDia", "ascensaoUsos"]) if (actor.getFlag(F, k)) mudancas[`flags.${F}.-=${k}`] = null;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
 });
 

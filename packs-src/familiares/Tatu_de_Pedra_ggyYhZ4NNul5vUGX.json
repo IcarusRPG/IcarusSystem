@@ -1,0 +1,148 @@
+{
+  "_id": "ggyYhZ4NNul5vUGX",
+  "name": "Tatu de Pedra",
+  "type": "personagem",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Tatu%20de%20Pedra.png",
+  "folder": null,
+  "sort": 300,
+  "system": {
+    "nivel": 1,
+    "tamanho": "pequeno",
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 2
+    },
+    "deslocamento": 6,
+    "resistencias": {
+      "rdGeral": 3
+    },
+    "pericias": {
+      "luta": {
+        "treino": 1
+      },
+      "fortitude": {
+        "treino": 1
+      },
+      "olfato": {
+        "treino": 1
+      },
+      "audicao": {
+        "treino": 1
+      }
+    },
+    "notas": "<p><strong>Familiar Elemental do Místico.</strong> Elemento: Rocha. Deslocamentos: escavacao 6 m.</p>"
+  },
+  "prototypeToken": {
+    "name": "Tatu de Pedra",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Tatu%20de%20Pedra.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "HEjqJPIh3m8JddIg",
+      "name": "Cabeçada",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "tiposDano": [
+          "impacto"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0,
+        "descricao": ""
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!ggyYhZ4NNul5vUGX.HEjqJPIh3m8JddIg"
+    },
+    {
+      "_id": "nloNTE4SBwtIfSnU",
+      "name": "Escudo de Pedra",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por rodada, como reação, quando o místico é alvo de um ataque e o tatu está adjacente a ele, o ataque é feito contra o tatu no lugar.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!ggyYhZ4NNul5vUGX.nloNTE4SBwtIfSnU"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "tatu-de-pedra",
+      "vinculoId": "tatu-de-pedra",
+      "vinculo": {
+        "animal": "tatu-de-pedra",
+        "familiar": true
+      },
+      "provisorio": false
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
+    }
+  },
+  "_key": "!actors!ggyYhZ4NNul5vUGX"
+}

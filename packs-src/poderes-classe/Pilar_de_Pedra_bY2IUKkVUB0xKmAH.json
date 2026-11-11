@@ -1,0 +1,38 @@
+{
+  "_id": "bY2IUKkVUB0xKmAH",
+  "name": "Pilar de Pedra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "elemento Rocha",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e ergue um <strong>pilar de pedra</strong> de 3 m de altura em um espaço livre em alcance curto. O pilar dá <strong>cobertura</strong> e pode <strong>empurrar uma criatura</strong> Média ou menor 3 m (Fortitude, CD de místico, para resistir). Ele dura até o fim da cena (10 PV, RD 8).",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__pilar-de-pedra",
+      "classe": "mistico",
+      "poder": "pilar-de-pedra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!bY2IUKkVUB0xKmAH"
+}

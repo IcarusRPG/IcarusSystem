@@ -1,0 +1,38 @@
+{
+  "_id": "94mNNMmJcuqe00cy",
+  "name": "Asas de Vento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "elemento Vento, 8º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 3 PM e passa a <strong>voar</strong> com deslocamento de <strong>9 m</strong> até o fim da cena.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__asas-de-vento",
+      "classe": "mistico",
+      "poder": "asas-de-vento",
+      "inferido": true
+    }
+  },
+  "_key": "!items!94mNNMmJcuqe00cy"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "ndBLjeM9T2Rg1l06",
+  "name": "Místico",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1500000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:mistico"
+    }
+  },
+  "_key": "!folders!ndBLjeM9T2Rg1l06"
+}

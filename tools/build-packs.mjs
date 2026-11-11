@@ -14,7 +14,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
 import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "../module/dados-compendios.mjs";
-import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo } from "../module/config.mjs";
+import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo, arquivoDoFamiliar } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
 import { idEstavel } from "../module/dados-itens.mjs";
@@ -31,7 +31,7 @@ const novos = {
   armaduras: ler("armaduras"), iconesArmaduras: ler("icones-armaduras"),
   poderes: ler("poderes-concedidos"), panteao: ler("panteao"), iconesDivindades: ler("icones-divindades"),
   condicoes: ler("condicoes"), macros: ler("macros"),
-  classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes"), vinculos: ler("vinculos"),
+  classes: ler("classes"), iconesClasses: ler("icones-classes"), proficienciasClasses: ler("proficiencias-classes"), vinculos: ler("vinculos"), familiares: ler("familiares"),
   nomePericia: k => PERICIAS.find(p => p.chave === k)?.nome ?? k
 };
 
@@ -66,6 +66,14 @@ for (const it of ler("itens-comuns").itens) confere("itens/itens de origem", ico
     const achado = noDisco.find(f => chave(f) === chave(arquivoDoVinculo(v.nome)));
     novos.vinculos.imagens[v.id] = achado ?? null;
     if (!achado) semImagem.push(`vínculo ${v.nome} (pata padrão; esperado img/Icones/${PASTA_ICONES_PODERES}/${arquivoDoVinculo(v.nome)})`);
+  }
+  // Familiares do Místico: "Familiar Elemental - <Nome>.png", mesma tolerância
+  novos.familiares.imagens = {};
+  for (const v of novos.familiares.familiares) {
+    const achado = noDisco.find(f => chave(f) === chave(arquivoDoFamiliar(v.nome)));
+    novos.familiares.imagens[v.id] = achado ?? null;
+    if (achado) console.log(`familiar ${v.nome}: ${achado}`);
+    else semImagem.push(`familiar ${v.nome} (ícone padrão; esperado img/Icones/${PASTA_ICONES_PODERES}/${arquivoDoFamiliar(v.nome)})`);
   }
 }
 // Origens, poderes de origem e itens comuns: ícone só com nome igual (normalizado) em
@@ -120,6 +128,7 @@ const PACOTES = {
   "habilidades-classe": docsClasses["habilidades-classe"],
   "poderes-classe": docsClasses["poderes-classe"],
   vinculos: documentosDeVinculos(novos.vinculos, PERICIAS),
+  familiares: documentosDeVinculos(novos.familiares, PERICIAS, "familiar"),
   ...docsOrigens,
   // Magias: tools/dados/magias.json + ícones (img/magias, manifesto magias_icones.json); sem ícone = dado azul
   magias: documentosDeMagias(ler("magias"), ler("magias_icones"), idEstavel)

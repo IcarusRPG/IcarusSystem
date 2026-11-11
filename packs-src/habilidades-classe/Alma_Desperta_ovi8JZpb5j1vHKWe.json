@@ -1,0 +1,38 @@
+{
+  "_id": "ovi8JZpb5j1vHKWe",
+  "name": "Alma Desperta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 10005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+5 em testes de resistência</strong> contra efeitos mentais e contra possessão, e não pode ser <strong>Enfeitiçado</strong> nem <strong>Controlado</strong> por magias de nível 4 ou menor.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__alma-desperta",
+      "classe": "mistico",
+      "habilidade": "alma-desperta",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ovi8JZpb5j1vHKWe"
+}

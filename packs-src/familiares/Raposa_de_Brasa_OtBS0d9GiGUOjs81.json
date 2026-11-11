@@ -1,0 +1,173 @@
+{
+  "_id": "OtBS0d9GiGUOjs81",
+  "name": "Raposa de Brasa",
+  "type": "personagem",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Raposa%20de%20Brasa.png",
+  "folder": null,
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "tamanho": "pequeno",
+    "atributos": {
+      "FOR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 0
+    },
+    "deslocamento": 12,
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {
+        "fogo": true
+      }
+    },
+    "pericias": {
+      "luta": {
+        "treino": 1
+      },
+      "furtividade": {
+        "treino": 1
+      },
+      "iniciativa": {
+        "treino": 1
+      },
+      "olfato": {
+        "treino": 1
+      },
+      "audicao": {
+        "treino": 1
+      },
+      "reflexos": {
+        "treino": 1
+      }
+    },
+    "notas": "<p><strong>Familiar Elemental do Místico.</strong> Elemento: Chama. Imune a Fogo.</p>"
+  },
+  "prototypeToken": {
+    "name": "Raposa de Brasa",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Raposa%20de%20Brasa.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "avgG8ghJBkuB2u2r",
+      "name": "Mordida",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "tiposDano": [
+          "fogo"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0,
+        "descricao": ""
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!OtBS0d9GiGUOjs81.avgG8ghJBkuB2u2r"
+    },
+    {
+      "_id": "GpTFRHR6L5C7vUr2",
+      "name": "Brasa Viva",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Reflexos ou fica Em Chamas.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!OtBS0d9GiGUOjs81.GpTFRHR6L5C7vUr2"
+    },
+    {
+      "_id": "ku7oJbRB8D1KHwoZ",
+      "name": "Fagulha Veloz",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por rodada, depois de atacar, a raposa se desloca até 6 m como ação livre.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!OtBS0d9GiGUOjs81.ku7oJbRB8D1KHwoZ"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "raposa-de-brasa",
+      "vinculoId": "raposa-de-brasa",
+      "vinculo": {
+        "animal": "raposa-de-brasa",
+        "familiar": true
+      },
+      "provisorio": false
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
+    }
+  },
+  "_key": "!actors!OtBS0d9GiGUOjs81"
+}

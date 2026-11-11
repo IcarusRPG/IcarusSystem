@@ -1,0 +1,38 @@
+{
+  "_id": "CZXjS9M38ukWvnWl",
+  "name": "Evolução do Familiar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 13006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 13,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O seu familiar ganha <strong>+2 na Defesa</strong> e o dado de dano dos seus ataques aumenta em <strong>um passo</strong>. Além disso, você pode invocá-lo como <strong>ação livre</strong> uma vez por cena.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 13,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__evolucao-do-familiar",
+      "classe": "mistico",
+      "habilidade": "evolucao-do-familiar",
+      "inferido": true
+    }
+  },
+  "_key": "!items!CZXjS9M38ukWvnWl"
+}

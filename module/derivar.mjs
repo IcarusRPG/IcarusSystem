@@ -8,6 +8,7 @@ import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMAN
 import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens, dadosDasHerancas } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
 import { passivosDoAnatema } from "./anatema-dados.mjs";
+import { passivosDoMistico } from "./mistico-dados.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import { vestimentasAtivas, bonusDeItens, ehVestimenta, ATAQUE_DESARMADO } from "./origens-dados.mjs";
@@ -54,6 +55,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   const vestidosAnatema = itens.map(i => ({ type: i.type, system: i.system }));
   const anatema = passivosDoAnatema(itens, { nivel: s.nivel, tipoArmadura: tipoArmadura(vestidosAnatema) });
   porNivel.pm += anatema.pmExtra;
+  // Místico: Mente Calma, Domínio do Vento
+  const mistico = passivosDoMistico(itens);
   s.pv.formula = maximoPelaClasse({ inicial: cc.pvInicial, porNivel: cc.pvPorNivel, atributoTotal: total(cc.pvAtributo), nivel: s.nivel });
   s.pm.formula = maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: s.nivel, atributoUmaVez: !!cc.pmAtributoSoNoPrimeiroNivel });
   s.pv.bonusNivel = porNivel.pv;
@@ -128,7 +131,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
-    d.bonusHeranca = [...(herancas.pericias[p.chave] ?? []), ...(anatema.pericias[p.chave] ?? [])];
+    d.bonusHeranca = [...(herancas.pericias[p.chave] ?? []), ...(anatema.pericias[p.chave] ?? []), ...(mistico.pericias[p.chave] ?? [])];
     for (const b of d.bonusHeranca) d.total += b.valor;
     // Bônus incondicionais de itens comuns em uso (o mesmo item não soma consigo mesmo)
     d.bonusItens = deItens[p.chave] ?? [];
@@ -164,6 +167,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   s.condicoes = { ids: [...cond.ids], ataque: cond.ataque, ataqueCorpoACorpo: cond.ataqueCorpoACorpo, pendencias: cond.pendencias };
 
   // Deslocamento com as condições (Lento, Sobrecarregado, Caído, Imóvel)
+  if (mistico.deslocamento) passivos.deslocamento.push({ valor: mistico.deslocamento, origem: "Domínio do Vento" });
   for (const p of passivos.deslocamento) s.deslocamento += p.valor;
   s.deslocamentoPassivos = passivos.deslocamento;
   s.deslocamentoSemCondicoes = s.deslocamento;

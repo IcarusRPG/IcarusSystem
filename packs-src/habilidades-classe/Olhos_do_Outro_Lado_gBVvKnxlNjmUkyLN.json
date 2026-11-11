@@ -1,0 +1,38 @@
+{
+  "_id": "gBVvKnxlNjmUkyLN",
+  "name": "Olhos do Outro Lado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 2002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação livre, você gasta <strong>1 PM</strong> e, até o fim da cena, enxerga <strong>espíritos e criaturas incorpóreas</strong> como se estivessem visíveis e recebe <strong>+2 em Misticismo</strong> e <strong>+2 em Intuição</strong> para perceber a presença de espíritos, assombrações e magias de Espiritual.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__olhos-do-outro-lado",
+      "classe": "mistico",
+      "habilidade": "olhos-do-outro-lado",
+      "inferido": true
+    }
+  },
+  "_key": "!items!gBVvKnxlNjmUkyLN"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "aKxK4z16JfqfpX6v",
+  "name": "Dobra Combinada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "8º nível, dois elementos",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 3 PM e combina <strong>dois elementos que você conhece</strong> em uma esfera de 3 m de raio, em alcance curto, que dura até o início do seu próximo turno. O efeito depende da combinação:<br>• <strong>Vapor (Chama + Maré):</strong> criaturas na área ficam <strong>Cegas</strong> (Fortitude evita) e sofrem <strong>1d6 de dano de Fogo</strong>.<br>• <strong>Lava (Chama + Rocha):</strong> o chão vira <strong>terreno difícil</strong> e criaturas na área sofrem <strong>2d6 de dano de Fogo</strong> (Reflexos reduz à metade).<br>• <strong>Tempestade (Maré + Vento):</strong> criaturas na área sofrem <strong>2d6 de dano de Elétrico</strong> (Reflexos reduz à metade).<br>• <strong>Poeira (Rocha + Vento):</strong> criaturas na área ficam <strong>Cegas</strong> e <strong>Lentas</strong> (Fortitude evita).",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__dobra-combinada",
+      "classe": "mistico",
+      "poder": "dobra-combinada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!aKxK4z16JfqfpX6v"
+}

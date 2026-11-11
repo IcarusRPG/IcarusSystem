@@ -21,6 +21,8 @@ import { ACOES_DE_MECANICA } from "../classes.mjs";
 import { tokenDoAtor } from "../regras-ataque.mjs";
 import { registrarLinhas, itemDeClasse, marcarStatus, avisarNoChat, escolhasDoAtor, DEPOIS_DA_ESCOLHA, USO_PROPRIO } from "./comum.mjs";
 import VINCULOS from "../dados/vinculos.mjs";
+import FAMILIARES from "../dados/familiares.mjs";
+import { subirPasso } from "../combate.mjs";
 
 const loc = k => game.i18n.localize(k);
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -80,29 +82,41 @@ function animalDoAtor(actor) {
 
 DEPOIS_DA_ESCOLHA.set("vinculo-selvagem", (actor, i) => actor.setFlag(SISTEMA_ID, "vinculoAnimal", VINCULOS.vinculos[i]?.id ?? null));
 
-/** Ator do animal deste patrulheiro no mundo (ou null). */
-const atorDoAnimal = actor => game.actors.find(a => a.getFlag(SISTEMA_ID, "vinculo")?.patrulheiro === actor.uuid) ?? null;
+/**
+ * Ator do companheiro deste dono no mundo (ou null): animal do Vínculo ou familiar do Místico.
+ * flags.vinculo.patrulheiro guarda o uuid do dono (o nome ficou do Patrulheiro).
+ */
+export const atorDoCompanheiro = (actor, animalId = null) => game.actors.find(a => {
+  const v = a.getFlag(SISTEMA_ID, "vinculo");
+  return v?.patrulheiro === actor.uuid && (!animalId || v.animal === animalId);
+}) ?? null;
+const atorDoAnimal = actor => atorDoCompanheiro(actor);
 
-/** Cria/atualiza o ator do animal com os valores do patrulheiro e põe o token ao lado. */
-export async function invocarAnimal(actor) {
-  const animal = animalDoAtor(actor);
-  if (!animal) return ui.notifications.warn(loc("ICARUS.Patrulheiro.SemAnimal"));
-  const s = actor.system;
-  // Anexo B: o animal usa a própria ficha (Luta, resistências); do patrulheiro vêm PV, Defesa, dano e CD
-  const e = estatisticasDoVinculo(animal, { nivel: s.nivel, DES: s.atributos.DES.total });
-  let animalAtor = atorDoAnimal(actor);
+const TIPOS_DE_COMPANHEIRO = {
+  vinculo: { pack: "vinculos", dados: VINCULOS, nome: "ICARUS.Patrulheiro.NomeAnimal", provisorio: true },
+  familiar: { pack: "familiares", dados: FAMILIARES, nome: "ICARUS.Mistico.NomeFamiliar", provisorio: false }
+};
+
+/**
+ * Cria/atualiza o ator do companheiro (cópia do ator do compêndio) com os valores do dono (e:
+ * estatisticasDoVinculo) e põe o token ao lado. Usado pelo Vínculo Selvagem e pelo Familiar Elemental.
+ * @param {{ tipo?: "vinculo"|"familiar", e: object, passoDano?: number }} opcoes
+ */
+export async function invocarCompanheiro(actor, animal, { tipo = "vinculo", e, passoDano = 0 }) {
+  const t = TIPOS_DE_COMPANHEIRO[tipo];
+  let animalAtor = atorDoCompanheiro(actor, animal.id);
   if (!animalAtor) {
-    const pack = game.packs.get(`${SISTEMA_ID}.vinculos`);
+    const pack = game.packs.get(`${SISTEMA_ID}.${t.pack}`);
     const indice = await pack?.getIndex({ fields: [`flags.${SISTEMA_ID}.id`] });
     const entrada = indice?.find(x => foundry.utils.getProperty(x, `flags.${SISTEMA_ID}.id`) === animal.id);
     const base = entrada ? (await pack.getDocument(entrada._id)).toObject()
-      : structuredClone(documentosDeVinculos(VINCULOS, PERICIAS).atores.find(a => a.flags[SISTEMA_ID].id === animal.id));
+      : structuredClone(documentosDeVinculos(t.dados, PERICIAS, tipo).atores.find(a => a.flags[SISTEMA_ID].id === animal.id));
     delete base._id;
-    base.name = fmt("ICARUS.Patrulheiro.NomeAnimal", { animal: animal.nome, nome: actor.name });
+    base.name = fmt(t.nome, { animal: animal.nome, nome: actor.name });
     base.ownership = foundry.utils.deepClone(actor.ownership);
-    foundry.utils.setProperty(base, `flags.${SISTEMA_ID}.vinculo`, { patrulheiro: actor.uuid, animal: animal.id });
+    foundry.utils.setProperty(base, `flags.${SISTEMA_ID}.vinculo`, { patrulheiro: actor.uuid, animal: animal.id, ...(tipo === "familiar" ? { familiar: true } : {}) });
     foundry.utils.setProperty(base, `flags.${SISTEMA_ID}.invocadoPor`, actor.id);
-    foundry.utils.setProperty(base, `flags.${SISTEMA_ID}.provisorio`, true);
+    foundry.utils.setProperty(base, `flags.${SISTEMA_ID}.provisorio`, t.provisorio);
     animalAtor = await Actor.create(base, { renderSheet: false });
   }
   // Valores que dependem do patrulheiro: PV cheios, Defesa, CD; o resto é a ficha do animal
@@ -117,11 +131,13 @@ export async function invocarAnimal(actor) {
     "flags.core.sheetClass": FICHA_ANIMAL
   };
   await animalAtor.update(mudancas, { icarusInvocacao: true });
-  // Dano dos ataques + metade do nível do patrulheiro (Texugo: só a mordida)
+  // Dano dos ataques + metade do nível do dono (Texugo: só a mordida); Evolução do Familiar: +1 passo
   const armas = animalAtor.items.filter(i => i.type === "arma");
-  await animalAtor.updateEmbeddedDocuments("Item", armas.map(arma => ({
-    _id: arma.id, "system.bonusDano": arma.flags?.[SISTEMA_ID]?.somaNivel === false ? 0 : e.bonusDano
-  })));
+  await animalAtor.updateEmbeddedDocuments("Item", armas.map(arma => {
+    const original = animal.ataques?.find(a => a.nome === arma.name)?.dano;
+    return { _id: arma.id, "system.bonusDano": arma.flags?.[SISTEMA_ID]?.somaNivel === false ? 0 : e.bonusDano,
+      ...(original && tipo === "familiar" ? { "system.dano": passoDano ? subirPasso(original, passoDano) : original } : {}) };
+  }));
   // Token ao lado do patrulheiro (se houver cena e token)
   const meu = tokenDoAtor(actor);
   if (meu && canvas?.scene && !animalAtor.getActiveTokens().length) {
@@ -129,6 +145,17 @@ export async function invocarAnimal(actor) {
     const dados = await animalAtor.getTokenDocument({ x: meu.document.x + g * meu.document.width, y: meu.document.y, actorLink: true });
     await canvas.scene.createEmbeddedDocuments("Token", [dados.toObject()]);
   }
+  return animalAtor;
+}
+
+/** Cria/atualiza o ator do animal com os valores do patrulheiro e põe o token ao lado. */
+export async function invocarAnimal(actor) {
+  const animal = animalDoAtor(actor);
+  if (!animal) return ui.notifications.warn(loc("ICARUS.Patrulheiro.SemAnimal"));
+  const s = actor.system;
+  // Anexo B: o animal usa a própria ficha (Luta, resistências); do patrulheiro vêm PV, Defesa, dano e CD
+  const e = estatisticasDoVinculo(animal, { nivel: s.nivel, DES: s.atributos.DES.total });
+  const animalAtor = await invocarCompanheiro(actor, animal, { e });
   await avisarNoChat(actor, fmt("ICARUS.Patrulheiro.Invocou", { nome: actor.name, animal: animal.nome, pv: e.pv, defesa: e.defesa, cd: e.cd }));
   return animalAtor;
 }

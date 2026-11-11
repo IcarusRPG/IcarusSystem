@@ -1,0 +1,15 @@
+{
+  "_id": "GutgZxCbsMP5PJsS",
+  "name": "Místico",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1500000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:mistico"
+    }
+  },
+  "_key": "!folders!GutgZxCbsMP5PJsS"
+}

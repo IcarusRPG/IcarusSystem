@@ -1,5 +1,15 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.30.0
+
+### Místico
+- `classes.json` com o **Místico** (15 classes; 9 habilidades e 29 poderes; 531 poderes no total). As outras classes ficam iguais e o `magias.json` não mudou. PV 14 + CON (+4 + CON por nível), **PM 5 × nível + Sabedoria** (atributo só uma vez). Misticismo e Vontade + 4 perícias; armas simples e túnicas, sem armadura e sem escudo. Ícone `img/Icones/classes/Místico.png`.
+- **Conjuração Mística:** lista Arcana com CD de Sabedoria e 4 escolas permanentes (a Espiritual é fixa; **Escola Estendida** dá a 5ª). Magias conhecidas: 3 no 1º nível e +1 a cada nível ímpar. **Ecos dos Ancestrais:** 2 magias Divinas das mesmas escolas por escolha, do 1º nível de magia no 5º até o 4º no 17º; sem ele, nada de magia Divina.
+- **Dobra Elemental:** elemento permanente (Chama, Maré, Rocha, Vento); os **Domínios** ensinam os outros e a **Harmonia** dá os quatro. **Rajada Elemental** na aba Classe: 1 PM, ataque à distância com Sabedoria, 1d8 a 5d8 do tipo do elemento (Fogo, Frio, Impacto, Corte). Rajada Potente usa d10, o Domínio soma +2, a Rajada Dupla custa +2 PM e a Rajada Veloz +1 PM. Os poderes de técnica só aparecem para quem conhece o elemento.
+- **Familiar Elemental:** novo compêndio **Familiares Elementais** com Raposa de Brasa, Lontra de Maré, Tatu de Pedra e Ave de Vendaval (`tools/dados/familiares.json`), com as imagens `Familiar Elemental - <Nome>.png`. A escolha mostra a ficha de cada um. "Invocar" custa 1 PM e usa o mesmo código do Vínculo Selvagem: PV 10 + metade do nível, Defesa 10 + metade do nível + bônus, CD com a Sabedoria do místico. Familiar Robusto (+10 PV, +1 Defesa) e Evolução do Familiar (+2 Defesa, dano um passo maior) entram sozinhos. **Segundo Familiar** dá outro invocável, e invocar um dispensa o outro.
+- **Meditação** (1/dia; Concentração CD 15; só gasta o uso no sucesso), **Alma Desperta** (informação), **Ascensão Espiritual** (forma permanente; 1/dia, 2 com Harmonia; 8 PM; efeito até o fim da cena, sem Fatigado) e **Harmonia** (imune a medo).
+- Mente Calma (+2 Vontade e Concentração), Domínio do Vento (+3 m) e as reduções do Domínio da Chama e do Domínio da Maré entram na ficha.
+
 ## 0.29.0
 
 ### Anátema

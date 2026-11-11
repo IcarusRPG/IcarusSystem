@@ -1,0 +1,38 @@
+{
+  "_id": "v7sdv6FmVIIzloJ9",
+  "name": "Onda de Vento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "elemento Vento",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e solta um cone de <strong>6 m</strong>: criaturas Médias ou menores na área fazem um teste de Fortitude (CD de místico) ou são <strong>empurradas 4,5 m</strong> e sofrem <strong>1d6 de dano de Impacto</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__onda-de-vento",
+      "classe": "mistico",
+      "poder": "onda-de-vento",
+      "inferido": true
+    }
+  },
+  "_key": "!items!v7sdv6FmVIIzloJ9"
+}

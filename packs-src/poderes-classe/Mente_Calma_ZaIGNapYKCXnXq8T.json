@@ -1,0 +1,38 @@
+{
+  "_id": "ZaIGNapYKCXnXq8T",
+  "name": "Mente Calma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+2 em Vontade e em Concentração</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__mente-calma",
+      "classe": "mistico",
+      "poder": "mente-calma",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ZaIGNapYKCXnXq8T"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Xp1EjSjDOscixDvi",
+  "name": "Domínio da Maré",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende o elemento <strong>Maré</strong>. Você <strong>respira na água</strong>, tem <strong>natação igual ao seu deslocamento</strong>, <strong>Redução de Dano 5 contra Frio</strong> e +2 de dano de Frio com a Rajada Elemental e com técnicas de Maré.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__dominio-da-mare",
+      "classe": "mistico",
+      "poder": "dominio-da-mare",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Xp1EjSjDOscixDvi"
+}

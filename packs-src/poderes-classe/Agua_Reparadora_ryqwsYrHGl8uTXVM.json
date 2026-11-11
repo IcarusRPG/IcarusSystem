@@ -1,0 +1,38 @@
+{
+  "_id": "ryqwsYrHGl8uTXVM",
+  "name": "Água Reparadora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "elemento Maré",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura (inclusive você): ela recupera <strong>1d6 + Sabedoria PV</strong>. Cada criatura só pode ser curada por este poder uma vez por cena.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__agua-reparadora",
+      "classe": "mistico",
+      "poder": "agua-reparadora",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ryqwsYrHGl8uTXVM"
+}

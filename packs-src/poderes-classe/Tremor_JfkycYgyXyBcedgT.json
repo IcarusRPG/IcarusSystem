@@ -1,0 +1,38 @@
+{
+  "_id": "JfkycYgyXyBcedgT",
+  "name": "Tremor",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "elemento Rocha",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 3 PM e bate no chão: criaturas a até <strong>3 m de você</strong> sofrem <strong>2d6 de dano de Impacto</strong> e fazem um teste de Fortitude (CD de místico) ou ficam <strong>Caídas</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__tremor",
+      "classe": "mistico",
+      "poder": "tremor",
+      "inferido": true
+    }
+  },
+  "_key": "!items!JfkycYgyXyBcedgT"
+}

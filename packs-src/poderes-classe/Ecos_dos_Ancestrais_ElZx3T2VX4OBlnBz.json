@@ -1,0 +1,38 @@
+{
+  "_id": "ElZx3T2VX4OBlnBz",
+  "name": "Ecos dos Ancestrais",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>duas magias divinas</strong>, <strong>das escolas que você escolheu</strong>, de qualquer nível que já possa lançar, e passa a lançar magias da lista <strong>Divina</strong>, usando <strong>Sabedoria</strong> como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias divinas de nível 1 no 5º nível, nível 2 no 9º, nível 3 no 13º e nível 4 no 17º (o místico não lança magias divinas de nível 5). Sem este poder, o místico <strong>não lança magias divinas</strong>. Você pode escolher este poder várias vezes: cada vez, aprende mais duas magias divinas.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__ecos-dos-ancestrais",
+      "classe": "mistico",
+      "poder": "ecos-dos-ancestrais",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ElZx3T2VX4OBlnBz"
+}

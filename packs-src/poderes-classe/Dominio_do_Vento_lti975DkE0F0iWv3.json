@@ -1,0 +1,38 @@
+{
+  "_id": "lti975DkE0F0iWv3",
+  "name": "Domínio do Vento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende o elemento <strong>Vento</strong>. Você recebe <strong>+3 m de deslocamento</strong>, <strong>cai em câmera lenta</strong> (queda de qualquer altura causa 0 de dano) e +2 de dano de Corte com a Rajada Elemental e com técnicas de Vento.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__dominio-do-vento",
+      "classe": "mistico",
+      "poder": "dominio-do-vento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!lti975DkE0F0iWv3"
+}

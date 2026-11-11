@@ -3,7 +3,7 @@
  * documentos dos compêndios. Sem dependência do Foundry: usado pelo build (Node), pelo plano B
  * (dentro do Foundry) e pelos testes.
  */
-import { SISTEMA_ID, ICONE_PADRAO, arquivoDoVinculo, imagemDoVinculo, ICONE_VINCULO_PADRAO, FICHA_ANIMAL } from "./config.mjs";
+import { SISTEMA_ID, ICONE_PADRAO, arquivoDoVinculo, imagemDoVinculo, ICONE_VINCULO_PADRAO, arquivoDoFamiliar, imagemDoFamiliar, ICONE_FAMILIAR_PADRAO, FICHA_ANIMAL } from "./config.mjs";
 import { idEstavel } from "./dados-itens.mjs";
 
 const normalizar = t => String(t).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -299,6 +299,12 @@ export function documentosDeClasses(d) {
 /* ------------------------------ Vínculos (animais do Patrulheiro) ------------------------------ */
 
 const TIPO_POR_NOME = { "perfuração": "perfuracao", "corte": "corte", "impacto": "impacto", "veneno": "veneno", "fogo": "fogo", "frio": "frio", "ácido": "acido" };
+
+/** Vínculo Selvagem (Patrulheiro) e Familiar Elemental (Místico): mesmo molde, nomes e imagens próprios. */
+const COMPANHEIROS = {
+  vinculo: { lista: "vinculos", arquivo: arquivoDoVinculo, imagem: imagemDoVinculo, padrao: ICONE_VINCULO_PADRAO, nota: "Vínculo Selvagem (valores provisórios)." },
+  familiar: { lista: "familiares", arquivo: arquivoDoFamiliar, imagem: imagemDoFamiliar, padrao: ICONE_FAMILIAR_PADRAO, nota: "Familiar Elemental do Místico." }
+};
 const chavePericia = (nome, pericias) => pericias.find(p => normalizar(p.nome) === normalizar(nome))?.chave;
 
 /**
@@ -312,18 +318,19 @@ const chavePericia = (nome, pericias) => pericias.find(p => normalizar(p.nome) =
  * @param {{ vinculos, imagens? }} dados   vinculos.json (+ imagens do build)
  * @param {{ chave, nome }[]} pericias  PERICIAS de config.mjs
  */
-export function documentosDeVinculos(dados, pericias) {
+export function documentosDeVinculos(dados, pericias, tipo = "vinculo") {
+  const t = COMPANHEIROS[tipo];
   return {
     pastas: [],
-    atores: (dados?.vinculos ?? []).map((a, i) => {
-      const actorId = idEstavel(`vinculo:${a.id}`);
+    atores: (dados?.[t.lista] ?? []).map((a, i) => {
+      const actorId = idEstavel(`${tipo}:${a.id}`);
       const pericia = {};
       for (const nome of a.treinadas ?? []) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), treino: 1 }; }
       for (const [nome, v] of Object.entries(a.outros ?? {})) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), outros: v }; }
       // atributoPericia: a perícia usa outro atributo (ex.: Luta da Cobra Voadora com DES)
       for (const [nome, at] of Object.entries(a.atributoPericia ?? {})) { const k = chavePericia(nome, pericias); if (k) pericia[k] = { ...(pericia[k] ?? {}), atributo: at }; }
-      const arquivo = dados.imagens ? dados.imagens[a.id] : arquivoDoVinculo(a.nome);
-      const img = arquivo ? imagemDoVinculo(a.nome, arquivo) : ICONE_VINCULO_PADRAO;
+      const arquivo = dados.imagens ? dados.imagens[a.id] : t.arquivo(a.nome);
+      const img = arquivo ? t.imagem(a.nome, arquivo) : t.padrao;
       const movimentos = Object.entries(a.deslocamentos ?? {}).filter(([k]) => k !== "terrestre").map(([k, v]) => `${k} ${v} m`).join(", ");
       return {
         _id: actorId, name: a.nome, type: "personagem", img, folder: null, sort: (i + 1) * 100,
@@ -334,19 +341,19 @@ export function documentosDeVinculos(dados, pericias) {
           pv: { value: 10, max: 10 },
           defesa: { outros: (a.defesaBonus ?? 0) - (a.atributos?.DES ?? 0) },
           deslocamento: a.deslocamentos?.terrestre ?? 9,
-          resistencias: { rdGeral: a.rd ?? 0 },
+          resistencias: { rdGeral: a.rd ?? 0, ...(a.imunidades?.length ? { imunidade: Object.fromEntries(a.imunidades.map(x => [TIPO_POR_NOME[String(x).toLowerCase()] ?? String(x).toLowerCase(), true])) } : {}) },
           pericias: pericia,
-          notas: `<p><strong>Vínculo Selvagem (valores provisórios).</strong>${movimentos ? ` Deslocamentos: ${escapar(movimentos)}.` : ""}</p>`
+          notas: `<p><strong>${t.nota}</strong>${a.elemento ? ` Elemento: ${escapar(a.elemento)}.` : ""}${movimentos ? ` Deslocamentos: ${escapar(movimentos)}.` : ""}${a.imunidades?.length ? ` Imune a ${escapar(a.imunidades.join(", "))}.` : ""}</p>`
         },
         prototypeToken: { name: a.nome, actorLink: true, disposition: 1, texture: { src: img } },
         items: [
           ...a.ataques.map((atq, j) => ({
-            _id: idEstavel(`vinculo:${a.id}:ataque:${j}`), name: atq.nome, type: "arma", img: "icons/svg/claw.svg",
+            _id: idEstavel(`${tipo}:${a.id}:ataque:${j}`), name: atq.nome, type: "arma", img: "icons/svg/claw.svg",
             system: {
-              categoria: "simples", grupo: "corpo-a-corpo", empunhadura: "uma-mao",
+              categoria: "simples", grupo: /pontaria/i.test(atq.pericia ?? "") ? "distancia" : "corpo-a-corpo", empunhadura: "uma-mao",
               dano: /1d6 de dano de veneno/i.test(atq.extra ?? "") ? `${atq.dano} + 1d6` : atq.dano,
               tiposDano: [TIPO_POR_NOME[String(atq.tipo ?? "").toLowerCase()] ?? "impacto", ...(/veneno/i.test(atq.extra ?? "") ? ["veneno"] : [])],
-              criticoMargem: 20, criticoMult: 2, alcance: "corpo-a-corpo", proficiencia: "sim", empunhada: true,
+              criticoMargem: 20, criticoMult: 2, alcance: atq.alcance ?? "corpo-a-corpo", proficiencia: "sim", empunhada: true,
               bonusAtaque: 0, bonusDano: 0, quantidade: 1, espacos: 0, preco: 0,
               descricao: atq.extra ? `<p>${escapar(atq.extra)}</p>` : ""
             },
@@ -354,12 +361,12 @@ export function documentosDeVinculos(dados, pericias) {
             flags: { [SISTEMA_ID]: { natural: true, somaNivel: !/só a mordida soma/i.test(atq.extra ?? "") || /mordida/i.test(atq.nome) } }
           })),
           ...(a.habilidades ?? []).map((h, j) => ({
-            _id: idEstavel(`vinculo:${a.id}:habilidade:${j}`), name: h.nome, type: "poder", img: "icons/svg/pawprint.svg",
+            _id: idEstavel(`${tipo}:${a.id}:habilidade:${j}`), name: h.nome, type: "poder", img: "icons/svg/pawprint.svg",
             system: { fonte: "geral", descricao: `<p>${escapar(h.texto)}</p>` }, flags: { [SISTEMA_ID]: { vinculo: true } }
           }))
         ],
         effects: [],
-        flags: { [SISTEMA_ID]: { id: a.id, vinculoId: a.id, vinculo: { animal: a.id }, provisorio: true }, core: { sheetClass: FICHA_ANIMAL } }
+        flags: { [SISTEMA_ID]: { id: a.id, vinculoId: a.id, vinculo: { animal: a.id, ...(tipo === "familiar" ? { familiar: true } : {}) }, provisorio: tipo === "vinculo" }, core: { sheetClass: FICHA_ANIMAL } }
       };
     })
   };
