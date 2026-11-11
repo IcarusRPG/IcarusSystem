@@ -7,7 +7,7 @@
   "sort": 800,
   "system": {
     "fonte": "classe",
-    "custoPM": 6,
+    "custoPM": null,
     "prerequisito": "",
     "nivel": null,
     "acao": "passivo",
@@ -31,7 +31,7 @@
       "id": "samurai__meditacao-de-combate",
       "classe": "samurai",
       "poder": "meditacao-de-combate",
-      "inferido": true
+      "inferido": false
     }
   },
   "_key": "!items!lVkVwA6ZW1gl4TIF"

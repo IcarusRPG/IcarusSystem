@@ -7,7 +7,7 @@
   "sort": 700,
   "system": {
     "fonte": "classe",
-    "custoPM": 1,
+    "custoPM": null,
     "prerequisito": "",
     "nivel": null,
     "acao": "passivo",
@@ -31,7 +31,7 @@
       "id": "barbaro__furia-sanguinaria",
       "classe": "barbaro",
       "poder": "furia-sanguinaria",
-      "inferido": true
+      "inferido": false
     }
   },
   "_key": "!items!QACjGZNP4uI0VET7"

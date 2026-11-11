@@ -1,5 +1,11 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.27.2
+
+### Custo das habilidades que recuperam PM
+- `classes.json` reimportado: **Embalo de Batalha** (Guerreiro), **Meditação de Combate** (Samurai), **Fúria Sanguinária** (Bárbaro) e **Mana Transbordante** (Arcanista) ficam **sem custo**, como a Dívida Paga (Paladino). O número do texto ("recupera 1 PM", "1d6 PM", "2 PM") tinha sido lido como custo. Assim elas não mostram mais um botão "Usar" cobrando PM.
+- As fichas que já tinham essas habilidades são corrigidas na primeira abertura do mundo pelo Mestre. Um custo ajustado à mão fica como está.
+
 ## 0.27.1
 
 ### Paladino: respostas do Mestre

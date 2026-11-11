@@ -21,6 +21,32 @@ export function iconeNovoDoFoco(item) {
   return padrao ? encodeURI(`systems/${SISTEMA_ID}/img/Icones/itens/equipamentos/focos arcanos/${m.arquivo}`) : null;
 }
 
+/**
+ * Habilidades que recuperam PM e vinham com o número do texto como custo (erro de extração do
+ * classes.json): id → custo errado. Só o custo errado é zerado (um ajuste à mão fica).
+ */
+export const CUSTOS_DE_GANHO = {
+  "guerreiro__embalo-de-batalha": 1, "samurai__meditacao-de-combate": 6, "barbaro__furia-sanguinaria": 1,
+  "arcanista__mana-transbordante": 2, "paladino__divida-paga": 2
+};
+
+/** Custo corrigido do item (0) ou null se não muda. */
+export function custoDeGanhoCorrigido(item) {
+  const errado = CUSTOS_DE_GANHO[item?.flags?.[SISTEMA_ID]?.id];
+  return errado !== undefined && Number(item.system?.custoPM) === errado ? 0 : null;
+}
+
+/** 0.27.2 — zera o custo dessas habilidades nas fichas e nos itens do mundo. @returns {Promise<number>} itens */
+export async function corrigirCustosDeGanho(atores = game.actors, itensDoMundo = game.items ?? []) {
+  let n = 0;
+  for (const actor of atores ?? []) {
+    const mudancas = actor.items.filter(i => custoDeGanhoCorrigido(i) !== null).map(i => ({ _id: i.id, "system.custoPM": 0 }));
+    if (mudancas.length) { await actor.updateEmbeddedDocuments("Item", mudancas); n += mudancas.length; }
+  }
+  for (const item of itensDoMundo) if (custoDeGanhoCorrigido(item) !== null) { await item.update({ "system.custoPM": 0 }); n++; }
+  return n;
+}
+
 /** 0.25.0 — focos arcanos já nas fichas e no mundo com o ícone padrão recebem a imagem própria. */
 export async function atualizarIconesDosFocos(atores = game.actors, itensDoMundo = game.items ?? []) {
   let n = 0;
@@ -192,7 +218,10 @@ const MIGRACOES = [
   // 0.13.0 — barras do token: bar1 = PV, bar2 = PM
   { versao: "0.13.0", rodar: () => configurarBarrasDosTokens() },
   // 0.25.0 — regra nova do PM dos conjuradores (Arcanista, Bardo) e ícones dos focos arcanos
-  { versao: "0.25.0", rodar: async () => (await migrarPMDosConjuradores()) + (await atualizarIconesDosFocos()) }
+  { versao: "0.25.0", rodar: async () => (await migrarPMDosConjuradores()) + (await atualizarIconesDosFocos()) },
+  // 0.27.2 — custo 0 nas habilidades que recuperam PM (Embalo de Batalha, Meditação de Combate,
+  // Fúria Sanguinária, Mana Transbordante, Dívida Paga)
+  { versao: "0.27.2", rodar: () => corrigirCustosDeGanho() }
 ];
 
 export function registrarMigracoes() {

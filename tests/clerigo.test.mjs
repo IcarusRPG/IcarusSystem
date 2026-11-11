@@ -257,3 +257,16 @@ test("Arma Consagrada: +1 passo no dado da arma, Sabedoria no ataque e no dano, 
   const desmarcado = await Promise.all(MODIFICADORES_ATAQUE.map(f => f({ actor: ator, item: maca, modo: "corpo-a-corpo", opcoes: {}, alvos: [] })));
   assert.ok(!desmarcado.some(x => x?.passosDano), "desmarcada no diálogo: nada muda");
 });
+
+test("Migração 0.27.2: habilidades que recuperam PM perdem o custo errado nas fichas; custo ajustado à mão fica", async () => {
+  const { custoDeGanhoCorrigido, corrigirCustosDeGanho } = await import("../module/migracoes.mjs");
+  const item = (id, custoPM) => ({ id: `i-${id}-${custoPM}`, flags: { "icarus-rpg": { id } }, system: { custoPM } });
+  assert.equal(custoDeGanhoCorrigido(item("samurai__meditacao-de-combate", 6)), 0);
+  assert.equal(custoDeGanhoCorrigido(item("samurai__meditacao-de-combate", 3)), null, "ajuste à mão");
+  assert.equal(custoDeGanhoCorrigido(item("arcanista__bola-de-fogo", 2)), null);
+  const feitos = [];
+  const ator = { items: [item("guerreiro__embalo-de-batalha", 1), item("arcanista__mana-transbordante", 2), item("guerreiro__golpe", 1)],
+    async updateEmbeddedDocuments(_t, l) { feitos.push(...l); } };
+  assert.equal(await corrigirCustosDeGanho([ator], []), 2);
+  assert.deepEqual(feitos.map(f => f["system.custoPM"]), [0, 0]);
+});
