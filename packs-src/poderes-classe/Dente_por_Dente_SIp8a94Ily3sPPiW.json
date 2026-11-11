@@ -1,0 +1,38 @@
+{
+  "_id": "SIp8a94Ily3sPPiW",
+  "name": "Dente por Dente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "7º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura adjacente acerta um ataque corpo a corpo contra você e causa dano, você pode gastar 1 PM e a sua reação: ela faz um teste de <strong>Fortitude</strong> (CD de anátema) ou fica <strong>Sangrando</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 7,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__dente-por-dente",
+      "classe": "anatema",
+      "poder": "dente-por-dente",
+      "inferido": true
+    }
+  },
+  "_key": "!items!SIp8a94Ily3sPPiW"
+}

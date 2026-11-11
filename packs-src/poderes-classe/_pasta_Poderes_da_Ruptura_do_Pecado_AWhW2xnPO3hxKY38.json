@@ -1,0 +1,15 @@
+{
+  "_id": "AWhW2xnPO3hxKY38",
+  "name": "Poderes da Ruptura do Pecado",
+  "type": "Item",
+  "folder": "RkOR06ILPWmxxSY2",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:anatema:poderes-da-ruptura-do-pecado"
+    }
+  },
+  "_key": "!folders!AWhW2xnPO3hxKY38"
+}

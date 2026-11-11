@@ -20,7 +20,7 @@ export const PASTA_ICONES_MAGIAS = `systems/${SISTEMA_ID}/img/magias`;
  * Atributo-chave das magias de classes que não somam atributo ao PM (Paladino: Carisma, pelas
  * Preces de Guerra). As outras usam o atributo de PM da classe.
  */
-export const ATRIBUTO_DE_MAGIA_DA_CLASSE = { paladino: "CAR" };
+export const ATRIBUTO_DE_MAGIA_DA_CLASSE = { paladino: "CAR", anatema: "SAB" };
 
 /** Atributo-chave da magia: o escolhido na ficha; senão o de PM da classe; senão o da classe; senão Inteligência. */
 export function atributoDeMagia(system) {
@@ -46,19 +46,21 @@ export function nivelMaximoDeMagia(nivelPersonagem, { teto = 5 } = {}) {
 }
 
 /** Teto do nível de magia pela classe (o Bardo e o Paladino nunca alcançam o 5º). */
-export const tetoDeMagiaDaClasse = classe => (classe === "bardo" || classe === "paladino" ? 4 : 5);
+export const tetoDeMagiaDaClasse = classe => (["bardo", "paladino", "anatema"].includes(classe) ? 4 : 5);
 
 /**
- * Maior nível de magia pela classe e nível. Paladino (Preces de Guerra): 1º no 5º nível, 2º no 9º,
+ * Maior nível de magia pela classe e nível. Paladino (Preces de Guerra) e Anátema (Palavras de Sangue): 1º no 5º nível, 2º no 9º,
  * 3º no 13º e 4º no 17º (0 antes do 5º). As outras: a tabela padrão com o teto da classe.
  */
 export function nivelMaximoDaClasse(classe, nivel) {
-  if (classe === "paladino") return Math.trunc(Number(nivel) || 1) < 5 ? 0 : nivelMaximoDeMagia(Math.trunc(Number(nivel)) - 4, { teto: 4 });
+  if (classe === "paladino" || classe === "anatema") return Math.trunc(Number(nivel) || 1) < 5 ? 0 : nivelMaximoDeMagia(Math.trunc(Number(nivel)) - 4, { teto: 4 });
   return nivelMaximoDeMagia(nivel, { teto: tetoDeMagiaDaClasse(classe) });
 }
 
 /** Magias conhecidas do Paladino: 2 por Preces de Guerra escolhida. */
 export const limiteDeMagiasDoPaladino = preces => 2 * Math.max(0, Math.trunc(Number(preces) || 0));
+/** Magias conhecidas do Anátema: 2 por Palavras de Sangue escolhida. */
+export const limiteDeMagiasDoAnatema = limiteDeMagiasDoPaladino;
 
 /**
  * Custo total de um lançamento: custo base + aprimoramentos escolhidos (índices; cada um uma vez).

@@ -1,0 +1,38 @@
+{
+  "_id": "rkhXMsFV5qhgi4PG",
+  "name": "Veias de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 10007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+2 em Fortitude</strong> e <strong>+5 nos testes de Constituição</strong> contra a condição <strong>Sangrando</strong> (a sua e a de qualquer criatura, quando você usa efeitos que a causam).",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__veias-de-ferro",
+      "classe": "anatema",
+      "habilidade": "veias-de-ferro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!rkhXMsFV5qhgi4PG"
+}

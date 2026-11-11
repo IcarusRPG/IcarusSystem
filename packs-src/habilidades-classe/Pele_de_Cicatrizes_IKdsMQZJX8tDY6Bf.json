@@ -1,0 +1,38 @@
+{
+  "_id": "IKdsMQZJX8tDY6Bf",
+  "name": "Pele de Cicatrizes",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 9015,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>Redução de Dano 2</strong> (respeitando o teto de RD do Núcleo), que passa a <strong>4</strong> enquanto você tiver <strong>menos da metade dos seus PV</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__pele-de-cicatrizes",
+      "classe": "anatema",
+      "habilidade": "pele-de-cicatrizes",
+      "inferido": false
+    }
+  },
+  "_key": "!items!IKdsMQZJX8tDY6Bf"
+}

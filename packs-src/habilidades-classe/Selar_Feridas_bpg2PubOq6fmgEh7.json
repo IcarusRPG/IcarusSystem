@@ -1,0 +1,38 @@
+{
+  "_id": "bpg2PubOq6fmgEh7",
+  "name": "Selar Feridas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 2003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 1 PM e toca uma criatura (inclusive você): ela <strong>remove a condição Sangrando</strong> e recupera <strong>1d6 PV</strong>. A cura aumenta em <strong>+1d6 no 8º, 14º e 20º níveis</strong> (4d6 no 20º). <em>Divino</em> (a magia que sobrou do tempo da fé).",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__selar-feridas",
+      "classe": "anatema",
+      "habilidade": "selar-feridas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!bpg2PubOq6fmgEh7"
+}

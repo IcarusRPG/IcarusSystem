@@ -1,0 +1,38 @@
+{
+  "_id": "0hvLGGum79SVfAq9",
+  "name": "Corte Gêmeo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "AWhW2xnPO3hxKY38",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa a Sangria de Guerra, pode pagar <strong>+1 PM</strong> para que uma segunda criatura <strong>adjacente ao alvo</strong> também fique Sangrando.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura do Pecado",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura do Pecado",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__corte-gemeo",
+      "classe": "anatema",
+      "poder": "corte-gemeo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0hvLGGum79SVfAq9"
+}

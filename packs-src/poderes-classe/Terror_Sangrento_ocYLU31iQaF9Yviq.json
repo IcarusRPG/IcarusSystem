@@ -1,0 +1,38 @@
+{
+  "_id": "ocYLU31iQaF9Yviq",
+  "name": "Terror Sangrento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "L6uiWsktBD5JCXiQ",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Aliados em alcance curto recebem <strong>+1 de dano</strong> contra criaturas que você tenha deixado <strong>Abaladas ou Apavoradas</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Blasfêmia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Blasfêmia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__terror-sangrento",
+      "classe": "anatema",
+      "poder": "terror-sangrento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ocYLU31iQaF9Yviq"
+}

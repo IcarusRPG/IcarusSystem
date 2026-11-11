@@ -1,0 +1,38 @@
+{
+  "_id": "MfjljDzrKFaLFiMG",
+  "name": "Ferida Teimosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A <strong>CD</strong> do teste da condição Sangrando que você causa com a Sangria de Guerra passa a ser <strong>10 + metade do seu nível + Sabedoria</strong>, em vez de 15.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__ferida-teimosa",
+      "classe": "anatema",
+      "poder": "ferida-teimosa",
+      "inferido": false
+    }
+  },
+  "_key": "!items!MfjljDzrKFaLFiMG"
+}

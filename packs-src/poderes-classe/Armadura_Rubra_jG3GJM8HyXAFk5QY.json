@@ -1,0 +1,38 @@
+{
+  "_id": "jG3GJM8HyXAFk5QY",
+  "name": "Armadura Rubra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "4º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+1 na Defesa</strong> enquanto usa armadura pesada.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__armadura-rubra",
+      "classe": "anatema",
+      "poder": "armadura-rubra",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jG3GJM8HyXAFk5QY"
+}

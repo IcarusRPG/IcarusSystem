@@ -1,0 +1,38 @@
+{
+  "_id": "9iFBp7B3zAcvAAdf",
+  "name": "Voz Blasfema",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 3018,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O seu Olhar Funesto atinge <strong>até duas criaturas</strong> em alcance curto (um teste para cada), e você recebe <strong>+2 em Intimidação</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__voz-blasfema",
+      "classe": "anatema",
+      "habilidade": "voz-blasfema",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9iFBp7B3zAcvAAdf"
+}

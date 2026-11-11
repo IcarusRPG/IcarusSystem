@@ -1,0 +1,38 @@
+{
+  "_id": "SZg6Auoq0nB4dcqn",
+  "name": "Perícia Especializada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "wCN9wQg82Jw5XCZm",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__pericia-especializada",
+      "classe": "anatema",
+      "poder": "pericia-especializada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!SZg6Auoq0nB4dcqn"
+}

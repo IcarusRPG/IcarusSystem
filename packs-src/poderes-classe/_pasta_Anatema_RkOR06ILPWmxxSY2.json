@@ -1,0 +1,15 @@
+{
+  "_id": "RkOR06ILPWmxxSY2",
+  "name": "Anátema",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:anatema"
+    }
+  },
+  "_key": "!folders!RkOR06ILPWmxxSY2"
+}

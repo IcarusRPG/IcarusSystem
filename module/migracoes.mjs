@@ -63,7 +63,7 @@ export async function atualizarIconesDosFocos(atores = game.actors, itensDoMundo
 
 const CAMPOS_PM = ["pmInicial", "pmPorNivel", "pmAtributo", "pmAtributoSoNoPrimeiroNivel"];
 /** Classes cuja regra de PM mudou (as outras ficam como estão, mesmo com ajuste à mão). */
-const CONJURADORES = new Set(["arcanista", "bardo", "clerigo", "druida"]);
+const CONJURADORES = new Set(["arcanista", "bardo", "clerigo", "druida", "anatema"]);
 
 /**
  * Mudanças no classeConfig de PM para a regra atual (conjuradores: base × nível + atributo uma

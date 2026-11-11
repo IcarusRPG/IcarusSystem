@@ -1,0 +1,38 @@
+{
+  "_id": "7NklJL45iCBviiuQ",
+  "name": "Estilo: Ruptura do Pecado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 9,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O anátema que cobra o que lhe devem.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__estilo-ruptura-do-pecado",
+      "classe": "anatema",
+      "habilidade": "estilo-ruptura-do-pecado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!7NklJL45iCBviiuQ"
+}

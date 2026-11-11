@@ -1,0 +1,38 @@
+{
+  "_id": "gYARzZJbkFzuwg7d",
+  "name": "Pano e Linha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "H24lj6DNrVFs7r46",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa o Selar Feridas em um <strong>aliado</strong>, ele também recebe <strong>PV temporários iguais à metade do seu nível</strong>, até o fim da cena.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Tragédia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Tragédia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__pano-e-linha",
+      "classe": "anatema",
+      "poder": "pano-e-linha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!gYARzZJbkFzuwg7d"
+}

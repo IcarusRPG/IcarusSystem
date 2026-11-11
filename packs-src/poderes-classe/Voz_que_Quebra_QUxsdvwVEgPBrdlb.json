@@ -1,0 +1,38 @@
+{
+  "_id": "QUxsdvwVEgPBrdlb",
+  "name": "Voz que Quebra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "L6uiWsktBD5JCXiQ",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar o Olhar Funesto como <strong>ação livre</strong> uma vez por rodada, pagando <strong>1 PM</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Blasfêmia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Blasfêmia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__voz-que-quebra",
+      "classe": "anatema",
+      "poder": "voz-que-quebra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!QUxsdvwVEgPBrdlb"
+}

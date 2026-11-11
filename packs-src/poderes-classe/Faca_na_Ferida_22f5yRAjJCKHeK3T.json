@@ -1,0 +1,38 @@
+{
+  "_id": "22f5yRAjJCKHeK3T",
+  "name": "Faca na Ferida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "AWhW2xnPO3hxKY38",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 1 PM: uma criatura <strong>Sangrando</strong> em alcance curto perde <strong>1d6 PV</strong> (perda de PV, sem teste).",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura do Pecado",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura do Pecado",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__faca-na-ferida",
+      "classe": "anatema",
+      "poder": "faca-na-ferida",
+      "inferido": true
+    }
+  },
+  "_key": "!items!22f5yRAjJCKHeK3T"
+}

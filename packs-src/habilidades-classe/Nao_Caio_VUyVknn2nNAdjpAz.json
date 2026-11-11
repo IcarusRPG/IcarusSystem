@@ -1,0 +1,38 @@
+{
+  "_id": "VUyVknn2nNAdjpAz",
+  "name": "Não Caio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 15016,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando seus PV chegariam a 0, você pode gastar 4 PM e a sua reação: seus PV ficam em <strong>1</strong> e você recebe <strong>4d8 PV temporários</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__nao-caio",
+      "classe": "anatema",
+      "habilidade": "nao-caio",
+      "inferido": true
+    }
+  },
+  "_key": "!items!VUyVknn2nNAdjpAz"
+}

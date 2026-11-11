@@ -1,0 +1,38 @@
+{
+  "_id": "jSohtJ724102apxE",
+  "name": "Dor Fértil",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 5006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, quando você <strong>perde PV</strong> (por dano ou por perda), você recupera <strong>1 PM</strong>. Você recupera no máximo <strong>metade do seu nível</strong> (arredondado para baixo) em PM por cena com esta habilidade.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__dor-fertil",
+      "classe": "anatema",
+      "habilidade": "dor-fertil",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jSohtJ724102apxE"
+}

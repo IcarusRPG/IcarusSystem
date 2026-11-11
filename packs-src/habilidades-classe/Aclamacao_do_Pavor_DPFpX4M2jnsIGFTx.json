@@ -1,0 +1,38 @@
+{
+  "_id": "DPFpX4M2jnsIGFTx",
+  "name": "Aclamação do Pavor",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 15020,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 6,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM: todos os inimigos em alcance curto fazem um teste de <strong>Vontade</strong> (CD de anátema). Quem falhar fica <strong>Apavorado</strong> por 1d4 rodadas. <em>Medo, Mental.</em>",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__aclamacao-do-pavor",
+      "classe": "anatema",
+      "habilidade": "aclamacao-do-pavor",
+      "inferido": true
+    }
+  },
+  "_key": "!items!DPFpX4M2jnsIGFTx"
+}

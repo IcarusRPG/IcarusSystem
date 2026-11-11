@@ -31,9 +31,10 @@ function efeitosDaCondicao(actor, id) {
 
 /**
  * Aplica uma condição (não duplica: se já estiver ativa, mantém a existente).
- * @param {object} [opcoes]  { duracao: "remover"|"rodadas"|"cena", rodadas, origem }
+ * @param {object} [opcoes]  { duracao: "remover"|"rodadas"|"cena", rodadas, origem, flags }
+ *   flags: dados extras do efeito (ex.: sangrandoPor do Anátema, com a CD e a perda do teste)
  */
-export async function aplicarCondicao(alvo, id, { duracao = "remover", rodadas = 1, origem = null } = {}) {
+export async function aplicarCondicao(alvo, id, { duracao = "remover", rodadas = 1, origem = null, flags = {} } = {}) {
   const actor = atorDe(alvo);
   const c = CONDICAO_POR_ID[id];
   if (!actor || !c) return null;
@@ -43,7 +44,7 @@ export async function aplicarCondicao(alvo, id, { duracao = "remover", rodadas =
     img: iconeDaCondicao(c),
     statuses: [id],
     description: c.descricao,
-    flags: { [SISTEMA_ID]: { condicao: id, duracao, origem, descritores: c.descritores ?? [], pendencias: c.pendencias ?? [] } }
+    flags: { [SISTEMA_ID]: { ...flags, condicao: id, duracao, origem, descritores: c.descritores ?? [], pendencias: c.pendencias ?? [] } }
   };
   if (duracao === "rodadas") {
     dados.duration = { rounds: Math.max(1, Number(rodadas) || 1), startRound: game.combat?.round ?? 0, startTurn: game.combat?.turn ?? 0, combat: game.combat?.id ?? null };

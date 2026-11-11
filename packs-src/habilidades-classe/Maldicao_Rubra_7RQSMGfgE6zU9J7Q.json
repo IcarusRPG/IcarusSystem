@@ -1,0 +1,38 @@
+{
+  "_id": "7RQSMGfgE6zU9J7Q",
+  "name": "Maldição Rubra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 9019,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e escolhe uma criatura em alcance curto. Ela faz um teste de <strong>Vontade</strong> (CD de anátema: 10 + metade do seu nível + Sabedoria): se falhar, fica <strong>Sangrando</strong> e <strong>Abalada</strong> até o fim da cena. <em>Mental.</em>",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__maldicao-rubra",
+      "classe": "anatema",
+      "habilidade": "maldicao-rubra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!7RQSMGfgE6zU9J7Q"
+}

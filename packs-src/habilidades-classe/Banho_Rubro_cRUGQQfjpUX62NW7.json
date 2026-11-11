@@ -1,0 +1,38 @@
+{
+  "_id": "cRUGQQfjpUX62NW7",
+  "name": "Banho Rubro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 20008,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 10,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, como ação padrão, você gasta 10 PM e deixa a Ruptura tomar conta. Até o fim da cena: a <strong>Sangria de Guerra não custa PM</strong>; sempre que uma criatura em alcance curto <strong>perde PV por Sangrando</strong>, você recupera <strong>1d4 PV</strong> (uma vez por criatura por rodada); e você fica com <strong>+2 em testes de ataque e em Intimidação</strong>. Quando a cena termina, você fica <strong>Fatigado</strong>. <em>Divino.</em>",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__banho-rubro",
+      "classe": "anatema",
+      "habilidade": "banho-rubro",
+      "inferido": true
+    }
+  },
+  "_key": "!items!cRUGQQfjpUX62NW7"
+}

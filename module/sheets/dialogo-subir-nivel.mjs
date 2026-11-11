@@ -9,6 +9,7 @@
  */
 import { SISTEMA_ID, ATRIBUTOS } from "../config.mjs";
 import { habilidadesDoNivel, nivelTemPoder, ganhoDoNivel, validarPoder, patamarDe, normalizarNome } from "../classes-dados.mjs";
+import { pmExtraPorNiveis } from "../anatema-dados.mjs";
 import { classeDoAtor, contadorDePoderes, concederHabilidades } from "../classes.mjs";
 import { situacaoParaValidar, escolherPoderDeClasse } from "./dialogo-poderes-classe.mjs";
 
@@ -75,6 +76,8 @@ export class DialogoSubirNivel extends HandlebarsApplicationMixin(ApplicationV2)
     const s = this.actor.system;
     const atributos = Object.fromEntries(ATRIBUTOS.map(k => [k, s.atributos[k].total]));
     const ganho = ganhoDoNivel(s.classeConfig, atributos, n);
+    // Mana Coagulada (Anátema, classes.json pm.extraACadaNiveis): +1 PM a cada 2 níveis
+    if (c.pm?.extraACadaNiveis) ganho.pm += pmExtraPorNiveis(c.pm.extraACadaNiveis, n) - pmExtraPorNiveis(c.pm.extraACadaNiveis, n - 1);
     const vagas = this.vagas(n);
     const situacao = this.situacao(n);
     const marcados = this.selecoes.get(n);

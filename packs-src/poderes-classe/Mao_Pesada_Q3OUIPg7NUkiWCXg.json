@@ -1,0 +1,38 @@
+{
+  "_id": "Q3OUIPg7NUkiWCXg",
+  "name": "Mão Pesada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "AWhW2xnPO3hxKY38",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+2 no dano</strong> com armas de Corte e de Perfuração.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura do Pecado",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura do Pecado",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__mao-pesada",
+      "classe": "anatema",
+      "poder": "mao-pesada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Q3OUIPg7NUkiWCXg"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "wCN9wQg82Jw5XCZm",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "RkOR06ILPWmxxSY2",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:anatema:poderes-comuns"
+    }
+  },
+  "_key": "!folders!wCN9wQg82Jw5XCZm"
+}

@@ -5,6 +5,7 @@ import { divindadePorId, idDaDivindadePorNome } from "../panteao.mjs";
 import { classePorId, idDaClassePorNome, blocoDoVinculo, dadosDasHerancas } from "../classes-dados.mjs";
 import { SISTEMA_ID, RECARGAS } from "../config.mjs";
 import { origemPorId, idDaOrigemPorNome } from "../origens-dados.mjs";
+import { passivosDoAnatema } from "../anatema-dados.mjs";
 
 const CHAVE_RD = /^system\.resistencias\.(rdGeral|reducao\.(\w+))$/;
 
@@ -41,6 +42,9 @@ export function fontesDeRD(actor) {
   // Heranças do Feiticeiro (Leviatã, Fênix, Alma do Elemento)
   const herancas = dadosDasHerancas([...(actor.items ?? [])], { nivel: actor.system?.nivel ?? 1, elementoDragao: actor.flags?.[SISTEMA_ID]?.elementoDragao ?? null });
   for (const r of herancas.rd) fontes.push({ tipo: r.tipo, valor: r.valor, origem: r.origem, chave: `heranca:${r.origem}|${r.tipo}` });
+  // Anátema: Pele de Cicatrizes (RD 2; 4 abaixo da metade dos PV)
+  const anatema = passivosDoAnatema([...(actor.items ?? [])], { nivel: actor.system?.nivel ?? 1, pv: actor._source?.system?.pv?.value ?? 0, pvMax: actor.system?.pv?.max ?? 0 });
+  for (const r of anatema.rd) fontes.push({ tipo: null, valor: r.valor, origem: r.origem, chave: `anatema:${r.origem}|rdGeral` });
   const salvo = actor._source?.system?.resistencias ?? {};
   return { base: { rdGeral: salvo.rdGeral ?? 0, reducao: { ...(salvo.reducao ?? {}) } }, fontes };
 }

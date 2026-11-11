@@ -1,0 +1,38 @@
+{
+  "_id": "kQlvNV6kdYrkPyeW",
+  "name": "Mana Coagulada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seu PM máximo aumenta em <strong>1 a cada 2 níveis de Anátema</strong> (arredondado para baixo; +1 no 2º nível, +2 no 4º, +10 no 20º).",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__mana-coagulada",
+      "classe": "anatema",
+      "habilidade": "mana-coagulada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kQlvNV6kdYrkPyeW"
+}

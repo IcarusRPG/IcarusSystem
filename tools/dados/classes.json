@@ -33,9 +33,11 @@
      "Iniciativa",
      "Intimidação",
      "Intuição",
+     "Luta",
      "Navegação",
      "Nobreza",
      "Olfato",
+     "Pontaria",
      "Reflexos",
      "Religião",
      "Sobrevivência",
@@ -863,7 +865,9 @@
      "Fortitude",
      "Iniciativa",
      "Intimidação",
+     "Luta",
      "Nobreza",
+     "Pontaria",
      "Reflexos",
      "Visão",
      "Vontade"
@@ -2594,10 +2598,10 @@
      "Barganha",
      "Diplomacia",
      "Enganação",
+     "Iniciativa",
      "Intimidação",
      "Intuição",
      "Investigação",
-     "Iniciativa",
      "Luta",
      "Pontaria",
      "Reflexos",
@@ -3400,8 +3404,10 @@
      "Iniciativa",
      "Intuição",
      "Investigação",
+     "Luta",
      "Navegação",
      "Olfato",
+     "Pontaria",
      "Reflexos",
      "Visão",
      "Vontade"
@@ -4121,6 +4127,7 @@
      "Iniciativa",
      "Intuição",
      "Luta",
+     "Pontaria",
      "Reflexos",
      "Religião",
      "Visão",
@@ -5627,7 +5634,9 @@
      "Intimidação",
      "Intuição",
      "Investigação",
+     "Luta",
      "Nobreza",
+     "Pontaria",
      "Prestidigitação",
      "Religião"
     ]
@@ -9080,7 +9089,8 @@
      "Intuição",
      "Luta",
      "Misticismo",
-     "Nobreza"
+     "Nobreza",
+     "Pontaria"
     ]
    },
    "proficiencias": "Armas simples, armaduras pesadas, escudos",
@@ -9761,6 +9771,7 @@
      "Intimidação",
      "Intuição",
      "Nobreza",
+     "Pontaria",
      "Religião"
     ]
    },
@@ -10599,9 +10610,12 @@
      "Cura",
      "Fortitude",
      "Furtividade",
+     "Iniciativa",
      "Intuição",
+     "Luta",
      "Navegação",
      "Olfato",
+     "Pontaria",
      "Religião",
      "Visão"
     ]
@@ -11440,6 +11454,761 @@
      "atributoMinimo": null,
      "requerPoderes": [],
      "requerGrupo": "Círculo do Broto",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "aumento-de-atributo",
+     "nome": "Aumento de Atributo",
+     "grupo": "Poderes comuns",
+     "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null
+    },
+    {
+     "id": "pericia-especializada",
+     "nome": "Perícia Especializada",
+     "grupo": "Poderes comuns",
+     "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+     "prerequisito": "10º nível",
+     "nivelMinimo": 10,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null
+    }
+   ]
+  },
+  {
+   "id": "anatema",
+   "nome": "Anátema",
+   "papel": "Guerreiro da Ruptura Divina",
+   "pv": {
+    "inicial": 26,
+    "porNivel": 6,
+    "atributo": "CON"
+   },
+   "pm": {
+    "inicial": 2,
+    "porNivel": 2,
+    "atributoSoNoPrimeiroNivel": true,
+    "texto": "2 + Sabedoria no 1º nível; +2 por nível seguinte; +1 PM a cada 2 níveis (Mana Coagulada)",
+    "atributo": "SAB",
+    "extraACadaNiveis": {
+     "niveis": 2,
+     "valor": 1
+    }
+   },
+   "atributoChave": "Sabedoria",
+   "pericias": {
+    "obrigatorias": "Fortitude e Intimidação",
+    "escolha": 3,
+    "lista": [
+     "Atletismo",
+     "Cura",
+     "Iniciativa",
+     "Intuição",
+     "Luta",
+     "Misticismo",
+     "Pontaria",
+     "Religião",
+     "Sobrevivência",
+     "Vontade"
+    ]
+   },
+   "proficiencias": "Armas simples e marciais, armaduras pesadas, escudos",
+   "intro": [
+    "O anátema é quem o céu virou as costas. Um pecado, uma dúvida, uma tragédia ou uma blasfêmia dita no pior momento: a bênção sumiu, e no lugar dela ficou uma marca na carne. O vazio deixado pela divindade não ficou vazio por muito tempo. Ele descobriu que o sangue, aquilo que corre e pulsa, ainda carrega mana, e a mana não pede licença a ninguém.",
+    "Há anátemas que cortam, abrem, derrubam e fazem o inimigo pagar cada gota. Há os que sobrevivem ao que mataria qualquer outro, costurando a própria carne no meio da batalha. E há os que ofendem o próprio céu e fazem do medo uma arma. O que une todos é a Ruptura: eles já não devem nada a ninguém, e é por isso que ninguém os assusta."
+   ],
+   "progressao": [
+    {
+     "nivel": 1,
+     "habilidades": [
+      "Abandonado",
+      "Mana Coagulada",
+      "Sangria de Guerra"
+     ],
+     "poder": false
+    },
+    {
+     "nivel": 2,
+     "habilidades": [
+      "Selar Feridas",
+      "Olhar Funesto"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 3,
+     "habilidades": [
+      "Ruptura"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 4,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 5,
+     "habilidades": [
+      "Dor Fértil"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 6,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 7,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 8,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 9,
+     "habilidades": [
+      "Habilidade de Ruptura"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 10,
+     "habilidades": [
+      "Veias de Ferro"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 11,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 12,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 13,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 14,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 15,
+     "habilidades": [
+      "Habilidade de Ruptura"
+     ],
+     "poder": true
+    },
+    {
+     "nivel": 16,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 17,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 18,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 19,
+     "habilidades": [],
+     "poder": true
+    },
+    {
+     "nivel": 20,
+     "habilidades": [
+      "Banho Rubro"
+     ],
+     "poder": true
+    }
+   ],
+   "habilidades": [
+    {
+     "id": "abandonado",
+     "nome": "Abandonado",
+     "nivel": 1,
+     "descricao": "Você foi abandonado por uma divindade (ou nunca teve uma) e <strong>não pode ser devoto</strong> de nenhuma divindade do Panteão: não recebe Poderes Concedidos nem precisa seguir Dogmas. Em troca, você aprende a pagar o preço da própria carne: <strong>uma vez por turno</strong>, ao gastar PM em uma habilidade ou magia, você pode <strong>pagar até 2 PM com PV</strong>. Cada PM pago assim custa <strong>3 PV</strong> (perda de PV, não dano). Você não pode usar este pagamento se ele reduzir seus PV a 0.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "mana-coagulada",
+     "nome": "Mana Coagulada",
+     "nivel": 1,
+     "descricao": "Seu PM máximo aumenta em <strong>1 a cada 2 níveis de Anátema</strong> (arredondado para baixo; +1 no 2º nível, +2 no 4º, +10 no 20º).",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "sangria-de-guerra",
+     "nome": "Sangria de Guerra",
+     "nivel": 1,
+     "descricao": "Quando você <strong>acerta</strong> um ataque corpo a corpo com uma arma de <strong>Corte ou Perfuração</strong>, pode gastar 1 PM: o alvo fica <strong>Sangrando</strong>. Criaturas imunes a Sangrando não são afetadas.",
+     "custoPM": 1,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "selar-feridas",
+     "nome": "Selar Feridas",
+     "nivel": 2,
+     "descricao": "Como ação de movimento, você gasta 1 PM e toca uma criatura (inclusive você): ela <strong>remove a condição Sangrando</strong> e recupera <strong>1d6 PV</strong>. A cura aumenta em <strong>+1d6 no 8º, 14º e 20º níveis</strong> (4d6 no 20º). <em>Divino</em> (a magia que sobrou do tempo da fé).",
+     "custoPM": 1,
+     "acao": "movimento",
+     "subs": []
+    },
+    {
+     "id": "olhar-funesto",
+     "nome": "Olhar Funesto",
+     "nivel": 2,
+     "descricao": "Você usa <strong>Sabedoria</strong>, em vez de Carisma, nos testes de <strong>Intimidação</strong>. Como ação de movimento, você faz um teste de Intimidação contra a <strong>Vontade</strong> de uma criatura em alcance curto: se vencer, ela fica <strong>Abalada</strong> até o fim da cena (se ela estiver <strong>Sangrando</strong>, fica <strong>Apavorada</strong> por 1 rodada, em vez de só Abalada). <em>Medo, Mental.</em>",
+     "custoPM": null,
+     "acao": "movimento",
+     "subs": []
+    },
+    {
+     "id": "ruptura",
+     "nome": "Ruptura",
+     "nivel": 3,
+     "descricao": "Você escolhe a ferida que o abandono deixou em você, e a escolha é permanente. Cada Ruptura concede uma habilidade agora, outra no 9º nível e outra no 15º, além de uma lista de poderes própria.<br>• <strong>Ruptura do Pecado:</strong> o anátema que cobra o que lhe devem. Dano e Sangrando.<br>• <strong>Ruptura da Tragédia:</strong> o anátema que sobrevive ao que mataria qualquer outro. Resistência, cura e proteção.<br>• <strong>Ruptura da Blasfêmia:</strong> o anátema que ofendeu o céu e não se arrependeu. Medo, controle e maldição.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": [],
+     "escolha": {
+      "tipo": "caminho",
+      "permanente": true,
+      "opcoes": [
+       "Ruptura do Pecado",
+       "Ruptura da Tragédia",
+       "Ruptura da Blasfêmia"
+      ]
+     }
+    },
+    {
+     "id": "dor-fertil",
+     "nome": "Dor Fértil",
+     "nivel": 5,
+     "descricao": "Uma vez por rodada, quando você <strong>perde PV</strong> (por dano ou por perda), você recupera <strong>1 PM</strong>. Você recupera no máximo <strong>metade do seu nível</strong> (arredondado para baixo) em PM por cena com esta habilidade.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "veias-de-ferro",
+     "nome": "Veias de Ferro",
+     "nivel": 10,
+     "descricao": "Você recebe <strong>+2 em Fortitude</strong> e <strong>+5 nos testes de Constituição</strong> contra a condição <strong>Sangrando</strong> (a sua e a de qualquer criatura, quando você usa efeitos que a causam).",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "banho-rubro",
+     "nome": "Banho Rubro",
+     "nivel": 20,
+     "descricao": "Uma vez por dia, como ação padrão, você gasta 10 PM e deixa a Ruptura tomar conta. Até o fim da cena: a <strong>Sangria de Guerra não custa PM</strong>; sempre que uma criatura em alcance curto <strong>perde PV por Sangrando</strong>, você recupera <strong>1d4 PV</strong> (uma vez por criatura por rodada); e você fica com <strong>+2 em testes de ataque e em Intimidação</strong>. Quando a cena termina, você fica <strong>Fatigado</strong>. <em>Divino.</em>",
+     "custoPM": 10,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "estilo-ruptura-do-pecado",
+     "nome": "Estilo: Ruptura do Pecado",
+     "nivel": null,
+     "descricao": "O anátema que cobra o que lhe devem.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "carne-aberta",
+     "nome": "Carne Aberta",
+     "nivel": 3,
+     "descricao": "Seus ataques corpo a corpo contra criaturas <strong>Sangrando</strong> causam <strong>+1d6 de dano</strong> (+2d6 no 11º nível e +3d6 no 17º).",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "hemorragia-pesada",
+     "nome": "Hemorragia Pesada",
+     "nivel": 9,
+     "descricao": "Criaturas que ficam Sangrando por causa de você perdem <strong>2d6 PV</strong>, em vez de 1d6, quando falham no teste da condição.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "sangria-total",
+     "nome": "Sangria Total",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM e faz um ataque corpo a corpo: se acertar, o alvo e <strong>cada criatura Sangrando em alcance curto</strong> perdem <strong>4d6 PV</strong> (sem teste).",
+     "custoPM": 6,
+     "acao": "padrao",
+     "subs": []
+    },
+    {
+     "id": "estilo-ruptura-da-tragedia",
+     "nome": "Estilo: Ruptura da Tragédia",
+     "nivel": null,
+     "descricao": "O anátema que sobrevive.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "cicatriz-viva",
+     "nome": "Cicatriz Viva",
+     "nivel": 3,
+     "descricao": "Você pode usar <strong>Selar Feridas em si mesmo</strong> como <strong>ação livre</strong> (uma vez por rodada) e, quando faz isso, a cura é <strong>+1d6</strong>.",
+     "custoPM": null,
+     "acao": "livre",
+     "subs": []
+    },
+    {
+     "id": "pele-de-cicatrizes",
+     "nome": "Pele de Cicatrizes",
+     "nivel": 9,
+     "descricao": "Você recebe <strong>Redução de Dano 2</strong> (respeitando o teto de RD do Núcleo), que passa a <strong>4</strong> enquanto você tiver <strong>menos da metade dos seus PV</strong>.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "nao-caio",
+     "nome": "Não Caio",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, quando seus PV chegariam a 0, você pode gastar 4 PM e a sua reação: seus PV ficam em <strong>1</strong> e você recebe <strong>4d8 PV temporários</strong>.",
+     "custoPM": 4,
+     "acao": "reacao",
+     "subs": []
+    },
+    {
+     "id": "estilo-ruptura-da-blasfemia",
+     "nome": "Estilo: Ruptura da Blasfêmia",
+     "nivel": null,
+     "descricao": "O anátema que ofendeu o céu.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "voz-blasfema",
+     "nome": "Voz Blasfema",
+     "nivel": 3,
+     "descricao": "O seu Olhar Funesto atinge <strong>até duas criaturas</strong> em alcance curto (um teste para cada), e você recebe <strong>+2 em Intimidação</strong>.",
+     "custoPM": null,
+     "acao": "passivo",
+     "subs": []
+    },
+    {
+     "id": "maldicao-rubra",
+     "nome": "Maldição Rubra",
+     "nivel": 9,
+     "descricao": "Como ação de movimento, você gasta 2 PM e escolhe uma criatura em alcance curto. Ela faz um teste de <strong>Vontade</strong> (CD de anátema: 10 + metade do seu nível + Sabedoria): se falhar, fica <strong>Sangrando</strong> e <strong>Abalada</strong> até o fim da cena. <em>Mental.</em>",
+     "custoPM": 2,
+     "acao": "movimento",
+     "subs": []
+    },
+    {
+     "id": "aclamacao-do-pavor",
+     "nome": "Aclamação do Pavor",
+     "nivel": 15,
+     "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM: todos os inimigos em alcance curto fazem um teste de <strong>Vontade</strong> (CD de anátema). Quem falhar fica <strong>Apavorado</strong> por 1d4 rodadas. <em>Medo, Mental.</em>",
+     "custoPM": 6,
+     "acao": "padrao",
+     "subs": []
+    }
+   ],
+   "grupos": [
+    "Poderes gerais",
+    "Poderes da Ruptura do Pecado",
+    "Poderes da Ruptura da Tragédia",
+    "Poderes da Ruptura da Blasfêmia",
+    "Poderes comuns"
+   ],
+   "poderes": [
+    {
+     "id": "palavras-de-sangue",
+     "nome": "Palavras de Sangue",
+     "grupo": "Poderes gerais",
+     "descricao": "Você aprende <strong>duas magias de Sangue</strong> de qualquer nível que já possa lançar, e passa a lançar magias da lista <strong>Sangue</strong>, usando <strong>Sabedoria</strong> como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 5º nível, nível 2 no 9º, nível 3 no 13º e nível 4 no 17º (o anátema não lança magias de nível 5). Você pode lançar magias usando qualquer armadura e escudo em que tenha proficiência. Sem este poder, o anátema <strong>não lança magias</strong>. Você pode escolher este poder várias vezes: cada vez, aprende mais duas magias de Sangue.",
+     "prerequisito": "5º nível",
+     "nivelMinimo": 5,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": true,
+     "maxEscolhas": null,
+     "escolha": {
+      "tipo": "magias",
+      "quantidade": 2,
+      "lista": "sangue"
+     }
+    },
+    {
+     "id": "ferida-teimosa",
+     "nome": "Ferida Teimosa",
+     "grupo": "Poderes gerais",
+     "descricao": "A <strong>CD</strong> do teste da condição Sangrando que você causa com a Sangria de Guerra passa a ser <strong>10 + metade do seu nível + Sabedoria</strong>, em vez de 15.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "voz-rouca",
+     "nome": "Voz Rouca",
+     "grupo": "Poderes gerais",
+     "descricao": "Você recebe <strong>+2 em Intimidação</strong> e se torna treinado nela, caso ainda não seja.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "armadura-rubra",
+     "nome": "Armadura Rubra",
+     "grupo": "Poderes gerais",
+     "descricao": "Você recebe <strong>+1 na Defesa</strong> enquanto usa armadura pesada.",
+     "prerequisito": "4º nível",
+     "nivelMinimo": 4,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "dente-por-dente",
+     "nome": "Dente por Dente",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando uma criatura adjacente acerta um ataque corpo a corpo contra você e causa dano, você pode gastar 1 PM e a sua reação: ela faz um teste de <strong>Fortitude</strong> (CD de anátema) ou fica <strong>Sangrando</strong>.",
+     "prerequisito": "7º nível",
+     "nivelMinimo": 7,
+     "custoPM": 1,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "selar-a-distancia",
+     "nome": "Selar à Distância",
+     "grupo": "Poderes gerais",
+     "descricao": "Você pode usar o Selar Feridas em alcance <strong>curto</strong>, em vez de toque.",
+     "prerequisito": "5º nível",
+     "nivelMinimo": 5,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "banquete-do-vencedor",
+     "nome": "Banquete do Vencedor",
+     "grupo": "Poderes gerais",
+     "descricao": "Quando você <strong>reduz uma criatura a 0 PV</strong> com um ataque, você recupera <strong>PV iguais à sua Sabedoria</strong> (mínimo 1).",
+     "prerequisito": "Sabedoria 1",
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": {
+      "SAB": 1
+     },
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "medo-ambulante",
+     "nome": "Medo Ambulante",
+     "grupo": "Poderes gerais",
+     "descricao": "Criaturas <strong>Abaladas ou Apavoradas</strong> por você sofrem <strong>–2 na Defesa</strong> contra os seus ataques.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "sangue-fervente",
+     "nome": "Sangue Fervente",
+     "grupo": "Poderes gerais",
+     "descricao": "Enquanto você estiver <strong>Sangrando</strong>, recebe <strong>+2 nos testes de ataque e +2 no dano</strong>. Você pode escolher não remover a sua própria condição Sangrando.",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "faro-sangrento",
+     "nome": "Faro Sangrento",
+     "grupo": "Poderes gerais",
+     "descricao": "Você percebe, mesmo sem enxergar, a <strong>posição de criaturas feridas</strong> (com menos do que o máximo de PV) em alcance curto, e recebe <strong>+2 em Olfato</strong> contra criaturas Sangrando.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "preco-barato",
+     "nome": "Preço Barato",
+     "grupo": "Poderes gerais",
+     "descricao": "O pagamento de PM com PV do Abandonado passa a custar <strong>2 PV por PM</strong>, em vez de 3, e você pode pagar até <strong>3 PM por turno</strong>.",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": null,
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "mao-pesada",
+     "nome": "Mão Pesada",
+     "grupo": "Poderes da Ruptura do Pecado",
+     "descricao": "Você recebe <strong>+2 no dano</strong> com armas de Corte e de Perfuração.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura do Pecado",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "ceifa",
+     "nome": "Ceifa",
+     "grupo": "Poderes da Ruptura do Pecado",
+     "descricao": "Uma vez por rodada, quando você <strong>reduz uma criatura a 0 PV</strong> com um ataque corpo a corpo, pode fazer um ataque corpo a corpo adicional contra uma criatura adjacente, como ação livre.",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": null,
+     "acao": "livre",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura do Pecado",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "corte-gemeo",
+     "nome": "Corte Gêmeo",
+     "grupo": "Poderes da Ruptura do Pecado",
+     "descricao": "Quando você usa a Sangria de Guerra, pode pagar <strong>+1 PM</strong> para que uma segunda criatura <strong>adjacente ao alvo</strong> também fique Sangrando.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura do Pecado",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "faca-na-ferida",
+     "nome": "Faca na Ferida",
+     "grupo": "Poderes da Ruptura do Pecado",
+     "descricao": "Como ação de movimento, você gasta 1 PM: uma criatura <strong>Sangrando</strong> em alcance curto perde <strong>1d6 PV</strong> (perda de PV, sem teste).",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "movimento",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura do Pecado",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "costura-rapida",
+     "nome": "Costura Rápida",
+     "grupo": "Poderes da Ruptura da Tragédia",
+     "descricao": "A cura do Selar Feridas aumenta em <strong>+1d6</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Tragédia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "peito-aberto",
+     "nome": "Peito Aberto",
+     "grupo": "Poderes da Ruptura da Tragédia",
+     "descricao": "Você recebe <strong>+5 em Fortitude</strong> contra as condições <strong>Fraco, Enjoado e Fatigado</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Tragédia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "amortecer",
+     "nome": "Amortecer",
+     "grupo": "Poderes da Ruptura da Tragédia",
+     "descricao": "Quando você sofre dano, pode gastar 2 PM e a sua reação para <strong>reduzir esse dano em 3 + metade do seu nível</strong>.",
+     "prerequisito": "6º nível",
+     "nivelMinimo": 6,
+     "custoPM": 2,
+     "acao": "reacao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Tragédia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "pano-e-linha",
+     "nome": "Pano e Linha",
+     "grupo": "Poderes da Ruptura da Tragédia",
+     "descricao": "Quando você usa o Selar Feridas em um <strong>aliado</strong>, ele também recebe <strong>PV temporários iguais à metade do seu nível</strong>, até o fim da cena.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Tragédia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "voz-que-quebra",
+     "nome": "Voz que Quebra",
+     "grupo": "Poderes da Ruptura da Blasfêmia",
+     "descricao": "Você pode usar o Olhar Funesto como <strong>ação livre</strong> uma vez por rodada, pagando <strong>1 PM</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 1,
+     "acao": "livre",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Blasfêmia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "praga-de-sangue",
+     "nome": "Praga de Sangue",
+     "grupo": "Poderes da Ruptura da Blasfêmia",
+     "descricao": "Criaturas que estejam ao mesmo tempo <strong>Abaladas e Sangrando</strong> por causa de você perdem <strong>+1d4 PV</strong> no início de cada turno delas.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Blasfêmia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "insulto-ao-ceu",
+     "nome": "Insulto ao Céu",
+     "grupo": "Poderes da Ruptura da Blasfêmia",
+     "descricao": "Como ação padrão, você gasta 2 PM e escolhe uma criatura em alcance curto: ela faz um teste de <strong>Vontade</strong> (CD de anátema). Se falhar, sofre <strong>2d6 de dano Psíquico</strong> e fica <strong>Abalada</strong> (se passar, sofre metade e não fica Abalada). <em>Mental.</em>",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": 2,
+     "acao": "padrao",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Blasfêmia",
+     "repetivel": false,
+     "maxEscolhas": null
+    },
+    {
+     "id": "terror-sangrento",
+     "nome": "Terror Sangrento",
+     "grupo": "Poderes da Ruptura da Blasfêmia",
+     "descricao": "Aliados em alcance curto recebem <strong>+1 de dano</strong> contra criaturas que você tenha deixado <strong>Abaladas ou Apavoradas</strong>.",
+     "prerequisito": null,
+     "nivelMinimo": null,
+     "custoPM": null,
+     "acao": "passivo",
+     "atributoMinimo": null,
+     "requerPoderes": [],
+     "requerGrupo": "Ruptura da Blasfêmia",
      "repetivel": false,
      "maxEscolhas": null
     },

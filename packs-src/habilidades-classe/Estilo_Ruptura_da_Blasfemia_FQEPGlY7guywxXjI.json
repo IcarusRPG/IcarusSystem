@@ -1,0 +1,38 @@
+{
+  "_id": "FQEPGlY7guywxXjI",
+  "name": "Estilo: Ruptura da Blasfêmia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 17,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O anátema que ofendeu o céu.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__estilo-ruptura-da-blasfemia",
+      "classe": "anatema",
+      "habilidade": "estilo-ruptura-da-blasfemia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!FQEPGlY7guywxXjI"
+}

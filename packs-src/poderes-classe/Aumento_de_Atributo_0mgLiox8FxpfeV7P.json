@@ -1,0 +1,38 @@
+{
+  "_id": "0mgLiox8FxpfeV7P",
+  "name": "Aumento de Atributo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "wCN9wQg82Jw5XCZm",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__aumento-de-atributo",
+      "classe": "anatema",
+      "poder": "aumento-de-atributo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0mgLiox8FxpfeV7P"
+}

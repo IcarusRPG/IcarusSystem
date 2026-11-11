@@ -1,0 +1,15 @@
+{
+  "_id": "vqU1gah6mMyKZOBj",
+  "name": "Anátema",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:anatema"
+    }
+  },
+  "_key": "!folders!vqU1gah6mMyKZOBj"
+}

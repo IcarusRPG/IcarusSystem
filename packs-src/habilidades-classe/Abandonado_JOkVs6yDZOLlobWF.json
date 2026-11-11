@@ -1,0 +1,38 @@
+{
+  "_id": "JOkVs6yDZOLlobWF",
+  "name": "Abandonado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você foi abandonado por uma divindade (ou nunca teve uma) e <strong>não pode ser devoto</strong> de nenhuma divindade do Panteão: não recebe Poderes Concedidos nem precisa seguir Dogmas. Em troca, você aprende a pagar o preço da própria carne: <strong>uma vez por turno</strong>, ao gastar PM em uma habilidade ou magia, você pode <strong>pagar até 2 PM com PV</strong>. Cada PM pago assim custa <strong>3 PV</strong> (perda de PV, não dano). Você não pode usar este pagamento se ele reduzir seus PV a 0.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__abandonado",
+      "classe": "anatema",
+      "habilidade": "abandonado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!JOkVs6yDZOLlobWF"
+}
