@@ -1,0 +1,38 @@
+{
+  "_id": "QCzezTa4snYr5w3r",
+  "name": "Falar com os Animais",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você <strong>entende e fala</strong> com animais comuns, à vontade e sem gastar PM, e recebe <strong>+2 em Adestramento</strong>. Animais não hostis por natureza começam <strong>indiferentes</strong> a você, em vez de desconfiados, e podem contar o que viram e ouviram (dentro do que um animal consegue perceber). Eles não são obrigados a obedecer.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__falar-com-os-animais",
+      "classe": "druida",
+      "poder": "falar-com-os-animais",
+      "inferido": false
+    }
+  },
+  "_key": "!items!QCzezTa4snYr5w3r"
+}

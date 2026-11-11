@@ -71,8 +71,10 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   // modificador negativo nas perícias de PERICIAS_PENALIZADAS (Acrobacia, Furtividade, Prestidigitação).
   let armadura = 0, escudo = 0;
   const penalidades = [];
+  // Forma do Druida: o equipamento fica sem efeito (sem armadura, escudo nem penalidade)
+  const forma = opcoes.forma ?? null;
   for (const item of itens) {
-    if (item.type !== "equipamento") continue;
+    if (forma || item.type !== "equipamento") continue;
     const e = item.system;
     if (!e.equipado || !TIPOS_EQUIPAVEIS.includes(e.tipo)) continue;
     // Foco arcano não dá Defesa; item destruído (0 PV) perde o bônus
@@ -91,7 +93,8 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   if (vinculo) s.defesa.outros = vinculo.defesa - 10 - s.atributos.DES.total;
   // Postura Altiva (Nobre): Carisma no lugar da Destreza na Defesa (flags.defesaAtributo = "CAR")
   s.defesa.atributo = opcoes.defesaAtributo === "CAR" && temHabilidadeNosItens(itens, "nobre", "postura-altiva") ? "CAR" : "DES";
-  s.defesa.total = calcularDefesa({ des: s.atributos[s.defesa.atributo].total, armadura, escudo, outros: s.defesa.outros });
+  s.defesa.forma = forma ? numero(forma.defesa) : 0;
+  s.defesa.total = calcularDefesa({ des: s.atributos[s.defesa.atributo].total, armadura, escudo, outros: s.defesa.outros }) + s.defesa.forma;
   // Habilidades de classe com bônus passivo (Pele Rija, Defesa Interior, Passo Ligeiro)
   const vestidos = itens.map(i => ({ type: i.type, system: i.system }));
   const passivos = passivosDeClasse(itens, {

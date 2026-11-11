@@ -10571,6 +10571,910 @@ export default {
           }
         }
       ]
+    },
+    {
+      "id": "druida",
+      "nome": "Druida",
+      "papel": "Conjurador Natural",
+      "pv": {
+        "inicial": 16,
+        "porNivel": 4,
+        "atributo": "CON"
+      },
+      "pm": {
+        "inicial": 5,
+        "porNivel": 5,
+        "atributoSoNoPrimeiroNivel": true,
+        "texto": "5 + Sabedoria no 1º nível; +5 por nível seguinte",
+        "atributo": "SAB"
+      },
+      "atributoChave": "Sabedoria",
+      "pericias": {
+        "obrigatorias": "Sobrevivência e Vontade",
+        "escolha": 4,
+        "lista": [
+          "Adestramento",
+          "Atletismo",
+          "Cavalgar",
+          "Concentração",
+          "Cura",
+          "Fortitude",
+          "Furtividade",
+          "Intuição",
+          "Navegação",
+          "Olfato",
+          "Religião",
+          "Visão"
+        ]
+      },
+      "proficiencias": "Armas simples, túnicas, armaduras leves, escudos",
+      "intro": [
+        "O druida é o devoto que ouviu a floresta antes de ouvir qualquer templo. Não reza dentro de paredes: reza com os pés na terra, as mãos na casca e o rosto no vento. A natureza responde a ele, e ele responde por ela.",
+        "Há druidas que viram a fera que a mata precisa. Há os que conversam com as raízes e fazem a floresta se mover. E há os que cuidam: um chá de ervas, uma mão suja de terra no ombro de um ferido. O que une todos é a certeza de que o mundo vivo se lembra de quem o respeita e cobra de quem o fere."
+      ],
+      "progressao": [
+        {
+          "nivel": 1,
+          "habilidades": [
+            "Fé Selvagem",
+            "Conjuração Divina",
+            "Passo da Mata"
+          ],
+          "poder": false
+        },
+        {
+          "nivel": 2,
+          "habilidades": [
+            "Mudar de Forma",
+            "Ervas Frescas"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 3,
+          "habilidades": [
+            "Círculo"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 4,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 5,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 6,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 7,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 8,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 9,
+          "habilidades": [
+            "Habilidade de Círculo"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 10,
+          "habilidades": [
+            "Sangue Verde"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 11,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 12,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 13,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 14,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 15,
+          "habilidades": [
+            "Habilidade de Círculo"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 16,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 17,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 18,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 19,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 20,
+          "habilidades": [
+            "Mil Formas"
+          ],
+          "poder": true
+        }
+      ],
+      "habilidades": [
+        {
+          "id": "fe-selvagem",
+          "nome": "Fé Selvagem",
+          "nivel": 1,
+          "descricao": "Você se torna devoto de <strong>uma divindade do Panteão</strong> (seção 16), e a escolha é permanente. Se a sua divindade for <strong>Floressa</strong>, você recebe <strong>os três Poderes Concedidos</strong> dela. Se for <strong>qualquer outra divindade</strong>, você recebe <strong>dois</strong> dos três, à sua escolha. Você deve seguir os <strong>Dogmas e Restrições</strong> da sua divindade. Se você agir contra um Dogma, a <strong>primeira vez</strong> você perde <strong>todos os seus PM por 1d4 dias</strong>. Na <strong>segunda vez</strong>, a divindade o abandona e você se torna um <strong>Anátema</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "divindade",
+            "permanente": true,
+            "opcoes": [
+              "Alétris",
+              "Amorina",
+              "Béllica",
+              "Etheria",
+              "Floressa",
+              "Justar",
+              "Logos",
+              "Nocturna",
+              "Odincia",
+              "Sólem",
+              "Ardor",
+              "Draconara",
+              "Eternus",
+              "Expiria",
+              "Fraudulus",
+              "Insidia",
+              "Irae",
+              "Mentis",
+              "Paxus",
+              "Valorus"
+            ],
+            "poderesConcedidos": {
+              "Floressa": 3,
+              "outras": 2
+            }
+          }
+        },
+        {
+          "id": "conjuracao-divina",
+          "nome": "Conjuração Divina",
+          "nivel": 1,
+          "descricao": "Você lança magias da lista <strong>Divina</strong>, usando Sabedoria como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º, nível 4 no 13º e nível 5 no 17º.<br>• <strong>Magias conhecidas.</strong> Você conhece 3 magias no 1º nível e aprende <strong>mais 1 a cada nível</strong>. Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra.<br>• <strong>Afinidade Natural.</strong> A CD das magias marcadas com <strong>Natureza</strong> é <strong>+1</strong>.<br>• <strong>Armadura.</strong> Você pode lançar magias usando túnicas, armaduras leves e escudos. Armaduras médias e pesadas não são do seu ofício (você não tem proficiência).<br>• <strong>Símbolo.</strong> Um raminho, uma pedra ou um osso entalhado (R$ 0, 0,5 espaço). Você não precisa dele para lançar magias, mas vários poderes o exigem.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "passo-da-mata",
+          "nome": "Passo da Mata",
+          "nivel": 1,
+          "descricao": "Você ignora o terreno difícil causado por vegetação, lama, neve fofa e pedras soltas, e recebe <strong>+2 em Sobrevivência</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "mudar-de-forma",
+          "nome": "Mudar de Forma",
+          "nivel": 2,
+          "descricao": "Você aprende a assumir a forma de animais. Cada animal é um poder de Druida chamado <strong>Forma de (animal)</strong>; você só pode assumir as formas dos poderes que escolheu. As regras abaixo valem para todas as formas:<br>• <strong>Assumir.</strong> É uma ação de movimento e o custo em PM está na descrição de cada forma.<br>• <strong>Duração.</strong> Até o fim da cena, até você voltar à forma normal (ação livre) ou ficar <strong>Inconsciente</strong>.<br>• <strong>O que muda.</strong> Você assume o tamanho e as capacidades da forma. Você mantém seus PV, PM, atributos, perícias e treinos. Seu equipamento <strong>fica com você, sem efeito</strong>.<br>• <strong>Ataque natural.</strong> Você ataca com a arma natural da forma, usando <strong>Luta</strong>. O dano dela aumenta <strong>um passo no 11º nível e outro no 17º</strong>.<br>• <strong>Defesa.</strong> Sem armadura, sua Defesa é 10 + Destreza + o bônus da forma.<br>• <strong>O que você não pode.</strong> Não pode falar (só sons do animal), nem lançar magias, nem usar itens, armas, armaduras ou escudos. O poder <strong>Palavra na Fera</strong> remove a parte da fala e das magias.<br>• <strong>Descritor.</strong> <em>Metamorfose.</em>",
+          "custoPM": null,
+          "acao": "movimento",
+          "subs": []
+        },
+        {
+          "id": "ervas-frescas",
+          "nome": "Ervas Frescas",
+          "nivel": 2,
+          "descricao": "Ao fim de cada descanso em <strong>ambiente natural</strong>, você prepara uma quantidade de <strong>ervas</strong> igual a <strong>1 + metade do seu nível</strong> (arredondado para baixo). Como ação padrão, <strong>qualquer criatura</strong> que tenha uma erva pode usá-la em si mesma, ou em uma criatura adjacente, e escolher: <strong>recuperar 1d6 PV</strong> ou <strong>remover uma condição</strong> entre Doente, Enjoado e Envenenado. A cura aumenta em <strong>+1d6 no 8º, 14º e 20º níveis</strong> (4d6 no 20º). As ervas duram até o próximo descanso.",
+          "custoPM": null,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "circulo",
+          "nome": "Círculo",
+          "nivel": 3,
+          "descricao": "Você escolhe um Círculo, e a escolha é permanente. Cada Círculo concede uma habilidade agora, outra no 9º nível e outra no 15º, além de uma lista de poderes própria.<br>• <strong>Círculo da Fera:</strong> o druida que vira a fera. Combate corpo a corpo e formas animais.<br>• <strong>Círculo da Mata:</strong> o druida que fala com as raízes. Controle do terreno e da floresta.<br>• <strong>Círculo do Broto:</strong> o druida que cuida. Ervas, cura leve e proteção do grupo.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Círculo da Fera",
+              "Círculo da Mata",
+              "Círculo do Broto"
+            ]
+          }
+        },
+        {
+          "id": "sangue-verde",
+          "nome": "Sangue Verde",
+          "nivel": 10,
+          "descricao": "Você fica <strong>imune a Doente</strong>, recebe <strong>+5 em Fortitude contra veneno</strong> e <strong>+2 em Fortitude</strong> em geral.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "mil-formas",
+          "nome": "Mil Formas",
+          "nivel": 20,
+          "descricao": "Uma vez por dia, como ação padrão, você gasta 10 PM e se abre por inteiro à natureza. Até o fim da cena: você pode <strong>trocar entre qualquer Forma que conheça</strong> como ação livre (uma vez por turno), <strong>sem pagar PM</strong> pela troca; você <strong>fala e lança magias</strong> em qualquer forma, como se tivesse <strong>Palavra na Fera</strong>; e suas armas naturais causam <strong>+2d6 de dano</strong>. Quando a cena termina, você fica <strong>Fatigado</strong>.",
+          "custoPM": 10,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "estilo-circulo-da-fera",
+          "nome": "Estilo: Círculo da Fera",
+          "nivel": null,
+          "descricao": "O druida que vira a fera.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "instinto-bestial",
+          "nome": "Instinto Bestial",
+          "nivel": 3,
+          "descricao": "Você aprende <strong>duas Formas à sua escolha</strong> sem gastar poderes, e o custo em PM de <strong>todas as suas Formas</strong> diminui em <strong>1 PM</strong> (mínimo 1).",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "poderes",
+            "quantidade": 2,
+            "opcoes": [
+              "Forma de Lobo",
+              "Forma de Urso",
+              "Forma de Águia",
+              "Forma de Serpente",
+              "Forma de Aranha",
+              "Forma de Tubarão"
+            ],
+            "gratis": true
+          }
+        },
+        {
+          "id": "fera-aprimorada",
+          "nome": "Fera Aprimorada",
+          "nivel": 9,
+          "descricao": "As armas naturais das suas Formas contam como <strong>mágicas</strong>, causam <strong>+2 de dano</strong> e você recebe <strong>+1 nos testes de ataque</strong> com elas.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "fera-ancestral",
+          "nome": "Fera Ancestral",
+          "nivel": 15,
+          "descricao": "Uma vez por cena, ao assumir uma Forma, você pode receber <strong>PV temporários iguais a 3 × seu nível</strong> e fazer suas armas naturais causarem <strong>+2d6 de dano</strong> até o fim da cena.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "estilo-circulo-da-mata",
+          "nome": "Estilo: Círculo da Mata",
+          "nivel": null,
+          "descricao": "O druida que fala com as raízes.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "raizes-vigilantes",
+          "nome": "Raízes Vigilantes",
+          "nivel": 3,
+          "descricao": "Como ação padrão, você gasta 2 PM e faz raízes brotarem em uma área de 3 m de raio, em alcance curto, sobre terra natural. Até o fim da cena, a área é <strong>terreno difícil</strong> para os seus inimigos, e inimigos que <strong>começarem o turno nela</strong> fazem um teste de <strong>Reflexos</strong> (CD de druida): se falharem, ficam <strong>Lentos</strong> até o fim do turno. Só uma área por vez.",
+          "custoPM": 2,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "salto-de-tronco",
+          "nome": "Salto de Tronco",
+          "nivel": 9,
+          "descricao": "Uma vez por rodada, se você começar o seu turno adjacente a uma árvore, como ação de movimento você entra nela e sai de <strong>outra árvore a até 9 m</strong>, desde que enxergue o destino.",
+          "custoPM": null,
+          "acao": "movimento",
+          "subs": []
+        },
+        {
+          "id": "floresta-desperta",
+          "nome": "Floresta Desperta",
+          "nivel": 15,
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM e acorda as árvores em uma esfera de 6 m de raio, em alcance médio. Inimigos na área fazem um teste de <strong>Reflexos</strong> (CD de druida): se falharem, ficam <strong>Enredados</strong>. Até o fim da cena, inimigos que <strong>comecem o turno</strong> na área sofrem <strong>3d6 de dano de Impacto</strong>.",
+          "custoPM": 8,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "estilo-circulo-do-broto",
+          "nome": "Estilo: Círculo do Broto",
+          "nivel": null,
+          "descricao": "O druida que cuida.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "maos-de-seiva",
+          "nome": "Mãos de Seiva",
+          "nivel": 3,
+          "descricao": "Você prepara <strong>2 ervas a mais</strong> em cada descanso. Além disso, quando <strong>você</strong> usa uma erva, o alcance dela é <strong>curto</strong>, em vez de adjacente.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "primavera-continua",
+          "nome": "Primavera Contínua",
+          "nivel": 9,
+          "descricao": "No início de cada turno seu, aliados a até 3 m de você que estejam <strong>feridos</strong> recuperam <strong>1d4 PV</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "florescer",
+          "nome": "Florescer",
+          "nivel": 15,
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM: todos os aliados em alcance curto recuperam <strong>3d8 PV</strong> e <strong>removem uma condição</strong> à escolha de cada um entre Abalado, Doente, Enjoado, Envenenado e Fatigado. <em>Divino.</em>",
+          "custoPM": 6,
+          "acao": "padrao",
+          "subs": []
+        }
+      ],
+      "grupos": [
+        "Poderes gerais",
+        "Poderes do Círculo da Fera",
+        "Poderes do Círculo da Mata",
+        "Poderes do Círculo do Broto",
+        "Poderes comuns"
+      ],
+      "poderes": [
+        {
+          "id": "falar-com-os-animais",
+          "nome": "Falar com os Animais",
+          "grupo": "Poderes gerais",
+          "descricao": "Você <strong>entende e fala</strong> com animais comuns, à vontade e sem gastar PM, e recebe <strong>+2 em Adestramento</strong>. Animais não hostis por natureza começam <strong>indiferentes</strong> a você, em vez de desconfiados, e podem contar o que viram e ouviram (dentro do que um animal consegue perceber). Eles não são obrigados a obedecer.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "lingua-das-raizes",
+          "nome": "Língua das Raízes",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação padrão, você gasta 1 PM e toca uma planta (uma árvore, um arbusto, uma trepadeira ou um campo de ervas): por 10 minutos, você <strong>conversa</strong> com a flora ao seu redor, em alcance curto. As plantas contam o que viram, ouviram e sentiram nos <strong>últimos sete dias</strong> (o Mestre decide o que uma planta consegue perceber; árvores muito antigas lembram de mais), podem <strong>abrir uma passagem de cipós</strong> ou <strong>afastar galhos</strong>. Plantas não se movem sozinhas nem lutam por você. <em>Divino.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "caminho-das-raizes",
+          "nome": "Caminho das Raízes",
+          "grupo": "Poderes gerais",
+          "descricao": "As árvores gigantescas são portas. Sempre que você <strong>passa pelo menos um minuto tocando uma árvore</strong> e conversando com ela, ela se torna uma <strong>Árvore Conhecida</strong>. Você pode ter até <strong>Sabedoria + metade do seu nível</strong> Árvores Conhecidas (mínimo 1); ao marcar uma nova além do limite, você esquece a mais antiga. Como <strong>ação completa</strong>, você gasta <strong>4 PM</strong>, toca uma <strong>árvore gigantesca</strong> (grande o bastante para uma criatura Média entrar no tronco) e <strong>entra nela</strong>, saindo em <strong>qualquer Árvore Conhecida</strong> a até <strong>5 km por nível de Druida</strong>, no mesmo plano. Você sai no espaço adjacente à árvore de destino, que precisa estar viva e inteira. Se o Mestre disser que a árvore não existe mais, a magia falha e os PM se perdem. <em>Divino.</em>",
+          "prerequisito": "9º nível",
+          "nivelMinimo": 9,
+          "custoPM": 4,
+          "acao": "completa",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "trilha-compartilhada",
+          "nome": "Trilha Compartilhada",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando usa o Caminho das Raízes, você pode levar até <strong>Sabedoria</strong> criaturas dispostas que o estejam <strong>tocando</strong>, pagando <strong>+1 PM</strong> por criatura.",
+          "prerequisito": "Caminho das Raízes",
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [
+            "caminho-das-raizes"
+          ],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "palavra-na-fera",
+          "nome": "Palavra na Fera",
+          "grupo": "Poderes gerais",
+          "descricao": "Enquanto estiver sob uma <strong>Forma</strong> (ou sob um efeito do Mosaico Vivo), você <strong>fala normalmente</strong> e <strong>lança magias</strong>, como se estivesse na forma normal. Você ainda <strong>não pode usar itens, armas, armaduras nem escudos</strong> na Forma, e as magias exigem os mesmos gestos e palavras de sempre (sem aprimoramento de PM extra por isso).",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mosaico-vivo",
+          "nome": "Mosaico Vivo",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação de movimento, você gasta 2 PM e transforma <strong>partes do seu corpo</strong> em partes de animais, sem assumir uma forma completa: você <strong>continua falando, lançando magias e usando itens e armadura</strong>. Até o fim da cena, você recebe os efeitos de <strong>uma parte</strong> à sua escolha. Você escolhe <strong>uma parte a mais no 10º nível e outra no 16º</strong> (total de 3 partes). Cada parte só pode ser escolhida uma vez por uso. <em>Metamorfose.</em><br>• <strong>Garras:</strong> você ganha uma arma natural de <strong>1d6 de dano de corte</strong> e <strong>+1 nos testes de ataque</strong> com ela.<br>• <strong>Olhos de Coruja:</strong> você enxerga no escuro e recebe <strong>+5 em Visão</strong>.<br>• <strong>Pernas de Cervo:</strong> <strong>+6 m de deslocamento</strong> e <strong>+5 em Atletismo</strong> para saltar.<br>• <strong>Pele de Rinoceronte:</strong> <strong>+2 na Defesa</strong> (acumula com a armadura).<br>• <strong>Asas de Gavião:</strong> deslocamento de <strong>voo de 6 m</strong>. <em>Pré-requisito: 10º nível.</em><br>• <strong>Nariz de Lobo:</strong> <strong>+5 em Olfato</strong> e em testes de Sobrevivência para rastrear.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "forma-de-lobo",
+          "nome": "Forma de Lobo",
+          "grupo": "Poderes gerais",
+          "descricao": "Assumir custa <strong>2 PM</strong>. Tamanho Médio. <strong>Deslocamento 12 m.</strong> Bônus de Defesa <strong>+3</strong>. <strong>+5 em Olfato</strong> e <strong>+2 em Furtividade.</strong> Arma natural: <strong>mordida, 1d8 de dano de perfuração.</strong> <em>Derrubar:</em> uma vez por rodada, ao acertar a mordida, o alvo faz um teste de <strong>Fortitude</strong> (CD de druida) ou fica <strong>Caído</strong>. <em>Alcateia:</em> aliados adjacentes ao alvo recebem <strong>+1 nos ataques</strong> contra ele.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "forma-de-urso",
+          "nome": "Forma de Urso",
+          "grupo": "Poderes gerais",
+          "descricao": "Assumir custa <strong>3 PM</strong>. Tamanho Grande. <strong>Deslocamento 9 m.</strong> Bônus de Defesa <strong>+4</strong>. Você recebe <strong>PV temporários iguais a 2 × seu nível</strong>. <strong>+2 em Atletismo.</strong> Arma natural: <strong>garras, 1d10 de dano de corte.</strong> <em>Abraço:</em> ao acertar o ataque, você pode <strong>agarrar</strong> o alvo como ação livre (teste de Luta contra o Atletismo ou a Acrobacia dele).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 3,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "forma-de-aguia",
+          "nome": "Forma de Águia",
+          "grupo": "Poderes gerais",
+          "descricao": "Assumir custa <strong>3 PM</strong>. Tamanho Pequeno. <strong>Voo de 12 m.</strong> Bônus de Defesa <strong>+2</strong>. <strong>+5 em Visão.</strong> Arma natural: <strong>garras, 1d6 de dano de corte.</strong> <em>Mergulho:</em> se você voou pelo menos 6 m em linha reta antes de atacar, o ataque causa <strong>+1d6 de dano</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 3,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "forma-de-serpente",
+          "nome": "Forma de Serpente",
+          "grupo": "Poderes gerais",
+          "descricao": "Assumir custa <strong>2 PM</strong>. Tamanho Médio. <strong>Deslocamento 9 m, escalada 6 m.</strong> Bônus de Defesa <strong>+3</strong>. <strong>+5 em Furtividade</strong> e <strong>+5 em Acrobacia</strong> para escapar de agarrar. Arma natural: <strong>mordida, 1d6 de dano de perfuração.</strong> <em>Constrição:</em> uma criatura que você agarre sofre <strong>1d6 de dano de impacto</strong> no início de cada turno seu.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "forma-de-aranha",
+          "nome": "Forma de Aranha",
+          "grupo": "Poderes gerais",
+          "descricao": "Assumir custa <strong>2 PM</strong>. Tamanho Pequeno. <strong>Deslocamento 9 m, escalada 9 m</strong> (inclusive em tetos). Bônus de Defesa <strong>+3</strong>. <strong>+5 em Furtividade</strong> em superfícies naturais. Arma natural: <strong>mordida, 1d4 de dano de perfuração.</strong> <em>Teia:</em> uma vez por cena, como ação padrão, você lança uma teia em uma criatura em alcance curto, que faz um teste de <strong>Reflexos</strong> (CD de druida) ou fica <strong>Enredada</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "forma-de-tubarao",
+          "nome": "Forma de Tubarão",
+          "grupo": "Poderes gerais",
+          "descricao": "Assumir custa <strong>3 PM</strong>. Tamanho Grande. <strong>Natação de 15 m</strong>, respira na água e <strong>na terra se move só 3 m</strong>. Bônus de Defesa <strong>+2</strong>. Arma natural: <strong>dentada, 1d8 de dano de perfuração.</strong> <em>Frenesi:</em> o ataque causa <strong>+1d6 de dano</strong> contra criaturas <strong>Sangrando</strong> ou com menos da metade dos PV.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 3,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "sementes-de-magia",
+          "nome": "Sementes de Magia",
+          "grupo": "Poderes gerais",
+          "descricao": "Você aprende <strong>duas magias divinas</strong> de qualquer nível que já possa lançar. Você pode escolher este poder quantas vezes quiser.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "magias",
+            "quantidade": 2
+          }
+        },
+        {
+          "id": "boticario",
+          "nome": "Boticário",
+          "grupo": "Poderes gerais",
+          "descricao": "Suas <strong>Ervas Frescas</strong> recebem <strong>+2 ervas</strong> por descanso, e a cura das ervas aumenta em <strong>+1d6</strong>.",
+          "prerequisito": "4º nível",
+          "nivelMinimo": 4,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "erva-rara",
+          "nome": "Erva Rara",
+          "grupo": "Poderes gerais",
+          "descricao": "Uma erva sua também pode remover as condições <strong>Cego, Surdo, Fraco, Debilitado e Sangrando</strong>, além das normais. Você gasta <strong>+1 PM ao preparar a erva</strong> (ao fim do descanso).",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "fotossintese",
+          "nome": "Fotossíntese",
+          "grupo": "Poderes gerais",
+          "descricao": "Ao ar livre e durante o dia, você recupera <strong>1 PV no fim de cada turno seu</strong>, se estiver ferido.",
+          "prerequisito": "4º nível",
+          "nivelMinimo": 4,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "caminhar-sem-rastros",
+          "nome": "Caminhar sem Rastros",
+          "grupo": "Poderes gerais",
+          "descricao": "Em ambiente natural, você não deixa rastros e recebe <strong>+5 em Furtividade</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "sentido-da-terra",
+          "nome": "Sentido da Terra",
+          "grupo": "Poderes gerais",
+          "descricao": "Você sente as <strong>vibrações do chão</strong> e percebe criaturas em contato com o solo em alcance curto, mesmo sem enxergar. Você não pode ser <strong>Surpreendido</strong> por criaturas terrestres.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "abrigo-vivo",
+          "nome": "Abrigo Vivo",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação completa de 10 minutos, você gasta 2 PM e molda galhos e folhagem em um <strong>abrigo</strong> para até 6 criaturas. Quem descansa nele em ambiente natural recebe <strong>PV extras iguais ao seu nível</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "completa",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "presas-famintas",
+          "nome": "Presas Famintas",
+          "grupo": "Poderes do Círculo da Fera",
+          "descricao": "O dado de dano das suas armas naturais aumenta em <strong>um passo</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Fera",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "faro-de-cacador",
+          "nome": "Faro de Caçador",
+          "grupo": "Poderes do Círculo da Fera",
+          "descricao": "Quando você ataca, na <strong>primeira vez por rodada</strong> que acertar uma criatura <strong>ferida</strong> (com menos que o máximo de PV), o ataque causa <strong>+1d6 de dano</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Fera",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "troca-veloz",
+          "nome": "Troca Veloz",
+          "grupo": "Poderes do Círculo da Fera",
+          "descricao": "Uma vez por rodada, você pode <strong>trocar de uma Forma para outra</strong> como <strong>ação livre</strong>, pagando <strong>+2 PM</strong>.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 2,
+          "acao": "livre",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Fera",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "couro-de-veterano",
+          "nome": "Couro de Veterano",
+          "grupo": "Poderes do Círculo da Fera",
+          "descricao": "Enquanto estiver sob uma <strong>Forma</strong>, você recebe <strong>+5 em Fortitude e em Reflexos</strong> e <strong>Redução de Dano 2</strong> (respeitando o teto de RD do Núcleo).",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Fera",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "jardim-bravio",
+          "nome": "Jardim Bravio",
+          "grupo": "Poderes do Círculo da Mata",
+          "descricao": "O raio da sua área das <strong>Raízes Vigilantes</strong> aumenta de 3 m para <strong>6 m</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Mata",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "espinhos-de-retorno",
+          "nome": "Espinhos de Retorno",
+          "grupo": "Poderes do Círculo da Mata",
+          "descricao": "Quando uma criatura <strong>adjacente</strong> acerta um ataque corpo a corpo contra você, você pode gastar <strong>1 PM</strong> e a sua reação: espinhos brotam e ela sofre <strong>1d6 + Sabedoria de dano de perfuração</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Mata",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "seiva-pegajosa",
+          "nome": "Seiva Pegajosa",
+          "grupo": "Poderes do Círculo da Mata",
+          "descricao": "Como ação padrão, você gasta 2 PM: uma criatura em alcance curto faz um teste de <strong>Reflexos</strong> (CD de druida); se falhar, fica <strong>Lenta</strong> até o fim do seu próximo turno.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Mata",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "sentinela-de-raiz",
+          "nome": "Sentinela de Raiz",
+          "grupo": "Poderes do Círculo da Mata",
+          "descricao": "Quando você descansa em ambiente natural, as plantas ao seu redor <strong>vigiam</strong> você: você e seus aliados <strong>não são Surpreendidos</strong> durante o descanso e recebem <strong>+5 em Audição e Visão</strong> para perceber intrusos.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo da Mata",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "desabrochar",
+          "nome": "Desabrochar",
+          "grupo": "Poderes do Círculo do Broto",
+          "descricao": "Quando uma criatura usa uma das suas ervas para <strong>recuperar PV</strong>, ela também recebe <strong>PV temporários iguais à metade do seu nível</strong>, até o fim da cena.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo do Broto",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "canteiro-curativo",
+          "nome": "Canteiro Curativo",
+          "grupo": "Poderes do Círculo do Broto",
+          "descricao": "Como ação padrão, você gasta 2 PM e planta um <strong>canteiro</strong> em um espaço adjacente: até o fim da cena, <strong>aliados que comecem o turno nele</strong> recuperam <strong>1d6 PV</strong>. Só um canteiro por vez.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo do Broto",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "infusao-revigorante",
+          "nome": "Infusão Revigorante",
+          "grupo": "Poderes do Círculo do Broto",
+          "descricao": "Quando uma criatura usa uma das suas ervas, você pode gastar <strong>2 PM</strong> para que ela também <strong>recupere 1d4 PM</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo do Broto",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "flor-protetora",
+          "nome": "Flor Protetora",
+          "grupo": "Poderes do Círculo do Broto",
+          "descricao": "Como ação de movimento, você gasta 2 PM e toca um aliado: uma flor brota e, até o fim da cena, ele recebe <strong>+1 na Defesa e em testes de resistência</strong>. Só uma Flor Protetora por vez.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Círculo do Broto",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aumento-de-atributo",
+          "nome": "Aumento de Atributo",
+          "grupo": "Poderes comuns",
+          "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null
+        },
+        {
+          "id": "pericia-especializada",
+          "nome": "Perícia Especializada",
+          "grupo": "Poderes comuns",
+          "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+          "prerequisito": "10º nível",
+          "nivelMinimo": 10,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null
+        }
+      ]
     }
   ]
 };

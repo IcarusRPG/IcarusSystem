@@ -1,0 +1,38 @@
+{
+  "_id": "blte7fKbAJCUx6mp",
+  "name": "Fotossíntese",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "4º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao ar livre e durante o dia, você recupera <strong>1 PV no fim de cada turno seu</strong>, se estiver ferido.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__fotossintese",
+      "classe": "druida",
+      "poder": "fotossintese",
+      "inferido": false
+    }
+  },
+  "_key": "!items!blte7fKbAJCUx6mp"
+}

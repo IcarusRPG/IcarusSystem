@@ -1,0 +1,38 @@
+{
+  "_id": "c53M0p3y7t2vYLLU",
+  "name": "Abrigo Vivo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "completa",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação completa de 10 minutos, você gasta 2 PM e molda galhos e folhagem em um <strong>abrigo</strong> para até 6 criaturas. Quem descansa nele em ambiente natural recebe <strong>PV extras iguais ao seu nível</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__abrigo-vivo",
+      "classe": "druida",
+      "poder": "abrigo-vivo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!c53M0p3y7t2vYLLU"
+}

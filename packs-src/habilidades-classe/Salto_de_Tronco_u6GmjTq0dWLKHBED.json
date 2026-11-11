@@ -1,0 +1,38 @@
+{
+  "_id": "u6GmjTq0dWLKHBED",
+  "name": "Salto de Tronco",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 9014,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, se você começar o seu turno adjacente a uma árvore, como ação de movimento você entra nela e sai de <strong>outra árvore a até 9 m</strong>, desde que enxergue o destino.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__salto-de-tronco",
+      "classe": "druida",
+      "habilidade": "salto-de-tronco",
+      "inferido": true
+    }
+  },
+  "_key": "!items!u6GmjTq0dWLKHBED"
+}

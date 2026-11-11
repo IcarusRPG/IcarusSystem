@@ -1,0 +1,38 @@
+{
+  "_id": "drQfBVfFn5zpeMiM",
+  "name": "Palavra na Fera",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sob uma <strong>Forma</strong> (ou sob um efeito do Mosaico Vivo), você <strong>fala normalmente</strong> e <strong>lança magias</strong>, como se estivesse na forma normal. Você ainda <strong>não pode usar itens, armas, armaduras nem escudos</strong> na Forma, e as magias exigem os mesmos gestos e palavras de sempre (sem aprimoramento de PM extra por isso).",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__palavra-na-fera",
+      "classe": "druida",
+      "poder": "palavra-na-fera",
+      "inferido": false
+    }
+  },
+  "_key": "!items!drQfBVfFn5zpeMiM"
+}

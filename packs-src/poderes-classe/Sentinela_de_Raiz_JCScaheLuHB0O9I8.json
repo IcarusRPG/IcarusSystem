@@ -1,0 +1,38 @@
+{
+  "_id": "JCScaheLuHB0O9I8",
+  "name": "Sentinela de Raiz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "Jxrm1KpC3rlz1gj4",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você descansa em ambiente natural, as plantas ao seu redor <strong>vigiam</strong> você: você e seus aliados <strong>não são Surpreendidos</strong> durante o descanso e recebem <strong>+5 em Audição e Visão</strong> para perceber intrusos.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Mata",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__sentinela-de-raiz",
+      "classe": "druida",
+      "poder": "sentinela-de-raiz",
+      "inferido": false
+    }
+  },
+  "_key": "!items!JCScaheLuHB0O9I8"
+}

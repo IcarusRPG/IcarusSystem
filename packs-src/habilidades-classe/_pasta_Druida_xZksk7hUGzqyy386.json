@@ -1,0 +1,15 @@
+{
+  "_id": "xZksk7hUGzqyy386",
+  "name": "Druida",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:druida"
+    }
+  },
+  "_key": "!folders!xZksk7hUGzqyy386"
+}

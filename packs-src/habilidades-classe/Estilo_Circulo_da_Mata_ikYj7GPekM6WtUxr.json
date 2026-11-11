@@ -1,0 +1,38 @@
+{
+  "_id": "ikYj7GPekM6WtUxr",
+  "name": "Estilo: Círculo da Mata",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 12,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O druida que fala com as raízes.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__estilo-circulo-da-mata",
+      "classe": "druida",
+      "habilidade": "estilo-circulo-da-mata",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ikYj7GPekM6WtUxr"
+}

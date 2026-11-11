@@ -34,6 +34,7 @@ import { rolarDanoAvulso, rolarCura, ABSORVEDORES_DE_DANO } from "../dano.mjs";
 import { motivoParaNaoAprender } from "../magias-dados.mjs";
 import { executarLancamento } from "../magias.mjs";
 import { divindadePorId, poderesDaDivindade, itemDoPoderConcedido } from "../panteao.mjs";
+import { concedidosDoDruida } from "../druida-dados.mjs";
 import { limiteDeMagiasDoClerigo, maximoDaOnda, planoDaOnda, intervencaoAtende, motivoSemIntervencao, violarDogma, passarUmDia, motivoDoMilagre } from "../clerigo-dados.mjs";
 
 const F = SISTEMA_ID;
@@ -102,26 +103,35 @@ export async function jurarDivindade(actor, divindadeId, { quantos = null } = {}
   if (novos.length) await actor.createEmbeddedDocuments("Item", novos);
 }
 
-/** Quantos Poderes Concedidos a Fé Jurada dá pela classe (null = todos). */
-export const concedidosDaClasse = classeId => (classeId === "paladino" ? 2 : null);
+/**
+ * Quantos Poderes Concedidos a fé da classe dá (null = todos): Clérigo todos; Paladino 2;
+ * Druida (Fé Selvagem) todos de Floressa, 2 de outra divindade.
+ */
+export const concedidosDaClasse = (classeId, divindadeId = null) =>
+  (classeId === "paladino" ? 2 : classeId === "druida" ? concedidosDoDruida(divindadeId) : null);
 
-APOS_ESCOLHA.set("fe-jurada", (actor, flags) => {
-  const classe = classeDoAtor(actor)?.id;
-  if (classe !== "clerigo" && classe !== "paladino") return null;
-  return jurarDivindade(actor, flags?.divindade, { quantos: concedidosDaClasse(classe) });
-});
+/** Habilidade da fé (escolha de divindade permanente) por classe. */
+export const HABILIDADE_DA_FE = { clerigo: "fe-jurada", paladino: "fe-jurada", druida: "fe-selvagem" };
 
-/** O jogador não troca a divindade jurada (Fé Jurada feita, Clérigo ou Paladino); o Mestre pode. */
-export function divindadeTravada(actor) {
-  const classe = classeDoAtor(actor)?.id;
-  if (game.user?.isGM || (classe !== "clerigo" && classe !== "paladino")) return false;
-  return !!itemDeClasse(actor, classe, "fe-jurada")?.flags?.[F]?.escolhaFeita;
+for (const hab of new Set(Object.values(HABILIDADE_DA_FE))) {
+  APOS_ESCOLHA.set(hab, (actor, flags) => {
+    const classe = classeDoAtor(actor)?.id;
+    if (HABILIDADE_DA_FE[classe] !== hab) return null;
+    return jurarDivindade(actor, flags?.divindade, { quantos: concedidosDaClasse(classe, flags?.divindade) });
+  });
 }
 
-/** Paladino: escolher os 2 Poderes Concedidos depois (se fechou o diálogo). */
+/** O jogador não troca a divindade jurada (Fé Jurada/Selvagem feita); o Mestre pode. */
+export function divindadeTravada(actor) {
+  const classe = classeDoAtor(actor)?.id;
+  if (game.user?.isGM || !HABILIDADE_DA_FE[classe]) return false;
+  return !!itemDeClasse(actor, classe, HABILIDADE_DA_FE[classe])?.flags?.[F]?.escolhaFeita;
+}
+
+/** Paladino e Druida: escolher os Poderes Concedidos depois (se fechou o diálogo). */
 ACOES_DE_MECANICA.set("devocao:concedidos", actor => {
   const div = actor.system.identidade.divindade;
-  return div ? jurarDivindade(actor, div, { quantos: concedidosDaClasse(classeDoAtor(actor)?.id) }) : null;
+  return div ? jurarDivindade(actor, div, { quantos: concedidosDaClasse(classeDoAtor(actor)?.id, div) }) : null;
 });
 export { concedidosDe };
 
@@ -164,6 +174,8 @@ ACOES_DE_MECANICA.set("clerigo:dia", async actor => {
   if (dias) mudancas[`flags.${F}.intervencaoDias`] = passarUmDia(dias);
   // Paladino: a Hora Final (1 vez por dia) volta
   if (actor.getFlag(F, "horaFinalDia")) mudancas[`flags.${F}.-=horaFinalDia`] = null;
+  // Druida: Mil Formas (1 vez por dia) volta
+  if (actor.getFlag(F, "milFormasDia")) mudancas[`flags.${F}.-=milFormasDia`] = null;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
 });
 

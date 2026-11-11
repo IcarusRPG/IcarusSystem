@@ -1,0 +1,15 @@
+{
+  "_id": "odOrjbIQM0u5PQjk",
+  "name": "Druida",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:druida"
+    }
+  },
+  "_key": "!folders!odOrjbIQM0u5PQjk"
+}

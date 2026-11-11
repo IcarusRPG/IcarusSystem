@@ -1,0 +1,38 @@
+{
+  "_id": "fQVqADqDM45huIys",
+  "name": "Língua das Raízes",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 1 PM e toca uma planta (uma árvore, um arbusto, uma trepadeira ou um campo de ervas): por 10 minutos, você <strong>conversa</strong> com a flora ao seu redor, em alcance curto. As plantas contam o que viram, ouviram e sentiram nos <strong>últimos sete dias</strong> (o Mestre decide o que uma planta consegue perceber; árvores muito antigas lembram de mais), podem <strong>abrir uma passagem de cipós</strong> ou <strong>afastar galhos</strong>. Plantas não se movem sozinhas nem lutam por você. <em>Divino.</em>",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__lingua-das-raizes",
+      "classe": "druida",
+      "poder": "lingua-das-raizes",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fQVqADqDM45huIys"
+}

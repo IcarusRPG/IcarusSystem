@@ -1,0 +1,38 @@
+{
+  "_id": "Z86bJ2L8ulKRjM6q",
+  "name": "Primavera Contínua",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 9018,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "No início de cada turno seu, aliados a até 3 m de você que estejam <strong>feridos</strong> recuperam <strong>1d4 PV</strong>.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__primavera-continua",
+      "classe": "druida",
+      "habilidade": "primavera-continua",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Z86bJ2L8ulKRjM6q"
+}

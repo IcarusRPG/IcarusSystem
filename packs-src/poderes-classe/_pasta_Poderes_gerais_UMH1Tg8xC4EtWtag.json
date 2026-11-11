@@ -1,0 +1,15 @@
+{
+  "_id": "UMH1Tg8xC4EtWtag",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "odOrjbIQM0u5PQjk",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:druida:poderes-gerais"
+    }
+  },
+  "_key": "!folders!UMH1Tg8xC4EtWtag"
+}

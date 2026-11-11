@@ -185,6 +185,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     const rd = actor ? fontesDeRD(actor) : undefined;
     const f = actor?.flags?.[SISTEMA_ID];
     const vinculo = f?.vinculo ? blocoDoVinculo(f, globalThis.game?.actors) : null;
-    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null, defesaAtributo: actor?.flags?.["icarus-rpg"]?.defesaAtributo });
+    // Forma do Druida (efeito ativo "Forma: X"): Defesa = 10 + DES + bônus da forma, sem armadura
+    const forma = [...(actor?.effects ?? [])].find(e => !e.disabled && e.flags?.[SISTEMA_ID]?.forma)?.flags[SISTEMA_ID].forma ?? null;
+    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null, defesaAtributo: actor?.flags?.["icarus-rpg"]?.defesaAtributo, forma });
   }
 }

@@ -1,0 +1,38 @@
+{
+  "_id": "gFi6qEivTRSc8TJs",
+  "name": "Faro de Caçador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "KA0bvNLOq94bgCBi",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você ataca, na <strong>primeira vez por rodada</strong> que acertar uma criatura <strong>ferida</strong> (com menos que o máximo de PV), o ataque causa <strong>+1d6 de dano</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Fera",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Fera",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__faro-de-cacador",
+      "classe": "druida",
+      "poder": "faro-de-cacador",
+      "inferido": false
+    }
+  },
+  "_key": "!items!gFi6qEivTRSc8TJs"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "toSjcrgxgnMd3xSa",
+  "name": "Trilha Compartilhada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "Caminho das Raízes",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa o Caminho das Raízes, você pode levar até <strong>Sabedoria</strong> criaturas dispostas que o estejam <strong>tocando</strong>, pagando <strong>+1 PM</strong> por criatura.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "caminho-das-raizes"
+    ],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__trilha-compartilhada",
+      "classe": "druida",
+      "poder": "trilha-compartilhada",
+      "inferido": true
+    }
+  },
+  "_key": "!items!toSjcrgxgnMd3xSa"
+}

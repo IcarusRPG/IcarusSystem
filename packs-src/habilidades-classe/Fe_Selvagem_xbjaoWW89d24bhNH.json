@@ -1,0 +1,38 @@
+{
+  "_id": "xbjaoWW89d24bhNH",
+  "name": "Fé Selvagem",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna devoto de <strong>uma divindade do Panteão</strong> (seção 16), e a escolha é permanente. Se a sua divindade for <strong>Floressa</strong>, você recebe <strong>os três Poderes Concedidos</strong> dela. Se for <strong>qualquer outra divindade</strong>, você recebe <strong>dois</strong> dos três, à sua escolha. Você deve seguir os <strong>Dogmas e Restrições</strong> da sua divindade. Se você agir contra um Dogma, a <strong>primeira vez</strong> você perde <strong>todos os seus PM por 1d4 dias</strong>. Na <strong>segunda vez</strong>, a divindade o abandona e você se torna um <strong>Anátema</strong>.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__fe-selvagem",
+      "classe": "druida",
+      "habilidade": "fe-selvagem",
+      "inferido": false
+    }
+  },
+  "_key": "!items!xbjaoWW89d24bhNH"
+}

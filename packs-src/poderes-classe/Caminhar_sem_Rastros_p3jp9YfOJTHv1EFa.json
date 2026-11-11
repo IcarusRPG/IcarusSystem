@@ -1,0 +1,38 @@
+{
+  "_id": "p3jp9YfOJTHv1EFa",
+  "name": "Caminhar sem Rastros",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Em ambiente natural, você não deixa rastros e recebe <strong>+5 em Furtividade</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__caminhar-sem-rastros",
+      "classe": "druida",
+      "poder": "caminhar-sem-rastros",
+      "inferido": false
+    }
+  },
+  "_key": "!items!p3jp9YfOJTHv1EFa"
+}

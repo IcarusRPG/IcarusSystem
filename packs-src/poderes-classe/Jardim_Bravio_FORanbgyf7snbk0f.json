@@ -1,0 +1,38 @@
+{
+  "_id": "FORanbgyf7snbk0f",
+  "name": "Jardim Bravio",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "Jxrm1KpC3rlz1gj4",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O raio da sua área das <strong>Raízes Vigilantes</strong> aumenta de 3 m para <strong>6 m</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Mata",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__jardim-bravio",
+      "classe": "druida",
+      "poder": "jardim-bravio",
+      "inferido": false
+    }
+  },
+  "_key": "!items!FORanbgyf7snbk0f"
+}

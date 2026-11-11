@@ -2,6 +2,7 @@
  * Ataque, dano, munição, recarga e arremesso dentro do Foundry, com os cards de chat.
  * As regras (bônus, fórmulas, o que gastar) ficam em combate.mjs; aqui só se aplica e se mostra.
  */
+import { bloqueiosDoAtor, armaPermitidaNaForma } from "./druida-dados.mjs";
 import { SISTEMA_ID } from "./config.mjs";
 import { comSinal, numero } from "./regras.mjs";
 import { vantagemDaRolagem, dadosDoCard } from "./rolls.mjs";
@@ -92,6 +93,11 @@ export function escolhasPadrao(secoes = [], { vantagem = false, desvantagem = fa
  */
 export async function rolarAtaque(actor, item, modo, opcoes = {}) {
   const { criarMensagem = true, dialogo = true, rapido = false } = opcoes;
+  // Druida sob uma Forma: só a arma natural da forma
+  if (item?.type === "arma" && bloqueiosDoAtor(actor).itens && !armaPermitidaNaForma(item)) {
+    ui.notifications.warn(game.i18n.format("ICARUS.Druida.FormaSemItens", { nome: actor.name }));
+    return null;
+  }
   if (!criarMensagem || !dialogo) return executarAtaque(actor, item, modo, opcoes);
   const contexto = await contextoDoDialogo(actor, item, modo);
   const aoConfirmar = async escolhas => {

@@ -1,0 +1,38 @@
+{
+  "_id": "StLadFly86H0SduY",
+  "name": "Caminho das Raízes",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 4,
+    "prerequisito": "9º nível",
+    "nivel": null,
+    "acao": "completa",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "As árvores gigantescas são portas. Sempre que você <strong>passa pelo menos um minuto tocando uma árvore</strong> e conversando com ela, ela se torna uma <strong>Árvore Conhecida</strong>. Você pode ter até <strong>Sabedoria + metade do seu nível</strong> Árvores Conhecidas (mínimo 1); ao marcar uma nova além do limite, você esquece a mais antiga. Como <strong>ação completa</strong>, você gasta <strong>4 PM</strong>, toca uma <strong>árvore gigantesca</strong> (grande o bastante para uma criatura Média entrar no tronco) e <strong>entra nela</strong>, saindo em <strong>qualquer Árvore Conhecida</strong> a até <strong>5 km por nível de Druida</strong>, no mesmo plano. Você sai no espaço adjacente à árvore de destino, que precisa estar viva e inteira. Se o Mestre disser que a árvore não existe mais, a magia falha e os PM se perdem. <em>Divino.</em>",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__caminho-das-raizes",
+      "classe": "druida",
+      "poder": "caminho-das-raizes",
+      "inferido": true
+    }
+  },
+  "_key": "!items!StLadFly86H0SduY"
+}

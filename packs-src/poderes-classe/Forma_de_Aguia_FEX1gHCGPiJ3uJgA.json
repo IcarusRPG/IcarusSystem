@@ -1,0 +1,38 @@
+{
+  "_id": "FEX1gHCGPiJ3uJgA",
+  "name": "Forma de Águia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Assumir custa <strong>3 PM</strong>. Tamanho Pequeno. <strong>Voo de 12 m.</strong> Bônus de Defesa <strong>+2</strong>. <strong>+5 em Visão.</strong> Arma natural: <strong>garras, 1d6 de dano de corte.</strong> <em>Mergulho:</em> se você voou pelo menos 6 m em linha reta antes de atacar, o ataque causa <strong>+1d6 de dano</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__forma-de-aguia",
+      "classe": "druida",
+      "poder": "forma-de-aguia",
+      "inferido": true
+    }
+  },
+  "_key": "!items!FEX1gHCGPiJ3uJgA"
+}

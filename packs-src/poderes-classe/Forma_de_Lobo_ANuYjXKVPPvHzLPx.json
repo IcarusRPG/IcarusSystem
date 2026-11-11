@@ -1,0 +1,38 @@
+{
+  "_id": "ANuYjXKVPPvHzLPx",
+  "name": "Forma de Lobo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Assumir custa <strong>2 PM</strong>. Tamanho Médio. <strong>Deslocamento 12 m.</strong> Bônus de Defesa <strong>+3</strong>. <strong>+5 em Olfato</strong> e <strong>+2 em Furtividade.</strong> Arma natural: <strong>mordida, 1d8 de dano de perfuração.</strong> <em>Derrubar:</em> uma vez por rodada, ao acertar a mordida, o alvo faz um teste de <strong>Fortitude</strong> (CD de druida) ou fica <strong>Caído</strong>. <em>Alcateia:</em> aliados adjacentes ao alvo recebem <strong>+1 nos ataques</strong> contra ele.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__forma-de-lobo",
+      "classe": "druida",
+      "poder": "forma-de-lobo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ANuYjXKVPPvHzLPx"
+}

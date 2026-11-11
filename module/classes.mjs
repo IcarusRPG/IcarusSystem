@@ -48,7 +48,8 @@ export function contagemDeClasseDoAtor(actor) {
 export function contadorDePoderes(actor) {
   const classe = classeDoAtor(actor);
   if (!classe) return null;
-  const escolhidos = itensDeClasse(actor, "poder").filter(i => i.system.classe === classe.id).length;
+  // Poderes dados de graça (Instinto Bestial do Druida) não ocupam escolha de poder
+  const escolhidos = itensDeClasse(actor, "poder").filter(i => i.system.classe === classe.id && !i.flags?.[SISTEMA_ID]?.gratis).length;
   return contagemDePoderes(classe, actor.system.nivel, escolhidos);
 }
 

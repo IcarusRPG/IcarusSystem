@@ -1,0 +1,38 @@
+{
+  "_id": "aMmdVD1zeqAzsrhV",
+  "name": "Espinhos de Retorno",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "Jxrm1KpC3rlz1gj4",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura <strong>adjacente</strong> acerta um ataque corpo a corpo contra você, você pode gastar <strong>1 PM</strong> e a sua reação: espinhos brotam e ela sofre <strong>1d6 + Sabedoria de dano de perfuração</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Mata",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__espinhos-de-retorno",
+      "classe": "druida",
+      "poder": "espinhos-de-retorno",
+      "inferido": true
+    }
+  },
+  "_key": "!items!aMmdVD1zeqAzsrhV"
+}

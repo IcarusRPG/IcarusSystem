@@ -3,6 +3,7 @@
  * Limite de Vestimentas (vestir/tirar; a 6ª peça é sempre bloqueada, para todos).
  * Nada aqui automatiza o efeito do item: o card no chat traz o texto e o Mestre aplica.
  */
+import { bloqueiosDoAtor } from "./druida-dados.mjs";
 import { SISTEMA_ID } from "./config.mjs";
 import { ehVestimenta, estaVestido, vestimentasAtivas, LIMITE_VESTIMENTAS } from "./origens-dados.mjs";
 import { MODIFICADORES_ATAQUE } from "./combate-chat.mjs";
@@ -31,6 +32,8 @@ async function cardDoItem(actor, item, linha = "") {
 /** "Usar": gasta 1 uso (se o item tiver usos) e posta o card. Sem usos restantes, avisa. */
 export async function usarItemComum(actor, item) {
   if (!temUsar(item)) return null;
+  // Druida sob uma Forma não usa itens
+  if (bloqueiosDoAtor(actor).itens) return ui.notifications.warn(fmt("ICARUS.Druida.FormaSemItens", { nome: actor.name }));
   const usos = item.system.usos ?? { max: 0, atual: 0 };
   if (usos.max > 0) {
     if (usos.atual <= 0) return ui.notifications.warn(fmt("ICARUS.ItensComuns.SemUsos", { item: item.name }));

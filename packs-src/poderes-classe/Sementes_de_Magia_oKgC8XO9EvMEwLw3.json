@@ -1,0 +1,38 @@
+{
+  "_id": "oKgC8XO9EvMEwLw3",
+  "name": "Sementes de Magia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>duas magias divinas</strong> de qualquer nível que já possa lançar. Você pode escolher este poder quantas vezes quiser.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__sementes-de-magia",
+      "classe": "druida",
+      "poder": "sementes-de-magia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!oKgC8XO9EvMEwLw3"
+}

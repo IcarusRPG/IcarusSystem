@@ -1,0 +1,38 @@
+{
+  "_id": "tyQvyJRFwfkcuquA",
+  "name": "Sentido da Terra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você sente as <strong>vibrações do chão</strong> e percebe criaturas em contato com o solo em alcance curto, mesmo sem enxergar. Você não pode ser <strong>Surpreendido</strong> por criaturas terrestres.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__sentido-da-terra",
+      "classe": "druida",
+      "poder": "sentido-da-terra",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tyQvyJRFwfkcuquA"
+}

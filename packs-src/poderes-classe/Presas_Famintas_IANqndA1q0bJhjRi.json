@@ -1,0 +1,38 @@
+{
+  "_id": "IANqndA1q0bJhjRi",
+  "name": "Presas Famintas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "KA0bvNLOq94bgCBi",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O dado de dano das suas armas naturais aumenta em <strong>um passo</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Fera",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Fera",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__presas-famintas",
+      "classe": "druida",
+      "poder": "presas-famintas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!IANqndA1q0bJhjRi"
+}

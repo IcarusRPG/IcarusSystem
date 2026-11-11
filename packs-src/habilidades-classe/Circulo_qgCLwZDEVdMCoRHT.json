@@ -1,0 +1,38 @@
+{
+  "_id": "qgCLwZDEVdMCoRHT",
+  "name": "Círculo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 3005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe um Círculo, e a escolha é permanente. Cada Círculo concede uma habilidade agora, outra no 9º nível e outra no 15º, além de uma lista de poderes própria.<br>• <strong>Círculo da Fera:</strong> o druida que vira a fera. Combate corpo a corpo e formas animais.<br>• <strong>Círculo da Mata:</strong> o druida que fala com as raízes. Controle do terreno e da floresta.<br>• <strong>Círculo do Broto:</strong> o druida que cuida. Ervas, cura leve e proteção do grupo.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__circulo",
+      "classe": "druida",
+      "habilidade": "circulo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!qgCLwZDEVdMCoRHT"
+}

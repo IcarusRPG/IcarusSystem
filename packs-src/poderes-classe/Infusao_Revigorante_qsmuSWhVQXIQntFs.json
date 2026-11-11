@@ -1,0 +1,38 @@
+{
+  "_id": "qsmuSWhVQXIQntFs",
+  "name": "Infusão Revigorante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "7ZXtsAiDexlEYyWu",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura usa uma das suas ervas, você pode gastar <strong>2 PM</strong> para que ela também <strong>recupere 1d4 PM</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo do Broto",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo do Broto",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__infusao-revigorante",
+      "classe": "druida",
+      "poder": "infusao-revigorante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!qsmuSWhVQXIQntFs"
+}

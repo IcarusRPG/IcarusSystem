@@ -1,0 +1,38 @@
+{
+  "_id": "fKkwQqR1ebGA6GI0",
+  "name": "Desabrochar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "7ZXtsAiDexlEYyWu",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando uma criatura usa uma das suas ervas para <strong>recuperar PV</strong>, ela também recebe <strong>PV temporários iguais à metade do seu nível</strong>, até o fim da cena.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo do Broto",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo do Broto",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__desabrochar",
+      "classe": "druida",
+      "poder": "desabrochar",
+      "inferido": false
+    }
+  },
+  "_key": "!items!fKkwQqR1ebGA6GI0"
+}

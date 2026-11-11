@@ -1,0 +1,38 @@
+{
+  "_id": "GU9dxb2LS3iUPKHE",
+  "name": "Instinto Bestial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 3009,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>duas Formas à sua escolha</strong> sem gastar poderes, e o custo em PM de <strong>todas as suas Formas</strong> diminui em <strong>1 PM</strong> (mínimo 1).",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__instinto-bestial",
+      "classe": "druida",
+      "habilidade": "instinto-bestial",
+      "inferido": false
+    }
+  },
+  "_key": "!items!GU9dxb2LS3iUPKHE"
+}

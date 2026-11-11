@@ -1,5 +1,18 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.28.0
+
+### Druida
+- `classes.json` com o **Druida** (13 classes; 20 habilidades e 33 poderes; 477 poderes no total). As outras 12 classes ficam iguais. PV 16 + CON (+4 + CON por nível), **PM 5 × nível + Sabedoria** (atributo só uma vez). Sobrevivência e Vontade + 4 perícias; armas simples, túnicas, armaduras leves e escudos. Ícone `img/Icones/classes/Druida.png`.
+- **Fé Selvagem:** a mesma escolha permanente de divindade do Clérigo. **Floressa** concede os 3 Poderes Concedidos; outra divindade, **2 à escolha**. A aba Classe mostra o Dogma, e o Mestre usa o mesmo "Agir contra um Dogma".
+- **Conjuração Divina:** lista Divina, CD com Sabedoria, magias conhecidas n + 2 (+2 por **Sementes de Magia**), até o 5º nível de magia (17º). **Afinidade Natural:** +1 na CD das magias de Natureza.
+- **Mudar de Forma:** "Assumir Forma" na aba Classe, com as Formas que o Druida tem (Lobo, Urso, Águia, Serpente, Aranha, Tubarão). Cria o efeito "Forma: X" até o fim da cena e a arma natural (Luta; +1 passo no 11º e no 17º). A Defesa vira 10 + Destreza + bônus da forma, sem armadura nem escudo. Sob a Forma, magias, itens e armas ficam bloqueados (**Palavra na Fera** e **Mil Formas** liberam as magias). Voltar é um botão; ficar Inconsciente também encerra a Forma. Mergulho, Frenesi e Faro de Caçador viram opções no ataque; Derrubar, Abraço, Constrição e Alcateia aparecem como lembrete; Teia tem botão (1/cena). PV temporários do Urso e Fera Ancestral vão para o chat.
+- **Mosaico Vivo:** escolhe 1 parte (2 no 10º, 3 no 16º) até o fim da cena, sem bloquear nada.
+- **Ervas Frescas:** "Preparar ervas" (o Mestre confirma o descanso em ambiente natural) e "Usar erva" (cura 1d6 a 4d6 ou remove condição). Mãos de Seiva, Boticário, Erva Rara, Desabrochar e Infusão Revigorante entram nos diálogos.
+- **Círculo** (Fera, Mata, Broto) permanente: habilidades e poderes só do Círculo escolhido. **Instinto Bestial:** 2 Formas de graça (não ocupam escolha de poder) e −1 PM em todas. Raízes Vigilantes, Floresta Desperta, Florescer, Espinhos de Retorno, Seiva Pegajosa, Flor Protetora, Canteiro e Primavera rolam e postam no chat.
+- **Caminho das Raízes:** lista de Árvores Conhecidas (limite Sabedoria + metade do nível; a mais antiga é esquecida), guarda a cena e o ponto do token; o portal cobra 4 PM (+1 por criatura com Trilha Compartilhada) e o Mestre move o token.
+- **Sangue Verde** (imune a Doente) e **Mil Formas** (1/dia; troca livre sem PM, +2d6 nas armas naturais, Fatigado no fim da cena; o "Passou 1 dia" do Mestre libera de novo).
+
 ## 0.27.2
 
 ### Custo das habilidades que recuperam PM
