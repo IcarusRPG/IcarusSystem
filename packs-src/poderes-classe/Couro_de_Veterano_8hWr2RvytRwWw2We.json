@@ -1,0 +1,38 @@
+{
+  "_id": "8hWr2RvytRwWw2We",
+  "name": "Couro de Veterano",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "KA0bvNLOq94bgCBi",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver sob uma <strong>Forma</strong>, você recebe <strong>+5 em Fortitude e em Reflexos</strong> e <strong>Redução de Dano 2</strong> (respeitando o teto de RD do Núcleo).",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Fera",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Fera",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__couro-de-veterano",
+      "classe": "druida",
+      "poder": "couro-de-veterano",
+      "inferido": false
+    }
+  },
+  "_key": "!items!8hWr2RvytRwWw2We"
+}

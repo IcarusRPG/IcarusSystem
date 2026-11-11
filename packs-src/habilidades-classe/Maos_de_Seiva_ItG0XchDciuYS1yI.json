@@ -1,0 +1,38 @@
+{
+  "_id": "ItG0XchDciuYS1yI",
+  "name": "Mãos de Seiva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 3017,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você prepara <strong>2 ervas a mais</strong> em cada descanso. Além disso, quando <strong>você</strong> usa uma erva, o alcance dela é <strong>curto</strong>, em vez de adjacente.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__maos-de-seiva",
+      "classe": "druida",
+      "habilidade": "maos-de-seiva",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ItG0XchDciuYS1yI"
+}

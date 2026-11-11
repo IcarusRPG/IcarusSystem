@@ -1,0 +1,38 @@
+{
+  "_id": "u8Vk2T2F324T5qEL",
+  "name": "Seiva Pegajosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "Jxrm1KpC3rlz1gj4",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM: uma criatura em alcance curto faz um teste de <strong>Reflexos</strong> (CD de druida); se falhar, fica <strong>Lenta</strong> até o fim do seu próximo turno.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Mata",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Mata",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__seiva-pegajosa",
+      "classe": "druida",
+      "poder": "seiva-pegajosa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!u8Vk2T2F324T5qEL"
+}

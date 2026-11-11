@@ -1,0 +1,38 @@
+{
+  "_id": "9G0zIp2NbTbKWnxd",
+  "name": "Flor Protetora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "7ZXtsAiDexlEYyWu",
+  "sort": 3100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e toca um aliado: uma flor brota e, até o fim da cena, ele recebe <strong>+1 na Defesa e em testes de resistência</strong>. Só uma Flor Protetora por vez.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo do Broto",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo do Broto",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__flor-protetora",
+      "classe": "druida",
+      "poder": "flor-protetora",
+      "inferido": true
+    }
+  },
+  "_key": "!items!9G0zIp2NbTbKWnxd"
+}

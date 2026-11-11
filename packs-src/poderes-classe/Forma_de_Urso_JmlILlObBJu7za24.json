@@ -1,0 +1,38 @@
+{
+  "_id": "JmlILlObBJu7za24",
+  "name": "Forma de Urso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Assumir custa <strong>3 PM</strong>. Tamanho Grande. <strong>Deslocamento 9 m.</strong> Bônus de Defesa <strong>+4</strong>. Você recebe <strong>PV temporários iguais a 2 × seu nível</strong>. <strong>+2 em Atletismo.</strong> Arma natural: <strong>garras, 1d10 de dano de corte.</strong> <em>Abraço:</em> ao acertar o ataque, você pode <strong>agarrar</strong> o alvo como ação livre (teste de Luta contra o Atletismo ou a Acrobacia dele).",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__forma-de-urso",
+      "classe": "druida",
+      "poder": "forma-de-urso",
+      "inferido": true
+    }
+  },
+  "_key": "!items!JmlILlObBJu7za24"
+}

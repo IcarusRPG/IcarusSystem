@@ -1,0 +1,15 @@
+{
+  "_id": "KA0bvNLOq94bgCBi",
+  "name": "Poderes do Círculo da Fera",
+  "type": "Item",
+  "folder": "odOrjbIQM0u5PQjk",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:druida:poderes-do-circulo-da-fera"
+    }
+  },
+  "_key": "!folders!KA0bvNLOq94bgCBi"
+}

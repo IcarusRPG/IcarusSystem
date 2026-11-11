@@ -1,0 +1,38 @@
+{
+  "_id": "M3CVcFM8SiBnySGR",
+  "name": "Mosaico Vivo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e transforma <strong>partes do seu corpo</strong> em partes de animais, sem assumir uma forma completa: você <strong>continua falando, lançando magias e usando itens e armadura</strong>. Até o fim da cena, você recebe os efeitos de <strong>uma parte</strong> à sua escolha. Você escolhe <strong>uma parte a mais no 10º nível e outra no 16º</strong> (total de 3 partes). Cada parte só pode ser escolhida uma vez por uso. <em>Metamorfose.</em><br>• <strong>Garras:</strong> você ganha uma arma natural de <strong>1d6 de dano de corte</strong> e <strong>+1 nos testes de ataque</strong> com ela.<br>• <strong>Olhos de Coruja:</strong> você enxerga no escuro e recebe <strong>+5 em Visão</strong>.<br>• <strong>Pernas de Cervo:</strong> <strong>+6 m de deslocamento</strong> e <strong>+5 em Atletismo</strong> para saltar.<br>• <strong>Pele de Rinoceronte:</strong> <strong>+2 na Defesa</strong> (acumula com a armadura).<br>• <strong>Asas de Gavião:</strong> deslocamento de <strong>voo de 6 m</strong>. <em>Pré-requisito: 10º nível.</em><br>• <strong>Nariz de Lobo:</strong> <strong>+5 em Olfato</strong> e em testes de Sobrevivência para rastrear.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__mosaico-vivo",
+      "classe": "druida",
+      "poder": "mosaico-vivo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!M3CVcFM8SiBnySGR"
+}

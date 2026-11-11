@@ -1,0 +1,38 @@
+{
+  "_id": "Ry7PIVSSj8z44XNi",
+  "name": "Erva Rara",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma erva sua também pode remover as condições <strong>Cego, Surdo, Fraco, Debilitado e Sangrando</strong>, além das normais. Você gasta <strong>+1 PM ao preparar a erva</strong> (ao fim do descanso).",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__erva-rara",
+      "classe": "druida",
+      "poder": "erva-rara",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Ry7PIVSSj8z44XNi"
+}

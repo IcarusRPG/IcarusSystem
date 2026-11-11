@@ -1,0 +1,38 @@
+{
+  "_id": "XcGNmyxYAqAmWvmo",
+  "name": "Mudar de Forma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 2003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende a assumir a forma de animais. Cada animal é um poder de Druida chamado <strong>Forma de (animal)</strong>; você só pode assumir as formas dos poderes que escolheu. As regras abaixo valem para todas as formas:<br>• <strong>Assumir.</strong> É uma ação de movimento e o custo em PM está na descrição de cada forma.<br>• <strong>Duração.</strong> Até o fim da cena, até você voltar à forma normal (ação livre) ou ficar <strong>Inconsciente</strong>.<br>• <strong>O que muda.</strong> Você assume o tamanho e as capacidades da forma. Você mantém seus PV, PM, atributos, perícias e treinos. Seu equipamento <strong>fica com você, sem efeito</strong>.<br>• <strong>Ataque natural.</strong> Você ataca com a arma natural da forma, usando <strong>Luta</strong>. O dano dela aumenta <strong>um passo no 11º nível e outro no 17º</strong>.<br>• <strong>Defesa.</strong> Sem armadura, sua Defesa é 10 + Destreza + o bônus da forma.<br>• <strong>O que você não pode.</strong> Não pode falar (só sons do animal), nem lançar magias, nem usar itens, armas, armaduras ou escudos. O poder <strong>Palavra na Fera</strong> remove a parte da fala e das magias.<br>• <strong>Descritor.</strong> <em>Metamorfose.</em>",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__mudar-de-forma",
+      "classe": "druida",
+      "habilidade": "mudar-de-forma",
+      "inferido": true
+    }
+  },
+  "_key": "!items!XcGNmyxYAqAmWvmo"
+}

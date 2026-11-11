@@ -1,0 +1,38 @@
+{
+  "_id": "IUuoRqnuNV7iQO3d",
+  "name": "Fera Aprimorada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 9010,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "As armas naturais das suas Formas contam como <strong>mágicas</strong>, causam <strong>+2 de dano</strong> e você recebe <strong>+1 nos testes de ataque</strong> com elas.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__fera-aprimorada",
+      "classe": "druida",
+      "habilidade": "fera-aprimorada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!IUuoRqnuNV7iQO3d"
+}

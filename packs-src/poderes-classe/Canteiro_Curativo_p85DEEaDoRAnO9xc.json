@@ -1,0 +1,38 @@
+{
+  "_id": "p85DEEaDoRAnO9xc",
+  "name": "Canteiro Curativo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "7ZXtsAiDexlEYyWu",
+  "sort": 2900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e planta um <strong>canteiro</strong> em um espaço adjacente: até o fim da cena, <strong>aliados que comecem o turno nele</strong> recuperam <strong>1d6 PV</strong>. Só um canteiro por vez.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo do Broto",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo do Broto",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__canteiro-curativo",
+      "classe": "druida",
+      "poder": "canteiro-curativo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!p85DEEaDoRAnO9xc"
+}

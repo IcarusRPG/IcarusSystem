@@ -1,0 +1,38 @@
+{
+  "_id": "ysRoBnv8Lay2eHsk",
+  "name": "Sangue Verde",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 10006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você fica <strong>imune a Doente</strong>, recebe <strong>+5 em Fortitude contra veneno</strong> e <strong>+2 em Fortitude</strong> em geral.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__sangue-verde",
+      "classe": "druida",
+      "habilidade": "sangue-verde",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ysRoBnv8Lay2eHsk"
+}

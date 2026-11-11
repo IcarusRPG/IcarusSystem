@@ -1,0 +1,181 @@
+{
+  "_id": "aP5eFf91WrXOcB6e",
+  "name": "Druida",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 1300,
+  "system": {
+    "classeId": "druida",
+    "papel": "Conjurador Natural",
+    "atributoChave": "Sabedoria",
+    "pv": {
+      "inicial": 16,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 5,
+      "porNivel": 5,
+      "atributo": "SAB",
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "5 + Sabedoria no 1º nível; +5 por nível seguinte"
+    },
+    "pericias": {
+      "obrigatorias": "Sobrevivência e Vontade",
+      "escolha": 4,
+      "lista": [
+        "Adestramento",
+        "Atletismo",
+        "Cavalgar",
+        "Concentração",
+        "Cura",
+        "Fortitude",
+        "Furtividade",
+        "Intuição",
+        "Navegação",
+        "Olfato",
+        "Religião",
+        "Visão"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, túnicas, armaduras leves, escudos",
+      "armas": [
+        "simples"
+      ],
+      "armaduras": [
+        "leve"
+      ],
+      "escudo": true,
+      "tunicas": true
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Fé Selvagem",
+          "Conjuração Divina",
+          "Passo da Mata"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Mudar de Forma",
+          "Ervas Frescas"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Círculo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Habilidade de Círculo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Sangue Verde"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [
+          "Habilidade de Círculo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Mil Formas"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O druida é o devoto que ouviu a floresta antes de ouvir qualquer templo. Não reza dentro de paredes: reza com os pés na terra, as mãos na casca e o rosto no vento. A natureza responde a ele, e ele responde por ela.</p><p>Há druidas que viram a fera que a mata precisa. Há os que conversam com as raízes e fazem a floresta se mover. E há os que cuidam: um chá de ervas, uma mão suja de terra no ombro de um ferido. O que une todos é a certeza de que o mundo vivo se lembra de quem o respeita e cobra de quem o fere.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida"
+    }
+  },
+  "_key": "!items!aP5eFf91WrXOcB6e"
+}

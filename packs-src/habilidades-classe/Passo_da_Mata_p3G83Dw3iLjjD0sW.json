@@ -1,0 +1,38 @@
+{
+  "_id": "p3G83Dw3iLjjD0sW",
+  "name": "Passo da Mata",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 1002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você ignora o terreno difícil causado por vegetação, lama, neve fofa e pedras soltas, e recebe <strong>+2 em Sobrevivência</strong>.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__passo-da-mata",
+      "classe": "druida",
+      "habilidade": "passo-da-mata",
+      "inferido": false
+    }
+  },
+  "_key": "!items!p3G83Dw3iLjjD0sW"
+}

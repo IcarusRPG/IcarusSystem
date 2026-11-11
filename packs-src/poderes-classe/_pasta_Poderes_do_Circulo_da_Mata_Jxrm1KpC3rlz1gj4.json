@@ -1,0 +1,15 @@
+{
+  "_id": "Jxrm1KpC3rlz1gj4",
+  "name": "Poderes do Círculo da Mata",
+  "type": "Item",
+  "folder": "odOrjbIQM0u5PQjk",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:druida:poderes-do-circulo-da-mata"
+    }
+  },
+  "_key": "!folders!Jxrm1KpC3rlz1gj4"
+}

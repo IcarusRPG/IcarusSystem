@@ -1,0 +1,38 @@
+{
+  "_id": "69LrKL1RTn4Ojlof",
+  "name": "Florescer",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 15019,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 6,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM: todos os aliados em alcance curto recuperam <strong>3d8 PV</strong> e <strong>removem uma condição</strong> à escolha de cada um entre Abalado, Doente, Enjoado, Envenenado e Fatigado. <em>Divino.</em>",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__florescer",
+      "classe": "druida",
+      "habilidade": "florescer",
+      "inferido": true
+    }
+  },
+  "_key": "!items!69LrKL1RTn4Ojlof"
+}

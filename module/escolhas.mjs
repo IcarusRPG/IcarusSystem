@@ -248,7 +248,26 @@ async function telaDivindade(actor, classe, entrada) {
   return o ? { flags: { divindade: o.id }, sufixo: o.nome } : null;
 }
 
-const TELAS = { divindade: telaDivindade,  escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
+/** Poderes da classe (Instinto Bestial: 2 Formas de graça): exatamente "quantidade", sem os que já tem. */
+async function telaPoderes(actor, classe, entrada) {
+  const { quantidade = 1, opcoes = [] } = entrada.escolha;
+  const ja = new Set(actor.items.filter(i => i.flags?.[SISTEMA_ID]?.classe === classe.id).map(i => normalizarNome(i.name)));
+  const content = `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Escolhas.PoderesTexto", { n: quantidade }))}</p>
+    <div class="grade-pericias-classe">${opcoes.map(o => `<label class="chk"><input type="checkbox" name="poder" value="${esc(o)}"${ja.has(normalizarNome(o)) ? " disabled" : ""}> ${esc(o)}</label>`).join("")}</div></div>`;
+  const r = await DialogV2.wait({
+    window: { title: entrada.nome }, content,
+    buttons: [
+      { action: "ok", label: loc("ICARUS.Devocao.Confirmar"), default: true, callback: (ev, b) => [...b.form.querySelectorAll("input[name=poder]:checked")].map(i => i.value) },
+      { action: "cancelar", label: loc("ICARUS.Escolhas.DecidirDepois") }
+    ],
+    rejectClose: false
+  });
+  if (!Array.isArray(r)) return null;
+  if (r.length !== quantidade) { ui.notifications.warn(fmt("ICARUS.Comuns.EscolhaN", { n: quantidade })); return null; }
+  return { flags: { poderes: r }, sufixo: r.join(", ") };
+}
+
+const TELAS = { poderes: telaPoderes, divindade: telaDivindade,  escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
 
 /** Depois de uma escolha de caminho (por id da habilidade): (actor, índice, item) => Promise. */
 export const APOS_CAMINHO = new Map();

@@ -1,0 +1,38 @@
+{
+  "_id": "CLOAJLFmOdvarc77",
+  "name": "Conjuração Divina",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você lança magias da lista <strong>Divina</strong>, usando Sabedoria como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º, nível 4 no 13º e nível 5 no 17º.<br>• <strong>Magias conhecidas.</strong> Você conhece 3 magias no 1º nível e aprende <strong>mais 1 a cada nível</strong>. Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra.<br>• <strong>Afinidade Natural.</strong> A CD das magias marcadas com <strong>Natureza</strong> é <strong>+1</strong>.<br>• <strong>Armadura.</strong> Você pode lançar magias usando túnicas, armaduras leves e escudos. Armaduras médias e pesadas não são do seu ofício (você não tem proficiência).<br>• <strong>Símbolo.</strong> Um raminho, uma pedra ou um osso entalhado (R$ 0, 0,5 espaço). Você não precisa dele para lançar magias, mas vários poderes o exigem.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__conjuracao-divina",
+      "classe": "druida",
+      "habilidade": "conjuracao-divina",
+      "inferido": false
+    }
+  },
+  "_key": "!items!CLOAJLFmOdvarc77"
+}

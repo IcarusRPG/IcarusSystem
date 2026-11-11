@@ -12,5 +12,6 @@ export default {
   "nobre": "Nobre.png",
   "bardo": "Bardo.png",
   "clerigo": "Clérigo.png",
-  "paladino": "Paladino.png"
+  "paladino": "Paladino.png",
+  "druida": "Druida.png"
 };

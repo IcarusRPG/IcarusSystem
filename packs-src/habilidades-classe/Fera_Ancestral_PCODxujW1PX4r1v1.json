@@ -1,0 +1,38 @@
+{
+  "_id": "PCODxujW1PX4r1v1",
+  "name": "Fera Ancestral",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 15011,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, ao assumir uma Forma, você pode receber <strong>PV temporários iguais a 3 × seu nível</strong> e fazer suas armas naturais causarem <strong>+2d6 de dano</strong> até o fim da cena.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__fera-ancestral",
+      "classe": "druida",
+      "habilidade": "fera-ancestral",
+      "inferido": false
+    }
+  },
+  "_key": "!items!PCODxujW1PX4r1v1"
+}

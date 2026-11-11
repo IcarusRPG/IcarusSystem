@@ -1,0 +1,38 @@
+{
+  "_id": "EVzKCok8WXkZu2cI",
+  "name": "Mil Formas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 20007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 10,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, como ação padrão, você gasta 10 PM e se abre por inteiro à natureza. Até o fim da cena: você pode <strong>trocar entre qualquer Forma que conheça</strong> como ação livre (uma vez por turno), <strong>sem pagar PM</strong> pela troca; você <strong>fala e lança magias</strong> em qualquer forma, como se tivesse <strong>Palavra na Fera</strong>; e suas armas naturais causam <strong>+2d6 de dano</strong>. Quando a cena termina, você fica <strong>Fatigado</strong>.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__mil-formas",
+      "classe": "druida",
+      "habilidade": "mil-formas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!EVzKCok8WXkZu2cI"
+}

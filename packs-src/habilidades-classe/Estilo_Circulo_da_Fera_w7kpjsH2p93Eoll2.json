@@ -1,0 +1,38 @@
+{
+  "_id": "w7kpjsH2p93Eoll2",
+  "name": "Estilo: Círculo da Fera",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 8,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O druida que vira a fera.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__estilo-circulo-da-fera",
+      "classe": "druida",
+      "habilidade": "estilo-circulo-da-fera",
+      "inferido": false
+    }
+  },
+  "_key": "!items!w7kpjsH2p93Eoll2"
+}

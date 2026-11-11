@@ -129,5 +129,15 @@ export default {
     ],
     "escudo": true,
     "tunicas": false
+  },
+  "druida": {
+    "armas": [
+      "simples"
+    ],
+    "armaduras": [
+      "leve"
+    ],
+    "escudo": true,
+    "tunicas": true
   }
 };

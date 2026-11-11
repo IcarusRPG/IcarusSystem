@@ -1,0 +1,38 @@
+{
+  "_id": "2N2fpUNYTzIYYLko",
+  "name": "Troca Veloz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "KA0bvNLOq94bgCBi",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, você pode <strong>trocar de uma Forma para outra</strong> como <strong>ação livre</strong>, pagando <strong>+2 PM</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Círculo da Fera",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Círculo da Fera",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__troca-veloz",
+      "classe": "druida",
+      "poder": "troca-veloz",
+      "inferido": true
+    }
+  },
+  "_key": "!items!2N2fpUNYTzIYYLko"
+}

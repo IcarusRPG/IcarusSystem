@@ -8,6 +8,7 @@
  * - Barra de macros: arrastar a magia da ficha cria a macro game.icarus.lancarMagia("<uuid>").
  * Regras puras: module/magias-dados.mjs.
  */
+import { bloqueiosDoAtor, ajusteDeAfinidade } from "./druida-dados.mjs";
 import { SISTEMA_ID } from "./config.mjs";
 import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao, ajustesDoArcanista, maximoDoPacto, custoComObraPrima } from "./magias-dados.mjs";
 import { temHabilidadeNosItens, linhagemDasEscolhas } from "./classes-dados.mjs";
@@ -137,6 +138,11 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
     ui.notifications.warn(fmt(semFoco, { nome: actor.name }));
     return null;
   }
+  // Druida sob uma Forma não lança magias (Palavra na Fera e Mil Formas liberam)
+  if (bloqueiosDoAtor(actor).magias) {
+    ui.notifications.warn(fmt("ICARUS.Druida.FormaSemMagia", { nome: actor.name }));
+    return null;
+  }
   const arc = arcanistaDoAtor(actor);
   const custo = custoFinal(actor, item, indices);
   const comSangue = arc?.pacto ? Math.min(Math.max(0, Math.trunc(pacto) || 0), maximoDoPacto(custo.total, actor.system.pv?.value ?? 0)) : 0;
@@ -205,7 +211,9 @@ export function custoFinal(actor, item, indices) {
   let total = aj.desconto ? Math.max(1, c.total - aj.desconto) : c.total;
   // Obra-Prima (Bardo, 20º): com a Chama da Musa ativa, metade do custo (depois das outras reduções)
   if (obraPrimaAtiva(actor)) total = custoComObraPrima(total);
-  return { ...c, total, ajusteCd: aj.cd };
+  // Afinidade Natural (Druida): +1 na CD das magias de afinidade Natureza
+  const afinidade = actor?.system?.identidade?.classe === "druida" && temHabilidadeNosItens([...(actor.items ?? [])], "druida", "conjuracao-divina") ? ajusteDeAfinidade(item.system) : 0;
+  return { ...c, total, ajusteCd: aj.cd + afinidade };
 }
 
 /** Bardo com Obra-Prima e a Chama da Musa ativa? */
@@ -303,7 +311,7 @@ export function contextoDasMagias(actor) {
   const semPreces = s.identidade?.classe === "paladino" && !actor.items.some(i => i.flags?.[F]?.id === "paladino__preces-de-guerra" && i.flags?.[F]?.magiasExtras);
   return {
     total: itens.length,
-    aviso: semPreces ? loc("ICARUS.Paladino.SemPreces") : "",
+    aviso: semPreces ? loc("ICARUS.Paladino.SemPreces") : bloqueiosDoAtor(actor).magias ? fmt("ICARUS.Druida.FormaSemMagia", { nome: actor.name }) : "",
     mantidas,
     grupos,
     cd: s.magia?.cd,

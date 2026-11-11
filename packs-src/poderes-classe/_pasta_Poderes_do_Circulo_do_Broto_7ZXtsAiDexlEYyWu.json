@@ -1,0 +1,15 @@
+{
+  "_id": "7ZXtsAiDexlEYyWu",
+  "name": "Poderes do Círculo do Broto",
+  "type": "Item",
+  "folder": "odOrjbIQM0u5PQjk",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:druida:poderes-do-circulo-do-broto"
+    }
+  },
+  "_key": "!folders!7ZXtsAiDexlEYyWu"
+}

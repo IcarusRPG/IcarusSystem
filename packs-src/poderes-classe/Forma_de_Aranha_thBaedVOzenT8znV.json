@@ -1,0 +1,38 @@
+{
+  "_id": "thBaedVOzenT8znV",
+  "name": "Forma de Aranha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Assumir custa <strong>2 PM</strong>. Tamanho Pequeno. <strong>Deslocamento 9 m, escalada 9 m</strong> (inclusive em tetos). Bônus de Defesa <strong>+3</strong>. <strong>+5 em Furtividade</strong> em superfícies naturais. Arma natural: <strong>mordida, 1d4 de dano de perfuração.</strong> <em>Teia:</em> uma vez por cena, como ação padrão, você lança uma teia em uma criatura em alcance curto, que faz um teste de <strong>Reflexos</strong> (CD de druida) ou fica <strong>Enredada</strong>.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__forma-de-aranha",
+      "classe": "druida",
+      "poder": "forma-de-aranha",
+      "inferido": true
+    }
+  },
+  "_key": "!items!thBaedVOzenT8znV"
+}

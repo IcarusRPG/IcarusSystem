@@ -1,0 +1,38 @@
+{
+  "_id": "tVViuOCQVgd6GP1h",
+  "name": "Ervas Frescas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "xZksk7hUGzqyy386",
+  "sort": 2004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao fim de cada descanso em <strong>ambiente natural</strong>, você prepara uma quantidade de <strong>ervas</strong> igual a <strong>1 + metade do seu nível</strong> (arredondado para baixo). Como ação padrão, <strong>qualquer criatura</strong> que tenha uma erva pode usá-la em si mesma, ou em uma criatura adjacente, e escolher: <strong>recuperar 1d6 PV</strong> ou <strong>remover uma condição</strong> entre Doente, Enjoado e Envenenado. A cura aumenta em <strong>+1d6 no 8º, 14º e 20º níveis</strong> (4d6 no 20º). As ervas duram até o próximo descanso.",
+    "classe": "druida",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__ervas-frescas",
+      "classe": "druida",
+      "habilidade": "ervas-frescas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!tVViuOCQVgd6GP1h"
+}

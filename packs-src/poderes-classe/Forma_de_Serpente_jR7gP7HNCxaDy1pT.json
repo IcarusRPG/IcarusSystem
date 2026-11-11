@@ -1,0 +1,38 @@
+{
+  "_id": "jR7gP7HNCxaDy1pT",
+  "name": "Forma de Serpente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Druida.png",
+  "folder": "UMH1Tg8xC4EtWtag",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Assumir custa <strong>2 PM</strong>. Tamanho Médio. <strong>Deslocamento 9 m, escalada 6 m.</strong> Bônus de Defesa <strong>+3</strong>. <strong>+5 em Furtividade</strong> e <strong>+5 em Acrobacia</strong> para escapar de agarrar. Arma natural: <strong>mordida, 1d6 de dano de perfuração.</strong> <em>Constrição:</em> uma criatura que você agarre sofre <strong>1d6 de dano de impacto</strong> no início de cada turno seu.",
+    "classe": "druida",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "druida__forma-de-serpente",
+      "classe": "druida",
+      "poder": "forma-de-serpente",
+      "inferido": true
+    }
+  },
+  "_key": "!items!jR7gP7HNCxaDy1pT"
+}
