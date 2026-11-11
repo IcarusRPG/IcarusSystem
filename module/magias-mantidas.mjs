@@ -10,6 +10,7 @@
  * - Todas terminam em "Encerrar cena"; o jogador encerra quando quiser na aba Magias.
  */
 import { SISTEMA_ID } from "./config.mjs";
+import { pmDisponivel, gastoDePM } from "./pm-gasto.mjs";
 import { tipoDeManutencao, cdDeConcentracao, adicionarMantida, debitoDoTurno, perderConcentracao, CONDICOES_QUE_QUEBRAM_CONCENTRACAO } from "./magias-dados.mjs";
 import { temHabilidadeNosItens } from "./classes-dados.mjs";
 import { INICIO_DO_TURNO } from "./acoes.mjs";
@@ -44,10 +45,10 @@ export async function registrarMantida(actor, item) {
   const tipo = tipoDeManutencao(item.system);
   if (!tipo) return null;
   let duradoura = false;
-  if (tipo === "sustentada" && temHabilidadeNosItens([...actor.items], "arcanista", "magia-duradoura") && actor.system.pm.value >= 2) {
+  if (tipo === "sustentada" && temHabilidadeNosItens([...actor.items], "arcanista", "magia-duradoura") && pmDisponivel(actor) >= 2) {
     duradoura = await foundry.applications.api.DialogV2.confirm({ window: { title: loc("ICARUS.Mantidas.Duradoura") },
       content: `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Mantidas.DuradouraTexto", { magia: item.name }))}</p></div>`, rejectClose: false });
-    if (duradoura) await actor.update({ "system.pm.value": actor.system.pm.value - 2 });
+    if (duradoura) await actor.update(gastoDePM(actor, 2));
   }
   const nova = { id: item.flags?.[F]?.id ?? item.id, itemId: item.id, nome: item.name, nivel: Number(item.system.nivel) || 1, tipo, duradoura: !!duradoura };
   const r = adicionarMantida(mantidasDoAtor(actor), nova, { menteDividida: menteDividida(actor) });
@@ -78,8 +79,8 @@ async function quebrarConcentracao(actor, condicao) {
 INICIO_DO_TURNO.push(async actor => {
   const lista = mantidasDoAtor(actor);
   if (!lista.some(m => m.tipo === "sustentada" && !m.duradoura)) return;
-  const r = debitoDoTurno(lista, actor.system.pm.value);
-  await actor.update({ "system.pm.value": actor.system.pm.value - r.custo, [`flags.${F}.magiasMantidas`]: r.mantidas });
+  const r = debitoDoTurno(lista, pmDisponivel(actor));
+  await actor.update({ ...gastoDePM(actor, r.custo), [`flags.${F}.magiasMantidas`]: r.mantidas });
   if (r.custo) await avisar(actor, fmt("ICARUS.Mantidas.Debito", { nome: actor.name, pm: r.custo,
     magias: r.mantidas.filter(m => m.tipo === "sustentada" && !m.duradoura).map(m => m.nome).join(", ") }));
   await avisarEncerradas(actor, r.encerradas, "ICARUS.Mantidas.SemPM");

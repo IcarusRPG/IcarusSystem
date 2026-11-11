@@ -9,6 +9,7 @@
  * Regras puras: module/magias-dados.mjs.
  */
 import { bloqueiosDoAtor, ajusteDeAfinidade } from "./druida-dados.mjs";
+import { pmDisponivel, gastoDePM, devolucaoDePM } from "./pm-gasto.mjs";
 import { SISTEMA_ID } from "./config.mjs";
 import { custoDoLancamento, podeLancar, metaDaMagia, CUSTO_POR_NIVEL, gruposDeMagias, ATRIBUTOS_MAGIA, NIVEIS_MAGIA, planoDoLancamento, tipoDeDuracao, ajustesDoArcanista, maximoDoPacto, custoComObraPrima } from "./magias-dados.mjs";
 import { temHabilidadeNosItens, linhagemDasEscolhas } from "./classes-dados.mjs";
@@ -83,9 +84,9 @@ export class DialogoMagia extends HandlebarsApplicationMixin(ApplicationV2) {
     const maxPacto = sangue?.maximo ?? 0;
     const comSangue = Math.min(Math.max(0, Math.trunc(pacto) || 0), maxPacto);
     const pm = c.total - comSangue;
-    const p = podeLancar(actor.system.pm.value, pm);
+    const p = podeLancar(pmDisponivel(actor), pm);
     return { custoTotal: c.total, maxPacto, comSangue, pvPacto: comSangue * (sangue?.pvPorPM ?? 2), pmAPagar: pm, pode: p.pode,
-      motivo: p.pode ? "" : fmt("ICARUS.Magias.SemPM", { custo: pm, pm: actor.system.pm.value }) };
+      motivo: p.pode ? "" : fmt("ICARUS.Magias.SemPM", { custo: pm, pm: pmDisponivel(actor) }) };
   }
 
   _onRender(contexto, opcoes) {
@@ -162,7 +163,8 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   const pvPorPM = sangue?.pvPorPM ?? 2;
   // Milagre (Clérigo): a magia sai sem o custo base; aprimoramentos pagos normalmente
   const pmAPagar = semCustoBase ? Math.max(0, custo.total - custo.base) : custo.total - comSangue;
-  const antes = actor.system.pm.value;
+  const antes = pmDisponivel(actor);
+  const pmAntes = { value: actor.system.pm.value, temp: actor.system.pm.temp ?? 0 };
   const ok = podeLancar(antes, pmAPagar);
   if (!ok.pode) {
     ui.notifications.warn(fmt("ICARUS.Magias.SemPM", { custo: pmAPagar, pm: antes }));
@@ -180,7 +182,7 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   if (area === null) return null;
   // Pacto/Preço de Sangue: PV por PM, perda de PV (sem RD)
   const pvAntes = actor.system.pv?.value ?? 0;
-  await actor.update({ "system.pm.value": antes - pmAPagar, ...(comSangue ? { "system.pv.value": pvAntes - comSangue * pvPorPM } : {}) });
+  await actor.update({ ...gastoDePM(actor, pmAPagar), ...(comSangue ? { "system.pv.value": pvAntes - comSangue * pvPorPM } : {}) });
   if (comSangue && sangue.aoPagar) await sangue.aoPagar(actor, comSangue);
   let cartao = null;
   try {
@@ -192,7 +194,7 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);
     if (!cartao) {
-      await actor.update({ "system.pm.value": actor.system.pm.value + pmAPagar, ...(comSangue ? { "system.pv.value": actor.system.pv.value + comSangue * pvPorPM } : {}) });
+      await actor.update({ ...devolucaoDePM(pmAntes), ...(comSangue ? { "system.pv.value": actor.system.pv.value + comSangue * pvPorPM } : {}) });
       ui.notifications.error(fmt("ICARUS.Magias.ErroDevolvido", { custo: pmAPagar }));
     } else ui.notifications.error(loc("ICARUS.Magias.ErroRolagem"));
     return cartao;

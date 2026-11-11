@@ -15,6 +15,7 @@
  *   CD = 10 + metade do nível + Sabedoria); para jogador, o card com a CD vai ao chat.
  */
 import { SISTEMA_ID, CATEGORIAS_ARMADURA_CORPO } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { calcularAtaque, calcularCD } from "../combate.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, ATAQUES_ADICIONAIS, executarAtaque, itensDoAtor } from "../combate-chat.mjs";
 import { ACOES_DE_MECANICA, APOS_CONCEDER, classeDoAtor } from "../classes.mjs";
@@ -67,8 +68,8 @@ ACOES_DE_MECANICA.set("monge:bracos", async actor => {
     rejectClose: false
   });
   if (!ok) return;
-  if (actor.system.pm.value < CUSTO_BRACOS) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: CUSTO_BRACOS, atual: actor.system.pm.value }));
-  await actor.update({ "system.pm.value": actor.system.pm.value - CUSTO_BRACOS, [`flags.${SISTEMA_ID}.bracosAstrais`]: true });
+  if (pmDisponivel(actor) < CUSTO_BRACOS) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: CUSTO_BRACOS, atual: pmDisponivel(actor) }));
+  await actor.update({ ...gastoDePM(actor, CUSTO_BRACOS), [`flags.${SISTEMA_ID}.bracosAstrais`]: true });
   await marcarStatus(actor, "bracos-astrais", true);
   return avisarNoChat(actor, fmt("ICARUS.Monge.BracosManifestou", { nome: actor.name }));
 });
@@ -97,8 +98,8 @@ PROVEDORES_ATAQUE.push((actor, item) => {
 });
 ATAQUES_ADICIONAIS.push(async (actor, item, modo, escolhas) => {
   if (!escolhas.rajada || !ehDesarmadoDoMonge(item)) return;
-  if (actor.system.pm.value < 1) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: 1, atual: actor.system.pm.value }));
-  await actor.update({ "system.pm.value": actor.system.pm.value - 1 });
+  if (pmDisponivel(actor) < 1) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: 1, atual: pmDisponivel(actor) }));
+  await actor.update(gastoDePM(actor, 1));
   // Ataque adicional: mesma rolagem/alvos, sem atributo no dano e sem repetir opções de uso único
   return executarAtaque(actor, item, modo, { ...escolhas, rajada: false, segundoSemAtributo: true, bonusExtra: escolhas.bonusExtra });
 });

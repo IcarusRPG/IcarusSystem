@@ -14,6 +14,7 @@
  *   elemento (escolhido no primeiro uso), Reflexos contra a CD das magias; botões de aplicar dano.
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { pmDaLinhagem, linhagemDasEscolhas, tradicaoDaLinhagem, temHabilidadeNosItens } from "../classes-dados.mjs";
 import { classeDoAtor, concederHabilidades, ACOES_DE_MECANICA } from "../classes.mjs";
 import { APOS_CAMINHO } from "../escolhas.mjs";
@@ -172,14 +173,14 @@ ACOES_DE_MECANICA.set("arcanista:sopro", async actor => {
     rejectClose: false
   });
   if (!r?.elemento) return;
-  if (r.pm > actor.system.pm.value) return ui.notifications.warn(fmt("ICARUS.Magias.SemPM", { custo: r.pm, pm: actor.system.pm.value }));
+  if (r.pm > pmDisponivel(actor)) return ui.notifications.warn(fmt("ICARUS.Magias.SemPM", { custo: r.pm, pm: pmDisponivel(actor) }));
   if (!atual) await actor.setFlag(F, "elementoDragao", r.elemento);
   const token = (actor.getActiveTokens?.(false, true) ?? []).find(t => t.parent?.id === canvas?.scene?.id) ?? null;
   // O cone sai do token: reaproveita o posicionamento de área das magias
   const sopro = { name: loc("ICARUS.Arcanista.Sopro"), id: "sopro-do-dragao", flags: { [F]: { id: "sopro-do-dragao" } }, system: { alcance: "cone de 6 m a partir de você", alvo: "" } };
   const area = await areaNoMapa({ actor, item: sopro, tokenConjurador: token, cor: null, instantanea: true });
   if (area === null) return;
-  if (r.pm) await actor.update({ "system.pm.value": actor.system.pm.value - r.pm });
+  if (r.pm) await actor.update(gastoDePM(actor, r.pm));
   const alvos = [...(game.user.targets ?? [])].map(t => t.document?.uuid).filter(Boolean);
   await avisarNoChat(actor, fmt("ICARUS.Arcanista.SoproChat", { nome: actor.name, pm: r.pm, cd: actor.system.magia?.cd ?? "?" }));
   await rolarDanoAvulso({

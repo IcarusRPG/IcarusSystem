@@ -1,4 +1,5 @@
 import { SISTEMA_ID } from "./config.mjs";
+import { gastoDePM } from "./pm-gasto.mjs";
 import { numero, comSinal, bonusTreino } from "./regras.mjs";
 import { rolarD20, vantagemDasFlags, minimoDasFlags } from "./combate.mjs";
 import { minimoD20DeHabilidades, temHabilidadeNosItens } from "./classes-dados.mjs";
@@ -149,7 +150,7 @@ export async function rolarPericia(actor, chave, opcoes = {}) {
   if (!deItens) return null;
   // Brio: o PM sai depois de confirmar
   const { brio = 0, talento = 0, ...semBrio } = deItens;
-  if (brio + talento) await actor.update({ "system.pm.value": Math.max(0, actor.system.pm.value - brio - talento) });
+  if (brio + talento) await actor.update(gastoDePM(actor, brio + talento));
   return rolarTeste(actor, {
     ...semBrio,
     rotulo: game.i18n.localize(`ICARUS.Pericias.${chave}`),

@@ -8,6 +8,7 @@
  * - Tiro Lendário (20º): 1 vez por cena, o ataque com arma de fogo acerta e é crítico.
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE, recarregar } from "../combate-chat.mjs";
 import { INICIO_DO_TURNO } from "../acoes.mjs";
 import { ACOES_DE_MECANICA } from "../classes.mjs";
@@ -36,11 +37,11 @@ MODIFICADORES_ATAQUE.push(async ({ actor, item, modo, opcoes }) => {
   if (!pedido || modo !== "fogo" || !itemDeClasse(actor, "pistoleiro", "tiro-carregado")) return null;
   const max = maximoTiroCarregado(actor.system.nivel, { calibrePesado: !!itemDeClasse(actor, "pistoleiro", "calibre-pesado"), mosquete: ehMosquete(item) });
   // Gasta antes do teste (mesmo se errar); nunca mais que o máximo nem que os PM disponíveis
-  const n = Math.min(pedido, max, actor.system.pm.value);
+  const n = Math.min(pedido, max, pmDisponivel(actor));
   const linhas = [];
   if (n < pedido) linhas.push(fmt("ICARUS.Pistoleiro.Limitado", { n, pedido }));
   if (!n) return { linhas };
-  await actor.update({ "system.pm.value": actor.system.pm.value - n });
+  await actor.update(gastoDePM(actor, n));
   linhas.push(fmt("ICARUS.Pistoleiro.LinhaTiro", { n }));
   return { extrasDano: [{ rotulo: loc("ICARUS.Pistoleiro.TiroCarregado"), formula: `${n}d6` }], linhas };
 });
@@ -80,8 +81,8 @@ ACOES_DE_MECANICA.set("pistoleiro:recarga", async actor => {
     rejectClose: false
   });
   if (!ok) return;
-  if (custo > actor.system.pm.value) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: custo, atual: actor.system.pm.value }));
-  await actor.update({ "system.pm.value": actor.system.pm.value - custo });
+  if (custo > pmDisponivel(actor)) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: custo, atual: pmDisponivel(actor) }));
+  await actor.update(gastoDePM(actor, custo));
   if (!mestre && game.combat) await actor.setFlag(SISTEMA_ID, "saqueUsadoNoTurno", true);
   for (const arma of armas) await recarregar(actor, arma);
   return avisarNoChat(actor, fmt("ICARUS.Pistoleiro.Recarregou", { nome: actor.name, custo }));

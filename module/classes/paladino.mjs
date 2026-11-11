@@ -22,6 +22,7 @@
  *   Corpo Escudo (reduz o próximo dano em 1 + nível), Fôlego da Fé (cura só o Paladino).
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
 import { classeDoAtor, ACOES_DE_MECANICA, concederHabilidades } from "../classes.mjs";
 import { usarPoder, GANCHOS_DE_PODER } from "../acoes.mjs";
@@ -57,8 +58,8 @@ for (const id of ["toque-restaurador", "retribuicao", "maos-abertas", "alivio-im
 
 /** Gasta PM (já confirmado); false se faltar. */
 async function gastarPM(actor, pm) {
-  if (pm > actor.system.pm.value) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: actor.system.pm.value })); return false; }
-  if (pm) await actor.update({ "system.pm.value": actor.system.pm.value - pm });
+  if (pm > pmDisponivel(actor)) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: pmDisponivel(actor) })); return false; }
+  if (pm) await actor.update(gastoDePM(actor, pm));
   return true;
 }
 

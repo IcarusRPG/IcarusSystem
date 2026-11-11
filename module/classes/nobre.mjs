@@ -22,6 +22,7 @@
  *   automaticamente (module/dano.mjs → ABSORVEDORES_DE_DANO).
  */
 import { SISTEMA_ID, PERICIAS } from "../config.mjs";
+import { pmDisponivel } from "../pm-gasto.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
 import { classeDoAtor, ACOES_DE_MECANICA, APOS_CONCEDER } from "../classes.mjs";
 import { usarPoder, ANTES_DE_USAR, GANCHOS_DE_PODER, FIM_DO_COMBATE } from "../acoes.mjs";
@@ -185,7 +186,7 @@ GANCHOS_DE_PODER.set("nobre__brado-de-comando", {
 });
 ACOES_DE_MECANICA.set("nobre:brado", actor => {
   const item = itemDeClasse(actor, "nobre", "brado-de-comando");
-  return item ? usarPoder(actor, item, { custo: maximoDoBrado(carisma(actor), actor.system.pm.value) }) : null;
+  return item ? usarPoder(actor, item, { custo: maximoDoBrado(carisma(actor), pmDisponivel(actor)) }) : null;
 });
 
 /* ---------------- Majestade ---------------- */

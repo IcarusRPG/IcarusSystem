@@ -15,6 +15,7 @@
  *   cena, sem Fatigado. Harmonia: imune a medo.
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { classeDoAtor, ACOES_DE_MECANICA } from "../classes.mjs";
 import { usarPoder } from "../acoes.mjs";
 import { FIM_DA_CENA } from "../condicoes-foundry.mjs";
@@ -49,8 +50,8 @@ for (const id of ["dobra-elemental", "familiar-elemental", "segundo-familiar", "
 
 /** Gasta PM (já confirmado); false se faltar. */
 async function gastarPM(actor, pm) {
-  if (pm > actor.system.pm.value) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: actor.system.pm.value })); return false; }
-  if (pm) await actor.update({ "system.pm.value": actor.system.pm.value - pm });
+  if (pm > pmDisponivel(actor)) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: pmDisponivel(actor) })); return false; }
+  if (pm) await actor.update(gastoDePM(actor, pm));
   return true;
 }
 

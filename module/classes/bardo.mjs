@@ -21,6 +21,7 @@
  *   Oposto (Atuação × Vontade). Manipular: cartão com Enfeitiçado (Vontade anula).
  */
 import { SISTEMA_ID, PERICIAS } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
 import { classeDoAtor, ACOES_DE_MECANICA, concederHabilidades } from "../classes.mjs";
 import { usarPoder, ANTES_DE_USAR, GANCHOS_DE_PODER, FIM_DO_COMBATE } from "../acoes.mjs";
@@ -31,6 +32,7 @@ import { calcularCD } from "../combate.mjs";
 import { rolarDanoAvulso } from "../dano.mjs";
 import { limiteDeMagiasDoBardo, motivoParaNaoAprender, bonusDaChama, dadoDoLouvor, custoComObraPrima } from "../magias-dados.mjs";
 import { obraPrimaAtiva } from "../magias.mjs";
+import { concederPMTemporarios } from "../pv-temporarios.mjs";
 
 const F = SISTEMA_ID;
 const loc = k => game.i18n.localize(k);
@@ -80,8 +82,8 @@ ANTES_DE_USAR.push(async (actor, item, uso) => {
 /** Gasta PM com confirmação (já com a Obra-Prima); false se cancelar ou faltar PM. */
 async function gastarPM(actor, custo, titulo) {
   const pm = obraPrimaAtiva(actor) ? custoComObraPrima(custo) : custo;
-  if (pm > actor.system.pm.value) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: actor.system.pm.value })); return false; }
-  if (pm) await actor.update({ "system.pm.value": actor.system.pm.value - pm });
+  if (pm > pmDisponivel(actor)) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: pmDisponivel(actor) })); return false; }
+  if (pm) await actor.update(gastoDePM(actor, pm));
   return pm;
 }
 
@@ -315,3 +317,37 @@ registrarLinhas("bardo", actor => {
   return linhas;
 });
 
+
+/* ---------------- Golpe Mágico (PM temporários) ---------------- */
+
+/**
+ * Golpe Mágico: sob a Chama da Musa, cada acerto corpo a corpo dá 2 PM temporários (acumulam, até
+ * o nível do bardo por cena; somem ao fim da cena). Botão no card do ataque corpo a corpo.
+ */
+function golpeMagicoNoCard(mensagem, html) {
+  const atq = mensagem.flags?.[F]?.ataque;
+  if (!atq || atq.modo !== "corpo-a-corpo" || mensagem.flags?.[F]?.golpeMagicoUsado) return;
+  const actor = fromUuidSync(atq.actorUuid);
+  if (!actor?.isOwner || classeDoAtor(actor)?.id !== "bardo" || !itemDeClasse(actor, "bardo", "golpe-magico") || !actor.getFlag(F, "chamaAtiva")) return;
+  const raiz = html instanceof HTMLElement ? html : html?.[0];
+  const conteudo = raiz?.querySelector(".message-content");
+  if (!conteudo) return;
+  const el = document.createElement("button");
+  el.type = "button";
+  el.className = "btn";
+  el.textContent = loc("ICARUS.Bardo.GolpeMagico");
+  el.addEventListener("click", async () => {
+    el.disabled = true;
+    await concederPMTemporarios(actor, 2, { fonte: loc("ICARUS.Bardo.GolpeMagico"), acumula: true, limiteNaCena: actor.system.nivel });
+    if (mensagem.isOwner) await mensagem.setFlag(F, "golpeMagicoUsado", true);
+  });
+  const caixa = document.createElement("div");
+  caixa.className = "icarus-aplicar";
+  caixa.appendChild(el);
+  conteudo.appendChild(caixa);
+}
+
+Hooks.once("init", () => {
+  if ((game.release?.generation ?? 12) >= 13) Hooks.on("renderChatMessageHTML", golpeMagicoNoCard);
+  else Hooks.on("renderChatMessage", golpeMagicoNoCard);
+});
