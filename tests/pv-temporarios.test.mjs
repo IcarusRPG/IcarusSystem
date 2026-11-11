@@ -136,3 +136,45 @@ test("Forma de Urso: 2 × nível PV temporários ligados à Forma; voltar da For
   await new Promise(r => setTimeout(r, 0));
   assert.equal(a.system.pv.temp, 0);
 });
+
+/* ---------------- PM temporários ---------------- */
+
+const G = await import("../module/pm-gasto.mjs");
+const { concederPMTemporarios, limparPMTemporarios } = await import("../module/pv-temporarios.mjs");
+const { usarPoder } = await import("../module/acoes.mjs");
+
+test("PM temporários: o gasto consome primeiro; disponível = PM + temporários; não acumulam, salvo Golpe Mágico", () => {
+  assert.equal(G.pmDisponivel({ system: { pm: { value: 3, temp: 4 } } }), 7);
+  assert.deepEqual(G.dividirGastoDePM({ value: 3, temp: 4 }, 5), { value: 2, temp: 0, doTemp: 4 });
+  assert.deepEqual(G.dividirGastoDePM({ value: 3, temp: 4 }, 2), { value: 3, temp: 2, doTemp: 2 });
+  assert.deepEqual(G.gastoDePM({ system: { pm: { value: 5, temp: 0 } } }, 2), { "system.pm.value": 3 });
+  assert.deepEqual(G.novosPMTemporarios(4, 2), { valor: 4, ganho: 0 });
+  assert.deepEqual(G.novosPMTemporarios(2, 4), { valor: 4, ganho: 2 });
+  assert.deepEqual(G.novosPMTemporarios(4, 2, { acumula: true, restanteNaCena: 1 }), { valor: 5, ganho: 1 });
+});
+
+test("Usar poder com 2 PM e 3 temporários: custo 4 sai 3 dos temporários e 1 dos PM", async () => {
+  const a = ator();
+  a.system.pm = { value: 2, max: 20, temp: 3 };
+  respostaDialogo = 4;
+  const uso = await usarPoder(a, { name: "Poder", system: { acao: "padrao", custoPM: 4, descricao: "" }, flags: { "icarus-rpg": { id: "x__y" } } });
+  assert.ok(uso);
+  assert.deepEqual([a.system.pm.value, a.system.pm.temp], [1, 0]);
+  respostaDialogo = 5;
+  assert.equal(await usarPoder(a, { name: "Poder", system: { acao: "padrao", custoPM: 5, descricao: "" }, flags: { "icarus-rpg": { id: "x__y" } } }), null, "sem PM suficiente");
+});
+
+test("Golpe Mágico: +2 acumulando até o nível na cena; fim da cena zera e libera de novo", async () => {
+  const a = ator({ nivel: 5 });
+  a.system.pm = { value: 10, max: 20, temp: 0 };
+  for (let i = 0; i < 3; i++) await concederPMTemporarios(a, 2, { acumula: true, limiteNaCena: 5, fonte: "Golpe Mágico" });
+  assert.deepEqual([a.system.pm.temp, a.getFlag("icarus-rpg", "pmTempCena")], [5, 5]);
+  assert.equal(await concederPMTemporarios(a, 2, { acumula: true, limiteNaCena: 5 }), 0, "limite da cena");
+  for (const f of FIM_DA_CENA) await f(a);
+  assert.deepEqual([a.system.pm.temp, a.getFlag("icarus-rpg", "pmTempCena")], [0, undefined]);
+  await concederPMTemporarios(a, 3, { origem: "efeito:z" });
+  await limparPMTemporarios(a, "efeito:outro");
+  assert.equal(a.system.pm.temp, 3);
+  await limparPMTemporarios(a, "efeito:z");
+  assert.equal(a.system.pm.temp, 0);
+});

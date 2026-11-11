@@ -57,7 +57,12 @@
       "Rotulo": "Pontos de Mana",
       "Gastar": "Gastar 1 PM",
       "Recuperar": "Recuperar 1 PM",
-      "Atuais": "Pontos de Mana atuais"
+      "Atuais": "Pontos de Mana atuais",
+      "Temporarios": "PM temporários",
+      "TempDica": "Ao gastar PM, os temporários saem primeiro. Não se acumulam (vale o maior), salvo quando o poder diz que acumulam. Recuperar PM não os restaura e eles somem no fim da cena ou quando o efeito que os deu termina.",
+      "TempRecebe": "{nome} recebe {valor} PM temporários ({fonte}); agora tem {total}.",
+      "TempMantem": "{nome} já tem {atual} PM temporários; os de {fonte} não se acumulam (vale o maior).",
+      "TempLimite": "{nome} já ganhou o máximo de PM temporários desta cena com {fonte} (tem {atual})."
     },
     "Defesa": {
       "Rotulo": "Defesa",
@@ -1811,7 +1816,8 @@
       "VozChat": "{nome} usa a Voz de Comando: {alvo} repete o teste com vantagem.",
       "FascinarChat": "{nome} usa Fascinar: Mestre, Teste Oposto de Atuação contra a Vontade do alvo.",
       "Manipular": "Manipular",
-      "ManipularChat": "{nome} usa Manipular: a criatura fascinada faz Vontade CD {cd}; se falhar fica Enfeitiçada até o fim da cena."
+      "ManipularChat": "{nome} usa Manipular: a criatura fascinada faz Vontade CD {cd}; se falhar fica Enfeitiçada até o fim da cena.",
+      "GolpeMagico": "Golpe Mágico (+2 PM temporários)"
     },
     "Clerigo": {
       "SoMestre": "Só o Mestre registra a violação de um Dogma.",

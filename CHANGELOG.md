@@ -13,6 +13,13 @@
   - **Pano e Linha** (metade do nível, no aliado). Se o aliado é de outro jogador, o chat mostra um botão "Aplicar" para o Mestre;
   - **Forma Ancestral** da Ascensão (3 × nível): some com a Ascensão.
 
+### PM temporários
+- Novo campo **PM temporários** na ficha, abaixo da barra de PM.
+- **Regra:** ao gastar PM, os temporários saem primeiro. O PM disponível para conferir custos é PM + PM temporários. Isso vale em todo lugar que gasta PM: poderes, magias, magias mantidas, Brio e Talento, e as ações das classes.
+- Os PM temporários não se acumulam (vale o maior), salvo quando o poder diz que acumulam. Recuperar PM não os restaura. Eles somem no fim da cena ou quando o efeito de origem termina.
+- Violar um Dogma tira também os PM temporários.
+- **Golpe Mágico (Bardo):** sob a Chama da Musa, o card do ataque corpo a corpo ganha o botão "+2 PM temporários". Eles acumulam até o nível do bardo por cena.
+
 ## 0.30.0
 
 ### Místico

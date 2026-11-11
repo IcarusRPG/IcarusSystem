@@ -9,6 +9,7 @@
  * - Contra-Ataque Espiritual e outras reações: gastam a reação ao usar (acoes.mjs).
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { dadosPorNivel } from "../classes-dados.mjs";
 import { PROVEDORES_ATAQUE, MODIFICADORES_ATAQUE } from "../combate-chat.mjs";
 import { INICIO_DO_TURNO } from "../acoes.mjs";
@@ -39,10 +40,10 @@ PROVEDORES_ATAQUE.push((actor, item) => {
 MODIFICADORES_ATAQUE.push(async ({ actor, item, opcoes }) => {
   if (!opcoes.kiai || !itemDeClasse(actor, "samurai", "kiai")) return null;
   if (kiaiUsado(actor)) return { linhas: [loc("ICARUS.Samurai.KiaiUsado")] };
-  if (actor.system.pm.value < CUSTO_KIAI) return { linhas: [fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: CUSTO_KIAI, atual: actor.system.pm.value })] };
+  if (pmDisponivel(actor) < CUSTO_KIAI) return { linhas: [fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: CUSTO_KIAI, atual: pmDisponivel(actor) })] };
   const n = dadosPorNivel(actor.system.nivel);
   const dado = dadoDaArma(item.system.dano);
-  const mudancas = { "system.pm.value": actor.system.pm.value - CUSTO_KIAI };
+  const mudancas = gastoDePM(actor, CUSTO_KIAI);
   if (game.combat) mudancas[`flags.${SISTEMA_ID}.kiaiUsadoNaRodada`] = true;
   await actor.update(mudancas);
   return {

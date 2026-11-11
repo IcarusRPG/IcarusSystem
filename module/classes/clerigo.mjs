@@ -21,6 +21,7 @@
  *   de ataque a opção (marcada) "Arma Consagrada": Sabedoria no ataque e no dano e +1 passo de dano.
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
 import { classeDoAtor, ACOES_DE_MECANICA } from "../classes.mjs";
 import { GANCHOS_DE_PODER } from "../acoes.mjs";
@@ -53,8 +54,8 @@ for (const id of ["onda-de-fe", "intervencao-divina", "milagre"]) USO_PROPRIO.ad
 
 /** Gasta PM (o custo já foi confirmado); false se faltar. */
 async function gastarPM(actor, pm) {
-  if (pm > actor.system.pm.value) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: actor.system.pm.value })); return false; }
-  if (pm) await actor.update({ "system.pm.value": actor.system.pm.value - pm });
+  if (pm > pmDisponivel(actor)) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm, atual: pmDisponivel(actor) })); return false; }
+  if (pm) await actor.update(gastoDePM(actor, pm));
   return true;
 }
 
@@ -147,7 +148,7 @@ ACOES_DE_MECANICA.set("clerigo:dogma", async actor => {
   if (!segunda) {
     const roll = await new Roll("1d4").evaluate();
     const r = violarDogma(atual, roll.total);
-    await actor.update({ "system.pm.value": 0, [`flags.${F}.dogma`]: { violacoes: r.violacoes, bloqueioPMDias: r.bloqueioPMDias } });
+    await actor.update({ "system.pm.value": 0, "system.pm.temp": 0, [`flags.${F}.dogma`]: { violacoes: r.violacoes, bloqueioPMDias: r.bloqueioPMDias } });
     return avisarNoChat(actor, fmt("ICARUS.Clerigo.DogmaPrimeiraChat", { nome: actor.name, dias: r.bloqueioPMDias }), { rolls: [roll] });
   }
   // 2ª vez: a divindade abandona o clérigo

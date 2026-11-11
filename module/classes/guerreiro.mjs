@@ -6,6 +6,7 @@
  * - Segunda Tentativa, Embalo de Batalha etc.: botões "Usar" (PM e card no chat), sem automação.
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { INICIO_DO_TURNO } from "../acoes.mjs";
 import { ACOES_DE_MECANICA } from "../classes.mjs";
 import { FIM_DA_CENA } from "../condicoes-foundry.mjs";
@@ -52,9 +53,9 @@ ACOES_DE_MECANICA.set("guerreiro:extra", async actor => {
     rejectClose: false
   });
   if (!ok) return;
-  if (custo > actor.system.pm.value) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: custo, atual: actor.system.pm.value }));
+  if (custo > pmDisponivel(actor)) return ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: custo, atual: pmDisponivel(actor) }));
   const n = (actor.getFlag(SISTEMA_ID, "agredirExtra") ?? 0) + 1;
-  await actor.update({ "system.pm.value": actor.system.pm.value - custo, [`flags.${SISTEMA_ID}.agredirExtra`]: n });
+  await actor.update({ ...gastoDePM(actor, custo), [`flags.${SISTEMA_ID}.agredirExtra`]: n });
   return avisarNoChat(actor, fmt("ICARUS.Guerreiro.ExtraChat", { nome: actor.name, custo, n }));
 });
 INICIO_DO_TURNO.push(async actor => { if (actor.getFlag(SISTEMA_ID, "agredirExtra")) await actor.unsetFlag(SISTEMA_ID, "agredirExtra"); });
