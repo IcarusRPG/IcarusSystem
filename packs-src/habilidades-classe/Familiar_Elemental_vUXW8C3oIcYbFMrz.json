@@ -1,0 +1,38 @@
+{
+  "_id": "vUXW8C3oIcYbFMrz",
+  "name": "Familiar Elemental",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 3003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Um espírito do seu elemento passa a andar com você. Você escolhe <strong>um</strong> familiar da lista abaixo (permanente, mas veja <strong>Segundo Familiar</strong>). Como ação de movimento, você gasta 1 PM e invoca o seu familiar, que surge em um espaço livre adjacente a você. Ele permanece até você dispensá-lo (ação livre) ou até chegar a 0 PV, quando desaparece; você pode invocá-lo de novo, com todos os PV, pagando o custo outra vez. O familiar <strong>não pode ser curado</strong> por nenhum efeito. Ele age logo depois do seu turno, com uma ação padrão e uma ação de movimento. O familiar tem <strong>ficha própria</strong>: <strong>PV</strong> = 10 + metade do seu nível; <strong>Defesa</strong> = 10 + metade do seu nível + o bônus dele; <strong>CD</strong> = 10 + metade do seu nível + Sabedoria; ele soma a metade do seu nível ao dano dos ataques.<br>• <strong>Raposa de Brasa (Chama).</strong> Defesa +3; deslocamento 12 m; imune a Fogo. Mordida: 1d6 de dano de Fogo. <em>Brasa Viva:</em> uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Reflexos ou fica Em Chamas. <em>Fagulha Veloz:</em> uma vez por rodada, depois de atacar, a raposa se desloca até 6 m como ação livre.<br>• <strong>Lontra de Maré (Maré).</strong> Defesa +2; deslocamento 9 m, natação 12 m. Jato: 1d6 de dano de Frio, alcance curto. <em>Água Viva:</em> uma vez por cena, como ação padrão, a lontra toca uma criatura e ela recupera 1d6 + metade do seu nível PV. <em>Escorregadia:</em> +5 em Acrobacia para escapar de agarrar.<br>• <strong>Tatu de Pedra (Rocha).</strong> Defesa +1; deslocamento 6 m, escavação 6 m; RD 3. Cabeçada: 1d6 de dano de Impacto. <em>Escudo de Pedra:</em> uma vez por rodada, como reação, quando você é alvo de um ataque e o tatu está adjacente a você, o ataque é feito contra o tatu no lugar.<br>• <strong>Ave de Vendaval (Vento).</strong> Defesa +4; deslocamento 3 m, voo 18 m. Garras: 1d4 de dano de Corte. <em>Rasante:</em> uma vez por rodada, depois de atacar, a ave se desloca até 6 m como ação livre. <em>Vento a Favor:</em> uma vez por cena, como ação de movimento, o místico ou um aliado adjacente recebe +6 m de deslocamento até o fim da cena.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__familiar-elemental",
+      "classe": "mistico",
+      "habilidade": "familiar-elemental",
+      "inferido": true
+    }
+  },
+  "_key": "!items!vUXW8C3oIcYbFMrz"
+}

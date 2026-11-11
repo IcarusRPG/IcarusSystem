@@ -1,0 +1,38 @@
+{
+  "_id": "yzFMVdYXJvTzHMjw",
+  "name": "Domínio da Rocha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende o elemento <strong>Rocha</strong>. Você <strong>ignora terreno difícil de pedra e terra</strong> e <strong>sente vibrações</strong> do chão (percebe criaturas em contato com o solo em alcance curto, mesmo sem ver), e recebe +2 de dano de Impacto com a Rajada Elemental e com técnicas de Rocha.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__dominio-da-rocha",
+      "classe": "mistico",
+      "poder": "dominio-da-rocha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!yzFMVdYXJvTzHMjw"
+}

@@ -8,6 +8,8 @@ import CLASSES_JSON from "./dados/classes.mjs";
 import ICONES_CLASSES from "./dados/icones-classes.mjs";
 import PROFICIENCIAS_CLASSES from "./dados/proficiencias-classes.mjs";
 import VINCULOS from "./dados/vinculos.mjs";
+import FAMILIARES from "./dados/familiares.mjs";
+import { extrasDoFamiliar, requisitoDeElemento, atendeElemento } from "./mistico-dados.mjs";
 
 export const CLASSES = CLASSES_JSON.classes;
 export const PASTA_ICONES_CLASSES = `systems/${SISTEMA_ID}/img/Icones/classes`;
@@ -264,13 +266,17 @@ export function validarPoder(classe, poder, p) {
   }
   for (const id of poder.requerPoderes ?? []) itens.push({ texto: nomePoder(id), estado: p.tem?.has(id) ? "ok" : "falta" });
   if (poder.requerGrupo) itens.push({ texto: poder.requerGrupo, estado: atendeGrupo(poder.requerGrupo, p.grupos) ? "ok" : "falta" });
+  // Místico: "elemento Chama", "dois elementos" (p.elementos = ids que conhece); sem o elemento, o poder nem aparece
+  const reqElemento = requisitoDeElemento(poder.prerequisito);
+  const temElemento = !reqElemento || !p.elementos || atendeElemento(reqElemento, p.elementos);
+  if (reqElemento) itens.push({ texto: String(poder.prerequisito).match(/(dois elementos|elemento [A-Za-zÀ-ú]+)/gi)?.join(", ") ?? "", estado: p.elementos ? (temElemento ? "ok" : "falta") : "conferir" });
   // "treinado em X" também é conferido; o resto do texto fica para o Mestre confirmar
   let resto = String(poder.prerequisito ?? "");
   for (const m of resto.matchAll(/treinad[oa] em ([A-Za-zÀ-ú]+)/gi)) {
     const chave = chaveDaPericia(m[1]);
     if (chave) itens.push({ texto: m[0], estado: (p.treino?.[chave] ?? 0) >= 1 ? "ok" : "falta" });
   }
-  resto = resto.replace(/treinad[oa] em [A-Za-zÀ-ú]+/gi, "").replace(/\d+º nível/g, "");
+  resto = resto.replace(/treinad[oa] em [A-Za-zÀ-ú]+/gi, "").replace(/\d+º nível/g, "").replace(/dois elementos|elemento [A-Za-zÀ-ú]+/gi, "");
   for (const [, nome] of Object.entries(NOMES_ATRIBUTO)) resto = resto.replace(new RegExp(`${nome} \d+`, "g"), "");
   for (const id of poder.requerPoderes ?? []) resto = resto.replace(nomePoder(id), "");
   if (poder.requerGrupo) resto = resto.replace(poder.requerGrupo, "");
@@ -283,7 +289,7 @@ export function validarPoder(classe, poder, p) {
   return {
     itens, ok, jaEscolhido,
     // Poderes de caminho/senda só aparecem para quem escolheu o caminho
-    visivel: atendeGrupo(poder.requerGrupo, p.grupos),
+    visivel: atendeGrupo(poder.requerGrupo, p.grupos) && temElemento,
     disponivel: ok && !jaEscolhido
   };
 }
@@ -405,26 +411,34 @@ export function flagsDeDuasArmas(itens, flags = {}) {
  * PV = 10 + metade do nível; Defesa = 10 + metade do nível + defesaBonus; dano dos ataques +
  * metade do nível; CD das habilidades = 10 + metade do nível + DES do patrulheiro. O ataque e os
  * testes usam as perícias da ficha do próprio animal.
- * @param {object} animal  entrada de vinculos.json (vinculos[])
- * @param {{ nivel: number, DES: number }} p  nível e DES (total) do patrulheiro
+ * Familiar Elemental (Místico): o mesmo, com a Sabedoria do místico na CD (p.atributoCd) e os
+ * extras do Familiar Robusto e da Evolução do Familiar (p.extras = { pv, defesa }).
+ * @param {object} animal  entrada de vinculos.json (vinculos[]) ou familiares.json (familiares[])
+ * @param {{ nivel: number, DES?: number, atributoCd?: number, extras?: { pv, defesa } }} p  nível e atributo do dono
  */
 export function estatisticasDoVinculo(animal, p) {
   const metade = Math.floor(Math.max(1, Number(p.nivel) || 1) / 2);
+  const extraPv = Number(p.extras?.pv) || 0;
+  const extraDef = Number(p.extras?.defesa) || 0;
   return {
-    pv: 10 + metade,
-    defesa: 10 + metade + (animal.defesaBonus ?? 0),
+    pv: 10 + metade + extraPv,
+    defesa: 10 + metade + (animal.defesaBonus ?? 0) + extraDef,
     // A Defesa da ficha é 10 + DES + Outros: Outros acerta a conta para não somar a DES do animal
-    defesaOutros: metade + (animal.defesaBonus ?? 0) - (animal.atributos?.DES ?? 0),
+    defesaOutros: metade + (animal.defesaBonus ?? 0) + extraDef - (animal.atributos?.DES ?? 0),
     bonusDano: metade,
-    cd: 10 + metade + (Number(p.DES) || 0)
+    cd: 10 + metade + (Number(p.atributoCd ?? p.DES) || 0)
   };
 }
 
 /** Entrada de vinculos.json do ator do animal (flags vinculoId / vinculo.animal / id), ou null. */
 export function animalDoVinculo(flags) {
   const id = flags?.vinculoId ?? flags?.vinculo?.animal ?? flags?.id;
-  return id ? VINCULOS.vinculos.find(v => v.id === id) ?? null : null;
+  if (!id) return null;
+  return VINCULOS.vinculos.find(v => v.id === id) ?? FAMILIARES.familiares.find(v => v.id === id) ?? null;
 }
+
+/** Entrada de familiares.json (Familiar Elemental do Místico) pelo id, ou null. */
+export const familiarPorId = id => FAMILIARES.familiares.find(f => f.id === id) ?? null;
 
 /**
  * Dono do animal (flags.invocadoPor = id do ator do patrulheiro) e o nível que vale para o animal.
@@ -448,7 +462,10 @@ export function blocoDoVinculo(flags, atores) {
   const { dono, nivel, metade } = donoDoVinculo(flags, atores);
   const ajuste = flags?.ajustes?.defesaBonus;
   const defesaBonus = Number.isFinite(ajuste) ? ajuste : animal?.defesaBonus ?? 0;
-  return { animal, dono, nivel, metade, defesaBonus, pv: 10 + metade, defesa: 10 + metade + defesaBonus };
+  // Familiar: Familiar Robusto (+10 PV, +1 Defesa) e Evolução do Familiar (+2 Defesa) do dono
+  const familiar = !!flags?.vinculo?.familiar || !!animal?.elemento;
+  const extras = familiar ? extrasDoFamiliar([...(dono?.items ?? [])]) : { pv: 0, defesa: 0 };
+  return { animal, dono, nivel, metade, defesaBonus, familiar, pv: 10 + metade + extras.pv, defesa: 10 + metade + defesaBonus + extras.defesa };
 }
 
 /* ------------------------------ Regras numéricas das classes ------------------------------ */

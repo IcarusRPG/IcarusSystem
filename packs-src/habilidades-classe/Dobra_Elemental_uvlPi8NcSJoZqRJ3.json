@@ -1,0 +1,38 @@
+{
+  "_id": "uvlPi8NcSJoZqRJ3",
+  "name": "Dobra Elemental",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe um dos quatro elementos: <strong>Chama</strong>, <strong>Maré</strong>, <strong>Rocha</strong> ou <strong>Vento</strong> (permanente). Você aprende a Rajada Elemental e a Dobra Casual, e você pode aprender os outros elementos com os poderes <strong>Domínio da Chama, Domínio da Maré, Domínio da Rocha e Domínio do Vento</strong>.<br>• <strong>Rajada Elemental.</strong> Como ação padrão, você gasta 1 PM e faz um ataque à distância contra uma criatura em alcance curto, usando <strong>Sabedoria</strong> no teste de ataque. Se acertar, causa <strong>1d8 de dano</strong> do tipo do elemento escolhido para aquela rajada (<strong>Chama: Fogo. Maré: Frio. Rocha: Impacto. Vento: Corte</strong>). O dano aumenta em <strong>+1d8 no 5º, 9º, 13º e 17º níveis</strong> (5d8 no 17º). Você usa um elemento por rajada, entre os que você conhece.<br>• <strong>Dobra Casual.</strong> À vontade, sem custo, você produz efeitos pequenos e sem combate com o seu elemento: acender uma chama do tamanho de uma vela, esfriar uma bebida, mover uma pedra do tamanho de um punho, soprar uma brisa que apaga uma chama.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__dobra-elemental",
+      "classe": "mistico",
+      "habilidade": "dobra-elemental",
+      "inferido": true
+    }
+  },
+  "_key": "!items!uvlPi8NcSJoZqRJ3"
+}

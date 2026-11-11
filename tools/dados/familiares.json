@@ -1,0 +1,206 @@
+{
+ "versao": 1,
+ "regras": {
+  "pv": "10 + metade do nível do místico (arredondada para baixo), igual para todos",
+  "defesa": "10 + metade do nível do místico (arredondada para baixo) + defesaBonus",
+  "cd": "10 + metade do nível do místico + Sabedoria do místico",
+  "dano": "dano do ataque + metade do nível do místico (arredondada para baixo)",
+  "treino": "perícias listadas em treinadas têm treino +2; \"outros\" soma ao total",
+  "invocar": "ação de movimento, 1 PM, espaço adjacente ao místico; dispensar é ação livre; a 0 PV desaparece (pode ser invocado de novo pagando o custo); não pode ser curado; age logo depois do turno do místico com ação padrão e de movimento",
+  "evolucao": "13º nível (Evolução do Familiar): +2 na Defesa e dado de dano um passo maior",
+  "mods": "poderes Familiar Robusto (+10 PV, +1 Defesa) e Voz do Familiar",
+  "definitivo": true
+ },
+ "familiares": [
+  {
+   "id": "raposa-de-brasa",
+   "nome": "Raposa de Brasa",
+   "elemento": "Chama",
+   "tamanho": "pequeno",
+   "atributos": {
+    "FOR": -1,
+    "DES": 3,
+    "CON": 0,
+    "INT": 0,
+    "SAB": 2,
+    "CAR": 1
+   },
+   "treinadas": [
+    "Luta",
+    "Furtividade",
+    "Iniciativa",
+    "Olfato",
+    "Audição",
+    "Reflexos"
+   ],
+   "outros": {},
+   "defesaBonus": 3,
+   "deslocamentos": {
+    "terrestre": 12
+   },
+   "rd": 0,
+   "imunidades": [
+    "Fogo"
+   ],
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "dano": "1d6",
+     "tipo": "Fogo",
+     "pericia": "Luta"
+    }
+   ],
+   "habilidades": [
+    {
+     "nome": "Brasa Viva",
+     "texto": "Uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Reflexos ou fica Em Chamas."
+    },
+    {
+     "nome": "Fagulha Veloz",
+     "texto": "Uma vez por rodada, depois de atacar, a raposa se desloca até 6 m como ação livre."
+    }
+   ]
+  },
+  {
+   "id": "lontra-de-mare",
+   "nome": "Lontra de Maré",
+   "elemento": "Maré",
+   "tamanho": "pequeno",
+   "atributos": {
+    "FOR": -1,
+    "DES": 2,
+    "CON": 1,
+    "INT": 0,
+    "SAB": 2,
+    "CAR": 2
+   },
+   "treinadas": [
+    "Luta",
+    "Acrobacia",
+    "Atletismo",
+    "Reflexos",
+    "Audição",
+    "Iniciativa"
+   ],
+   "outros": {
+    "Acrobacia (escapar de agarrar)": 5
+   },
+   "defesaBonus": 2,
+   "deslocamentos": {
+    "terrestre": 9,
+    "natacao": 12
+   },
+   "rd": 0,
+   "imunidades": [],
+   "ataques": [
+    {
+     "nome": "Jato",
+     "dano": "1d6",
+     "tipo": "Frio",
+     "pericia": "Pontaria",
+     "alcance": "curto"
+    }
+   ],
+   "habilidades": [
+    {
+     "nome": "Água Viva",
+     "texto": "Uma vez por cena, como ação padrão, a lontra toca uma criatura e ela recupera 1d6 + metade do nível do místico PV."
+    },
+    {
+     "nome": "Escorregadia",
+     "texto": "+5 em Acrobacia para escapar de agarrar."
+    }
+   ]
+  },
+  {
+   "id": "tatu-de-pedra",
+   "nome": "Tatu de Pedra",
+   "elemento": "Rocha",
+   "tamanho": "pequeno",
+   "atributos": {
+    "FOR": 2,
+    "DES": -1,
+    "CON": 3,
+    "INT": 0,
+    "SAB": 1,
+    "CAR": 0
+   },
+   "treinadas": [
+    "Luta",
+    "Fortitude",
+    "Olfato",
+    "Audição"
+   ],
+   "outros": {},
+   "defesaBonus": 1,
+   "deslocamentos": {
+    "terrestre": 6,
+    "escavacao": 6
+   },
+   "rd": 3,
+   "imunidades": [],
+   "ataques": [
+    {
+     "nome": "Cabeçada",
+     "dano": "1d6",
+     "tipo": "Impacto",
+     "pericia": "Luta"
+    }
+   ],
+   "habilidades": [
+    {
+     "nome": "Escudo de Pedra",
+     "texto": "Uma vez por rodada, como reação, quando o místico é alvo de um ataque e o tatu está adjacente a ele, o ataque é feito contra o tatu no lugar."
+    }
+   ]
+  },
+  {
+   "id": "ave-de-vendaval",
+   "nome": "Ave de Vendaval",
+   "elemento": "Vento",
+   "tamanho": "pequeno",
+   "atributos": {
+    "FOR": -2,
+    "DES": 4,
+    "CON": 0,
+    "INT": 0,
+    "SAB": 2,
+    "CAR": 1
+   },
+   "treinadas": [
+    "Luta",
+    "Acrobacia",
+    "Iniciativa",
+    "Visão",
+    "Audição",
+    "Reflexos"
+   ],
+   "outros": {},
+   "defesaBonus": 4,
+   "deslocamentos": {
+    "terrestre": 3,
+    "voo": 18
+   },
+   "rd": 0,
+   "imunidades": [],
+   "ataques": [
+    {
+     "nome": "Garras",
+     "dano": "1d4",
+     "tipo": "Corte",
+     "pericia": "Luta"
+    }
+   ],
+   "habilidades": [
+    {
+     "nome": "Rasante",
+     "texto": "Uma vez por rodada, depois de atacar, a ave se desloca até 6 m como ação livre."
+    },
+    {
+     "nome": "Vento a Favor",
+     "texto": "Uma vez por cena, como ação de movimento, o místico ou um aliado adjacente recebe +6 m de deslocamento até o fim da cena."
+    }
+   ]
+  }
+ ]
+}

@@ -70,7 +70,7 @@ export class FichaAnimal extends HandlebarsApplicationMixin(ActorSheetV2) {
       img: actor.img || ICONE_VINCULO_PADRAO,
       nome: actor.name,
       nivel: bloco.nivel,
-      linha: [loc("ICARUS.FichaAnimal.Animal"), loc(`ICARUS.Tamanhos.${animal?.tamanho ?? s.tamanho}`), loc("ICARUS.FichaAnimal.Vinculo")].join(" · "),
+      linha: [loc("ICARUS.FichaAnimal.Animal"), loc(`ICARUS.Tamanhos.${animal?.tamanho ?? s.tamanho}`), loc(bloco.familiar ? "ICARUS.FichaAnimal.Familiar" : "ICARUS.FichaAnimal.Vinculo")].join(" · "),
       dono: bloco.dono?.name ?? "—",
       provisorio: !!f.provisorio,
       iniciativa: pericia("iniciativa"),

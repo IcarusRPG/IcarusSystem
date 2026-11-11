@@ -15,6 +15,10 @@
  *   terreno      1 entre "opcoes", sem repetir um terreno já escolhido
  *   arma-exotica 1 arma exótica do compêndio de armas, sem repetir
  *   divindade    1 das divindades do Panteão (Fé Jurada do Clérigo; "opcoes" = nomes do panteao.json)
+ *   elemento     1 elemento da Dobra Elemental (Místico): flags.elemento = id ("mare")
+ *   familiar     1 familiar de familiares.json (Familiar Elemental, Segundo Familiar), com a mini-ficha,
+ *                sem repetir um que já conhece: flags.familiar = id
+ *   forma        1 forma da Ascensão Espiritual: flags.forma = "ancestral" | "divina"
  * O resultado fica nas flags do item (e o nome ganha a escolha: "Aumento de Atributo (Destreza)").
  * Fechar a tela sem escolher deixa o item "pendente de escolha" (aviso na ficha e botão para concluir).
  */
@@ -22,6 +26,8 @@ import { SISTEMA_ID, ATRIBUTOS, PERICIAS } from "./config.mjs";
 import { patamarDe, podeAumentarAtributo, normalizarNome, classePorId, marcadorDaOpcao, chaveDaPericia } from "./classes-dados.mjs";
 import ARMAS from "./dados/armas.mjs";
 import VINCULOS from "./dados/vinculos.mjs";
+import FAMILIARES from "./dados/familiares.mjs";
+import { elementoPorNome, formaPorNome, familiaresDosItens } from "./mistico-dados.mjs";
 import { marcarTreino } from "./assistente.mjs";
 import { DIVINDADES, idDaDivindadePorNome } from "./panteao.mjs";
 
@@ -99,7 +105,7 @@ async function telaCaminho(actor, classe, entrada) {
 }
 
 /** Mini-ficha do animal (Anexo B). */
-function miniFicha(a) {
+function miniFicha(a, { provisorio = true } = {}) {
   const at = ATRIBUTOS.map(k => `${k} ${a.atributos?.[k] >= 0 ? "+" : ""}${a.atributos?.[k] ?? 0}`).join(" · ");
   const desl = Object.entries(a.deslocamentos ?? {}).map(([k, v]) => `${k} ${v} m`).join(", ");
   const atq = a.ataques.map(x => `${x.nome} ${x.dano} ${x.tipo}${x.extra ? ` (${x.extra})` : ""}`).join("; ");
@@ -109,7 +115,7 @@ function miniFicha(a) {
     <dt>${esc(loc("ICARUS.Escolhas.Deslocamento"))}</dt><dd>${esc(desl)}</dd>
     <dt>${esc(loc("ICARUS.Escolhas.Ataques"))}</dt><dd>${esc(atq)}</dd>
     ${(a.habilidades ?? []).map(h => `<dt>${esc(h.nome)}</dt><dd>${esc(h.texto)}</dd>`).join("")}
-    <dd class="provisorio">${esc(loc("ICARUS.Escolhas.Provisorio"))}</dd></dl>`;
+    ${provisorio ? `<dd class="provisorio">${esc(loc("ICARUS.Escolhas.Provisorio"))}</dd>` : ""}</dl>`;
 }
 
 /** Aumento de Atributo: 6 botões; o atributo que já subiu neste patamar fica desabilitado. */
@@ -178,8 +184,13 @@ async function telaTipoDano(actor, classe, entrada) {
 }
 
 /** Escolas (Conjuração Bárdica): exatamente "quantidade", com as obrigatórias marcadas e travadas. */
+/** Escolas de magia (as opções que o JSON não lista). */
+const ESCOLAS = ["Abjuração", "Adivinhação", "Convocação", "Encantamento", "Evocação", "Ilusão", "Necromancia", "Transmutação", "Espiritual"];
+
 async function telaEscolas(actor, classe, entrada) {
-  const { quantidade = 3, obrigatoria = [], opcoes = [] } = entrada.escolha;
+  const { quantidade = 3 } = entrada.escolha;
+  const obrigatoria = entrada.escolha.obrigatoria ?? entrada.escolha.obrigatorias ?? [];
+  const opcoes = entrada.escolha.opcoes?.length ? entrada.escolha.opcoes : ESCOLAS;
   const content = `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Escolhas.EscolasTexto", { n: quantidade, obrigatorias: obrigatoria.join(", ") }))}</p>
     <div class="grade-pericias-classe">${opcoes.map(o => `<label class="chk"><input type="checkbox" name="escola" value="${esc(o)}"${obrigatoria.includes(o) ? " checked disabled" : ""}> ${esc(o)}</label>`).join("")}</div></div>`;
   const r = await DialogV2.wait({
@@ -205,8 +216,10 @@ async function telaMagias(actor, classe, entrada) {
 
 /** Escola de magia (Escola Predileta, Segunda Escola): sem repetir uma escola já escolhida. */
 async function telaEscola(actor, classe, entrada) {
-  const ja = new Set(actor.items.map(i => i.flags?.[SISTEMA_ID]?.escola).filter(Boolean));
-  const escola = await escolherUm(entrada.nome, loc("ICARUS.Escolhas.Escola"), entrada.escolha.opcoes.map(o => ({ valor: o, rotulo: o, desativado: ja.has(o) })));
+  // Escola Estendida (Místico): também não repete as escolas da Conjuração Mística
+  const ja = new Set(actor.items.flatMap(i => [i.flags?.[SISTEMA_ID]?.escola, ...(i.flags?.[SISTEMA_ID]?.escolas ?? [])]).filter(Boolean));
+  const opcoes = entrada.escolha.opcoes?.length ? entrada.escolha.opcoes : ESCOLAS;
+  const escola = await escolherUm(entrada.nome, loc("ICARUS.Escolhas.Escola"), opcoes.map(o => ({ valor: o, rotulo: o, desativado: ja.has(o) })));
   return escola ? { flags: { escola }, sufixo: escola } : null;
 }
 
@@ -267,7 +280,40 @@ async function telaPoderes(actor, classe, entrada) {
   return { flags: { poderes: r }, sufixo: r.join(", ") };
 }
 
-const TELAS = { poderes: telaPoderes, divindade: telaDivindade,  escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
+/** Elemento da Dobra Elemental (Místico). */
+async function telaElemento(actor, classe, entrada) {
+  const nome = await escolherUm(entrada.nome, "", entrada.escolha.opcoes.map(o => ({ valor: o, rotulo: o })),
+    { aviso: entrada.escolha.permanente ? loc("ICARUS.Escolhas.Permanente") : "" });
+  const id = elementoPorNome(nome);
+  return id ? { flags: { elemento: id }, sufixo: nome } : null;
+}
+
+/** Forma da Ascensão Espiritual (Místico). */
+async function telaForma(actor, classe, entrada) {
+  const nome = await escolherUm(entrada.nome, "", entrada.escolha.opcoes.map(o => ({ valor: o, rotulo: o })),
+    { aviso: entrada.escolha.permanente ? loc("ICARUS.Escolhas.Permanente") : "" });
+  const id = formaPorNome(nome);
+  return id ? { flags: { forma: id }, sufixo: nome } : null;
+}
+
+/** Familiar Elemental / Segundo Familiar: cartões com a mini-ficha; não repete um que já conhece. */
+async function telaFamiliar(actor, classe, entrada) {
+  const ja = new Set(familiaresDosItens([...(actor.items ?? [])]));
+  const opcoes = entrada.escolha.opcoes.map(nome => FAMILIARES.familiares.find(f => normalizarNome(f.nome) === normalizarNome(nome))).filter(Boolean);
+  const livres = opcoes.filter(f => !ja.has(f.id));
+  const cartoes = livres.map(f => `<div class="cartao-escolha"><h4>${esc(f.nome)} (${esc(f.elemento)})</h4>${miniFicha(f, { provisorio: false })}</div>`).join("");
+  const r = await DialogV2.wait({
+    window: { title: entrada.nome },
+    position: { width: Math.min(1100, 260 * Math.max(1, livres.length) + 60) },
+    content: `<div class="icarus-uso escolha-caminho">${entrada.escolha.permanente ? `<p class="aviso">${esc(loc("ICARUS.Escolhas.Permanente"))}</p>` : ""}<div class="cartoes-escolha">${cartoes}</div></div>`,
+    buttons: livres.map(f => ({ action: f.id, label: f.nome })),
+    rejectClose: false
+  });
+  const f = livres.find(x => x.id === r);
+  return f ? { flags: { familiar: f.id }, sufixo: f.nome } : null;
+}
+
+const TELAS = { elemento: telaElemento, familiar: telaFamiliar, forma: telaForma, poderes: telaPoderes, divindade: telaDivindade,  escolas: telaEscolas, magias: telaMagias, escola: telaEscola, caminho: telaCaminho, atributo: telaAtributo, pericias: telaPericias, "tipo-dano": telaTipoDano, terreno: telaTerreno, "arma-exotica": telaArmaExotica };
 
 /** Depois de uma escolha de caminho (por id da habilidade): (actor, índice, item) => Promise. */
 export const APOS_CAMINHO = new Map();

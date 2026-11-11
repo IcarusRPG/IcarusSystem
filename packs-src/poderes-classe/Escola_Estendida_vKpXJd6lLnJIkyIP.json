@@ -1,0 +1,38 @@
+{
+  "_id": "vKpXJd6lLnJIkyIP",
+  "name": "Escola Estendida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>uma quinta escola de magia</strong>, à sua escolha. Você só pode escolher este poder uma vez.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__escola-estendida",
+      "classe": "mistico",
+      "poder": "escola-estendida",
+      "inferido": false
+    }
+  },
+  "_key": "!items!vKpXJd6lLnJIkyIP"
+}

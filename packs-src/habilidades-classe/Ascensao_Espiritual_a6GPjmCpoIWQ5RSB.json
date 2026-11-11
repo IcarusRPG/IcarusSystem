@@ -1,0 +1,38 @@
+{
+  "_id": "a6GPjmCpoIWQ5RSB",
+  "name": "Ascensão Espiritual",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 17007,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 8,
+    "prerequisito": "",
+    "nivel": 17,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprendeu a atravessar para o plano espiritual e voltar trazendo um pedaço dele. Você escolhe <strong>uma</strong> das duas formas abaixo (permanente). Uma vez por dia, como ação padrão, você gasta 8 PM e assume a forma escolhida até o fim da cena ou até voltar ao normal (ação livre). Na forma, você <strong>fala e lança magias normalmente</strong>.<br>• <strong>Forma Ancestral (um animal espiritual primordial).</strong> Você se torna uma <strong>fera espiritual gigantesca</strong>, feita de pelo, nuvem, brasa e pedra ao mesmo tempo. Tamanho <strong>Grande</strong>. Você recebe <strong>PV temporários iguais a 3 × seu nível</strong>, <strong>+2 na Defesa</strong>, <strong>Redução de Dano 5</strong> (respeitando o teto de RD do Núcleo), <strong>deslocamento +6 m</strong> e <strong>voo de 12 m</strong>. Você ganha uma arma natural (<strong>garras e presas, 3d8 de dano</strong>), cujo tipo é o de um dos <strong>elementos que você conhece</strong> (escolha a cada ataque), e você pode usar a Rajada Elemental como <strong>ação de movimento</strong> uma vez por rodada.<br>• <strong>Forma Divina (um espírito celeste).</strong> Você se torna um <strong>ser de luz e vento</strong>, meio corpo e meio memória de quem já viveu. Tamanho <strong>Médio</strong>. Você recebe <strong>voo de 18 m</strong>, <strong>+5 em testes de resistência</strong>, <strong>Redução de Dano 5</strong> contra dano de armas e ataques que não sejam mágicos (respeitando o teto de RD do Núcleo) e uma <strong>aura de 6 m</strong>: aliados dentro da aura recebem <strong>+2 em testes de resistência</strong> e <strong>recuperam 1d6 PV</strong> no início de cada turno seu. As suas magias de nível 3 ou menor custam <strong>1 PM a menos</strong> (mínimo 1).",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 17,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__ascensao-espiritual",
+      "classe": "mistico",
+      "habilidade": "ascensao-espiritual",
+      "inferido": true
+    }
+  },
+  "_key": "!items!a6GPjmCpoIWQ5RSB"
+}

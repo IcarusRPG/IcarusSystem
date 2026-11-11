@@ -61,6 +61,7 @@ import "./module/classes/clerigo.mjs";
 import "./module/classes/paladino.mjs";
 import "./module/classes/druida.mjs";
 import "./module/classes/anatema.mjs";
+import "./module/classes/mistico.mjs";
 import "./module/recursos.mjs";
 import { registrarMigracoes, BARRAS_DO_TOKEN } from "./module/migracoes.mjs";
 import { registrarTestes } from "./module/testes-sessao.mjs";

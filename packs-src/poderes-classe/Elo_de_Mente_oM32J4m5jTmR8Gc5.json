@@ -1,0 +1,38 @@
+{
+  "_id": "oM32J4m5jTmR8Gc5",
+  "name": "Elo de Mente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "Gwu3GyuBWDKMMFvW",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você pode <strong>enxergar e ouvir</strong> pelo seu familiar até o início do seu próximo turno, enquanto ele estiver a até 1,5 km de você. Você fica <strong>Cego e Surdo</strong> (para o seu próprio corpo) enquanto isso dura.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Familiar",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__elo-de-mente",
+      "classe": "mistico",
+      "poder": "elo-de-mente",
+      "inferido": true
+    }
+  },
+  "_key": "!items!oM32J4m5jTmR8Gc5"
+}

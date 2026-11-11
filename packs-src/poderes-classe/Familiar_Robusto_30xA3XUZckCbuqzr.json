@@ -1,0 +1,38 @@
+{
+  "_id": "30xA3XUZckCbuqzr",
+  "name": "Familiar Robusto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "Gwu3GyuBWDKMMFvW",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O seu familiar recebe <strong>+10 PV</strong> e <strong>+1 na Defesa</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Familiar",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__familiar-robusto",
+      "classe": "mistico",
+      "poder": "familiar-robusto",
+      "inferido": false
+    }
+  },
+  "_key": "!items!30xA3XUZckCbuqzr"
+}

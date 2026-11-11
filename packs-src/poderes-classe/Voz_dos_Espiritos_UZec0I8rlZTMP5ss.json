@@ -1,0 +1,38 @@
+{
+  "_id": "UZec0I8rlZTMP5ss",
+  "name": "Voz dos Espíritos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você <strong>fala com espíritos e fantasmas</strong> e pode conversar com <strong>mortos recentes</strong> (até 1 dia por nível de místico) por <strong>10 minutos</strong>, gastando 2 PM. Você pode fazer <strong>até 5 perguntas</strong>, e eles respondem com o que sabiam em vida.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__voz-dos-espiritos",
+      "classe": "mistico",
+      "poder": "voz-dos-espiritos",
+      "inferido": true
+    }
+  },
+  "_key": "!items!UZec0I8rlZTMP5ss"
+}

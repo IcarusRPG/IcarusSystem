@@ -12244,6 +12244,753 @@ export default {
           "maxEscolhas": null
         }
       ]
+    },
+    {
+      "id": "mistico",
+      "nome": "Místico",
+      "papel": "Conjurador Espiritual",
+      "pv": {
+        "inicial": 14,
+        "porNivel": 4,
+        "atributo": "CON"
+      },
+      "pm": {
+        "inicial": 5,
+        "porNivel": 5,
+        "atributoSoNoPrimeiroNivel": true,
+        "texto": "5 + Sabedoria no 1º nível; +5 por nível seguinte",
+        "atributo": "SAB"
+      },
+      "atributoChave": "Sabedoria",
+      "pericias": {
+        "obrigatorias": "Misticismo e Vontade",
+        "escolha": 4,
+        "lista": [
+          "Acrobacia",
+          "Atletismo",
+          "Concentração",
+          "Cura",
+          "Diplomacia",
+          "Fortitude",
+          "Iniciativa",
+          "Intuição",
+          "Luta",
+          "Pontaria",
+          "Reflexos",
+          "Religião",
+          "Sobrevivência"
+        ]
+      },
+      "proficiencias": "Armas simples, túnicas. Nenhuma armadura, nenhum escudo",
+      "intro": [
+        "O místico nasceu com um pé em cada mundo. Enquanto o clérigo pede e o arcanista calcula, o místico escuta: o fogo tem um temperamento, a água tem uma memória, a pedra tem paciência e o vento não tem dono. Ele aprendeu a conversar com cada um deles até o elemento passar a responder pelo que ele quer, não pelo que ele manda.",
+        "Todo místico carrega um espírito por perto, um pequeno guardião de brasa, maré, pedra ou vento que anda ao seu lado. E todo místico sabe, no fundo, que existe um lugar para além deste mundo onde os antepassados esperam. Os mais velhos conseguem ir até lá e voltar trazendo um pedaço desse outro lado no corpo."
+      ],
+      "progressao": [
+        {
+          "nivel": 1,
+          "habilidades": [
+            "Conjuração Mística",
+            "Dobra Elemental"
+          ],
+          "poder": false
+        },
+        {
+          "nivel": 2,
+          "habilidades": [
+            "Olhos do Outro Lado"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 3,
+          "habilidades": [
+            "Familiar Elemental"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 4,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 5,
+          "habilidades": [
+            "Meditação",
+            "2º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 6,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 7,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 8,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 9,
+          "habilidades": [
+            "3º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 10,
+          "habilidades": [
+            "Alma Desperta"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 11,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 12,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 13,
+          "habilidades": [
+            "Evolução do Familiar",
+            "4º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 14,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 15,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 16,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 17,
+          "habilidades": [
+            "Ascensão Espiritual",
+            "5º nível de magia"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 18,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 19,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 20,
+          "habilidades": [
+            "Harmonia"
+          ],
+          "poder": true
+        }
+      ],
+      "habilidades": [
+        {
+          "id": "conjuracao-mistica",
+          "nome": "Conjuração Mística",
+          "nivel": 1,
+          "descricao": "Você lança magias da lista <strong>Arcana</strong>, usando Sabedoria como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º, nível 4 no 13º e nível 5 no 17º.<br>• <strong>Escolas.</strong> Você escolhe <strong>quatro escolas de magia</strong> (permanente): a <strong>Espiritual</strong>, que é obrigatória, mais três à sua escolha. Você só aprende magias dessas escolas.<br>• <strong>Magias conhecidas.</strong> Você conhece 3 magias no 1º nível e aprende <strong>mais 1 a cada nível ímpar</strong> a partir do 3º. Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra.<br>• <strong>Magia divina.</strong> Você só lança magias da lista <strong>Divina</strong> se escolher o poder <strong>Ecos dos Ancestrais</strong>. Elas devem ser <strong>das mesmas escolas</strong> que você escolheu.<br>• <strong>Armadura.</strong> Você pode lançar magias usando túnicas.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "escolas",
+            "quantidade": 4,
+            "obrigatorias": [
+              "Espiritual"
+            ],
+            "permanente": true
+          }
+        },
+        {
+          "id": "dobra-elemental",
+          "nome": "Dobra Elemental",
+          "nivel": 1,
+          "descricao": "Você escolhe um dos quatro elementos: <strong>Chama</strong>, <strong>Maré</strong>, <strong>Rocha</strong> ou <strong>Vento</strong> (permanente). Você aprende a Rajada Elemental e a Dobra Casual, e você pode aprender os outros elementos com os poderes <strong>Domínio da Chama, Domínio da Maré, Domínio da Rocha e Domínio do Vento</strong>.<br>• <strong>Rajada Elemental.</strong> Como ação padrão, você gasta 1 PM e faz um ataque à distância contra uma criatura em alcance curto, usando <strong>Sabedoria</strong> no teste de ataque. Se acertar, causa <strong>1d8 de dano</strong> do tipo do elemento escolhido para aquela rajada (<strong>Chama: Fogo. Maré: Frio. Rocha: Impacto. Vento: Corte</strong>). O dano aumenta em <strong>+1d8 no 5º, 9º, 13º e 17º níveis</strong> (5d8 no 17º). Você usa um elemento por rajada, entre os que você conhece.<br>• <strong>Dobra Casual.</strong> À vontade, sem custo, você produz efeitos pequenos e sem combate com o seu elemento: acender uma chama do tamanho de uma vela, esfriar uma bebida, mover uma pedra do tamanho de um punho, soprar uma brisa que apaga uma chama.",
+          "custoPM": 1,
+          "acao": "padrao",
+          "subs": [],
+          "escolha": {
+            "tipo": "elemento",
+            "permanente": true,
+            "opcoes": [
+              "Chama",
+              "Maré",
+              "Rocha",
+              "Vento"
+            ]
+          }
+        },
+        {
+          "id": "olhos-do-outro-lado",
+          "nome": "Olhos do Outro Lado",
+          "nivel": 2,
+          "descricao": "Como ação livre, você gasta <strong>1 PM</strong> e, até o fim da cena, enxerga <strong>espíritos e criaturas incorpóreas</strong> como se estivessem visíveis e recebe <strong>+2 em Misticismo</strong> e <strong>+2 em Intuição</strong> para perceber a presença de espíritos, assombrações e magias de Espiritual.",
+          "custoPM": 1,
+          "acao": "livre",
+          "subs": []
+        },
+        {
+          "id": "familiar-elemental",
+          "nome": "Familiar Elemental",
+          "nivel": 3,
+          "descricao": "Um espírito do seu elemento passa a andar com você. Você escolhe <strong>um</strong> familiar da lista abaixo (permanente, mas veja <strong>Segundo Familiar</strong>). Como ação de movimento, você gasta 1 PM e invoca o seu familiar, que surge em um espaço livre adjacente a você. Ele permanece até você dispensá-lo (ação livre) ou até chegar a 0 PV, quando desaparece; você pode invocá-lo de novo, com todos os PV, pagando o custo outra vez. O familiar <strong>não pode ser curado</strong> por nenhum efeito. Ele age logo depois do seu turno, com uma ação padrão e uma ação de movimento. O familiar tem <strong>ficha própria</strong>: <strong>PV</strong> = 10 + metade do seu nível; <strong>Defesa</strong> = 10 + metade do seu nível + o bônus dele; <strong>CD</strong> = 10 + metade do seu nível + Sabedoria; ele soma a metade do seu nível ao dano dos ataques.<br>• <strong>Raposa de Brasa (Chama).</strong> Defesa +3; deslocamento 12 m; imune a Fogo. Mordida: 1d6 de dano de Fogo. <em>Brasa Viva:</em> uma vez por rodada, quando a mordida acerta, o alvo faz um teste de Reflexos ou fica Em Chamas. <em>Fagulha Veloz:</em> uma vez por rodada, depois de atacar, a raposa se desloca até 6 m como ação livre.<br>• <strong>Lontra de Maré (Maré).</strong> Defesa +2; deslocamento 9 m, natação 12 m. Jato: 1d6 de dano de Frio, alcance curto. <em>Água Viva:</em> uma vez por cena, como ação padrão, a lontra toca uma criatura e ela recupera 1d6 + metade do seu nível PV. <em>Escorregadia:</em> +5 em Acrobacia para escapar de agarrar.<br>• <strong>Tatu de Pedra (Rocha).</strong> Defesa +1; deslocamento 6 m, escavação 6 m; RD 3. Cabeçada: 1d6 de dano de Impacto. <em>Escudo de Pedra:</em> uma vez por rodada, como reação, quando você é alvo de um ataque e o tatu está adjacente a você, o ataque é feito contra o tatu no lugar.<br>• <strong>Ave de Vendaval (Vento).</strong> Defesa +4; deslocamento 3 m, voo 18 m. Garras: 1d4 de dano de Corte. <em>Rasante:</em> uma vez por rodada, depois de atacar, a ave se desloca até 6 m como ação livre. <em>Vento a Favor:</em> uma vez por cena, como ação de movimento, o místico ou um aliado adjacente recebe +6 m de deslocamento até o fim da cena.",
+          "custoPM": 1,
+          "acao": "movimento",
+          "subs": [],
+          "escolha": {
+            "tipo": "familiar",
+            "permanente": true,
+            "opcoes": [
+              "Raposa de Brasa",
+              "Lontra de Maré",
+              "Tatu de Pedra",
+              "Ave de Vendaval"
+            ]
+          }
+        },
+        {
+          "id": "meditacao",
+          "nome": "Meditação",
+          "nivel": 5,
+          "descricao": "Uma vez por dia, em <strong>10 minutos de meditação</strong> calma, você recupera <strong>1d6 + Sabedoria PM</strong>. Você precisa passar em um <strong>teste de Concentração (CD 15)</strong>: se falhar, a meditação não recupera PM (você pode tentar de novo, e o uso do dia só é gasto no sucesso). Qualquer interrupção cancela a meditação.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "alma-desperta",
+          "nome": "Alma Desperta",
+          "nivel": 10,
+          "descricao": "Você recebe <strong>+5 em testes de resistência</strong> contra efeitos mentais e contra possessão, e não pode ser <strong>Enfeitiçado</strong> nem <strong>Controlado</strong> por magias de nível 4 ou menor.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "evolucao-do-familiar",
+          "nome": "Evolução do Familiar",
+          "nivel": 13,
+          "descricao": "O seu familiar ganha <strong>+2 na Defesa</strong> e o dado de dano dos seus ataques aumenta em <strong>um passo</strong>. Além disso, você pode invocá-lo como <strong>ação livre</strong> uma vez por cena.",
+          "custoPM": null,
+          "acao": "livre",
+          "subs": []
+        },
+        {
+          "id": "ascensao-espiritual",
+          "nome": "Ascensão Espiritual",
+          "nivel": 17,
+          "descricao": "Você aprendeu a atravessar para o plano espiritual e voltar trazendo um pedaço dele. Você escolhe <strong>uma</strong> das duas formas abaixo (permanente). Uma vez por dia, como ação padrão, você gasta 8 PM e assume a forma escolhida até o fim da cena ou até voltar ao normal (ação livre). Na forma, você <strong>fala e lança magias normalmente</strong>.<br>• <strong>Forma Ancestral (um animal espiritual primordial).</strong> Você se torna uma <strong>fera espiritual gigantesca</strong>, feita de pelo, nuvem, brasa e pedra ao mesmo tempo. Tamanho <strong>Grande</strong>. Você recebe <strong>PV temporários iguais a 3 × seu nível</strong>, <strong>+2 na Defesa</strong>, <strong>Redução de Dano 5</strong> (respeitando o teto de RD do Núcleo), <strong>deslocamento +6 m</strong> e <strong>voo de 12 m</strong>. Você ganha uma arma natural (<strong>garras e presas, 3d8 de dano</strong>), cujo tipo é o de um dos <strong>elementos que você conhece</strong> (escolha a cada ataque), e você pode usar a Rajada Elemental como <strong>ação de movimento</strong> uma vez por rodada.<br>• <strong>Forma Divina (um espírito celeste).</strong> Você se torna um <strong>ser de luz e vento</strong>, meio corpo e meio memória de quem já viveu. Tamanho <strong>Médio</strong>. Você recebe <strong>voo de 18 m</strong>, <strong>+5 em testes de resistência</strong>, <strong>Redução de Dano 5</strong> contra dano de armas e ataques que não sejam mágicos (respeitando o teto de RD do Núcleo) e uma <strong>aura de 6 m</strong>: aliados dentro da aura recebem <strong>+2 em testes de resistência</strong> e <strong>recuperam 1d6 PV</strong> no início de cada turno seu. As suas magias de nível 3 ou menor custam <strong>1 PM a menos</strong> (mínimo 1).",
+          "custoPM": 8,
+          "acao": "padrao",
+          "subs": [],
+          "escolha": {
+            "tipo": "forma",
+            "permanente": true,
+            "opcoes": [
+              "Forma Ancestral",
+              "Forma Divina"
+            ]
+          }
+        },
+        {
+          "id": "harmonia",
+          "nome": "Harmonia",
+          "nivel": 20,
+          "descricao": "Você conhece os <strong>quatro elementos</strong> (a Rajada Elemental pode usar qualquer um) e fica <strong>imune a medo</strong>. Você pode usar a Ascensão Espiritual <strong>duas vezes por dia</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        }
+      ],
+      "grupos": [
+        "Poderes gerais",
+        "Poderes de Dobra",
+        "Poderes do Familiar",
+        "Poderes comuns"
+      ],
+      "poderes": [
+        {
+          "id": "ecos-dos-ancestrais",
+          "nome": "Ecos dos Ancestrais",
+          "grupo": "Poderes gerais",
+          "descricao": "Você aprende <strong>duas magias divinas</strong>, <strong>das escolas que você escolheu</strong>, de qualquer nível que já possa lançar, e passa a lançar magias da lista <strong>Divina</strong>, usando <strong>Sabedoria</strong> como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias divinas de nível 1 no 5º nível, nível 2 no 9º, nível 3 no 13º e nível 4 no 17º (o místico não lança magias divinas de nível 5). Sem este poder, o místico <strong>não lança magias divinas</strong>. Você pode escolher este poder várias vezes: cada vez, aprende mais duas magias divinas.",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "magias",
+            "quantidade": 2,
+            "lista": "divina",
+            "escolasDoMistico": true
+          }
+        },
+        {
+          "id": "escola-estendida",
+          "nome": "Escola Estendida",
+          "grupo": "Poderes gerais",
+          "descricao": "Você aprende <strong>uma quinta escola de magia</strong>, à sua escolha. Você só pode escolher este poder uma vez.",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "escola",
+            "quantidade": 1
+          }
+        },
+        {
+          "id": "magia-elemental",
+          "nome": "Magia Elemental",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando você lança uma magia da escola de <strong>Evocação</strong> que cause dano, você pode trocar o tipo de dano para o tipo de <strong>um dos elementos que você conhece</strong> (Fogo, Frio, Impacto ou Corte).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "passo-fantasma",
+          "nome": "Passo Fantasma",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação de movimento, você gasta 2 PM e se torna <strong>incorpóreo</strong> até o fim do seu turno: você pode atravessar criaturas e objetos finos (até 30 cm de espessura), mas precisa terminar o movimento em um espaço livre.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "consulta-aos-espiritos",
+          "nome": "Consulta aos Espíritos",
+          "grupo": "Poderes gerais",
+          "descricao": "Uma vez por dia, em um ritual de <strong>10 minutos</strong>, você gasta 2 PM e faz uma pergunta a um espírito ancestral. O Mestre responde com <strong>sim, não ou \"não sei\"</strong> (e pode dar uma pista). A resposta só é confiável se a pergunta for sobre algo que o espírito poderia saber.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "voz-dos-espiritos",
+          "nome": "Voz dos Espíritos",
+          "grupo": "Poderes gerais",
+          "descricao": "Você <strong>fala com espíritos e fantasmas</strong> e pode conversar com <strong>mortos recentes</strong> (até 1 dia por nível de místico) por <strong>10 minutos</strong>, gastando 2 PM. Você pode fazer <strong>até 5 perguntas</strong>, e eles respondem com o que sabiam em vida.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "mente-calma",
+          "nome": "Mente Calma",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe <strong>+2 em Vontade e em Concentração</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dominio-da-chama",
+          "nome": "Domínio da Chama",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Você aprende o elemento <strong>Chama</strong>. Você recebe <strong>Redução de Dano 5 contra Fogo</strong> e, ao causar dano de Fogo com Rajada Elemental ou com uma técnica de Chama, soma <strong>+2</strong> ao dano.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dominio-da-mare",
+          "nome": "Domínio da Maré",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Você aprende o elemento <strong>Maré</strong>. Você <strong>respira na água</strong>, tem <strong>natação igual ao seu deslocamento</strong>, <strong>Redução de Dano 5 contra Frio</strong> e +2 de dano de Frio com a Rajada Elemental e com técnicas de Maré.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dominio-da-rocha",
+          "nome": "Domínio da Rocha",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Você aprende o elemento <strong>Rocha</strong>. Você <strong>ignora terreno difícil de pedra e terra</strong> e <strong>sente vibrações</strong> do chão (percebe criaturas em contato com o solo em alcance curto, mesmo sem ver), e recebe +2 de dano de Impacto com a Rajada Elemental e com técnicas de Rocha.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dominio-do-vento",
+          "nome": "Domínio do Vento",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Você aprende o elemento <strong>Vento</strong>. Você recebe <strong>+3 m de deslocamento</strong>, <strong>cai em câmera lenta</strong> (queda de qualquer altura causa 0 de dano) e +2 de dano de Corte com a Rajada Elemental e com técnicas de Vento.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "sopro-abrasador",
+          "nome": "Sopro Abrasador",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 3 PM e solta um cone de <strong>6 m</strong> de chamas: criaturas na área sofrem <strong>3d6 de dano de Fogo</strong> (Reflexos, CD de místico, reduz à metade).",
+          "prerequisito": "elemento Chama",
+          "nivelMinimo": null,
+          "custoPM": 3,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "cortina-de-brasa",
+          "nome": "Cortina de Brasa",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 3 PM e cria uma <strong>linha de chamas</strong> de 6 m de comprimento em alcance curto, que dura até o fim da cena. Criaturas que a atravessam ou começam o turno nela sofrem <strong>2d6 de dano de Fogo</strong> (Reflexos reduz à metade). Só uma Cortina por vez.",
+          "prerequisito": "elemento Chama, 6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 3,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "chicote-de-mare",
+          "nome": "Chicote de Maré",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 2 PM e faz um ataque à distância (Sabedoria) contra uma criatura em alcance curto: se acertar, causa <strong>2d6 de dano de Frio</strong> e o alvo faz um teste de Fortitude (CD de místico) ou fica <strong>Caído</strong>.",
+          "prerequisito": "elemento Maré",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "agua-reparadora",
+          "nome": "Água Reparadora",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura (inclusive você): ela recupera <strong>1d6 + Sabedoria PV</strong>. Cada criatura só pode ser curada por este poder uma vez por cena.",
+          "prerequisito": "elemento Maré",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "pilar-de-pedra",
+          "nome": "Pilar de Pedra",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação de movimento, você gasta 2 PM e ergue um <strong>pilar de pedra</strong> de 3 m de altura em um espaço livre em alcance curto. O pilar dá <strong>cobertura</strong> e pode <strong>empurrar uma criatura</strong> Média ou menor 3 m (Fortitude, CD de místico, para resistir). Ele dura até o fim da cena (10 PV, RD 8).",
+          "prerequisito": "elemento Rocha",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "tremor",
+          "nome": "Tremor",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 3 PM e bate no chão: criaturas a até <strong>3 m de você</strong> sofrem <strong>2d6 de dano de Impacto</strong> e fazem um teste de Fortitude (CD de místico) ou ficam <strong>Caídas</strong>.",
+          "prerequisito": "elemento Rocha",
+          "nivelMinimo": null,
+          "custoPM": 3,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "onda-de-vento",
+          "nome": "Onda de Vento",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 2 PM e solta um cone de <strong>6 m</strong>: criaturas Médias ou menores na área fazem um teste de Fortitude (CD de místico) ou são <strong>empurradas 4,5 m</strong> e sofrem <strong>1d6 de dano de Impacto</strong>.",
+          "prerequisito": "elemento Vento",
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "asas-de-vento",
+          "nome": "Asas de Vento",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação de movimento, você gasta 3 PM e passa a <strong>voar</strong> com deslocamento de <strong>9 m</strong> até o fim da cena.",
+          "prerequisito": "elemento Vento, 8º nível",
+          "nivelMinimo": 8,
+          "custoPM": 3,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "dobra-combinada",
+          "nome": "Dobra Combinada",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Como ação padrão, você gasta 3 PM e combina <strong>dois elementos que você conhece</strong> em uma esfera de 3 m de raio, em alcance curto, que dura até o início do seu próximo turno. O efeito depende da combinação:<br>• <strong>Vapor (Chama + Maré):</strong> criaturas na área ficam <strong>Cegas</strong> (Fortitude evita) e sofrem <strong>1d6 de dano de Fogo</strong>.<br>• <strong>Lava (Chama + Rocha):</strong> o chão vira <strong>terreno difícil</strong> e criaturas na área sofrem <strong>2d6 de dano de Fogo</strong> (Reflexos reduz à metade).<br>• <strong>Tempestade (Maré + Vento):</strong> criaturas na área sofrem <strong>2d6 de dano de Elétrico</strong> (Reflexos reduz à metade).<br>• <strong>Poeira (Rocha + Vento):</strong> criaturas na área ficam <strong>Cegas</strong> e <strong>Lentas</strong> (Fortitude evita).",
+          "prerequisito": "8º nível, dois elementos",
+          "nivelMinimo": 8,
+          "custoPM": 3,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "rajada-potente",
+          "nome": "Rajada Potente",
+          "grupo": "Poderes de Dobra",
+          "descricao": "O dado da Rajada Elemental passa de d8 para <strong>d10</strong>.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "rajada-dupla",
+          "nome": "Rajada Dupla",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Quando você usa a Rajada Elemental, pode gastar +2 PM para atacar <strong>uma segunda criatura</strong>, em alcance curto, adjacente ao primeiro alvo.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "rajada-veloz",
+          "nome": "Rajada Veloz",
+          "grupo": "Poderes de Dobra",
+          "descricao": "Uma vez por rodada, você pode usar a Rajada Elemental como <strong>ação de movimento</strong>, pagando <strong>+1 PM</strong>.",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": 1,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "segundo-familiar",
+          "nome": "Segundo Familiar",
+          "grupo": "Poderes do Familiar",
+          "descricao": "Você aprende <strong>outro</strong> familiar da lista, à sua escolha. Você só pode ter <strong>um</strong> familiar invocado por vez, e invocar outro dispensa o primeiro. Você pode escolher este poder várias vezes (um familiar diferente por vez).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "familiar",
+            "opcoes": [
+              "Raposa de Brasa",
+              "Lontra de Maré",
+              "Tatu de Pedra",
+              "Ave de Vendaval"
+            ]
+          }
+        },
+        {
+          "id": "familiar-robusto",
+          "nome": "Familiar Robusto",
+          "grupo": "Poderes do Familiar",
+          "descricao": "O seu familiar recebe <strong>+10 PV</strong> e <strong>+1 na Defesa</strong>.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "elo-de-mente",
+          "nome": "Elo de Mente",
+          "grupo": "Poderes do Familiar",
+          "descricao": "Como ação de movimento, você pode <strong>enxergar e ouvir</strong> pelo seu familiar até o início do seu próximo turno, enquanto ele estiver a até 1,5 km de você. Você fica <strong>Cego e Surdo</strong> (para o seu próprio corpo) enquanto isso dura.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "voz-do-familiar",
+          "nome": "Voz do Familiar",
+          "grupo": "Poderes do Familiar",
+          "descricao": "O seu familiar <strong>fala</strong> a língua que você falar e age de forma <strong>mais independente</strong>: ele pode agir mesmo que você não o comande, seguindo o que você já mandou, e recebe <strong>+2 em Intuição e Vontade</strong>.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aumento-de-atributo",
+          "nome": "Aumento de Atributo",
+          "grupo": "Poderes comuns",
+          "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null
+        },
+        {
+          "id": "pericia-especializada",
+          "nome": "Perícia Especializada",
+          "grupo": "Poderes comuns",
+          "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+          "prerequisito": "10º nível",
+          "nivelMinimo": 10,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null
+        }
+      ]
     }
   ]
 };

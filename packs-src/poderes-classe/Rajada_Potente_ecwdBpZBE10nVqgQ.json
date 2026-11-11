@@ -1,0 +1,38 @@
+{
+  "_id": "ecwdBpZBE10nVqgQ",
+  "name": "Rajada Potente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O dado da Rajada Elemental passa de d8 para <strong>d10</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__rajada-potente",
+      "classe": "mistico",
+      "poder": "rajada-potente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ecwdBpZBE10nVqgQ"
+}

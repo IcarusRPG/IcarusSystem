@@ -1,0 +1,15 @@
+{
+  "_id": "Gwu3GyuBWDKMMFvW",
+  "name": "Poderes do Familiar",
+  "type": "Item",
+  "folder": "ndBLjeM9T2Rg1l06",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:mistico:poderes-do-familiar"
+    }
+  },
+  "_key": "!folders!Gwu3GyuBWDKMMFvW"
+}

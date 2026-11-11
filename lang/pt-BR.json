@@ -1322,7 +1322,8 @@
         "salto": "Salto",
         "escavacao": "Escavação",
         "natacao": "Natação"
-      }
+      },
+      "Familiar": "Familiar Elemental"
     },
     "Origens": {
       "Pericia": "Bônus de perícia:",
@@ -2147,6 +2148,48 @@
       "MedoAmbulante": "Medo Ambulante: alvo Abalado/Apavorado (+2)",
       "SemPalavras": "O Anátema só lança magias com o poder Palavras de Sangue.",
       "ListaSangue": "lista Sangue"
+    },
+    "Mistico": {
+      "NomeFamiliar": "{animal} ({nome})",
+      "Escolas": "Escolas de magia",
+      "Elemento": "Elemento",
+      "SemElemento": "Escolha o elemento na Dobra Elemental primeiro.",
+      "Rajada": "Rajada Elemental",
+      "RajadaTexto": "Ação padrão, 1 PM: ataque à distância (alcance curto) com Sabedoria contra o alvo marcado (T).",
+      "RajadaDupla": "Rajada Dupla (+2 PM): ataca também o segundo alvo marcado",
+      "RajadaVeloz": "Rajada Veloz (+1 PM): como ação de movimento (1 vez por rodada)",
+      "RajadaChat": "{nome}: Rajada Elemental ({elemento}) — ataque {total} contra {alvo} (Defesa {defesa}) {resultado}",
+      "RajadaTitulo": "Rajada Elemental ({elemento})",
+      "RajadaInfo": "{dano} · 1 PM · {elementos}",
+      "Acertou": "→ acertou",
+      "Errou": "→ errou",
+      "Familiar": "Familiar Elemental",
+      "SemFamiliar": "Escolha o familiar na habilidade Familiar Elemental primeiro.",
+      "Invocar": "Invocar {familiar}",
+      "Dispensar": "Dispensar o familiar",
+      "FamiliarInfo": "1 PM · PV {pv} · Defesa {defesa} · CD {cd}",
+      "Invocou": "{nome} invoca {familiar}: PV {pv}, Defesa {defesa}, CD {cd}.",
+      "Meditacao": "Meditação",
+      "MeditacaoInfo": "1 vez por dia · Concentração CD {cd} · recupera {formula} PM",
+      "MeditacaoUsada": "Já usada hoje",
+      "MeditacaoDia": "A Meditação já foi usada hoje.",
+      "MeditacaoFalhou": "{nome} não conseguiu meditar (Concentração {total}): não recupera PM, mas pode tentar de novo.",
+      "MeditacaoChat": "{nome} medita e recupera {pm} PM.",
+      "AlmaDesperta": "Alma Desperta",
+      "AlmaDespertaInfo": "+5 em resistência contra efeitos mentais e possessão · não fica Enfeitiçado nem Controlado por magias de nível 4 ou menor",
+      "Formas": {
+        "ancestral": "Ascensão: Forma Ancestral",
+        "divina": "Ascensão: Forma Divina"
+      },
+      "SemForma": "Escolha a forma na Ascensão Espiritual primeiro.",
+      "AscensaoDia": "A Ascensão Espiritual já foi usada hoje.",
+      "AscensaoInfo": "8 PM · {usos} / {max} hoje · sem Fatigado ao final",
+      "AncestralChat": "{nome} assume a Forma Ancestral: Tamanho Grande, {pv} PV temporários, +2 Defesa, RD 5, +6 m e voo 12 m; garras e presas 3d8 (tipo de um elemento que conhece); Rajada Elemental como ação de movimento 1 vez por rodada.",
+      "DivinaChat": "{nome} assume a Forma Divina: voo 18 m, +5 em resistência, RD 5 contra armas e ataques não mágicos e aura de 6 m (aliados +2 em resistência e 1d6 PV no início de cada turno de {nome}); magias de nível 3 ou menor custam 1 PM a menos (mínimo 1).",
+      "Voltar": "Voltar ao normal",
+      "MagiasInfo": "Arcanas {a} / {la} · Divinas {d} / {ld}",
+      "SemEcos": "O Místico só aprende magias Divinas com o poder Ecos dos Ancestrais.",
+      "Imune": "{nome} é imune a medo (Harmonia)."
     }
   }
 }

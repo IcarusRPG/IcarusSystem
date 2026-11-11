@@ -1,0 +1,38 @@
+{
+  "_id": "dmKGNWWR33iODAyt",
+  "name": "Magia Elemental",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você lança uma magia da escola de <strong>Evocação</strong> que cause dano, você pode trocar o tipo de dano para o tipo de <strong>um dos elementos que você conhece</strong> (Fogo, Frio, Impacto ou Corte).",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__magia-elemental",
+      "classe": "mistico",
+      "poder": "magia-elemental",
+      "inferido": false
+    }
+  },
+  "_key": "!items!dmKGNWWR33iODAyt"
+}

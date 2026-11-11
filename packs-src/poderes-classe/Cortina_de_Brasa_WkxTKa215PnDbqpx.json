@@ -1,0 +1,38 @@
+{
+  "_id": "WkxTKa215PnDbqpx",
+  "name": "Cortina de Brasa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "elemento Chama, 6º nível",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 3 PM e cria uma <strong>linha de chamas</strong> de 6 m de comprimento em alcance curto, que dura até o fim da cena. Criaturas que a atravessam ou começam o turno nela sofrem <strong>2d6 de dano de Fogo</strong> (Reflexos reduz à metade). Só uma Cortina por vez.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__cortina-de-brasa",
+      "classe": "mistico",
+      "poder": "cortina-de-brasa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!WkxTKa215PnDbqpx"
+}

@@ -1,0 +1,170 @@
+{
+  "_id": "Q4sExLr8KChjvEyy",
+  "name": "Lontra de Maré",
+  "type": "personagem",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Lontra%20de%20Mar%C3%A9.png",
+  "folder": null,
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "tamanho": "pequeno",
+    "atributos": {
+      "FOR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 0
+    },
+    "deslocamento": 9,
+    "resistencias": {
+      "rdGeral": 0
+    },
+    "pericias": {
+      "luta": {
+        "treino": 1
+      },
+      "acrobacia": {
+        "treino": 1
+      },
+      "atletismo": {
+        "treino": 1
+      },
+      "reflexos": {
+        "treino": 1
+      },
+      "audicao": {
+        "treino": 1
+      },
+      "iniciativa": {
+        "treino": 1
+      }
+    },
+    "notas": "<p><strong>Familiar Elemental do Místico.</strong> Elemento: Maré. Deslocamentos: natacao 12 m.</p>"
+  },
+  "prototypeToken": {
+    "name": "Lontra de Maré",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Lontra%20de%20Mar%C3%A9.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "ZoUWJBGjh4fIlwrY",
+      "name": "Jato",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "distancia",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "tiposDano": [
+          "frio"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "curto",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0,
+        "descricao": ""
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!Q4sExLr8KChjvEyy.ZoUWJBGjh4fIlwrY"
+    },
+    {
+      "_id": "XhYocIwf88DfReSC",
+      "name": "Água Viva",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por cena, como ação padrão, a lontra toca uma criatura e ela recupera 1d6 + metade do nível do místico PV.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!Q4sExLr8KChjvEyy.XhYocIwf88DfReSC"
+    },
+    {
+      "_id": "dqHZlgpqXDXxLVlJ",
+      "name": "Escorregadia",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>+5 em Acrobacia para escapar de agarrar.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!Q4sExLr8KChjvEyy.dqHZlgpqXDXxLVlJ"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "lontra-de-mare",
+      "vinculoId": "lontra-de-mare",
+      "vinculo": {
+        "animal": "lontra-de-mare",
+        "familiar": true
+      },
+      "provisorio": false
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
+    }
+  },
+  "_key": "!actors!Q4sExLr8KChjvEyy"
+}

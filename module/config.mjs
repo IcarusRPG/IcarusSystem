@@ -140,6 +140,11 @@ export const arquivoDoVinculo = nome => `Vinculo Selvagem - ${nome}.png`;
 export const imagemDoVinculo = (nome, arquivo = arquivoDoVinculo(nome)) =>
   encodeURI(`systems/${SISTEMA_ID}/img/Icones/${PASTA_ICONES_PODERES}/${arquivo}`);
 export const ICONE_VINCULO_PADRAO = "icons/svg/pawprint.svg";
+/** Imagens dos familiares do Místico: img/Icones/poderes e habilidades/Familiar Elemental - <Nome>.png (mesma regra). */
+export const arquivoDoFamiliar = nome => `Familiar Elemental - ${nome}.png`;
+export const imagemDoFamiliar = (nome, arquivo = arquivoDoFamiliar(nome)) =>
+  encodeURI(`systems/${SISTEMA_ID}/img/Icones/${PASTA_ICONES_PODERES}/${arquivo}`);
+export const ICONE_FAMILIAR_PADRAO = "icons/svg/pawprint.svg";
 /** Ficha dos animais do Vínculo (flags.core.sheetClass): "<sistema>.<classe registrada>". */
 export const FICHA_ANIMAL = `${SISTEMA_ID}.FichaAnimal`;
 

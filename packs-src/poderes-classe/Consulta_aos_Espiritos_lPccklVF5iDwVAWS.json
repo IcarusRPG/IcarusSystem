@@ -1,0 +1,38 @@
+{
+  "_id": "lPccklVF5iDwVAWS",
+  "name": "Consulta aos Espíritos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, em um ritual de <strong>10 minutos</strong>, você gasta 2 PM e faz uma pergunta a um espírito ancestral. O Mestre responde com <strong>sim, não ou \"não sei\"</strong> (e pode dar uma pista). A resposta só é confiável se a pergunta for sobre algo que o espírito poderia saber.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__consulta-aos-espiritos",
+      "classe": "mistico",
+      "poder": "consulta-aos-espiritos",
+      "inferido": true
+    }
+  },
+  "_key": "!items!lPccklVF5iDwVAWS"
+}

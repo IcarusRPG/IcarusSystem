@@ -1,0 +1,38 @@
+{
+  "_id": "SKQwj4dNrKSv7ny9",
+  "name": "Rajada Veloz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, você pode usar a Rajada Elemental como <strong>ação de movimento</strong>, pagando <strong>+1 PM</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__rajada-veloz",
+      "classe": "mistico",
+      "poder": "rajada-veloz",
+      "inferido": true
+    }
+  },
+  "_key": "!items!SKQwj4dNrKSv7ny9"
+}

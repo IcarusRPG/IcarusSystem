@@ -1,0 +1,38 @@
+{
+  "_id": "vA6CmB2sgw3b5CDa",
+  "name": "Sopro Abrasador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "elemento Chama",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 3 PM e solta um cone de <strong>6 m</strong> de chamas: criaturas na área sofrem <strong>3d6 de dano de Fogo</strong> (Reflexos, CD de místico, reduz à metade).",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__sopro-abrasador",
+      "classe": "mistico",
+      "poder": "sopro-abrasador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!vA6CmB2sgw3b5CDa"
+}

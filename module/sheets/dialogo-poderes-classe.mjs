@@ -11,6 +11,7 @@ import { dadosDoPoderDeClasse } from "../dados-compendios.mjs";
 import { classeDoAtor, idsDeClasseDoAtor, contagemDeClasseDoAtor, contadorDePoderes } from "../classes.mjs";
 import ICONES_CLASSES from "../dados/icones-classes.mjs";
 import { resolverEscolha } from "../escolhas.mjs";
+import { elementosDosItens } from "../mistico-dados.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const loc = k => game.i18n.localize(k);
@@ -25,7 +26,9 @@ export function situacaoParaValidar(actor, classe) {
     treino: Object.fromEntries(PERICIAS.map(p => [p.chave, s.pericias[p.chave].treino])),
     tem: idsDeClasseDoAtor(actor),
     contagem: contagemDeClasseDoAtor(actor),
-    grupos: gruposEscolhidos(classe, actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {})
+    grupos: gruposEscolhidos(classe, actor.getFlag(SISTEMA_ID, "escolhasClasse") ?? {}),
+    // Místico: elementos que conhece (poderes de técnica só aparecem com o elemento)
+    elementos: classe?.id === "mistico" ? elementosDosItens([...actor.items]) : undefined
   };
 }
 

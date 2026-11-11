@@ -150,5 +150,13 @@ export default {
     ],
     "escudo": true,
     "tunicas": false
+  },
+  "mistico": {
+    "armas": [
+      "simples"
+    ],
+    "armaduras": [],
+    "escudo": false,
+    "tunicas": true
   }
 };

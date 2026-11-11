@@ -11,7 +11,7 @@
       "caption": "Icarus RPG"
     }
   ],
-  "version": "0.29.0",
+  "version": "0.30.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -217,6 +217,19 @@
       "flags": {}
     },
     {
+      "name": "familiares",
+      "label": "Icarus — Familiares Elementais (Místico)",
+      "path": "packs/familiares",
+      "type": "Actor",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "origens",
       "label": "Icarus — Origens",
       "path": "packs/origens",
@@ -285,6 +298,7 @@
         "habilidades-classe",
         "poderes-classe",
         "vinculos",
+        "familiares",
         "origens",
         "poderes-origem",
         "itens-comuns",
@@ -300,6 +314,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.29.0/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.30.0/icarus-rpg.zip",
   "socket": true
 }

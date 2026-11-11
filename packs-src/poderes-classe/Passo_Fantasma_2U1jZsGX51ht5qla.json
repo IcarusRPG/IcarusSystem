@@ -1,0 +1,38 @@
+{
+  "_id": "2U1jZsGX51ht5qla",
+  "name": "Passo Fantasma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "uGB5CxA7XWX42FNr",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 2 PM e se torna <strong>incorpóreo</strong> até o fim do seu turno: você pode atravessar criaturas e objetos finos (até 30 cm de espessura), mas precisa terminar o movimento em um espaço livre.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__passo-fantasma",
+      "classe": "mistico",
+      "poder": "passo-fantasma",
+      "inferido": true
+    }
+  },
+  "_key": "!items!2U1jZsGX51ht5qla"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "A98SPzLu0k22ceT1",
+  "name": "Voz do Familiar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "Gwu3GyuBWDKMMFvW",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O seu familiar <strong>fala</strong> a língua que você falar e age de forma <strong>mais independente</strong>: ele pode agir mesmo que você não o comande, seguindo o que você já mandou, e recebe <strong>+2 em Intuição e Vontade</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Familiar",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__voz-do-familiar",
+      "classe": "mistico",
+      "poder": "voz-do-familiar",
+      "inferido": false
+    }
+  },
+  "_key": "!items!A98SPzLu0k22ceT1"
+}

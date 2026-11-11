@@ -1,0 +1,170 @@
+{
+  "_id": "0vjNrWFBZQWcWOO0",
+  "name": "Ave de Vendaval",
+  "type": "personagem",
+  "img": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Ave%20de%20Vendaval.png",
+  "folder": null,
+  "sort": 400,
+  "system": {
+    "nivel": 1,
+    "tamanho": "pequeno",
+    "atributos": {
+      "FOR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "classeConfig": {
+      "manual": true
+    },
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "defesa": {
+      "outros": 0
+    },
+    "deslocamento": 3,
+    "resistencias": {
+      "rdGeral": 0
+    },
+    "pericias": {
+      "luta": {
+        "treino": 1
+      },
+      "acrobacia": {
+        "treino": 1
+      },
+      "iniciativa": {
+        "treino": 1
+      },
+      "visao": {
+        "treino": 1
+      },
+      "audicao": {
+        "treino": 1
+      },
+      "reflexos": {
+        "treino": 1
+      }
+    },
+    "notas": "<p><strong>Familiar Elemental do Místico.</strong> Elemento: Vento. Deslocamentos: voo 18 m.</p>"
+  },
+  "prototypeToken": {
+    "name": "Ave de Vendaval",
+    "actorLink": true,
+    "disposition": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/Familiar%20Elemental%20-%20Ave%20de%20Vendaval.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "LIhUzf0qsqHaPEtQ",
+      "name": "Garras",
+      "type": "arma",
+      "img": "icons/svg/claw.svg",
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d4",
+        "tiposDano": [
+          "corte"
+        ],
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "proficiencia": "sim",
+        "empunhada": true,
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "quantidade": 1,
+        "espacos": 0,
+        "preco": 0,
+        "descricao": ""
+      },
+      "flags": {
+        "icarus-rpg": {
+          "natural": true,
+          "somaNivel": true
+        }
+      },
+      "_key": "!actors.items!0vjNrWFBZQWcWOO0.LIhUzf0qsqHaPEtQ"
+    },
+    {
+      "_id": "qElqbCVHv75mPg3a",
+      "name": "Rasante",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por rodada, depois de atacar, a ave se desloca até 6 m como ação livre.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!0vjNrWFBZQWcWOO0.qElqbCVHv75mPg3a"
+    },
+    {
+      "_id": "mSNYodsCgTbRQej7",
+      "name": "Vento a Favor",
+      "type": "poder",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "fonte": "geral",
+        "descricao": "<p>Uma vez por cena, como ação de movimento, o místico ou um aliado adjacente recebe +6 m de deslocamento até o fim da cena.</p>"
+      },
+      "flags": {
+        "icarus-rpg": {
+          "vinculo": true
+        }
+      },
+      "_key": "!actors.items!0vjNrWFBZQWcWOO0.mSNYodsCgTbRQej7"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "ave-de-vendaval",
+      "vinculoId": "ave-de-vendaval",
+      "vinculo": {
+        "animal": "ave-de-vendaval",
+        "familiar": true
+      },
+      "provisorio": false
+    },
+    "core": {
+      "sheetClass": "icarus-rpg.FichaAnimal"
+    }
+  },
+  "_key": "!actors!0vjNrWFBZQWcWOO0"
+}

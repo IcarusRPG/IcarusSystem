@@ -1,0 +1,38 @@
+{
+  "_id": "2JYdLcFGFwVZuoEx",
+  "name": "Conjuração Mística",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você lança magias da lista <strong>Arcana</strong>, usando Sabedoria como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 1º nível, nível 2 no 5º, nível 3 no 9º, nível 4 no 13º e nível 5 no 17º.<br>• <strong>Escolas.</strong> Você escolhe <strong>quatro escolas de magia</strong> (permanente): a <strong>Espiritual</strong>, que é obrigatória, mais três à sua escolha. Você só aprende magias dessas escolas.<br>• <strong>Magias conhecidas.</strong> Você conhece 3 magias no 1º nível e aprende <strong>mais 1 a cada nível ímpar</strong> a partir do 3º. Toda magia deve ser de um nível que você já possa lançar. Ao subir de nível, você pode trocar uma magia conhecida por outra.<br>• <strong>Magia divina.</strong> Você só lança magias da lista <strong>Divina</strong> se escolher o poder <strong>Ecos dos Ancestrais</strong>. Elas devem ser <strong>das mesmas escolas</strong> que você escolheu.<br>• <strong>Armadura.</strong> Você pode lançar magias usando túnicas.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__conjuracao-mistica",
+      "classe": "mistico",
+      "habilidade": "conjuracao-mistica",
+      "inferido": false
+    }
+  },
+  "_key": "!items!2JYdLcFGFwVZuoEx"
+}

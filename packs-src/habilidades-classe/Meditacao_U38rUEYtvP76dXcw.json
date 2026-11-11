@@ -1,0 +1,38 @@
+{
+  "_id": "U38rUEYtvP76dXcw",
+  "name": "Meditação",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 5004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, em <strong>10 minutos de meditação</strong> calma, você recupera <strong>1d6 + Sabedoria PM</strong>. Você precisa passar em um <strong>teste de Concentração (CD 15)</strong>: se falhar, a meditação não recupera PM (você pode tentar de novo, e o uso do dia só é gasto no sucesso). Qualquer interrupção cancela a meditação.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__meditacao",
+      "classe": "mistico",
+      "habilidade": "meditacao",
+      "inferido": false
+    }
+  },
+  "_key": "!items!U38rUEYtvP76dXcw"
+}

@@ -1,0 +1,185 @@
+{
+  "_id": "CNbbDnlTZqNpqlK1",
+  "name": "Místico",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 1500,
+  "system": {
+    "classeId": "mistico",
+    "papel": "Conjurador Espiritual",
+    "atributoChave": "Sabedoria",
+    "pv": {
+      "inicial": 14,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 5,
+      "porNivel": 5,
+      "atributo": "SAB",
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "5 + Sabedoria no 1º nível; +5 por nível seguinte"
+    },
+    "pericias": {
+      "obrigatorias": "Misticismo e Vontade",
+      "escolha": 4,
+      "lista": [
+        "Acrobacia",
+        "Atletismo",
+        "Concentração",
+        "Cura",
+        "Diplomacia",
+        "Fortitude",
+        "Iniciativa",
+        "Intuição",
+        "Luta",
+        "Pontaria",
+        "Reflexos",
+        "Religião",
+        "Sobrevivência"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples, túnicas. Nenhuma armadura, nenhum escudo",
+      "armas": [
+        "simples"
+      ],
+      "armaduras": [],
+      "escudo": false,
+      "tunicas": true
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Conjuração Mística",
+          "Dobra Elemental"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Olhos do Outro Lado"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Familiar Elemental"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Meditação",
+          "2º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "3º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Alma Desperta"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [
+          "Evolução do Familiar",
+          "4º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [
+          "Ascensão Espiritual",
+          "5º nível de magia"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Harmonia"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O místico nasceu com um pé em cada mundo. Enquanto o clérigo pede e o arcanista calcula, o místico escuta: o fogo tem um temperamento, a água tem uma memória, a pedra tem paciência e o vento não tem dono. Ele aprendeu a conversar com cada um deles até o elemento passar a responder pelo que ele quer, não pelo que ele manda.</p><p>Todo místico carrega um espírito por perto, um pequeno guardião de brasa, maré, pedra ou vento que anda ao seu lado. E todo místico sabe, no fundo, que existe um lugar para além deste mundo onde os antepassados esperam. Os mais velhos conseguem ir até lá e voltar trazendo um pedaço desse outro lado no corpo.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico"
+    }
+  },
+  "_key": "!items!CNbbDnlTZqNpqlK1"
+}

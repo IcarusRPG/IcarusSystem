@@ -1,0 +1,38 @@
+{
+  "_id": "vlUJC1M8AHd902UQ",
+  "name": "Harmonia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "GutgZxCbsMP5PJsS",
+  "sort": 20008,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você conhece os <strong>quatro elementos</strong> (a Rajada Elemental pode usar qualquer um) e fica <strong>imune a medo</strong>. Você pode usar a Ascensão Espiritual <strong>duas vezes por dia</strong>.",
+    "classe": "mistico",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__harmonia",
+      "classe": "mistico",
+      "habilidade": "harmonia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!vlUJC1M8AHd902UQ"
+}

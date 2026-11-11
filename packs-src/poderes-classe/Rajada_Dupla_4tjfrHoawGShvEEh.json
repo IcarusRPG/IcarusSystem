@@ -1,0 +1,38 @@
+{
+  "_id": "4tjfrHoawGShvEEh",
+  "name": "Rajada Dupla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "96WbOw7x2MnXXB5d",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa a Rajada Elemental, pode gastar +2 PM para atacar <strong>uma segunda criatura</strong>, em alcance curto, adjacente ao primeiro alvo.",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes de Dobra",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__rajada-dupla",
+      "classe": "mistico",
+      "poder": "rajada-dupla",
+      "inferido": true
+    }
+  },
+  "_key": "!items!4tjfrHoawGShvEEh"
+}

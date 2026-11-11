@@ -1,0 +1,38 @@
+{
+  "_id": "q0eBFDxoumh0ddzf",
+  "name": "Segundo Familiar",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/M%C3%ADstico.png",
+  "folder": "Gwu3GyuBWDKMMFvW",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>outro</strong> familiar da lista, à sua escolha. Você só pode ter <strong>um</strong> familiar invocado por vez, e invocar outro dispensa o primeiro. Você pode escolher este poder várias vezes (um familiar diferente por vez).",
+    "classe": "mistico",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Familiar",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "mistico__segundo-familiar",
+      "classe": "mistico",
+      "poder": "segundo-familiar",
+      "inferido": false
+    }
+  },
+  "_key": "!items!q0eBFDxoumh0ddzf"
+}

@@ -32,7 +32,8 @@ export const FLAGS_DE_CLASSE = [
   "dogma", "anatema", "soloSagrado", "intervencaoDias", "intervencaoFalhou", "ultimaGraca", "feEscudo", "armaConsagrada", "resguardo",
   "voto", "sentenciada", "marca", "toqueRestauradorCena", "muralhaUsada", "auroraUsada", "vereditoUsado", "vereditoPendente", "corpoEscudoUsado", "corpoEscudo", "folegoUsado", "ultimoAvisoUsado", "horaFinal", "horaFinalDia",
   "circulo", "teiaUsada", "feraAncestralUsada", "feraAncestral", "florestaUsada", "florescerUsado", "milFormas", "milFormasDia", "ervas", "ervasRaras", "arvoresConhecidas",
-  "ruptura", "precoTurno", "sangriaTotalUsada", "naoCaioUsado", "aclamacaoUsada", "dorFertilCena", "dorFertilRodada", "amortecer", "banhoRubro", "banhoRubroDia"
+  "ruptura", "precoTurno", "sangriaTotalUsada", "naoCaioUsado", "aclamacaoUsada", "dorFertilCena", "dorFertilRodada", "amortecer", "banhoRubro", "banhoRubroDia",
+  "meditacaoDia", "ascensaoUsos", "ascensao", "olhosDoOutroLado"
 ];
 const STATUS_DE_CLASSE = ["furia", "bracos-astrais"];
 

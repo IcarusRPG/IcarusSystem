@@ -1,0 +1,15 @@
+{
+  "_id": "uGB5CxA7XWX42FNr",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "ndBLjeM9T2Rg1l06",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:mistico:poderes-gerais"
+    }
+  },
+  "_key": "!folders!uGB5CxA7XWX42FNr"
+}
