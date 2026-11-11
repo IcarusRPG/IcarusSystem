@@ -1,0 +1,38 @@
+{
+  "_id": "x5JLjnwFDQdKzPRE",
+  "name": "Interpor-se",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 3008,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando um aliado <strong>adjacente</strong> a você é alvo de um ataque, você pode gastar 1 PM e a sua reação para se tornar o alvo do ataque <strong>no lugar dele</strong>. Você precisa conseguir ver o aliado e o atacante.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__interpor-se",
+      "classe": "paladino",
+      "habilidade": "interpor-se",
+      "inferido": true
+    }
+  },
+  "_key": "!items!x5JLjnwFDQdKzPRE"
+}

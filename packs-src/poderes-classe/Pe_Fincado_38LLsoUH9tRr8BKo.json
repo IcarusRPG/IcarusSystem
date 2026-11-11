@@ -1,0 +1,38 @@
+{
+  "_id": "38LLsoUH9tRr8BKo",
+  "name": "Pé Fincado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "zIBSgaCiSfDpkbgY",
+  "sort": 1500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você <strong>não pode ser empurrado, puxado nem derrubado</strong> por efeitos de movimento forçado, e recebe <strong>+2 em Atletismo e Fortitude</strong> para resistir a agarrar, derrubar e empurrar.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Muralha",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Muralha",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__pe-fincado",
+      "classe": "paladino",
+      "poder": "pe-fincado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!38LLsoUH9tRr8BKo"
+}

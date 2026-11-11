@@ -1,0 +1,38 @@
+{
+  "_id": "7HYiJ6AQYeOfXoMq",
+  "name": "Hora Final",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 20006,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 10,
+    "prerequisito": "",
+    "nivel": 20,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por dia, como ação padrão, você gasta 10 PM e se entrega por inteiro à sua divindade. Até o fim da cena: você recebe <strong>+2 em testes de ataque e na Defesa</strong>, <strong>Redução de Dano 5</strong> (respeitando o teto de RD do Núcleo), a Punição Consagrada <strong>não tem limite de PM por ataque</strong> (e você paga PM normalmente) e, <strong>na primeira vez que seus PV chegariam a 0</strong>, eles ficam em <strong>1 PV</strong>. Quando a cena termina, você fica <strong>Fatigado</strong>. <em>Divino.</em>",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 20,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__hora-final",
+      "classe": "paladino",
+      "habilidade": "hora-final",
+      "inferido": true
+    }
+  },
+  "_key": "!items!7HYiJ6AQYeOfXoMq"
+}

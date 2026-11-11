@@ -8,6 +8,7 @@
     <span class="magias-info">{{localize "ICARUS.Magias.NivelMaximo"}}: <b>{{magias.nivelMaximo}}º</b></span>
     <span class="magias-info">PM <b>{{system.pm.value}} / {{system.pm.max}}</b></span>
   </div>
+  {{#if magias.aviso}}<p class="aviso">{{magias.aviso}}</p>{{/if}}
   {{#if magias.mantidas.length}}
   <div class="painel magias-mantidas">
     <b>{{localize "ICARUS.Mantidas.Titulo"}}</b>

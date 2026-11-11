@@ -1,0 +1,15 @@
+{
+  "_id": "ERBt3d0O0FMVTXVW",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "F29bTTKqG6iKtTRQ",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:paladino:poderes-gerais"
+    }
+  },
+  "_key": "!folders!ERBt3d0O0FMVTXVW"
+}

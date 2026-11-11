@@ -1,0 +1,38 @@
+{
+  "_id": "8RwC2fVIUM4scKus",
+  "name": "Aura de Resguardo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 5004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 5,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você e os aliados em alcance de <strong>3 m</strong> (centrada em você) recebem <strong>+1 em testes de resistência</strong>. O bônus passa a <strong>+2 no 13º nível</strong>. A aura é passiva e acompanha você. <em>Divino.</em>",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__aura-de-resguardo",
+      "classe": "paladino",
+      "habilidade": "aura-de-resguardo",
+      "inferido": false
+    }
+  },
+  "_key": "!items!8RwC2fVIUM4scKus"
+}

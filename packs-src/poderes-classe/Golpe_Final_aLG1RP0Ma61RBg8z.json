@@ -1,0 +1,38 @@
+{
+  "_id": "aLG1RP0Ma61RBg8z",
+  "name": "Golpe Final",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "r0pczZVlwDOmDrLq",
+  "sort": 2700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Contra uma sentenciada com <strong>menos da metade dos PV</strong>, a Punição Consagrada causa <strong>+1d6 de dano de Essência</strong> adicional (uma vez por ataque).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Sentença",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Sentença",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__golpe-final",
+      "classe": "paladino",
+      "poder": "golpe-final",
+      "inferido": false
+    }
+  },
+  "_key": "!items!aLG1RP0Ma61RBg8z"
+}

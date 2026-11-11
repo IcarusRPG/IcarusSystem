@@ -1,0 +1,15 @@
+{
+  "_id": "F29bTTKqG6iKtTRQ",
+  "name": "Paladino",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:paladino"
+    }
+  },
+  "_key": "!folders!F29bTTKqG6iKtTRQ"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "UNQWRDWXrjl5EywY",
+  "name": "Voto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 3003,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você jura um Voto que define o seu papel no grupo. A escolha é permanente. Cada Voto concede uma habilidade no 3º nível e mais uma no 9º e no 15º.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__voto",
+      "classe": "paladino",
+      "habilidade": "voto",
+      "inferido": false
+    }
+  },
+  "_key": "!items!UNQWRDWXrjl5EywY"
+}

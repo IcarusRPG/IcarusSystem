@@ -1,0 +1,15 @@
+{
+  "_id": "zIBSgaCiSfDpkbgY",
+  "name": "Poderes do Voto da Muralha",
+  "type": "Item",
+  "folder": "F29bTTKqG6iKtTRQ",
+  "sorting": "a",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:paladino:poderes-do-voto-da-muralha"
+    }
+  },
+  "_key": "!folders!zIBSgaCiSfDpkbgY"
+}

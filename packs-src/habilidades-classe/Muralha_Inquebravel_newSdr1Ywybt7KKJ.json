@@ -1,0 +1,38 @@
+{
+  "_id": "newSdr1Ywybt7KKJ",
+  "name": "Muralha Inquebrável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 15010,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 5,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação de movimento, você gasta 5 PM: até o fim da cena, você recebe <strong>Redução de Dano 5</strong> (respeitando o teto de RD do Núcleo) e os aliados adjacentes a você recebem <strong>+2 na Defesa</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__muralha-inquebravel",
+      "classe": "paladino",
+      "habilidade": "muralha-inquebravel",
+      "inferido": true
+    }
+  },
+  "_key": "!items!newSdr1Ywybt7KKJ"
+}

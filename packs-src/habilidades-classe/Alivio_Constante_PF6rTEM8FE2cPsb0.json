@@ -1,0 +1,38 @@
+{
+  "_id": "PF6rTEM8FE2cPsb0",
+  "name": "Alívio Constante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 9013,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "No início de cada turno seu, <strong>aliados dentro da sua Aura de Resguardo</strong> que estejam com <strong>menos da metade dos PV</strong> recuperam <strong>1d6 PV</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__alivio-constante",
+      "classe": "paladino",
+      "habilidade": "alivio-constante",
+      "inferido": false
+    }
+  },
+  "_key": "!items!PF6rTEM8FE2cPsb0"
+}

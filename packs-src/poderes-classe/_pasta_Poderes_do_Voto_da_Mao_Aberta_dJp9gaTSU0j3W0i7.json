@@ -1,0 +1,15 @@
+{
+  "_id": "dJp9gaTSU0j3W0i7",
+  "name": "Poderes do Voto da Mão Aberta",
+  "type": "Item",
+  "folder": "F29bTTKqG6iKtTRQ",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:paladino:poderes-do-voto-da-mao-aberta"
+    }
+  },
+  "_key": "!folders!dJp9gaTSU0j3W0i7"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "f8df00FsoHs9eUs3",
+  "name": "Alívio Imediato",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "4º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa o Toque Restaurador, você pode gastar +1 PM para que o alvo também remova uma condição à sua escolha entre Abalado, Doente, Enjoado, Envenenado, Fatigado e Fraco.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__alivio-imediato",
+      "classe": "paladino",
+      "poder": "alivio-imediato",
+      "inferido": true
+    }
+  },
+  "_key": "!items!f8df00FsoHs9eUs3"
+}

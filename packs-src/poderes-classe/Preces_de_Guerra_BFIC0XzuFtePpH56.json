@@ -1,0 +1,38 @@
+{
+  "_id": "BFIC0XzuFtePpH56",
+  "name": "Preces de Guerra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>duas magias divinas</strong> de qualquer nível que já possa lançar, e passa a lançar magias da lista <strong>Divina</strong>, usando <strong>Carisma</strong> como atributo-chave (CD = 10 + metade do seu nível + Carisma). Você acessa magias de nível 1 no 5º nível, nível 2 no 9º, nível 3 no 13º e nível 4 no 17º (o paladino não lança magias de nível 5). Você pode lançar magias usando qualquer armadura e escudo em que tenha proficiência. Sem este poder, o paladino <strong>não lança magias</strong>. Você pode escolher este poder várias vezes: cada vez, aprende mais duas magias divinas.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__preces-de-guerra",
+      "classe": "paladino",
+      "poder": "preces-de-guerra",
+      "inferido": false
+    }
+  },
+  "_key": "!items!BFIC0XzuFtePpH56"
+}

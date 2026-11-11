@@ -1,0 +1,38 @@
+{
+  "_id": "mzSOcdJLdjPYLQsa",
+  "name": "Bênção de Arma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e toca a arma de um aliado: até o fim da cena, ela é considerada <strong>mágica</strong> e causa <strong>+1d4 de dano de Essência</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__bencao-de-arma",
+      "classe": "paladino",
+      "poder": "bencao-de-arma",
+      "inferido": true
+    }
+  },
+  "_key": "!items!mzSOcdJLdjPYLQsa"
+}

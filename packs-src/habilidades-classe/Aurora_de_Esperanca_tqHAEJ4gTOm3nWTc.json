@@ -1,0 +1,38 @@
+{
+  "_id": "tqHAEJ4gTOm3nWTc",
+  "name": "Aurora de Esperança",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 15014,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 8,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM: todos os aliados em alcance curto recebem os efeitos do seu Toque Restaurador (<strong>sem o limite de uma vez por cena</strong> e sem pagar o custo dele) e <strong>removem uma condição</strong> à escolha de cada um entre Abalado, Doente, Enjoado, Envenenado, Fatigado e Fraco. <em>Divino.</em>",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__aurora-de-esperanca",
+      "classe": "paladino",
+      "habilidade": "aurora-de-esperanca",
+      "inferido": true
+    }
+  },
+  "_key": "!items!tqHAEJ4gTOm3nWTc"
+}

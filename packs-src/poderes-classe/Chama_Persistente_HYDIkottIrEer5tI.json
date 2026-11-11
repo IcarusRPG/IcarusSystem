@@ -1,0 +1,38 @@
+{
+  "_id": "HYDIkottIrEer5tI",
+  "name": "Chama Persistente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "dJp9gaTSU0j3W0i7",
+  "sort": 2000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Aliados curados pelo seu Toque Restaurador recebem <strong>+1 nos testes de ataque e de resistência</strong> até o início do seu próximo turno.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Mão Aberta",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Mão Aberta",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__chama-persistente",
+      "classe": "paladino",
+      "poder": "chama-persistente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!HYDIkottIrEer5tI"
+}

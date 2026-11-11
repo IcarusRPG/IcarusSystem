@@ -29,7 +29,8 @@ export const FLAGS_DE_CLASSE = [
   "classeId", "escolhasClasse", "caminho", "vinculoAnimal", "furia", "presa", "bracosAstrais",
   "furtivoUsadoNaRodada", "kiaiUsadoNaRodada", "tiroLendarioUsado", "saqueUsadoNoTurno", "folegoUsado", "agredirExtra",
   "periciasClasse", "treinoAntesClasse", "proficienciasAntesClasse", "periciaRefinada", "periciaEspecializada", "tradicaoMagias", "focoLiberado", "elementoDragao", "defesaAtributo", "rendimentos", "cofreNaCena", "majestade", "estandarte", "escolta", "estilo", "chamaAtiva", "execucao", "estadioUsado", "instrumentoLiberado", "encorajado",
-  "dogma", "anatema", "soloSagrado", "intervencaoDias", "intervencaoFalhou", "ultimaGraca", "feEscudo", "armaConsagrada", "resguardo"
+  "dogma", "anatema", "soloSagrado", "intervencaoDias", "intervencaoFalhou", "ultimaGraca", "feEscudo", "armaConsagrada", "resguardo",
+  "voto", "sentenciada", "marca", "toqueRestauradorCena", "muralhaUsada", "auroraUsada", "vereditoUsado", "vereditoPendente", "corpoEscudoUsado", "corpoEscudo", "folegoUsado", "ultimoAvisoUsado", "horaFinal", "horaFinalDia"
 ];
 const STATUS_DE_CLASSE = ["furia", "bracos-astrais"];
 

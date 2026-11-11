@@ -1,0 +1,38 @@
+{
+  "_id": "aMJ1SnIMS2xUiFYE",
+  "name": "Punição Consagrada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 1001,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você <strong>acerta</strong> um ataque corpo a corpo, pode gastar PM e decidir <strong>depois do acerto</strong>: cada PM gasto causa <strong>+1d6 de dano de Essência</strong> (contra mortos-vivos, +1d8). O máximo de PM por ataque é <strong>1 no 1º nível, 2 no 5º, 3 no 10º, 4 no 15º e 5 no 20º</strong>. Os PM são gastos mesmo que o ataque tenha sido contra um alvo imune à Essência.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__punicao-consagrada",
+      "classe": "paladino",
+      "habilidade": "punicao-consagrada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!aMJ1SnIMS2xUiFYE"
+}

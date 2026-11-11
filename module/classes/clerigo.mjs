@@ -62,24 +62,68 @@ async function gastarPM(actor, pm) {
 /** Concedidos de uma divindade (ou de todas, sem id) que o ator tem. */
 const concedidosDe = (actor, divindadeId = null) => actor.items.filter(i => i.flags?.[F]?.concedido && (!divindadeId || i.flags[F].divindade === divindadeId));
 
-/** Jura a divindade: devoção na ficha, sai o que era de outra divindade, entram os 3 poderes dela. */
-export async function jurarDivindade(actor, divindadeId) {
+/** Diálogo do Paladino: escolhe exatamente "quantos" dos Poderes Concedidos; null se cancelar. */
+async function escolherConcedidos(actor, divindadeId, quantos) {
+  const poderes = poderesDaDivindade(divindadeId);
+  for (;;) {
+    const r = await DialogV2.wait({
+      window: { title: fmt("ICARUS.Paladino.ConcedidosTitulo", { divindade: divindadePorId(divindadeId)?.nome ?? "" }) },
+      content: `<div class="icarus-uso"><p>${esc(fmt("ICARUS.Paladino.ConcedidosTexto", { n: quantos }))}</p>
+        ${poderes.map(p => `<label class="chk"><input type="checkbox" name="poder" value="${p.id}"> <b>${esc(p.nome)}</b> <small>${esc(p.meta ?? "")}</small></label>`).join("")}</div>`,
+      buttons: [
+        { action: "ok", label: loc("ICARUS.Devocao.Confirmar"), default: true, callback: (ev, b) => [...b.form.querySelectorAll("input[name=poder]:checked")].map(i => i.value) },
+        { action: "cancelar", label: loc("ICARUS.Escolhas.DecidirDepois") }
+      ],
+      rejectClose: false
+    });
+    if (!Array.isArray(r)) return null;
+    if (r.length === quantos) return r;
+    ui.notifications.warn(fmt("ICARUS.Comuns.EscolhaN", { n: quantos }));
+  }
+}
+
+/**
+ * Jura a divindade: devoção na ficha, sai o que era de outra divindade, entram os poderes dela
+ * (Clérigo: os 3; Paladino: 2 à escolha). Sem escolher, a devoção fica e os poderes esperam o
+ * botão "Escolher os Poderes Concedidos" (aba Classe).
+ */
+export async function jurarDivindade(actor, divindadeId, { quantos = null } = {}) {
   if (!divindadePorId(divindadeId)) return;
   const deOutra = concedidosDe(actor).filter(i => i.flags[F].divindade !== divindadeId);
   if (deOutra.length) await actor.deleteEmbeddedDocuments("Item", deOutra.map(i => i.id));
   await actor.update({ "system.identidade.divindade": divindadeId });
   const possuidos = new Set(concedidosDe(actor, divindadeId).map(i => i.flags[F].id));
-  const novos = poderesDaDivindade(divindadeId).filter(p => !possuidos.has(p.id)).map(p => itemDoPoderConcedido(p.id)).filter(Boolean);
+  let ids = poderesDaDivindade(divindadeId).map(p => p.id);
+  if (quantos !== null) {
+    if (possuidos.size >= quantos) return;
+    ids = (await escolherConcedidos(actor, divindadeId, quantos)) ?? [];
+  }
+  const novos = ids.filter(id => !possuidos.has(id)).map(id => itemDoPoderConcedido(id)).filter(Boolean);
   if (novos.length) await actor.createEmbeddedDocuments("Item", novos);
 }
 
-APOS_ESCOLHA.set("fe-jurada", (actor, flags) => (ehClerigo(actor) ? jurarDivindade(actor, flags?.divindade) : null));
+/** Quantos Poderes Concedidos a Fé Jurada dá pela classe (null = todos). */
+export const concedidosDaClasse = classeId => (classeId === "paladino" ? 2 : null);
 
-/** O jogador não troca a divindade jurada (Fé Jurada feita); o Mestre pode. */
+APOS_ESCOLHA.set("fe-jurada", (actor, flags) => {
+  const classe = classeDoAtor(actor)?.id;
+  if (classe !== "clerigo" && classe !== "paladino") return null;
+  return jurarDivindade(actor, flags?.divindade, { quantos: concedidosDaClasse(classe) });
+});
+
+/** O jogador não troca a divindade jurada (Fé Jurada feita, Clérigo ou Paladino); o Mestre pode. */
 export function divindadeTravada(actor) {
-  if (game.user?.isGM || !ehClerigo(actor)) return false;
-  return !!itemDeClasse(actor, "clerigo", "fe-jurada")?.flags?.[F]?.escolhaFeita;
+  const classe = classeDoAtor(actor)?.id;
+  if (game.user?.isGM || (classe !== "clerigo" && classe !== "paladino")) return false;
+  return !!itemDeClasse(actor, classe, "fe-jurada")?.flags?.[F]?.escolhaFeita;
 }
+
+/** Paladino: escolher os 2 Poderes Concedidos depois (se fechou o diálogo). */
+ACOES_DE_MECANICA.set("devocao:concedidos", actor => {
+  const div = actor.system.identidade.divindade;
+  return div ? jurarDivindade(actor, div, { quantos: concedidosDaClasse(classeDoAtor(actor)?.id) }) : null;
+});
+export { concedidosDe };
 
 /* ---------------- Violação de Dogma ---------------- */
 
@@ -118,6 +162,8 @@ ACOES_DE_MECANICA.set("clerigo:dia", async actor => {
   if (dogma?.bloqueioPMDias) mudancas[`flags.${F}.dogma.bloqueioPMDias`] = passarUmDia(dogma.bloqueioPMDias);
   const dias = actor.getFlag(F, "intervencaoDias");
   if (dias) mudancas[`flags.${F}.intervencaoDias`] = passarUmDia(dias);
+  // Paladino: a Hora Final (1 vez por dia) volta
+  if (actor.getFlag(F, "horaFinalDia")) mudancas[`flags.${F}.-=horaFinalDia`] = null;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
 });
 

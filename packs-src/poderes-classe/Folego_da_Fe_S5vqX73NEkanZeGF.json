@@ -1,0 +1,38 @@
+{
+  "_id": "S5vqX73NEkanZeGF",
+  "name": "Fôlego da Fé",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação de movimento, você gasta 2 PM e <strong>você mesmo</strong> recupera <strong>1d8 + seu nível</strong> em PV. <strong>Este poder afeta somente você, nunca aliados.</strong>",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__folego-da-fe",
+      "classe": "paladino",
+      "poder": "folego-da-fe",
+      "inferido": true
+    }
+  },
+  "_key": "!items!S5vqX73NEkanZeGF"
+}

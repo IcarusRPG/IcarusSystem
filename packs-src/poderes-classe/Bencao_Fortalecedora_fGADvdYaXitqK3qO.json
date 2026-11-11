@@ -1,0 +1,38 @@
+{
+  "_id": "fGADvdYaXitqK3qO",
+  "name": "Bênção Fortalecedora",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "dJp9gaTSU0j3W0i7",
+  "sort": 1900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e toca um aliado: ele recebe <strong>1d8 + Carisma PV temporários</strong> até o fim da cena.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Mão Aberta",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Mão Aberta",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__bencao-fortalecedora",
+      "classe": "paladino",
+      "poder": "bencao-fortalecedora",
+      "inferido": true
+    }
+  },
+  "_key": "!items!fGADvdYaXitqK3qO"
+}

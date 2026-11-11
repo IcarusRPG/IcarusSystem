@@ -1,0 +1,38 @@
+{
+  "_id": "Rq0gB2cVnY7ZeaVn",
+  "name": "Cadeia de Sentenças",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "r0pczZVlwDOmDrLq",
+  "sort": 2800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Dívida Paga",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando reduz a sua sentenciada a 0 PV, você pode sentenciar <strong>outra criatura em alcance curto</strong> como ação livre (sem pagar PM).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Sentença",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Sentença",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__cadeia-de-sentencas",
+      "classe": "paladino",
+      "poder": "cadeia-de-sentencas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Rq0gB2cVnY7ZeaVn"
+}

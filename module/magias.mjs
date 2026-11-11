@@ -299,8 +299,11 @@ export function contextoDasMagias(actor) {
   const mantidas = mantidasDoAtor(actor).map(m => ({ ...m,
     info: m.tipo === "sustentada" ? (m.duradoura ? loc("ICARUS.Mantidas.InfoDuradoura") : loc("ICARUS.Mantidas.InfoSustentada"))
       : fmt("ICARUS.Mantidas.InfoConcentracao", { cd: cdDeConcentracao(m.nivel) }) }));
+  // Paladino: só lança magias com Preces de Guerra
+  const semPreces = s.identidade?.classe === "paladino" && !actor.items.some(i => i.flags?.[F]?.id === "paladino__preces-de-guerra" && i.flags?.[F]?.magiasExtras);
   return {
     total: itens.length,
+    aviso: semPreces ? loc("ICARUS.Paladino.SemPreces") : "",
     mantidas,
     grupos,
     cd: s.magia?.cd,

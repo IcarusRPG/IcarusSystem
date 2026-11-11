@@ -1,0 +1,38 @@
+{
+  "_id": "K13XZMoN4xgrxaQJ",
+  "name": "Estilo: Voto da Muralha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 7,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O paladino que fica à frente.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__estilo-voto-da-muralha",
+      "classe": "paladino",
+      "habilidade": "estilo-voto-da-muralha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!K13XZMoN4xgrxaQJ"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "jkwqdmYZerL7K6dL",
+  "name": "Lâmina de Essência",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "r0pczZVlwDOmDrLq",
+  "sort": 2400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O dado da Punição Consagrada passa de d6 para <strong>d8</strong> (contra mortos-vivos, d10).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Sentença",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Sentença",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__lamina-de-essencia",
+      "classe": "paladino",
+      "poder": "lamina-de-essencia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!jkwqdmYZerL7K6dL"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "1bEKoy9YbrjqcP53",
+  "name": "Última Linha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "zIBSgaCiSfDpkbgY",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "8º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto estiver com <strong>menos da metade dos seus PV</strong>, você recebe <strong>+2 na Defesa</strong> e <strong>Redução de Dano 2</strong> (respeitando o teto de RD do Núcleo).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Muralha",
+    "nivelMinimo": 8,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Muralha",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__ultima-linha",
+      "classe": "paladino",
+      "poder": "ultima-linha",
+      "inferido": false
+    }
+  },
+  "_key": "!items!1bEKoy9YbrjqcP53"
+}

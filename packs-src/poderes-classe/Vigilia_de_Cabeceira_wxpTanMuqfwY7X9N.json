@@ -1,0 +1,38 @@
+{
+  "_id": "wxpTanMuqfwY7X9N",
+  "name": "Vigília de Cabeceira",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "dJp9gaTSU0j3W0i7",
+  "sort": 2300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Ao fim de um descanso, você pode gastar 3 PM: todos os aliados que descansaram em alcance curto recebem <strong>PV temporários iguais ao seu nível</strong> (duram até o fim do dia seguinte e não se acumulam com outros PV temporários).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Mão Aberta",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Mão Aberta",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__vigilia-de-cabeceira",
+      "classe": "paladino",
+      "poder": "vigilia-de-cabeceira",
+      "inferido": true
+    }
+  },
+  "_key": "!items!wxpTanMuqfwY7X9N"
+}

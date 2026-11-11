@@ -1,0 +1,38 @@
+{
+  "_id": "Zjx9XiqYOF8CSNsL",
+  "name": "Olhar sem Piedade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "r0pczZVlwDOmDrLq",
+  "sort": 2500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você sentencia uma criatura, ela faz um teste de <strong>Vontade</strong> (CD de paladino): se falhar, fica <strong>Abalada</strong> até o fim da cena. <em>Mental.</em>",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Sentença",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Sentença",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__olhar-sem-piedade",
+      "classe": "paladino",
+      "poder": "olhar-sem-piedade",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Zjx9XiqYOF8CSNsL"
+}
