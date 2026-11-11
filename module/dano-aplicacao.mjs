@@ -72,6 +72,24 @@ export function danoPorComponentes(resistencias, componentes, regras, { ignoraRD
  * @param {(tipo:string)=>string} [p.nomeDoTipo]
  * @returns {{ modo:"dano"|"cura"|"perda", base:number, valor:number, final:number, antes:number, depois:number, detalhe:string, partes?:object[] }}
  */
+/**
+ * PV temporários: o dano consome primeiro os temporários, depois os PV. Perda de PV e cura não
+ * mexem neles. @returns {{ usados: number, resto: number, temp: number }} temp = o que sobra
+ */
+export function consumirTemporarios(dano, temp) {
+  const t = Math.max(0, inteiro(temp) || 0);
+  const d = Math.max(0, inteiro(dano) || 0);
+  const usados = Math.min(t, d);
+  return { usados, resto: d - usados, temp: t - usados };
+}
+
+/** PV temporários não se acumulam: vale o maior. Devolve { valor, trocou } (trocou = a nova fonte vale). */
+export function novosTemporarios(atual, novo) {
+  const a = Math.max(0, inteiro(atual) || 0);
+  const n = Math.max(0, inteiro(novo) || 0);
+  return n > a ? { valor: n, trocou: true } : { valor: a, trocou: false };
+}
+
 export function calcularAplicacao({ acao, componentes, resistencias, pv, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }, nomeDoTipo = t => t }) {
   const comps = componentes?.length ? componentes : [{ tipo: "dano", valor: 0 }];
   const base = comps.reduce((s, c) => s + Math.max(0, inteiro(c.valor) || 0), 0);

@@ -11,11 +11,12 @@
  *   socket (ação "dano:aplicar"). O Mestre recalcula o valor pela mensagem (o jogador não manda número).
  * Registro: flags["icarus-rpg"].aplicacoes (alvo, antes, depois, cálculo, quem), mostrado na própria
  *   mensagem ("Aplicado em X (−11)", cálculo na dica); sem mensagem de confirmação. O Mestre desfaz a última.
- * Regras do cálculo: module/dano-aplicacao.mjs. PV temporários ainda não existem no modelo.
+ * Regras do cálculo: module/dano-aplicacao.mjs. PV temporários (system.pv.temp): o dano consome
+ *   primeiro os temporários; cura e perda de PV não mexem neles. Desfazer devolve os dois.
  */
 import { SISTEMA_ID, REGRAS_DANO } from "./config.mjs";
 import {
-  ACOES, calcularAplicacao, validarPedido, dadosDaMensagem, botoesDaBarra, valorDoBotao,
+  ACOES, calcularAplicacao, consumirTemporarios, validarPedido, dadosDaMensagem, botoesDaBarra, valorDoBotao,
   ultimaDesfazivel, textoDoRegistro
 } from "./dano-aplicacao.mjs";
 import { registrarDanoEmMorrendo } from "./morte-foundry.mjs";
@@ -132,10 +133,22 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
       if (!calc.final) break;
     }
   }
+  // PV temporários: o dano consome primeiro os temporários, depois os PV
+  const tempAntes = Math.max(0, Number(actor.system.pv.temp) || 0);
+  let tempDepois = tempAntes;
+  if (calc.modo === "dano" && calc.final > 0 && tempAntes) {
+    const t = consumirTemporarios(calc.final, tempAntes);
+    tempDepois = t.temp;
+    calc.depois = Math.max(0, calc.antes - t.resto);
+    calc.detalhe += ` → ${fmt("ICARUS.PV.TempConsumidos", { n: t.usados })}`;
+  }
   const morrendo = actor.statuses?.has("morrendo");
   const naoLetal = calc.modo !== "cura" && dados.naoLetal;
   // Não letal: não deixa Morrendo (opção lida em morte-foundry.mjs)
-  if (calc.depois !== calc.antes) await actor.update({ "system.pv.value": calc.depois }, naoLetal ? { icarusNaoLetal: true } : {});
+  const mudancasPV = {};
+  if (calc.depois !== calc.antes) mudancasPV["system.pv.value"] = calc.depois;
+  if (tempDepois !== tempAntes) mudancasPV["system.pv.temp"] = tempDepois;
+  if (Object.keys(mudancasPV).length) await actor.update(mudancasPV, naoLetal ? { icarusNaoLetal: true } : {});
   const depois = actor.system.pv.value;
   // Dano sofrido em Morrendo: 1 falha no teste de morte (2 se crítico), como no botão da ficha
   if (calc.modo !== "cura" && calc.final > 0 && calc.antes === 0 && morrendo && !naoLetal) await registrarDanoEmMorrendo(actor, dados.critico);
@@ -156,7 +169,7 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
     linha,
     registro: {
       alvo: nome, tokenUuid: alvo?.documentName === "Token" ? alvo.uuid : null, actorUuid: actor.uuid,
-      botao, antes: calc.antes, depois, detalhe: linha, usuario: usuarioId, quando: Date.now(), desfeita: false
+      botao, antes: calc.antes, depois, tempAntes, detalhe: linha, usuario: usuarioId, quando: Date.now(), desfeita: false
     }
   };
 }
@@ -262,7 +275,7 @@ async function desfazer(mensagem, usuarioId = game.user.id) {
   if (usuarioId !== game.user.id && a.usuario !== usuarioId) return recusar(usuarioId, "ICARUS.Dano.PedidoInvalido");
   const alvo = a.tokenUuid ? fromUuidSync(a.tokenUuid) : null;
   const actor = alvo?.actor ?? fromUuidSync(a.actorUuid);
-  if (actor) await actor.update({ "system.pv.value": a.antes }, { icarusDesfazer: true });
+  if (actor) await actor.update({ "system.pv.value": a.antes, ...(Number.isInteger(a.tempAntes) ? { "system.pv.temp": a.tempAntes } : {}) }, { icarusDesfazer: true });
   else ui.notifications.warn(fmt("ICARUS.Dano.DesfazerSemAlvo", { nome: a.alvo }));
   lista[i].desfeita = true;
   await emFila(() => mensagem.setFlag(F, "aplicacoes", lista));
@@ -305,7 +318,7 @@ export async function aoReceberDano(msg, remetente) {
     }).map(r => ({
       alvo: fromUuidSync(r.tokenUuid ?? "")?.name ?? fromUuidSync(r.actorUuid).name, tokenUuid: typeof r.tokenUuid === "string" ? r.tokenUuid : null,
       actorUuid: r.actorUuid, botao: ACOES.includes(r.botao) ? r.botao : "dano",
-      antes: r.antes, depois: r.depois, detalhe: typeof r.detalhe === "string" ? r.detalhe.slice(0, 300) : "", usuario: de, quando: Date.now(), desfeita: false
+      antes: r.antes, depois: r.depois, ...(Number.isInteger(r.tempAntes) && r.tempAntes >= 0 && r.tempAntes <= 99999 ? { tempAntes: r.tempAntes } : {}), detalhe: typeof r.detalhe === "string" ? r.detalhe.slice(0, 300) : "", usuario: de, quando: Date.now(), desfeita: false
     }));
     if (registros.length) await registrar(mensagem, registros);
     return;

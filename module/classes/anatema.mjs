@@ -33,6 +33,7 @@ import { rolarDanoAvulso, ABSORVEDORES_DE_DANO } from "../dano.mjs";
 import { rolarPericia } from "../rolls.mjs";
 import { mudancasParaEfeito, motivoParaNaoAprender, limiteDeMagiasDoAnatema, nivelMaximoDaClasse } from "../magias-dados.mjs";
 import { CONDICAO_POR_ID } from "../condicoes.mjs";
+import { concederPVTemporarios } from "../pv-temporarios.mjs";
 import {
   precoDeSangue, maximoComPV, chaveDoTurno, dadosDoSangrando, curaDoSelar, danoDaCarneAberta, limiteDaDorFertil,
   alvosDoOlhar, reducaoDoAmortecer, curaDoBanquete, pvTemporariosDoPano
@@ -293,7 +294,8 @@ ACOES_DE_MECANICA.set("anatema:selar", async actor => {
     else await avisarNoChat(actor, fmt("ICARUS.Anatema.SelarRemoverMestre", { alvo: nomeAlvo }));
   }
   await rolarDanoAvulso({ formula, cura: true, alvoUuid: alvo.uuid, titulo: fmt("ICARUS.Anatema.SelarTitulo", { alvo: nomeAlvo }), img: item.img, actor });
-  if (!emSi && tem(actor, "pano-e-linha")) await avisarNoChat(actor, fmt("ICARUS.Anatema.PanoChat", { alvo: nomeAlvo, pv: pvTemporariosDoPano(actor.system.nivel) }));
+  // Pano e Linha: PV temporários = metade do nível no aliado, até o fim da cena
+  if (!emSi && tem(actor, "pano-e-linha")) await concederPVTemporarios(alvo, pvTemporariosDoPano(actor.system.nivel), { fonte: loc("ICARUS.Anatema.Pano"), autor: actor });
 });
 
 /* ---------------- Olhar Funesto ---------------- */
@@ -398,7 +400,8 @@ GANCHOS_DE_PODER.set("anatema__nao-caio", {
     await actor.setFlag(F, "naoCaioUsado", true);
     if ((actor.system.pv?.value ?? 0) < 1) await actor.update({ "system.pv.value": 1 });
     const roll = await new Roll("4d8").evaluate();
-    return avisarNoChat(actor, fmt("ICARUS.Anatema.NaoCaioChat", { nome: actor.name, pv: roll.total }), { rolls: [roll] });
+    await avisarNoChat(actor, fmt("ICARUS.Anatema.NaoCaioChat", { nome: actor.name, pv: roll.total }), { rolls: [roll] });
+    return concederPVTemporarios(actor, roll.total, { fonte: loc("ICARUS.Anatema.NaoCaio") });
   }
 });
 

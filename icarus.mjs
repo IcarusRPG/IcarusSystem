@@ -60,6 +60,7 @@ import "./module/classes/bardo.mjs";
 import "./module/classes/clerigo.mjs";
 import "./module/classes/paladino.mjs";
 import "./module/classes/druida.mjs";
+import "./module/pv-temporarios.mjs";
 import "./module/classes/anatema.mjs";
 import "./module/classes/mistico.mjs";
 import "./module/recursos.mjs";

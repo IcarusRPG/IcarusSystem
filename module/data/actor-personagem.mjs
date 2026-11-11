@@ -94,7 +94,8 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
         manual: new fields.BooleanField({ initial: false })
       }),
       // "max" só é lido no modo manual; fora dele é recalculado pela fórmula.
-      pv: new fields.SchemaField({ value: inteiro(0, { min: 0 }), max: inteiro(0, { min: 0 }) }),
+      // temp: PV temporários (não se acumulam; o dano consome primeiro; somem no fim da cena)
+      pv: new fields.SchemaField({ value: inteiro(0, { min: 0 }), max: inteiro(0, { min: 0 }), temp: inteiro(0, { min: 0 }) }),
       pm: new fields.SchemaField({ value: inteiro(0, { min: 0 }), max: inteiro(0, { min: 0 }) }),
       defesa: new fields.SchemaField({ outros: inteiro(0) }),
       // Magias: atributo-chave da CD (vazio = o de PM da classe; sem classe, Inteligência)

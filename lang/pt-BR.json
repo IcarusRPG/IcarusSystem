@@ -44,7 +44,14 @@
       "Rotulo": "Pontos de Vida",
       "Perder": "Perder 1 PV",
       "Recuperar": "Recuperar 1 PV",
-      "Atuais": "Pontos de Vida atuais"
+      "Atuais": "Pontos de Vida atuais",
+      "Temporarios": "PV temporários",
+      "TempDica": "O dano consome primeiro os PV temporários. Não se acumulam (vale o maior), a cura não os restaura e eles somem no fim da cena ou quando o efeito que os deu termina.",
+      "TempConsumidos": "{n} vão para os PV temporários",
+      "TempRecebe": "{nome} recebe {valor} PV temporários ({fonte}).",
+      "TempMantem": "{nome} já tem {atual} PV temporários; os {valor} de {fonte} não se acumulam (vale o maior).",
+      "TempPendente": "{nome} recebe {valor} PV temporários ({fonte}). Quem controla {nome} aplica pelo botão.",
+      "TempAplicar": "Aplicar {valor} PV temporários em {nome}"
     },
     "PM": {
       "Rotulo": "Pontos de Mana",
@@ -2147,7 +2154,9 @@
       "SangueFervente": "Sangue Fervente (+2)",
       "MedoAmbulante": "Medo Ambulante: alvo Abalado/Apavorado (+2)",
       "SemPalavras": "O Anátema só lança magias com o poder Palavras de Sangue.",
-      "ListaSangue": "lista Sangue"
+      "ListaSangue": "lista Sangue",
+      "Pano": "Pano e Linha",
+      "NaoCaio": "Não Caio"
     },
     "Mistico": {
       "NomeFamiliar": "{animal} ({nome})",
