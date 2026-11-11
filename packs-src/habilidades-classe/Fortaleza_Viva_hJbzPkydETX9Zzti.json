@@ -1,0 +1,38 @@
+{
+  "_id": "hJbzPkydETX9Zzti",
+  "name": "Fortaleza Viva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 9009,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+1 na Defesa</strong> enquanto empunha um escudo. Quando usa Interpor-se, você recebe também <strong>+2 na Defesa contra esse ataque</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__fortaleza-viva",
+      "classe": "paladino",
+      "habilidade": "fortaleza-viva",
+      "inferido": false
+    }
+  },
+  "_key": "!items!hJbzPkydETX9Zzti"
+}

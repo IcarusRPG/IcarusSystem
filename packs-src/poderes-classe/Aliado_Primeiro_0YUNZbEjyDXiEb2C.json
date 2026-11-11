@@ -1,0 +1,38 @@
+{
+  "_id": "0YUNZbEjyDXiEb2C",
+  "name": "Aliado Primeiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "dJp9gaTSU0j3W0i7",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando usa o Toque Restaurador, o alvo, se não for você, <strong>também recebe +2 na Defesa</strong> até o início do seu próximo turno.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Mão Aberta",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Mão Aberta",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__aliado-primeiro",
+      "classe": "paladino",
+      "poder": "aliado-primeiro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!0YUNZbEjyDXiEb2C"
+}

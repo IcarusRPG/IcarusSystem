@@ -1,0 +1,38 @@
+{
+  "_id": "1XRNaQEFiYpODmDV",
+  "name": "Ombro a Ombro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "zIBSgaCiSfDpkbgY",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Aliados adjacentes a você recebem <strong>+1 na Defesa</strong> enquanto você estiver empunhando um escudo.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Muralha",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Muralha",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__ombro-a-ombro",
+      "classe": "paladino",
+      "poder": "ombro-a-ombro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!1XRNaQEFiYpODmDV"
+}

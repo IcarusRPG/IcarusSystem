@@ -1,0 +1,38 @@
+{
+  "_id": "ytVDHOqVfR1n7Ej9",
+  "name": "Último Aviso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "r0pczZVlwDOmDrLq",
+  "sort": 2600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "No seu primeiro ataque contra a sua sentenciada em cada cena, você recebe <strong>+4 no dano</strong> (além de qualquer Punição).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Sentença",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Sentença",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__ultimo-aviso",
+      "classe": "paladino",
+      "poder": "ultimo-aviso",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ytVDHOqVfR1n7Ej9"
+}

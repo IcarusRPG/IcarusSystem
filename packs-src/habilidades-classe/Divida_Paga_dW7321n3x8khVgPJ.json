@@ -1,0 +1,38 @@
+{
+  "_id": "dW7321n3x8khVgPJ",
+  "name": "Dívida Paga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 9017,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você <strong>reduz a sua sentenciada a 0 PV</strong>, você recupera <strong>2 PM</strong> e pode se mover até <strong>6 m</strong> como ação livre.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__divida-paga",
+      "classe": "paladino",
+      "habilidade": "divida-paga",
+      "inferido": true
+    }
+  },
+  "_key": "!items!dW7321n3x8khVgPJ"
+}

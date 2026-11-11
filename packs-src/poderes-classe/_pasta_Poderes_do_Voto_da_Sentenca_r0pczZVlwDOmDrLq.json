@@ -1,0 +1,15 @@
+{
+  "_id": "r0pczZVlwDOmDrLq",
+  "name": "Poderes do Voto da Sentença",
+  "type": "Item",
+  "folder": "F29bTTKqG6iKtTRQ",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:paladino:poderes-do-voto-da-sentenca"
+    }
+  },
+  "_key": "!folders!r0pczZVlwDOmDrLq"
+}

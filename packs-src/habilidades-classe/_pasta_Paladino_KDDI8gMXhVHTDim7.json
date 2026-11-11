@@ -1,0 +1,15 @@
+{
+  "_id": "KDDI8gMXhVHTDim7",
+  "name": "Paladino",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "habilidades:paladino"
+    }
+  },
+  "_key": "!folders!KDDI8gMXhVHTDim7"
+}

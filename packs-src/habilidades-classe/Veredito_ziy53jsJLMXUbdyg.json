@@ -1,0 +1,38 @@
+{
+  "_id": "ziy53jsJLMXUbdyg",
+  "name": "Veredito",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 15018,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 6,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM e faz um ataque corpo a corpo contra a sua sentenciada. Se acertar, o ataque causa <strong>+5d6 de dano de Essência</strong> (sem gastar PM adicional e sem contar no limite da Punição Consagrada).",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__veredito",
+      "classe": "paladino",
+      "habilidade": "veredito",
+      "inferido": true
+    }
+  },
+  "_key": "!items!ziy53jsJLMXUbdyg"
+}

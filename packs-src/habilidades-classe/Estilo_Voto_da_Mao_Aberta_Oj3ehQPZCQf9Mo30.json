@@ -1,0 +1,38 @@
+{
+  "_id": "Oj3ehQPZCQf9Mo30",
+  "name": "Estilo: Voto da Mão Aberta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 11,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O paladino que sustenta o grupo.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__estilo-voto-da-mao-aberta",
+      "classe": "paladino",
+      "habilidade": "estilo-voto-da-mao-aberta",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Oj3ehQPZCQf9Mo30"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "02aWZbD0qmzZOjrW",
+  "name": "Mãos Largas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar o Toque Restaurador em alcance <strong>curto</strong>, em vez de toque.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__maos-largas",
+      "classe": "paladino",
+      "poder": "maos-largas",
+      "inferido": false
+    }
+  },
+  "_key": "!items!02aWZbD0qmzZOjrW"
+}

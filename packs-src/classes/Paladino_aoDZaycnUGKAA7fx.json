@@ -1,0 +1,181 @@
+{
+  "_id": "aoDZaycnUGKAA7fx",
+  "name": "Paladino",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 1200,
+  "system": {
+    "classeId": "paladino",
+    "papel": "Campeão Divino",
+    "atributoChave": "Carisma (usado nas habilidades da classe e na CD das magias, se você tiver Preces de Guerra)",
+    "pv": {
+      "inicial": 18,
+      "porNivel": 4,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 4,
+      "porNivel": 4,
+      "atributo": null,
+      "atributoSoNoPrimeiroNivel": false,
+      "texto": "4 por nível (classe não conjuradora: sem atributo-chave de PM)"
+    },
+    "pericias": {
+      "obrigatorias": "Luta e Vontade",
+      "escolha": 3,
+      "lista": [
+        "Adestramento",
+        "Atletismo",
+        "Cavalgar",
+        "Cura",
+        "Diplomacia",
+        "Fortitude",
+        "Iniciativa",
+        "Intimidação",
+        "Intuição",
+        "Nobreza",
+        "Religião"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples e marciais, armaduras pesadas, escudos",
+      "armas": [
+        "simples",
+        "marciais"
+      ],
+      "armaduras": [
+        "pesada"
+      ],
+      "escudo": true,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Fé Jurada",
+          "Punição Consagrada"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Toque Restaurador"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Voto"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Aura de Resguardo"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Habilidade de Voto"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Coragem Inabalável"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [
+          "Habilidade de Voto"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Hora Final"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O paladino é o devoto que escolheu a espada em vez do altar. Onde o clérigo reza ao lado da batalha, o paladino reza dentro dela: carrega a fé nos ombros, o escudo no braço e o juramento na boca. Não precisa de templo; a divindade vai com ele.</p><p>Há paladinos que são muralhas, e quem está atrás deles dorme tranquilo. Há os que carregam a esperança de um grupo inteiro nas mãos. E há os que se tornam a sentença de uma divindade contra quem a desafiou. O que une todos é a Palavra Empenhada: o paladino que quebra a própria palavra deixa de ser paladino, qualquer que seja o poder que tenha na lâmina.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino"
+    }
+  },
+  "_key": "!items!aoDZaycnUGKAA7fx"
+}

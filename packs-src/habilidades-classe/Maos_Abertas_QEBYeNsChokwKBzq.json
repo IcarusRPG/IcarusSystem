@@ -1,0 +1,38 @@
+{
+  "_id": "QEBYeNsChokwKBzq",
+  "name": "Mãos Abertas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 3012,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O Toque Restaurador custa <strong>1 PM</strong>, em vez de 2.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__maos-abertas",
+      "classe": "paladino",
+      "habilidade": "maos-abertas",
+      "inferido": true
+    }
+  },
+  "_key": "!items!QEBYeNsChokwKBzq"
+}

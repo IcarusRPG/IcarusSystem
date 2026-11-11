@@ -1,0 +1,38 @@
+{
+  "_id": "ykbpbHlnuBX6BF16",
+  "name": "Armadura de Fé",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "4º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+1 na Defesa</strong> enquanto usa armadura pesada.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__armadura-de-fe",
+      "classe": "paladino",
+      "poder": "armadura-de-fe",
+      "inferido": false
+    }
+  },
+  "_key": "!items!ykbpbHlnuBX6BF16"
+}

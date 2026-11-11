@@ -1,0 +1,38 @@
+{
+  "_id": "baMOWVviwSpy49JB",
+  "name": "Presença de Cavaleiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+2 em Diplomacia e Intimidação</strong> e se torna treinado em uma delas, à sua escolha, caso ainda não seja.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__presenca-de-cavaleiro",
+      "classe": "paladino",
+      "poder": "presenca-de-cavaleiro",
+      "inferido": false
+    }
+  },
+  "_key": "!items!baMOWVviwSpy49JB"
+}

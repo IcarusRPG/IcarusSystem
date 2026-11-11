@@ -1,0 +1,38 @@
+{
+  "_id": "tviKtKuk3ac1AEdu",
+  "name": "Fé Jurada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você se torna devoto de <strong>uma divindade do Panteão</strong> (seção 16), e a escolha é permanente. Ao contrário dos devotos comuns, você recebe <strong>dois dos três Poderes Concedidos</strong> da sua divindade, à sua escolha (o clérigo recebe os três), e deve seguir os <strong>Dogmas e Restrições</strong> dela. Além disso, você faz a <strong>Palavra Empenhada</strong>: você nunca ataca uma criatura rendida ou <strong>Indefesa</strong> que não represente ameaça, e nunca quebra uma promessa que fez de forma explícita. Se você agir contra um Dogma ou contra a Palavra Empenhada, a <strong>primeira vez</strong> você perde <strong>todos os seus PM por 1d4 dias</strong>. Na <strong>segunda vez</strong>, a divindade o abandona e você se torna um <strong>Anátema</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__fe-jurada",
+      "classe": "paladino",
+      "habilidade": "fe-jurada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!tviKtKuk3ac1AEdu"
+}

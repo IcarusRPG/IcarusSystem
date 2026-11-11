@@ -1,0 +1,40 @@
+{
+  "_id": "APLjAlYHLrdtnaJy",
+  "name": "Fé Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Carisma 2",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa <strong>Carisma</strong>, em vez de Força, nos testes de ataque e nas rolagens de dano corpo a corpo com armas em que seja proficiente.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CAR": 2
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__fe-marcial",
+      "classe": "paladino",
+      "poder": "fe-marcial",
+      "inferido": false
+    }
+  },
+  "_key": "!items!APLjAlYHLrdtnaJy"
+}

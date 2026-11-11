@@ -118,5 +118,16 @@ export default {
     ],
     "escudo": true,
     "tunicas": false
+  },
+  "paladino": {
+    "armas": [
+      "simples",
+      "marciais"
+    ],
+    "armaduras": [
+      "pesada"
+    ],
+    "escudo": true,
+    "tunicas": false
   }
 };

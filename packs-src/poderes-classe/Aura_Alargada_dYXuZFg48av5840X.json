@@ -1,0 +1,38 @@
+{
+  "_id": "dYXuZFg48av5840X",
+  "name": "Aura Alargada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 500,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Aura de Resguardo",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O raio da sua Aura de Resguardo passa de 3 m para <strong>6 m</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__aura-alargada",
+      "classe": "paladino",
+      "poder": "aura-alargada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!dYXuZFg48av5840X"
+}

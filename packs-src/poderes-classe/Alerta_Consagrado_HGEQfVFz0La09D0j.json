@@ -1,0 +1,38 @@
+{
+  "_id": "HGEQfVFz0La09D0j",
+  "name": "Alerta Consagrado",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 1200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+3 em Iniciativa</strong> e não pode ser <strong>Surpreendido</strong> (você ainda pode ser Desprevenido por outros efeitos).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__alerta-consagrado",
+      "classe": "paladino",
+      "poder": "alerta-consagrado",
+      "inferido": false
+    }
+  },
+  "_key": "!items!HGEQfVFz0La09D0j"
+}

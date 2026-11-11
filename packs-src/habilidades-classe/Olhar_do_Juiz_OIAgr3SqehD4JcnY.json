@@ -1,0 +1,38 @@
+{
+  "_id": "OIAgr3SqehD4JcnY",
+  "name": "Olhar do Juiz",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 3016,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 1 PM e <strong>sentencia</strong> uma criatura que veja em alcance curto, até o fim da cena ou até sentenciar outra (uma por vez). Contra a sua <strong>sentenciada</strong>, você recebe <strong>+1 nos testes de ataque</strong> e o limite de PM da Punição Consagrada aumenta em <strong>+1</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__olhar-do-juiz",
+      "classe": "paladino",
+      "habilidade": "olhar-do-juiz",
+      "inferido": true
+    }
+  },
+  "_key": "!items!OIAgr3SqehD4JcnY"
+}

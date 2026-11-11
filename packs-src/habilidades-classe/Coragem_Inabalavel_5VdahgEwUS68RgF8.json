@@ -1,0 +1,38 @@
+{
+  "_id": "5VdahgEwUS68RgF8",
+  "name": "Coragem Inabalável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 10005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 10,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você fica <strong>imune</strong> a <strong>Abalado</strong> e <strong>Apavorado</strong>. Aliados dentro da sua Aura de Resguardo recebem <strong>+2 em testes de resistência contra efeitos de medo</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__coragem-inabalavel",
+      "classe": "paladino",
+      "habilidade": "coragem-inabalavel",
+      "inferido": false
+    }
+  },
+  "_key": "!items!5VdahgEwUS68RgF8"
+}

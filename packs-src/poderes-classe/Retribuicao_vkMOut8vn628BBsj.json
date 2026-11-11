@@ -1,0 +1,38 @@
+{
+  "_id": "vkMOut8vn628BBsj",
+  "name": "Retribuição",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 1 PM e <strong>marca</strong> uma criatura em alcance curto, até o fim da cena ou até marcar outra (uma por vez). Enquanto ela estiver marcada, sempre que ela <strong>acertar um ataque corpo a corpo contra você</strong>, você pode gastar a sua reação para que ela sofra <strong>1d8 + Carisma de dano de Essência</strong>. O efeito <strong>só funciona contra a criatura marcada</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__retribuicao",
+      "classe": "paladino",
+      "poder": "retribuicao",
+      "inferido": true
+    }
+  },
+  "_key": "!items!vkMOut8vn628BBsj"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "cgaJcMjBlXmQApHh",
+  "name": "Corpo Escudo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "zIBSgaCiSfDpkbgY",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, quando você sofre dano, pode gastar a sua reação e 2 PM para <strong>reduzir esse dano em 1 + seu nível</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Muralha",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Muralha",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__corpo-escudo",
+      "classe": "paladino",
+      "poder": "corpo-escudo",
+      "inferido": true
+    }
+  },
+  "_key": "!items!cgaJcMjBlXmQApHh"
+}

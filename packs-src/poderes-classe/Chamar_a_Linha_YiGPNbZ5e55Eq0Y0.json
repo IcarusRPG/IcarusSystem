@@ -1,0 +1,38 @@
+{
+  "_id": "YiGPNbZ5e55Eq0Y0",
+  "name": "Chamar a Linha",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "zIBSgaCiSfDpkbgY",
+  "sort": 1400,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação de movimento, você gasta 1 PM e escolhe um inimigo em alcance curto. Ele faz um teste de <strong>Vontade</strong> (CD de paladino: 10 + metade do seu nível + Carisma): se falhar, sofre <strong>–2 nos testes de ataque contra qualquer alvo que não seja você</strong> até o início do seu próximo turno. <em>Mental.</em>",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Muralha",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Muralha",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__chamar-a-linha",
+      "classe": "paladino",
+      "poder": "chamar-a-linha",
+      "inferido": true
+    }
+  },
+  "_key": "!items!YiGPNbZ5e55Eq0Y0"
+}

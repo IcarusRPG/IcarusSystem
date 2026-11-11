@@ -1,0 +1,38 @@
+{
+  "_id": "3gAJh9xasOentS43",
+  "name": "Perícia Especializada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "l4oPwXAdCzTB6tMg",
+  "sort": 3000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "10º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes comuns",
+    "nivelMinimo": 10,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__pericia-especializada",
+      "classe": "paladino",
+      "poder": "pericia-especializada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!3gAJh9xasOentS43"
+}

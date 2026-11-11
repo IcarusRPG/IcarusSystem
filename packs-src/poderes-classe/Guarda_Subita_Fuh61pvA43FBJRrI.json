@@ -1,0 +1,38 @@
+{
+  "_id": "Fuh61pvA43FBJRrI",
+  "name": "Guarda Súbita",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando é alvo de um ataque, você pode gastar 2 PM e a sua reação para receber <strong>+5 na Defesa</strong> contra esse ataque.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__guarda-subita",
+      "classe": "paladino",
+      "poder": "guarda-subita",
+      "inferido": true
+    }
+  },
+  "_key": "!items!Fuh61pvA43FBJRrI"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "UZ6WtvkI2pHuigUn",
+  "name": "Remédio dos Fiéis",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "dJp9gaTSU0j3W0i7",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 3,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você usa o Toque Restaurador, pode gastar +3 PM para <strong>dobrar o número de dados de cura</strong> (rolando o dobro de d8).",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes do Voto da Mão Aberta",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Voto da Mão Aberta",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__remedio-dos-fieis",
+      "classe": "paladino",
+      "poder": "remedio-dos-fieis",
+      "inferido": true
+    }
+  },
+  "_key": "!items!UZ6WtvkI2pHuigUn"
+}

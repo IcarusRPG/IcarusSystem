@@ -9729,6 +9729,848 @@ export default {
           }
         }
       ]
+    },
+    {
+      "id": "paladino",
+      "nome": "Paladino",
+      "papel": "Campeão Divino",
+      "pv": {
+        "inicial": 18,
+        "porNivel": 4,
+        "atributo": "CON"
+      },
+      "pm": {
+        "inicial": 4,
+        "porNivel": 4,
+        "atributoSoNoPrimeiroNivel": false,
+        "texto": "4 por nível (classe não conjuradora: sem atributo-chave de PM)",
+        "atributo": null,
+        "atributoChave": "CAR"
+      },
+      "atributoChave": "Carisma (usado nas habilidades da classe e na CD das magias, se você tiver Preces de Guerra)",
+      "pericias": {
+        "obrigatorias": "Luta e Vontade",
+        "escolha": 3,
+        "lista": [
+          "Adestramento",
+          "Atletismo",
+          "Cavalgar",
+          "Cura",
+          "Diplomacia",
+          "Fortitude",
+          "Iniciativa",
+          "Intimidação",
+          "Intuição",
+          "Nobreza",
+          "Religião"
+        ]
+      },
+      "proficiencias": "Armas simples e marciais, armaduras pesadas, escudos",
+      "intro": [
+        "O paladino é o devoto que escolheu a espada em vez do altar. Onde o clérigo reza ao lado da batalha, o paladino reza dentro dela: carrega a fé nos ombros, o escudo no braço e o juramento na boca. Não precisa de templo; a divindade vai com ele.",
+        "Há paladinos que são muralhas, e quem está atrás deles dorme tranquilo. Há os que carregam a esperança de um grupo inteiro nas mãos. E há os que se tornam a sentença de uma divindade contra quem a desafiou. O que une todos é a Palavra Empenhada: o paladino que quebra a própria palavra deixa de ser paladino, qualquer que seja o poder que tenha na lâmina."
+      ],
+      "progressao": [
+        {
+          "nivel": 1,
+          "habilidades": [
+            "Fé Jurada",
+            "Punição Consagrada"
+          ],
+          "poder": false
+        },
+        {
+          "nivel": 2,
+          "habilidades": [
+            "Toque Restaurador"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 3,
+          "habilidades": [
+            "Voto"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 4,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 5,
+          "habilidades": [
+            "Aura de Resguardo"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 6,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 7,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 8,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 9,
+          "habilidades": [
+            "Habilidade de Voto"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 10,
+          "habilidades": [
+            "Coragem Inabalável"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 11,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 12,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 13,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 14,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 15,
+          "habilidades": [
+            "Habilidade de Voto"
+          ],
+          "poder": true
+        },
+        {
+          "nivel": 16,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 17,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 18,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 19,
+          "habilidades": [],
+          "poder": true
+        },
+        {
+          "nivel": 20,
+          "habilidades": [
+            "Hora Final"
+          ],
+          "poder": true
+        }
+      ],
+      "habilidades": [
+        {
+          "id": "fe-jurada",
+          "nome": "Fé Jurada",
+          "nivel": 1,
+          "descricao": "Você se torna devoto de <strong>uma divindade do Panteão</strong> (seção 16), e a escolha é permanente. Ao contrário dos devotos comuns, você recebe <strong>dois dos três Poderes Concedidos</strong> da sua divindade, à sua escolha (o clérigo recebe os três), e deve seguir os <strong>Dogmas e Restrições</strong> dela. Além disso, você faz a <strong>Palavra Empenhada</strong>: você nunca ataca uma criatura rendida ou <strong>Indefesa</strong> que não represente ameaça, e nunca quebra uma promessa que fez de forma explícita. Se você agir contra um Dogma ou contra a Palavra Empenhada, a <strong>primeira vez</strong> você perde <strong>todos os seus PM por 1d4 dias</strong>. Na <strong>segunda vez</strong>, a divindade o abandona e você se torna um <strong>Anátema</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "divindade",
+            "permanente": true,
+            "opcoes": [
+              "Alétris",
+              "Amorina",
+              "Béllica",
+              "Etheria",
+              "Floressa",
+              "Justar",
+              "Logos",
+              "Nocturna",
+              "Odincia",
+              "Sólem",
+              "Ardor",
+              "Draconara",
+              "Eternus",
+              "Expiria",
+              "Fraudulus",
+              "Insidia",
+              "Irae",
+              "Mentis",
+              "Paxus",
+              "Valorus"
+            ]
+          }
+        },
+        {
+          "id": "punicao-consagrada",
+          "nome": "Punição Consagrada",
+          "nivel": 1,
+          "descricao": "Quando você <strong>acerta</strong> um ataque corpo a corpo, pode gastar PM e decidir <strong>depois do acerto</strong>: cada PM gasto causa <strong>+1d6 de dano de Essência</strong> (contra mortos-vivos, +1d8). O máximo de PM por ataque é <strong>1 no 1º nível, 2 no 5º, 3 no 10º, 4 no 15º e 5 no 20º</strong>. Os PM são gastos mesmo que o ataque tenha sido contra um alvo imune à Essência.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "toque-restaurador",
+          "nome": "Toque Restaurador",
+          "nivel": 2,
+          "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura (inclusive você), que recupera <strong>1d8 + Carisma</strong> PV (mínimo +1). A cura aumenta em <strong>+1d8 no 5º, 9º, 13º e 17º níveis</strong> (5d8 no 17º). Cada criatura só pode ser curada pelo seu Toque Restaurador <strong>uma vez por cena</strong>. <em>Divino.</em>",
+          "custoPM": 2,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "voto",
+          "nome": "Voto",
+          "nivel": 3,
+          "descricao": "Você jura um Voto que define o seu papel no grupo. A escolha é permanente. Cada Voto concede uma habilidade no 3º nível e mais uma no 9º e no 15º.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": [],
+          "escolha": {
+            "tipo": "caminho",
+            "permanente": true,
+            "opcoes": [
+              "Voto da Muralha",
+              "Voto da Mão Aberta",
+              "Voto da Sentença"
+            ]
+          }
+        },
+        {
+          "id": "aura-de-resguardo",
+          "nome": "Aura de Resguardo",
+          "nivel": 5,
+          "descricao": "Você e os aliados em alcance de <strong>3 m</strong> (centrada em você) recebem <strong>+1 em testes de resistência</strong>. O bônus passa a <strong>+2 no 13º nível</strong>. A aura é passiva e acompanha você. <em>Divino.</em>",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "coragem-inabalavel",
+          "nome": "Coragem Inabalável",
+          "nivel": 10,
+          "descricao": "Você fica <strong>imune</strong> a <strong>Abalado</strong> e <strong>Apavorado</strong>. Aliados dentro da sua Aura de Resguardo recebem <strong>+2 em testes de resistência contra efeitos de medo</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "hora-final",
+          "nome": "Hora Final",
+          "nivel": 20,
+          "descricao": "Uma vez por dia, como ação padrão, você gasta 10 PM e se entrega por inteiro à sua divindade. Até o fim da cena: você recebe <strong>+2 em testes de ataque e na Defesa</strong>, <strong>Redução de Dano 5</strong> (respeitando o teto de RD do Núcleo), a Punição Consagrada <strong>não tem limite de PM por ataque</strong> (e você paga PM normalmente) e, <strong>na primeira vez que seus PV chegariam a 0</strong>, eles ficam em <strong>1 PV</strong>. Quando a cena termina, você fica <strong>Fatigado</strong>. <em>Divino.</em>",
+          "custoPM": 10,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "estilo-voto-da-muralha",
+          "nome": "Estilo: Voto da Muralha",
+          "nivel": null,
+          "descricao": "O paladino que fica à frente.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "interpor-se",
+          "nome": "Interpor-se",
+          "nivel": 3,
+          "descricao": "Quando um aliado <strong>adjacente</strong> a você é alvo de um ataque, você pode gastar 1 PM e a sua reação para se tornar o alvo do ataque <strong>no lugar dele</strong>. Você precisa conseguir ver o aliado e o atacante.",
+          "custoPM": 1,
+          "acao": "reacao",
+          "subs": []
+        },
+        {
+          "id": "fortaleza-viva",
+          "nome": "Fortaleza Viva",
+          "nivel": 9,
+          "descricao": "Você recebe <strong>+1 na Defesa</strong> enquanto empunha um escudo. Quando usa Interpor-se, você recebe também <strong>+2 na Defesa contra esse ataque</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "muralha-inquebravel",
+          "nome": "Muralha Inquebrável",
+          "nivel": 15,
+          "descricao": "Uma vez por cena, como ação de movimento, você gasta 5 PM: até o fim da cena, você recebe <strong>Redução de Dano 5</strong> (respeitando o teto de RD do Núcleo) e os aliados adjacentes a você recebem <strong>+2 na Defesa</strong>.",
+          "custoPM": 5,
+          "acao": "movimento",
+          "subs": []
+        },
+        {
+          "id": "estilo-voto-da-mao-aberta",
+          "nome": "Estilo: Voto da Mão Aberta",
+          "nivel": null,
+          "descricao": "O paladino que sustenta o grupo.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "maos-abertas",
+          "nome": "Mãos Abertas",
+          "nivel": 3,
+          "descricao": "O Toque Restaurador custa <strong>1 PM</strong>, em vez de 2.",
+          "custoPM": 1,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "alivio-constante",
+          "nome": "Alívio Constante",
+          "nivel": 9,
+          "descricao": "No início de cada turno seu, <strong>aliados dentro da sua Aura de Resguardo</strong> que estejam com <strong>menos da metade dos PV</strong> recuperam <strong>1d6 PV</strong>.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "aurora-de-esperanca",
+          "nome": "Aurora de Esperança",
+          "nivel": 15,
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 8 PM: todos os aliados em alcance curto recebem os efeitos do seu Toque Restaurador (<strong>sem o limite de uma vez por cena</strong> e sem pagar o custo dele) e <strong>removem uma condição</strong> à escolha de cada um entre Abalado, Doente, Enjoado, Envenenado, Fatigado e Fraco. <em>Divino.</em>",
+          "custoPM": 8,
+          "acao": "padrao",
+          "subs": []
+        },
+        {
+          "id": "estilo-voto-da-sentenca",
+          "nome": "Estilo: Voto da Sentença",
+          "nivel": null,
+          "descricao": "O paladino que caça.",
+          "custoPM": null,
+          "acao": "passivo",
+          "subs": []
+        },
+        {
+          "id": "olhar-do-juiz",
+          "nome": "Olhar do Juiz",
+          "nivel": 3,
+          "descricao": "Como ação de movimento, você gasta 1 PM e <strong>sentencia</strong> uma criatura que veja em alcance curto, até o fim da cena ou até sentenciar outra (uma por vez). Contra a sua <strong>sentenciada</strong>, você recebe <strong>+1 nos testes de ataque</strong> e o limite de PM da Punição Consagrada aumenta em <strong>+1</strong>.",
+          "custoPM": 1,
+          "acao": "movimento",
+          "subs": []
+        },
+        {
+          "id": "divida-paga",
+          "nome": "Dívida Paga",
+          "nivel": 9,
+          "descricao": "Quando você <strong>reduz a sua sentenciada a 0 PV</strong>, você recupera <strong>2 PM</strong> e pode se mover até <strong>6 m</strong> como ação livre.",
+          "custoPM": 2,
+          "acao": "livre",
+          "subs": []
+        },
+        {
+          "id": "veredito",
+          "nome": "Veredito",
+          "nivel": 15,
+          "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM e faz um ataque corpo a corpo contra a sua sentenciada. Se acertar, o ataque causa <strong>+5d6 de dano de Essência</strong> (sem gastar PM adicional e sem contar no limite da Punição Consagrada).",
+          "custoPM": 6,
+          "acao": "padrao",
+          "subs": []
+        }
+      ],
+      "grupos": [
+        "Poderes gerais",
+        "Poderes do Voto da Muralha",
+        "Poderes do Voto da Mão Aberta",
+        "Poderes do Voto da Sentença",
+        "Poderes comuns"
+      ],
+      "poderes": [
+        {
+          "id": "preces-de-guerra",
+          "nome": "Preces de Guerra",
+          "grupo": "Poderes gerais",
+          "descricao": "Você aprende <strong>duas magias divinas</strong> de qualquer nível que já possa lançar, e passa a lançar magias da lista <strong>Divina</strong>, usando <strong>Carisma</strong> como atributo-chave (CD = 10 + metade do seu nível + Carisma). Você acessa magias de nível 1 no 5º nível, nível 2 no 9º, nível 3 no 13º e nível 4 no 17º (o paladino não lança magias de nível 5). Você pode lançar magias usando qualquer armadura e escudo em que tenha proficiência. Sem este poder, o paladino <strong>não lança magias</strong>. Você pode escolher este poder várias vezes: cada vez, aprende mais duas magias divinas.",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "magias",
+            "quantidade": 2
+          }
+        },
+        {
+          "id": "fe-marcial",
+          "nome": "Fé Marcial",
+          "grupo": "Poderes gerais",
+          "descricao": "Você usa <strong>Carisma</strong>, em vez de Força, nos testes de ataque e nas rolagens de dano corpo a corpo com armas em que seja proficiente.",
+          "prerequisito": "Carisma 2",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": {
+            "CAR": 2
+          },
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "maos-largas",
+          "nome": "Mãos Largas",
+          "grupo": "Poderes gerais",
+          "descricao": "Você pode usar o Toque Restaurador em alcance <strong>curto</strong>, em vez de toque.",
+          "prerequisito": "5º nível",
+          "nivelMinimo": 5,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "alivio-imediato",
+          "nome": "Alívio Imediato",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando usa o Toque Restaurador, você pode gastar +1 PM para que o alvo também remova uma condição à sua escolha entre Abalado, Doente, Enjoado, Envenenado, Fatigado e Fraco.",
+          "prerequisito": "4º nível",
+          "nivelMinimo": 4,
+          "custoPM": 1,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aura-alargada",
+          "nome": "Aura Alargada",
+          "grupo": "Poderes gerais",
+          "descricao": "O raio da sua Aura de Resguardo passa de 3 m para <strong>6 m</strong>.",
+          "prerequisito": "Aura de Resguardo",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "guarda-subita",
+          "nome": "Guarda Súbita",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando é alvo de um ataque, você pode gastar 2 PM e a sua reação para receber <strong>+5 na Defesa</strong> contra esse ataque.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "armadura-de-fe",
+          "nome": "Armadura de Fé",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe <strong>+1 na Defesa</strong> enquanto usa armadura pesada.",
+          "prerequisito": "4º nível",
+          "nivelMinimo": 4,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "carga-fulgurante",
+          "nome": "Carga Fulgurante",
+          "grupo": "Poderes gerais",
+          "descricao": "Quando faz uma investida e acerta o ataque, você pode gastar 2 PM para causar <strong>+2d6 de dano de Essência</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "folego-da-fe",
+          "nome": "Fôlego da Fé",
+          "grupo": "Poderes gerais",
+          "descricao": "Uma vez por cena, como ação de movimento, você gasta 2 PM e <strong>você mesmo</strong> recupera <strong>1d8 + seu nível</strong> em PV. <strong>Este poder afeta somente você, nunca aliados.</strong>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "bencao-de-arma",
+          "nome": "Bênção de Arma",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação padrão, você gasta 2 PM e toca a arma de um aliado: até o fim da cena, ela é considerada <strong>mágica</strong> e causa <strong>+1d4 de dano de Essência</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "presenca-de-cavaleiro",
+          "nome": "Presença de Cavaleiro",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe <strong>+2 em Diplomacia e Intimidação</strong> e se torna treinado em uma delas, à sua escolha, caso ainda não seja.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "alerta-consagrado",
+          "nome": "Alerta Consagrado",
+          "grupo": "Poderes gerais",
+          "descricao": "Você recebe <strong>+3 em Iniciativa</strong> e não pode ser <strong>Surpreendido</strong> (você ainda pode ser Desprevenido por outros efeitos).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "retribuicao",
+          "nome": "Retribuição",
+          "grupo": "Poderes gerais",
+          "descricao": "Como ação de movimento, você gasta 1 PM e <strong>marca</strong> uma criatura em alcance curto, até o fim da cena ou até marcar outra (uma por vez). Enquanto ela estiver marcada, sempre que ela <strong>acertar um ataque corpo a corpo contra você</strong>, você pode gastar a sua reação para que ela sofra <strong>1d8 + Carisma de dano de Essência</strong>. O efeito <strong>só funciona contra a criatura marcada</strong>.",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 1,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "chamar-a-linha",
+          "nome": "Chamar a Linha",
+          "grupo": "Poderes do Voto da Muralha",
+          "descricao": "Como ação de movimento, você gasta 1 PM e escolhe um inimigo em alcance curto. Ele faz um teste de <strong>Vontade</strong> (CD de paladino: 10 + metade do seu nível + Carisma): se falhar, sofre <strong>–2 nos testes de ataque contra qualquer alvo que não seja você</strong> até o início do seu próximo turno. <em>Mental.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 1,
+          "acao": "movimento",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Muralha",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "pe-fincado",
+          "nome": "Pé Fincado",
+          "grupo": "Poderes do Voto da Muralha",
+          "descricao": "Você <strong>não pode ser empurrado, puxado nem derrubado</strong> por efeitos de movimento forçado, e recebe <strong>+2 em Atletismo e Fortitude</strong> para resistir a agarrar, derrubar e empurrar.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Muralha",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "corpo-escudo",
+          "nome": "Corpo Escudo",
+          "grupo": "Poderes do Voto da Muralha",
+          "descricao": "Uma vez por cena, quando você sofre dano, pode gastar a sua reação e 2 PM para <strong>reduzir esse dano em 1 + seu nível</strong>.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "reacao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Muralha",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "ombro-a-ombro",
+          "nome": "Ombro a Ombro",
+          "grupo": "Poderes do Voto da Muralha",
+          "descricao": "Aliados adjacentes a você recebem <strong>+1 na Defesa</strong> enquanto você estiver empunhando um escudo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Muralha",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "ultima-linha",
+          "nome": "Última Linha",
+          "grupo": "Poderes do Voto da Muralha",
+          "descricao": "Enquanto estiver com <strong>menos da metade dos seus PV</strong>, você recebe <strong>+2 na Defesa</strong> e <strong>Redução de Dano 2</strong> (respeitando o teto de RD do Núcleo).",
+          "prerequisito": "8º nível",
+          "nivelMinimo": 8,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Muralha",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "bencao-fortalecedora",
+          "nome": "Bênção Fortalecedora",
+          "grupo": "Poderes do Voto da Mão Aberta",
+          "descricao": "Como ação padrão, você gasta 2 PM e toca um aliado: ele recebe <strong>1d8 + Carisma PV temporários</strong> até o fim da cena.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 2,
+          "acao": "padrao",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Mão Aberta",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "chama-persistente",
+          "nome": "Chama Persistente",
+          "grupo": "Poderes do Voto da Mão Aberta",
+          "descricao": "Aliados curados pelo seu Toque Restaurador recebem <strong>+1 nos testes de ataque e de resistência</strong> até o início do seu próximo turno.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Mão Aberta",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "remedio-dos-fieis",
+          "nome": "Remédio dos Fiéis",
+          "grupo": "Poderes do Voto da Mão Aberta",
+          "descricao": "Quando você usa o Toque Restaurador, pode gastar +3 PM para <strong>dobrar o número de dados de cura</strong> (rolando o dobro de d8).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": 3,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Mão Aberta",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aliado-primeiro",
+          "nome": "Aliado Primeiro",
+          "grupo": "Poderes do Voto da Mão Aberta",
+          "descricao": "Quando usa o Toque Restaurador, o alvo, se não for você, <strong>também recebe +2 na Defesa</strong> até o início do seu próximo turno.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Mão Aberta",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "vigilia-de-cabeceira",
+          "nome": "Vigília de Cabeceira",
+          "grupo": "Poderes do Voto da Mão Aberta",
+          "descricao": "Ao fim de um descanso, você pode gastar 3 PM: todos os aliados que descansaram em alcance curto recebem <strong>PV temporários iguais ao seu nível</strong> (duram até o fim do dia seguinte e não se acumulam com outros PV temporários).",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": 3,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Mão Aberta",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "lamina-de-essencia",
+          "nome": "Lâmina de Essência",
+          "grupo": "Poderes do Voto da Sentença",
+          "descricao": "O dado da Punição Consagrada passa de d6 para <strong>d8</strong> (contra mortos-vivos, d10).",
+          "prerequisito": "6º nível",
+          "nivelMinimo": 6,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Sentença",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "olhar-sem-piedade",
+          "nome": "Olhar sem Piedade",
+          "grupo": "Poderes do Voto da Sentença",
+          "descricao": "Quando você sentencia uma criatura, ela faz um teste de <strong>Vontade</strong> (CD de paladino): se falhar, fica <strong>Abalada</strong> até o fim da cena. <em>Mental.</em>",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Sentença",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "ultimo-aviso",
+          "nome": "Último Aviso",
+          "grupo": "Poderes do Voto da Sentença",
+          "descricao": "No seu primeiro ataque contra a sua sentenciada em cada cena, você recebe <strong>+4 no dano</strong> (além de qualquer Punição).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Sentença",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "golpe-final",
+          "nome": "Golpe Final",
+          "grupo": "Poderes do Voto da Sentença",
+          "descricao": "Contra uma sentenciada com <strong>menos da metade dos PV</strong>, a Punição Consagrada causa <strong>+1d6 de dano de Essência</strong> adicional (uma vez por ataque).",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Sentença",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "cadeia-de-sentencas",
+          "nome": "Cadeia de Sentenças",
+          "grupo": "Poderes do Voto da Sentença",
+          "descricao": "Quando reduz a sua sentenciada a 0 PV, você pode sentenciar <strong>outra criatura em alcance curto</strong> como ação livre (sem pagar PM).",
+          "prerequisito": "Dívida Paga",
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "livre",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": "Voto da Sentença",
+          "repetivel": false,
+          "maxEscolhas": null
+        },
+        {
+          "id": "aumento-de-atributo",
+          "nome": "Aumento de Atributo",
+          "grupo": "Poderes comuns",
+          "descricao": "Você recebe +1 em um atributo. Você pode escolher este poder várias vezes, mas apenas uma vez por patamar para um mesmo atributo.",
+          "prerequisito": null,
+          "nivelMinimo": null,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "atributo",
+            "quantidade": 1
+          }
+        },
+        {
+          "id": "pericia-especializada",
+          "nome": "Perícia Especializada",
+          "grupo": "Poderes comuns",
+          "descricao": "Escolha uma perícia em que você seja treinado e ainda não seja especialista. Você se torna especialista nela (bônus de treino +4). Você pode escolher este poder quantas vezes quiser, cada vez para uma perícia diferente.",
+          "prerequisito": "10º nível",
+          "nivelMinimo": 10,
+          "custoPM": null,
+          "acao": "passivo",
+          "atributoMinimo": null,
+          "requerPoderes": [],
+          "requerGrupo": null,
+          "repetivel": true,
+          "maxEscolhas": null,
+          "escolha": {
+            "tipo": "pericias",
+            "quantidade": 1,
+            "filtro": "treinadas-nao-especialistas"
+          }
+        }
+      ]
     }
   ]
 };

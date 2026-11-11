@@ -1,0 +1,38 @@
+{
+  "_id": "KlC9h4cTvs3GmZn5",
+  "name": "Carga Fulgurante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "ERBt3d0O0FMVTXVW",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando faz uma investida e acerta o ataque, você pode gastar 2 PM para causar <strong>+2d6 de dano de Essência</strong>.",
+    "classe": "paladino",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__carga-fulgurante",
+      "classe": "paladino",
+      "poder": "carga-fulgurante",
+      "inferido": true
+    }
+  },
+  "_key": "!items!KlC9h4cTvs3GmZn5"
+}

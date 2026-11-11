@@ -1,0 +1,38 @@
+{
+  "_id": "GNA8lMkGVW9dTQKg",
+  "name": "Toque Restaurador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/Paladino.png",
+  "folder": "KDDI8gMXhVHTDim7",
+  "sort": 2002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e toca uma criatura (inclusive você), que recupera <strong>1d8 + Carisma</strong> PV (mínimo +1). A cura aumenta em <strong>+1d8 no 5º, 9º, 13º e 17º níveis</strong> (5d8 no 17º). Cada criatura só pode ser curada pelo seu Toque Restaurador <strong>uma vez por cena</strong>. <em>Divino.</em>",
+    "classe": "paladino",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "paladino__toque-restaurador",
+      "classe": "paladino",
+      "habilidade": "toque-restaurador",
+      "inferido": true
+    }
+  },
+  "_key": "!items!GNA8lMkGVW9dTQKg"
+}

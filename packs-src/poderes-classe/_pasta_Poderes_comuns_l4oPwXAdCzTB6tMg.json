@@ -1,0 +1,15 @@
+{
+  "_id": "l4oPwXAdCzTB6tMg",
+  "name": "Poderes comuns",
+  "type": "Item",
+  "folder": "F29bTTKqG6iKtTRQ",
+  "sorting": "a",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:paladino:poderes-comuns"
+    }
+  },
+  "_key": "!folders!l4oPwXAdCzTB6tMg"
+}
