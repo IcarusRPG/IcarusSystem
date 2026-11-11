@@ -7,7 +7,7 @@
   "sort": 4001,
   "system": {
     "fonte": "classe",
-    "custoPM": 1,
+    "custoPM": null,
     "prerequisito": "",
     "nivel": 4,
     "acao": "passivo",
@@ -31,7 +31,7 @@
       "id": "guerreiro__embalo-de-batalha",
       "classe": "guerreiro",
       "habilidade": "embalo-de-batalha",
-      "inferido": true
+      "inferido": false
     }
   },
   "_key": "!items!RDkFjscEoQDfUqzX"

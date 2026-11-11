@@ -321,3 +321,13 @@ test("15. Assistente de nível: habilidades da linha, poder só a partir do 2º,
   const conjurador = { ...monge, pmAtributoSoNoPrimeiroNivel: false };
   assert.equal(ganhoDoNivel(conjurador, { SAB: 3 }, 2).pm, 7);
 });
+
+test("Habilidades que recuperam PM não têm custo (o número do texto não é custo)", () => {
+  const ganho = [["guerreiro", "embalo-de-batalha"], ["samurai", "meditacao-de-combate"], ["barbaro", "furia-sanguinaria"], ["arcanista", "mana-transbordante"], ["paladino", "divida-paga"]];
+  for (const [c, id] of ganho) {
+    const k = classePorId(c);
+    const h = [...k.habilidades, ...k.poderes].find(x => x.id === id);
+    assert.ok(h, `${c}/${id}`);
+    assert.ok(!h.custoPM, `${c}/${id} com custo ${h.custoPM}`);
+  }
+});

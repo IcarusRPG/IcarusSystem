@@ -7,7 +7,7 @@
   "sort": 20002,
   "system": {
     "fonte": "classe",
-    "custoPM": 2,
+    "custoPM": null,
     "prerequisito": "",
     "nivel": 20,
     "acao": "passivo",
@@ -31,7 +31,7 @@
       "id": "arcanista__mana-transbordante",
       "classe": "arcanista",
       "habilidade": "mana-transbordante",
-      "inferido": true
+      "inferido": false
     }
   },
   "_key": "!items!cX8ZjuYj1LtBdcOv"
