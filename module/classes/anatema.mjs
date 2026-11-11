@@ -21,6 +21,7 @@
  *   derivados na ficha.
  */
 import { SISTEMA_ID } from "../config.mjs";
+import { pmDisponivel, gastoDePM } from "../pm-gasto.mjs";
 import { temHabilidadeNosItens } from "../classes-dados.mjs";
 import { classeDoAtor, ACOES_DE_MECANICA, concederHabilidades } from "../classes.mjs";
 import { GANCHOS_DE_PODER, PAGAMENTO_COM_PV } from "../acoes.mjs";
@@ -92,9 +93,8 @@ async function pagar(actor, pm, comPV = 0) {
   const p = precoDoAtor(actor);
   const v = p ? Math.min(Math.max(0, Math.trunc(Number(comPV) || 0)), p.maximo(pm)) : 0;
   const daMana = pm - v;
-  if (daMana > actor.system.pm.value) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: daMana, atual: actor.system.pm.value })); return false; }
-  const mudancas = {};
-  if (daMana) mudancas["system.pm.value"] = actor.system.pm.value - daMana;
+  if (daMana > pmDisponivel(actor)) { ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: daMana, atual: pmDisponivel(actor) })); return false; }
+  const mudancas = daMana ? gastoDePM(actor, daMana) : {};
   if (v) mudancas["system.pv.value"] = actor.system.pv.value - v * p.pvPorPM;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
   if (v) await p.aoPagar(actor, v);

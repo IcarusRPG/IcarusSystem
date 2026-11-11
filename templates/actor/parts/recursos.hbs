@@ -27,6 +27,10 @@
       {{#if editable}}<button type="button" class="btn quad" data-action="recurso" data-recurso="pm" data-delta="1" aria-label="{{localize 'ICARUS.PM.Recuperar'}}">+</button>{{/if}}
     </div>
     <div class="barra"><span style="width: {{pm.pct}}%"></span></div>
+    <label class="pv-temp{{#if pm.temp}} ativo{{/if}}" title="{{localize 'ICARUS.PM.TempDica'}}">
+      {{localize "ICARUS.PM.Temporarios"}}
+      <input class="campo" type="number" name="system.pm.temp" value="{{pm.temp}}" min="0" step="1">
+    </label>
   </div>
 
   <div class="painel defesa">

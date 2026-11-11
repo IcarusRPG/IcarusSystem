@@ -8,6 +8,7 @@
  * até o início do próximo turno do personagem (aí a ação se perde). Sem automação do gatilho.
  */
 import { SISTEMA_ID } from "./config.mjs";
+import { pmDisponivel, gastoDePM } from "./pm-gasto.mjs";
 import { podeReagir } from "./combate.mjs";
 
 const loc = k => game.i18n.localize(k);
@@ -96,14 +97,13 @@ export async function usarPoder(actor, item, { custo = null } = {}) {
   // Ganchos de todos os poderes (Cofre da Família, custo em dinheiro): podem trocar PM por dinheiro
   for (const fn of ANTES_DE_USAR) if ((await fn(actor, item, uso)) === false) return null;
   if (sangue && typeof resposta === "object") uso.comPV = Math.min(resposta.comPV, sangue.maximo(uso.pm));
-  if (uso.pm - uso.comPV > actor.system.pm.value) {
-    ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: uso.pm - uso.comPV, atual: actor.system.pm.value }));
+  if (uso.pm - uso.comPV > pmDisponivel(actor)) {
+    ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: uso.pm - uso.comPV, atual: pmDisponivel(actor) }));
     return null;
   }
   const gancho = GANCHOS_DE_PODER.get(item.flags?.[SISTEMA_ID]?.id);
   if (gancho?.antes && (await gancho.antes(actor, item, uso)) === false) return null;
-  const mudancas = {};
-  if (uso.pm) mudancas["system.pm.value"] = actor.system.pm.value - (uso.pm - uso.comPV);
+  const mudancas = uso.pm - uso.comPV > 0 ? gastoDePM(actor, uso.pm - uso.comPV) : {};
   if (uso.comPV) mudancas["system.pv.value"] = actor.system.pv.value - uso.comPV * sangue.pvPorPM;
   if (reacao) mudancas["system.reacao.disponivel"] = false;
   if (Object.keys(mudancas).length) await actor.update(mudancas);

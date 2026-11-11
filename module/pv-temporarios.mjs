@@ -1,5 +1,5 @@
 /**
- * PV temporários (system.pv.temp):
+ * PV e PM temporários (system.pv.temp, system.pm.temp). PV temporários:
  * - não se acumulam: vale o maior (novosTemporarios); a fonte que vale fica em flags.pvTempOrigem;
  * - o dano consome primeiro os temporários (module/dano.mjs); cura e perda de PV não mexem neles;
  * - somem no fim da cena ("Encerrar cena") ou quando o efeito de origem termina (origem = id do
@@ -9,6 +9,7 @@
 import { SISTEMA_ID } from "./config.mjs";
 import { novosTemporarios } from "./dano-aplicacao.mjs";
 import { FIM_DA_CENA } from "./condicoes-foundry.mjs";
+import { novosPMTemporarios } from "./pm-gasto.mjs";
 
 const F = SISTEMA_ID;
 const fmt = (k, d) => game.i18n.format(k, d);
@@ -53,6 +54,38 @@ export async function limparPVTemporarios(actor, origem = null) {
   await actor.update({ "system.pv.temp": 0, [`flags.${F}.-=pvTempOrigem`]: null });
 }
 
+/**
+ * PM temporários (system.pm.temp): o gasto de PM consome primeiro (module/pm-gasto.mjs); não se
+ * acumulam (vale o maior), salvo "acumula" (Golpe Mágico: soma até "limiteNaCena" por cena,
+ * contado em flags.pmTempCena). Somem no fim da cena ou com o efeito de origem (flags.pmTempOrigem).
+ * @param {{ origem?: string, fonte?: string, acumula?: boolean, limiteNaCena?: number }} [opcoes]
+ * @returns {Promise<number>} quantos PM temporários entraram
+ */
+export async function concederPMTemporarios(actor, valor, { origem = "cena", fonte = "", acumula = false, limiteNaCena = Infinity } = {}) {
+  if (!actor?.isOwner) return 0;
+  const naCena = Number(actor.getFlag(F, "pmTempCena")) || 0;
+  const r = novosPMTemporarios(actor.system?.pm?.temp, valor, { acumula, restanteNaCena: limiteNaCena - naCena });
+  if (r.ganho) {
+    await actor.update({ "system.pm.temp": r.valor, [`flags.${F}.pmTempOrigem`]: origem, ...(acumula ? { [`flags.${F}.pmTempCena`]: naCena + r.ganho } : {}) });
+  }
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="icarus-rolagem icarus-lembrete"><p class="condicao-descricao">${esc(r.ganho
+    ? fmt("ICARUS.PM.TempRecebe", { nome: actor.name, valor: r.ganho, total: r.valor, fonte })
+    : fmt(acumula ? "ICARUS.PM.TempLimite" : "ICARUS.PM.TempMantem", { nome: actor.name, atual: r.valor, fonte }))}</p></div>` });
+  return r.ganho;
+}
+
+/** Tira os PM temporários (todos, ou só se vieram dessa origem). */
+export async function limparPMTemporarios(actor, origem = null) {
+  if (!actor?.isOwner) return;
+  const mudancas = {};
+  if (Number(actor.system?.pm?.temp) > 0 && (!origem || actor.getFlag(F, "pmTempOrigem") === origem)) {
+    mudancas["system.pm.temp"] = 0;
+    mudancas[`flags.${F}.-=pmTempOrigem`] = null;
+  }
+  if (!origem && actor.getFlag(F, "pmTempCena") !== undefined) mudancas[`flags.${F}.-=pmTempCena`] = null;
+  if (Object.keys(mudancas).length) await actor.update(mudancas);
+}
+
 function aoRenderizar(mensagem, html) {
   const d = mensagem.flags?.[F]?.pvTemp;
   if (!d || d.aplicado) return;
@@ -77,7 +110,10 @@ function aoRenderizar(mensagem, html) {
 }
 
 // Fim da cena: somem
-FIM_DA_CENA.push(actor => limparPVTemporarios(actor));
+FIM_DA_CENA.push(async actor => {
+  await limparPVTemporarios(actor);
+  await limparPMTemporarios(actor);
+});
 
 Hooks.once("init", () => {
   if ((game.release?.generation ?? 12) >= 13) Hooks.on("renderChatMessageHTML", aoRenderizar);
@@ -87,5 +123,6 @@ Hooks.once("init", () => {
     const actor = efeito.parent;
     if (userId !== game.user.id || !actor?.system?.pv) return;
     limparPVTemporarios(actor, origemDoEfeito(efeito));
+    limparPMTemporarios(actor, origemDoEfeito(efeito));
   });
 });
