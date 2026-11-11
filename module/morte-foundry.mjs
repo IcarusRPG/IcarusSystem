@@ -13,9 +13,18 @@ import { resultadoTesteMorte, danoEmMorrendo } from "./morte.mjs";
 import { aplicarCondicao, removerCondicao } from "./condicoes-foundry.mjs";
 import { rolarDanoAvulso } from "./dano.mjs";
 import { CONDICAO_POR_ID } from "./condicoes.mjs";
+import { testeDoSangrando } from "./anatema-dados.mjs";
 
 const loc = k => game.i18n.localize(k);
 const T = `systems/${SISTEMA_ID}/templates/chat`;
+
+/** Teste do Sangrando do ator (CD e perda do Anátema que causou, Veias de Ferro, Praga de Sangue). */
+function sangrandoDoAtor(actor) {
+  const efeito = actor.effects.find(e => e.statuses?.has("sangrando"));
+  const veias = actor.items.some(i => i.flags?.[SISTEMA_ID]?.id === "anatema__veias-de-ferro");
+  const t = testeDoSangrando(efeito?.flags?.[SISTEMA_ID]?.sangrandoPor ?? null, { veiasDeFerro: veias, abalado: actor.statuses.has("abalado") });
+  return { ...t, cd: t.cd || CONDICAO_POR_ID.sangrando.turno.cd };
+}
 
 async function card(actor, dados, flags = {}) {
   const content = await renderTemplate(`${T}/lembrete.hbs`, dados);
@@ -89,7 +98,13 @@ async function lembretesDoTurno(actor) {
   const botoes = [];
   const linhas = [];
   if (s.has("em-chamas")) { linhas.push(loc("ICARUS.Lembrete.EmChamas")); botoes.push({ acao: "fogo", rotulo: loc("ICARUS.Lembrete.RolarFogo") }); }
-  if (s.has("sangrando")) { linhas.push(loc("ICARUS.Lembrete.Sangrando")); botoes.push({ acao: "sangrando", rotulo: loc("ICARUS.Lembrete.RolarConstituicao") }); }
+  if (s.has("sangrando")) {
+    const t = sangrandoDoAtor(actor);
+    linhas.push(game.i18n.format("ICARUS.Lembrete.Sangrando", { cd: t.cd, perda: t.perda }));
+    botoes.push({ acao: "sangrando", rotulo: game.i18n.format("ICARUS.Lembrete.RolarConstituicao", { cd: t.cd }) });
+    // Praga de Sangue (Anátema): Abalado e Sangrando por ele → +1d4 de perda no início do turno
+    if (t.praga) { linhas.push(loc("ICARUS.Lembrete.Praga")); botoes.push({ acao: "praga", rotulo: loc("ICARUS.Lembrete.RolarPraga") }); }
+  }
   if (s.has("confuso")) { linhas.push(loc("ICARUS.Lembrete.Confuso")); botoes.push({ acao: "confuso", rotulo: loc("ICARUS.Lembrete.RolarConfuso") }); }
   if (s.has("morrendo")) { linhas.push(loc("ICARUS.Lembrete.Morrendo")); botoes.push({ acao: "morte", rotulo: loc("ICARUS.Morte.Rolar") }); }
   if (!botoes.length) return;
@@ -108,18 +123,23 @@ async function aoClicarLembrete(actor, acao) {
     })?.[1] ?? "";
     return card(actor, { titulo: game.i18n.format("ICARUS.Lembrete.ConfusoEm", { nome: actor.name }), texto: linha, total: roll.total });
   }
+  if (acao === "praga") {
+    return rolarDanoAvulso({ formula: "1d4", titulo: game.i18n.format("ICARUS.Lembrete.PerdaEm", { nome: actor.name }), img: "icons/svg/blood.svg", actor, perda: true, alvoUuid: actor.uuid });
+  }
   if (acao === "sangrando") {
-    const con = actor.system.atributos.CON.total;
+    // CD e perda: 15 e 1d6, ou os do Anátema que causou (Ferida Teimosa, Hemorragia Pesada)
+    const t = sangrandoDoAtor(actor);
+    const con = actor.system.atributos.CON.total + t.bonus;
     const roll = await new Roll(`1d20 ${con < 0 ? "-" : "+"} ${Math.abs(con)}`).evaluate();
-    const ok = roll.total >= CONDICAO_POR_ID.sangrando.turno.cd;
+    const ok = roll.total >= t.cd;
     await card(actor, {
-      titulo: game.i18n.format("ICARUS.Lembrete.SangrandoEm", { nome: actor.name }),
-      texto: loc(ok ? "ICARUS.Lembrete.SangrandoParou" : "ICARUS.Lembrete.SangrandoContinua"),
+      titulo: game.i18n.format("ICARUS.Lembrete.SangrandoEm", { nome: actor.name, cd: t.cd }),
+      texto: ok ? loc("ICARUS.Lembrete.SangrandoParou") : game.i18n.format("ICARUS.Lembrete.SangrandoContinua", { perda: t.perda }),
       total: roll.total
     });
     if (ok) return removerCondicao(actor, "sangrando");
-    // Falha: perde 1d6 PV (perda de PV ignora resistências); o Mestre aplica pelo botão
-    return rolarDanoAvulso({ formula: CONDICAO_POR_ID.sangrando.turno.falha.perdaPV, titulo: game.i18n.format("ICARUS.Lembrete.PerdaEm", { nome: actor.name }), img: "icons/svg/blood.svg", actor, perda: true, alvoUuid: actor.uuid });
+    // Falha: perde PV (perda de PV ignora resistências); o Mestre aplica pelo botão
+    return rolarDanoAvulso({ formula: t.perda, titulo: game.i18n.format("ICARUS.Lembrete.PerdaEm", { nome: actor.name }), img: "icons/svg/blood.svg", actor, perda: true, alvoUuid: actor.uuid });
   }
 }
 

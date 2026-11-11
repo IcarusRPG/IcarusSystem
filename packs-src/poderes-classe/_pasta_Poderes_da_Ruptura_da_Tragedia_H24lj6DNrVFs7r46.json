@@ -1,0 +1,15 @@
+{
+  "_id": "H24lj6DNrVFs7r46",
+  "name": "Poderes da Ruptura da Tragédia",
+  "type": "Item",
+  "folder": "RkOR06ILPWmxxSY2",
+  "sorting": "a",
+  "sort": 300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:anatema:poderes-da-ruptura-da-tragedia"
+    }
+  },
+  "_key": "!folders!H24lj6DNrVFs7r46"
+}

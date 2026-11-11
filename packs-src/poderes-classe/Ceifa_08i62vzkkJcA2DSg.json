@@ -1,0 +1,38 @@
+{
+  "_id": "08i62vzkkJcA2DSg",
+  "name": "Ceifa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "AWhW2xnPO3hxKY38",
+  "sort": 1300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por rodada, quando você <strong>reduz uma criatura a 0 PV</strong> com um ataque corpo a corpo, pode fazer um ataque corpo a corpo adicional contra uma criatura adjacente, como ação livre.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura do Pecado",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura do Pecado",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__ceifa",
+      "classe": "anatema",
+      "poder": "ceifa",
+      "inferido": true
+    }
+  },
+  "_key": "!items!08i62vzkkJcA2DSg"
+}

@@ -58,11 +58,11 @@ export function bloqueiosDaForma({ forma = false, palavraNaFera = false, milForm
 /** Partes do Mosaico Vivo (Asas de Gavião só a partir do 10º nível). */
 export const PARTES_DO_MOSAICO = [
   { id: "garras", nivel: 1 },
-  { id: "olhos-de-coruja", nivel: 1, mudancas: [{ chave: "pericia.visao", valor: 5 }] },
+  { id: "olhos-de-coruja", nivel: 1, mudancas: [{ chave: "pericia:visao", valor: 5 }] },
   { id: "pernas-de-cervo", nivel: 1, mudancas: [{ chave: "deslocamento", valor: 6 }] },
   { id: "pele-de-rinoceronte", nivel: 1, mudancas: [{ chave: "defesa", valor: 2 }] },
   { id: "asas-de-gaviao", nivel: 10 },
-  { id: "nariz-de-lobo", nivel: 1, mudancas: [{ chave: "pericia.olfato", valor: 5 }] }
+  { id: "nariz-de-lobo", nivel: 1, mudancas: [{ chave: "pericia:olfato", valor: 5 }] }
 ];
 
 /** Quantas partes do Mosaico Vivo por uso: 1, 2 no 10º, 3 no 16º. */

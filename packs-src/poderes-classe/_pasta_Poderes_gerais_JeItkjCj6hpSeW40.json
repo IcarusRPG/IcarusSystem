@@ -1,0 +1,15 @@
+{
+  "_id": "JeItkjCj6hpSeW40",
+  "name": "Poderes gerais",
+  "type": "Item",
+  "folder": "RkOR06ILPWmxxSY2",
+  "sorting": "a",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:anatema:poderes-gerais"
+    }
+  },
+  "_key": "!folders!JeItkjCj6hpSeW40"
+}

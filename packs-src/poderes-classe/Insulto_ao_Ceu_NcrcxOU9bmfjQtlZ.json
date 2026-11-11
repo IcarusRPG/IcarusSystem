@@ -1,0 +1,38 @@
+{
+  "_id": "NcrcxOU9bmfjQtlZ",
+  "name": "Insulto ao Céu",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "L6uiWsktBD5JCXiQ",
+  "sort": 2200,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Como ação padrão, você gasta 2 PM e escolhe uma criatura em alcance curto: ela faz um teste de <strong>Vontade</strong> (CD de anátema). Se falhar, sofre <strong>2d6 de dano Psíquico</strong> e fica <strong>Abalada</strong> (se passar, sofre metade e não fica Abalada). <em>Mental.</em>",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Blasfêmia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Blasfêmia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__insulto-ao-ceu",
+      "classe": "anatema",
+      "poder": "insulto-ao-ceu",
+      "inferido": true
+    }
+  },
+  "_key": "!items!NcrcxOU9bmfjQtlZ"
+}

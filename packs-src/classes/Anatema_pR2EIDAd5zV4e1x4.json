@@ -1,0 +1,182 @@
+{
+  "_id": "pR2EIDAd5zV4e1x4",
+  "name": "Anátema",
+  "type": "classe",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "ysRhuRMBJ7MPmVyM",
+  "sort": 1400,
+  "system": {
+    "classeId": "anatema",
+    "papel": "Guerreiro da Ruptura Divina",
+    "atributoChave": "Sabedoria",
+    "pv": {
+      "inicial": 26,
+      "porNivel": 6,
+      "atributo": "CON"
+    },
+    "pm": {
+      "inicial": 2,
+      "porNivel": 2,
+      "atributo": "SAB",
+      "atributoSoNoPrimeiroNivel": true,
+      "texto": "2 + Sabedoria no 1º nível; +2 por nível seguinte; +1 PM a cada 2 níveis (Mana Coagulada)"
+    },
+    "pericias": {
+      "obrigatorias": "Fortitude e Intimidação",
+      "escolha": 3,
+      "lista": [
+        "Atletismo",
+        "Cura",
+        "Iniciativa",
+        "Intuição",
+        "Luta",
+        "Misticismo",
+        "Pontaria",
+        "Religião",
+        "Sobrevivência",
+        "Vontade"
+      ]
+    },
+    "proficiencias": {
+      "texto": "Armas simples e marciais, armaduras pesadas, escudos",
+      "armas": [
+        "simples",
+        "marciais"
+      ],
+      "armaduras": [
+        "pesada"
+      ],
+      "escudo": true,
+      "tunicas": false
+    },
+    "progressao": [
+      {
+        "nivel": 1,
+        "habilidades": [
+          "Abandonado",
+          "Mana Coagulada",
+          "Sangria de Guerra"
+        ],
+        "poder": false
+      },
+      {
+        "nivel": 2,
+        "habilidades": [
+          "Selar Feridas",
+          "Olhar Funesto"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 3,
+        "habilidades": [
+          "Ruptura"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 4,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 5,
+        "habilidades": [
+          "Dor Fértil"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 6,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 7,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 8,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 9,
+        "habilidades": [
+          "Habilidade de Ruptura"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 10,
+        "habilidades": [
+          "Veias de Ferro"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 11,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 12,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 13,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 14,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 15,
+        "habilidades": [
+          "Habilidade de Ruptura"
+        ],
+        "poder": true
+      },
+      {
+        "nivel": 16,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 17,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 18,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 19,
+        "habilidades": [],
+        "poder": true
+      },
+      {
+        "nivel": 20,
+        "habilidades": [
+          "Banho Rubro"
+        ],
+        "poder": true
+      }
+    ],
+    "intro": "<p>O anátema é quem o céu virou as costas. Um pecado, uma dúvida, uma tragédia ou uma blasfêmia dita no pior momento: a bênção sumiu, e no lugar dela ficou uma marca na carne. O vazio deixado pela divindade não ficou vazio por muito tempo. Ele descobriu que o sangue, aquilo que corre e pulsa, ainda carrega mana, e a mana não pede licença a ninguém.</p><p>Há anátemas que cortam, abrem, derrubam e fazem o inimigo pagar cada gota. Há os que sobrevivem ao que mataria qualquer outro, costurando a própria carne no meio da batalha. E há os que ofendem o próprio céu e fazem do medo uma arma. O que une todos é a Ruptura: eles já não devem nada a ninguém, e é por isso que ninguém os assusta.</p>"
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema"
+    }
+  },
+  "_key": "!items!pR2EIDAd5zV4e1x4"
+}

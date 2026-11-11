@@ -1,0 +1,38 @@
+{
+  "_id": "9IxqlXcAk6zedget",
+  "name": "Ruptura",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 3005,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você escolhe a ferida que o abandono deixou em você, e a escolha é permanente. Cada Ruptura concede uma habilidade agora, outra no 9º nível e outra no 15º, além de uma lista de poderes própria.<br>• <strong>Ruptura do Pecado:</strong> o anátema que cobra o que lhe devem. Dano e Sangrando.<br>• <strong>Ruptura da Tragédia:</strong> o anátema que sobrevive ao que mataria qualquer outro. Resistência, cura e proteção.<br>• <strong>Ruptura da Blasfêmia:</strong> o anátema que ofendeu o céu e não se arrependeu. Medo, controle e maldição.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__ruptura",
+      "classe": "anatema",
+      "habilidade": "ruptura",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9IxqlXcAk6zedget"
+}

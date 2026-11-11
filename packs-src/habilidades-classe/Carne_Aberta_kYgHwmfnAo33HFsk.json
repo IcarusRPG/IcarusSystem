@@ -1,0 +1,38 @@
+{
+  "_id": "kYgHwmfnAo33HFsk",
+  "name": "Carne Aberta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 3010,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Seus ataques corpo a corpo contra criaturas <strong>Sangrando</strong> causam <strong>+1d6 de dano</strong> (+2d6 no 11º nível e +3d6 no 17º).",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__carne-aberta",
+      "classe": "anatema",
+      "habilidade": "carne-aberta",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kYgHwmfnAo33HFsk"
+}

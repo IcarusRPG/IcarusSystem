@@ -32,6 +32,19 @@ export const GANCHOS_DE_PODER = new Map();
 export const ANTES_DE_USAR = [];
 
 /**
+ * Pagar PM com PV (Anátema: Preço de Sangue). Cada fonte: (actor) => { maximo(custo), pvPorPM,
+ * rotulo, aoPagar(actor, pm) } | null. Os diálogos de poder e de magia oferecem o campo.
+ */
+export const PAGAMENTO_COM_PV = [];
+export function pagamentoComPV(actor) {
+  for (const fn of PAGAMENTO_COM_PV) {
+    const p = fn(actor);
+    if (p) return p;
+  }
+  return null;
+}
+
+/**
  * Usar um poder pela ficha: confirmação com o custo em PM editável (o custo do item é sugestão),
  * reação conferida e gasta, PM descontado e card no chat. Nada é gasto sem confirmar.
  * @returns {Promise<object|null>} o uso { pm, reacao, forcado } ou null se cancelou
@@ -50,39 +63,51 @@ export async function usarPoder(actor, item, { custo = null } = {}) {
   const acao = s.acao ? loc(`ICARUS.Poderes.Acoes.${s.acao}`) : "";
   const avisoReacao = reacao && !situacao.pode
     ? `<p class="aviso">${esc(fmt("ICARUS.Reacao.NaoPode", { nome: actor.name, motivo: motivoReacao(situacao.motivo) }))}</p>` : "";
+  // Preço de Sangue (Anátema): parte do custo paga com PV
+  const sangue = pagamentoComPV(actor);
+  const campoSangue = sangue ? `<label class="linha">${esc(sangue.rotulo)}
+      <input type="number" name="pv" value="0" min="0" max="${sangue.maximo(Number(sugerido) || 0)}" step="1"></label>` : "";
   const content = `<div class="icarus-uso">
     <p>${acao ? `<b>${esc(acao)}</b> · ` : ""}${reacao ? esc(loc("ICARUS.Reacao.Gasta")) : ""}</p>
     <label class="linha">${esc(loc("ICARUS.Poderes.CustoPM"))}
       <input type="number" name="pm" value="${Number(sugerido) || 0}" min="0" step="1" autofocus></label>
+    ${campoSangue}
     ${inferido ? `<p class="dica">${esc(loc("ICARUS.Poderes.CustoInferido"))}</p>` : ""}
     <p class="dica">${esc(fmt("ICARUS.Poderes.PMAtual", { pm: actor.system.pm.value, max: actor.system.pm.max }))}</p>
     ${avisoReacao}
   </div>`;
   const forcado = reacao && !situacao.pode;
-  const pm = await foundry.applications.api.DialogV2.wait({
+  const resposta = await foundry.applications.api.DialogV2.wait({
     window: { title: fmt("ICARUS.Poderes.UsarTitulo", { nome: item.name }) },
     content,
     buttons: [
       { action: "usar", label: forcado ? loc("ICARUS.Reacao.UsarMesmoAssim") : loc("ICARUS.Poderes.Usar"), default: true,
-        callback: (ev, botao) => Math.max(0, Math.trunc(Number(botao.form.elements.pm.value) || 0)) },
+        callback: (ev, botao) => {
+          const pm = Math.max(0, Math.trunc(Number(botao.form.elements.pm.value) || 0));
+          return sangue ? { pm, comPV: Math.max(0, Math.trunc(Number(botao.form.elements.pv?.value) || 0)) } : pm;
+        } },
       { action: "cancelar", label: loc("ICARUS.Testes.Cancelar") }
     ],
     rejectClose: false
   });
-  if (pm === null || pm === undefined || pm === "cancelar") return null;
-  const uso = { pm, reacao, forcado };
+  if (resposta === null || resposta === undefined || resposta === "cancelar") return null;
+  const pm = typeof resposta === "object" ? resposta.pm : resposta;
+  const uso = { pm, reacao, forcado, comPV: 0 };
   // Ganchos de todos os poderes (Cofre da Família, custo em dinheiro): podem trocar PM por dinheiro
   for (const fn of ANTES_DE_USAR) if ((await fn(actor, item, uso)) === false) return null;
-  if (uso.pm > actor.system.pm.value) {
-    ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: uso.pm, atual: actor.system.pm.value }));
+  if (sangue && typeof resposta === "object") uso.comPV = Math.min(resposta.comPV, sangue.maximo(uso.pm));
+  if (uso.pm - uso.comPV > actor.system.pm.value) {
+    ui.notifications.warn(fmt("ICARUS.Poderes.SemPM", { nome: actor.name, pm: uso.pm - uso.comPV, atual: actor.system.pm.value }));
     return null;
   }
   const gancho = GANCHOS_DE_PODER.get(item.flags?.[SISTEMA_ID]?.id);
   if (gancho?.antes && (await gancho.antes(actor, item, uso)) === false) return null;
   const mudancas = {};
-  if (uso.pm) mudancas["system.pm.value"] = actor.system.pm.value - uso.pm;
+  if (uso.pm) mudancas["system.pm.value"] = actor.system.pm.value - (uso.pm - uso.comPV);
+  if (uso.comPV) mudancas["system.pv.value"] = actor.system.pv.value - uso.comPV * sangue.pvPorPM;
   if (reacao) mudancas["system.reacao.disponivel"] = false;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
+  if (uso.comPV) await sangue.aoPagar(actor, uso.comPV);
   await cardDeUso(actor, item, uso);
   await gancho?.depois?.(actor, item, uso);
   return uso;

@@ -1,0 +1,38 @@
+{
+  "_id": "YYZWaOZcAobW9Ujg",
+  "name": "Olhar Funesto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 2004,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 2,
+    "acao": "movimento",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você usa <strong>Sabedoria</strong>, em vez de Carisma, nos testes de <strong>Intimidação</strong>. Como ação de movimento, você faz um teste de Intimidação contra a <strong>Vontade</strong> de uma criatura em alcance curto: se vencer, ela fica <strong>Abalada</strong> até o fim da cena (se ela estiver <strong>Sangrando</strong>, fica <strong>Apavorada</strong> por 1 rodada, em vez de só Abalada). <em>Medo, Mental.</em>",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 2,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__olhar-funesto",
+      "classe": "anatema",
+      "habilidade": "olhar-funesto",
+      "inferido": true
+    }
+  },
+  "_key": "!items!YYZWaOZcAobW9Ujg"
+}

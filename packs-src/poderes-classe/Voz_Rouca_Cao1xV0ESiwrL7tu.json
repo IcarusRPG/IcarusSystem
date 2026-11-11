@@ -1,0 +1,38 @@
+{
+  "_id": "Cao1xV0ESiwrL7tu",
+  "name": "Voz Rouca",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 300,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+2 em Intimidação</strong> e se torna treinado nela, caso ainda não seja.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__voz-rouca",
+      "classe": "anatema",
+      "poder": "voz-rouca",
+      "inferido": false
+    }
+  },
+  "_key": "!items!Cao1xV0ESiwrL7tu"
+}

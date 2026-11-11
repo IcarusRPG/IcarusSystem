@@ -18,6 +18,17 @@ import { rolarDanoAvulso, rolarCura } from "./dano.mjs";
 import AUTOMACAO from "./dados/magias_automacao.mjs";
 import { registrarMantida, mantidasDoAtor } from "./magias-mantidas.mjs";
 import { cdDeConcentracao } from "./magias-dados.mjs";
+import { pagamentoComPV } from "./acoes.mjs";
+
+/**
+ * Pagar parte do custo com PV: Pacto de Sangue do Mago de Sangue (2 PV por PM, até metade do custo)
+ * ou Preço de Sangue do Anátema (module/classes/anatema.mjs). null se o conjurador não pode.
+ */
+function pagamentoDeSangue(actor, custoTotal) {
+  if (arcanistaDoAtor(actor)?.pacto) return { maximo: maximoDoPacto(custoTotal, actor.system.pv?.value ?? 0), pvPorPM: 2, titulo: loc("ICARUS.Magias.Pacto"), rotulo: loc("ICARUS.Magias.PactoPM") };
+  const p = pagamentoComPV(actor);
+  return p ? { maximo: p.maximo(custoTotal), pvPorPM: p.pvPorPM, titulo: p.titulo, rotulo: p.rotulo, aoPagar: p.aoPagar } : null;
+}
 
 const F = SISTEMA_ID;
 const T = `systems/${SISTEMA_ID}/templates`;
@@ -58,8 +69,8 @@ export class DialogoMagia extends HandlebarsApplicationMixin(ApplicationV2) {
       custoBase: s.custoPM, pmAtual: actor.system.pm.value, pmMax: actor.system.pm.max,
       cd: (actor.system.magia?.cd ?? 0) + (arc ? ajustesDoArcanista(s, arc).cd : 0) || null,
       aprimoramentos: s.aprimoramentos.map((a, i) => ({ indice: i, custo: a.custo, texto: a.texto })),
-      // Pacto de Sangue (Mago de Sangue): pagar parte do custo com PV (2 PV por PM)
-      pacto: !!arc?.pacto, pvAtual: actor.system.pv?.value,
+      // Pacto de Sangue (Mago de Sangue) ou Preço de Sangue (Anátema): pagar parte do custo com PV
+      pacto: !!pagamentoDeSangue(actor, s.custoPM), pactoTitulo: pagamentoDeSangue(actor, s.custoPM)?.titulo, pactoRotulo: pagamentoDeSangue(actor, s.custoPM)?.rotulo, pvAtual: actor.system.pv?.value,
       ...this.estado([], 0)
     };
   }
@@ -68,11 +79,12 @@ export class DialogoMagia extends HandlebarsApplicationMixin(ApplicationV2) {
   estado(indices, pacto = 0) {
     const { actor, item } = this.dados;
     const c = custoFinal(actor, item, indices);
-    const maxPacto = arcanistaDoAtor(actor)?.pacto ? maximoDoPacto(c.total, actor.system.pv?.value ?? 0) : 0;
+    const sangue = pagamentoDeSangue(actor, c.total);
+    const maxPacto = sangue?.maximo ?? 0;
     const comSangue = Math.min(Math.max(0, Math.trunc(pacto) || 0), maxPacto);
     const pm = c.total - comSangue;
     const p = podeLancar(actor.system.pm.value, pm);
-    return { custoTotal: c.total, maxPacto, comSangue, pvPacto: comSangue * 2, pmAPagar: pm, pode: p.pode,
+    return { custoTotal: c.total, maxPacto, comSangue, pvPacto: comSangue * (sangue?.pvPorPM ?? 2), pmAPagar: pm, pode: p.pode,
       motivo: p.pode ? "" : fmt("ICARUS.Magias.SemPM", { custo: pm, pm: actor.system.pm.value }) };
   }
 
@@ -145,7 +157,9 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   }
   const arc = arcanistaDoAtor(actor);
   const custo = custoFinal(actor, item, indices);
-  const comSangue = arc?.pacto ? Math.min(Math.max(0, Math.trunc(pacto) || 0), maximoDoPacto(custo.total, actor.system.pv?.value ?? 0)) : 0;
+  const sangue = semCustoBase ? null : pagamentoDeSangue(actor, custo.total);
+  const comSangue = sangue ? Math.min(Math.max(0, Math.trunc(pacto) || 0), sangue.maximo) : 0;
+  const pvPorPM = sangue?.pvPorPM ?? 2;
   // Milagre (Clérigo): a magia sai sem o custo base; aprimoramentos pagos normalmente
   const pmAPagar = semCustoBase ? Math.max(0, custo.total - custo.base) : custo.total - comSangue;
   const antes = actor.system.pm.value;
@@ -164,12 +178,13 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   const area = await areaNoMapa({ actor, item, tokenConjurador: tokenDoConjurador(actor), cor: plano.vfx?.cor ?? null,
     instantanea: tipoDeDuracao(s.duracao) === "instantanea" });
   if (area === null) return null;
-  // Pacto de Sangue: 2 PV por PM, perda de PV (sem RD)
+  // Pacto/Preço de Sangue: PV por PM, perda de PV (sem RD)
   const pvAntes = actor.system.pv?.value ?? 0;
-  await actor.update({ "system.pm.value": antes - pmAPagar, ...(comSangue ? { "system.pv.value": pvAntes - comSangue * 2 } : {}) });
+  await actor.update({ "system.pm.value": antes - pmAPagar, ...(comSangue ? { "system.pv.value": pvAntes - comSangue * pvPorPM } : {}) });
+  if (comSangue && sangue.aoPagar) await sangue.aoPagar(actor, comSangue);
   let cartao = null;
   try {
-    cartao = await cartaoDaMagia(actor, item, { ...custo, comSangue, pmAPagar }, plano);
+    cartao = await cartaoDaMagia(actor, item, { ...custo, comSangue, pvSangue: comSangue * pvPorPM, pmAPagar }, plano);
     // Sustentada (1 PM por turno) ou concentração (teste ao sofrer dano): passa a ser mantida
     try { await registrarMantida(actor, item); } catch (erro) { console.error("Icarus RPG | magia mantida", erro); }
     await rolagensDaMagia(actor, item, plano, cartao, area ?? null, custo.ajusteCd);
@@ -177,7 +192,7 @@ export async function executarLancamento(actor, item, indices = [], { pacto = 0,
   } catch (erro) {
     console.error("Icarus RPG | Lançar magia", erro);
     if (!cartao) {
-      await actor.update({ "system.pm.value": actor.system.pm.value + pmAPagar, ...(comSangue ? { "system.pv.value": actor.system.pv.value + comSangue * 2 } : {}) });
+      await actor.update({ "system.pm.value": actor.system.pm.value + pmAPagar, ...(comSangue ? { "system.pv.value": actor.system.pv.value + comSangue * pvPorPM } : {}) });
       ui.notifications.error(fmt("ICARUS.Magias.ErroDevolvido", { custo: pmAPagar }));
     } else ui.notifications.error(loc("ICARUS.Magias.ErroRolagem"));
     return cartao;
@@ -248,7 +263,7 @@ async function cartaoDaMagia(actor, item, custo, plano = { efeitos: [] }) {
   const alvos = alvosMarcados();
   const content = await renderTemplate(`${T}/chat/magia.hbs`, {
     img: item.img, nome: item.name, nivel: s.nivel, escola: s.escola,
-    custo: custo.total, custoBase: custo.base, comSangue: custo.comSangue ?? 0, pvSangue: (custo.comSangue ?? 0) * 2, execucao: s.execucao, alcance: s.alcance, alvo: s.alvo,
+    custo: custo.total, custoBase: custo.base, comSangue: custo.comSangue ?? 0, pvSangue: custo.pvSangue ?? (custo.comSangue ?? 0) * 2, execucao: s.execucao, alcance: s.alcance, alvo: s.alvo,
     duracao: s.duracao, resistencia: s.resistencia, cd,
     descricao: await TextEditor.enrichHTML(s.descricao, { async: true }),
     aprimoramentos: custo.indices.map(i => s.aprimoramentos[i]),
@@ -309,9 +324,11 @@ export function contextoDasMagias(actor) {
       : fmt("ICARUS.Mantidas.InfoConcentracao", { cd: cdDeConcentracao(m.nivel) }) }));
   // Paladino: só lança magias com Preces de Guerra
   const semPreces = s.identidade?.classe === "paladino" && !actor.items.some(i => i.flags?.[F]?.id === "paladino__preces-de-guerra" && i.flags?.[F]?.magiasExtras);
+  // Anátema: só lança magias com Palavras de Sangue
+  const semPalavras = s.identidade?.classe === "anatema" && !actor.items.some(i => i.flags?.[F]?.id === "anatema__palavras-de-sangue" && i.flags?.[F]?.magiasExtras);
   return {
     total: itens.length,
-    aviso: semPreces ? loc("ICARUS.Paladino.SemPreces") : bloqueiosDoAtor(actor).magias ? fmt("ICARUS.Druida.FormaSemMagia", { nome: actor.name }) : "",
+    aviso: semPreces ? loc("ICARUS.Paladino.SemPreces") : semPalavras ? loc("ICARUS.Anatema.SemPalavras") : bloqueiosDoAtor(actor).magias ? fmt("ICARUS.Druida.FormaSemMagia", { nome: actor.name }) : "",
     mantidas,
     grupos,
     cd: s.magia?.cd,

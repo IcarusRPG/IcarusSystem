@@ -1,5 +1,19 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.29.0
+
+### Anátema
+- `classes.json` com o **Anátema** (14 classes; 21 habilidades e 25 poderes; 502 poderes no total). Nas outras classes só muda a lista de perícias à escolha (Luta, Pontaria e Iniciativa onde faltavam). PV 26 + CON (+6 + CON por nível), **PM 2 × nível + Sabedoria** (atributo só uma vez) **+1 a cada 2 níveis** pela **Mana Coagulada**. Fortitude e Intimidação + 3 perícias; armas simples e marciais, armaduras pesadas e escudos. Ícone `img/Icones/classes/Anátema.png`.
+- **Abandonado:** o Anátema não escolhe divindade nem recebe Poderes Concedidos (o Mestre é só avisado). **Preço de Sangue:** os diálogos de usar poder, lançar magia e as ações do Anátema têm o campo "Pagar com PV": até 2 PM por turno, 3 PV cada (**Preço Barato:** até 3, 2 PV cada). É perda de PV e nunca deixa os PV em 0; uma vez por turno em combate.
+- **Sangria de Guerra:** botão no card do ataque corpo a corpo com arma de Corte ou Perfuração (1 PM). O Sangrando guarda quem o causou: CD 15 (**Ferida Teimosa:** 10 + metade do nível + Sabedoria) e perda 1d6 (**Hemorragia Pesada:** 2d6), e o lembrete de turno usa esses valores. **Corte Gêmeo** (+1 PM) pega o segundo alvo marcado. Alvo de outro jogador ou do Mestre recebe um botão "Aplicar" no chat.
+- **Selar Feridas** (remove Sangrando e cura 1d6 a 4d6; Costura Rápida, Cicatriz Viva em si, Selar à Distância, Pano e Linha) e **Olhar Funesto** (Sabedoria em Intimidação; rola a Intimidação e o card aplica Abalado, ou Apavorado por 1 rodada se o alvo estiver Sangrando; Voz Blasfema: 2 alvos; Voz que Quebra: ação livre por 1 PM) na aba Classe.
+- **Ruptura** (Pecado, Tragédia, Blasfêmia) permanente: habilidades e poderes só da escolhida. Carne Aberta, Mão Pesada, Sangue Fervente e Medo Ambulante entram no ataque; Sangria Total, Não Caio, Maldição Rubra, Aclamação do Pavor, Dente por Dente, Faca na Ferida, Insulto ao Céu e Amortecer têm automação simples; Pele de Cicatrizes (RD 2/4), Voz Rouca, Voz Blasfema, Veias de Ferro (+2 Fortitude, +5 contra Sangrando) e Armadura Rubra (+1 Defesa em armadura pesada) são calculados na ficha.
+- **Dor Fértil:** ao perder PV, +1 PM (1 vez por rodada; até metade do nível por cena). **Banho Rubro:** 1/dia; +2 em ataque e Intimidação e Sangria sem PM até o fim da cena, depois Fatigado.
+- **Palavras de Sangue:** a única forma de o Anátema lançar magias: 2 magias da lista **Sangue** por escolha, do 1º nível de magia no 5º até o 4º no 17º, CD com Sabedoria. Sem o poder, a aba Magias avisa e não aceita magias.
+
+### Correção
+- **Mosaico Vivo (Druida):** Olhos de Coruja e Nariz de Lobo não davam os +5 em Visão e Olfato (a chave do efeito estava errada).
+
 ## 0.28.0
 
 ### Druida

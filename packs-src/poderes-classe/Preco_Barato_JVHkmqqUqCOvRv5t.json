@@ -1,0 +1,38 @@
+{
+  "_id": "JVHkmqqUqCOvRv5t",
+  "name": "Preço Barato",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 1100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O pagamento de PM com PV do Abandonado passa a custar <strong>2 PV por PM</strong>, em vez de 3, e você pode pagar até <strong>3 PM por turno</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__preco-barato",
+      "classe": "anatema",
+      "poder": "preco-barato",
+      "inferido": false
+    }
+  },
+  "_key": "!items!JVHkmqqUqCOvRv5t"
+}

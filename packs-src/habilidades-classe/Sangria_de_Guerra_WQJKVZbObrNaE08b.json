@@ -1,0 +1,38 @@
+{
+  "_id": "WQJKVZbObrNaE08b",
+  "name": "Sangria de Guerra",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 1002,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 1,
+    "prerequisito": "",
+    "nivel": 1,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você <strong>acerta</strong> um ataque corpo a corpo com uma arma de <strong>Corte ou Perfuração</strong>, pode gastar 1 PM: o alvo fica <strong>Sangrando</strong>. Criaturas imunes a Sangrando não são afetadas.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 1,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__sangria-de-guerra",
+      "classe": "anatema",
+      "habilidade": "sangria-de-guerra",
+      "inferido": true
+    }
+  },
+  "_key": "!items!WQJKVZbObrNaE08b"
+}

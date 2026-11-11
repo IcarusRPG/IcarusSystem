@@ -1,0 +1,38 @@
+{
+  "_id": "DYjkYJ2FA2j0eWdv",
+  "name": "Hemorragia Pesada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 9011,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 9,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Criaturas que ficam Sangrando por causa de você perdem <strong>2d6 PV</strong>, em vez de 1d6, quando falham no teste da condição.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 9,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__hemorragia-pesada",
+      "classe": "anatema",
+      "habilidade": "hemorragia-pesada",
+      "inferido": false
+    }
+  },
+  "_key": "!items!DYjkYJ2FA2j0eWdv"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "L6uiWsktBD5JCXiQ",
+  "name": "Poderes da Ruptura da Blasfêmia",
+  "type": "Item",
+  "folder": "RkOR06ILPWmxxSY2",
+  "sorting": "a",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-classe:anatema:poderes-da-ruptura-da-blasfemia"
+    }
+  },
+  "_key": "!folders!L6uiWsktBD5JCXiQ"
+}

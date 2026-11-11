@@ -1,0 +1,38 @@
+{
+  "_id": "utH7FBkkygf6Y1eS",
+  "name": "Cicatriz Viva",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 3014,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": 3,
+    "acao": "livre",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar <strong>Selar Feridas em si mesmo</strong> como <strong>ação livre</strong> (uma vez por rodada) e, quando faz isso, a cura é <strong>+1d6</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 3,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__cicatriz-viva",
+      "classe": "anatema",
+      "habilidade": "cicatriz-viva",
+      "inferido": true
+    }
+  },
+  "_key": "!items!utH7FBkkygf6Y1eS"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "H2cOa0qhxRopkeEF",
+  "name": "Sangue Fervente",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 900,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Enquanto você estiver <strong>Sangrando</strong>, recebe <strong>+2 nos testes de ataque e +2 no dano</strong>. Você pode escolher não remover a sua própria condição Sangrando.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__sangue-fervente",
+      "classe": "anatema",
+      "poder": "sangue-fervente",
+      "inferido": false
+    }
+  },
+  "_key": "!items!H2cOa0qhxRopkeEF"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "9xz31PtxAqZsP6ag",
+  "name": "Banquete do Vencedor",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "Sabedoria 1",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você <strong>reduz uma criatura a 0 PV</strong> com um ataque, você recupera <strong>PV iguais à sua Sabedoria</strong> (mínimo 1).",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "SAB": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__banquete-do-vencedor",
+      "classe": "anatema",
+      "poder": "banquete-do-vencedor",
+      "inferido": false
+    }
+  },
+  "_key": "!items!9xz31PtxAqZsP6ag"
+}

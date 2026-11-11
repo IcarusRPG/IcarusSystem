@@ -1,0 +1,38 @@
+{
+  "_id": "kD5dcxkF2VNzKkNC",
+  "name": "Palavras de Sangue",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você aprende <strong>duas magias de Sangue</strong> de qualquer nível que já possa lançar, e passa a lançar magias da lista <strong>Sangue</strong>, usando <strong>Sabedoria</strong> como atributo-chave (CD = 10 + metade do seu nível + Sabedoria). Você acessa magias de nível 1 no 5º nível, nível 2 no 9º, nível 3 no 13º e nível 4 no 17º (o anátema não lança magias de nível 5). Você pode lançar magias usando qualquer armadura e escudo em que tenha proficiência. Sem este poder, o anátema <strong>não lança magias</strong>. Você pode escolher este poder várias vezes: cada vez, aprende mais duas magias de Sangue.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__palavras-de-sangue",
+      "classe": "anatema",
+      "poder": "palavras-de-sangue",
+      "inferido": false
+    }
+  },
+  "_key": "!items!kD5dcxkF2VNzKkNC"
+}

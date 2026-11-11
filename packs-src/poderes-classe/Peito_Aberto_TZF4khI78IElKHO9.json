@@ -1,0 +1,38 @@
+{
+  "_id": "TZF4khI78IElKHO9",
+  "name": "Peito Aberto",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "H24lj6DNrVFs7r46",
+  "sort": 1700,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você recebe <strong>+5 em Fortitude</strong> contra as condições <strong>Fraco, Enjoado e Fatigado</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Tragédia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Tragédia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__peito-aberto",
+      "classe": "anatema",
+      "poder": "peito-aberto",
+      "inferido": false
+    }
+  },
+  "_key": "!items!TZF4khI78IElKHO9"
+}

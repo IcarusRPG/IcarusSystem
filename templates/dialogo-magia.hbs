@@ -22,8 +22,8 @@
 
   {{#if pacto}}
   <fieldset class="ataque-secao">
-    <legend>{{localize "ICARUS.Magias.Pacto"}}</legend>
-    <label class="linha">{{localize "ICARUS.Magias.PactoPM"}} <input type="number" name="pacto" value="0" min="0" max="{{maxPacto}}" step="1"></label>
+    <legend>{{pactoTitulo}}</legend>
+    <label class="linha">{{pactoRotulo}} <input type="number" name="pacto" value="0" min="0" max="{{maxPacto}}" step="1"></label>
     <small class="ataque-dica" data-pacto-info></small>
   </fieldset>
   {{/if}}

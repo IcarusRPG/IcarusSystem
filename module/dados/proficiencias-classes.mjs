@@ -139,5 +139,16 @@ export default {
     ],
     "escudo": true,
     "tunicas": true
+  },
+  "anatema": {
+    "armas": [
+      "simples",
+      "marciais"
+    ],
+    "armaduras": [
+      "pesada"
+    ],
+    "escudo": true,
+    "tunicas": false
   }
 };

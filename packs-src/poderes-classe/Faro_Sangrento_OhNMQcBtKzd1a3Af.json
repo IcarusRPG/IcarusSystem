@@ -1,0 +1,38 @@
+{
+  "_id": "OhNMQcBtKzd1a3Af",
+  "name": "Faro Sangrento",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 1000,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você percebe, mesmo sem enxergar, a <strong>posição de criaturas feridas</strong> (com menos do que o máximo de PV) em alcance curto, e recebe <strong>+2 em Olfato</strong> contra criaturas Sangrando.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__faro-sangrento",
+      "classe": "anatema",
+      "poder": "faro-sangrento",
+      "inferido": false
+    }
+  },
+  "_key": "!items!OhNMQcBtKzd1a3Af"
+}

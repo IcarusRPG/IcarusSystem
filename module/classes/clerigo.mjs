@@ -176,6 +176,8 @@ ACOES_DE_MECANICA.set("clerigo:dia", async actor => {
   if (actor.getFlag(F, "horaFinalDia")) mudancas[`flags.${F}.-=horaFinalDia`] = null;
   // Druida: Mil Formas (1 vez por dia) volta
   if (actor.getFlag(F, "milFormasDia")) mudancas[`flags.${F}.-=milFormasDia`] = null;
+  // Anátema: Banho Rubro (1 vez por dia) volta
+  if (actor.getFlag(F, "banhoRubroDia")) mudancas[`flags.${F}.-=banhoRubroDia`] = null;
   if (Object.keys(mudancas).length) await actor.update(mudancas);
 });
 

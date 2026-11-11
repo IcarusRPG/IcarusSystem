@@ -7,6 +7,7 @@ import { atributoDeMagia, cdDaMagia, nivelMaximoDaClasse } from "./magias-dados.
 import { ATRIBUTOS, PERICIAS, TIPOS_EQUIPAVEIS, CARGA_BASE, CARGA_POR_FOR, TAMANHO_PACOTE, PERICIAS_PENALIZADAS } from "./config.mjs";
 import { bonusDeItensDeClasse, passivosDeClasse, temHabilidadeNosItens, dadosDasHerancas } from "./classes-dados.mjs";
 import { somarRD, tetoDeRD, tipoArmadura, usandoEscudo, vestindoTunica } from "./combate.mjs";
+import { passivosDoAnatema } from "./anatema-dados.mjs";
 import { totalEmCentavos } from "./moeda.mjs";
 import { modificadoresDasCondicoes, deslocamentoComCondicoes } from "./condicoes.mjs";
 import { vestimentasAtivas, bonusDeItens, ehVestimenta, ATAQUE_DESARMADO } from "./origens-dados.mjs";
@@ -49,6 +50,10 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   const porNivel = bonusDeNivel({
     nivel: s.nivel, bonusPvPorNivel: cc.bonusPvPorNivel, bonusPmPorNivel: cc.bonusPmPorNivel, bonusPmNivelImpar: cc.bonusPmNivelImpar
   });
+  // Anátema: Mana Coagulada (+1 PM a cada 2 níveis), Olhar Funesto, Vozes, Veias de Ferro, Armadura Rubra
+  const vestidosAnatema = itens.map(i => ({ type: i.type, system: i.system }));
+  const anatema = passivosDoAnatema(itens, { nivel: s.nivel, tipoArmadura: tipoArmadura(vestidosAnatema) });
+  porNivel.pm += anatema.pmExtra;
   s.pv.formula = maximoPelaClasse({ inicial: cc.pvInicial, porNivel: cc.pvPorNivel, atributoTotal: total(cc.pvAtributo), nivel: s.nivel });
   s.pm.formula = maximoPelaClasse({ inicial: cc.pmInicial, porNivel: cc.pmPorNivel, atributoTotal: total(cc.pmAtributo), nivel: s.nivel, atributoUmaVez: !!cc.pmAtributoSoNoPrimeiroNivel });
   s.pv.bonusNivel = porNivel.pv;
@@ -100,6 +105,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   const passivos = passivosDeClasse(itens, {
     tipoArmadura: tipoArmadura(vestidos), usandoEscudo: usandoEscudo(vestidos), vestindoTunica: vestindoTunica(vestidos), SAB: s.atributos.SAB.total
   });
+  passivos.defesa.push(...anatema.defesa);
   s.defesa.passivos = passivos.defesa;
   for (const p of passivos.defesa) s.defesa.total += p.valor;
   s.defesa.condicao = cond.defesa;
@@ -110,9 +116,11 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
   for (const p of PERICIAS) {
     const d = s.pericias[p.chave];
     if (!ATRIBUTOS.includes(d.atributo)) d.atributo = p.atributo;
+    // Olhar Funesto (Anátema): Sabedoria no lugar de Carisma em Intimidação
+    if (anatema.atributos[p.chave] && d.atributo === p.atributo) d.atributo = anatema.atributos[p.chave];
     d.treino = limitar(Math.trunc(numero(d.treino)), 0, 2);
     // Treino Extra / Treinamento Extra: treinada por poder de classe (derivado; remover o item desfaz)
-    d.treinadaPorPoder = deClasse.treinadas.has(p.chave) && d.treino < 1;
+    d.treinadaPorPoder = (deClasse.treinadas.has(p.chave) || anatema.treinadas.includes(p.chave)) && d.treino < 1;
     if (d.treinadaPorPoder) d.treino = 1;
     // Perícia Especializada / Perícia Refinada: treinada vira especialista (+4); ao remover o item, volta
     d.especialistaPorPoder = deClasse.especialistas.has(p.chave) && d.treino >= 1;
@@ -120,7 +128,7 @@ export function derivarPersonagem(s, itens = [], condicoesAtivas = [], opcoes = 
     d.bonusTreino = bonusTreino(d.treino);
     d.penalidadeArmadura = PERICIAS_PENALIZADAS.includes(p.chave) ? s.defesa.penalidade : 0;
     d.total = totalPericia(s.atributos[d.atributo].total, d.treino, d.outros) - d.penalidadeArmadura;
-    d.bonusHeranca = herancas.pericias[p.chave] ?? [];
+    d.bonusHeranca = [...(herancas.pericias[p.chave] ?? []), ...(anatema.pericias[p.chave] ?? [])];
     for (const b of d.bonusHeranca) d.total += b.valor;
     // Bônus incondicionais de itens comuns em uso (o mesmo item não soma consigo mesmo)
     d.bonusItens = deItens[p.chave] ?? [];

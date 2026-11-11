@@ -13,5 +13,6 @@ export default {
   "bardo": "Bardo.png",
   "clerigo": "Clérigo.png",
   "paladino": "Paladino.png",
-  "druida": "Druida.png"
+  "druida": "Druida.png",
+  "anatema": "Anátema.png"
 };

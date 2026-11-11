@@ -1,0 +1,38 @@
+{
+  "_id": "2FLywfa7uwUzscc3",
+  "name": "Costura Rápida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "H24lj6DNrVFs7r46",
+  "sort": 1600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "A cura do Selar Feridas aumenta em <strong>+1d6</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Tragédia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Tragédia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__costura-rapida",
+      "classe": "anatema",
+      "poder": "costura-rapida",
+      "inferido": false
+    }
+  },
+  "_key": "!items!2FLywfa7uwUzscc3"
+}

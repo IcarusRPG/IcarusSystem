@@ -1,0 +1,38 @@
+{
+  "_id": "WxO0NKuL2qSlU1Lo",
+  "name": "Amortecer",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "H24lj6DNrVFs7r46",
+  "sort": 1800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 2,
+    "prerequisito": "6º nível",
+    "nivel": null,
+    "acao": "reacao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Quando você sofre dano, pode gastar 2 PM e a sua reação para <strong>reduzir esse dano em 3 + metade do seu nível</strong>.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Tragédia",
+    "nivelMinimo": 6,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Tragédia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__amortecer",
+      "classe": "anatema",
+      "poder": "amortecer",
+      "inferido": true
+    }
+  },
+  "_key": "!items!WxO0NKuL2qSlU1Lo"
+}

@@ -103,6 +103,13 @@ export async function trocarDivindade(actor, novoId) {
     actor.sheet?.render(false);
     return;
   }
+  // Anátema (Abandonado): não pode ser devoto
+  const { devocaoBloqueada } = await import("../classes/anatema.mjs");
+  if (novoId && devocaoBloqueada(actor) && !game.user.isGM) {
+    ui.notifications.warn(game.i18n.localize("ICARUS.Anatema.SemDevocao"));
+    actor.sheet?.render(false);
+    return;
+  }
   const daAnterior = actor.items.filter(i => i.flags?.[SISTEMA_ID]?.concedido && i.flags[SISTEMA_ID].divindade === atual);
   if (atual && daAnterior.length) {
     const anterior = divindadePorId(atual)?.nome ?? atual;

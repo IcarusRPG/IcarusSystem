@@ -1,0 +1,38 @@
+{
+  "_id": "RG8toxMxN61NyVbb",
+  "name": "Estilo: Ruptura da Tragédia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 13,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "O anátema que sobrevive.",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__estilo-ruptura-da-tragedia",
+      "classe": "anatema",
+      "habilidade": "estilo-ruptura-da-tragedia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!RG8toxMxN61NyVbb"
+}

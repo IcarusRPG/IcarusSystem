@@ -1,0 +1,38 @@
+{
+  "_id": "FNsSt3k2WiOFO7EC",
+  "name": "Selar à Distância",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 600,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "5º nível",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Você pode usar o Selar Feridas em alcance <strong>curto</strong>, em vez de toque.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__selar-a-distancia",
+      "classe": "anatema",
+      "poder": "selar-a-distancia",
+      "inferido": false
+    }
+  },
+  "_key": "!items!FNsSt3k2WiOFO7EC"
+}

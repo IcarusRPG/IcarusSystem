@@ -220,3 +220,10 @@ test("Sangue Verde: Doente não pega", () => {
   const r = (ganchos.preCreateActiveEffect ?? []).map(f => f({ parent: a, statuses: new Set(["doente"]) }, {}, {}, "u1"));
   assert.ok(r.includes(false));
 });
+
+test("Mosaico Vivo: Olhos de Coruja e Nariz de Lobo dão +5 de verdade (Visão e Olfato no efeito)", async () => {
+  const { mudancasParaEfeito } = await import("../module/magias-dados.mjs");
+  const chaves = id => mudancasParaEfeito(D.PARTES_DO_MOSAICO.find(p => p.id === id).mudancas).changes.map(c => [c.key, c.value]);
+  assert.deepEqual(chaves("olhos-de-coruja"), [["system.pericias.visao.outros", "5"]]);
+  assert.deepEqual(chaves("nariz-de-lobo"), [["system.pericias.olfato.outros", "5"]]);
+});

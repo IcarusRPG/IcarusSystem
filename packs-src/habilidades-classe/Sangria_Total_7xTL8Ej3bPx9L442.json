@@ -1,0 +1,38 @@
+{
+  "_id": "7xTL8Ej3bPx9L442",
+  "name": "Sangria Total",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "vqU1gah6mMyKZOBj",
+  "sort": 15012,
+  "system": {
+    "fonte": "classe",
+    "custoPM": 6,
+    "prerequisito": "",
+    "nivel": 15,
+    "acao": "padrao",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Uma vez por cena, como ação padrão, você gasta 6 PM e faz um ataque corpo a corpo: se acertar, o alvo e <strong>cada criatura Sangrando em alcance curto</strong> perdem <strong>4d6 PV</strong> (sem teste).",
+    "classe": "anatema",
+    "tipoPoder": "habilidade",
+    "grupo": "",
+    "nivelMinimo": 15,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__sangria-total",
+      "classe": "anatema",
+      "habilidade": "sangria-total",
+      "inferido": true
+    }
+  },
+  "_key": "!items!7xTL8Ej3bPx9L442"
+}

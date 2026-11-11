@@ -1,0 +1,38 @@
+{
+  "_id": "fKSrUvgHuy5PBQdz",
+  "name": "Praga de Sangue",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "L6uiWsktBD5JCXiQ",
+  "sort": 2100,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Criaturas que estejam ao mesmo tempo <strong>Abaladas e Sangrando</strong> por causa de você perdem <strong>+1d4 PV</strong> no início de cada turno delas.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes da Ruptura da Blasfêmia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "Ruptura da Blasfêmia",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__praga-de-sangue",
+      "classe": "anatema",
+      "poder": "praga-de-sangue",
+      "inferido": false
+    }
+  },
+  "_key": "!items!fKSrUvgHuy5PBQdz"
+}

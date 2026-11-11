@@ -1,0 +1,38 @@
+{
+  "_id": "OO9nUSRgyR09aUFw",
+  "name": "Medo Ambulante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/classes/An%C3%A1tema.png",
+  "folder": "JeItkjCj6hpSeW40",
+  "sort": 800,
+  "system": {
+    "fonte": "classe",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "passivo",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "Criaturas <strong>Abaladas ou Apavoradas</strong> por você sofrem <strong>–2 na Defesa</strong> contra os seus ataques.",
+    "classe": "anatema",
+    "tipoPoder": "poder",
+    "grupo": "Poderes gerais",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "anatema__medo-ambulante",
+      "classe": "anatema",
+      "poder": "medo-ambulante",
+      "inferido": false
+    }
+  },
+  "_key": "!items!OO9nUSRgyR09aUFw"
+}
