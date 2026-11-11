@@ -1,5 +1,18 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.31.0
+
+### PV temporários
+- Novo campo **PV temporários** na ficha, abaixo da barra de PV. Fica em destaque quando há algum, e o Mestre pode ajustar à mão.
+- **Regra:** o dano consome primeiro os PV temporários, depois os PV. O cálculo no chat mostra quanto foi para os temporários, e "Desfazer" devolve os dois.
+- Os PV temporários **não se acumulam** (vale o maior) e a **cura não os restaura**. A **perda de PV** (Sangrando, Preço de Sangue, Faca na Ferida) também não mexe neles.
+- Eles **somem no fim da cena** ("Encerrar cena") ou **quando o efeito de origem termina** (sair da Forma, sair da Ascensão ou apagar o efeito).
+- Ligados ao campo:
+  - **Forma de Urso** (2 × nível) e **Fera Ancestral** (3 × nível): somem com a Forma;
+  - **Não Caio** (4d8);
+  - **Pano e Linha** (metade do nível, no aliado). Se o aliado é de outro jogador, o chat mostra um botão "Aplicar" para o Mestre;
+  - **Forma Ancestral** da Ascensão (3 × nível): some com a Ascensão.
+
 ## 0.30.0
 
 ### Místico

@@ -26,6 +26,7 @@ import { estatisticasDoVinculo, familiarPorId } from "../classes-dados.mjs";
 import { mudancasParaEfeito, motivoParaNaoAprender } from "../magias-dados.mjs";
 import { invocarCompanheiro, atorDoCompanheiro } from "./patrulheiro.mjs";
 import FAMILIARES from "../dados/familiares.mjs";
+import { concederPVTemporarios, origemDoEfeito } from "../pv-temporarios.mjs";
 import {
   ELEMENTOS, elementosDosItens, danoDaRajada, custoDaRajada, magiasConhecidasDoMistico, magiasDivinasDoMistico,
   nivelMaximoDivinoDoMistico, MEDITACAO_CD, curaDaMeditacao, usosDaAscensao, FORMAS_DA_ASCENSAO, extrasDoFamiliar, familiaresDosItens
@@ -187,12 +188,14 @@ ACOES_DE_MECANICA.set("mistico:ascensao", async actor => {
   const uso = await usarPoder(actor, item);
   if (!uso) return;
   const { changes } = mudancasParaEfeito(FORMAS_DA_ASCENSAO[forma]);
-  await actor.createEmbeddedDocuments("ActiveEffect", [{ name: `${item.name}`, img: item.img, changes, transfer: false, flags: { [F]: { duracao: "cena", mistico: "ascensao" } } }]);
+  const [efeito] = await actor.createEmbeddedDocuments("ActiveEffect", [{ name: `${item.name}`, img: item.img, changes, transfer: false, flags: { [F]: { duracao: "cena", mistico: "ascensao" } } }]);
   await actor.update({ [`flags.${F}.ascensaoUsos`]: usos + 1, [`flags.${F}.ascensao`]: forma });
   const texto = forma === "ancestral"
     ? fmt("ICARUS.Mistico.AncestralChat", { nome: actor.name, pv: 3 * actor.system.nivel })
     : fmt("ICARUS.Mistico.DivinaChat", { nome: actor.name });
-  return avisarNoChat(actor, texto);
+  await avisarNoChat(actor, texto);
+  // Forma Ancestral: 3 × nível PV temporários, que somem quando a Ascensão acaba
+  if (forma === "ancestral") await concederPVTemporarios(actor, 3 * actor.system.nivel, { origem: origemDoEfeito(efeito), fonte: loc("ICARUS.Mistico.Formas.ancestral") });
 });
 
 ACOES_DE_MECANICA.set("mistico:voltar", async actor => {

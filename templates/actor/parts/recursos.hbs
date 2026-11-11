@@ -10,6 +10,10 @@
       {{#if editable}}<button type="button" class="btn quad" data-action="recurso" data-recurso="pv" data-delta="1" aria-label="{{localize 'ICARUS.PV.Recuperar'}}">+</button>{{/if}}
     </div>
     <div class="barra"><span style="width: {{pv.pct}}%"></span></div>
+    <label class="pv-temp{{#if pv.temp}} ativo{{/if}}" title="{{localize 'ICARUS.PV.TempDica'}}">
+      {{localize "ICARUS.PV.Temporarios"}}
+      <input class="campo" type="number" name="system.pv.temp" value="{{pv.temp}}" min="0" step="1">
+    </label>
   </div>
 
   <div class="painel recurso pm">

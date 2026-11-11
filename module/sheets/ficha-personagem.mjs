@@ -162,7 +162,7 @@ export class FichaPersonagem extends ActorSheet {
     };
 
     const pct = (v, m) => (m > 0 ? Math.round(100 * v / m) : 0);
-    ctx.pv = { value: s.pv.value, max: s.pv.max, pct: pct(s.pv.value, s.pv.max), dica: dica("system.classeConfig.bonusPvPorNivel") };
+    ctx.pv = { value: s.pv.value, max: s.pv.max, temp: s.pv.temp ?? 0, pct: pct(s.pv.value, s.pv.max), dica: dica("system.classeConfig.bonusPvPorNivel") };
     ctx.pm = { value: s.pm.value, max: s.pm.max, pct: pct(s.pm.value, s.pm.max), dica: dica("system.classeConfig.bonusPmPorNivel", "system.classeConfig.bonusPmNivelImpar") };
     ctx.defesa = {
       total: s.defesa.total,

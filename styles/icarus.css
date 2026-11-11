@@ -234,6 +234,10 @@ body.game {
 .ficha-icarus .defesa-info b { color: var(--ic-texto); }
 .ficha-icarus .outros-def { display: inline-flex; align-items: center; gap: 6px; }
 .ficha-icarus .outros-def input { width: 48px; padding: 1px 4px; font-size: 14px; text-align: center; }
+/* PV temporários: abaixo da barra de PV; destacado quando há algum */
+.ficha-icarus .pv-temp { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; font-size: 12px; opacity: 0.75; }
+.ficha-icarus .pv-temp input { width: 48px; padding: 1px 4px; font-size: 14px; text-align: center; }
+.ficha-icarus .pv-temp.ativo { opacity: 1; font-weight: bold; color: #4a90c2; }
 
 /* --- Abas --- */
 .ficha-icarus .abas {

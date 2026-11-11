@@ -33,6 +33,7 @@ import { dadosDoPoderDeClasse } from "../dados-compendios.mjs";
 import ICONES_CLASSES from "../dados/icones-classes.mjs";
 import { divindadePorId } from "../panteao.mjs";
 import { CONDICAO_POR_ID } from "../condicoes.mjs";
+import { concederPVTemporarios, origemDoEfeito } from "../pv-temporarios.mjs";
 import {
   FORMAS, formaDoPoder, custoDaForma, danoDaForma, pvTemporariosDoUrso, pvTemporariosDaFeraAncestral, formaDoAtor,
   PARTES_DO_MOSAICO, partesDoMosaico, partesDisponiveis, quantasErvas, curaDaErva, condicoesDaErva,
@@ -140,7 +141,7 @@ ACOES_DE_MECANICA.set("druida:forma", async actor => {
   if (!f || !(await gastarPM(actor, custo(f)))) return;
   await sairDaForma(actor, { aviso: false });
   const nome = fmt("ICARUS.Druida.FormaNome", { forma: f.item?.name?.replace(/^Forma de\s*/i, "") ?? f.id });
-  await actor.createEmbeddedDocuments("ActiveEffect", [{ name: nome, img: f.item?.img ?? actor.img, changes: [], transfer: false,
+  const [efeito] = await actor.createEmbeddedDocuments("ActiveEffect", [{ name: nome, img: f.item?.img ?? actor.img, changes: [], transfer: false,
     flags: { [F]: { duracao: "cena", forma: { id: f.id, nome, defesa: f.defesa } } } }]);
   const aprimorada = tem(actor, "fera-aprimorada");
   await actor.createEmbeddedDocuments("Item", [{
@@ -153,13 +154,15 @@ ACOES_DE_MECANICA.set("druida:forma", async actor => {
     flags: { [F]: { armaDaForma: f.id, natural: true } }
   }]);
   const textos = [fmt("ICARUS.Druida.AssumiuChat", { nome: actor.name, forma: nome, deslocamento: f.deslocamento, tamanho: loc(`ICARUS.Druida.Tamanhos.${f.tamanho}`), defesa: f.defesa })];
-  if (f.pvTemporarios) textos.push(fmt("ICARUS.Druida.PVTemporarios", { valor: pvTemporariosDoUrso(actor.system.nivel) }));
   if (r.ancestral) {
     await actor.update({ [`flags.${F}.feraAncestralUsada`]: true, [`flags.${F}.feraAncestral`]: true });
     textos.push(fmt("ICARUS.Druida.FeraAncestralChat", { valor: pvTemporariosDaFeraAncestral(actor.system.nivel) }));
   }
   if (!(milFormas || tem(actor, "palavra-na-fera"))) textos.push(loc("ICARUS.Druida.SemFalaNemMagia"));
   await avisarNoChat(actor, textos.join(" "));
+  // PV temporários do Urso (2 × nível) e da Fera Ancestral (3 × nível): somem quando a Forma acaba
+  const pvTemp = Math.max(f.pvTemporarios ? pvTemporariosDoUrso(actor.system.nivel) : 0, r.ancestral ? pvTemporariosDaFeraAncestral(actor.system.nivel) : 0);
+  if (pvTemp) await concederPVTemporarios(actor, pvTemp, { origem: origemDoEfeito(efeito), fonte: r.ancestral ? loc("ICARUS.Druida.FeraAncestral") : nome });
 });
 
 ACOES_DE_MECANICA.set("druida:voltar", actor => sairDaForma(actor));
