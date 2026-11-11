@@ -16,12 +16,19 @@ export const NIVEIS_MAGIA = [1, 2, 3, 4, 5];
 export const ATRIBUTOS_MAGIA = ["INT", "SAB", "CAR"];
 export const PASTA_ICONES_MAGIAS = `systems/${SISTEMA_ID}/img/magias`;
 
-/** Atributo-chave da magia: o escolhido na ficha; senão o de PM da classe; senão Inteligência. */
+/**
+ * Atributo-chave das magias de classes que não somam atributo ao PM (Paladino: Carisma, pelas
+ * Preces de Guerra). As outras usam o atributo de PM da classe.
+ */
+export const ATRIBUTO_DE_MAGIA_DA_CLASSE = { paladino: "CAR" };
+
+/** Atributo-chave da magia: o escolhido na ficha; senão o de PM da classe; senão o da classe; senão Inteligência. */
 export function atributoDeMagia(system) {
   const escolhido = system?.magia?.atributo;
   if (ATRIBUTOS_MAGIA.includes(escolhido)) return escolhido;
   const daClasse = system?.classeConfig?.pmAtributo;
-  return ATRIBUTOS_MAGIA.includes(daClasse) ? daClasse : "INT";
+  if (ATRIBUTOS_MAGIA.includes(daClasse)) return daClasse;
+  return ATRIBUTO_DE_MAGIA_DA_CLASSE[system?.identidade?.classe] ?? "INT";
 }
 
 /** CD = 10 + metade do nível + atributo-chave. */
@@ -38,8 +45,20 @@ export function nivelMaximoDeMagia(nivelPersonagem, { teto = 5 } = {}) {
   return Math.min(teto, NIVEIS_MAGIA.filter(m => n >= NIVEL_PERSONAGEM_POR_NIVEL_MAGIA[m]).at(-1) ?? 1);
 }
 
-/** Teto do nível de magia pela classe (o Bardo nunca alcança o 5º). */
-export const tetoDeMagiaDaClasse = classe => (classe === "bardo" ? 4 : 5);
+/** Teto do nível de magia pela classe (o Bardo e o Paladino nunca alcançam o 5º). */
+export const tetoDeMagiaDaClasse = classe => (classe === "bardo" || classe === "paladino" ? 4 : 5);
+
+/**
+ * Maior nível de magia pela classe e nível. Paladino (Preces de Guerra): 1º no 5º nível, 2º no 9º,
+ * 3º no 13º e 4º no 17º (0 antes do 5º). As outras: a tabela padrão com o teto da classe.
+ */
+export function nivelMaximoDaClasse(classe, nivel) {
+  if (classe === "paladino") return Math.trunc(Number(nivel) || 1) < 5 ? 0 : nivelMaximoDeMagia(Math.trunc(Number(nivel)) - 4, { teto: 4 });
+  return nivelMaximoDeMagia(nivel, { teto: tetoDeMagiaDaClasse(classe) });
+}
+
+/** Magias conhecidas do Paladino: 2 por Preces de Guerra escolhida. */
+export const limiteDeMagiasDoPaladino = preces => 2 * Math.max(0, Math.trunc(Number(preces) || 0));
 
 /**
  * Custo total de um lançamento: custo base + aprimoramentos escolhidos (índices; cada um uma vez).
@@ -257,12 +276,12 @@ export function limiteDeMagiasConhecidas(linhagem, nivel, extras = 0) {
  * limite de conhecidas. Devolve o primeiro motivo (chave de tradução + dados) ou null.
  * @param {{ nivel:number, tradicoes:string[] }} magia  system da magia
  * @param {{ nivel:number, tradicao:string|null, conhecidas:number, limite:number, escolas?:string[], teto?:number }} p
- *   escolas: só dessas escolas (Bardo); teto: maior nível de magia da classe
+ *   escolas: só dessas escolas (Bardo); teto: maior nível de magia da classe; max: maior nível já calculado (Paladino)
  */
 export function motivoParaNaoAprender(magia, p) {
   if (p.tradicao && (magia.tradicoes ?? []).length && !magia.tradicoes.includes(p.tradicao)) return { chave: "ICARUS.Magias.Conhecidas.Tradicao", dados: { tradicao: p.tradicao } };
   if (p.escolas?.length && !p.escolas.includes(magia.escola)) return { chave: "ICARUS.Magias.Conhecidas.Escola", dados: { escolas: p.escolas.join(", ") } };
-  const max = nivelMaximoDeMagia(p.nivel, { teto: p.teto ?? 5 });
+  const max = p.max ?? nivelMaximoDeMagia(p.nivel, { teto: p.teto ?? 5 });
   if (Number(magia.nivel) > max) return { chave: "ICARUS.Magias.Conhecidas.Nivel", dados: { nivel: magia.nivel, max } };
   if (p.conhecidas >= p.limite) return { chave: "ICARUS.Magias.Conhecidas.Limite", dados: { limite: p.limite } };
   return null;

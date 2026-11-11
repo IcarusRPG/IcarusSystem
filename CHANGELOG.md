@@ -1,5 +1,17 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.27.0
+
+### Paladino
+- `classes.json` com o **Paladino** (12 classes; 19 habilidades e 30 poderes; 444 poderes no total). PV 18 + CON (+4 + CON por nível), **PM 4 por nível, fixo** (sem atributo). Carisma só nas habilidades e na CD das magias. Luta e Vontade + 3 perícias; armas simples e marciais, armaduras pesadas e escudos, sem túnicas.
+- **Fé Jurada:** mesma escolha permanente do Clérigo; o Paladino escolhe **2 dos 3 Poderes Concedidos**. A aba Classe mostra o Dogma e a **Palavra Empenhada**; o Mestre usa o mesmo "Agir contra um Dogma".
+- **Punição Consagrada:** botão no card de ataque corpo a corpo. Gasta até 1/2/3/4/5 PM (pelo nível; +1 contra a sentenciada; sem limite na Hora Final), +1d6 de Essência por PM (d8 contra mortos-vivos; Lâmina de Essência d8/d10; Golpe Final +1d6). No mesmo card: **Carga Fulgurante** e o **Veredito**.
+- **Toque Restaurador:** Nd8 + Carisma (1d8 no 2º até 5d8 no 17º), 2 PM (1 com Mãos Abertas), uma vez por cena por criatura (com aviso). Alívio Imediato, Remédio dos Fiéis, Mãos Largas, Aliado Primeiro e Chama Persistente no diálogo.
+- **Voto** (Muralha, Mão Aberta, Sentença) permanente: habilidades e poderes só do Voto escolhido. Muralha Inquebrável (RD 5 e +2 Defesa nos aliados), Aurora de Esperança, Olhar do Juiz (sentenciada, +1 no ataque), Olhar sem Piedade, Dívida Paga, Cadeia de Sentenças, Último Aviso e Veredito.
+- **Aura de Resguardo** (informação e interruptor no Paladino), **Coragem Inabalável** (imune a Abalado e Apavorado), **Hora Final** (1/dia: +2 ataque e Defesa, RD 5, fica em 1 PV uma vez, Fatigado no fim da cena).
+- **Preces de Guerra:** única forma de o Paladino lançar magias (2 Divinas por escolha; 1º nível de magia no 5º, 2º no 9º, 3º no 13º, 4º no 17º; CD com Carisma). Sem o poder, a aba Magias mostra o aviso.
+- **Fé Marcial** (Carisma no ataque e dano corpo a corpo, opção no diálogo), **Retribuição** (só contra a criatura marcada), **Corpo Escudo** (reduz o próximo dano em 1 + nível), **Fôlego da Fé** (cura só o Paladino).
+
 ## 0.26.1
 
 ### Correções: alvos da área e Teste de Concentração
