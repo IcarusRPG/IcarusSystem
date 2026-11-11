@@ -188,3 +188,25 @@ test("Preces de Guerra: sem o poder, o jogador não aprende magia; com uma, apre
   a.items.push({ type: "magia", flags: {} }, { type: "magia", flags: {} });
   assert.equal(pre(magia(1, ["divina"])), false, "limite 2");
 });
+
+test("Último Aviso: +4 só no primeiro ataque contra cada sentenciada na cena; outra sentenciada ganha de novo; o fim da cena zera", async () => {
+  const { MODIFICADORES_ATAQUE } = await import("../module/combate-chat.mjs");
+  const { FIM_DA_CENA } = await import("../module/condicoes-foundry.mjs");
+  const a = ator(9);
+  await itemDe(a, "ultimo-aviso");
+  const alvo = uuid => [{ token: { actor: { uuid } } }];
+  const ataque = async uuid => (await Promise.all(MODIFICADORES_ATAQUE.map(m => m({ actor: a, item: { type: "arma", system: {} }, modo: "distancia", opcoes: {}, alvos: alvo(uuid) }))))
+    .find(x => x?.linhas?.includes("ICARUS.Paladino.ContraSentenciada"));
+  await a.setFlag("icarus-rpg", "sentenciada", { uuid: "Actor.ogro", nome: "Ogro" });
+  assert.equal((await ataque("Actor.ogro")).extrasDano.length, 1, "primeiro ataque: +4");
+  assert.equal((await ataque("Actor.ogro")).extrasDano.length, 0, "segundo: nada");
+  await a.setFlag("icarus-rpg", "sentenciada", { uuid: "Actor.troll", nome: "Troll" });
+  assert.deepEqual((await ataque("Actor.troll")).extrasDano.map(e => e.formula), ["4"], "nova sentenciada: +4 de novo");
+  for (const fn of FIM_DA_CENA) await fn(a);
+  await a.setFlag("icarus-rpg", "sentenciada", { uuid: "Actor.ogro", nome: "Ogro" });
+  assert.equal((await ataque("Actor.ogro")).extrasDano.length, 1, "cena nova: +4 de novo");
+});
+
+test("Dívida Paga é ganho de PM: sem custo no JSON (o '2 PM' era do texto)", () => {
+  assert.ok(!paladino.habilidades.find(h => h.id === "divida-paga").custoPM);
+});

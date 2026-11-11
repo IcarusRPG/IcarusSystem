@@ -10083,7 +10083,7 @@ export default {
           "nome": "Dívida Paga",
           "nivel": 9,
           "descricao": "Quando você <strong>reduz a sua sentenciada a 0 PV</strong>, você recupera <strong>2 PM</strong> e pode se mover até <strong>6 m</strong> como ação livre.",
-          "custoPM": 2,
+          "custoPM": null,
           "acao": "livre",
           "subs": []
         },

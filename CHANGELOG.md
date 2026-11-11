@@ -1,5 +1,12 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.27.1
+
+### Paladino: respostas do Mestre
+- **Último Aviso:** os +4 de dano valem no primeiro ataque contra **cada** sentenciada na cena (antes era um só por cena). Uma nova sentenciada, pela Cadeia de Sentenças ou por um novo Olhar do Juiz, ganha os +4 de novo. O marcador zera no fim da cena.
+- **Dívida Paga:** sem custo (recupera 2 PM). O "2 PM" do `classes.json` vinha do texto e foi corrigido.
+- **Retribuição:** confirmado como estava: o 1 PM é da marcação; a reação não cobra PM.
+
 ## 0.27.0
 
 ### Paladino

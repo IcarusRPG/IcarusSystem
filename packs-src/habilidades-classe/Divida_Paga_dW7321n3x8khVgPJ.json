@@ -7,7 +7,7 @@
   "sort": 9017,
   "system": {
     "fonte": "classe",
-    "custoPM": 2,
+    "custoPM": null,
     "prerequisito": "",
     "nivel": 9,
     "acao": "livre",

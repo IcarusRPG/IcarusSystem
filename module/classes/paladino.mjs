@@ -241,13 +241,16 @@ MODIFICADORES_ATAQUE.push(async ({ actor, item, modo, opcoes, alvos }) => {
       r.linhas.push(loc("ICARUS.Paladino.FeMarcialLinha"));
     }
   }
-  // Contra a sentenciada: +1 no ataque; Último Aviso: +4 no dano no primeiro ataque da cena
+  // Contra a sentenciada: +1 no ataque; Último Aviso: +4 no dano no primeiro ataque contra CADA
+  // sentenciada na cena (flags.ultimoAvisoUsado = uuids; volta a zero no fim da cena)
   if (contraSentenciada(actor, alvos?.[0])) {
     r.bonus += 1;
     r.linhas.push(loc("ICARUS.Paladino.ContraSentenciada"));
-    if (tem(actor, "ultimo-aviso") && !actor.getFlag(F, "ultimoAvisoUsado")) {
+    const uuid = sentenciadaDe(actor).uuid;
+    const usados = Array.isArray(actor.getFlag(F, "ultimoAvisoUsado")) ? actor.getFlag(F, "ultimoAvisoUsado") : [];
+    if (tem(actor, "ultimo-aviso") && !usados.includes(uuid)) {
       r.extrasDano.push({ rotulo: loc("ICARUS.Paladino.UltimoAviso"), formula: "4", naoMultiplica: true });
-      await actor.setFlag(F, "ultimoAvisoUsado", true);
+      await actor.setFlag(F, "ultimoAvisoUsado", [...usados, uuid]);
     }
   }
   return r.bonus || r.linhas.length || r.extrasDano.length ? r : null;
