@@ -5,7 +5,10 @@
  *   versao, imagemFinal, aplicado, pendente } (x/y/escala normalizados; a edição volta igual);
  * - Aplicar: gera o PNG, grava em worlds/<mundo>/icarus-tokens/<actorId>.png (nome estável, URL com
  *   cache-bust) e configura o prototypeToken (escala 1, anel dinâmico desligado); com ator vinculado,
- *   opcionalmente atualiza os tokens já colocados nas cenas.
+ *   opcionalmente atualiza os tokens já colocados nas cenas; com ator NÃO vinculado (ameaças), só
+ *   atualiza as cópias já na cena se o usuário marcar a caixa (desmarcada por padrão).
+ * Serve a qualquer ficha: personagem (ActorSheet v1, element jQuery) e mercador/ameaça
+ * (ApplicationV2, element HTMLElement). Atores de compêndio não têm editor (só atores do mundo).
  * Upload: quem tem a permissão "Upload New Files" envia direto. Quem não tem manda o PNG pelo socket
  * do sistema ao Mestre ativo, que confere (dono do ator, PNG, até 2 MB), grava e devolve a URL.
  * Sem Mestre online, o ajuste fica pendente e o Mestre finaliza ao entrar (gera o PNG a partir dos
@@ -50,20 +53,34 @@ export function retratoDoAtor(actor) {
   return !img || padroes.includes(img) ? null : img;
 }
 
+/** Tokens de cena deste ator: vinculados (ator vinculado) ou cópias soltas (ator não vinculado). */
+export function tokensDoAtorNaCena(tokens, actor) {
+  const vinculado = !!actor?.prototypeToken?.actorLink;
+  return [...(tokens ?? [])].filter(k => k.actorId === actor?.id && !!k.actorLink === vinculado);
+}
+
 /** Dados da aba Token para o template. */
 export function contextoDoToken(actor, editavel) {
   const salvo = actor.flags?.[F]?.token ?? null;
   const retrato = retratoDoAtor(actor);
-  const tokensNaCena = actor.prototypeToken?.actorLink && (game.scenes?.some(s => s.tokens.some(k => k.actorId === actor.id && k.actorLink)) ?? false);
+  const noCompendio = !!actor.pack;
+  // Ficha aberta pelo token não vinculado (ator sintético): o token é configurado no ator do diretório
+  const sintetico = !!actor.isToken && !actor.prototypeToken?.actorLink;
+  const vinculado = !!actor.prototypeToken?.actorLink;
+  const naCena = noCompendio ? 0 : (game.scenes ?? []).reduce((n, s) => n + tokensDoAtorNaCena(s.tokens, actor).length, 0);
   return {
-    editavel,
+    editavel: editavel && !noCompendio && !sintetico,
+    noCompendio,
+    sintetico,
+    vinculado,
+    tokensNaCena: vinculado && naCena > 0,
+    copiasNaCena: !vinculado && naCena > 0 ? naCena : 0,
     molduras: TOKENS.tokens.map(m => ({ id: m.id, nome: m.nome, url: urlDaMiniatura(m) })),
     semRetrato: !retrato,
     retratoMudou: !!(salvo?.retratoSrc && retrato && salvo.retratoSrc !== retrato),
     pendente: !!salvo?.pendente,
     aplicado: !!salvo?.aplicado,
-    imagemFinal: salvo?.imagemFinal ?? "",
-    tokensNaCena
+    imagemFinal: salvo?.imagemFinal ?? ""
   };
 }
 
@@ -71,12 +88,14 @@ export function contextoDoToken(actor, editavel) {
 
 /** Liga o editor na aba Token (chamado ao abrir a aba; refaz a cada render). */
 export async function ligarEditor(ficha) {
-  const raiz = ficha.element?.[0]?.querySelector(".token-editor");
-  if (!raiz) return;
+  // ActorSheet v1: element é jQuery; ApplicationV2: HTMLElement
+  const elemento = ficha.element?.[0] ?? ficha.element;
+  const raiz = elemento?.querySelector?.(".token-editor");
+  const actor = ficha.actor ?? ficha.document;
+  if (!raiz || !actor || actor.pack || (actor.isToken && !actor.prototypeToken?.actorLink)) return;
   // O mesmo HTML não ganha dois editores (aba aberta + render chamam juntos)
   if (ficha._editorToken?.raiz === raiz.closest(".token-aba")) return;
   ficha._editorToken?.destruir();
-  const actor = ficha.actor;
   const editor = new EditorDeToken(raiz.closest(".token-aba"), {
     manifesto: TOKENS,
     urlDaMoldura,
@@ -87,7 +106,9 @@ export async function ligarEditor(ficha) {
     aoMudar: estado => salvarRascunho(actor, estado),
     aoEscolherRetrato: () => escolherRetrato(actor),
     aoAplicar: (partes, estado) => aplicarToken(actor, partes, estado, {
-      atualizarCena: raiz.closest(".token-aba")?.querySelector("input.token-atualizar-cena")?.checked ?? true
+      atualizarCena: raiz.closest(".token-aba")?.querySelector("input.token-atualizar-cena")?.checked ?? true,
+      // Ator não vinculado: as cópias na cena só mudam com a caixa marcada
+      atualizarCopias: raiz.closest(".token-aba")?.querySelector("input.token-atualizar-copias")?.checked ?? false
     })
   });
   ficha._editorToken = editor;
@@ -112,6 +133,29 @@ export function escolherRetrato(actor) {
   return new Picker({ type: "image", current: actor.img, callback: caminho => actor.update({ img: caminho }) }).browse();
 }
 
+/**
+ * Troca de retrato pelas fichas de mercador e ameaça: muda img e, se o token ainda não foi
+ * finalizado pela aba Token, também a imagem do token. Com token finalizado, a imagem do token
+ * fica e o usuário é avisado (aplicar de novo na aba Token). @returns {{ dados: object, avisar: boolean }}
+ */
+export function atualizacaoDoRetrato(actor, caminho) {
+  const finalizado = !!actor?.flags?.[F]?.token?.imagemFinal;
+  return { dados: finalizado ? { img: caminho } : { img: caminho, "prototypeToken.texture.src": caminho }, avisar: finalizado };
+}
+
+/** Seletor de retrato das fichas de mercador e ameaça (ver atualizacaoDoRetrato). */
+export function trocarRetrato(actor) {
+  const Picker = classeFilePicker();
+  return new Picker({
+    type: "image", current: actor.img,
+    callback: async caminho => {
+      const { dados, avisar } = atualizacaoDoRetrato(actor, caminho);
+      await actor.update(dados);
+      if (avisar) ui.notifications.info(fmt("ICARUS.Token.RetratoTrocadoTokenMantido", { nome: actor.name }));
+    }
+  }).browse();
+}
+
 /* ------------------------------ Aplicar ------------------------------ */
 
 const pastaDoMundo = () => `worlds/${game.world.id}/icarus-tokens`;
@@ -130,7 +174,7 @@ export async function gravarNoMundo(actorId, blob) {
 }
 
 /** Configura o prototypeToken (e os tokens na cena) com a imagem final; guarda o estado aplicado. */
-export async function aplicarNoAtor(actor, caminho, estado, { atualizarCena = true } = {}) {
+export async function aplicarNoAtor(actor, caminho, estado, { atualizarCena = true, atualizarCopias = false } = {}) {
   const url = `${caminho}?v=${Date.now()}`;
   const aplicado = { molduraId: estado.molduraId, retratoSrc: estado.retratoSrc, x: estado.x, y: estado.y, escala: estado.escala };
   await actor.update({
@@ -140,9 +184,10 @@ export async function aplicarNoAtor(actor, caminho, estado, { atualizarCena = tr
     "prototypeToken.ring.enabled": false,
     [`flags.${F}.token`]: { ...estado, versao: 1, imagemFinal: url, pendente: false, aplicado }
   });
-  if (atualizarCena && actor.prototypeToken.actorLink) {
+  const vinculado = !!actor.prototypeToken.actorLink;
+  if (vinculado ? atualizarCena : atualizarCopias) {
     for (const cena of game.scenes ?? []) {
-      const ids = cena.tokens.filter(k => k.actorId === actor.id && k.actorLink).map(k => k.id);
+      const ids = tokensDoAtorNaCena(cena.tokens, actor).map(k => k.id);
       if (!ids.length) continue;
       await cena.updateEmbeddedDocuments("Token", ids.map(_id => ({ _id, "texture.src": url, "texture.scaleX": 1, "texture.scaleY": 1, "ring.enabled": false })))
         .catch(erro => console.warn(`Icarus RPG | Token: não atualizou os tokens da cena ${cena.name}`, erro));
@@ -155,21 +200,22 @@ export async function aplicarNoAtor(actor, caminho, estado, { atualizarCena = tr
  * Aplicar: com permissão de upload grava direto; sem ela, pede ao Mestre ativo pelo socket; sem
  * Mestre, salva como pendente. Nada muda no ator se o upload falhar.
  */
-export async function aplicarToken(actor, partes, estado, { atualizarCena = true } = {}) {
+export async function aplicarToken(actor, partes, estado, { atualizarCena = true, atualizarCopias = false } = {}) {
+  if (actor.pack) return ui.notifications.warn(loc("ICARUS.Token.SoNoMundo"));
   try {
     if (game.user.can("FILES_UPLOAD")) {
       const blob = await pngDentroDoLimite(partes, LIMITE_BYTES);
       const caminho = await gravarNoMundo(actor.id, blob);
-      await aplicarNoAtor(actor, caminho, estado, { atualizarCena });
+      await aplicarNoAtor(actor, caminho, estado, { atualizarCena, atualizarCopias });
       return ui.notifications.info(fmt("ICARUS.Token.Aplicado", { nome: actor.name }));
     }
     if (!game.users.activeGM) {
-      await actor.update({ [`flags.${F}.token`]: { ...(actor.flags?.[F]?.token ?? {}), ...estado, pendente: true, atualizarCena } });
+      await actor.update({ [`flags.${F}.token`]: { ...(actor.flags?.[F]?.token ?? {}), ...estado, pendente: true, atualizarCena, atualizarCopias } });
       return ui.notifications.warn(loc("ICARUS.Token.SemMestre"));
     }
     const blob = await pngDentroDoLimite(partes, LIMITE_SOCKET);
     const caminho = await pedirAoMestre(actor, blob);
-    await aplicarNoAtor(actor, caminho, estado, { atualizarCena });
+    await aplicarNoAtor(actor, caminho, estado, { atualizarCena, atualizarCopias });
     ui.notifications.info(fmt("ICARUS.Token.Aplicado", { nome: actor.name }));
   } catch (erro) {
     console.error("Icarus RPG | Token: falhou ao aplicar", erro);
@@ -251,7 +297,7 @@ export async function finalizarPendentes() {
     const estado = actor.flags[F].token;
     try {
       const caminho = await gravarNoMundo(actor.id, await renderizarDoEstado(estado));
-      await aplicarNoAtor(actor, caminho, estado, { atualizarCena: estado.atualizarCena !== false });
+      await aplicarNoAtor(actor, caminho, estado, { atualizarCena: estado.atualizarCena !== false, atualizarCopias: !!estado.atualizarCopias });
       feitos++;
     } catch (erro) {
       console.warn(`Icarus RPG | Token pendente de ${actor.name} não foi finalizado`, erro);

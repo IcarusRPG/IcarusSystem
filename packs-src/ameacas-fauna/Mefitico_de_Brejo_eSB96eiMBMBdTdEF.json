@@ -1,0 +1,193 @@
+{
+  "_id": "eSB96eiMBMBdTdEF",
+  "name": "Mefítico-de-Brejo",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-mefitico-de-brejo.webp",
+  "folder": "bKH2p7XouJHtsC2J",
+  "sort": 3500,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "5",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 12,
+      "outros": 0
+    },
+    "pv": {
+      "value": 77,
+      "max": 77,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +6, Visão +3",
+    "cd": 18,
+    "salvaguardas": {
+      "fort": 11,
+      "ref": -1,
+      "von": 5
+    },
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 6,
+        "dados": "1d6",
+        "fixo": 20,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +6 (1d6+20 perfuração). CD das habilidades 18.",
+    "resistencias": {
+      "rdGeral": 2,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (glândula de odor, 1d2 doses, CD 18)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Mefítico-de-Brejo",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/especial-mefitico-de-brejo.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "pq8Tvdegzk35zVfv",
+      "name": "Jato Fétido",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> cone de 6 m; Fortitude CD 18. Falha: Enjoado por 1d4 rodadas, e a criatura sofre −5 em Furtividade e em rastrear por 1 hora (o cheiro fica na roupa). Sucesso: Enjoado por 1 rodada.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mefitico-de-brejo",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!eSB96eiMBMBdTdEF.pq8Tvdegzk35zVfv"
+    },
+    {
+      "_id": "K8kMeuViFtaHE2MB",
+      "name": "Morte Fingida",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena)</em> ao ser reduzido a 0 PV, fica com 1 PV e tomba como morto (Percepção CD 18 nota que respira). Se ninguém notar, levanta no fim da rodada seguinte, recupera 15 PV e o primeiro ataque seu causa +2d6 contra criaturas desprevenidas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mefitico-de-brejo",
+          "gatilho": "1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!eSB96eiMBMBdTdEF.K8kMeuViFtaHE2MB"
+    },
+    {
+      "_id": "iEyT4vhxZHC2Q4nM",
+      "name": "Couro Folgado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>Redução de Dano 2 e +2 em testes para escapar de Agarrar.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mefitico-de-brejo",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!eSB96eiMBMBdTdEF.iEyT4vhxZHC2Q4nM"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "mefitico-de-brejo",
+      "papel": "especial",
+      "nd": "5"
+    }
+  },
+  "_key": "!actors!eSB96eiMBMBdTdEF"
+}

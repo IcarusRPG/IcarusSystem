@@ -1452,6 +1452,57 @@ body.game {
 .ficha-mercador-corpo .fm-poder-texto small { color: var(--ic-apagado); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ficha-mercador-corpo .fm-ataque { flex-wrap: wrap; }
 
+/* --- Ameaça: ficha compacta (usa a base .ficha-mercador-corpo; module/sheets/ficha-ameaca.mjs) --- */
+.ficha-ameaca .window-content { container-type: inline-size; }
+.ficha-ameaca-corpo .fm-retrato { width: 112px; height: 112px; }
+.ficha-ameaca-corpo .fa-subtitulo { width: 100%; margin-top: 2px; color: var(--ic-apagado); font-style: italic; background: transparent; border: 0; }
+.ficha-ameaca-corpo .fa-etiquetas { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px; }
+.ficha-ameaca-corpo .fa-etiqueta { padding: 1px 8px; border: 1px solid var(--ic-borda); border-radius: 10px; font-size: 12px; color: var(--ic-texto); background: var(--ic-painel); }
+.ficha-ameaca-corpo .fa-nd { color: var(--ic-ouro-claro); border-color: var(--ic-ouro); font-weight: 700; }
+.ficha-ameaca-corpo .fa-papel-solo { color: var(--ic-pv); border-color: var(--ic-pv); }
+.ficha-ameaca-corpo .fa-papel-lacaio { color: var(--ic-ciano-titulo); border-color: var(--ic-ciano); }
+.ficha-ameaca-corpo .fa-papel-especial { color: var(--ic-ouro-claro); border-color: var(--ic-ouro); }
+.ficha-ameaca-corpo .fa-acompanha { margin: 4px 0 0; font-size: 13px; color: var(--ic-apagado); }
+.ficha-ameaca-corpo .fa-numeros, .ficha-ameaca-corpo .fa-salvaguardas { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+.ficha-ameaca-corpo .fa-numero { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 72px; padding: 4px 6px; border: 1px solid var(--ic-linha); border-radius: 6px; background: var(--ic-painel); }
+.ficha-ameaca-corpo .fa-numero > span:first-child, .ficha-ameaca-corpo .fa-numero > a { font-size: 12px; color: var(--ic-apagado); }
+.ficha-ameaca-corpo .fa-numero > b { font-size: 20px; line-height: 1.1; color: var(--ic-ouro-claro); }
+.ficha-ameaca-corpo .fa-numero input[type="number"] { width: 52px; font-size: 12px; }
+.ficha-ameaca-corpo .fa-par { display: flex; gap: 2px; align-items: center; }
+.ficha-ameaca-corpo .fa-par input[type="number"] { width: 48px; }
+.ficha-ameaca-corpo .fa-pv > b { color: var(--ic-pv); }
+.ficha-ameaca-corpo .fa-deslocamento { flex: 1 1 180px; display: flex; flex-direction: column; justify-content: center; gap: 2px; font-size: 12px; color: var(--ic-apagado); }
+.ficha-ameaca-corpo .fa-acao-titulo { margin-left: 6px; font-size: 13px; cursor: pointer; }
+.ficha-ameaca-corpo .fa-ataque { padding: 4px 0; border-top: 1px solid var(--ic-linha); }
+.ficha-ameaca-corpo .fa-ataque:first-of-type { border-top: 0; }
+.ficha-ameaca-corpo .fa-ataque-linha { display: flex; gap: 6px; align-items: center; }
+.ficha-ameaca-corpo .fa-ataque-nome { flex: 1; min-width: 0; font-weight: 700; }
+.ficha-ameaca-corpo .fa-ataque-campos { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 3px; font-size: 12px; color: var(--ic-apagado); }
+.ficha-ameaca-corpo .fa-ataque-campos label { display: flex; gap: 4px; align-items: center; }
+.ficha-ameaca-corpo .fa-dados { width: 56px; }
+.ficha-ameaca-corpo .fa-tipo { flex: 1 1 200px; }
+.ficha-ameaca-corpo .fa-tipo input { flex: 1; }
+.ficha-ameaca-corpo .fa-habilidade { padding: 4px 0; border-top: 1px solid var(--ic-linha); }
+.ficha-ameaca-corpo .fa-habilidade:first-of-type { border-top: 0; }
+.ficha-ameaca-corpo .fa-habilidade-cab { display: flex; justify-content: space-between; gap: 8px; }
+.ficha-ameaca-corpo .fa-habilidade-acoes { display: flex; gap: 8px; }
+.ficha-ameaca-corpo .fa-habilidade-texto p { margin: 2px 0; font-size: 13px; }
+.ficha-ameaca-corpo .fa-habilidade-texto em { color: var(--ic-ciano-titulo); }
+.ficha-ameaca-corpo .fa-pericias summary, .ficha-ameaca-corpo .fa-pericias-todas summary { cursor: pointer; }
+.ficha-ameaca-corpo .fa-pericias summary small { color: var(--ic-apagado); font-family: inherit; font-size: 12px; }
+.ficha-ameaca-corpo .fa-pericias-todas summary { margin: 4px 0; color: var(--ic-ciano-titulo); }
+.ficha-ameaca-corpo .fa-textos { display: flex; flex-direction: column; gap: 4px; }
+.ficha-ameaca-corpo .fa-textos > label { display: flex; gap: 8px; align-items: center; }
+.ficha-ameaca-corpo .fa-textos > label input { flex: 1; }
+.ficha-ameaca-corpo .fa-identificacao { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--ic-apagado); }
+.ficha-ameaca-corpo .fa-identificacao label { display: flex; gap: 4px; align-items: center; }
+.ficha-ameaca-corpo .fa-imunes { margin: 2px 0; font-size: 13px; }
+.ficha-ameaca-corpo .fa-original { margin: 6px 0; font-size: 12px; }
+@container (max-width: 480px) {
+  .ficha-ameaca-corpo .fm-retrato { width: 80px; height: 80px; }
+  .ficha-ameaca-corpo .fa-numero { min-width: 64px; }
+}
+
 /* --- Mercador: vitrine (retrato inteiro, nome e balão grandes) --- */
 .vitrine-mercador .window-content { padding: 0; container-type: inline-size; }
 .vitrine-corpo {

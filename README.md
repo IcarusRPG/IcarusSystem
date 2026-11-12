@@ -201,8 +201,12 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - `img/Icones/itens/itens de origem/<Nome do item>.png` (256×256, fundo transparente), mapa em `tools/dados/icones-itens-comuns.json`.
 - Atualizar: `npm run build:icones-itens -- --de "<pasta itens de origem>"` reduz as imagens e refaz o mapa (casa pelo nome do item; exceções no script). Itens já nas fichas que estavam com o dado azul recebem o ícone pela migração 0.11.1.
 
-## Tokens dos personagens
+## Tokens (personagem, mercador e ameaça)
 
+- A aba **Token** é a mesma nas fichas de personagem, mercador e ameaça (`module/token.mjs`): galeria de molduras, enquadramento do retrato e Aplicar. O PNG fica em `worlds/<mundo>/icarus-tokens/<id do ator>.png`.
+- **Ator vinculado** (personagem, mercador): Aplicar muda o token do ator e, com a caixa marcada, os tokens já colocados nas cenas.
+- **Ator não vinculado** (ameaça): Aplicar muda o token dos próximos que forem colocados; as cópias já na cena só mudam com a caixa "Atualizar também as N cópias" marcada (desmarcada por padrão). A ficha aberta pelo token de uma cópia não tem editor: use a ficha do diretório.
+- Atores de compêndio não têm editor: importe para o mundo antes.
 - Molduras: `img/Icones/tokens/personagens/` (só a pasta *Token Personagens*; nomes ASCII com hífens) e miniaturas em `miniaturas/`. O manifesto `tools/dados/tokens.json` traz o nome de exibição, o nome original, a caixa da abertura e o raio de fechamento da máscara (aros com frestas, como o Anátema).
 - Atualizar as molduras: `npm run build:tokens -- --de "<pasta Token Personagens>"` copia (sem sobrescrever arquivo diferente sem `--sobrescrever`), gera as miniaturas e o manifesto; `npm run build:tokens` só refaz o manifesto. Rodar de novo não muda nada.
 - **Upload pelos jogadores:** por padrão o Foundry não deixa jogadores enviarem arquivos. Sem essa permissão, o token é enviado pelo Mestre online (o sistema confere se o jogador é dono do ator, se é PNG e se tem até 2 MB). Sem Mestre online, os ajustes ficam salvos e o token é aplicado quando um Mestre entrar. Para dispensar o Mestre, conceda **"Upload New Files"** (Configurações → Configurar Permissões) aos jogadores.
@@ -258,12 +262,12 @@ As condições também estão no compêndio **Icarus — Condições** (um diár
 Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
 
 - **Criar:** no diretório de atores, "Criar ator" e escolha **Mercador**. Os jogadores entram como observadores: podem abrir, mas não editar. O compêndio **Icarus: Mercadores** tem três exemplos prontos (Ferreiro, Boticário e Mercador de Rua).
-- **Ficha (só o Mestre e os donos):** compacta, com as mesmas regras do personagem, em seis abas:
+- **Ficha (só o Mestre e os donos):** compacta, com as mesmas regras do personagem, em sete abas:
   - **Resumo:** nível, Defesa (derivada da armadura e do escudo, ou "Defesa manual"), PV e PM digitados, atributos (clique para rolar) e proficiências (tudo marcado por padrão);
   - **Perícias:** as do Icarus, com treino e outros, e rolagem pelo nome. Barganha, Diplomacia, Intimidação e Prestidigitação ficam sempre em cima;
   - **Poderes e magias:** itens arrastados de compêndios, com "Usar" e "Lançar";
   - **Equipamento e ataques:** armas, armaduras, escudos e munições que o mercador usa (equipar, empunhar, atacar, dano). "Passar para a loja" transforma um item em estoque;
-  - **Loja** e **Notas**.
+  - **Loja**, **Notas** e **Token** (a mesma do personagem).
 - **Equipamento × estoque:** o estoque tem a marca da loja e não protege nem arma o mercador; o resto é dele.
 - **Montar o estoque:** na aba Loja, arraste armas, equipamentos e munições de qualquer lugar: compêndio, diretório de itens, inventário de outro ator ou da própria ficha. O item é sempre copiado.
   - Ao soltar, o sistema pergunta a quantidade, o preço e se o item entra oculto. "Criar item" faz um item novo direto no estoque.
@@ -292,6 +296,20 @@ Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
   - Os guardas usam as mesmas opções da Barganha (fechar a loja, avisar o Mestre, nota de consequência). O sistema não cria guardas nem combate.
 - **O mercador também compra (opcional):** com "O mercador também compra dos jogadores" ligado, a vitrine ganha a aba **Vender**. Ele paga o preço de venda do item ou uma fração do preço, tirando da caixa.
 - **Chat:** em Configurar Definições → Sistema, a mensagem de compra pode ser pública ou só para o comprador e o Mestre.
+
+## Ameaças
+
+Ator do tipo **Ameaça**: criatura do Mestre, com os números prontos do bestiário.
+
+- **Criar:** arraste do compêndio **Icarus: Ameaças — Fauna** (110 criaturas em pastas por papel e patamar, em ordem de ND), ou "Criar ator" → **Ameaça** para uma nova. O token vem não vinculado, hostil e do tamanho da criatura.
+- **Ficha:**
+  - Cabeçalho com retrato, nome, subtítulo e etiquetas de papel, ND, tipo e tamanho; lacaios mostram "Costuma acompanhar".
+  - Faixa de números: Defesa, PV, PM (se houver), Iniciativa (clique para rolar), CD e deslocamento. Fortitude, Reflexos e Vontade rolam pelo nome.
+  - Ataques: Atacar (d20 + bônus contra os alvos marcados; Shift = vantagem, Ctrl = desvantagem) e Dano (Shift = crítico). O card de ataque tem Dano e Dano crítico, e o dano usa os mesmos botões de aplicar das armas.
+  - Habilidades (itens "poder", texto à vista, botão para mostrar no chat), atributos, perícias (recolhidas), sentidos, tesouro, RD e notas.
+- **Regras:** perícia = atributo + treino + outros, sem nível. A Defesa, as salvaguardas e a iniciativa digitadas são o valor base; condições e Efeitos somam por cima. Com PV 0, nada de testes de morte: o Mestre decide.
+- **Dados:** `tools/dados/ameacas-fauna.json` (gerado pelo bestiário). Rode `npm run build:packs`: os IDs são estáveis e nada se duplica.
+- **Imagens:** `img/Ameacas/Fauna/`, casadas pelo nome sem acento, sem maiúsculas e sem o prefixo `ameaca-`/`lacaio-`/`especial-`. Imagem que falta usa o dado azul. O build lista as criaturas sem imagem, os arquivos sem criatura e as criaturas sem CD.
 
 ## Publicar uma versão
 

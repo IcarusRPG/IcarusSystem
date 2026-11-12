@@ -1,0 +1,201 @@
+{
+  "_id": "d8h4RzKnCfdfT43P",
+  "name": "Rei-das-Cavernas",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-rei-das-cavernas.webp",
+  "folder": "p5WdzDDQoF8w7jSe",
+  "sort": 6000,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "9",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 160,
+      "max": 160,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, escalada 6 m",
+    "sentidos": "Olfato +6, Audição +4",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 13,
+      "ref": 1,
+      "von": 7
+    },
+    "atributos": {
+      "FOR": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Garras",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 16,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 17,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Garras +9 (2d6+16 corte) e Mordida +9 (2d6+17 perfuração).",
+    "resistencias": {
+      "rdGeral": 4,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (pele, garras).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Rei-das-Cavernas",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-rei-das-cavernas.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "01cB89VWZK8gpAQI",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar as Garras, faz Agarrar (teste +11).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "rei-das-cavernas",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!d8h4RzKnCfdfT43P.01cB89VWZK8gpAQI"
+    },
+    {
+      "_id": "E0h10Yyp6AoGTavu",
+      "name": "Rugido de Caverna",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena)</em> Vontade CD 18 em alcance curto ou Abalado até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "rei-das-cavernas",
+          "gatilho": "1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!d8h4RzKnCfdfT43P.E0h10Yyp6AoGTavu"
+    },
+    {
+      "_id": "bwLv6sJWK8Yq6wfn",
+      "name": "Pele Cicatrizada",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>Redução de Dano 4.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "rei-das-cavernas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!d8h4RzKnCfdfT43P.bwLv6sJWK8Yq6wfn"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "rei-das-cavernas",
+      "papel": "solo",
+      "nd": "9"
+    }
+  },
+  "_key": "!actors!d8h4RzKnCfdfT43P"
+}

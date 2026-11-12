@@ -1,0 +1,169 @@
+{
+  "_id": "3fyvCk1Tt7fL5xJt",
+  "name": "Urso-de-Garras-Curtas",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-urso-de-garras-curtas.webp",
+  "folder": "M9dqY9deZhpGrGr4",
+  "sort": 5500,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "8",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, escalada 6 m",
+    "sentidos": "Olfato +5",
+    "cd": 18,
+    "salvaguardas": {
+      "fort": 13,
+      "ref": 1,
+      "von": 7
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {},
+    "ataques": [
+      {
+        "nome": "Garras",
+        "bonus": 10,
+        "dados": "1d8",
+        "fixo": 42,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Garras +10 (1d8+42 corte). CD das habilidades 18.",
+    "resistencias": {
+      "rdGeral": 2,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (couro)",
+    "acompanha": "Garra-Torta",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Urso-de-Garras-Curtas",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-urso-de-garras-curtas.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "ZuACBWeaRWkh0tC2",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com as Garras, faz Agarrar (teste +12).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "urso-de-garras-curtas",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!3fyvCk1Tt7fL5xJt.ZuACBWeaRWkh0tC2"
+    },
+    {
+      "_id": "jAzQwdx3PfW2WtX6",
+      "name": "Couro Grosso",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>Redução de Dano 2.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "urso-de-garras-curtas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!3fyvCk1Tt7fL5xJt.jAzQwdx3PfW2WtX6"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "urso-de-garras-curtas",
+      "papel": "lacaio",
+      "nd": "8"
+    }
+  },
+  "_key": "!actors!3fyvCk1Tt7fL5xJt"
+}

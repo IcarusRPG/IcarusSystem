@@ -1,0 +1,15 @@
+{
+  "_id": "NyTXyFQoX6yKhYyT",
+  "name": "Iniciante (ND 1/4 a 4)",
+  "type": "Actor",
+  "folder": "a5ezzS3FQU5BuIEq",
+  "sorting": "m",
+  "sort": 1000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:lacaio:iniciante"
+    }
+  },
+  "_key": "!folders!NyTXyFQoX6yKhYyT"
+}

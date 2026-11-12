@@ -14,6 +14,8 @@
 
   <section class="painel token-editor">
     <h3 class="titulo-painel">{{localize "ICARUS.Token.Editor"}}</h3>
+    {{#if token.noCompendio}}<p class="token-aviso">{{localize "ICARUS.Token.SoNoMundo"}}</p>{{/if}}
+    {{#if token.sintetico}}<p class="token-aviso">{{localize "ICARUS.Token.SoNoAtorBase"}}</p>{{/if}}
     {{#if token.pendente}}<p class="token-aviso">{{localize "ICARUS.Token.Pendente"}}</p>{{/if}}
     {{#if token.semRetrato}}
     <p class="token-aviso">{{localize "ICARUS.Token.SemRetrato"}}
@@ -37,6 +39,10 @@
     <p class="dica">{{localize "ICARUS.Token.Ajuda"}}</p>
     {{#if token.tokensNaCena}}
     <label class="chk"><input type="checkbox" class="token-atualizar-cena" checked> {{localize "ICARUS.Token.AtualizarCena"}}</label>
+    {{/if}}
+    {{#if token.copiasNaCena}}
+    <label class="chk"><input type="checkbox" class="token-atualizar-copias"> {{localize "ICARUS.Token.AtualizarCopias" n=token.copiasNaCena}}</label>
+    {{else}}{{#unless token.vinculado}}<p class="dica">{{localize "ICARUS.Token.NaoVinculadoDica"}}</p>{{/unless}}
     {{/if}}
     <div class="token-botoes">
       <button type="button" class="btn" data-token-acao="aplicar"><i class="fa-solid fa-check" aria-hidden="true"></i> {{localize "ICARUS.Token.Aplicar"}}</button>

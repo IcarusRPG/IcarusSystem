@@ -1,0 +1,144 @@
+{{#*inline "periciaAmeaca"}}
+<tr>
+  <td><a class="fm-rolavel" data-action="rolarPericia" data-pericia="{{chave}}"><i class="fa-solid fa-dice-d20"></i> {{nome}}</a> <small>({{atributo}})</small></td>
+  <td><b>{{total}}</b></td>
+  <td><select name="system.pericias.{{chave}}.treino">{{#each treinos}}<option value="{{valor}}" {{#if selecionado}}selected{{/if}}>{{rotulo}}</option>{{/each}}</select></td>
+  <td><input type="number" class="fm-curto" name="system.pericias.{{chave}}.outros" value="{{outros}}" step="1" aria-label="{{localize "ICARUS.Ameaca.Outros"}}"></td>
+</tr>
+{{/inline}}
+<div class="ficha-icarus ficha-mercador-corpo ficha-ameaca-corpo">
+  <header class="fm-cabecalho">
+    <img class="fm-retrato" src="{{img}}" alt="{{nome}}" {{#if editavel}}data-action="imagem"{{/if}}>
+    <div class="fm-identidade">
+      <input class="fm-nome" type="text" name="name" value="{{nome}}" aria-label="{{localize "ICARUS.Ameaca.Nome"}}">
+      <input class="fa-subtitulo" type="text" name="system.subtitulo" value="{{src.subtitulo}}" placeholder="{{localize "ICARUS.Ameaca.Subtitulo"}}" aria-label="{{localize "ICARUS.Ameaca.Subtitulo"}}">
+      <div class="fa-etiquetas">
+        <span class="fa-etiqueta fa-papel-{{src.papel}}">{{papelRotulo}}</span>
+        <span class="fa-etiqueta fa-nd">ND {{src.nd}}{{#if src.ndContaComo}} <small>({{localize "ICARUS.Ameaca.ContaComo"}} {{src.ndContaComo}})</small>{{/if}}</span>
+        <span class="fa-etiqueta">{{src.tipo}}</span>
+        <span class="fa-etiqueta">{{tamanhoRotulo}}</span>
+      </div>
+      {{#if mostrarAcompanha}}<p class="fa-acompanha"><b>{{localize "ICARUS.Ameaca.Acompanha"}}:</b> {{src.acompanha}}</p>{{/if}}
+    </div>
+  </header>
+
+  <nav class="fm-abas">
+    {{#each abas}}<a class="{{#if ativa}}ativa{{/if}}" data-action="aba" data-aba="{{id}}">{{rotulo}}</a>{{/each}}
+  </nav>
+
+  <div class="fm-corpo">
+    {{#if (eq aba "ficha")}}
+    <section class="fm-bloco fa-numeros">
+      <div class="fa-numero" data-tooltip="{{defesa.dica}}"><span>{{localize "ICARUS.Defesa.Rotulo"}}</span><b>{{defesa.total}}</b>
+        <input type="number" name="system.defesa.valor" value="{{src.defesa.valor}}" step="1" aria-label="{{localize "ICARUS.Defesa.Rotulo"}}"></div>
+      <div class="fa-numero fa-pv"><span>PV</span><b>{{s.pv.value}}{{#if s.pv.temp}} <small>+{{s.pv.temp}}</small>{{/if}}</b>
+        <span class="fa-par"><input type="number" name="system.pv.value" value="{{src.pv.value}}" min="0" step="1" aria-label="PV"> / <input type="number" name="system.pv.max" value="{{src.pv.max}}" min="0" step="1" aria-label="PV máx."></span></div>
+      {{#if mostrarPM}}
+      <div class="fa-numero"><span>PM</span><b>{{s.pm.value}}</b>
+        <span class="fa-par"><input type="number" name="system.pm.value" value="{{src.pm.value}}" min="0" step="1" aria-label="PM"> / <input type="number" name="system.pm.max" value="{{src.pm.max}}" min="0" step="1" aria-label="PM máx."></span></div>
+      {{/if}}
+      <div class="fa-numero"><a class="fm-rolavel" data-action="rolarPericia" data-pericia="iniciativa"><i class="fa-solid fa-dice-d20"></i> {{localize "ICARUS.Pericias.iniciativa"}}</a><b>{{iniciativa}}</b>
+        <input type="number" name="system.iniciativa" value="{{src.iniciativa}}" step="1" aria-label="{{localize "ICARUS.Pericias.iniciativa"}}"></div>
+      <div class="fa-numero"><span>{{localize "ICARUS.Ameaca.CD"}}</span><b>{{#if cdTexto}}{{cdTexto}}{{else}}—{{/if}}</b>
+        <input type="number" name="system.cd" value="{{src.cd}}" step="1" aria-label="{{localize "ICARUS.Ameaca.CD"}}"></div>
+      <label class="fa-deslocamento">{{localize "ICARUS.Deslocamento"}} <input type="text" name="system.deslocamentoTexto" value="{{src.deslocamentoTexto}}"></label>
+    </section>
+
+    <section class="fm-bloco fa-salvaguardas">
+      {{#each salvaguardas}}
+      <div class="fa-numero"><a class="fm-rolavel" data-action="rolarPericia" data-pericia="{{pericia}}"><i class="fa-solid fa-dice-d20"></i> {{rotulo}}</a><b>{{total}}</b>
+        <input type="number" name="system.salvaguardas.{{chave}}" value="{{valor}}" step="1" aria-label="{{rotulo}}"></div>
+      {{/each}}
+    </section>
+
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Ameaca.Ataques"}}
+        {{#if editavel}}<a class="fa-acao-titulo" data-action="adicionarAtaque" data-tooltip="{{localize "ICARUS.Ameaca.NovoAtaque"}}"><i class="fa-solid fa-plus"></i></a>{{/if}}</h3>
+      {{#each ataques}}
+      <div class="fa-ataque" data-indice="{{indice}}">
+        <div class="fa-ataque-linha">
+          <input class="fa-ataque-nome" type="text" data-ataque-campo="nome" value="{{nome}}" aria-label="{{localize "ICARUS.Ameaca.NomeAtaque"}}">
+          <button type="button" class="btn primario" data-action="atacar" data-tooltip="{{localize "ICARUS.Ameaca.AtacarDica"}}"><i class="fa-solid fa-dice-d20"></i> {{bonusTexto}}</button>
+          <button type="button" class="btn" data-action="dano"><i class="fa-solid fa-burst"></i> {{danoTexto}}</button>
+          {{#if ../editavel}}<a data-action="removerAtaque" data-tooltip="{{localize "ICARUS.Ameaca.RemoverAtaque"}}"><i class="fa-solid fa-trash"></i></a>{{/if}}
+        </div>
+        <div class="fa-ataque-campos">
+          <label>{{localize "ICARUS.Ameaca.Bonus"}} <input type="number" class="fm-curto" data-ataque-campo="bonus" value="{{bonus}}" step="1"></label>
+          <label>{{localize "ICARUS.Ameaca.Dados"}} <input type="text" class="fa-dados" data-ataque-campo="dados" value="{{dados}}"></label>
+          <label>+ <input type="number" class="fm-curto" data-ataque-campo="fixo" value="{{fixo}}" step="1" aria-label="{{localize "ICARUS.Ameaca.Fixo"}}"></label>
+          <label class="fa-tipo">{{localize "ICARUS.Ameaca.Tipo"}} <input type="text" data-ataque-campo="tipo" value="{{tipo}}"></label>
+          <label>{{localize "ICARUS.Ameaca.Alcance"}} <select data-ataque-campo="alcance">{{#each alcances}}<option value="{{valor}}" {{#if selecionado}}selected{{/if}}>{{rotulo}}</option>{{/each}}</select></label>
+        </div>
+      </div>
+      {{else}}<p class="dica">{{localize "ICARUS.Ameaca.SemAtaques"}}</p>{{/each}}
+    </section>
+
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Ameaca.Habilidades"}}</h3>
+      {{#each habilidades}}
+      <div class="fa-habilidade" data-item-id="{{id}}">
+        <div class="fa-habilidade-cab">
+          <a data-action="abrirItem"><b>{{nome}}</b></a>
+          <span class="fa-habilidade-acoes">
+            <a data-action="usarPoder" data-tooltip="{{localize "ICARUS.Ameaca.PostarNoChat"}}"><i class="fa-solid fa-comment"></i></a>
+            {{#if ../editavel}}<a data-action="removerItem" data-tooltip="{{localize "ICARUS.Ameaca.RemoverHabilidade"}}"><i class="fa-solid fa-trash"></i></a>{{/if}}
+          </span>
+        </div>
+        <div class="fa-habilidade-texto">{{{texto}}}</div>
+      </div>
+      {{else}}<p class="dica">{{localize "ICARUS.Ameaca.ArrasteHabilidades"}}</p>{{/each}}
+      {{#if editavel}}<button type="button" class="btn" data-action="criarHabilidade"><i class="fa-solid fa-plus"></i> {{localize "ICARUS.Ameaca.NovaHabilidade"}}</button>{{/if}}
+    </section>
+
+    <section class="fm-bloco fm-atributos">
+      {{#each atributos}}
+      <div class="fm-atributo">
+        <a class="fm-rolavel" data-action="rolarAtributo" data-atributo="{{chave}}" data-tooltip="{{localize "ICARUS.Mercador.Rolar"}}">{{rotulo}} <b>{{total}}</b></a>
+        <input type="number" name="system.atributos.{{chave}}.base" value="{{base}}" step="1" aria-label="{{rotulo}}">
+      </div>
+      {{/each}}
+    </section>
+
+    <section class="fm-bloco">
+      <details class="fa-pericias" {{#if pericias.principais.length}}open{{/if}}>
+        <summary class="fm-titulo">{{localize "ICARUS.Ameaca.Pericias"}} <small>{{localize "ICARUS.Ameaca.PericiasDica"}}</small></summary>
+        {{#if pericias.principais.length}}
+        <table class="fm-estoque fm-pericias"><tbody>{{#each pericias.principais}}{{> "periciaAmeaca" this}}{{/each}}</tbody></table>
+        {{/if}}
+        <details class="fa-pericias-todas">
+          <summary>{{localize "ICARUS.Ameaca.TodasPericias"}}</summary>
+          <table class="fm-estoque fm-pericias"><tbody>{{#each pericias.outras}}{{> "periciaAmeaca" this}}{{/each}}</tbody></table>
+        </details>
+      </details>
+    </section>
+
+    <section class="fm-bloco fa-textos">
+      <label>{{localize "ICARUS.Ameaca.Sentidos"}} <input type="text" name="system.sentidos" value="{{src.sentidos}}"></label>
+      <label>{{localize "ICARUS.Ameaca.Tesouro"}} <input type="text" name="system.tesouro" value="{{src.tesouro}}"></label>
+      <label>{{localize "ICARUS.Ameaca.Acompanha"}} <input type="text" name="system.acompanha" value="{{src.acompanha}}"></label>
+      <div class="fa-identificacao">
+        <label>ND <input type="text" class="fm-curto" name="system.nd" value="{{src.nd}}"></label>
+        <label>{{localize "ICARUS.Ameaca.ContaComo"}} <input type="number" class="fm-curto" name="system.ndContaComo" value="{{src.ndContaComo}}" step="1"></label>
+        <label>{{localize "ICARUS.Ameaca.Papel"}} <select name="system.papel">{{#each papeis}}<option value="{{valor}}" {{#if selecionado}}selected{{/if}}>{{rotulo}}</option>{{/each}}</select></label>
+        <label>{{localize "ICARUS.Ameaca.TipoCriatura"}} <input type="text" name="system.tipo" value="{{src.tipo}}"></label>
+        <label>{{localize "ICARUS.Ameaca.Tamanho"}} <select name="system.tamanho">{{#each tamanhos}}<option value="{{valor}}" {{#if selecionado}}selected{{/if}}>{{rotulo}}</option>{{/each}}</select></label>
+        <label>RD <input type="number" class="fm-curto" name="system.resistencias.rdGeral" value="{{src.resistencias.rdGeral}}" step="1"></label>
+      </div>
+      {{#if imunidades}}<p class="fa-imunes"><b>{{localize "ICARUS.Ameaca.Imune"}}:</b> {{imunidades}}</p>{{/if}}
+    </section>
+
+    {{#if src.ataquesTexto}}<p class="dica fa-original"><b>{{localize "ICARUS.Ameaca.Original"}}:</b> {{src.ataquesTexto}}</p>{{/if}}
+
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Ameaca.Notas"}}</h3>
+      <textarea name="system.notas" rows="6">{{src.notas}}</textarea>
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Descricao"}}</h3>
+      <textarea name="system.descricao" rows="4">{{src.descricao}}</textarea>
+    </section>
+    {{/if}}
+
+    {{#if (eq aba "token")}}
+    {{> "systems/icarus-rpg/templates/actor/parts/token.hbs"}}
+    {{/if}}
+  </div>
+</div>

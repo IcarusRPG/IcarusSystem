@@ -1,0 +1,220 @@
+{
+  "_id": "q0NioL64i6lNWId3",
+  "name": "Fera-das-Geleiras",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-fera-das-geleiras.webp",
+  "folder": "86HgGQKeik1E8p7Y",
+  "sort": 8100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "14",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 17,
+      "outros": 0
+    },
+    "pv": {
+      "value": 220,
+      "max": 220,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 1,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, natação 9 m",
+    "sentidos": "Olfato +8, Visão +5",
+    "cd": 22,
+    "salvaguardas": {
+      "fort": 17,
+      "ref": 11,
+      "von": 5
+    },
+    "atributos": {
+      "FOR": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Garras",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 28,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Mordida",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 27,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+28 corte), Mordida +10 (2d6+27 perfuração). CD das habilidades 22.",
+    "resistencias": {
+      "rdGeral": 5,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (pele, presas)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Fera-das-Geleiras",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-fera-das-geleiras.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "ZBZL99Mh8Gnwf4K3",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com as Garras, faz Agarrar (teste +12).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fera-das-geleiras",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!q0NioL64i6lNWId3.ZBZL99Mh8Gnwf4K3"
+    },
+    {
+      "_id": "HJYCHSzzLXiXc4Hd",
+      "name": "Pelagem Polar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>Redução de Dano 5 e imune a frio natural.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fera-das-geleiras",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!q0NioL64i6lNWId3.HJYCHSzzLXiXc4Hd"
+    },
+    {
+      "_id": "pWqf442zeny2TSi9",
+      "name": "Rugido de Avalanche",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação padrão)</em> cone de 9 m; Reflexos CD 22 ou Caído.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fera-das-geleiras",
+          "gatilho": "1 vez por cena, ação padrão"
+        }
+      },
+      "_key": "!actors.items!q0NioL64i6lNWId3.pWqf442zeny2TSi9"
+    },
+    {
+      "_id": "vqMfM7jl1LGcueId",
+      "name": "Caçador da Neve",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>+10 em Furtividade na neve e no gelo; ignora terreno difícil de neve e gelo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fera-das-geleiras",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!q0NioL64i6lNWId3.vqMfM7jl1LGcueId"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "fera-das-geleiras",
+      "papel": "solo",
+      "nd": "14"
+    }
+  },
+  "_key": "!actors!q0NioL64i6lNWId3"
+}

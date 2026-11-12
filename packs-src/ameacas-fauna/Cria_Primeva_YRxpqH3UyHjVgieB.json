@@ -1,0 +1,201 @@
+{
+  "_id": "YRxpqH3UyHjVgieB",
+  "name": "Cria-Primeva",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cria-primeva.webp",
+  "folder": "D9kDZtT1hp97MgCV",
+  "sort": 10300,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "20",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 17,
+      "outros": 0
+    },
+    "pv": {
+      "value": 70,
+      "max": 70,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 5,
+    "deslocamento": 18,
+    "deslocamentoTexto": "18 m, escalada 9 m",
+    "sentidos": "Olfato +9, Visão +9",
+    "cd": 26,
+    "salvaguardas": {
+      "fort": 15,
+      "ref": 21,
+      "von": 9
+    },
+    "atributos": {
+      "FOR": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 5
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 12,
+        "dados": "2d6",
+        "fixo": 46,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garras",
+        "bonus": 12,
+        "dados": "2d6",
+        "fixo": 45,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +12 (2d6+46 perfuração), Garras +12 (2d6+45 corte). CD das habilidades 26.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (pele primeva)",
+    "acompanha": "Fera-Primeva",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Cria-Primeva",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cria-primeva.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "v2o6mrcbZcaX5ro7",
+      "name": "Derrubar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre, 1 vez por rodada)</em> se a Mordida acertar, Fortitude CD 26 ou Caído.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cria-primeva",
+          "gatilho": "livre, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!YRxpqH3UyHjVgieB.v2o6mrcbZcaX5ro7"
+    },
+    {
+      "_id": "EhZsUwLcud2m3LU4",
+      "name": "Emboscada",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>contra alvo desprevenido, o primeiro ataque do turno causa +2d6 de dano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cria-primeva",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!YRxpqH3UyHjVgieB.EhZsUwLcud2m3LU4"
+    },
+    {
+      "_id": "jbb6QBvbyO15Bdnd",
+      "name": "Frenesi",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>com metade dos PV ou menos, +2 nos ataques e no dano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cria-primeva",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!YRxpqH3UyHjVgieB.jbb6QBvbyO15Bdnd"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cria-primeva",
+      "papel": "lacaio",
+      "nd": "20"
+    }
+  },
+  "_key": "!actors!YRxpqH3UyHjVgieB"
+}

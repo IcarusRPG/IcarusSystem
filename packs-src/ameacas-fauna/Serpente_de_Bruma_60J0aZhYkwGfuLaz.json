@@ -1,0 +1,174 @@
+{
+  "_id": "60J0aZhYkwGfuLaz",
+  "name": "Serpente-de-Bruma",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-de-bruma.webp",
+  "folder": "bclB3ttOuY02it1k",
+  "sort": 800,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "1",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 60,
+      "max": 60,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, natação 6 m",
+    "sentidos": "Visão +3, Olfato +3",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 2,
+      "ref": 8,
+      "von": -4
+    },
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 7,
+        "dados": "1d4",
+        "fixo": 6,
+        "tipo": "perfuração, mais 1d6 de veneno",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +7 (1d4+6 perfuração, mais 1d6 de veneno).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: glândula de veneno (1 dose, CD 11 para extrair).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Serpente-de-Bruma",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-de-bruma.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "snUhsk6s1TqjOZiI",
+      "name": "Peçonha",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>se a Mordida causar dano, o alvo faz Fortitude CD 13 ou fica Envenenado até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "serpente-de-bruma",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!60J0aZhYkwGfuLaz.snUhsk6s1TqjOZiI"
+    },
+    {
+      "_id": "NK5ThittHTZ3MSca",
+      "name": "Corpo de Bruma",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+5 em Furtividade em áreas de neblina, pântano ou capim alto.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "serpente-de-bruma",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!60J0aZhYkwGfuLaz.NK5ThittHTZ3MSca"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "serpente-de-bruma",
+      "papel": "solo",
+      "nd": "1"
+    }
+  },
+  "_key": "!actors!60J0aZhYkwGfuLaz"
+}

@@ -1,0 +1,169 @@
+{
+  "_id": "yBFiNjKY8AO0j9Dk",
+  "name": "Lampreia-Gigante",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-lampreia-gigante.webp",
+  "folder": "b6uc07GYz6jbDH0Y",
+  "sort": 9000,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "16",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 60,
+      "max": 60,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 12,
+    "deslocamentoTexto": "natação 12 m",
+    "sentidos": "percepção às cegas (curto, na água)",
+    "cd": 23,
+    "salvaguardas": {
+      "fort": 6,
+      "ref": 18,
+      "von": 12
+    },
+    "atributos": {
+      "FOR": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {},
+    "ataques": [
+      {
+        "nome": "Boca de Ventosa",
+        "bonus": 11,
+        "dados": "2d6",
+        "fixo": 78,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Boca de Ventosa +11 (2d6+78 perfuração). CD das habilidades 23.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (couro)",
+    "acompanha": "Moreia-Abissal",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Lampreia-Gigante",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-lampreia-gigante.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "pzjFSH2tnlNGCdrk",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com a Boca de Ventosa, faz Agarrar (teste +13).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "lampreia-gigante",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!yBFiNjKY8AO0j9Dk.pzjFSH2tnlNGCdrk"
+    },
+    {
+      "_id": "qxDWkqLPz1cGI08y",
+      "name": "Sanguessuga",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>no início do turno dela, a criatura agarrada perde 2d6 PV (perda de PV, não dano) e ela recupera metade desse valor em PV temporários.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "lampreia-gigante",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!yBFiNjKY8AO0j9Dk.qxDWkqLPz1cGI08y"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "lampreia-gigante",
+      "papel": "lacaio",
+      "nd": "16"
+    }
+  },
+  "_key": "!actors!yBFiNjKY8AO0j9Dk"
+}

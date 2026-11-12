@@ -1,0 +1,201 @@
+{
+  "_id": "2YRwWSR84g9s7xbB",
+  "name": "Baleia-de-Dentes-Serrados",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-baleia-de-dentes-serrados.webp",
+  "folder": "p5WdzDDQoF8w7jSe",
+  "sort": 6100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "10",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 170,
+      "max": 170,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 1,
+    "deslocamento": 18,
+    "deslocamentoTexto": "natação 18 m",
+    "sentidos": "percepção às cegas (longo, na água), Audição +8 (especialista)",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 14,
+      "ref": 2,
+      "von": 8
+    },
+    "atributos": {
+      "FOR": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 4
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 19,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Cauda",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 18,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+19 perfuração) e Cauda +9 (2d6+18 impacto).",
+    "resistencias": {
+      "rdGeral": 4,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: óleo e dentes (CD 18).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Baleia-de-Dentes-Serrados",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-baleia-de-dentes-serrados.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "dFhbgGcFd4jQkGIm",
+      "name": "Sonar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>sabe a posição de todas as criaturas na água em alcance longo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "baleia-de-dentes-serrados",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!2YRwWSR84g9s7xbB.dFhbgGcFd4jQkGIm"
+    },
+    {
+      "_id": "zmXUrEE9DZ23Goml",
+      "name": "Varrida de Cauda",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação de movimento, 1 vez por cena)</em> criaturas adjacentes sofrem 2d6 de impacto e são empurradas 6 m (Fortitude CD 19 reduz à metade e evita o empurrão).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "baleia-de-dentes-serrados",
+          "gatilho": "ação de movimento, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!2YRwWSR84g9s7xbB.zmXUrEE9DZ23Goml"
+    },
+    {
+      "_id": "clTiyylkROlWvmMi",
+      "name": "Pele Lisa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>Redução de Dano 4.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "baleia-de-dentes-serrados",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!2YRwWSR84g9s7xbB.clTiyylkROlWvmMi"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "baleia-de-dentes-serrados",
+      "papel": "solo",
+      "nd": "10"
+    }
+  },
+  "_key": "!actors!2YRwWSR84g9s7xbB"
+}

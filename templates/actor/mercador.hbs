@@ -242,6 +242,10 @@
     </section>
     {{/if}}
 
+    {{#if (eq aba "token")}}
+    {{> "systems/icarus-rpg/templates/actor/parts/token.hbs"}}
+    {{/if}}
+
     {{#if (eq aba "notas")}}
     <section class="fm-bloco">
       <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Descricao"}}</h3>
