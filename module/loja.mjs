@@ -321,6 +321,15 @@ export function registrarTeste(estado = {}, teste, dados) {
   return { ok: true, estado: { ...(estado ?? {}), [teste]: { feito: true, ...dados } } };
 }
 
+/**
+ * Teste que este usuário já fez com o mercador (Barganha, Diplomacia ou Intimidação), ou null.
+ * Cada jogador faz UM dos testes: depois, os outros ficam para os outros jogadores. O Mestre é livre
+ * (quem chama não aplica a regra a ele).
+ */
+export function testeFeitoPeloUsuario(estado = {}, usuarioId) {
+  return TESTES_DE_BARGANHA.find(t => estado?.[t]?.feito && estado[t].usuarioId === usuarioId) ?? null;
+}
+
 /** Sorteia uma fala (uma por linha) e troca {personagem} e {mercador}. aleatorio: () => [0, 1). */
 export function sortearFala(texto, { personagem = "", mercador = "" } = {}, aleatorio = Math.random) {
   const linhas = String(texto ?? "").split(/\r?\n/).map(l => l.trim()).filter(Boolean);

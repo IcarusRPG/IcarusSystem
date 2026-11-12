@@ -1,5 +1,11 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.38.1
+
+### Barganha: um teste por jogador
+- Quem já fez um dos testes com o mercador (Barganha, Diplomacia ou Intimidação) não pode fazer os outros dois: na vitrine dele os botões ficam desativados com "Você já fez um teste: vez dos outros". Os outros jogadores continuam podendo fazer os testes que ainda estão livres.
+- A regra é conferida também no Mestre (um pedido enviado mesmo assim é recusado). O Mestre não tem a restrição, e "Reiniciar barganhas" libera todos de novo.
+
 ## 0.38.0
 
 ### Rolagens grandes no chat precisam da aprovação do Mestre

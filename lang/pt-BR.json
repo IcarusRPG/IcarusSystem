@@ -2410,8 +2410,10 @@
           "testeInvalido": "Este teste não está disponível com este mercador.",
           "mensagemInvalida": "A rolagem não vale para este teste.",
           "mensagemUsada": "Esta rolagem já foi usada.",
-          "mensagemAntiga": "Rolagem antiga demais; role de novo."
-        }
+          "mensagemAntiga": "Rolagem antiga demais; role de novo.",
+          "jaFezUm": "Você já fez o teste de {teste} com este mercador. Os outros testes ficam para os outros jogadores."
+        },
+        "VezDosOutros": "Você já fez um teste: vez dos outros"
       },
       "Roubo": {
         "Roubar": "Roubar",
