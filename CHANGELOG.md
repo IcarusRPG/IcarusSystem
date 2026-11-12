@@ -1,5 +1,28 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.33.0
+
+### Mercador: estoque finito, itens livres e Barganha
+- **Estoque sempre finito.** O "∞" saiu e a quantidade é um inteiro ≥ 0; com 0, o item aparece como "Esgotado". **Migração:** itens de mercador que estavam com estoque infinito passam a ter 1 unidade. Revise o estoque dos seus mercadores.
+- **O Mestre coloca qualquer item:**
+  - Arrastar de compêndio, diretório, inventário de outro ator ou da própria ficha sempre copia o item e pergunta quantidade, preço e se entra oculto.
+  - "Criar item" faz um item novo direto no estoque.
+  - Cada linha edita nome, quantidade, preço, oculto e "libera com".
+  - O preço do mercador prevalece sobre o preço do item, o preço de venda e o "sem venda".
+- **Barganha:**
+  - Na vitrine, três botões com d20 vermelho (Barganha, Diplomacia, Intimidação). O personagem rola a perícia com o diálogo de sempre.
+  - O **Mestre** decide pela mensagem da rolagem: autor, falante, perícia, até 2 minutos e não usada antes.
+  - Cada teste vale **uma vez por mercador, para o grupo todo**. Dois pedidos ao mesmo tempo dão um só.
+- **Efeitos** (no máximo um desconto e um acréscimo):
+  - sucesso: −5% e os itens ocultos aparecem; 20 natural: −15%;
+  - falha na Intimidação, ou 1 natural em Barganha ou Diplomacia: +10%;
+  - 1 natural na Intimidação: **chama os guardas**. A loja fecha, o Mestre recebe um aviso com a nota de consequência e um botão reabre a loja.
+  - O preço da vitrine é o mesmo da compra: o preço unitário é arredondado e depois multiplicado pela quantidade.
+- **Falas:** 12 resultados (crítico, sucesso, falha e falha crítica dos três testes), com uma frase sorteada por linha. Aparecem num balão na vitrine de todos e no chat, ditas pelo mercador. São editáveis, aceitam {personagem} e {mercador} e têm "Restaurar falas padrão".
+- **Na aba Loja:** CD e liga/desliga de cada teste, os descontos, o acréscimo, as opções dos guardas, "mostrar CD aos jogadores", "falas no chat", "Reiniciar barganhas" e a situação de cada teste.
+- O compêndio de exemplo agora tem estoque finito e um item oculto em cada mercador.
+- As rolagens de perícia guardam o d20 natural nas flags da mensagem (`natural`).
+
 ## 0.32.0
 
 ### Mercador (ator de loja) e vitrine

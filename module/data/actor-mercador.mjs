@@ -1,4 +1,5 @@
 import { ATRIBUTOS } from "../config.mjs";
+import { TESTES_DE_BARGANHA, RESULTADOS, BARGANHA_PADRAO, textoDasFalasPadrao } from "../loja.mjs";
 
 const fields = foundry.data.fields;
 const inteiro = (initial = 0, opcoes = {}) => new fields.NumberField({ required: true, nullable: false, integer: true, initial, ...opcoes });
@@ -33,6 +34,25 @@ export class MercadorData extends foundry.abstract.TypeDataModel {
         compra: new fields.SchemaField({
           ativo: new fields.BooleanField({ initial: false }),
           percentual: new fields.NumberField({ required: true, nullable: false, min: 0, max: 1, initial: 0.5 })
+        }),
+        // Barganha (Barganha, Diplomacia, Intimidação): CDs, efeitos, guardas e falas (uma por linha)
+        barganha: new fields.SchemaField({
+          testes: new fields.SchemaField(Object.fromEntries(TESTES_DE_BARGANHA.map(t => [t, new fields.SchemaField({
+            ativo: new fields.BooleanField({ initial: true }), cd: inteiro(BARGANHA_PADRAO.testes[t].cd, { min: 0 })
+          })]))),
+          descontoSucesso: inteiro(BARGANHA_PADRAO.descontoSucesso, { min: 0, max: 100 }),
+          descontoCritico: inteiro(BARGANHA_PADRAO.descontoCritico, { min: 0, max: 100 }),
+          acrescimo: inteiro(BARGANHA_PADRAO.acrescimo, { min: 0 }),
+          guardas: new fields.SchemaField({
+            fecharLoja: new fields.BooleanField({ initial: true }),
+            avisarMestre: new fields.BooleanField({ initial: true }),
+            nota: texto()
+          }),
+          mostrarCD: new fields.BooleanField({ initial: false }),
+          falasNoChat: new fields.BooleanField({ initial: true }),
+          falas: new fields.SchemaField(Object.fromEntries(TESTES_DE_BARGANHA.map(t => [t, new fields.SchemaField(
+            Object.fromEntries(RESULTADOS.map(r => [r, texto(textoDasFalasPadrao(t, r))]))
+          )])))
         })
       }),
       descricao: new fields.HTMLField({ required: true, blank: true, initial: "" }),

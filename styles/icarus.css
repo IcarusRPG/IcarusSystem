@@ -1449,3 +1449,38 @@ body.game {
 .vitrine-corpo .vm-acao input { width: 52px; text-align: center; }
 .vitrine-corpo .vm-rodape { padding: 8px 14px; border-top: 1px solid var(--ic-borda); background: var(--ic-cabecalho); }
 .vitrine-corpo .vm-rodape p { margin: 2px 0; }
+
+/* --- Mercador: Barganha (d20 vermelho), balão de fala e ajustes de preço --- */
+.vitrine-corpo .vm-testes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.vitrine-corpo .vm-teste {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 2px; min-width: 120px; padding: 6px 10px;
+  color: var(--ic-texto); background: rgba(26, 16, 18, 0.85); border: 1px solid var(--ic-pv); border-radius: 6px; cursor: pointer;
+}
+.vitrine-corpo .vm-teste i { color: var(--ic-pv); font-size: 18px; }
+.vitrine-corpo .vm-teste:hover:not([disabled]) { background: rgba(228, 87, 79, 0.25); }
+.vitrine-corpo .vm-teste[disabled] { cursor: default; opacity: 0.75; }
+.vitrine-corpo .vm-teste.feito.passou { border-color: #4ade80; }
+.vitrine-corpo .vm-teste.feito.falhou { border-color: var(--ic-apagado); }
+.vitrine-corpo .vm-teste small { font-size: 11px; color: var(--ic-apagado); }
+.vitrine-corpo .vm-marca { font-weight: bold; }
+.vitrine-corpo .vm-teste.passou .vm-marca { color: #4ade80; }
+.vitrine-corpo .vm-teste.falhou .vm-marca { color: var(--ic-pv); }
+.vitrine-corpo .vm-aviso { margin: 4px 0 0; font-size: 12px; color: var(--ic-ouro-claro); }
+.vitrine-corpo .vm-balao {
+  position: absolute; top: 16px; right: 16px; max-width: 46%; padding: 10px 14px; font-style: italic;
+  color: #1a1206; background: #f6ecd2; border-radius: 12px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+.vitrine-corpo .vm-balao::after {
+  content: ""; position: absolute; bottom: -10px; left: 24px; border: 10px solid transparent; border-top-color: #f6ecd2; border-bottom: 0;
+}
+.vitrine-corpo .vm-guardas { font-weight: bold; }
+.vitrine-corpo .vm-ajustes { margin: 0; padding: 4px 14px; }
+.vitrine-corpo .vm-desconto { padding: 1px 8px; color: #052e16; background: #4ade80; border-radius: 10px; font-weight: bold; }
+.vitrine-corpo .vm-acrescimo { padding: 1px 8px; color: #fff; background: var(--ic-pv); border-radius: 10px; font-weight: bold; }
+.vitrine-corpo .vm-liberado { color: var(--ic-ouro); }
+.ficha-mercador-corpo .fm-d20 { color: var(--ic-pv); }
+.ficha-mercador-corpo .fm-efeitos { font-size: 13px; color: var(--ic-ouro-claro); }
+.ficha-mercador-corpo .fm-nome-item { width: 100%; }
+.ficha-mercador-corpo .fm-falas { margin: 4px 0; }
+.ficha-mercador-corpo .fm-falas summary { cursor: pointer; color: var(--ic-ciano-titulo); }
+.ficha-mercador-corpo .fm-fala { flex-direction: column; align-items: stretch; }

@@ -70,7 +70,7 @@ export async function rolarTeste(actor, { rotulo, modificador, tipo, chave, esco
     content,
     rolls: [r.roll],
     sound: CONFIG.sounds.dice,
-    flags: { [SISTEMA_ID]: { tipo, chave, modo: r.modo, d20: r.d20, total: r.total } }
+    flags: { [SISTEMA_ID]: { tipo, chave, modo: r.modo, d20: r.d20, natural: r.natural, total: r.total } }
   };
   ChatMessage.applyRollMode(dados, game.settings.get("core", "rollMode"));
   // Palavra de Encorajamento vale para um teste

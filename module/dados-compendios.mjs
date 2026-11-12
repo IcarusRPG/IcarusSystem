@@ -392,7 +392,7 @@ export function documentosDeMercadores(dados, fontes) {
       d.folder = null;
       d.sort = (j + 1) * 100;
       if (d.system && "quantidade" in d.system) d.system.quantidade = d.type === "municao" ? 20 : 1;
-      d.flags = { ...(d.flags ?? {}), [SISTEMA_ID]: { ...(d.flags?.[SISTEMA_ID] ?? {}), loja: { venda: true, quantidade: ref.quantidade ?? null, precoBase: null, oculto: false } } };
+      d.flags = { ...(d.flags ?? {}), [SISTEMA_ID]: { ...(d.flags?.[SISTEMA_ID] ?? {}), loja: { venda: true, quantidade: Math.max(0, Math.trunc(Number(ref.quantidade) || 0)), precoBase: null, oculto: !!ref.oculto, liberaCom: ref.liberaCom ?? "qualquer" } } };
       return d;
     }).filter(Boolean);
     return {

@@ -6,12 +6,13 @@
  */
 import { SISTEMA_ID } from "../config.mjs";
 import { formatarPreco, precoEmOuro, totalEmCentavos } from "../moeda.mjs";
-import { lojaDoItem, precoUnitario, visivelNaVitrine, precoDeVenda, quantidadeVendavel, TIPOS_VENDAVEIS } from "../loja.mjs";
-import { pedirNaLoja } from "../loja-foundry.mjs";
+import { lojaDoItem, precoUnitario, visivelNaVitrine, precoDeVenda, quantidadeVendavel, TIPOS_VENDAVEIS, TESTES_DE_BARGANHA } from "../loja.mjs";
+import { pedirNaLoja, pedirBarganha, estadoDaBarganha, efeitosDoMercador } from "../loja-foundry.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const F = SISTEMA_ID;
 const loc = k => game.i18n.localize(k);
+const fmt = (k, d) => game.i18n.format(k, d);
 const reais = c => (formatarPreco(c) === "—" ? "R$ 0" : formatarPreco(c));
 
 /** Vitrines abertas (para atualizar com o estoque e o dinheiro). */
@@ -41,7 +42,7 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     classes: ["icarus", "icarus-dialogo", "vitrine-mercador"],
     position: { width: 760, height: 860 },
     window: { resizable: true, icon: "fa-solid fa-store" },
-    actions: { comprar: VitrineMercador._comprar, vender: VitrineMercador._vender, aba: VitrineMercador._aba }
+    actions: { comprar: VitrineMercador._comprar, vender: VitrineMercador._vender, aba: VitrineMercador._aba, barganha: VitrineMercador._barganha }
   };
 
   static PARTS = { vitrine: { template: `systems/${SISTEMA_ID}/templates/vitrine-mercador.hbs`, scrollable: [".vm-lista"] } };
@@ -61,15 +62,29 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     const aberta = !!s.loja.aberta;
     const comprador = this.comprador;
     const saldo = comprador ? totalEmCentavos(comprador.system.moedas) : 0;
-    const itens = m.items.filter(visivelNaVitrine).map(i => {
+    // Barganha: efeitos no preço e nos itens ocultos (a mesma conta da compra no Mestre)
+    const efeitos = efeitosDoMercador(m);
+    const itens = m.items.filter(i => visivelNaVitrine(i, efeitos)).map(i => {
       const l = lojaDoItem(i);
-      const preco = precoUnitario(i, mult);
+      const preco = precoUnitario(i, mult, efeitos);
       const semEstoque = l.quantidade === 0;
       return {
         id: i.id, nome: i.name, img: i.img, dica: (i.system.descricao ?? "").replace(/<[^>]+>/g, "").trim(),
-        estoque: l.quantidade === null ? "∞" : l.quantidade, max: l.quantidade ?? 999,
+        estoque: l.quantidade, max: Math.max(1, l.quantidade), liberado: l.oculto,
         preco: formatarPreco(preco), precoOuro: precoEmOuro(preco), esgotado: semEstoque,
-        desativado: !aberta || !comprador || semEstoque || preco <= 0 || i.system.semVenda
+        desativado: !aberta || !comprador || semEstoque || preco <= 0
+      };
+    });
+    const config = s.loja.barganha;
+    const estado = estadoDaBarganha(m);
+    const semMestre = !game.users.activeGM;
+    const testes = TESTES_DE_BARGANHA.filter(t => config.testes[t].ativo).map(t => {
+      const e = estado[t];
+      return {
+        chave: t, nome: loc(`ICARUS.Pericias.${t}`), feito: !!e?.feito,
+        passou: e?.resultado === "sucesso" || e?.resultado === "critico",
+        legenda: e?.feito ? fmt("ICARUS.Loja.Barganha.Feito", { resultado: loc(`ICARUS.Loja.Barganha.Rotulos.${e.resultado}`), por: e.por }) : config.mostrarCD ? `CD ${config.testes[t].cd}` : "",
+        desativado: !!e?.feito || !aberta || !comprador || semMestre
       };
     });
     const compra = s.loja.compra;
@@ -80,6 +95,8 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
       : [];
     return {
       img: m.img, nome: m.name, saudacao: s.loja.saudacao, aberta,
+      testes, semMestre, guardas: !!m.getFlag(F, "guardas"), fala: estado.ultima?.fala ?? "",
+      desconto: efeitos.desconto, acrescimo: efeitos.acrescimo,
       itens, venda, podeVender: !!compra?.ativo, aba: this.aba,
       compradores: compradoresPossiveis().map(a => ({ uuid: a.uuid, nome: a.name, selecionado: a.uuid === this.compradorUuid })),
       comprador: comprador?.name ?? "", saldo: reais(saldo), semComprador: !comprador
@@ -119,6 +136,14 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     alvo.disabled = true;
     await pedirNaLoja("comprar", { mercador: this.mercador, itemId: linha.dataset.itemId, quantidade, comprador: this.comprador });
     alvo.disabled = false;
+  }
+
+  /** Teste de Barganha, Diplomacia ou Intimidação (uma vez por mercador, para o grupo). */
+  static async _barganha(event, alvo) {
+    if (!this.comprador) return ui.notifications.warn(loc("ICARUS.Loja.SemComprador"));
+    alvo.disabled = true;
+    const ok = await pedirBarganha({ mercador: this.mercador, teste: alvo.dataset.teste, comprador: this.comprador });
+    if (!ok) alvo.disabled = false;
   }
 
   static async _vender(event, alvo) {

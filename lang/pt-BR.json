@@ -2235,17 +2235,51 @@
       "Caixa": "Caixa do mercador",
       "CompraAtiva": "O mercador também compra dos jogadores",
       "Percentual": "Paga (fração do preço, sem preço de venda)",
-      "ArrasteEstoque": "Arraste armas, equipamentos e munições de um compêndio ou do diretório de itens para esta aba: entram no estoque.",
+      "ArrasteEstoque": "Arraste armas, equipamentos e munições de qualquer lugar (compêndio, diretório de itens, inventário de outro ator ou desta ficha) para esta aba: o item é copiado para o estoque e você escolhe quantidade, preço e se entra oculto.",
       "Item": "Item",
       "Quantidade": "Qtd.",
       "PrecoBase": "Preço base (R$)",
       "PrecoFinal": "Preço final",
-      "Oculto": "Oculto",
-      "PrecoBaseDica": "Vazio = preço do item. O preço final aplica o multiplicador.",
+      "PrecoBaseDica": "Preço deste mercador, em Reais. Vazio = preço do item. O preço do mercador vale até para item \"sem venda\" ou de preço 0.",
       "SemVenda": "não se vende",
       "EstoqueVazio": "Estoque vazio.",
       "Descricao": "Descrição",
-      "Notas": "Notas do Mestre"
+      "Notas": "Notas do Mestre",
+      "SemVendaDica": "Sem preço do mercador, este item não se vende. Defina um preço para vendê-lo aqui.",
+      "EntraOculto": "Entra oculto (só aparece com a Barganha)",
+      "AdicionarAoEstoque": "Adicionar ao estoque: {item}",
+      "CriarItem": "Criar item",
+      "NomeDoItem": "Nome",
+      "Icone": "Ícone (caminho da imagem)",
+      "LiberaCom": "Libera com",
+      "Libera": {
+        "qualquer": "qualquer teste",
+        "barganha": "Barganha",
+        "diplomacia": "Diplomacia",
+        "intimidacao": "Intimidação"
+      },
+      "Barganha": "Barganha",
+      "Ativo": "Ativo",
+      "Estado": "Situação",
+      "Livre": "livre",
+      "EstadoTeste": "{resultado} ({por})",
+      "DescontoSucesso": "Desconto ao passar",
+      "DescontoCritico": "Desconto com 20 natural",
+      "Acrescimo": "Acréscimo",
+      "MostrarCD": "Mostrar a CD aos jogadores",
+      "FalasNoChat": "Falas do mercador no chat para todos",
+      "GuardasTitulo": "1 natural na Intimidação (guardas):",
+      "FecharLojaGuardas": "fechar a loja",
+      "AvisarMestre": "avisar o Mestre",
+      "NotaGuardas": "Nota de consequência",
+      "NotaGuardasExemplo": "Ex.: 2 guardas chegam em 1d4 rodadas",
+      "ReiniciarBarganhas": "Reiniciar barganhas",
+      "AcalmarGuardas": "Acalmar os guardas / reabrir a loja",
+      "RestaurarFalas": "Restaurar falas padrão",
+      "RestaurarFalasTexto": "Trocar as 12 falas do mercador pelas falas padrão?",
+      "Falas": "Falas",
+      "FalasDica": "Uma frase por linha; o sistema sorteia uma a cada teste. Use {personagem} e {mercador}.",
+      "Oculto": "Oculto"
     },
     "Loja": {
       "Fechada": "Loja fechada",
@@ -2286,6 +2320,32 @@
         "ChatDica": "Pública (todos veem) ou só para o comprador e o Mestre.",
         "Publico": "Pública",
         "Privado": "Só comprador e Mestre"
+      },
+      "Barganha": {
+        "Rotulos": {
+          "critico": "Sucesso crítico (20)",
+          "sucesso": "Sucesso",
+          "falha": "Falha",
+          "falhaCritica": "Falha crítica (1)"
+        },
+        "Resultados": {
+          "critico": "{teste} de {personagem}: 20 natural! Desconto maior e itens liberados.",
+          "sucesso": "{teste} de {personagem}: sucesso. Desconto e itens liberados.",
+          "falha": "{teste} de {personagem}: não funcionou.",
+          "falhaCritica": "{teste} de {personagem}: 1 natural!"
+        },
+        "Feito": "{resultado} · {por}",
+        "Guardas": "O mercador chamou os guardas!",
+        "GuardasMestre": "{mercador} chamou os guardas por causa de {personagem} (1 natural na Intimidação). A loja fechou.",
+        "Liberado": "Liberado pela Barganha",
+        "Motivos": {
+          "jaFeito": "Este teste já foi feito com este mercador.",
+          "jaFeitoPor": "Outro jogador já fez este teste ({por}).",
+          "testeInvalido": "Este teste não está disponível com este mercador.",
+          "mensagemInvalida": "A rolagem não vale para este teste.",
+          "mensagemUsada": "Esta rolagem já foi usada.",
+          "mensagemAntiga": "Rolagem antiga demais; role de novo."
+        }
       }
     }
   }
