@@ -7,8 +7,10 @@
 import { SISTEMA_ID } from "./config.mjs";
 import { formatarPreco } from "./moeda.mjs";
 import {
-  validarCompra, validarVenda, validarPedidoDeLoja, dadosDaCompra, itemParaEmpilhar, unidadesCompradas, lojaDoItem
+  validarCompra, validarVenda, validarPedidoDeLoja, dadosDaCompra, itemParaEmpilhar, unidadesCompradas, lojaDoItem,
+  efeitosDaBarganha, registrarTeste, resultadoDoTeste, sortearFala, validarPedidoDeBarganha, validarMensagemDeBarganha
 } from "./loja.mjs";
+import { rolarPericia } from "./rolls.mjs";
 
 const F = SISTEMA_ID;
 const CANAL = `system.${SISTEMA_ID}`;
@@ -75,7 +77,7 @@ async function emBloco(passos) {
 
 async function comprar(mercador, comprador, pedido, dono, usuario) {
   const item = mercador.items.get(pedido.itemId);
-  const r = validarCompra(mercador.system, item, pedido.quantidade, comprador.system, { dono });
+  const r = validarCompra(mercador.system, item, pedido.quantidade, comprador.system, { dono, efeitos: efeitosDoMercador(mercador) });
   if (!r.ok) return { ok: false, texto: textoDoMotivo(r, { item: item?.name ?? "" }) };
   const moedasAntes = foundry.utils.deepClone(comprador._source.system.moedas);
   const caixaAntes = foundry.utils.deepClone(mercador._source.system.caixa);
@@ -89,7 +91,7 @@ async function comprar(mercador, comprador, pedido, dono, usuario) {
       ? { fazer: () => pilha.update({ "system.quantidade": pilha.system.quantidade + unidadesCompradas(dados, pedido.quantidade) }),
         desfazer: () => pilha.update({ "system.quantidade": pilha.system.quantidade - unidadesCompradas(dados, pedido.quantidade) }) }
       : { fazer: async () => { [criado] = await comprador.createEmbeddedDocuments("Item", [dados]); }, desfazer: () => criado?.delete() },
-    ...(r.estoque === null ? [] : [{ fazer: () => item.update({ [`flags.${F}.loja.quantidade`]: r.estoque }), desfazer: () => item.update({ [`flags.${F}.loja.quantidade`]: estoqueAntes }) }]),
+    { fazer: () => item.update({ [`flags.${F}.loja.quantidade`]: r.estoque }), desfazer: () => item.update({ [`flags.${F}.loja.quantidade`]: estoqueAntes }) },
     ...(r.caixa === null ? [] : [{ fazer: () => mercador.update({ "system.caixa": r.caixa }), desfazer: () => mercador.update({ "system.caixa": caixaAntes }) }])
   ];
   if (!(await emBloco(passos))) return { ok: false, texto: loc("ICARUS.Loja.Erro") };
@@ -135,6 +137,116 @@ function registrarNoChat(mercador, comprador, texto) {
   });
 }
 
+/* ---------------- Barganha ---------------- */
+
+/** Estado da Barganha do mercador (flags.barganha) e os efeitos dele na loja. */
+export const estadoDaBarganha = mercador => mercador?.flags?.[F]?.barganha ?? {};
+export const efeitosDoMercador = mercador => efeitosDaBarganha(estadoDaBarganha(mercador), mercador?.system?.loja?.barganha);
+
+/**
+ * O jogador faz um teste (Barganha, Diplomacia ou Intimidação): rola a perícia do comprador (com o
+ * diálogo de bônus de sempre) e manda a mensagem ao Mestre, que decide pelo total dela.
+ */
+export async function pedirBarganha({ mercador, teste, comprador }) {
+  if (!comprador) { ui.notifications.warn(loc("ICARUS.Loja.SemComprador")); return false; }
+  if (estadoDaBarganha(mercador)[teste]?.feito) { ui.notifications.warn(loc("ICARUS.Loja.Barganha.Motivos.jaFeito")); return false; }
+  if (!mercador.system.loja.aberta) { ui.notifications.warn(loc("ICARUS.Loja.Motivos.lojaFechada")); return false; }
+  if (!game.user.isGM && !game.users.activeGM) { ui.notifications.warn(loc("ICARUS.Loja.SemMestre")); return false; }
+  const mensagem = await rolarPericia(comprador, teste);
+  if (!mensagem?.id) return false;
+  const pedido = { mercadorUuid: mercador.uuid, teste, mensagemId: mensagem.id, compradorUuid: comprador.uuid };
+  if (game.user.isGM) {
+    const r = await processarBarganha(pedido, game.user.id);
+    if (!r.ok) ui.notifications.warn(r.texto);
+    return r.ok;
+  }
+  game.socket.emit(CANAL, { acao: "loja:barganha", ...pedido });
+  return true;
+}
+
+/** Um teste por vez no Mestre: dois pedidos simultâneos do mesmo teste dão um só válido. */
+let filaDeBarganha = Promise.resolve();
+const emFila = fn => {
+  const p = filaDeBarganha.then(fn, fn);
+  filaDeBarganha = p.catch(() => null);
+  return p;
+};
+
+/**
+ * Lado do Mestre: confere o pedido e a mensagem da rolagem (autor, falante, perícia, recente, não
+ * usada), decide o resultado pela CD guardada no mercador, grava o estado, publica a fala do mercador
+ * e, no 1 natural da Intimidação, fecha a loja e avisa o Mestre. @returns {Promise<{ ok, texto }>}
+ */
+export function processarBarganha(pedidoBruto, usuarioId) {
+  return emFila(async () => {
+    const pedido = validarPedidoDeBarganha(pedidoBruto);
+    const usuario = game.users.get(usuarioId);
+    const mercador = pedido ? atorDe(pedido.mercadorUuid) : null;
+    const comprador = pedido ? atorDe(pedido.compradorUuid) : null;
+    if (!pedido || !usuario || mercador?.type !== "mercador" || !comprador) return { ok: false, texto: loc("ICARUS.Loja.Barganha.Motivos.mensagemInvalida") };
+    const config = mercador.system.loja.barganha;
+    if (!mercador.system.loja.aberta) return { ok: false, texto: loc("ICARUS.Loja.Motivos.lojaFechada") };
+    if (!config.testes[pedido.teste]?.ativo) return { ok: false, texto: loc("ICARUS.Loja.Barganha.Motivos.testeInvalido") };
+    const estado = estadoDaBarganha(mercador);
+    if (estado[pedido.teste]?.feito) return { ok: false, texto: fmt("ICARUS.Loja.Barganha.Motivos.jaFeitoPor", { por: estado[pedido.teste].por }) };
+    const mensagem = game.messages.get(pedido.mensagemId);
+    const f = mensagem?.flags?.[F] ?? {};
+    const v = validarMensagemDeBarganha(mensagem ? {
+      autor: mensagem.author?.id ?? mensagem.user?.id, atorFalante: mensagem.speaker?.actor, chave: f.chave,
+      total: f.total, natural: f.natural ?? f.d20, quando: mensagem.timestamp, usada: !!f.barganhaUsada
+    } : null, { teste: pedido.teste, usuarioId, compradorId: comprador.id, dono: usuario.isGM || !!comprador.testUserPermission?.(usuario, "OWNER"), agora: Date.now() });
+    if (!v.ok) return { ok: false, texto: loc(`ICARUS.Loja.Barganha.Motivos.${v.motivo}`) };
+    const resultado = resultadoDoTeste({ natural: v.natural, total: v.total, cd: config.testes[pedido.teste].cd });
+    const fala = sortearFala(config.falas?.[pedido.teste]?.[resultado], { personagem: comprador.name, mercador: mercador.name });
+    const r = registrarTeste(estado, pedido.teste, { por: comprador.name, usuarioId, resultado, fala });
+    if (!r.ok) return { ok: false, texto: loc(`ICARUS.Loja.Barganha.Motivos.${r.motivo}`) };
+    const guardas = pedido.teste === "intimidacao" && resultado === "falhaCritica";
+    await mensagem.setFlag(F, "barganhaUsada", true);
+    await mercador.update({
+      [`flags.${F}.barganha`]: { ...r.estado, ultima: { teste: pedido.teste, fala, quando: Date.now() } },
+      ...(guardas ? { [`flags.${F}.guardas`]: true, ...(config.guardas.fecharLoja ? { "system.loja.aberta": false } : {}) } : {})
+    });
+    await falarNoChat(mercador, comprador, fala, config.falasNoChat);
+    if (guardas && config.guardas.avisarMestre) await avisarGuardas(mercador, comprador, config.guardas.nota);
+    const texto = fmt(`ICARUS.Loja.Barganha.Resultados.${resultado}`, { teste: loc(`ICARUS.Pericias.${pedido.teste}`), personagem: comprador.name });
+    return { ok: true, texto };
+  });
+}
+
+/** A fala do mercador no chat, dita por ele (pública ou só para o jogador e o Mestre). */
+function falarNoChat(mercador, comprador, fala, paraTodos) {
+  if (!fala) return null;
+  const donos = game.users.filter(u => !u.isGM && comprador.testUserPermission?.(u, "OWNER")).map(u => u.id);
+  return ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor: mercador }),
+    content: `<div class="icarus-rolagem icarus-lembrete icarus-loja-fala"><p class="condicao-descricao">“${esc(fala)}”</p></div>`,
+    ...(paraTodos ? {} : { whisper: [...donos, ...game.users.filter(u => u.isGM).map(u => u.id)] })
+  });
+}
+
+/** 1 natural na Intimidação: aviso ao Mestre (notificação e sussurro com a nota de consequência). */
+function avisarGuardas(mercador, comprador, nota) {
+  const texto = fmt("ICARUS.Loja.Barganha.GuardasMestre", { mercador: mercador.name, personagem: comprador.name });
+  ui.notifications.warn(texto, { permanent: true });
+  return ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor: mercador }),
+    content: `<div class="icarus-rolagem icarus-lembrete"><p class="condicao-descricao"><b>${esc(texto)}</b>${nota ? `<br>${esc(nota)}` : ""}</p></div>`,
+    whisper: game.users.filter(u => u.isGM).map(u => u.id)
+  });
+}
+
+/** Mestre: libera de novo os 3 testes (preço e itens ocultos voltam ao original). */
+export async function reiniciarBarganhas(mercador) {
+  if (!game.user.isGM) return;
+  await mercador.update({ [`flags.${F}.-=barganha`]: null });
+}
+
+/** Mestre: acalma os guardas e reabre a loja. */
+export async function acalmarGuardas(mercador) {
+  if (!game.user.isGM) return;
+  await mercador.update({ "system.loja.aberta": true, [`flags.${F}.-=guardas`]: null });
+}
+
 /** Mensagens do socket (exportada para os testes). */
 export async function aoReceberLoja(msg, remetente) {
   if (!msg?.acao?.startsWith("loja:")) return;
@@ -147,6 +259,11 @@ export async function aoReceberLoja(msg, remetente) {
   if (!game.users.activeGM?.isSelf) return;
   const usuario = game.users.get(de);
   if (!usuario?.active) return;
+  if (msg.acao === "loja:barganha") {
+    const r = await processarBarganha(msg, de);
+    game.socket.emit(CANAL, { acao: "loja:resposta", para: de, ok: r.ok, texto: r.texto });
+    return;
+  }
   const pedido = validarPedidoDeLoja(msg);
   const tipo = msg.acao === "loja:vender" ? "vender" : msg.acao === "loja:comprar" ? "comprar" : null;
   const r = pedido && tipo ? await executar(tipo, pedido, de) : { ok: false, texto: loc("ICARUS.Loja.Motivos.quantidadeInvalida") };

@@ -259,12 +259,22 @@ Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
 
 - **Criar:** no diretório de atores, "Criar ator" e escolha **Mercador**. Os jogadores entram como observadores: podem abrir, mas não editar. O compêndio **Icarus: Mercadores** tem três exemplos prontos (Ferreiro, Boticário e Mercador de Rua).
 - **Ficha (só o Mestre e os donos):** compacta, com as abas **Ficha** (nível, Defesa, PV, PM, atributos, perícias, habilidades, equipamento e magias), **Loja** e **Notas**.
-- **Montar o estoque:** na aba Loja, arraste armas, equipamentos e munições de um compêndio ou do diretório de itens.
-  - Cada linha tem quantidade (ou ∞), preço base (vazio = preço do item), preço final (com o multiplicador) e "oculto".
+- **Montar o estoque:** na aba Loja, arraste armas, equipamentos e munições de qualquer lugar: compêndio, diretório de itens, inventário de outro ator ou da própria ficha. O item é sempre copiado.
+  - Ao soltar, o sistema pergunta a quantidade, o preço e se o item entra oculto. "Criar item" faz um item novo direto no estoque.
+  - O estoque é sempre finito; com 0, o item aparece como "Esgotado".
+  - Cada linha tem nome, quantidade, preço do mercador (vazio = preço do item), preço final, "oculto" e "libera com" (qualquer teste, Barganha, Diplomacia ou Intimidação).
+  - O preço do mercador vale até para item "sem venda" ou de preço 0.
   - Na mesma aba ficam a fala de abertura e a de despedida, o multiplicador de preço, a caixa do mercador ("caixa infinita" ou moedas), "Abrir/Fechar loja" e "Ver como jogador".
 - **Como o jogador compra:** ao abrir o mercador (duplo clique no token ou no diretório), o jogador vê a **vitrine**: o retrato grande, o nome, a fala de abertura e a lista com preço, estoque e o botão Comprar.
   - O pedido vai ao Mestre conectado, que confere tudo e faz a compra: o dinheiro sai (com troco), o item entra no inventário (empilhando munições e consumíveis), o estoque cai e o chat registra.
   - Sem Mestre conectado, a compra não acontece.
+- **Barganha:** a vitrine tem três botões com um d20 vermelho: **Barganha**, **Diplomacia** e **Intimidação**.
+  - O personagem rola a perícia e o Mestre decide pela rolagem no chat, com a CD que ele configurou no mercador.
+  - Cada teste vale uma vez por mercador, para o grupo todo: depois de feito, o botão mostra o resultado e quem fez.
+  - Passar dá 5% de desconto e libera os itens ocultos; 20 natural dá 15%. Falhar na Intimidação, ou tirar 1 natural em Barganha ou Diplomacia, aumenta o preço em 10%. Fica no máximo um desconto e um acréscimo.
+  - 1 natural na Intimidação faz o mercador **chamar os guardas**: a loja fecha e o Mestre recebe um aviso. O sistema não cria guardas nem combate.
+  - O mercador responde com uma fala sorteada, num balão na vitrine e no chat. As 12 falas são editáveis na aba Loja, com "Restaurar falas padrão".
+  - "Reiniciar barganhas" libera os testes de novo, e "Acalmar os guardas" reabre a loja.
 - **O mercador também compra (opcional):** com "O mercador também compra dos jogadores" ligado, a vitrine ganha a aba **Vender**. Ele paga o preço de venda do item ou uma fração do preço, tirando da caixa.
 - **Chat:** em Configurar Definições → Sistema, a mensagem de compra pode ser pública ou só para o comprador e o Mestre.
 

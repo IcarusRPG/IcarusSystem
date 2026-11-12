@@ -7,6 +7,7 @@
  * escolha ("Vínculo Selvagem (Teixugo Gigante)") e o documento antigo do compêndio Vínculos.
  */
 import { SISTEMA_ID, FICHA_ANIMAL, ICONE_PADRAO } from "./config.mjs";
+import { migrarQuantidadeDoEstoque } from "./loja.mjs";
 import { iconeDoItemComum } from "./origens-dados.mjs";
 import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./origens.mjs";
 import { classePorId, linhagemDasEscolhas, pmPelaRegra } from "./classes-dados.mjs";
@@ -205,6 +206,22 @@ export async function configurarBarrasDosTokens(atores = game.actors) {
 }
 
 /** Migrações por versão: registradas para rodar uma vez (configuração de mundo "migracao"). */
+/**
+ * 0.33.0 — estoque do Mercador sem "∞": quantidade null vira 1 (atores do mundo e mercadores não
+ * ligados nos tokens das cenas). @param {Iterable<Actor>} [atores]  @returns {Promise<number>} itens alterados
+ */
+export async function migrarEstoqueInfinito(atores = null) {
+  const lista = atores ?? [...(game.actors ?? []), ...(game.scenes ?? []).flatMap(s => [...s.tokens].filter(t => !t.actorLink && t.actor).map(t => t.actor))];
+  let n = 0;
+  for (const actor of lista) {
+    if (actor?.type !== "mercador") continue;
+    const mudancas = actor.items.filter(i => migrarQuantidadeDoEstoque(i.flags?.[SISTEMA_ID]?.loja) !== null)
+      .map(i => ({ _id: i.id, [`flags.${SISTEMA_ID}.loja.quantidade`]: 1 }));
+    if (mudancas.length) { await actor.updateEmbeddedDocuments("Item", mudancas); n += mudancas.length; }
+  }
+  return n;
+}
+
 const MIGRACOES = [
   { versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) },
   // 0.10.1 — a origem dá +2 de bônus na perícia (não treina): com confirmação; recusar não repete
@@ -221,7 +238,9 @@ const MIGRACOES = [
   { versao: "0.25.0", rodar: async () => (await migrarPMDosConjuradores()) + (await atualizarIconesDosFocos()) },
   // 0.27.2 — custo 0 nas habilidades que recuperam PM (Embalo de Batalha, Meditação de Combate,
   // Fúria Sanguinária, Mana Transbordante, Dívida Paga)
-  { versao: "0.27.2", rodar: () => corrigirCustosDeGanho() }
+  { versao: "0.27.2", rodar: () => corrigirCustosDeGanho() },
+  // 0.33.0 — estoque do Mercador sem "∞" (quantidade null vira 1)
+  { versao: "0.33.0", rodar: () => migrarEstoqueInfinito() }
 ];
 
 export function registrarMigracoes() {

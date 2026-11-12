@@ -32,7 +32,7 @@ const moedas = (real = 0, centavo = 0, ouroReal = 0) => ({ moedas: { ouroReal, r
 test("Preço: base do item ou da loja × multiplicador × quantidade, arredondado em centavos; munição por pacote", () => {
   assert.equal(L.precoTotal(item(), 2, 1), 1000);
   assert.equal(L.precoTotal(item(), 1, 1.25), 625);
-  assert.equal(L.precoTotal(item({ preco: 333 }), 3, 1.1), 1099, "333 × 1,1 × 3 = 1098,9 → 1099");
+  assert.equal(L.precoTotal(item({ preco: 333 }), 3, 1.1), 1098, "unitário 333 × 1,1 = 366,3 → 366; × 3 = 1098");
   assert.equal(L.precoTotal(item({}, { precoBase: 800 }), 1, 1), 800, "preço da loja sobrescreve");
   assert.equal(L.precoUnitario({ type: "municao", system: { precoPacote: 100 }, flags: {} }), 100);
   assert.equal(podePagar({ real: 5 }, 500), true);
@@ -49,11 +49,16 @@ test("Compra válida: débito com troco em moedas, estoque diminui, caixa infini
   assert.deepEqual(r.moedas, debitar({ ouroReal: 1, real: 0, centavo: 0 }, 1000));
 });
 
-test("Estoque infinito não muda; caixa do mercador recebe quando não é infinita", () => {
-  const r = L.validarCompra(mercador({}, { caixaInfinita: false, caixa: { ouroReal: 0, real: 1, centavo: 50 } }), item({}, { quantidade: null }), 4, moedas(50));
+test("Estoque sempre finito (o antigo null conta 1 e a migração grava 1); caixa do mercador recebe quando não é infinita", () => {
+  const r = L.validarCompra(mercador({}, { caixaInfinita: false, caixa: { ouroReal: 0, real: 1, centavo: 50 } }), item({}, { quantidade: 4 }), 4, moedas(50));
   assert.equal(r.ok, true);
-  assert.equal(r.estoque, null);
+  assert.equal(r.estoque, 0);
   assert.equal(totalEmCentavos(r.caixa), 150 + 2000);
+  assert.equal(L.lojaDoItem(item({}, { quantidade: null })).quantidade, 1);
+  assert.equal(L.validarCompra(mercador(), item({}, { quantidade: null }), 2, moedas(50)).motivo, "semEstoque");
+  assert.equal(L.migrarQuantidadeDoEstoque({ quantidade: null }), 1);
+  assert.equal(L.migrarQuantidadeDoEstoque({ quantidade: 0 }), null);
+  assert.equal(L.esgotado(item({}, { quantidade: 0 })), true);
 });
 
 test("Recusas: loja fechada, oculto, esgotado, sem estoque, quantidade inválida, sem dinheiro, sem preço, sem permissão", () => {
@@ -66,6 +71,9 @@ test("Recusas: loja fechada, oculto, esgotado, sem estoque, quantidade inválida
   assert.equal(motivo(mercador(), item(), 1, moedas(4, 99)), "semDinheiro");
   assert.equal(motivo(mercador(), item({ preco: 0 }), 1, moedas(50)), "semPreco");
   assert.equal(motivo(mercador(), item({ semVenda: true }), 1, moedas(50)), "semPreco");
+  // O preço do mercador prevalece: "sem venda" e preço 0 se vendem com preço definido
+  assert.equal(L.validarCompra(mercador(), item({ semVenda: true }, { precoBase: 700 }), 1, moedas(50)).total, 700);
+  assert.equal(L.validarCompra(mercador(), item({ preco: 0 }, { precoBase: 300 }), 1, moedas(50)).total, 300);
   assert.equal(motivo(mercador(), { type: "poder", system: {}, flags: { [F]: { loja: {} } } }, 1, moedas(50)), "itemInvalido");
   assert.equal(L.validarCompra(mercador(), item(), 1, moedas(50), { dono: false }).motivo, "semPermissao");
 });
@@ -200,4 +208,162 @@ test("Compêndio Icarus: Mercadores: 3 mercadores com estoque dos compêndios do
       assert.ok(L.precoUnitario(i) > 0, `${a.name}: ${i.name} sem preço`);
     }
   }
+});
+
+/* ---------------- Barganha ---------------- */
+
+const { processarBarganha, reiniciarBarganhas, acalmarGuardas, efeitosDoMercador } = await import("../module/loja-foundry.mjs");
+const { migrarEstoqueInfinito } = await import("../module/migracoes.mjs");
+
+test("Barganha: 20 natural = crítico e 1 natural = falha crítica, mesmo com o total do outro lado da CD (vantagem usa o dado que valeu)", () => {
+  assert.equal(L.resultadoDoTeste({ natural: 20, total: 8, cd: 15 }), "critico");
+  assert.equal(L.resultadoDoTeste({ natural: 1, total: 30, cd: 15 }), "falhaCritica");
+  assert.equal(L.resultadoDoTeste({ natural: 12, total: 15, cd: 15 }), "sucesso");
+  assert.equal(L.resultadoDoTeste({ natural: 12, total: 14, cd: 15 }), "falha");
+  // Com vantagem, a mensagem guarda o natural do dado mantido (rolls.mjs → flags.natural)
+  const v = L.validarMensagemDeBarganha({ autor: "u", atorFalante: "a", chave: "barganha", total: 9, natural: 20, quando: 1000 }, { teste: "barganha", usuarioId: "u", compradorId: "a", dono: true, agora: 2000 });
+  assert.equal(L.resultadoDoTeste({ ...v, cd: 15 }), "critico");
+});
+
+test("Efeitos: um desconto (15% com 20 natural, senão 5%) e um acréscimo (10%), sem acumular; preço = base × (1 − d) × (1 + a), unitário arredondado", () => {
+  const e = estado => L.efeitosDaBarganha(estado, L.BARGANHA_PADRAO);
+  assert.deepEqual(e({}), { desconto: 0, acrescimo: 0, liberados: [], guardas: false });
+  assert.equal(e({ barganha: { feito: true, resultado: "sucesso" }, diplomacia: { feito: true, resultado: "sucesso" } }).desconto, 5, "dois sucessos: um desconto só");
+  assert.equal(e({ barganha: { feito: true, resultado: "sucesso" }, diplomacia: { feito: true, resultado: "critico" } }).desconto, 15, "o crítico no lugar dos 5%");
+  assert.equal(e({ barganha: { feito: true, resultado: "falha" }, diplomacia: { feito: true, resultado: "falha" } }).acrescimo, 0, "falha comum em Barganha/Diplomacia: nada");
+  assert.equal(e({ intimidacao: { feito: true, resultado: "falha" } }).acrescimo, 10);
+  assert.equal(e({ barganha: { feito: true, resultado: "falhaCritica" }, intimidacao: { feito: true, resultado: "falha" } }).acrescimo, 10, "um acréscimo só");
+  const juntos = e({ barganha: { feito: true, resultado: "critico" }, diplomacia: { feito: true, resultado: "falhaCritica" } });
+  assert.deepEqual([juntos.desconto, juntos.acrescimo], [15, 10]);
+  assert.equal(L.precoUnitario(item({ preco: 1000 }), 1, juntos), 935, "1000 × 0,85 × 1,1 = 935");
+  assert.equal(L.precoUnitario(item({ preco: 333 }), 1, { desconto: 5, acrescimo: 0 }), 316, "333 × 0,95 = 316,35 → 316");
+  assert.equal(L.precoTotal(item({ preco: 333 }), 3, 1, { desconto: 5 }), 948, "o total é o unitário mostrado × quantidade");
+  const r = L.validarCompra(mercador(), item({ preco: 333 }), 3, moedas(50), { efeitos: { desconto: 5, acrescimo: 0, liberados: [] } });
+  assert.deepEqual([r.unitario, r.total], [316, 948]);
+});
+
+test("Itens ocultos: aparecem com qualquer teste que passou, ou só com o teste ligado a eles", () => {
+  const oculto = liberaCom => item({}, { oculto: true, liberaCom });
+  const com = liberados => ({ liberados });
+  assert.equal(L.visivelNaVitrine(oculto("qualquer"), com([])), false);
+  assert.equal(L.visivelNaVitrine(oculto("qualquer"), com(["diplomacia"])), true);
+  assert.equal(L.visivelNaVitrine(oculto("intimidacao"), com(["diplomacia"])), false);
+  assert.equal(L.visivelNaVitrine(oculto("intimidacao"), com(["intimidacao"])), true);
+  assert.equal(L.validarCompra(mercador(), oculto("barganha"), 1, moedas(50)).motivo, "itemInvalido");
+  assert.equal(L.validarCompra(mercador(), oculto("barganha"), 1, moedas(50), { efeitos: com(["barganha"]) }).ok, true);
+});
+
+test("Um teste, uma vez, para o grupo; falas sorteadas por resultado com {personagem} e {mercador}", () => {
+  const a = L.registrarTeste({}, "barganha", { por: "Kaelen", resultado: "sucesso" });
+  assert.equal(a.ok, true);
+  assert.deepEqual(L.registrarTeste(a.estado, "barganha", { por: "Lira" }), { ok: false, motivo: "jaFeito", por: "Kaelen" });
+  assert.equal(L.registrarTeste(a.estado, "diplomacia", { por: "Lira" }).ok, true, "os outros testes continuam livres");
+  assert.equal(L.registrarTeste({}, "furtividade", {}).motivo, "testeInvalido");
+  assert.equal(L.sortearFala("um {personagem}\ndois {mercador}\n\n", { personagem: "Kaelen", mercador: "Boticário" }, () => 0.99), "dois Boticário");
+  assert.equal(L.sortearFala("", {}), "");
+  for (const t of L.TESTES_DE_BARGANHA) for (const r of L.RESULTADOS) assert.equal(L.FALAS_PADRAO[t][r].length, 3, t + "/" + r);
+  assert.match(L.sortearFala(L.textoDasFalasPadrao("barganha", "sucesso"), { personagem: "Kaelen" }, () => 0.5), /Kaelen/);
+});
+
+test("Mensagem da rolagem: autor, falante (dono), perícia, recente e não usada", () => {
+  const ok = { autor: "u", atorFalante: "a", chave: "diplomacia", total: 17, natural: 11, quando: 1000000 };
+  const p = { teste: "diplomacia", usuarioId: "u", compradorId: "a", dono: true, agora: 1000000 + 60000 };
+  assert.deepEqual(L.validarMensagemDeBarganha(ok, p), { ok: true, total: 17, natural: 11 });
+  assert.equal(L.validarMensagemDeBarganha({ ...ok, autor: "outro" }, p).motivo, "mensagemInvalida");
+  assert.equal(L.validarMensagemDeBarganha({ ...ok, atorFalante: "b" }, p).motivo, "mensagemInvalida");
+  assert.equal(L.validarMensagemDeBarganha(ok, { ...p, dono: false }).motivo, "mensagemInvalida");
+  assert.equal(L.validarMensagemDeBarganha({ ...ok, chave: "barganha" }, p).motivo, "mensagemInvalida");
+  assert.equal(L.validarMensagemDeBarganha({ ...ok, usada: true }, p).motivo, "mensagemUsada");
+  assert.equal(L.validarMensagemDeBarganha(ok, { ...p, agora: 1000000 + 180000 }).motivo, "mensagemAntiga");
+  assert.equal(L.validarMensagemDeBarganha({ ...ok, natural: 21 }, p).motivo, "mensagemInvalida");
+  assert.equal(L.validarPedidoDeBarganha({ mercadorUuid: "Actor.aaaaaaaaaaaaaaaa", teste: "barganha", mensagemId: "bbbbbbbbbbbbbbbb", compradorUuid: "Actor.cccccccccccccccc", total: 30 }).total, undefined, "o total nunca vem do jogador");
+});
+
+/** Mercador e mensagens simulados para o fluxo do Mestre. */
+function mercadorDeBarganha() {
+  const falas = Object.fromEntries(L.TESTES_DE_BARGANHA.map(t => [t, Object.fromEntries(L.RESULTADOS.map(r => [r, L.textoDasFalasPadrao(t, r)]))]));
+  const m = atorSimulado("Actor.mmmmmmmmmmmmmmmm", "mercador", mercador({ barganha: { ...structuredClone(L.BARGANHA_PADRAO), falas } }), [{ ...item({}, { oculto: true }), id: "iiiiiiiiiiiiiiii" }]);
+  m.flags = { [F]: {} };
+  m.getFlag = (_s, k) => m.flags[F][k];
+  const original = m.update;
+  const prefixo = "flags." + F + ".";
+  m.update = async mudancas => {
+    const resto = {};
+    for (const [k, v] of Object.entries(mudancas)) {
+      if (k.startsWith(prefixo + "-=")) delete m.flags[F][k.slice(prefixo.length + 2)];
+      else if (k.startsWith(prefixo)) m.flags[F][k.slice(prefixo.length)] = v;
+      else resto[k] = v;
+    }
+    return original.call(m, resto);
+  };
+  return m;
+}
+const mensagens = new Map();
+globalThis.game.messages = { get: id => mensagens.get(id) };
+function rolagem(id, { chave = "barganha", total = 18, natural = 12, autor = "jog", ator = "cccccccccccccccc" } = {}) {
+  const msg = { id, author: { id: autor }, speaker: { actor: ator }, timestamp: Date.now(), flags: { [F]: { tipo: "pericia", chave, total, natural } },
+    async setFlag(_s, k, v) { msg.flags[F][k] = v; } };
+  mensagens.set(id, msg);
+  return msg;
+}
+const pedidoB = (teste, mensagemId) => ({ mercadorUuid: "Actor.mmmmmmmmmmmmmmmm", teste, mensagemId, compradorUuid: "Actor.cccccccccccccccc" });
+
+test("Mestre: dois pedidos simultâneos do mesmo teste dão um só; a mensagem não vale duas vezes; preço e itens mudam", async () => {
+  usuarios.set("jog", { id: "jog", isGM: false, active: true });
+  usuarios.set("jog2", { id: "jog2", isGM: false, active: true });
+  const merc = mercadorDeBarganha();
+  const comp = atorSimulado("Actor.cccccccccccccccc", "personagem", { moedas: { ouroReal: 0, real: 20, centavo: 0 } });
+  comp.id = "cccccccccccccccc";
+  rolagem("aaaaaaaaaaaaaaa1", { total: 18, natural: 12 });
+  rolagem("aaaaaaaaaaaaaaa2", { total: 25, natural: 20 });
+  const [r1, r2] = await Promise.all([processarBarganha(pedidoB("barganha", "aaaaaaaaaaaaaaa1"), "jog"), processarBarganha(pedidoB("barganha", "aaaaaaaaaaaaaaa2"), "jog")]);
+  assert.equal(r1.ok, true);
+  assert.equal(r2.ok, false);
+  assert.match(r2.texto, /jaFeitoPor/);
+  assert.deepEqual([merc.flags[F].barganha.barganha.resultado, merc.flags[F].barganha.barganha.por], ["sucesso", "Kaelen"]);
+  assert.ok(merc.flags[F].barganha.ultima.fala.length > 10, "a fala fica para o balão");
+  assert.match(chat.at(-1).content, /icarus-loja-fala/);
+  const ef = efeitosDoMercador(merc);
+  assert.deepEqual([ef.desconto, ef.liberados], [5, ["barganha"]]);
+  assert.equal(L.visivelNaVitrine(merc.items[0], ef), true, "o item oculto foi liberado");
+  // A mesma mensagem não serve de novo, nem a de outro usuário
+  assert.equal((await processarBarganha(pedidoB("barganha", "aaaaaaaaaaaaaaa1"), "jog")).ok, false);
+  rolagem("aaaaaaaaaaaaaaa3", { chave: "diplomacia", autor: "jog2" });
+  assert.equal((await processarBarganha(pedidoB("diplomacia", "aaaaaaaaaaaaaaa3"), "jog")).ok, false, "mensagem de outro usuário");
+  // Reiniciar libera tudo e volta preço e ocultos
+  game.user.isGM = true;
+  await reiniciarBarganhas(merc);
+  assert.deepEqual(efeitosDoMercador(merc), { desconto: 0, acrescimo: 0, liberados: [], guardas: false });
+  assert.equal(L.visivelNaVitrine(merc.items[0], efeitosDoMercador(merc)), false);
+  game.user.isGM = false;
+});
+
+test("Guardas: 1 natural na Intimidação fecha a loja, avisa o Mestre e o botão reabre", async () => {
+  const merc = mercadorDeBarganha();
+  const comp = atorSimulado("Actor.cccccccccccccccc", "personagem", { moedas: { ouroReal: 0, real: 20, centavo: 0 } });
+  comp.id = "cccccccccccccccc";
+  merc.system.loja.barganha.guardas.nota = "2 guardas chegam em 1d4 rodadas";
+  usuarios.set("mestre", { id: "mestre", isGM: true, active: true });
+  rolagem("aaaaaaaaaaaaaaa4", { chave: "intimidacao", total: 40, natural: 1 });
+  const r = await processarBarganha(pedidoB("intimidacao", "aaaaaaaaaaaaaaa4"), "jog");
+  assert.equal(r.ok, true);
+  assert.equal(merc.system.loja.aberta, false);
+  assert.equal(merc.flags[F].guardas, true);
+  assert.equal(efeitosDoMercador(merc).acrescimo, 0, "os guardas não somam o acréscimo");
+  assert.ok(chat.some(c => c.whisper?.includes("mestre") && /2 guardas chegam/.test(c.content)), "sussurro ao Mestre com a nota");
+  rolagem("aaaaaaaaaaaaaaa5", { chave: "barganha" });
+  assert.match((await processarBarganha(pedidoB("barganha", "aaaaaaaaaaaaaaa5"), "jog")).texto, /lojaFechada/);
+  game.user.isGM = true;
+  await acalmarGuardas(merc);
+  game.user.isGM = false;
+  assert.deepEqual([merc.system.loja.aberta, merc.flags[F].guardas], [true, undefined]);
+});
+
+test("Migração 0.33.0: estoque antigo null vira 1 (só no mercador)", async () => {
+  const alterados = [];
+  const ator = (type, quantidades) => ({ type, items: quantidades.map((q, i) => ({ id: "i" + i, flags: { [F]: { loja: { quantidade: q } } } })),
+    async updateEmbeddedDocuments(_t, l) { alterados.push(...l); } });
+  const n = await migrarEstoqueInfinito([ator("mercador", [null, 3, undefined]), ator("personagem", [null])]);
+  assert.equal(n, 2);
+  assert.deepEqual(alterados.map(a => a["flags." + F + ".loja.quantidade"]), [1, 1]);
 });

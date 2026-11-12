@@ -83,9 +83,10 @@
           "id": "saco-de-ervas",
           "loja": {
             "venda": true,
-            "quantidade": null,
+            "quantidade": 10,
             "precoBase": null,
-            "oculto": false
+            "oculto": false,
+            "liberaCom": "qualquer"
           }
         }
       },
@@ -124,7 +125,8 @@
             "venda": true,
             "quantidade": 2,
             "precoBase": null,
-            "oculto": false
+            "oculto": false,
+            "liberaCom": "qualquer"
           }
         }
       },
@@ -167,9 +169,10 @@
           "id": "bandagens-de-luta",
           "loja": {
             "venda": true,
-            "quantidade": null,
+            "quantidade": 10,
             "precoBase": null,
-            "oculto": false
+            "oculto": false,
+            "liberaCom": "qualquer"
           }
         }
       },
@@ -208,7 +211,8 @@
             "venda": true,
             "quantidade": 3,
             "precoBase": null,
-            "oculto": false
+            "oculto": false,
+            "liberaCom": "qualquer"
           }
         }
       },
@@ -247,7 +251,8 @@
             "venda": true,
             "quantidade": 2,
             "precoBase": null,
-            "oculto": false
+            "oculto": false,
+            "liberaCom": "qualquer"
           }
         }
       },
@@ -299,7 +304,8 @@
             "venda": true,
             "quantidade": 1,
             "precoBase": null,
-            "oculto": false
+            "oculto": true,
+            "liberaCom": "diplomacia"
           }
         }
       },

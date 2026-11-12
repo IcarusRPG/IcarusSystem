@@ -84,24 +84,72 @@
     </section>
     <section class="fm-bloco">
       <p class="dica">{{localize "ICARUS.Mercador.ArrasteEstoque"}}</p>
+      <button type="button" class="btn" data-action="criarItem"><i class="fa-solid fa-plus"></i> {{localize "ICARUS.Mercador.CriarItem"}}</button>
       <table class="fm-estoque">
-        <thead><tr><th></th><th>{{localize "ICARUS.Mercador.Item"}}</th><th>{{localize "ICARUS.Mercador.Quantidade"}}</th><th>∞</th>
-          <th>{{localize "ICARUS.Mercador.PrecoBase"}}</th><th>{{localize "ICARUS.Mercador.PrecoFinal"}}</th><th>{{localize "ICARUS.Mercador.Oculto"}}</th><th></th></tr></thead>
+        <thead><tr><th></th><th>{{localize "ICARUS.Mercador.Item"}}</th><th>{{localize "ICARUS.Mercador.Quantidade"}}</th>
+          <th>{{localize "ICARUS.Mercador.PrecoBase"}}</th><th>{{localize "ICARUS.Mercador.PrecoFinal"}}</th><th>{{localize "ICARUS.Mercador.Oculto"}}</th>
+          <th>{{localize "ICARUS.Mercador.LiberaCom"}}</th><th></th></tr></thead>
         <tbody>
           {{#each estoque}}
           <tr data-item-id="{{id}}" class="{{#if oculto}}oculto{{/if}}">
-            <td><img src="{{img}}" alt="" width="28" height="28"></td>
-            <td><a data-action="abrirItem">{{nome}}</a>{{#if semVenda}} <span class="aviso">({{localize "ICARUS.Mercador.SemVenda"}})</span>{{/if}}</td>
-            <td><input type="number" class="fm-curto" value="{{quantidade}}" min="0" step="1" data-loja-campo="quantidade" {{#if infinito}}disabled{{/if}}></td>
-            <td><input type="checkbox" data-loja-campo="infinito" {{#if infinito}}checked{{/if}}></td>
+            <td><img src="{{img}}" alt="" width="28" height="28" data-action="abrirItem"></td>
+            <td><input type="text" class="fm-nome-item" value="{{nome}}" data-loja-campo="nome">{{#if semVenda}} <span class="aviso" data-tooltip="{{localize "ICARUS.Mercador.SemVendaDica"}}">({{localize "ICARUS.Mercador.SemVenda"}})</span>{{/if}}</td>
+            <td><input type="number" class="fm-curto" value="{{quantidade}}" min="0" step="1" data-loja-campo="quantidade"></td>
             <td><input type="number" class="fm-medio" value="{{precoBase}}" min="0" step="0.01" placeholder="{{precoItem}}" data-loja-campo="precoBase" data-tooltip="{{localize "ICARUS.Mercador.PrecoBaseDica"}}"></td>
             <td title="{{dicaOuro}}">{{precoFinal}}</td>
             <td><input type="checkbox" data-loja-campo="oculto" {{#if oculto}}checked{{/if}}></td>
+            <td><select data-loja-campo="liberaCom" {{#unless oculto}}disabled{{/unless}}>{{#each libera}}<option value="{{valor}}" {{#if selecionado}}selected{{/if}}>{{rotulo}}</option>{{/each}}</select></td>
             <td><a data-action="removerItem"><i class="fa-solid fa-trash"></i></a></td>
           </tr>
           {{else}}<tr><td colspan="8" class="dica">{{localize "ICARUS.Mercador.EstoqueVazio"}}</td></tr>{{/each}}
         </tbody>
       </table>
+    </section>
+
+    <section class="fm-bloco fm-barganha">
+      <h3 class="fm-titulo"><i class="fa-solid fa-dice-d20 fm-d20"></i> {{localize "ICARUS.Mercador.Barganha"}}{{#if barganha.efeitos}} <span class="fm-efeitos">{{barganha.efeitos}}</span>{{/if}}</h3>
+      {{#if barganha.guardas}}
+      <p class="aviso"><i class="fa-solid fa-shield-halved"></i> {{localize "ICARUS.Loja.Barganha.Guardas"}}
+        <button type="button" class="btn" data-action="acalmarGuardas">{{localize "ICARUS.Mercador.AcalmarGuardas"}}</button></p>
+      {{/if}}
+      <table class="fm-estoque">
+        <thead><tr><th></th><th>{{localize "ICARUS.Mercador.Ativo"}}</th><th>CD</th><th>{{localize "ICARUS.Mercador.Estado"}}</th></tr></thead>
+        <tbody>
+          {{#each barganha.testes}}
+          <tr><td>{{nome}}</td>
+            <td><input type="checkbox" name="system.loja.barganha.testes.{{chave}}.ativo" {{#if ativo}}checked{{/if}}></td>
+            <td><input type="number" class="fm-curto" name="system.loja.barganha.testes.{{chave}}.cd" value="{{cd}}" min="0" step="1"></td>
+            <td>{{estado}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="fm-loja-config">
+        <label>{{localize "ICARUS.Mercador.DescontoSucesso"}} <input type="number" name="system.loja.barganha.descontoSucesso" value="{{s.loja.barganha.descontoSucesso}}" min="0" max="100" step="1">%</label>
+        <label>{{localize "ICARUS.Mercador.DescontoCritico"}} <input type="number" name="system.loja.barganha.descontoCritico" value="{{s.loja.barganha.descontoCritico}}" min="0" max="100" step="1">%</label>
+        <label>{{localize "ICARUS.Mercador.Acrescimo"}} <input type="number" name="system.loja.barganha.acrescimo" value="{{s.loja.barganha.acrescimo}}" min="0" step="1">%</label>
+        <label class="chk"><input type="checkbox" name="system.loja.barganha.mostrarCD" {{#if s.loja.barganha.mostrarCD}}checked{{/if}}> {{localize "ICARUS.Mercador.MostrarCD"}}</label>
+        <label class="chk"><input type="checkbox" name="system.loja.barganha.falasNoChat" {{#if s.loja.barganha.falasNoChat}}checked{{/if}}> {{localize "ICARUS.Mercador.FalasNoChat"}}</label>
+      </div>
+      <div class="fm-loja-config">
+        <span>{{localize "ICARUS.Mercador.GuardasTitulo"}}</span>
+        <label class="chk"><input type="checkbox" name="system.loja.barganha.guardas.fecharLoja" {{#if s.loja.barganha.guardas.fecharLoja}}checked{{/if}}> {{localize "ICARUS.Mercador.FecharLojaGuardas"}}</label>
+        <label class="chk"><input type="checkbox" name="system.loja.barganha.guardas.avisarMestre" {{#if s.loja.barganha.guardas.avisarMestre}}checked{{/if}}> {{localize "ICARUS.Mercador.AvisarMestre"}}</label>
+        <label class="fm-largo">{{localize "ICARUS.Mercador.NotaGuardas"}} <input type="text" name="system.loja.barganha.guardas.nota" value="{{s.loja.barganha.guardas.nota}}" placeholder="{{localize "ICARUS.Mercador.NotaGuardasExemplo"}}"></label>
+      </div>
+      <div class="fm-botoes">
+        <button type="button" class="btn" data-action="reiniciarBarganhas" {{#unless barganha.algumFeito}}disabled{{/unless}}><i class="fa-solid fa-rotate-left"></i> {{localize "ICARUS.Mercador.ReiniciarBarganhas"}}</button>
+        <button type="button" class="btn" data-action="restaurarFalas"><i class="fa-solid fa-comment-dots"></i> {{localize "ICARUS.Mercador.RestaurarFalas"}}</button>
+      </div>
+      <p class="dica">{{localize "ICARUS.Mercador.FalasDica"}}</p>
+      {{#each barganha.testes}}
+      <details class="fm-falas">
+        <summary>{{localize "ICARUS.Mercador.Falas"}}: {{nome}}</summary>
+        {{#each falas}}
+        <label class="fm-largo fm-fala">{{rotulo}}
+          <textarea name="system.loja.barganha.falas.{{../chave}}.{{chave}}" rows="3">{{texto}}</textarea></label>
+        {{/each}}
+      </details>
+      {{/each}}
     </section>
     {{/if}}
 
