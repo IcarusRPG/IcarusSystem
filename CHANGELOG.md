@@ -1,5 +1,26 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.34.0
+
+### Mercador: compra sem dinheiro, Roubar e os guardas
+- **Compra sem dinheiro:** o botão Comprar continua ativo e o Mestre decide.
+  - Na 1ª e na 2ª tentativa, o mercador diz **"Está tentando me roubar?"** no balão da vitrine de quem tentou e no chat, dito por ele.
+  - Na **3ª**, ele **chama os guardas**: a loja fecha para todos e o Mestre recebe um sussurro com o nome de quem provocou e a nota de consequência.
+  - A contagem é **por jogador e por mercador**, fica no mercador (`flags.icarus-rpg.tentativasSemDinheiro`) e só o Mestre a altera.
+  - Só "dinheiro insuficiente" conta (esgotado, loja fechada e quantidade inválida não contam).
+  - Zera com "Reiniciar barganhas", "Acalmar os guardas / reabrir a loja" ou o botão de zerar de cada jogador.
+- **Roubar:** botão ao lado de Comprar em cada item visível e com estoque.
+  - O personagem rola **Prestidigitação** com o diálogo de sempre, e o Mestre confere a mensagem como na Barganha (socket `loja:roubar`).
+  - **Passou** (≥ CD): leva 1 unidade sem pagar (empilhando como na compra), o estoque cai 1 e só ele e o Mestre recebem "Seus dedos foram mais rápidos que os olhos do mercador: {item} é seu."
+  - **Falhou:** flagrante, com a fala do mercador e os guardas; nada é entregue.
+  - Itens esgotados e ocultos não podem ser roubados. Roubar não pede nem gasta dinheiro.
+- **Ficha (aba Loja, bloco "Roubo e guardas"):**
+  - "Permitir roubar", CD do roubo (15) e CD opcional por item;
+  - número de tentativas antes dos guardas (3);
+  - o aviso, as falas dos guardas, as de flagrante e a mensagem do roubo, todas editáveis e incluídas em "Restaurar falas padrão";
+  - as tentativas por jogador (com zerar) e o registro dos roubos.
+- **Guardas em uma função só:** a da Barganha (1 natural na Intimidação), a da compra sem dinheiro e a do flagrante. Compra, venda, Barganha e roubo passam pela mesma fila do Mestre.
+
 ## 0.33.0
 
 ### Mercador: estoque finito, itens livres e Barganha

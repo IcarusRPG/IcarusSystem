@@ -24,7 +24,9 @@ export function lojaDoItem(item) {
     quantidade: l.quantidade === null || l.quantidade === undefined ? 1 : n0(l.quantidade),
     precoBase: l.precoBase === null || l.precoBase === undefined || l.precoBase === "" ? null : n0(l.precoBase),
     oculto: !!l.oculto,
-    liberaCom: LIBERA_COM.includes(l.liberaCom) ? l.liberaCom : "qualquer"
+    liberaCom: LIBERA_COM.includes(l.liberaCom) ? l.liberaCom : "qualquer",
+    // CD do roubo deste item (null = a do mercador)
+    cdRoubo: l.cdRoubo === null || l.cdRoubo === undefined || l.cdRoubo === "" ? null : n0(l.cdRoubo)
   };
 }
 
@@ -358,3 +360,78 @@ export function validarMensagemDeBarganha(m, p) {
   if (!Number.isFinite(Number(m.total)) || !Number.isInteger(natural) || natural < 1 || natural > 20) return { ok: false, motivo: "mensagemInvalida" };
   return { ok: true, total: Number(m.total), natural };
 }
+
+/* ---------------- Roubo e compra sem dinheiro (os guardas) ---------------- */
+
+/** Configuração padrão do Roubo (loja.roubo do mercador). Falas: uma por linha. */
+export const ROUBO_PADRAO = {
+  permitir: true,
+  cd: 15,
+  tentativas: 3,
+  aviso: "Está tentando me roubar?",
+  falasGuardas: [
+    "Três vezes! Você tentou me roubar TRÊS VEZES! (assopra o apito com toda a força) GUARDAAAAS!",
+    "Chega! Eu avisei, {personagem}! (bate no sino do balcão) Guardas! Tem um ladrão na minha loja!",
+    "Pensou que eu não ia perceber? Pensou que eu era bobo? ...GUARDAS! ALGUÉM CHAME OS GUARDAS!"
+  ].join("\n"),
+  falasFlagrante: [
+    "Minha bolsa! Você tem dedos leves, mas não o bastante! LADRÃO! GUARDAAAAS!",
+    "Eu vi, {personagem}! Eu vi a sua mão! (apita com toda a força) Peguem esse ladrão! Guardas!",
+    "(agarra o seu pulso, o rosto vermelho) Roubando de mim, na minha loja? GUARDA! TEM UM LADRÃO AQUI!"
+  ].join("\n"),
+  sucesso: "Seus dedos foram mais rápidos que os olhos do mercador: {item} é seu."
+};
+
+/**
+ * Compra sem dinheiro: conta a tentativa do usuário (por mercador). Na tentativa de número "limite"
+ * (padrão 3) o mercador chama os guardas; antes, só o aviso.
+ * @returns {{ contagem: object, n: number, guardas: boolean }}
+ */
+export function registrarTentativaSemDinheiro(contagem = {}, usuarioId, limite = ROUBO_PADRAO.tentativas) {
+  const n = n0(contagem?.[usuarioId]) + 1;
+  return { contagem: { ...(contagem ?? {}), [usuarioId]: n }, n, guardas: n >= Math.max(1, n0(limite) || ROUBO_PADRAO.tentativas) };
+}
+
+/** Zera a contagem de um usuário (ou de todos, sem usuário). */
+export function zerarTentativas(contagem = {}, usuarioId = null) {
+  if (!usuarioId) return {};
+  const c = { ...(contagem ?? {}) };
+  delete c[usuarioId];
+  return c;
+}
+
+/** CD do roubo: a do item (loja.cdRoubo), se tiver; senão a do mercador. */
+export function cdDoRoubo(item, mercador) {
+  const doItem = item?.flags?.[SISTEMA_ID]?.loja?.cdRoubo;
+  return doItem === null || doItem === undefined || doItem === "" ? n0(mercador?.loja?.roubo?.cd ?? ROUBO_PADRAO.cd) : n0(doItem);
+}
+
+/**
+ * Dá para tentar roubar este item? Roubo ligado, loja aberta, item visível (oculto liberado) e com estoque.
+ * Dinheiro não importa. @returns {{ ok: true } | { ok: false, motivo }}
+ */
+export function validarRoubo(mercador, item, { dono = true, efeitos = {} } = {}) {
+  if (!dono) return { ok: false, motivo: "semPermissao" };
+  if (mercador?.loja?.roubo?.permitir === false) return { ok: false, motivo: "rouboDesligado" };
+  if (!mercador?.loja?.aberta) return { ok: false, motivo: "lojaFechada" };
+  if (!item || !visivelNaVitrine(item, efeitos)) return { ok: false, motivo: "itemInvalido" };
+  if (lojaDoItem(item).quantidade === 0) return { ok: false, motivo: "esgotado" };
+  return { ok: true };
+}
+
+/** O roubo passou? Total da Prestidigitação ≥ CD. */
+export const rouboPassou = ({ total, cd }) => Number(total) >= Number(cd);
+
+/** Pedido de roubo do jogador ({ mercadorUuid, itemId, mensagemId, compradorUuid }): limpo ou null. */
+export function validarPedidoDeRoubo(msg) {
+  if (!msg || typeof msg !== "object") return null;
+  const { mercadorUuid, itemId, mensagemId, compradorUuid } = msg;
+  if (typeof mercadorUuid !== "string" || !UUID_ATOR.test(mercadorUuid)) return null;
+  if (typeof compradorUuid !== "string" || !UUID_ATOR.test(compradorUuid)) return null;
+  if (typeof itemId !== "string" || !ID.test(itemId)) return null;
+  if (typeof mensagemId !== "string" || !ID.test(mensagemId)) return null;
+  return { mercadorUuid, itemId, mensagemId, compradorUuid };
+}
+
+/** Troca {item} no texto (a mensagem do roubo bem-sucedido). */
+export const comItem = (texto, item) => String(texto ?? "").replaceAll("{item}", item ?? "");

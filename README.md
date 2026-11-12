@@ -275,6 +275,15 @@ Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
   - 1 natural na Intimidação faz o mercador **chamar os guardas**: a loja fecha e o Mestre recebe um aviso. O sistema não cria guardas nem combate.
   - O mercador responde com uma fala sorteada, num balão na vitrine e no chat. As 12 falas são editáveis na aba Loja, com "Restaurar falas padrão".
   - "Reiniciar barganhas" libera os testes de novo, e "Acalmar os guardas" reabre a loja.
+- **Compra sem dinheiro:** o botão Comprar nunca fica desligado por falta de dinheiro; quem decide é o Mestre.
+  - Na 1ª e na 2ª tentativa sem dinheiro, o mercador pergunta "Está tentando me roubar?" (no balão de quem tentou e no chat). Na 3ª, ele chama os guardas.
+  - A contagem é por jogador e por mercador. Só "dinheiro insuficiente" conta.
+  - Zera com "Reiniciar barganhas", com "Acalmar os guardas" ou pelo botão de zerar de cada jogador na ficha.
+- **Roubar:** cada item da vitrine tem o botão **Roubar** ao lado de Comprar. O personagem rola Prestidigitação contra a CD do mercador (ou a do item, se tiver uma).
+  - Passou: leva 1 unidade sem pagar, o estoque cai 1 e só ele e o Mestre recebem o aviso.
+  - Falhou: o mercador pega o ladrão e chama os guardas.
+  - "Permitir roubar" pode ser desligado por mercador.
+  - Os guardas usam as mesmas opções da Barganha (fechar a loja, avisar o Mestre, nota de consequência). O sistema não cria guardas nem combate.
 - **O mercador também compra (opcional):** com "O mercador também compra dos jogadores" ligado, a vitrine ganha a aba **Vender**. Ele paga o preço de venda do item ou uma fração do preço, tirando da caixa.
 - **Chat:** em Configurar Definições → Sistema, a mensagem de compra pode ser pública ou só para o comprador e o Mestre.
 

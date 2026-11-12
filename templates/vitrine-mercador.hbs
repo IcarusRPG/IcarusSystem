@@ -58,7 +58,8 @@
           <td>{{#if esgotado}}{{localize "ICARUS.Loja.Esgotado"}}{{else}}{{estoque}}{{/if}}</td>
           <td title="{{precoOuro}}">{{preco}}</td>
           <td class="vm-acao"><input type="number" data-quantidade value="1" min="1" max="{{max}}" step="1" {{#if desativado}}disabled{{/if}}>
-            <button type="button" class="btn primario" data-action="comprar" {{#if desativado}}disabled{{/if}}>{{localize "ICARUS.Loja.Comprar"}}</button></td>
+            <button type="button" class="btn primario" data-action="comprar" {{#if desativado}}disabled{{/if}}>{{localize "ICARUS.Loja.Comprar"}}</button>
+            {{#if ../podeRoubar}}<button type="button" class="btn vm-roubar" data-action="roubar" {{#if roubarDesativado}}disabled{{/if}} data-tooltip="{{localize "ICARUS.Loja.Roubo.Dica"}}"><i class="fa-solid fa-hand"></i> {{localize "ICARUS.Loja.Roubo.Roubar"}}</button>{{/if}}</td>
         </tr>
         {{else}}<tr><td colspan="5" class="dica">{{localize "ICARUS.Loja.NadaAVenda"}}</td></tr>{{/each}}
       </tbody>

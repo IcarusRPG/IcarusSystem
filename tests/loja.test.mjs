@@ -367,3 +367,111 @@ test("Migração 0.33.0: estoque antigo null vira 1 (só no mercador)", async ()
   assert.equal(n, 2);
   assert.deepEqual(alterados.map(a => a["flags." + F + ".loja.quantidade"]), [1, 1]);
 });
+
+/* ---------------- Roubo e compra sem dinheiro ---------------- */
+
+const { processarRoubo, zerarTentativasDoUsuario } = await import("../module/loja-foundry.mjs");
+
+test("Compra sem dinheiro: contagem por jogador; aviso na 1ª e 2ª; guardas na 3ª; zerar", () => {
+  let c = {};
+  const r1 = L.registrarTentativaSemDinheiro(c, "jog");
+  const r2 = L.registrarTentativaSemDinheiro(r1.contagem, "jog");
+  const outro = L.registrarTentativaSemDinheiro(r2.contagem, "jog2");
+  const r3 = L.registrarTentativaSemDinheiro(outro.contagem, "jog");
+  assert.deepEqual([r1.guardas, r2.guardas, outro.guardas, r3.guardas], [false, false, false, true]);
+  assert.deepEqual(r3.contagem, { jog: 3, jog2: 1 });
+  assert.equal(L.registrarTentativaSemDinheiro({}, "a", 1).guardas, true, "limite configurável");
+  assert.deepEqual(L.zerarTentativas(r3.contagem, "jog"), { jog2: 1 });
+  assert.deepEqual(L.zerarTentativas(r3.contagem), {});
+});
+
+test("Roubo: CD do item sobrescreve a do mercador; esgotado, oculto, loja fechada e roubo desligado não deixam; dinheiro não importa", () => {
+  const m = mercador({ roubo: { ...L.ROUBO_PADRAO } });
+  assert.equal(L.cdDoRoubo(item(), m), 15);
+  assert.equal(L.cdDoRoubo(item({}, { cdRoubo: 22 }), m), 22);
+  assert.deepEqual(L.validarRoubo(m, item()), { ok: true });
+  assert.equal(L.validarRoubo(m, item({}, { quantidade: 0 })).motivo, "esgotado");
+  assert.equal(L.validarRoubo(m, item({}, { oculto: true })).motivo, "itemInvalido");
+  assert.equal(L.validarRoubo(m, item({}, { oculto: true }), { efeitos: { liberados: ["barganha"] } }).ok, true, "oculto liberado pode");
+  assert.equal(L.validarRoubo(mercador({ aberta: false, roubo: { ...L.ROUBO_PADRAO } }), item()).motivo, "lojaFechada");
+  assert.equal(L.validarRoubo(mercador({ roubo: { ...L.ROUBO_PADRAO, permitir: false } }), item()).motivo, "rouboDesligado");
+  assert.deepEqual([L.rouboPassou({ total: 15, cd: 15 }), L.rouboPassou({ total: 14, cd: 15 })], [true, false]);
+  assert.equal(L.validarPedidoDeRoubo({ mercadorUuid: "Actor.aaaaaaaaaaaaaaaa", itemId: "bbbbbbbbbbbbbbbb", mensagemId: "cccccccccccccccc", compradorUuid: "Actor.dddddddddddddddd", total: 99 }).total, undefined);
+  assert.equal(L.sortearFala(L.ROUBO_PADRAO.falasGuardas, { personagem: "Kaelen" }, () => 0.5), "Chega! Eu avisei, Kaelen! (bate no sino do balcão) Guardas! Tem um ladrão na minha loja!");
+  assert.equal(L.comItem(L.ROUBO_PADRAO.sucesso, "Adaga"), "Seus dedos foram mais rápidos que os olhos do mercador: Adaga é seu.");
+});
+
+/** Mercador com item visível (para comprar e roubar) e o comprador sem dinheiro. */
+function lojaParaRoubo({ real = 0, cdRoubo = null } = {}) {
+  const merc = mercadorDeBarganha();
+  merc.items[0].flags[F].loja.oculto = false;
+  merc.items[0].flags[F].loja.cdRoubo = cdRoubo;
+  const comp = atorSimulado("Actor.cccccccccccccccc", "personagem", { moedas: { ouroReal: 0, real, centavo: 0 } });
+  comp.id = "cccccccccccccccc";
+  return { merc, comp };
+}
+const compra = q => ({ mercadorUuid: "Actor.mmmmmmmmmmmmmmmm", itemId: "iiiiiiiiiiiiiiii", quantidade: q, compradorUuid: "Actor.cccccccccccccccc" });
+
+test("Mestre: comprar sem dinheiro 3 vezes chama os guardas; outros motivos não contam; outro jogador não é afetado; zerar", async () => {
+  usuarios.set("jog", { id: "jog", isGM: false, active: true });
+  usuarios.set("mestre", { id: "mestre", isGM: true, active: true });
+  const { merc } = lojaParaRoubo();
+  const r1 = await executar("comprar", compra(1), "jog");
+  assert.deepEqual([r1.ok, r1.texto], [false, "Está tentando me roubar?"]);
+  assert.deepEqual([merc.flags[F].falaLoja.texto, merc.flags[F].falaLoja.para], ["Está tentando me roubar?", "jog"], "balão só para quem tentou");
+  assert.match(chat.at(-1).content, /Está tentando me roubar\?/);
+  await executar("comprar", compra(9), "jog");
+  assert.equal(merc.flags[F].tentativasSemDinheiro.jog, 1, "sem estoque não conta");
+  assert.equal((await executar("comprar", compra(1), "jog")).texto, "Está tentando me roubar?");
+  // Outro jogador (com outro personagem) começa do zero
+  const comp2 = atorSimulado("Actor.eeeeeeeeeeeeeeee", "personagem", { moedas: { ouroReal: 0, real: 0, centavo: 0 } });
+  comp2.testUserPermission = u => u.id === "jog2" || u.isGM;
+  usuarios.set("jog2", { id: "jog2", isGM: false, active: true });
+  await executar("comprar", { ...compra(1), compradorUuid: "Actor.eeeeeeeeeeeeeeee" }, "jog2");
+  assert.deepEqual(merc.flags[F].tentativasSemDinheiro, { jog: 2, jog2: 1 });
+  await executar("comprar", compra(1), "jog");
+  assert.equal(merc.system.loja.aberta, false, "3ª: guardas, loja fechada");
+  assert.equal(merc.flags[F].guardas, true);
+  assert.ok(chat.some(c => c.whisper?.includes("mestre") && /SemDinheiroMestre.*Kaelen.*"n":3/.test(c.content)), "o Mestre sabe quem provocou");
+  assert.match((await executar("comprar", compra(1), "jog")).texto, /lojaFechada/, "loja fechada: ninguém compra");
+  assert.equal(merc.flags[F].tentativasSemDinheiro.jog, 3, "loja fechada não conta");
+  game.user.isGM = true;
+  await zerarTentativasDoUsuario(merc, "jog2");
+  assert.deepEqual(merc.flags[F].tentativasSemDinheiro, { jog: 3 });
+  await acalmarGuardas(merc);
+  assert.equal(merc.flags[F].tentativasSemDinheiro, undefined, "reabrir zera");
+  merc.flags[F].tentativasSemDinheiro = { jog: 2 };
+  await reiniciarBarganhas(merc);
+  assert.equal(merc.flags[F].tentativasSemDinheiro, undefined, "reiniciar zera");
+  game.user.isGM = false;
+});
+
+test("Mestre: roubo que passa entrega 1 unidade, baixa o estoque e avisa só o jogador e o Mestre; a rolagem não vale duas vezes", async () => {
+  const { merc, comp } = lojaParaRoubo();
+  rolagem("rrrrrrrrrrrrrrr1", { chave: "prestidigitacao", total: 16, natural: 9 });
+  const r = await processarRoubo({ mercadorUuid: merc.uuid, itemId: "iiiiiiiiiiiiiiii", mensagemId: "rrrrrrrrrrrrrrr1", compradorUuid: comp.uuid }, "jog");
+  assert.equal(r.ok, true, r.texto);
+  assert.equal(merc.items[0].flags[F].loja.quantidade, 2);
+  assert.deepEqual([comp.items.length, comp.items[0].system.quantidade, comp.items[0].flags?.[F]?.loja], [1, 1, undefined]);
+  assert.deepEqual(chat.at(-1).whisper.sort(), ["jog", "mestre"]);
+  assert.match(chat.at(-1).content, /Saco de ervas é seu/);
+  assert.equal(merc.flags[F].roubos.at(-1).passou, true);
+  assert.equal((await processarRoubo({ mercadorUuid: merc.uuid, itemId: "iiiiiiiiiiiiiiii", mensagemId: "rrrrrrrrrrrrrrr1", compradorUuid: comp.uuid }, "jog")).ok, false, "mensagem usada");
+  rolagem("rrrrrrrrrrrrrrr2", { chave: "diplomacia", total: 30 });
+  assert.equal((await processarRoubo({ mercadorUuid: merc.uuid, itemId: "iiiiiiiiiiiiiiii", mensagemId: "rrrrrrrrrrrrrrr2", compradorUuid: comp.uuid }, "jog")).ok, false, "precisa ser Prestidigitação");
+});
+
+test("Mestre: roubo que falha (CD do item) chama os guardas sem entregar nada; roubo desligado é recusado", async () => {
+  const { merc, comp } = lojaParaRoubo({ cdRoubo: 25 });
+  rolagem("rrrrrrrrrrrrrrr3", { chave: "prestidigitacao", total: 20, natural: 14 });
+  const r = await processarRoubo({ mercadorUuid: merc.uuid, itemId: "iiiiiiiiiiiiiiii", mensagemId: "rrrrrrrrrrrrrrr3", compradorUuid: comp.uuid }, "jog");
+  assert.equal(r.ok, false);
+  assert.deepEqual([merc.system.loja.aberta, merc.flags[F].guardas, merc.items[0].flags[F].loja.quantidade, comp.items.length], [false, true, 3, 0]);
+  assert.ok(chat.some(c => c.whisper?.includes("mestre") && /FlagranteMestre/.test(c.content)));
+  assert.ok(merc.flags[F].falaLoja.texto.length > 10, "fala de flagrante no balão de todos");
+  assert.equal(merc.flags[F].falaLoja.para, null);
+  const outra = lojaParaRoubo();
+  outra.merc.system.loja.roubo = { ...L.ROUBO_PADRAO, permitir: false };
+  rolagem("rrrrrrrrrrrrrrr4", { chave: "prestidigitacao", total: 30, natural: 15 });
+  assert.match((await processarRoubo({ mercadorUuid: outra.merc.uuid, itemId: "iiiiiiiiiiiiiiii", mensagemId: "rrrrrrrrrrrrrrr4", compradorUuid: outra.comp.uuid }, "jog")).texto, /rouboDesligado/);
+});
