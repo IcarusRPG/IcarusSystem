@@ -76,5 +76,17 @@ export function poderesDasHabilidades(habilidades = []) {
   }));
 }
 
+/**
+ * Os jogadores conseguem abrir a vitrine? O Foundry só entrega o duplo clique (token ou diretório)
+ * a quem tem pelo menos "Limitado" (1) no ator. @param {object} ownership  actor.ownership
+ * @param {string[]} jogadores  ids dos usuários que não são Mestre
+ */
+export function jogadoresVeemALoja(ownership = {}, jogadores = []) {
+  const padrao = Number(ownership.default ?? 0);
+  // -1 = herdar (o padrão)
+  const nivel = id => (ownership[id] === undefined || Number(ownership[id]) === -1 ? padrao : Number(ownership[id]));
+  return jogadores.length === 0 || jogadores.every(id => nivel(id) >= 1);
+}
+
 /** O item é do estoque da loja (vende) ou é do próprio mercador (equipamento, poder, magia)? */
 export const ehEstoque = item => !!item?.flags?.["icarus-rpg"]?.loja && item.flags["icarus-rpg"].loja.venda !== false;

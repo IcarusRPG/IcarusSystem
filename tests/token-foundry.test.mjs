@@ -114,3 +114,13 @@ test("6. Gravar no mundo: cria a pasta só se faltar e envia o PNG (FilePicker p
   delete globalThis.foundry.applications;
   delete globalThis.FilePicker;
 });
+
+test("Raiz da ficha: ActorSheet v1 (jQuery) e ApplicationV2 (<form>, onde form[0] é o primeiro campo)", async () => {
+  const { elementoDaFicha } = await import("../module/token.mjs");
+  const janela = { querySelector: () => "editor" };
+  assert.equal(elementoDaFicha({ element: { jquery: "3.7", 0: janela } }), janela);
+  // <form> do ApplicationV2: element[0] é o primeiro <input>, não a janela
+  const form = { 0: { tagName: "INPUT" }, querySelector: () => "editor" };
+  assert.equal(elementoDaFicha({ element: form }), form);
+  assert.equal(elementoDaFicha({}), null);
+});

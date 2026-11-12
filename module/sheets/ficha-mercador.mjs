@@ -16,7 +16,7 @@ import { usarPoder } from "../acoes.mjs";
 import { lancarMagia } from "../magias.mjs";
 import { alternarVestido } from "../itens-comuns.mjs";
 import { ehVestimenta } from "../origens-dados.mjs";
-import { ehEstoque } from "../mercador-dados.mjs";
+import { ehEstoque, jogadoresVeemALoja } from "../mercador-dados.mjs";
 import { formatarPreco, precoEmOuro, totalEmCentavos } from "../moeda.mjs";
 import {
   lojaDoItem, precoBase, precoUnitario, precoDoItemNaLoja, TIPOS_VENDAVEIS, LIBERA_COM, TESTES_DE_BARGANHA, RESULTADOS, textoDasFalasPadrao, ROUBO_PADRAO
@@ -77,6 +77,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
       reiniciarBarganhas: FichaMercador._reiniciarBarganhas,
       acalmarGuardas: FichaMercador._acalmarGuardas,
       zerarTentativas: FichaMercador._zerarTentativas,
+      liberarParaJogadores: FichaMercador._liberarParaJogadores,
       rolarPericia: FichaMercador._rolarPericia,
       rolarAtributo: FichaMercador._rolarAtributo,
       usarPoder: FichaMercador._usarPoder,
@@ -140,6 +141,8 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
     const ehEquipavel = i => i.type === "equipamento" && (TIPOS_EQUIPAVEIS.includes(i.system.tipo) || ehVestimenta(i));
     return {
       actor, aba: this.aba, editavel: this.isEditable, gm: game.user.isGM,
+      // Sem "Limitado" para os jogadores, o duplo clique deles não abre nada (nem a vitrine)
+      semAcessoJogadores: game.user.isGM && !jogadoresVeemALoja(actor.ownership, game.users.filter(u => !u.isGM).map(u => u.id)),
       img: actor.img, nome: actor.name, s, src,
       abas: ABAS_MERCADOR.map(id => ({ id, rotulo: loc(`ICARUS.Mercador.Abas.${id}`), ativa: id === this.aba })),
       defesa: {
@@ -278,6 +281,11 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
   /** Retrato: muda img e o token (se o token não foi finalizado na aba Token; senão avisa). */
   static _imagem() {
     return trocarRetrato(this.document);
+  }
+
+  /** Jogadores passam a "Observador" no mercador (abrem a vitrine, não editam). */
+  static _liberarParaJogadores() {
+    return this.document.update({ "ownership.default": CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER });
   }
 
   static _verComoJogador() {

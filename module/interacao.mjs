@@ -161,7 +161,8 @@ function embrulharDuploClique() {
 function caixaNasConfiguracoes(app, html) {
   const doc = app.document ?? app.object;
   if (!doc) return;
-  const raiz = html?.[0] ?? html;
+  // v13: a config é um <form> (form[0] seria o primeiro campo); v12: jQuery
+  const raiz = html?.jquery ? html[0] : html;
   const form = raiz?.querySelector?.("form") ?? (raiz?.tagName === "FORM" ? raiz : null);
   if (!form || form.querySelector(".icarus-exige-proximidade")) return;
   const marcado = !!doc.flags?.[F]?.interacao?.exigeProximidade;

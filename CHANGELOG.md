@@ -1,5 +1,12 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.36.1
+
+### Correções: aba Token do mercador e da ameaça; acesso dos jogadores à loja
+- **Aba Token no mercador e na ameaça:** a prévia ficava vazia e as molduras não respondiam. O editor procurava a aba no lugar errado nessas fichas (ficha ApplicationV2 é um formulário, e o "primeiro elemento" dele é um campo). Agora liga como no personagem.
+- **Exigir proximidade** nas configurações do token (v13): a caixa não aparecia pelo mesmo motivo; corrigido.
+- **Loja que não abre para o jogador:** o Foundry só entrega o duplo clique (no token ou no diretório) a quem tem pelo menos "Limitado" no ator. A ficha do mercador agora avisa o Mestre quando algum jogador não tem acesso, com o botão **Liberar a loja para os jogadores** (passa a permissão padrão para Observador).
+
 ## 0.36.0
 
 ### Ameaças: ator novo, compêndio da fauna e aba Token para ameaça e mercador
