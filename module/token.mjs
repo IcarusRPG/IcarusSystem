@@ -86,11 +86,18 @@ export function contextoDoToken(actor, editavel) {
 
 /* ------------------------------ Aba na ficha ------------------------------ */
 
+/**
+ * Raiz da ficha: ActorSheet v1 tem element jQuery (element[0]); ApplicationV2 tem HTMLElement. A ficha
+ * ApplicationV2 é um <form>, e form[0] é o primeiro CAMPO do formulário: por isso o teste é jquery.
+ */
+export function elementoDaFicha(ficha) {
+  const el = ficha?.element;
+  return el?.jquery ? el[0] : el ?? null;
+}
+
 /** Liga o editor na aba Token (chamado ao abrir a aba; refaz a cada render). */
 export async function ligarEditor(ficha) {
-  // ActorSheet v1: element é jQuery; ApplicationV2: HTMLElement
-  const elemento = ficha.element?.[0] ?? ficha.element;
-  const raiz = elemento?.querySelector?.(".token-editor");
+  const raiz = elementoDaFicha(ficha)?.querySelector?.(".token-editor");
   const actor = ficha.actor ?? ficha.document;
   if (!raiz || !actor || actor.pack || (actor.isToken && !actor.prototypeToken?.actorLink)) return;
   // O mesmo HTML não ganha dois editores (aba aberta + render chamam juntos)

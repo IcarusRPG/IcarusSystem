@@ -106,3 +106,11 @@ test("Ataque com a arma empunhada do mercador gera a mensagem de ataque com as f
   assert.deepEqual([flags.actorUuid, flags.itemId, flags.modo], ["Actor.m", "espada", "corpo-a-corpo"]);
   assert.equal(r.total, 12 + s.pericias.luta.total, "d20 + Luta do mercador");
 });
+
+test("Vitrine: os jogadores precisam de pelo menos 'Limitado' no mercador para o duplo clique abrir a loja", () => {
+  assert.equal(M.jogadoresVeemALoja({ default: 2 }, ["j1", "j2"]), true);
+  assert.equal(M.jogadoresVeemALoja({ default: 0, gm: 3 }, ["j1"]), false, "mercador sem permissão padrão (o caso do aviso na ficha)");
+  assert.equal(M.jogadoresVeemALoja({ default: 0, j1: 1 }, ["j1", "j2"]), false, "um jogador sem acesso já avisa");
+  assert.equal(M.jogadoresVeemALoja({ default: 2, j1: -1 }, ["j1"]), true, "-1 herda o padrão");
+  assert.equal(M.jogadoresVeemALoja({ default: 0 }, []), true, "sem jogadores, nada a avisar");
+});

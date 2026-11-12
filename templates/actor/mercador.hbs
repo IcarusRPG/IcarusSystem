@@ -19,6 +19,10 @@
         <span><b>PV</b> {{s.pv.value}}/{{s.pv.max}}</span>
         <span><b>PM</b> {{s.pm.value}}/{{s.pm.max}}</span>
       </div>
+      {{#if semAcessoJogadores}}
+      <p class="fm-sem-acesso"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "ICARUS.Mercador.SemAcessoJogadores"}}
+        <button type="button" class="btn" data-action="liberarParaJogadores">{{localize "ICARUS.Mercador.LiberarParaJogadores"}}</button></p>
+      {{/if}}
       <div class="fm-botoes">
         <button type="button" class="btn" data-action="alternarLoja"><i class="fa-solid fa-store"></i> {{#if s.loja.aberta}}{{localize "ICARUS.Mercador.FecharLoja"}}{{else}}{{localize "ICARUS.Mercador.AbrirLoja"}}{{/if}}</button>
         <button type="button" class="btn" data-action="verComoJogador"><i class="fa-solid fa-eye"></i> {{localize "ICARUS.Mercador.VerComoJogador"}}</button>
