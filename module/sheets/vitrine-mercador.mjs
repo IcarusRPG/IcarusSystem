@@ -6,7 +6,7 @@
  */
 import { SISTEMA_ID } from "../config.mjs";
 import { formatarPreco, precoEmOuro, totalEmCentavos } from "../moeda.mjs";
-import { lojaDoItem, precoUnitario, visivelNaVitrine, precoDeVenda, quantidadeVendavel, TIPOS_VENDAVEIS, TESTES_DE_BARGANHA } from "../loja.mjs";
+import { lojaDoItem, precoUnitario, visivelNaVitrine, precoDeVenda, quantidadeVendavel, TIPOS_VENDAVEIS, TESTES_DE_BARGANHA, testeFeitoPeloUsuario } from "../loja.mjs";
 import { pedirNaLoja, pedirBarganha, pedirRoubo, estadoDaBarganha, efeitosDoMercador } from "../loja-foundry.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -79,13 +79,17 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     const config = s.loja.barganha;
     const estado = estadoDaBarganha(m);
     const semMestre = !game.users.activeGM;
+    // Um teste por jogador: quem já fez um vê os outros desativados ("vez dos outros")
+    const meu = game.user.isGM ? null : testeFeitoPeloUsuario(estado, game.user.id);
     const testes = TESTES_DE_BARGANHA.filter(t => config.testes[t].ativo).map(t => {
       const e = estado[t];
+      const vezDosOutros = !e?.feito && !!meu;
       return {
         chave: t, nome: loc(`ICARUS.Pericias.${t}`), feito: !!e?.feito,
         passou: e?.resultado === "sucesso" || e?.resultado === "critico",
-        legenda: e?.feito ? fmt("ICARUS.Loja.Barganha.Feito", { resultado: loc(`ICARUS.Loja.Barganha.Rotulos.${e.resultado}`), por: e.por }) : config.mostrarCD ? `CD ${config.testes[t].cd}` : "",
-        desativado: !!e?.feito || !aberta || !comprador || semMestre
+        legenda: e?.feito ? fmt("ICARUS.Loja.Barganha.Feito", { resultado: loc(`ICARUS.Loja.Barganha.Rotulos.${e.resultado}`), por: e.por })
+          : vezDosOutros ? loc("ICARUS.Loja.Barganha.VezDosOutros") : config.mostrarCD ? `CD ${config.testes[t].cd}` : "",
+        desativado: !!e?.feito || vezDosOutros || !aberta || !comprador || semMestre
       };
     });
     const compra = s.loja.compra;

@@ -475,3 +475,29 @@ test("Mestre: roubo que falha (CD do item) chama os guardas sem entregar nada; r
   rolagem("rrrrrrrrrrrrrrr4", { chave: "prestidigitacao", total: 30, natural: 15 });
   assert.match((await processarRoubo({ mercadorUuid: outra.merc.uuid, itemId: "iiiiiiiiiiiiiiii", mensagemId: "rrrrrrrrrrrrrrr4", compradorUuid: outra.comp.uuid }, "jog")).texto, /rouboDesligado/);
 });
+
+test("Um teste por jogador: quem fez Barganha não faz Diplomacia nem Intimidação; os outros jogadores e o Mestre podem", async () => {
+  usuarios.set("jog", { id: "jog", isGM: false, active: true });
+  usuarios.set("jog2", { id: "jog2", isGM: false, active: true });
+  usuarios.set("mestre", { id: "mestre", isGM: true, active: true });
+  const merc = mercadorDeBarganha();
+  const comp = atorSimulado("Actor.cccccccccccccccc", "personagem", { moedas: { ouroReal: 0, real: 20, centavo: 0 } });
+  comp.id = "cccccccccccccccc";
+  rolagem("bbbbbbbbbbbbbbb1", { chave: "barganha" });
+  assert.equal((await processarBarganha(pedidoB("barganha", "bbbbbbbbbbbbbbb1"), "jog")).ok, true);
+  assert.equal(L.testeFeitoPeloUsuario(merc.flags[F].barganha, "jog"), "barganha");
+  assert.equal(L.testeFeitoPeloUsuario(merc.flags[F].barganha, "jog2"), null);
+  rolagem("bbbbbbbbbbbbbbb2", { chave: "diplomacia" });
+  const negado = await processarBarganha(pedidoB("diplomacia", "bbbbbbbbbbbbbbb2"), "jog");
+  assert.equal(negado.ok, false);
+  assert.match(negado.texto, /jaFezUm/);
+  // O personagem do outro jogador
+  const comp2 = atorSimulado("Actor.dddddddddddddddd", "personagem", { moedas: { ouroReal: 0, real: 20, centavo: 0 } });
+  comp2.id = "dddddddddddddddd";
+  comp2.testUserPermission = u => u.id === "jog2" || u.isGM;
+  rolagem("bbbbbbbbbbbbbbb3", { chave: "diplomacia", autor: "jog2", ator: "dddddddddddddddd" });
+  const r2 = await processarBarganha({ ...pedidoB("diplomacia", "bbbbbbbbbbbbbbb3"), compradorUuid: "Actor.dddddddddddddddd" }, "jog2");
+  assert.equal(r2.ok, true, `outro jogador faz o teste dele: ${r2.texto}`);
+  rolagem("bbbbbbbbbbbbbbb4", { chave: "intimidacao", autor: "mestre", natural: 12 });
+  assert.equal((await processarBarganha(pedidoB("intimidacao", "bbbbbbbbbbbbbbb4"), "mestre")).ok, true, "o Mestre não tem a restrição");
+});

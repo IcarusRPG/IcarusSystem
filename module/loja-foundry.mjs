@@ -8,7 +8,7 @@ import { SISTEMA_ID } from "./config.mjs";
 import { formatarPreco } from "./moeda.mjs";
 import {
   validarCompra, validarVenda, validarPedidoDeLoja, dadosDaCompra, itemParaEmpilhar, unidadesCompradas, lojaDoItem,
-  efeitosDaBarganha, registrarTeste, resultadoDoTeste, sortearFala, validarPedidoDeBarganha, validarMensagemDeBarganha,
+  efeitosDaBarganha, registrarTeste, testeFeitoPeloUsuario, resultadoDoTeste, sortearFala, validarPedidoDeBarganha, validarMensagemDeBarganha,
   registrarTentativaSemDinheiro, zerarTentativas, cdDoRoubo, validarRoubo, rouboPassou, validarPedidoDeRoubo, comItem, ROUBO_PADRAO, BARGANHA_PADRAO
 } from "./loja.mjs";
 import { rolarPericia } from "./rolls.mjs";
@@ -157,6 +157,9 @@ export const efeitosDoMercador = mercador => efeitosDaBarganha(estadoDaBarganha(
 export async function pedirBarganha({ mercador, teste, comprador }) {
   if (!comprador) { ui.notifications.warn(loc("ICARUS.Loja.SemComprador")); return false; }
   if (estadoDaBarganha(mercador)[teste]?.feito) { ui.notifications.warn(loc("ICARUS.Loja.Barganha.Motivos.jaFeito")); return false; }
+  // Um teste por jogador: quem já fez um deixa os outros para os outros jogadores
+  const meu = game.user.isGM ? null : testeFeitoPeloUsuario(estadoDaBarganha(mercador), game.user.id);
+  if (meu) { ui.notifications.warn(fmt("ICARUS.Loja.Barganha.Motivos.jaFezUm", { teste: loc(`ICARUS.Pericias.${meu}`) })); return false; }
   if (!mercador.system.loja.aberta) { ui.notifications.warn(loc("ICARUS.Loja.Motivos.lojaFechada")); return false; }
   if (!game.user.isGM && !game.users.activeGM) { ui.notifications.warn(loc("ICARUS.Loja.SemMestre")); return false; }
   const mensagem = await rolarPericia(comprador, teste);
@@ -196,6 +199,8 @@ export function processarBarganha(pedidoBruto, usuarioId) {
     if (!config.testes[pedido.teste]?.ativo) return { ok: false, texto: loc("ICARUS.Loja.Barganha.Motivos.testeInvalido") };
     const estado = estadoDaBarganha(mercador);
     if (estado[pedido.teste]?.feito) return { ok: false, texto: fmt("ICARUS.Loja.Barganha.Motivos.jaFeitoPor", { por: estado[pedido.teste].por }) };
+    const jaFez = usuario.isGM ? null : testeFeitoPeloUsuario(estado, usuarioId);
+    if (jaFez) return { ok: false, texto: fmt("ICARUS.Loja.Barganha.Motivos.jaFezUm", { teste: loc(`ICARUS.Pericias.${jaFez}`) }) };
     const mensagem = game.messages.get(pedido.mensagemId);
     const f = mensagem?.flags?.[F] ?? {};
     const v = validarMensagemDeBarganha(mensagem ? {

@@ -290,6 +290,7 @@ Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
 - **Barganha:** a vitrine tem três botões com um d20 vermelho: **Barganha**, **Diplomacia** e **Intimidação**.
   - O personagem rola a perícia e o Mestre decide pela rolagem no chat, com a CD que ele configurou no mercador.
   - Cada teste vale uma vez por mercador, para o grupo todo: depois de feito, o botão mostra o resultado e quem fez.
+  - Cada jogador faz **um** dos três testes por mercador: depois, os outros dois ficam desativados na vitrine dele ("vez dos outros") para os outros jogadores tentarem. O Mestre não tem essa restrição.
   - Passar dá 5% de desconto e libera os itens ocultos; 20 natural dá 15%. Falhar na Intimidação, ou tirar 1 natural em Barganha ou Diplomacia, aumenta o preço em 10%. Fica no máximo um desconto e um acréscimo.
   - 1 natural na Intimidação faz o mercador **chamar os guardas**: a loja fecha e o Mestre recebe um aviso. O sistema não cria guardas nem combate.
   - O mercador responde com uma fala sorteada, num balão na vitrine e no chat. As 12 falas são editáveis na aba Loja, com "Restaurar falas padrão".
