@@ -1,5 +1,15 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.38.0
+
+### Rolagens grandes no chat precisam da aprovação do Mestre
+- Opção nova em Configurar Definições → Icarus RPG, **ligada por padrão**: "Rolagens grandes no chat: pedir aprovação do Mestre", com o **limite de dados** (16) configurável.
+- Jogador que digitar no chat uma rolagem com mais de 16 dados (`/r`, `/gmr`, `/br`, `/sr`, `/pr` ou `[[...]]`): a rolagem não acontece na hora.
+  - O Mestre recebe uma mensagem perguntando se aprova, com os botões **Aprovar** e **Recusar**.
+  - Quem tentou vê "O Mestre está avaliando se você poderá fazer esta rolagem".
+  - Aprovada, a rolagem é feita como o jogador digitou; recusada, ele recebe um aviso. Sem Mestre conectado, a rolagem não é feita.
+- Ataques, poderes, habilidades e magias rolados pelo sistema não passam por essa regra, e o Mestre rola o que quiser.
+
 ## 0.37.0
 
 ### Barras do token: NPCs, mercadores e ameaças ocultos por padrão; Defesa só dos jogadores

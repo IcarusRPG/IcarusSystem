@@ -2482,6 +2482,25 @@
       "Imune": "Imune",
       "Original": "Ataques no bestiário",
       "Notas": "Notas"
+    },
+    "RolagemGrande": {
+      "Config": {
+        "Ativo": "Rolagens grandes no chat: pedir aprovação do Mestre",
+        "AtivoDica": "Quando um jogador digitar no chat uma rolagem com mais dados que o limite, a rolagem só acontece se o Mestre aprovar. Ataques, poderes, habilidades e magias do sistema não passam por aqui.",
+        "Limite": "Rolagens grandes: limite de dados",
+        "LimiteDica": "Acima deste número de dados, a rolagem digitada por um jogador precisa da aprovação do Mestre."
+      },
+      "NDados": "{n} dados",
+      "Pedido": "{nome} pediu para rolar {n} dados:",
+      "PerguntaMestre": "{nome} quer fazer esta rolagem. Você aprova?",
+      "AvaliandoChat": "O Mestre está avaliando se você poderá fazer esta rolagem:",
+      "Avaliando": "Rolagem com muitos dados: o Mestre está avaliando se você poderá fazer essa rolagem.",
+      "Aprovar": "Aprovar",
+      "Recusar": "Recusar",
+      "Aprovada": "Rolagem de {nome} aprovada por {por}:",
+      "Recusada": "Rolagem de {nome} recusada por {por}:",
+      "RecusadaAviso": "O Mestre não aprovou a sua rolagem.",
+      "SemMestre": "Rolagens com mais dados que o limite ({n} pedidos) precisam da aprovação do Mestre, e não há Mestre conectado."
     }
   }
 }
