@@ -1,0 +1,117 @@
+<div class="ficha-icarus ficha-mercador-corpo">
+  <header class="fm-cabecalho">
+    <img class="fm-retrato" src="{{img}}" alt="{{nome}}" {{#if editavel}}data-action="imagem"{{/if}}>
+    <div class="fm-identidade">
+      <input class="fm-nome" type="text" name="name" value="{{nome}}" aria-label="{{localize "ICARUS.Mercador.Nome"}}">
+      <p class="fm-linha">{{localize "TYPES.Actor.mercador"}}
+        · <span class="{{#if s.loja.aberta}}fm-aberta{{else}}fm-fechada{{/if}}">{{#if s.loja.aberta}}{{localize "ICARUS.Mercador.LojaAberta"}}{{else}}{{localize "ICARUS.Mercador.LojaFechada"}}{{/if}}</span></p>
+      <div class="fm-botoes">
+        <button type="button" class="btn" data-action="alternarLoja"><i class="fa-solid fa-store"></i> {{#if s.loja.aberta}}{{localize "ICARUS.Mercador.FecharLoja"}}{{else}}{{localize "ICARUS.Mercador.AbrirLoja"}}{{/if}}</button>
+        <button type="button" class="btn" data-action="verComoJogador"><i class="fa-solid fa-eye"></i> {{localize "ICARUS.Mercador.VerComoJogador"}}</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="fm-abas">
+    <a class="{{#if (eq aba "ficha")}}ativa{{/if}}" data-action="aba" data-aba="ficha">{{localize "ICARUS.Mercador.Abas.ficha"}}</a>
+    <a class="{{#if (eq aba "loja")}}ativa{{/if}}" data-action="aba" data-aba="loja">{{localize "ICARUS.Mercador.Abas.loja"}}</a>
+    <a class="{{#if (eq aba "notas")}}ativa{{/if}}" data-action="aba" data-aba="notas">{{localize "ICARUS.Mercador.Abas.notas"}}</a>
+  </nav>
+
+  <div class="fm-corpo">
+    {{#if (eq aba "ficha")}}
+    <section class="fm-bloco fm-numeros">
+      <label>{{localize "ICARUS.Nivel.Rotulo"}} <input type="number" name="system.nivel" value="{{s.nivel}}" min="0" step="1"></label>
+      <label>{{localize "ICARUS.Defesa.Rotulo"}} <input type="number" name="system.defesa" value="{{s.defesa}}" step="1"></label>
+      <label>PV <input type="number" name="system.pv.value" value="{{s.pv.value}}" min="0" step="1"> / <input type="number" name="system.pv.max" value="{{s.pv.max}}" min="0" step="1"></label>
+      <label>PM <input type="number" name="system.pm.value" value="{{s.pm.value}}" min="0" step="1"> / <input type="number" name="system.pm.max" value="{{s.pm.max}}" min="0" step="1"></label>
+    </section>
+    <section class="fm-bloco fm-atributos">
+      {{#each atributos}}<label>{{rotulo}} <input type="number" name="system.atributos.{{chave}}" value="{{valor}}" step="1"></label>{{/each}}
+    </section>
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Pericias"}} <a data-action="adicionarLinha" data-lista="pericias"><i class="fa-solid fa-plus"></i></a></h3>
+      {{#each pericias}}
+      <div class="fm-linha-lista">
+        <input type="text" value="{{nome}}" data-lista="pericias" data-indice="{{i}}" data-campo="nome" placeholder="{{localize "ICARUS.Mercador.Pericia"}}">
+        <input type="number" class="fm-curto" value="{{bonus}}" data-lista="pericias" data-indice="{{i}}" data-campo="bonus" step="1">
+        <a data-action="removerLinha" data-lista="pericias" data-indice="{{i}}"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{/each}}
+    </section>
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Habilidades"}} <a data-action="adicionarLinha" data-lista="habilidades"><i class="fa-solid fa-plus"></i></a></h3>
+      {{#each habilidades}}
+      <div class="fm-linha-lista fm-habilidade">
+        <input type="text" value="{{nome}}" data-lista="habilidades" data-indice="{{i}}" data-campo="nome" placeholder="{{localize "ICARUS.Mercador.Habilidade"}}">
+        <a data-action="removerLinha" data-lista="habilidades" data-indice="{{i}}"><i class="fa-solid fa-trash"></i></a>
+        <textarea data-lista="habilidades" data-indice="{{i}}" data-campo="descricao" rows="2">{{descricao}}</textarea>
+      </div>
+      {{/each}}
+    </section>
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Equipamento"}}</h3>
+      {{#each equipamento}}
+      <div class="fm-linha-lista" data-item-id="{{id}}">
+        <img src="{{img}}" alt="" width="24" height="24"><a data-action="abrirItem">{{nome}}</a>
+        {{#if temEquipado}}<label class="chk"><input type="checkbox" data-equipado {{#if equipado}}checked{{/if}}> {{localize "ICARUS.Mercador.Equipado"}}</label>{{/if}}
+        <a data-action="removerItem"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{else}}<p class="dica">{{localize "ICARUS.Mercador.ArrasteEquipamento"}}</p>{{/each}}
+    </section>
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Magias"}}</h3>
+      {{#each magias}}<div class="fm-linha-lista" data-item-id="{{id}}"><img src="{{img}}" alt="" width="24" height="24"><a data-action="abrirItem">{{nome}}</a><a data-action="removerItem"><i class="fa-solid fa-trash"></i></a></div>
+      {{else}}<p class="dica">—</p>{{/each}}
+    </section>
+    {{/if}}
+
+    {{#if (eq aba "loja")}}
+    <section class="fm-bloco fm-loja-config">
+      <label class="fm-largo">{{localize "ICARUS.Mercador.Saudacao"}} <input type="text" name="system.loja.saudacao" value="{{s.loja.saudacao}}"></label>
+      <label class="fm-largo">{{localize "ICARUS.Mercador.Despedida"}} <input type="text" name="system.loja.despedida" value="{{s.loja.despedida}}"></label>
+      <label>{{localize "ICARUS.Mercador.Multiplicador"}} <input type="number" name="system.loja.multiplicadorPreco" value="{{s.loja.multiplicadorPreco}}" min="0.01" step="0.05"></label>
+      <label class="chk"><input type="checkbox" name="system.caixaInfinita" {{#if s.caixaInfinita}}checked{{/if}}> {{localize "ICARUS.Mercador.CaixaInfinita"}}</label>
+      {{#unless s.caixaInfinita}}
+      <div class="fm-caixa">{{localize "ICARUS.Mercador.Caixa"}} ({{caixaTotal}}):
+        <label>{{localize "ICARUS.Moedas.OuroReal"}} <input type="number" name="system.caixa.ouroReal" value="{{s.caixa.ouroReal}}" min="0" step="1"></label>
+        <label>{{localize "ICARUS.Moedas.Real"}} <input type="number" name="system.caixa.real" value="{{s.caixa.real}}" min="0" step="1"></label>
+        <label>{{localize "ICARUS.Moedas.Centavo"}} <input type="number" name="system.caixa.centavo" value="{{s.caixa.centavo}}" min="0" step="1"></label>
+      </div>
+      {{/unless}}
+      <label class="chk"><input type="checkbox" name="system.loja.compra.ativo" {{#if s.loja.compra.ativo}}checked{{/if}}> {{localize "ICARUS.Mercador.CompraAtiva"}}</label>
+      {{#if s.loja.compra.ativo}}<label>{{localize "ICARUS.Mercador.Percentual"}} <input type="number" name="system.loja.compra.percentual" value="{{s.loja.compra.percentual}}" min="0" max="1" step="0.05"></label>{{/if}}
+    </section>
+    <section class="fm-bloco">
+      <p class="dica">{{localize "ICARUS.Mercador.ArrasteEstoque"}}</p>
+      <table class="fm-estoque">
+        <thead><tr><th></th><th>{{localize "ICARUS.Mercador.Item"}}</th><th>{{localize "ICARUS.Mercador.Quantidade"}}</th><th>∞</th>
+          <th>{{localize "ICARUS.Mercador.PrecoBase"}}</th><th>{{localize "ICARUS.Mercador.PrecoFinal"}}</th><th>{{localize "ICARUS.Mercador.Oculto"}}</th><th></th></tr></thead>
+        <tbody>
+          {{#each estoque}}
+          <tr data-item-id="{{id}}" class="{{#if oculto}}oculto{{/if}}">
+            <td><img src="{{img}}" alt="" width="28" height="28"></td>
+            <td><a data-action="abrirItem">{{nome}}</a>{{#if semVenda}} <span class="aviso">({{localize "ICARUS.Mercador.SemVenda"}})</span>{{/if}}</td>
+            <td><input type="number" class="fm-curto" value="{{quantidade}}" min="0" step="1" data-loja-campo="quantidade" {{#if infinito}}disabled{{/if}}></td>
+            <td><input type="checkbox" data-loja-campo="infinito" {{#if infinito}}checked{{/if}}></td>
+            <td><input type="number" class="fm-medio" value="{{precoBase}}" min="0" step="0.01" placeholder="{{precoItem}}" data-loja-campo="precoBase" data-tooltip="{{localize "ICARUS.Mercador.PrecoBaseDica"}}"></td>
+            <td title="{{dicaOuro}}">{{precoFinal}}</td>
+            <td><input type="checkbox" data-loja-campo="oculto" {{#if oculto}}checked{{/if}}></td>
+            <td><a data-action="removerItem"><i class="fa-solid fa-trash"></i></a></td>
+          </tr>
+          {{else}}<tr><td colspan="8" class="dica">{{localize "ICARUS.Mercador.EstoqueVazio"}}</td></tr>{{/each}}
+        </tbody>
+      </table>
+    </section>
+    {{/if}}
+
+    {{#if (eq aba "notas")}}
+    <section class="fm-bloco">
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Descricao"}}</h3>
+      <textarea name="system.descricao" rows="5">{{s.descricao}}</textarea>
+      <h3 class="fm-titulo">{{localize "ICARUS.Mercador.Notas"}}</h3>
+      <textarea name="system.notas" rows="10">{{notas}}</textarea>
+    </section>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,61 @@
+{
+  "_leiame": "Mercadores de exemplo do compêndio Icarus: Mercadores. Os itens vêm dos compêndios do sistema pelo nome (pacote: armas, municoes, armaduras-escudos, itens-comuns), com o preço deles; quantidade null = estoque infinito. O retrato é provisório.",
+  "mercadores": [
+    {
+      "id": "ferreiro",
+      "nome": "Ferreiro",
+      "saudacao": "Aço bom não se compra barato. Mas se compra aqui.",
+      "despedida": "Volte quando a lâmina cegar.",
+      "descricao": "Ferreiro de vila: armas, armaduras e escudos.",
+      "itens": [
+        { "pacote": "armas", "nome": "Adaga", "quantidade": 6 },
+        { "pacote": "armas", "nome": "Espada curta", "quantidade": 3 },
+        { "pacote": "armas", "nome": "Espada longa", "quantidade": 2 },
+        { "pacote": "armas", "nome": "Machado de batalha", "quantidade": 2 },
+        { "pacote": "armas", "nome": "Martelo de guerra", "quantidade": 2 },
+        { "pacote": "armas", "nome": "Lança", "quantidade": 4 },
+        { "pacote": "armas", "nome": "Arco curto", "quantidade": 2 },
+        { "pacote": "municoes", "nome": "Flechas", "quantidade": null },
+        { "pacote": "armaduras-escudos", "nome": "Gibão Acolchoado", "quantidade": 2 },
+        { "pacote": "armaduras-escudos", "nome": "Couro Batido", "quantidade": 2 },
+        { "pacote": "armaduras-escudos", "nome": "Cota de Malha", "quantidade": 1 },
+        { "pacote": "armaduras-escudos", "nome": "Escudo Leve (Broquel)", "quantidade": 3 },
+        { "pacote": "armaduras-escudos", "nome": "Escudo Pesado", "quantidade": 1 }
+      ]
+    },
+    {
+      "id": "boticario",
+      "nome": "Boticário",
+      "saudacao": "Ervas frescas, ataduras limpas e um bom conselho de graça.",
+      "despedida": "Cuide desse corte antes que ele cuide de você.",
+      "descricao": "Alquimista e boticário: itens de cura e cuidado.",
+      "itens": [
+        { "pacote": "itens-comuns", "nome": "Saco de ervas", "quantidade": null },
+        { "pacote": "itens-comuns", "nome": "Maleta de curandeiro", "quantidade": 2 },
+        { "pacote": "itens-comuns", "nome": "Bandagens de luta", "quantidade": null },
+        { "pacote": "itens-comuns", "nome": "Perfume fino", "quantidade": 3 },
+        { "pacote": "itens-comuns", "nome": "Estojo de escrita", "quantidade": 2 },
+        { "pacote": "itens-comuns", "nome": "Livro raro de estudo", "quantidade": 1 }
+      ]
+    },
+    {
+      "id": "mercador-de-rua",
+      "nome": "Mercador de Rua",
+      "saudacao": "Chega mais! Tudo o que um viajante precisa, e um pouco do que não precisa.",
+      "despedida": "Boa estrada, e não diga que comprou de mim!",
+      "descricao": "Barraca de rua: itens comuns variados.",
+      "itens": [
+        { "pacote": "itens-comuns", "nome": "Mapa regional", "quantidade": 3 },
+        { "pacote": "itens-comuns", "nome": "Kit de viagem (odre e panela)", "quantidade": 4 },
+        { "pacote": "itens-comuns", "nome": "Capa de viagem", "quantidade": 3 },
+        { "pacote": "itens-comuns", "nome": "Corda de marinheiro (15 m)", "quantidade": 5 },
+        { "pacote": "itens-comuns", "nome": "Ração de campanha (7 dias)", "quantidade": null },
+        { "pacote": "itens-comuns", "nome": "Trouxa de viagem", "quantidade": 4 },
+        { "pacote": "itens-comuns", "nome": "Capuz escuro", "quantidade": 2 },
+        { "pacote": "itens-comuns", "nome": "Apito", "quantidade": 5 },
+        { "pacote": "itens-comuns", "nome": "Bolas de malabarismo", "quantidade": 2 },
+        { "pacote": "itens-comuns", "nome": "Instrumento musical", "quantidade": 1 }
+      ]
+    }
+  ]
+}

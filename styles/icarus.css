@@ -1397,3 +1397,55 @@ body.game {
 /* Aba Magias: magias mantidas (sustentada / concentração) */
 .icarus .aba-magias .magias-mantidas { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-bottom: 6px; }
 .icarus .aba-magias .magia-mantida { display: inline-flex; align-items: center; gap: 4px; }
+
+/* --- Mercador: ficha compacta do Mestre --- */
+.ficha-mercador .window-content { padding: 0; }
+.ficha-mercador-corpo { display: flex; flex-direction: column; height: 100%; }
+.ficha-mercador-corpo .fm-cabecalho { display: flex; gap: 14px; padding: 12px; background: var(--ic-cabecalho); border-bottom: 1px solid var(--ic-borda); }
+.ficha-mercador-corpo .fm-retrato { width: 128px; height: 128px; flex: none; object-fit: cover; border: 2px solid var(--ic-moldura); border-radius: 6px; cursor: pointer; }
+.ficha-mercador-corpo .fm-identidade { flex: 1; min-width: 0; }
+.ficha-mercador-corpo .fm-nome { width: 100%; font-family: var(--ic-f-titulo); font-size: 24px; color: var(--ic-ouro-claro); background: transparent; border: 0; border-bottom: 1px solid var(--ic-borda); }
+.ficha-mercador-corpo .fm-linha { margin: 4px 0; color: var(--ic-apagado); }
+.ficha-mercador-corpo .fm-aberta { color: #4ade80; }
+.ficha-mercador-corpo .fm-fechada { color: var(--ic-pv); }
+.ficha-mercador-corpo .fm-botoes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.ficha-mercador-corpo .fm-abas, .vitrine-corpo .vm-abas { display: flex; gap: 2px; padding: 0 12px; background: var(--ic-cabecalho); border-bottom: 1px solid var(--ic-borda); }
+.ficha-mercador-corpo .fm-abas a, .vitrine-corpo .vm-abas a { padding: 6px 14px; color: var(--ic-apagado); border-bottom: 2px solid transparent; }
+.ficha-mercador-corpo .fm-abas a.ativa, .vitrine-corpo .vm-abas a.ativa { color: var(--ic-ouro-claro); border-bottom-color: var(--ic-ouro); }
+.ficha-mercador-corpo .fm-corpo { flex: 1; overflow-y: auto; padding: 4px 12px 12px; }
+.ficha-mercador-corpo .fm-bloco { padding: 8px 0; border-bottom: 1px solid var(--ic-linha); }
+.ficha-mercador-corpo .fm-titulo { margin: 0 0 6px; border: 0; font-family: var(--ic-f-titulo); font-size: 15px; color: var(--ic-ciano-titulo); }
+.ficha-mercador-corpo .fm-numeros, .ficha-mercador-corpo .fm-atributos, .ficha-mercador-corpo .fm-loja-config { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.ficha-mercador-corpo input[type="number"] { width: 56px; text-align: center; }
+.ficha-mercador-corpo .fm-curto { width: 52px; }
+.ficha-mercador-corpo .fm-medio { width: 80px; }
+.ficha-mercador-corpo .fm-largo { flex: 1 1 100%; display: flex; gap: 8px; align-items: center; }
+.ficha-mercador-corpo .fm-largo input { flex: 1; }
+.ficha-mercador-corpo .fm-caixa { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.ficha-mercador-corpo .fm-linha-lista { display: flex; gap: 6px; align-items: center; margin: 3px 0; }
+.ficha-mercador-corpo .fm-linha-lista input[type="text"] { flex: 1; }
+.ficha-mercador-corpo .fm-habilidade { flex-wrap: wrap; }
+.ficha-mercador-corpo .fm-habilidade textarea { flex: 1 1 100%; }
+.ficha-mercador-corpo textarea { width: 100%; }
+.ficha-mercador-corpo .fm-estoque { width: 100%; border-collapse: collapse; }
+.ficha-mercador-corpo .fm-estoque th { font-size: 12px; color: var(--ic-apagado); text-align: left; }
+.ficha-mercador-corpo .fm-estoque td { padding: 3px 4px; border-top: 1px solid var(--ic-linha); }
+.ficha-mercador-corpo .fm-estoque tr.oculto td { opacity: 0.55; }
+
+/* --- Mercador: vitrine dos jogadores --- */
+.vitrine-mercador .window-content { padding: 0; }
+.vitrine-corpo { display: flex; flex-direction: column; height: 100%; background: var(--ic-janela); color: var(--ic-texto); }
+.vitrine-corpo .vm-retrato { position: relative; flex: 0 0 55%; min-height: 260px; background: var(--ic-fundo) center top / cover no-repeat; }
+.vitrine-corpo .vm-legenda { position: absolute; inset: auto 0 0 0; padding: 48px 20px 14px; background: linear-gradient(to bottom, transparent, rgba(4, 7, 11, 0.95)); }
+.vitrine-corpo .vm-nome { margin: 0; border: 0; font-family: var(--ic-f-titulo); font-size: 32px; color: var(--ic-ouro-claro); text-shadow: 0 2px 6px #000; }
+.vitrine-corpo .vm-saudacao { margin: 6px 0 0; font-style: italic; font-size: 16px; color: var(--ic-texto); }
+.vitrine-corpo .vm-fechada { margin: 0; padding: 8px 14px; color: var(--ic-pv); background: var(--ic-pv-fundo); }
+.vitrine-corpo .vm-lista { flex: 1; overflow-y: auto; padding: 6px 12px; }
+.vitrine-corpo .vm-tabela { width: 100%; border-collapse: collapse; }
+.vitrine-corpo .vm-tabela th { font-size: 12px; color: var(--ic-apagado); text-align: left; }
+.vitrine-corpo .vm-tabela td { padding: 4px 6px; border-top: 1px solid var(--ic-linha); vertical-align: middle; }
+.vitrine-corpo .vm-tabela tr.esgotado td { opacity: 0.45; }
+.vitrine-corpo .vm-acao { display: flex; gap: 6px; align-items: center; justify-content: flex-end; }
+.vitrine-corpo .vm-acao input { width: 52px; text-align: center; }
+.vitrine-corpo .vm-rodape { padding: 8px 14px; border-top: 1px solid var(--ic-borda); background: var(--ic-cabecalho); }
+.vitrine-corpo .vm-rodape p { margin: 2px 0; }

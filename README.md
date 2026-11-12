@@ -253,6 +253,21 @@ Fontes únicas em `tools/dados/`: `armaduras.json`, `poderes-concedidos.json`, `
 
 As condições também estão no compêndio **Icarus — Condições** (um diário com uma página por condição, em ordem alfabética, com descritores e marcas de pendência).
 
+## Mercadores
+
+Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
+
+- **Criar:** no diretório de atores, "Criar ator" e escolha **Mercador**. Os jogadores entram como observadores: podem abrir, mas não editar. O compêndio **Icarus: Mercadores** tem três exemplos prontos (Ferreiro, Boticário e Mercador de Rua).
+- **Ficha (só o Mestre e os donos):** compacta, com as abas **Ficha** (nível, Defesa, PV, PM, atributos, perícias, habilidades, equipamento e magias), **Loja** e **Notas**.
+- **Montar o estoque:** na aba Loja, arraste armas, equipamentos e munições de um compêndio ou do diretório de itens.
+  - Cada linha tem quantidade (ou ∞), preço base (vazio = preço do item), preço final (com o multiplicador) e "oculto".
+  - Na mesma aba ficam a fala de abertura e a de despedida, o multiplicador de preço, a caixa do mercador ("caixa infinita" ou moedas), "Abrir/Fechar loja" e "Ver como jogador".
+- **Como o jogador compra:** ao abrir o mercador (duplo clique no token ou no diretório), o jogador vê a **vitrine**: o retrato grande, o nome, a fala de abertura e a lista com preço, estoque e o botão Comprar.
+  - O pedido vai ao Mestre conectado, que confere tudo e faz a compra: o dinheiro sai (com troco), o item entra no inventário (empilhando munições e consumíveis), o estoque cai e o chat registra.
+  - Sem Mestre conectado, a compra não acontece.
+- **O mercador também compra (opcional):** com "O mercador também compra dos jogadores" ligado, a vitrine ganha a aba **Vender**. Ele paga o preço de venda do item ou uma fração do preço, tirando da caixa.
+- **Chat:** em Configurar Definições → Sistema, a mensagem de compra pode ser pública ou só para o comprador e o Mestre.
+
 ## Publicar uma versão
 
 1. Atualize `version` e o número da versão no link `download` do `system.json`.

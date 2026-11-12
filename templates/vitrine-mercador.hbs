@@ -1,0 +1,64 @@
+<div class="ficha-icarus vitrine-corpo">
+  <header class="vm-retrato" style="background-image: url('{{img}}')">
+    <div class="vm-legenda">
+      <h1 class="vm-nome">{{nome}}</h1>
+      {{#if saudacao}}<p class="vm-saudacao">“{{saudacao}}”</p>{{/if}}
+    </div>
+  </header>
+
+  {{#unless aberta}}<p class="vm-fechada"><i class="fa-solid fa-door-closed"></i> {{localize "ICARUS.Loja.Fechada"}}</p>{{/unless}}
+
+  {{#if podeVender}}
+  <nav class="fm-abas vm-abas">
+    <a class="{{#if (eq aba "comprar")}}ativa{{/if}}" data-action="aba" data-aba="comprar">{{localize "ICARUS.Loja.AbaComprar"}}</a>
+    <a class="{{#if (eq aba "vender")}}ativa{{/if}}" data-action="aba" data-aba="vender">{{localize "ICARUS.Loja.AbaVender"}}</a>
+  </nav>
+  {{/if}}
+
+  <div class="vm-lista">
+    {{#if (eq aba "vender")}}
+    <table class="vm-tabela">
+      <thead><tr><th></th><th>{{localize "ICARUS.Mercador.Item"}}</th><th>{{localize "ICARUS.Loja.Tem"}}</th><th>{{localize "ICARUS.Loja.PagaPor"}}</th><th></th></tr></thead>
+      <tbody>
+        {{#each venda}}
+        <tr data-item-id="{{id}}">
+          <td><img src="{{img}}" alt="" width="36" height="36"></td>
+          <td>{{nome}}</td>
+          <td>{{tem}}</td>
+          <td>{{preco}}</td>
+          <td class="vm-acao"><input type="number" data-quantidade value="1" min="1" max="{{tem}}" step="1">
+            <button type="button" class="btn" data-action="vender" {{#if desativado}}disabled{{/if}}>{{localize "ICARUS.Loja.Vender"}}</button></td>
+        </tr>
+        {{else}}<tr><td colspan="5" class="dica">{{localize "ICARUS.Loja.NadaParaVender"}}</td></tr>{{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <table class="vm-tabela">
+      <thead><tr><th></th><th>{{localize "ICARUS.Mercador.Item"}}</th><th>{{localize "ICARUS.Loja.Estoque"}}</th><th>{{localize "ICARUS.Loja.Preco"}}</th><th></th></tr></thead>
+      <tbody>
+        {{#each itens}}
+        <tr data-item-id="{{id}}" class="{{#if esgotado}}esgotado{{/if}}">
+          <td><img src="{{img}}" alt="" width="36" height="36"></td>
+          <td title="{{dica}}">{{nome}}</td>
+          <td>{{#if esgotado}}{{localize "ICARUS.Loja.Esgotado"}}{{else}}{{estoque}}{{/if}}</td>
+          <td title="{{precoOuro}}">{{preco}}</td>
+          <td class="vm-acao"><input type="number" data-quantidade value="1" min="1" max="{{max}}" step="1" {{#if desativado}}disabled{{/if}}>
+            <button type="button" class="btn primario" data-action="comprar" {{#if desativado}}disabled{{/if}}>{{localize "ICARUS.Loja.Comprar"}}</button></td>
+        </tr>
+        {{else}}<tr><td colspan="5" class="dica">{{localize "ICARUS.Loja.NadaAVenda"}}</td></tr>{{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+  </div>
+
+  <footer class="vm-rodape">
+    {{#if semComprador}}
+    <p class="aviso">{{localize "ICARUS.Loja.SemComprador"}}</p>
+    {{else}}
+    {{#if (gt compradores.length 1)}}
+    <label>{{localize "ICARUS.Loja.QuemCompra"}} <select data-comprador>{{#each compradores}}<option value="{{uuid}}" {{#if selecionado}}selected{{/if}}>{{nome}}</option>{{/each}}</select></label>
+    {{/if}}
+    <p>{{localize "ICARUS.Loja.SeuDinheiro"}} <strong>{{saldo}}</strong>{{#unless (gt compradores.length 1)}} ({{comprador}}){{/unless}}</p>
+    {{/if}}
+  </footer>
+</div>

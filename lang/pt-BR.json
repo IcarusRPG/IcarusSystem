@@ -1,7 +1,8 @@
 {
   "TYPES": {
     "Actor": {
-      "personagem": "Personagem"
+      "personagem": "Personagem",
+      "mercador": "Mercador"
     },
     "Item": {
       "poder": "Poder",
@@ -17,7 +18,8 @@
     "Ficha": {
       "Personagem": "Ficha de Personagem (Icarus RPG)",
       "Item": "Ficha de Item (Icarus RPG)",
-      "Animal": "Ficha de Animal do Vínculo (Icarus RPG)"
+      "Animal": "Ficha de Animal do Vínculo (Icarus RPG)",
+      "Mercador": "Ficha de Mercador (Icarus RPG)"
     },
     "Identidade": {
       "Nome": "Nome do personagem",
@@ -2205,6 +2207,86 @@
       "MagiasInfo": "Arcanas {a} / {la} · Divinas {d} / {ld}",
       "SemEcos": "O Místico só aprende magias Divinas com o poder Ecos dos Ancestrais.",
       "Imune": "{nome} é imune a medo (Harmonia)."
+    },
+    "Mercador": {
+      "Nome": "Nome do mercador",
+      "LojaAberta": "loja aberta",
+      "LojaFechada": "loja fechada",
+      "AbrirLoja": "Abrir loja",
+      "FecharLoja": "Fechar loja",
+      "VerComoJogador": "Ver como jogador",
+      "Abas": {
+        "ficha": "Ficha",
+        "loja": "Loja",
+        "notas": "Notas"
+      },
+      "Pericias": "Perícias",
+      "Pericia": "Perícia",
+      "Habilidades": "Habilidades",
+      "Habilidade": "Habilidade",
+      "Equipamento": "Equipamento",
+      "Magias": "Magias",
+      "Equipado": "equipado",
+      "ArrasteEquipamento": "Arraste armas e equipamentos para cá (na aba Ficha, ficam com o mercador, fora da loja).",
+      "Saudacao": "Fala de abertura",
+      "Despedida": "Fala de despedida",
+      "Multiplicador": "Multiplicador de preço",
+      "CaixaInfinita": "Caixa infinita",
+      "Caixa": "Caixa do mercador",
+      "CompraAtiva": "O mercador também compra dos jogadores",
+      "Percentual": "Paga (fração do preço, sem preço de venda)",
+      "ArrasteEstoque": "Arraste armas, equipamentos e munições de um compêndio ou do diretório de itens para esta aba: entram no estoque.",
+      "Item": "Item",
+      "Quantidade": "Qtd.",
+      "PrecoBase": "Preço base (R$)",
+      "PrecoFinal": "Preço final",
+      "Oculto": "Oculto",
+      "PrecoBaseDica": "Vazio = preço do item. O preço final aplica o multiplicador.",
+      "SemVenda": "não se vende",
+      "EstoqueVazio": "Estoque vazio.",
+      "Descricao": "Descrição",
+      "Notas": "Notas do Mestre"
+    },
+    "Loja": {
+      "Fechada": "Loja fechada",
+      "AbaComprar": "Comprar",
+      "AbaVender": "Vender",
+      "Estoque": "Estoque",
+      "Preco": "Preço",
+      "Comprar": "Comprar",
+      "Vender": "Vender",
+      "Tem": "Você tem",
+      "PagaPor": "Paga por unidade",
+      "Esgotado": "Esgotado",
+      "NadaAVenda": "Nada à venda no momento.",
+      "NadaParaVender": "Você não tem nada que este mercador compre.",
+      "SemComprador": "Escolha um personagem seu (ou controle o token dele) para comprar.",
+      "QuemCompra": "Quem compra:",
+      "SeuDinheiro": "Seu dinheiro:",
+      "NaoVendavel": "Só armas, equipamentos e munições entram no estoque.",
+      "SemMestre": "Nenhum Mestre conectado; a compra não pode ser feita agora.",
+      "Erro": "A compra falhou no meio e foi desfeita. Tente de novo.",
+      "Comprou": "{comprador} comprou {n}× {item} de {mercador} por {total}.",
+      "Vendeu": "{vendedor} vendeu {n}× {item} para {mercador} por {total}.",
+      "Motivos": {
+        "semPermissao": "Você não controla este personagem.",
+        "lojaFechada": "A loja está fechada.",
+        "itemInvalido": "Este item não está à venda.",
+        "semPreco": "{item} não se vende.",
+        "quantidadeInvalida": "Quantidade inválida.",
+        "esgotado": "{item} está esgotado.",
+        "semEstoque": "Só há {estoque} de {item} no estoque.",
+        "semDinheiro": "Dinheiro insuficiente: {item} custa {total}.",
+        "naoCompra": "Este mercador não compra itens.",
+        "semVenda": "O mercador não compra {item}.",
+        "caixaSemDinheiro": "O mercador não tem {total} no caixa."
+      },
+      "Config": {
+        "Chat": "Mensagem de compra no chat",
+        "ChatDica": "Pública (todos veem) ou só para o comprador e o Mestre.",
+        "Publico": "Pública",
+        "Privado": "Só comprador e Mestre"
+      }
     }
   }
 }

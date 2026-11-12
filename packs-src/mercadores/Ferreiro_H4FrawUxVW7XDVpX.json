@@ -1,0 +1,682 @@
+{
+  "_id": "H4FrawUxVW7XDVpX",
+  "name": "Ferreiro",
+  "type": "mercador",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": null,
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "defesa": 10,
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "pm": {
+      "value": 0,
+      "max": 0
+    },
+    "atributos": {
+      "FOR": 0,
+      "DES": 0,
+      "CON": 0,
+      "INT": 0,
+      "SAB": 0,
+      "CAR": 1
+    },
+    "pericias": [],
+    "habilidades": [],
+    "caixa": {
+      "ouroReal": 0,
+      "real": 0,
+      "centavo": 0
+    },
+    "caixaInfinita": true,
+    "loja": {
+      "aberta": true,
+      "saudacao": "Aço bom não se compra barato. Mas se compra aqui.",
+      "despedida": "Volte quando a lâmina cegar.",
+      "multiplicadorPreco": 1,
+      "compra": {
+        "ativo": false,
+        "percentual": 0.5
+      }
+    },
+    "descricao": "<p>Ferreiro de vila: armas, armaduras e escudos.</p>",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Ferreiro",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "hpJjv4zdEE6dgUIS",
+      "name": "Adaga",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Adaga.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "leve",
+        "dano": "1d4",
+        "danoExtra": "",
+        "criticoMargem": 19,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "alcanceArremesso": "curto",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "propriedades": [
+          "leve",
+          "agil",
+          "arremesso"
+        ],
+        "municaoTipo": "",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 500,
+        "espacos": 1,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "adaga",
+          "objeto": {
+            "rd": 10,
+            "pvMax": 2,
+            "tamanho": "pequeno"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 6,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.hpJjv4zdEE6dgUIS"
+    },
+    {
+      "_id": "xyxwskyCngOFrkC8",
+      "name": "Espada curta",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Espada%20curta.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "leve",
+        "dano": "1d6",
+        "danoExtra": "",
+        "criticoMargem": 19,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "alcanceArremesso": "",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "propriedades": [
+          "leve",
+          "agil"
+        ],
+        "municaoTipo": "",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 1200,
+        "espacos": 1,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "espada-curta",
+          "objeto": {
+            "rd": 10,
+            "pvMax": 2,
+            "tamanho": "pequeno"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 3,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.xyxwskyCngOFrkC8"
+    },
+    {
+      "_id": "5780ErjQdlxySBy1",
+      "name": "Espada longa",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Espada%20Longa.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "categoria": "marcial",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d8",
+        "danoExtra": "",
+        "criticoMargem": 19,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "alcanceArremesso": "",
+        "tiposDano": [
+          "corte"
+        ],
+        "propriedades": [],
+        "municaoTipo": "",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 1500,
+        "espacos": 1,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "espada-longa",
+          "objeto": {
+            "rd": 10,
+            "pvMax": 5,
+            "tamanho": "pequeno"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.5780ErjQdlxySBy1"
+    },
+    {
+      "_id": "pH9hFGRierZnSTth",
+      "name": "Machado de batalha",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Machado%20de%20Batalha.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "categoria": "marcial",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d8",
+        "danoExtra": "",
+        "criticoMargem": 20,
+        "criticoMult": 3,
+        "alcance": "corpo-a-corpo",
+        "alcanceArremesso": "",
+        "tiposDano": [
+          "corte"
+        ],
+        "propriedades": [],
+        "municaoTipo": "",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 1000,
+        "espacos": 1,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "machado-de-batalha",
+          "objeto": {
+            "rd": 10,
+            "pvMax": 5,
+            "tamanho": "pequeno"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.pH9hFGRierZnSTth"
+    },
+    {
+      "_id": "qNGnSs4IhSf4XfE1",
+      "name": "Martelo de guerra",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Martelo%20de%20Guerra.png",
+      "folder": null,
+      "sort": 500,
+      "system": {
+        "categoria": "marcial",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d8",
+        "danoExtra": "",
+        "criticoMargem": 20,
+        "criticoMult": 3,
+        "alcance": "corpo-a-corpo",
+        "alcanceArremesso": "",
+        "tiposDano": [
+          "impacto"
+        ],
+        "propriedades": [],
+        "municaoTipo": "",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 1200,
+        "espacos": 1,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "martelo-de-guerra",
+          "objeto": {
+            "rd": 10,
+            "pvMax": 5,
+            "tamanho": "pequeno"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.qNGnSs4IhSf4XfE1"
+    },
+    {
+      "_id": "RNOKrDwCuVJSSjXg",
+      "name": "Lança",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Lan%C3%A7a.png",
+      "folder": null,
+      "sort": 600,
+      "system": {
+        "categoria": "simples",
+        "grupo": "corpo-a-corpo",
+        "empunhadura": "uma-mao",
+        "dano": "1d6",
+        "danoExtra": "",
+        "criticoMargem": 20,
+        "criticoMult": 2,
+        "alcance": "corpo-a-corpo",
+        "alcanceArremesso": "curto",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "propriedades": [
+          "arremesso"
+        ],
+        "municaoTipo": "",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 300,
+        "espacos": 1,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "lanca",
+          "objeto": {
+            "rd": 5,
+            "pvMax": 5,
+            "tamanho": "pequeno"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 4,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.RNOKrDwCuVJSSjXg"
+    },
+    {
+      "_id": "dlquxT9tPMtSV5jL",
+      "name": "Arco curto",
+      "type": "arma",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armas/Arco%20curto.png",
+      "folder": null,
+      "sort": 700,
+      "system": {
+        "categoria": "simples",
+        "grupo": "distancia",
+        "empunhadura": "duas-maos",
+        "dano": "1d6",
+        "danoExtra": "",
+        "criticoMargem": 20,
+        "criticoMult": 3,
+        "alcance": "medio",
+        "alcanceArremesso": "",
+        "tiposDano": [
+          "perfuracao"
+        ],
+        "propriedades": [
+          "duas-maos"
+        ],
+        "municaoTipo": "flechas",
+        "capacidadeDisparos": 0,
+        "carregados": 0,
+        "preco": 3000,
+        "espacos": 2,
+        "quantidade": 1,
+        "empunhada": false,
+        "proficiencia": "auto",
+        "bonusAtaque": 0,
+        "bonusDano": 0,
+        "municaoUsada": "auto",
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "arco-curto",
+          "objeto": {
+            "rd": 5,
+            "pvMax": 10,
+            "tamanho": "medio"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.dlquxT9tPMtSV5jL"
+    },
+    {
+      "_id": "6XzAYpMrapy566Ww",
+      "name": "Flechas",
+      "type": "municao",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/muni%C3%A7%C3%B5es/Flechas.png",
+      "folder": null,
+      "sort": 800,
+      "system": {
+        "tipo": "flechas",
+        "quantidade": 20,
+        "precoPacote": 100,
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "flechas",
+          "loja": {
+            "venda": true,
+            "quantidade": null,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.6XzAYpMrapy566Ww"
+    },
+    {
+      "_id": "QEh6Zxnjkw8twkzc",
+      "name": "Gibão Acolchoado",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Gib%C3%A3o%20acolchoado.png",
+      "folder": null,
+      "sort": 900,
+      "system": {
+        "tipo": "armadura",
+        "categoria": "leve",
+        "bonusDefesa": 1,
+        "penalidade": 0,
+        "preco": 1000,
+        "espacos": 2,
+        "quantidade": 1,
+        "equipado": false,
+        "acoplado": false,
+        "provisorio": [
+          "espacos"
+        ],
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "gibao-acolchoado",
+          "objeto": {
+            "rd": 5,
+            "pvMax": 20,
+            "tamanho": "medio"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.QEh6Zxnjkw8twkzc"
+    },
+    {
+      "_id": "9hQ27bn9NaVCFGrS",
+      "name": "Couro Batido",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Couro%20batido.png",
+      "folder": null,
+      "sort": 1000,
+      "system": {
+        "tipo": "armadura",
+        "categoria": "leve",
+        "bonusDefesa": 2,
+        "penalidade": 0,
+        "preco": 2500,
+        "espacos": 2,
+        "quantidade": 1,
+        "equipado": false,
+        "acoplado": false,
+        "provisorio": [
+          "espacos"
+        ],
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "couro-batido",
+          "objeto": {
+            "rd": 5,
+            "pvMax": 20,
+            "tamanho": "medio"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.9hQ27bn9NaVCFGrS"
+    },
+    {
+      "_id": "QVSrKalg1LwVCiDL",
+      "name": "Cota de Malha",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Cota%20de%20malha.png",
+      "folder": null,
+      "sort": 1100,
+      "system": {
+        "tipo": "armadura",
+        "categoria": "media",
+        "bonusDefesa": 5,
+        "penalidade": 3,
+        "preco": 25000,
+        "espacos": 3,
+        "quantidade": 1,
+        "equipado": false,
+        "acoplado": false,
+        "provisorio": [
+          "espacos"
+        ],
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "cota-de-malha",
+          "objeto": {
+            "rd": 8,
+            "pvMax": 30,
+            "tamanho": "medio"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 1,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.QVSrKalg1LwVCiDL"
+    },
+    {
+      "_id": "olTYueiWVISIvAHb",
+      "name": "Escudo Leve (Broquel)",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Escudo%20Medieval%20de%20Madeira%20e%20Ferro.png",
+      "folder": null,
+      "sort": 1200,
+      "system": {
+        "tipo": "escudo",
+        "categoria": "escudo",
+        "bonusDefesa": 1,
+        "penalidade": 0,
+        "preco": 1500,
+        "espacos": 1,
+        "quantidade": 1,
+        "equipado": false,
+        "acoplado": false,
+        "provisorio": [
+          "espacos"
+        ],
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "escudo-leve",
+          "objeto": {
+            "rd": 5,
+            "pvMax": 10,
+            "tamanho": "medio"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 3,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.olTYueiWVISIvAHb"
+    },
+    {
+      "_id": "K8C23Q705laWUpNr",
+      "name": "Escudo Pesado",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/equipamentos/armaduras%20e%20escudos/Escudo%20Medieval%20de%20A%C3%A7o%20Desgastado.png",
+      "folder": null,
+      "sort": 1300,
+      "system": {
+        "tipo": "escudo",
+        "categoria": "escudo",
+        "bonusDefesa": 2,
+        "penalidade": 2,
+        "preco": 4000,
+        "espacos": 2,
+        "quantidade": 1,
+        "equipado": false,
+        "acoplado": false,
+        "provisorio": [
+          "espacos"
+        ],
+        "descricao": ""
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "id": "escudo-pesado",
+          "objeto": {
+            "rd": 10,
+            "pvMax": 20,
+            "tamanho": "medio"
+          },
+          "loja": {
+            "venda": true,
+            "quantidade": 1,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "_key": "!actors.items!H4FrawUxVW7XDVpX.K8C23Q705laWUpNr"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "ferreiro"
+    }
+  },
+  "_key": "!actors!H4FrawUxVW7XDVpX"
+}

@@ -77,3 +77,6 @@ export function creditar(moedas, centavos) {
   c %= CENTAVOS_POR_REAL;
   return { ouroReal: inteiroPositivo(moedas?.ouroReal), real: r, centavo: c };
 }
+
+/** Dá para pagar o valor com essas moedas? */
+export const podePagar = (moedas, centavos) => totalEmCentavos(moedas) >= inteiroPositivo(centavos);

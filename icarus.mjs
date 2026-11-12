@@ -11,6 +11,10 @@ import { ClasseData } from "./module/data/item-classe.mjs";
 import { OrigemData } from "./module/data/item-origem.mjs";
 import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaAnimal } from "./module/sheets/ficha-animal.mjs";
+import { MercadorData } from "./module/data/actor-mercador.mjs";
+import { FichaMercador } from "./module/sheets/ficha-mercador.mjs";
+import { registrarVitrine } from "./module/sheets/vitrine-mercador.mjs";
+import { registrarLoja } from "./module/loja-foundry.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
 import { rolarTeste, rolarPericia, rolarAtributo } from "./module/rolls.mjs";
 import { criarKaelen, verificarKaelen, dadosKaelen } from "./module/dev/kaelen.mjs";
@@ -89,6 +93,8 @@ registrarMorte();
 registrarAtalhos();
 registrarAcoes();
 registrarClasses();
+registrarLoja();
+registrarVitrine();
 
 const TEMPLATES = [
   "actor/personagem.hbs",
@@ -157,6 +163,7 @@ Hooks.once("init", () => {
 
   // Modelos de dados
   CONFIG.Actor.dataModels.personagem = PersonagemData;
+  CONFIG.Actor.dataModels.mercador = MercadorData;
   CONFIG.Item.dataModels.poder = PoderData;
   CONFIG.Item.dataModels.equipamento = EquipamentoData;
   CONFIG.Item.dataModels.arma = ArmaData;
@@ -200,10 +207,21 @@ Hooks.once("init", () => {
   Actors.registerSheet(SISTEMA_ID, FichaPersonagem, { types: ["personagem"], makeDefault: true, label: "ICARUS.Ficha.Personagem" });
   // Animais do Vínculo: escolhida por flags.core.sheetClass (FICHA_ANIMAL); as outras fichas não mudam
   Actors.registerSheet(SISTEMA_ID, FichaAnimal, { types: ["personagem"], makeDefault: false, label: "ICARUS.Ficha.Animal" });
+  // Mercador: ficha compacta para o Mestre e o dono; para os outros, a vitrine
+  Actors.registerSheet(SISTEMA_ID, FichaMercador, { types: ["mercador"], makeDefault: true, label: "ICARUS.Ficha.Mercador" });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe", "origem"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 
   return loadTemplates(TEMPLATES);
+});
+
+/** Mercador novo: os jogadores podem abrir (vitrine), mas não editar; token ligado. */
+Hooks.on("preCreateActor", (actor, dados) => {
+  if (actor.type !== "mercador") return;
+  const atualizacao = { "prototypeToken.actorLink": true };
+  if (dados.ownership?.default === undefined) atualizacao["ownership.default"] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
+  if (!dados.img || dados.img === Actor.DEFAULT_ICON) atualizacao.img = ICONE_PADRAO;
+  actor.updateSource(atualizacao);
 });
 
 /** Personagem novo recebe o dado azul como imagem e token, e o token fica ligado à ficha. */
