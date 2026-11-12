@@ -190,6 +190,13 @@ Para testar no seu Foundry sem publicar, copie ou ligue esta pasta em `Data/syst
 - **Sons opcionais:** `audio/ui/dano.ogg` e `audio/ui/cura.ogg` (curtos; rode `npm run gerar:dados` depois de adicionar).
 - Testes fora do Foundry: `/tests/navegador/chat-dano.html` e `/tests/navegador/numeros-pv.html`.
 
+## Rolagens grandes no chat
+
+- Opção do mundo **"Rolagens grandes no chat: pedir aprovação do Mestre"** (ligada por padrão) e **limite de dados** (16).
+- Quando um jogador digita no chat uma rolagem com mais dados que o limite (`/r 20d6`, `/gmr`, `/br`, `/sr`, `/pr` ou `[[...]]` dentro de uma mensagem), ela não é feita na hora. O Mestre recebe uma mensagem com **Aprovar** e **Recusar**; quem pediu vê "O Mestre está avaliando se você poderá fazer esta rolagem".
+- Aprovada, a rolagem original sai do cliente de quem pediu. Recusada, ele recebe um aviso. Sem Mestre conectado, a rolagem não é feita.
+- Ataques, poderes, habilidades e magias do sistema rolam pelas fichas e não passam por essa regra. O Mestre rola o que quiser.
+
 ## Interação por proximidade e porta trancada
 
 - **Cena:** use 1,5 m por quadrado, em metros (Configurar Cena → Grade: Distância 1,5, Unidade m). Se a cena estiver diferente, o Mestre recebe um aviso ao abri-la.
