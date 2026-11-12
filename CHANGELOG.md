@@ -1,5 +1,14 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.37.0
+
+### Barras do token: NPCs, mercadores e ameaças ocultos por padrão; Defesa só dos jogadores
+- Duas opções novas em Configurar Definições → Icarus RPG, as duas **ligadas por padrão**:
+  - **Token: ocultar as barras de PV/PM de NPCs e mercadores**;
+  - **Token: ocultar as barras de PV/PM das ameaças**.
+  Ligadas, ninguém vê as barras de vida e de mana desses tokens, nem o Mestre (no token e nas mini barras do carrossel). Desligadas, vale a opção que já existia (só o Mestre, ou PV em porcentagem para os jogadores).
+- O **escudo de Defesa** agora só aparece nos personagens de jogadores. NPCs, mercadores e ameaças nunca mostram a Defesa no token, e não há opção para mostrar.
+
 ## 0.36.1
 
 ### Correções: aba Token do mercador e da ameaça; acesso dos jogadores à loja

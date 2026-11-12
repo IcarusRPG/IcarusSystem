@@ -11,7 +11,7 @@
       "caption": "Icarus RPG"
     }
   ],
-  "version": "0.36.1",
+  "version": "0.37.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -354,6 +354,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.36.1/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.37.0/icarus-rpg.zip",
   "socket": true
 }

@@ -13,6 +13,7 @@
  */
 import { SISTEMA_ID } from "./config.mjs";
 import { cartasDoCombate, rodadaNova, paraRolar, limitarNaTela } from "./carrossel-dados.mjs";
+import { categoriaDoAtor } from "./token-barras-dados.mjs";
 import { existeArquivoUi } from "./token-barras.mjs";
 
 const F = SISTEMA_ID;
@@ -43,7 +44,7 @@ function combatentesDe(combate) {
     return {
       id: cb.id, nome: cb.name, img: cb.token?.texture?.src || cb.img || actor?.img,
       iniciativa: cb.initiative, oculto: cb.hidden, derrotado: cb.isDefeated,
-      disposicao: cb.token?.disposition ?? 0, ehPJ: !!actor?.hasPlayerOwner, dono: !!cb.isOwner,
+      disposicao: cb.token?.disposition ?? 0, ehPJ: !!actor?.hasPlayerOwner, categoria: categoriaDoAtor(actor), dono: !!cb.isOwner,
       pv: s?.pv ? { value: s.pv.value, max: s.pv.max } : null, pm: s?.pm ? { value: s.pm.value, max: s.pm.max } : null
     };
   });
@@ -52,7 +53,8 @@ function combatentesDe(combate) {
 const visao = () => ({
   ehMestre: game.user.isGM,
   mostrarBarras: cfg("carrosselBarras"),
-  hud: { npcModo: cfg("hudNpcModo"), mostrarPM: cfg("hudMostrarPM"), mostrarDefesa: cfg("hudMostrarDefesa"), texto: cfg("hudTexto") }
+  hud: { npcModo: cfg("hudNpcModo"), mostrarPM: cfg("hudMostrarPM"), mostrarDefesa: cfg("hudMostrarDefesa"),
+    ocultarNpc: cfg("hudOcultarNpc"), ocultarAmeacas: cfg("hudOcultarAmeacas"), texto: cfg("hudTexto") }
 });
 
 /* ------------------------------ Elemento ------------------------------ */

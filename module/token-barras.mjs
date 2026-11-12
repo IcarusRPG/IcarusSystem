@@ -9,7 +9,7 @@
  * PV baixo só usam o ticker enquanto acontecem.
  */
 import { SISTEMA_ID } from "./config.mjs";
-import { fracao, pvBaixo, visibilidade, layoutDoHud, textoDaBarra } from "./token-barras-dados.mjs";
+import { fracao, pvBaixo, visibilidade, layoutDoHud, textoDaBarra, categoriaDoAtor } from "./token-barras-dados.mjs";
 import ARQUIVOS_UI from "./dados/arquivos-ui.mjs";
 
 /** O arquivo opcional de interface existe no sistema? (lista gerada no build: tools/gerar-dados.mjs) */
@@ -31,6 +31,8 @@ const config = () => ({
   npcModo: game.settings.get(F, "hudNpcModo"),
   mostrarPM: game.settings.get(F, "hudMostrarPM"),
   mostrarDefesa: game.settings.get(F, "hudMostrarDefesa"),
+  ocultarNpc: game.settings.get(F, "hudOcultarNpc"),
+  ocultarAmeacas: game.settings.get(F, "hudOcultarAmeacas"),
   texto: game.settings.get(F, "hudTexto")
 });
 const ticker = () => canvas?.app?.ticker ?? PIXI.Ticker.shared;
@@ -164,7 +166,7 @@ class HudDoToken {
     const actor = token.actor;
     const cfg = config();
     if (!cfg.ativo || !actor?.system?.pv || token.destroyed) { this.raiz.visible = false; return; }
-    const ver = visibilidade({ ehMestre: game.user.isGM, ehPJ: !!actor.hasPlayerOwner, config: cfg });
+    const ver = visibilidade({ ehMestre: game.user.isGM, ehPJ: !!actor.hasPlayerOwner, categoria: categoriaDoAtor(actor), config: cfg });
     const s = actor.system;
     const w = token.w, h = token.h;
     const hover = !!token.hover || !!token.controlled;
@@ -231,8 +233,11 @@ export function registrarBarrasDoToken() {
   reg("hudAtivo", { name: "ICARUS.Hud.Config.Ativo", hint: "ICARUS.Hud.Config.AtivoDica", type: Boolean, default: true });
   reg("hudNpcModo", { name: "ICARUS.Hud.Config.Npc", hint: "ICARUS.Hud.Config.NpcDica", type: String, default: "mestre",
     choices: { mestre: "ICARUS.Hud.Config.NpcMestre", porcentagem: "ICARUS.Hud.Config.NpcPorcentagem" } });
+  // NPCs/mercadores e ameaças: barras ocultas para todos por padrão (até para o Mestre)
+  reg("hudOcultarNpc", { name: "ICARUS.Hud.Config.OcultarNpc", hint: "ICARUS.Hud.Config.OcultarNpcDica", type: Boolean, default: true });
+  reg("hudOcultarAmeacas", { name: "ICARUS.Hud.Config.OcultarAmeacas", hint: "ICARUS.Hud.Config.OcultarAmeacasDica", type: Boolean, default: true });
   reg("hudMostrarPM", { name: "ICARUS.Hud.Config.PM", type: Boolean, default: true });
-  reg("hudMostrarDefesa", { name: "ICARUS.Hud.Config.Defesa", type: Boolean, default: true });
+  reg("hudMostrarDefesa", { name: "ICARUS.Hud.Config.Defesa", hint: "ICARUS.Hud.Config.DefesaDica", type: Boolean, default: true });
   reg("hudTexto", { name: "ICARUS.Hud.Config.Texto", type: String, default: "passarMouse",
     choices: { passarMouse: "ICARUS.Hud.Config.TextoMouse", sempre: "ICARUS.Hud.Config.TextoSempre", nunca: "ICARUS.Hud.Config.TextoNunca" } });
 
