@@ -1,0 +1,321 @@
+{
+  "_id": "knciQwa98UanOC1f",
+  "name": "Boticário",
+  "type": "mercador",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": null,
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "defesa": 10,
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "pm": {
+      "value": 0,
+      "max": 0
+    },
+    "atributos": {
+      "FOR": 0,
+      "DES": 0,
+      "CON": 0,
+      "INT": 0,
+      "SAB": 0,
+      "CAR": 1
+    },
+    "pericias": [],
+    "habilidades": [],
+    "caixa": {
+      "ouroReal": 0,
+      "real": 0,
+      "centavo": 0
+    },
+    "caixaInfinita": true,
+    "loja": {
+      "aberta": true,
+      "saudacao": "Ervas frescas, ataduras limpas e um bom conselho de graça.",
+      "despedida": "Cuide desse corte antes que ele cuide de você.",
+      "multiplicadorPreco": 1,
+      "compra": {
+        "ativo": false,
+        "percentual": 0.5
+      }
+    },
+    "descricao": "<p>Alquimista e boticário: itens de cura e cuidado.</p>",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Boticário",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "Ep9YCTjij0wcV7za",
+      "name": "Saco de ervas",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Saco%20de%20ervas.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "cura",
+        "quantidade": 1,
+        "preco": 500,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 2,
+          "atual": 2
+        },
+        "origemItem": false,
+        "descricao": "Ervas secas e raízes de uso medicinal e culinário (camomila, hortelã, alho-bravo, casca de salgueiro...). Tem 2 usos. <strong>Descanso:</strong> em 10 minutos, 1 uso prepara um chá que encerra uma destas condições em uma criatura: Envenenado, Enjoado, Abalado ou Fatigado. <strong>Utilidade:</strong> cataplasmas e temperos. <strong>Roleplay:</strong> remédios caseiros e trocas com herbalistas."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "saco-de-ervas",
+          "loja": {
+            "venda": true,
+            "quantidade": null,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 100,
+      "_key": "!actors.items!knciQwa98UanOC1f.Ep9YCTjij0wcV7za"
+    },
+    {
+      "_id": "L7vymgXjmbxFlLoU",
+      "name": "Maleta de curandeiro",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Maleta%20de%20curandeiro.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "cura",
+        "quantidade": 1,
+        "preco": 3000,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 10,
+          "atual": 10
+        },
+        "origemItem": false,
+        "descricao": "Estojo com ataduras, agulha, linha, bisturi e pinças. Tem 10 usos. <strong>Combate:</strong> como ação completa, gasta 1 uso para encerrar a condição Sangrando em uma criatura adjacente. <strong>Utilidade:</strong> necessária para tratar ferimentos de forma adequada (além de um curativo improvisado). <strong>Roleplay:</strong> transforma o personagem no médico do grupo."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "maleta-de-curandeiro",
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 200,
+      "_key": "!actors.items!knciQwa98UanOC1f.L7vymgXjmbxFlLoU"
+    },
+    {
+      "_id": "j7hIVfwfcdcJgvMj",
+      "name": "Bandagens de luta",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Bandagens%20de%20luta.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "ferramenta",
+        "quantidade": 1,
+        "preco": 100,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": true,
+        "vestido": false,
+        "bonus": [
+          {
+            "pericia": "ataqueDesarmado",
+            "valor": 1,
+            "condicao": "em testes de ataque desarmado"
+          }
+        ],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Faixas de linho para enrolar mãos e pulsos antes de lutar. <strong>Bônus:</strong> +1 em testes de ataque desarmado enquanto as bandagens estiverem enroladas. Também protegem os dedos em socos contra superfícies duras. <strong>Roleplay:</strong> lutadores e arruaceiros reconhecem quem as usa."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "bandagens-de-luta",
+          "loja": {
+            "venda": true,
+            "quantidade": null,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 300,
+      "_key": "!actors.items!knciQwa98UanOC1f.j7hIVfwfcdcJgvMj"
+    },
+    {
+      "_id": "Lr7FEVEICqAkXQYQ",
+      "name": "Perfume fino",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Perfume%20fino.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "insignia",
+        "quantidade": 1,
+        "preco": 1500,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 10,
+          "atual": 10
+        },
+        "origemItem": false,
+        "descricao": "Frasco de essência de flores raras. Tem 10 aplicações. <strong>Utilidade:</strong> deixa um cheiro marcante e agradável, e mascara odores (dificulta ser rastreado pelo faro). <strong>Roleplay:</strong> causa boa impressão em encontros sociais e festas."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "perfume-fino",
+          "loja": {
+            "venda": true,
+            "quantidade": 3,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 400,
+      "_key": "!actors.items!knciQwa98UanOC1f.Lr7FEVEICqAkXQYQ"
+    },
+    {
+      "_id": "bvJ4RqCrpUGBQvjY",
+      "name": "Estojo de escrita",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Estojo%20de%20escrita.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "escrita",
+        "quantidade": 1,
+        "preco": 500,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Pena, tinteiro, folhas de pergaminho (20) e areia para secar a tinta. <strong>Utilidade:</strong> escrever cartas, anotações e mapas simples. <strong>Roleplay:</strong> compor poemas e cartas de apresentação."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "estojo-de-escrita",
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 500,
+      "_key": "!actors.items!knciQwa98UanOC1f.bvJ4RqCrpUGBQvjY"
+    },
+    {
+      "_id": "08oZkjTlI7mhHYSu",
+      "name": "Livro raro de estudo",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Livro%20raro%20de%20estudo.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "escrita",
+        "quantidade": 1,
+        "preco": 5000,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [
+          {
+            "pericia": null,
+            "valor": 1,
+            "condicao": null,
+            "escolha": [
+              "historia",
+              "investigacao",
+              "misticismo",
+              "nobreza"
+            ]
+          }
+        ],
+        "valeEnquantoPossui": true,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Volume antigo sobre um tema à escolha do jogador (a história de uma cidade, uma criatura, um ofício ou uma religião), aprovado pelo Mestre. <strong>Bônus:</strong> +1 em uma perícia baseada em Inteligência à escolha do jogador (História, Investigação, Misticismo ou Nobreza). Não precisa estar com o livro em mãos, mas <strong>se o personagem perdê-lo ou vendê-lo, perde o bônus</strong>. <strong>Exploração:</strong> ao consultá-lo por 1 hora, o Mestre pode fornecer uma pista sobre aquele tema (uma vez por aventura). <strong>Roleplay:</strong> colecionadores e bibliotecas pagam ou trocam favores por ele."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "livro-raro-de-estudo",
+          "escolhaTexto": "",
+          "loja": {
+            "venda": true,
+            "quantidade": 1,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 600,
+      "_key": "!actors.items!knciQwa98UanOC1f.08oZkjTlI7mhHYSu"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "boticario"
+    }
+  },
+  "_key": "!actors!knciQwa98UanOC1f"
+}

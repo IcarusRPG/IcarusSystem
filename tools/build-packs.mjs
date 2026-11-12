@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
-import { documentosNovos, documentosDeClasses, documentosDeVinculos } from "../module/dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses, documentosDeVinculos, documentosDeMercadores } from "../module/dados-compendios.mjs";
 import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo, arquivoDoFamiliar } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
@@ -115,6 +115,12 @@ const docsNovos = documentosNovos(novos);
 const semRdPv = aplicarObjetosNosCompendios(objetosDados, docsArmas.armas.itens, docsNovos["armaduras-escudos"].itens);
 if (semRdPv.length) console.warn(`Sem RD/PV na tabela de objetos: ${semRdPv.join(", ")}`);
 const docsClasses = documentosDeClasses(novos);
+// Mercadores de exemplo: o estoque são cópias dos itens destes compêndios (pelo nome)
+const docsMercadores = documentosDeMercadores(ler("mercadores"), {
+  armas: docsArmas.armas.itens, municoes: docsArmas.municoes.itens,
+  "armaduras-escudos": docsNovos["armaduras-escudos"].itens, "itens-comuns": docsOrigens["itens-comuns"].itens
+});
+if (docsMercadores.faltando.length) throw new Error(`Mercadores: itens que não existem nos compêndios: ${docsMercadores.faltando.join("; ")}`);
 
 /** Cada pacote: lista de [documento, coleção] já com as chaves. */
 const PACOTES = {
@@ -129,6 +135,7 @@ const PACOTES = {
   "poderes-classe": docsClasses["poderes-classe"],
   vinculos: documentosDeVinculos(novos.vinculos, PERICIAS),
   familiares: documentosDeVinculos(novos.familiares, PERICIAS, "familiar"),
+  mercadores: { pastas: [], atores: docsMercadores.atores },
   ...docsOrigens,
   // Magias: tools/dados/magias.json + ícones (img/magias, manifesto magias_icones.json); sem ícone = dado azul
   magias: documentosDeMagias(ler("magias"), ler("magias_icones"), idEstavel)

@@ -11,7 +11,7 @@
       "caption": "Icarus RPG"
     }
   ],
-  "version": "0.31.0",
+  "version": "0.32.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -48,6 +48,12 @@
         "htmlFields": [
           "notas",
           "diario"
+        ]
+      },
+      "mercador": {
+        "htmlFields": [
+          "descricao",
+          "notas"
         ]
       }
     },
@@ -230,6 +236,19 @@
       "flags": {}
     },
     {
+      "name": "mercadores",
+      "label": "Icarus: Mercadores",
+      "path": "packs/mercadores",
+      "type": "Actor",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "origens",
       "label": "Icarus — Origens",
       "path": "packs/origens",
@@ -299,6 +318,7 @@
         "poderes-classe",
         "vinculos",
         "familiares",
+        "mercadores",
         "origens",
         "poderes-origem",
         "itens-comuns",
@@ -314,6 +334,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.31.0/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.32.0/icarus-rpg.zip",
   "socket": true
 }

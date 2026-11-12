@@ -1,0 +1,483 @@
+{
+  "_id": "jui73iQbb7E8ymxj",
+  "name": "Mercador de Rua",
+  "type": "mercador",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": null,
+  "sort": 300,
+  "system": {
+    "nivel": 1,
+    "defesa": 10,
+    "pv": {
+      "value": 10,
+      "max": 10
+    },
+    "pm": {
+      "value": 0,
+      "max": 0
+    },
+    "atributos": {
+      "FOR": 0,
+      "DES": 0,
+      "CON": 0,
+      "INT": 0,
+      "SAB": 0,
+      "CAR": 1
+    },
+    "pericias": [],
+    "habilidades": [],
+    "caixa": {
+      "ouroReal": 0,
+      "real": 0,
+      "centavo": 0
+    },
+    "caixaInfinita": true,
+    "loja": {
+      "aberta": true,
+      "saudacao": "Chega mais! Tudo o que um viajante precisa, e um pouco do que não precisa.",
+      "despedida": "Boa estrada, e não diga que comprou de mim!",
+      "multiplicadorPreco": 1,
+      "compra": {
+        "ativo": false,
+        "percentual": 0.5
+      }
+    },
+    "descricao": "<p>Barraca de rua: itens comuns variados.</p>",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Mercador de Rua",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png"
+    }
+  },
+  "items": [
+    {
+      "_id": "8e40ZlvAkGwRjslx",
+      "name": "Mapa regional",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Mapa%20regional.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "viagem",
+        "quantidade": 1,
+        "preco": 500,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Pergaminho com estradas, vilas, rios e marcos de uma região (escolhida pelo jogador, de onde ele cresceu ou viajou). <strong>Exploração:</strong> em caminhos mapeados da região, o Mestre não pede teste para se orientar. <strong>Roleplay:</strong> mostrá-lo a moradores ajuda a pedir direções e a descobrir pontos de interesse. Pode ser anotado com perigos e rotas."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "mapa-regional",
+          "escolhaTexto": "",
+          "loja": {
+            "venda": true,
+            "quantidade": 3,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 100,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.8e40ZlvAkGwRjslx"
+    },
+    {
+      "_id": "4j8lm9CUpSEqg2Kt",
+      "name": "Kit de viagem (odre e panela)",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Kit%20de%20viagem%20(odre%20e%20panela).png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "viagem",
+        "quantidade": 1,
+        "preco": 300,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Odre de couro (2 litros) e panela de ferro com tampa e cabo dobrável. <strong>Descanso:</strong> permite uma refeição quente por descanso. <strong>Combate:</strong> como ação padrão, gastar 1 litro do odre apaga a condição Em Chamas em uma criatura adjacente (2 usos antes de reabastecer). <strong>Roleplay:</strong> cozinhar para o grupo ou para estranhos abre conversa."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "kit-de-viagem-odre-e-panela",
+          "loja": {
+            "venda": true,
+            "quantidade": 4,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 200,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.4j8lm9CUpSEqg2Kt"
+    },
+    {
+      "_id": "v1OOynNKQq1ZfjhR",
+      "name": "Capa de viagem",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Capa%20de%20viagem.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "viagem",
+        "quantidade": 1,
+        "preco": 400,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": true,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Capa grossa de lã encerada, com capuz. <strong>Clima:</strong> protege de chuva, vento e frio comum (sem penalidades por clima leve). <strong>Roleplay:</strong> o capuz esconde parte do rosto e dá ar de viajante anônimo."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "capa-de-viagem",
+          "loja": {
+            "venda": true,
+            "quantidade": 3,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 300,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.v1OOynNKQq1ZfjhR"
+    },
+    {
+      "_id": "5KRjgXNsxaBe3qPA",
+      "name": "Corda de marinheiro (15 m)",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Corda%20de%20marinheiro%20(15%20m).png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "viagem",
+        "quantidade": 1,
+        "preco": 500,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [
+          {
+            "pericia": "pontaria",
+            "valor": 3,
+            "condicao": "no teste de Pontaria para prender a corda em um ponto alto"
+          }
+        ],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Corda trançada de cânhamo, resistente à água salgada; aguenta o peso de duas pessoas. <strong>Uso:</strong> para prender a corda em um ponto alto (gancho, galho, ameia), o personagem faz um teste de Pontaria, com <strong>+3</strong> de bônus por usar a corda. Prendida, permite subir ou descer até 15 m. <strong>Combate:</strong> como ação de movimento, estica a corda entre dois pontos: criaturas que passem por ali correndo fazem Reflexos (CD 10) ou ficam Caídas. <strong>Utilidade:</strong> amarrar cargas, prisioneiros e pontes improvisadas."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "corda-de-marinheiro-15-m",
+          "loja": {
+            "venda": true,
+            "quantidade": 5,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 400,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.5KRjgXNsxaBe3qPA"
+    },
+    {
+      "_id": "Sa3n83Kw1QwcUu5X",
+      "name": "Ração de campanha (7 dias)",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Ra%C3%A7%C3%A3o%20de%20campanha%20(7%20dias).png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "viagem",
+        "quantidade": 1,
+        "preco": 400,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 2,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Pão seco, carne curada, frutas secas e sal, embrulhados em pano. <strong>Sobrevivência:</strong> alimenta uma pessoa por 7 dias e não estraga. <strong>Roleplay:</strong> repartir ração com um NPC faminto costuma render gratidão."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "racao-de-campanha-7-dias",
+          "loja": {
+            "venda": true,
+            "quantidade": null,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 500,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.Sa3n83Kw1QwcUu5X"
+    },
+    {
+      "_id": "czAwJxLdw9pOoNIw",
+      "name": "Trouxa de viagem",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Trouxa%20de%20viagem.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "viagem",
+        "quantidade": 1,
+        "preco": 200,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Saco de pano com alças: roupa de reposição, cobertor fino e ração para 1 dia. <strong>Descanso:</strong> o cobertor garante um descanso confortável em chão duro. <strong>Utilidade:</strong> carrega itens pequenos. <strong>Roleplay:</strong> é tudo que o personagem tem ao começar."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "trouxa-de-viagem",
+          "loja": {
+            "venda": true,
+            "quantidade": 4,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 600,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.czAwJxLdw9pOoNIw"
+    },
+    {
+      "_id": "L2b2g1aLWrQOU3mX",
+      "name": "Capuz escuro",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Capuz%20escuro.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "traje",
+        "quantidade": 1,
+        "preco": 300,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": true,
+        "vestido": false,
+        "bonus": [
+          {
+            "pericia": "intimidacao",
+            "valor": 1,
+            "condicao": null
+          }
+        ],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Capuz de tecido fosco que esconde o rosto e os cabelos. <strong>Bônus:</strong> +1 em Intimidação enquanto o capuz estiver vestido. <strong>Identidade:</strong> esconde o rosto de quem o vê de frente. <strong>Desvantagem:</strong> não esconde o corpo nem dá camuflagem. <strong>Roleplay:</strong> o estilo é típico de assassinos e mercenários."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "capuz-escuro",
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 700,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.L2b2g1aLWrQOU3mX"
+    },
+    {
+      "_id": "YVLY7iEbZRYE3jYN",
+      "name": "Apito",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Apito.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "ferramenta",
+        "quantidade": 1,
+        "preco": 100,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Apito de metal que se ouve a 100 m em ambiente aberto. <strong>Combate:</strong> como ação livre, avisa aliados em alcance longo (sinal combinado) ou chama guardas próximos (o Mestre decide quem responde). <strong>Roleplay:</strong> símbolo de autoridade."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "apito",
+          "loja": {
+            "venda": true,
+            "quantidade": 5,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 800,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.YVLY7iEbZRYE3jYN"
+    },
+    {
+      "_id": "Hqe3Hzdb2mvxwRgf",
+      "name": "Bolas de malabarismo",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Bolas%20de%20malabarismo.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "ferramenta",
+        "quantidade": 1,
+        "preco": 200,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 0.5,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Três bolas de couro recheadas de areia. <strong>Utilidade:</strong> exibições e passatempo; distraem crianças e plateias. <strong>Combate:</strong> arremessar as bolas para chamar atenção é uma ação de movimento e distrai uma criatura que não esteja em combate (a critério do Mestre)."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "bolas-de-malabarismo",
+          "loja": {
+            "venda": true,
+            "quantidade": 2,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 900,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.Hqe3Hzdb2mvxwRgf"
+    },
+    {
+      "_id": "ztkcG03rhIUEVP76",
+      "name": "Instrumento musical",
+      "type": "equipamento",
+      "img": "systems/icarus-rpg/img/Icones/itens/itens%20de%20origem/Instrumento%20musical.png",
+      "system": {
+        "tipo": "item-comum",
+        "categoriaItem": "ferramenta",
+        "quantidade": 1,
+        "preco": 1500,
+        "precoVenda": null,
+        "semVenda": false,
+        "espacos": 1,
+        "vestimenta": false,
+        "vestido": false,
+        "bonus": [
+          {
+            "pericia": "atuacao",
+            "valor": 1,
+            "condicao": "quando o instrumento é usado"
+          },
+          {
+            "pericia": "diplomacia",
+            "valor": 1,
+            "condicao": "quando usado em festas e ambientes nobres"
+          }
+        ],
+        "valeEnquantoPossui": false,
+        "usos": {
+          "max": 0,
+          "atual": 0
+        },
+        "origemItem": false,
+        "descricao": "Alaúde, flauta, tambor, gaita ou outro, à escolha do jogador. <strong>Bônus:</strong> +1 em Atuação quando usado. Em festas e ambientes nobres, também dá +1 em Diplomacia, além do bônus de Atuação. <strong>Roleplay:</strong> ganhar a vida, animar festas e conquistar plateias."
+      },
+      "flags": {
+        "icarus-rpg": {
+          "id": "instrumento-musical",
+          "escolhaTexto": "",
+          "loja": {
+            "venda": true,
+            "quantidade": 1,
+            "precoBase": null,
+            "oculto": false
+          }
+        }
+      },
+      "folder": null,
+      "sort": 1000,
+      "_key": "!actors.items!jui73iQbb7E8ymxj.ztkcG03rhIUEVP76"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "mercador-de-rua"
+    }
+  },
+  "_key": "!actors!jui73iQbb7E8ymxj"
+}

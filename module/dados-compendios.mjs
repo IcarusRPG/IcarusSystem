@@ -371,3 +371,45 @@ export function documentosDeVinculos(dados, pericias, tipo = "vinculo") {
     })
   };
 }
+
+/* ------------------------------ Mercadores (compêndio Icarus: Mercadores) ------------------------------ */
+
+/**
+ * Atores "mercador" de exemplo (tools/dados/mercadores.json). O estoque são cópias dos itens dos
+ * compêndios do sistema, achados pelo nome (fontes = { pacote: documentos[] }), com o preço deles e
+ * flags["icarus-rpg"].loja. Item que não existe nos compêndios entra em "faltando" (o build avisa).
+ * @returns {{ pastas: [], atores: object[], faltando: string[] }}
+ */
+export function documentosDeMercadores(dados, fontes) {
+  const faltando = [];
+  const atores = (dados?.mercadores ?? []).map((m, i) => {
+    const itens = (m.itens ?? []).map((ref, j) => {
+      const fonte = (fontes?.[ref.pacote] ?? []).find(d => normalizar(d.name) === normalizar(ref.nome));
+      if (!fonte) { faltando.push(`${m.nome}: ${ref.nome} (${ref.pacote})`); return null; }
+      const d = structuredClone(fonte);
+      delete d._key;
+      d._id = idEstavel(`mercador:${m.id}:item:${j}`);
+      d.folder = null;
+      d.sort = (j + 1) * 100;
+      if (d.system && "quantidade" in d.system) d.system.quantidade = d.type === "municao" ? 20 : 1;
+      d.flags = { ...(d.flags ?? {}), [SISTEMA_ID]: { ...(d.flags?.[SISTEMA_ID] ?? {}), loja: { venda: true, quantidade: ref.quantidade ?? null, precoBase: null, oculto: false } } };
+      return d;
+    }).filter(Boolean);
+    return {
+      _id: idEstavel(`mercador:${m.id}`), name: m.nome, type: "mercador", img: ICONE_PADRAO, folder: null, sort: (i + 1) * 100,
+      system: {
+        nivel: 1, defesa: 10, pv: { value: 10, max: 10 }, pm: { value: 0, max: 0 },
+        atributos: { FOR: 0, DES: 0, CON: 0, INT: 0, SAB: 0, CAR: 1 }, pericias: [], habilidades: [],
+        caixa: { ouroReal: 0, real: 0, centavo: 0 }, caixaInfinita: true,
+        loja: { aberta: true, saudacao: m.saudacao ?? "", despedida: m.despedida ?? "", multiplicadorPreco: 1, compra: { ativo: false, percentual: 0.5 } },
+        descricao: m.descricao ? `<p>${escapar(m.descricao)}</p>` : "", notas: ""
+      },
+      prototypeToken: { name: m.nome, actorLink: true, disposition: 0, texture: { src: ICONE_PADRAO } },
+      items: itens,
+      effects: [],
+      ownership: { default: 2 },
+      flags: { [SISTEMA_ID]: { id: m.id } }
+    };
+  });
+  return { pastas: [], atores, faltando };
+}

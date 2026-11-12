@@ -1,5 +1,23 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.32.0
+
+### Mercador (ator de loja) e vitrine
+- Novo tipo de ator **Mercador**, com ficha compacta para o Mestre. Ela tem três abas:
+  - **Ficha:** nível, Defesa, PV, PM, atributos, perícias, habilidades, equipamento e magias;
+  - **Loja:** o estoque. Arraste itens de compêndios ou do diretório; cada item tem quantidade ou ∞, preço base, preço final, oculto e remover. Também ficam aqui as falas, o multiplicador de preço, a caixa do mercador, "Abrir/Fechar loja" e "Ver como jogador";
+  - **Notas:** só para o Mestre.
+- **Vitrine:** quem não é Mestre nem dono, ao abrir o mercador, vê o retrato grande, o nome, a fala de abertura e a lista à venda, sem os números do mercador.
+  - Cada item mostra preço (com a dica em Ouro Real), estoque ou "Esgotado", quantidade e Comprar.
+  - O rodapé mostra o dinheiro de quem compra, com seletor se houver mais de um personagem. A vitrine se atualiza sozinha.
+- **Compra pelo Mestre (socket `loja:comprar`):** o jogador manda só o mercador, o item, a quantidade e o comprador.
+  - O Mestre recalcula o preço (base × multiplicador × quantidade, em centavos), confere a loja aberta, o estoque, o dinheiro e a posse do comprador.
+  - Ele debita com troco, entrega o item (empilhando munições e consumíveis do mesmo item), baixa o estoque, credita a caixa se ela não for infinita e registra no chat.
+  - Tudo é um bloco: se um passo falha, os anteriores são desfeitos. Sem Mestre conectado, nada muda.
+- **Venda ao mercador (opcional, `loja.compra.ativo`):** aba "Vender" na vitrine. O mercador paga o preço de venda do item ou o preço × percentual, da caixa. Itens "sem venda" não são aceitos.
+- Compêndio **Icarus: Mercadores** com Ferreiro, Boticário e Mercador de Rua. O estoque deles vem dos compêndios de armas, munições, armaduras e itens comuns, com os preços originais. Os retratos são provisórios.
+- Configuração do mundo: mensagem de compra pública ou só para o comprador e o Mestre.
+
 ## 0.31.0
 
 ### PV temporários
