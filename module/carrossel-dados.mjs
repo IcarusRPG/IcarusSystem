@@ -11,7 +11,7 @@ export const DISPOSICOES = { "-2": "secreto", "-1": "hostil", 0: "neutro", 1: "a
 
 /**
  * @param {object} p
- * @param {{ id, nome, img, iniciativa, oculto, derrotado, disposicao, ehPJ, dono?, pv?, pm? }[]} p.combatentes  em ordem
+ * @param {{ id, nome, img, iniciativa, oculto, derrotado, disposicao, ehPJ, categoria?, dono?, pv?, pm? }[]} p.combatentes  em ordem
  * @param {string|null} p.turnoId   combatente do turno (null = combate não começou)
  * @param {{ ehMestre: boolean, hud: object, mostrarBarras: boolean }} p.visao
  * @returns {object[]} cartas visíveis
@@ -22,7 +22,7 @@ export function cartasDoCombate({ combatentes, turnoId, visao }) {
   const proximos = new Map();
   if (iAtivo >= 0) for (let k = 1; k <= 2 && k < visiveis.length; k++) proximos.set(visiveis[(iAtivo + k) % visiveis.length].id, k);
   return visiveis.map(c => {
-    const ver = visibilidade({ ehMestre: visao.ehMestre, ehPJ: c.ehPJ, config: visao.hud });
+    const ver = visibilidade({ ehMestre: visao.ehMestre, ehPJ: c.ehPJ, categoria: c.categoria, config: visao.hud });
     const barra = (b, numeros) => (b && b.max > 0 ? { fracao: fracao(b.value, b.max), texto: textoDaBarra(b.value, b.max, numeros) } : null);
     const derrotado = !!c.derrotado || (c.pv?.max > 0 && c.pv.value <= 0);
     return {

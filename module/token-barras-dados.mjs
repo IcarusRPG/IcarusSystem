@@ -3,9 +3,14 @@
  * sem Foundry nem PIXI. Usadas por module/token-barras.mjs (desenho) e module/carrossel.mjs.
  *
  * Personagem de jogador (ator com dono jogador): PV, PM e Defesa para todos.
- * NPC/monstro (sem dono jogador): por padrão só o Mestre; opção de mostrar aos jogadores só o PV
- * em porcentagem (barra sem números). Opções gerais: PM, Defesa e texto numérico.
+ * NPC/mercador e ameaça (sem dono jogador): por padrão as barras ficam ocultas para TODOS, até para o
+ * Mestre (opções "ocultar" do mundo, ligadas). Desligadas: só o Mestre vê, ou os jogadores veem só o
+ * PV em porcentagem (barra sem números). O escudo de Defesa é só dos personagens de jogadores.
+ * Opções gerais: PM, Defesa (dos jogadores) e texto numérico.
  */
+
+/** Categoria do token: "pj" (dono jogador), "ameaca" (ator ameaça) ou "npc" (o resto, mercadores inclusive). */
+export const categoriaDoAtor = actor => (actor?.hasPlayerOwner ? "pj" : actor?.type === "ameaca" ? "ameaca" : "npc");
 
 /** Fração 0–1 (máximo 0 ou inválido → 0). */
 export const fracao = (valor, max) => {
@@ -18,16 +23,21 @@ export const pvBaixo = (valor, max) => { const f = fracao(valor, max); return f 
 
 /**
  * O que este usuário vê no token.
- * @param {{ ehMestre: boolean, ehPJ: boolean, config: { npcModo: "mestre"|"porcentagem", mostrarPM: boolean, mostrarDefesa: boolean, texto: "passarMouse"|"sempre"|"nunca" } }} p
+ * @param {{ ehMestre: boolean, ehPJ: boolean, categoria?: "pj"|"npc"|"ameaca", config: { npcModo: "mestre"|"porcentagem", mostrarPM: boolean, mostrarDefesa: boolean, ocultarNpc?: boolean, ocultarAmeacas?: boolean, texto: "passarMouse"|"sempre"|"nunca" } }} p
  * @returns {{ pv: boolean, pm: boolean, defesa: boolean, numeros: boolean, texto: "passarMouse"|"sempre"|"nunca" }}
  */
-export function visibilidade({ ehMestre, ehPJ, config }) {
+export function visibilidade({ ehMestre, ehPJ, categoria = null, config }) {
+  const cat = ehPJ ? "pj" : categoria ?? "npc";
+  if ((cat === "npc" && config.ocultarNpc) || (cat === "ameaca" && config.ocultarAmeacas)) {
+    return { pv: false, pm: false, defesa: false, numeros: false, texto: config.texto };
+  }
   const total = ehMestre || ehPJ;
   const pvPorcentagem = !total && config.npcModo === "porcentagem";
   return {
     pv: total || pvPorcentagem,
     pm: total && !!config.mostrarPM,
-    defesa: total && !!config.mostrarDefesa,
+    // Defesa: só nos personagens de jogadores (nunca em NPC, mercador ou ameaça)
+    defesa: ehPJ && !!config.mostrarDefesa,
     numeros: total,
     texto: config.texto
   };

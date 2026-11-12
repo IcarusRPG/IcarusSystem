@@ -1520,15 +1520,20 @@
         "Ativo": "Token: barras de PV/PM e escudo de Defesa",
         "AtivoDica": "Desenha as barras do Icarus abaixo do token (no lugar das barras padrão) e o escudo com a Defesa.",
         "Npc": "Token: barras de NPCs e monstros",
-        "NpcDica": "Personagens de jogadores mostram PV, PM e Defesa para todos. NPCs (sem dono jogador):",
+        "NpcDica": "Personagens de jogadores mostram PV, PM e Defesa para todos. NPCs, mercadores e ameaças (quando as opções de ocultar estão desligadas):",
         "NpcMestre": "Só o Mestre vê",
         "NpcPorcentagem": "Jogadores veem só o PV, sem números",
         "PM": "Token: mostrar a barra de PM",
-        "Defesa": "Token: mostrar o escudo de Defesa",
+        "Defesa": "Token: mostrar o escudo de Defesa dos personagens de jogadores",
         "Texto": "Token: texto atual/máx das barras",
         "TextoMouse": "Ao passar o mouse (ou com o token selecionado)",
         "TextoSempre": "Sempre",
-        "TextoNunca": "Nunca"
+        "TextoNunca": "Nunca",
+        "OcultarNpc": "Token: ocultar as barras de PV/PM de NPCs e mercadores",
+        "OcultarNpcDica": "Ligado (padrão): ninguém vê as barras de vida e de mana de NPCs e mercadores no token e no carrossel, nem o Mestre. Desligado: vale a opção \"barras de NPCs e monstros\".",
+        "OcultarAmeacas": "Token: ocultar as barras de PV/PM das ameaças",
+        "OcultarAmeacasDica": "Ligado (padrão): ninguém vê as barras de vida e de mana das ameaças no token e no carrossel, nem o Mestre. Desligado: vale a opção \"barras de NPCs e monstros\".",
+        "DefesaDica": "NPCs, mercadores e ameaças nunca mostram a Defesa no token."
       }
     },
     "Carrossel": {

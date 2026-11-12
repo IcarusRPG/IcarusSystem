@@ -1,7 +1,7 @@
 /** Barras de PV/PM e escudo de Defesa no token: visibilidade e geometria. */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { fracao, pvBaixo, visibilidade, layoutDoHud, textoDaBarra } from "../module/token-barras-dados.mjs";
+import { fracao, pvBaixo, visibilidade, layoutDoHud, textoDaBarra, categoriaDoAtor } from "../module/token-barras-dados.mjs";
 
 const config = { npcModo: "mestre", mostrarPM: true, mostrarDefesa: true, texto: "passarMouse" };
 
@@ -56,4 +56,19 @@ test("Migração: bar1 = PV e bar2 = PM; rodar duas vezes não muda nada", async
   assert.equal(await configurarBarrasDosTokens(atores), 2);
   assert.deepEqual(atualizacoes, [{ "prototypeToken.bar1.attribute": "pv", "prototypeToken.bar2.attribute": "pm" }, { "prototypeToken.bar2.attribute": "pm" }]);
   assert.equal(await configurarBarrasDosTokens(atores), 0, "idempotente");
+});
+
+test("Opções novas: barras de NPCs/mercadores e de ameaças ocultas para todos (padrão); Defesa só nos PJs", () => {
+  const padrao = { ...config, ocultarNpc: true, ocultarAmeacas: true };
+  const nada = { pv: false, pm: false, defesa: false, numeros: false, texto: "passarMouse" };
+  for (const ehMestre of [true, false]) {
+    assert.deepEqual(visibilidade({ ehMestre, ehPJ: false, categoria: "npc", config: padrao }), nada, "mercador/NPC: nem o Mestre vê");
+    assert.deepEqual(visibilidade({ ehMestre, ehPJ: false, categoria: "ameaca", config: padrao }), nada, "ameaça: nem o Mestre vê");
+  }
+  assert.deepEqual(visibilidade({ ehMestre: false, ehPJ: true, categoria: "pj", config: padrao }), { pv: true, pm: true, defesa: true, numeros: true, texto: "passarMouse" }, "jogadores continuam iguais");
+  // Desligando só a das ameaças: o Mestre vê PV e PM da ameaça, mas nunca a Defesa
+  const soNpc = { ...padrao, ocultarAmeacas: false };
+  assert.deepEqual(visibilidade({ ehMestre: true, ehPJ: false, categoria: "ameaca", config: soNpc }), { pv: true, pm: true, defesa: false, numeros: true, texto: "passarMouse" });
+  assert.equal(visibilidade({ ehMestre: true, ehPJ: false, categoria: "npc", config: soNpc }).pv, false, "NPC continua oculto");
+  assert.deepEqual([categoriaDoAtor({ hasPlayerOwner: true, type: "personagem" }), categoriaDoAtor({ type: "ameaca" }), categoriaDoAtor({ type: "mercador" }), categoriaDoAtor({ type: "personagem" })], ["pj", "ameaca", "npc", "npc"]);
 });
