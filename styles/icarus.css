@@ -1484,3 +1484,9 @@ body.game {
 .ficha-mercador-corpo .fm-falas { margin: 4px 0; }
 .ficha-mercador-corpo .fm-falas summary { cursor: pointer; color: var(--ic-ciano-titulo); }
 .ficha-mercador-corpo .fm-fala { flex-direction: column; align-items: stretch; }
+
+/* --- Mercador: Roubar e estado do roubo --- */
+.vitrine-corpo .vm-roubar { color: var(--ic-texto); border-color: var(--ic-pv); }
+.vitrine-corpo .vm-roubar i { color: var(--ic-pv); }
+.ficha-mercador-corpo .fm-estado { margin: 4px 0; padding-left: 18px; color: var(--ic-apagado); }
+.ficha-mercador-corpo .fm-estado a { margin-left: 6px; }

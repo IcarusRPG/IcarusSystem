@@ -7,9 +7,9 @@
 import { SISTEMA_ID, ATRIBUTOS, ICONE_PADRAO } from "../config.mjs";
 import { formatarPreco, precoEmOuro, totalEmCentavos } from "../moeda.mjs";
 import {
-  lojaDoItem, precoBase, precoUnitario, precoDoItemNaLoja, TIPOS_VENDAVEIS, LIBERA_COM, TESTES_DE_BARGANHA, RESULTADOS, textoDasFalasPadrao
+  lojaDoItem, precoBase, precoUnitario, precoDoItemNaLoja, TIPOS_VENDAVEIS, LIBERA_COM, TESTES_DE_BARGANHA, RESULTADOS, textoDasFalasPadrao, ROUBO_PADRAO
 } from "../loja.mjs";
-import { estadoDaBarganha, efeitosDoMercador, reiniciarBarganhas, acalmarGuardas } from "../loja-foundry.mjs";
+import { estadoDaBarganha, efeitosDoMercador, reiniciarBarganhas, acalmarGuardas, zerarTentativasDoUsuario } from "../loja-foundry.mjs";
 import { abrirVitrine } from "./vitrine-mercador.mjs";
 
 const { HandlebarsApplicationMixin, DialogV2 } = foundry.applications.api;
@@ -61,7 +61,8 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
       criarItem: FichaMercador._criarItem,
       restaurarFalas: FichaMercador._restaurarFalas,
       reiniciarBarganhas: FichaMercador._reiniciarBarganhas,
-      acalmarGuardas: FichaMercador._acalmarGuardas
+      acalmarGuardas: FichaMercador._acalmarGuardas,
+      zerarTentativas: FichaMercador._zerarTentativas
     }
   };
 
@@ -105,7 +106,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
           // Preço do mercador digitado em Reais (guardado em centavos); vazio = preço do item
           precoBase: l.precoBase === null ? "" : l.precoBase / 100, precoItem: formatarPreco(precoBase(i)),
           precoFinal: formatarPreco(final), dicaOuro: precoEmOuro(final), oculto: l.oculto,
-          semVenda: !!i.system.semVenda && l.precoBase === null,
+          semVenda: !!i.system.semVenda && l.precoBase === null, cdRoubo: l.cdRoubo ?? "",
           libera: LIBERA_COM.map(v => ({ valor: v, rotulo: loc(`ICARUS.Mercador.Libera.${v}`), selecionado: v === l.liberaCom }))
         };
       }),
@@ -119,7 +120,12 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
         })),
         efeitos: [efeitos.desconto ? `−${efeitos.desconto}%` : "", efeitos.acrescimo ? `+${efeitos.acrescimo}%` : ""].filter(Boolean).join(" · "),
         guardas: !!actor.getFlag(F, "guardas"),
-        algumFeito: TESTES_DE_BARGANHA.some(t => estado[t]?.feito)
+        algumFeito: TESTES_DE_BARGANHA.some(t => estado[t]?.feito) || Object.keys(actor.getFlag(F, "tentativasSemDinheiro") ?? {}).length > 0
+      },
+      // Roubo e compra sem dinheiro: tentativas por jogador e o registro dos roubos
+      roubo: {
+        tentativas: Object.entries(actor.getFlag(F, "tentativasSemDinheiro") ?? {}).map(([usuarioId, n]) => ({ usuarioId, n, nome: game.users.get(usuarioId)?.name ?? usuarioId })),
+        roubos: [...(actor.getFlag(F, "roubos") ?? [])].reverse().map(r => ({ ...r, texto: fmt(r.passou ? "ICARUS.Mercador.RouboPassou" : "ICARUS.Mercador.RouboPego", { por: r.por, item: r.item }) }))
       },
       descricao: await TextEditor.enrichHTML(s.descricao ?? "", { async: true }),
       notas: s.notas
@@ -141,6 +147,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
         if (chave === "oculto") valor = el.checked;
         else if (chave === "liberaCom") valor = LIBERA_COM.includes(el.value) ? el.value : "qualquer";
         else if (chave === "precoBase") valor = centavos(el.value);
+        else if (chave === "cdRoubo") valor = el.value === "" ? null : Math.max(0, Math.trunc(Number(el.value) || 0));
         else valor = Math.max(0, Math.trunc(Number(el.value) || 0));
         return item.update({ [`flags.${F}.loja.${chave}`]: valor });
       });
@@ -253,7 +260,15 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
     const ok = await DialogV2.confirm({ window: { title: loc("ICARUS.Mercador.RestaurarFalas") }, content: `<p>${esc(loc("ICARUS.Mercador.RestaurarFalasTexto"))}</p>`, rejectClose: false });
     if (!ok) return;
     const falas = Object.fromEntries(TESTES_DE_BARGANHA.map(t => [t, Object.fromEntries(RESULTADOS.map(r => [r, textoDasFalasPadrao(t, r)]))]));
-    return this.document.update({ "system.loja.barganha.falas": falas });
+    return this.document.update({
+      "system.loja.barganha.falas": falas,
+      "system.loja.roubo.aviso": ROUBO_PADRAO.aviso, "system.loja.roubo.falasGuardas": ROUBO_PADRAO.falasGuardas,
+      "system.loja.roubo.falasFlagrante": ROUBO_PADRAO.falasFlagrante, "system.loja.roubo.sucesso": ROUBO_PADRAO.sucesso
+    });
+  }
+
+  static _zerarTentativas(event, alvo) {
+    return zerarTentativasDoUsuario(this.document, alvo.dataset.usuario);
   }
 
   static _reiniciarBarganhas() {

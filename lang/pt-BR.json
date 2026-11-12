@@ -2278,8 +2278,23 @@
       "RestaurarFalas": "Restaurar falas padrão",
       "RestaurarFalasTexto": "Trocar as 12 falas do mercador pelas falas padrão?",
       "Falas": "Falas",
-      "FalasDica": "Uma frase por linha; o sistema sorteia uma a cada teste. Use {personagem} e {mercador}.",
-      "Oculto": "Oculto"
+      "FalasDica": "Uma frase por linha; o sistema sorteia uma. Use {personagem} e {mercador} (e {item} na mensagem do roubo).",
+      "Oculto": "Oculto",
+      "RouboTitulo": "Roubo e guardas",
+      "PermitirRoubar": "Permitir roubar",
+      "CdRoubo": "CD do roubo (Prestidigitação)",
+      "CdRouboItem": "CD roubo",
+      "CdRouboItemDica": "CD do roubo deste item. Vazio = a CD do mercador.",
+      "Tentativas": "Tentativas sem dinheiro antes dos guardas",
+      "RouboGuardasDica": "Fechar a loja, avisar o Mestre e a nota de consequência usam as opções da Barganha.",
+      "TentativasSemDinheiro": "tentativa(s) sem dinheiro",
+      "Zerar": "zerar",
+      "RouboPassou": "{por} roubou {item}",
+      "RouboPego": "{por} foi pego tentando roubar {item}",
+      "AvisoSemDinheiro": "Aviso nas primeiras tentativas sem dinheiro",
+      "FalasGuardasSemDinheiro": "Guardas na última tentativa sem dinheiro",
+      "FalasFlagrante": "Flagrante no roubo",
+      "MensagemRoubo": "Roubo bem-sucedido (só para quem roubou e o Mestre; use {item})"
     },
     "Loja": {
       "Fechada": "Loja fechada",
@@ -2313,7 +2328,8 @@
         "semDinheiro": "Dinheiro insuficiente: {item} custa {total}.",
         "naoCompra": "Este mercador não compra itens.",
         "semVenda": "O mercador não compra {item}.",
-        "caixaSemDinheiro": "O mercador não tem {total} no caixa."
+        "caixaSemDinheiro": "O mercador não tem {total} no caixa.",
+        "rouboDesligado": "Este mercador não deixa roubar."
       },
       "Config": {
         "Chat": "Mensagem de compra no chat",
@@ -2346,6 +2362,12 @@
           "mensagemUsada": "Esta rolagem já foi usada.",
           "mensagemAntiga": "Rolagem antiga demais; role de novo."
         }
+      },
+      "Roubo": {
+        "Roubar": "Roubar",
+        "Dica": "Prestidigitação contra a CD do mercador: passou, leva 1 unidade sem pagar; falhou, ele chama os guardas.",
+        "SemDinheiroMestre": "{personagem} tentou comprar de {mercador} sem dinheiro {n} vezes: o mercador chamou os guardas. A loja fechou.",
+        "FlagranteMestre": "{personagem} foi pego roubando {item} de {mercador}: o mercador chamou os guardas. A loja fechou."
       }
     }
   }

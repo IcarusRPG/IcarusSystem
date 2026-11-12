@@ -7,7 +7,7 @@
 import { SISTEMA_ID } from "../config.mjs";
 import { formatarPreco, precoEmOuro, totalEmCentavos } from "../moeda.mjs";
 import { lojaDoItem, precoUnitario, visivelNaVitrine, precoDeVenda, quantidadeVendavel, TIPOS_VENDAVEIS, TESTES_DE_BARGANHA } from "../loja.mjs";
-import { pedirNaLoja, pedirBarganha, estadoDaBarganha, efeitosDoMercador } from "../loja-foundry.mjs";
+import { pedirNaLoja, pedirBarganha, pedirRoubo, estadoDaBarganha, efeitosDoMercador } from "../loja-foundry.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const F = SISTEMA_ID;
@@ -42,7 +42,7 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     classes: ["icarus", "icarus-dialogo", "vitrine-mercador"],
     position: { width: 760, height: 860 },
     window: { resizable: true, icon: "fa-solid fa-store" },
-    actions: { comprar: VitrineMercador._comprar, vender: VitrineMercador._vender, aba: VitrineMercador._aba, barganha: VitrineMercador._barganha }
+    actions: { comprar: VitrineMercador._comprar, vender: VitrineMercador._vender, aba: VitrineMercador._aba, barganha: VitrineMercador._barganha, roubar: VitrineMercador._roubar }
   };
 
   static PARTS = { vitrine: { template: `systems/${SISTEMA_ID}/templates/vitrine-mercador.hbs`, scrollable: [".vm-lista"] } };
@@ -72,7 +72,8 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
         id: i.id, nome: i.name, img: i.img, dica: (i.system.descricao ?? "").replace(/<[^>]+>/g, "").trim(),
         estoque: l.quantidade, max: Math.max(1, l.quantidade), liberado: l.oculto,
         preco: formatarPreco(preco), precoOuro: precoEmOuro(preco), esgotado: semEstoque,
-        desativado: !aberta || !comprador || semEstoque || preco <= 0
+        desativado: !aberta || !comprador || semEstoque || preco <= 0,
+        roubarDesativado: !aberta || !comprador || semEstoque || !game.users.activeGM
       };
     });
     const config = s.loja.barganha;
@@ -95,7 +96,8 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
       : [];
     return {
       img: m.img, nome: m.name, saudacao: s.loja.saudacao, aberta,
-      testes, semMestre, guardas: !!m.getFlag(F, "guardas"), fala: estado.ultima?.fala ?? "",
+      testes, semMestre, guardas: !!m.getFlag(F, "guardas"), fala: falaAtual(m, estado),
+      podeRoubar: s.loja.roubo?.permitir !== false,
       desconto: efeitos.desconto, acrescimo: efeitos.acrescimo,
       itens, venda, podeVender: !!compra?.ativo, aba: this.aba,
       compradores: compradoresPossiveis().map(a => ({ uuid: a.uuid, nome: a.name, selecionado: a.uuid === this.compradorUuid })),
@@ -146,6 +148,14 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     if (!ok) alvo.disabled = false;
   }
 
+  /** Roubar 1 unidade (Prestidigitação contra a CD do mercador ou do item). */
+  static async _roubar(event, alvo) {
+    if (!this.comprador) return ui.notifications.warn(loc("ICARUS.Loja.SemComprador"));
+    alvo.disabled = true;
+    await pedirRoubo({ mercador: this.mercador, itemId: alvo.closest("[data-item-id]").dataset.itemId, comprador: this.comprador });
+    alvo.disabled = false;
+  }
+
   static async _vender(event, alvo) {
     const linha = alvo.closest("[data-item-id]");
     const quantidade = Math.trunc(Number(linha.querySelector("[data-quantidade]")?.value) || 1);
@@ -154,6 +164,18 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
     await pedirNaLoja("vender", { mercador: this.mercador, itemId: linha.dataset.itemId, quantidade, comprador: this.comprador });
     alvo.disabled = false;
   }
+}
+
+/**
+ * Fala do balão: a mais recente entre a da Barganha (para todos) e a da loja (aviso de compra sem
+ * dinheiro, só para quem tentou; guardas, para todos).
+ */
+function falaAtual(mercador, estado) {
+  const loja = mercador.getFlag(F, "falaLoja");
+  const daLoja = loja && (!loja.para || loja.para === game.user.id) ? loja : null;
+  const daBarganha = estado.ultima ? { texto: estado.ultima.fala, quando: estado.ultima.quando } : null;
+  const mais = [daLoja, daBarganha].filter(Boolean).sort((a, b) => (b.quando ?? 0) - (a.quando ?? 0))[0];
+  return mais?.texto ?? "";
 }
 
 /** Abre (ou traz para frente) a vitrine do mercador. */
