@@ -191,7 +191,8 @@ Hooks.once("init", () => {
 
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {
-    personagem: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] }
+    personagem: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] },
+    mercador: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] }
   };
 
   // Iniciativa = 1d20 + total da perícia Iniciativa

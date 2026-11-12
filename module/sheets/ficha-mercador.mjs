@@ -1,10 +1,21 @@
 /**
- * Ficha do Mercador (ApplicationV2: ActorSheetV2 + Handlebars), compacta, com 3 abas:
- * Ficha (números digitados), Loja (estoque finito: arrastar de qualquer lugar ou criar; quantidade,
- * preço do mercador, oculto, "libera com"; e a Barganha) e Notas.
+ * Ficha do Mercador (ApplicationV2: ActorSheetV2 + Handlebars), compacta, com 6 abas:
+ * Resumo (nível, Defesa derivada ou manual, PV, PM, atributos, proficiências), Perícias (as do
+ * Icarus, com rolagem), Poderes/Magias (itens, como no personagem), Equipamento e Ataques (o que o
+ * mercador usa: equipar, empunhar, atacar), Loja (estoque finito e Barganha) e Notas.
+ * Equipamento × estoque: o estoque tem flags["icarus-rpg"].loja; o resto é do mercador.
  * Quem não é Mestre nem dono não vê esta ficha: render() abre a vitrine (vitrine-mercador.mjs).
  */
-import { SISTEMA_ID, ATRIBUTOS, ICONE_PADRAO } from "../config.mjs";
+import { SISTEMA_ID, ATRIBUTOS, ICONE_PADRAO, PERICIAS, PROFICIENCIAS_ARMA, CATEGORIAS_ARMADURA_CORPO, TIPOS_EQUIPAVEIS } from "../config.mjs";
+import { comSinal } from "../regras.mjs";
+import { calcularAtaque, calcularDano, totalMunicao } from "../combate.mjs";
+import { itensDoAtor, rolarAtaque, rolarDano, recarregar } from "../combate-chat.mjs";
+import { rolarPericia, rolarAtributo, modoDoEvento } from "../rolls.mjs";
+import { usarPoder } from "../acoes.mjs";
+import { lancarMagia } from "../magias.mjs";
+import { alternarVestido } from "../itens-comuns.mjs";
+import { ehVestimenta } from "../origens-dados.mjs";
+import { ehEstoque } from "../mercador-dados.mjs";
 import { formatarPreco, precoEmOuro, totalEmCentavos } from "../moeda.mjs";
 import {
   lojaDoItem, precoBase, precoUnitario, precoDoItemNaLoja, TIPOS_VENDAVEIS, LIBERA_COM, TESTES_DE_BARGANHA, RESULTADOS, textoDasFalasPadrao, ROUBO_PADRAO
@@ -56,20 +67,29 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
       alternarLoja: FichaMercador._alternarLoja,
       removerItem: FichaMercador._removerItem,
       abrirItem: FichaMercador._abrirItem,
-      adicionarLinha: FichaMercador._adicionarLinha,
-      removerLinha: FichaMercador._removerLinha,
       criarItem: FichaMercador._criarItem,
       restaurarFalas: FichaMercador._restaurarFalas,
       reiniciarBarganhas: FichaMercador._reiniciarBarganhas,
       acalmarGuardas: FichaMercador._acalmarGuardas,
-      zerarTentativas: FichaMercador._zerarTentativas
+      zerarTentativas: FichaMercador._zerarTentativas,
+      rolarPericia: FichaMercador._rolarPericia,
+      rolarAtributo: FichaMercador._rolarAtributo,
+      usarPoder: FichaMercador._usarPoder,
+      lancarMagia: FichaMercador._lancarMagia,
+      atacar: FichaMercador._atacar,
+      dano: FichaMercador._dano,
+      recarregar: FichaMercador._recarregar,
+      equipar: FichaMercador._equipar,
+      empunhar: FichaMercador._empunhar,
+      paraLoja: FichaMercador._paraLoja,
+      paraMercador: FichaMercador._paraMercador
     }
   };
 
   static PARTS = { ficha: { template: `systems/${SISTEMA_ID}/templates/actor/mercador.hbs`, scrollable: [".fm-corpo"] } };
 
   /** Aba aberta (só nesta janela). */
-  aba = "ficha";
+  aba = "resumo";
 
   /** Jogador sem posse não vê a ficha: abre a vitrine. */
   render(options, _options) {
@@ -85,19 +105,57 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
     const s = actor.system;
     const mult = s.loja.multiplicadorPreco;
     const efeitos = efeitosDoMercador(actor);
-    const estoque = actor.items.filter(i => TIPOS_VENDAVEIS.includes(i.type) && i.flags?.[F]?.loja);
-    const proprios = actor.items.filter(i => !estoque.includes(i));
-    const porTipo = tipo => proprios.filter(i => i.type === tipo).map(i => ({ id: i.id, nome: i.name, img: i.img, equipado: !!i.system.equipado, temEquipado: "equipado" in (i.system ?? {}) }));
+    const src = actor._source.system;
+    // Estoque (vende) × itens do mercador (usa): o critério é a flag da loja
+    const estoque = actor.items.filter(i => TIPOS_VENDAVEIS.includes(i.type) && ehEstoque(i));
+    const proprios = actor.items.filter(i => !ehEstoque(i));
+    const itens = itensDoAtor(actor);
     const estado = estadoDaBarganha(actor);
     const b = s.loja.barganha;
+    const resumoDe = html => String(html ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 140);
+    // Perícias do Icarus: as treinadas, com bônus ou usadas pela loja em cima; o resto em "Todas"
+    const DA_LOJA = ["barganha", "diplomacia", "intimidacao", "prestidigitacao"];
+    const treinos = t => [0, 1, 2].map(v => ({ valor: v, rotulo: loc(`ICARUS.Mercador.Treinos.${v}`), selecionado: v === t }));
+    const linhas = PERICIAS.map(p => {
+      const d = s.pericias[p.chave];
+      return { chave: p.chave, nome: p.nome, atributo: d.atributo, total: comSinal(d.total), treinos: treinos(src.pericias[p.chave]?.treino ?? 0),
+        outros: src.pericias[p.chave]?.outros ?? 0, loja: DA_LOJA.includes(p.chave), destaque: (src.pericias[p.chave]?.treino ?? 0) > 0 || (src.pericias[p.chave]?.outros ?? 0) !== 0 };
+    });
+    const ataques = proprios.filter(i => i.type === "arma" && i.system.empunhada).map(i => {
+      const a = i.system;
+      const atq = calcularAtaque(s, a, a.modos[0], itens);
+      return {
+        id: i.id, nome: i.name, img: i.img, ataque: comSinal(atq.bonus), dano: calcularDano(s, a, a.modos[0]).texto,
+        ataqueDica: loc(`ICARUS.Pericias.${atq.pericia}`) + (a.proficiente ? "" : ` · ${loc("ICARUS.Mercador.SemProficiencia")}`),
+        municao: a.grupo === "fogo" ? `${a.carregados}/${a.capacidadeDisparos}` : a.municaoTipo ? `${totalMunicao(itens, a.municaoTipo)} ${loc(`ICARUS.Municao.Tipos.${a.municaoTipo}`)}` : "",
+        ehFogo: a.grupo === "fogo",
+        modos: a.modos.map(m => ({ modo: m, rotulo: loc(`ICARUS.Armas.Botoes.${m}`), detalhado: loc("ICARUS.Mercador.AtaqueDica") }))
+      };
+    });
+    const ehEquipavel = i => i.type === "equipamento" && (TIPOS_EQUIPAVEIS.includes(i.system.tipo) || ehVestimenta(i));
     return {
       actor, aba: this.aba, editavel: this.isEditable, gm: game.user.isGM,
-      img: actor.img, nome: actor.name, s,
-      atributos: ATRIBUTOS.map(k => ({ chave: k, rotulo: loc(`ICARUS.Atributos.${k}`), valor: s.atributos[k] })),
-      pericias: s.pericias.map((p, i) => ({ ...p, i })),
-      habilidades: s.habilidades.map((h, i) => ({ ...h, i })),
-      magias: porTipo("magia"),
-      equipamento: [...porTipo("arma"), ...porTipo("equipamento"), ...porTipo("municao")],
+      img: actor.img, nome: actor.name, s, src,
+      abas: ["resumo", "pericias", "poderes", "equipamento", "loja", "notas"].map(id => ({ id, rotulo: loc(`ICARUS.Mercador.Abas.${id}`), ativa: id === this.aba })),
+      defesa: {
+        total: s.defesa.total, manual: !!src.defesaManual?.ativo,
+        formula: `10 + ${s.defesa.atributo} ${comSinal(s.atributos[s.defesa.atributo].total)}${s.defesa.armadura ? ` + ${s.defesa.armadura}` : ""}${s.defesa.escudo ? ` + ${s.defesa.escudo}` : ""}${s.defesa.outros ? ` ${comSinal(s.defesa.outros)}` : ""}`,
+        dica: src.defesaManual?.ativo ? loc("ICARUS.Mercador.DefesaManualDica") : loc("ICARUS.Mercador.DefesaDerivadaDica")
+      },
+      atributos: ATRIBUTOS.map(k => ({ chave: k, rotulo: loc(`ICARUS.Atributos.${k}`), base: src.atributos[k].base, total: comSinal(s.atributos[k].total) })),
+      proficiencias: {
+        armas: PROFICIENCIAS_ARMA.map(v => ({ valor: v, rotulo: loc(`ICARUS.Proficiencias.ArmasOp.${v}`), marcado: src.proficiencias.armas.includes(v) })),
+        armaduras: CATEGORIAS_ARMADURA_CORPO.map(v => ({ valor: v, rotulo: loc(`ICARUS.Proficiencias.ArmadurasOp.${v}`), marcado: src.proficiencias.armaduras.includes(v) }))
+      },
+      pericias: { principais: linhas.filter(l => l.loja || l.destaque), outras: linhas.filter(l => !l.loja && !l.destaque) },
+      poderes: proprios.filter(i => i.type === "poder").map(i => ({ id: i.id, nome: i.name, img: i.img, resumo: resumoDe(i.system.descricao) })),
+      magias: proprios.filter(i => i.type === "magia").map(i => ({ id: i.id, nome: i.name, img: i.img, info: fmt("ICARUS.Mercador.MagiaInfo", { nivel: i.system.nivel, custo: i.system.custoPM }) })),
+      ataques,
+      equipamento: proprios.filter(i => TIPOS_VENDAVEIS.includes(i.type)).map(i => ({
+        id: i.id, nome: i.name, img: i.img, ehArma: i.type === "arma", empunhada: !!i.system.empunhada,
+        equipavel: ehEquipavel(i), equipado: ehVestimenta(i) && i.system.tipo === "item-comum" ? !!i.system.vestido : !!i.system.equipado,
+        info: i.type === "equipamento" && i.system.bonusDefesa ? `+${i.system.bonusDefesa} ${loc("ICARUS.Defesa.Rotulo")}` : i.type === "municao" ? `×${i.system.quantidade}` : ""
+      })),
       estoque: estoque.map(i => {
         const l = lojaDoItem(i);
         const final = precoUnitario(i, mult, efeitos);
@@ -152,20 +210,13 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
         return item.update({ [`flags.${F}.loja.${chave}`]: valor });
       });
     }
-    // Perícias e habilidades: listas simples (o formulário não monta arrays sozinho)
-    for (const campo of raiz.querySelectorAll("[data-lista]")) {
-      campo.addEventListener("change", ev => {
-        const el = ev.currentTarget;
-        const lista = foundry.utils.deepClone(this.document.system[el.dataset.lista]);
-        const linha = lista[Number(el.dataset.indice)];
-        if (!linha) return;
-        linha[el.dataset.campo] = el.type === "number" ? Math.trunc(Number(el.value) || 0) : el.value;
-        this.document.update({ [`system.${el.dataset.lista}`]: lista });
+    // Proficiências (listas de marcar: o formulário não monta arrays sozinho)
+    for (const caixa of raiz.querySelectorAll("[data-proficiencia]")) {
+      caixa.addEventListener("change", ev => {
+        const lista = ev.currentTarget.dataset.proficiencia;
+        const marcados = [...raiz.querySelectorAll(`[data-proficiencia="${lista}"]:checked`)].map(e => e.value);
+        this.document.update({ [`system.proficiencias.${lista}`]: marcados });
       });
-    }
-    // Equipado (lista simples)
-    for (const caixa of raiz.querySelectorAll("[data-equipado]")) {
-      caixa.addEventListener("change", ev => this.document.items.get(ev.currentTarget.closest("[data-item-id]")?.dataset.itemId)?.update({ "system.equipado": ev.currentTarget.checked }));
     }
   }
 
@@ -191,6 +242,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (item.parent === this.document && (item.flags?.[F]?.loja || this.aba !== "loja")) return;
     const novo = item.toObject();
     delete novo._id;
+    if (!["poder", "magia", ...TIPOS_VENDAVEIS].includes(novo.type)) return ui.notifications.warn(loc("ICARUS.Mercador.TipoNaoAceito"));
     if (this.aba === "loja") {
       if (!TIPOS_VENDAVEIS.includes(novo.type)) return ui.notifications.warn(loc("ICARUS.Loja.NaoVendavel"));
       const r = await perguntarEstoque({ titulo: fmt("ICARUS.Mercador.AdicionarAoEstoque", { item: novo.name }), preco: precoDoItemNaLoja(novo) });
@@ -199,6 +251,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
       if (novo.system && "quantidade" in novo.system) novo.system.quantidade = novo.type === "municao" ? 20 : 1;
       if (novo.system && "equipado" in novo.system) novo.system.equipado = false;
     }
+    else if (novo.flags?.[F]?.loja) delete novo.flags[F].loja;
     await this.document.createEmbeddedDocuments("Item", [novo]);
   }
 
@@ -229,16 +282,69 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
     this.document.items.get(alvo.closest("[data-item-id]")?.dataset.itemId)?.sheet?.render(true);
   }
 
-  static _adicionarLinha(event, alvo) {
-    const lista = alvo.dataset.lista;
-    const nova = lista === "pericias" ? { nome: "", bonus: 0 } : { nome: "", descricao: "" };
-    return this.document.update({ [`system.${lista}`]: [...foundry.utils.deepClone(this.document.system[lista]), nova] });
+  /** Item da linha clicada. */
+  _itemDe(alvo) {
+    return this.document.items.get(alvo.closest("[data-item-id]")?.dataset.itemId);
   }
 
-  static _removerLinha(event, alvo) {
-    const lista = alvo.dataset.lista;
-    const nova = foundry.utils.deepClone(this.document.system[lista]).filter((_, i) => i !== Number(alvo.dataset.indice));
-    return this.document.update({ [`system.${lista}`]: nova });
+  static _rolarPericia(event, alvo) {
+    return rolarPericia(this.document, alvo.dataset.pericia, modoDoEvento(event));
+  }
+
+  static _rolarAtributo(event, alvo) {
+    return rolarAtributo(this.document, alvo.dataset.atributo, modoDoEvento(event));
+  }
+
+  static _usarPoder(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item ? usarPoder(this.document, item) : null;
+  }
+
+  static _lancarMagia(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item ? lancarMagia(this.document, item, { aprimorado: true }) : null;
+  }
+
+  /** Atacar: clique rola na hora; Shift/Ctrl: vantagem/desvantagem (como na ficha do personagem). */
+  static _atacar(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item ? rolarAtaque(this.document, item, alvo.dataset.modo, { ...modoDoEvento(event), rapido: !event.altKey }) : null;
+  }
+
+  static _dano(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item ? rolarDano(this.document, item, item.system.modos[0]) : null;
+  }
+
+  static _recarregar(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item ? recarregar(this.document, item) : null;
+  }
+
+  /** Equipar: a mesma regra da ficha do personagem (armadura e túnica no Limite de Vestimentas). */
+  static _equipar(event, alvo) {
+    const item = this._itemDe(alvo);
+    if (!item) return null;
+    if (ehVestimenta(item)) return alternarVestido(this.document, item);
+    return item.update({ "system.equipado": !item.system.equipado });
+  }
+
+  static _empunhar(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item?.update({ "system.empunhada": !item.system.empunhada });
+  }
+
+  /** Passa um item do mercador para o estoque da loja (desequipado). */
+  static _paraLoja(event, alvo) {
+    const item = this._itemDe(alvo);
+    if (!item) return null;
+    return item.update({ [`flags.${F}.loja`]: { ...LOJA_PADRAO }, ...("equipado" in item.system ? { "system.equipado": false } : {}), ...("empunhada" in item.system ? { "system.empunhada": false } : {}), ...("vestido" in item.system ? { "system.vestido": false } : {}) });
+  }
+
+  /** Tira um item do estoque: passa a ser do mercador (ele mesmo usa). */
+  static _paraMercador(event, alvo) {
+    const item = this._itemDe(alvo);
+    return item?.update({ [`flags.${F}.-=loja`]: null });
   }
 
   /** "Criar item": um equipamento novo já no estoque (para o que não existe em compêndio). */

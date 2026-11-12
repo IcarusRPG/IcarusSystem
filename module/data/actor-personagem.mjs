@@ -188,6 +188,11 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     return super.migrateData(source);
   }
 
+  /** Itens que entram na derivação (o Mercador tira o estoque da loja). */
+  _itensParaDerivar(actor) {
+    return actor?.items ?? [];
+  }
+
   /** Roda depois dos Efeitos Ativos, então Temp, "Outros", treino e deslocamento já chegam com os bônus. */
   prepareDerivedData() {
     const actor = this.parent;
@@ -196,6 +201,6 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
     const vinculo = f?.vinculo ? blocoDoVinculo(f, globalThis.game?.actors) : null;
     // Forma do Druida (efeito ativo "Forma: X"): Defesa = 10 + DES + bônus da forma, sem armadura
     const forma = [...(actor?.effects ?? [])].find(e => !e.disabled && e.flags?.[SISTEMA_ID]?.forma)?.flags[SISTEMA_ID].forma ?? null;
-    derivarPersonagem(this, actor?.items ?? [], actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null, defesaAtributo: actor?.flags?.["icarus-rpg"]?.defesaAtributo, forma });
+    derivarPersonagem(this, this._itensParaDerivar(actor), actor?.statuses ?? [], { rd, vinculo: vinculo?.animal ? vinculo : null, defesaAtributo: actor?.flags?.["icarus-rpg"]?.defesaAtributo, forma });
   }
 }
