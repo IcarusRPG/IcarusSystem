@@ -2216,7 +2216,10 @@
       "FecharLoja": "Fechar loja",
       "VerComoJogador": "Ver como jogador",
       "Abas": {
-        "ficha": "Ficha",
+        "resumo": "Resumo",
+        "pericias": "Perícias",
+        "poderes": "Poderes e magias",
+        "equipamento": "Equipamento e ataques",
         "loja": "Loja",
         "notas": "Notas"
       },
@@ -2227,7 +2230,7 @@
       "Equipamento": "Equipamento",
       "Magias": "Magias",
       "Equipado": "equipado",
-      "ArrasteEquipamento": "Arraste armas e equipamentos para cá (na aba Ficha, ficam com o mercador, fora da loja).",
+      "ArrasteEquipamento": "Arraste armas, armaduras, escudos e munições para esta aba (fora da aba Loja): ficam com o mercador, que pode equipar e atacar.",
       "Saudacao": "Fala de abertura",
       "Despedida": "Fala de despedida",
       "Multiplicador": "Multiplicador de preço",
@@ -2294,7 +2297,39 @@
       "AvisoSemDinheiro": "Aviso nas primeiras tentativas sem dinheiro",
       "FalasGuardasSemDinheiro": "Guardas na última tentativa sem dinheiro",
       "FalasFlagrante": "Flagrante no roubo",
-      "MensagemRoubo": "Roubo bem-sucedido (só para quem roubou e o Mestre; use {item})"
+      "MensagemRoubo": "Roubo bem-sucedido (só para quem roubou e o Mestre; use {item})",
+      "DefesaManual": "Defesa manual",
+      "DefesaManualDica": "Defesa manual ligada: vale o valor digitado (desligue para calcular pela armadura e pelo escudo).",
+      "DefesaDerivadaDica": "10 + Destreza + armadura + escudo equipados + outros, como no personagem.",
+      "Rolar": "Rolar (Shift: vantagem; Ctrl: desvantagem)",
+      "Proficiencias": "Proficiências",
+      "Escudos": "Escudos",
+      "Tunicas": "Túnicas",
+      "PericiasDica": "As mesmas perícias do personagem: total = atributo + treino + outros. Clique no nome para rolar. Barganha, Diplomacia, Intimidação e Prestidigitação ficam sempre aqui em cima.",
+      "Total": "Total",
+      "Treino": "Treino",
+      "Outros": "Outros",
+      "TodasPericias": "Todas as perícias",
+      "Treinos": {
+        "0": "—",
+        "1": "Treinado",
+        "2": "Especialista"
+      },
+      "Poderes": "Poderes",
+      "Usar": "Usar",
+      "ArrastePoderes": "Arraste poderes de um compêndio ou do diretório de itens para cá. Poderes do mercador não são vendidos.",
+      "MagiaInfo": "{nivel}º nível · {custo} PM",
+      "Ataques": "Ataques",
+      "SemProficiencia": "sem proficiência",
+      "AtaqueDica": "Clique para atacar (Shift: vantagem; Ctrl: desvantagem; Alt: ataque detalhado)",
+      "Dano": "Dano",
+      "Recarregar": "Recarregar",
+      "SemAtaques": "Empunhe uma arma do equipamento para atacar.",
+      "EquipamentoDica": "o que o mercador usa (não é vendido)",
+      "NaMao": "na mão",
+      "PassarParaLoja": "Passar para a loja (vira estoque)",
+      "EquiparEleMesmo": "Tirar da loja: o mercador usa este item",
+      "TipoNaoAceito": "O mercador aceita poderes, magias, armas, equipamentos e munições."
     },
     "Loja": {
       "Fechada": "Loja fechada",
@@ -2311,7 +2346,7 @@
       "NadaParaVender": "Você não tem nada que este mercador compre.",
       "SemComprador": "Escolha um personagem seu (ou controle o token dele) para comprar.",
       "QuemCompra": "Quem compra:",
-      "SeuDinheiro": "Seu dinheiro:",
+      "SeuDinheiro": "Dinheiro:",
       "NaoVendavel": "Só armas, equipamentos e munições entram no estoque.",
       "SemMestre": "Nenhum Mestre conectado; a compra não pode ser feita agora.",
       "Erro": "A compra falhou no meio e foi desfeita. Tente de novo.",
@@ -2368,7 +2403,8 @@
         "Dica": "Prestidigitação contra a CD do mercador: passou, leva 1 unidade sem pagar; falhou, ele chama os guardas.",
         "SemDinheiroMestre": "{personagem} tentou comprar de {mercador} sem dinheiro {n} vezes: o mercador chamou os guardas. A loja fechou.",
         "FlagranteMestre": "{personagem} foi pego roubando {item} de {mercador}: o mercador chamou os guardas. A loja fechou."
-      }
+      },
+      "Comprador": "Comprador:"
     }
   }
 }

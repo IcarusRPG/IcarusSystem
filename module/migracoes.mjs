@@ -8,6 +8,7 @@
  */
 import { SISTEMA_ID, FICHA_ANIMAL, ICONE_PADRAO } from "./config.mjs";
 import { migrarQuantidadeDoEstoque } from "./loja.mjs";
+import { poderesDasHabilidades } from "./mercador-dados.mjs";
 import { iconeDoItemComum } from "./origens-dados.mjs";
 import { migrarBonusDeOrigem, adicionarItensQueFaltam } from "./origens.mjs";
 import { classePorId, linhagemDasEscolhas, pmPelaRegra } from "./classes-dados.mjs";
@@ -222,6 +223,28 @@ export async function migrarEstoqueInfinito(atores = null) {
   return n;
 }
 
+/**
+ * 0.35.0 — mercador com as regras do personagem. A conversão do system (atributos, perícias por
+ * chave, "Defesa manual" com o valor antigo) já acontece em MercadorData.migrateData; aqui ela é
+ * gravada no banco (o update normal só gravaria diferenças) e as habilidades livres viram itens
+ * "poder". Idempotente: sem habilidades e já no formato novo, nada muda.
+ * @param {Iterable<Actor>} [atores]  @returns {Promise<number>} mercadores alterados
+ */
+export async function migrarMercadoresParaPersonagem(atores = null) {
+  const lista = atores ?? [...(game.actors ?? []), ...(game.scenes ?? []).flatMap(s => [...s.tokens].filter(t => !t.actorLink && t.actor).map(t => t.actor))];
+  let n = 0;
+  for (const actor of lista) {
+    if (actor?.type !== "mercador") continue;
+    const sistema = actor.toObject().system;
+    const poderes = poderesDasHabilidades(sistema.habilidades);
+    if (poderes.length) await actor.createEmbeddedDocuments("Item", poderes);
+    sistema.habilidades = [];
+    await actor.update({ system: sistema }, { diff: false, recursive: false });
+    n++;
+  }
+  return n;
+}
+
 const MIGRACOES = [
   { versao: "0.9.0", rodar: async () => (await migrarTexugo()) + (await migrarFichaDosAnimais()) },
   // 0.10.1 — a origem dá +2 de bônus na perícia (não treina): com confirmação; recusar não repete
@@ -240,7 +263,9 @@ const MIGRACOES = [
   // Fúria Sanguinária, Mana Transbordante, Dívida Paga)
   { versao: "0.27.2", rodar: () => corrigirCustosDeGanho() },
   // 0.33.0 — estoque do Mercador sem "∞" (quantidade null vira 1)
-  { versao: "0.33.0", rodar: () => migrarEstoqueInfinito() }
+  { versao: "0.33.0", rodar: () => migrarEstoqueInfinito() },
+  // 0.35.0 — mercador com as regras do personagem (perícias, poderes, Defesa derivada)
+  { versao: "0.35.0", rodar: () => migrarMercadoresParaPersonagem() }
 ];
 
 export function registrarMigracoes() {

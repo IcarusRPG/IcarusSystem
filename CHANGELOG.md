@@ -1,5 +1,27 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.35.0
+
+### Mercador: vitrine bonita e ficha com as regras do Icarus
+- **Vitrine:**
+  - O retrato aparece **inteiro**, sem cortar nem distorcer. Em janela larga fica à esquerda, na altura toda; em janela estreita fica em cima (até 55% da altura). A janela padrão é maior (980 × 820).
+  - O nome do mercador está maior (40 px). A fala dele (saudação, Barganha, aviso, guardas) aparece num **balão grande**, de 22 a 30 px, com aspas decorativas e a ponta apontando para o retrato.
+  - Falas de impacto (Intimidação e guardas) têm borda vermelha. A fala nova entra com uma animação curta, que não toca com "reduzir movimento".
+  - Os testes de Barganha ficam numa faixa própria abaixo do balão.
+  - As linhas dos itens têm mais respiro (48 px, ícone de 40 px). O rodapé mostra "Comprador: <nome>" e "Dinheiro" separados.
+- **Ficha do mercador com as regras do personagem:** o ator `mercador` agora usa o mesmo modelo do personagem.
+  - Atributos com base, racial e temporário; perícias do Icarus com treino e outros; Defesa derivada; proficiências; resistências.
+  - Perícias, ataques, dano, condições e barras do token funcionam pelas mesmas funções.
+  - Não tem classe: PV e PM são digitados. A "Defesa manual" é opcional, e as proficiências vêm todas marcadas por padrão.
+- **Abas da ficha:** Resumo, Perícias (rolagem pelo nome; as da loja sempre em cima), Poderes e magias (itens "poder" e "magia", com Usar e Lançar), Equipamento e ataques (equipar e empunhar como no personagem, Atacar, Dano e Recarregar), Loja e Notas.
+- **Equipamento × estoque:** o estoque (marca da loja) não entra na Defesa, nas perícias, nos ataques nem na munição gasta. "Passar para a loja" e "Tirar da loja" movem itens entre as duas listas.
+- **Migração 0.35.0** (uma vez, ao abrir o mundo como Mestre):
+  - atributos digitados viram a base;
+  - a Defesa digitada vira "Defesa manual" ligada com o mesmo valor;
+  - perícias livres viram as perícias do Icarus pelo nome, com treino e outros que mantêm o total; as que não casam vão para as notas;
+  - habilidades livres viram itens "poder".
+- O compêndio "Icarus: Mercadores" já vem no formato novo, com Barganha, Diplomacia e Intuição treinadas.
+
 ## 0.34.0
 
 ### Mercador: compra sem dinheiro, Roubar e os guardas

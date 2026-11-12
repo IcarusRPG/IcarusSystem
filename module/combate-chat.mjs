@@ -3,6 +3,7 @@
  * As regras (bônus, fórmulas, o que gastar) ficam em combate.mjs; aqui só se aplica e se mostra.
  */
 import { bloqueiosDoAtor, armaPermitidaNaForma } from "./druida-dados.mjs";
+import { ehEstoque } from "./mercador-dados.mjs";
 import { SISTEMA_ID } from "./config.mjs";
 import { comSinal, numero } from "./regras.mjs";
 import { vantagemDaRolagem, dadosDoCard } from "./rolls.mjs";
@@ -17,7 +18,8 @@ const loc = k => game.i18n.localize(k);
 
 /** Itens do ator no formato que as regras puras esperam. */
 export function itensDoAtor(actor) {
-  return actor.items.map(i => ({ id: i.id, type: i.type, system: i.system }));
+  // O estoque de um mercador (flags da loja) não é dele: não conta munição, armas nem armadura
+  return actor.items.filter(i => !ehEstoque(i)).map(i => ({ id: i.id, type: i.type, system: i.system }));
 }
 
 async function enviar(actor, content, { rolls = [], flags = {} } = {}) {

@@ -1,5 +1,7 @@
-import { ATRIBUTOS } from "../config.mjs";
 import { TESTES_DE_BARGANHA, RESULTADOS, BARGANHA_PADRAO, ROUBO_PADRAO, textoDasFalasPadrao } from "../loja.mjs";
+import { PROFICIENCIAS_ARMA, CATEGORIAS_ARMADURA_CORPO } from "../config.mjs";
+import { PersonagemData } from "./actor-personagem.mjs";
+import { converterMercadorAntigo, ehEstoque } from "../mercador-dados.mjs";
 
 const fields = foundry.data.fields;
 const inteiro = (initial = 0, opcoes = {}) => new fields.NumberField({ required: true, nullable: false, integer: true, initial, ...opcoes });
@@ -7,21 +9,31 @@ const texto = (initial = "") => new fields.StringField({ required: true, blank: 
 
 /**
  * Ator "mercador": personagem do Mestre que vende itens (ficha compacta + vitrine para os jogadores).
- * Sem derivação: Defesa, PV, PM, atributos e perícias são números digitados. O estoque são os itens
- * do próprio ator (flags["icarus-rpg"].loja de cada item; regras em module/loja.mjs).
+ * Usa o MESMO modelo do personagem (atributos, perícias com treino/outros, Defesa derivada da
+ * armadura e do escudo equipados, proficiências, resistências), então perícias, ataques, dano e
+ * condições funcionam pelas mesmas funções. Diferenças: sem classe (PV e PM são digitados:
+ * classeConfig.manual sempre ligado), "Defesa manual" opcional, proficiências em tudo por padrão,
+ * e a loja (estoque = itens com flags["icarus-rpg"].loja; regras em module/loja.mjs).
+ * Mercadores antigos (antes da 0.35.0) são convertidos em migrateData (module/mercador-dados.mjs).
  */
-export class MercadorData extends foundry.abstract.TypeDataModel {
+export class MercadorData extends PersonagemData {
   static defineSchema() {
+    const base = super.defineSchema();
     return {
-      nivel: inteiro(1, { min: 0 }),
-      defesa: inteiro(10),
-      pv: new fields.SchemaField({ value: inteiro(10, { min: 0 }), max: inteiro(10, { min: 0 }) }),
-      pm: new fields.SchemaField({ value: inteiro(0, { min: 0 }), max: inteiro(0, { min: 0 }) }),
-      // Atributos como modificador direto (as mesmas chaves do personagem)
-      atributos: new fields.SchemaField(Object.fromEntries(ATRIBUTOS.map(k => [k, inteiro(0)]))),
-      pericias: new fields.ArrayField(new fields.SchemaField({ nome: texto(), bonus: inteiro(0) })),
+      ...base,
+      // Mercador começa podendo usar tudo (o Mestre restringe)
+      proficiencias: new fields.SchemaField({
+        armas: new fields.ArrayField(new fields.StringField({ required: true, blank: false, choices: PROFICIENCIAS_ARMA }), { initial: [...PROFICIENCIAS_ARMA] }),
+        armaduras: new fields.ArrayField(new fields.StringField({ required: true, blank: false, choices: CATEGORIAS_ARMADURA_CORPO }), { initial: [...CATEGORIAS_ARMADURA_CORPO] }),
+        escudo: new fields.BooleanField({ initial: true }),
+        tunicas: new fields.BooleanField({ initial: true }),
+        texto: texto()
+      }),
+      // "Defesa manual": ligada, a Defesa é o valor digitado (mercadores antigos); desligada, derivada
+      defesaManual: new fields.SchemaField({ ativo: new fields.BooleanField({ initial: false }), valor: inteiro(10) }),
+      // Habilidades livres antigas: a migração do mundo as transforma em itens "poder" e esvazia a lista
       habilidades: new fields.ArrayField(new fields.SchemaField({ nome: texto(), descricao: texto() })),
-      // Dinheiro do mercador (centavos por moeda, como o personagem); caixa infinita não conta
+      // Dinheiro do mercador (centavos por moeda); caixa infinita não conta
       caixa: new fields.SchemaField({ ouroReal: inteiro(0, { min: 0 }), real: inteiro(0, { min: 0 }), centavo: inteiro(0, { min: 0 }) }),
       caixaInfinita: new fields.BooleanField({ initial: true }),
       loja: new fields.SchemaField({
@@ -65,8 +77,25 @@ export class MercadorData extends foundry.abstract.TypeDataModel {
           )])))
         })
       }),
-      descricao: new fields.HTMLField({ required: true, blank: true, initial: "" }),
-      notas: new fields.HTMLField({ required: true, blank: true, initial: "" })
+      descricao: new fields.HTMLField({ required: true, blank: true, initial: "" })
     };
+  }
+
+  /** Mercadores antigos (atributos, Defesa e perícias digitados) viram o formato do personagem. */
+  static migrateData(source) {
+    converterMercadorAntigo(source);
+    return super.migrateData(source);
+  }
+
+  /** O estoque da loja não é do mercador: fora da Defesa, das perícias e da carga. */
+  _itensParaDerivar(actor) {
+    return [...(actor?.items ?? [])].filter(i => !ehEstoque(i));
+  }
+
+  /** Mesma derivação do personagem, com PV/PM digitados (sem classe) e a "Defesa manual" opcional. */
+  prepareDerivedData() {
+    this.classeConfig.manual = true;
+    super.prepareDerivedData();
+    if (this.defesaManual?.ativo) this.defesa.total = Math.trunc(Number(this.defesaManual.valor) || 0);
   }
 }

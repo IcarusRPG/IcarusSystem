@@ -398,8 +398,10 @@ export function documentosDeMercadores(dados, fontes) {
     return {
       _id: idEstavel(`mercador:${m.id}`), name: m.nome, type: "mercador", img: ICONE_PADRAO, folder: null, sort: (i + 1) * 100,
       system: {
-        nivel: 1, defesa: 10, pv: { value: 10, max: 10 }, pm: { value: 0, max: 0 },
-        atributos: { FOR: 0, DES: 0, CON: 0, INT: 0, SAB: 0, CAR: 1 }, pericias: [], habilidades: [],
+        // Mesmo formato do personagem (0.35.0): Defesa derivada, perícias por chave, PV/PM digitados
+        nivel: 1, pv: { value: 10, max: 10 }, pm: { value: 0, max: 0 }, classeConfig: { manual: true },
+        atributos: { FOR: { base: 0 }, DES: { base: 0 }, CON: { base: 0 }, INT: { base: 0 }, SAB: { base: 0 }, CAR: { base: 1 } },
+        pericias: { barganha: { treino: 1 }, diplomacia: { treino: 1 }, intuicao: { treino: 1 } },
         caixa: { ouroReal: 0, real: 0, centavo: 0 }, caixaInfinita: true,
         loja: { aberta: true, saudacao: m.saudacao ?? "", despedida: m.despedida ?? "", multiplicadorPreco: 1, compra: { ativo: false, percentual: 0.5 } },
         descricao: m.descricao ? `<p>${escapar(m.descricao)}</p>` : "", notas: ""

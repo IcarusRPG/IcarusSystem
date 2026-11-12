@@ -7,7 +7,6 @@
   "sort": 300,
   "system": {
     "nivel": 1,
-    "defesa": 10,
     "pv": {
       "value": 10,
       "max": 10
@@ -16,16 +15,40 @@
       "value": 0,
       "max": 0
     },
-    "atributos": {
-      "FOR": 0,
-      "DES": 0,
-      "CON": 0,
-      "INT": 0,
-      "SAB": 0,
-      "CAR": 1
+    "classeConfig": {
+      "manual": true
     },
-    "pericias": [],
-    "habilidades": [],
+    "atributos": {
+      "FOR": {
+        "base": 0
+      },
+      "DES": {
+        "base": 0
+      },
+      "CON": {
+        "base": 0
+      },
+      "INT": {
+        "base": 0
+      },
+      "SAB": {
+        "base": 0
+      },
+      "CAR": {
+        "base": 1
+      }
+    },
+    "pericias": {
+      "barganha": {
+        "treino": 1
+      },
+      "diplomacia": {
+        "treino": 1
+      },
+      "intuicao": {
+        "treino": 1
+      }
+    },
     "caixa": {
       "ouroReal": 0,
       "real": 0,

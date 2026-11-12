@@ -115,7 +115,7 @@ export class FichaItem extends ItemSheet {
     if (item.type === "magia") {
       const dono = item.parent;
       ctx.magia = {
-        podeLancar: !!dono?.isOwner && dono.type === "personagem",
+        podeLancar: !!dono?.isOwner && ["personagem", "mercador"].includes(dono.type),
         tradicoes: (s.tradicoes ?? []).map(t => loc(`ICARUS.Magias.TradicoesNomes.${t}`)).join(", ")
       };
     }

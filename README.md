@@ -258,14 +258,20 @@ As condições também estão no compêndio **Icarus — Condições** (um diár
 Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
 
 - **Criar:** no diretório de atores, "Criar ator" e escolha **Mercador**. Os jogadores entram como observadores: podem abrir, mas não editar. O compêndio **Icarus: Mercadores** tem três exemplos prontos (Ferreiro, Boticário e Mercador de Rua).
-- **Ficha (só o Mestre e os donos):** compacta, com as abas **Ficha** (nível, Defesa, PV, PM, atributos, perícias, habilidades, equipamento e magias), **Loja** e **Notas**.
+- **Ficha (só o Mestre e os donos):** compacta, com as mesmas regras do personagem, em seis abas:
+  - **Resumo:** nível, Defesa (derivada da armadura e do escudo, ou "Defesa manual"), PV e PM digitados, atributos (clique para rolar) e proficiências (tudo marcado por padrão);
+  - **Perícias:** as do Icarus, com treino e outros, e rolagem pelo nome. Barganha, Diplomacia, Intimidação e Prestidigitação ficam sempre em cima;
+  - **Poderes e magias:** itens arrastados de compêndios, com "Usar" e "Lançar";
+  - **Equipamento e ataques:** armas, armaduras, escudos e munições que o mercador usa (equipar, empunhar, atacar, dano). "Passar para a loja" transforma um item em estoque;
+  - **Loja** e **Notas**.
+- **Equipamento × estoque:** o estoque tem a marca da loja e não protege nem arma o mercador; o resto é dele.
 - **Montar o estoque:** na aba Loja, arraste armas, equipamentos e munições de qualquer lugar: compêndio, diretório de itens, inventário de outro ator ou da própria ficha. O item é sempre copiado.
   - Ao soltar, o sistema pergunta a quantidade, o preço e se o item entra oculto. "Criar item" faz um item novo direto no estoque.
   - O estoque é sempre finito; com 0, o item aparece como "Esgotado".
   - Cada linha tem nome, quantidade, preço do mercador (vazio = preço do item), preço final, "oculto" e "libera com" (qualquer teste, Barganha, Diplomacia ou Intimidação).
   - O preço do mercador vale até para item "sem venda" ou de preço 0.
   - Na mesma aba ficam a fala de abertura e a de despedida, o multiplicador de preço, a caixa do mercador ("caixa infinita" ou moedas), "Abrir/Fechar loja" e "Ver como jogador".
-- **Como o jogador compra:** ao abrir o mercador (duplo clique no token ou no diretório), o jogador vê a **vitrine**: o retrato grande, o nome, a fala de abertura e a lista com preço, estoque e o botão Comprar.
+- **Como o jogador compra:** ao abrir o mercador (duplo clique no token ou no diretório), o jogador vê a **vitrine**: o retrato inteiro (ao lado, em janela larga; em cima, em janela estreita), o nome grande, a fala do mercador num balão em destaque e a lista com preço, estoque e o botão Comprar.
   - O pedido vai ao Mestre conectado, que confere tudo e faz a compra: o dinheiro sai (com troco), o item entra no inventário (empilhando munições e consumíveis), o estoque cai e o chat registra.
   - Sem Mestre conectado, a compra não acontece.
 - **Barganha:** a vitrine tem três botões com um d20 vermelho: **Barganha**, **Diplomacia** e **Intimidação**.

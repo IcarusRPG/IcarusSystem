@@ -40,7 +40,7 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static DEFAULT_OPTIONS = {
     classes: ["icarus", "icarus-dialogo", "vitrine-mercador"],
-    position: { width: 760, height: 860 },
+    position: { width: 980, height: 820 },
     window: { resizable: true, icon: "fa-solid fa-store" },
     actions: { comprar: VitrineMercador._comprar, vender: VitrineMercador._vender, aba: VitrineMercador._aba, barganha: VitrineMercador._barganha, roubar: VitrineMercador._roubar }
   };
@@ -96,7 +96,7 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
       : [];
     return {
       img: m.img, nome: m.name, saudacao: s.loja.saudacao, aberta,
-      testes, semMestre, guardas: !!m.getFlag(F, "guardas"), fala: falaAtual(m, estado),
+      testes, semMestre, guardas: !!m.getFlag(F, "guardas"), balao: balaoDoMercador(m, estado, s.loja.saudacao),
       podeRoubar: s.loja.roubo?.permitir !== false,
       desconto: efeitos.desconto, acrescimo: efeitos.acrescimo,
       itens, venda, podeVender: !!compra?.ativo, aba: this.aba,
@@ -107,6 +107,12 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
 
   _onRender(context, options) {
     super._onRender?.(context, options);
+    // A fala nova entra com uma animação curta (só quando muda, não a cada atualização)
+    const balao = this.element.querySelector(".vm-balao");
+    if (balao && balao.dataset.chave !== this._chaveDoBalao) {
+      balao.classList.add("entrando");
+      this._chaveDoBalao = balao.dataset.chave;
+    }
     this.element.querySelector("[data-comprador]")?.addEventListener("change", ev => {
       this.compradorUuid = ev.currentTarget.value || null;
       this.render();
@@ -172,10 +178,19 @@ export class VitrineMercador extends HandlebarsApplicationMixin(ApplicationV2) {
  */
 function falaAtual(mercador, estado) {
   const loja = mercador.getFlag(F, "falaLoja");
-  const daLoja = loja && (!loja.para || loja.para === game.user.id) ? loja : null;
-  const daBarganha = estado.ultima ? { texto: estado.ultima.fala, quando: estado.ultima.quando } : null;
-  const mais = [daLoja, daBarganha].filter(Boolean).sort((a, b) => (b.quando ?? 0) - (a.quando ?? 0))[0];
-  return mais?.texto ?? "";
+  const daLoja = loja && (!loja.para || loja.para === game.user.id) ? { texto: loja.texto, quando: loja.quando, forte: !loja.para || !!mercador.getFlag(F, "guardas") } : null;
+  const daBarganha = estado.ultima ? { texto: estado.ultima.fala, quando: estado.ultima.quando, forte: estado.ultima.teste === "intimidacao" } : null;
+  return [daLoja, daBarganha].filter(x => x?.texto).sort((a, b) => (b.quando ?? 0) - (a.quando ?? 0))[0] ?? null;
+}
+
+/**
+ * Balão do mercador: a fala mais recente (Barganha, aviso, guardas) ou, sem fala, a saudação.
+ * forte: falas de impacto (Intimidação, guardas) com a borda vermelha; chave: muda a cada fala nova.
+ */
+function balaoDoMercador(mercador, estado, saudacao) {
+  const fala = falaAtual(mercador, estado);
+  if (fala) return { texto: fala.texto, forte: !!fala.forte, chave: String(fala.quando ?? "") };
+  return { texto: saudacao ?? "", forte: false, chave: "saudacao" };
 }
 
 /** Abre (ou traz para frente) a vitrine do mercador. */
