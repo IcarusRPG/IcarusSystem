@@ -1,0 +1,15 @@
+{
+  "_id": "M9dqY9deZhpGrGr4",
+  "name": "Veterano (ND 5 a 10)",
+  "type": "Actor",
+  "folder": "a5ezzS3FQU5BuIEq",
+  "sorting": "m",
+  "sort": 2000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:lacaio:veterano"
+    }
+  },
+  "_key": "!folders!M9dqY9deZhpGrGr4"
+}

@@ -1,0 +1,243 @@
+{
+  "_id": "11b5SNQbx51ttCC7",
+  "name": "Auroque-Primordial",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-auroque-primordial.webp",
+  "folder": "CITIZK79ZW3GkWa7",
+  "sort": 10600,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "S",
+    "ndContaComo": 20,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "colossal",
+    "defesa": {
+      "valor": 20,
+      "outros": 0
+    },
+    "pv": {
+      "value": 500,
+      "max": 500,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 15,
+    "deslocamentoTexto": "15 m",
+    "sentidos": "Olfato +10, Audição +10, Visão +8",
+    "cd": 28,
+    "salvaguardas": {
+      "fort": 23,
+      "ref": 11,
+      "von": 17
+    },
+    "atributos": {
+      "FOR": {
+        "base": 11,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 10,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 5
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 7
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Chifrada",
+        "bonus": 12,
+        "dados": "2d8",
+        "fixo": 44,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Pisão",
+        "bonus": 12,
+        "dados": "2d8",
+        "fixo": 43,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Chifrada +12 (2d8+44 perfuração), Pisão +12 (2d8+43 impacto). CD das habilidades 28.",
+    "resistencias": {
+      "rdGeral": 8,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Dobro (chifre, couro primordial; item lendário a definir)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Auroque-Primordial",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-auroque-primordial.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "zP8vhCr3uShb5RLV",
+      "name": "Fases",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>Fase 1 (100% a 51% dos PV): normal. <strong>Fase 2 (50% dos PV ou menos):</strong> Fúria Primordial, +2 nos ataques e no dano, +6 m de deslocamento e imune a Abalado, Pasmo e Atordoado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "auroque-primordial",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!11b5SNQbx51ttCC7.zP8vhCr3uShb5RLV"
+    },
+    {
+      "_id": "EXQ2c374QTMpcACQ",
+      "name": "Resistência Lendária",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(2 vezes por cena)</em> quando falhar em um teste de resistência, pode escolher ser bem-sucedido.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "auroque-primordial",
+          "gatilho": "2 vezes por cena"
+        }
+      },
+      "_key": "!actors.items!11b5SNQbx51ttCC7.EXQ2c374QTMpcACQ"
+    },
+    {
+      "_id": "e36hrCkKIRUznCgC",
+      "name": "Ação Lendária",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(1 vez por rodada, no fim do turno de outra criatura)</em> Pisão Sísmico; criaturas em 9 m fazem Reflexos CD 28 ou ficam Caídas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "auroque-primordial",
+          "gatilho": "1 vez por rodada, no fim do turno de outra criatura"
+        }
+      },
+      "_key": "!actors.items!11b5SNQbx51ttCC7.e36hrCkKIRUznCgC"
+    },
+    {
+      "_id": "dUEJ6ckQT5T4Nb5m",
+      "name": "Investida Primordial",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>se avançar 15 m em linha reta, a Chifrada causa +3d8 e o alvo faz Fortitude CD 28 ou fica Caído e Pasmo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "auroque-primordial",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!11b5SNQbx51ttCC7.dUEJ6ckQT5T4Nb5m"
+    },
+    {
+      "_id": "Z2TxLe0KZhMs7Ecf",
+      "name": "Couro de Montanha",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 500,
+      "system": {
+        "descricao": "<p>Redução de Dano 8 e imune a Derrubar e Empurrar.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "auroque-primordial",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!11b5SNQbx51ttCC7.Z2TxLe0KZhMs7Ecf"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "auroque-primordial",
+      "papel": "solo",
+      "nd": "S"
+    }
+  },
+  "_key": "!actors!11b5SNQbx51ttCC7"
+}

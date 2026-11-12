@@ -1,0 +1,6796 @@
+{
+ "versao": 1,
+ "fonte": "Bestiarios de fauna de Icarus (Solo, Lacaio, Especial)",
+ "ameacas": [
+  {
+   "id": "ratao-de-vala",
+   "nome": "Ratão-de-Vala",
+   "papel": "solo",
+   "nd": "1/4",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "ameaca-ratao-de-vala.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +4, Audição +3",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 6,
+    "von": -6
+   },
+   "pv": 15,
+   "deslocamento": "9 m, natação 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +5 (1d4+4 perfuração).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 5,
+     "dados": "1d4",
+     "fixo": 4,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 2,
+    "Con": 1,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Sem tesouro.",
+   "habilidades": [
+    {
+     "nome": "Mordida Suja",
+     "gatilho": null,
+     "texto": "o alvo faz Fortitude CD 12 ou fica Enjoado por 1 rodada."
+    }
+   ]
+  },
+  {
+   "id": "chacal-rubro",
+   "nome": "Chacal-Rubro",
+   "papel": "solo",
+   "nd": "1/2",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-chacal-rubro.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +4, Audição +3",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 0,
+    "von": -6
+   },
+   "pv": 30,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +6 (1d6+6 perfuração).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 6,
+     "dados": "1d6",
+     "fixo": 6,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 2,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (couro).",
+   "habilidades": [
+    {
+     "nome": "Uivo de Chamado",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "criaturas em alcance curto que o ouçam fazem Vontade CD 12 ou ficam Abaladas até o início do próximo turno dele."
+    }
+   ]
+  },
+  {
+   "id": "javali-machado",
+   "nome": "Javali-Machado",
+   "papel": "solo",
+   "nd": "1",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-javali-machado.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+0",
+   "sentidos": "Olfato +4, Audição +2",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 8,
+    "ref": -4,
+    "von": 2
+   },
+   "pv": 60,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Presa +7 (1d6+8 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Presa",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 8,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 0,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (presas, carne).",
+   "habilidades": [
+    {
+     "nome": "Investida Brutal",
+     "gatilho": null,
+     "texto": "se ele se deslocar pelo menos 6 m em linha reta antes de atacar, a Presa causa +1d6 de dano e o alvo faz Fortitude CD 13 ou fica Caído."
+    }
+   ]
+  },
+  {
+   "id": "serpente-de-bruma",
+   "nome": "Serpente-de-Bruma",
+   "papel": "solo",
+   "nd": "1",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-serpente-de-bruma.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3, Olfato +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 2,
+    "ref": 8,
+    "von": -4
+   },
+   "pv": 60,
+   "deslocamento": "9 m, natação 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +7 (1d4+6 perfuração, mais 1d6 de veneno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 7,
+     "dados": "1d4",
+     "fixo": 6,
+     "tipo": "perfuração, mais 1d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 3,
+    "Con": 1,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: glândula de veneno (1 dose, CD 11 para extrair).",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, o alvo faz Fortitude CD 13 ou fica Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Corpo de Bruma",
+     "gatilho": null,
+     "texto": "+5 em Furtividade em áreas de neblina, pântano ou capim alto."
+    }
+   ]
+  },
+  {
+   "id": "falcao-de-penhasco",
+   "nome": "Falcão-de-Penhasco",
+   "papel": "solo",
+   "nd": "1",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "ameaca-falcao-de-penhasco.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +6 (vê detalhes a longa distância)",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": -4,
+    "ref": 8,
+    "von": 2
+   },
+   "pv": 60,
+   "deslocamento": "6 m, voo 15 m",
+   "ataquesTexto": "Corpo a corpo: Garras +7 (1d4+9 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 7,
+     "dados": "1d4",
+     "fixo": 9,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": -1,
+    "Des": 3,
+    "Con": 1,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (penas finas).",
+   "habilidades": [
+    {
+     "nome": "Mergulho",
+     "gatilho": null,
+     "texto": "se voar pelo menos 9 m em descida antes de atacar, a Garra causa +1d6 de dano."
+    }
+   ]
+  },
+  {
+   "id": "garra-torta",
+   "nome": "Garra-Torta",
+   "papel": "solo",
+   "nd": "2",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-garra-torta.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": "urso das montanhas",
+   "iniciativa": "0",
+   "sentidos": "Olfato +5, Audição +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": -3,
+    "von": 3
+   },
+   "pv": 75,
+   "deslocamento": "12 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: 2 Garras +7 (1d8+4 corte cada).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Garra",
+     "bonus": 7,
+     "dados": "1d8",
+     "fixo": 4,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garra",
+     "bonus": 7,
+     "dados": "1d8",
+     "fixo": 4,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 0,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (couro, garras).",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com uma Garra, faz a manobra Agarrar contra o alvo (teste +9)."
+    }
+   ]
+  },
+  {
+   "id": "glutao-dentesserra",
+   "nome": "Glutão-Dentesserra",
+   "papel": "solo",
+   "nd": "2",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-glutao-dentesserra.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +5",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 3,
+    "von": -3
+   },
+   "pv": 75,
+   "deslocamento": "9 m, escavação 4,5 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +7 (1d6+5 perfuração) e Garras +7 (1d6+5 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 5,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 5,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 2,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (pele).",
+   "habilidades": [
+    {
+     "nome": "Fúria Teimosa",
+     "gatilho": null,
+     "texto": "com metade dos PV ou menos, causa +2 de dano e fica imune à condição Abalado."
+    }
+   ]
+  },
+  {
+   "id": "caimao-cinzento",
+   "nome": "Caimão-Cinzento",
+   "papel": "solo",
+   "nd": "2",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-caimao-cinzento.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +4, Olfato +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": -3,
+    "von": 3
+   },
+   "pv": 75,
+   "deslocamento": "6 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +7 (1d8+12 perfuração).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 7,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": -1,
+    "Con": 4,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (couro nobre).",
+   "habilidades": [
+    {
+     "nome": "Couraça Rugosa",
+     "gatilho": null,
+     "texto": "Redução de Dano 3."
+    },
+    {
+     "nome": "Emboscada Submersa",
+     "gatilho": null,
+     "texto": "na primeira rodada, se estava submerso, o alvo está desprevenido contra a Mordida."
+    }
+   ]
+  },
+  {
+   "id": "bisao-rochoso",
+   "nome": "Bisão-Rochoso",
+   "papel": "solo",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-bisao-rochoso.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +4, Audição +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": -3,
+    "von": 3
+   },
+   "pv": 85,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+6 impacto) e Pisão +8 (1d8+6 impacto, só contra alvo Caído).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 6,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 6,
+     "tipo": "impacto, só contra alvo Caído"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": -1,
+    "Con": 5,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (couro, chifres).",
+   "habilidades": [
+    {
+     "nome": "Debandada",
+     "gatilho": null,
+     "texto": "se avançar 9 m em linha reta antes da Chifrada, empurra o alvo 3 m e ele faz Fortitude CD 14 ou fica Caído."
+    }
+   ]
+  },
+  {
+   "id": "tecedeira-de-teias",
+   "nome": "Tecedeira-de-Teias",
+   "papel": "solo",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-tecedeira-de-teias.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3, percepção de vibrações (sente criaturas em contato com a teia, alcance médio)",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 3,
+    "ref": 9,
+    "von": -3
+   },
+   "pv": 85,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+7 perfuração, mais 3d6 de veneno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 7,
+     "tipo": "perfuração, mais 3d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 3,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: seda (2d4 rolos, CD 13 para colher).",
+   "habilidades": [
+    {
+     "nome": "Teia",
+     "gatilho": "ação padrão, uma vez por rodada",
+     "texto": "alvo em alcance curto faz Reflexos CD 14 ou fica Enredado."
+    },
+    {
+     "nome": "Teceira de Fios",
+     "gatilho": null,
+     "texto": "ignora terreno difícil de teia e não é afetada por ela."
+    }
+   ]
+  },
+  {
+   "id": "enguia-tonitruante",
+   "nome": "Enguia-Tonitruante",
+   "papel": "solo",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-enguia-tonitruante.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +2, percepção de vibrações na água +6",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 3,
+    "ref": 9,
+    "von": -3
+   },
+   "pv": 85,
+   "deslocamento": "3 m, natação 15 m",
+   "ataquesTexto": "Corpo a corpo: Choque +8 (2d8+11 elétrico).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Choqu",
+     "bonus": 8,
+     "dados": "2d8",
+     "fixo": 11,
+     "tipo": "elétrico"
+    }
+   ],
+   "atributos": {
+    "For": 0,
+    "Des": 2,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: órgão elétrico (1 dose, CD 13).",
+   "habilidades": [
+    {
+     "nome": "Campo Eletrificado",
+     "gatilho": null,
+     "texto": "criatura que a atinja com ataque corpo a corpo sofre 1d6 de dano elétrico."
+    },
+    {
+     "nome": "Fora d'Água",
+     "gatilho": null,
+     "texto": "fora da água, sofre –2 em ataques e não pode usar o Campo Eletrificado."
+    }
+   ]
+  },
+  {
+   "id": "lobo-rasga-vento",
+   "nome": "Lobo-Rasga-Vento",
+   "papel": "solo",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-lobo-rasga-vento.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +6, Audição +4",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 3,
+    "von": -3
+   },
+   "pv": 85,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+7 perfuração) e Garras +8 (1d6+7 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 7,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 7,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 2,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (pele).",
+   "habilidades": [
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "ao acertar a Mordida, o alvo faz Fortitude CD 14 ou fica Caído."
+    },
+    {
+     "nome": "Uivo de Tropa",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 14 em alcance curto ou Abalado até o próximo turno dele."
+    }
+   ]
+  },
+  {
+   "id": "onca-de-cipo",
+   "nome": "Onça-de-Cipó",
+   "papel": "solo",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-onca-de-cipo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +5, Olfato +5",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 4,
+    "ref": 10,
+    "von": -2
+   },
+   "pv": 100,
+   "deslocamento": "12 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+9 perfuração) e Garras +8 (1d6+10 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 9,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 10,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 4,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (pele rara).",
+   "habilidades": [
+    {
+     "nome": "Emboscada",
+     "gatilho": null,
+     "texto": "contra alvo desprevenido, o primeiro ataque do turno causa +1d8 de dano."
+    },
+    {
+     "nome": "Pelagem de Folhagem",
+     "gatilho": null,
+     "texto": "+5 em Furtividade em mata fechada."
+    }
+   ]
+  },
+  {
+   "id": "cornudo-de-couraca",
+   "nome": "Cornudo-de-Couraça",
+   "papel": "solo",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-cornudo-de-couraca.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "-1",
+   "sentidos": "Olfato +3, Audição +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 10,
+    "ref": -2,
+    "von": 4
+   },
+   "pv": 100,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+8 perfuração) e Pisão +8 (1d8+9 impacto, só contra alvo Caído).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 8,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 9,
+     "tipo": "impacto, só contra alvo Caído"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": -1,
+    "Con": 5,
+    "Int": -4,
+    "Sab": 0,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (chifre, couro).",
+   "habilidades": [
+    {
+     "nome": "Couro Grosso",
+     "gatilho": null,
+     "texto": "Redução de Dano 4."
+    },
+    {
+     "nome": "Atropelar",
+     "gatilho": null,
+     "texto": "se avançar 9 m em linha reta, a Chifrada derruba o alvo (Fortitude CD 15 evita)."
+    }
+   ]
+  },
+  {
+   "id": "piton-constritora",
+   "nome": "Píton-Constritora",
+   "papel": "solo",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-piton-constritora.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +3, Olfato +4, sentido de calor (percebe criaturas vivas a curto alcance)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 10,
+    "ref": 4,
+    "von": -2
+   },
+   "pv": 100,
+   "deslocamento": "9 m, escalada 6 m, natação 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+8 perfuração).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 8,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 1,
+    "Con": 4,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: couro raro (CD 14 para curtir).",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar a Mordida, faz Agarrar (teste +10)."
+    },
+    {
+     "nome": "Constrição",
+     "gatilho": null,
+     "texto": "no início do turno dela, o alvo que estiver agarrado sofre 1d8+9 de dano de impacto."
+    }
+   ]
+  },
+  {
+   "id": "condor-rei",
+   "nome": "Condor-Rei",
+   "papel": "solo",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-condor-rei.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +8",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 4,
+    "ref": 10,
+    "von": -2
+   },
+   "pv": 100,
+   "deslocamento": "6 m, voo 24 m",
+   "ataquesTexto": "Corpo a corpo: Garras +8 (1d8+8 corte) e Garras +8 (1d8+9 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 8,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 9,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 3,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 4,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Especial: penas grandes (1d4).",
+   "habilidades": [
+    {
+     "nome": "Arrebatar",
+     "gatilho": "1 vez por cena",
+     "texto": "ao acertar uma criatura Pequena ou menor, a agarra e voa até 9 m; se ela não se soltar (Atletismo ou Acrobacia CD 15 em seu turno), sofre 2d6 de dano de queda quando for solta."
+    },
+    {
+     "nome": "Rajada de Asas",
+     "gatilho": "ação de movimento",
+     "texto": "Reflexos CD 15 em alcance curto ou todos os adjacentes são empurrados 3 m."
+    }
+   ]
+  },
+  {
+   "id": "alce-trovao",
+   "nome": "Alce-Trovão",
+   "papel": "solo",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-alce-trovao.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Olfato +4, Audição +4",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": -1,
+    "von": 5
+   },
+   "pv": 110,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+10 perfuração) e Coice +8 (1d8+11 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 10,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Coic",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 11,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 1,
+    "Con": 5,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (galhada, couro).",
+   "habilidades": [
+    {
+     "nome": "Investida Trovejante",
+     "gatilho": null,
+     "texto": "se avançar 9 m em linha reta antes da Chifrada, ela causa +1d8 e o alvo faz Fortitude CD 16 ou fica Caído."
+    },
+    {
+     "nome": "Couro Grosso",
+     "gatilho": null,
+     "texto": "Redução de Dano 2."
+    },
+    {
+     "nome": "Ouvido Atento",
+     "gatilho": null,
+     "texto": "nunca fica desprevenido por barulho ou movimento à distância."
+    }
+   ]
+  },
+  {
+   "id": "lagarto-cuspidor",
+   "nome": "Lagarto-Cuspidor",
+   "papel": "solo",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-lagarto-cuspidor.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +3, Olfato +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 5,
+    "ref": 11,
+    "von": -1
+   },
+   "pv": 110,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+10 perfuração). À distância (curto): Cuspe Corrosivo +8 (3d6+6 ácido).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 10,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": ": Cuspe Corrosivo",
+     "bonus": 8,
+     "dados": "3d6",
+     "fixo": 6,
+     "tipo": "ácido"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 2,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: bolsa de ácido (1d4 doses, CD 15).",
+   "habilidades": [
+    {
+     "nome": "Corrosão",
+     "gatilho": null,
+     "texto": "se o Cuspe acertar, o alvo fica com –1 na Defesa até o fim da cena (não acumula)."
+    },
+    {
+     "nome": "Aderente",
+     "gatilho": null,
+     "texto": "escala paredes e tetos sem teste e ignora terreno difícil de rocha."
+    }
+   ]
+  },
+  {
+   "id": "escorpiao-cauda-de-ferro",
+   "nome": "Escorpião-Cauda-de-Ferro",
+   "papel": "solo",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-escorpiao-cauda-de-ferro.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +2, percepção de vibrações (alcance curto)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": -1,
+    "von": 5
+   },
+   "pv": 110,
+   "deslocamento": "9 m, escavação 4,5 m",
+   "ataquesTexto": "Corpo a corpo: Pinça +8 (1d8+7 corte) e Ferrão +8 (1d8+7 perfuração, mais 2d6 de veneno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Pinça",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 7,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Ferrão",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 7,
+     "tipo": "perfuração, mais 2d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 1,
+    "Con": 4,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: glândula de veneno (1d3 doses, CD 15).",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar a Pinça, faz Agarrar (teste +10)."
+    },
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se o Ferrão causar dano, Fortitude CD 16 ou o alvo fica Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Couraça",
+     "gatilho": null,
+     "texto": "Redução de Dano 3."
+    }
+   ]
+  },
+  {
+   "id": "morcegao-de-cripta",
+   "nome": "Morcegão-de-Cripta",
+   "papel": "solo",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-morcegao-de-cripta.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção às cegas (médio), Audição +6, visão fraca (Visão –4)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": -1,
+    "ref": 11,
+    "von": 5
+   },
+   "pv": 110,
+   "deslocamento": "3 m, voo 18 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+9 perfuração) e Asas +8 (1d8+12 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 9,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Asas",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 3,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (asas).",
+   "habilidades": [
+    {
+     "nome": "Ecolocalização",
+     "gatilho": null,
+     "texto": "não sofre penalidade por escuridão nem por Cego."
+    },
+    {
+     "nome": "Voo Rasante",
+     "gatilho": null,
+     "texto": "depois de acertar a Mordida, pode se deslocar até 6 m como ação livre (1 vez por rodada)."
+    }
+   ]
+  },
+  {
+   "id": "simio-de-rochedo",
+   "nome": "Símio-de-Rochedo",
+   "papel": "solo",
+   "nd": "6",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-simio-de-rochedo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +4, Olfato +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 120,
+   "deslocamento": "12 m, escalada 12 m",
+   "ataquesTexto": "Corpo a corpo: 2 Punhos +8 (1d8+12 impacto e 1d8+13 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Punho",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Punho",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 13,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 1,
+    "Con": 4,
+    "Int": -3,
+    "Sab": 2,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão.",
+   "habilidades": [
+    {
+     "nome": "Pancada Dupla",
+     "gatilho": null,
+     "texto": "se os dois Punhos acertarem o mesmo alvo, ele faz Fortitude CD 17 ou fica Pasmo até o início do próximo turno do símio."
+    },
+    {
+     "nome": "Brado Intimidante",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 17 em alcance curto ou Abalado até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Escalador Nato",
+     "gatilho": null,
+     "texto": "escala sem teste, mesmo superfícies lisas."
+    }
+   ]
+  },
+  {
+   "id": "serrilha-do-abismo",
+   "nome": "Serrilha-do-Abismo",
+   "papel": "solo",
+   "nd": "6",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-serrilha-do-abismo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +8 (sangue a 1 km), Visão +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 6,
+    "von": 0
+   },
+   "pv": 120,
+   "deslocamento": "natação 18 m (não anda em terra)",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+12 perfuração) e Cauda +8 (1d8+13 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 13,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 2,
+    "Con": 4,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (dentes).",
+   "habilidades": [
+    {
+     "nome": "Frenesi de Sangue",
+     "gatilho": null,
+     "texto": "contra alvo com menos da metade dos PV, +2 nos ataques e nas rolagens de dano."
+    },
+    {
+     "nome": "Corpo Aquático",
+     "gatilho": null,
+     "texto": "respira só na água; fora dela fica Imobilizado e sofre 1d6 de dano por turno."
+    }
+   ]
+  },
+  {
+   "id": "vespao-colossal",
+   "nome": "Vespão-Colossal",
+   "papel": "solo",
+   "nd": "6",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "ameaca-vespao-colossal.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +4, Audição +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 12,
+    "von": 6
+   },
+   "pv": 120,
+   "deslocamento": "3 m, voo 18 m",
+   "ataquesTexto": "Corpo a corpo: Ferrão +8 (1d6+10 perfuração, mais 3d6 de veneno) e Mordida +8 (1d6+7 perfuração).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Ferrão",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 10,
+     "tipo": "perfuração, mais 3d6 de veneno"
+    },
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 7,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 0,
+    "Des": 4,
+    "Con": 2,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: veneno paralisante (1 dose, CD 16).",
+   "habilidades": [
+    {
+     "nome": "Peçonha Paralisante",
+     "gatilho": null,
+     "texto": "se o Ferrão causar dano, Fortitude CD 17 ou o alvo fica Pasmo até o início do próximo turno do vespão."
+    },
+    {
+     "nome": "Voo Errático",
+     "gatilho": null,
+     "texto": "+2 na Defesa contra ataques à distância."
+    }
+   ]
+  },
+  {
+   "id": "cavalo-d-agua",
+   "nome": "Cavalo-d'Água",
+   "papel": "solo",
+   "nd": "6",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-cavalo-d-agua.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +3, Audição +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 120,
+   "deslocamento": "9 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+13 perfuração) e Pisão +8 (1d8+12 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 13,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 0,
+    "Con": 5,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (couro, presas).",
+   "habilidades": [
+    {
+     "nome": "Território",
+     "gatilho": null,
+     "texto": "uma criatura que termine o turno a até 3 m dele sofre um ataque de Mordida como reação (1 vez por rodada)."
+    },
+    {
+     "nome": "Couro Espesso",
+     "gatilho": null,
+     "texto": "Redução de Dano 3."
+    },
+    {
+     "nome": "Submergir",
+     "gatilho": null,
+     "texto": "pode prender o fôlego por 10 minutos e se esconde na água com +5 em Furtividade."
+    }
+   ]
+  },
+  {
+   "id": "rugidor-de-savana",
+   "nome": "Rugidor-de-Savana",
+   "papel": "solo",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-rugidor-de-savana.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +4, Olfato +4",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 135,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+14 perfuração) e Garras +8 (1d8+16 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 14,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 16,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 2,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão (juba, pele).",
+   "habilidades": [
+    {
+     "nome": "Rugido Atordoante",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "Vontade CD 17 em alcance curto ou Abalado e Pasmo até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Garra acertar, o alvo faz Fortitude CD 17 ou fica Caído."
+    },
+    {
+     "nome": "Salto",
+     "gatilho": null,
+     "texto": "salta 6 m a mais em seu deslocamento sem teste."
+    }
+   ]
+  },
+  {
+   "id": "cacadora-de-tocas",
+   "nome": "Caçadora-de-Tocas",
+   "papel": "solo",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-cacadora-de-tocas.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção de vibrações (médio), Visão +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 12,
+    "von": 6
+   },
+   "pv": 135,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+17 perfuração, mais 5d6 de veneno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 17,
+     "tipo": "perfuração, mais 5d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 3,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: seda reforçada (1d6 rolos, CD 16).",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 17 ou Envenenado e Lento até o fim da cena."
+    },
+    {
+     "nome": "Emboscada de Toca",
+     "gatilho": null,
+     "texto": "na primeira rodada, se estava escondida, o alvo está desprevenido e ela ganha +1d8 de dano."
+    },
+    {
+     "nome": "Teia de Armadilha",
+     "gatilho": "ação padrão, 1 vez por cena",
+     "texto": "cobre área de 3 m; criaturas nela fazem Reflexos CD 17 ou ficam Enredadas."
+    }
+   ]
+  },
+  {
+   "id": "besouro-ariete",
+   "nome": "Besouro-Aríete",
+   "papel": "solo",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-besouro-ariete.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +2, Olfato +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 135,
+   "deslocamento": "9 m, voo 6 m (desajeitado)",
+   "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+16 perfuração) e Mandíbulas +8 (1d8+14 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 16,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Mandíbulas",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 14,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": -1,
+    "Con": 5,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: carapaça (CD 16, serve para armadura leve).",
+   "habilidades": [
+    {
+     "nome": "Couraça Quitinosa",
+     "gatilho": null,
+     "texto": "Redução de Dano 5."
+    },
+    {
+     "nome": "Aríete",
+     "gatilho": null,
+     "texto": "se avançar 6 m em linha reta, a Chifrada empurra o alvo 3 m e ele faz Fortitude CD 17 ou fica Caído."
+    },
+    {
+     "nome": "Casco Pesado",
+     "gatilho": null,
+     "texto": "se ficar Caído, precisa gastar uma ação padrão (em vez de movimento) para se levantar."
+    }
+   ]
+  },
+  {
+   "id": "abutre-colosso",
+   "nome": "Abutre-Colosso",
+   "papel": "solo",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-abutre-colosso.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +9, Olfato +5",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 6,
+    "von": 0
+   },
+   "pv": 135,
+   "deslocamento": "6 m, voo 24 m",
+   "ataquesTexto": "Corpo a corpo: Bico +8 (1d8+16 perfuração) e Garras +8 (1d8+14 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Bico",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 16,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 14,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 2,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (penas).",
+   "habilidades": [
+    {
+     "nome": "Dilacerar",
+     "gatilho": null,
+     "texto": "contra alvo com menos da metade dos PV, o Bico causa +1d8."
+    },
+    {
+     "nome": "Rasante",
+     "gatilho": null,
+     "texto": "depois de acertar, pode se deslocar até 9 m em voo como ação livre (1 vez por rodada)."
+    },
+    {
+     "nome": "Olfato de Carniça",
+     "gatilho": null,
+     "texto": "sente criaturas feridas ou mortas a até 1 km."
+    }
+   ]
+  },
+  {
+   "id": "trombudo-das-neves",
+   "nome": "Trombudo-das-Neves",
+   "papel": "solo",
+   "nd": "8",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-trombudo-das-neves.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +4, Audição +3",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 1,
+    "von": 7
+   },
+   "pv": 145,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Presas +9 (2d6+14 perfuração) e Pisão +9 (2d6+14 impacto, só contra alvo Caído ou Pequeno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Presas",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 14,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 14,
+     "tipo": "impacto, só contra alvo Caído ou Pequeno"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": -1,
+    "Con": 6,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (presas, pele).",
+   "habilidades": [
+    {
+     "nome": "Pelagem Grossa",
+     "gatilho": null,
+     "texto": "Redução de Dano 4 e imune a frio de origem natural."
+    },
+    {
+     "nome": "Atropelar",
+     "gatilho": null,
+     "texto": "ao avançar 9 m, passa por criaturas Médias ou menores; elas fazem Reflexos CD 18 ou ficam Caídas e sofrem 2d6 de impacto."
+    },
+    {
+     "nome": "Varrida de Tromba",
+     "gatilho": "ação de movimento",
+     "texto": "empurra todas as criaturas adjacentes 3 m (Fortitude CD 18 evita)."
+    }
+   ]
+  },
+  {
+   "id": "fera-de-presas-curvas",
+   "nome": "Fera-de-Presas-Curvas",
+   "papel": "solo",
+   "nd": "8",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-fera-de-presas-curvas.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +5, Olfato +5",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 7,
+    "von": 1
+   },
+   "pv": 145,
+   "deslocamento": "15 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (1d8+13 perfuração), Garras +9 (1d8+9 corte) e Garras +9 (1d8+8 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 13,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 9,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 8,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 3,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão (presas, pele).",
+   "habilidades": [
+    {
+     "nome": "Bote",
+     "gatilho": "1 vez por cena",
+     "texto": "na primeira rodada, avança até 9 m e a Mordida derruba (Fortitude CD 18 evita)."
+    },
+    {
+     "nome": "Pelagem Furtiva",
+     "gatilho": null,
+     "texto": "+5 em Furtividade em terreno aberto com capim ou rocha."
+    },
+    {
+     "nome": "Presas Cravadas",
+     "gatilho": null,
+     "texto": "se a Mordida acertar um alvo Caído, causa +1d8."
+    }
+   ]
+  },
+  {
+   "id": "cobra-imperial",
+   "nome": "Cobra-Imperial",
+   "papel": "solo",
+   "nd": "8",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-cobra-imperial.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +4, sentido de calor (curto)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 1,
+    "ref": 13,
+    "von": 7
+   },
+   "pv": 145,
+   "deslocamento": "9 m, natação 9 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (1d8+17 perfuração, mais 6d6 de veneno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 17,
+     "tipo": "perfuração, mais 6d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 3,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 3,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Especial: presas de veneno (1d3 doses, CD 17).",
+   "habilidades": [
+    {
+     "nome": "Peçonha Mortal",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 18 ou Envenenado; ao fim de cada turno dele, repete o teste; falhar 2 vezes seguidas deixa o alvo Inconsciente."
+    },
+    {
+     "nome": "Capuz Hipnótico",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 18 em alcance curto ou Pasmo até o início do próximo turno."
+    },
+    {
+     "nome": "Bote Veloz",
+     "gatilho": null,
+     "texto": "1 vez por rodada, depois de atacar, pode recuar 6 m como ação livre."
+    }
+   ]
+  },
+  {
+   "id": "rei-das-cavernas",
+   "nome": "Rei-das-Cavernas",
+   "papel": "solo",
+   "nd": "9",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-rei-das-cavernas.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +6, Audição +4",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 1,
+    "von": 7
+   },
+   "pv": 160,
+   "deslocamento": "12 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Garras +9 (2d6+16 corte) e Mordida +9 (2d6+17 perfuração).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 16,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 17,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": 0,
+    "Con": 6,
+    "Int": -4,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Padrão (pele, garras).",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar as Garras, faz Agarrar (teste +11)."
+    },
+    {
+     "nome": "Rugido de Caverna",
+     "gatilho": "1 vez por cena",
+     "texto": "Vontade CD 18 em alcance curto ou Abalado até o fim da cena."
+    },
+    {
+     "nome": "Pele Cicatrizada",
+     "gatilho": null,
+     "texto": "Redução de Dano 4."
+    }
+   ]
+  },
+  {
+   "id": "polvo-de-abismo",
+   "nome": "Polvo-de-Abismo",
+   "papel": "solo",
+   "nd": "9",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "ameaca-polvo-de-abismo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +4, percepção de vibrações na água (médio)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 1,
+    "ref": 13,
+    "von": 7
+   },
+   "pv": 160,
+   "deslocamento": "3 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: 3 Tentáculos +9 (1d8+11, 1d8+12 e 1d8+12 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Tentáculo",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 11,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Tentáculo",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Tentáculo",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 3,
+    "Con": 3,
+    "Int": -3,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: bolsa de tinta (1d3 doses, CD 17).",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar um Tentáculo, faz Agarrar (teste +11); pode manter até 2 criaturas agarradas."
+    },
+    {
+     "nome": "Nuvem de Tinta",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "escurece a água em 6 m; quem estiver dentro fica Cego (Reflexos CD 18 reduz a 1 rodada)."
+    },
+    {
+     "nome": "Corpo Mole",
+     "gatilho": null,
+     "texto": "passa por qualquer fresta e é imune a Imobilizar; Redução de Dano 2."
+    }
+   ]
+  },
+  {
+   "id": "devorador-de-rio",
+   "nome": "Devorador-de-Rio",
+   "papel": "solo",
+   "nd": "9",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-devorador-de-rio.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +4, Olfato +4",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 1,
+    "von": 7
+   },
+   "pv": 160,
+   "deslocamento": "6 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+16 perfuração) e Cauda +9 (2d6+17 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 16,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 17,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": -1,
+    "Con": 6,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (couro nobre, dentes).",
+   "habilidades": [
+    {
+     "nome": "Presa Rolante",
+     "gatilho": null,
+     "texto": "se a Mordida acertar uma criatura Média ou menor, ela fica Agarrada (teste +11); no turno seguinte, o Devorador pode girar (ação de movimento) e causar 2d6 de dano ao alvo agarrado."
+    },
+    {
+     "nome": "Couraça Dura",
+     "gatilho": null,
+     "texto": "Redução de Dano 5."
+    },
+    {
+     "nome": "Emboscada Submersa",
+     "gatilho": null,
+     "texto": "na primeira rodada, se estava submerso, o alvo está desprevenido contra a Mordida."
+    }
+   ]
+  },
+  {
+   "id": "baleia-de-dentes-serrados",
+   "nome": "Baleia-de-Dentes-Serrados",
+   "papel": "solo",
+   "nd": "10",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-baleia-de-dentes-serrados.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "percepção às cegas (longo, na água), Audição +8 (especialista)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 14,
+    "ref": 2,
+    "von": 8
+   },
+   "pv": 170,
+   "deslocamento": "natação 18 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+19 perfuração) e Cauda +9 (2d6+18 impacto).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 19,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 18,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": 1,
+    "Con": 7,
+    "Int": -3,
+    "Sab": 4,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Especial: óleo e dentes (CD 18).",
+   "habilidades": [
+    {
+     "nome": "Sonar",
+     "gatilho": null,
+     "texto": "sabe a posição de todas as criaturas na água em alcance longo."
+    },
+    {
+     "nome": "Varrida de Cauda",
+     "gatilho": "ação de movimento, 1 vez por cena",
+     "texto": "criaturas adjacentes sofrem 2d6 de impacto e são empurradas 6 m (Fortitude CD 19 reduz à metade e evita o empurrão)."
+    },
+    {
+     "nome": "Pele Lisa",
+     "gatilho": null,
+     "texto": "Redução de Dano 4."
+    }
+   ]
+  },
+  {
+   "id": "matriarca-das-tocas",
+   "nome": "Matriarca-das-Tocas",
+   "papel": "solo",
+   "nd": "10",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-matriarca-das-tocas.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção de vibrações (longo), Visão +4",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 2,
+    "ref": 14,
+    "von": 8
+   },
+   "pv": 170,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+16 perfuração, mais 8d6 de veneno).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 16,
+     "tipo": "perfuração, mais 8d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 4,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: seda e veneno (1d4 doses, CD 18).",
+   "habilidades": [
+    {
+     "nome": "Peçonha Devastadora",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 19 ou Envenenado e Lento até o fim da cena."
+    },
+    {
+     "nome": "Teia",
+     "gatilho": "ação padrão",
+     "texto": "alvo em alcance curto faz Reflexos CD 19 ou fica Enredado; ela não é afetada por teias."
+    },
+    {
+     "nome": "Casulos de Seda",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "cria 3 casulos em pontos livres em alcance curto; no início do turno seguinte, cada um rompe e libera um filhote (Lacaio ND 1/4, Animal Pequeno, 4 PV, mordida +6 por 1d4+3 e veneno leve)."
+    },
+    {
+     "nome": "Furtividade",
+     "gatilho": "especialista",
+     "texto": "+4 de treino; esconde-se em teias e túneis."
+    }
+   ]
+  },
+  {
+   "id": "tigre-dentes-de-foice",
+   "nome": "Tigre-Dentes-de-Foice",
+   "papel": "solo",
+   "nd": "10",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-tigre-dentes-de-foice.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +5, Olfato +6",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 14,
+    "ref": 8,
+    "von": 2
+   },
+   "pv": 170,
+   "deslocamento": "15 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+18 perfuração) e Garras +9 (2d6+19 corte).",
+   "cd": null,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 18,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 19,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": 3,
+    "Con": 6,
+    "Int": -4,
+    "Sab": 3,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Padrão (pele, presas).",
+   "habilidades": [
+    {
+     "nome": "Salto Predatório",
+     "gatilho": "1 vez por cena",
+     "texto": "na primeira rodada, avança até 12 m e a Mordida derruba o alvo (Fortitude CD 19 evita)."
+    },
+    {
+     "nome": "Dentes de Foice",
+     "gatilho": null,
+     "texto": "contra alvo Caído, a Mordida causa +2d6."
+    },
+    {
+     "nome": "Pelagem Furtiva",
+     "gatilho": null,
+     "texto": "+5 em Furtividade em capinzal e mata aberta (especialista em Furtividade: +4 de treino)."
+    }
+   ]
+  },
+  {
+   "id": "baluarte-de-chifres",
+   "nome": "Baluarte-de-Chifres",
+   "papel": "solo",
+   "nd": "11",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-baluarte-de-chifres.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +5, Audição +4",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 15,
+    "ref": 3,
+    "von": 9
+   },
+   "pv": 180,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +9 (2d6+21 perfuração), Pisão +9 (2d6+20 impacto, só contra alvo Caído ou Pequeno). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 21,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 20,
+     "tipo": "impacto, só contra alvo Caído ou Pequeno"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": -1,
+    "Con": 7,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Padrão (chifre, couro)",
+   "habilidades": [
+    {
+     "nome": "Couraça de Crânio",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    },
+    {
+     "nome": "Investida Esmagadora",
+     "gatilho": null,
+     "texto": "se avançar 12 m em linha reta antes da Chifrada, ela causa +2d6 de dano e empurra o alvo 3 m; o alvo faz Fortitude CD 20 ou fica Caído."
+    },
+    {
+     "nome": "Mente Simples",
+     "gatilho": null,
+     "texto": "imune a efeitos de medo e a Pasmo."
+    },
+    {
+     "nome": "Muralha Viva",
+     "gatilho": null,
+     "texto": "criaturas Médias ou menores só passam por ele com Acrobacia CD 20 (ocupa o corredor)."
+    }
+   ]
+  },
+  {
+   "id": "moreia-abissal",
+   "nome": "Moreia-Abissal",
+   "papel": "solo",
+   "nd": "11",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-moreia-abissal.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3, percepção de vibrações na água (médio)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 3,
+    "ref": 15,
+    "von": 9
+   },
+   "pv": 180,
+   "deslocamento": "3 m, natação 15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+21 perfuração), Constrição +9 (2d6+20 impacto, só contra criatura agarrada). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 21,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Constrição",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 20,
+     "tipo": "impacto, só contra criatura agarrada"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 3,
+    "Con": 5,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (couro, dentes)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +11)."
+    },
+    {
+     "nome": "Engolir",
+     "gatilho": "ação padrão",
+     "texto": "engole uma criatura Média ou menor que esteja agarrada; no início de cada turno dela, a engolida sofre 2d6 de dano de ácido. Escapa causando 25 de dano ao interior (Defesa 10)."
+    },
+    {
+     "nome": "Pele Escorregadia",
+     "gatilho": null,
+     "texto": "+4 para escapar de Agarrar e Imobilizar; imune a Enredado."
+    },
+    {
+     "nome": "Emboscada de Fenda",
+     "gatilho": null,
+     "texto": "na primeira rodada, se estava escondida, o alvo está desprevenido contra a Mordida."
+    }
+   ]
+  },
+  {
+   "id": "ceifa-verde",
+   "nome": "Ceifa-Verde",
+   "papel": "solo",
+   "nd": "11",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-ceifa-verde.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +8, Audição +3",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 3,
+    "ref": 15,
+    "von": 9
+   },
+   "pv": 180,
+   "deslocamento": "9 m, voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Foice +9 (2d6+21 corte), Foice +9 (2d6+20 corte). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Foic",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 21,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Foic",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 20,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 4,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: foices (CD 18, servem de matéria-prima)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com uma Foice, faz Agarrar (teste +11)."
+    },
+    {
+     "nome": "Camuflagem de Folhagem",
+     "gatilho": null,
+     "texto": "+10 em Furtividade em mata; o primeiro ataque do combate contra alvo desprevenido causa +2d6."
+    },
+    {
+     "nome": "Postura de Caça",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "quando uma criatura entra no alcance dela, faz um ataque de Foice contra ela."
+    },
+    {
+     "nome": "Cabeça Giratória",
+     "gatilho": null,
+     "texto": "não pode ser flanqueada."
+    }
+   ]
+  },
+  {
+   "id": "uivador-da-tundra",
+   "nome": "Uivador-da-Tundra",
+   "papel": "solo",
+   "nd": "12",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-uivador-da-tundra.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +10, Audição +6",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 16,
+    "ref": 10,
+    "von": 4
+   },
+   "pv": 195,
+   "deslocamento": "18 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+23 perfuração), Garras +10 (2d6+23 corte). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 3,
+    "Con": 6,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão (pele)",
+   "habilidades": [
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, o alvo faz Fortitude CD 21 ou fica Caído."
+    },
+    {
+     "nome": "Uivo de Tempestade",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "Vontade CD 21 em alcance médio ou Abalado até o fim da cena."
+    },
+    {
+     "nome": "Pelagem de Geada",
+     "gatilho": null,
+     "texto": "Redução de Dano 4 e imune a frio natural."
+    },
+    {
+     "nome": "Faro de Caçador",
+     "gatilho": null,
+     "texto": "rastreia por Olfato sem teste em até 1 km."
+    }
+   ]
+  },
+  {
+   "id": "casco-de-montanha",
+   "nome": "Casco-de-Montanha",
+   "papel": "solo",
+   "nd": "12",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-casco-de-montanha.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "-1",
+   "sentidos": "Visão +2, Olfato +3",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 16,
+    "ref": 4,
+    "von": 10
+   },
+   "pv": 195,
+   "deslocamento": "6 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+23 perfuração), Cabeçada +10 (2d6+23 impacto). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Cabeçada",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": -2,
+    "Con": 8,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Especial: casco (CD 19, serve para escudo pesado)",
+   "habilidades": [
+    {
+     "nome": "Couraça de Rocha",
+     "gatilho": null,
+     "texto": "Redução de Dano 8."
+    },
+    {
+     "nome": "Recolher-se",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "+4 na Defesa até o início do próximo turno dele; enquanto recolhido, não ataca."
+    },
+    {
+     "nome": "Inabalável",
+     "gatilho": null,
+     "texto": "imune a Derrubar e Empurrar."
+    },
+    {
+     "nome": "Pisão Sísmico",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "criaturas em 6 m fazem Reflexos CD 21 ou ficam Caídas."
+    }
+   ]
+  },
+  {
+   "id": "aguia-do-cume",
+   "nome": "Águia-do-Cume",
+   "papel": "solo",
+   "nd": "12",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-aguia-do-cume.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +12 (vê detalhes a longa distância)",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 10,
+    "ref": 16,
+    "von": 4
+   },
+   "pv": 195,
+   "deslocamento": "6 m, voo 24 m",
+   "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+23 corte), Garras +10 (2d6+23 corte). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 4,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 5,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão (penas)",
+   "habilidades": [
+    {
+     "nome": "Arrebatar",
+     "gatilho": "1 vez por cena",
+     "texto": "ao acertar criatura Média ou menor, a agarra e voa até 12 m; se ela não se soltar (Atletismo ou Acrobacia CD 21), sofre 4d6 de queda quando for solta."
+    },
+    {
+     "nome": "Mergulho Mortal",
+     "gatilho": null,
+     "texto": "se voar 12 m em descida antes de atacar, a primeira Garra causa +2d6."
+    },
+    {
+     "nome": "Rajada de Asas",
+     "gatilho": "ação de movimento",
+     "texto": "Reflexos CD 21 em alcance curto ou adjacentes são empurrados 3 m."
+    },
+    {
+     "nome": "Olhar Aguçado",
+     "gatilho": null,
+     "texto": "nunca fica desprevenida por ataques à distância."
+    }
+   ]
+  },
+  {
+   "id": "fera-das-geleiras",
+   "nome": "Fera-das-Geleiras",
+   "papel": "solo",
+   "nd": "14",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-fera-das-geleiras.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Olfato +8, Visão +5",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 17,
+    "ref": 11,
+    "von": 5
+   },
+   "pv": 220,
+   "deslocamento": "12 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+28 corte), Mordida +10 (2d6+27 perfuração). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 28,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 27,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": 1,
+    "Con": 7,
+    "Int": -4,
+    "Sab": 3,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Padrão (pele, presas)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com as Garras, faz Agarrar (teste +12)."
+    },
+    {
+     "nome": "Pelagem Polar",
+     "gatilho": null,
+     "texto": "Redução de Dano 5 e imune a frio natural."
+    },
+    {
+     "nome": "Rugido de Avalanche",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "cone de 9 m; Reflexos CD 22 ou Caído."
+    },
+    {
+     "nome": "Caçador da Neve",
+     "gatilho": null,
+     "texto": "+10 em Furtividade na neve e no gelo; ignora terreno difícil de neve e gelo."
+    }
+   ]
+  },
+  {
+   "id": "serpente-de-mare",
+   "nome": "Serpente-de-Maré",
+   "papel": "solo",
+   "nd": "14",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-serpente-de-mare.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +5, percepção de vibrações na água (longo)",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 5,
+    "ref": 17,
+    "von": 11
+   },
+   "pv": 220,
+   "deslocamento": "9 m, natação 15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+28 perfuração), Constrição +10 (2d6+27 impacto, só contra criatura agarrada). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 28,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Constrição",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 27,
+     "tipo": "impacto, só contra criatura agarrada"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 3,
+    "Con": 5,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Padrão (escamas)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +12)."
+    },
+    {
+     "nome": "Onda",
+     "gatilho": "ação de movimento",
+     "texto": "bate na água; criaturas na água ou em embarcações em 6 m fazem Reflexos CD 22 ou são derrubadas ou lançadas 3 m."
+    },
+    {
+     "nome": "Corpo Escorregadio",
+     "gatilho": null,
+     "texto": "+4 para escapar de Agarrar e Imobilizar."
+    },
+    {
+     "nome": "Fôlego Longo",
+     "gatilho": null,
+     "texto": "prende o fôlego por 1 hora."
+    }
+   ]
+  },
+  {
+   "id": "lacraia-de-rocha",
+   "nome": "Lacraia-de-Rocha",
+   "papel": "solo",
+   "nd": "15",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-lacraia-de-rocha.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção de vibrações (longo), Olfato +4",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 5,
+    "ref": 17,
+    "von": 11
+   },
+   "pv": 230,
+   "deslocamento": "12 m, escavação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+23 perfuração, mais 4d6 de veneno), Ferrão de Cauda +10 (2d6+22 perfuração). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "perfuração, mais 4d6 de veneno"
+    },
+    {
+     "nome": "Ferrão de Cauda",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 22,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 3,
+    "Con": 5,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: veneno e quitina (1d4 doses, CD 20)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +12)."
+    },
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 22 ou Envenenado e Lento até o fim da cena."
+    },
+    {
+     "nome": "Emboscada Subterrânea",
+     "gatilho": null,
+     "texto": "ao emergir da escavação, o alvo está desprevenido e faz Reflexos CD 22 ou fica Caído."
+    },
+    {
+     "nome": "Couraça de Placas",
+     "gatilho": null,
+     "texto": "Redução de Dano 5."
+    }
+   ]
+  },
+  {
+   "id": "coruja-matriarca",
+   "nome": "Coruja-Matriarca",
+   "papel": "solo",
+   "nd": "15",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-coruja-matriarca.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Audição +12, Visão +10 (enxerga com pouca luz)",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": 17,
+    "von": 5
+   },
+   "pv": 230,
+   "deslocamento": "6 m, voo 21 m",
+   "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+30 corte), Bico +10 (2d6+29 perfuração). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 30,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Bico",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 29,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 5,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 5,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão (penas silenciosas)",
+   "habilidades": [
+    {
+     "nome": "Voo Silencioso",
+     "gatilho": null,
+     "texto": "+10 em Furtividade em voo; o primeiro ataque vindo do voo contra alvo desprevenido causa +2d6."
+    },
+    {
+     "nome": "Grito Paralisante",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "Vontade CD 22 em alcance curto ou Pasmo por 1 rodada."
+    },
+    {
+     "nome": "Cabeça Giratória",
+     "gatilho": null,
+     "texto": "não pode ser flanqueada."
+    },
+    {
+     "nome": "Presa de Silêncio",
+     "gatilho": null,
+     "texto": "a Garra que acerta alvo Médio ou menor o impede de falar até o início do próximo turno dela (Fortitude CD 22 evita)."
+    }
+   ]
+  },
+  {
+   "id": "lingua-de-chicote",
+   "nome": "Língua-de-Chicote",
+   "papel": "solo",
+   "nd": "16",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-lingua-de-chicote.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +12 (olhos independentes)",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 18,
+    "von": 12
+   },
+   "pv": 240,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Língua (alcance 9 m) +10 (2d6+32 impacto), Mordida +10 (2d6+31 perfuração). CD das habilidades 23.",
+   "cd": 23,
+   "ataques": [
+    {
+     "nome": "Língua (alcance 9 m)",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 32,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 31,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 3,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 4,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: pele camuflante (CD 20)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Língua, faz Agarrar (teste +12)."
+    },
+    {
+     "nome": "Língua Puxadora",
+     "gatilho": null,
+     "texto": "a criatura agarrada pela Língua é puxada até ficar adjacente (3 m por rodada)."
+    },
+    {
+     "nome": "Camuflagem Perfeita",
+     "gatilho": null,
+     "texto": "parado, +15 em Furtividade; o primeiro ataque do combate vindo da camuflagem deixa o alvo desprevenido."
+    },
+    {
+     "nome": "Olhos Independentes",
+     "gatilho": null,
+     "texto": "não pode ser flanqueada e nunca fica desprevenida."
+    }
+   ]
+  },
+  {
+   "id": "escavador-tita",
+   "nome": "Escavador-Titã",
+   "papel": "solo",
+   "nd": "16",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-escavador-tita.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "-1",
+   "sentidos": "percepção de vibrações (longo)",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 18,
+    "ref": 6,
+    "von": 12
+   },
+   "pv": 240,
+   "deslocamento": "9 m, escavação 9 m",
+   "ataquesTexto": "Corpo a corpo: Chifre +10 (2d6+32 perfuração), Mandíbulas +10 (2d6+31 corte). CD das habilidades 23.",
+   "cd": 23,
+   "ataques": [
+    {
+     "nome": "Chifr",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 32,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Mandíbulas",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 31,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 8,
+    "Des": -2,
+    "Con": 8,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: carapaça (CD 21, armadura média)",
+   "habilidades": [
+    {
+     "nome": "Couraça Titã",
+     "gatilho": null,
+     "texto": "Redução de Dano 8."
+    },
+    {
+     "nome": "Emboscada Subterrânea",
+     "gatilho": null,
+     "texto": "ao emergir sob criaturas, elas fazem Reflexos CD 23 ou ficam Caídas e sofrem 2d6 de impacto."
+    },
+    {
+     "nome": "Tremor",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "área de 9 m; Fortitude CD 23 ou Caído."
+    },
+    {
+     "nome": "Inabalável",
+     "gatilho": null,
+     "texto": "imune a Derrubar e Empurrar."
+    }
+   ]
+  },
+  {
+   "id": "cachalote-ancestral",
+   "nome": "Cachalote-Ancestral",
+   "papel": "solo",
+   "nd": "17",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-cachalote-ancestral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "percepção às cegas (longo, na água), Audição +10",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 19,
+    "ref": 7,
+    "von": 13
+   },
+   "pv": 255,
+   "deslocamento": "natação 18 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (2d8+32 perfuração), Cauda +11 (2d8+32 impacto). CD das habilidades 24.",
+   "cd": 24,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 32,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 32,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 9,
+    "Des": 0,
+    "Con": 9,
+    "Int": -3,
+    "Sab": 4,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Especial: óleo ancestral e dentes (CD 22)",
+   "habilidades": [
+    {
+     "nome": "Engolir",
+     "gatilho": "ação padrão",
+     "texto": "engole uma criatura Grande ou menor que esteja agarrada; no início de cada turno dela, a engolida sofre 2d8 de ácido. Escapa causando 40 de dano."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Sonar",
+     "gatilho": null,
+     "texto": "sabe a posição de todas as criaturas na água em alcance longo."
+    },
+    {
+     "nome": "Varrida de Cauda",
+     "gatilho": "1 vez por cena",
+     "texto": "adjacentes sofrem 2d8 de impacto e são empurrados 9 m (Fortitude CD 24 reduz à metade e evita o empurrão)."
+    },
+    {
+     "nome": "Pele Cicatrizada",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    }
+   ]
+  },
+  {
+   "id": "lobo-ancestral",
+   "nome": "Lobo-Ancestral",
+   "papel": "solo",
+   "nd": "17",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-lobo-ancestral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Olfato +12 (especialista), Audição +8",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 19,
+    "ref": 13,
+    "von": 7
+   },
+   "pv": 255,
+   "deslocamento": "18 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (2d6+21 perfuração), Garras +11 (2d6+20 corte), Garras +11 (2d6+20 corte). CD das habilidades 24.",
+   "cd": 24,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 21,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 20,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 20,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 8,
+    "Des": 4,
+    "Con": 7,
+    "Int": -3,
+    "Sab": 4,
+    "Car": 1
+   },
+   "tesouro": "Tesouro Padrão (pele ancestral)",
+   "habilidades": [
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 24 ou Caído."
+    },
+    {
+     "nome": "Uivo Ancestral",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "Vontade CD 24 em alcance longo ou Abalado até o fim da cena."
+    },
+    {
+     "nome": "Pelagem de Prata Antiga",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    },
+    {
+     "nome": "Faro Ancestral",
+     "gatilho": null,
+     "texto": "rastreia por Olfato sem teste e sempre sabe a direção de criaturas feridas a até 2 km."
+    }
+   ]
+  },
+  {
+   "id": "jiboia-ancestral",
+   "nome": "Jibóia-Ancestral",
+   "papel": "solo",
+   "nd": "18",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-jiboia-ancestral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +6, sentido de calor (médio)",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 20,
+    "ref": 8,
+    "von": 14
+   },
+   "pv": 265,
+   "deslocamento": "9 m, natação 9 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (2d8+34 perfuração), Constrição +11 (2d8+34 impacto, só contra criatura agarrada). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 34,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Constrição",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 34,
+     "tipo": "impacto, só contra criatura agarrada"
+    }
+   ],
+   "atributos": {
+    "For": 9,
+    "Des": 2,
+    "Con": 8,
+    "Int": -5,
+    "Sab": 3,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Especial: couro ancestral (CD 23)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Engolir",
+     "gatilho": "ação padrão",
+     "texto": "engole uma criatura Grande ou menor que esteja agarrada; 2d8 de ácido por turno. Escapa causando 40 de dano."
+    },
+    {
+     "nome": "Constrição Esmagadora",
+     "gatilho": null,
+     "texto": "no início do turno dela, cada criatura agarrada faz Fortitude CD 25 ou fica Atordoada até o fim do turno."
+    },
+    {
+     "nome": "Peso Colossal",
+     "gatilho": null,
+     "texto": "imune a Derrubar e Empurrar de criaturas menores que Enorme."
+    }
+   ]
+  },
+  {
+   "id": "condor-ancestral",
+   "nome": "Condor-Ancestral",
+   "papel": "solo",
+   "nd": "18",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-condor-ancestral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Visão +14 (especialista, vê a longuíssima distância)",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 14,
+    "ref": 20,
+    "von": 8
+   },
+   "pv": 265,
+   "deslocamento": "6 m, voo 30 m",
+   "ataquesTexto": "Corpo a corpo: Garras +11 (2d8+34 corte), Garras +11 (2d8+34 corte). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 34,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 34,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 8,
+    "Des": 5,
+    "Con": 6,
+    "Int": -3,
+    "Sab": 6,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Padrão (penas ancestrais)",
+   "habilidades": [
+    {
+     "nome": "Arrebatar",
+     "gatilho": "1 vez por cena",
+     "texto": "ao acertar criatura Grande ou menor, a agarra e voa até 18 m; se ela não se soltar (Atletismo ou Acrobacia CD 25), sofre 6d6 de queda."
+    },
+    {
+     "nome": "Rajada de Asas",
+     "gatilho": "ação padrão, 1 vez por cena",
+     "texto": "cone de 12 m; Reflexos CD 25 ou Caído e empurrado 6 m."
+    },
+    {
+     "nome": "Sombra Gigante",
+     "gatilho": "1 vez por cena",
+     "texto": "quem estiver sob ela faz Vontade CD 25 ou fica Abalado até o fim da cena."
+    },
+    {
+     "nome": "Mergulho Mortal",
+     "gatilho": null,
+     "texto": "se voar 18 m em descida antes de atacar, a primeira Garra causa +2d8."
+    }
+   ]
+  },
+  {
+   "id": "mastodonte-ancestral",
+   "nome": "Mastodonte-Ancestral",
+   "papel": "solo",
+   "nd": "19",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-mastodonte-ancestral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "-1",
+   "sentidos": "Olfato +6, Audição +6",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 20,
+    "ref": 8,
+    "von": 14
+   },
+   "pv": 280,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Presas +11 (2d8+37 perfuração), Pisão +11 (2d8+36 impacto, só contra alvo Caído ou Médio e menor). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Presas",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 37,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 36,
+     "tipo": "impacto, só contra alvo Caído ou Médio e menor"
+    }
+   ],
+   "atributos": {
+    "For": 10,
+    "Des": -2,
+    "Con": 9,
+    "Int": -4,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Especial: presas ancestrais (CD 23)",
+   "habilidades": [
+    {
+     "nome": "Atropelar",
+     "gatilho": null,
+     "texto": "ao avançar 12 m, passa por criaturas Grandes ou menores; elas fazem Reflexos CD 25 ou ficam Caídas e sofrem 2d8 de impacto."
+    },
+    {
+     "nome": "Passo Sísmico",
+     "gatilho": "ação de movimento, 1 vez por rodada",
+     "texto": "Reflexos CD 25 em 9 m ou Caído."
+    },
+    {
+     "nome": "Pelagem de Mil Invernos",
+     "gatilho": null,
+     "texto": "Redução de Dano 6 e imune a frio natural."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com as Presas, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Arremesso",
+     "gatilho": "ação de movimento",
+     "texto": "arremessa uma criatura agarrada 9 m; ela sofre 4d6 de impacto e cai Caída."
+    }
+   ]
+  },
+  {
+   "id": "fera-primeva",
+   "nome": "Fera-Primeva",
+   "papel": "solo",
+   "nd": "20",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-fera-primeva.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Olfato +10, Visão +10",
+   "defesa": 19,
+   "salvaguardas": {
+    "fort": 15,
+    "ref": 21,
+    "von": 9
+   },
+   "pv": 290,
+   "deslocamento": "18 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (2d8+23 perfuração), Garras +11 (2d8+23 corte), Garras +11 (2d8+22 corte). CD das habilidades 26.",
+   "cd": 26,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 23,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 23,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d8",
+     "fixo": 22,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 9,
+    "Des": 5,
+    "Con": 8,
+    "Int": -3,
+    "Sab": 4,
+    "Car": 2
+   },
+   "tesouro": "Tesouro Especial: pele e presas primevas (CD 24)",
+   "habilidades": [
+    {
+     "nome": "Salto Predatório",
+     "gatilho": "1 vez por cena",
+     "texto": "na primeira rodada, avança até 18 m e a Mordida derruba (Fortitude CD 26)."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se uma Garra acertar, Fortitude CD 26 ou Caído."
+    },
+    {
+     "nome": "Rugido Primevo",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "Vontade CD 26 em alcance longo ou Abalado até o fim da cena."
+    },
+    {
+     "nome": "Frenesi",
+     "gatilho": null,
+     "texto": "com metade dos PV ou menos, +2 nos ataques e no dano."
+    },
+    {
+     "nome": "Pele Antiga",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    },
+    {
+     "nome": "Furtividade especialista",
+     "gatilho": null,
+     "texto": "+4 de treino; +10 em mata e rochedo."
+    }
+   ]
+  },
+  {
+   "id": "auroque-primordial",
+   "nome": "Auroque-Primordial",
+   "papel": "solo",
+   "nd": "S",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-auroque-primordial.png",
+   "nota": null,
+   "acompanha": null,
+   "ndContaComo": 20,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +10, Audição +10, Visão +8",
+   "defesa": 20,
+   "salvaguardas": {
+    "fort": 23,
+    "ref": 11,
+    "von": 17
+   },
+   "pv": 500,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +12 (2d8+44 perfuração), Pisão +12 (2d8+43 impacto). CD das habilidades 28.",
+   "cd": 28,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 12,
+     "dados": "2d8",
+     "fixo": 44,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 12,
+     "dados": "2d8",
+     "fixo": 43,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 11,
+    "Des": -1,
+    "Con": 10,
+    "Int": -3,
+    "Sab": 3,
+    "Car": 2
+   },
+   "tesouro": "Tesouro Dobro (chifre, couro primordial; item lendário a definir)",
+   "habilidades": [
+    {
+     "nome": "Fases",
+     "gatilho": null,
+     "texto": "Fase 1 (100% a 51% dos PV): normal. **Fase 2 (50% dos PV ou menos):** Fúria Primordial, +2 nos ataques e no dano, +6 m de deslocamento e imune a Abalado, Pasmo e Atordoado."
+    },
+    {
+     "nome": "Resistência Lendária",
+     "gatilho": "2 vezes por cena",
+     "texto": "quando falhar em um teste de resistência, pode escolher ser bem-sucedido."
+    },
+    {
+     "nome": "Ação Lendária",
+     "gatilho": "1 vez por rodada, no fim do turno de outra criatura",
+     "texto": "Pisão Sísmico; criaturas em 9 m fazem Reflexos CD 28 ou ficam Caídas."
+    },
+    {
+     "nome": "Investida Primordial",
+     "gatilho": null,
+     "texto": "se avançar 15 m em linha reta, a Chifrada causa +3d8 e o alvo faz Fortitude CD 28 ou fica Caído e Pasmo."
+    },
+    {
+     "nome": "Couro de Montanha",
+     "gatilho": null,
+     "texto": "Redução de Dano 8 e imune a Derrubar e Empurrar."
+    }
+   ]
+  },
+  {
+   "id": "mae-dos-abismos",
+   "nome": "Mãe-dos-Abismos",
+   "papel": "solo",
+   "nd": "S",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-mae-dos-abismos.png",
+   "nota": null,
+   "acompanha": null,
+   "ndContaComo": 20,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "percepção às cegas (longo, na água), Visão +10",
+   "defesa": 20,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": 23,
+    "von": 17
+   },
+   "pv": 500,
+   "deslocamento": "3 m, natação 18 m",
+   "ataquesTexto": "Corpo a corpo: Tentáculo +12 (2d8+26 impacto), Tentáculo +12 (2d8+26 impacto), Tentáculo +12 (2d8+26 impacto). CD das habilidades 28.",
+   "cd": 28,
+   "ataques": [
+    {
+     "nome": "Tentáculo",
+     "bonus": 12,
+     "dados": "2d8",
+     "fixo": 26,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Tentáculo",
+     "bonus": 12,
+     "dados": "2d8",
+     "fixo": 26,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Tentáculo",
+     "bonus": 12,
+     "dados": "2d8",
+     "fixo": 26,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 10,
+    "Des": 4,
+    "Con": 9,
+    "Int": -2,
+    "Sab": 4,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Dobro (tinta ancestral; item lendário a definir)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com um Tentáculo, faz Agarrar (teste +14); pode manter até 3 criaturas agarradas."
+    },
+    {
+     "nome": "Engolir",
+     "gatilho": "ação padrão",
+     "texto": "engole uma criatura Grande ou menor que esteja agarrada; no início de cada turno dela, a engolida sofre 3d8 de ácido. Escapa causando 50 de dano."
+    },
+    {
+     "nome": "Fases",
+     "gatilho": null,
+     "texto": "**Fase 2 (50% dos PV ou menos):** libera Nuvem de Tinta e ganha +2 nos ataques, e os Tentáculos causam +1d8."
+    },
+    {
+     "nome": "Nuvem de Tinta",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "escurece a água em 12 m; quem estiver dentro fica Cego (Reflexos CD 28 reduz a 1 rodada)."
+    },
+    {
+     "nome": "Resistência Lendária",
+     "gatilho": "2 vezes por cena",
+     "texto": "quando falhar em um teste de resistência, pode escolher ser bem-sucedida."
+    },
+    {
+     "nome": "Ação Lendária",
+     "gatilho": "1 vez por rodada, no fim do turno de outra criatura",
+     "texto": "um Tentáculo agarra uma criatura em alcance (sem teste de ataque; Reflexos CD 28 evita)."
+    },
+    {
+     "nome": "Corpo Mole",
+     "gatilho": null,
+     "texto": "passa por qualquer fresta, imune a Imobilizar e Redução de Dano 6."
+    }
+   ]
+  },
+  {
+   "id": "serpente-do-horizonte",
+   "nome": "Serpente-do-Horizonte",
+   "papel": "solo",
+   "nd": "S+",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "ameaca-serpente-do-horizonte.png",
+   "nota": null,
+   "acompanha": null,
+   "ndContaComo": 20,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +12, sentido de calor (longo), percepção de vibrações (longo)",
+   "defesa": 21,
+   "salvaguardas": {
+    "fort": 25,
+    "ref": 13,
+    "von": 19
+   },
+   "pv": 800,
+   "deslocamento": "12 m, escalada 9 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +13 (2d8+26 perfuração, mais 6d6 de veneno), Cauda +13 (2d8+26 impacto), Constrição +13 (2d8+25 impacto, só contra criatura agarrada). CD das habilidades 30.",
+   "cd": 30,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 13,
+     "dados": "2d8",
+     "fixo": 26,
+     "tipo": "perfuração, mais 6d6 de veneno"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 13,
+     "dados": "2d8",
+     "fixo": 26,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Constrição",
+     "bonus": 13,
+     "dados": "2d8",
+     "fixo": 25,
+     "tipo": "impacto, só contra criatura agarrada"
+    }
+   ],
+   "atributos": {
+    "For": 12,
+    "Des": 3,
+    "Con": 11,
+    "Int": -2,
+    "Sab": 5,
+    "Car": 3
+   },
+   "tesouro": "Tesouro Dobro e Especial (escamas e veneno da Serpente; item lendário a definir)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +15)."
+    },
+    {
+     "nome": "Fases",
+     "gatilho": null,
+     "texto": "Fase 1 (100% a 67%): normal. **Fase 2 (66% a 34%):** Veneno do Fim; a Serpente exala uma nuvem de 12 m; quem começar o turno nela faz Fortitude CD 30 ou fica Envenenado. **Fase 3 (33% ou menos):** Rastejar do Mundo; ao fim de cada turno dela, um tremor de 12 m derruba (Fortitude CD 30 evita)."
+    },
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 30 ou Envenenado e Lento até o fim da cena."
+    },
+    {
+     "nome": "Engolir",
+     "gatilho": "ação padrão",
+     "texto": "engole uma criatura Enorme ou menor que esteja agarrada; no início de cada turno dela, a engolida sofre 4d8 de ácido. Escapa causando 60 de dano."
+    },
+    {
+     "nome": "Resistência Lendária",
+     "gatilho": "3 vezes por cena",
+     "texto": "quando falhar em um teste de resistência, pode escolher ser bem-sucedida."
+    },
+    {
+     "nome": "Ação Lendária",
+     "gatilho": "2 vezes por rodada, no fim do turno de outras criaturas",
+     "texto": "Cauda como ação livre contra criatura adjacente."
+    },
+    {
+     "nome": "Corpo do Mundo",
+     "gatilho": null,
+     "texto": "Redução de Dano 10; imune a veneno, frio e Derrubar."
+    }
+   ]
+  },
+  {
+   "id": "morcego-dentuco",
+   "nome": "Morcego-Dentuço",
+   "papel": "lacaio",
+   "nd": "1/4",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-morcego-dentuco.png",
+   "nota": null,
+   "acompanha": "Morcegão-de-Cripta",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "percepção às cegas (curto), Audição +3",
+   "defesa": 10,
+   "salvaguardas": {
+    "fort": -6,
+    "ref": 6,
+    "von": 0
+   },
+   "pv": 4,
+   "deslocamento": "3 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +6 (1d4+5 perfuração). CD das habilidades 12.",
+   "cd": 12,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 6,
+     "dados": "1d4",
+     "fixo": 5,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": -3,
+    "Des": 3,
+    "Con": 0,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Voo Errático",
+     "gatilho": null,
+     "texto": "+2 na Defesa contra ataques à distância."
+    }
+   ]
+  },
+  {
+   "id": "cao-de-ruina",
+   "nome": "Cão-de-Ruína",
+   "papel": "lacaio",
+   "nd": "1/2",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-cao-de-ruina.png",
+   "nota": null,
+   "acompanha": "Chacal-Rubro",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +4",
+   "defesa": 11,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 0,
+    "von": -6
+   },
+   "pv": 8,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +7 (1d6+7 perfuração). CD das habilidades 12.",
+   "cd": 12,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 7,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 2,
+    "Con": 1,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    }
+   ]
+  },
+  {
+   "id": "vibora-de-folha",
+   "nome": "Víbora-de-Folha",
+   "papel": "lacaio",
+   "nd": "1",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-vibora-de-folha.png",
+   "nota": null,
+   "acompanha": "Serpente-de-Bruma",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3, Olfato +3",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": -4,
+    "ref": 8,
+    "von": 2
+   },
+   "pv": 15,
+   "deslocamento": "6 m, escalada 4,5 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d4+7 perfuração, mais 1d6 de veneno). CD das habilidades 13.",
+   "cd": 13,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d4",
+     "fixo": 7,
+     "tipo": "perfuração, mais 1d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 3,
+    "Con": 0,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 13 ou Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Camuflagem de Folhagem",
+     "gatilho": null,
+     "texto": "+5 em Furtividade em mata e capim alto."
+    }
+   ]
+  },
+  {
+   "id": "corvo-carniceiro",
+   "nome": "Corvo-Carniceiro",
+   "papel": "lacaio",
+   "nd": "1",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-corvo-carniceiro.png",
+   "nota": null,
+   "acompanha": "Falcão-de-Penhasco",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +5, Olfato +2",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": -4,
+    "ref": 8,
+    "von": 2
+   },
+   "pv": 15,
+   "deslocamento": "3 m, voo 15 m",
+   "ataquesTexto": "Corpo a corpo: Bico +8 (1d4+10 perfuração). CD das habilidades 13.",
+   "cd": 13,
+   "ataques": [
+    {
+     "nome": "Bico",
+     "bonus": 8,
+     "dados": "1d4",
+     "fixo": 10,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 3,
+    "Con": 0,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Olhos de Carniça",
+     "gatilho": null,
+     "texto": "sente criaturas feridas a até 300 m."
+    }
+   ]
+  },
+  {
+   "id": "hiena-de-campina",
+   "nome": "Hiena-de-Campina",
+   "papel": "lacaio",
+   "nd": "2",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-hiena-de-campina.png",
+   "nota": null,
+   "acompanha": "Rugidor-de-Savana",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +5, Audição +3",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 3,
+    "von": -3
+   },
+   "pv": 20,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+15 perfuração). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 15,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 2,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Riso Desnorteante",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 14 em alcance curto ou Abalado até o início do próximo turno dela."
+    }
+   ]
+  },
+  {
+   "id": "aranha-de-esteira",
+   "nome": "Aranha-de-Esteira",
+   "papel": "lacaio",
+   "nd": "2",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-aranha-de-esteira.png",
+   "nota": null,
+   "acompanha": "Tecedeira-de-Teias",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção de vibrações (curto)",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 9,
+    "von": 3
+   },
+   "pv": 20,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +8 (1d4+13 perfuração, mais 1d6 de veneno). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 8,
+     "dados": "1d4",
+     "fixo": 13,
+     "tipo": "perfuração, mais 1d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": -1,
+    "Des": 3,
+    "Con": 1,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 14 ou Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Teia",
+     "gatilho": "ação de movimento, 1 vez por cena",
+     "texto": "alvo em alcance curto faz Reflexos CD 14 ou fica Enredado."
+    }
+   ]
+  },
+  {
+   "id": "lobo-de-matilha",
+   "nome": "Lobo-de-Matilha",
+   "papel": "lacaio",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-lobo-de-matilha.png",
+   "nota": null,
+   "acompanha": "Lobo-Rasga-Vento",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +6, Audição +4",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 3,
+    "von": -3
+   },
+   "pv": 20,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (1d6+19 perfuração). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 19,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 2,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 14 ou Caído."
+    }
+   ]
+  },
+  {
+   "id": "lagarto-d-agua",
+   "nome": "Lagarto-d'Água",
+   "papel": "lacaio",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-lagarto-d-agua.png",
+   "nota": null,
+   "acompanha": "Caimão-Cinzento",
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +3, Olfato +3",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": -3,
+    "von": 3
+   },
+   "pv": 20,
+   "deslocamento": "6 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (1d6+19 perfuração). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 19,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 0,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (couro)",
+   "habilidades": [
+    {
+     "nome": "Emboscada Submersa",
+     "gatilho": null,
+     "texto": "na primeira rodada, se estava submerso, o alvo está desprevenido contra o ataque."
+    },
+    {
+     "nome": "Couraça",
+     "gatilho": null,
+     "texto": "Redução de Dano 2."
+    }
+   ]
+  },
+  {
+   "id": "vespa-soldado",
+   "nome": "Vespa-Soldado",
+   "papel": "lacaio",
+   "nd": "3",
+   "tipo": "Animal",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-vespa-soldado.png",
+   "nota": null,
+   "acompanha": "Vespão-Colossal",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +4",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 9,
+    "von": 3
+   },
+   "pv": 20,
+   "deslocamento": "3 m, voo 15 m",
+   "ataquesTexto": "Corpo a corpo: Ferrão +9 (1d4+13 perfuração, mais 2d6 de veneno). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Ferrão",
+     "bonus": 9,
+     "dados": "1d4",
+     "fixo": 13,
+     "tipo": "perfuração, mais 2d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": -1,
+    "Des": 4,
+    "Con": 1,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se o Ferrão causar dano, Fortitude CD 14 ou Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Voo Errático",
+     "gatilho": null,
+     "texto": "+2 na Defesa contra ataques à distância."
+    }
+   ]
+  },
+  {
+   "id": "macaco-arremessador",
+   "nome": "Macaco-Arremessador",
+   "papel": "lacaio",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-macaco-arremessador.png",
+   "nota": null,
+   "acompanha": "Símio-de-Rochedo",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +4",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": -2,
+    "ref": 10,
+    "von": 4
+   },
+   "pv": 25,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Pancada +9 (1d6+11 impacto), Pedrada (alcance curto) +9 (1d6+11 impacto). CD das habilidades 15.",
+   "cd": 15,
+   "ataques": [
+    {
+     "nome": "Pancada",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 11,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Pedrada (alcance curto)",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 11,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 3,
+    "Con": 2,
+    "Int": -3,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade",
+   "habilidades": [
+    {
+     "nome": "Escalador Nato",
+     "gatilho": null,
+     "texto": "escala sem teste, mesmo superfícies lisas."
+    },
+    {
+     "nome": "Mira de Pedra",
+     "gatilho": null,
+     "texto": "a Pedrada ignora cobertura parcial."
+    }
+   ]
+  },
+  {
+   "id": "caranguejo-de-pincas",
+   "nome": "Caranguejo-de-Pinças",
+   "papel": "lacaio",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-caranguejo-de-pincas.png",
+   "nota": null,
+   "acompanha": "Serrilha-do-Abismo",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +2, percepção de vibrações (curto)",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 10,
+    "ref": -2,
+    "von": 4
+   },
+   "pv": 25,
+   "deslocamento": "6 m, natação 6 m",
+   "ataquesTexto": "Corpo a corpo: Pinça +9 (1d6+25 corte). CD das habilidades 15.",
+   "cd": 15,
+   "ataques": [
+    {
+     "nome": "Pinça",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 25,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 0,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (carapaça)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Pinça, faz Agarrar (teste +11)."
+    },
+    {
+     "nome": "Couraça",
+     "gatilho": null,
+     "texto": "Redução de Dano 3."
+    }
+   ]
+  },
+  {
+   "id": "felino-de-moita",
+   "nome": "Felino-de-Moita",
+   "papel": "lacaio",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-felino-de-moita.png",
+   "nota": null,
+   "acompanha": "Onça-de-Cipó",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +5, Olfato +4",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": -1,
+    "ref": 11,
+    "von": 5
+   },
+   "pv": 30,
+   "deslocamento": "12 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Garras +9 (1d6+13 corte), Mordida +9 (1d6+13 perfuração). CD das habilidades 16.",
+   "cd": 16,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 13,
+     "tipo": "corte"
+    },
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 13,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 4,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Emboscada",
+     "gatilho": null,
+     "texto": "contra alvo desprevenido, o primeiro ataque do turno causa +1d6 de dano."
+    },
+    {
+     "nome": "Pelagem de Folhagem",
+     "gatilho": null,
+     "texto": "+5 em Furtividade em mata fechada."
+    }
+   ]
+  },
+  {
+   "id": "escorpiao-de-areia",
+   "nome": "Escorpião-de-Areia",
+   "papel": "lacaio",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-escorpiao-de-areia.png",
+   "nota": null,
+   "acompanha": "Escorpião-Cauda-de-Ferro",
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "percepção de vibrações (curto)",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": -1,
+    "von": 5
+   },
+   "pv": 30,
+   "deslocamento": "9 m, escavação 4,5 m",
+   "ataquesTexto": "Corpo a corpo: Ferrão +9 (1d6+22 perfuração, mais 2d6 de veneno). CD das habilidades 16.",
+   "cd": 16,
+   "ataques": [
+    {
+     "nome": "Ferrão",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 22,
+     "tipo": "perfuração, mais 2d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 1,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (veneno, 1 dose, CD 16)",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se o Ferrão causar dano, Fortitude CD 16 ou Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Couraça",
+     "gatilho": null,
+     "texto": "Redução de Dano 2."
+    }
+   ]
+  },
+  {
+   "id": "bufalo-de-rebanho",
+   "nome": "Búfalo-de-Rebanho",
+   "papel": "lacaio",
+   "nd": "6",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-bufalo-de-rebanho.png",
+   "nota": null,
+   "acompanha": "Cornudo-de-Couraça",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +4, Audição +3",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 30,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +9 (1d8+32 perfuração). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 32,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 0,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (couro)",
+   "habilidades": [
+    {
+     "nome": "Investida",
+     "gatilho": null,
+     "texto": "se avançar 9 m em linha reta antes de atacar, a Chifrada causa +1d8 de dano e o alvo faz Fortitude CD 17 ou fica Caído."
+    },
+    {
+     "nome": "Rebanho",
+     "gatilho": null,
+     "texto": "+1 na Defesa por aliado da mesma espécie adjacente (máx. +2)."
+    }
+   ]
+  },
+  {
+   "id": "abutre-de-bando",
+   "nome": "Abutre-de-Bando",
+   "papel": "lacaio",
+   "nd": "6",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-abutre-de-bando.png",
+   "nota": null,
+   "acompanha": "Abutre-Colosso",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +7, Olfato +4",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 12,
+    "von": 6
+   },
+   "pv": 30,
+   "deslocamento": "3 m, voo 15 m",
+   "ataquesTexto": "Corpo a corpo: Bico +9 (1d6+33 perfuração). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Bico",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 33,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 2,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (penas)",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Dilacerar",
+     "gatilho": null,
+     "texto": "contra alvo com menos da metade dos PV, o Bico causa +1d6."
+    }
+   ]
+  },
+  {
+   "id": "gavial-de-rio",
+   "nome": "Gavial-de-Rio",
+   "papel": "lacaio",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-gavial-de-rio.png",
+   "nota": null,
+   "acompanha": "Devorador-de-Rio",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +4, Olfato +3",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 35,
+   "deslocamento": "6 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (1d8+38 perfuração). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "1d8",
+     "fixo": 38,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 0,
+    "Con": 4,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (couro)",
+   "habilidades": [
+    {
+     "nome": "Emboscada Submersa",
+     "gatilho": null,
+     "texto": "na primeira rodada, se estava submerso, o alvo está desprevenido contra o ataque."
+    },
+    {
+     "nome": "Couraça",
+     "gatilho": null,
+     "texto": "Redução de Dano 3."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +11)."
+    }
+   ]
+  },
+  {
+   "id": "besouro-soldado",
+   "nome": "Besouro-Soldado",
+   "papel": "lacaio",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-besouro-soldado.png",
+   "nota": null,
+   "acompanha": "Besouro-Aríete",
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +2, Olfato +3",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 12,
+    "von": 0
+   },
+   "pv": 35,
+   "deslocamento": "9 m, voo 6 m",
+   "ataquesTexto": "Corpo a corpo: Mandíbulas +9 (1d6+39 corte). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Mandíbulas",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 39,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 0,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (carapaça)",
+   "habilidades": [
+    {
+     "nome": "Couraça Quitinosa",
+     "gatilho": null,
+     "texto": "Redução de Dano 4."
+    },
+    {
+     "nome": "Investida",
+     "gatilho": null,
+     "texto": "se avançar 6 m em linha reta antes de atacar, as Mandíbulas causa +1d6 de dano e o alvo faz Fortitude CD 17 ou fica Caído."
+    }
+   ]
+  },
+  {
+   "id": "lince-das-rochas",
+   "nome": "Lince-das-Rochas",
+   "papel": "lacaio",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-lince-das-rochas.png",
+   "nota": null,
+   "acompanha": "Rugidor-de-Savana",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +6, Audição +5",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 12,
+    "von": 0
+   },
+   "pv": 35,
+   "deslocamento": "12 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Garras +9 (1d6+39 corte). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 39,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 4,
+    "Con": 2,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Salto",
+     "gatilho": null,
+     "texto": "salta 6 m a mais sem teste."
+    },
+    {
+     "nome": "Emboscada",
+     "gatilho": null,
+     "texto": "contra alvo desprevenido, o primeiro ataque do turno causa +1d6 de dano."
+    }
+   ]
+  },
+  {
+   "id": "urso-de-garras-curtas",
+   "nome": "Urso-de-Garras-Curtas",
+   "papel": "lacaio",
+   "nd": "8",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-urso-de-garras-curtas.png",
+   "nota": null,
+   "acompanha": "Garra-Torta",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +5",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 1,
+    "von": 7
+   },
+   "pv": 35,
+   "deslocamento": "12 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Garras +10 (1d8+42 corte). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 42,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 0,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (couro)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com as Garras, faz Agarrar (teste +12)."
+    },
+    {
+     "nome": "Couro Grosso",
+     "gatilho": null,
+     "texto": "Redução de Dano 2."
+    }
+   ]
+  },
+  {
+   "id": "raia-de-ferrao",
+   "nome": "Raia-de-Ferrão",
+   "papel": "lacaio",
+   "nd": "8",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "lacaio-raia-de-ferrao.png",
+   "nota": null,
+   "acompanha": "Polvo-de-Abismo",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção de vibrações na água (médio)",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 1,
+    "ref": 13,
+    "von": 7
+   },
+   "pv": 35,
+   "deslocamento": "natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Ferrão +10 (1d6+36 perfuração, mais 2d6 de veneno). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Ferrão",
+     "bonus": 10,
+     "dados": "1d6",
+     "fixo": 36,
+     "tipo": "perfuração, mais 2d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 3,
+    "Con": 2,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (veneno, 1 dose, CD 18)",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se o Ferrão causar dano, Fortitude CD 18 ou Lento e Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Camuflagem de Fundo",
+     "gatilho": null,
+     "texto": "+5 em Furtividade na água, escondida no fundo."
+    }
+   ]
+  },
+  {
+   "id": "lobo-atroz",
+   "nome": "Lobo-Atroz",
+   "papel": "lacaio",
+   "nd": "9",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-lobo-atroz.png",
+   "nota": null,
+   "acompanha": "Lobo-Ancestral",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +7, Audição +5",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 7,
+    "von": 1
+   },
+   "pv": 40,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (1d8+48 perfuração). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 48,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 3,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 18 ou Caído."
+    }
+   ]
+  },
+  {
+   "id": "mastodonte-jovem",
+   "nome": "Mastodonte-Jovem",
+   "papel": "lacaio",
+   "nd": "9",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-mastodonte-jovem.png",
+   "nota": null,
+   "acompanha": "Trombudo-das-Neves",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +4, Audição +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 13,
+    "ref": 1,
+    "von": 7
+   },
+   "pv": 40,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Presas +10 (2d6+45 perfuração). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Presas",
+     "bonus": 10,
+     "dados": "2d6",
+     "fixo": 45,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": -1,
+    "Con": 5,
+    "Int": -4,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (presas)",
+   "habilidades": [
+    {
+     "nome": "Investida",
+     "gatilho": null,
+     "texto": "se avançar 9 m em linha reta antes de atacar, as Presas causa +2d6 de dano e o alvo faz Fortitude CD 18 ou fica Caído."
+    },
+    {
+     "nome": "Couro Grosso",
+     "gatilho": null,
+     "texto": "Redução de Dano 3."
+    }
+   ]
+  },
+  {
+   "id": "tubarao-de-recife",
+   "nome": "Tubarão-de-Recife",
+   "papel": "lacaio",
+   "nd": "10",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-tubarao-de-recife.png",
+   "nota": null,
+   "acompanha": "Serrilha-do-Abismo",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +8 (sangue a 1 km), Visão +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 14,
+    "ref": 2,
+    "von": 8
+   },
+   "pv": 40,
+   "deslocamento": "natação 18 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (1d8+52 perfuração). CD das habilidades 19.",
+   "cd": 19,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 52,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 3,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (dentes)",
+   "habilidades": [
+    {
+     "nome": "Frenesi de Sangue",
+     "gatilho": null,
+     "texto": "contra alvo com menos da metade dos PV, +2 no ataque e no dano."
+    },
+    {
+     "nome": "Corpo Aquático",
+     "gatilho": null,
+     "texto": "respira só na água; fora dela fica Imobilizado e sofre 1d6 por turno."
+    }
+   ]
+  },
+  {
+   "id": "corredora-de-garras",
+   "nome": "Corredora-de-Garras",
+   "papel": "lacaio",
+   "nd": "10",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-corredora-de-garras.png",
+   "nota": null,
+   "acompanha": "Tigre-Dentes-de-Foice",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +6, Audição +4",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 8,
+    "ref": 14,
+    "von": 2
+   },
+   "pv": 40,
+   "deslocamento": "18 m",
+   "ataquesTexto": "Corpo a corpo: Garras +10 (1d8+52 corte). CD das habilidades 19.",
+   "cd": 19,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 52,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 4,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (penas)",
+   "habilidades": [
+    {
+     "nome": "Bote",
+     "gatilho": null,
+     "texto": "avança até 6 m a mais em linha reta antes de atacar e derruba o alvo (Fortitude CD 19 evita)."
+    },
+    {
+     "nome": "Pés Velozes",
+     "gatilho": null,
+     "texto": "+2 em testes de Reflexos."
+    }
+   ]
+  },
+  {
+   "id": "hiena-gigante",
+   "nome": "Hiena-Gigante",
+   "papel": "lacaio",
+   "nd": "11",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-hiena-gigante.png",
+   "nota": null,
+   "acompanha": "Rugidor-de-Savana",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +7, Audição +5",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 15,
+    "ref": 9,
+    "von": 3
+   },
+   "pv": 45,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (1d8+57 perfuração). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 57,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 2,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 20 ou Caído."
+    },
+    {
+     "nome": "Mordida Esmagadora",
+     "gatilho": null,
+     "texto": "contra alvo Caído, a Mordida causa +1d8."
+    }
+   ]
+  },
+  {
+   "id": "aranha-armadilheira",
+   "nome": "Aranha-Armadilheira",
+   "papel": "lacaio",
+   "nd": "11",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-aranha-armadilheira.png",
+   "nota": null,
+   "acompanha": "Matriarca-das-Tocas",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção de vibrações (médio)",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 3,
+    "ref": 15,
+    "von": 9
+   },
+   "pv": 45,
+   "deslocamento": "9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +10 (1d8+47 perfuração, mais 3d6 de veneno). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 47,
+     "tipo": "perfuração, mais 3d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 3,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (seda, 1d4 rolos)",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 20 ou Envenenado e Lento até o fim da cena."
+    },
+    {
+     "nome": "Teia",
+     "gatilho": "ação de movimento, 1 vez por cena",
+     "texto": "Reflexos CD 20 ou Enredado."
+    }
+   ]
+  },
+  {
+   "id": "condor-jovem",
+   "nome": "Condor-Jovem",
+   "papel": "lacaio",
+   "nd": "11",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-condor-jovem.png",
+   "nota": null,
+   "acompanha": "Condor-Ancestral",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +9",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 15,
+    "von": 3
+   },
+   "pv": 45,
+   "deslocamento": "6 m, voo 21 m",
+   "ataquesTexto": "Corpo a corpo: Garras +10 (1d8+57 corte). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 57,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 3,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 4,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Metade (penas)",
+   "habilidades": [
+    {
+     "nome": "Mergulho",
+     "gatilho": null,
+     "texto": "se voar 9 m em descida antes de atacar, +1d8 de dano."
+    },
+    {
+     "nome": "Rajada de Asas",
+     "gatilho": "ação de movimento, 1 vez por cena",
+     "texto": "Reflexos CD 20 em alcance curto ou adjacentes são empurrados 3 m."
+    }
+   ]
+  },
+  {
+   "id": "cao-de-gelo",
+   "nome": "Cão-de-Gelo",
+   "papel": "lacaio",
+   "nd": "12",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-cao-de-gelo.png",
+   "nota": null,
+   "acompanha": "Uivador-da-Tundra",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +9, Audição +5",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 16,
+    "ref": 10,
+    "von": 4
+   },
+   "pv": 50,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (1d8+62 perfuração). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 62,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 3,
+    "Con": 5,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 21 ou Caído."
+    },
+    {
+     "nome": "Pelagem de Geada",
+     "gatilho": null,
+     "texto": "Redução de Dano 3 e imune a frio natural."
+    }
+   ]
+  },
+  {
+   "id": "cobra-de-mare",
+   "nome": "Cobra-de-Maré",
+   "papel": "lacaio",
+   "nd": "12",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-cobra-de-mare.png",
+   "nota": null,
+   "acompanha": "Serpente-de-Maré",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +4, Olfato +4",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 4,
+    "ref": 16,
+    "von": 10
+   },
+   "pv": 50,
+   "deslocamento": "6 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (1d8+52 perfuração, mais 3d6 de veneno). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 52,
+     "tipo": "perfuração, mais 3d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 3,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (escamas)",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 21 ou Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Corpo Escorregadio",
+     "gatilho": null,
+     "texto": "+4 para escapar de Agarrar e Imobilizar."
+    }
+   ]
+  },
+  {
+   "id": "tigre-branco-jovem",
+   "nome": "Tigre-Branco-Jovem",
+   "papel": "lacaio",
+   "nd": "13",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-tigre-branco-jovem.png",
+   "nota": null,
+   "acompanha": "Fera-das-Geleiras",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +7, Olfato +6",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 10,
+    "ref": 16,
+    "von": 4
+   },
+   "pv": 50,
+   "deslocamento": "15 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (1d8+31 perfuração), Garras +11 (1d8+31 corte). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 31,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 31,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 4,
+    "Con": 4,
+    "Int": -4,
+    "Sab": 3,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Emboscada",
+     "gatilho": null,
+     "texto": "contra alvo desprevenido, o primeiro ataque do turno causa +1d8 de dano."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 21 ou Caído."
+    }
+   ]
+  },
+  {
+   "id": "tartaruga-mordedora",
+   "nome": "Tartaruga-Mordedora",
+   "papel": "lacaio",
+   "nd": "13",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-tartaruga-mordedora.png",
+   "nota": null,
+   "acompanha": "Casco-de-Montanha",
+   "subtitulo": null,
+   "iniciativa": "-1",
+   "sentidos": "Visão +3, Olfato +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 16,
+    "ref": 4,
+    "von": 10
+   },
+   "pv": 50,
+   "deslocamento": "3 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +11 (1d8+66 perfuração). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 66,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": -2,
+    "Con": 6,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (casco)",
+   "habilidades": [
+    {
+     "nome": "Casco",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    },
+    {
+     "nome": "Recolher-se",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "+4 na Defesa até o início do próximo turno; enquanto recolhida, não ataca."
+    }
+   ]
+  },
+  {
+   "id": "gorila-prateado",
+   "nome": "Gorila-Prateado",
+   "papel": "lacaio",
+   "nd": "14",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-gorila-prateado.png",
+   "nota": null,
+   "acompanha": "Símio-de-Rochedo",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +5, Olfato +4",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 17,
+    "ref": 5,
+    "von": 11
+   },
+   "pv": 55,
+   "deslocamento": "12 m, escalada 12 m",
+   "ataquesTexto": "Corpo a corpo: Punhos +11 (1d8+72 impacto). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Punhos",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 72,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 2,
+    "Con": 5,
+    "Int": -3,
+    "Sab": 2,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Metade",
+   "habilidades": [
+    {
+     "nome": "Brado Intimidante",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 22 em alcance curto ou Abalado até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com os Punhos, faz Agarrar (teste +13)."
+    }
+   ]
+  },
+  {
+   "id": "polvo-jovem",
+   "nome": "Polvo-Jovem",
+   "papel": "lacaio",
+   "nd": "14",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-polvo-jovem.png",
+   "nota": null,
+   "acompanha": "Polvo-de-Abismo",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +5, percepção de vibrações na água (médio)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 5,
+    "ref": 17,
+    "von": 11
+   },
+   "pv": 55,
+   "deslocamento": "3 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Tentáculos +11 (1d8+72 impacto). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Tentáculos",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 72,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 3,
+    "Con": 4,
+    "Int": -3,
+    "Sab": 2,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (tinta, 1 dose, CD 22)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com os Tentáculos, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Tinta",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "escurece a água em 6 m; quem estiver dentro fica Cego (Reflexos CD 22 reduz a 1 rodada)."
+    },
+    {
+     "nome": "Corpo Mole",
+     "gatilho": null,
+     "texto": "passa por qualquer fresta."
+    }
+   ]
+  },
+  {
+   "id": "louva-deus-gigante",
+   "nome": "Louva-Deus-Gigante",
+   "papel": "lacaio",
+   "nd": "15",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-louva-deus-gigante.png",
+   "nota": null,
+   "acompanha": "Ceifa-Verde",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +9",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": 17,
+    "von": 5
+   },
+   "pv": 60,
+   "deslocamento": "9 m, voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Foice +11 (1d8+76 corte). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Foic",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 76,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 4,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 3,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Foice, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Emboscada",
+     "gatilho": null,
+     "texto": "contra alvo desprevenido, o primeiro ataque do turno causa +1d8 de dano."
+    },
+    {
+     "nome": "Camuflagem de Folhagem",
+     "gatilho": null,
+     "texto": "+10 em Furtividade em mata."
+    }
+   ]
+  },
+  {
+   "id": "coruja-de-garras",
+   "nome": "Coruja-de-Garras",
+   "papel": "lacaio",
+   "nd": "15",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "lacaio-coruja-de-garras.png",
+   "nota": null,
+   "acompanha": "Coruja-Matriarca",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Audição +10, Visão +8 (enxerga com pouca luz)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": 17,
+    "von": 5
+   },
+   "pv": 60,
+   "deslocamento": "6 m, voo 18 m",
+   "ataquesTexto": "Corpo a corpo: Garras +11 (1d8+76 corte). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "1d8",
+     "fixo": 76,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 4,
+    "Des": 4,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 5,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Metade (penas silenciosas)",
+   "habilidades": [
+    {
+     "nome": "Voo Silencioso",
+     "gatilho": null,
+     "texto": "+8 em Furtividade em voo; o primeiro ataque vindo do voo contra alvo desprevenido causa +1d8."
+    },
+    {
+     "nome": "Cabeça Giratória",
+     "gatilho": null,
+     "texto": "não pode ser flanqueada."
+    }
+   ]
+  },
+  {
+   "id": "urso-de-gelo",
+   "nome": "Urso-de-Gelo",
+   "papel": "lacaio",
+   "nd": "16",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-urso-de-gelo.png",
+   "nota": null,
+   "acompanha": "Fera-das-Geleiras",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +6",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 18,
+    "ref": 6,
+    "von": 12
+   },
+   "pv": 60,
+   "deslocamento": "12 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Garras +11 (2d6+78 corte). CD das habilidades 23.",
+   "cd": 23,
+   "ataques": [
+    {
+     "nome": "Garras",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 78,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 0,
+    "Con": 6,
+    "Int": -4,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Metade (pele)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com as Garras, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Pelagem Polar",
+     "gatilho": null,
+     "texto": "Redução de Dano 4. Imune a frio natural."
+    }
+   ]
+  },
+  {
+   "id": "lampreia-gigante",
+   "nome": "Lampreia-Gigante",
+   "papel": "lacaio",
+   "nd": "16",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-lampreia-gigante.png",
+   "nota": null,
+   "acompanha": "Moreia-Abissal",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "percepção às cegas (curto, na água)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 18,
+    "von": 12
+   },
+   "pv": 60,
+   "deslocamento": "natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Boca de Ventosa +11 (2d6+78 perfuração). CD das habilidades 23.",
+   "cd": 23,
+   "ataques": [
+    {
+     "nome": "Boca de Ventosa",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 78,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 2,
+    "Con": 5,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (couro)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Boca de Ventosa, faz Agarrar (teste +13)."
+    },
+    {
+     "nome": "Sanguessuga",
+     "gatilho": null,
+     "texto": "no início do turno dela, a criatura agarrada perde 2d6 PV (perda de PV, não dano) e ela recupera metade desse valor em PV temporários."
+    }
+   ]
+  },
+  {
+   "id": "auroque-jovem",
+   "nome": "Auroque-Jovem",
+   "papel": "lacaio",
+   "nd": "17",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-auroque-jovem.png",
+   "nota": null,
+   "acompanha": "Auroque-Primordial",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +6, Audição +5",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 19,
+    "ref": 7,
+    "von": 13
+   },
+   "pv": 65,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +12 (2d6+83 perfuração). CD das habilidades 24.",
+   "cd": 24,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 12,
+     "dados": "2d6",
+     "fixo": 83,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": -1,
+    "Con": 6,
+    "Int": -4,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Metade (chifre)",
+   "habilidades": [
+    {
+     "nome": "Investida",
+     "gatilho": null,
+     "texto": "se avançar 12 m em linha reta antes de atacar, a Chifrada causa +2d6 de dano e o alvo faz Fortitude CD 24 ou fica Caído."
+    },
+    {
+     "nome": "Couro de Montanha",
+     "gatilho": null,
+     "texto": "Redução de Dano 4."
+    }
+   ]
+  },
+  {
+   "id": "tubarao-anciao",
+   "nome": "Tubarão-Ancião",
+   "papel": "lacaio",
+   "nd": "17",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-tubarao-anciao.png",
+   "nota": null,
+   "acompanha": "Cachalote-Ancestral",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Olfato +10 (sangue a 2 km), Visão +4",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 19,
+    "ref": 7,
+    "von": 13
+   },
+   "pv": 65,
+   "deslocamento": "natação 21 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +12 (2d6+83 perfuração). CD das habilidades 24.",
+   "cd": 24,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 12,
+     "dados": "2d6",
+     "fixo": 83,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 3,
+    "Con": 5,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Tesouro Metade (dentes)",
+   "habilidades": [
+    {
+     "nome": "Frenesi de Sangue",
+     "gatilho": null,
+     "texto": "contra alvo com menos da metade dos PV, +2 no ataque e no dano."
+    },
+    {
+     "nome": "Corpo Aquático",
+     "gatilho": null,
+     "texto": "respira só na água; fora dela fica Imobilizado e sofre 2d6 por turno."
+    }
+   ]
+  },
+  {
+   "id": "naja-gigante",
+   "nome": "Naja-Gigante",
+   "papel": "lacaio",
+   "nd": "18",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-naja-gigante.png",
+   "nota": null,
+   "acompanha": "Jibóia-Ancestral",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +6, sentido de calor (médio)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 14,
+    "ref": 20,
+    "von": 8
+   },
+   "pv": 65,
+   "deslocamento": "12 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +12 (2d6+71 perfuração, mais 5d6 de veneno). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 12,
+     "dados": "2d6",
+     "fixo": 71,
+     "tipo": "perfuração, mais 5d6 de veneno"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 4,
+    "Con": 4,
+    "Int": -5,
+    "Sab": 3,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Metade (presas, veneno 1d3 doses, CD 25)",
+   "habilidades": [
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 25 ou Envenenado até o fim da cena."
+    },
+    {
+     "nome": "Capuz Hipnótico",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 25 em alcance curto ou Pasmo até o início do próximo turno."
+    }
+   ]
+  },
+  {
+   "id": "mamute-guerreiro",
+   "nome": "Mamute-Guerreiro",
+   "papel": "lacaio",
+   "nd": "19",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-mamute-guerreiro.png",
+   "nota": null,
+   "acompanha": "Mastodonte-Ancestral",
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Olfato +6, Audição +5",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 20,
+    "ref": 8,
+    "von": 14
+   },
+   "pv": 70,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Presas +12 (2d6+93 perfuração). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Presas",
+     "bonus": 12,
+     "dados": "2d6",
+     "fixo": 93,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 8,
+    "Des": -1,
+    "Con": 7,
+    "Int": -4,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Metade (presas)",
+   "habilidades": [
+    {
+     "nome": "Investida",
+     "gatilho": null,
+     "texto": "se avançar 12 m em linha reta antes de atacar, as Presas causa +2d6 de dano e o alvo faz Fortitude CD 25 ou fica Caído."
+    },
+    {
+     "nome": "Pelagem de Mil Invernos",
+     "gatilho": null,
+     "texto": "Redução de Dano 5. Imune a frio natural."
+    },
+    {
+     "nome": "Atropelar",
+     "gatilho": null,
+     "texto": "ao avançar 9 m, passa por criaturas Médias ou menores; elas fazem Reflexos CD 25 ou ficam Caídas."
+    }
+   ]
+  },
+  {
+   "id": "cria-primeva",
+   "nome": "Cria-Primeva",
+   "papel": "lacaio",
+   "nd": "20",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-cria-primeva.png",
+   "nota": null,
+   "acompanha": "Fera-Primeva",
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Olfato +9, Visão +9",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 15,
+    "ref": 21,
+    "von": 9
+   },
+   "pv": 70,
+   "deslocamento": "18 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +12 (2d6+46 perfuração), Garras +12 (2d6+45 corte). CD das habilidades 26.",
+   "cd": 26,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 12,
+     "dados": "2d6",
+     "fixo": 46,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 12,
+     "dados": "2d6",
+     "fixo": 45,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 7,
+    "Des": 5,
+    "Con": 6,
+    "Int": -3,
+    "Sab": 4,
+    "Car": 1
+   },
+   "tesouro": "Tesouro Metade (pele primeva)",
+   "habilidades": [
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida acertar, Fortitude CD 26 ou Caído."
+    },
+    {
+     "nome": "Emboscada",
+     "gatilho": null,
+     "texto": "contra alvo desprevenido, o primeiro ataque do turno causa +2d6 de dano."
+    },
+    {
+     "nome": "Frenesi",
+     "gatilho": null,
+     "texto": "com metade dos PV ou menos, +2 nos ataques e no dano."
+    }
+   ]
+  },
+  {
+   "id": "rebento-primordial",
+   "nome": "Rebento-Primordial",
+   "papel": "lacaio",
+   "nd": "S",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-rebento-primordial.png",
+   "nota": null,
+   "acompanha": "Auroque-Primordial",
+   "ndContaComo": 20,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +9, Audição +8",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 23,
+    "ref": 11,
+    "von": 17
+   },
+   "pv": 120,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Chifrada +13 (2d6+51 perfuração), Pisão +13 (2d6+51 impacto). CD das habilidades 28.",
+   "cd": 28,
+   "ataques": [
+    {
+     "nome": "Chifrada",
+     "bonus": 13,
+     "dados": "2d6",
+     "fixo": 51,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Pisão",
+     "bonus": 13,
+     "dados": "2d6",
+     "fixo": 51,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 9,
+    "Des": 0,
+    "Con": 8,
+    "Int": -3,
+    "Sab": 2,
+    "Car": 1
+   },
+   "tesouro": "Tesouro Metade",
+   "habilidades": [
+    {
+     "nome": "Investida",
+     "gatilho": null,
+     "texto": "se avançar 12 m em linha reta antes de atacar, a Chifrada causa +2d6 de dano e o alvo faz Fortitude CD 28 ou fica Caído."
+    },
+    {
+     "nome": "Couro de Montanha",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    },
+    {
+     "nome": "Pisão Sísmico",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "criaturas em 6 m fazem Reflexos CD 28 ou ficam Caídas."
+    },
+    {
+     "nome": "Presença do Auroque",
+     "gatilho": null,
+     "texto": "enquanto o Auroque-Primordial estiver vivo e a até 30 m, ele fica imune a Abalado."
+    }
+   ]
+  },
+  {
+   "id": "rebento-do-horizonte",
+   "nome": "Rebento-do-Horizonte",
+   "papel": "lacaio",
+   "nd": "S+",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "lacaio-rebento-do-horizonte.png",
+   "nota": null,
+   "acompanha": "Serpente-do-Horizonte",
+   "ndContaComo": 20,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +10, sentido de calor (longo)",
+   "defesa": 19,
+   "salvaguardas": {
+    "fort": 25,
+    "ref": 13,
+    "von": 19
+   },
+   "pv": 200,
+   "deslocamento": "12 m, natação 9 m, escalada 9 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +14 (2d6+55 perfuração, mais 4d6 de veneno), Cauda +14 (2d6+55 impacto). CD das habilidades 30.",
+   "cd": 30,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 14,
+     "dados": "2d6",
+     "fixo": 55,
+     "tipo": "perfuração, mais 4d6 de veneno"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 14,
+     "dados": "2d6",
+     "fixo": 55,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 10,
+    "Des": 3,
+    "Con": 9,
+    "Int": -3,
+    "Sab": 3,
+    "Car": 2
+   },
+   "tesouro": "Tesouro Metade (escamas)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com a Mordida, faz Agarrar (teste +16)."
+    },
+    {
+     "nome": "Peçonha",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 30 ou Envenenado e Lento até o fim da cena."
+    },
+    {
+     "nome": "Escamas do Mundo",
+     "gatilho": null,
+     "texto": "Redução de Dano 6."
+    },
+    {
+     "nome": "Constrição",
+     "gatilho": null,
+     "texto": "no início do turno dele, cada criatura agarrada sofre 2d6 de dano de impacto."
+    },
+    {
+     "nome": "Cria do Horizonte",
+     "gatilho": null,
+     "texto": "enquanto a Serpente-do-Horizonte estiver viva e a até 30 m, ele ignora a condição Abalado e causa +1d8 de dano."
+    }
+   ]
+  },
+  {
+   "id": "sapo-ventriloquo",
+   "nome": "Sapo-Ventríloquo",
+   "papel": "especial",
+   "nd": "2",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "especial-sapo-ventriloquo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +4, Audição +5",
+   "defesa": 11,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 9,
+    "von": 3
+   },
+   "pv": 52,
+   "deslocamento": "6 m, natação 6 m",
+   "ataquesTexto": "Corpo a corpo: Língua (alcance 4,5 m) +5 (1d6+10 impacto). CD das habilidades 16.",
+   "cd": 16,
+   "ataques": [
+    {
+     "nome": "Língua (alcance 4,5 m)",
+     "bonus": 5,
+     "dados": "1d6",
+     "fixo": 10,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 2,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Metade (glândula de muco, 1d3 doses, CD 16)",
+   "habilidades": [
+    {
+     "nome": "Voz Falsa",
+     "gatilho": "ação de movimento, à vontade",
+     "texto": "imita qualquer som que já ouviu e o projeta de um ponto a até 18 m. Quem ouvir faz Vontade CD 16; se falhar, gasta a próxima ação de movimento indo em direção ao som. Quem passar percebe o truque."
+    },
+    {
+     "nome": "Língua Puxadora",
+     "gatilho": null,
+     "texto": "se a Língua acertar uma criatura Média ou menor, ela é puxada para o espaço livre adjacente ao sapo."
+    },
+    {
+     "nome": "Muco Irritante",
+     "gatilho": null,
+     "texto": "criatura que o agarrar ou o atacar sem arma (ataque desarmado, arma natural) sofre 1d6 de veneno e faz Fortitude CD 16 ou fica Enjoada por 1 rodada."
+    }
+   ]
+  },
+  {
+   "id": "tentaculo-de-kraken",
+   "nome": "Tentáculo-de-Kraken",
+   "papel": "especial",
+   "nd": "4",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "especial-tentaculo-de-kraken.png",
+   "nota": "Parte do encontro **Kraken-das-Marés**: vem em número de 3 a 5 ao redor da Cabeça-de-Kraken (ND 7). Sozinho, ele só se estende de onde estiver o corpo (mantenha-o a até 12 m da Cabeça).",
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "percepção às cegas (curto, na água)",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 10,
+    "ref": 4,
+    "von": -2
+   },
+   "pv": 70,
+   "deslocamento": "natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Golpe de Tentáculo (alcance 4,5 m) +6 (1d8+16 impacto). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Golpe de Tentáculo (alcance 4,5 m)",
+     "bonus": 6,
+     "dados": "1d8",
+     "fixo": 16,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 2,
+    "Con": 4,
+    "Int": -3,
+    "Sab": 1,
+    "Car": -2
+   },
+   "tesouro": "Sem tesouro (os Tentáculos não carregam tesouro; ver Cabeça-de-Kraken)",
+   "habilidades": [
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com o Golpe, faz Agarrar (teste +8); mantém 1 criatura agarrada."
+    },
+    {
+     "nome": "Arrastar",
+     "gatilho": "ação de movimento",
+     "texto": "move uma criatura agarrada por ele até 6 m em direção à Cabeça de Kraken (ou ao ponto onde o corpo do Kraken estiver)."
+    },
+    {
+     "nome": "Membro do Kraken",
+     "gatilho": null,
+     "texto": "ao chegar a 0 PV, é decepado e solta quem agarrava. Se a Cabeça de Kraken estiver viva, ele volta em 1d4 rodadas com metade dos PV, em qualquer ponto da água a 9 m da Cabeça. Se a Cabeça morrer, todos os Tentáculos recuam."
+    }
+   ]
+  },
+  {
+   "id": "mefitico-de-brejo",
+   "nome": "Mefítico-de-Brejo",
+   "papel": "especial",
+   "nd": "5",
+   "tipo": "Animal",
+   "tamanho": "Médio",
+   "imagem": "especial-mefitico-de-brejo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +6, Visão +3",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 11,
+    "ref": -1,
+    "von": 5
+   },
+   "pv": 77,
+   "deslocamento": "12 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +6 (1d6+20 perfuração). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 6,
+     "dados": "1d6",
+     "fixo": 20,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 3,
+    "Con": 3,
+    "Int": -4,
+    "Sab": 2,
+    "Car": -2
+   },
+   "tesouro": "Tesouro Metade (glândula de odor, 1d2 doses, CD 18)",
+   "habilidades": [
+    {
+     "nome": "Jato Fétido",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "cone de 6 m; Fortitude CD 18. Falha: Enjoado por 1d4 rodadas, e a criatura sofre −5 em Furtividade e em rastrear por 1 hora (o cheiro fica na roupa). Sucesso: Enjoado por 1 rodada."
+    },
+    {
+     "nome": "Morte Fingida",
+     "gatilho": "1 vez por cena",
+     "texto": "ao ser reduzido a 0 PV, fica com 1 PV e tomba como morto (Percepção CD 18 nota que respira). Se ninguém notar, levanta no fim da rodada seguinte, recupera 15 PV e o primeiro ataque seu causa +2d6 contra criaturas desprevenidas."
+    },
+    {
+     "nome": "Couro Folgado",
+     "gatilho": null,
+     "texto": "Redução de Dano 2 e +2 em testes para escapar de Agarrar."
+    }
+   ]
+  },
+  {
+   "id": "cabeca-de-kraken",
+   "nome": "Cabeça-de-Kraken",
+   "papel": "especial",
+   "nd": "7",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "especial-cabeca-de-kraken.png",
+   "nota": "Encontro **Kraken-das-Marés** = 1 Cabeça-de-Kraken (ND 7) + 3 a 5 Tentáculos-de-Kraken (ND 4). Calcule o ND total pela tabela de encontro; com 4 Tentáculos, trate como ND 9 ou 10 para o grupo.",
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "percepção às cegas (médio, na água), Visão +6",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": 12,
+    "ref": 6,
+    "von": 0
+   },
+   "pv": 94,
+   "deslocamento": "natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Bico +6 (2d6+23 perfuração). CD das habilidades 19.",
+   "cd": 19,
+   "ataques": [
+    {
+     "nome": "Bico",
+     "bonus": 6,
+     "dados": "2d6",
+     "fixo": 23,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 1,
+    "Con": 5,
+    "Int": -2,
+    "Sab": 3,
+    "Car": -1
+   },
+   "tesouro": "Tesouro Padrão (bico de kraken; tinta de kraken, 1d3 doses, CD 19)",
+   "habilidades": [
+    {
+     "nome": "Corpo Distribuído",
+     "gatilho": null,
+     "texto": "enquanto houver ao menos 1 Tentáculo-de-Kraken vivo, a Cabeça tem Redução de Dano 5. Quando o último Tentáculo é decepado, a Cabeça fica Vulnerável até o fim da rodada seguinte."
+    },
+    {
+     "nome": "Puxar para o Bico",
+     "gatilho": "ação de movimento, 1 vez por rodada",
+     "texto": "cada criatura agarrada por um Tentáculo-de-Kraken a até 9 m da Cabeça é arrastada para um espaço adjacente à Cabeça."
+    },
+    {
+     "nome": "Bico Dilacerante",
+     "gatilho": null,
+     "texto": "o Bico causa +2d6 de dano contra criatura Agarrada."
+    },
+    {
+     "nome": "Jato de Tinta",
+     "gatilho": "ação padrão, 1 vez por cena",
+     "texto": "cone de 12 m na água ou na superfície; Reflexos CD 19 ou Cego por 1d4 rodadas (sucesso: Ofuscado por 1 rodada). A Cabeça então se submerge (ação livre)."
+    }
+   ]
+  },
+  {
+   "id": "dancarina-de-escamas",
+   "nome": "Dançarina-de-Escamas",
+   "papel": "especial",
+   "nd": "10",
+   "tipo": "Animal",
+   "tamanho": "Grande",
+   "imagem": "especial-dancarina-de-escamas.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +6, sentido de calor (curto)",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 2,
+    "ref": 14,
+    "von": 8
+   },
+   "pv": 119,
+   "deslocamento": "12 m, natação 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +7 (1d8+37 perfuração). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 7,
+     "dados": "1d8",
+     "fixo": 37,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 4,
+    "Con": 3,
+    "Int": -3,
+    "Sab": 3,
+    "Car": 4
+   },
+   "tesouro": "Tesouro Metade (pele, veneno 1d2 doses, CD 21)",
+   "habilidades": [
+    {
+     "nome": "Dança Hipnótica",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "criaturas a até 9 m que possam vê-la fazem Vontade CD 21. Falha: Fascinado até o fim do próximo turno (a condição acaba com qualquer ação hostil contra a vítima ou contra a Dançarina). Quem passar fica imune à Dança por 24 horas."
+    },
+    {
+     "nome": "Bote Súbito",
+     "gatilho": null,
+     "texto": "contra criatura Fascinada, a Mordida acerta automaticamente e causa +3d6 de dano."
+    },
+    {
+     "nome": "Peçonha Entorpecente",
+     "gatilho": null,
+     "texto": "se a Mordida causar dano, Fortitude CD 21 ou Lento até o fim da cena; se falhar por 5 ou mais, também Imóvel até o fim do próximo turno dela."
+    }
+   ]
+  },
+  {
+   "id": "nuvem-devoradora",
+   "nome": "Nuvem-Devoradora",
+   "papel": "especial",
+   "nd": "13",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "especial-nuvem-devoradora.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +4, Olfato +6 (sangue a 300 m)",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 4,
+    "ref": 16,
+    "von": 10
+   },
+   "pv": 144,
+   "deslocamento": "voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Mordidas do Enxame +8 (2d6+44 corte). CD das habilidades 23.",
+   "cd": 23,
+   "ataques": [
+    {
+     "nome": "Mordidas do Enxam",
+     "bonus": 8,
+     "dados": "2d6",
+     "fixo": 44,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 4,
+    "Con": 3,
+    "Int": -5,
+    "Sab": 1,
+    "Car": -3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Enxame",
+     "gatilho": null,
+     "texto": "imune a Agarrar, Derrubar, Imobilizar, Enredado e Atordoado. Sofre metade do dano de ataques de alvo único (armas, projéteis) e o dobro do dano de efeitos em área."
+    },
+    {
+     "nome": "Envolver",
+     "gatilho": null,
+     "texto": "pode entrar no espaço de criaturas. Quem estiver no mesmo espaço no início do turno da Nuvem faz Fortitude CD 23 ou fica Cego até o fim do próximo turno e sofre −2 em ataques."
+    },
+    {
+     "nome": "Dispersar",
+     "gatilho": "reação, 1 vez por cena",
+     "texto": "ao sofrer dano de área, divide-se e reaparece em um ponto a até 12 m com os PV que tinha antes do dano, menos 20."
+    }
+   ]
+  },
+  {
+   "id": "morcego-ancestral",
+   "nome": "Morcego-Ancestral",
+   "papel": "especial",
+   "nd": "18",
+   "tipo": "Animal",
+   "tamanho": "Enorme",
+   "imagem": "especial-morcego-ancestral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "percepção às cegas (longo), Audição +10",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 8,
+    "ref": 20,
+    "von": 14
+   },
+   "pv": 186,
+   "deslocamento": "3 m, voo 21 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+28 perfuração) e Garras +9 (2d6+27 corte). CD das habilidades 27.",
+   "cd": 27,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 28,
+     "tipo": "perfuração"
+    },
+    {
+     "nome": "Garras",
+     "bonus": 9,
+     "dados": "2d6",
+     "fixo": 27,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 6,
+    "Des": 4,
+    "Con": 5,
+    "Int": -3,
+    "Sab": 4,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Metade (asas, presas)",
+   "habilidades": [
+    {
+     "nome": "Grito Ensurdecedor",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "cone de 18 m; 9d8 de dano sônico, Fortitude CD 27 para metade. Falha: Surdo por 1 hora; se falhar por 5 ou mais, também Atordoado por 1 rodada."
+    },
+    {
+     "nome": "Voo Silencioso",
+     "gatilho": null,
+     "texto": "+10 em Furtividade em voo; em escuridão total, é considerado invisível para quem não tiver percepção às cegas."
+    },
+    {
+     "nome": "Sede de Sangue",
+     "gatilho": null,
+     "texto": "contra criatura com menos da metade dos PV, a Mordida o cura em metade do dano causado e o ataque passa a ter +2."
+    },
+    {
+     "nome": "Teia de Sons",
+     "gatilho": null,
+     "texto": "percebe todas as criaturas a até 30 m, mesmo invisíveis ou atrás de cobertura."
+    }
+   ]
+  },
+  {
+   "id": "salamandra-de-magma",
+   "nome": "Salamandra-de-Magma",
+   "papel": "especial",
+   "nd": "20",
+   "tipo": "Animal",
+   "tamanho": "Colossal",
+   "imagem": "especial-salamandra-de-magma.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +8, sentido de calor (longo)",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 21,
+    "ref": 15,
+    "von": 9
+   },
+   "pv": 203,
+   "deslocamento": "9 m, escalada 6 m",
+   "ataquesTexto": "Corpo a corpo: Mordida +9 (2d8+29 fogo e perfuração) e Cauda +9 (2d8+29 impacto). CD das habilidades 28.",
+   "cd": 28,
+   "ataques": [
+    {
+     "nome": "Mordida",
+     "bonus": 9,
+     "dados": "2d8",
+     "fixo": 29,
+     "tipo": "fogo e perfuração"
+    },
+    {
+     "nome": "Cauda",
+     "bonus": 9,
+     "dados": "2d8",
+     "fixo": 29,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 9,
+    "Des": 0,
+    "Con": 9,
+    "Int": -3,
+    "Sab": 3,
+    "Car": 0
+   },
+   "tesouro": "Tesouro Dobro (pele de magma; item lendário a definir)",
+   "habilidades": [
+    {
+     "nome": "Couro de Magma",
+     "gatilho": null,
+     "texto": "imune a fogo e Redução de Dano 5. Criatura que a atinge com ataque corpo a corpo sofre 2d8 de fogo; criatura adjacente no início do turno dela sofre 2d6 de fogo."
+    },
+    {
+     "nome": "Erupção",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "explosão de 9 m de raio centrada nela; 12d6 de fogo, Reflexos CD 28 para metade. Falha: Em Chamas."
+    },
+    {
+     "nome": "Rastro de Lava",
+     "gatilho": null,
+     "texto": "ao se deslocar, deixa um rastro incandescente; criatura que entra ou começa o turno nele sofre 3d6 de fogo. Dura 1d4 rodadas."
+    },
+    {
+     "nome": "Resfriamento Lento",
+     "gatilho": null,
+     "texto": "se sofrer 40 ou mais de dano de frio em um turno, fica Lenta e perde Couro de Magma até o fim da cena."
+    }
+   ]
+  }
+ ]
+}

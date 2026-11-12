@@ -1,0 +1,15 @@
+{
+  "_id": "zFlGrEO15cUPBM35",
+  "name": "Lenda+ (ND S e S+)",
+  "type": "Actor",
+  "folder": "a5ezzS3FQU5BuIEq",
+  "sorting": "m",
+  "sort": 5000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:lacaio:lenda-mais"
+    }
+  },
+  "_key": "!folders!zFlGrEO15cUPBM35"
+}

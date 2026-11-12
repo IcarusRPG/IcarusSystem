@@ -1,0 +1,163 @@
+{
+  "_id": "CX4sGuAqed2bbInc",
+  "name": "Bisão-Rochoso",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-bisao-rochoso.webp",
+  "folder": "bclB3ttOuY02it1k",
+  "sort": 1600,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "3",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 85,
+      "max": 85,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +4, Audição +3",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": -3,
+      "von": 3
+    },
+    "atributos": {
+      "FOR": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Chifrada",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 6,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Pisão",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 6,
+        "tipo": "impacto, só contra alvo Caído",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+6 impacto) e Pisão +8 (1d8+6 impacto, só contra alvo Caído).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (couro, chifres).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Bisão-Rochoso",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-bisao-rochoso.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "ksz34AD2YVkMR5B8",
+      "name": "Debandada",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>se avançar 9 m em linha reta antes da Chifrada, empurra o alvo 3 m e ele faz Fortitude CD 14 ou fica Caído.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "bisao-rochoso",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!CX4sGuAqed2bbInc.ksz34AD2YVkMR5B8"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bisao-rochoso",
+      "papel": "solo",
+      "nd": "3"
+    }
+  },
+  "_key": "!actors!CX4sGuAqed2bbInc"
+}

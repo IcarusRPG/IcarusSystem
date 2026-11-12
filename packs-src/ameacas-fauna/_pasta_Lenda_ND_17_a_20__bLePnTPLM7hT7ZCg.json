@@ -1,0 +1,15 @@
+{
+  "_id": "bLePnTPLM7hT7ZCg",
+  "name": "Lenda (ND 17 a 20)",
+  "type": "Actor",
+  "folder": "kaAF0lc55qMjuZCu",
+  "sorting": "m",
+  "sort": 4000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:solo:lenda"
+    }
+  },
+  "_key": "!folders!bLePnTPLM7hT7ZCg"
+}

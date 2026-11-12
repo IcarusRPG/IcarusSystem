@@ -1,0 +1,193 @@
+{
+  "_id": "Kfva0m0wM9M2Hlfm",
+  "name": "Louva-Deus-Gigante",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-louva-deus-gigante.webp",
+  "folder": "b6uc07GYz6jbDH0Y",
+  "sort": 8800,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "15",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 60,
+      "max": 60,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, voo 9 m",
+    "sentidos": "Visão +9",
+    "cd": 22,
+    "salvaguardas": {
+      "fort": 11,
+      "ref": 17,
+      "von": 5
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 6
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Foic",
+        "bonus": 11,
+        "dados": "1d8",
+        "fixo": 76,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Foice +11 (1d8+76 corte). CD das habilidades 22.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade",
+    "acompanha": "Ceifa-Verde",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Louva-Deus-Gigante",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-louva-deus-gigante.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "Ez5lwYsFYmGSfKFV",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com a Foice, faz Agarrar (teste +13).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "louva-deus-gigante",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!Kfva0m0wM9M2Hlfm.Ez5lwYsFYmGSfKFV"
+    },
+    {
+      "_id": "ADT7YmdOMTt1prLx",
+      "name": "Emboscada",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>contra alvo desprevenido, o primeiro ataque do turno causa +1d8 de dano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "louva-deus-gigante",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Kfva0m0wM9M2Hlfm.ADT7YmdOMTt1prLx"
+    },
+    {
+      "_id": "m5iyyaDnyF9V7chb",
+      "name": "Camuflagem de Folhagem",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+10 em Furtividade em mata.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "louva-deus-gigante",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Kfva0m0wM9M2Hlfm.m5iyyaDnyF9V7chb"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "louva-deus-gigante",
+      "papel": "lacaio",
+      "nd": "15"
+    }
+  },
+  "_key": "!actors!Kfva0m0wM9M2Hlfm"
+}

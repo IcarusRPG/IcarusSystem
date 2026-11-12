@@ -13,6 +13,10 @@ import { FichaPersonagem } from "./module/sheets/ficha-personagem.mjs";
 import { FichaAnimal } from "./module/sheets/ficha-animal.mjs";
 import { MercadorData } from "./module/data/actor-mercador.mjs";
 import { FichaMercador } from "./module/sheets/ficha-mercador.mjs";
+import { AmeacaData } from "./module/data/actor-ameaca.mjs";
+import { FichaAmeaca } from "./module/sheets/ficha-ameaca.mjs";
+import { registrarAtaquesNaturais } from "./module/ameaca-ataques.mjs";
+import { casasDoTamanho } from "./module/ameaca-dados.mjs";
 import { registrarVitrine } from "./module/sheets/vitrine-mercador.mjs";
 import { registrarLoja } from "./module/loja-foundry.mjs";
 import { FichaItem } from "./module/sheets/ficha-item.mjs";
@@ -77,6 +81,7 @@ import "./module/regras-ataque.mjs";
 
 registrarInterface();
 registrarBotoesDoChat();
+registrarAtaquesNaturais();
 registrarArmaduras();
 registrarItensComuns();
 registrarMagias();
@@ -110,6 +115,8 @@ const TEMPLATES = [
   "actor/parts/recursos-classe.hbs",
   "actor/parts/diario.hbs",
   "actor/parts/token.hbs",
+  "actor/ameaca.hbs",
+  "chat/ataque-natural.hbs",
   "porta/cd.hbs",
   "actor/parts/efeitos.hbs",
   "item/poder.hbs",
@@ -164,6 +171,7 @@ Hooks.once("init", () => {
   // Modelos de dados
   CONFIG.Actor.dataModels.personagem = PersonagemData;
   CONFIG.Actor.dataModels.mercador = MercadorData;
+  CONFIG.Actor.dataModels.ameaca = AmeacaData;
   CONFIG.Item.dataModels.poder = PoderData;
   CONFIG.Item.dataModels.equipamento = EquipamentoData;
   CONFIG.Item.dataModels.arma = ArmaData;
@@ -192,7 +200,8 @@ Hooks.once("init", () => {
   // Barras do token: primária PV, secundária PM
   CONFIG.Actor.trackableAttributes = {
     personagem: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] },
-    mercador: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] }
+    mercador: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] },
+    ameaca: { bar: ["pv", "pm"], value: ["defesa.total", "deslocamento"] }
   };
 
   // Iniciativa = 1d20 + total da perícia Iniciativa
@@ -210,6 +219,8 @@ Hooks.once("init", () => {
   Actors.registerSheet(SISTEMA_ID, FichaAnimal, { types: ["personagem"], makeDefault: false, label: "ICARUS.Ficha.Animal" });
   // Mercador: ficha compacta para o Mestre e o dono; para os outros, a vitrine
   Actors.registerSheet(SISTEMA_ID, FichaMercador, { types: ["mercador"], makeDefault: true, label: "ICARUS.Ficha.Mercador" });
+  // Ameaça: ficha compacta do Mestre (bestiário)
+  Actors.registerSheet(SISTEMA_ID, FichaAmeaca, { types: ["ameaca"], makeDefault: true, label: "ICARUS.Ficha.Ameaca" });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe", "origem"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 
@@ -222,6 +233,28 @@ Hooks.on("preCreateActor", (actor, dados) => {
   const atualizacao = { "prototypeToken.actorLink": true };
   if (dados.ownership?.default === undefined) atualizacao["ownership.default"] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
   if (!dados.img || dados.img === Actor.DEFAULT_ICON) atualizacao.img = ICONE_PADRAO;
+  actor.updateSource(atualizacao);
+});
+
+/**
+ * Ameaça nova (criada no diretório): token não vinculado (cada token com os próprios PV), hostil,
+ * barra 1 = PV, casas pelo tamanho. As do compêndio já vêm configuradas (documentosDeAmeacas).
+ */
+Hooks.on("preCreateActor", (actor, dados) => {
+  if (actor.type !== "ameaca") return;
+  const atualizacao = {};
+  if (dados.prototypeToken?.actorLink === undefined) atualizacao["prototypeToken.actorLink"] = false;
+  if (dados.prototypeToken?.disposition === undefined) atualizacao["prototypeToken.disposition"] = CONST.TOKEN_DISPOSITIONS.HOSTILE;
+  if (dados.prototypeToken?.bar1?.attribute === undefined) atualizacao["prototypeToken.bar1.attribute"] = "pv";
+  if (dados.prototypeToken?.width === undefined) {
+    const casas = casasDoTamanho(dados.system?.tamanho ?? "medio");
+    atualizacao["prototypeToken.width"] = casas;
+    atualizacao["prototypeToken.height"] = casas;
+  }
+  if (!dados.img || dados.img === Actor.DEFAULT_ICON) {
+    atualizacao.img = ICONE_PADRAO;
+    atualizacao["prototypeToken.texture.src"] = ICONE_PADRAO;
+  }
   actor.updateSource(atualizacao);
 });
 

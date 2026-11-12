@@ -1,5 +1,26 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.36.0
+
+### Ameaças: ator novo, compêndio da fauna e aba Token para ameaça e mercador
+- **Ator "Ameaça"** (tipo `ameaca`): criatura do Mestre com ficha compacta, para usar várias ao mesmo tempo.
+  - Os números vêm prontos e são todos editáveis: Defesa, PV (e PM, se houver), Iniciativa, CD das habilidades, deslocamento, Fortitude, Reflexos e Vontade, atributos, sentidos e tesouro. Nada vem de classe ou nível.
+  - Perícias do Icarus = atributo + treino + outros (sem nível), recolhidas; só as com treino ou bônus aparecem abertas.
+  - **Ataques naturais** (nome, bônus, dados, dano fixo, tipo, alcance): **Atacar** rola d20 + bônus contra a Defesa dos alvos marcados (Shift = vantagem, Ctrl = desvantagem), com crítico no 20. O card tem **Dano** e **Dano crítico**. O dano sai com as mesmas marcas das armas, então Aplicar dano, Metade, Dobro, RD e imunidades funcionam igual. "mais 1d6 de veneno" vira uma parte de veneno, e o crítico dobra só os dados da mordida, não o veneno.
+  - **Habilidades** são itens "poder", com o texto sempre visível na ficha, o gatilho no começo e um botão para mostrar no chat.
+  - Iniciativa, testes de resistência pedidos pelo Mestre, condições, dano e cura, PV temporários e barras do token funcionam como no personagem: a ameaça usa o mesmo modelo por baixo, e condições e Efeitos somam por cima dos valores prontos.
+  - **PV 0 não abre testes de morte:** a ameaça cai ou morre pelas regras do Mestre.
+  - Token padrão: **não vinculado** (cada token com os próprios PV), **hostil**, barra 1 = PV, nome ao passar o mouse e barras só para o Mestre. O tamanho define as casas: Pequeno e Médio 1×1, Grande 2×2, Enorme 3×3, Colossal 4×4.
+  - Etiquetas de papel (Solo, Lacaio, Especial) e de ND. Os lacaios mostram "Costuma acompanhar". Fases, Resistência Lendária e Ação Lendária (S e S+) ficam só no texto.
+- **Compêndio "Icarus: Ameaças — Fauna"**: as **110 criaturas** do bestiário (58 Solo, 44 Lacaios, 8 Especiais), geradas de `tools/dados/ameacas-fauna.json`.
+  - Pastas por papel e patamar: Iniciante (ND 1/4 a 4), Veterano (5 a 10), Campeão (11 a 16), Lenda (17 a 20) e Lenda+ (S e S+), em ordem de ND e nome.
+  - As imagens ficam em `img/Ameacas/Fauna/` (WebP). Imagem que falta usa o dado azul, e o build lista as criaturas sem imagem e os arquivos sem criatura.
+  - "Redução de Dano N" e a imunidade a tipos de dano ("imune a veneno, frio") entram nas resistências. Visão e Audição dos sentidos entram nas perícias. Imunidades com condição ("frio natural") e a condições ficam no texto.
+  - CD das habilidades vazia no JSON fica vazia na ficha (37 criaturas Solo); o build lista quais.
+- **Aba Token no mercador e na ameaça:** o mesmo editor e a mesma galeria do personagem.
+  - Em ator **não vinculado** (ameaças), Aplicar muda o token dos próximos que você colocar; as cópias já na cena só mudam se você marcar a caixa.
+  - Atores de compêndio não têm editor: importe para o mundo. Até lá, o token usa a imagem da criatura sem moldura.
+  - Trocar o retrato do mercador ou da ameaça muda também o token, a não ser que ele já tenha moldura aplicada; nesse caso a moldura fica e um aviso explica.
 ## 0.35.0
 
 ### Mercador: vitrine bonita e ficha com as regras do Icarus

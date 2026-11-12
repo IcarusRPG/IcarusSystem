@@ -1,8 +1,9 @@
 /**
- * Ficha do Mercador (ApplicationV2: ActorSheetV2 + Handlebars), compacta, com 6 abas:
+ * Ficha do Mercador (ApplicationV2: ActorSheetV2 + Handlebars), compacta, com 7 abas:
  * Resumo (nível, Defesa derivada ou manual, PV, PM, atributos, proficiências), Perícias (as do
  * Icarus, com rolagem), Poderes/Magias (itens, como no personagem), Equipamento e Ataques (o que o
- * mercador usa: equipar, empunhar, atacar), Loja (estoque finito e Barganha) e Notas.
+ * mercador usa: equipar, empunhar, atacar), Loja (estoque finito e Barganha), Notas e Token (o mesmo
+ * editor de token do personagem, module/token.mjs).
  * Equipamento × estoque: o estoque tem flags["icarus-rpg"].loja; o resto é do mercador.
  * Quem não é Mestre nem dono não vê esta ficha: render() abre a vitrine (vitrine-mercador.mjs).
  */
@@ -22,6 +23,7 @@ import {
 } from "../loja.mjs";
 import { estadoDaBarganha, efeitosDoMercador, reiniciarBarganhas, acalmarGuardas, zerarTentativasDoUsuario } from "../loja-foundry.mjs";
 import { abrirVitrine } from "./vitrine-mercador.mjs";
+import { contextoDoToken, ligarEditor, trocarRetrato } from "../token.mjs";
 
 const { HandlebarsApplicationMixin, DialogV2 } = foundry.applications.api;
 // v12: ActorSheetV2 (com DocumentSheetV2 de reserva, como a ficha do animal)
@@ -32,6 +34,9 @@ const fmt = (k, d) => game.i18n.format(k, d);
 const esc = t => Handlebars.escapeExpression(t ?? "");
 const reais = c => (formatarPreco(c) === "—" ? "R$ 0" : formatarPreco(c));
 const centavos = v => (v === "" || v === null || v === undefined ? null : Math.max(0, Math.round(Number(String(v).replace(",", ".")) * 100) || 0));
+
+/** Abas da ficha do mercador (a Token usa o editor de module/token.mjs). */
+export const ABAS_MERCADOR = ["resumo", "pericias", "poderes", "equipamento", "loja", "notas", "token"];
 
 /** Estoque novo: à venda, 1 unidade, preço do item, visível, liberado por qualquer teste. */
 export const LOJA_PADRAO = { venda: true, quantidade: 1, precoBase: null, oculto: false, liberaCom: "qualquer" };
@@ -136,7 +141,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
     return {
       actor, aba: this.aba, editavel: this.isEditable, gm: game.user.isGM,
       img: actor.img, nome: actor.name, s, src,
-      abas: ["resumo", "pericias", "poderes", "equipamento", "loja", "notas"].map(id => ({ id, rotulo: loc(`ICARUS.Mercador.Abas.${id}`), ativa: id === this.aba })),
+      abas: ABAS_MERCADOR.map(id => ({ id, rotulo: loc(`ICARUS.Mercador.Abas.${id}`), ativa: id === this.aba })),
       defesa: {
         total: s.defesa.total, manual: !!src.defesaManual?.ativo,
         formula: `10 + ${s.defesa.atributo} ${comSinal(s.atributos[s.defesa.atributo].total)}${s.defesa.armadura ? ` + ${s.defesa.armadura}` : ""}${s.defesa.escudo ? ` + ${s.defesa.escudo}` : ""}${s.defesa.outros ? ` ${comSinal(s.defesa.outros)}` : ""}`,
@@ -186,7 +191,8 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
         roubos: [...(actor.getFlag(F, "roubos") ?? [])].reverse().map(r => ({ ...r, texto: fmt(r.passou ? "ICARUS.Mercador.RouboPassou" : "ICARUS.Mercador.RouboPego", { por: r.por, item: r.item }) }))
       },
       descricao: await TextEditor.enrichHTML(s.descricao ?? "", { async: true }),
-      notas: s.notas
+      notas: s.notas,
+      token: contextoDoToken(actor, this.isEditable)
     };
   }
 
@@ -218,6 +224,14 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
         this.document.update({ [`system.proficiencias.${lista}`]: marcados });
       });
     }
+    // Aba Token: liga o editor (refaz a cada render, o canvas é novo)
+    if (this.aba === "token") ligarEditor(this);
+  }
+
+  async close(options) {
+    this._editorToken?.destruir();
+    this._editorToken = null;
+    return super.close(options);
   }
 
   /** Arrastar itens (uma vez por janela): na aba Loja entram no estoque; nas outras, como itens do mercador. */
@@ -233,7 +247,7 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
    */
   async _soltar(event) {
     event.preventDefault();
-    if (!this.isEditable) return;
+    if (!this.isEditable || event.target.closest?.(".token-aba")) return;
     const dados = TextEditor.getDragEventData(event);
     if (dados?.type !== "Item") return;
     const item = await fromUuid(dados.uuid);
@@ -256,13 +270,14 @@ export class FichaMercador extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static _aba(event, alvo) {
+    if (this.aba === "token" && alvo.dataset.aba !== "token") { this._editorToken?.destruir(); this._editorToken = null; }
     this.aba = alvo.dataset.aba;
     this.render();
   }
 
+  /** Retrato: muda img e o token (se o token não foi finalizado na aba Token; senão avisa). */
   static _imagem() {
-    const actor = this.document;
-    return new FilePicker({ type: "image", current: actor.img, callback: caminho => actor.update({ img: caminho, "prototypeToken.texture.src": caminho }) }).browse();
+    return trocarRetrato(this.document);
   }
 
   static _verComoJogador() {

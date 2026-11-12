@@ -1,0 +1,35 @@
+<div class="icarus-rolagem icarus-ataque{{#if ameaca}} critico{{/if}}">
+  <div class="arma-cab">
+    <img src="{{arma.img}}" alt="" width="36" height="36">
+    <div>
+      <h3 class="rolagem-nome">{{arma.nome}}</h3>
+      <div class="rolagem-tipo">{{detalhe}}</div>
+    </div>
+  </div>
+  <div class="rolagem-dados">
+    {{> "systems/icarus-rpg/templates/chat/partes-d20.hbs"}}
+    <span class="rolagem-formula">d20 {{bonus}}</span>
+    <span class="rolagem-total">{{total}}</span>
+  </div>
+  {{#if modoRotulo}}<div class="rolagem-modo">{{modoRotulo}}</div>{{/if}}
+  {{#if automatico}}<div class="rolagem-selo">{{localize "ICARUS.Ataque.AcertoAutomatico"}}</div>
+  {{else if ameaca}}<div class="rolagem-selo">{{localize "ICARUS.Armas.Card.Ameaca"}} (20)</div>{{/if}}
+  {{#if nota}}<div class="linha-regra">{{nota}}</div>{{/if}}
+  {{#if condicao}}<div class="linha-aviso">{{condicao}}</div>{{/if}}
+  {{#if alvos.length}}
+  <ul class="lista-alvos">
+    {{#each alvos}}
+    <li class="linha-alvo {{classe}}">
+      {{nome}} ({{localize "ICARUS.Defesa.Rotulo"}} {{#if defesa}}{{defesa}}{{else}}?{{/if}}) —
+      <b>{{#if critico}}{{localize "ICARUS.Ataque.Critico"}}{{else if acerta}}{{localize "ICARUS.Armas.Card.Acertou"}}{{else}}{{localize "ICARUS.Armas.Card.Errou"}}{{/if}}</b>
+    </li>
+    {{/each}}
+  </ul>
+  {{else if ameaca}}
+  <div class="linha-aviso">{{localize "ICARUS.Ataque.AmeacaSemAlvo"}}</div>
+  {{/if}}
+  <div class="rolagem-botoes">
+    <button type="button" data-icarus-natural="dano">{{localize "ICARUS.Armas.Card.RolarDano"}}</button>
+    {{#if podeCritico}}<button type="button" class="botao-critico" data-icarus-natural="critico">{{localize "ICARUS.Armas.Card.DanoCritico"}} (×{{mult}})</button>{{/if}}
+  </div>
+</div>

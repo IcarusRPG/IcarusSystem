@@ -1,0 +1,285 @@
+{
+  "_id": "J3RDmWTkQOL1Br4U",
+  "name": "Mãe-dos-Abismos",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-mae-dos-abismos.webp",
+  "folder": "CITIZK79ZW3GkWa7",
+  "sort": 10700,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "S",
+    "ndContaComo": 20,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "colossal",
+    "defesa": {
+      "valor": 20,
+      "outros": 0
+    },
+    "pv": {
+      "value": 500,
+      "max": 500,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 3,
+    "deslocamentoTexto": "3 m, natação 18 m",
+    "sentidos": "percepção às cegas (longo, na água), Visão +10",
+    "cd": 28,
+    "salvaguardas": {
+      "fort": 11,
+      "ref": 23,
+      "von": 17
+    },
+    "atributos": {
+      "FOR": {
+        "base": 10,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 9,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 6
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Tentáculo",
+        "bonus": 12,
+        "dados": "2d8",
+        "fixo": 26,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Tentáculo",
+        "bonus": 12,
+        "dados": "2d8",
+        "fixo": 26,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Tentáculo",
+        "bonus": 12,
+        "dados": "2d8",
+        "fixo": 26,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Tentáculo +12 (2d8+26 impacto), Tentáculo +12 (2d8+26 impacto), Tentáculo +12 (2d8+26 impacto). CD das habilidades 28.",
+    "resistencias": {
+      "rdGeral": 6,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Dobro (tinta ancestral; item lendário a definir)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Mãe-dos-Abismos",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-mae-dos-abismos.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "22zJzZEl3IFFWhMC",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com um Tentáculo, faz Agarrar (teste +14); pode manter até 3 criaturas agarradas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.22zJzZEl3IFFWhMC"
+    },
+    {
+      "_id": "y3WjAh7Jya1OGvP3",
+      "name": "Engolir",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão)</em> engole uma criatura Grande ou menor que esteja agarrada; no início de cada turno dela, a engolida sofre 3d8 de ácido. Escapa causando 50 de dano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": "ação padrão"
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.y3WjAh7Jya1OGvP3"
+    },
+    {
+      "_id": "DVVJjWFzTKcWZkSJ",
+      "name": "Fases",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><strong>Fase 2 (50% dos PV ou menos):</strong> libera Nuvem de Tinta e ganha +2 nos ataques, e os Tentáculos causam +1d8.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.DVVJjWFzTKcWZkSJ"
+    },
+    {
+      "_id": "vZM9xvngbKFpyXTx",
+      "name": "Nuvem de Tinta",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> escurece a água em 12 m; quem estiver dentro fica Cego (Reflexos CD 28 reduz a 1 rodada).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.vZM9xvngbKFpyXTx"
+    },
+    {
+      "_id": "v5fscNQvwCZ6b3Fh",
+      "name": "Resistência Lendária",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 500,
+      "system": {
+        "descricao": "<p><em>(2 vezes por cena)</em> quando falhar em um teste de resistência, pode escolher ser bem-sucedida.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": "2 vezes por cena"
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.v5fscNQvwCZ6b3Fh"
+    },
+    {
+      "_id": "6Ze10A3bq9rjgVVf",
+      "name": "Ação Lendária",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 600,
+      "system": {
+        "descricao": "<p><em>(1 vez por rodada, no fim do turno de outra criatura)</em> um Tentáculo agarra uma criatura em alcance (sem teste de ataque; Reflexos CD 28 evita).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": "1 vez por rodada, no fim do turno de outra criatura"
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.6Ze10A3bq9rjgVVf"
+    },
+    {
+      "_id": "lG83ixiYXsDbrDbq",
+      "name": "Corpo Mole",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 700,
+      "system": {
+        "descricao": "<p>passa por qualquer fresta, imune a Imobilizar e Redução de Dano 6.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mae-dos-abismos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!J3RDmWTkQOL1Br4U.lG83ixiYXsDbrDbq"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "mae-dos-abismos",
+      "papel": "solo",
+      "nd": "S"
+    }
+  },
+  "_key": "!actors!J3RDmWTkQOL1Br4U"
+}

@@ -1,0 +1,239 @@
+{
+  "_id": "JS59qliFDcU7wUCW",
+  "name": "Mastodonte-Ancestral",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-mastodonte-ancestral.webp",
+  "folder": "bLePnTPLM7hT7ZCg",
+  "sort": 10200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "19",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "colossal",
+    "defesa": {
+      "valor": 18,
+      "outros": 0
+    },
+    "pv": {
+      "value": 280,
+      "max": 280,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": -1,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +6, Audição +6",
+    "cd": 25,
+    "salvaguardas": {
+      "fort": 20,
+      "ref": 8,
+      "von": 14
+    },
+    "atributos": {
+      "FOR": {
+        "base": 10,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 9,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 4
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Presas",
+        "bonus": 11,
+        "dados": "2d8",
+        "fixo": 37,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Pisão",
+        "bonus": 11,
+        "dados": "2d8",
+        "fixo": 36,
+        "tipo": "impacto, só contra alvo Caído ou Médio e menor",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Presas +11 (2d8+37 perfuração), Pisão +11 (2d8+36 impacto, só contra alvo Caído ou Médio e menor). CD das habilidades 25.",
+    "resistencias": {
+      "rdGeral": 6,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: presas ancestrais (CD 23)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Mastodonte-Ancestral",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-mastodonte-ancestral.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "AtXnAAIig3YCoAMw",
+      "name": "Atropelar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>ao avançar 12 m, passa por criaturas Grandes ou menores; elas fazem Reflexos CD 25 ou ficam Caídas e sofrem 2d8 de impacto.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mastodonte-ancestral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!JS59qliFDcU7wUCW.AtXnAAIig3YCoAMw"
+    },
+    {
+      "_id": "B5BHDXAcj5Ea58Pf",
+      "name": "Passo Sísmico",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação de movimento, 1 vez por rodada)</em> Reflexos CD 25 em 9 m ou Caído.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mastodonte-ancestral",
+          "gatilho": "ação de movimento, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!JS59qliFDcU7wUCW.B5BHDXAcj5Ea58Pf"
+    },
+    {
+      "_id": "izwgGmxhAVaeF6I6",
+      "name": "Pelagem de Mil Invernos",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>Redução de Dano 6 e imune a frio natural.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mastodonte-ancestral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!JS59qliFDcU7wUCW.izwgGmxhAVaeF6I6"
+    },
+    {
+      "_id": "9bQUuavDwwN4E3SQ",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com as Presas, faz Agarrar (teste +13).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mastodonte-ancestral",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!JS59qliFDcU7wUCW.9bQUuavDwwN4E3SQ"
+    },
+    {
+      "_id": "IUzfgUsKVrm96GSs",
+      "name": "Arremesso",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 500,
+      "system": {
+        "descricao": "<p><em>(ação de movimento)</em> arremessa uma criatura agarrada 9 m; ela sofre 4d6 de impacto e cai Caída.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "mastodonte-ancestral",
+          "gatilho": "ação de movimento"
+        }
+      },
+      "_key": "!actors.items!JS59qliFDcU7wUCW.IUzfgUsKVrm96GSs"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "mastodonte-ancestral",
+      "papel": "solo",
+      "nd": "19"
+    }
+  },
+  "_key": "!actors!JS59qliFDcU7wUCW"
+}

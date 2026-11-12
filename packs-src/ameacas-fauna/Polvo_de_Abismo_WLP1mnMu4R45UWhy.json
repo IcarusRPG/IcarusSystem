@@ -1,0 +1,209 @@
+{
+  "_id": "WLP1mnMu4R45UWhy",
+  "name": "Polvo-de-Abismo",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-polvo-de-abismo.webp",
+  "folder": "p5WdzDDQoF8w7jSe",
+  "sort": 5900,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "9",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 160,
+      "max": 160,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 3,
+    "deslocamentoTexto": "3 m, natação 12 m",
+    "sentidos": "Visão +4, percepção de vibrações na água (médio)",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 1,
+      "ref": 13,
+      "von": 7
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Tentáculo",
+        "bonus": 9,
+        "dados": "1d8",
+        "fixo": 11,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Tentáculo",
+        "bonus": 9,
+        "dados": "1d8",
+        "fixo": 12,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Tentáculo",
+        "bonus": 9,
+        "dados": "1d8",
+        "fixo": 12,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: 3 Tentáculos +9 (1d8+11, 1d8+12 e 1d8+12 impacto).",
+    "resistencias": {
+      "rdGeral": 2,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: bolsa de tinta (1d3 doses, CD 17).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Polvo-de-Abismo",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-polvo-de-abismo.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "yYtwW6tKZbNY33gV",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar um Tentáculo, faz Agarrar (teste +11); pode manter até 2 criaturas agarradas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "polvo-de-abismo",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!WLP1mnMu4R45UWhy.yYtwW6tKZbNY33gV"
+    },
+    {
+      "_id": "OpfvQt8iGUtICscG",
+      "name": "Nuvem de Tinta",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> escurece a água em 6 m; quem estiver dentro fica Cego (Reflexos CD 18 reduz a 1 rodada).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "polvo-de-abismo",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!WLP1mnMu4R45UWhy.OpfvQt8iGUtICscG"
+    },
+    {
+      "_id": "oZf7l36XOJJKExqv",
+      "name": "Corpo Mole",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>passa por qualquer fresta e é imune a Imobilizar; Redução de Dano 2.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "polvo-de-abismo",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!WLP1mnMu4R45UWhy.oZf7l36XOJJKExqv"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "polvo-de-abismo",
+      "papel": "solo",
+      "nd": "9"
+    }
+  },
+  "_key": "!actors!WLP1mnMu4R45UWhy"
+}

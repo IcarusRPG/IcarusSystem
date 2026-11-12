@@ -11,7 +11,7 @@
       "caption": "Icarus RPG"
     }
   ],
-  "version": "0.35.0",
+  "version": "0.36.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -51,6 +51,12 @@
         ]
       },
       "mercador": {
+        "htmlFields": [
+          "descricao",
+          "notas"
+        ]
+      },
+      "ameaca": {
         "htmlFields": [
           "descricao",
           "notas"
@@ -249,6 +255,19 @@
       "flags": {}
     },
     {
+      "name": "ameacas-fauna",
+      "label": "Icarus: Ameaças — Fauna",
+      "path": "packs/ameacas-fauna",
+      "type": "Actor",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "origens",
       "label": "Icarus — Origens",
       "path": "packs/origens",
@@ -319,6 +338,7 @@
         "vinculos",
         "familiares",
         "mercadores",
+        "ameacas-fauna",
         "origens",
         "poderes-origem",
         "itens-comuns",
@@ -334,6 +354,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.35.0/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.36.0/icarus-rpg.zip",
   "socket": true
 }

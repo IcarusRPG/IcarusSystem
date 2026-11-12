@@ -1,0 +1,193 @@
+{
+  "_id": "mjFxZmF90TQCgIf3",
+  "name": "Cobra-Imperial",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cobra-imperial.webp",
+  "folder": "p5WdzDDQoF8w7jSe",
+  "sort": 5100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "8",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 145,
+      "max": 145,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, natação 9 m, escalada 6 m",
+    "sentidos": "Visão +4, sentido de calor (curto)",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 1,
+      "ref": 13,
+      "von": 7
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "1d8",
+        "fixo": 17,
+        "tipo": "perfuração, mais 6d6 de veneno",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +9 (1d8+17 perfuração, mais 6d6 de veneno).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: presas de veneno (1d3 doses, CD 17).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Cobra-Imperial",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cobra-imperial.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "9QzBifNYRFu5PcBz",
+      "name": "Peçonha Mortal",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>se a Mordida causar dano, Fortitude CD 18 ou Envenenado; ao fim de cada turno dele, repete o teste; falhar 2 vezes seguidas deixa o alvo Inconsciente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cobra-imperial",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!mjFxZmF90TQCgIf3.9QzBifNYRFu5PcBz"
+    },
+    {
+      "_id": "JGmJLVIe10cWJWZo",
+      "name": "Capuz Hipnótico",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> Vontade CD 18 em alcance curto ou Pasmo até o início do próximo turno.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cobra-imperial",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!mjFxZmF90TQCgIf3.JGmJLVIe10cWJWZo"
+    },
+    {
+      "_id": "K4nlWdtjWML9FExJ",
+      "name": "Bote Veloz",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>1 vez por rodada, depois de atacar, pode recuar 6 m como ação livre.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cobra-imperial",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!mjFxZmF90TQCgIf3.K4nlWdtjWML9FExJ"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cobra-imperial",
+      "papel": "solo",
+      "nd": "8"
+    }
+  },
+  "_key": "!actors!mjFxZmF90TQCgIf3"
+}

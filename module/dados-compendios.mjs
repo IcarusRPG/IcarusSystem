@@ -5,6 +5,7 @@
  */
 import { SISTEMA_ID, ICONE_PADRAO, arquivoDoVinculo, imagemDoVinculo, ICONE_VINCULO_PADRAO, arquivoDoFamiliar, imagemDoFamiliar, ICONE_FAMILIAR_PADRAO, FICHA_ANIMAL } from "./config.mjs";
 import { idEstavel } from "./dados-itens.mjs";
+import { PAPEIS, PATAMARES, patamarDoNd, compararAmeacas, casasDoTamanho, sistemaDaAmeaca, descricaoDaHabilidade } from "./ameaca-dados.mjs";
 
 const normalizar = t => String(t).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const escapar = t => String(t ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -414,4 +415,66 @@ export function documentosDeMercadores(dados, fontes) {
     };
   });
   return { pastas: [], atores, faltando };
+}
+
+/* ------------------------------ Ameaças (compêndio Icarus: Ameaças — Fauna) ------------------------------ */
+
+export const PASTA_IMAGENS_AMEACAS = `systems/${SISTEMA_ID}/img/Ameacas/Fauna`;
+const NOME_DO_PAPEL = { solo: "Solo", lacaio: "Lacaio", especial: "Especial", outro: "Outros" };
+
+/**
+ * Atores "ameaca" do bestiário (tools/dados/ameacas-fauna.json).
+ * - _id estável ("ameaca:<id>"), habilidades como itens "poder" com _id estável por habilidade;
+ * - imagem: opcoes.imagens[id] (arquivo em img/Ameacas/Fauna, casado pelo build) ou o dado azul;
+ * - token: não vinculado, hostil, barra 1 = PV, casas pelo tamanho (Grande 2×2 … Colossal 4×4);
+ * - pastas por papel (Solo, Lacaio, Especial) > patamar (Iniciante … Lenda+), ordem por ND e nome.
+ * @param {object} dados  { ameacas: [...] }
+ * @param {{ pericias?: object[], imagens?: Record<string,string|null> }} opcoes
+ * @returns {{ pastas: object[], atores: object[], semCd: string[], semImagem: string[] }}
+ */
+export function documentosDeAmeacas(dados, { pericias = [], imagens = {} } = {}) {
+  const lista = [...(dados?.ameacas ?? [])].sort(compararAmeacas);
+  const papeis = PAPEIS.filter(p => lista.some(a => (PAPEIS.includes(a.papel) ? a.papel : "outro") === p));
+  const pastas = [];
+  papeis.forEach((papel, i) => {
+    const mae = pasta(`ameacas:${papel}`, NOME_DO_PAPEL[papel], { tipo: "Actor", sort: (i + 1) * 100000 });
+    pastas.push({ ...mae, sorting: "m" });
+    PATAMARES.forEach((p, j) => {
+      if (!lista.some(a => a.papel === papel && patamarDoNd(a.nd).id === p.id)) return;
+      pastas.push({ ...pasta(`ameacas:${papel}:${p.id}`, `${p.nome} (${p.faixa})`, { tipo: "Actor", mae: mae._id, sort: (j + 1) * 1000 }), sorting: "m" });
+    });
+  });
+  const semCd = [];
+  const semImagem = [];
+  const atores = lista.map((a, i) => {
+    const papel = PAPEIS.includes(a.papel) ? a.papel : "outro";
+    const arquivo = imagens?.[a.id] ?? null;
+    if (!arquivo) semImagem.push(a.id);
+    if (a.cd === null || a.cd === undefined) semCd.push(a.id);
+    const img = arquivo ? encodeURI(`${PASTA_IMAGENS_AMEACAS}/${arquivo}`) : ICONE_PADRAO;
+    const casas = casasDoTamanho(a.tamanho);
+    const actorId = idEstavel(`ameaca:${a.id}`);
+    return {
+      _id: actorId, name: a.nome, type: "ameaca", img,
+      folder: idEstavel(`pasta:ameacas:${papel}:${patamarDoNd(a.nd).id}`), sort: (i + 1) * 100,
+      system: sistemaDaAmeaca(a, pericias),
+      prototypeToken: {
+        name: a.nome, actorLink: false, disposition: -1,
+        // Nome ao passar o mouse; barras só para o dono (o Mestre)
+        displayName: 30, displayBars: 40,
+        width: casas, height: casas,
+        texture: { src: img, scaleX: 1, scaleY: 1 },
+        bar1: { attribute: "pv" }, bar2: { attribute: null }
+      },
+      items: (a.habilidades ?? []).map((h, j) => ({
+        _id: idEstavel(`ameaca:${a.id}:habilidade:${j}`), name: h.nome, type: "poder", img: ICONE_PADRAO, folder: null, sort: (j + 1) * 100,
+        system: { descricao: descricaoDaHabilidade(h) }, effects: [],
+        flags: { [SISTEMA_ID]: { ameaca: a.id, gatilho: h.gatilho ?? null } }
+      })),
+      effects: [],
+      ownership: { default: 0 },
+      flags: { [SISTEMA_ID]: { id: a.id, papel, nd: String(a.nd) } }
+    };
+  });
+  return { pastas, atores, semCd, semImagem };
 }

@@ -1,0 +1,220 @@
+{
+  "_id": "McW2RbTOmcHSNifS",
+  "name": "Moreia-Abissal",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-moreia-abissal.webp",
+  "folder": "86HgGQKeik1E8p7Y",
+  "sort": 7200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "11",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 180,
+      "max": 180,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 3,
+    "deslocamentoTexto": "3 m, natação 15 m",
+    "sentidos": "Visão +3, percepção de vibrações na água (médio)",
+    "cd": 20,
+    "salvaguardas": {
+      "fort": 3,
+      "ref": 15,
+      "von": 9
+    },
+    "atributos": {
+      "FOR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 21,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Constrição",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 20,
+        "tipo": "impacto, só contra criatura agarrada",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+21 perfuração), Constrição +9 (2d6+20 impacto, só contra criatura agarrada). CD das habilidades 20.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (couro, dentes)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Moreia-Abissal",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-moreia-abissal.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "XwkrsJRYrBwHdMO3",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com a Mordida, faz Agarrar (teste +11).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "moreia-abissal",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!McW2RbTOmcHSNifS.XwkrsJRYrBwHdMO3"
+    },
+    {
+      "_id": "7pIXDI4JZJZS48XD",
+      "name": "Engolir",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão)</em> engole uma criatura Média ou menor que esteja agarrada; no início de cada turno dela, a engolida sofre 2d6 de dano de ácido. Escapa causando 25 de dano ao interior (Defesa 10).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "moreia-abissal",
+          "gatilho": "ação padrão"
+        }
+      },
+      "_key": "!actors.items!McW2RbTOmcHSNifS.7pIXDI4JZJZS48XD"
+    },
+    {
+      "_id": "VjssXt2J6jBlhsxl",
+      "name": "Pele Escorregadia",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+4 para escapar de Agarrar e Imobilizar; imune a Enredado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "moreia-abissal",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!McW2RbTOmcHSNifS.VjssXt2J6jBlhsxl"
+    },
+    {
+      "_id": "ZXIP8aDKK4LnGt3n",
+      "name": "Emboscada de Fenda",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>na primeira rodada, se estava escondida, o alvo está desprevenido contra a Mordida.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "moreia-abissal",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!McW2RbTOmcHSNifS.ZXIP8aDKK4LnGt3n"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "moreia-abissal",
+      "papel": "solo",
+      "nd": "11"
+    }
+  },
+  "_key": "!actors!McW2RbTOmcHSNifS"
+}

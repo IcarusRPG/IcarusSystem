@@ -2,7 +2,8 @@
   "TYPES": {
     "Actor": {
       "personagem": "Personagem",
-      "mercador": "Mercador"
+      "mercador": "Mercador",
+      "ameaca": "Ameaça"
     },
     "Item": {
       "poder": "Poder",
@@ -19,7 +20,8 @@
       "Personagem": "Ficha de Personagem (Icarus RPG)",
       "Item": "Ficha de Item (Icarus RPG)",
       "Animal": "Ficha de Animal do Vínculo (Icarus RPG)",
-      "Mercador": "Ficha de Mercador (Icarus RPG)"
+      "Mercador": "Ficha de Mercador (Icarus RPG)",
+      "Ameaca": "Ficha de Ameaça (Icarus RPG)"
     },
     "Identidade": {
       "Nome": "Nome do personagem",
@@ -1420,7 +1422,7 @@
     },
     "Token": {
       "Molduras": "Molduras",
-      "Editor": "Token do personagem",
+      "Editor": "Token",
       "Previa": "Prévia do token",
       "Menos": "Diminuir zoom",
       "Mais": "Aumentar zoom",
@@ -1430,23 +1432,28 @@
       "Aplicar": "Aplicar token",
       "Restaurar": "Restaurar",
       "AtualizarCena": "Atualizar também os tokens já colocados nas cenas",
-      "SoLeitura": "Só o dono do personagem (ou o Mestre) edita o token.",
-      "SemRetrato": "O personagem não tem imagem: escolha o retrato antes de montar o token.",
+      "SoLeitura": "Só o dono do ator (ou o Mestre) edita o token.",
+      "SemRetrato": "Este ator não tem imagem (usa o ícone padrão): escolha o retrato antes de montar o token.",
       "EscolherRetrato": "Escolher retrato",
-      "RetratoMudou": "A imagem do personagem mudou desde o último token. Os ajustes foram mantidos.",
+      "RetratoMudou": "A imagem do ator mudou desde o último token. Os ajustes foram mantidos.",
       "UsarRetratoAtual": "Usar a imagem atual",
       "SemMolduras": "Nenhuma moldura de token encontrada no sistema.",
       "ErroMoldura": "A moldura \"{nome}\" não carregou (arquivo ausente ou bloqueado). Escolha outra.",
-      "ErroRetrato": "O retrato do personagem não carregou (arquivo ausente ou de outro site sem permissão). Escolha outra imagem.",
+      "ErroRetrato": "O retrato do ator não carregou (arquivo ausente ou de outro site sem permissão). Escolha outra imagem.",
       "Aplicado": "Token de {nome} aplicado.",
       "ErroAplicar": "O token não foi aplicado (nada mudou). {motivo}",
       "SemMestre": "Você não tem permissão de enviar arquivos e não há Mestre online. Os ajustes foram salvos: o token será aplicado quando o Mestre entrar.",
       "MestreNaoRespondeu": "O Mestre não respondeu a tempo.",
-      "RecusaDono": "Só o dono do personagem pode aplicar o token.",
+      "RecusaDono": "Só o dono do ator pode aplicar o token.",
       "RecusaTipo": "A imagem enviada não é um PNG válido.",
       "RecusaTamanho": "A imagem passou de 2 MB.",
       "Pendente": "Token pendente: será aplicado quando um Mestre entrar.",
-      "PendentesFeitos": "Tokens pendentes aplicados: {n} de {total}."
+      "PendentesFeitos": "Tokens pendentes aplicados: {n} de {total}.",
+      "SoNoMundo": "Ator de compêndio: importe-o para o mundo para montar o token. Até lá, o token usa a imagem da criatura sem moldura.",
+      "SoNoAtorBase": "Esta ficha é de um token não vinculado. Monte o token na ficha do ator, no diretório de atores.",
+      "AtualizarCopias": "Atualizar também as {n} cópias desta criatura já colocadas nas cenas",
+      "NaoVinculadoDica": "Token não vinculado: Aplicar muda o token dos próximos que você colocar na cena.",
+      "RetratoTrocadoTokenMantido": "Retrato de {nome} trocado. O token continua com a moldura aplicada: para usar o novo retrato, aplique de novo na aba Token."
     },
     "Interacao": {
       "Longe": "Você não está próximo o bastante para interagir com {objeto}. (Alcance: {alcance} m)",
@@ -2221,7 +2228,8 @@
         "poderes": "Poderes e magias",
         "equipamento": "Equipamento e ataques",
         "loja": "Loja",
-        "notas": "Notas"
+        "notas": "Notas",
+        "token": "Token"
       },
       "Pericias": "Perícias",
       "Pericia": "Perícia",
@@ -2405,6 +2413,68 @@
         "FlagranteMestre": "{personagem} foi pego roubando {item} de {mercador}: o mercador chamou os guardas. A loja fechou."
       },
       "Comprador": "Comprador:"
+    },
+    "Ameaca": {
+      "Nome": "Nome da ameaça",
+      "Subtitulo": "Subtítulo",
+      "ContaComo": "conta como",
+      "Acompanha": "Costuma acompanhar",
+      "CD": "CD",
+      "Outros": "Outros",
+      "Abas": {
+        "ficha": "Ficha",
+        "token": "Token"
+      },
+      "Papel": "Papel",
+      "Papeis": {
+        "solo": "Solo",
+        "lacaio": "Lacaio",
+        "especial": "Especial",
+        "outro": "Outro"
+      },
+      "Tamanho": "Tamanho",
+      "Tamanhos": {
+        "minusculo": "Minúsculo",
+        "pequeno": "Pequeno",
+        "medio": "Médio",
+        "grande": "Grande",
+        "enorme": "Enorme",
+        "colossal": "Colossal"
+      },
+      "TipoCriatura": "Tipo",
+      "DefesaAlterada": "Defesa da criatura: {valor} (com condições e Efeitos aplicados)",
+      "Ataques": "Ataques",
+      "NovoAtaque": "Novo ataque",
+      "RemoverAtaque": "Remover ataque",
+      "NomeAtaque": "Nome do ataque",
+      "AtacarDica": "Atacar: d20 + bônus contra os alvos marcados (Shift = vantagem, Ctrl = desvantagem)",
+      "SemAtaques": "Sem ataques. Use + para criar um.",
+      "Bonus": "Bônus",
+      "Dados": "Dados",
+      "Fixo": "Dano fixo",
+      "Tipo": "Tipo de dano",
+      "Alcance": "Alcance",
+      "Alcances": {
+        "corpo-a-corpo": "Corpo a corpo",
+        "distancia": "À distância"
+      },
+      "CorpoACorpo": "Corpo a corpo",
+      "ADistancia": "À distância",
+      "CondicaoNoAtaque": "Condição no ataque: {valor}",
+      "AtorSumiu": "A ameaça deste ataque não existe mais.",
+      "Habilidades": "Habilidades",
+      "PostarNoChat": "Mostrar no chat",
+      "RemoverHabilidade": "Remover habilidade",
+      "NovaHabilidade": "Nova habilidade",
+      "ArrasteHabilidades": "Sem habilidades. Arraste poderes para cá ou crie uma.",
+      "Pericias": "Perícias",
+      "PericiasDica": "(atributo + treino + outros)",
+      "TodasPericias": "Todas as perícias",
+      "Sentidos": "Sentidos",
+      "Tesouro": "Tesouro",
+      "Imune": "Imune",
+      "Original": "Ataques no bestiário",
+      "Notas": "Notas"
     }
   }
 }

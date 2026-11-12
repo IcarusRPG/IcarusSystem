@@ -1,0 +1,222 @@
+{
+  "_id": "NEenl19qfvLm002m",
+  "name": "Salamandra-de-Magma",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-salamandra-de-magma.webp",
+  "folder": "bFd00kE2nKrf5JVC",
+  "sort": 10500,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "20",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "colossal",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 203,
+      "max": 203,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, escalada 6 m",
+    "sentidos": "Visão +8, sentido de calor (longo)",
+    "cd": 28,
+    "salvaguardas": {
+      "fort": 21,
+      "ref": 15,
+      "von": 9
+    },
+    "atributos": {
+      "FOR": {
+        "base": 9,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 9,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 5
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "2d8",
+        "fixo": 29,
+        "tipo": "fogo e perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Cauda",
+        "bonus": 9,
+        "dados": "2d8",
+        "fixo": 29,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +9 (2d8+29 fogo e perfuração) e Cauda +9 (2d8+29 impacto). CD das habilidades 28.",
+    "resistencias": {
+      "rdGeral": 5,
+      "imunidade": {
+        "fogo": true
+      }
+    },
+    "tesouro": "Tesouro Dobro (pele de magma; item lendário a definir)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Salamandra-de-Magma",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/especial-salamandra-de-magma.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "LCopQSSAFKpvIp7U",
+      "name": "Couro de Magma",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>imune a fogo e Redução de Dano 5. Criatura que a atinge com ataque corpo a corpo sofre 2d8 de fogo; criatura adjacente no início do turno dela sofre 2d6 de fogo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "salamandra-de-magma",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!NEenl19qfvLm002m.LCopQSSAFKpvIp7U"
+    },
+    {
+      "_id": "9dpi26y1z6Q4Futk",
+      "name": "Erupção",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> explosão de 9 m de raio centrada nela; 12d6 de fogo, Reflexos CD 28 para metade. Falha: Em Chamas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "salamandra-de-magma",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!NEenl19qfvLm002m.9dpi26y1z6Q4Futk"
+    },
+    {
+      "_id": "tIzyXlPMVDTfunwL",
+      "name": "Rastro de Lava",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>ao se deslocar, deixa um rastro incandescente; criatura que entra ou começa o turno nele sofre 3d6 de fogo. Dura 1d4 rodadas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "salamandra-de-magma",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!NEenl19qfvLm002m.tIzyXlPMVDTfunwL"
+    },
+    {
+      "_id": "oYkmx7MZKnLkgYkP",
+      "name": "Resfriamento Lento",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>se sofrer 40 ou mais de dano de frio em um turno, fica Lenta e perde Couro de Magma até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "salamandra-de-magma",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!NEenl19qfvLm002m.oYkmx7MZKnLkgYkP"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "salamandra-de-magma",
+      "papel": "especial",
+      "nd": "20"
+    }
+  },
+  "_key": "!actors!NEenl19qfvLm002m"
+}

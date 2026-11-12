@@ -13,7 +13,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
-import { documentosNovos, documentosDeClasses, documentosDeVinculos, documentosDeMercadores } from "../module/dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses, documentosDeVinculos, documentosDeMercadores, documentosDeAmeacas } from "../module/dados-compendios.mjs";
+import { casarImagens } from "../module/ameaca-dados.mjs";
 import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo, arquivoDoFamiliar } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
 import { documentosDeOrigens, chaveDeNome } from "../module/origens-dados.mjs";
@@ -122,6 +123,17 @@ const docsMercadores = documentosDeMercadores(ler("mercadores"), {
 });
 if (docsMercadores.faltando.length) throw new Error(`Mercadores: itens que não existem nos compêndios: ${docsMercadores.faltando.join("; ")}`);
 
+// Ameaças (fauna): imagens em img/Ameacas/Fauna, casadas por slug (sem acento, minúsculas, sem o
+// prefixo ameaca-/lacaio-/especial- e sem extensão). Sem imagem: dado azul (o build não para).
+const dadosAmeacas = ler("ameacas-fauna");
+const pastaAmeacas = path.join(RAIZ, "img", "Ameacas", "Fauna");
+const casamento = casarImagens(dadosAmeacas.ameacas, fs.existsSync(pastaAmeacas) ? fs.readdirSync(pastaAmeacas) : []);
+const docsAmeacas = documentosDeAmeacas(dadosAmeacas, { pericias: PERICIAS, imagens: casamento.porId });
+console.log(`Ameaças: ${docsAmeacas.atores.length} criatura(s), ${Object.keys(casamento.porId).length} com imagem`);
+if (casamento.semImagem.length) console.warn(`Ameaças sem imagem (dado azul; esperado em img/Ameacas/Fauna/): ${casamento.semImagem.join(", ")}`);
+if (casamento.orfas.length) console.warn(`Imagens em img/Ameacas/Fauna/ sem criatura: ${casamento.orfas.join(", ")}`);
+if (docsAmeacas.semCd.length) console.warn(`Ameaças sem CD das habilidades no JSON (campo vazio): ${docsAmeacas.semCd.length}: ${docsAmeacas.semCd.join(", ")}`);
+
 /** Cada pacote: lista de [documento, coleção] já com as chaves. */
 const PACOTES = {
   armas: docsArmas.armas,
@@ -136,6 +148,7 @@ const PACOTES = {
   vinculos: documentosDeVinculos(novos.vinculos, PERICIAS),
   familiares: documentosDeVinculos(novos.familiares, PERICIAS, "familiar"),
   mercadores: { pastas: [], atores: docsMercadores.atores },
+  "ameacas-fauna": { pastas: docsAmeacas.pastas, atores: docsAmeacas.atores },
   ...docsOrigens,
   // Magias: tools/dados/magias.json + ícones (img/magias, manifesto magias_icones.json); sem ícone = dado azul
   magias: documentosDeMagias(ler("magias"), ler("magias_icones"), idEstavel)

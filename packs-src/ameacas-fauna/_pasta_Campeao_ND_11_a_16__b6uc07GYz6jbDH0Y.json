@@ -1,0 +1,15 @@
+{
+  "_id": "b6uc07GYz6jbDH0Y",
+  "name": "Campeão (ND 11 a 16)",
+  "type": "Actor",
+  "folder": "a5ezzS3FQU5BuIEq",
+  "sorting": "m",
+  "sort": 3000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:lacaio:campeao"
+    }
+  },
+  "_key": "!folders!b6uc07GYz6jbDH0Y"
+}

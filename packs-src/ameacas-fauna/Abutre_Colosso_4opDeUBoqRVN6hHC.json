@@ -1,0 +1,201 @@
+{
+  "_id": "4opDeUBoqRVN6hHC",
+  "name": "Abutre-Colosso",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-abutre-colosso.webp",
+  "folder": "p5WdzDDQoF8w7jSe",
+  "sort": 4300,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "7",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 135,
+      "max": 135,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, voo 24 m",
+    "sentidos": "Visão +9, Olfato +5",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 12,
+      "ref": 6,
+      "von": 0
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 6
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Bico",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 16,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garras",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 14,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Bico +8 (1d8+16 perfuração) e Garras +8 (1d8+14 corte).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (penas).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Abutre-Colosso",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-abutre-colosso.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "nZEnmBFbzh5uwP2v",
+      "name": "Dilacerar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>contra alvo com menos da metade dos PV, o Bico causa +1d8.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "abutre-colosso",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!4opDeUBoqRVN6hHC.nZEnmBFbzh5uwP2v"
+    },
+    {
+      "_id": "9si6mkFSg4KwUNNU",
+      "name": "Rasante",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>depois de acertar, pode se deslocar até 9 m em voo como ação livre (1 vez por rodada).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "abutre-colosso",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!4opDeUBoqRVN6hHC.9si6mkFSg4KwUNNU"
+    },
+    {
+      "_id": "pcVODooDdZnrGGGJ",
+      "name": "Olfato de Carniça",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>sente criaturas feridas ou mortas a até 1 km.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "abutre-colosso",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!4opDeUBoqRVN6hHC.pcVODooDdZnrGGGJ"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "abutre-colosso",
+      "papel": "solo",
+      "nd": "7"
+    }
+  },
+  "_key": "!actors!4opDeUBoqRVN6hHC"
+}

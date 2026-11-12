@@ -1,0 +1,15 @@
+{
+  "_id": "CITIZK79ZW3GkWa7",
+  "name": "Lenda+ (ND S e S+)",
+  "type": "Actor",
+  "folder": "kaAF0lc55qMjuZCu",
+  "sorting": "m",
+  "sort": 5000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:solo:lenda-mais"
+    }
+  },
+  "_key": "!folders!CITIZK79ZW3GkWa7"
+}
