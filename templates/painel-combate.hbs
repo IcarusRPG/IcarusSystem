@@ -1,0 +1,39 @@
+<div class="painel-combate-conteudo">
+  <header class="pc-barra">
+    <span class="pc-rodada">{{#if comecou}}{{localize "ICARUS.Carrossel.Rodada"}} <b>{{rodada}}</b>{{else}}{{localize "ICARUS.PainelCombate.NaoComecou"}}{{/if}}</span>
+    {{#if noTurno}}<span class="pc-turno">{{localize "ICARUS.PainelCombate.TurnoDe"}} <b>{{noTurno}}</b></span>{{/if}}
+    <span class="pc-espaco"></span>
+    {{#unless popout}}<button type="button" class="pc-botao" data-pc-acao="popout" data-tooltip="{{localize "ICARUS.PainelCombate.PopoutDica"}}"><i class="fa-solid fa-up-right-from-square"></i> {{localize "ICARUS.PainelCombate.Popout"}}</button>{{/unless}}
+  </header>
+  {{#if cartas.length}}
+  <div class="pc-grade">
+    {{#each cartas}}
+    <article class="pc-carta{{#if destaque}} destaque{{/if}}{{#if agindoAgora}} agindo{{/if}}{{#if noTurno}} no-turno{{/if}}{{#if derrotado}} derrotado{{/if}}{{#if oculto}} oculto{{/if}}"
+      data-pc-id="{{id}}" tabindex="0" data-tooltip="{{@root.dicaCarta}}">
+      {{#if rotulo}}<div class="pc-selo"><i class="fa-solid {{#if agindoAgora}}fa-bolt{{else}}fa-hourglass-half{{/if}}"></i> {{rotulo}}</div>{{/if}}
+      <div class="pc-topo">
+        <div class="pc-retrato"><img src="{{img}}" alt="" draggable="false">{{#if derrotado}}<i class="fa-solid fa-skull pc-caveira"></i>{{/if}}</div>
+        <div class="pc-ident">
+          <div class="pc-nome">{{#if oculto}}<i class="fa-solid fa-eye-slash" data-tooltip="{{@root.dicaOculto}}"></i> {{/if}}{{nome}}</div>
+          <div class="pc-sub">{{#if tipo}}{{tipo}}{{/if}}{{#if nd}} · ND {{nd}}{{/if}}</div>
+          <div class="pc-ini" data-tooltip="{{@root.rotuloIniciativa}}"><i class="fa-solid fa-dice-d20"></i> {{#if iniciativaTexto}}{{iniciativaTexto}}{{else}}—{{/if}}</div>
+        </div>
+      </div>
+      {{#if pv}}<div class="pc-barra-recurso pv{{#if pvBaixo}} baixo{{/if}}"><i style="width: {{pv.pct}}%"></i><span>PV {{pv.valor}} / {{pv.max}}</span></div>{{/if}}
+      {{#if pm}}<div class="pc-barra-recurso pm"><i style="width: {{pm.pct}}%"></i><span>PM {{pm.valor}} / {{pm.max}}</span></div>{{/if}}
+      <div class="pc-numeros">
+        <span class="pc-def" data-tooltip="{{@root.rotuloDefesa}}"><i class="fa-solid fa-shield-halved"></i> {{#if defesa}}{{defesa}}{{else}}—{{/if}}</span>
+        <span data-tooltip="Fortitude">FORT <b>{{fortTexto}}</b></span>
+        <span data-tooltip="Reflexos">REF <b>{{refTexto}}</b></span>
+        <span data-tooltip="Vontade">VON <b>{{vonTexto}}</b></span>
+      </div>
+      {{#if condicoes.length}}
+      <div class="pc-condicoes">{{#each condicoes}}<img src="{{img}}" alt="{{nome}}" data-tooltip="{{nome}}">{{/each}}</div>
+      {{/if}}
+    </article>
+    {{/each}}
+  </div>
+  {{else}}
+  <p class="pc-vazio">{{localize "ICARUS.PainelCombate.Vazio"}}</p>
+  {{/if}}
+</div>

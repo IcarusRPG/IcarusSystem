@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Painel de combate do Mestre (module/painel-combate.mjs)
+   Mesma folha para a janela do Foundry e para a janela separada (pop-out).
+   ========================================================================== */
+
+.icarus-painel-combate {
+  --pc-fundo: #0b1118; --pc-carta: #121c26; --pc-borda: #2a4558; --pc-texto: #e7eef3; --pc-apagado: #9bb0be;
+  --pc-ouro: #d8b45a; --pc-ouro-claro: #f1d98f; --pc-pv: #c0392b; --pc-pm: #2e6fd1; --pc-verde: #7fdc8a;
+}
+#icarus-painel-combate .window-content { padding: 0; background: var(--pc-fundo); color: var(--pc-texto); overflow: auto; }
+body.icarus-pc-popout { margin: 0; min-height: 100vh; background: #0b1118; color: #e7eef3; overflow: auto; }
+body.icarus-pc-popout .icarus-painel-combate { display: block; }
+
+.icarus-painel-combate .painel-combate-conteudo { display: flex; flex-direction: column; gap: 10px; padding: 10px; font-family: "Alegreya Sans", "Signika", sans-serif; }
+
+/* Barra de cima: rodada, turno, destacar */
+.icarus-painel-combate .pc-barra { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--pc-apagado); }
+.icarus-painel-combate .pc-barra b { color: var(--pc-ouro-claro); }
+.icarus-painel-combate .pc-espaco { flex: 1; }
+.icarus-painel-combate .pc-botao {
+  width: auto; height: 30px; padding: 0 12px; display: inline-flex; align-items: center; gap: 6px; line-height: 1;
+  border: 1px solid var(--pc-borda); border-radius: 5px; background: #101c27; color: var(--pc-texto); font-size: 13px; cursor: pointer;
+}
+.icarus-painel-combate .pc-botao:hover, .icarus-painel-combate .pc-botao:focus-visible { border-color: var(--pc-ouro); color: var(--pc-ouro-claro); outline: none; }
+
+/* Grade de cartas */
+.icarus-painel-combate .pc-grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.icarus-painel-combate .pc-carta {
+  position: relative; display: flex; flex-direction: column; gap: 6px; padding: 10px;
+  border: 1px solid var(--pc-borda); border-radius: 8px; background: var(--pc-carta);
+  cursor: pointer; user-select: none; transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.icarus-painel-combate .pc-carta:hover, .icarus-painel-combate .pc-carta:focus-visible { border-color: var(--pc-ouro); outline: none; }
+.icarus-painel-combate .pc-carta.no-turno { border-color: #5b7d93; }
+
+/* Destaque: o próximo do Mestre a agir (dourado) e agindo agora (pulsando) */
+.icarus-painel-combate .pc-carta.destaque {
+  border: 2px solid var(--pc-ouro); padding: 9px; background: linear-gradient(180deg, #2a2412 0%, var(--pc-carta) 60%);
+  box-shadow: 0 0 0 1px rgba(216, 180, 90, .35), 0 0 18px rgba(216, 180, 90, .45);
+}
+.icarus-painel-combate .pc-carta.agindo { animation: pc-pulso 1.6s ease-in-out infinite; }
+@keyframes pc-pulso {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(216, 180, 90, .35), 0 0 14px rgba(216, 180, 90, .35); }
+  50% { box-shadow: 0 0 0 2px rgba(241, 217, 143, .7), 0 0 28px rgba(241, 217, 143, .7); }
+}
+@media (prefers-reduced-motion: reduce) { .icarus-painel-combate .pc-carta.agindo { animation: none; } }
+.icarus-painel-combate .pc-selo {
+  align-self: flex-start; padding: 2px 8px; border-radius: 10px; background: var(--pc-ouro); color: #1a1408;
+  font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+}
+.icarus-painel-combate .pc-carta.derrotado { filter: grayscale(.9) brightness(.6); }
+.icarus-painel-combate .pc-carta.oculto .pc-retrato img { opacity: .6; }
+
+.icarus-painel-combate .pc-topo { display: flex; gap: 10px; align-items: center; }
+.icarus-painel-combate .pc-retrato { position: relative; flex: none; width: 56px; height: 56px; border-radius: 6px; overflow: hidden; border: 1px solid var(--pc-borda); background: #000; }
+.icarus-painel-combate .pc-carta.destaque .pc-retrato { border-color: var(--pc-ouro); }
+.icarus-painel-combate .pc-retrato img { width: 100%; height: 100%; object-fit: cover; border: 0; display: block; }
+.icarus-painel-combate .pc-caveira { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #ff8b84; background: rgba(0, 0, 0, .45); }
+.icarus-painel-combate .pc-ident { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.icarus-painel-combate .pc-nome { font-family: "Cinzel", Georgia, serif; font-weight: 700; font-size: 15px; color: var(--pc-ouro-claro); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.icarus-painel-combate .pc-sub { font-size: 12px; color: var(--pc-apagado); min-height: 1em; }
+.icarus-painel-combate .pc-ini { font-size: 13px; color: var(--pc-texto); }
+
+/* Barras de PV e PM com números */
+.icarus-painel-combate .pc-barra-recurso { position: relative; height: 18px; border-radius: 4px; background: #05080c; border: 1px solid #000; overflow: hidden; }
+.icarus-painel-combate .pc-barra-recurso i { position: absolute; inset: 0 auto 0 0; display: block; transition: width .3s; }
+.icarus-painel-combate .pc-barra-recurso.pv i { background: linear-gradient(180deg, #e0574a, var(--pc-pv)); }
+.icarus-painel-combate .pc-barra-recurso.pm i { background: linear-gradient(180deg, #4f8fe8, var(--pc-pm)); }
+.icarus-painel-combate .pc-barra-recurso.pv.baixo i { animation: pc-baixo 1s ease-in-out infinite; }
+@keyframes pc-baixo { 50% { filter: brightness(1.5); } }
+.icarus-painel-combate .pc-barra-recurso span {
+  position: relative; display: block; text-align: center; font-size: 12px; font-weight: 700; line-height: 16px; color: #fff;
+  text-shadow: 0 0 2px #000, 1px 1px 0 #000, -1px -1px 0 #000;
+}
+
+/* Defesa e salvaguardas */
+.icarus-painel-combate .pc-numeros { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; color: var(--pc-apagado); }
+.icarus-painel-combate .pc-numeros b { color: var(--pc-texto); }
+.icarus-painel-combate .pc-def { color: var(--pc-ouro-claro); font-weight: 700; }
+
+/* Condições ativas */
+.icarus-painel-combate .pc-condicoes { display: flex; flex-wrap: wrap; gap: 4px; }
+.icarus-painel-combate .pc-condicoes img { width: 22px; height: 22px; padding: 2px; border: 1px solid var(--pc-borda); border-radius: 4px; background: #05080c; }
+
+.icarus-painel-combate .pc-vazio { margin: 24px 0; text-align: center; font-style: italic; color: var(--pc-apagado); }
