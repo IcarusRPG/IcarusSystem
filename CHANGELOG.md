@@ -1,5 +1,13 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.40.2
+
+### Tela do Teste Oposto e do Teste de Resistência: botões e textos legíveis
+- Os botões do rodapé (Reenviar tela, Cancelar teste, Fechar para todos, Fechar) ficavam embaixo da barra de macros do Foundry. Agora ficam acima dela, maiores e no estilo dourado da tela.
+- Os textos que ficam soltos sobre o mapa ganharam contorno escuro: título, subtítulo, origem ("conjurado por…"), o ×, perícia e bônus, resultado, "Aguardando Mestre" e o banner do vencedor.
+  - Título, subtítulo, × e banner têm traço por fora da letra; os textos menores têm contorno por sombra, para não afinar as letras.
+- Os textos cinza-azulados ficaram mais claros.
+
 ## 0.40.1
 
 ### Correção: o mundo não carregava na 0.40.0
