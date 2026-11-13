@@ -1,0 +1,182 @@
+{
+  "_id": "amWU6PJ7FxGOiXsA",
+  "name": "Vigia-de-Cinzas",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-vigia-de-cinzas.webp",
+  "folder": "FpvEYiNvcWVSIRNF",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "10",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 40,
+      "max": 40,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m",
+    "sentidos": "Visão +6, Audição +4",
+    "cd": 19,
+    "salvaguardas": {
+      "fort": 2,
+      "ref": 8,
+      "von": 14
+    },
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Espada Espectral",
+        "bonus": 10,
+        "dados": "1d6",
+        "fixo": 53,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Espada Espectral +10 (1d6+53 corte). CD das habilidades 19.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 4,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Sentinela-Sem-Descanso",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Vigia-de-Cinzas",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-vigia-de-cinzas.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "vCD8waOFi7w0rvCr",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "vigia-de-cinzas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!amWU6PJ7FxGOiXsA.vCD8waOFi7w0rvCr"
+    },
+    {
+      "_id": "sDiajYJBLNH1Sw59",
+      "name": "Alerta Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por rodada)</em> quando um aliado a até 9 m é atacado, ele recebe +2 na Defesa contra esse ataque.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "vigia-de-cinzas",
+          "gatilho": "reação, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!amWU6PJ7FxGOiXsA.sDiajYJBLNH1Sw59"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "vigia-de-cinzas",
+      "tema": "espectros",
+      "papel": "lacaio",
+      "nd": "10"
+    }
+  },
+  "_key": "!actors!amWU6PJ7FxGOiXsA"
+}

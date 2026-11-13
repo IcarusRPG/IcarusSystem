@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +6 (1d6+20 perfuração). CD das habilidades 18.",
     "resistencias": {
       "rdGeral": 2,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (glândula de odor, 1d2 doses, CD 18)",

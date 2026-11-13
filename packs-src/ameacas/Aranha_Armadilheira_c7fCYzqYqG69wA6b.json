@@ -86,6 +86,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +10 (1d8+47 perfuração, mais 3d6 de veneno). CD das habilidades 20.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (seda, 1d4 rolos)",

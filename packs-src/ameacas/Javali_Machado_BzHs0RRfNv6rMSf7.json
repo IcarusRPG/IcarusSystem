@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Presa +7 (1d6+8 corte).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (presas, carne).",

@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+19 perfuração) e Cauda +9 (2d6+18 impacto).",
     "resistencias": {
       "rdGeral": 4,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: óleo e dentes (CD 18).",

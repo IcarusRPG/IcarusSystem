@@ -103,6 +103,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+30 corte), Bico +10 (2d6+29 perfuração). CD das habilidades 22.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (penas silenciosas)",

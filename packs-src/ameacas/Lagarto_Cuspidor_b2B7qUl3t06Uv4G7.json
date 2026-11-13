@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+10 perfuração). À distância (curto): Cuspe Corrosivo +8 (3d6+6 ácido).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: bolsa de ácido (1d4 doses, CD 15).",

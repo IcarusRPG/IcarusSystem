@@ -47,18 +47,22 @@ export function componentesDoBotao(componentes, acao) {
 
 /**
  * Dano recebido com vários tipos: resistências por tipo em cada parte, RD geral uma vez na soma.
- * @returns {{ final:number, partes:{tipo:string, final:number, passos:object[]}[], rd:number, soma:number }}
+ * RD não mágica (resistencias.rdNaoMagico, Forma Espectral): soma-se à RD geral só se o dano NÃO
+ * for mágico (magia: mensagens com flags.magia ou flags.dano.magico).
+ * @returns {{ final:number, partes:{tipo:string, final:number, passos:object[]}[], rd:number, soma:number, rdNaoMagico:number, ignorouNaoMagico:boolean }}
  */
-export function danoPorComponentes(resistencias, componentes, regras, { ignoraRD = false } = {}) {
+export function danoPorComponentes(resistencias, componentes, regras, { ignoraRD = false, magico = false } = {}) {
   const semRD = { ...(resistencias ?? {}), rdGeral: 0 };
   const partes = componentes.map(c => {
     const r = calcularDanoRecebido(semRD, c.valor, c.tipo, regras, { ignoraRD });
     return { tipo: c.tipo, final: r.final, passos: r.passos };
   });
   const soma = partes.reduce((s, p) => s + p.final, 0);
-  const rd = ignoraRD ? 0 : Math.max(0, inteiro(resistencias?.rdGeral) || 0);
+  const naoMagica = Math.max(0, inteiro(resistencias?.rdNaoMagico) || 0);
+  const rdNaoMagico = ignoraRD || magico ? 0 : naoMagica;
+  const rd = (ignoraRD ? 0 : Math.max(0, inteiro(resistencias?.rdGeral) || 0)) + rdNaoMagico;
   const minimo = regras?.minimo ?? 0;
-  return { final: Math.max(minimo, soma - rd), partes, rd, soma };
+  return { final: Math.max(minimo, soma - rd), partes, rd, soma, rdNaoMagico, ignorouNaoMagico: !ignoraRD && magico && naoMagica > 0 };
 }
 
 /**
@@ -90,7 +94,7 @@ export function novosTemporarios(atual, novo) {
   return n > a ? { valor: n, trocou: true } : { valor: a, trocou: false };
 }
 
-export function calcularAplicacao({ acao, componentes, resistencias, pv, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }, nomeDoTipo = t => t }) {
+export function calcularAplicacao({ acao, componentes, resistencias, pv, regras = { vulnerabilidadeMult: 1.5, minimo: 0 }, nomeDoTipo = t => t, magico = false }) {
   const comps = componentes?.length ? componentes : [{ tipo: "dano", valor: 0 }];
   const base = comps.reduce((s, c) => s + Math.max(0, inteiro(c.valor) || 0), 0);
   const ajustados = componentesDoBotao(comps, acao);
@@ -106,7 +110,7 @@ export function calcularAplicacao({ acao, componentes, resistencias, pv, regras 
   if (acao === "perda") {
     return { modo: "perda", base, valor, final: valor, antes, depois: Math.max(0, antes - valor), detalhe: `perde ${valor} PV` };
   }
-  const r = danoPorComponentes(resistencias, ajustados, regras);
+  const r = danoPorComponentes(resistencias, ajustados, regras, { magico });
   let detalhe;
   if (r.partes.length === 1) {
     // Mesmo texto de sempre: "14 Corte → RD 3 → 11"
@@ -121,6 +125,9 @@ export function calcularAplicacao({ acao, componentes, resistencias, pv, regras 
     });
     detalhe = `${pedacos.join(" + ")} = ${r.soma}${r.rd ? ` → RD ${r.rd} → ${r.final}` : ""}`;
   }
+  // Forma Espectral: diz de onde veio a RD (ou que a magia a ignorou)
+  if (r.rdNaoMagico) detalhe += ` (RD não mágica: −${r.rdNaoMagico})`;
+  else if (r.ignorouNaoMagico) detalhe += " (dano mágico: ignora a RD contra ataques não mágicos)";
   return { modo: "dano", base, valor, final: r.final, antes, depois: Math.max(0, antes - r.final), detalhe: prefixo + detalhe, partes: r.partes };
 }
 
@@ -152,12 +159,14 @@ export function dadosDaMensagem(flags, rolagens = [], { qualquerRolagem = false 
       : [{ tipo: String(d.tipo || "dano"), valor: total }];
     if (componentes.some(c => !ok(c.valor))) componentes = [{ tipo: "dano", valor: total }];
     const naoLetal = flags?.naoLetal ? { pericia: flags.naoLetal.pericia === "intimidacao" ? "intimidacao" : "diplomacia" } : null;
-    return { rollType, total, componentes, alvoUuid: typeof d.alvoUuid === "string" ? d.alvoUuid : null, critico: !!d.critico, manual: false, naoLetal };
+    // Dano mágico: magias e efeitos de magia (flags.magia) ou marcado na mensagem (flags.dano.magico)
+    const magico = !!d.magico || !!flags?.magia;
+    return { rollType, total, componentes, alvoUuid: typeof d.alvoUuid === "string" ? d.alvoUuid : null, critico: !!d.critico, manual: false, naoLetal, magico };
   }
   if (!qualquerRolagem || !rolagens.length) return null;
   const total = inteiro(rolagens.reduce((s, r) => s + (Number(r?.total) || 0), 0));
   if (!ok(total)) return null;
-  return { rollType: "dano", total, componentes: [{ tipo: "dano", valor: total }], alvoUuid: null, critico: false, manual: true };
+  return { rollType: "dano", total, componentes: [{ tipo: "dano", valor: total }], alvoUuid: null, critico: false, manual: true, magico: false };
 }
 
 /** Botões que a barra mostra para cada tipo de rolagem. */

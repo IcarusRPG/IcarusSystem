@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+7 perfuração, mais 3d6 de veneno).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: seda (2d4 rolos, CD 13 para colher).",

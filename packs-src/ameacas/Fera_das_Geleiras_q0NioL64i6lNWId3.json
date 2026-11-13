@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+28 corte), Mordida +10 (2d6+27 perfuração). CD das habilidades 22.",
     "resistencias": {
       "rdGeral": 5,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (pele, presas)",

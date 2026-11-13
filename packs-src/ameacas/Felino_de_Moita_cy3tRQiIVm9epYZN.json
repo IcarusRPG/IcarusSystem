@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +9 (1d6+13 corte), Mordida +9 (1d6+13 perfuração). CD das habilidades 16.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (pele)",

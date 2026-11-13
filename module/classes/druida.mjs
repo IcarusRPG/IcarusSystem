@@ -378,7 +378,7 @@ GANCHOS_DE_PODER.set("druida__floresta-desperta", {
     await actor.setFlag(F, "florestaUsada", true);
     await cartaoDeEfeito(actor, { id: "floresta-desperta", nome: loc("ICARUS.Druida.Floresta"), texto: fmt("ICARUS.Druida.FlorestaChat", { nome: actor.name, cd: cdDoDruida(actor) }),
       efeito: { tipo: "efeito", alvo: "inimigo", duracao: { tipo: "cena" }, condicoes: ["enredado"], resistencia: { atributo: "reflexos", efeito: "anula" } } });
-    return rolarDanoAvulso({ partes: [{ formula: "3d6", tipo: "impacto" }], titulo: loc("ICARUS.Druida.Floresta"), img: actor.img, actor });
+    return rolarDanoAvulso({ partes: [{ formula: "3d6", tipo: "impacto" }], titulo: loc("ICARUS.Druida.Floresta"), img: actor.img, actor, magico: true });
   }
 });
 
@@ -395,7 +395,7 @@ GANCHOS_DE_PODER.set("druida__raizes-vigilantes", {
 });
 
 GANCHOS_DE_PODER.set("druida__espinhos-de-retorno", {
-  depois: actor => rolarDanoAvulso({ partes: [{ formula: `1d6 + ${sabedoria(actor)}`, tipo: "perfuracao" }], titulo: loc("ICARUS.Druida.Espinhos"), img: actor.img, actor })
+  depois: actor => rolarDanoAvulso({ partes: [{ formula: `1d6 + ${sabedoria(actor)}`, tipo: "perfuracao" }], titulo: loc("ICARUS.Druida.Espinhos"), img: actor.img, actor, magico: true })
 });
 
 GANCHOS_DE_PODER.set("druida__seiva-pegajosa", {

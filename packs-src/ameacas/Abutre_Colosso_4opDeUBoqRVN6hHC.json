@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Bico +8 (1d8+16 perfuração) e Garras +8 (1d8+14 corte).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (penas).",

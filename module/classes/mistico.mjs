@@ -124,7 +124,7 @@ ACOES_DE_MECANICA.set("mistico:rajada", async actor => {
     await avisarNoChat(actor, fmt("ICARUS.Mistico.RajadaChat", { nome: actor.name, elemento: el.nome, total: d.total, alvo: alvo?.name ?? "—", defesa: defesa ?? "?", resultado }), { rolls: [d.roll] });
     if (res.acerta === false) continue;
     await rolarDanoAvulso({ partes: [{ formula: res.critico ? formula.replace(/^(\d+)d/, (_, n) => `${2 * n}d`) : formula, tipo: el.tipo }],
-      titulo: fmt("ICARUS.Mistico.RajadaTitulo", { elemento: el.nome }), img: itemDeClasse(actor, "mistico", "dobra-elemental")?.img ?? actor.img, actor });
+      titulo: fmt("ICARUS.Mistico.RajadaTitulo", { elemento: el.nome }), img: itemDeClasse(actor, "mistico", "dobra-elemental")?.img ?? actor.img, actor, magico: true });
   }
 });
 

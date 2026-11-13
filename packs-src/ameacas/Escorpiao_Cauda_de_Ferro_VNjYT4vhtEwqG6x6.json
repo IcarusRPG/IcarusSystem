@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Pinça +8 (1d8+7 corte) e Ferrão +8 (1d8+7 perfuração, mais 2d6 de veneno).",
     "resistencias": {
       "rdGeral": 3,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: glândula de veneno (1d3 doses, CD 15).",

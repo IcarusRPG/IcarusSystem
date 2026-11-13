@@ -1,0 +1,15 @@
+{
+  "_id": "px4kIx8CxkI93AAY",
+  "name": "ND 6",
+  "type": "Actor",
+  "folder": "yyhm4LDUbKGBo3aP",
+  "sorting": "m",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio:6"
+    }
+  },
+  "_key": "!folders!px4kIx8CxkI93AAY"
+}

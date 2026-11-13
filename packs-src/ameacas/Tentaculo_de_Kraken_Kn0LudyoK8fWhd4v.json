@@ -86,6 +86,7 @@
     "ataquesTexto": "Corpo a corpo: Golpe de Tentáculo (alcance 4,5 m) +6 (1d8+16 impacto). CD das habilidades 17.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro (os Tentáculos não carregam tesouro; ver Cabeça-de-Kraken)",

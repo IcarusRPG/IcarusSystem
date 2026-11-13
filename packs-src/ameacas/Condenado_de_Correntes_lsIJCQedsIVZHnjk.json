@@ -1,0 +1,228 @@
+{
+  "_id": "lsIJCQedsIVZHnjk",
+  "name": "Condenado-de-Correntes",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-condenado-de-correntes.webp",
+  "folder": "Zu3pe1uEBFxdPcCC",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "6",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 120,
+      "max": 120,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m",
+    "sentidos": "Visão +3, Audição +4",
+    "cd": 17,
+    "salvaguardas": {
+      "fort": 0,
+      "ref": 6,
+      "von": 12
+    },
+    "atributos": {
+      "FOR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Correntada",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 13,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Correntada",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 12,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Correntada +8 (1d8+13 impacto), Correntada +8 (1d8+12 impacto). CD das habilidades 17.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 3,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Condenado-de-Correntes",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-condenado-de-correntes.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "31hPTPOjjP9od1y3",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condenado-de-correntes",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!lsIJCQedsIVZHnjk.31hPTPOjjP9od1y3"
+    },
+    {
+      "_id": "ceghseGg9tWevqP4",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com uma Correntada, faz Agarrar (teste +10).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condenado-de-correntes",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!lsIJCQedsIVZHnjk.ceghseGg9tWevqP4"
+    },
+    {
+      "_id": "b853yMnjhfz5owfa",
+      "name": "Puxar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(ação de movimento, 1 vez por rodada)</em> move uma criatura agarrada até 6 m em direção a si.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condenado-de-correntes",
+          "gatilho": "ação de movimento, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!lsIJCQedsIVZHnjk.b853yMnjhfz5owfa"
+    },
+    {
+      "_id": "CFemcQUqnpsQi5W9",
+      "name": "Peso das Correntes",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>a cada criatura agarrada, +1 na Defesa dele (máx. +2).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condenado-de-correntes",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!lsIJCQedsIVZHnjk.CFemcQUqnpsQi5W9"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "condenado-de-correntes",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "6"
+    }
+  },
+  "_key": "!actors!lsIJCQedsIVZHnjk"
+}

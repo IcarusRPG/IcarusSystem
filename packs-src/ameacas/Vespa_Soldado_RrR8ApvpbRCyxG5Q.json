@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Ferrão +9 (1d4+13 perfuração, mais 2d6 de veneno). CD das habilidades 14.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro",

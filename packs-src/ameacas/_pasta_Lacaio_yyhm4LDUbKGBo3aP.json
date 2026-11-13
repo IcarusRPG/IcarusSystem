@@ -1,0 +1,15 @@
+{
+  "_id": "yyhm4LDUbKGBo3aP",
+  "name": "Lacaio",
+  "type": "Actor",
+  "folder": "uCFcIvoEZE4ExA0Z",
+  "sorting": "m",
+  "sort": 20000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio"
+    }
+  },
+  "_key": "!folders!yyhm4LDUbKGBo3aP"
+}

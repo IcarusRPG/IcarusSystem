@@ -1,0 +1,15 @@
+{
+  "_id": "oZteTCDaxdEZGik9",
+  "name": "Solo",
+  "type": "Actor",
+  "folder": "uCFcIvoEZE4ExA0Z",
+  "sorting": "m",
+  "sort": 30000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:solo"
+    }
+  },
+  "_key": "!folders!oZteTCDaxdEZGik9"
+}

@@ -1,0 +1,178 @@
+{
+  "_id": "fXYMxkvyEevjpOVR",
+  "name": "Sussurro-Aprisionado",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-sussurro-aprisionado.webp",
+  "folder": "piQWglrGzoKlbgKL",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "1/4",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "pequeno",
+    "defesa": {
+      "valor": 10,
+      "outros": 0
+    },
+    "pv": {
+      "value": 4,
+      "max": 4,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 6,
+    "deslocamentoTexto": "voo 6 m",
+    "sentidos": "Audição +4",
+    "cd": 12,
+    "salvaguardas": {
+      "fort": -6,
+      "ref": 0,
+      "von": 6
+    },
+    "atributos": {
+      "FOR": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Gélido",
+        "bonus": 6,
+        "dados": "1d4",
+        "fixo": 5,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Gélido +6 (1d4+5 frio). CD das habilidades 12.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 2,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Poltergeist-de-Casarão",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Sussurro-Aprisionado",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-sussurro-aprisionado.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "U9qpJWV8D4Dpgv5N",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "sussurro-aprisionado",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!fXYMxkvyEevjpOVR.U9qpJWV8D4Dpgv5N"
+    },
+    {
+      "_id": "NpB5GKo47vLwuicV",
+      "name": "Sussurro Perturbador",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>se o Toque Gélido causar dano, Vontade CD 12 ou Abalado até o fim do próximo turno dele.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "sussurro-aprisionado",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!fXYMxkvyEevjpOVR.NpB5GKo47vLwuicV"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "sussurro-aprisionado",
+      "tema": "espectros",
+      "papel": "lacaio",
+      "nd": "1/4"
+    }
+  },
+  "_key": "!actors!fXYMxkvyEevjpOVR"
+}

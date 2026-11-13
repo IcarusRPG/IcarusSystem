@@ -107,6 +107,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +11 (2d6+21 perfuração), Garras +11 (2d6+20 corte), Garras +11 (2d6+20 corte). CD das habilidades 24.",
     "resistencias": {
       "rdGeral": 6,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (pele ancestral)",

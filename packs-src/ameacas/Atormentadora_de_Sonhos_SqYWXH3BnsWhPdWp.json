@@ -1,0 +1,220 @@
+{
+  "_id": "SqYWXH3BnsWhPdWp",
+  "name": "Atormentadora-de-Sonhos",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/especial-atormentadora-de-sonhos.webp",
+  "folder": "ktaLSD3efYBfCp0D",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "5",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 12,
+      "outros": 0
+    },
+    "pv": {
+      "value": 77,
+      "max": 77,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, voo 9 m",
+    "sentidos": "Visão +4, Audição +4",
+    "cd": 18,
+    "salvaguardas": {
+      "fort": -1,
+      "ref": 5,
+      "von": 11
+    },
+    "atributos": {
+      "FOR": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 1
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Psíquico",
+        "bonus": 6,
+        "dados": "1d6",
+        "fixo": 20,
+        "tipo": "psíquico",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Psíquico +6 (1d6+20 psíquico). CD das habilidades 18.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 3,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (poeira de sonho, 1d3 doses, CD 18)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Atormentadora-de-Sonhos",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/especial-atormentadora-de-sonhos.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "3RNVAKmQjRxNYRjh",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "atormentadora-de-sonhos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!SqYWXH3BnsWhPdWp.3RNVAKmQjRxNYRjh"
+    },
+    {
+      "_id": "i8EVAft6Mz3mL6GE",
+      "name": "Pesadelo",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> criatura em alcance curto faz Vontade CD 18; falha: Abalado até o fim do próximo turno dela e sofre 3d6 de dano psíquico.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "atormentadora-de-sonhos",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!SqYWXH3BnsWhPdWp.i8EVAft6Mz3mL6GE"
+    },
+    {
+      "_id": "JRDcXhgWi2El72wp",
+      "name": "Invadir o Sono",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>contra criatura dormindo ou inconsciente, o Pesadelo age automaticamente, sem teste.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "atormentadora-de-sonhos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!SqYWXH3BnsWhPdWp.JRDcXhgWi2El72wp"
+    },
+    {
+      "_id": "W0XLAajyn51LJO9J",
+      "name": "Fuga em Sonho",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por cena)</em> ao chegar a 0 PV, desfaz-se em fumaça e reaparece em 1d4 rodadas com metade dos PV em qualquer ponto a 18 m.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "atormentadora-de-sonhos",
+          "gatilho": "reação, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!SqYWXH3BnsWhPdWp.W0XLAajyn51LJO9J"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "atormentadora-de-sonhos",
+      "tema": "espectros",
+      "papel": "especial",
+      "nd": "5"
+    }
+  },
+  "_key": "!actors!SqYWXH3BnsWhPdWp"
+}

@@ -1,0 +1,216 @@
+{
+  "_id": "ynU95FbYhCnVy0MB",
+  "name": "Afogada-do-Lago",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-afogada-do-lago.webp",
+  "folder": "A1Dyh02yvF1ZuTHv",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "4",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 100,
+      "max": 100,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, natação 12 m",
+    "sentidos": "Audição +4, percepção de vibrações na água (médio)",
+    "cd": 15,
+    "salvaguardas": {
+      "fort": -2,
+      "ref": 10,
+      "von": 4
+    },
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mãos Gélidas",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 22,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mãos Gélidas +8 (1d6+22 frio). CD das habilidades 15.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 3,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Afogada-do-Lago",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-afogada-do-lago.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "iEJqblJg32vl37m7",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "afogada-do-lago",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!ynU95FbYhCnVy0MB.iEJqblJg32vl37m7"
+    },
+    {
+      "_id": "YeVtfu57WVowZd8m",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com as Mãos Gélidas, faz Agarrar (teste +10).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "afogada-do-lago",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!ynU95FbYhCnVy0MB.YeVtfu57WVowZd8m"
+    },
+    {
+      "_id": "4t7tLEuP6e0VQFZ8",
+      "name": "Afogar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>criatura agarrada por ela estando na água sofre 2d6 de dano de afogamento no início de cada turno.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "afogada-do-lago",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!ynU95FbYhCnVy0MB.4t7tLEuP6e0VQFZ8"
+    },
+    {
+      "_id": "H3P3MySXimJ5G557",
+      "name": "Arrastar ao Fundo",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(ação de movimento)</em> move uma criatura agarrada até 6 m na água.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "afogada-do-lago",
+          "gatilho": "ação de movimento"
+        }
+      },
+      "_key": "!actors.items!ynU95FbYhCnVy0MB.H3P3MySXimJ5G557"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "afogada-do-lago",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "4"
+    }
+  },
+  "_key": "!actors!ynU95FbYhCnVy0MB"
+}

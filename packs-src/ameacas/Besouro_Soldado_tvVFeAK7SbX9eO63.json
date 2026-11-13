@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mandíbulas +9 (1d6+39 corte). CD das habilidades 17.",
     "resistencias": {
       "rdGeral": 4,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (carapaça)",

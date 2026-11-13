@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+16 perfuração) e Mandíbulas +8 (1d8+14 corte).",
     "resistencias": {
       "rdGeral": 5,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: carapaça (CD 16, serve para armadura leve).",

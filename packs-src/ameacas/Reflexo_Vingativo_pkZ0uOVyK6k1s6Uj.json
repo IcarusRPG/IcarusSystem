@@ -1,0 +1,216 @@
+{
+  "_id": "pkZ0uOVyK6k1s6Uj",
+  "name": "Reflexo-Vingativo",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/especial-reflexo-vingativo.webp",
+  "folder": "F087p5ZOGnOt1Hgp",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "8",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 102,
+      "max": 102,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m",
+    "sentidos": "Visão +6",
+    "cd": 20,
+    "salvaguardas": {
+      "fort": 1,
+      "ref": 7,
+      "von": 13
+    },
+    "atributos": {
+      "FOR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 4
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Golpe Espelhado",
+        "bonus": 7,
+        "dados": "1d6",
+        "fixo": 31,
+        "tipo": "psíquico",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Golpe Espelhado +7 (1d6+31 psíquico). CD das habilidades 20.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 4,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (estilhaço espectral, 1d2 doses, CD 20)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Reflexo-Vingativo",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/especial-reflexo-vingativo.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "5Ox9nKYVTFQg4eOp",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "reflexo-vingativo",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!pkZ0uOVyK6k1s6Uj.5Ox9nKYVTFQg4eOp"
+    },
+    {
+      "_id": "DFp1FSflR5PpX2z8",
+      "name": "Espelhar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, 1 vez por cena)</em> assume a aparência de uma criatura em alcance curto; quem conhece a criatura faz Intuição CD 20 para notar o engano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "reflexo-vingativo",
+          "gatilho": "ação padrão, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!pkZ0uOVyK6k1s6Uj.DFp1FSflR5PpX2z8"
+    },
+    {
+      "_id": "Go4whSkF8BcATcC8",
+      "name": "Golpe Refletido",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por rodada)</em> quando um ataque corpo a corpo contra ele erra, faz um ataque contra o atacante.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "reflexo-vingativo",
+          "gatilho": "reação, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!pkZ0uOVyK6k1s6Uj.Go4whSkF8BcATcC8"
+    },
+    {
+      "_id": "YuEpoOk2KCsMDR0C",
+      "name": "Quebrar o Espelho",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>quando um ataque o atinge por 15 ou mais acima da Defesa, ele se estilhaça e fica Vulnerável até o fim do próximo turno.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "reflexo-vingativo",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!pkZ0uOVyK6k1s6Uj.YuEpoOk2KCsMDR0C"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "reflexo-vingativo",
+      "tema": "espectros",
+      "papel": "especial",
+      "nd": "8"
+    }
+  },
+  "_key": "!actors!pkZ0uOVyK6k1s6Uj"
+}

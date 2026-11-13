@@ -1,0 +1,178 @@
+{
+  "_id": "GTOb4G7OLokyiXRJ",
+  "name": "Vulto-Rastejante",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-vulto-rastejante.webp",
+  "folder": "piQWglrGzoKlbgKL",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "1/4",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "pequeno",
+    "defesa": {
+      "valor": 10,
+      "outros": 0
+    },
+    "pv": {
+      "value": 4,
+      "max": 4,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m",
+    "sentidos": "Visão +3",
+    "cd": 12,
+    "salvaguardas": {
+      "fort": -6,
+      "ref": 0,
+      "von": 6
+    },
+    "atributos": {
+      "FOR": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Arranhão Gélido",
+        "bonus": 6,
+        "dados": "1d4",
+        "fixo": 5,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Arranhão Gélido +6 (1d4+5 frio). CD das habilidades 12.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 2,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Pranteadora-de-Beira-de-Rio",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Vulto-Rastejante",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-vulto-rastejante.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "8aAfeVtriDGWIbqY",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "vulto-rastejante",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!GTOb4G7OLokyiXRJ.8aAfeVtriDGWIbqY"
+    },
+    {
+      "_id": "sejHTQFEC3XlDqRO",
+      "name": "Esgueirar-se",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+5 em Furtividade e passa por qualquer fresta.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "vulto-rastejante",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!GTOb4G7OLokyiXRJ.sejHTQFEC3XlDqRO"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "vulto-rastejante",
+      "tema": "espectros",
+      "papel": "lacaio",
+      "nd": "1/4"
+    }
+  },
+  "_key": "!actors!GTOb4G7OLokyiXRJ"
+}

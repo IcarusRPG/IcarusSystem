@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: 2 Garras +7 (1d8+4 corte cada).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (couro, garras).",

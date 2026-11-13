@@ -94,6 +94,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+23 perfuração, mais 4d6 de veneno), Ferrão de Cauda +10 (2d6+22 perfuração). CD das habilidades 22.",
     "resistencias": {
       "rdGeral": 5,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: veneno e quitina (1d4 doses, CD 20)",

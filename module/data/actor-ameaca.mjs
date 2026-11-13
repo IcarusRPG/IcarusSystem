@@ -42,7 +42,9 @@ export class AmeacaData extends PersonagemData {
       tesouro: texto(),
       acompanha: texto(),
       nota: texto(),
-      descricao: new fields.HTMLField({ required: true, blank: true, initial: "" })
+      descricao: new fields.HTMLField({ required: true, blank: true, initial: "" }),
+      // Resistências do personagem + RD só contra ataques não mágicos (Forma Espectral)
+      resistencias: new fields.SchemaField({ ...base.resistencias.fields, rdNaoMagico: inteiro(0, { min: 0 }) })
     };
   }
 

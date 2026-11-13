@@ -103,6 +103,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+13 perfuração) e Pisão +8 (1d8+12 impacto).",
     "resistencias": {
       "rdGeral": 3,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (couro, presas).",

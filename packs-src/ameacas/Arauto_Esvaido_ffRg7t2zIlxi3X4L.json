@@ -1,0 +1,182 @@
+{
+  "_id": "ffRg7t2zIlxi3X4L",
+  "name": "Arauto-Esvaído",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-arauto-esvaido.webp",
+  "folder": "3ITKIoA5IoXaHPMg",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "20",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 17,
+      "outros": 0
+    },
+    "pv": {
+      "value": 70,
+      "max": 70,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, voo 12 m",
+    "sentidos": "Visão +7, Audição +6",
+    "cd": 26,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": 15,
+      "von": 21
+    },
+    "atributos": {
+      "FOR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 4
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Gélido",
+        "bonus": 12,
+        "dados": "1d6",
+        "fixo": 102,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Gélido +12 (1d6+102 frio). CD das habilidades 26.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 7,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Soberano-das-Brumas",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Arauto-Esvaído",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-arauto-esvaido.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "C6wa8WIU6FpcuL7N",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 7 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "arauto-esvaido",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!ffRg7t2zIlxi3X4L.C6wa8WIU6FpcuL7N"
+    },
+    {
+      "_id": "fnkWTJLXkCrQmUEH",
+      "name": "Lamento Final",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(reação, ao chegar a 0 PV)</em> explode em 6 m de raio; 8d8 de dano psíquico, Reflexos CD 26 para metade.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "arauto-esvaido",
+          "gatilho": "reação, ao chegar a 0 PV"
+        }
+      },
+      "_key": "!actors.items!ffRg7t2zIlxi3X4L.fnkWTJLXkCrQmUEH"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "arauto-esvaido",
+      "tema": "espectros",
+      "papel": "lacaio",
+      "nd": "20"
+    }
+  },
+  "_key": "!actors!ffRg7t2zIlxi3X4L"
+}

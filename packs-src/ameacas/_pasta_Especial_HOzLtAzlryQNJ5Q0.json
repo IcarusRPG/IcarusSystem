@@ -1,0 +1,15 @@
+{
+  "_id": "HOzLtAzlryQNJ5Q0",
+  "name": "Especial",
+  "type": "Actor",
+  "folder": "uCFcIvoEZE4ExA0Z",
+  "sorting": "m",
+  "sort": 10000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:especial"
+    }
+  },
+  "_key": "!folders!HOzLtAzlryQNJ5Q0"
+}

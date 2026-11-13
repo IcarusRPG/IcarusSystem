@@ -1,0 +1,15 @@
+{
+  "_id": "A1I4nFigXtf92rMB",
+  "name": "ND 15",
+  "type": "Actor",
+  "folder": "HOzLtAzlryQNJ5Q0",
+  "sorting": "m",
+  "sort": 400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:especial:15"
+    }
+  },
+  "_key": "!folders!A1I4nFigXtf92rMB"
+}

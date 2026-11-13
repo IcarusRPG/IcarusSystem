@@ -1,5 +1,23 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.40.0
+
+### Espectros: 32 ameaças do tipo Espírito, com RD só contra ataques não mágicos
+- O compêndio **Icarus: Ameaças** ganhou o tema **Espectros**: 14 Solo, 13 Lacaios e 5 Especiais, em Espectros > Especial/Lacaio/Solo > ND, com as imagens em `img/Ameacas/Espectros/`.
+  - Todos são do tipo Espírito; o token vem não vinculado, hostil e do tamanho da criatura.
+  - A **Forma Espectral** é a primeira habilidade de cada um.
+  - Imune a veneno vira imunidade a dano de veneno; Agarrar, Derrubar, Doente e as outras imunidades a condições ficam só no texto.
+- **RD não mágica:** a Redução de Dano da Forma Espectral só vale contra ataques **não mágicos**.
+  - Campo novo "RD não mágica" na ficha da ameaça; a faixa de resistências mostra "RD X (só ataques não mágicos)".
+  - Armas e ataques naturais sofrem a RD não mágica. **Dano mágico a ignora.**
+  - O detalhe do dano aplicado mostra "RD não mágica: −X" ou "dano mágico: ignora a RD contra ataques não mágicos". A RD geral e a não mágica se somam quando as duas valem.
+- **O que conta como dano mágico:**
+  - as magias e tudo que já tinha a marca de magia (Sopro do Dragão, Dissonância, Estádio Lotado, Onda de Fé);
+  - as habilidades de classe marcadas agora como mágicas: Rajada do Místico; Punição, Carga, Veredito e Retribuição do Paladino; Floresta Desperta e Espinhos de Retorno do Druida.
+  - Armas e ataques naturais não são mágicos (o sistema ainda não tem arma mágica).
+- A leitura de "Redução de Dano N" das habilidades não conta mais a RD "contra ataques não mágicos" como RD geral.
+- Os ataques de frio e psíquico dos espectros rolam e aplicam dano com as resistências do alvo por tipo.
+
 ## 0.39.0
 
 ### Compêndio de ameaças único, em Tema > Papel > ND

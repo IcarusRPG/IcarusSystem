@@ -86,6 +86,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +7 (1d6+7 perfuração). CD das habilidades 12.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro",

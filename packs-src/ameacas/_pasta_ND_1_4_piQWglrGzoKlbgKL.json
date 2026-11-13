@@ -1,0 +1,15 @@
+{
+  "_id": "piQWglrGzoKlbgKL",
+  "name": "ND 1/4",
+  "type": "Actor",
+  "folder": "yyhm4LDUbKGBo3aP",
+  "sorting": "m",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio:1/4"
+    }
+  },
+  "_key": "!folders!piQWglrGzoKlbgKL"
+}

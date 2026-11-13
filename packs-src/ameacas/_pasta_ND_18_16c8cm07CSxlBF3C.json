@@ -1,0 +1,15 @@
+{
+  "_id": "16c8cm07CSxlBF3C",
+  "name": "ND 18",
+  "type": "Actor",
+  "folder": "oZteTCDaxdEZGik9",
+  "sorting": "m",
+  "sort": 1100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:solo:18"
+    }
+  },
+  "_key": "!folders!16c8cm07CSxlBF3C"
+}

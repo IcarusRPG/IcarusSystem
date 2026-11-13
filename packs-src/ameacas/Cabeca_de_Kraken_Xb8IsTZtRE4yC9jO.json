@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Bico +6 (2d6+23 perfuração). CD das habilidades 19.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (bico de kraken; tinta de kraken, 1d3 doses, CD 19)",

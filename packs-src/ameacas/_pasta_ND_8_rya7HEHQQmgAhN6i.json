@@ -1,0 +1,15 @@
+{
+  "_id": "rya7HEHQQmgAhN6i",
+  "name": "ND 8",
+  "type": "Actor",
+  "folder": "yyhm4LDUbKGBo3aP",
+  "sorting": "m",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio:8"
+    }
+  },
+  "_key": "!folders!rya7HEHQQmgAhN6i"
+}

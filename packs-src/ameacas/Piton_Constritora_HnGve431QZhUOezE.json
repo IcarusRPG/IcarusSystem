@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+8 perfuração).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: couro raro (CD 14 para curtir).",

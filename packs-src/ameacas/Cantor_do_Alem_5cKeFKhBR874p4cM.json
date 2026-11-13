@@ -1,0 +1,220 @@
+{
+  "_id": "5cKeFKhBR874p4cM",
+  "name": "Cantor-do-Além",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/especial-cantor-do-alem.webp",
+  "folder": "SUuErLDsKAaPKSOE",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "18",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 186,
+      "max": 186,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, voo 12 m",
+    "sentidos": "Audição +12, Visão +6",
+    "cd": 27,
+    "salvaguardas": {
+      "fort": 8,
+      "ref": 14,
+      "von": 20
+    },
+    "atributos": {
+      "FOR": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 8
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Nota Cortant",
+        "bonus": 9,
+        "dados": "1d6",
+        "fixo": 66,
+        "tipo": "psíquico",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Nota Cortante +9 (1d6+66 psíquico). CD das habilidades 27.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 6,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Dobro (voz espectral; item a definir)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Cantor-do-Além",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/especial-cantor-do-alem.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "8eBjKEZzE7PfXdMQ",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cantor-do-alem",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!5cKeFKhBR874p4cM.8eBjKEZzE7PfXdMQ"
+    },
+    {
+      "_id": "0qXuXTABWZRAhaS5",
+      "name": "Canção de Ruína",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> cone de 18 m; 8d8 de dano psíquico, Vontade CD 27 para metade e, se falhar, Fascinado até o fim do próximo turno dele.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cantor-do-alem",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!5cKeFKhBR874p4cM.0qXuXTABWZRAhaS5"
+    },
+    {
+      "_id": "dsiyXR6uHLVEZF4G",
+      "name": "Harmonia Fantasma",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por rodada)</em> quando uma criatura em alcance médio faz um teste de Vontade contra um efeito dele, ele pode forçar uma nova rolagem e ficar com o pior resultado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cantor-do-alem",
+          "gatilho": "reação, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!5cKeFKhBR874p4cM.dsiyXR6uHLVEZF4G"
+    },
+    {
+      "_id": "NF6h1QrEl51c8F0A",
+      "name": "Eco",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação livre)</em> repete a última habilidade usada, sem esperar a recarga.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cantor-do-alem",
+          "gatilho": "1 vez por cena, ação livre"
+        }
+      },
+      "_key": "!actors.items!5cKeFKhBR874p4cM.NF6h1QrEl51c8F0A"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cantor-do-alem",
+      "tema": "espectros",
+      "papel": "especial",
+      "nd": "18"
+    }
+  },
+  "_key": "!actors!5cKeFKhBR874p4cM"
+}

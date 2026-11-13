@@ -137,14 +137,15 @@ export function textoDoDano(ataque) {
 
 /**
  * Redução de Dano das habilidades ("Redução de Dano 6"; "imune a fogo e Redução de Dano 5").
- * Frases condicionais ("enquanto houver…") ficam só no texto. @returns {number}
+ * Frases condicionais ("enquanto houver…") ficam só no texto, e a RD "contra ataques não mágicos"
+ * (Forma Espectral) não conta aqui: vem do campo rdNaoMagico do JSON. @returns {number}
  */
 export function rdDasHabilidades(habilidades = []) {
   let rd = 0;
   for (const h of habilidades) {
     const texto = String(h?.texto ?? "");
     if (/\b(enquanto|quando|se)\b/i.test(texto.split(/Redução de Dano/i)[0] ?? "")) continue;
-    const m = texto.match(/Redução de Dano\s+(\d+)/i);
+    const m = texto.match(/Redução de Dano\s+(\d+)\b(?!\s+contra ataques não mágicos)/i);
     if (m) rd = Math.max(rd, Number(m[1]));
   }
   return rd;
@@ -262,7 +263,7 @@ export function sistemaDaAmeaca(a, pericias = []) {
     atributos, pericias: periciasDoAtor,
     ataques: (a.ataques ?? []).map(x => ({ nome: x.nome ?? "", bonus: Math.trunc(Number(x.bonus) || 0), dados: x.dados ?? "", fixo: Math.trunc(Number(x.fixo) || 0), tipo: x.tipo ?? "", alcance: x.alcance ?? "corpo-a-corpo" })),
     ataquesTexto: a.ataquesTexto ?? "",
-    resistencias: { rdGeral: rdDasHabilidades(a.habilidades), imunidade: Object.fromEntries(imunes.map(t => [t, true])) },
+    resistencias: { rdGeral: rdDasHabilidades(a.habilidades), rdNaoMagico: Math.max(0, Math.trunc(Number(a.rdNaoMagico) || 0)), imunidade: Object.fromEntries(imunes.map(t => [t, true])) },
     tesouro: a.tesouro ?? "", acompanha: a.acompanha ?? "", nota: a.nota ?? "",
     descricao: "", notas: a.nota ? `<p>${htmlDoTexto(a.nota)}</p>` : ""
   };

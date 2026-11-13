@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordidas do Enxame +8 (2d6+44 corte). CD das habilidades 23.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro",

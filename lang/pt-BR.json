@@ -2483,7 +2483,11 @@
       "Tesouro": "Tesouro",
       "Imune": "Imune",
       "Original": "Ataques no bestiário",
-      "Notas": "Notas"
+      "Notas": "Notas",
+      "Reducao": "Redução de Dano",
+      "RdNaoMagico": "RD não mágica",
+      "RdNaoMagicoDica": "Redução de Dano que só vale contra ataques não mágicos (Forma Espectral). Magias e habilidades mágicas a ignoram; soma-se à RD geral.",
+      "RdNaoMagicoTexto": "RD {n} (só ataques não mágicos)"
     },
     "RolagemGrande": {
       "Config": {

@@ -86,6 +86,7 @@
     "ataquesTexto": "Corpo a corpo: Ferrão +9 (1d6+22 perfuração, mais 2d6 de veneno). CD das habilidades 16.",
     "resistencias": {
       "rdGeral": 2,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (veneno, 1 dose, CD 16)",

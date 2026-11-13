@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+23 perfuração), Cabeçada +10 (2d6+23 impacto). CD das habilidades 21.",
     "resistencias": {
       "rdGeral": 8,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: casco (CD 19, serve para escudo pesado)",

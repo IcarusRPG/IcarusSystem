@@ -1,0 +1,197 @@
+{
+  "_id": "Wxz0yzA7u32Iedv7",
+  "name": "Cão-Espectral",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-cao-espectral.webp",
+  "folder": "jiYjQx537YJbk6ch",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "3",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 85,
+      "max": 85,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 15,
+    "deslocamentoTexto": "15 m",
+    "sentidos": "Olfato +6, Audição +4",
+    "cd": 14,
+    "salvaguardas": {
+      "fort": -3,
+      "ref": 9,
+      "von": 3
+    },
+    "atributos": {
+      "FOR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida Gélida",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 17,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida Gélida +8 (1d6+17 frio). CD das habilidades 14.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 2,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Cão-Espectral",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-cao-espectral.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "S14nG0vL87LDlqDA",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cao-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Wxz0yzA7u32Iedv7.S14nG0vL87LDlqDA"
+    },
+    {
+      "_id": "j64Tj1Vtxj8g2Dar",
+      "name": "Derrubar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(livre, 1 vez por rodada)</em> se a Mordida Gélida acertar, Fortitude CD 14 ou Caído.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cao-espectral",
+          "gatilho": "livre, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!Wxz0yzA7u32Iedv7.j64Tj1Vtxj8g2Dar"
+    },
+    {
+      "_id": "rhhmq2OE8SClAxUP",
+      "name": "Uivo Agourento",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> Vontade CD 14 em alcance médio ou Abalado até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cao-espectral",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!Wxz0yzA7u32Iedv7.rhhmq2OE8SClAxUP"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cao-espectral",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "3"
+    }
+  },
+  "_key": "!actors!Wxz0yzA7u32Iedv7"
+}
