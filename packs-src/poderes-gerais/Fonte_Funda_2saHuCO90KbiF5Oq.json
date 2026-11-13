@@ -1,0 +1,38 @@
+{
+  "_id": "2saHuCO90KbiF5Oq",
+  "name": "Fonte Funda",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> nenhum.</p><p>Seus PM máximos aumentam em +4 e em +1 a cada 2 níveis (níveis 4, 6, 8, 10 e assim por diante, contando do nível em que escolheu o poder).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {}
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:fonte-funda",
+      "poderGeral": "fonte-funda",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!2saHuCO90KbiF5Oq"
+}

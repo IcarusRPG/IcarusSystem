@@ -1,0 +1,44 @@
+{
+  "_id": "rBdTwAbyxYF7zc7i",
+  "name": "Arrancada Pesada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Força 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Força 1.</p><p>Quando você usa Agredir com ataque corpo a corpo depois de se mover ao menos 6 m em linha reta em direção ao alvo no mesmo turno, o ataque causa +1d6 de dano (+2d6 a partir do 11º nível).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "for": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:arrancada-pesada",
+      "poderGeral": "arrancada-pesada",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!rBdTwAbyxYF7zc7i"
+}

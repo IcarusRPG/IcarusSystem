@@ -1,0 +1,42 @@
+{
+  "_id": "WX4RnqibirdPXZEh",
+  "name": "Arma Querida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "proficiência com a arma",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> proficiência com a arma.</p><p>Escolha uma arma específica que você possua e se ligue a ela (leva uma noite de descanso). Enquanto a empunhar, você recebe +1 no ataque e +1 no dano com ela. Se a arma for perdida ou destruída, você pode escolher outra após uma semana.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "proficiencias": [
+        "a arma escolhida"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:arma-querida",
+      "poderGeral": "arma-querida",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!WX4RnqibirdPXZEh"
+}

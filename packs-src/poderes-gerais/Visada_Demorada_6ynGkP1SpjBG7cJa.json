@@ -1,0 +1,42 @@
+{
+  "_id": "6ynGkP1SpjBG7cJa",
+  "name": "Visada Demorada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "7DLZf3kXgtL2onHR",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Pontaria",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Pontaria.</p><p>Como ação de movimento, você mira: seu próximo ataque à distância neste turno recebe +2 no ataque e +1d6 no dano. Não vale se você se moveu antes de usar este poder neste turno.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate à distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Pontaria"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:visada-demorada",
+      "poderGeral": "visada-demorada",
+      "grupo": "Combate à distância"
+    }
+  },
+  "_key": "!items!6ynGkP1SpjBG7cJa"
+}

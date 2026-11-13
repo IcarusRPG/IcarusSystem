@@ -1,0 +1,42 @@
+{
+  "_id": "4lDWsglwMXnvO6UT",
+  "name": "Cavaleiro Nato",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Cavalgar",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Cavalgar.</p><p>Você recebe +2 em Cavalgar. Montado, você não sofre penalidade de ataque por montaria em movimento, e não cai por dano sofrido (só por falha crítica de Cavalgar).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Cavalgar"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:cavaleiro-nato",
+      "poderGeral": "cavaleiro-nato",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!4lDWsglwMXnvO6UT"
+}

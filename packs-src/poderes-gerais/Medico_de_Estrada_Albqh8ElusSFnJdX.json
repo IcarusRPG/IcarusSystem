@@ -1,0 +1,42 @@
+{
+  "_id": "Albqh8ElusSFnJdX",
+  "name": "Médico de Estrada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 800,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Cura",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Cura.</p><p>Você recebe +2 em Cura. Como ação padrão, com Cura (CD 15), você encerra uma condição de Sangrando ou traz de volta uma criatura Morrendo com 1 PV.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Cura"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:medico-de-estrada",
+      "poderGeral": "medico-de-estrada",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!Albqh8ElusSFnJdX"
+}

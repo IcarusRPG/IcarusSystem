@@ -1,0 +1,38 @@
+{
+  "_id": "uG8PEQL57BWoV9B0",
+  "name": "Embraçar Escudo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> nenhum.</p><p>Você recebe proficiência com escudos.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {}
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:embracar-escudo",
+      "poderGeral": "embracar-escudo",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!uG8PEQL57BWoV9B0"
+}

@@ -397,6 +397,9 @@ export class FichaPersonagem extends ActorSheet {
             id: p.id, name: p.name, img: p.img,
             mostrarIcone: fonte === "raca" || fonte === "divindade" || fonte === "classe",
             concedido: !!flags.concedido,
+            // Poder Geral (compêndio Icarus: Poderes Gerais): selo "Geral" para distinguir do poder de classe
+            geral: p.system.tipoPoder === "geral",
+            repetivel: p.system.tipoPoder === "geral" && !!p.system.repetivel,
             auto: ehPoderRacialAuto(p),
             pendente: ehPoderRacialAuto(p) && flags.pendente === true,
             custo: p.system.custoPM ?? null,
@@ -408,7 +411,8 @@ export class FichaPersonagem extends ActorSheet {
             usarDica: [p.system.acao ? loc(`ICARUS.Poderes.Acoes.${p.system.acao}`) : "", p.system.acao === "reacao" ? textoReacao(actor) : ""].filter(Boolean).join(" · "),
             meta: [
               p.system.nivel ? game.i18n.format("ICARUS.Poderes.NivelN", { n: p.system.nivel }) : "",
-              p.system.prerequisito ? `${loc("ICARUS.Poderes.Prerequisito")}: ${p.system.prerequisito}` : ""
+              // No Poder Geral o pré-requisito já vem em destaque na descrição
+              p.system.prerequisito && p.system.tipoPoder !== "geral" ? `${loc("ICARUS.Poderes.Prerequisito")}: ${p.system.prerequisito}` : ""
             ].filter(Boolean).join(" · "),
             descricao: await TextEditor.enrichHTML(p.system.descricao, { async: true, secrets: actor.isOwner, relativeTo: p })
           };

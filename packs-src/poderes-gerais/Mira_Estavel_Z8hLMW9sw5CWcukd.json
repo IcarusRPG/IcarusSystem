@@ -1,0 +1,42 @@
+{
+  "_id": "Z8hLMW9sw5CWcukd",
+  "name": "Mira Estável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "7DLZf3kXgtL2onHR",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Pontaria",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Pontaria.</p><p>Se você não se moveu neste turno, seus ataques à distância recebem +1 no ataque e ignoram camuflagem leve.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate à distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Pontaria"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mira-estavel",
+      "poderGeral": "mira-estavel",
+      "grupo": "Combate à distância"
+    }
+  },
+  "_key": "!items!Z8hLMW9sw5CWcukd"
+}

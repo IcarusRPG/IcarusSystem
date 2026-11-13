@@ -1,0 +1,44 @@
+{
+  "_id": "SnEEHep5Mj032xEg",
+  "name": "Corpo Rijo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Constituição 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Constituição 1.</p><p>Seus pontos de vida máximos aumentam em +1 por nível (retroativo: ao escolher no 6º nível, ganha +6 na hora, e +1 a cada novo nível).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CON": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "con": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:corpo-rijo",
+      "poderGeral": "corpo-rijo",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!SnEEHep5Mj032xEg"
+}

@@ -1,5 +1,37 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.42.0
+
+### Poderes Gerais: compêndio "Icarus: Poderes Gerais"
+- Compêndio novo (pack `poderes-gerais`) com os **71 Poderes Gerais**, dados de `tools/dados/poderes-gerais.json` copiados como vieram.
+- **Pastas:** uma por grupo, na ordem do livro, com os poderes em ordem alfabética dentro de cada uma:
+
+  | Grupo | Poderes |
+  |---|---|
+  | Aprimoramentos | 7 |
+  | Combate corpo a corpo | 12 |
+  | Combate à distância | 6 |
+  | Defesa e resiliência | 7 |
+  | Mobilidade | 8 |
+  | Perícias | 12 |
+  | Interpretação e influência | 5 |
+  | Exploração e viagem | 5 |
+  | Sorte e destino | 2 |
+  | Magia | 7 |
+
+  - O sistema põe esse compêndio em **ordem manual** na primeira vez, para as pastas seguirem a ordem dos grupos. No modo alfabético do Foundry elas sairiam por nome. Quem já escolheu um modo para o compêndio continua com o seu.
+- **Item:** é o mesmo tipo `poder` dos poderes de classe e de origem, com:
+  - `fonte: "geral"` e o valor novo `tipoPoder: "geral"` (a marca de "Poder Geral" para filtrar);
+  - `grupo` e o campo de pré-requisito;
+  - `repetivel`;
+  - o campo novo `requisitos`, com os pré-requisitos estruturados (atributos, nível, treinado, treinadoOu, poderes, proficiências, conjurador), só informativo. Os requisitos também vão para `atributoMinimo`, `nivelMinimo` e `requerPoderes`, no formato dos poderes de classe.
+- **Descrição:** a linha **Pré-requisitos** em destaque (com "nenhum" quando não há), o texto em parágrafos e **Repetível** quando for o caso.
+  - Ícone: o dado azul padrão, sem imagens nesta etapa.
+  - IDs estáveis, e o build para se um id se repetir.
+- **Ficha:** o Poder Geral arrastado do compêndio entra no grupo "Poderes Gerais" da aba Poderes, com o selo dourado **Geral** (e **Repetível**).
+  - Nada é automatizado: nem a troca por um poder de classe, nem o bloqueio por pré-requisito. O contador de poderes de classe não muda.
+  - Os efeitos dos poderes (bônus, RD, reações) ficam só no texto, para o Mestre e o jogador aplicarem.
+
 ## 0.41.0
 
 ### Painel de combate do Mestre

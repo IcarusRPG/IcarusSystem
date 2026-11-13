@@ -1,0 +1,15 @@
+{
+  "_id": "7DLZf3kXgtL2onHR",
+  "name": "Combate à distância",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:combate-a-distancia"
+    }
+  },
+  "_key": "!folders!7DLZf3kXgtL2onHR"
+}

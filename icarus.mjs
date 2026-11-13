@@ -26,7 +26,7 @@ import { aplicarRaca, trocarRaca, reaplicarRaca, verificarIconesRacas, verificar
 import { registrarInterface } from "./module/interface.mjs";
 import { rolarAtaque, rolarDano, recarregar, recolherArma, registrarBotoesDoChat, registrarConfiguracoesDeCombate } from "./module/combate-chat.mjs";
 import { adicionarItem } from "./module/inventario.mjs";
-import { popularCompendios } from "./module/compendios.mjs";
+import { popularCompendios, ordenarCompendiosManualmente } from "./module/compendios.mjs";
 import { verificarArmas } from "./module/dev/verificar-armas.mjs";
 import { registrarTelao, abrirTelao } from "./module/telao/telao.mjs";
 import { registrarArmaduras } from "./module/armaduras.mjs";
@@ -281,6 +281,8 @@ Hooks.once("ready", () => {
   if (game.user.isGM) verificarIconesRacas();
   if (game.user.isGM) { verificarImagensDoSistema(); verificarIconesDosFocos(); }
   if (game.user.isGM) verificarIconesClasses();
+  // Poderes Gerais: pastas na ordem dos grupos (modo manual do compêndio, se o usuário não escolheu outro)
+  ordenarCompendiosManualmente();
 });
 
 /** Botão "Condições do Mestre" nas ferramentas de token (só para o Mestre). */

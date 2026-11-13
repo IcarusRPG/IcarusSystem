@@ -1,0 +1,42 @@
+{
+  "_id": "MuVHqj2ljpKmbmUH",
+  "name": "Duelista de Fôlego",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Luta",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Luta.</p><p>Enquanto só uma criatura hostil estiver a até 3 m de você, você recebe +1 nos ataques e +1 na Defesa.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Luta"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:duelista-de-folego",
+      "poderGeral": "duelista-de-folego",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!MuVHqj2ljpKmbmUH"
+}

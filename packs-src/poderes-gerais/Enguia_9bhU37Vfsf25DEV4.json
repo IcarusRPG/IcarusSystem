@@ -1,0 +1,44 @@
+{
+  "_id": "9bhU37Vfsf25DEV4",
+  "name": "Enguia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Destreza 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Destreza 1.</p><p>Você recebe +4 em testes para se soltar de Agarrar ou de cordas e amarras.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "des": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:enguia",
+      "poderGeral": "enguia",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!9bhU37Vfsf25DEV4"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "2NpRvSgHXTHtERKb",
+  "name": "Golpe de Oportunidade",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Luta",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Luta.</p><p>Quando uma criatura hostil adjacente a você deixa o seu alcance por vontade própria (andando para longe), você pode gastar sua reação para fazer um ataque corpo a corpo contra ela, antes de ela sair. Não vale se ela foi empurrada, derrubada ou levada à força, nem se você estiver desprevenido. Este é o ataque de oportunidade do Icarus: sem este poder, ninguém ganha ataque por alguém sair do alcance.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Luta"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:golpe-de-oportunidade",
+      "poderGeral": "golpe-de-oportunidade",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!2NpRvSgHXTHtERKb"
+}

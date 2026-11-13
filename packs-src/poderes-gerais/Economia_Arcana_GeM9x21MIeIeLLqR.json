@@ -1,0 +1,40 @@
+{
+  "_id": "GeM9x21MIeIeLLqR",
+  "name": "Economia Arcana",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "vbogyf1SfK2YS4bv",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "capacidade de lançar magias",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> capacidade de lançar magias.</p><p>Escolha uma escola de magia. As suas magias dessa escola custam −1 PM (mínimo 1 PM).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Magia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "conjurador": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:economia-arcana",
+      "poderGeral": "economia-arcana",
+      "grupo": "Magia"
+    }
+  },
+  "_key": "!items!GeM9x21MIeIeLLqR"
+}

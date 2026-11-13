@@ -1,0 +1,42 @@
+{
+  "_id": "UVwv5jjCHO4AhIj7",
+  "name": "Bússola na Cabeça",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Navegação",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Navegação.</p><p>Enquanto sua visão não estiver prejudicada por condições físicas, mentais ou climáticas (como Cego, Ofuscado, Confuso, nevoeiro ou tempestade), você nunca se perde em terra ou no mar e recebe +2 em Navegação.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Navegação"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:bussola-na-cabeca",
+      "poderGeral": "bussola-na-cabeca",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!UVwv5jjCHO4AhIj7"
+}

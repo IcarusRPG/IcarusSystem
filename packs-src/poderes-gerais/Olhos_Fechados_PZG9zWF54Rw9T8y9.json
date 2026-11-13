@@ -1,0 +1,42 @@
+{
+  "_id": "PZG9zWF54Rw9T8y9",
+  "name": "Olhos Fechados",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 1000,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Luta",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Luta.</p><p>Você luta bem sem ver: camuflagem total passa a contar como camuflagem leve contra os seus ataques, e camuflagem leve é ignorada.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Luta"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:olhos-fechados",
+      "poderGeral": "olhos-fechados",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!PZG9zWF54Rw9T8y9"
+}

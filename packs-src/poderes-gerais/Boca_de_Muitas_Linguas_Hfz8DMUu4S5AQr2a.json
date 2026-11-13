@@ -1,0 +1,44 @@
+{
+  "_id": "Hfz8DMUu4S5AQr2a",
+  "name": "Boca de Muitas Línguas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "GkZ5f6nKxF4GU1g9",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Inteligência 2",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Inteligência 2.</p><p>Você aprende 2 idiomas à sua escolha.</p><p class=\"icarus-repetivel\"><strong>Repetível.</strong></p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Exploração e viagem",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "INT": 2
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true,
+    "requisitos": {
+      "atributos": {
+        "int": 2
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:boca-de-muitas-linguas",
+      "poderGeral": "boca-de-muitas-linguas",
+      "grupo": "Exploração e viagem"
+    }
+  },
+  "_key": "!items!Hfz8DMUu4S5AQr2a"
+}

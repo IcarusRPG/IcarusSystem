@@ -1,0 +1,44 @@
+{
+  "_id": "iV6v6w7NHoJxkt0L",
+  "name": "Mochila Bem Arrumada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "GkZ5f6nKxF4GU1g9",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Força 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Força 1.</p><p>Sua capacidade de carga aumenta em +2 espaços.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Exploração e viagem",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "for": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mochila-bem-arrumada",
+      "poderGeral": "mochila-bem-arrumada",
+      "grupo": "Exploração e viagem"
+    }
+  },
+  "_key": "!items!iV6v6w7NHoJxkt0L"
+}

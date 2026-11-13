@@ -1,0 +1,44 @@
+{
+  "_id": "ahgvivgnqhfAYJkz",
+  "name": "Passada Longa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Destreza 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Destreza 1.</p><p>Seu deslocamento aumenta em +3 m. Se o seu deslocamento já for 12 m ou mais, o aumento é de apenas +1,5 m. Sem efeito com armadura pesada.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "des": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:passada-longa",
+      "poderGeral": "passada-longa",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!ahgvivgnqhfAYJkz"
+}

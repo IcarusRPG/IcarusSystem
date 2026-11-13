@@ -1,0 +1,44 @@
+{
+  "_id": "McxTL6EjoxkrsoSo",
+  "name": "Mão Dupla",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 800,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Destreza 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Destreza 1.</p><p>Ao empunhar duas armas (pelo menos uma Leve) e usar Agredir, você pode fazer um ataque com cada arma, sofrendo −2 nos testes de ataque desses dois ataques (a penalidade vale só para essa ação Agredir). É a regra de Combate com duas armas do Núcleo, aberta a qualquer classe. O Par de Lâminas, a habilidade Duas Armas do Ladino e o Ataque Duplo do Nyashi continuam funcionando como já estão.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "des": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mao-dupla",
+      "poderGeral": "mao-dupla",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!McxTL6EjoxkrsoSo"
+}

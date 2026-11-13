@@ -1,0 +1,44 @@
+{
+  "_id": "j4OrT4CsZpHJiJLj",
+  "name": "Passo Firme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 700,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Constituição 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Constituição 1.</p><p>Você ignora terreno difícil natural (lama, neve, escombros, vegetação).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CON": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "con": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:passo-firme",
+      "poderGeral": "passo-firme",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!j4OrT4CsZpHJiJLj"
+}

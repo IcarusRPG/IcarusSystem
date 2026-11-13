@@ -1,0 +1,45 @@
+{
+  "_id": "q7oNOA1bswdMQOz2",
+  "name": "Ceifa Contínua",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Força 2, 5º nível",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Força 2, 5º nível.</p><p>Uma vez por turno, quando você reduz uma criatura a 0 PV ou acerta um crítico com ataque corpo a corpo, pode gastar 1 PM para fazer imediatamente um ataque corpo a corpo adicional contra outra criatura ao seu alcance.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": 5,
+    "atributoMinimo": {
+      "FOR": 2
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "for": 2
+      },
+      "nivel": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:ceifa-continua",
+      "poderGeral": "ceifa-continua",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!q7oNOA1bswdMQOz2"
+}

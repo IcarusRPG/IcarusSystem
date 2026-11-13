@@ -1,0 +1,42 @@
+{
+  "_id": "WbLU5RdWMksyO9yh",
+  "name": "Olhar de Peso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "U9iTJkfo00mkCCit",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Intimidação",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Intimidação.</p><p>Você pode fazer Intimidação como ação de movimento e, uma vez por cena, usar Carisma ou Força (o que for maior) no teste.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Interpretação e influência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Intimidação"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:olhar-de-peso",
+      "poderGeral": "olhar-de-peso",
+      "grupo": "Interpretação e influência"
+    }
+  },
+  "_key": "!items!WbLU5RdWMksyO9yh"
+}

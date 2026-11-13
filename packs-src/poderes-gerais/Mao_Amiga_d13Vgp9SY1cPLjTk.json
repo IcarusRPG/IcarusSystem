@@ -1,0 +1,44 @@
+{
+  "_id": "d13Vgp9SY1cPLjTk",
+  "name": "Mão Amiga",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "U9iTJkfo00mkCCit",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Sabedoria 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Sabedoria 1.</p><p>Quando você ajuda outro personagem em um teste (regra de Ajuda, abaixo), o seu teste de ajuda concede +1 a mais no total do teste dele, exceto se você tirar 1 natural (falha crítica), caso em que a penalidade de −4 se aplica normalmente.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Interpretação e influência",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "SAB": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "sab": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mao-amiga",
+      "poderGeral": "mao-amiga",
+      "grupo": "Interpretação e influência"
+    }
+  },
+  "_key": "!items!d13Vgp9SY1cPLjTk"
+}

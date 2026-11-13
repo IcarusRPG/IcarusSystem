@@ -1,0 +1,15 @@
+{
+  "_id": "z7aCvphRrruyvWNd",
+  "name": "Combate corpo a corpo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:combate-corpo-a-corpo"
+    }
+  },
+  "_key": "!folders!z7aCvphRrruyvWNd"
+}

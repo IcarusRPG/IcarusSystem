@@ -1,0 +1,38 @@
+{
+  "_id": "z08ajxrmQEOmlwfV",
+  "name": "Moeda no Bolso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "TFupHkV76E3TaAv1",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> nenhum.</p><p>Uma vez por dia, você transforma um 1 natural (seu) em 10 natural.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Sorte e destino",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {}
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:moeda-no-bolso",
+      "poderGeral": "moeda-no-bolso",
+      "grupo": "Sorte e destino"
+    }
+  },
+  "_key": "!items!z08ajxrmQEOmlwfV"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "4JFgKxI9gsHZpE91",
+  "name": "Braçada Forte",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Atletismo",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Atletismo.</p><p>Você ganha deslocamento de natação igual à metade do deslocamento e +2 em Atletismo para nadar.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Atletismo"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:bracada-forte",
+      "poderGeral": "bracada-forte",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!4JFgKxI9gsHZpE91"
+}

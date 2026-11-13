@@ -1,0 +1,42 @@
+{
+  "_id": "Qb7JLinJYGP9aBbD",
+  "name": "Truque Sujo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 1200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Enganação",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Enganação.</p><p>Ao usar Agredir, gaste 1 PM e faça um teste de Enganação contra a Intuição do alvo. Se vencer, ele fica desprevenido contra aquele ataque. Uma vez por criatura por cena.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Enganação"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:truque-sujo",
+      "poderGeral": "truque-sujo",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!Qb7JLinJYGP9aBbD"
+}

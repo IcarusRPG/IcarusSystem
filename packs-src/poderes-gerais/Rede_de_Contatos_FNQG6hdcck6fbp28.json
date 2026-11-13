@@ -1,0 +1,44 @@
+{
+  "_id": "FNQG6hdcck6fbp28",
+  "name": "Rede de Contatos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "U9iTJkfo00mkCCit",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Carisma 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Carisma 1.</p><p>Uma vez por aventura, ao chegar a um povoado, você pode pedir ao Mestre um contato (informante, curandeiro, contrabandista, sacerdote) que lhe deve um favor pequeno.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Interpretação e influência",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CAR": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "car": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:rede-de-contatos",
+      "poderGeral": "rede-de-contatos",
+      "grupo": "Interpretação e influência"
+    }
+  },
+  "_key": "!items!FNQG6hdcck6fbp28"
+}

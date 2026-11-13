@@ -1,0 +1,41 @@
+{
+  "_id": "a8m3F4w8Pb1lOT5n",
+  "name": "Palavra Curta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "vbogyf1SfK2YS4bv",
+  "sort": 700,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "capacidade de lançar magias, 5º nível",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> capacidade de lançar magias, 5º nível.</p><p>Uma vez por cena, ao lançar uma magia de execução padrão, você pode pagar +2 PM para lançá-la como ação de movimento.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Magia",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "conjurador": true,
+      "nivel": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:palavra-curta",
+      "poderGeral": "palavra-curta",
+      "grupo": "Magia"
+    }
+  },
+  "_key": "!items!a8m3F4w8Pb1lOT5n"
+}

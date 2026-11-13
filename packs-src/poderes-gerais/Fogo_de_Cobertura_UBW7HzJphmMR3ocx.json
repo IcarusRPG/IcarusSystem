@@ -1,0 +1,42 @@
+{
+  "_id": "UBW7HzJphmMR3ocx",
+  "name": "Fogo de Cobertura",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "7DLZf3kXgtL2onHR",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Pontaria",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Pontaria.</p><p>Quando um aliado a até 9 m de você é alvo de um ataque, você pode gastar sua reação e 1 PM para fazer um ataque à distância contra o atacante. Se acertar, o ataque contra o seu aliado sofre −2.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate à distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Pontaria"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:fogo-de-cobertura",
+      "poderGeral": "fogo-de-cobertura",
+      "grupo": "Combate à distância"
+    }
+  },
+  "_key": "!items!UBW7HzJphmMR3ocx"
+}

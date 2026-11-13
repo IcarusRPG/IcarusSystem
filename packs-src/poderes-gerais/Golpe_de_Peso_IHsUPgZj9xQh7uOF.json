@@ -1,0 +1,44 @@
+{
+  "_id": "IHsUPgZj9xQh7uOF",
+  "name": "Golpe de Peso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Força 2",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Força 2.</p><p>Antes de Agredir com uma arma corpo a corpo de duas mãos, você pode aceitar −3 no teste de ataque para receber +6 no dano. Decida antes de rolar.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 2
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "for": 2
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:golpe-de-peso",
+      "poderGeral": "golpe-de-peso",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!IHsUPgZj9xQh7uOF"
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "daBaPwLbQB0n6GbV",
+  "name": "Mobilidade",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 500000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:mobilidade"
+    }
+  },
+  "_key": "!folders!daBaPwLbQB0n6GbV"
+}

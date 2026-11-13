@@ -1,0 +1,38 @@
+{
+  "_id": "nmtNNTbcfLklcTDG",
+  "name": "Formação Marcial",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 700,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> nenhum.</p><p>Você recebe proficiência com armas marciais.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {}
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:formacao-marcial",
+      "poderGeral": "formacao-marcial",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!nmtNNTbcfLklcTDG"
+}

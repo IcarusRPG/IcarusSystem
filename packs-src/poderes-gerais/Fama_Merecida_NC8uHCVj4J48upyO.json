@@ -1,0 +1,44 @@
+{
+  "_id": "NC8uHCVj4J48upyO",
+  "name": "Fama Merecida",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "U9iTJkfo00mkCCit",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Carisma 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Carisma 1.</p><p>Você recebe +2 em Enganação. Além disso, ao chegar a uma cidade, vila ou região, você pode contar uma história sobre si mesmo (descrevendo-a ao Mestre): ela se torna verdade naquele lugar, e as pessoas passam a conhecê-la e repeti-la. A história traz benefícios e consequências, definidos com o Mestre, e duram para sempre ali: você sofre os dois, bons ou maus. Uma história por cidade, vila ou região.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Interpretação e influência",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CAR": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "car": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:fama-merecida",
+      "poderGeral": "fama-merecida",
+      "grupo": "Interpretação e influência"
+    }
+  },
+  "_key": "!items!NC8uHCVj4J48upyO"
+}
