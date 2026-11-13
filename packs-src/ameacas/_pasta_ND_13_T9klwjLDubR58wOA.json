@@ -1,0 +1,15 @@
+{
+  "_id": "T9klwjLDubR58wOA",
+  "name": "ND 13",
+  "type": "Actor",
+  "folder": "revF9YqmSUH49t5V",
+  "sorting": "m",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:especial:13"
+    }
+  },
+  "_key": "!folders!T9klwjLDubR58wOA"
+}

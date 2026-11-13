@@ -1,0 +1,221 @@
+{
+  "_id": "loDLEDYA0jSIWRBt",
+  "name": "Serpente-de-Maré",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-de-mare.webp",
+  "folder": "OVhE2cqCN7ErOYzC",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "14",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 17,
+      "outros": 0
+    },
+    "pv": {
+      "value": 220,
+      "max": 220,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, natação 15 m",
+    "sentidos": "Visão +5, percepção de vibrações na água (longo)",
+    "cd": 22,
+    "salvaguardas": {
+      "fort": 5,
+      "ref": 17,
+      "von": 11
+    },
+    "atributos": {
+      "FOR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 28,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Constrição",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 27,
+        "tipo": "impacto, só contra criatura agarrada",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+28 perfuração), Constrição +10 (2d6+27 impacto, só contra criatura agarrada). CD das habilidades 22.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (escamas)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Serpente-de-Maré",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-de-mare.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "k9h5bzP8yOwLm707",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com a Mordida, faz Agarrar (teste +12).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "serpente-de-mare",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!loDLEDYA0jSIWRBt.k9h5bzP8yOwLm707"
+    },
+    {
+      "_id": "dyx87ES2Y9iVsCWC",
+      "name": "Onda",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação de movimento)</em> bate na água; criaturas na água ou em embarcações em 6 m fazem Reflexos CD 22 ou são derrubadas ou lançadas 3 m.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "serpente-de-mare",
+          "gatilho": "ação de movimento"
+        }
+      },
+      "_key": "!actors.items!loDLEDYA0jSIWRBt.dyx87ES2Y9iVsCWC"
+    },
+    {
+      "_id": "dPkQouXw8BWEb66u",
+      "name": "Corpo Escorregadio",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+4 para escapar de Agarrar e Imobilizar.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "serpente-de-mare",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!loDLEDYA0jSIWRBt.dPkQouXw8BWEb66u"
+    },
+    {
+      "_id": "CTmy3KUr4qiOX93F",
+      "name": "Fôlego Longo",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>prende o fôlego por 1 hora.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "serpente-de-mare",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!loDLEDYA0jSIWRBt.CTmy3KUr4qiOX93F"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "serpente-de-mare",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "14"
+    }
+  },
+  "_key": "!actors!loDLEDYA0jSIWRBt"
+}

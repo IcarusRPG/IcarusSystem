@@ -1,0 +1,202 @@
+{
+  "_id": "QsV812OpSrtKr6Ht",
+  "name": "Trombudo-das-Neves",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-trombudo-das-neves.webp",
+  "folder": "y6PQafh3yyT5FtNZ",
+  "sort": 300,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "8",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 145,
+      "max": 145,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +4, Audição +3",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 13,
+      "ref": 1,
+      "von": 7
+    },
+    "atributos": {
+      "FOR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Presas",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 14,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Pisão",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 14,
+        "tipo": "impacto, só contra alvo Caído ou Pequeno",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Presas +9 (2d6+14 perfuração) e Pisão +9 (2d6+14 impacto, só contra alvo Caído ou Pequeno).",
+    "resistencias": {
+      "rdGeral": 4,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (presas, pele).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Trombudo-das-Neves",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-trombudo-das-neves.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "W7nhTZaE4MlDc290",
+      "name": "Pelagem Grossa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>Redução de Dano 4 e imune a frio de origem natural.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "trombudo-das-neves",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!QsV812OpSrtKr6Ht.W7nhTZaE4MlDc290"
+    },
+    {
+      "_id": "DSC9dFVvUuDRJfYe",
+      "name": "Atropelar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>ao avançar 9 m, passa por criaturas Médias ou menores; elas fazem Reflexos CD 18 ou ficam Caídas e sofrem 2d6 de impacto.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "trombudo-das-neves",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!QsV812OpSrtKr6Ht.DSC9dFVvUuDRJfYe"
+    },
+    {
+      "_id": "DE0BdUsXSM0STAsP",
+      "name": "Varrida de Tromba",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(ação de movimento)</em> empurra todas as criaturas adjacentes 3 m (Fortitude CD 18 evita).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "trombudo-das-neves",
+          "gatilho": "ação de movimento"
+        }
+      },
+      "_key": "!actors.items!QsV812OpSrtKr6Ht.DE0BdUsXSM0STAsP"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "trombudo-das-neves",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "8"
+    }
+  },
+  "_key": "!actors!QsV812OpSrtKr6Ht"
+}

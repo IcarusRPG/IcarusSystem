@@ -1,0 +1,15 @@
+{
+  "_id": "71RR7mKlytfonEh5",
+  "name": "ND S",
+  "type": "Actor",
+  "folder": "4f5L25TW1g8K6Yf2",
+  "sorting": "m",
+  "sort": 2300,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:lacaio:S"
+    }
+  },
+  "_key": "!folders!71RR7mKlytfonEh5"
+}

@@ -1,0 +1,151 @@
+{
+  "_id": "eJJnD5Y8tCA1sIi6",
+  "name": "Cão-de-Ruína",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cao-de-ruina.webp",
+  "folder": "eBGiiraPlL24H03Q",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "1/2",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 11,
+      "outros": 0
+    },
+    "pv": {
+      "value": 8,
+      "max": 8,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +4",
+    "cd": 12,
+    "salvaguardas": {
+      "fort": 6,
+      "ref": 0,
+      "von": -6
+    },
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {},
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 7,
+        "dados": "1d6",
+        "fixo": 7,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +7 (1d6+7 perfuração). CD das habilidades 12.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Chacal-Rubro",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Cão-de-Ruína",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cao-de-ruina.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "Icxq7t6tyz4rsiJJ",
+      "name": "Tática de Bando",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cao-de-ruina",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!eJJnD5Y8tCA1sIi6.Icxq7t6tyz4rsiJJ"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cao-de-ruina",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "1/2"
+    }
+  },
+  "_key": "!actors!eJJnD5Y8tCA1sIi6"
+}

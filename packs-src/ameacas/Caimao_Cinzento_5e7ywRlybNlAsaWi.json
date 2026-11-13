@@ -1,0 +1,175 @@
+{
+  "_id": "5e7ywRlybNlAsaWi",
+  "name": "Caimão-Cinzento",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-caimao-cinzento.webp",
+  "folder": "nngonvrcHEpMLqAv",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "2",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 75,
+      "max": 75,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, natação 12 m",
+    "sentidos": "Visão +4, Olfato +3",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": -3,
+      "von": 3
+    },
+    "atributos": {
+      "FOR": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 7,
+        "dados": "1d8",
+        "fixo": 12,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +7 (1d8+12 perfuração).",
+    "resistencias": {
+      "rdGeral": 3,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (couro nobre).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Caimão-Cinzento",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-caimao-cinzento.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "9XlE0AXqeHfVrFQv",
+      "name": "Couraça Rugosa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>Redução de Dano 3.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "caimao-cinzento",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!5e7ywRlybNlAsaWi.9XlE0AXqeHfVrFQv"
+    },
+    {
+      "_id": "G8DvROMuvjpCHI3E",
+      "name": "Emboscada Submersa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>na primeira rodada, se estava submerso, o alvo está desprevenido contra a Mordida.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "caimao-cinzento",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!5e7ywRlybNlAsaWi.G8DvROMuvjpCHI3E"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "caimao-cinzento",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "2"
+    }
+  },
+  "_key": "!actors!5e7ywRlybNlAsaWi"
+}

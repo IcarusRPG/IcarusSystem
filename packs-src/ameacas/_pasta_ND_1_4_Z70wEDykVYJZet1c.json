@@ -1,0 +1,15 @@
+{
+  "_id": "Z70wEDykVYJZet1c",
+  "name": "ND 1/4",
+  "type": "Actor",
+  "folder": "4f5L25TW1g8K6Yf2",
+  "sorting": "m",
+  "sort": 100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:lacaio:1/4"
+    }
+  },
+  "_key": "!folders!Z70wEDykVYJZet1c"
+}

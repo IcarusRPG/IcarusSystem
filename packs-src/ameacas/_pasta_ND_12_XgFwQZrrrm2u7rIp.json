@@ -1,0 +1,15 @@
+{
+  "_id": "XgFwQZrrrm2u7rIp",
+  "name": "ND 12",
+  "type": "Actor",
+  "folder": "4f5L25TW1g8K6Yf2",
+  "sorting": "m",
+  "sort": 1400,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:lacaio:12"
+    }
+  },
+  "_key": "!folders!XgFwQZrrrm2u7rIp"
+}

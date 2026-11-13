@@ -1,0 +1,175 @@
+{
+  "_id": "utKV8kMFvLd9omC2",
+  "name": "Tecedeira-de-Teias",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-tecedeira-de-teias.webp",
+  "folder": "uPAX2UbqN3yYTlfE",
+  "sort": 400,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "3",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 85,
+      "max": 85,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, escalada 9 m",
+    "sentidos": "Visão +3, percepção de vibrações (sente criaturas em contato com a teia, alcance médio)",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 3,
+      "ref": 9,
+      "von": -3
+    },
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 7,
+        "tipo": "perfuração, mais 3d6 de veneno",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+7 perfuração, mais 3d6 de veneno).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: seda (2d4 rolos, CD 13 para colher).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Tecedeira-de-Teias",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-tecedeira-de-teias.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "Uv5DtLEecidPJXT0",
+      "name": "Teia",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(ação padrão, uma vez por rodada)</em> alvo em alcance curto faz Reflexos CD 14 ou fica Enredado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tecedeira-de-teias",
+          "gatilho": "ação padrão, uma vez por rodada"
+        }
+      },
+      "_key": "!actors.items!utKV8kMFvLd9omC2.Uv5DtLEecidPJXT0"
+    },
+    {
+      "_id": "l3xua31A39unbfFd",
+      "name": "Teceira de Fios",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>ignora terreno difícil de teia e não é afetada por ela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tecedeira-de-teias",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!utKV8kMFvLd9omC2.l3xua31A39unbfFd"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "tecedeira-de-teias",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "3"
+    }
+  },
+  "_key": "!actors!utKV8kMFvLd9omC2"
+}

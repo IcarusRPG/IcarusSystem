@@ -1,0 +1,221 @@
+{
+  "_id": "vCdT0xc2PbfKnBxu",
+  "name": "Águia-do-Cume",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-aguia-do-cume.webp",
+  "folder": "a32SiBiIybPdOsKI",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "12",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 17,
+      "outros": 0
+    },
+    "pv": {
+      "value": 195,
+      "max": 195,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, voo 24 m",
+    "sentidos": "Visão +12 (vê detalhes a longa distância)",
+    "cd": 21,
+    "salvaguardas": {
+      "fort": 10,
+      "ref": 16,
+      "von": 4
+    },
+    "atributos": {
+      "FOR": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 7
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Garras",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 23,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garras",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 23,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Garras +10 (2d6+23 corte), Garras +10 (2d6+23 corte). CD das habilidades 21.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (penas)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Águia-do-Cume",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-aguia-do-cume.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "QQhEGyC4IbGTuMfB",
+      "name": "Arrebatar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena)</em> ao acertar criatura Média ou menor, a agarra e voa até 12 m; se ela não se soltar (Atletismo ou Acrobacia CD 21), sofre 4d6 de queda quando for solta.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "aguia-do-cume",
+          "gatilho": "1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!vCdT0xc2PbfKnBxu.QQhEGyC4IbGTuMfB"
+    },
+    {
+      "_id": "8troVmwW2EHKu4Kv",
+      "name": "Mergulho Mortal",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>se voar 12 m em descida antes de atacar, a primeira Garra causa +2d6.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "aguia-do-cume",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!vCdT0xc2PbfKnBxu.8troVmwW2EHKu4Kv"
+    },
+    {
+      "_id": "ZzL2x5Gq6OYv4KWx",
+      "name": "Rajada de Asas",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(ação de movimento)</em> Reflexos CD 21 em alcance curto ou adjacentes são empurrados 3 m.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "aguia-do-cume",
+          "gatilho": "ação de movimento"
+        }
+      },
+      "_key": "!actors.items!vCdT0xc2PbfKnBxu.ZzL2x5Gq6OYv4KWx"
+    },
+    {
+      "_id": "b4zwBDFDYY2Ndo8X",
+      "name": "Olhar Aguçado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>nunca fica desprevenida por ataques à distância.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "aguia-do-cume",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!vCdT0xc2PbfKnBxu.b4zwBDFDYY2Ndo8X"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "aguia-do-cume",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "12"
+    }
+  },
+  "_key": "!actors!vCdT0xc2PbfKnBxu"
+}

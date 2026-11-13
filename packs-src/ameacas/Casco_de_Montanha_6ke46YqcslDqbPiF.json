@@ -1,0 +1,221 @@
+{
+  "_id": "6ke46YqcslDqbPiF",
+  "name": "Casco-de-Montanha",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-casco-de-montanha.webp",
+  "folder": "a32SiBiIybPdOsKI",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "12",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 17,
+      "outros": 0
+    },
+    "pv": {
+      "value": 195,
+      "max": 195,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": -1,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, natação 9 m",
+    "sentidos": "Visão +2, Olfato +3",
+    "cd": 21,
+    "salvaguardas": {
+      "fort": 16,
+      "ref": 4,
+      "von": 10
+    },
+    "atributos": {
+      "FOR": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 8,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 0
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 23,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Cabeçada",
+        "bonus": 10,
+        "dados": "2d6",
+        "fixo": 23,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+23 perfuração), Cabeçada +10 (2d6+23 impacto). CD das habilidades 21.",
+    "resistencias": {
+      "rdGeral": 8,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: casco (CD 19, serve para escudo pesado)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Casco-de-Montanha",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-casco-de-montanha.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "PzlfxOFp7hsIIseN",
+      "name": "Couraça de Rocha",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>Redução de Dano 8.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "casco-de-montanha",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!6ke46YqcslDqbPiF.PzlfxOFp7hsIIseN"
+    },
+    {
+      "_id": "HYZ2RgrttgO6DtaA",
+      "name": "Recolher-se",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por rodada)</em> +4 na Defesa até o início do próximo turno dele; enquanto recolhido, não ataca.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "casco-de-montanha",
+          "gatilho": "reação, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!6ke46YqcslDqbPiF.HYZ2RgrttgO6DtaA"
+    },
+    {
+      "_id": "yegBXQcnUYYoLS5n",
+      "name": "Inabalável",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>imune a Derrubar e Empurrar.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "casco-de-montanha",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!6ke46YqcslDqbPiF.yegBXQcnUYYoLS5n"
+    },
+    {
+      "_id": "00DMmHV0BELM3KvF",
+      "name": "Pisão Sísmico",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação padrão)</em> criaturas em 6 m fazem Reflexos CD 21 ou ficam Caídas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "casco-de-montanha",
+          "gatilho": "1 vez por cena, ação padrão"
+        }
+      },
+      "_key": "!actors.items!6ke46YqcslDqbPiF.00DMmHV0BELM3KvF"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "casco-de-montanha",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "12"
+    }
+  },
+  "_key": "!actors!6ke46YqcslDqbPiF"
+}

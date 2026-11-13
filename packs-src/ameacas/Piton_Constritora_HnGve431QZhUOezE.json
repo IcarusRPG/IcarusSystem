@@ -1,0 +1,175 @@
+{
+  "_id": "HnGve431QZhUOezE",
+  "name": "Píton-Constritora",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-piton-constritora.webp",
+  "folder": "Twai9eVISPYT3xC2",
+  "sort": 400,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "4",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 100,
+      "max": 100,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 1,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, escalada 6 m, natação 6 m",
+    "sentidos": "Visão +3, Olfato +4, sentido de calor (percebe criaturas vivas a curto alcance)",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 10,
+      "ref": 4,
+      "von": -2
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 8,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+8 perfuração).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: couro raro (CD 14 para curtir).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Píton-Constritora",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-piton-constritora.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "eAfqecE0HPpFp07i",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar a Mordida, faz Agarrar (teste +10).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "piton-constritora",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!HnGve431QZhUOezE.eAfqecE0HPpFp07i"
+    },
+    {
+      "_id": "ngYEgEKXIEceucP3",
+      "name": "Constrição",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>no início do turno dela, o alvo que estiver agarrado sofre 1d8+9 de dano de impacto.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "piton-constritora",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!HnGve431QZhUOezE.ngYEgEKXIEceucP3"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "piton-constritora",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "4"
+    }
+  },
+  "_key": "!actors!HnGve431QZhUOezE"
+}

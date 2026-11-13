@@ -1,0 +1,159 @@
+{
+  "_id": "lSuJcG7B9TAkCMvH",
+  "name": "Glutão-Dentesserra",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-glutao-dentesserra.webp",
+  "folder": "nngonvrcHEpMLqAv",
+  "sort": 300,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "2",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 75,
+      "max": 75,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, escavação 4,5 m",
+    "sentidos": "Olfato +5",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": 3,
+      "von": -3
+    },
+    "atributos": {
+      "FOR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {},
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 7,
+        "dados": "1d6",
+        "fixo": 5,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garras",
+        "bonus": 7,
+        "dados": "1d6",
+        "fixo": 5,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +7 (1d6+5 perfuração) e Garras +7 (1d6+5 corte).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (pele).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Glutão-Dentesserra",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-glutao-dentesserra.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "6H34lej0OToy3QlH",
+      "name": "Fúria Teimosa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>com metade dos PV ou menos, causa +2 de dano e fica imune à condição Abalado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "glutao-dentesserra",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!lSuJcG7B9TAkCMvH.6H34lej0OToy3QlH"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "glutao-dentesserra",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "2"
+    }
+  },
+  "_key": "!actors!lSuJcG7B9TAkCMvH"
+}

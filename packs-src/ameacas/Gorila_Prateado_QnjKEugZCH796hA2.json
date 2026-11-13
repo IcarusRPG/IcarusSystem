@@ -1,0 +1,175 @@
+{
+  "_id": "QnjKEugZCH796hA2",
+  "name": "Gorila-Prateado",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-gorila-prateado.webp",
+  "folder": "yF2GemD1juh9Zi7a",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "14",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 55,
+      "max": 55,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, escalada 12 m",
+    "sentidos": "Visão +5, Olfato +4",
+    "cd": 22,
+    "salvaguardas": {
+      "fort": 17,
+      "ref": 5,
+      "von": 11
+    },
+    "atributos": {
+      "FOR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Punhos",
+        "bonus": 11,
+        "dados": "1d8",
+        "fixo": 72,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Punhos +11 (1d8+72 impacto). CD das habilidades 22.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade",
+    "acompanha": "Símio-de-Rochedo",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Gorila-Prateado",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-gorila-prateado.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "U6UvblHK32WUzOD2",
+      "name": "Brado Intimidante",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> Vontade CD 22 em alcance curto ou Abalado até o fim do próximo turno dele.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "gorila-prateado",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!QnjKEugZCH796hA2.U6UvblHK32WUzOD2"
+    },
+    {
+      "_id": "WQj5nH9KlZdz266m",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com os Punhos, faz Agarrar (teste +13).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "gorila-prateado",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!QnjKEugZCH796hA2.WQj5nH9KlZdz266m"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "gorila-prateado",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "14"
+    }
+  },
+  "_key": "!actors!QnjKEugZCH796hA2"
+}

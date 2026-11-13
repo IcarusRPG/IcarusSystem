@@ -1,0 +1,194 @@
+{
+  "_id": "ILIfIknG9ydeLSUb",
+  "name": "Gavial-de-Rio",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-gavial-de-rio.webp",
+  "folder": "Gmb9Hc6WNheUSe3t",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "7",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, natação 12 m",
+    "sentidos": "Visão +4, Olfato +3",
+    "cd": 17,
+    "salvaguardas": {
+      "fort": 12,
+      "ref": 0,
+      "von": 6
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "1d8",
+        "fixo": 38,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +9 (1d8+38 perfuração). CD das habilidades 17.",
+    "resistencias": {
+      "rdGeral": 3,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (couro)",
+    "acompanha": "Devorador-de-Rio",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Gavial-de-Rio",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-gavial-de-rio.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "5GSPorkmLlPMh0m7",
+      "name": "Emboscada Submersa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>na primeira rodada, se estava submerso, o alvo está desprevenido contra o ataque.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "gavial-de-rio",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!ILIfIknG9ydeLSUb.5GSPorkmLlPMh0m7"
+    },
+    {
+      "_id": "x0voUGcDUjTnyUg6",
+      "name": "Couraça",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>Redução de Dano 3.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "gavial-de-rio",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!ILIfIknG9ydeLSUb.x0voUGcDUjTnyUg6"
+    },
+    {
+      "_id": "Qdu3emQDxuYxdqgH",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com a Mordida, faz Agarrar (teste +11).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "gavial-de-rio",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!ILIfIknG9ydeLSUb.Qdu3emQDxuYxdqgH"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "gavial-de-rio",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "7"
+    }
+  },
+  "_key": "!actors!ILIfIknG9ydeLSUb"
+}

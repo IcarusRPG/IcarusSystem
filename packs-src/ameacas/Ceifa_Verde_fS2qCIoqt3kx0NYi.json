@@ -1,0 +1,225 @@
+{
+  "_id": "fS2qCIoqt3kx0NYi",
+  "name": "Ceifa-Verde",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-ceifa-verde.webp",
+  "folder": "JiJYfQMO0mCu9B23",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "11",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 180,
+      "max": 180,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, voo 9 m",
+    "sentidos": "Visão +8, Audição +3",
+    "cd": 20,
+    "salvaguardas": {
+      "fort": 3,
+      "ref": 15,
+      "von": 9
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 5
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 0
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Foic",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 21,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Foic",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 20,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Foice +9 (2d6+21 corte), Foice +9 (2d6+20 corte). CD das habilidades 20.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Especial: foices (CD 18, servem de matéria-prima)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Ceifa-Verde",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-ceifa-verde.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "wqluDGrZRux82jKu",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com uma Foice, faz Agarrar (teste +11).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "ceifa-verde",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!fS2qCIoqt3kx0NYi.wqluDGrZRux82jKu"
+    },
+    {
+      "_id": "OAGjDJL7WlH9fpDe",
+      "name": "Camuflagem de Folhagem",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+10 em Furtividade em mata; o primeiro ataque do combate contra alvo desprevenido causa +2d6.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "ceifa-verde",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!fS2qCIoqt3kx0NYi.OAGjDJL7WlH9fpDe"
+    },
+    {
+      "_id": "EQNrNvvQEK3WJbXy",
+      "name": "Postura de Caça",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por rodada)</em> quando uma criatura entra no alcance dela, faz um ataque de Foice contra ela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "ceifa-verde",
+          "gatilho": "reação, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!fS2qCIoqt3kx0NYi.EQNrNvvQEK3WJbXy"
+    },
+    {
+      "_id": "YIznVwLfb2iCyLXe",
+      "name": "Cabeça Giratória",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>não pode ser flanqueada.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "ceifa-verde",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!fS2qCIoqt3kx0NYi.YIznVwLfb2iCyLXe"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "ceifa-verde",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "11"
+    }
+  },
+  "_key": "!actors!fS2qCIoqt3kx0NYi"
+}

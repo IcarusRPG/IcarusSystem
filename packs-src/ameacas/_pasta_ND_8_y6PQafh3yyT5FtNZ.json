@@ -1,0 +1,15 @@
+{
+  "_id": "y6PQafh3yyT5FtNZ",
+  "name": "ND 8",
+  "type": "Actor",
+  "folder": "mAgPr0t4Dtd1lhiS",
+  "sorting": "m",
+  "sort": 1000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:solo:8"
+    }
+  },
+  "_key": "!folders!y6PQafh3yyT5FtNZ"
+}

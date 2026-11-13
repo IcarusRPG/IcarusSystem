@@ -1,0 +1,179 @@
+{
+  "_id": "iO5R7ZFPnWf3dKt6",
+  "name": "Coruja-de-Garras",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-coruja-de-garras.webp",
+  "folder": "QM8Xzx0sKh7z9HbX",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "15",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 60,
+      "max": 60,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, voo 18 m",
+    "sentidos": "Audição +10, Visão +8 (enxerga com pouca luz)",
+    "cd": 22,
+    "salvaguardas": {
+      "fort": 11,
+      "ref": 17,
+      "von": 5
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 5
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Garras",
+        "bonus": 11,
+        "dados": "1d8",
+        "fixo": 76,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Garras +11 (1d8+76 corte). CD das habilidades 22.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (penas silenciosas)",
+    "acompanha": "Coruja-Matriarca",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Coruja-de-Garras",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-coruja-de-garras.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "LsCHtfa1wqX2HfBX",
+      "name": "Voo Silencioso",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>+8 em Furtividade em voo; o primeiro ataque vindo do voo contra alvo desprevenido causa +1d8.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "coruja-de-garras",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!iO5R7ZFPnWf3dKt6.LsCHtfa1wqX2HfBX"
+    },
+    {
+      "_id": "2h5ERWkXe9nRMF2H",
+      "name": "Cabeça Giratória",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>não pode ser flanqueada.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "coruja-de-garras",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!iO5R7ZFPnWf3dKt6.2h5ERWkXe9nRMF2H"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "coruja-de-garras",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "15"
+    }
+  },
+  "_key": "!actors!iO5R7ZFPnWf3dKt6"
+}

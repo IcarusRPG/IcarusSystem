@@ -1,0 +1,175 @@
+{
+  "_id": "wfNihidHg6edtvxi",
+  "name": "Corvo-Carniceiro",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-corvo-carniceiro.webp",
+  "folder": "LvuboGD8C8CZznuH",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "1",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "pequeno",
+    "defesa": {
+      "valor": 12,
+      "outros": 0
+    },
+    "pv": {
+      "value": 15,
+      "max": 15,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 3,
+    "deslocamentoTexto": "3 m, voo 15 m",
+    "sentidos": "Visão +5, Olfato +2",
+    "cd": 13,
+    "salvaguardas": {
+      "fort": -4,
+      "ref": 8,
+      "von": 2
+    },
+    "atributos": {
+      "FOR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Bico",
+        "bonus": 8,
+        "dados": "1d4",
+        "fixo": 10,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Bico +8 (1d4+10 perfuração). CD das habilidades 13.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Falcão-de-Penhasco",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Corvo-Carniceiro",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-corvo-carniceiro.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "7NJYaa6QPlUMXIEA",
+      "name": "Tática de Bando",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "corvo-carniceiro",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!wfNihidHg6edtvxi.7NJYaa6QPlUMXIEA"
+    },
+    {
+      "_id": "7bPpK8hjzpmJzSSS",
+      "name": "Olhos de Carniça",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>sente criaturas feridas a até 300 m.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "corvo-carniceiro",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!wfNihidHg6edtvxi.7bPpK8hjzpmJzSSS"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "corvo-carniceiro",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "1"
+    }
+  },
+  "_key": "!actors!wfNihidHg6edtvxi"
+}

@@ -1,0 +1,175 @@
+{
+  "_id": "Z1TS4vwsCl6HbjmP",
+  "name": "Hiena-de-Campina",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-hiena-de-campina.webp",
+  "folder": "BFLhTshvOky79uXM",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "2",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 12,
+      "outros": 0
+    },
+    "pv": {
+      "value": 20,
+      "max": 20,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +5, Audição +3",
+    "cd": 14,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": 3,
+      "von": -3
+    },
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 15,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +8 (1d6+15 perfuração). CD das habilidades 14.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (pele)",
+    "acompanha": "Rugidor-de-Savana",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Hiena-de-Campina",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-hiena-de-campina.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "M6Wv5bOQKpofPj8Y",
+      "name": "Tática de Bando",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "hiena-de-campina",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Z1TS4vwsCl6HbjmP.M6Wv5bOQKpofPj8Y"
+    },
+    {
+      "_id": "P7l90V4GlUVbna0L",
+      "name": "Riso Desnorteante",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> Vontade CD 14 em alcance curto ou Abalado até o início do próximo turno dela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "hiena-de-campina",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!Z1TS4vwsCl6HbjmP.P7l90V4GlUVbna0L"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "hiena-de-campina",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "2"
+    }
+  },
+  "_key": "!actors!Z1TS4vwsCl6HbjmP"
+}

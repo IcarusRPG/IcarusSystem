@@ -1,0 +1,221 @@
+{
+  "_id": "bljQdyTlUed46Ikf",
+  "name": "Condor-Ancestral",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-condor-ancestral.webp",
+  "folder": "LUQ6FGtr3SimKczy",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "18",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "colossal",
+    "defesa": {
+      "valor": 18,
+      "outros": 0
+    },
+    "pv": {
+      "value": 265,
+      "max": 265,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 5,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, voo 30 m",
+    "sentidos": "Visão +14 (especialista, vê a longuíssima distância)",
+    "cd": 25,
+    "salvaguardas": {
+      "fort": 14,
+      "ref": 20,
+      "von": 8
+    },
+    "atributos": {
+      "FOR": {
+        "base": 8,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 8
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Garras",
+        "bonus": 11,
+        "dados": "2d8",
+        "fixo": 34,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garras",
+        "bonus": 11,
+        "dados": "2d8",
+        "fixo": 34,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Garras +11 (2d8+34 corte), Garras +11 (2d8+34 corte). CD das habilidades 25.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (penas ancestrais)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Condor-Ancestral",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-condor-ancestral.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "MmuiCGNbROChnvov",
+      "name": "Arrebatar",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena)</em> ao acertar criatura Grande ou menor, a agarra e voa até 18 m; se ela não se soltar (Atletismo ou Acrobacia CD 25), sofre 6d6 de queda.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condor-ancestral",
+          "gatilho": "1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!bljQdyTlUed46Ikf.MmuiCGNbROChnvov"
+    },
+    {
+      "_id": "M4JLxkUedviKK9wp",
+      "name": "Rajada de Asas",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, 1 vez por cena)</em> cone de 12 m; Reflexos CD 25 ou Caído e empurrado 6 m.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condor-ancestral",
+          "gatilho": "ação padrão, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!bljQdyTlUed46Ikf.M4JLxkUedviKK9wp"
+    },
+    {
+      "_id": "zFzxCmPWkW3n5mTd",
+      "name": "Sombra Gigante",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena)</em> quem estiver sob ela faz Vontade CD 25 ou fica Abalado até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condor-ancestral",
+          "gatilho": "1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!bljQdyTlUed46Ikf.zFzxCmPWkW3n5mTd"
+    },
+    {
+      "_id": "5IeBPP5ArKGfLMpu",
+      "name": "Mergulho Mortal",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>se voar 18 m em descida antes de atacar, a primeira Garra causa +2d8.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "condor-ancestral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!bljQdyTlUed46Ikf.5IeBPP5ArKGfLMpu"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "condor-ancestral",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "18"
+    }
+  },
+  "_key": "!actors!bljQdyTlUed46Ikf"
+}

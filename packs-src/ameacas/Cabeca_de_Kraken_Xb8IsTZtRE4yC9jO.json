@@ -1,0 +1,213 @@
+{
+  "_id": "Xb8IsTZtRE4yC9jO",
+  "name": "Cabeça-de-Kraken",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-cabeca-de-kraken.webp",
+  "folder": "ltbOETXyqNT83QQP",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "7",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 12,
+      "outros": 0
+    },
+    "pv": {
+      "value": 94,
+      "max": 94,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 9,
+    "deslocamentoTexto": "natação 9 m",
+    "sentidos": "percepção às cegas (médio, na água), Visão +6",
+    "cd": 19,
+    "salvaguardas": {
+      "fort": 12,
+      "ref": 6,
+      "von": 0
+    },
+    "atributos": {
+      "FOR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Bico",
+        "bonus": 6,
+        "dados": "2d6",
+        "fixo": 23,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Bico +6 (2d6+23 perfuração). CD das habilidades 19.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (bico de kraken; tinta de kraken, 1d3 doses, CD 19)",
+    "acompanha": "",
+    "nota": "Encontro **Kraken-das-Marés** = 1 Cabeça-de-Kraken (ND 7) + 3 a 5 Tentáculos-de-Kraken (ND 4). Calcule o ND total pela tabela de encontro; com 4 Tentáculos, trate como ND 9 ou 10 para o grupo.",
+    "descricao": "",
+    "notas": "<p>Encontro <strong>Kraken-das-Marés</strong> = 1 Cabeça-de-Kraken (ND 7) + 3 a 5 Tentáculos-de-Kraken (ND 4). Calcule o ND total pela tabela de encontro; com 4 Tentáculos, trate como ND 9 ou 10 para o grupo.</p>"
+  },
+  "prototypeToken": {
+    "name": "Cabeça-de-Kraken",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/especial-cabeca-de-kraken.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "cl0zwID8lQToCQoC",
+      "name": "Corpo Distribuído",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>enquanto houver ao menos 1 Tentáculo-de-Kraken vivo, a Cabeça tem Redução de Dano 5. Quando o último Tentáculo é decepado, a Cabeça fica Vulnerável até o fim da rodada seguinte.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cabeca-de-kraken",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Xb8IsTZtRE4yC9jO.cl0zwID8lQToCQoC"
+    },
+    {
+      "_id": "83WVeRWshnutTOMe",
+      "name": "Puxar para o Bico",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação de movimento, 1 vez por rodada)</em> cada criatura agarrada por um Tentáculo-de-Kraken a até 9 m da Cabeça é arrastada para um espaço adjacente à Cabeça.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cabeca-de-kraken",
+          "gatilho": "ação de movimento, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!Xb8IsTZtRE4yC9jO.83WVeRWshnutTOMe"
+    },
+    {
+      "_id": "fGmYnGnKK7aKomBr",
+      "name": "Bico Dilacerante",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>o Bico causa +2d6 de dano contra criatura Agarrada.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cabeca-de-kraken",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Xb8IsTZtRE4yC9jO.fGmYnGnKK7aKomBr"
+    },
+    {
+      "_id": "MqAoOR7TOyUeJ5UV",
+      "name": "Jato de Tinta",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(ação padrão, 1 vez por cena)</em> cone de 12 m na água ou na superfície; Reflexos CD 19 ou Cego por 1d4 rodadas (sucesso: Ofuscado por 1 rodada). A Cabeça então se submerge (ação livre).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cabeca-de-kraken",
+          "gatilho": "ação padrão, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!Xb8IsTZtRE4yC9jO.MqAoOR7TOyUeJ5UV"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cabeca-de-kraken",
+      "tema": "fauna",
+      "papel": "especial",
+      "nd": "7"
+    }
+  },
+  "_key": "!actors!Xb8IsTZtRE4yC9jO"
+}

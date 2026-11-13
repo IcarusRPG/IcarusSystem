@@ -1,0 +1,15 @@
+{
+  "_id": "OVhE2cqCN7ErOYzC",
+  "name": "ND 14",
+  "type": "Actor",
+  "folder": "mAgPr0t4Dtd1lhiS",
+  "sorting": "m",
+  "sort": 1500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:solo:14"
+    }
+  },
+  "_key": "!folders!OVhE2cqCN7ErOYzC"
+}

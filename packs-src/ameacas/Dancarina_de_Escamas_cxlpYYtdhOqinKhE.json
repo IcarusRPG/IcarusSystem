@@ -1,0 +1,194 @@
+{
+  "_id": "cxlpYYtdhOqinKhE",
+  "name": "Dançarina-de-Escamas",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-dancarina-de-escamas.webp",
+  "folder": "fJgGuwr9dGVBYN2T",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "10",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 119,
+      "max": 119,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, natação 6 m",
+    "sentidos": "Visão +6, sentido de calor (curto)",
+    "cd": 21,
+    "salvaguardas": {
+      "fort": 2,
+      "ref": 14,
+      "von": 8
+    },
+    "atributos": {
+      "FOR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 7,
+        "dados": "1d8",
+        "fixo": 37,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +7 (1d8+37 perfuração). CD das habilidades 21.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (pele, veneno 1d2 doses, CD 21)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Dançarina-de-Escamas",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/especial-dancarina-de-escamas.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "5ZKsNvtPIt0pSsUm",
+      "name": "Dança Hipnótica",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> criaturas a até 9 m que possam vê-la fazem Vontade CD 21. Falha: Fascinado até o fim do próximo turno (a condição acaba com qualquer ação hostil contra a vítima ou contra a Dançarina). Quem passar fica imune à Dança por 24 horas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "dancarina-de-escamas",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!cxlpYYtdhOqinKhE.5ZKsNvtPIt0pSsUm"
+    },
+    {
+      "_id": "CmQ009mxrOnvlVUO",
+      "name": "Bote Súbito",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>contra criatura Fascinada, a Mordida acerta automaticamente e causa +3d6 de dano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "dancarina-de-escamas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!cxlpYYtdhOqinKhE.CmQ009mxrOnvlVUO"
+    },
+    {
+      "_id": "tWtE9q9Al6W5dzjl",
+      "name": "Peçonha Entorpecente",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>se a Mordida causar dano, Fortitude CD 21 ou Lento até o fim da cena; se falhar por 5 ou mais, também Imóvel até o fim do próximo turno dela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "dancarina-de-escamas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!cxlpYYtdhOqinKhE.tWtE9q9Al6W5dzjl"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "dancarina-de-escamas",
+      "tema": "fauna",
+      "papel": "especial",
+      "nd": "10"
+    }
+  },
+  "_key": "!actors!cxlpYYtdhOqinKhE"
+}

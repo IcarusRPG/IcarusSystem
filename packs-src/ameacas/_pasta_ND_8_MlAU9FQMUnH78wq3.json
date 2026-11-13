@@ -1,0 +1,15 @@
+{
+  "_id": "MlAU9FQMUnH78wq3",
+  "name": "ND 8",
+  "type": "Actor",
+  "folder": "4f5L25TW1g8K6Yf2",
+  "sorting": "m",
+  "sort": 1000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:lacaio:8"
+    }
+  },
+  "_key": "!folders!MlAU9FQMUnH78wq3"
+}

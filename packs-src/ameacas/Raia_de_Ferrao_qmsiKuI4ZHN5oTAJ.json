@@ -1,0 +1,170 @@
+{
+  "_id": "qmsiKuI4ZHN5oTAJ",
+  "name": "Raia-de-Ferrão",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-raia-de-ferrao.webp",
+  "folder": "MlAU9FQMUnH78wq3",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "8",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 12,
+    "deslocamentoTexto": "natação 12 m",
+    "sentidos": "percepção de vibrações na água (médio)",
+    "cd": 18,
+    "salvaguardas": {
+      "fort": 1,
+      "ref": 13,
+      "von": 7
+    },
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {},
+    "ataques": [
+      {
+        "nome": "Ferrão",
+        "bonus": 10,
+        "dados": "1d6",
+        "fixo": 36,
+        "tipo": "perfuração, mais 2d6 de veneno",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Ferrão +10 (1d6+36 perfuração, mais 2d6 de veneno). CD das habilidades 18.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (veneno, 1 dose, CD 18)",
+    "acompanha": "Polvo-de-Abismo",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Raia-de-Ferrão",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-raia-de-ferrao.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "f01ELMRTfIC7pkY5",
+      "name": "Peçonha",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>se o Ferrão causar dano, Fortitude CD 18 ou Lento e Envenenado até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "raia-de-ferrao",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!qmsiKuI4ZHN5oTAJ.f01ELMRTfIC7pkY5"
+    },
+    {
+      "_id": "gYD8LLYeZ5zCW3PP",
+      "name": "Camuflagem de Fundo",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+5 em Furtividade na água, escondida no fundo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "raia-de-ferrao",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!qmsiKuI4ZHN5oTAJ.gYD8LLYeZ5zCW3PP"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "raia-de-ferrao",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "8"
+    }
+  },
+  "_key": "!actors!qmsiKuI4ZHN5oTAJ"
+}

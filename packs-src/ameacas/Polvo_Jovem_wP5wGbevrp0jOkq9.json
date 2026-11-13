@@ -1,0 +1,194 @@
+{
+  "_id": "wP5wGbevrp0jOkq9",
+  "name": "Polvo-Jovem",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-polvo-jovem.webp",
+  "folder": "yF2GemD1juh9Zi7a",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "14",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 55,
+      "max": 55,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 3,
+    "deslocamentoTexto": "3 m, natação 12 m",
+    "sentidos": "Visão +5, percepção de vibrações na água (médio)",
+    "cd": 22,
+    "salvaguardas": {
+      "fort": 5,
+      "ref": 17,
+      "von": 11
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Tentáculos",
+        "bonus": 11,
+        "dados": "1d8",
+        "fixo": 72,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Tentáculos +11 (1d8+72 impacto). CD das habilidades 22.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (tinta, 1 dose, CD 22)",
+    "acompanha": "Polvo-de-Abismo",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Polvo-Jovem",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-polvo-jovem.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "eLwXEg9f1fz94ekr",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com os Tentáculos, faz Agarrar (teste +13).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "polvo-jovem",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!wP5wGbevrp0jOkq9.eLwXEg9f1fz94ekr"
+    },
+    {
+      "_id": "8C0mTEjDBxFYqhHy",
+      "name": "Tinta",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> escurece a água em 6 m; quem estiver dentro fica Cego (Reflexos CD 22 reduz a 1 rodada).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "polvo-jovem",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!wP5wGbevrp0jOkq9.8C0mTEjDBxFYqhHy"
+    },
+    {
+      "_id": "5Wj10hfpqt7vXyAF",
+      "name": "Corpo Mole",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>passa por qualquer fresta.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "polvo-jovem",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!wP5wGbevrp0jOkq9.5Wj10hfpqt7vXyAF"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "polvo-jovem",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "14"
+    }
+  },
+  "_key": "!actors!wP5wGbevrp0jOkq9"
+}

@@ -1,0 +1,164 @@
+{
+  "_id": "TDGIaXfIPb8uzX7T",
+  "name": "Garra-Torta",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-garra-torta.webp",
+  "folder": "nngonvrcHEpMLqAv",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "2",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "urso das montanhas",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 75,
+      "max": 75,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, escalada 6 m",
+    "sentidos": "Olfato +5, Audição +3",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": -3,
+      "von": 3
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Garra",
+        "bonus": 7,
+        "dados": "1d8",
+        "fixo": 4,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garra",
+        "bonus": 7,
+        "dados": "1d8",
+        "fixo": 4,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: 2 Garras +7 (1d8+4 corte cada).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (couro, garras).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Garra-Torta",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-garra-torta.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "xcBpMEdXMFBJ3ys7",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com uma Garra, faz a manobra Agarrar contra o alvo (teste +9).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "garra-torta",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!TDGIaXfIPb8uzX7T.xcBpMEdXMFBJ3ys7"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "garra-torta",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "2"
+    }
+  },
+  "_key": "!actors!TDGIaXfIPb8uzX7T"
+}

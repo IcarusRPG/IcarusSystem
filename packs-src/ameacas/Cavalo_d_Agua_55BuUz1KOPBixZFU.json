@@ -1,0 +1,206 @@
+{
+  "_id": "55BuUz1KOPBixZFU",
+  "name": "Cavalo-d'Água",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cavalo-d-agua.webp",
+  "folder": "YGXVJlX4xptgZ4Hh",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "6",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 120,
+      "max": 120,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, natação 12 m",
+    "sentidos": "Visão +3, Audição +3",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 12,
+      "ref": 0,
+      "von": 6
+    },
+    "atributos": {
+      "FOR": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 13,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Pisão",
+        "bonus": 8,
+        "dados": "1d8",
+        "fixo": 12,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +8 (1d8+13 perfuração) e Pisão +8 (1d8+12 impacto).",
+    "resistencias": {
+      "rdGeral": 3,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (couro, presas).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Cavalo-d'Água",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cavalo-d-agua.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "Xcv5R9FUCYxYROTy",
+      "name": "Território",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>uma criatura que termine o turno a até 3 m dele sofre um ataque de Mordida como reação (1 vez por rodada).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cavalo-d-agua",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!55BuUz1KOPBixZFU.Xcv5R9FUCYxYROTy"
+    },
+    {
+      "_id": "xfLWsWsUkLCJMdiV",
+      "name": "Couro Espesso",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>Redução de Dano 3.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cavalo-d-agua",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!55BuUz1KOPBixZFU.xfLWsWsUkLCJMdiV"
+    },
+    {
+      "_id": "8uTtuPoURYvimUkX",
+      "name": "Submergir",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>pode prender o fôlego por 10 minutos e se esconde na água com +5 em Furtividade.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "cavalo-d-agua",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!55BuUz1KOPBixZFU.8uTtuPoURYvimUkX"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "cavalo-d-agua",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "6"
+    }
+  },
+  "_key": "!actors!55BuUz1KOPBixZFU"
+}

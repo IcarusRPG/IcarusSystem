@@ -59,6 +59,20 @@ export function patamarDoNd(nd) {
   return PATAMARES[3];
 }
 
+/**
+ * Temas do compêndio "Icarus: Ameaças" (pastas de 1º nível, nesta ordem). dados = arquivo em
+ * tools/dados/<dados>.json (tema sem arquivo é ignorado no build); imagens = subpasta de img/Ameacas/.
+ */
+export const TEMAS = [
+  { id: "fauna", nome: "Fauna", dados: "ameacas-fauna", imagens: "Fauna" },
+  { id: "espectros", nome: "Espectros", dados: "ameacas-espectros", imagens: "Espectros" }
+];
+
+/** Ordem dos papéis nas pastas do compêndio (alfabética). */
+export const ORDEM_PAPEIS_COMPENDIO = ["especial", "lacaio", "solo", "outro"];
+/** Nome da pasta de ND: "ND 1/4", "ND 10", "ND S+". */
+export const pastaDoNd = nd => `ND ${String(nd ?? "").trim()}`;
+
 /** Ordena por ND e depois por nome. */
 export const compararAmeacas = (a, b) => ordemDoNd(a.nd) - ordemDoNd(b.nd) || String(a.nome ?? a.name).localeCompare(String(b.nome ?? b.name), "pt-BR");
 

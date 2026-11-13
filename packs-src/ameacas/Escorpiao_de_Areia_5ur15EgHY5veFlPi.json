@@ -1,0 +1,170 @@
+{
+  "_id": "5ur15EgHY5veFlPi",
+  "name": "Escorpião-de-Areia",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-escorpiao-de-areia.webp",
+  "folder": "5xMyzNfzLaRHDvX3",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "5",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 30,
+      "max": 30,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 1,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, escavação 4,5 m",
+    "sentidos": "percepção de vibrações (curto)",
+    "cd": 16,
+    "salvaguardas": {
+      "fort": 11,
+      "ref": -1,
+      "von": 5
+    },
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {},
+    "ataques": [
+      {
+        "nome": "Ferrão",
+        "bonus": 9,
+        "dados": "1d6",
+        "fixo": 22,
+        "tipo": "perfuração, mais 2d6 de veneno",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Ferrão +9 (1d6+22 perfuração, mais 2d6 de veneno). CD das habilidades 16.",
+    "resistencias": {
+      "rdGeral": 2,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (veneno, 1 dose, CD 16)",
+    "acompanha": "Escorpião-Cauda-de-Ferro",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Escorpião-de-Areia",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-escorpiao-de-areia.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "r2rdwo27GvVnwdrv",
+      "name": "Peçonha",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>se o Ferrão causar dano, Fortitude CD 16 ou Envenenado até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "escorpiao-de-areia",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!5ur15EgHY5veFlPi.r2rdwo27GvVnwdrv"
+    },
+    {
+      "_id": "2yXD5A8s7altXlpC",
+      "name": "Couraça",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>Redução de Dano 2.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "escorpiao-de-areia",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!5ur15EgHY5veFlPi.2yXD5A8s7altXlpC"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "escorpiao-de-areia",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "5"
+    }
+  },
+  "_key": "!actors!5ur15EgHY5veFlPi"
+}

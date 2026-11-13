@@ -1,0 +1,175 @@
+{
+  "_id": "Y4KK9IjwGKe24Nv6",
+  "name": "Tubarão-de-Recife",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-tubarao-de-recife.webp",
+  "folder": "qEHSt8Hwg7xuGQkA",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "10",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 40,
+      "max": 40,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 18,
+    "deslocamentoTexto": "natação 18 m",
+    "sentidos": "Olfato +8 (sangue a 1 km), Visão +3",
+    "cd": 19,
+    "salvaguardas": {
+      "fort": 14,
+      "ref": 2,
+      "von": 8
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 10,
+        "dados": "1d8",
+        "fixo": 52,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +10 (1d8+52 perfuração). CD das habilidades 19.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (dentes)",
+    "acompanha": "Serrilha-do-Abismo",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Tubarão-de-Recife",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-tubarao-de-recife.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "Ij4lI8KxbUkVe0Ju",
+      "name": "Frenesi de Sangue",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>contra alvo com menos da metade dos PV, +2 no ataque e no dano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tubarao-de-recife",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Y4KK9IjwGKe24Nv6.Ij4lI8KxbUkVe0Ju"
+    },
+    {
+      "_id": "IpmB4WkJZaSvahwF",
+      "name": "Corpo Aquático",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>respira só na água; fora dela fica Imobilizado e sofre 1d6 por turno.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tubarao-de-recife",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Y4KK9IjwGKe24Nv6.IpmB4WkJZaSvahwF"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "tubarao-de-recife",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "10"
+    }
+  },
+  "_key": "!actors!Y4KK9IjwGKe24Nv6"
+}

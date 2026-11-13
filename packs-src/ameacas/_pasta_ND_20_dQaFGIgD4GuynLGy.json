@@ -1,0 +1,15 @@
+{
+  "_id": "dQaFGIgD4GuynLGy",
+  "name": "ND 20",
+  "type": "Actor",
+  "folder": "4f5L25TW1g8K6Yf2",
+  "sorting": "m",
+  "sort": 2200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:lacaio:20"
+    }
+  },
+  "_key": "!folders!dQaFGIgD4GuynLGy"
+}

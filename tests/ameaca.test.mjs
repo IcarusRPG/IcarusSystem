@@ -41,6 +41,7 @@ globalThis.game = { user: { id: "u", isGM: true, targets: new Set() }, users: []
 const A = await import("../module/ameaca-dados.mjs");
 const { AmeacaData } = await import("../module/data/actor-ameaca.mjs");
 const { documentosDeAmeacas } = await import("../module/dados-compendios.mjs");
+const { idEstavel } = await import("../module/dados-itens.mjs");
 const { PERICIAS } = await import("../module/config.mjs");
 const { sistemaCompleto } = await import("./simulacao.mjs");
 const { rolarAtaqueNatural, rolarDanoNatural } = await import("../module/ameaca-ataques.mjs");
@@ -99,41 +100,82 @@ test("Derivação: Efeitos somam por cima dos valores prontos; RD do bestiário 
   assert.equal(s.pv.max, 800, "PV digitados (sem classe)");
 });
 
-test("Compêndio da fauna: 110 atores (58 + 44 + 8), IDs estáveis, pastas por papel e patamar, ordem por ND", () => {
-  const imagens = Object.fromEntries(DADOS.ameacas.map(a => [a.id, a.imagem.replace(".png", ".webp")]));
-  const r = documentosDeAmeacas(DADOS, { pericias: PERICIAS, imagens });
+/** Tema da fauna como o build monta (imagens casadas com os nomes do JSON, em .webp). */
+const fauna = (arquivos = Object.fromEntries(DADOS.ameacas.map(a => [a.id, a.imagem.replace(".png", ".webp")]))) =>
+  ({ id: "fauna", nome: "Fauna", imagens: "Fauna", ameacas: DADOS.ameacas, arquivos });
+/** Caminho de pastas de um ator: ["Fauna", "Solo", "ND S+"]. */
+const caminho = (r, folder) => {
+  const nomes = [];
+  for (let p = r.pastas.find(x => x._id === folder); p; p = r.pastas.find(x => x._id === p.folder)) nomes.unshift(p.name);
+  return nomes;
+};
+
+test("Compêndio Icarus: Ameaças — fauna: 110 atores (58 + 44 + 8), IDs estáveis de sempre, idempotente", () => {
+  const r = documentosDeAmeacas([fauna()], { pericias: PERICIAS });
   assert.equal(r.atores.length, 110);
   const papel = p => r.atores.filter(a => a.flags["icarus-rpg"].papel === p).length;
   assert.deepEqual([papel("solo"), papel("lacaio"), papel("especial")], [58, 44, 8]);
-  assert.ok(r.atores.every(a => a.type === "ameaca" && /^[A-Za-z0-9]{16}$/.test(a._id)));
+  assert.ok(r.atores.every(a => a.type === "ameaca" && a.flags["icarus-rpg"].tema === "fauna"));
+  assert.ok(r.atores.every(a => a._id === idEstavel(`ameaca:${a.flags["icarus-rpg"].id}`)), "o _id do ator não mudou com as pastas");
   assert.equal(new Set(r.atores.map(a => a._id)).size, 110);
   assert.equal(new Set(r.atores.flatMap(a => a.items.map(i => i._id))).size, r.atores.reduce((n, a) => n + a.items.length, 0), "habilidades com IDs únicos");
-  // Idempotente
-  assert.deepEqual(documentosDeAmeacas(DADOS, { pericias: PERICIAS, imagens }), r);
-  // Pastas
-  const nomes = r.pastas.map(p => p.name);
-  assert.ok(["Solo", "Lacaio", "Especial", "Iniciante (ND 1/4 a 4)", "Lenda+ (ND S e S+)"].every(n => nomes.includes(n)));
-  assert.ok(r.pastas.every(p => p.type === "Actor"));
-  const pastaIds = new Set(r.pastas.map(p => p._id));
-  assert.ok(r.atores.every(a => pastaIds.has(a.folder)), "todo ator está numa pasta existente");
+  assert.deepEqual(documentosDeAmeacas([fauna()], { pericias: PERICIAS }), r, "idempotente");
   const serpente = r.atores.find(a => a.name === "Serpente-do-Horizonte");
-  assert.equal(r.pastas.find(p => p._id === serpente.folder).name, "Lenda+ (ND S e S+)");
-  // Ordem: ND (1/4, 1/2, 1 … 20, S, S+) e nome
-  const ordem = r.atores.map(a => A.ordemDoNd(a.system.nd));
-  assert.deepEqual(ordem, [...ordem].sort((x, y) => x - y));
-  assert.equal(r.atores[0].system.nd, "1/4");
-  assert.equal(r.atores.at(-1).system.nd, "S+");
-  // Habilidade: gatilho no começo da descrição
-  const agarrar = serpente.items.find(i => i.name === "Agarrar Aprimorado");
-  assert.match(agarrar.system.descricao, /^<p><em>\(livre\)<\/em> ao acertar/);
+  assert.match(serpente.items.find(i => i.name === "Agarrar Aprimorado").system.descricao, /^<p><em>\(livre\)<\/em> ao acertar/);
   assert.equal(r.semCd.length, 37);
   assert.equal(r.atores.find(a => a.flags["icarus-rpg"].id === "ratao-de-vala").system.cd, null, "CD nula fica vazia");
 });
 
+test("Pastas: Tema > Papel (Especial, Lacaio, Solo) > ND, sem pasta vazia, ND na ordem real, atores em ordem alfabética", () => {
+  const r = documentosDeAmeacas([fauna()], { pericias: PERICIAS });
+  const filhas = mae => r.pastas.filter(p => p.folder === mae).sort((a, b) => a.sort - b.sort);
+  const [tema] = filhas(null);
+  assert.equal(tema.name, "Fauna");
+  assert.ok(r.pastas.every(p => p.type === "Actor" && p.sorting === "m"));
+  assert.deepEqual(filhas(tema._id).map(p => p.name), ["Especial", "Lacaio", "Solo"]);
+  const solo = filhas(tema._id)[2];
+  const nds = filhas(solo._id).map(p => p.name);
+  assert.deepEqual(nds.slice(0, 3), ["ND 1/4", "ND 1/2", "ND 1"]);
+  assert.deepEqual(nds.slice(-2), ["ND S", "ND S+"]);
+  // Nenhuma pasta de ND vazia; profundidade 3
+  const pastasNd = r.pastas.filter(p => p.name.startsWith("ND "));
+  assert.ok(pastasNd.every(p => r.atores.some(a => a.folder === p._id)), "sem pasta vazia");
+  assert.ok(r.atores.every(a => caminho(r, a.folder).length === 3));
+  assert.equal(r.pastas.length, 1 + 3 + pastasNd.length);
+  // Cada ator está na pasta do seu tema/papel/ND
+  const serpente = r.atores.find(a => a.name === "Serpente-do-Horizonte");
+  assert.deepEqual(caminho(r, serpente.folder), ["Fauna", "Solo", "ND S+"]);
+  assert.ok(r.atores.every(a => caminho(r, a.folder)[2] === `ND ${a.system.nd}`));
+  // Dentro da pasta: alfabética (pt-BR)
+  for (const p of pastasNd) {
+    const nomes = r.atores.filter(a => a.folder === p._id).sort((a, b) => a.sort - b.sort).map(a => a.name);
+    assert.deepEqual(nomes, [...nomes].sort((a, b) => a.localeCompare(b, "pt-BR")), p.name);
+  }
+  // IDs das pastas pelo caminho
+  assert.equal(solo._id, idEstavel("pasta:ameacas:fauna:solo"));
+  assert.equal(serpente.folder, idEstavel("pasta:ameacas:fauna:solo:S+"));
+});
+
+test("Vários temas: cada um na sua pasta (ordem de TEMAS), tema sem criaturas não cria pasta, id repetido entre temas falha", () => {
+  assert.deepEqual(A.TEMAS.map(t => [t.id, t.dados, t.imagens]), [["fauna", "ameacas-fauna", "Fauna"], ["espectros", "ameacas-espectros", "Espectros"]]);
+  const espectro = { ...porId("ratao-de-vala"), id: "vulto-de-teste", nome: "Vulto de Teste", tipo: "Espírito", papel: "lacaio", nd: "2" };
+  const r = documentosDeAmeacas([fauna(), { id: "espectros", nome: "Espectros", imagens: "Espectros", ameacas: [espectro], arquivos: {} }, { id: "vazio", nome: "Vazio", imagens: "Vazio", ameacas: [] }], { pericias: PERICIAS });
+  assert.deepEqual(r.pastas.filter(p => !p.folder).sort((a, b) => a.sort - b.sort).map(p => p.name), ["Fauna", "Espectros"]);
+  const vulto = r.atores.find(a => a.name === "Vulto de Teste");
+  assert.deepEqual(caminho(r, vulto.folder), ["Espectros", "Lacaio", "ND 2"]);
+  assert.equal(vulto.flags["icarus-rpg"].tema, "espectros");
+  assert.equal(vulto.system.tipo, "Espírito");
+  assert.match(vulto.img, /Dado/, "sem imagem: dado azul");
+  assert.ok(r.semImagem.includes("vulto-de-teste"));
+  assert.throws(() => documentosDeAmeacas([fauna(), { id: "espectros", nome: "Espectros", imagens: "Espectros", ameacas: [porId("ratao-de-vala")] }]), /ratao-de-vala.*repetido/);
+});
+
 test("Compêndio: imagem ausente não quebra (dado azul) e o casamento de nomes é tolerante", () => {
-  const r = documentosDeAmeacas(DADOS, { pericias: PERICIAS, imagens: {} });
+  const r = documentosDeAmeacas([fauna({})], { pericias: PERICIAS });
   assert.equal(r.semImagem.length, 110);
   assert.ok(r.atores.every(a => a.img.includes("Dado") && a.prototypeToken.texture.src === a.img));
+  const comImagem = documentosDeAmeacas([fauna()], { pericias: PERICIAS }).atores.find(a => a.name === "Serpente-do-Horizonte");
+  assert.equal(comImagem.img, "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-do-horizonte.webp", "pasta de imagens do tema");
   const casado = A.casarImagens(DADOS.ameacas.slice(0, 3).concat(porId("coruja-matriarca")),
     ["Ratão-de-Vala.png", "lacaio-chacal-rubro.webp", "lacaio-morcego-dentuco.webp", "Coruja-Matriarc.png", "Sobrando.png", "leia-me.txt"]);
   assert.equal(casado.porId["ratao-de-vala"], "Ratão-de-Vala.png");
@@ -145,8 +187,9 @@ test("Compêndio: imagem ausente não quebra (dado azul) e o casamento de nomes 
 
 test("Tamanho → casas do token (Pequeno/Médio 1×1, Grande 2×2, Enorme 3×3, Colossal 4×4); token hostil e não vinculado", () => {
   assert.deepEqual(["Pequeno", "Médio", "Grande", "Enorme", "Colossal"].map(A.casasDoTamanho), [1, 1, 2, 3, 4]);
-  const r = documentosDeAmeacas({ ameacas: [porId("serpente-do-horizonte"), porId("ratao-de-vala")] }, { pericias: PERICIAS });
-  const [ratao, serpente] = r.atores;
+  const r = documentosDeAmeacas([{ id: "fauna", nome: "Fauna", imagens: "Fauna", ameacas: [porId("serpente-do-horizonte"), porId("ratao-de-vala")] }], { pericias: PERICIAS });
+  const ratao = r.atores.find(a => a.name === "Ratão-de-Vala");
+  const serpente = r.atores.find(a => a.name === "Serpente-do-Horizonte");
   assert.deepEqual([serpente.prototypeToken.width, serpente.prototypeToken.height, ratao.prototypeToken.width], [4, 4, 1]);
   assert.deepEqual([ratao.prototypeToken.actorLink, ratao.prototypeToken.disposition, ratao.prototypeToken.bar1.attribute], [false, -1, "pv"]);
 });
@@ -219,7 +262,7 @@ test("Token de ator não vinculado: Aplicar muda só o prototype; as cópias na 
   await aplicarNoAtor(actor, "p.png", { molduraId: "metal" }, { atualizarCopias: true });
   assert.deepEqual(atualizacoes.map(t => t._id), ["t1", "t2"]);
   // Compêndio: sem editor
-  assert.deepEqual([contextoDoToken({ ...actor, pack: "icarus-rpg.ameacas-fauna" }, true).editavel, contextoDoToken({ ...actor, pack: "x" }, true).noCompendio], [false, true]);
+  assert.deepEqual([contextoDoToken({ ...actor, pack: "icarus-rpg.ameacas" }, true).editavel, contextoDoToken({ ...actor, pack: "x" }, true).noCompendio], [false, true]);
   // Ficha do token não vinculado (ator sintético): sem editor
   assert.equal(contextoDoToken({ ...actor, isToken: true }, true).sintetico, true);
   game.scenes = [];

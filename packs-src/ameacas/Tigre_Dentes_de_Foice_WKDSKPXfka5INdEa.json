@@ -1,0 +1,202 @@
+{
+  "_id": "WKDSKPXfka5INdEa",
+  "name": "Tigre-Dentes-de-Foice",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-tigre-dentes-de-foice.webp",
+  "folder": "WGVFLDLp0ZgVkrli",
+  "sort": 300,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "10",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 170,
+      "max": 170,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 15,
+    "deslocamentoTexto": "15 m, escalada 6 m",
+    "sentidos": "Visão +5, Olfato +6",
+    "cd": null,
+    "salvaguardas": {
+      "fort": 14,
+      "ref": 8,
+      "von": 2
+    },
+    "atributos": {
+      "FOR": {
+        "base": 7,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mordida",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 18,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Garras",
+        "bonus": 9,
+        "dados": "2d6",
+        "fixo": 19,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+18 perfuração) e Garras +9 (2d6+19 corte).",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Padrão (pele, presas).",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Tigre-Dentes-de-Foice",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-tigre-dentes-de-foice.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "ADAl28vihAMQHBif",
+      "name": "Salto Predatório",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena)</em> na primeira rodada, avança até 12 m e a Mordida derruba o alvo (Fortitude CD 19 evita).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tigre-dentes-de-foice",
+          "gatilho": "1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!WKDSKPXfka5INdEa.ADAl28vihAMQHBif"
+    },
+    {
+      "_id": "DsCKrP1aBI2A2L01",
+      "name": "Dentes de Foice",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>contra alvo Caído, a Mordida causa +2d6.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tigre-dentes-de-foice",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!WKDSKPXfka5INdEa.DsCKrP1aBI2A2L01"
+    },
+    {
+      "_id": "Yh7Xa28KMR4b29z3",
+      "name": "Pelagem Furtiva",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+5 em Furtividade em capinzal e mata aberta (especialista em Furtividade: +4 de treino).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "tigre-dentes-de-foice",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!WKDSKPXfka5INdEa.Yh7Xa28KMR4b29z3"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "tigre-dentes-de-foice",
+      "tema": "fauna",
+      "papel": "solo",
+      "nd": "10"
+    }
+  },
+  "_key": "!actors!WKDSKPXfka5INdEa"
+}

@@ -1,0 +1,175 @@
+{
+  "_id": "t01GjArzlEE8Be4b",
+  "name": "Búfalo-de-Rebanho",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-bufalo-de-rebanho.webp",
+  "folder": "nhC8bsLFJxDBf7t5",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "6",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Animal",
+    "subtitulo": "",
+    "tamanho": "grande",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 30,
+      "max": 30,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 0,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m",
+    "sentidos": "Olfato +4, Audição +3",
+    "cd": 17,
+    "salvaguardas": {
+      "fort": 12,
+      "ref": 0,
+      "von": 6
+    },
+    "atributos": {
+      "FOR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Chifrada",
+        "bonus": 9,
+        "dados": "1d8",
+        "fixo": 32,
+        "tipo": "perfuração",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Chifrada +9 (1d8+32 perfuração). CD das habilidades 17.",
+    "resistencias": {
+      "rdGeral": 0,
+      "imunidade": {}
+    },
+    "tesouro": "Tesouro Metade (couro)",
+    "acompanha": "Cornudo-de-Couraça",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Búfalo-de-Rebanho",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-bufalo-de-rebanho.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "pYoM0F5IboiOIOh2",
+      "name": "Investida",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>se avançar 9 m em linha reta antes de atacar, a Chifrada causa +1d8 de dano e o alvo faz Fortitude CD 17 ou fica Caído.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "bufalo-de-rebanho",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!t01GjArzlEE8Be4b.pYoM0F5IboiOIOh2"
+    },
+    {
+      "_id": "bkwrlvtg1CKoqyA1",
+      "name": "Rebanho",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+1 na Defesa por aliado da mesma espécie adjacente (máx. +2).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "bufalo-de-rebanho",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!t01GjArzlEE8Be4b.bkwrlvtg1CKoqyA1"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "bufalo-de-rebanho",
+      "tema": "fauna",
+      "papel": "lacaio",
+      "nd": "6"
+    }
+  },
+  "_key": "!actors!t01GjArzlEE8Be4b"
+}

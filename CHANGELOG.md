@@ -1,5 +1,18 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.39.0
+
+### Compêndio de ameaças único, em Tema > Papel > ND
+- O compêndio **"Icarus: Ameaças — Fauna"** passou a ser **"Icarus: Ameaças"** (pack `ameacas`), um só para todos os temas de ameaças.
+- Pastas em três níveis:
+  - **Tema:** Fauna, e depois Espectros e os próximos;
+  - **Papel:** Especial, Lacaio e Solo, em ordem alfabética;
+  - **ND:** "ND 1/4", "ND 1/2", "ND 1" … "ND 20", "ND S", "ND S+", na ordem real e só com as pastas que têm criatura.
+- Dentro de cada pasta de ND, as criaturas ficam em ordem alfabética. Os patamares (Iniciante, Veterano…) saíram das pastas.
+- As criaturas mantêm o mesmo ID, e as já importadas no mundo continuam iguais. Cada ator ganhou a marca do tema (`flags["icarus-rpg"].tema`).
+- **Para quem tinha o compêndio antigo:** links e macros que apontem para `Compendium.icarus-rpg.ameacas-fauna…` precisam ser trocados por `Compendium.icarus-rpg.ameacas…` (mesmo ID da criatura).
+- **Para o build:** os temas ficam cadastrados em `TEMAS` (`module/ameaca-dados.mjs`). O build pula o tema que ainda não tem JSON e para com mensagem clara se um `id` de criatura se repetir entre temas.
+
 ## 0.38.1
 
 ### Barganha: um teste por jogador
