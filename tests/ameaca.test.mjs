@@ -9,7 +9,16 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 // Campos do Foundry só com o "initial" (para ler os padrões do schema)
 class Campo { constructor(o = {}) { this.o = o; } padrao() { return typeof this.o.initial === "function" ? this.o.initial() : this.o.initial; } }
-class SchemaField extends Campo { constructor(f, o) { super(o); this.f = f; this.fields = f; } padrao() { return Object.fromEntries(Object.entries(this.f).map(([k, c]) => [k, c.padrao()])); } }
+// Como no Foundry: um campo só pode ter um pai ("field already belongs to some other parent")
+class SchemaField extends Campo {
+  constructor(f, o) {
+    super(o); this.f = f; this.fields = f;
+    for (const [k, c] of Object.entries(f)) {
+      if (c.parent) throw new Error(`The "${k}" field already belongs to some other parent and may not be reused.`);
+      c.parent = this;
+    }
+  }
+  padrao() { return Object.fromEntries(Object.entries(this.f).map(([k, c]) => [k, c.padrao()])); } }
 class ArrayField extends Campo { constructor(el, o = {}) { super(o); } padrao() { return this.o.initial ?? []; } }
 const chat = [];
 globalThis.foundry = {
