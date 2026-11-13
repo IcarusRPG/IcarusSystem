@@ -107,6 +107,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +13 (2d8+26 perfuração, mais 6d6 de veneno), Cauda +13 (2d8+26 impacto), Constrição +13 (2d8+25 impacto, só contra criatura agarrada). CD das habilidades 30.",
     "resistencias": {
       "rdGeral": 10,
+      "rdNaoMagico": 0,
       "imunidade": {
         "veneno": true,
         "frio": true

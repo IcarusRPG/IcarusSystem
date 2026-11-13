@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +9 (2d6+21 perfuração), Constrição +9 (2d6+20 impacto, só contra criatura agarrada). CD das habilidades 20.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (couro, dentes)",

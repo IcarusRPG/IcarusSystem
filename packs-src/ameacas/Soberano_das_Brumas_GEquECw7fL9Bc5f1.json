@@ -1,0 +1,243 @@
+{
+  "_id": "GEquECw7fL9Bc5f1",
+  "name": "Soberano-das-Brumas",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-soberano-das-brumas.webp",
+  "folder": "X7Cw45Kvw2nMRMmZ",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "20",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 19,
+      "outros": 0
+    },
+    "pv": {
+      "value": 290,
+      "max": 290,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, voo 12 m",
+    "sentidos": "Visão +10, percepção às cegas (longo)",
+    "cd": 26,
+    "salvaguardas": {
+      "fort": 9,
+      "ref": 15,
+      "von": 21
+    },
+    "atributos": {
+      "FOR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 6,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 5
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Gélido",
+        "bonus": 11,
+        "dados": "2d6",
+        "fixo": 41,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Cetro Espectral",
+        "bonus": 11,
+        "dados": "2d6",
+        "fixo": 40,
+        "tipo": "psíquico",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Gélido +11 (2d6+41 frio), Cetro Espectral +11 (2d6+40 psíquico). CD das habilidades 26.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 7,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Dobro (essência da névoa; item lendário a definir)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Soberano-das-Brumas",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-soberano-das-brumas.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "SezQLmiRwAOCzuZS",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 7 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soberano-das-brumas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!GEquECw7fL9Bc5f1.SezQLmiRwAOCzuZS"
+    },
+    {
+      "_id": "hmHGvkpc90f3jylq",
+      "name": "Névoa Eterna",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> névoa de 18 m de raio; quem estiver dentro, exceto ele e seus aliados espectrais, tem cobertura total além de 3 m.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soberano-das-brumas",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!GEquECw7fL9Bc5f1.hmHGvkpc90f3jylq"
+    },
+    {
+      "_id": "fOlXUBDa8ihiVS23",
+      "name": "Ordem Final",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> Vontade CD 26 em alcance médio ou Pasmo até o fim do próximo turno dele.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soberano-das-brumas",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!GEquECw7fL9Bc5f1.fOlXUBDa8ihiVS23"
+    },
+    {
+      "_id": "xE0erZFlopKXBjyt",
+      "name": "Reunir os Esquecidos",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação padrão)</em> surgem 1d4+1 Legionários-Espectrais (Lacaio ND 19) ao redor dele.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soberano-das-brumas",
+          "gatilho": "1 vez por cena, ação padrão"
+        }
+      },
+      "_key": "!actors.items!GEquECw7fL9Bc5f1.xE0erZFlopKXBjyt"
+    },
+    {
+      "_id": "bQlZBwG5mJfWJopQ",
+      "name": "Domínio da Névoa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 500,
+      "system": {
+        "descricao": "<p>na névoa dele, recupera 10 PV por rodada.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soberano-das-brumas",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!GEquECw7fL9Bc5f1.bQlZBwG5mJfWJopQ"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "soberano-das-brumas",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "20"
+    }
+  },
+  "_key": "!actors!GEquECw7fL9Bc5f1"
+}

@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Chifrada +9 (2d6+21 perfuração), Pisão +9 (2d6+20 impacto, só contra alvo Caído ou Pequeno). CD das habilidades 20.",
     "resistencias": {
       "rdGeral": 6,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (chifre, couro)",

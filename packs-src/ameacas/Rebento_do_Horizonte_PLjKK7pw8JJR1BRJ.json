@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +14 (2d6+55 perfuração, mais 4d6 de veneno), Cauda +14 (2d6+55 impacto). CD das habilidades 30.",
     "resistencias": {
       "rdGeral": 6,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (escamas)",

@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +11 (2d8+34 perfuração), Constrição +11 (2d8+34 impacto, só contra criatura agarrada). CD das habilidades 25.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: couro ancestral (CD 23)",

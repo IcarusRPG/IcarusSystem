@@ -107,6 +107,7 @@
     "ataquesTexto": "Corpo a corpo: 3 Tentáculos +9 (1d8+11, 1d8+12 e 1d8+12 impacto).",
     "resistencias": {
       "rdGeral": 2,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: bolsa de tinta (1d3 doses, CD 17).",

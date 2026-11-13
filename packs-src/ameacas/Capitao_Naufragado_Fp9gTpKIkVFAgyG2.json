@@ -1,0 +1,216 @@
+{
+  "_id": "Fp9gTpKIkVFAgyG2",
+  "name": "Capitão-Naufragado",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-capitao-naufragado.webp",
+  "folder": "pqTT0EUhinIrYpoW",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "7",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 135,
+      "max": 135,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m, natação 9 m",
+    "sentidos": "Visão +5, percepção às cegas (curto)",
+    "cd": 17,
+    "salvaguardas": {
+      "fort": 0,
+      "ref": 12,
+      "von": 6
+    },
+    "atributos": {
+      "FOR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Sabre Espectral",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 35,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Sabre Espectral +8 (1d6+35 corte). CD das habilidades 17.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 3,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Capitão-Naufragado",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-capitao-naufragado.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "DeoeBBXCSxapQOrs",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "capitao-naufragado",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Fp9gTpKIkVFAgyG2.DeoeBBXCSxapQOrs"
+    },
+    {
+      "_id": "aieR3vioaJdWCRcJ",
+      "name": "Brado de Comando",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação de movimento)</em> aliados dele a até 18 m ganham +2 nos ataques até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "capitao-naufragado",
+          "gatilho": "1 vez por cena, ação de movimento"
+        }
+      },
+      "_key": "!actors.items!Fp9gTpKIkVFAgyG2.aieR3vioaJdWCRcJ"
+    },
+    {
+      "_id": "bSfPnf08SjFLgVVI",
+      "name": "Posição de Duelo",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+2 no ataque contra a criatura que o atacou na rodada anterior.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "capitao-naufragado",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Fp9gTpKIkVFAgyG2.bSfPnf08SjFLgVVI"
+    },
+    {
+      "_id": "fBLz1cL5X8g7o9R0",
+      "name": "Maré Acompanhante",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>à vontade, faz um quadrado de 3 m ao redor virar água rasa (terreno difícil).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "capitao-naufragado",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Fp9gTpKIkVFAgyG2.fBLz1cL5X8g7o9R0"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "capitao-naufragado",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "7"
+    }
+  },
+  "_key": "!actors!Fp9gTpKIkVFAgyG2"
+}

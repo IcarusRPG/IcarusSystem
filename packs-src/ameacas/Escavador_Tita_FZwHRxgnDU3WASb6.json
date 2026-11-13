@@ -94,6 +94,7 @@
     "ataquesTexto": "Corpo a corpo: Chifre +10 (2d6+32 perfuração), Mandíbulas +10 (2d6+31 corte). CD das habilidades 23.",
     "resistencias": {
       "rdGeral": 8,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: carapaça (CD 21, armadura média)",

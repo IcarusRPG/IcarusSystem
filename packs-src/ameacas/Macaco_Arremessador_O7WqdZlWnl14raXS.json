@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Pancada +9 (1d6+11 impacto), Pedrada (alcance curto) +9 (1d6+11 impacto). CD das habilidades 15.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade",

@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Bico +9 (1d6+33 perfuração). CD das habilidades 17.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (penas)",

@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Presas +10 (2d6+45 perfuração). CD das habilidades 18.",
     "resistencias": {
       "rdGeral": 3,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (presas)",

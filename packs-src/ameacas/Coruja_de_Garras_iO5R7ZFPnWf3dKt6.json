@@ -95,6 +95,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +11 (1d8+76 corte). CD das habilidades 22.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (penas silenciosas)",

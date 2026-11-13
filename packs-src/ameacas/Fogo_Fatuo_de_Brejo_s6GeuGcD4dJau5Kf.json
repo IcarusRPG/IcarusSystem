@@ -1,0 +1,197 @@
+{
+  "_id": "s6GeuGcD4dJau5Kf",
+  "name": "Fogo-Fátuo-de-Brejo",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-fogo-fatuo-de-brejo.webp",
+  "folder": "tcz65hIdG4BItbdg",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "1",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "pequeno",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 60,
+      "max": 60,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "voo 9 m",
+    "sentidos": "Visão +4, percepção às cegas (curto)",
+    "cd": 13,
+    "salvaguardas": {
+      "fort": -4,
+      "ref": 2,
+      "von": 8
+    },
+    "atributos": {
+      "FOR": {
+        "base": -5,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -2,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Gélido",
+        "bonus": 7,
+        "dados": "1d4",
+        "fixo": 9,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Gélido +7 (1d4+9 frio). CD das habilidades 13.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 2,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Fogo-Fátuo-de-Brejo",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-fogo-fatuo-de-brejo.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "kYWaMEbuj8iqfMNa",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fogo-fatuo-de-brejo",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!s6GeuGcD4dJau5Kf.kYWaMEbuj8iqfMNa"
+    },
+    {
+      "_id": "j8ffBAFUkxHsNUVE",
+      "name": "Luz Enganosa",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação de movimento, à vontade)</em> surge como uma luz distante e hipnótica. Quem a vê faz Vontade CD 13 ou gasta o próximo deslocamento indo em direção à luz.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fogo-fatuo-de-brejo",
+          "gatilho": "ação de movimento, à vontade"
+        }
+      },
+      "_key": "!actors.items!s6GeuGcD4dJau5Kf.j8ffBAFUkxHsNUVE"
+    },
+    {
+      "_id": "4Hdwy10V0smI32I1",
+      "name": "Apagar-se",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por cena)</em> ao sofrer dano, fica invisível até o fim do próximo turno dela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "fogo-fatuo-de-brejo",
+          "gatilho": "reação, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!s6GeuGcD4dJau5Kf.4Hdwy10V0smI32I1"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "fogo-fatuo-de-brejo",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "1"
+    }
+  },
+  "_key": "!actors!s6GeuGcD4dJau5Kf"
+}

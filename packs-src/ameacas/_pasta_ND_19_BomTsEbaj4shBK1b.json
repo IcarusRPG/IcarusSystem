@@ -1,0 +1,15 @@
+{
+  "_id": "BomTsEbaj4shBK1b",
+  "name": "ND 19",
+  "type": "Actor",
+  "folder": "yyhm4LDUbKGBo3aP",
+  "sorting": "m",
+  "sort": 1000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio:19"
+    }
+  },
+  "_key": "!folders!BomTsEbaj4shBK1b"
+}

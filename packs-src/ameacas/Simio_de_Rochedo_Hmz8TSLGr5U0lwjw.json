@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: 2 Punhos +8 (1d8+12 impacto e 1d8+13 impacto).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão.",

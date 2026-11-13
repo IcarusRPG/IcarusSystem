@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Chifrada +9 (1d8+32 perfuração). CD das habilidades 17.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (couro)",

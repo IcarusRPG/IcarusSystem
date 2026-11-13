@@ -1,0 +1,15 @@
+{
+  "_id": "F087p5ZOGnOt1Hgp",
+  "name": "ND 8",
+  "type": "Actor",
+  "folder": "HOzLtAzlryQNJ5Q0",
+  "sorting": "m",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:especial:8"
+    }
+  },
+  "_key": "!folders!F087p5ZOGnOt1Hgp"
+}

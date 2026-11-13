@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +11 (2d8+32 perfuração), Cauda +11 (2d8+32 impacto). CD das habilidades 24.",
     "resistencias": {
       "rdGeral": 6,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: óleo ancestral e dentes (CD 22)",

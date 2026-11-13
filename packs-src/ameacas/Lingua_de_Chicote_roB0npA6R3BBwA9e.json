@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Língua (alcance 9 m) +10 (2d6+32 impacto), Mordida +10 (2d6+31 perfuração). CD das habilidades 23.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: pele camuflante (CD 20)",

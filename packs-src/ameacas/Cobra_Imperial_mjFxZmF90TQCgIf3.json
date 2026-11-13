@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +9 (1d8+17 perfuração, mais 6d6 de veneno).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: presas de veneno (1d3 doses, CD 17).",

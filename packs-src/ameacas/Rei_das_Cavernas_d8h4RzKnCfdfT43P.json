@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +9 (2d6+16 corte) e Mordida +9 (2d6+17 perfuração).",
     "resistencias": {
       "rdGeral": 4,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (pele, garras).",

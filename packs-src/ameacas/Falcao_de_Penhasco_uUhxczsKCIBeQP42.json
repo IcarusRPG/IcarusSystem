@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +7 (1d4+9 corte).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (penas finas).",

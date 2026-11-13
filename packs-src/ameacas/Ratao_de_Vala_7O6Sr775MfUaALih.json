@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +5 (1d4+4 perfuração).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro.",

@@ -1,0 +1,220 @@
+{
+  "_id": "gcqRo7iWkjZD7Qfp",
+  "name": "Usurpadora-de-Corpos",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/especial-usurpadora-de-corpos.webp",
+  "folder": "A1I4nFigXtf92rMB",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "15",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 161,
+      "max": 161,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 5,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, voo 12 m",
+    "sentidos": "Visão +8, Audição +6",
+    "cd": 24,
+    "salvaguardas": {
+      "fort": 5,
+      "ref": 11,
+      "von": 17
+    },
+    "atributos": {
+      "FOR": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 4
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Ruptura Psíquica",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 55,
+        "tipo": "psíquico",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Ruptura Psíquica +8 (1d6+55 psíquico). CD das habilidades 24.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 5,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (essência possessora; item a definir)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Usurpadora-de-Corpos",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/especial-usurpadora-de-corpos.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "fljUEfNsMrkdGphA",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 5 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "usurpadora-de-corpos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!gcqRo7iWkjZD7Qfp.fljUEfNsMrkdGphA"
+    },
+    {
+      "_id": "CC8cFL8ywTLymV8L",
+      "name": "Possessão",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> criatura adjacente faz Vontade CD 24; falha: a Usurpadora entra no corpo dela e a controla até o fim do próximo turno da vítima. Enquanto está dentro, não pode ser alvo de ataques. A vítima pode repetir o teste no fim de cada turno dela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "usurpadora-de-corpos",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!gcqRo7iWkjZD7Qfp.CC8cFL8ywTLymV8L"
+    },
+    {
+      "_id": "ub6pfHVTP81IrJlS",
+      "name": "Expulsão",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>se a vítima sofrer 30 ou mais de dano em um turno, ou um aliado gastar uma ação padrão e passar em Vontade CD 24, a Usurpadora é expulsa e fica Pasmo até o fim do turno seguinte.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "usurpadora-de-corpos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!gcqRo7iWkjZD7Qfp.ub6pfHVTP81IrJlS"
+    },
+    {
+      "_id": "adwogXKkQKIptOnv",
+      "name": "Memória Roubada",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p>enquanto possui uma criatura, usa os ataques e o bônus de ataque dela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "usurpadora-de-corpos",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!gcqRo7iWkjZD7Qfp.adwogXKkQKIptOnv"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "usurpadora-de-corpos",
+      "tema": "espectros",
+      "papel": "especial",
+      "nd": "15"
+    }
+  },
+  "_key": "!actors!gcqRo7iWkjZD7Qfp"
+}

@@ -1,0 +1,220 @@
+{
+  "_id": "kvCHvW51Mrdvtidp",
+  "name": "Devoradora-de-Memórias",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-devoradora-de-memorias.webp",
+  "folder": "BQNbEnwISFxLFRqZ",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "16",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 18,
+      "outros": 0
+    },
+    "pv": {
+      "value": 240,
+      "max": 240,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 5,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, voo 12 m",
+    "sentidos": "Visão +8, Audição +6",
+    "cd": 23,
+    "salvaguardas": {
+      "fort": 6,
+      "ref": 12,
+      "von": 18
+    },
+    "atributos": {
+      "FOR": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 5,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 5
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Psíquico",
+        "bonus": 10,
+        "dados": "1d6",
+        "fixo": 74,
+        "tipo": "psíquico",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Psíquico +10 (1d6+74 psíquico). CD das habilidades 23.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 6,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (memória cristalizada, 1d2 doses, CD 23)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Devoradora-de-Memórias",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-devoradora-de-memorias.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "AaMcbS5V5dLmnUAc",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "devoradora-de-memorias",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!kvCHvW51Mrdvtidp.AaMcbS5V5dLmnUAc"
+    },
+    {
+      "_id": "exbfOnzPns8ASHj1",
+      "name": "Roubo de Memória",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>se o Toque Psíquico causar dano, Vontade CD 23 ou Esmorecido até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "devoradora-de-memorias",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!kvCHvW51Mrdvtidp.exbfOnzPns8ASHj1"
+    },
+    {
+      "_id": "J1ol9jxkDKEXnBoR",
+      "name": "Fome de Mente",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>cura metade do dano psíquico que causar.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "devoradora-de-memorias",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!kvCHvW51Mrdvtidp.J1ol9jxkDKEXnBoR"
+    },
+    {
+      "_id": "j8sR6GZMZxYfu8zi",
+      "name": "Rosto Emprestado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(ação de movimento)</em> assume o rosto de alguém que a criatura Esmorecida conhece; Intuição CD 23 para notar o engano.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "devoradora-de-memorias",
+          "gatilho": "ação de movimento"
+        }
+      },
+      "_key": "!actors.items!kvCHvW51Mrdvtidp.j8sR6GZMZxYfu8zi"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "devoradora-de-memorias",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "16"
+    }
+  },
+  "_key": "!actors!kvCHvW51Mrdvtidp"
+}

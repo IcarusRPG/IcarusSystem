@@ -1,0 +1,201 @@
+{
+  "_id": "NuWXTdV3JO0iROm5",
+  "name": "Legionário-Espectral",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-legionario-espectral.webp",
+  "folder": "BomTsEbaj4shBK1b",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "19",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 70,
+      "max": 70,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m",
+    "sentidos": "Visão +6, Audição +5",
+    "cd": 25,
+    "salvaguardas": {
+      "fort": 8,
+      "ref": 14,
+      "von": 20
+    },
+    "atributos": {
+      "FOR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 4
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Gládio Espectral",
+        "bonus": 12,
+        "dados": "1d6",
+        "fixo": 97,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Gládio Espectral +12 (1d6+97 corte). CD das habilidades 25.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 6,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Soberano-das-Brumas",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Legionário-Espectral",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-legionario-espectral.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "8r9TM7DOqi8gvwsD",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "legionario-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!NuWXTdV3JO0iROm5.8r9TM7DOqi8gvwsD"
+    },
+    {
+      "_id": "H0Z3tViNJZcuyC7O",
+      "name": "Tática de Bando",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "legionario-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!NuWXTdV3JO0iROm5.H0Z3tViNJZcuyC7O"
+    },
+    {
+      "_id": "fei4LkqjLviWGPc5",
+      "name": "Muralha de Escudos",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+1 na Defesa por aliado da mesma espécie adjacente (máx. +3).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "legionario-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!NuWXTdV3JO0iROm5.fei4LkqjLviWGPc5"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "legionario-espectral",
+      "tema": "espectros",
+      "papel": "lacaio",
+      "nd": "19"
+    }
+  },
+  "_key": "!actors!NuWXTdV3JO0iROm5"
+}

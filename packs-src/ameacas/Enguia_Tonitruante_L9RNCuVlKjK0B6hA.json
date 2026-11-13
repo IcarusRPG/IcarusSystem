@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Choque +8 (2d8+11 elétrico).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: órgão elétrico (1 dose, CD 13).",

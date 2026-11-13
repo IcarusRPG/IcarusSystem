@@ -1,0 +1,15 @@
+{
+  "_id": "uCFcIvoEZE4ExA0Z",
+  "name": "Espectros",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 200000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros"
+    }
+  },
+  "_key": "!folders!uCFcIvoEZE4ExA0Z"
+}

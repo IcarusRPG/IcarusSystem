@@ -86,6 +86,7 @@
     "ataquesTexto": "Corpo a corpo: Boca de Ventosa +11 (2d6+78 perfuração). CD das habilidades 23.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (couro)",

@@ -92,6 +92,8 @@ export class FichaAmeaca extends HandlebarsApplicationMixin(ActorSheetV2) {
       papeis: PAPEIS.map(v => ({ valor: v, rotulo: loc(`ICARUS.Ameaca.Papeis.${v}`), selecionado: v === src.papel })),
       tamanhos: Object.keys(TAMANHOS_AMEACA).map(v => ({ valor: v, rotulo: loc(`ICARUS.Ameaca.Tamanhos.${v}`), selecionado: v === src.tamanho })),
       imunidades: imunes.join(", "),
+      // "RD 5" e/ou "RD 3 (só ataques não mágicos)"
+      rdTexto: [s.resistencias?.rdGeral ? `RD ${s.resistencias.rdGeral}` : "", src.resistencias?.rdNaoMagico ? game.i18n.format("ICARUS.Ameaca.RdNaoMagicoTexto", { n: src.resistencias.rdNaoMagico }) : ""].filter(Boolean).join(" · "),
       token: contextoDoToken(actor, this.isEditable)
     };
   }

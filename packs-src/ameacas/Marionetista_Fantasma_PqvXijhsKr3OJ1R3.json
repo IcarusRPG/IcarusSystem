@@ -1,0 +1,220 @@
+{
+  "_id": "PqvXijhsKr3OJ1R3",
+  "name": "Marionetista-Fantasma",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/especial-marionetista-fantasma.webp",
+  "folder": "5Ef9huwoaUJidc7i",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "10",
+    "ndContaComo": null,
+    "papel": "especial",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 119,
+      "max": 119,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m",
+    "sentidos": "Visão +6, Audição +4",
+    "cd": 21,
+    "salvaguardas": {
+      "fort": 2,
+      "ref": 8,
+      "von": 14
+    },
+    "atributos": {
+      "FOR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 1
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Gélido",
+        "bonus": 7,
+        "dados": "1d6",
+        "fixo": 38,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Gélido +7 (1d6+38 frio). CD das habilidades 21.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 4,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (fio espectral, 1d3 doses, CD 21)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Marionetista-Fantasma",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/especial-marionetista-fantasma.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "Kb1dRSTkmVt8F7jv",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "marionetista-fantasma",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!PqvXijhsKr3OJ1R3.Kb1dRSTkmVt8F7jv"
+    },
+    {
+      "_id": "kTaqv00s3YwUgIXu",
+      "name": "Cordas Espectrais",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> criatura em alcance médio faz Vontade CD 21; falha: faz imediatamente uma ação padrão à escolha do Mestre (por exemplo, atacar um aliado).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "marionetista-fantasma",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!PqvXijhsKr3OJ1R3.kTaqv00s3YwUgIXu"
+    },
+    {
+      "_id": "zLXKBtQbXqGjTCPK",
+      "name": "Animar Objetos",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação padrão)</em> anima 3 objetos como Servos-Espectrais (Lacaio ND 5) até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "marionetista-fantasma",
+          "gatilho": "1 vez por cena, ação padrão"
+        }
+      },
+      "_key": "!actors.items!PqvXijhsKr3OJ1R3.zLXKBtQbXqGjTCPK"
+    },
+    {
+      "_id": "87rvK2GdmfY04FBt",
+      "name": "Fio Cortado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por cena)</em> ao ser alvo de um ataque corpo a corpo, o atacante faz Reflexos CD 21 ou fica Enredado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "marionetista-fantasma",
+          "gatilho": "reação, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!PqvXijhsKr3OJ1R3.87rvK2GdmfY04FBt"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "marionetista-fantasma",
+      "tema": "espectros",
+      "papel": "especial",
+      "nd": "10"
+    }
+  },
+  "_key": "!actors!PqvXijhsKr3OJ1R3"
+}

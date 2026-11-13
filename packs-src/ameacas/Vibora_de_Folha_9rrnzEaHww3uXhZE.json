@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +8 (1d4+7 perfuração, mais 1d6 de veneno). CD das habilidades 13.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro",

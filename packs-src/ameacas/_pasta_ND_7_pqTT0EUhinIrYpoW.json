@@ -1,0 +1,15 @@
+{
+  "_id": "pqTT0EUhinIrYpoW",
+  "name": "ND 7",
+  "type": "Actor",
+  "folder": "oZteTCDaxdEZGik9",
+  "sorting": "m",
+  "sort": 600,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:solo:7"
+    }
+  },
+  "_key": "!folders!pqTT0EUhinIrYpoW"
+}

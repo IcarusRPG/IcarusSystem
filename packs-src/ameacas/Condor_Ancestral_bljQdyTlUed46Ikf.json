@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +11 (2d8+34 corte), Garras +11 (2d8+34 corte). CD das habilidades 25.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (penas ancestrais)",

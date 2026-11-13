@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Presas +9 (2d6+14 perfuração) e Pisão +9 (2d6+14 impacto, só contra alvo Caído ou Pequeno).",
     "resistencias": {
       "rdGeral": 4,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (presas, pele).",

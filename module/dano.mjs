@@ -47,14 +47,14 @@ export const nomeDoTipo = tipo => loc(`ICARUS.TiposDano.${tipo || "dano"}`);
  * @param {string|null} [p.alvoUuid]  aplica direto nesse ator (lembretes de turno)
  * @param {object} [p.flags]   outras flags do sistema
  */
-export async function criarMensagemDeDano({ actor = null, rolls = [], rollType = "dano", componentes, card, perda = false, critico = false, alvoUuid = null, flags = {} }) {
+export async function criarMensagemDeDano({ actor = null, rolls = [], rollType = "dano", componentes, card, perda = false, critico = false, alvoUuid = null, flags = {}, magico = false }) {
   const total = componentes.reduce((s, c) => s + c.valor, 0);
   const content = await renderTemplate(`${T}/dano.hbs`, { ...card, total, cura: rollType === "cura", critico: !!critico || !!card.critico });
   const dados = {
     speaker: actor ? ChatMessage.getSpeaker({ actor }) : ChatMessage.getSpeaker(),
     content,
     rolls,
-    flags: { [F]: { ...flags, dano: { rollType, total, tipo: componentes[0]?.tipo || "dano", componentes, perda: !!perda, critico: !!critico, alvoUuid }, aplicacoes: [] } }
+    flags: { [F]: { ...flags, dano: { rollType, total, tipo: componentes[0]?.tipo || "dano", componentes, perda: !!perda, critico: !!critico, alvoUuid, magico: !!magico || !!flags.magia }, aplicacoes: [] } }
   };
   if (rolls.length) dados.sound = CONFIG.sounds.dice;
   ChatMessage.applyRollMode(dados, game.settings.get("core", "rollMode"));
@@ -66,16 +66,18 @@ export async function criarMensagemDeDano({ actor = null, rolls = [], rollType =
  * - formula + tipo: um tipo só (ex.: Em Chamas 1d6 de fogo).
  * - partes: [{ formula, tipo }] para dano de vários tipos (ex.: 6d6 elétrico + 6d6 impacto).
  * - cura: true para rolagens de cura (botão Curar).
+ * - magico: true para dano mágico de habilidades (magias já são mágicas por flags.magia): ignora a
+ *   RD contra ataques não mágicos (Forma Espectral).
  * - alvoUuid: aplica direto nesse ator (lembretes de turno); sem ele, nos alvos/selecionados.
  */
-export async function rolarDanoAvulso({ formula, tipo = "dano", partes = null, titulo, img = "icons/svg/fire.svg", actor = null, perda = false, cura = false, alvoUuid = null, flags = {} }) {
+export async function rolarDanoAvulso({ formula, tipo = "dano", partes = null, titulo, img = "icons/svg/fire.svg", actor = null, perda = false, cura = false, alvoUuid = null, flags = {}, magico = false }) {
   const lista = partes?.length ? partes : [{ formula, tipo }];
   const rolls = [];
   for (const p of lista) rolls.push(await new Roll(p.formula).evaluate());
   const componentes = lista.map((p, i) => ({ tipo: cura ? "dano" : p.tipo || "dano", valor: Math.max(0, rolls[i].total) }));
   const tipos = cura ? "" : perda ? loc("ICARUS.Dano.PerdaDePV") : [...new Set(componentes.map(c => nomeDoTipo(c.tipo)))].join(" e ");
   return criarMensagemDeDano({
-    actor, rolls, rollType: cura ? "cura" : "dano", componentes, perda, alvoUuid, flags,
+    actor, rolls, rollType: cura ? "cura" : "dano", componentes, perda, alvoUuid, flags, magico,
     card: {
       arma: { nome: titulo, img: cura && img === "icons/svg/fire.svg" ? "icons/svg/regen.svg" : img },
       texto: lista.map((p, i) => (lista.length > 1 && !cura ? `${p.formula} (${nomeDoTipo(componentes[i].tipo)})` : p.formula)).join(" + "),
@@ -117,7 +119,7 @@ async function aplicarNoAlvo(alvo, botao, dados, usuarioId) {
   }
   const calc = calcularAplicacao({
     acao: botao, componentes: dados.componentes, resistencias: actor.system.resistencias,
-    pv: actor.system.pv, regras: REGRAS_DANO, nomeDoTipo
+    pv: actor.system.pv, regras: REGRAS_DANO, nomeDoTipo, magico: !!dados.magico
   });
   // Absorção (Escolta Contratada): tira do dano final antes de mexer nos PV
   let absorcao = "";

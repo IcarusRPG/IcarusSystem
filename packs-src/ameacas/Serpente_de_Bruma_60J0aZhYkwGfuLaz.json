@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +7 (1d4+6 perfuração, mais 1d6 de veneno).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: glândula de veneno (1 dose, CD 11 para extrair).",

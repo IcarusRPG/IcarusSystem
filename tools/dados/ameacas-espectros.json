@@ -1,0 +1,2024 @@
+{
+ "versao": 1,
+ "tema": "espectros",
+ "fonte": "Bestiario de Espectros de Icarus (Solo, Lacaio, Especial)",
+ "ameacas": [
+  {
+   "id": "fogo-fatuo-de-brejo",
+   "nome": "Fogo-Fátuo-de-Brejo",
+   "papel": "solo",
+   "nd": "1",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "ameaca-fogo-fatuo-de-brejo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +4, percepção às cegas (curto)",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": -4,
+    "ref": 2,
+    "von": 8
+   },
+   "pv": 60,
+   "deslocamento": "voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +7 (1d4+9 frio). CD das habilidades 13.",
+   "cd": 13,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 7,
+     "dados": "1d4",
+     "fixo": 9,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -5,
+    "Des": 3,
+    "Con": 0,
+    "Int": -2,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Luz Enganosa",
+     "gatilho": "ação de movimento, à vontade",
+     "texto": "surge como uma luz distante e hipnótica. Quem a vê faz Vontade CD 13 ou gasta o próximo deslocamento indo em direção à luz."
+    },
+    {
+     "nome": "Apagar-se",
+     "gatilho": "reação, 1 vez por cena",
+     "texto": "ao sofrer dano, fica invisível até o fim do próximo turno dela."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "pranteadora-de-beira-de-rio",
+   "nome": "Pranteadora-de-Beira-de-Rio",
+   "papel": "solo",
+   "nd": "2",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-pranteadora-de-beira-de-rio.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Audição +5, Visão +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 3,
+    "von": 9
+   },
+   "pv": 75,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +7 (1d6+13 frio). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 13,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -5,
+    "Des": 2,
+    "Con": 0,
+    "Int": 0,
+    "Sab": 2,
+    "Car": 2
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Choro Aflitivo",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "Vontade CD 14 em alcance curto ou Abalado até o fim do próximo turno dela."
+    },
+    {
+     "nome": "Presa à Água",
+     "gatilho": null,
+     "texto": "regenera 3 PV por rodada enquanto estiver sobre ou dentro de água."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "poltergeist-de-casarao",
+   "nome": "Poltergeist-de-Casarão",
+   "papel": "solo",
+   "nd": "2",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "ameaca-poltergeist-de-casarao.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +3, Audição +3",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 9,
+    "von": 3
+   },
+   "pv": 75,
+   "deslocamento": "voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Pancada Espectral +7 (1d4+6 impacto), Objeto Arremessado (alcance curto) +7 (1d4+6 impacto). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Pancada Espectral",
+     "bonus": 7,
+     "dados": "1d4",
+     "fixo": 6,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Objeto Arremessado (alcance curto)",
+     "bonus": 7,
+     "dados": "1d4",
+     "fixo": 6,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": -4,
+    "Des": 4,
+    "Con": 0,
+    "Int": -1,
+    "Sab": 0,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Bagunça",
+     "gatilho": "ação de movimento, 1 vez por cena",
+     "texto": "derruba e espalha objetos soltos em um quadrado de 3 m; o espaço vira terreno difícil até o fim da cena."
+    },
+    {
+     "nome": "Voo Errático",
+     "gatilho": null,
+     "texto": "+2 na Defesa contra ataques à distância."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "cao-espectral",
+   "nome": "Cão-Espectral",
+   "papel": "solo",
+   "nd": "3",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-cao-espectral.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Olfato +6, Audição +4",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 9,
+    "von": 3
+   },
+   "pv": 85,
+   "deslocamento": "15 m",
+   "ataquesTexto": "Corpo a corpo: Mordida Gélida +8 (1d6+17 frio). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Mordida Gélida",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 17,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -3,
+    "Des": 3,
+    "Con": 0,
+    "Int": -3,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Derrubar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "se a Mordida Gélida acertar, Fortitude CD 14 ou Caído."
+    },
+    {
+     "nome": "Uivo Agourento",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 14 em alcance médio ou Abalado até o fim da cena."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "soldado-perdido",
+   "nome": "Soldado-Perdido",
+   "papel": "solo",
+   "nd": "4",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-soldado-perdido.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +3, Audição +3",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": -2,
+    "ref": 4,
+    "von": 10
+   },
+   "pv": 100,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Espada Espectral +8 (1d6+22 corte). CD das habilidades 15.",
+   "cd": 15,
+   "ataques": [
+    {
+     "nome": "Espada Espectral",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 22,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 1,
+    "Con": 0,
+    "Int": -1,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Dever Eterno",
+     "gatilho": null,
+     "texto": "imune a Abalado e Apavorado."
+    },
+    {
+     "nome": "Marcha Inexorável",
+     "gatilho": null,
+     "texto": "ignora terreno difícil."
+    },
+    {
+     "nome": "Guarda Fantasma",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "+3 na Defesa contra um ataque corpo a corpo."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "afogada-do-lago",
+   "nome": "Afogada-do-Lago",
+   "papel": "solo",
+   "nd": "4",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-afogada-do-lago.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Audição +4, percepção de vibrações na água (médio)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": -2,
+    "ref": 10,
+    "von": 4
+   },
+   "pv": 100,
+   "deslocamento": "6 m, natação 12 m",
+   "ataquesTexto": "Corpo a corpo: Mãos Gélidas +8 (1d6+22 frio). CD das habilidades 15.",
+   "cd": 15,
+   "ataques": [
+    {
+     "nome": "Mãos Gélidas",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 22,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 2,
+    "Con": 0,
+    "Int": 0,
+    "Sab": 1,
+    "Car": 1
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com as Mãos Gélidas, faz Agarrar (teste +10)."
+    },
+    {
+     "nome": "Afogar",
+     "gatilho": null,
+     "texto": "criatura agarrada por ela estando na água sofre 2d6 de dano de afogamento no início de cada turno."
+    },
+    {
+     "nome": "Arrastar ao Fundo",
+     "gatilho": "ação de movimento",
+     "texto": "move uma criatura agarrada até 6 m na água."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "condenado-de-correntes",
+   "nome": "Condenado-de-Correntes",
+   "papel": "solo",
+   "nd": "6",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Grande",
+   "imagem": "ameaca-condenado-de-correntes.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "0",
+   "sentidos": "Visão +3, Audição +4",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 6,
+    "von": 12
+   },
+   "pv": 120,
+   "deslocamento": "6 m",
+   "ataquesTexto": "Corpo a corpo: Correntada +8 (1d8+13 impacto), Correntada +8 (1d8+12 impacto). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Correntada",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 13,
+     "tipo": "impacto"
+    },
+    {
+     "nome": "Correntada",
+     "bonus": 8,
+     "dados": "1d8",
+     "fixo": 12,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 0,
+    "Con": 0,
+    "Int": -1,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com uma Correntada, faz Agarrar (teste +10)."
+    },
+    {
+     "nome": "Puxar",
+     "gatilho": "ação de movimento, 1 vez por rodada",
+     "texto": "move uma criatura agarrada até 6 m em direção a si."
+    },
+    {
+     "nome": "Peso das Correntes",
+     "gatilho": null,
+     "texto": "a cada criatura agarrada, +1 na Defesa dele (máx. +2)."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "capitao-naufragado",
+   "nome": "Capitão-Naufragado",
+   "papel": "solo",
+   "nd": "7",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-capitao-naufragado.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +5, percepção às cegas (curto)",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 12,
+    "von": 6
+   },
+   "pv": 135,
+   "deslocamento": "9 m, natação 9 m",
+   "ataquesTexto": "Corpo a corpo: Sabre Espectral +8 (1d6+35 corte). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Sabre Espectral",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 35,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 3,
+    "Con": 0,
+    "Int": 1,
+    "Sab": 2,
+    "Car": 3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Brado de Comando",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "aliados dele a até 18 m ganham +2 nos ataques até o fim da cena."
+    },
+    {
+     "nome": "Posição de Duelo",
+     "gatilho": null,
+     "texto": "+2 no ataque contra a criatura que o atacou na rodada anterior."
+    },
+    {
+     "nome": "Maré Acompanhante",
+     "gatilho": null,
+     "texto": "à vontade, faz um quadrado de 3 m ao redor virar água rasa (terreno difícil)."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "carpideira-do-fim",
+   "nome": "Carpideira-do-Fim",
+   "papel": "solo",
+   "nd": "9",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-carpideira-do-fim.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Audição +8, Visão +4",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 1,
+    "ref": 7,
+    "von": 13
+   },
+   "pv": 160,
+   "deslocamento": "12 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +9 (1d6+44 frio). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 44,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -3,
+    "Des": 3,
+    "Con": 0,
+    "Int": 1,
+    "Sab": 3,
+    "Car": 4
+   },
+   "tesouro": "Tesouro Metade (lágrima espectral, 1d3 doses, CD 18)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Lamento Devastador",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "cone de 9 m; 6d8 de dano psíquico, Vontade CD 18 para metade e, se falhar, Abalado até o fim do próximo turno dela."
+    },
+    {
+     "nome": "Aura de Luto",
+     "gatilho": "passiva, 6 m",
+     "texto": "criaturas hostis sofrem −2 em testes de resistência contra medo."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "rei-cinza",
+   "nome": "Rei-Cinza",
+   "papel": "solo",
+   "nd": "10",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-rei-cinza.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +6, Audição +5",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 2,
+    "ref": 8,
+    "von": 14
+   },
+   "pv": 170,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Cetro Espectral +9 (1d6+48 psíquico). CD das habilidades 19.",
+   "cd": 19,
+   "ataques": [
+    {
+     "nome": "Cetro Espectral",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 48,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 2,
+    "Con": 0,
+    "Int": 3,
+    "Sab": 4,
+    "Car": 5
+   },
+   "tesouro": "Tesouro Padrão (coroa espectral; item a definir)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Ordem Régia",
+     "gatilho": "ação padrão, 1 vez por cena",
+     "texto": "Vontade CD 19 em alcance curto ou Pasmo até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Séquito Espectral",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "surgem 2 Servos-Espectrais (Lacaio ND 5) adjacentes a ele."
+    },
+    {
+     "nome": "Majestade",
+     "gatilho": null,
+     "texto": "criaturas que o atacam corpo a corpo fazem Vontade CD 19 ou sofrem −2 nesse ataque."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "sentinela-sem-descanso",
+   "nome": "Sentinela-Sem-Descanso",
+   "papel": "solo",
+   "nd": "15",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Grande",
+   "imagem": "ameaca-sentinela-sem-descanso.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +8, Audição +6",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 5,
+    "ref": 11,
+    "von": 17
+   },
+   "pv": 230,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Montante Espectral +10 (1d8+69 corte). CD das habilidades 22.",
+   "cd": 22,
+   "ataques": [
+    {
+     "nome": "Montante Espectral",
+     "bonus": 10,
+     "dados": "1d8",
+     "fixo": 69,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 5,
+    "Des": 1,
+    "Con": 0,
+    "Int": 1,
+    "Sab": 3,
+    "Car": 2
+   },
+   "tesouro": "Tesouro Padrão (armadura espectral; item a definir)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 5 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Postura de Guarda",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "quando uma criatura entra no alcance dele, faz um ataque contra ela."
+    },
+    {
+     "nome": "Silêncio da Tumba",
+     "gatilho": null,
+     "texto": "se o Montante acertar, Vontade CD 22 ou a criatura não pode falar nem usar habilidades que exijam fala até o fim da cena."
+    },
+    {
+     "nome": "Armadura Espectral",
+     "gatilho": null,
+     "texto": "Redução de Dano adicional 3 (soma-se à Forma Espectral)."
+    }
+   ],
+   "rdNaoMagico": 8
+  },
+  {
+   "id": "devoradora-de-memorias",
+   "nome": "Devoradora-de-Memórias",
+   "papel": "solo",
+   "nd": "16",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "ameaca-devoradora-de-memorias.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Visão +8, Audição +6",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 6,
+    "ref": 12,
+    "von": 18
+   },
+   "pv": 240,
+   "deslocamento": "12 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Toque Psíquico +10 (1d6+74 psíquico). CD das habilidades 23.",
+   "cd": 23,
+   "ataques": [
+    {
+     "nome": "Toque Psíquico",
+     "bonus": 10,
+     "dados": "1d6",
+     "fixo": 74,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": -4,
+    "Des": 5,
+    "Con": 0,
+    "Int": 4,
+    "Sab": 3,
+    "Car": 4
+   },
+   "tesouro": "Tesouro Metade (memória cristalizada, 1d2 doses, CD 23)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Roubo de Memória",
+     "gatilho": null,
+     "texto": "se o Toque Psíquico causar dano, Vontade CD 23 ou Esmorecido até o fim da cena."
+    },
+    {
+     "nome": "Fome de Mente",
+     "gatilho": null,
+     "texto": "cura metade do dano psíquico que causar."
+    },
+    {
+     "nome": "Rosto Emprestado",
+     "gatilho": "ação de movimento",
+     "texto": "assume o rosto de alguém que a criatura Esmorecida conhece; Intuição CD 23 para notar o engano."
+    }
+   ],
+   "rdNaoMagico": 6
+  },
+  {
+   "id": "coro-dos-afogados",
+   "nome": "Coro-dos-Afogados",
+   "papel": "solo",
+   "nd": "18",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-coro-dos-afogados.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "percepção às cegas (médio), Audição +10",
+   "defesa": 18,
+   "salvaguardas": {
+    "fort": 8,
+    "ref": 14,
+    "von": 20
+   },
+   "pv": 265,
+   "deslocamento": "6 m, natação 15 m",
+   "ataquesTexto": "Corpo a corpo: Mãos Gélidas +11 (2d6+22 frio), Mãos Gélidas +11 (2d6+22 frio), Mãos Gélidas +11 (2d6+21 frio). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Mãos Gélidas",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 22,
+     "tipo": "frio"
+    },
+    {
+     "nome": "Mãos Gélidas",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 22,
+     "tipo": "frio"
+    },
+    {
+     "nome": "Mãos Gélidas",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 21,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 0,
+    "Con": 0,
+    "Int": 0,
+    "Sab": 3,
+    "Car": 3
+   },
+   "tesouro": "Tesouro Metade (sal dos afogados, 1d3 doses, CD 25)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar com as Mãos Gélidas; mantém até 3 criaturas agarradas."
+    },
+    {
+     "nome": "Canto Coletivo",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "cone de 12 m; 10d8 de dano psíquico, Vontade CD 25 para metade; se falhar, Fascinado até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Maré de Afogados",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "9 m de raio; Reflexos CD 25 ou Lento até o fim do próximo turno dele e 4d6 de dano de frio."
+    }
+   ],
+   "rdNaoMagico": 6
+  },
+  {
+   "id": "soberano-das-brumas",
+   "nome": "Soberano-das-Brumas",
+   "papel": "solo",
+   "nd": "20",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Enorme",
+   "imagem": "ameaca-soberano-das-brumas.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +10, percepção às cegas (longo)",
+   "defesa": 19,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 15,
+    "von": 21
+   },
+   "pv": 290,
+   "deslocamento": "12 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +11 (2d6+41 frio), Cetro Espectral +11 (2d6+40 psíquico). CD das habilidades 26.",
+   "cd": 26,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 41,
+     "tipo": "frio"
+    },
+    {
+     "nome": "Cetro Espectral",
+     "bonus": 11,
+     "dados": "2d6",
+     "fixo": 40,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 4,
+    "Con": 0,
+    "Int": 4,
+    "Sab": 5,
+    "Car": 6
+   },
+   "tesouro": "Tesouro Dobro (essência da névoa; item lendário a definir)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 7 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Névoa Eterna",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "névoa de 18 m de raio; quem estiver dentro, exceto ele e seus aliados espectrais, tem cobertura total além de 3 m."
+    },
+    {
+     "nome": "Ordem Final",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "Vontade CD 26 em alcance médio ou Pasmo até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Reunir os Esquecidos",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "surgem 1d4+1 Legionários-Espectrais (Lacaio ND 19) ao redor dele."
+    },
+    {
+     "nome": "Domínio da Névoa",
+     "gatilho": null,
+     "texto": "na névoa dele, recupera 10 PV por rodada."
+    }
+   ],
+   "rdNaoMagico": 7
+  },
+  {
+   "id": "lampejo-errante",
+   "nome": "Lampejo-Errante",
+   "papel": "lacaio",
+   "nd": "1/2",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-lampejo-errante.png",
+   "nota": null,
+   "acompanha": "Fogo-Fátuo-de-Brejo",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3",
+   "defesa": 11,
+   "salvaguardas": {
+    "fort": -6,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 8,
+   "deslocamento": "voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Choque Gélido +7 (1d4+8 frio). CD das habilidades 12.",
+   "cd": 12,
+   "ataques": [
+    {
+     "nome": "Choque Gélido",
+     "bonus": 7,
+     "dados": "1d4",
+     "fixo": 8,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -5,
+    "Des": 3,
+    "Con": 0,
+    "Int": -3,
+    "Sab": 0,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Piscar",
+     "gatilho": "livre, 1 vez por rodada",
+     "texto": "teletransporta-se até 3 m."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "vulto-rastejante",
+   "nome": "Vulto-Rastejante",
+   "papel": "lacaio",
+   "nd": "1/4",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-vulto-rastejante.png",
+   "nota": null,
+   "acompanha": "Pranteadora-de-Beira-de-Rio",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3",
+   "defesa": 10,
+   "salvaguardas": {
+    "fort": -6,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 4,
+   "deslocamento": "6 m",
+   "ataquesTexto": "Corpo a corpo: Arranhão Gélido +6 (1d4+5 frio). CD das habilidades 12.",
+   "cd": 12,
+   "ataques": [
+    {
+     "nome": "Arranhão Gélido",
+     "bonus": 6,
+     "dados": "1d4",
+     "fixo": 5,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -4,
+    "Des": 3,
+    "Con": 0,
+    "Int": -3,
+    "Sab": 0,
+    "Car": -1
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Esgueirar-se",
+     "gatilho": null,
+     "texto": "+5 em Furtividade e passa por qualquer fresta."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "sussurro-aprisionado",
+   "nome": "Sussurro-Aprisionado",
+   "papel": "lacaio",
+   "nd": "1/4",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-sussurro-aprisionado.png",
+   "nota": null,
+   "acompanha": "Poltergeist-de-Casarão",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Audição +4",
+   "defesa": 10,
+   "salvaguardas": {
+    "fort": -6,
+    "ref": 0,
+    "von": 6
+   },
+   "pv": 4,
+   "deslocamento": "voo 6 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +6 (1d4+5 frio). CD das habilidades 12.",
+   "cd": 12,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 6,
+     "dados": "1d4",
+     "fixo": 5,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -5,
+    "Des": 2,
+    "Con": 0,
+    "Int": -2,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Sussurro Perturbador",
+     "gatilho": null,
+     "texto": "se o Toque Gélido causar dano, Vontade CD 12 ou Abalado até o fim do próximo turno dele."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "mao-espectral",
+   "nome": "Mão-Espectral",
+   "papel": "lacaio",
+   "nd": "3",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-mao-espectral.png",
+   "nota": null,
+   "acompanha": "Afogada-do-Lago",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +3",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": -3,
+    "ref": 3,
+    "von": 9
+   },
+   "pv": 20,
+   "deslocamento": "voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Apertão +9 (1d4+20 frio). CD das habilidades 14.",
+   "cd": 14,
+   "ataques": [
+    {
+     "nome": "Apertão",
+     "bonus": 9,
+     "dados": "1d4",
+     "fixo": 20,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 3,
+    "Con": 0,
+    "Int": -3,
+    "Sab": 0,
+    "Car": -2
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Agarrar Aprimorado",
+     "gatilho": "livre",
+     "texto": "ao acertar o Apertão, faz Agarrar (teste +11)."
+    }
+   ],
+   "rdNaoMagico": 2
+  },
+  {
+   "id": "servo-espectral",
+   "nome": "Servo-Espectral",
+   "papel": "lacaio",
+   "nd": "5",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-servo-espectral.png",
+   "nota": null,
+   "acompanha": "Rei-Cinza",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +4, Audição +3",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": -1,
+    "ref": 5,
+    "von": 11
+   },
+   "pv": 30,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Pancada Gélida +9 (1d6+29 frio). CD das habilidades 16.",
+   "cd": 16,
+   "ataques": [
+    {
+     "nome": "Pancada Gélida",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 29,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": 1,
+    "Des": 1,
+    "Con": 0,
+    "Int": -2,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "corvo-espectral",
+   "nome": "Corvo-Espectral",
+   "papel": "lacaio",
+   "nd": "5",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-corvo-espectral.png",
+   "nota": null,
+   "acompanha": "Soldado-Perdido",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +6",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": -1,
+    "ref": 11,
+    "von": 5
+   },
+   "pv": 30,
+   "deslocamento": "voo 15 m",
+   "ataquesTexto": "Corpo a corpo: Bicada +9 (1d4+30 frio). CD das habilidades 16.",
+   "cd": 16,
+   "ataques": [
+    {
+     "nome": "Bicada",
+     "bonus": 9,
+     "dados": "1d4",
+     "fixo": 30,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -3,
+    "Des": 4,
+    "Con": 0,
+    "Int": -3,
+    "Sab": 2,
+    "Car": -1
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Voo Errático",
+     "gatilho": null,
+     "texto": "+2 na Defesa contra ataques à distância."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "lamentador",
+   "nome": "Lamentador",
+   "papel": "lacaio",
+   "nd": "6",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-lamentador.png",
+   "nota": null,
+   "acompanha": "Carpideira-do-Fim",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Audição +5",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 0,
+    "ref": 6,
+    "von": 12
+   },
+   "pv": 30,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +9 (1d6+33 frio). CD das habilidades 17.",
+   "cd": 17,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 33,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 2,
+    "Con": 0,
+    "Int": -2,
+    "Sab": 1,
+    "Car": 1
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Lamúria",
+     "gatilho": "1 vez por cena, ação de movimento",
+     "texto": "Vontade CD 17 em alcance curto ou Abalado até o fim do próximo turno dele."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "soldado-esquecido",
+   "nome": "Soldado-Esquecido",
+   "papel": "lacaio",
+   "nd": "8",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-soldado-esquecido.png",
+   "nota": null,
+   "acompanha": "Capitão-Naufragado",
+   "subtitulo": null,
+   "iniciativa": "+1",
+   "sentidos": "Visão +4",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 1,
+    "ref": 7,
+    "von": 13
+   },
+   "pv": 35,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Lança Espectral +10 (1d6+43 perfuração). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Lança Espectral",
+     "bonus": 10,
+     "dados": "1d6",
+     "fixo": 43,
+     "tipo": "perfuração"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 1,
+    "Con": 0,
+    "Int": -1,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Formação de Escudos",
+     "gatilho": null,
+     "texto": "+1 na Defesa por aliado da mesma espécie adjacente (máx. +2)."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "vigia-de-cinzas",
+   "nome": "Vigia-de-Cinzas",
+   "papel": "lacaio",
+   "nd": "10",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-vigia-de-cinzas.png",
+   "nota": null,
+   "acompanha": "Sentinela-Sem-Descanso",
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +6, Audição +4",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 2,
+    "ref": 8,
+    "von": 14
+   },
+   "pv": 40,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Espada Espectral +10 (1d6+53 corte). CD das habilidades 19.",
+   "cd": 19,
+   "ataques": [
+    {
+     "nome": "Espada Espectral",
+     "bonus": 10,
+     "dados": "1d6",
+     "fixo": 53,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 2,
+    "Des": 2,
+    "Con": 0,
+    "Int": 0,
+    "Sab": 3,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Alerta Espectral",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "quando um aliado a até 9 m é atacado, ele recebe +2 na Defesa contra esse ataque."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "prisioneiro-etereo",
+   "nome": "Prisioneiro-Etéreo",
+   "papel": "lacaio",
+   "nd": "11",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-prisioneiro-etereo.png",
+   "nota": null,
+   "acompanha": "Condenado-de-Correntes",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +4",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 3,
+    "ref": 9,
+    "von": 15
+   },
+   "pv": 45,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Corrente Gélida +10 (1d6+58 impacto). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Corrente Gélida",
+     "bonus": 10,
+     "dados": "1d6",
+     "fixo": 58,
+     "tipo": "impacto"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 1,
+    "Con": 0,
+    "Int": -1,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Algemas Espectrais",
+     "gatilho": null,
+     "texto": "se a Corrente Gélida causar dano, Fortitude CD 20 ou Lento até o fim do próximo turno dele."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "lamina-sussurrante",
+   "nome": "Lâmina-Sussurrante",
+   "papel": "lacaio",
+   "nd": "12",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Pequeno",
+   "imagem": "lacaio-lamina-sussurrante.png",
+   "nota": null,
+   "acompanha": "Devoradora-de-Memórias",
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Visão +5, Audição +4",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 4,
+    "ref": 16,
+    "von": 10
+   },
+   "pv": 50,
+   "deslocamento": "voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Corte Espectral +11 (1d4+64 corte). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Corte Espectral",
+     "bonus": 11,
+     "dados": "1d4",
+     "fixo": 64,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 5,
+    "Con": 0,
+    "Int": -2,
+    "Sab": 1,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 5 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Dança de Lâminas",
+     "gatilho": null,
+     "texto": "+2 em Iniciativa e +1 na Defesa por outra Lâmina-Sussurrante adjacente (máx. +2)."
+    }
+   ],
+   "rdNaoMagico": 5
+  },
+  {
+   "id": "legionario-espectral",
+   "nome": "Legionário-Espectral",
+   "papel": "lacaio",
+   "nd": "19",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-legionario-espectral.png",
+   "nota": null,
+   "acompanha": "Soberano-das-Brumas",
+   "subtitulo": null,
+   "iniciativa": "+2",
+   "sentidos": "Visão +6, Audição +5",
+   "defesa": 16,
+   "salvaguardas": {
+    "fort": 8,
+    "ref": 14,
+    "von": 20
+   },
+   "pv": 70,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Gládio Espectral +12 (1d6+97 corte). CD das habilidades 25.",
+   "cd": 25,
+   "ataques": [
+    {
+     "nome": "Gládio Espectral",
+     "bonus": 12,
+     "dados": "1d6",
+     "fixo": 97,
+     "tipo": "corte"
+    }
+   ],
+   "atributos": {
+    "For": 3,
+    "Des": 2,
+    "Con": 0,
+    "Int": 0,
+    "Sab": 2,
+    "Car": 0
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Tática de Bando",
+     "gatilho": null,
+     "texto": "+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3)."
+    },
+    {
+     "nome": "Muralha de Escudos",
+     "gatilho": null,
+     "texto": "+1 na Defesa por aliado da mesma espécie adjacente (máx. +3)."
+    }
+   ],
+   "rdNaoMagico": 6
+  },
+  {
+   "id": "arauto-esvaido",
+   "nome": "Arauto-Esvaído",
+   "papel": "lacaio",
+   "nd": "20",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "lacaio-arauto-esvaido.png",
+   "nota": null,
+   "acompanha": "Soberano-das-Brumas",
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +7, Audição +6",
+   "defesa": 17,
+   "salvaguardas": {
+    "fort": 9,
+    "ref": 15,
+    "von": 21
+   },
+   "pv": 70,
+   "deslocamento": "12 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +12 (1d6+102 frio). CD das habilidades 26.",
+   "cd": 26,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 12,
+     "dados": "1d6",
+     "fixo": 102,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 4,
+    "Con": 0,
+    "Int": 1,
+    "Sab": 3,
+    "Car": 3
+   },
+   "tesouro": "Sem tesouro",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 7 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Lamento Final",
+     "gatilho": "reação, ao chegar a 0 PV",
+     "texto": "explode em 6 m de raio; 8d8 de dano psíquico, Reflexos CD 26 para metade."
+    }
+   ],
+   "rdNaoMagico": 7
+  },
+  {
+   "id": "atormentadora-de-sonhos",
+   "nome": "Atormentadora-de-Sonhos",
+   "papel": "especial",
+   "nd": "5",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "especial-atormentadora-de-sonhos.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Visão +4, Audição +4",
+   "defesa": 12,
+   "salvaguardas": {
+    "fort": -1,
+    "ref": 5,
+    "von": 11
+   },
+   "pv": 77,
+   "deslocamento": "9 m, voo 9 m",
+   "ataquesTexto": "Corpo a corpo: Toque Psíquico +6 (1d6+20 psíquico). CD das habilidades 18.",
+   "cd": 18,
+   "ataques": [
+    {
+     "nome": "Toque Psíquico",
+     "bonus": 6,
+     "dados": "1d6",
+     "fixo": 20,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": -4,
+    "Des": 4,
+    "Con": 0,
+    "Int": 2,
+    "Sab": 3,
+    "Car": 3
+   },
+   "tesouro": "Tesouro Metade (poeira de sonho, 1d3 doses, CD 18)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Pesadelo",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "criatura em alcance curto faz Vontade CD 18; falha: Abalado até o fim do próximo turno dela e sofre 3d6 de dano psíquico."
+    },
+    {
+     "nome": "Invadir o Sono",
+     "gatilho": null,
+     "texto": "contra criatura dormindo ou inconsciente, o Pesadelo age automaticamente, sem teste."
+    },
+    {
+     "nome": "Fuga em Sonho",
+     "gatilho": "reação, 1 vez por cena",
+     "texto": "ao chegar a 0 PV, desfaz-se em fumaça e reaparece em 1d4 rodadas com metade dos PV em qualquer ponto a 18 m."
+    }
+   ],
+   "rdNaoMagico": 3
+  },
+  {
+   "id": "reflexo-vingativo",
+   "nome": "Reflexo-Vingativo",
+   "papel": "especial",
+   "nd": "8",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "especial-reflexo-vingativo.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +6",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 1,
+    "ref": 7,
+    "von": 13
+   },
+   "pv": 102,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Golpe Espelhado +7 (1d6+31 psíquico). CD das habilidades 20.",
+   "cd": 20,
+   "ataques": [
+    {
+     "nome": "Golpe Espelhado",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 31,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": -2,
+    "Des": 3,
+    "Con": 0,
+    "Int": 2,
+    "Sab": 2,
+    "Car": 3
+   },
+   "tesouro": "Tesouro Metade (estilhaço espectral, 1d2 doses, CD 20)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Espelhar",
+     "gatilho": "ação padrão, 1 vez por cena",
+     "texto": "assume a aparência de uma criatura em alcance curto; quem conhece a criatura faz Intuição CD 20 para notar o engano."
+    },
+    {
+     "nome": "Golpe Refletido",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "quando um ataque corpo a corpo contra ele erra, faz um ataque contra o atacante."
+    },
+    {
+     "nome": "Quebrar o Espelho",
+     "gatilho": null,
+     "texto": "quando um ataque o atinge por 15 ou mais acima da Defesa, ele se estilhaça e fica Vulnerável até o fim do próximo turno."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "marionetista-fantasma",
+   "nome": "Marionetista-Fantasma",
+   "papel": "especial",
+   "nd": "10",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "especial-marionetista-fantasma.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+3",
+   "sentidos": "Visão +6, Audição +4",
+   "defesa": 13,
+   "salvaguardas": {
+    "fort": 2,
+    "ref": 8,
+    "von": 14
+   },
+   "pv": 119,
+   "deslocamento": "9 m",
+   "ataquesTexto": "Corpo a corpo: Toque Gélido +7 (1d6+38 frio). CD das habilidades 21.",
+   "cd": 21,
+   "ataques": [
+    {
+     "nome": "Toque Gélido",
+     "bonus": 7,
+     "dados": "1d6",
+     "fixo": 38,
+     "tipo": "frio"
+    }
+   ],
+   "atributos": {
+    "For": -3,
+    "Des": 3,
+    "Con": 0,
+    "Int": 4,
+    "Sab": 3,
+    "Car": 2
+   },
+   "tesouro": "Tesouro Metade (fio espectral, 1d3 doses, CD 21)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Cordas Espectrais",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "criatura em alcance médio faz Vontade CD 21; falha: faz imediatamente uma ação padrão à escolha do Mestre (por exemplo, atacar um aliado)."
+    },
+    {
+     "nome": "Animar Objetos",
+     "gatilho": "1 vez por cena, ação padrão",
+     "texto": "anima 3 objetos como Servos-Espectrais (Lacaio ND 5) até o fim da cena."
+    },
+    {
+     "nome": "Fio Cortado",
+     "gatilho": "reação, 1 vez por cena",
+     "texto": "ao ser alvo de um ataque corpo a corpo, o atacante faz Reflexos CD 21 ou fica Enredado."
+    }
+   ],
+   "rdNaoMagico": 4
+  },
+  {
+   "id": "usurpadora-de-corpos",
+   "nome": "Usurpadora-de-Corpos",
+   "papel": "especial",
+   "nd": "15",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "especial-usurpadora-de-corpos.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+5",
+   "sentidos": "Visão +8, Audição +6",
+   "defesa": 14,
+   "salvaguardas": {
+    "fort": 5,
+    "ref": 11,
+    "von": 17
+   },
+   "pv": 161,
+   "deslocamento": "12 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Ruptura Psíquica +8 (1d6+55 psíquico). CD das habilidades 24.",
+   "cd": 24,
+   "ataques": [
+    {
+     "nome": "Ruptura Psíquica",
+     "bonus": 8,
+     "dados": "1d6",
+     "fixo": 55,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": -4,
+    "Des": 5,
+    "Con": 0,
+    "Int": 4,
+    "Sab": 4,
+    "Car": 4
+   },
+   "tesouro": "Tesouro Metade (essência possessora; item a definir)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 5 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Possessão",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "criatura adjacente faz Vontade CD 24; falha: a Usurpadora entra no corpo dela e a controla até o fim do próximo turno da vítima. Enquanto está dentro, não pode ser alvo de ataques. A vítima pode repetir o teste no fim de cada turno dela."
+    },
+    {
+     "nome": "Expulsão",
+     "gatilho": null,
+     "texto": "se a vítima sofrer 30 ou mais de dano em um turno, ou um aliado gastar uma ação padrão e passar em Vontade CD 24, a Usurpadora é expulsa e fica Pasmo até o fim do turno seguinte."
+    },
+    {
+     "nome": "Memória Roubada",
+     "gatilho": null,
+     "texto": "enquanto possui uma criatura, usa os ataques e o bônus de ataque dela."
+    }
+   ],
+   "rdNaoMagico": 5
+  },
+  {
+   "id": "cantor-do-alem",
+   "nome": "Cantor-do-Além",
+   "papel": "especial",
+   "nd": "18",
+   "tipo": "Espírito",
+   "tema": "espectros",
+   "tamanho": "Médio",
+   "imagem": "especial-cantor-do-alem.png",
+   "nota": null,
+   "acompanha": null,
+   "subtitulo": null,
+   "iniciativa": "+4",
+   "sentidos": "Audição +12, Visão +6",
+   "defesa": 15,
+   "salvaguardas": {
+    "fort": 8,
+    "ref": 14,
+    "von": 20
+   },
+   "pv": 186,
+   "deslocamento": "12 m, voo 12 m",
+   "ataquesTexto": "Corpo a corpo: Nota Cortante +9 (1d6+66 psíquico). CD das habilidades 27.",
+   "cd": 27,
+   "ataques": [
+    {
+     "nome": "Nota Cortant",
+     "bonus": 9,
+     "dados": "1d6",
+     "fixo": 66,
+     "tipo": "psíquico"
+    }
+   ],
+   "atributos": {
+    "For": -4,
+    "Des": 4,
+    "Con": 0,
+    "Int": 3,
+    "Sab": 4,
+    "Car": 6
+   },
+   "tesouro": "Tesouro Dobro (voz espectral; item a definir)",
+   "habilidades": [
+    {
+     "nome": "Forma Espectral",
+     "gatilho": null,
+     "texto": "incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente."
+    },
+    {
+     "nome": "Canção de Ruína",
+     "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas",
+     "texto": "cone de 18 m; 8d8 de dano psíquico, Vontade CD 27 para metade e, se falhar, Fascinado até o fim do próximo turno dele."
+    },
+    {
+     "nome": "Harmonia Fantasma",
+     "gatilho": "reação, 1 vez por rodada",
+     "texto": "quando uma criatura em alcance médio faz um teste de Vontade contra um efeito dele, ele pode forçar uma nova rolagem e ficar com o pior resultado."
+    },
+    {
+     "nome": "Eco",
+     "gatilho": "1 vez por cena, ação livre",
+     "texto": "repete a última habilidade usada, sem esperar a recarga."
+    }
+   ],
+   "rdNaoMagico": 6
+  }
+ ]
+}

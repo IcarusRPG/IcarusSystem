@@ -1,0 +1,232 @@
+{
+  "_id": "Av1vtGell8nSb7Gz",
+  "name": "Coro-dos-Afogados",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-coro-dos-afogados.webp",
+  "folder": "16c8cm07CSxlBF3C",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "18",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "enorme",
+    "defesa": {
+      "valor": 18,
+      "outros": 0
+    },
+    "pv": {
+      "value": 265,
+      "max": 265,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 2,
+    "deslocamento": 6,
+    "deslocamentoTexto": "6 m, natação 15 m",
+    "sentidos": "percepção às cegas (médio), Audição +10",
+    "cd": 25,
+    "salvaguardas": {
+      "fort": 8,
+      "ref": 14,
+      "von": 20
+    },
+    "atributos": {
+      "FOR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "audicao": {
+        "treino": 0,
+        "outros": 7
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Mãos Gélidas",
+        "bonus": 11,
+        "dados": "2d6",
+        "fixo": 22,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Mãos Gélidas",
+        "bonus": 11,
+        "dados": "2d6",
+        "fixo": 22,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Mãos Gélidas",
+        "bonus": 11,
+        "dados": "2d6",
+        "fixo": 21,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Mãos Gélidas +11 (2d6+22 frio), Mãos Gélidas +11 (2d6+22 frio), Mãos Gélidas +11 (2d6+21 frio). CD das habilidades 25.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 6,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (sal dos afogados, 1d3 doses, CD 25)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Coro-dos-Afogados",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-coro-dos-afogados.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "HEi4KTkvAclkQ17d",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 6 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "coro-dos-afogados",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Av1vtGell8nSb7Gz.HEi4KTkvAclkQ17d"
+    },
+    {
+      "_id": "A1onX3mJM3bC0rBa",
+      "name": "Agarrar Aprimorado",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(livre)</em> ao acertar com as Mãos Gélidas; mantém até 3 criaturas agarradas.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "coro-dos-afogados",
+          "gatilho": "livre"
+        }
+      },
+      "_key": "!actors.items!Av1vtGell8nSb7Gz.A1onX3mJM3bC0rBa"
+    },
+    {
+      "_id": "nGMbI9OJsIjlII5t",
+      "name": "Canto Coletivo",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> cone de 12 m; 10d8 de dano psíquico, Vontade CD 25 para metade; se falhar, Fascinado até o fim do próximo turno dele.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "coro-dos-afogados",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!Av1vtGell8nSb7Gz.nGMbI9OJsIjlII5t"
+    },
+    {
+      "_id": "lfECkJWuoeExMgoh",
+      "name": "Maré de Afogados",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(1 vez por cena, ação padrão)</em> 9 m de raio; Reflexos CD 25 ou Lento até o fim do próximo turno dele e 4d6 de dano de frio.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "coro-dos-afogados",
+          "gatilho": "1 vez por cena, ação padrão"
+        }
+      },
+      "_key": "!actors.items!Av1vtGell8nSb7Gz.lfECkJWuoeExMgoh"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "coro-dos-afogados",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "18"
+    }
+  },
+  "_key": "!actors!Av1vtGell8nSb7Gz"
+}

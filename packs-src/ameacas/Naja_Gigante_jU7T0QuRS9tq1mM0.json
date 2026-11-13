@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +12 (2d6+71 perfuração, mais 5d6 de veneno). CD das habilidades 25.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (presas, veneno 1d3 doses, CD 25)",

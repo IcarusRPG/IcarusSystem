@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Garras +8 (1d8+8 corte) e Garras +8 (1d8+9 corte).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Especial: penas grandes (1d4).",

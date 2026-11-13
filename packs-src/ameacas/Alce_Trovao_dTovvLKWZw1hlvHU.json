@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Chifrada +8 (1d8+10 perfuração) e Coice +8 (1d8+11 impacto).",
     "resistencias": {
       "rdGeral": 2,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (galhada, couro).",

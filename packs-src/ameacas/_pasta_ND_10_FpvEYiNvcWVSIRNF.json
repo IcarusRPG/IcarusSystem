@@ -1,0 +1,15 @@
+{
+  "_id": "FpvEYiNvcWVSIRNF",
+  "name": "ND 10",
+  "type": "Actor",
+  "folder": "yyhm4LDUbKGBo3aP",
+  "sorting": "m",
+  "sort": 700,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio:10"
+    }
+  },
+  "_key": "!folders!FpvEYiNvcWVSIRNF"
+}

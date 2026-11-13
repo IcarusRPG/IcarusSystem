@@ -107,6 +107,7 @@
     "ataquesTexto": "Corpo a corpo: Tentáculo +12 (2d8+26 impacto), Tentáculo +12 (2d8+26 impacto), Tentáculo +12 (2d8+26 impacto). CD das habilidades 28.",
     "resistencias": {
       "rdGeral": 6,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Dobro (tinta ancestral; item lendário a definir)",

@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +10 (2d6+28 perfuração), Constrição +10 (2d6+27 impacto, só contra criatura agarrada). CD das habilidades 22.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Padrão (escamas)",

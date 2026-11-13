@@ -1,0 +1,201 @@
+{
+  "_id": "q6qmDhzPMDdVclmq",
+  "name": "Carpideira-do-Fim",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-carpideira-do-fim.webp",
+  "folder": "jMeDH3rrsdXKvH6w",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "9",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 16,
+      "outros": 0
+    },
+    "pv": {
+      "value": 160,
+      "max": 160,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 3,
+    "deslocamento": 12,
+    "deslocamentoTexto": "12 m, voo 12 m",
+    "sentidos": "Audição +8, Visão +4",
+    "cd": 18,
+    "salvaguardas": {
+      "fort": 1,
+      "ref": 7,
+      "von": 13
+    },
+    "atributos": {
+      "FOR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 3,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 1
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 5
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Toque Gélido",
+        "bonus": 9,
+        "dados": "1d6",
+        "fixo": 44,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Toque Gélido +9 (1d6+44 frio). CD das habilidades 18.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 4,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Tesouro Metade (lágrima espectral, 1d3 doses, CD 18)",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Carpideira-do-Fim",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-carpideira-do-fim.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "WLRjXWrqqMCuSpEA",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 4 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "carpideira-do-fim",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!q6qmDhzPMDdVclmq.WLRjXWrqqMCuSpEA"
+    },
+    {
+      "_id": "fIHvPy1um8gaKqv8",
+      "name": "Lamento Devastador",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação padrão, só pode usar de novo após 1d4 rodadas)</em> cone de 9 m; 6d8 de dano psíquico, Vontade CD 18 para metade e, se falhar, Abalado até o fim do próximo turno dela.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "carpideira-do-fim",
+          "gatilho": "ação padrão, só pode usar de novo após 1d4 rodadas"
+        }
+      },
+      "_key": "!actors.items!q6qmDhzPMDdVclmq.fIHvPy1um8gaKqv8"
+    },
+    {
+      "_id": "ZFEJdDHUHrjzFPvp",
+      "name": "Aura de Luto",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p><em>(passiva, 6 m)</em> criaturas hostis sofrem −2 em testes de resistência contra medo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "carpideira-do-fim",
+          "gatilho": "passiva, 6 m"
+        }
+      },
+      "_key": "!actors.items!q6qmDhzPMDdVclmq.ZFEJdDHUHrjzFPvp"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "carpideira-do-fim",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "9"
+    }
+  },
+  "_key": "!actors!q6qmDhzPMDdVclmq"
+}

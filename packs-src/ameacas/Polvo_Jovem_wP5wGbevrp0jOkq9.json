@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Tentáculos +11 (1d8+72 impacto). CD das habilidades 22.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (tinta, 1 dose, CD 22)",

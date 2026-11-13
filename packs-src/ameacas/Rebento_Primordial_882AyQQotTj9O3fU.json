@@ -99,6 +99,7 @@
     "ataquesTexto": "Corpo a corpo: Chifrada +13 (2d6+51 perfuração), Pisão +13 (2d6+51 impacto). CD das habilidades 28.",
     "resistencias": {
       "rdGeral": 6,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade",

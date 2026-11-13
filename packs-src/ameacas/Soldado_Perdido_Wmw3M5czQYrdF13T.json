@@ -1,0 +1,220 @@
+{
+  "_id": "Wmw3M5czQYrdF13T",
+  "name": "Soldado-Perdido",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-soldado-perdido.webp",
+  "folder": "A1Dyh02yvF1ZuTHv",
+  "sort": 200,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "4",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "medio",
+    "defesa": {
+      "valor": 15,
+      "outros": 0
+    },
+    "pv": {
+      "value": 100,
+      "max": 100,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 1,
+    "deslocamento": 9,
+    "deslocamentoTexto": "9 m",
+    "sentidos": "Visão +3, Audição +3",
+    "cd": 15,
+    "salvaguardas": {
+      "fort": -2,
+      "ref": 4,
+      "von": 10
+    },
+    "atributos": {
+      "FOR": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 1,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 2
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 2
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Espada Espectral",
+        "bonus": 8,
+        "dados": "1d6",
+        "fixo": 22,
+        "tipo": "corte",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Espada Espectral +8 (1d6+22 corte). CD das habilidades 15.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 3,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Soldado-Perdido",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-soldado-perdido.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "NzfjszvcAq5Rm19o",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soldado-perdido",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Wmw3M5czQYrdF13T.NzfjszvcAq5Rm19o"
+    },
+    {
+      "_id": "5Z2zb5dHrIbDNNjs",
+      "name": "Dever Eterno",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>imune a Abalado e Apavorado.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soldado-perdido",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Wmw3M5czQYrdF13T.5Z2zb5dHrIbDNNjs"
+    },
+    {
+      "_id": "1IvsYgtmTVSnExtI",
+      "name": "Marcha Inexorável",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>ignora terreno difícil.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soldado-perdido",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!Wmw3M5czQYrdF13T.1IvsYgtmTVSnExtI"
+    },
+    {
+      "_id": "fpBVo0gVYze4WVtO",
+      "name": "Guarda Fantasma",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 400,
+      "system": {
+        "descricao": "<p><em>(reação, 1 vez por rodada)</em> +3 na Defesa contra um ataque corpo a corpo.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "soldado-perdido",
+          "gatilho": "reação, 1 vez por rodada"
+        }
+      },
+      "_key": "!actors.items!Wmw3M5czQYrdF13T.fpBVo0gVYze4WVtO"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "soldado-perdido",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "4"
+    }
+  },
+  "_key": "!actors!Wmw3M5czQYrdF13T"
+}

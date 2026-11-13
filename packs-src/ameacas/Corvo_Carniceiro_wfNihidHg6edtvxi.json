@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Bico +8 (1d4+10 perfuração). CD das habilidades 13.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Sem tesouro",

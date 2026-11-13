@@ -1,0 +1,197 @@
+{
+  "_id": "0l8I6tPzqmCd4vXJ",
+  "name": "Corvo-Espectral",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-corvo-espectral.webp",
+  "folder": "VHssGzYOfrhtgrL9",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "5",
+    "ndContaComo": null,
+    "papel": "lacaio",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "pequeno",
+    "defesa": {
+      "valor": 13,
+      "outros": 0
+    },
+    "pv": {
+      "value": 30,
+      "max": 30,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 15,
+    "deslocamentoTexto": "voo 15 m",
+    "sentidos": "Visão +6",
+    "cd": 16,
+    "salvaguardas": {
+      "fort": -1,
+      "ref": 11,
+      "von": 5
+    },
+    "atributos": {
+      "FOR": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -3,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 2,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 4
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Bicada",
+        "bonus": 9,
+        "dados": "1d4",
+        "fixo": 30,
+        "tipo": "frio",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Bicada +9 (1d4+30 frio). CD das habilidades 16.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 3,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "Soldado-Perdido",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Corvo-Espectral",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/lacaio-corvo-espectral.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "aknnhGMEdH87oM63",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 3 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "corvo-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!0l8I6tPzqmCd4vXJ.aknnhGMEdH87oM63"
+    },
+    {
+      "_id": "VAFvlAXvMSCDCR06",
+      "name": "Tática de Bando",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p>+1 no ataque por aliado da mesma espécie adjacente ao alvo (máx. +3).</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "corvo-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!0l8I6tPzqmCd4vXJ.VAFvlAXvMSCDCR06"
+    },
+    {
+      "_id": "f5zLIgJFEVQSUYsk",
+      "name": "Voo Errático",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+2 na Defesa contra ataques à distância.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "corvo-espectral",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!0l8I6tPzqmCd4vXJ.f5zLIgJFEVQSUYsk"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "corvo-espectral",
+      "tema": "espectros",
+      "papel": "lacaio",
+      "nd": "5"
+    }
+  },
+  "_key": "!actors!0l8I6tPzqmCd4vXJ"
+}

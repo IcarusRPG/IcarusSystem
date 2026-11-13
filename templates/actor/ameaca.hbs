@@ -123,7 +123,9 @@
         <label>{{localize "ICARUS.Ameaca.TipoCriatura"}} <input type="text" name="system.tipo" value="{{src.tipo}}"></label>
         <label>{{localize "ICARUS.Ameaca.Tamanho"}} <select name="system.tamanho">{{#each tamanhos}}<option value="{{valor}}" {{#if selecionado}}selected{{/if}}>{{rotulo}}</option>{{/each}}</select></label>
         <label>RD <input type="number" class="fm-curto" name="system.resistencias.rdGeral" value="{{src.resistencias.rdGeral}}" step="1"></label>
+        <label data-tooltip="{{localize "ICARUS.Ameaca.RdNaoMagicoDica"}}">{{localize "ICARUS.Ameaca.RdNaoMagico"}} <input type="number" class="fm-curto" name="system.resistencias.rdNaoMagico" value="{{src.resistencias.rdNaoMagico}}" min="0" step="1"></label>
       </div>
+      {{#if rdTexto}}<p class="fa-imunes"><b>{{localize "ICARUS.Ameaca.Reducao"}}:</b> {{rdTexto}}</p>{{/if}}
       {{#if imunidades}}<p class="fa-imunes"><b>{{localize "ICARUS.Ameaca.Imune"}}:</b> {{imunidades}}</p>{{/if}}
     </section>
 

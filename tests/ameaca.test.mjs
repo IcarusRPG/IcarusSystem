@@ -9,7 +9,7 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 // Campos do Foundry só com o "initial" (para ler os padrões do schema)
 class Campo { constructor(o = {}) { this.o = o; } padrao() { return typeof this.o.initial === "function" ? this.o.initial() : this.o.initial; } }
-class SchemaField extends Campo { constructor(f, o) { super(o); this.f = f; } padrao() { return Object.fromEntries(Object.entries(this.f).map(([k, c]) => [k, c.padrao()])); } }
+class SchemaField extends Campo { constructor(f, o) { super(o); this.f = f; this.fields = f; } padrao() { return Object.fromEntries(Object.entries(this.f).map(([k, c]) => [k, c.padrao()])); } }
 class ArrayField extends Campo { constructor(el, o = {}) { super(o); } padrao() { return this.o.initial ?? []; } }
 const chat = [];
 globalThis.foundry = {
@@ -283,4 +283,78 @@ test("Leitura do bestiário: RD (sem as condicionais), imunidades a tipos de dan
   assert.deepEqual(["+2", "–1", "+0"].map(A.inteiroDoTexto), [2, -1, 0]);
   assert.deepEqual(["1/4", "4", "5", "16", "17", "20", "S", "S+"].map(n => A.patamarDoNd(n).id), ["iniciante", "iniciante", "veterano", "campeao", "lenda", "lenda", "lenda-mais", "lenda-mais"]);
   assert.equal(A.valorDoNd("S", 20), 20);
+});
+
+/* ------------------------------ Espectros (tema 2) ------------------------------ */
+
+const ESPECTROS = JSON.parse(fs.readFileSync(path.join(RAIZ, "tools/dados/ameacas-espectros.json"), "utf8"));
+const espectro = id => ESPECTROS.ameacas.find(a => a.id === id);
+const temaEspectros = () => ({ id: "espectros", nome: "Espectros", imagens: "Espectros", ameacas: ESPECTROS.ameacas, arquivos: {} });
+
+test("Espectros: 32 atores (14 Solo, 13 Lacaio, 5 Especial), tipo Espírito, em Espectros > Papel > ND, sem colidir com a fauna", () => {
+  const r = documentosDeAmeacas([fauna(), temaEspectros()], { pericias: PERICIAS });
+  const esp = r.atores.filter(a => a.flags["icarus-rpg"].tema === "espectros");
+  assert.equal(esp.length, 32);
+  const papel = p => esp.filter(a => a.flags["icarus-rpg"].papel === p).length;
+  assert.deepEqual([papel("solo"), papel("lacaio"), papel("especial")], [14, 13, 5]);
+  assert.ok(esp.every(a => a.system.tipo === "Espírito"));
+  assert.equal(new Set(r.atores.map(a => a._id)).size, 142, "IDs únicos entre os temas");
+  assert.ok(esp.every(a => caminho(r, a.folder)[0] === "Espectros" && caminho(r, a.folder)[2] === `ND ${a.system.nd}`));
+  assert.ok(esp.every(a => a.items[0].name === "Forma Espectral"), "Forma Espectral é a primeira habilidade");
+  assert.ok(esp.every(a => a.prototypeToken.actorLink === false && a.prototypeToken.disposition === -1));
+  assert.ok(esp.every(a => /Dado/.test(a.img)), "sem imagem: dado azul, o build não quebra");
+  const lacaio = esp.find(a => a.flags["icarus-rpg"].papel === "lacaio");
+  assert.ok(lacaio.system.acompanha, "lacaios trazem 'Costuma acompanhar'");
+});
+
+test("Forma Espectral: RD só contra ataques não mágicos (rdNaoMagico), fora da RD geral; Sentinela 5 + 3; imune a veneno", () => {
+  for (const a of ESPECTROS.ameacas) {
+    const s = A.sistemaDaAmeaca(a, PERICIAS);
+    assert.equal(s.resistencias.rdGeral, 0, `${a.id}: a RD da Forma Espectral não vale contra tudo`);
+    assert.equal(s.resistencias.rdNaoMagico, a.rdNaoMagico);
+    assert.equal(s.resistencias.imunidade.veneno, true, `${a.id}: imune a veneno`);
+    assert.equal(Object.keys(s.resistencias.imunidade).length, 1, "Agarrar, Derrubar, Doente… ficam só no texto");
+  }
+  const sentinela = A.sistemaDaAmeaca(espectro("sentinela-sem-descanso"), PERICIAS);
+  assert.equal(sentinela.resistencias.rdNaoMagico, 5 + 3);
+  // A RD comum continua sendo lida (fauna)
+  assert.equal(A.rdDasHabilidades([{ texto: "Redução de Dano 10; imune a veneno." }]), 10);
+  assert.equal(A.rdDasHabilidades([{ texto: "Redução de Dano 10 contra ataques não mágicos." }]), 0);
+  // Schema da ameaça tem o campo novo (padrão 0)
+  assert.equal(AmeacaData.defineSchema().resistencias.padrao().rdNaoMagico, 0);
+  assert.ok("rdGeral" in AmeacaData.defineSchema().resistencias.padrao(), "as resistências do personagem continuam");
+});
+
+test("Aplicar dano num espectro: arma e ataque natural sofrem a RD não mágica; magia ignora; RD geral soma", async () => {
+  const { calcularAplicacao, dadosDaMensagem } = await import("../module/dano-aplicacao.mjs");
+  const resistencias = { rdGeral: 0, rdNaoMagico: 3, reducao: {}, imunidade: { veneno: true }, vulnerabilidade: {} };
+  const pv = { value: 40, max: 40 };
+  const arma = calcularAplicacao({ acao: "dano", componentes: [{ tipo: "corte", valor: 10 }], resistencias, pv });
+  assert.equal(arma.final, 7);
+  assert.match(arma.detalhe, /RD não mágica: −3/);
+  const magia = calcularAplicacao({ acao: "dano", componentes: [{ tipo: "frio", valor: 10 }], resistencias, pv, magico: true });
+  assert.equal(magia.final, 10);
+  assert.match(magia.detalhe, /dano mágico: ignora/);
+  const comGeral = calcularAplicacao({ acao: "dano", componentes: [{ tipo: "corte", valor: 10 }], resistencias: { ...resistencias, rdGeral: 2 }, pv });
+  assert.equal(comGeral.final, 10 - 2 - 3, "RD geral + RD não mágica");
+  assert.equal(calcularAplicacao({ acao: "dano", componentes: [{ tipo: "veneno", valor: 9 }], resistencias, pv }).final, 0, "imune a veneno");
+  // Quem não tem RD não mágica (personagem): nada muda
+  assert.equal(calcularAplicacao({ acao: "dano", componentes: [{ tipo: "corte", valor: 10 }], resistencias: { rdGeral: 2 }, pv }).final, 8);
+  // Mensagens: magia (flags.magia) ou flags.dano.magico são mágicas; o resto não
+  assert.equal(dadosDaMensagem({ dano: { total: 5, componentes: [] }, magia: { id: "raio" } }).magico, true);
+  assert.equal(dadosDaMensagem({ dano: { total: 5, componentes: [], magico: true } }).magico, true);
+  assert.equal(dadosDaMensagem({ dano: { total: 5, componentes: [] } }).magico, false);
+});
+
+test("Ataques de espectros: frio e psíquico lidos como tipos de dano e rolados com as partes certas", async () => {
+  assert.equal(A.lerTipoDoAtaque("frio").tipo, "frio");
+  assert.equal(A.lerTipoDoAtaque("psíquico").tipo, "psiquico");
+  const comFrio = ESPECTROS.ameacas.find(a => a.ataques.some(x => x.tipo === "frio"));
+  const s = preparar(A.sistemaDaAmeaca(comFrio, PERICIAS));
+  const actor = { id: "e", uuid: "Actor.e", name: comFrio.nome, img: "e.webp", system: s, flags: {}, items: [] };
+  const i = comFrio.ataques.findIndex(x => x.tipo === "frio");
+  await rolarDanoNatural(actor, i);
+  const dano = chat.at(-1).flags["icarus-rpg"].dano;
+  assert.deepEqual(dano.componentes.map(c => c.tipo), ["frio"]);
+  assert.equal(dano.magico, false, "ataque natural não é mágico");
 });

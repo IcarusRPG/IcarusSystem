@@ -95,6 +95,7 @@
     "ataquesTexto": "Corpo a corpo: Língua (alcance 4,5 m) +5 (1d6+10 impacto). CD das habilidades 16.",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (glândula de muco, 1d3 doses, CD 16)",

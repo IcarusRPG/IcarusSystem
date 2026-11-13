@@ -91,6 +91,7 @@
     "ataquesTexto": "Corpo a corpo: Mordida +6 (1d6+6 perfuração).",
     "resistencias": {
       "rdGeral": 0,
+      "rdNaoMagico": 0,
       "imunidade": {}
     },
     "tesouro": "Tesouro Metade (couro).",

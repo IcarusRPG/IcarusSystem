@@ -1,0 +1,209 @@
+{
+  "_id": "CRPmDAT2ZbxIwOFh",
+  "name": "Poltergeist-de-Casarão",
+  "type": "ameaca",
+  "img": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-poltergeist-de-casarao.webp",
+  "folder": "lHFtaOKi10orKjDo",
+  "sort": 100,
+  "system": {
+    "nivel": 1,
+    "classeConfig": {
+      "manual": true
+    },
+    "nd": "2",
+    "ndContaComo": null,
+    "papel": "solo",
+    "tipo": "Espírito",
+    "subtitulo": "",
+    "tamanho": "pequeno",
+    "defesa": {
+      "valor": 14,
+      "outros": 0
+    },
+    "pv": {
+      "value": 75,
+      "max": 75,
+      "temp": 0
+    },
+    "pm": {
+      "value": 0,
+      "max": 0,
+      "temp": 0
+    },
+    "iniciativa": 4,
+    "deslocamento": 9,
+    "deslocamentoTexto": "voo 9 m",
+    "sentidos": "Visão +3, Audição +3",
+    "cd": 14,
+    "salvaguardas": {
+      "fort": -3,
+      "ref": 9,
+      "von": 3
+    },
+    "atributos": {
+      "FOR": {
+        "base": -4,
+        "racial": 0,
+        "temp": 0
+      },
+      "DES": {
+        "base": 4,
+        "racial": 0,
+        "temp": 0
+      },
+      "CON": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "INT": {
+        "base": -1,
+        "racial": 0,
+        "temp": 0
+      },
+      "SAB": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      },
+      "CAR": {
+        "base": 0,
+        "racial": 0,
+        "temp": 0
+      }
+    },
+    "pericias": {
+      "visao": {
+        "treino": 0,
+        "outros": 3
+      },
+      "audicao": {
+        "treino": 0,
+        "outros": 3
+      }
+    },
+    "ataques": [
+      {
+        "nome": "Pancada Espectral",
+        "bonus": 7,
+        "dados": "1d4",
+        "fixo": 6,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      },
+      {
+        "nome": "Objeto Arremessado (alcance curto)",
+        "bonus": 7,
+        "dados": "1d4",
+        "fixo": 6,
+        "tipo": "impacto",
+        "alcance": "corpo-a-corpo"
+      }
+    ],
+    "ataquesTexto": "Corpo a corpo: Pancada Espectral +7 (1d4+6 impacto), Objeto Arremessado (alcance curto) +7 (1d4+6 impacto). CD das habilidades 14.",
+    "resistencias": {
+      "rdGeral": 0,
+      "rdNaoMagico": 2,
+      "imunidade": {
+        "veneno": true
+      }
+    },
+    "tesouro": "Sem tesouro",
+    "acompanha": "",
+    "nota": "",
+    "descricao": "",
+    "notas": ""
+  },
+  "prototypeToken": {
+    "name": "Poltergeist-de-Casarão",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 30,
+    "displayBars": 40,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/icarus-rpg/img/Ameacas/Espectros/ameaca-poltergeist-de-casarao.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": "pv"
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "items": [
+    {
+      "_id": "McFWbiIYKA8zfCkd",
+      "name": "Forma Espectral",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 100,
+      "system": {
+        "descricao": "<p>incorpóreo, atravessa paredes e objetos sólidos (não pode terminar o turno dentro deles); Redução de Dano 2 contra ataques não mágicos; imune a Agarrar, Derrubar, Imobilizar, Enredado, veneno e Doente.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "poltergeist-de-casarao",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!CRPmDAT2ZbxIwOFh.McFWbiIYKA8zfCkd"
+    },
+    {
+      "_id": "biPSbExyf00gFFr0",
+      "name": "Bagunça",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 200,
+      "system": {
+        "descricao": "<p><em>(ação de movimento, 1 vez por cena)</em> derruba e espalha objetos soltos em um quadrado de 3 m; o espaço vira terreno difícil até o fim da cena.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "poltergeist-de-casarao",
+          "gatilho": "ação de movimento, 1 vez por cena"
+        }
+      },
+      "_key": "!actors.items!CRPmDAT2ZbxIwOFh.biPSbExyf00gFFr0"
+    },
+    {
+      "_id": "kKxdK1XOMJ6dhjQ5",
+      "name": "Voo Errático",
+      "type": "poder",
+      "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+      "folder": null,
+      "sort": 300,
+      "system": {
+        "descricao": "<p>+2 na Defesa contra ataques à distância.</p>"
+      },
+      "effects": [],
+      "flags": {
+        "icarus-rpg": {
+          "ameaca": "poltergeist-de-casarao",
+          "gatilho": null
+        }
+      },
+      "_key": "!actors.items!CRPmDAT2ZbxIwOFh.kKxdK1XOMJ6dhjQ5"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "icarus-rpg": {
+      "id": "poltergeist-de-casarao",
+      "tema": "espectros",
+      "papel": "solo",
+      "nd": "2"
+    }
+  },
+  "_key": "!actors!CRPmDAT2ZbxIwOFh"
+}

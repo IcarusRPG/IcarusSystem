@@ -1,0 +1,15 @@
+{
+  "_id": "3ITKIoA5IoXaHPMg",
+  "name": "ND 20",
+  "type": "Actor",
+  "folder": "yyhm4LDUbKGBo3aP",
+  "sorting": "m",
+  "sort": 1100,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:espectros:lacaio:20"
+    }
+  },
+  "_key": "!folders!3ITKIoA5IoXaHPMg"
+}

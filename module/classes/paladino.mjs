@@ -141,7 +141,7 @@ GANCHOS_DE_PODER.set("paladino__retribuicao", {
   antes: actor => {
     if (!actor.getFlag(F, "marca")) { ui.notifications.warn(loc("ICARUS.Paladino.SemMarca")); return false; }
   },
-  depois: actor => rolarDanoAvulso({ partes: [{ formula: `1d8 + ${carisma(actor)}`, tipo: "essencia" }], titulo: fmt("ICARUS.Paladino.RetribuicaoTitulo", { alvo: actor.getFlag(F, "marca").nome }), img: actor.img, actor })
+  depois: actor => rolarDanoAvulso({ partes: [{ formula: `1d8 + ${carisma(actor)}`, tipo: "essencia" }], titulo: fmt("ICARUS.Paladino.RetribuicaoTitulo", { alvo: actor.getFlag(F, "marca").nome }), img: actor.img, actor, magico: true })
 });
 
 /* ---------------- Punição Consagrada, Carga Fulgurante e Veredito (card de ataque) ---------------- */
@@ -168,19 +168,19 @@ async function punicao(actor, mensagem) {
   if (!r || typeof r !== "object") return false;
   const plano = planoDaPunicao(r.pm, actor.system.nivel, { sentenciada: sent, horaFinal: hora, mortoVivo: r.mortoVivo, lamina: tem(actor, "lamina-de-essencia"), golpeFinal });
   if (!(await gastarPM(actor, plano.pm))) return false;
-  await rolarDanoAvulso({ partes: plano.partes, titulo: `${loc("ICARUS.Paladino.Punicao")} (${loc("ICARUS.Paladino.DanoExtra")})`, img: actor.img, actor });
+  await rolarDanoAvulso({ partes: plano.partes, titulo: `${loc("ICARUS.Paladino.Punicao")} (${loc("ICARUS.Paladino.DanoExtra")})`, img: actor.img, actor, magico: true });
   return true;
 }
 
 async function cargaFulgurante(actor) {
   if (!(await gastarPM(actor, 2))) return false;
-  await rolarDanoAvulso({ partes: [{ formula: "2d6", tipo: "essencia" }], titulo: `${loc("ICARUS.Paladino.Carga")} (${loc("ICARUS.Paladino.DanoExtra")})`, img: actor.img, actor });
+  await rolarDanoAvulso({ partes: [{ formula: "2d6", tipo: "essencia" }], titulo: `${loc("ICARUS.Paladino.Carga")} (${loc("ICARUS.Paladino.DanoExtra")})`, img: actor.img, actor, magico: true });
   return true;
 }
 
 async function veredito(actor) {
   await actor.unsetFlag(F, "vereditoPendente");
-  await rolarDanoAvulso({ partes: [{ formula: "5d6", tipo: "essencia" }], titulo: `${loc("ICARUS.Paladino.Veredito")} (${loc("ICARUS.Paladino.DanoExtra")})`, img: actor.img, actor });
+  await rolarDanoAvulso({ partes: [{ formula: "5d6", tipo: "essencia" }], titulo: `${loc("ICARUS.Paladino.Veredito")} (${loc("ICARUS.Paladino.DanoExtra")})`, img: actor.img, actor, magico: true });
   return true;
 }
 
