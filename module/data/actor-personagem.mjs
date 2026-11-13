@@ -60,6 +60,19 @@ const inteiro = (initial = 0, opcoes = {}) =>
 const texto = () => new fields.StringField({ required: true, blank: true, initial: "" });
 
 /**
+ * Campos de system.resistencias, sempre novos a cada chamada: o Foundry não deixa um campo que já
+ * está num SchemaField entrar em outro (a ameaça monta o dela com estes campos + rdNaoMagico).
+ */
+export function camposDeResistencia() {
+  return {
+    rdGeral: inteiro(0),
+    reducao: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, inteiro(0)]))),
+    imunidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })]))),
+    vulnerabilidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })])))
+  };
+}
+
+/**
  * Dados do Actor "personagem".
  * Tudo o que é derivado (totais, máximos, Defesa) é calculado em module/derivar.mjs e nunca é salvo.
  */
@@ -124,12 +137,7 @@ export class PersonagemData extends foundry.abstract.TypeDataModel {
       }),
       // Resistências (por tipo de dano): Redução de [tipo] X, Imunidade, Vulnerabilidade e RD geral.
       // Efeitos Ativos podem somar (reducao, rdGeral) ou forçar true (imunidade, vulnerabilidade).
-      resistencias: new fields.SchemaField({
-        rdGeral: inteiro(0),
-        reducao: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, inteiro(0)]))),
-        imunidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })]))),
-        vulnerabilidade: new fields.SchemaField(Object.fromEntries(TIPOS_DANO_COM_RESISTENCIA.map(k => [k, new fields.BooleanField({ initial: false })])))
-      }),
+      resistencias: new fields.SchemaField(camposDeResistencia()),
       // Testes de morte (Morrendo): sucessos, falhas e se ficou estável
       morte: new fields.SchemaField({
         sucessos: inteiro(0, { min: 0, max: 3 }), falhas: inteiro(0, { min: 0, max: 3 }), estavel: new fields.BooleanField({ initial: false })

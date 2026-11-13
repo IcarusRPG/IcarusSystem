@@ -1,5 +1,13 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.40.1
+
+### Correção: o mundo não carregava na 0.40.0
+- O Foundry parava na tela de carregamento com o erro `The "rdGeral" field already belongs to some other parent and may not be reused`.
+- Causa: o modelo da ameaça reaproveitava os campos de resistência do personagem para acrescentar a "RD não mágica", e o Foundry não deixa o mesmo campo pertencer a dois schemas.
+- Agora os campos de resistência são criados de novo para cada modelo (`camposDeResistencia()` em `module/data/actor-personagem.mjs`). Nada muda nos dados salvos.
+- Os testes passaram a imitar essa regra do Foundry, para pegar o mesmo erro antes do lançamento.
+
 ## 0.40.0
 
 ### Espectros: 32 ameaças do tipo Espírito, com RD só contra ataques não mágicos

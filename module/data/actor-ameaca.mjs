@@ -1,4 +1,4 @@
-import { PersonagemData } from "./actor-personagem.mjs";
+import { PersonagemData, camposDeResistencia } from "./actor-personagem.mjs";
 import { PAPEIS, TAMANHOS_AMEACA, ajustesDaAmeaca } from "../ameaca-dados.mjs";
 import { bonusTreino } from "../regras.mjs";
 
@@ -43,8 +43,9 @@ export class AmeacaData extends PersonagemData {
       acompanha: texto(),
       nota: texto(),
       descricao: new fields.HTMLField({ required: true, blank: true, initial: "" }),
-      // Resistências do personagem + RD só contra ataques não mágicos (Forma Espectral)
-      resistencias: new fields.SchemaField({ ...base.resistencias.fields, rdNaoMagico: inteiro(0, { min: 0 }) })
+      // Resistências do personagem + RD só contra ataques não mágicos (Forma Espectral).
+      // Campos novos: o Foundry não deixa reaproveitar os de base.resistencias (já têm pai)
+      resistencias: new fields.SchemaField({ ...camposDeResistencia(), rdNaoMagico: inteiro(0, { min: 0 }) })
     };
   }
 
