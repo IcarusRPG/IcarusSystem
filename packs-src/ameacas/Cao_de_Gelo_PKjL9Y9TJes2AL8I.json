@@ -3,8 +3,8 @@
   "name": "Cão-de-Gelo",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cao-de-gelo.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 7400,
+  "folder": "XgFwQZrrrm2u7rIp",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "cao-de-gelo",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "12"
     }

@@ -3,8 +3,8 @@
   "name": "Caimão-Cinzento",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-caimao-cinzento.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 1100,
+  "folder": "nngonvrcHEpMLqAv",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "caimao-cinzento",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "2"
     }

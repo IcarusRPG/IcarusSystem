@@ -3,8 +3,8 @@
   "name": "Lince-das-Rochas",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-lince-das-rochas.webp",
-  "folder": "M9dqY9deZhpGrGr4",
-  "sort": 4900,
+  "folder": "Gmb9Hc6WNheUSe3t",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -170,6 +170,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "lince-das-rochas",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "7"
     }

@@ -3,8 +3,8 @@
   "name": "Urso-de-Gelo",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-urso-de-gelo.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 9200,
+  "folder": "VLKNCDaAtAarICTC",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -161,6 +161,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "urso-de-gelo",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "16"
     }

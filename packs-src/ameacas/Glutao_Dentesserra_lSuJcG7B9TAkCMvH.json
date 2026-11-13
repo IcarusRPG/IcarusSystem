@@ -3,8 +3,8 @@
   "name": "Glutão-Dentesserra",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-glutao-dentesserra.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 1300,
+  "folder": "nngonvrcHEpMLqAv",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -150,6 +150,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "glutao-dentesserra",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "2"
     }

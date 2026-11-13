@@ -3,8 +3,8 @@
   "name": "Serpente-do-Horizonte",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-do-horizonte.webp",
-  "folder": "CITIZK79ZW3GkWa7",
-  "sort": 11000,
+  "folder": "hIUfMerd8I1MnVZ9",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -280,6 +280,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "serpente-do-horizonte",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "S+"
     }

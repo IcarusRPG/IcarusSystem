@@ -3,8 +3,8 @@
   "name": "Escorpião-Cauda-de-Ferro",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-escorpiao-cauda-de-ferro.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 3100,
+  "folder": "4sttvh2cgUu9b3uB",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "escorpiao-cauda-de-ferro",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "5"
     }

@@ -3,8 +3,8 @@
   "name": "Ceifa-Verde",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-ceifa-verde.webp",
-  "folder": "86HgGQKeik1E8p7Y",
-  "sort": 6900,
+  "folder": "JiJYfQMO0mCu9B23",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -216,6 +216,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "ceifa-verde",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "11"
     }

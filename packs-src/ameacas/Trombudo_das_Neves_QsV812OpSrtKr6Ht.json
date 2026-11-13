@@ -3,8 +3,8 @@
   "name": "Trombudo-das-Neves",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-trombudo-das-neves.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 5400,
+  "folder": "y6PQafh3yyT5FtNZ",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "trombudo-das-neves",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "8"
     }

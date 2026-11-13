@@ -3,8 +3,8 @@
   "name": "Tecedeira-de-Teias",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-tecedeira-de-teias.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 2100,
+  "folder": "uPAX2UbqN3yYTlfE",
+  "sort": 400,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "tecedeira-de-teias",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "3"
     }

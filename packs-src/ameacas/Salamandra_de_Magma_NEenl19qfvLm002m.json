@@ -3,8 +3,8 @@
   "name": "Salamandra-de-Magma",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-salamandra-de-magma.webp",
-  "folder": "bFd00kE2nKrf5JVC",
-  "sort": 10500,
+  "folder": "lFTLWRFJC7IkOJ6j",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -214,6 +214,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "salamandra-de-magma",
+      "tema": "fauna",
       "papel": "especial",
       "nd": "20"
     }

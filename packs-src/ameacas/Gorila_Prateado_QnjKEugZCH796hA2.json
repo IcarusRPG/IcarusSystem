@@ -3,8 +3,8 @@
   "name": "Gorila-Prateado",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-gorila-prateado.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 8200,
+  "folder": "yF2GemD1juh9Zi7a",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "gorila-prateado",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "14"
     }

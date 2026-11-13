@@ -3,8 +3,8 @@
   "name": "Lobo-Ancestral",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-lobo-ancestral.webp",
-  "folder": "bLePnTPLM7hT7ZCg",
-  "sort": 9500,
+  "folder": "Q1L55RaR4ZNvq6K8",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -220,6 +220,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "lobo-ancestral",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "17"
     }

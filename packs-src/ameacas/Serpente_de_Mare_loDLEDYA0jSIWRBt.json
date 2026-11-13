@@ -3,8 +3,8 @@
   "name": "Serpente-de-Maré",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-de-mare.webp",
-  "folder": "86HgGQKeik1E8p7Y",
-  "sort": 8400,
+  "folder": "OVhE2cqCN7ErOYzC",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "serpente-de-mare",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "14"
     }

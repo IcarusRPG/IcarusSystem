@@ -3,8 +3,8 @@
   "name": "Hiena-de-Campina",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-hiena-de-campina.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 1400,
+  "folder": "BFLhTshvOky79uXM",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "hiena-de-campina",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "2"
     }

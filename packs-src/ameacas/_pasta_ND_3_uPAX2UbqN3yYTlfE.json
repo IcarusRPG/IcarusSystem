@@ -1,0 +1,15 @@
+{
+  "_id": "uPAX2UbqN3yYTlfE",
+  "name": "ND 3",
+  "type": "Actor",
+  "folder": "mAgPr0t4Dtd1lhiS",
+  "sorting": "m",
+  "sort": 500,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:solo:3"
+    }
+  },
+  "_key": "!folders!uPAX2UbqN3yYTlfE"
+}

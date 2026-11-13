@@ -3,8 +3,8 @@
   "name": "Alce-Trovão",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-alce-trovao.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 3000,
+  "folder": "4sttvh2cgUu9b3uB",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "alce-trovao",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "5"
     }

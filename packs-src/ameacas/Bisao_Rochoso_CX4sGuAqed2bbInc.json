@@ -3,8 +3,8 @@
   "name": "Bisão-Rochoso",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-bisao-rochoso.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 1600,
+  "folder": "uPAX2UbqN3yYTlfE",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -155,6 +155,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "bisao-rochoso",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "3"
     }

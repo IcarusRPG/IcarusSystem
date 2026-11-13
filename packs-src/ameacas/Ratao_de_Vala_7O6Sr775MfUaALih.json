@@ -3,8 +3,8 @@
   "name": "Ratão-de-Vala",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-ratao-de-vala.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 200,
+  "folder": "4z8yAIRGE8FK3lJh",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -147,6 +147,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "ratao-de-vala",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "1/4"
     }

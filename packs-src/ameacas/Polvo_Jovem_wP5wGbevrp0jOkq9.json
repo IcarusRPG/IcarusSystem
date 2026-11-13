@@ -3,8 +3,8 @@
   "name": "Polvo-Jovem",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-polvo-jovem.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 8300,
+  "folder": "yF2GemD1juh9Zi7a",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "polvo-jovem",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "14"
     }

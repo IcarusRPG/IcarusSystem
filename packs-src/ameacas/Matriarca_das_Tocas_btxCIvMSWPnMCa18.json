@@ -3,8 +3,8 @@
   "name": "Matriarca-das-Tocas",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-matriarca-das-tocas.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 6400,
+  "folder": "WGVFLDLp0ZgVkrli",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -204,6 +204,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "matriarca-das-tocas",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "10"
     }

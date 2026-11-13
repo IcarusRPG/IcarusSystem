@@ -3,8 +3,8 @@
   "name": "Condor-Ancestral",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-condor-ancestral.webp",
-  "folder": "bLePnTPLM7hT7ZCg",
-  "sort": 9700,
+  "folder": "LUQ6FGtr3SimKczy",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "condor-ancestral",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "18"
     }

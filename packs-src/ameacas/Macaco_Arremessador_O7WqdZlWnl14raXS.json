@@ -3,8 +3,8 @@
   "name": "Macaco-Arremessador",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-macaco-arremessador.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 2600,
+  "folder": "l0g2WoO4vfEQv84S",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -174,6 +174,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "macaco-arremessador",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "4"
     }

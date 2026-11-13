@@ -3,8 +3,8 @@
   "name": "Auroque-Primordial",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-auroque-primordial.webp",
-  "folder": "CITIZK79ZW3GkWa7",
-  "sort": 10600,
+  "folder": "VXsm5BObnjq5TAtu",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -235,6 +235,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "auroque-primordial",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "S"
     }

@@ -3,8 +3,8 @@
   "name": "Raia-de-Ferrão",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-raia-de-ferrao.webp",
-  "folder": "M9dqY9deZhpGrGr4",
-  "sort": 5300,
+  "folder": "MlAU9FQMUnH78wq3",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -161,6 +161,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "raia-de-ferrao",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "8"
     }

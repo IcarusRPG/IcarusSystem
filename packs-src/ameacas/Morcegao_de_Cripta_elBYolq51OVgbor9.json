@@ -3,8 +3,8 @@
   "name": "Morcegão-de-Cripta",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-morcegao-de-cripta.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 3600,
+  "folder": "4sttvh2cgUu9b3uB",
+  "sort": 400,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -178,6 +178,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "morcegao-de-cripta",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "5"
     }

@@ -3,8 +3,8 @@
   "name": "Morcego-Ancestral",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-morcego-ancestral.webp",
-  "folder": "bFd00kE2nKrf5JVC",
-  "sort": 9900,
+  "folder": "shtwbrqzJ24qqzT0",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "morcego-ancestral",
+      "tema": "fauna",
       "papel": "especial",
       "nd": "18"
     }

@@ -3,8 +3,8 @@
   "name": "Vespão-Colossal",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-vespao-colossal.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 4200,
+  "folder": "YGXVJlX4xptgZ4Hh",
+  "sort": 400,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -178,6 +178,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "vespao-colossal",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "6"
     }

@@ -3,8 +3,8 @@
   "name": "Chacal-Rubro",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-chacal-rubro.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 400,
+  "folder": "LJrwQSqKRFIKs7bZ",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -147,6 +147,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "chacal-rubro",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "1/2"
     }

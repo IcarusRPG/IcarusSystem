@@ -3,8 +3,8 @@
   "name": "Abutre-Colosso",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-abutre-colosso.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 4300,
+  "folder": "KEjG6RfnAlgpjgEi",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "abutre-colosso",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "7"
     }

@@ -3,8 +3,8 @@
   "name": "Uivador-da-Tundra",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-uivador-da-tundra.webp",
-  "folder": "86HgGQKeik1E8p7Y",
-  "sort": 7700,
+  "folder": "a32SiBiIybPdOsKI",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "uivador-da-tundra",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "12"
     }

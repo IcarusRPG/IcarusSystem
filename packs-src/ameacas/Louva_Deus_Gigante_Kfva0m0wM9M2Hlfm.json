@@ -3,8 +3,8 @@
   "name": "Louva-Deus-Gigante",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-louva-deus-gigante.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 8800,
+  "folder": "QM8Xzx0sKh7z9HbX",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "louva-deus-gigante",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "15"
     }

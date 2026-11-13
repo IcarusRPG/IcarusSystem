@@ -1,0 +1,15 @@
+{
+  "_id": "4f5L25TW1g8K6Yf2",
+  "name": "Lacaio",
+  "type": "Actor",
+  "folder": "LBbKKh6DhhhqWZmj",
+  "sorting": "m",
+  "sort": 20000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:lacaio"
+    }
+  },
+  "_key": "!folders!4f5L25TW1g8K6Yf2"
+}

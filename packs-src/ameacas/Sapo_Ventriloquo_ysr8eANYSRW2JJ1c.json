@@ -3,8 +3,8 @@
   "name": "Sapo-Ventríloquo",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-sapo-ventriloquo.webp",
-  "folder": "2Ks9yvzWKPfAyFJ4",
-  "sort": 1500,
+  "folder": "iMBMEACYFUA0lmT5",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -189,6 +189,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "sapo-ventriloquo",
+      "tema": "fauna",
       "papel": "especial",
       "nd": "2"
     }

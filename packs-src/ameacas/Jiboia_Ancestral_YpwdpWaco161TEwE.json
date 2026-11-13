@@ -3,8 +3,8 @@
   "name": "Jibóia-Ancestral",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-jiboia-ancestral.webp",
-  "folder": "bLePnTPLM7hT7ZCg",
-  "sort": 9800,
+  "folder": "LUQ6FGtr3SimKczy",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "jiboia-ancestral",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "18"
     }

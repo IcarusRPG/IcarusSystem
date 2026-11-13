@@ -3,8 +3,8 @@
   "name": "Condor-Rei",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-condor-rei.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 2400,
+  "folder": "Twai9eVISPYT3xC2",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -174,6 +174,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "condor-rei",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "4"
     }

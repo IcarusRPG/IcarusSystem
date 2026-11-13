@@ -3,8 +3,8 @@
   "name": "Caranguejo-de-Pinças",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-caranguejo-de-pincas.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 2300,
+  "folder": "l0g2WoO4vfEQv84S",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "caranguejo-de-pincas",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "4"
     }

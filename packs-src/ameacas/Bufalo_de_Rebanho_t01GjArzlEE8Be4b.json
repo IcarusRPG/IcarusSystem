@@ -3,8 +3,8 @@
   "name": "Búfalo-de-Rebanho",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-bufalo-de-rebanho.webp",
-  "folder": "M9dqY9deZhpGrGr4",
-  "sort": 3800,
+  "folder": "nhC8bsLFJxDBf7t5",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "bufalo-de-rebanho",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "6"
     }

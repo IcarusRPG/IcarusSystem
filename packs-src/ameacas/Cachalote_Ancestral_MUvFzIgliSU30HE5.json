@@ -3,8 +3,8 @@
   "name": "Cachalote-Ancestral",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cachalote-ancestral.webp",
-  "folder": "bLePnTPLM7hT7ZCg",
-  "sort": 9400,
+  "folder": "Q1L55RaR4ZNvq6K8",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -231,6 +231,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "cachalote-ancestral",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "17"
     }

@@ -3,8 +3,8 @@
   "name": "Cavalo-d'Água",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cavalo-d-agua.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 3900,
+  "folder": "YGXVJlX4xptgZ4Hh",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -197,6 +197,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "cavalo-d-agua",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "6"
     }

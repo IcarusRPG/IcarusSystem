@@ -1,0 +1,15 @@
+{
+  "_id": "LBbKKh6DhhhqWZmj",
+  "name": "Fauna",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna"
+    }
+  },
+  "_key": "!folders!LBbKKh6DhhhqWZmj"
+}

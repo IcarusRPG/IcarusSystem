@@ -1,0 +1,15 @@
+{
+  "_id": "mAgPr0t4Dtd1lhiS",
+  "name": "Solo",
+  "type": "Actor",
+  "folder": "LBbKKh6DhhhqWZmj",
+  "sorting": "m",
+  "sort": 30000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:solo"
+    }
+  },
+  "_key": "!folders!mAgPr0t4Dtd1lhiS"
+}

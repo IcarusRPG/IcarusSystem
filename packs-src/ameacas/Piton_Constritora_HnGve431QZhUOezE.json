@@ -3,8 +3,8 @@
   "name": "Píton-Constritora",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-piton-constritora.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 2800,
+  "folder": "Twai9eVISPYT3xC2",
+  "sort": 400,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "piton-constritora",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "4"
     }

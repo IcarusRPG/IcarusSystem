@@ -3,8 +3,8 @@
   "name": "Javali-Machado",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-javali-machado.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 700,
+  "folder": "sX2XU3ZBqUMi77OJ",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -147,6 +147,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "javali-machado",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "1"
     }

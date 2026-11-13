@@ -3,8 +3,8 @@
   "name": "Corvo-Carniceiro",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-corvo-carniceiro.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 500,
+  "folder": "LvuboGD8C8CZznuH",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "corvo-carniceiro",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "1"
     }

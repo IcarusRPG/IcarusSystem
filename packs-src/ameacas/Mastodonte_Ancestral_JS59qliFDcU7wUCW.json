@@ -3,8 +3,8 @@
   "name": "Mastodonte-Ancestral",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-mastodonte-ancestral.webp",
-  "folder": "bLePnTPLM7hT7ZCg",
-  "sort": 10200,
+  "folder": "l89pnMuiGWipHlIJ",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -231,6 +231,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "mastodonte-ancestral",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "19"
     }

@@ -3,8 +3,8 @@
   "name": "Nuvem-Devoradora",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-nuvem-devoradora.webp",
-  "folder": "Tc78RyDZfJm58ExZ",
-  "sort": 7800,
+  "folder": "T9klwjLDubR58wOA",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "nuvem-devoradora",
+      "tema": "fauna",
       "papel": "especial",
       "nd": "13"
     }

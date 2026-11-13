@@ -3,8 +3,8 @@
   "name": "Garra-Torta",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-garra-torta.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 1200,
+  "folder": "nngonvrcHEpMLqAv",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -155,6 +155,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "garra-torta",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "2"
     }

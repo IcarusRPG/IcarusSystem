@@ -3,8 +3,8 @@
   "name": "Mamute-Guerreiro",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-mamute-guerreiro.webp",
-  "folder": "D9kDZtT1hp97MgCV",
-  "sort": 10100,
+  "folder": "HjNtykFPXhV0cHan",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "mamute-guerreiro",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "19"
     }

@@ -3,8 +3,8 @@
   "name": "Vespa-Soldado",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-vespa-soldado.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 2200,
+  "folder": "HYfDxI3AjQk4Rw48",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "vespa-soldado",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "3"
     }

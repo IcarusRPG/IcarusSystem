@@ -3,8 +3,8 @@
   "name": "Tigre-Branco-Jovem",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-tigre-branco-jovem.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 8000,
+  "folder": "MUx3D4kS8NzuN6gP",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -174,6 +174,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "tigre-branco-jovem",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "13"
     }

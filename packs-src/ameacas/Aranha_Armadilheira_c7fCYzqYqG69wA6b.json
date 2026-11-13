@@ -3,8 +3,8 @@
   "name": "Aranha-Armadilheira",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-aranha-armadilheira.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 6700,
+  "folder": "uS9DQU2YWhpdjAdp",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -161,6 +161,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "aranha-armadilheira",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "11"
     }

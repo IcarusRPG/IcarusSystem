@@ -3,8 +3,8 @@
   "name": "Lagarto-d'Água",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-lagarto-d-agua.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 1800,
+  "folder": "HYfDxI3AjQk4Rw48",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "lagarto-d-agua",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "3"
     }

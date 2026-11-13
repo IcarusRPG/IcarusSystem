@@ -3,8 +3,8 @@
   "name": "Naja-Gigante",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-naja-gigante.webp",
-  "folder": "D9kDZtT1hp97MgCV",
-  "sort": 10000,
+  "folder": "Lj9U5jKbYu1lokdA",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "naja-gigante",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "18"
     }

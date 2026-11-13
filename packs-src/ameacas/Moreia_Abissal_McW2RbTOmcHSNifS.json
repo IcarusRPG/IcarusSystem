@@ -3,8 +3,8 @@
   "name": "Moreia-Abissal",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-moreia-abissal.webp",
-  "folder": "86HgGQKeik1E8p7Y",
-  "sort": 7200,
+  "folder": "JiJYfQMO0mCu9B23",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "moreia-abissal",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "11"
     }

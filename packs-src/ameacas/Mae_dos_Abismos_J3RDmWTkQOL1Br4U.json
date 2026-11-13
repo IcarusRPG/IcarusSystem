@@ -3,8 +3,8 @@
   "name": "Mãe-dos-Abismos",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-mae-dos-abismos.webp",
-  "folder": "CITIZK79ZW3GkWa7",
-  "sort": 10700,
+  "folder": "VXsm5BObnjq5TAtu",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -277,6 +277,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "mae-dos-abismos",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "S"
     }

@@ -3,8 +3,8 @@
   "name": "Coruja-de-Garras",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-coruja-de-garras.webp",
-  "folder": "b6uc07GYz6jbDH0Y",
-  "sort": 8500,
+  "folder": "QM8Xzx0sKh7z9HbX",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -170,6 +170,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "coruja-de-garras",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "15"
     }

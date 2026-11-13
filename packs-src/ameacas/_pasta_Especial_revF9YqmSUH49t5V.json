@@ -1,0 +1,15 @@
+{
+  "_id": "revF9YqmSUH49t5V",
+  "name": "Especial",
+  "type": "Actor",
+  "folder": "LBbKKh6DhhhqWZmj",
+  "sorting": "m",
+  "sort": 10000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:especial"
+    }
+  },
+  "_key": "!folders!revF9YqmSUH49t5V"
+}

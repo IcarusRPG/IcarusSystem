@@ -3,8 +3,8 @@
   "name": "Escorpião-de-Areia",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-escorpiao-de-areia.webp",
-  "folder": "M9dqY9deZhpGrGr4",
-  "sort": 3200,
+  "folder": "5xMyzNfzLaRHDvX3",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -161,6 +161,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "escorpiao-de-areia",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "5"
     }

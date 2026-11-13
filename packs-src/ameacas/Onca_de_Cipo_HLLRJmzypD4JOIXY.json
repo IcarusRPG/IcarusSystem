@@ -3,8 +3,8 @@
   "name": "Onça-de-Cipó",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-onca-de-cipo.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 2700,
+  "folder": "Twai9eVISPYT3xC2",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -174,6 +174,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "onca-de-cipo",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "4"
     }

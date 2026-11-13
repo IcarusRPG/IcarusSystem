@@ -3,8 +3,8 @@
   "name": "Tentáculo-de-Kraken",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/especial-tentaculo-de-kraken.webp",
-  "folder": "2Ks9yvzWKPfAyFJ4",
-  "sort": 2900,
+  "folder": "kpkc9VmQqR5dt8zq",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -180,6 +180,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "tentaculo-de-kraken",
+      "tema": "fauna",
       "papel": "especial",
       "nd": "4"
     }

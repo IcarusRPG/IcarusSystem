@@ -3,8 +3,8 @@
   "name": "Serpente-de-Bruma",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-serpente-de-bruma.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 800,
+  "folder": "sX2XU3ZBqUMi77OJ",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "serpente-de-bruma",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "1"
     }

@@ -3,8 +3,8 @@
   "name": "Enguia-Tonitruante",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-enguia-tonitruante.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 1700,
+  "folder": "uPAX2UbqN3yYTlfE",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "enguia-tonitruante",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "3"
     }

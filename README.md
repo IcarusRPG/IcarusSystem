@@ -311,15 +311,17 @@ Ator do tipo **Mercador**: um personagem do Mestre que vende itens.
 
 Ator do tipo **Ameaça**: criatura do Mestre, com os números prontos do bestiário.
 
-- **Criar:** arraste do compêndio **Icarus: Ameaças — Fauna** (110 criaturas em pastas por papel e patamar, em ordem de ND), ou "Criar ator" → **Ameaça** para uma nova. O token vem não vinculado, hostil e do tamanho da criatura.
+- **Criar:** arraste do compêndio **Icarus: Ameaças**, ou "Criar ator" → **Ameaça** para uma nova. O token vem não vinculado, hostil e do tamanho da criatura.
+- **Compêndio:** um só, com as pastas **Tema > Papel > ND**: Fauna (e os próximos temas, como Espectros) > Especial, Lacaio, Solo > "ND 1/4", "ND 1/2", "ND 1" … "ND 20", "ND S", "ND S+". Só existem as pastas de ND com alguma criatura; dentro delas, ordem alfabética.
 - **Ficha:**
   - Cabeçalho com retrato, nome, subtítulo e etiquetas de papel, ND, tipo e tamanho; lacaios mostram "Costuma acompanhar".
   - Faixa de números: Defesa, PV, PM (se houver), Iniciativa (clique para rolar), CD e deslocamento. Fortitude, Reflexos e Vontade rolam pelo nome.
   - Ataques: Atacar (d20 + bônus contra os alvos marcados; Shift = vantagem, Ctrl = desvantagem) e Dano (Shift = crítico). O card de ataque tem Dano e Dano crítico, e o dano usa os mesmos botões de aplicar das armas.
   - Habilidades (itens "poder", texto à vista, botão para mostrar no chat), atributos, perícias (recolhidas), sentidos, tesouro, RD e notas.
 - **Regras:** perícia = atributo + treino + outros, sem nível. A Defesa, as salvaguardas e a iniciativa digitadas são o valor base; condições e Efeitos somam por cima. Com PV 0, nada de testes de morte: o Mestre decide.
-- **Dados:** `tools/dados/ameacas-fauna.json` (gerado pelo bestiário). Rode `npm run build:packs`: os IDs são estáveis e nada se duplica.
-- **Imagens:** `img/Ameacas/Fauna/`, casadas pelo nome sem acento, sem maiúsculas e sem o prefixo `ameaca-`/`lacaio-`/`especial-`. Imagem que falta usa o dado azul. O build lista as criaturas sem imagem, os arquivos sem criatura e as criaturas sem CD.
+- **Dados:** um JSON por tema em `tools/dados/` (`ameacas-fauna.json`, `ameacas-espectros.json`…), cadastrados em `TEMAS` (`module/ameaca-dados.mjs`: id, nome, arquivo de dados e subpasta de imagens). Tema sem JSON é pulado no build. Rode `npm run build:packs`: os IDs são estáveis, nada se duplica, e um `id` repetido entre temas para o build com o nome dele.
+- **Novo tema:** acrescente a entrada em `TEMAS`, o JSON em `tools/dados/` e as imagens em `img/Ameacas/<Subpasta>/`.
+- **Imagens:** `img/Ameacas/<tema>/` (`Fauna/`, `Espectros/`…), casadas por tema pelo nome sem acento, sem maiúsculas e sem o prefixo `ameaca-`/`lacaio-`/`especial-`. Imagem que falta usa o dado azul. O build lista as criaturas sem imagem, os arquivos sem criatura e as criaturas sem CD.
 
 ## Publicar uma versão
 

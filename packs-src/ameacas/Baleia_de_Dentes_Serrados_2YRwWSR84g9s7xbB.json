@@ -3,8 +3,8 @@
   "name": "Baleia-de-Dentes-Serrados",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-baleia-de-dentes-serrados.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 6100,
+  "folder": "WGVFLDLp0ZgVkrli",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "baleia-de-dentes-serrados",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "10"
     }

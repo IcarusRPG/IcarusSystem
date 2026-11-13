@@ -3,8 +3,8 @@
   "name": "Cão-de-Ruína",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cao-de-ruina.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
-  "sort": 300,
+  "folder": "eBGiiraPlL24H03Q",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -142,6 +142,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "cao-de-ruina",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "1/2"
     }

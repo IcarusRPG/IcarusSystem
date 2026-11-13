@@ -3,8 +3,8 @@
   "name": "Símio-de-Rochedo",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-simio-de-rochedo.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 4100,
+  "folder": "YGXVJlX4xptgZ4Hh",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "simio-de-rochedo",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "6"
     }

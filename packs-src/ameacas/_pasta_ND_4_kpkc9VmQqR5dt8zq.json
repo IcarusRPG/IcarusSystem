@@ -1,0 +1,15 @@
+{
+  "_id": "kpkc9VmQqR5dt8zq",
+  "name": "ND 4",
+  "type": "Actor",
+  "folder": "revF9YqmSUH49t5V",
+  "sorting": "m",
+  "sort": 200,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "ameacas:fauna:especial:4"
+    }
+  },
+  "_key": "!folders!kpkc9VmQqR5dt8zq"
+}

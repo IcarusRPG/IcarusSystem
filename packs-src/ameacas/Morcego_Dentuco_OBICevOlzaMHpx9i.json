@@ -3,7 +3,7 @@
   "name": "Morcego-Dentuço",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-morcego-dentuco.webp",
-  "folder": "NyTXyFQoX6yKhYyT",
+  "folder": "Z70wEDykVYJZet1c",
   "sort": 100,
   "system": {
     "nivel": 1,
@@ -147,6 +147,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "morcego-dentuco",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "1/4"
     }

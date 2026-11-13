@@ -3,8 +3,8 @@
   "name": "Águia-do-Cume",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-aguia-do-cume.webp",
-  "folder": "86HgGQKeik1E8p7Y",
-  "sort": 7300,
+  "folder": "a32SiBiIybPdOsKI",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "aguia-do-cume",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "12"
     }

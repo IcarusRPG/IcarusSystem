@@ -3,8 +3,8 @@
   "name": "Cria-Primeva",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-cria-primeva.webp",
-  "folder": "D9kDZtT1hp97MgCV",
-  "sort": 10300,
+  "folder": "dQaFGIgD4GuynLGy",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "cria-primeva",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "20"
     }

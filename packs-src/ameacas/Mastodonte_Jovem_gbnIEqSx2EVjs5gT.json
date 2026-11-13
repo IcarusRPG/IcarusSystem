@@ -3,8 +3,8 @@
   "name": "Mastodonte-Jovem",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-mastodonte-jovem.webp",
-  "folder": "M9dqY9deZhpGrGr4",
-  "sort": 5800,
+  "folder": "gFE8VMYJvfjsTBXq",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -166,6 +166,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "mastodonte-jovem",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "9"
     }

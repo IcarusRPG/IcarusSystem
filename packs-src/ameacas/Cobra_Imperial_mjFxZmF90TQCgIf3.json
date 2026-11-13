@@ -3,8 +3,8 @@
   "name": "Cobra-Imperial",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-cobra-imperial.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 5100,
+  "folder": "y6PQafh3yyT5FtNZ",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "cobra-imperial",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "8"
     }

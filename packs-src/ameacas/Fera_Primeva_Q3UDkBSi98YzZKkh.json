@@ -3,8 +3,8 @@
   "name": "Fera-Primeva",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-fera-primeva.webp",
-  "folder": "bLePnTPLM7hT7ZCg",
-  "sort": 10400,
+  "folder": "79ESuHRp5cbisDV3",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -258,6 +258,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "fera-primeva",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "20"
     }

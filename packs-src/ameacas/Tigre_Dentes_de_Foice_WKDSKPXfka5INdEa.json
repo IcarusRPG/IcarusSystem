@@ -3,8 +3,8 @@
   "name": "Tigre-Dentes-de-Foice",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-tigre-dentes-de-foice.webp",
-  "folder": "p5WdzDDQoF8w7jSe",
-  "sort": 6500,
+  "folder": "WGVFLDLp0ZgVkrli",
+  "sort": 300,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -193,6 +193,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "tigre-dentes-de-foice",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "10"
     }

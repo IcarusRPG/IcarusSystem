@@ -3,8 +3,8 @@
   "name": "Rebento-Primordial",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-rebento-primordial.webp",
-  "folder": "zFlGrEO15cUPBM35",
-  "sort": 10800,
+  "folder": "71RR7mKlytfonEh5",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -212,6 +212,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "rebento-primordial",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "S"
     }

@@ -3,8 +3,8 @@
   "name": "Coruja-Matriarca",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-coruja-matriarca.webp",
-  "folder": "86HgGQKeik1E8p7Y",
-  "sort": 8600,
+  "folder": "eLPlrkEZcPqgDyYv",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -216,6 +216,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "coruja-matriarca",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "15"
     }

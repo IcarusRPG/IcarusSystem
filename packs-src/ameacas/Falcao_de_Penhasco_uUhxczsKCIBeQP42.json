@@ -3,8 +3,8 @@
   "name": "Falcão-de-Penhasco",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/ameaca-falcao-de-penhasco.webp",
-  "folder": "bclB3ttOuY02it1k",
-  "sort": 600,
+  "folder": "sX2XU3ZBqUMi77OJ",
+  "sort": 100,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -147,6 +147,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "falcao-de-penhasco",
+      "tema": "fauna",
       "papel": "solo",
       "nd": "1"
     }

@@ -3,8 +3,8 @@
   "name": "Gavial-de-Rio",
   "type": "ameaca",
   "img": "systems/icarus-rpg/img/Ameacas/Fauna/lacaio-gavial-de-rio.webp",
-  "folder": "M9dqY9deZhpGrGr4",
-  "sort": 4800,
+  "folder": "Gmb9Hc6WNheUSe3t",
+  "sort": 200,
   "system": {
     "nivel": 1,
     "classeConfig": {
@@ -185,6 +185,7 @@
   "flags": {
     "icarus-rpg": {
       "id": "gavial-de-rio",
+      "tema": "fauna",
       "papel": "lacaio",
       "nd": "7"
     }
