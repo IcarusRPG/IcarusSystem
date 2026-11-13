@@ -89,10 +89,11 @@ class Carrossel {
           <button type="button" data-acao="anterior" aria-label=""><i class="fa-solid fa-backward-step" aria-hidden="true"></i></button>
           <button type="button" data-acao="proximo" aria-label=""><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
           <button type="button" data-acao="encerrar" aria-label=""><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i></button>
+          <button type="button" data-acao="painel" aria-label=""><i class="fa-solid fa-chess-board" aria-hidden="true"></i></button>
         </div>
       </div>`;
     el.querySelector(".carrossel-rodada span").textContent = loc("ICARUS.Carrossel.Rodada");
-    const titulos = { anterior: "ICARUS.Carrossel.Anterior", proximo: "ICARUS.Carrossel.Proximo", encerrar: "ICARUS.Carrossel.Encerrar" };
+    const titulos = { anterior: "ICARUS.Carrossel.Anterior", proximo: "ICARUS.Carrossel.Proximo", encerrar: "ICARUS.Carrossel.Encerrar", painel: "ICARUS.PainelCombate.Abrir" };
     for (const b of el.querySelectorAll("[data-acao]")) {
       b.title = b.ariaLabel = loc(titulos[b.dataset.acao]);
       b.addEventListener("click", () => this.acaoDoMestre(b.dataset.acao));
@@ -322,6 +323,7 @@ class Carrossel {
 
   async acaoDoMestre(acao) {
     const c = game.combat;
+    if (game.user.isGM && acao === "painel") return game.icarus.painelCombate?.abrir();
     if (!game.user.isGM || !c) return;
     if (acao === "anterior") return c.previousTurn();
     if (acao === "proximo") return c.started ? c.nextTurn() : c.startCombat();

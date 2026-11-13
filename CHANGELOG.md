@@ -1,5 +1,24 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.41.0
+
+### Painel de combate do Mestre
+- Janela nova, só do Mestre, com uma carta para cada combatente **dele** no combate da cena: atores sem dono jogador (NPCs, ameaças, mercadores).
+  - Cada carta mostra retrato, nome, tipo e ND (ameaças) e iniciativa. Tem também barras de PV e PM com os números, Defesa, Fortitude/Reflexos/Vontade e as condições ativas.
+  - O derrotado fica cinza, com caveira; o oculto, com o olho cortado.
+- **Destaque do próximo a agir:** a partir do turno atual, o primeiro combatente do Mestre na ordem de iniciativa fica com borda dourada e o selo "Próximo a agir" ou "Age em N turnos". Se o turno é dele, o selo diz "Agindo agora" e a carta pulsa. Derrotados são pulados.
+- **Duplo clique** na carta abre a ficha (de token não vinculado, a ficha do token). **Clique** seleciona o token e centraliza a tela nele.
+- A janela se move pela tela inteira, muda de tamanho e lembra o lugar.
+  - **Destacar janela** (botão no painel e no menu do cabeçalho) abre o painel numa janela separada do navegador, para outro monitor. Ela continua atualizando, e o duplo clique abre a ficha no Foundry.
+- Abre sozinho quando começa um combate com algum combatente do Mestre e fecha quando o combate acaba.
+  - Fechado à mão, só volta no próximo combate ou pelo botão novo no carrossel (tabuleiro, junto dos botões do Mestre). Também abre pela macro `game.icarus.painelCombate.abrir()`.
+- Configuração do mundo **"Painel de combate do Mestre"**, ligada por padrão.
+
+### Ícone do Vulnerável
+- A condição Vulnerável apontava para um ícone que não existe no Foundry (`icons/svg/shield-off.svg`). Agora usa `icons/svg/target.svg`.
+- Um teste confere que todos os ícones das condições existem.
+- Vulnerável já aplicado antes da atualização continua sem ícone até ser removido e aplicado de novo.
+
 ## 0.40.2
 
 ### Tela do Teste Oposto e do Teste de Resistência: botões e textos legíveis

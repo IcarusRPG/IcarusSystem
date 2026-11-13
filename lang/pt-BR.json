@@ -1536,6 +1536,27 @@
         "DefesaDica": "NPCs, mercadores e ameaças nunca mostram a Defesa no token."
       }
     },
+    "PainelCombate": {
+      "Titulo": "Painel de combate do Mestre",
+      "Abrir": "Painel de combate do Mestre",
+      "Popout": "Destacar janela",
+      "PopoutDica": "Abre o painel numa janela separada do navegador (para outro monitor)",
+      "PopoutBloqueado": "O navegador bloqueou a janela separada. Libere pop-ups para o Foundry e tente de novo.",
+      "NaoComecou": "Combate ainda não começou",
+      "TurnoDe": "Turno de",
+      "AgindoAgora": "Agindo agora",
+      "ProximoAAgir": "Próximo a agir",
+      "AgeEm": "Age em {n} turnos",
+      "Vazio": "Nenhum combatente do Mestre no combate desta cena.",
+      "DicaCarta": "Clique: seleciona o token · Duplo clique: abre a ficha",
+      "Oculto": "Oculto para os jogadores",
+      "Defesa": "Defesa",
+      "Iniciativa": "Iniciativa",
+      "Config": {
+        "Ativo": "Painel de combate do Mestre",
+        "AtivoDica": "Durante o combate, abre para o Mestre uma janela móvel (que pode virar janela separada) com as fichas dos combatentes dele, destacando o próximo a agir. Duplo clique abre a ficha."
+      }
+    },
     "Carrossel": {
       "Titulo": "Carrossel de combate",
       "Rodada": "Rodada",

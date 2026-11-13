@@ -48,6 +48,7 @@ import { registrarAnimacoesDeMagias } from "./module/vfx-magias.mjs";
 import { registrarAreaDasMagias } from "./module/magias-area.mjs";
 import { registrarObjetos } from "./module/objetos.mjs";
 import { registrarCarrossel } from "./module/carrossel.mjs";
+import { registrarPainelCombate } from "./module/painel-combate.mjs";
 import { registrarBotoesDeDano, aplicarNosSelecionados, rolarDanoAvulso, rolarCura } from "./module/dano.mjs";
 import { registrarCondicoes } from "./module/condicoes-foundry.mjs";
 import { abrirPainelDoMestre } from "./module/sheets/painel-condicoes.mjs";
@@ -149,7 +150,8 @@ const TEMPLATES = [
   "testes/chat.hbs",
   "testes/oposto-config.hbs",
   "testes/resistencia-config.hbs",
-  "testes/seletor.hbs"
+  "testes/seletor.hbs",
+  "painel-combate.hbs"
 ].map(t => `systems/${SISTEMA_ID}/templates/${t}`);
 
 Hooks.once("init", () => {
@@ -196,6 +198,8 @@ Hooks.once("init", () => {
   registrarNumerosDePV();
   // Carrossel de combate (depois das barras: usa as configurações delas)
   registrarCarrossel();
+  // Painel de combate do Mestre (cartas dos combatentes dele, com o próximo a agir em destaque)
+  game.icarus.painelCombate = registrarPainelCombate();
   game.icarus.migrarBonusDeOrigem = migrarBonusDeOrigem;
   game.icarus.adicionarItensDeOrigem = adicionarItensQueFaltam;
 

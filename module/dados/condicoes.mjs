@@ -700,7 +700,7 @@ export default {
           "valor": -2
         }
       ],
-      "iconeCore": "icons/svg/shield-off.svg"
+      "iconeCore": "icons/svg/target.svg"
     }
   ]
 };
