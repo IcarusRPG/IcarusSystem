@@ -1,0 +1,44 @@
+{
+  "_id": "yF6sArBca1AZ2nO2",
+  "name": "Viajante Incansável",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "GkZ5f6nKxF4GU1g9",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Constituição 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Constituição 1.</p><p>Você não fica Fatigado por marchar ou viajar sem descanso e recebe +2 em Fortitude contra Fatigado e Exausto.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Exploração e viagem",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CON": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "con": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:viajante-incansavel",
+      "poderGeral": "viajante-incansavel",
+      "grupo": "Exploração e viagem"
+    }
+  },
+  "_key": "!items!yF6sArBca1AZ2nO2"
+}

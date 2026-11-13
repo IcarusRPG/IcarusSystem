@@ -1,0 +1,15 @@
+{
+  "_id": "U9iTJkfo00mkCCit",
+  "name": "Interpretação e influência",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 700000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:interpretacao-e-influencia"
+    }
+  },
+  "_key": "!folders!U9iTJkfo00mkCCit"
+}

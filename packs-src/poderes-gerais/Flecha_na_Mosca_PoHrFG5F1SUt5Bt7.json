@@ -1,0 +1,47 @@
+{
+  "_id": "PoHrFG5F1SUt5Bt7",
+  "name": "Flecha na Mosca",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "7DLZf3kXgtL2onHR",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Destreza 2, treinado em Pontaria",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Destreza 2, treinado em Pontaria.</p><p>Você soma o seu modificador de Destreza nas rolagens de dano dos seus ataques à distância (armas de disparo e de arremesso). Se um efeito já soma esse atributo (Arremesso Devil, Kyudo), você usa o maior, sem somar os dois.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate à distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 2
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "des": 2
+      },
+      "treinado": [
+        "Pontaria"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:flecha-na-mosca",
+      "poderGeral": "flecha-na-mosca",
+      "grupo": "Combate à distância"
+    }
+  },
+  "_key": "!items!PoHrFG5F1SUt5Bt7"
+}

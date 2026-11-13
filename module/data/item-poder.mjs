@@ -21,13 +21,17 @@ export class PoderData extends foundry.abstract.TypeDataModel {
       tipoDano: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", ...TIPOS_DANO_TODOS] }),
       // Classe: id da classe, habilidade de classe ou poder de classe, grupo (linha/caminho) e pré-requisitos
       classe: texto(),
-      tipoPoder: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", "habilidade", "poder"] }),
+      // "geral" = Poder Geral (compêndio Icarus: Poderes Gerais), escolhido no lugar de um poder de classe
+      tipoPoder: new fields.StringField({ required: true, blank: true, initial: "", choices: ["", "habilidade", "poder", "geral"] }),
       grupo: texto(),
       nivelMinimo: new fields.NumberField({ required: true, nullable: true, integer: true, min: 1, max: 25, initial: null }),
       atributoMinimo: new fields.ObjectField({ required: true, initial: {} }),
       requerPoderes: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
       requerGrupo: texto(),
       repetivel: new fields.BooleanField({ initial: false }),
+      // Pré-requisitos estruturados (Poderes Gerais): { atributos: { for: 1 }, nivel, treinado[], treinadoOu[], poderes[], proficiencias[], conjurador }.
+      // Só informativo: nada é bloqueado por eles.
+      requisitos: new fields.ObjectField({ required: true, initial: {} }),
       descricao: new fields.HTMLField({ required: true, blank: true, initial: "" })
     };
   }

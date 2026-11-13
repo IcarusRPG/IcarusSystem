@@ -1,0 +1,41 @@
+{
+  "_id": "J4qeGPnNu2lztOIb",
+  "name": "Mana como Couraça",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "vbogyf1SfK2YS4bv",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "capacidade de lançar magias, 5º nível",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> capacidade de lançar magias, 5º nível.</p><p>Quando você sofre dano, pode gastar sua reação e 1 PM para reduzir o dano em 1 + o nível da maior magia que você pode lançar.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Magia",
+    "nivelMinimo": 5,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "conjurador": true,
+      "nivel": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mana-como-couraca",
+      "poderGeral": "mana-como-couraca",
+      "grupo": "Magia"
+    }
+  },
+  "_key": "!items!J4qeGPnNu2lztOIb"
+}

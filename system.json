@@ -11,7 +11,7 @@
       "caption": "Icarus RPG"
     }
   ],
-  "version": "0.41.0",
+  "version": "0.42.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
@@ -217,6 +217,19 @@
       "flags": {}
     },
     {
+      "name": "poderes-gerais",
+      "label": "Icarus: Poderes Gerais",
+      "path": "packs/poderes-gerais",
+      "type": "Item",
+      "system": "icarus-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "vinculos",
       "label": "Icarus — Vínculos (Patrulheiro)",
       "path": "packs/vinculos",
@@ -336,6 +349,7 @@
         "classes",
         "habilidades-classe",
         "poderes-classe",
+        "poderes-gerais",
         "vinculos",
         "familiares",
         "mercadores",
@@ -355,6 +369,6 @@
   "secondaryTokenAttribute": "pm",
   "url": "https://github.com/IcarusRPG/IcarusSystem",
   "manifest": "https://github.com/IcarusRPG/IcarusSystem/releases/latest/download/system.json",
-  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.41.0/icarus-rpg.zip",
+  "download": "https://github.com/IcarusRPG/IcarusSystem/releases/download/v0.42.0/icarus-rpg.zip",
   "socket": true
 }

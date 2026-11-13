@@ -1,0 +1,44 @@
+{
+  "_id": "494L6HyNPhZxh8T0",
+  "name": "Reflexo de Gato",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "4JAL0laiN3MHT3he",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Destreza 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Destreza 1.</p><p>Você recebe +2 em Reflexos e, uma vez por cena, pode rolar com vantagem um teste de Reflexos.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Defesa e resiliência",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "des": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:reflexo-de-gato",
+      "poderGeral": "reflexo-de-gato",
+      "grupo": "Defesa e resiliência"
+    }
+  },
+  "_key": "!items!494L6HyNPhZxh8T0"
+}

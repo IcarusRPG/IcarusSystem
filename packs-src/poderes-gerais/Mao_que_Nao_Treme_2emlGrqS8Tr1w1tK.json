@@ -1,0 +1,40 @@
+{
+  "_id": "2emlGrqS8Tr1w1tK",
+  "name": "Mão que Não Treme",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "vbogyf1SfK2YS4bv",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "capacidade de lançar magias",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> capacidade de lançar magias.</p><p>Você recebe +2 em Concentração.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Magia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "conjurador": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mao-que-nao-treme",
+      "poderGeral": "mao-que-nao-treme",
+      "grupo": "Magia"
+    }
+  },
+  "_key": "!items!2emlGrqS8Tr1w1tK"
+}

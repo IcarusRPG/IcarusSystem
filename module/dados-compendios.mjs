@@ -297,6 +297,70 @@ export function documentosDeClasses(d) {
   };
 }
 
+/* ------------------------------ Poderes Gerais ------------------------------ */
+
+/** Texto do JSON → HTML simples: um parágrafo por bloco (linha em branco), quebras simples viram <br>. */
+export const htmlDosParagrafos = texto => String(texto ?? "").split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
+  .map(p => `<p>${escapar(p).replace(/\n/g, "<br>")}</p>`).join("");
+
+/** Sem pré-requisito ("nenhum" no JSON) → texto vazio no campo do item. */
+const semPrerequisito = t => !t || /^nenhum$/i.test(String(t).trim());
+
+/**
+ * Poder Geral → item "poder" (fonte "geral", tipoPoder "geral"). O campo prerequisito e a linha em
+ * destaque na descrição vêm de `prerequisitos`; os requisitos estruturados ficam em
+ * system.requisitos (e, no formato dos poderes de classe, em atributoMinimo/nivelMinimo/requerPoderes),
+ * só informativos.
+ * @param {object} p        poder do poderes-gerais.json
+ * @param {Map<string,string>} idPorNome  nome do poder → id (para requerPoderes)
+ */
+export function dadosDoPoderGeral(p, idPorNome = new Map(), sort = 0) {
+  const req = p.requisitos ?? {};
+  const prerequisito = semPrerequisito(p.prerequisitos) ? "" : String(p.prerequisitos).trim();
+  const linhas = [
+    `<p class="icarus-prerequisito"><strong>Pré-requisitos:</strong> ${prerequisito ? escapar(prerequisito) : "nenhum"}.</p>`,
+    htmlDosParagrafos(p.texto),
+    p.repetivel ? `<p class="icarus-repetivel"><strong>Repetível.</strong></p>` : ""
+  ];
+  return {
+    _id: idEstavel(`poder-geral:${p.id}`), name: p.nome, type: "poder", img: ICONE_PADRAO,
+    folder: idEstavel(`pasta:poderes-gerais:${normalizar(p.grupo)}`), sort,
+    system: {
+      fonte: "geral", custoPM: null, prerequisito, nivel: null, acao: "", frequencia: "",
+      sustentada: false, divindade: "", tipoDano: "", descricao: linhas.join(""),
+      classe: "", tipoPoder: "geral", grupo: p.grupo, nivelMinimo: req.nivel ?? null,
+      atributoMinimo: Object.fromEntries(Object.entries(req.atributos ?? {}).map(([k, v]) => [k.toUpperCase(), v])),
+      requerPoderes: (req.poderes ?? []).map(n => idPorNome.get(normalizar(n)) ?? normalizar(n)), requerGrupo: "",
+      repetivel: !!p.repetivel, requisitos: structuredClone(req)
+    },
+    effects: [],
+    flags: { [SISTEMA_ID]: { id: `poder-geral:${p.id}`, poderGeral: p.id, grupo: p.grupo } }
+  };
+}
+
+/**
+ * Compêndio "Icarus: Poderes Gerais": uma pasta por grupo (na ordem de grupoOrdem / da lista
+ * `grupos`), poderes em ordem alfabética dentro dela. Para o build com mensagem clara: id
+ * repetido ou grupo que não está na lista.
+ * @param {{ grupos: string[], poderes: object[] }} dados   tools/dados/poderes-gerais.json
+ */
+export function documentosDePoderesGerais(dados) {
+  const grupos = dados?.grupos ?? [];
+  const poderes = dados?.poderes ?? [];
+  const vistos = new Set();
+  for (const p of poderes) {
+    if (vistos.has(p.id)) throw new Error(`Poderes Gerais: id repetido "${p.id}"`);
+    vistos.add(p.id);
+    if (!grupos.includes(p.grupo)) throw new Error(`Poderes Gerais: "${p.nome}" no grupo "${p.grupo}", que não está em grupos`);
+  }
+  const idPorNome = new Map(poderes.map(p => [normalizar(p.nome), p.id]));
+  const pastas = grupos.map((g, i) => pasta(`poderes-gerais:${normalizar(g)}`, g, { sort: (i + 1) * 100000 }));
+  const itens = grupos.flatMap(g => poderes.filter(p => p.grupo === g)
+    .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
+    .map((p, i) => dadosDoPoderGeral(p, idPorNome, (i + 1) * 100)));
+  return { pastas, itens };
+}
+
 /* ------------------------------ Vínculos (animais do Patrulheiro) ------------------------------ */
 
 const TIPO_POR_NOME = { "perfuração": "perfuracao", "corte": "corte", "impacto": "impacto", "veneno": "veneno", "fogo": "fogo", "frio": "frio", "ácido": "acido" };

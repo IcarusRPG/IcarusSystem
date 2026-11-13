@@ -482,6 +482,10 @@ body.game {
 .ficha-icarus .tag-pendente { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; border-radius: 3px; padding: 0 5px; }
 .ficha-icarus .tag-racial { color: var(--ic-ciano-titulo); border: 1px solid var(--ic-moldura); }
 .ficha-icarus .tag-pendente { color: var(--ic-ouro-claro); border: 1px solid var(--ic-ouro-escuro); }
+/* Poder Geral: selo discreto em ouro (distingue do poder de classe) */
+.ficha-icarus .tag-racial.tag-geral { color: var(--ic-ouro-claro); border-color: var(--ic-ouro-escuro); }
+/* Linha de pré-requisitos dos Poderes Gerais (descrição do item, na ficha e no chat) */
+.icarus-prerequisito { padding-left: 6px; border-left: 2px solid #d8b45a; font-style: italic; }
 .ficha-icarus .btn.pendente { border-color: var(--ic-ouro); background: var(--ic-miolo-escudo); color: var(--ic-ouro-claro); }
 
 /* Valores alterados por Efeitos Ativos: a dica mostra a origem ("+2 Couro Brutal") */

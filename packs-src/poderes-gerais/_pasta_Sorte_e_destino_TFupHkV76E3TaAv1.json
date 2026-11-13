@@ -1,0 +1,15 @@
+{
+  "_id": "TFupHkV76E3TaAv1",
+  "name": "Sorte e destino",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 900000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:sorte-e-destino"
+    }
+  },
+  "_key": "!folders!TFupHkV76E3TaAv1"
+}

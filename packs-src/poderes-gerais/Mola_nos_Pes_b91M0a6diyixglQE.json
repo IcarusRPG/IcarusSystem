@@ -1,0 +1,43 @@
+{
+  "_id": "b91M0a6diyixglQE",
+  "name": "Mola nos Pés",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Atletismo ou Acrobacia",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Atletismo ou Acrobacia.</p><p>Seu salto é o dobro da distância normal e não exige corrida. Você pode saltar como parte do movimento.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinadoOu": [
+        "Atletismo",
+        "Acrobacia"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mola-nos-pes",
+      "poderGeral": "mola-nos-pes",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!b91M0a6diyixglQE"
+}

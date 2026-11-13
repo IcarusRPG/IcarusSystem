@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { documentosDosCompendios } from "../module/dados-itens.mjs";
-import { documentosNovos, documentosDeClasses, documentosDeVinculos, documentosDeMercadores, documentosDeAmeacas } from "../module/dados-compendios.mjs";
+import { documentosNovos, documentosDeClasses, documentosDeVinculos, documentosDeMercadores, documentosDeAmeacas, documentosDePoderesGerais } from "../module/dados-compendios.mjs";
 import { casarImagens, TEMAS } from "../module/ameaca-dados.mjs";
 import { PERICIAS, PASTA_ICONES_PODERES, arquivoDoVinculo, arquivoDoFamiliar } from "../module/config.mjs";
 import { IMAGENS_SISTEMA } from "../module/imagens.mjs";
@@ -141,6 +141,10 @@ const docsAmeacas = documentosDeAmeacas(temasAmeacas, { pericias: PERICIAS });
 console.log(`Ameaças: ${docsAmeacas.atores.length} criatura(s) em ${docsAmeacas.pastas.length} pasta(s)`);
 if (docsAmeacas.semCd.length) console.warn(`Ameaças sem CD das habilidades no JSON (campo vazio): ${docsAmeacas.semCd.length}: ${docsAmeacas.semCd.join(", ")}`);
 
+// Poderes Gerais: tools/dados/poderes-gerais.json, uma pasta por grupo (ordem do JSON), sem imagem (dado azul)
+const docsPoderesGerais = documentosDePoderesGerais(ler("poderes-gerais"));
+console.log(`Poderes Gerais: ${docsPoderesGerais.itens.length} poder(es) em ${docsPoderesGerais.pastas.length} pasta(s)`);
+
 /** Cada pacote: lista de [documento, coleção] já com as chaves. */
 const PACOTES = {
   armas: docsArmas.armas,
@@ -156,6 +160,7 @@ const PACOTES = {
   familiares: documentosDeVinculos(novos.familiares, PERICIAS, "familiar"),
   mercadores: { pastas: [], atores: docsMercadores.atores },
   ameacas: { pastas: docsAmeacas.pastas, atores: docsAmeacas.atores },
+  "poderes-gerais": docsPoderesGerais,
   ...docsOrigens,
   // Magias: tools/dados/magias.json + ícones (img/magias, manifesto magias_icones.json); sem ícone = dado azul
   magias: documentosDeMagias(ler("magias"), ler("magias_icones"), idEstavel)

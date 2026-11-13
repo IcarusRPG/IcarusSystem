@@ -1,0 +1,44 @@
+{
+  "_id": "BHj1IseBtZltTbnb",
+  "name": "Segunda Impressão",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 1200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Diplomacia, Enganação ou Intimidação",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Diplomacia, Enganação ou Intimidação.</p><p>Uma vez por cena, depois de falhar em um teste de Diplomacia, Enganação ou Intimidação, você pode refazê-lo com o mesmo alvo, sem a penalidade de repetição.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinadoOu": [
+        "Diplomacia",
+        "Enganação",
+        "Intimidação"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:segunda-impressao",
+      "poderGeral": "segunda-impressao",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!BHj1IseBtZltTbnb"
+}

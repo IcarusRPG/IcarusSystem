@@ -1,0 +1,42 @@
+{
+  "_id": "8T6VLSCveCjdAurX",
+  "name": "Instinto de Caçador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 600,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado no sentido escolhido",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado no sentido escolhido.</p><p>Escolha Visão, Audição ou Olfato: você recebe +2 nessa perícia e ignora camuflagem leve ao usar esse sentido para atacar ou perceber algo. Repetível (um sentido diferente por vez).</p><p class=\"icarus-repetivel\"><strong>Repetível.</strong></p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true,
+    "requisitos": {
+      "treinado": [
+        "o sentido escolhido"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:instinto-de-cacador",
+      "poderGeral": "instinto-de-cacador",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!8T6VLSCveCjdAurX"
+}

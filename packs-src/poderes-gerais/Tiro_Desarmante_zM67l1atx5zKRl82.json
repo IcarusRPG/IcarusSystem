@@ -1,0 +1,42 @@
+{
+  "_id": "zM67l1atx5zKRl82",
+  "name": "Tiro Desarmante",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "7DLZf3kXgtL2onHR",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Pontaria",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Pontaria.</p><p>Você pode usar a manobra Desarmar com um ataque à distância (arma de disparo ou de arremesso) contra um alvo no alcance da arma. Faça o teste de ataque com Pontaria; o alvo faz o teste de Fortitude como de costume. Gaste 1 PM e 1 munição. Se vencer, o item cai no espaço do alvo (se vencer por 5 ou mais, é empurrado 1,5 m na direção do tiro).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate à distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Pontaria"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:tiro-desarmante",
+      "poderGeral": "tiro-desarmante",
+      "grupo": "Combate à distância"
+    }
+  },
+  "_key": "!items!zM67l1atx5zKRl82"
+}

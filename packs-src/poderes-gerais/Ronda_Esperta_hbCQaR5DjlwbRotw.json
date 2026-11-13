@@ -1,0 +1,43 @@
+{
+  "_id": "hbCQaR5DjlwbRotw",
+  "name": "Ronda Esperta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "GkZ5f6nKxF4GU1g9",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Audição ou Visão",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Audição ou Visão.</p><p>Enquanto você faz a vigília, você e quem dorme sob a sua guarda não ficam desprevenidos ao serem surpreendidos por ataques noturnos; você recebe +2 em Audição e Visão durante a vigília.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Exploração e viagem",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinadoOu": [
+        "Audição",
+        "Visão"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:ronda-esperta",
+      "poderGeral": "ronda-esperta",
+      "grupo": "Exploração e viagem"
+    }
+  },
+  "_key": "!items!hbCQaR5DjlwbRotw"
+}

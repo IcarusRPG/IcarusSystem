@@ -1,0 +1,42 @@
+{
+  "_id": "EAGVhv0sOt62a7oq",
+  "name": "Escapada Limpa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Acrobacia",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Acrobacia.</p><p>Como parte do seu movimento, você pode fazer Acrobacia (CD 15) para não provocar Golpes de Oportunidade de uma criatura durante esse movimento.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Acrobacia"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:escapada-limpa",
+      "poderGeral": "escapada-limpa",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!EAGVhv0sOt62a7oq"
+}

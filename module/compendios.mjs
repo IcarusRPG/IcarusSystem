@@ -77,3 +77,25 @@ export async function popularCompendios() {
   ui.notifications.info(game.i18n.localize("ICARUS.Compendios.Populados"));
   return relatorio;
 }
+
+/**
+ * Compêndios cujas pastas da raiz têm ordem própria (sort do build), não alfabética: o Foundry
+ * ordena por nome no modo padrão ("a"). Põe em modo manual ("m") só se o usuário ainda não
+ * escolheu um modo para o compêndio (preferência de cada cliente, em core.collectionSortingModes).
+ */
+export const COMPENDIOS_ORDEM_MANUAL = [`${SISTEMA_ID}.poderes-gerais`];
+
+/** Modos com os compêndios de ordem manual que ainda não têm modo escolhido (null = nada muda). */
+export function modosComOrdemManual(modos, ids = COMPENDIOS_ORDEM_MANUAL) {
+  const faltam = ids.filter(id => !modos?.[id]);
+  return faltam.length ? { ...(modos ?? {}), ...Object.fromEntries(faltam.map(id => [id, "m"])) } : null;
+}
+
+export async function ordenarCompendiosManualmente() {
+  try {
+    const novos = modosComOrdemManual(game.settings.get("core", "collectionSortingModes"));
+    if (novos) await game.settings.set("core", "collectionSortingModes", novos);
+  } catch (erro) {
+    console.warn("Icarus RPG | Não deu para pôr os compêndios em ordem manual.", erro);
+  }
+}

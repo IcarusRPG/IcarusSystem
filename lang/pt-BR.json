@@ -254,6 +254,9 @@
         "divindade": "Divindade"
       },
       "Gerais": "Poderes Gerais",
+      "TagGeral": "Geral",
+      "TagGeralDica": "Poder Geral: escolhido no lugar de um poder de classe. Pré-requisitos só informativos (o Mestre e o jogador conferem).",
+      "TagRepetivel": "Repetível",
       "TagNivel": "Nível {nivel}",
       "ContaUm": "1 poder",
       "Conta": "{n} poderes",

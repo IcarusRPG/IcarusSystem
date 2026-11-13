@@ -1,0 +1,42 @@
+{
+  "_id": "28lXtpIYqNljEY6W",
+  "name": "Sempre em Guarda",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "4JAL0laiN3MHT3he",
+  "sort": 700,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Iniciativa",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Iniciativa.</p><p>Você recebe +4 em Iniciativa e não fica desprevenido no primeiro round do combate, mesmo antes de agir.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Defesa e resiliência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Iniciativa"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:sempre-em-guarda",
+      "poderGeral": "sempre-em-guarda",
+      "grupo": "Defesa e resiliência"
+    }
+  },
+  "_key": "!items!28lXtpIYqNljEY6W"
+}

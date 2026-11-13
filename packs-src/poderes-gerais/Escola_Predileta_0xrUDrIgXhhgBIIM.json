@@ -1,0 +1,40 @@
+{
+  "_id": "0xrUDrIgXhhgBIIM",
+  "name": "Escola Predileta",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "vbogyf1SfK2YS4bv",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "capacidade de lançar magias",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> capacidade de lançar magias.</p><p>Escolha uma escola de magia. A CD das suas magias dessa escola aumenta em +1. Repetível (escola diferente a cada vez).</p><p class=\"icarus-repetivel\"><strong>Repetível.</strong></p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Magia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true,
+    "requisitos": {
+      "conjurador": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:escola-predileta",
+      "poderGeral": "escola-predileta",
+      "grupo": "Magia"
+    }
+  },
+  "_key": "!items!0xrUDrIgXhhgBIIM"
+}

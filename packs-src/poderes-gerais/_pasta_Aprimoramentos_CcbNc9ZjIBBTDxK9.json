@@ -1,0 +1,15 @@
+{
+  "_id": "CcbNc9ZjIBBTDxK9",
+  "name": "Aprimoramentos",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:aprimoramentos"
+    }
+  },
+  "_key": "!folders!CcbNc9ZjIBBTDxK9"
+}

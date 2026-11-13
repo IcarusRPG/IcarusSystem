@@ -1,0 +1,15 @@
+{
+  "_id": "BTOZjtS6oj9Kl7pm",
+  "name": "Perícias",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 600000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:pericias"
+    }
+  },
+  "_key": "!folders!BTOZjtS6oj9Kl7pm"
+}

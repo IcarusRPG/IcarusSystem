@@ -1,0 +1,42 @@
+{
+  "_id": "bq0QCMpZCXEpr5RO",
+  "name": "Olho de Mercador",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 1100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Barganha",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Barganha.</p><p>Você recebe +2 em Barganha, avalia o valor exato de qualquer item que veja e, ao comprar com sucesso em Barganha, o desconto sobe de 5% para 10%.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Barganha"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:olho-de-mercador",
+      "poderGeral": "olho-de-mercador",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!bq0QCMpZCXEpr5RO"
+}

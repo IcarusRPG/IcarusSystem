@@ -1,0 +1,42 @@
+{
+  "_id": "pudcEsFNBi874Dbe",
+  "name": "Couraça Média",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 200,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "proficiência com armaduras leves",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> proficiência com armaduras leves.</p><p>Você recebe proficiência com armaduras médias.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "proficiencias": [
+        "armaduras leves"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:couraca-media",
+      "poderGeral": "couraca-media",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!pudcEsFNBi874Dbe"
+}

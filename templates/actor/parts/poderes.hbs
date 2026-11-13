@@ -28,6 +28,7 @@
             <b>{{name}}</b>
             {{#if custo}}<span class="custo">{{custo}} PM</span>{{/if}}
           </div>
+          {{#if geral}}<div class="card-tags"><span class="tag-racial tag-geral" data-tooltip="{{localize 'ICARUS.Poderes.TagGeralDica'}}">{{localize "ICARUS.Poderes.TagGeral"}}</span>{{#if repetivel}}<span class="tag-racial">{{localize "ICARUS.Poderes.TagRepetivel"}}</span>{{/if}}</div>{{/if}}
           {{#if concedido}}<div class="card-tags"><span class="tag-racial">{{localize "ICARUS.Devocao.TagConcedido"}}</span></div>{{/if}}
           {{#if auto}}<div class="card-tags"><span class="tag-racial">{{localize "ICARUS.Racas.TagRacial"}}</span>{{#if pendente}}<span class="tag-pendente">{{localize "ICARUS.Racas.EscolhaPendente"}}</span>{{/if}}</div>{{/if}}
           {{#if meta}}<div class="card-meta">{{meta}}</div>{{/if}}

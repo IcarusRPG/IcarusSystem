@@ -1,0 +1,42 @@
+{
+  "_id": "2fkLJCHT88yt7JSP",
+  "name": "Pé de Pluma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "daBaPwLbQB0n6GbV",
+  "sort": 800,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Furtividade",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Furtividade.</p><p>Você se move em deslocamento total sem a penalidade de −5 de Furtividade em movimento (regra de Furtividade em movimento, abaixo).</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Mobilidade",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Furtividade"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:pe-de-pluma",
+      "poderGeral": "pe-de-pluma",
+      "grupo": "Mobilidade"
+    }
+  },
+  "_key": "!items!2fkLJCHT88yt7JSP"
+}

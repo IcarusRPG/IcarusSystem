@@ -1,0 +1,49 @@
+{
+  "_id": "FvshKfjoZu2MMgzu",
+  "name": "Mãos Gêmeas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 900,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Mão Dupla, Destreza 2",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Mão Dupla, Destreza 2.</p><p>A penalidade de ataque ao lutar com duas armas passa de −2 para −1. Não soma com o Par de Lâminas, que a elimina.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 2
+    },
+    "requerPoderes": [
+      "mao-dupla"
+    ],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "poderes": [
+        "Mão Dupla"
+      ],
+      "atributos": {
+        "des": 2
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:maos-gemeas",
+      "poderGeral": "maos-gemeas",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!FvshKfjoZu2MMgzu"
+}

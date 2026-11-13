@@ -1,0 +1,38 @@
+{
+  "_id": "CxBhbZcZv2vPxvnx",
+  "name": "Estudos Paralelos",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> nenhum.</p><p>Você se torna treinado em duas perícias à sua escolha. Não vale para perícias em que você já é treinado.</p><p class=\"icarus-repetivel\"><strong>Repetível.</strong></p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": true,
+    "requisitos": {}
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:estudos-paralelos",
+      "poderGeral": "estudos-paralelos",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!CxBhbZcZv2vPxvnx"
+}

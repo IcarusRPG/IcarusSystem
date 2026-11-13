@@ -1,0 +1,42 @@
+{
+  "_id": "anQ7SsBO07cgS0a2",
+  "name": "Língua das Feras",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 700,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Adestramento",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Adestramento.</p><p>Você recebe +2 em Adestramento. Como ação padrão, com Adestramento, você pode acalmar um animal hostil (CD = 10 + ND do animal) ou dar uma ordem a um animal que ainda não seja seu.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Adestramento"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:lingua-das-feras",
+      "poderGeral": "lingua-das-feras",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!anQ7SsBO07cgS0a2"
+}

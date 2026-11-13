@@ -1,0 +1,44 @@
+{
+  "_id": "fz8lnPIDUpIqCY6X",
+  "name": "Cabeça de Estudioso",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Inteligência 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Inteligência 1.</p><p>Você recebe +2 em História, Misticismo, Nobreza e Religião e, uma vez por cena, pode fazer um teste de uma dessas perícias mesmo que fosse proibido sem treino, com vantagem.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "INT": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "int": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:cabeca-de-estudioso",
+      "poderGeral": "cabeca-de-estudioso",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!fz8lnPIDUpIqCY6X"
+}

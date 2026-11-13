@@ -1,0 +1,42 @@
+{
+  "_id": "5L39FTLr6o3S2tV3",
+  "name": "Queda Macia",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "4JAL0laiN3MHT3he",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Acrobacia",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Acrobacia.</p><p>Ao cair, o dano da queda é reduzido em 2d6 e você pode fazer Acrobacia (CD 15) para não ficar caído.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Defesa e resiliência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Acrobacia"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:queda-macia",
+      "poderGeral": "queda-macia",
+      "grupo": "Defesa e resiliência"
+    }
+  },
+  "_key": "!items!5L39FTLr6o3S2tV3"
+}

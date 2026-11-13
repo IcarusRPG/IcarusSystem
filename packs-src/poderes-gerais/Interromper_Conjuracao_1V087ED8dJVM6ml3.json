@@ -1,0 +1,43 @@
+{
+  "_id": "1V087ED8dJVM6ml3",
+  "name": "Interromper Conjuração",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "vbogyf1SfK2YS4bv",
+  "sort": 400,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Misticismo, capacidade de lançar magias",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Misticismo, capacidade de lançar magias.</p><p>Quando uma criatura a até 9 m que você vê começa a lançar uma magia, você pode gastar sua reação e 2 PM para fazer Misticismo contra CD 10 + nível da magia + 5. Se passar, a magia falha e o PM dela é gasto. Uma vez por cena.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Magia",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "conjurador": true,
+      "treinado": [
+        "Misticismo"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:interromper-conjuracao",
+      "poderGeral": "interromper-conjuracao",
+      "grupo": "Magia"
+    }
+  },
+  "_key": "!items!1V087ED8dJVM6ml3"
+}

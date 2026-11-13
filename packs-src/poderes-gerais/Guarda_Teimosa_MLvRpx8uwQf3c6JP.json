@@ -1,0 +1,45 @@
+{
+  "_id": "MLvRpx8uwQf3c6JP",
+  "name": "Guarda Teimosa",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 700,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Golpe de Oportunidade, 4º nível",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Golpe de Oportunidade, 4º nível.</p><p>Quando você acerta um Golpe de Oportunidade, o deslocamento da criatura termina ali: ela fica no espaço em que estava.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": 4,
+    "atributoMinimo": {},
+    "requerPoderes": [
+      "golpe-de-oportunidade"
+    ],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "poderes": [
+        "Golpe de Oportunidade"
+      ],
+      "nivel": 4
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:guarda-teimosa",
+      "poderGeral": "guarda-teimosa",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!MLvRpx8uwQf3c6JP"
+}

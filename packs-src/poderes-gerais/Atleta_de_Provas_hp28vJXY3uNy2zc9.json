@@ -1,0 +1,43 @@
+{
+  "_id": "hp28vJXY3uNy2zc9",
+  "name": "Atleta de Provas",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Atletismo ou Acrobacia",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Atletismo ou Acrobacia.</p><p>Você recebe +2 em Atletismo e Acrobacia e, uma vez por cena, pode refazer um teste dessas perícias.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinadoOu": [
+        "Atletismo",
+        "Acrobacia"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:atleta-de-provas",
+      "poderGeral": "atleta-de-provas",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!hp28vJXY3uNy2zc9"
+}

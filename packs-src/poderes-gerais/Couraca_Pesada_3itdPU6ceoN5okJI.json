@@ -1,0 +1,49 @@
+{
+  "_id": "3itdPU6ceoN5okJI",
+  "name": "Couraça Pesada",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "CcbNc9ZjIBBTDxK9",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Couraça Média, Força 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Couraça Média, Força 1.</p><p>Você recebe proficiência com armaduras pesadas.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Aprimoramentos",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 1
+    },
+    "requerPoderes": [
+      "couraca-media"
+    ],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "poderes": [
+        "Couraça Média"
+      ],
+      "atributos": {
+        "for": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:couraca-pesada",
+      "poderGeral": "couraca-pesada",
+      "grupo": "Aprimoramentos"
+    }
+  },
+  "_key": "!items!3itdPU6ceoN5okJI"
+}

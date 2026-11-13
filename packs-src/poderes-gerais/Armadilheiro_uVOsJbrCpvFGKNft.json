@@ -1,0 +1,44 @@
+{
+  "_id": "uVOsJbrCpvFGKNft",
+  "name": "Armadilheiro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "GkZ5f6nKxF4GU1g9",
+  "sort": 100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Destreza 1",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Destreza 1.</p><p>Em 10 minutos, com materiais baratos, você monta uma armadilha de laço (Reflexos CD 10 + metade do nível + Destreza, ou o alvo fica Enredado) ou uma armadilha de alarme (um som alto avisa você). Você pode ter 2 armadilhas armadas por vez.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Exploração e viagem",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "DES": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "des": 1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:armadilheiro",
+      "poderGeral": "armadilheiro",
+      "grupo": "Exploração e viagem"
+    }
+  },
+  "_key": "!items!uVOsJbrCpvFGKNft"
+}

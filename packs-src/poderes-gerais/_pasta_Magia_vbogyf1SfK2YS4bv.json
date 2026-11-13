@@ -1,0 +1,15 @@
+{
+  "_id": "vbogyf1SfK2YS4bv",
+  "name": "Magia",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1000000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:magia"
+    }
+  },
+  "_key": "!folders!vbogyf1SfK2YS4bv"
+}

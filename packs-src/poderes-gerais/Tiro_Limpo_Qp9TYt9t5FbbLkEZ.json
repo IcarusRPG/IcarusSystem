@@ -1,0 +1,42 @@
+{
+  "_id": "Qp9TYt9t5FbbLkEZ",
+  "name": "Tiro Limpo",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "7DLZf3kXgtL2onHR",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Pontaria",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Pontaria.</p><p>Você não sofre a penalidade de −5 nos ataques à distância contra um alvo que está em combate corpo a corpo com outra criatura.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate à distância",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Pontaria"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:tiro-limpo",
+      "poderGeral": "tiro-limpo",
+      "grupo": "Combate à distância"
+    }
+  },
+  "_key": "!items!Qp9TYt9t5FbbLkEZ"
+}

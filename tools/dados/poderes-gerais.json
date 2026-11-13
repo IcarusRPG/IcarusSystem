@@ -1,0 +1,1071 @@
+{
+ "versao": 1,
+ "fonte": "Poderes Gerais de Icarus (validado)",
+ "grupos": [
+  "Aprimoramentos",
+  "Combate corpo a corpo",
+  "Combate à distância",
+  "Defesa e resiliência",
+  "Mobilidade",
+  "Perícias",
+  "Interpretação e influência",
+  "Exploração e viagem",
+  "Sorte e destino",
+  "Magia"
+ ],
+ "poderes": [
+  {
+   "id": "corpo-rijo",
+   "nome": "Corpo Rijo",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Seus pontos de vida máximos aumentam em +1 por nível (retroativo: ao escolher no 6º nível, ganha +6 na hora, e +1 a cada novo nível).",
+   "prerequisitos": "Constituição 1",
+   "requisitos": {
+    "atributos": {
+     "con": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "fonte-funda",
+   "nome": "Fonte Funda",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Seus PM máximos aumentam em +4 e em +1 a cada 2 níveis (níveis 4, 6, 8, 10 e assim por diante, contando do nível em que escolheu o poder).",
+   "prerequisitos": "nenhum",
+   "requisitos": {},
+   "repetivel": false
+  },
+  {
+   "id": "estudos-paralelos",
+   "nome": "Estudos Paralelos",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Você se torna treinado em duas perícias à sua escolha. Não vale para perícias em que você já é treinado.",
+   "prerequisitos": "nenhum",
+   "requisitos": {},
+   "repetivel": true
+  },
+  {
+   "id": "formacao-marcial",
+   "nome": "Formação Marcial",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Você recebe proficiência com armas marciais.",
+   "prerequisitos": "nenhum",
+   "requisitos": {},
+   "repetivel": false
+  },
+  {
+   "id": "couraca-media",
+   "nome": "Couraça Média",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Você recebe proficiência com armaduras médias.",
+   "prerequisitos": "proficiência com armaduras leves",
+   "requisitos": {
+    "proficiencias": [
+     "armaduras leves"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "couraca-pesada",
+   "nome": "Couraça Pesada",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Você recebe proficiência com armaduras pesadas.",
+   "prerequisitos": "Couraça Média, Força 1",
+   "requisitos": {
+    "poderes": [
+     "Couraça Média"
+    ],
+    "atributos": {
+     "for": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "embracar-escudo",
+   "nome": "Embraçar Escudo",
+   "grupo": "Aprimoramentos",
+   "grupoOrdem": 0,
+   "tipo": "poder-geral",
+   "texto": "Você recebe proficiência com escudos.",
+   "prerequisitos": "nenhum",
+   "requisitos": {},
+   "repetivel": false
+  },
+  {
+   "id": "golpe-de-oportunidade",
+   "nome": "Golpe de Oportunidade",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Quando uma criatura hostil adjacente a você deixa o seu alcance por vontade própria (andando para longe), você pode gastar sua reação para fazer um ataque corpo a corpo contra ela, antes de ela sair. Não vale se ela foi empurrada, derrubada ou levada à força, nem se você estiver desprevenido. Este é o ataque de oportunidade do Icarus: sem este poder, ninguém ganha ataque por alguém sair do alcance.",
+   "prerequisitos": "treinado em Luta",
+   "requisitos": {
+    "treinado": [
+     "Luta"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "guarda-teimosa",
+   "nome": "Guarda Teimosa",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Quando você acerta um Golpe de Oportunidade, o deslocamento da criatura termina ali: ela fica no espaço em que estava.",
+   "prerequisitos": "Golpe de Oportunidade, 4º nível",
+   "requisitos": {
+    "poderes": [
+     "Golpe de Oportunidade"
+    ],
+    "nivel": 4
+   },
+   "repetivel": false
+  },
+  {
+   "id": "arrancada-pesada",
+   "nome": "Arrancada Pesada",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Quando você usa Agredir com ataque corpo a corpo depois de se mover ao menos 6 m em linha reta em direção ao alvo no mesmo turno, o ataque causa +1d6 de dano (+2d6 a partir do 11º nível).",
+   "prerequisitos": "Força 1",
+   "requisitos": {
+    "atributos": {
+     "for": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "golpe-de-peso",
+   "nome": "Golpe de Peso",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Antes de Agredir com uma arma corpo a corpo de duas mãos, você pode aceitar −3 no teste de ataque para receber +6 no dano. Decida antes de rolar.",
+   "prerequisitos": "Força 2",
+   "requisitos": {
+    "atributos": {
+     "for": 2
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "ceifa-continua",
+   "nome": "Ceifa Contínua",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por turno, quando você reduz uma criatura a 0 PV ou acerta um crítico com ataque corpo a corpo, pode gastar 1 PM para fazer imediatamente um ataque corpo a corpo adicional contra outra criatura ao seu alcance.",
+   "prerequisitos": "Força 2, 5º nível",
+   "requisitos": {
+    "atributos": {
+     "for": 2
+    },
+    "nivel": 5
+   },
+   "repetivel": false
+  },
+  {
+   "id": "duelista-de-folego",
+   "nome": "Duelista de Fôlego",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Enquanto só uma criatura hostil estiver a até 3 m de você, você recebe +1 nos ataques e +1 na Defesa.",
+   "prerequisitos": "treinado em Luta",
+   "requisitos": {
+    "treinado": [
+     "Luta"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "pegada-de-ferro",
+   "nome": "Pegada de Ferro",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 nos testes de manobra (Agarrar, Derrubar, Desarmar, Empurrar e Quebrar) e +2 no teste de Fortitude para resistir a manobras.",
+   "prerequisitos": "Força 1, treinado em Luta",
+   "requisitos": {
+    "atributos": {
+     "for": 1
+    },
+    "treinado": [
+     "Luta"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "olhos-fechados",
+   "nome": "Olhos Fechados",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Você luta bem sem ver: camuflagem total passa a contar como camuflagem leve contra os seus ataques, e camuflagem leve é ignorada.",
+   "prerequisitos": "treinado em Luta",
+   "requisitos": {
+    "treinado": [
+     "Luta"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "arma-querida",
+   "nome": "Arma Querida",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Escolha uma arma específica que você possua e se ligue a ela (leva uma noite de descanso). Enquanto a empunhar, você recebe +1 no ataque e +1 no dano com ela. Se a arma for perdida ou destruída, você pode escolher outra após uma semana.",
+   "prerequisitos": "proficiência com a arma",
+   "requisitos": {
+    "proficiencias": [
+     "a arma escolhida"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "truque-sujo",
+   "nome": "Truque Sujo",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Ao usar Agredir, gaste 1 PM e faça um teste de Enganação contra a Intuição do alvo. Se vencer, ele fica desprevenido contra aquele ataque. Uma vez por criatura por cena.",
+   "prerequisitos": "treinado em Enganação",
+   "requisitos": {
+    "treinado": [
+     "Enganação"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mao-dupla",
+   "nome": "Mão Dupla",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "Ao empunhar duas armas (pelo menos uma Leve) e usar Agredir, você pode fazer um ataque com cada arma, sofrendo −2 nos testes de ataque desses dois ataques (a penalidade vale só para essa ação Agredir). É a regra de Combate com duas armas do Núcleo, aberta a qualquer classe. O Par de Lâminas, a habilidade Duas Armas do Ladino e o Ataque Duplo do Nyashi continuam funcionando como já estão.",
+   "prerequisitos": "Destreza 1",
+   "requisitos": {
+    "atributos": {
+     "des": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "maos-gemeas",
+   "nome": "Mãos Gêmeas",
+   "grupo": "Combate corpo a corpo",
+   "grupoOrdem": 1,
+   "tipo": "poder-geral",
+   "texto": "A penalidade de ataque ao lutar com duas armas passa de −2 para −1. Não soma com o Par de Lâminas, que a elimina.",
+   "prerequisitos": "Mão Dupla, Destreza 2",
+   "requisitos": {
+    "poderes": [
+     "Mão Dupla"
+    ],
+    "atributos": {
+     "des": 2
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "visada-demorada",
+   "nome": "Visada Demorada",
+   "grupo": "Combate à distância",
+   "grupoOrdem": 2,
+   "tipo": "poder-geral",
+   "texto": "Como ação de movimento, você mira: seu próximo ataque à distância neste turno recebe +2 no ataque e +1d6 no dano. Não vale se você se moveu antes de usar este poder neste turno.",
+   "prerequisitos": "treinado em Pontaria",
+   "requisitos": {
+    "treinado": [
+     "Pontaria"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mira-estavel",
+   "nome": "Mira Estável",
+   "grupo": "Combate à distância",
+   "grupoOrdem": 2,
+   "tipo": "poder-geral",
+   "texto": "Se você não se moveu neste turno, seus ataques à distância recebem +1 no ataque e ignoram camuflagem leve.",
+   "prerequisitos": "treinado em Pontaria",
+   "requisitos": {
+    "treinado": [
+     "Pontaria"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "fogo-de-cobertura",
+   "nome": "Fogo de Cobertura",
+   "grupo": "Combate à distância",
+   "grupoOrdem": 2,
+   "tipo": "poder-geral",
+   "texto": "Quando um aliado a até 9 m de você é alvo de um ataque, você pode gastar sua reação e 1 PM para fazer um ataque à distância contra o atacante. Se acertar, o ataque contra o seu aliado sofre −2.",
+   "prerequisitos": "treinado em Pontaria",
+   "requisitos": {
+    "treinado": [
+     "Pontaria"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "flecha-na-mosca",
+   "nome": "Flecha na Mosca",
+   "grupo": "Combate à distância",
+   "grupoOrdem": 2,
+   "tipo": "poder-geral",
+   "texto": "Você soma o seu modificador de Destreza nas rolagens de dano dos seus ataques à distância (armas de disparo e de arremesso). Se um efeito já soma esse atributo (Arremesso Devil, Kyudo), você usa o maior, sem somar os dois.",
+   "prerequisitos": "Destreza 2, treinado em Pontaria",
+   "requisitos": {
+    "atributos": {
+     "des": 2
+    },
+    "treinado": [
+     "Pontaria"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "tiro-limpo",
+   "nome": "Tiro Limpo",
+   "grupo": "Combate à distância",
+   "grupoOrdem": 2,
+   "tipo": "poder-geral",
+   "texto": "Você não sofre a penalidade de −5 nos ataques à distância contra um alvo que está em combate corpo a corpo com outra criatura.",
+   "prerequisitos": "treinado em Pontaria",
+   "requisitos": {
+    "treinado": [
+     "Pontaria"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "tiro-desarmante",
+   "nome": "Tiro Desarmante",
+   "grupo": "Combate à distância",
+   "grupoOrdem": 2,
+   "tipo": "poder-geral",
+   "texto": "Você pode usar a manobra Desarmar com um ataque à distância (arma de disparo ou de arremesso) contra um alvo no alcance da arma. Faça o teste de ataque com Pontaria; o alvo faz o teste de Fortitude como de costume. Gaste 1 PM e 1 munição. Se vencer, o item cai no espaço do alvo (se vencer por 5 ou mais, é empurrado 1,5 m na direção do tiro).",
+   "prerequisitos": "treinado em Pontaria",
+   "requisitos": {
+    "treinado": [
+     "Pontaria"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "couro-curtido",
+   "nome": "Couro Curtido",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Você recebe Redução de Dano 1. Segue o teto de RD do Núcleo.",
+   "prerequisitos": "Constituição 2",
+   "requisitos": {
+    "atributos": {
+     "con": 2
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "sempre-em-guarda",
+   "nome": "Sempre em Guarda",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +4 em Iniciativa e não fica desprevenido no primeiro round do combate, mesmo antes de agir.",
+   "prerequisitos": "treinado em Iniciativa",
+   "requisitos": {
+    "treinado": [
+     "Iniciativa"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "postura-alerta",
+   "nome": "Postura Alerta",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Se você não usa armadura pesada, recebe +1 na Defesa.",
+   "prerequisitos": "Destreza 1",
+   "requisitos": {
+    "atributos": {
+     "des": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "queda-macia",
+   "nome": "Queda Macia",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Ao cair, o dano da queda é reduzido em 2d6 e você pode fazer Acrobacia (CD 15) para não ficar caído.",
+   "prerequisitos": "treinado em Acrobacia",
+   "requisitos": {
+    "treinado": [
+     "Acrobacia"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "cabeca-dura",
+   "nome": "Cabeça Dura",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Vontade e, uma vez por cena, pode rolar com vantagem um teste de Vontade.",
+   "prerequisitos": "Sabedoria 1",
+   "requisitos": {
+    "atributos": {
+     "sab": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "barriga-de-pedra",
+   "nome": "Barriga de Pedra",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Fortitude e vantagem em testes para resistir a veneno, doença e enjoo.",
+   "prerequisitos": "Constituição 1",
+   "requisitos": {
+    "atributos": {
+     "con": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "reflexo-de-gato",
+   "nome": "Reflexo de Gato",
+   "grupo": "Defesa e resiliência",
+   "grupoOrdem": 3,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Reflexos e, uma vez por cena, pode rolar com vantagem um teste de Reflexos.",
+   "prerequisitos": "Destreza 1",
+   "requisitos": {
+    "atributos": {
+     "des": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "passada-longa",
+   "nome": "Passada Longa",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Seu deslocamento aumenta em +3 m. Se o seu deslocamento já for 12 m ou mais, o aumento é de apenas +1,5 m. Sem efeito com armadura pesada.",
+   "prerequisitos": "Destreza 1",
+   "requisitos": {
+    "atributos": {
+     "des": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "escapada-limpa",
+   "nome": "Escapada Limpa",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Como parte do seu movimento, você pode fazer Acrobacia (CD 15) para não provocar Golpes de Oportunidade de uma criatura durante esse movimento.",
+   "prerequisitos": "treinado em Acrobacia",
+   "requisitos": {
+    "treinado": [
+     "Acrobacia"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mola-nos-pes",
+   "nome": "Mola nos Pés",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Seu salto é o dobro da distância normal e não exige corrida. Você pode saltar como parte do movimento.",
+   "prerequisitos": "treinado em Atletismo ou Acrobacia",
+   "requisitos": {
+    "treinadoOu": [
+     "Atletismo",
+     "Acrobacia"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mao-de-gancho",
+   "nome": "Mão de Gancho",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Você ganha deslocamento de escalada igual à metade do deslocamento e +2 em Atletismo para escalar.",
+   "prerequisitos": "treinado em Atletismo",
+   "requisitos": {
+    "treinado": [
+     "Atletismo"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "bracada-forte",
+   "nome": "Braçada Forte",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Você ganha deslocamento de natação igual à metade do deslocamento e +2 em Atletismo para nadar.",
+   "prerequisitos": "treinado em Atletismo",
+   "requisitos": {
+    "treinado": [
+     "Atletismo"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "pe-de-pluma",
+   "nome": "Pé de Pluma",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Você se move em deslocamento total sem a penalidade de −5 de Furtividade em movimento (regra de Furtividade em movimento, abaixo).",
+   "prerequisitos": "treinado em Furtividade",
+   "requisitos": {
+    "treinado": [
+     "Furtividade"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "passo-firme",
+   "nome": "Passo Firme",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Você ignora terreno difícil natural (lama, neve, escombros, vegetação).",
+   "prerequisitos": "Constituição 1",
+   "requisitos": {
+    "atributos": {
+     "con": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "enguia",
+   "nome": "Enguia",
+   "grupo": "Mobilidade",
+   "grupoOrdem": 4,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +4 em testes para se soltar de Agarrar ou de cordas e amarras.",
+   "prerequisitos": "Destreza 1",
+   "requisitos": {
+    "atributos": {
+     "des": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "dedos-leves",
+   "nome": "Dedos Leves",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Prestidigitação. Sacar, guardar ou passar um objeto pequeno é ação livre.",
+   "prerequisitos": "treinado em Prestidigitação",
+   "requisitos": {
+    "treinado": [
+     "Prestidigitação"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mil-mascaras",
+   "nome": "Mil Máscaras",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Enganação e faz um disfarce completo em 10 minutos, mesmo sem kit, com +5 de bônus se tiver kit.",
+   "prerequisitos": "treinado em Enganação ou Atuação",
+   "requisitos": {
+    "treinadoOu": [
+     "Enganação",
+     "Atuação"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "instinto-de-cacador",
+   "nome": "Instinto de Caçador",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Escolha Visão, Audição ou Olfato: você recebe +2 nessa perícia e ignora camuflagem leve ao usar esse sentido para atacar ou perceber algo. Repetível (um sentido diferente por vez).",
+   "prerequisitos": "treinado no sentido escolhido",
+   "requisitos": {
+    "treinado": [
+     "o sentido escolhido"
+    ]
+   },
+   "repetivel": true
+  },
+  {
+   "id": "medico-de-estrada",
+   "nome": "Médico de Estrada",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Cura. Como ação padrão, com Cura (CD 15), você encerra uma condição de Sangrando ou traz de volta uma criatura Morrendo com 1 PV.",
+   "prerequisitos": "treinado em Cura",
+   "requisitos": {
+    "treinado": [
+     "Cura"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "segunda-impressao",
+   "nome": "Segunda Impressão",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por cena, depois de falhar em um teste de Diplomacia, Enganação ou Intimidação, você pode refazê-lo com o mesmo alvo, sem a penalidade de repetição.",
+   "prerequisitos": "treinado em Diplomacia, Enganação ou Intimidação",
+   "requisitos": {
+    "treinadoOu": [
+     "Diplomacia",
+     "Enganação",
+     "Intimidação"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "cabeca-de-estudioso",
+   "nome": "Cabeça de Estudioso",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em História, Misticismo, Nobreza e Religião e, uma vez por cena, pode fazer um teste de uma dessas perícias mesmo que fosse proibido sem treino, com vantagem.",
+   "prerequisitos": "Inteligência 1",
+   "requisitos": {
+    "atributos": {
+     "int": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "lingua-das-feras",
+   "nome": "Língua das Feras",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Adestramento. Como ação padrão, com Adestramento, você pode acalmar um animal hostil (CD = 10 + ND do animal) ou dar uma ordem a um animal que ainda não seja seu.",
+   "prerequisitos": "treinado em Adestramento",
+   "requisitos": {
+    "treinado": [
+     "Adestramento"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "bussola-na-cabeca",
+   "nome": "Bússola na Cabeça",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Enquanto sua visão não estiver prejudicada por condições físicas, mentais ou climáticas (como Cego, Ofuscado, Confuso, nevoeiro ou tempestade), você nunca se perde em terra ou no mar e recebe +2 em Navegação.",
+   "prerequisitos": "treinado em Navegação",
+   "requisitos": {
+    "treinado": [
+     "Navegação"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "cavaleiro-nato",
+   "nome": "Cavaleiro Nato",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Cavalgar. Montado, você não sofre penalidade de ataque por montaria em movimento, e não cai por dano sofrido (só por falha crítica de Cavalgar).",
+   "prerequisitos": "treinado em Cavalgar",
+   "requisitos": {
+    "treinado": [
+     "Cavalgar"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "atleta-de-provas",
+   "nome": "Atleta de Provas",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Atletismo e Acrobacia e, uma vez por cena, pode refazer um teste dessas perícias.",
+   "prerequisitos": "treinado em Atletismo ou Acrobacia",
+   "requisitos": {
+    "treinadoOu": [
+     "Atletismo",
+     "Acrobacia"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "olho-de-investigador",
+   "nome": "Olho de Investigador",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Investigação e Intuição e pode usar Investigação como ação de movimento, uma vez por cena.",
+   "prerequisitos": "treinado em Investigação ou Intuição",
+   "requisitos": {
+    "treinadoOu": [
+     "Investigação",
+     "Intuição"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "olho-de-mercador",
+   "nome": "Olho de Mercador",
+   "grupo": "Perícias",
+   "grupoOrdem": 5,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Barganha, avalia o valor exato de qualquer item que veja e, ao comprar com sucesso em Barganha, o desconto sobe de 5% para 10%.",
+   "prerequisitos": "treinado em Barganha",
+   "requisitos": {
+    "treinado": [
+     "Barganha"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "olhar-de-peso",
+   "nome": "Olhar de Peso",
+   "grupo": "Interpretação e influência",
+   "grupoOrdem": 6,
+   "tipo": "poder-geral",
+   "texto": "Você pode fazer Intimidação como ação de movimento e, uma vez por cena, usar Carisma ou Força (o que for maior) no teste.",
+   "prerequisitos": "treinado em Intimidação",
+   "requisitos": {
+    "treinado": [
+     "Intimidação"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "fama-merecida",
+   "nome": "Fama Merecida",
+   "grupo": "Interpretação e influência",
+   "grupoOrdem": 6,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Enganação. Além disso, ao chegar a uma cidade, vila ou região, você pode contar uma história sobre si mesmo (descrevendo-a ao Mestre): ela se torna verdade naquele lugar, e as pessoas passam a conhecê-la e repeti-la. A história traz benefícios e consequências, definidos com o Mestre, e duram para sempre ali: você sofre os dois, bons ou maus. Uma história por cidade, vila ou região.",
+   "prerequisitos": "Carisma 1",
+   "requisitos": {
+    "atributos": {
+     "car": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "rede-de-contatos",
+   "nome": "Rede de Contatos",
+   "grupo": "Interpretação e influência",
+   "grupoOrdem": 6,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por aventura, ao chegar a um povoado, você pode pedir ao Mestre um contato (informante, curandeiro, contrabandista, sacerdote) que lhe deve um favor pequeno.",
+   "prerequisitos": "Carisma 1",
+   "requisitos": {
+    "atributos": {
+     "car": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "voz-que-acalma",
+   "nome": "Voz que Acalma",
+   "grupo": "Interpretação e influência",
+   "grupoOrdem": 6,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por cena, como ação padrão, faça Diplomacia (CD 15) para encerrar a condição Abalado ou Frustrado de um aliado que possa ouvir você.",
+   "prerequisitos": "treinado em Diplomacia",
+   "requisitos": {
+    "treinado": [
+     "Diplomacia"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mao-amiga",
+   "nome": "Mão Amiga",
+   "grupo": "Interpretação e influência",
+   "grupoOrdem": 6,
+   "tipo": "poder-geral",
+   "texto": "Quando você ajuda outro personagem em um teste (regra de Ajuda, abaixo), o seu teste de ajuda concede +1 a mais no total do teste dele, exceto se você tirar 1 natural (falha crítica), caso em que a penalidade de −4 se aplica normalmente.",
+   "prerequisitos": "Sabedoria 1",
+   "requisitos": {
+    "atributos": {
+     "sab": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "armadilheiro",
+   "nome": "Armadilheiro",
+   "grupo": "Exploração e viagem",
+   "grupoOrdem": 7,
+   "tipo": "poder-geral",
+   "texto": "Em 10 minutos, com materiais baratos, você monta uma armadilha de laço (Reflexos CD 10 + metade do nível + Destreza, ou o alvo fica Enredado) ou uma armadilha de alarme (um som alto avisa você). Você pode ter 2 armadilhas armadas por vez.",
+   "prerequisitos": "Destreza 1",
+   "requisitos": {
+    "atributos": {
+     "des": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mochila-bem-arrumada",
+   "nome": "Mochila Bem Arrumada",
+   "grupo": "Exploração e viagem",
+   "grupoOrdem": 7,
+   "tipo": "poder-geral",
+   "texto": "Sua capacidade de carga aumenta em +2 espaços.",
+   "prerequisitos": "Força 1",
+   "requisitos": {
+    "atributos": {
+     "for": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "viajante-incansavel",
+   "nome": "Viajante Incansável",
+   "grupo": "Exploração e viagem",
+   "grupoOrdem": 7,
+   "tipo": "poder-geral",
+   "texto": "Você não fica Fatigado por marchar ou viajar sem descanso e recebe +2 em Fortitude contra Fatigado e Exausto.",
+   "prerequisitos": "Constituição 1",
+   "requisitos": {
+    "atributos": {
+     "con": 1
+    }
+   },
+   "repetivel": false
+  },
+  {
+   "id": "boca-de-muitas-linguas",
+   "nome": "Boca de Muitas Línguas",
+   "grupo": "Exploração e viagem",
+   "grupoOrdem": 7,
+   "tipo": "poder-geral",
+   "texto": "Você aprende 2 idiomas à sua escolha.",
+   "prerequisitos": "Inteligência 2",
+   "requisitos": {
+    "atributos": {
+     "int": 2
+    }
+   },
+   "repetivel": true
+  },
+  {
+   "id": "ronda-esperta",
+   "nome": "Ronda Esperta",
+   "grupo": "Exploração e viagem",
+   "grupoOrdem": 7,
+   "tipo": "poder-geral",
+   "texto": "Enquanto você faz a vigília, você e quem dorme sob a sua guarda não ficam desprevenidos ao serem surpreendidos por ataques noturnos; você recebe +2 em Audição e Visão durante a vigília.",
+   "prerequisitos": "treinado em Audição ou Visão",
+   "requisitos": {
+    "treinadoOu": [
+     "Audição",
+     "Visão"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "fio-da-sorte",
+   "nome": "Fio da Sorte",
+   "grupo": "Sorte e destino",
+   "grupoOrdem": 8,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por cena, você pode gastar 3 PM para rolar de novo um d20 seu ou o d20 de um ataque feito contra você, ficando com o novo resultado.",
+   "prerequisitos": "nenhum",
+   "requisitos": {},
+   "repetivel": false
+  },
+  {
+   "id": "moeda-no-bolso",
+   "nome": "Moeda no Bolso",
+   "grupo": "Sorte e destino",
+   "grupoOrdem": 8,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por dia, você transforma um 1 natural (seu) em 10 natural.",
+   "prerequisitos": "nenhum",
+   "requisitos": {},
+   "repetivel": false
+  },
+  {
+   "id": "mao-que-nao-treme",
+   "nome": "Mão que Não Treme",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Você recebe +2 em Concentração.",
+   "prerequisitos": "capacidade de lançar magias",
+   "requisitos": {
+    "conjurador": true
+   },
+   "repetivel": false
+  },
+  {
+   "id": "palavra-curta",
+   "nome": "Palavra Curta",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Uma vez por cena, ao lançar uma magia de execução padrão, você pode pagar +2 PM para lançá-la como ação de movimento.",
+   "prerequisitos": "capacidade de lançar magias, 5º nível",
+   "requisitos": {
+    "conjurador": true,
+    "nivel": 5
+   },
+   "repetivel": false
+  },
+  {
+   "id": "dedo-longo",
+   "nome": "Dedo Longo",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Ao lançar uma magia de alcance curto ou médio, você pode pagar +2 PM para aumentar o alcance uma faixa (curto → médio, médio → longo).",
+   "prerequisitos": "capacidade de lançar magias",
+   "requisitos": {
+    "conjurador": true
+   },
+   "repetivel": false
+  },
+  {
+   "id": "escola-predileta",
+   "nome": "Escola Predileta",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Escolha uma escola de magia. A CD das suas magias dessa escola aumenta em +1. Repetível (escola diferente a cada vez).",
+   "prerequisitos": "capacidade de lançar magias",
+   "requisitos": {
+    "conjurador": true
+   },
+   "repetivel": true
+  },
+  {
+   "id": "interromper-conjuracao",
+   "nome": "Interromper Conjuração",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Quando uma criatura a até 9 m que você vê começa a lançar uma magia, você pode gastar sua reação e 2 PM para fazer Misticismo contra CD 10 + nível da magia + 5. Se passar, a magia falha e o PM dela é gasto. Uma vez por cena.",
+   "prerequisitos": "treinado em Misticismo, capacidade de lançar magias",
+   "requisitos": {
+    "conjurador": true,
+    "treinado": [
+     "Misticismo"
+    ]
+   },
+   "repetivel": false
+  },
+  {
+   "id": "mana-como-couraca",
+   "nome": "Mana como Couraça",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Quando você sofre dano, pode gastar sua reação e 1 PM para reduzir o dano em 1 + o nível da maior magia que você pode lançar.",
+   "prerequisitos": "capacidade de lançar magias, 5º nível",
+   "requisitos": {
+    "conjurador": true,
+    "nivel": 5
+   },
+   "repetivel": false
+  },
+  {
+   "id": "economia-arcana",
+   "nome": "Economia Arcana",
+   "grupo": "Magia",
+   "grupoOrdem": 9,
+   "tipo": "poder-geral",
+   "texto": "Escolha uma escola de magia. As suas magias dessa escola custam −1 PM (mínimo 1 PM).",
+   "prerequisitos": "capacidade de lançar magias",
+   "requisitos": {
+    "conjurador": true
+   },
+   "repetivel": false
+  }
+ ]
+}

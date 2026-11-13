@@ -1,0 +1,43 @@
+{
+  "_id": "BsGi4net86BZW3WZ",
+  "name": "Mil Máscaras",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "BTOZjtS6oj9Kl7pm",
+  "sort": 900,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Enganação ou Atuação",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Enganação ou Atuação.</p><p>Você recebe +2 em Enganação e faz um disfarce completo em 10 minutos, mesmo sem kit, com +5 de bônus se tiver kit.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Perícias",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinadoOu": [
+        "Enganação",
+        "Atuação"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:mil-mascaras",
+      "poderGeral": "mil-mascaras",
+      "grupo": "Perícias"
+    }
+  },
+  "_key": "!items!BsGi4net86BZW3WZ"
+}

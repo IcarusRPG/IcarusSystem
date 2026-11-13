@@ -1,0 +1,15 @@
+{
+  "_id": "4JAL0laiN3MHT3he",
+  "name": "Defesa e resiliência",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 400000,
+  "color": null,
+  "flags": {
+    "icarus-rpg": {
+      "id": "poderes-gerais:defesa-e-resiliencia"
+    }
+  },
+  "_key": "!folders!4JAL0laiN3MHT3he"
+}

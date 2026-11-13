@@ -1,0 +1,42 @@
+{
+  "_id": "72JfgkjaTxDLhwG0",
+  "name": "Voz que Acalma",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "U9iTJkfo00mkCCit",
+  "sort": 500,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "treinado em Diplomacia",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> treinado em Diplomacia.</p><p>Uma vez por cena, como ação padrão, faça Diplomacia (CD 15) para encerrar a condição Abalado ou Frustrado de um aliado que possa ouvir você.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Interpretação e influência",
+    "nivelMinimo": null,
+    "atributoMinimo": {},
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "treinado": [
+        "Diplomacia"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:voz-que-acalma",
+      "poderGeral": "voz-que-acalma",
+      "grupo": "Interpretação e influência"
+    }
+  },
+  "_key": "!items!72JfgkjaTxDLhwG0"
+}

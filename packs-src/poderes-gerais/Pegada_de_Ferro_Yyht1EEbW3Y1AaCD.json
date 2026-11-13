@@ -1,0 +1,47 @@
+{
+  "_id": "Yyht1EEbW3Y1AaCD",
+  "name": "Pegada de Ferro",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "z7aCvphRrruyvWNd",
+  "sort": 1100,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Força 1, treinado em Luta",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Força 1, treinado em Luta.</p><p>Você recebe +2 nos testes de manobra (Agarrar, Derrubar, Desarmar, Empurrar e Quebrar) e +2 no teste de Fortitude para resistir a manobras.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Combate corpo a corpo",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "FOR": 1
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "for": 1
+      },
+      "treinado": [
+        "Luta"
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:pegada-de-ferro",
+      "poderGeral": "pegada-de-ferro",
+      "grupo": "Combate corpo a corpo"
+    }
+  },
+  "_key": "!items!Yyht1EEbW3Y1AaCD"
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "f12HhA0GWHiSbo82",
+  "name": "Couro Curtido",
+  "type": "poder",
+  "img": "systems/icarus-rpg/img/Icones/default/Dado%20Azul%20500x500.png",
+  "folder": "4JAL0laiN3MHT3he",
+  "sort": 300,
+  "system": {
+    "fonte": "geral",
+    "custoPM": null,
+    "prerequisito": "Constituição 2",
+    "nivel": null,
+    "acao": "",
+    "frequencia": "",
+    "sustentada": false,
+    "divindade": "",
+    "tipoDano": "",
+    "descricao": "<p class=\"icarus-prerequisito\"><strong>Pré-requisitos:</strong> Constituição 2.</p><p>Você recebe Redução de Dano 1. Segue o teto de RD do Núcleo.</p>",
+    "classe": "",
+    "tipoPoder": "geral",
+    "grupo": "Defesa e resiliência",
+    "nivelMinimo": null,
+    "atributoMinimo": {
+      "CON": 2
+    },
+    "requerPoderes": [],
+    "requerGrupo": "",
+    "repetivel": false,
+    "requisitos": {
+      "atributos": {
+        "con": 2
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "icarus-rpg": {
+      "id": "poder-geral:couro-curtido",
+      "poderGeral": "couro-curtido",
+      "grupo": "Defesa e resiliência"
+    }
+  },
+  "_key": "!items!f12HhA0GWHiSbo82"
+}
