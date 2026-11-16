@@ -38,6 +38,8 @@ export class FichaItem extends ItemSheet {
     ctx.editable = this.isEditable;
     ctx.owner = item.isOwner;
     ctx.opcoesFonte = opcoes(FONTES_PODER, "ICARUS.Poderes.Fontes");
+    // Poder Geral: ícone quadrado com moldura própria (sem a borda e o recorte do cabeçalho)
+    ctx.poderGeral = item.type === "poder" && s.tipoPoder === "geral";
     if (item.type === "classe") {
       const pmAtributo = src.pm.atributo ? (src.pm.atributoSoNoPrimeiroNivel ? game.i18n.format("ICARUS.Classe.PMAtributoPrimeiro", { atributo: src.pm.atributo }) : ` + ${src.pm.atributo}`) : "";
       ctx.classe = {

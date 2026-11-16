@@ -484,6 +484,9 @@ body.game {
 .ficha-icarus .tag-pendente { color: var(--ic-ouro-claro); border: 1px solid var(--ic-ouro-escuro); }
 /* Poder Geral: selo discreto em ouro (distingue do poder de classe) */
 .ficha-icarus .tag-racial.tag-geral { color: var(--ic-ouro-claro); border-color: var(--ic-ouro-escuro); }
+/* Ícone do Poder Geral: quadrado com moldura e cantos transparentes próprios, sem hexágono, recorte nem fundo */
+.ficha-icarus .card-icone-quadrado { flex: none; width: 44px; height: 44px; object-fit: contain; border: 0; border-radius: 0; background: none; }
+.ficha-icarus .item-cab img.icone-poder-geral { object-fit: contain; border: 0; border-radius: 0; background: none; }
 /* Linha de pré-requisitos dos Poderes Gerais (descrição do item, na ficha e no chat) */
 .icarus-prerequisito { padding-left: 6px; border-left: 2px solid #d8b45a; font-style: italic; }
 .ficha-icarus .btn.pendente { border-color: var(--ic-ouro); background: var(--ic-miolo-escudo); color: var(--ic-ouro-claro); }

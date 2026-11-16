@@ -19,8 +19,10 @@
     </div>
     <div class="cards">
       {{#each poderes}}
-      <article class="painel card{{#if mostrarIcone}} com-icone{{/if}}" data-item-id="{{id}}" data-abrir-item>
-        {{#if mostrarIcone}}
+      <article class="painel card{{#if mostrarIcone}} com-icone{{/if}}{{#if geral}} com-icone poder-geral{{/if}}" data-item-id="{{id}}" data-abrir-item>
+        {{#if geral}}
+        <img class="card-icone-quadrado" src="{{img}}" alt="" onerror="this.onerror=null;this.src='{{@root.iconePadrao}}'">
+        {{else if mostrarIcone}}
         <span class="hex-mini card-icone" aria-hidden="true"><span class="moldura hex"></span><span class="miolo hex"><img src="{{img}}" alt="" onerror="this.onerror=null;this.src='{{@root.iconePadrao}}'"></span></span>
         {{/if}}
         <div class="card-corpo">

@@ -1,5 +1,20 @@
 # Changelog — Icarus RPG (Foundry VTT)
 
+## 0.42.1
+
+### Ícone dos Poderes Gerais
+- Os **71 Poderes Gerais** usam o mesmo ícone: `img/Icones/poderes e habilidades/poder-geral.png`, a estrela dourada em moldura metálica.
+  - Fica na pasta de ícones de poderes que já existia, a mesma dos animais do Vínculo e dos familiares.
+  - O caminho está numa constante só, `ICONE_PODER_GERAL` (`module/config.mjs`), e não no JSON de dados.
+- **Arquivo:** o PNG original tinha 3000×3000 px e 7,6 MB, com os cantos brancos opacos.
+  - Foi reduzido para 512×512, em PNG de cerca de 300 KB.
+  - O branco por fora da moldura virou transparente. Nada dentro da moldura mudou.
+- **Poder Geral criado à mão ou por macro** (`tipoPoder: "geral"`) sem imagem própria recebe esse ícone. Os outros poderes e itens continuam com o ícone de sempre.
+- **Exibição:**
+  - na aba Poderes da ficha, o Poder Geral mostra o ícone quadrado, sem a moldura hexagonal dos poderes de raça/classe/divindade;
+  - na ficha do item, o ícone aparece sem a borda e o arredondado do cabeçalho.
+- **Mundos:** Poderes Gerais já importados antes desta versão continuam com o dado azul. Para ver o ícone novo, importe o poder de novo do compêndio.
+
 ## 0.42.0
 
 ### Poderes Gerais: compêndio "Icarus: Poderes Gerais"

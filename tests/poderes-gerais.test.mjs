@@ -97,3 +97,43 @@ test("ordem manual: põe o compêndio em 'm' só se o usuário ainda não escolh
   assert.deepEqual(modosComOrdemManual({ "icarus-rpg.armas": "a" }), { "icarus-rpg.armas": "a", "icarus-rpg.poderes-gerais": "m" });
   assert.equal(modosComOrdemManual({ "icarus-rpg.poderes-gerais": "a" }), null);
 });
+
+test("ícone: todos os 71 usam ICONE_PODER_GERAL, e o arquivo existe na pasta de poderes e habilidades", async () => {
+  const { ICONE_PODER_GERAL, ICONE_PADRAO } = await import("../module/config.mjs");
+  assert.equal(ICONE_PODER_GERAL, "systems/icarus-rpg/img/Icones/poderes%20e%20habilidades/poder-geral.png");
+  const { itens } = documentosDePoderesGerais(DADOS);
+  assert.equal(itens.length, 71);
+  assert.ok(itens.every(i => i.img === ICONE_PODER_GERAL));
+  assert.notEqual(ICONE_PODER_GERAL, ICONE_PADRAO);
+  const arquivo = path.join(RAIZ, "img", "Icones", "poderes e habilidades", "poder-geral.png");
+  assert.ok(fs.existsSync(arquivo));
+  // PNG 512×512 (cabeçalho IHDR) com canal alfa (tipo de cor 6 = RGBA)
+  const cab = fs.readFileSync(arquivo).subarray(0, 32);
+  assert.equal(cab.readUInt32BE(16), 512);
+  assert.equal(cab.readUInt32BE(20), 512);
+  assert.equal(cab[25], 6);
+  // O caminho não vai para o JSON de dados
+  assert.ok(!ler("tools/dados/poderes-gerais.json").includes("poder-geral.png"));
+});
+
+test("ícone padrão: só o Poder Geral sem imagem própria ganha o ícone; os outros itens não mudam", async () => {
+  const { imagemPadraoDoItem, ICONE_PODER_GERAL, ICONE_PADRAO } = await import("../module/config.mjs");
+  const padrao = "icons/svg/item-bag.svg";
+  const geral = img => ({ type: "poder", img, system: { tipoPoder: "geral" } });
+  assert.equal(imagemPadraoDoItem(geral(undefined), padrao), ICONE_PODER_GERAL);
+  assert.equal(imagemPadraoDoItem(geral(padrao), padrao), ICONE_PODER_GERAL);
+  assert.equal(imagemPadraoDoItem(geral(ICONE_PADRAO), padrao), ICONE_PODER_GERAL);
+  assert.equal(imagemPadraoDoItem(geral("minha/imagem.webp"), padrao), null);
+  assert.equal(imagemPadraoDoItem({ type: "poder", img: padrao, system: { tipoPoder: "poder" } }, padrao), null);
+  assert.equal(imagemPadraoDoItem({ type: "poder", img: padrao, system: { tipoPoder: "habilidade" } }, padrao), null);
+  assert.equal(imagemPadraoDoItem({ type: "arma", img: padrao, system: {} }, padrao), null);
+});
+
+test("exibição: ficha mostra o ícone quadrado (sem hexágono) e a ficha de item não recorta", () => {
+  const hbs = ler("templates/actor/parts/poderes.hbs");
+  assert.match(hbs, /\{\{#if geral\}\}\s*<img class="card-icone-quadrado"/);
+  assert.match(ler("templates/item/poder.hbs"), /\{\{#if poderGeral\}\} class="icone-poder-geral"/);
+  const css = ler("styles/icarus.css");
+  assert.match(css, /\.card-icone-quadrado \{[^}]*object-fit: contain/);
+  assert.match(css, /img\.icone-poder-geral \{[^}]*border-radius: 0/);
+});
