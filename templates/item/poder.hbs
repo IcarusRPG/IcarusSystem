@@ -1,6 +1,6 @@
 <form class="{{cssClass}} ficha-icarus ficha-item" autocomplete="off">
   <header class="item-cab">
-    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64">
+    <img src="{{item.img}}" alt="" data-edit="img" width="64" height="64"{{#if poderGeral}} class="icone-poder-geral"{{/if}}>
     <input class="nome" type="text" name="name" value="{{item.name}}" aria-label="{{localize 'ICARUS.Item.Nome'}}">
   </header>
   <div class="item-campos">

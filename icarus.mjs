@@ -1,7 +1,7 @@
 /**
  * Icarus RPG — ponto de entrada do sistema para o Foundry VTT v12.
  */
-import { ICARUS, SISTEMA_ID, ICONE_PADRAO } from "./module/config.mjs";
+import { ICARUS, SISTEMA_ID, ICONE_PADRAO, imagemPadraoDoItem } from "./module/config.mjs";
 import { PersonagemData } from "./module/data/actor-personagem.mjs";
 import { PoderData } from "./module/data/item-poder.mjs";
 import { EquipamentoData } from "./module/data/item-equipamento.mjs";
@@ -231,6 +231,12 @@ Hooks.once("init", () => {
   Items.registerSheet(SISTEMA_ID, FichaItem, { types: ["poder", "equipamento", "arma", "municao", "classe", "origem"], makeDefault: true, label: "ICARUS.Ficha.Item" });
 
   return loadTemplates(TEMPLATES);
+});
+
+/** Poder Geral novo sem imagem própria (criado à mão ou por macro): ícone do Poder Geral. Outros itens não mudam. */
+Hooks.on("preCreateItem", (item, dados) => {
+  const img = imagemPadraoDoItem({ type: item.type, img: dados.img, system: item.system }, Item.DEFAULT_ICON);
+  if (img) item.updateSource({ img });
 });
 
 /** Mercador novo: os jogadores podem abrir (vitrine), mas não editar; token ligado. */

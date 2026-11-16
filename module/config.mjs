@@ -140,6 +140,17 @@ export const arquivoDoVinculo = nome => `Vinculo Selvagem - ${nome}.png`;
 export const imagemDoVinculo = (nome, arquivo = arquivoDoVinculo(nome)) =>
   encodeURI(`systems/${SISTEMA_ID}/img/Icones/${PASTA_ICONES_PODERES}/${arquivo}`);
 export const ICONE_VINCULO_PADRAO = "icons/svg/pawprint.svg";
+/** Ícone de todos os Poderes Gerais (compêndio e poder geral criado à mão): img/Icones/poderes e habilidades/poder-geral.png. */
+export const ICONE_PODER_GERAL = encodeURI(`systems/${SISTEMA_ID}/img/Icones/${PASTA_ICONES_PODERES}/poder-geral.png`);
+/**
+ * Imagem que um item novo deve receber: Poder Geral sem imagem própria (vazia, a do Foundry ou o
+ * dado azul) ganha ICONE_PODER_GERAL; qualquer outro item fica como está (null).
+ */
+export function imagemPadraoDoItem(dados, padraoFoundry = null) {
+  if (dados?.type !== "poder" || dados?.system?.tipoPoder !== "geral") return null;
+  const img = dados.img;
+  return !img || img === padraoFoundry || img === ICONE_PADRAO ? ICONE_PODER_GERAL : null;
+}
 /** Imagens dos familiares do Místico: img/Icones/poderes e habilidades/Familiar Elemental - <Nome>.png (mesma regra). */
 export const arquivoDoFamiliar = nome => `Familiar Elemental - ${nome}.png`;
 export const imagemDoFamiliar = (nome, arquivo = arquivoDoFamiliar(nome)) =>

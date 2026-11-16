@@ -3,7 +3,7 @@
  * documentos dos compêndios. Sem dependência do Foundry: usado pelo build (Node), pelo plano B
  * (dentro do Foundry) e pelos testes.
  */
-import { SISTEMA_ID, ICONE_PADRAO, arquivoDoVinculo, imagemDoVinculo, ICONE_VINCULO_PADRAO, arquivoDoFamiliar, imagemDoFamiliar, ICONE_FAMILIAR_PADRAO, FICHA_ANIMAL } from "./config.mjs";
+import { SISTEMA_ID, ICONE_PADRAO, ICONE_PODER_GERAL, arquivoDoVinculo, imagemDoVinculo, ICONE_VINCULO_PADRAO, arquivoDoFamiliar, imagemDoFamiliar, ICONE_FAMILIAR_PADRAO, FICHA_ANIMAL } from "./config.mjs";
 import { idEstavel } from "./dados-itens.mjs";
 import { PAPEIS, ORDEM_PAPEIS_COMPENDIO, ordemDoNd, pastaDoNd, casasDoTamanho, sistemaDaAmeaca, descricaoDaHabilidade } from "./ameaca-dados.mjs";
 
@@ -323,7 +323,7 @@ export function dadosDoPoderGeral(p, idPorNome = new Map(), sort = 0) {
     p.repetivel ? `<p class="icarus-repetivel"><strong>Repetível.</strong></p>` : ""
   ];
   return {
-    _id: idEstavel(`poder-geral:${p.id}`), name: p.nome, type: "poder", img: ICONE_PADRAO,
+    _id: idEstavel(`poder-geral:${p.id}`), name: p.nome, type: "poder", img: ICONE_PODER_GERAL,
     folder: idEstavel(`pasta:poderes-gerais:${normalizar(p.grupo)}`), sort,
     system: {
       fonte: "geral", custoPM: null, prerequisito, nivel: null, acao: "", frequencia: "",
